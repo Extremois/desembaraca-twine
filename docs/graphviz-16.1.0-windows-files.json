@@ -1,0 +1,778 @@
+﻿[
+    {
+        "name":  "acyclic.exe",
+        "bytes":  11776,
+        "sha256":  "129b353f654ef87bb3f6dd019087bd02a98bac2ff4f493bad412a0c1419d79c0",
+        "file_version":  null,
+        "product_version":  null,
+        "company":  null
+    },
+    {
+        "name":  "ANN.dll",
+        "bytes":  196608,
+        "sha256":  "e914978c8af6352a7a7686f6a4e21c36dfb50fe0617e866c21c6f8bfe569a936",
+        "file_version":  null,
+        "product_version":  null,
+        "company":  null
+    },
+    {
+        "name":  "bcomps.exe",
+        "bytes":  15360,
+        "sha256":  "9ad81eabe9ec685781ca7353f910452eb4519026bb585fbfa2d5f5ab79728441",
+        "file_version":  null,
+        "product_version":  null,
+        "company":  null
+    },
+    {
+        "name":  "brotlicommon.dll",
+        "bytes":  136192,
+        "sha256":  "03629b35995b962117e782d4485076b0ded157119bc563ffd16a8633973a3b06",
+        "file_version":  null,
+        "product_version":  null,
+        "company":  null
+    },
+    {
+        "name":  "brotlidec.dll",
+        "bytes":  44544,
+        "sha256":  "dfeef35d03ffaec01d596033909138e77387285f21ad8f0a7cc0a0f1bf11fa2c",
+        "file_version":  null,
+        "product_version":  null,
+        "company":  null
+    },
+    {
+        "name":  "bz2.dll",
+        "bytes":  64512,
+        "sha256":  "b6e32dbd76e3feeb75c059731fd5d38b8e41653e0221d20aab60fe519beeacca",
+        "file_version":  null,
+        "product_version":  null,
+        "company":  null
+    },
+    {
+        "name":  "cairo-2.dll",
+        "bytes":  814592,
+        "sha256":  "845426d17834eece7ea5f2065733ea43c0eb82cd0db40f4e86fbd8d73d111e8e",
+        "file_version":  null,
+        "product_version":  null,
+        "company":  null
+    },
+    {
+        "name":  "ccomps.exe",
+        "bytes":  20480,
+        "sha256":  "c95d4ccdc85d446dae81e376a214cf93328c096814fa4dd3dd5eab8381e10e71",
+        "file_version":  null,
+        "product_version":  null,
+        "company":  null
+    },
+    {
+        "name":  "cdt.dll",
+        "bytes":  16896,
+        "sha256":  "62688e00a4de865d84b28cbc1bfdc218b301d10e055a8c99b1c4c4d13a930a90",
+        "file_version":  null,
+        "product_version":  null,
+        "company":  null
+    },
+    {
+        "name":  "cgraph++.dll",
+        "bytes":  10240,
+        "sha256":  "355fb9738deadb93632a24d6610e8247c38640fea1d4fa9ae5dc03288d3f70e2",
+        "file_version":  null,
+        "product_version":  null,
+        "company":  null
+    },
+    {
+        "name":  "cgraph.dll",
+        "bytes":  69632,
+        "sha256":  "2f72566a51d8eeca5621bdcec3a4acafb4df3ba31f96d1f36dd331ce9444fc7d",
+        "file_version":  null,
+        "product_version":  null,
+        "company":  null
+    },
+    {
+        "name":  "circo.exe",
+        "bytes":  10240,
+        "sha256":  "f1802259468106e831b3cf590e08e390235f3a0ce3ae21f62e08d39c971ee087",
+        "file_version":  null,
+        "product_version":  null,
+        "company":  null
+    },
+    {
+        "name":  "cluster.exe",
+        "bytes":  202752,
+        "sha256":  "dd1258566c0a838dc6cb08f7e2ef9ee3f66a48b2d7489a904e0524e5583a18fd",
+        "file_version":  null,
+        "product_version":  null,
+        "company":  null
+    },
+    {
+        "name":  "concrt140.dll",
+        "bytes":  259688,
+        "sha256":  "a2b04c69868b08a600518ebbad1661d38de4dd0e0a8e638c22d4641d410e50b1",
+        "file_version":  "14.44.35211.0",
+        "product_version":  "14.44.35211.0",
+        "company":  "Microsoft Corporation"
+    },
+    {
+        "name":  "dijkstra.exe",
+        "bytes":  15360,
+        "sha256":  "2b2ab04c1d851939952c222ec6200185e6845c76c4b418d8b3dde36bead05e5b",
+        "file_version":  null,
+        "product_version":  null,
+        "company":  null
+    },
+    {
+        "name":  "dot.exe",
+        "bytes":  10240,
+        "sha256":  "f1802259468106e831b3cf590e08e390235f3a0ce3ae21f62e08d39c971ee087",
+        "file_version":  null,
+        "product_version":  null,
+        "company":  null
+    },
+    {
+        "name":  "dot2gxl.exe",
+        "bytes":  31232,
+        "sha256":  "c987e6e947d91d3d0616e3b5ee75c8dbec5ee935924af6d916fd55809bfd4d98",
+        "file_version":  null,
+        "product_version":  null,
+        "company":  null
+    },
+    {
+        "name":  "dot_builtins.exe",
+        "bytes":  11776,
+        "sha256":  "434cc74bcd2cc59687551cdeba4f255ef0822df187dc6fec355f6875cd4d8624",
+        "file_version":  null,
+        "product_version":  null,
+        "company":  null
+    },
+    {
+        "name":  "edgepaint.exe",
+        "bytes":  219648,
+        "sha256":  "12e28b5c2333648d0bc9d0d0ade224f1423b48c1038b0597a866a072322c7631",
+        "file_version":  null,
+        "product_version":  null,
+        "company":  null
+    },
+    {
+        "name":  "fdp.exe",
+        "bytes":  10240,
+        "sha256":  "f1802259468106e831b3cf590e08e390235f3a0ce3ae21f62e08d39c971ee087",
+        "file_version":  null,
+        "product_version":  null,
+        "company":  null
+    },
+    {
+        "name":  "ffi-8.dll",
+        "bytes":  24064,
+        "sha256":  "2f1f8bb934e472af2fefb3659e815dd3e329640115e01da7d88793f52ff06e81",
+        "file_version":  null,
+        "product_version":  null,
+        "company":  null
+    },
+    {
+        "name":  "fontconfig-1.dll",
+        "bytes":  226816,
+        "sha256":  "04b7cd0cd017aedf83062118059babefbcf2388351faf64b1a16e7d25ae7d086",
+        "file_version":  null,
+        "product_version":  null,
+        "company":  null
+    },
+    {
+        "name":  "freetype.dll",
+        "bytes":  568320,
+        "sha256":  "73c056635394c8caa6cf114277b6aa4b6d9a106d5605f6fa3a75297ba9fcf32f",
+        "file_version":  "2.12.1",
+        "product_version":  "2.12.1",
+        "company":  "The FreeType Project"
+    },
+    {
+        "name":  "fribidi-0.dll",
+        "bytes":  112128,
+        "sha256":  "82fd33769d8f6a45d843c4cf34c4383fc5f6be61b86e2ecb42ac47ffba68f648",
+        "file_version":  null,
+        "product_version":  null,
+        "company":  null
+    },
+    {
+        "name":  "gc.exe",
+        "bytes":  13312,
+        "sha256":  "f0610d57d4fe8991241c5e82bf9383f0b28cfdec1233041e7326853290379249",
+        "file_version":  null,
+        "product_version":  null,
+        "company":  null
+    },
+    {
+        "name":  "gdtclft.dll",
+        "bytes":  23552,
+        "sha256":  "5cfc7d3f77ba765a199af9dd3866ad56794cb2dc9f404b626e533d825166a72b",
+        "file_version":  null,
+        "product_version":  null,
+        "company":  null
+    },
+    {
+        "name":  "getopt.dll",
+        "bytes":  16896,
+        "sha256":  "149574ac45d1981b5cb2f03100cb5524e34183d8ad9b034ed4ecffc3a0620dab",
+        "file_version":  null,
+        "product_version":  null,
+        "company":  null
+    },
+    {
+        "name":  "gio-2.0-0.dll",
+        "bytes":  1299968,
+        "sha256":  "cf6acde3c4a3142aa9beabd7be3c9df9082a3403712d9129e5a569a090972582",
+        "file_version":  "2.78.4.0",
+        "product_version":  "2.78.4",
+        "company":  "The GLib developer community"
+    },
+    {
+        "name":  "glib-2.0-0.dll",
+        "bytes":  1094144,
+        "sha256":  "f5962b3fbcff37782a0255322ccb3f3e9a7089f75951911064cafec343deb851",
+        "file_version":  "2.78.4.0",
+        "product_version":  "2.78.4",
+        "company":  "The GLib developer community"
+    },
+    {
+        "name":  "gml2gv.exe",
+        "bytes":  37888,
+        "sha256":  "47d4c048d61072d899430f07ab3ae510705ac0cf82e5f963bfc8834f46cefc16",
+        "file_version":  null,
+        "product_version":  null,
+        "company":  null
+    },
+    {
+        "name":  "gmodule-2.0-0.dll",
+        "bytes":  16384,
+        "sha256":  "fdbba0fb72641428a3f99b87672b825217206e136dde6399ce21cb9579bb0445",
+        "file_version":  "2.78.4.0",
+        "product_version":  "2.78.4",
+        "company":  "The GLib developer community"
+    },
+    {
+        "name":  "gobject-2.0-0.dll",
+        "bytes":  256512,
+        "sha256":  "1959c181c9c4ee7ee47154e22d658b6a77ba139a99aa0b7ce432bbdba0f1e950",
+        "file_version":  "2.78.4.0",
+        "product_version":  "2.78.4",
+        "company":  "The GLib developer community"
+    },
+    {
+        "name":  "graphml2gv.exe",
+        "bytes":  17920,
+        "sha256":  "348c3e7107cac82d524cb014d71db5672e98d5df6771464eb4bed938ba59784f",
+        "file_version":  null,
+        "product_version":  null,
+        "company":  null
+    },
+    {
+        "name":  "gts.dll",
+        "bytes":  309760,
+        "sha256":  "a327b89db69a27230aec3c359a55211eeb8aa7df6d6b001ddd6538adbb21a181",
+        "file_version":  null,
+        "product_version":  null,
+        "company":  null
+    },
+    {
+        "name":  "gv2gml.exe",
+        "bytes":  20992,
+        "sha256":  "f3595fdde87f47c8994d3fb0d5be8c63deec76c4215dde2672de9851ec1ea06d",
+        "file_version":  null,
+        "product_version":  null,
+        "company":  null
+    },
+    {
+        "name":  "gv2gxl.exe",
+        "bytes":  31232,
+        "sha256":  "c987e6e947d91d3d0616e3b5ee75c8dbec5ee935924af6d916fd55809bfd4d98",
+        "file_version":  null,
+        "product_version":  null,
+        "company":  null
+    },
+    {
+        "name":  "gvc++.dll",
+        "bytes":  16384,
+        "sha256":  "0bef4b713ac31a808210ace83e8b39379492535ab90345b11a899ec17fe5302d",
+        "file_version":  null,
+        "product_version":  null,
+        "company":  null
+    },
+    {
+        "name":  "gvc.dll",
+        "bytes":  503808,
+        "sha256":  "dcd12ed29ca3b5a8b089d0876f0d6d013e02b9242fd8e8ac620c2bbae62be5cf",
+        "file_version":  null,
+        "product_version":  null,
+        "company":  null
+    },
+    {
+        "name":  "gvcolor.exe",
+        "bytes":  29184,
+        "sha256":  "f1423b41b560a778002cf785492633232d0ef766c520185f9aeddfcb8c2d7c2b",
+        "file_version":  null,
+        "product_version":  null,
+        "company":  null
+    },
+    {
+        "name":  "gvgen.exe",
+        "bytes":  23040,
+        "sha256":  "5a97e7eb5b07e5e294757af981e96405bbda56077b7cfe86d2b784923896d1db",
+        "file_version":  null,
+        "product_version":  null,
+        "company":  null
+    },
+    {
+        "name":  "gvmap.exe",
+        "bytes":  280064,
+        "sha256":  "881ffb1e5571354383a571fd3f983230c9e88508ba8e8f2aca236e596efec1c8",
+        "file_version":  null,
+        "product_version":  null,
+        "company":  null
+    },
+    {
+        "name":  "gvpack.exe",
+        "bytes":  32256,
+        "sha256":  "fb22f9d6063cb23044aff3fd57690384be9e081112b5deeeef623b4f231fb42e",
+        "file_version":  null,
+        "product_version":  null,
+        "company":  null
+    },
+    {
+        "name":  "gvplugin_core.dll",
+        "bytes":  83968,
+        "sha256":  "7e66926a3ca86bfa77d65b7c1d683e59f9db220d27342c2784f7904e507cd13e",
+        "file_version":  null,
+        "product_version":  null,
+        "company":  null
+    },
+    {
+        "name":  "gvplugin_dot_layout.dll",
+        "bytes":  124928,
+        "sha256":  "bbe9ef99546b515d80ae0a74040865d81b084616007552fde211f81f38aea405",
+        "file_version":  null,
+        "product_version":  null,
+        "company":  null
+    },
+    {
+        "name":  "gvplugin_gd.dll",
+        "bytes":  36352,
+        "sha256":  "76ecb2e699d3a20314e58650db9b3a6fc09f45bcfd1b293f9af96411dc0472ea",
+        "file_version":  null,
+        "product_version":  null,
+        "company":  null
+    },
+    {
+        "name":  "gvplugin_gdiplus.dll",
+        "bytes":  25600,
+        "sha256":  "69624c8954d23e8d30eef99258a01a60ad011f71ae1ac6c692b973b1e8414bf0",
+        "file_version":  null,
+        "product_version":  null,
+        "company":  null
+    },
+    {
+        "name":  "gvplugin_kitty.dll",
+        "bytes":  10752,
+        "sha256":  "dfa01dfc3e47dc0f29ae5774a806e5ca51ca963fe36a43415a7fc76819d2cb70",
+        "file_version":  null,
+        "product_version":  null,
+        "company":  null
+    },
+    {
+        "name":  "gvplugin_neato_layout.dll",
+        "bytes":  366080,
+        "sha256":  "9818b19c0f853005d82ace13495f9903b7dd1bb14a61601e35721491606993b8",
+        "file_version":  null,
+        "product_version":  null,
+        "company":  null
+    },
+    {
+        "name":  "gvplugin_pango.dll",
+        "bytes":  32256,
+        "sha256":  "bfeb5fc819b7b4e0c99bc060d6fe8a6a5d405006f4d8f1604cbdee0d9938954c",
+        "file_version":  null,
+        "product_version":  null,
+        "company":  null
+    },
+    {
+        "name":  "gvplugin_vt.dll",
+        "bytes":  20992,
+        "sha256":  "a4854c43dbce3347c58a8f50ea2f0d1929b33b8ab1098c9dddabb8ff1a94cf5b",
+        "file_version":  null,
+        "product_version":  null,
+        "company":  null
+    },
+    {
+        "name":  "gvplugin_webp.dll",
+        "bytes":  13824,
+        "sha256":  "be692633e019c510baf96ada92d00c1e8edfe1e9dcd822dabf1c4c5ba1ad89c3",
+        "file_version":  null,
+        "product_version":  null,
+        "company":  null
+    },
+    {
+        "name":  "gvpr.dll",
+        "bytes":  250880,
+        "sha256":  "5c18a65a6535a55a5a7f90ee1ba18549a496b928e28fa4768782977e51934927",
+        "file_version":  null,
+        "product_version":  null,
+        "company":  null
+    },
+    {
+        "name":  "gvpr.exe",
+        "bytes":  9728,
+        "sha256":  "eb8afeec3a00f61bc41e2f82c92f704da88614bf9e4a7fbdd600e46b7f884f54",
+        "file_version":  null,
+        "product_version":  null,
+        "company":  null
+    },
+    {
+        "name":  "gxl2dot.exe",
+        "bytes":  31232,
+        "sha256":  "c987e6e947d91d3d0616e3b5ee75c8dbec5ee935924af6d916fd55809bfd4d98",
+        "file_version":  null,
+        "product_version":  null,
+        "company":  null
+    },
+    {
+        "name":  "gxl2gv.exe",
+        "bytes":  31232,
+        "sha256":  "c987e6e947d91d3d0616e3b5ee75c8dbec5ee935924af6d916fd55809bfd4d98",
+        "file_version":  null,
+        "product_version":  null,
+        "company":  null
+    },
+    {
+        "name":  "harfbuzz.dll",
+        "bytes":  933376,
+        "sha256":  "b5026d478ffa746925092c481bb4886f16584b1dba9c79c0c1a9a6a0038b6489",
+        "file_version":  null,
+        "product_version":  null,
+        "company":  null
+    },
+    {
+        "name":  "iconv-2.dll",
+        "bytes":  1053184,
+        "sha256":  "c2ccfdccc3cf9502856930b28cd14059751ff7f9cf28c3ece15edaa0bdeaa36a",
+        "file_version":  "1.17",
+        "product_version":  "1.17",
+        "company":  "Free Software Foundation"
+    },
+    {
+        "name":  "intl-8.dll",
+        "bytes":  71680,
+        "sha256":  "8144a7505fdcfdeb70ddb9204662d871358362fb8e0f07a69e1d1cb6ab39178b",
+        "file_version":  "0.21.1",
+        "product_version":  "0.21.1",
+        "company":  "Free Software Foundation"
+    },
+    {
+        "name":  "jpeg62.dll",
+        "bytes":  708608,
+        "sha256":  "1f4debb182fcdc173c1e15b7e6c1474337772bef6b7159e156e9391274d3808f",
+        "file_version":  "62,4,0,0",
+        "product_version":  "3.0.1",
+        "company":  "The libjpeg-turbo Project"
+    },
+    {
+        "name":  "libexpat.dll",
+        "bytes":  129024,
+        "sha256":  "83d81fb34f3af64a3429ea80f1eeb7fb232204ed2f56a7aa45bea7153e8e4f97",
+        "file_version":  "VER_FILEVERSION",
+        "product_version":  "VER_FILEVERSION",
+        "company":  ""
+    },
+    {
+        "name":  "libgd.dll",
+        "bytes":  348160,
+        "sha256":  "7d51d3b760116ebcd5eff3e096bf899eb0a289f3fcfd4a7cd2bd0839f3c4a6aa",
+        "file_version":  null,
+        "product_version":  null,
+        "company":  null
+    },
+    {
+        "name":  "liblzma.dll",
+        "bytes":  160768,
+        "sha256":  "0312f849d6a1142e1651a311c0eadb0c6154d35331f0f7664695333c8b5cbbcc",
+        "file_version":  "5.4.4",
+        "product_version":  "5.4.4",
+        "company":  "The Tukaani Project \u003chttps://tukaani.org/\u003e"
+    },
+    {
+        "name":  "libpng16.dll",
+        "bytes":  167424,
+        "sha256":  "b84c673878e569d03ef124794e0cd488e21786e736d6bf08860c0696cbe34336",
+        "file_version":  null,
+        "product_version":  null,
+        "company":  null
+    },
+    {
+        "name":  "libsharpyuv.dll",
+        "bytes":  23552,
+        "sha256":  "7bc8f0abff248a9ac9da798fa24f8ff7448f83bc7fd93e818ce9f57fae00c17d",
+        "file_version":  null,
+        "product_version":  null,
+        "company":  null
+    },
+    {
+        "name":  "libwebp.dll",
+        "bytes":  293376,
+        "sha256":  "dec3029e168923b2c4d149da50fe3e41c9ab9c9590baa2353673836271a32607",
+        "file_version":  null,
+        "product_version":  null,
+        "company":  null
+    },
+    {
+        "name":  "mingle.exe",
+        "bytes":  212480,
+        "sha256":  "308f99010871921065f803fdaf770c3ac770bc6cdd40282e5efb5ff474b7d454",
+        "file_version":  null,
+        "product_version":  null,
+        "company":  null
+    },
+    {
+        "name":  "mm2gv.exe",
+        "bytes":  24576,
+        "sha256":  "82e27b67639074cea77912fc7799a12349d6ce07fc0c524cd282e24848d17ef1",
+        "file_version":  null,
+        "product_version":  null,
+        "company":  null
+    },
+    {
+        "name":  "msvcp140.dll",
+        "bytes":  447616,
+        "sha256":  "97e71a3c697fb1ab3af777db39009e4602525e8c3aff0837ecc7031cba188165",
+        "file_version":  "14.44.35211.0",
+        "product_version":  "14.44.35211.0",
+        "company":  "Microsoft Corporation"
+    },
+    {
+        "name":  "msvcp140_1.dll",
+        "bytes":  33896,
+        "sha256":  "01a58552686d0c6b9fd67a7ac81169fc0013aedf59a8efdc611f94907489a31c",
+        "file_version":  "14.44.35211.0",
+        "product_version":  "14.44.35211.0",
+        "company":  "Microsoft Corporation"
+    },
+    {
+        "name":  "msvcp140_2.dll",
+        "bytes":  294992,
+        "sha256":  "2a5365e03cc6e78b408dfca81537f3734bf3d7cf9cc13ae33204dfbc641dbe43",
+        "file_version":  "14.44.35211.0",
+        "product_version":  "14.44.35211.0",
+        "company":  "Microsoft Corporation"
+    },
+    {
+        "name":  "msvcp140_atomic_wait.dll",
+        "bytes":  47240,
+        "sha256":  "c4a2bae74e008a5bb2445f9078c14df9dcb03267248dfa64e7d04cdc8af5208e",
+        "file_version":  "14.44.35211.0",
+        "product_version":  "14.44.35211.0",
+        "company":  "Microsoft Corporation"
+    },
+    {
+        "name":  "msvcp140_codecvt_ids.dll",
+        "bytes":  30824,
+        "sha256":  "a5cbecfd9b8892ec9a60e30fef7ef2158032c6d91efdfbaca87c082bcd48bfa9",
+        "file_version":  "14.44.35211.0",
+        "product_version":  "14.44.35211.0",
+        "company":  "Microsoft Corporation"
+    },
+    {
+        "name":  "neato.exe",
+        "bytes":  10240,
+        "sha256":  "f1802259468106e831b3cf590e08e390235f3a0ce3ae21f62e08d39c971ee087",
+        "file_version":  null,
+        "product_version":  null,
+        "company":  null
+    },
+    {
+        "name":  "nop.exe",
+        "bytes":  10240,
+        "sha256":  "ab071b8211b38d84d035ccb4fb7aa7dfe102fa381b4e77a0424793a4603d53cf",
+        "file_version":  null,
+        "product_version":  null,
+        "company":  null
+    },
+    {
+        "name":  "osage.exe",
+        "bytes":  10240,
+        "sha256":  "f1802259468106e831b3cf590e08e390235f3a0ce3ae21f62e08d39c971ee087",
+        "file_version":  null,
+        "product_version":  null,
+        "company":  null
+    },
+    {
+        "name":  "pango-1.0-0.dll",
+        "bytes":  308224,
+        "sha256":  "7e0567ebd3d679e7555f82964aa56b93b93886bee803b455bb04e47bcd6c8d6e",
+        "file_version":  "1.50.14.0",
+        "product_version":  "1.50.14",
+        "company":  "Red Hat Software"
+    },
+    {
+        "name":  "pangocairo-1.0-0.dll",
+        "bytes":  48128,
+        "sha256":  "0bf6c7130d39ebfc4bbacf5d5f80da3a0f5a41bdab421f1ca433c712217d5ce9",
+        "file_version":  "1.50.14.0",
+        "product_version":  "1.50.14",
+        "company":  "Red Hat Software"
+    },
+    {
+        "name":  "pangoft2-1.0-0.dll",
+        "bytes":  64512,
+        "sha256":  "121ad1f823087f329057fb57d6ade3398a38992c8bda0f0eb7e2546b0374c99a",
+        "file_version":  "1.50.14.0",
+        "product_version":  "1.50.14",
+        "company":  "Red Hat Software"
+    },
+    {
+        "name":  "pangowin32-1.0-0.dll",
+        "bytes":  46080,
+        "sha256":  "064e206d6ce5bccaead7a6d0d7316f2ddfc9449df8661793525b1a6f94145006",
+        "file_version":  "1.50.14.0",
+        "product_version":  "1.50.14",
+        "company":  "Red Hat Software"
+    },
+    {
+        "name":  "patchwork.exe",
+        "bytes":  10240,
+        "sha256":  "f1802259468106e831b3cf590e08e390235f3a0ce3ae21f62e08d39c971ee087",
+        "file_version":  null,
+        "product_version":  null,
+        "company":  null
+    },
+    {
+        "name":  "pathplan.dll",
+        "bytes":  33792,
+        "sha256":  "a4451f45c7dd3cdf23f871c2d19666b1e88375da2eb0ca7dfc03a9029815cff4",
+        "file_version":  null,
+        "product_version":  null,
+        "company":  null
+    },
+    {
+        "name":  "pcre2-8.dll",
+        "bytes":  493056,
+        "sha256":  "6f7e304c197b4683118df5c8b689ec999517070e6e1aa9e80188883537172448",
+        "file_version":  null,
+        "product_version":  null,
+        "company":  null
+    },
+    {
+        "name":  "pixman-1-0.dll",
+        "bytes":  574464,
+        "sha256":  "5ad9f3e9bf5c2de9b755275bb2f33248dbebf7cb4fb20d36c9469ad3dedff8e0",
+        "file_version":  null,
+        "product_version":  null,
+        "company":  null
+    },
+    {
+        "name":  "prune.exe",
+        "bytes":  13824,
+        "sha256":  "f7f875de6cd25bbbad1ed790be3bb250cb3b99e7a056d2678d69687a71dd0ca7",
+        "file_version":  null,
+        "product_version":  null,
+        "company":  null
+    },
+    {
+        "name":  "sccmap.exe",
+        "bytes":  14848,
+        "sha256":  "17b5643a3cfa188cec5b2fe18d89e64bfc89de6e823ebcc34dc1af9fd8196644",
+        "file_version":  null,
+        "product_version":  null,
+        "company":  null
+    },
+    {
+        "name":  "sfdp.exe",
+        "bytes":  10240,
+        "sha256":  "f1802259468106e831b3cf590e08e390235f3a0ce3ae21f62e08d39c971ee087",
+        "file_version":  null,
+        "product_version":  null,
+        "company":  null
+    },
+    {
+        "name":  "tcl86t.dll",
+        "bytes":  1466880,
+        "sha256":  "159cc4a2ec21e197016eb1eb60fb4fc97a0cfc173db9d5d5751907dbb7c972de",
+        "file_version":  "8.6.10",
+        "product_version":  "8.6.10",
+        "company":  "ActiveState Corporation"
+    },
+    {
+        "name":  "tcldot.dll",
+        "bytes":  42496,
+        "sha256":  "bfbad6f257d388299963786adb6a2a8d66970600f4c1347f07fd9c19df4613d7",
+        "file_version":  null,
+        "product_version":  null,
+        "company":  null
+    },
+    {
+        "name":  "tcldot_builtin.dll",
+        "bytes":  44032,
+        "sha256":  "787705333619f9fb0ad96bc23539d557fb8a640cbd3761f9ee5ba8a5845f57ca",
+        "file_version":  null,
+        "product_version":  null,
+        "company":  null
+    },
+    {
+        "name":  "tclplan.dll",
+        "bytes":  31232,
+        "sha256":  "8770bc5453d8e0537659a38413284a6c7c9971639245f89b0cec22f69b7f9ffd",
+        "file_version":  null,
+        "product_version":  null,
+        "company":  null
+    },
+    {
+        "name":  "tiff.dll",
+        "bytes":  413184,
+        "sha256":  "07f38f2cf31953f028cd0cc25614dab47f4683ab5ca8ff7e7cbcc72c02294052",
+        "file_version":  "4.6.0",
+        "product_version":  "4.6.0",
+        "company":  "libtiff project"
+    },
+    {
+        "name":  "tred.exe",
+        "bytes":  10752,
+        "sha256":  "ca7294ca2f62db5fc010272624b1fd463a645126ef962c7a7a631487b2bf4787",
+        "file_version":  null,
+        "product_version":  null,
+        "company":  null
+    },
+    {
+        "name":  "twopi.exe",
+        "bytes":  10240,
+        "sha256":  "f1802259468106e831b3cf590e08e390235f3a0ce3ae21f62e08d39c971ee087",
+        "file_version":  null,
+        "product_version":  null,
+        "company":  null
+    },
+    {
+        "name":  "unflatten.exe",
+        "bytes":  11776,
+        "sha256":  "917439becf0680cc2b328c373aab576abb0fceed9053f30b3c653abf5b0817e4",
+        "file_version":  null,
+        "product_version":  null,
+        "company":  null
+    },
+    {
+        "name":  "vcruntime140.dll",
+        "bytes":  91216,
+        "sha256":  "a9d7732a3c3de09f0601a7fa2555093dcb49f08e2fc62a86091461f0f38393ed",
+        "file_version":  "14.44.35211.0",
+        "product_version":  "14.44.35211.0",
+        "company":  "Microsoft Corporation"
+    },
+    {
+        "name":  "xdot.dll",
+        "bytes":  20992,
+        "sha256":  "e2e4f8eac31644434eb7165844310004d01261d298d84a0d2a76ddb23e430015",
+        "file_version":  null,
+        "product_version":  null,
+        "company":  null
+    },
+    {
+        "name":  "zlib1.dll",
+        "bytes":  78848,
+        "sha256":  "cf625057f7f58a1a858c151b060c325de01f05b6cd84b1be635f4edb3f73241c",
+        "file_version":  "1.3",
+        "product_version":  "1.3",
+        "company":  ""
+    }
+]
