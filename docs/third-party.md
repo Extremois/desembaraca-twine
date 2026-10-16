@@ -1,9 +1,10 @@
 # Dependências e licenças
 
-Inventário final do fluxo por código-fonte, verificado em 2026-10-16.
+Inventário do fluxo por código-fonte e do runtime gerenciado, verificado em 2026-10-16.
 O código autoral usa Apache-2.0, escolhido explicitamente pelo mantenedor; texto em
 [LICENSE](../LICENSE) e aviso em [NOTICE](../NOTICE). Não há binários ou código de
-Graphviz, ELK.js, Node.js, Twine ou Python incorporados ao projeto.
+Graphviz, ELK.js, Node.js, Twine ou Python incorporados ao projeto; textos de licença
+e avisos de terceiros acompanham o manifesto do runtime.
 
 ## Componentes do fluxo validado
 
@@ -21,7 +22,7 @@ O fluxo validado é `python run.py` e testes `unittest`: nenhum instalador de pa
 necessário. Não há bibliotecas transitivas Python incorporadas. A licença autoral não
 substitui as licenças dos pré-requisitos externos.
 
-## Inventário nativo observado
+## Inventário anterior da instalação global (histórico)
 
 [graphviz-16.1.0-windows-files.json](graphviz-16.1.0-windows-files.json) registra os 97
 executáveis e DLLs encontrados na instalação usada, com nomes, tamanhos, SHA-256 e
@@ -34,18 +35,17 @@ DLLs de renderização, fontes e suporte: Cairo, Pango/GLib, Fontconfig, FreeTyp
 FriBidi, libgd, JPEG, TIFF, libpng, WebP, Brotli, bzip2, Expat, libffi, libiconv/gettext,
 liblzma, PCRE2, Pixman, Tcl, GTS, zlib e runtime Microsoft. A lista não afirma que todos
 esses plugins foram carregados por cada chamada de dot/json0, nem aplica EPL-2.0 a todas
-essas bibliotecas. Nenhuma delas é incorporada à entrega deste projeto; seus avisos
-permanecem na distribuição instalada do fornecedor. Empacotar essa instalação exigiria
-um inventário de licenças próprio por componente; isso não faz parte desta entrega.
+essas bibliotecas. Esse inventário histórico não qualifica o ZIP gerenciado. A revisão
+do artefato obtido automaticamente e os avisos complementares estão descritos adiante.
 
 ## Build e desenvolvimento opcionais
 
-`setuptools>=68` é o backend de build opcional para instalação editável; `pytest>=8`
-é um extra opcional de desenvolvimento. Ambos indicam MIT nas origens. Não estavam
-instalados no ambiente de validação: não se atribui versão ou árvore transitiva fictícia
-a eles, e a instalação editável não é anunciada como verificada. As 69 verificações
-foram executadas com unittest. Pip 26.1.2 já existia na venv, mas não é dependência de
-execução nem é incorporado à entrega. Instalar os extras requer acesso ao índice.
+`setuptools>=68` é o backend de build; `pytest>=8` é um extra opcional de
+desenvolvimento. Ambos indicam MIT nas origens. A suíte usa unittest. Na qualificação
+de distribuições foram obtidos em venv isolada build 1.6.1, setuptools 84.0.0, wheel
+0.48.0, packaging 26.3, pyproject_hooks 1.3.3 e colorama 0.4.6. Essas ferramentas e
+pip não são dependências de execução nem são incorporadas à entrega. A obtenção de
+ferramentas pode precisar de acesso ao índice; resultados estão em validation.md.
 
 ELK.js e Node não aparecem em `project.dependencies`. O pacote ELK instalado declara
 dependências de desenvolvimento (por exemplo web-worker); o experimento usou o worker
@@ -54,7 +54,7 @@ simulado do bundle no mesmo processo. Esses componentes não são exigidos pela 
 ## Compatibilidade da integração escolhida
 
 O projeto distribui sua implementação independente sob Apache-2.0 e usa Graphviz
-instalado separadamente, trocando apenas IDs sintéticos, dimensões e relações por arquivo
+gerenciado pela aplicação, trocando apenas IDs sintéticos, dimensões e relações por arquivo
 DOT/JSON. Não incorpora fontes ou binários EPL/GPL. O avaliador usa matemática SVG
 implementada no projeto; as fontes GPL do Twine foram consultadas para identificar o
 comportamento e não copiadas ou transpiladas. Nesta composição não foi identificado
@@ -82,3 +82,49 @@ avisos omitidos.
 O NOTICE identifica o projeto e remete a este inventário. Os arquivos de amostra
 privados e os downloads do editor permanecem fora das fontes versionadas; os fixtures
 incluídos são sintéticos. NetworkX foi avaliado documentalmente e não é dependência.
+
+## Artefato qualificado para obtenção automática
+
+A feature `002-manage-layout-runtime` obteve e verificou o ZIP oficial win32 16.1.0.
+O [inventário do ZIP](graphviz-16.1.0-managed-runtime.json)
+contém origem, SHA-256 real, tamanhos e os 302 arquivos, incluindo 97 EXE/DLLs.
+Ele é distinto do inventário anterior da instalação global e não contém binários.
+
+SHA-256 verificado: `37906f29ede26cf1952f8cf942c1e7814ab86ef448130136c8607b1b6ffe0870`.
+O ZIP não contém arquivos com nomes de licença/aviso identificáveis pelos termos
+license/copying/notice/copyright. Os avisos complementares foram recuperados das
+fontes do fornecedor e incluídos no projeto, conforme a revisão abaixo.
+
+A [evidência de qualificação](../specs/002-manage-layout-runtime/validation.md)
+registra o impedimento inicial de T004 e sua resolução. O manifesto ativo fixa o
+artefato e avisos; instalação separada de Graphviz deixou de ser requisito.
+
+### Revisão concluída para o download direto
+
+A revisão seguinte complementa o registro inicial acima: o [inventário de componentes](graphviz-16.1.0-components.json)
+mapeia todos os 302 arquivos a 28 componentes, distinguindo licenças de bibliotecas das
+licenças dos respectivos projetos/ferramentas. Os 29 arquivos em
+`src/twine_edge_overlap/third_party/graphviz-16.1.0/` incluem textos, avisos e SOURCES.json;
+o manifesto fixa seus caminhos e SHA-256 para instalação junto ao runtime e uso offline.
+
+Os avisos vcpkg provêm do commit `ff985525b23a1a72ddb1a89482ea12233c3cbe85`
+usado pela tag Graphviz; o texto PCRE2 foi complementado com LICENCE da tag 10.43.
+ANN 1.1.2 tem aviso LGPL e copyright no cabeçalho do fornecedor, complementado pelo texto
+LGPL-2.1; as fontes públicas do autor estão referenciadas. Os termos Microsoft foram
+extraídos do documento oficial Visual C++ 2015-2022 Runtime, preservando o texto completo.
+NOASSERTION dos metadados de receita não foi convertido em licença presumida: para
+libiconv/liblzma/Tcl foram usados os avisos de biblioteca correspondentes.
+
+A composição escolhida mantém o Python autoral independente sob Apache-2.0 e executa
+Graphviz como programa separado, sem carregar suas DLLs no Python ou incorporar fontes
+dos motores ao código autoral. O usuário obtém o ZIP original diretamente do fornecedor,
+sem reempacotamento/espelho de binários pelo projeto; avisos e referências de fontes são
+mantidos separadamente. A conclusão de compatibilidade se limita a essa composição e
+ao uso local dos componentes obtidos. Não autoriza redistribuir binários Microsoft ou
+outros componentes em wheel, sdist ou releases: tal mudança exige revisão própria.
+
+Os [termos oficiais do runtime Microsoft](https://visualstudio.microsoft.com/license-terms/vs2022-cruntime/)
+tratam da instalação e do uso; a [documentação de redistribuição](https://learn.microsoft.com/en-us/visualstudio/releases/2022/redistribution)
+mantém condições próprias para quem redistribui. O projeto não troca essas condições por
+Apache-2.0 nem oferece os binários a partir de sua própria distribuição. Bibliotecas LGPL
+continuam com seus avisos/fontes referenciados e binários do fornecedor intactos.
