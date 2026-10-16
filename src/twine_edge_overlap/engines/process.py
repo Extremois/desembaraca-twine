@@ -22,7 +22,8 @@ class ProcessResult:
 
 
 def run_bounded(
-    command: Sequence[str], *, timeout: float = 30.0, max_output: int = 8 * 1024 * 1024
+    command: Sequence[str], *, timeout: float = 30.0, max_output: int = 8 * 1024 * 1024,
+    cwd=None, env=None,
 ) -> ProcessResult:
     """Run a direct executable, retaining at most max_output combined bytes.
 
@@ -33,8 +34,9 @@ def run_bounded(
         raise ValueError("Invalid experimental process allowance")
     deadline = time.monotonic() + timeout
     process = subprocess.Popen(
-        list(command), stdin=subprocess.DEVNULL, stdout=subprocess.PIPE,
-        stderr=subprocess.PIPE, shell=False,
+        list(command), executable=os.fspath(command[0]) if os.name=='nt' else None,
+        stdin=subprocess.DEVNULL, stdout=subprocess.PIPE,
+        stderr=subprocess.PIPE, shell=False, cwd=cwd, env=env,
         creationflags=subprocess.CREATE_NO_WINDOW if os.name=='nt' else 0,
     )
     chunks: queue.Queue[tuple[int, bytes | None]] = queue.Queue(maxsize=16)
