@@ -1,28 +1,17 @@
 """Geometry-only Graphviz interface; story text never reaches DOT or a shell."""
 import json
 import math
-import os
 from pathlib import Path
-import shutil
 import tempfile
 import time
+from ..runtime import ensure_runtime
 from .process import run_bounded,ProcessLimitError
 from ..domain.model import Node
-from ..errors import DependencyError,EngineError,BudgetError
+from ..errors import EngineError,BudgetError
 
 
 def locate():
-    explicit=os.environ.get('TWINE_GRAPHVIZ_DOT')
-    if explicit:
-        if Path(explicit).is_file(): return explicit
-        raise DependencyError('TWINE_GRAPHVIZ_DOT não aponta para um executável existente')
-    found=shutil.which('dot')
-    if found: return found
-    if os.name=='nt':
-        for root in (os.environ.get('ProgramFiles',r'C:\Program Files'),os.environ.get('ProgramFiles(x86)',r'C:\Program Files (x86)')):
-            path=Path(root)/'Graphviz/bin/dot.exe'
-            if path.is_file(): return str(path)
-    raise DependencyError('Graphviz dot não encontrado; instale Graphviz ou defina TWINE_GRAPHVIZ_DOT')
+    return str(ensure_runtime().executable)
 
 
 def build_dot(document):
@@ -55,8 +44,8 @@ def decode_layout(data,document):
         raise EngineError('Saída JSON/IDs/coordenadas inválidos de Graphviz') from exc
 
 
-def layout(document,deadline):
-    executable=locate()
+def layout(document,deadline,*,runtime):
+    executable=str(runtime.executable)
     if not document.nodes: return {}
     remaining=min(30,deadline-time.monotonic())
     if remaining<=0: raise BudgetError('Prazo global esgotado antes do motor')
@@ -64,8 +53,8 @@ def layout(document,deadline):
         with tempfile.TemporaryDirectory(prefix='twine-graphviz-') as folder:
             source=Path(folder)/'graph.dot'
             source.write_text(build_dot(document),encoding='ascii')
-            result=run_bounded([executable,'-Tjson0',str(source)],timeout=remaining)
-        if result.returncode: raise EngineError('Graphviz falhou; confira instalação completa e plugins json0')
+            result=run_bounded([executable,'-Tjson0',str(source)],timeout=remaining,cwd=runtime.cwd,env=runtime.env)
+        if result.returncode: raise EngineError('Graphviz falhou; repita --repair-runtime conforme a documentação')
         return decode_layout(result.stdout,document)
     except ProcessLimitError as exc: raise BudgetError('Motor excedeu o limite de tempo ou de 8 MiB de saída') from exc
     except OSError as exc: raise EngineError('Não foi possível executar Graphviz ou seus temporários') from exc

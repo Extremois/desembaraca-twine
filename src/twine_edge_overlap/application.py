@@ -9,14 +9,17 @@ from .engines import graphviz
 from .errors import EngineError,BudgetError,IntegrityError
 from .files import snapshot,publish
 from .formats.profile import parse,serialize,verify
+from .runtime import ensure_runtime
 
 
-def run(path,*,engine=None,seconds=GLOBAL_SECONDS):
+def run(path,*,engine=None,seconds=GLOBAL_SECONDS,runtime_provider=None,progress=None):
     deadline=time.monotonic()+seconds
     source=Path(path).resolve()
     source_bytes=snapshot(source)
     original=parse(source_bytes,deadline)
-    graphviz.locate()  # Missing dependency is an actionable failure, even for a clean input.
+    preparation_start=time.monotonic()
+    runtime=(runtime_provider() if runtime_provider is not None else ensure_runtime(progress=progress))
+    deadline+=time.monotonic()-preparation_start
     try:
         if time.monotonic()>=deadline:
             raise TimeoutError()
@@ -27,7 +30,7 @@ def run(path,*,engine=None,seconds=GLOBAL_SECONDS):
     reason='Não havia conflitos a resolver' if before.clean else 'Nenhuma melhoria admissível; layout original preservado'
     if not before.clean:
         try:
-            positions=(engine or graphviz.layout)(original,deadline)
+            positions=engine(original,deadline) if engine is not None else graphviz.layout(original,deadline,runtime=runtime)
             if time.monotonic()>=deadline:
                 raise TimeoutError()
             candidate=parse(serialize(original,positions),deadline)
