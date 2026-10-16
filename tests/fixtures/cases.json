@@ -1,0 +1,237 @@
+[
+  {
+    "case": "crossing",
+    "file": "crossing.twee",
+    "sha256": "d7c694abfcf286588792ea3f537bebafbe45eb4a7774252782bda6dc8319b25b",
+    "before": [
+      1,
+      0,
+      0
+    ],
+    "known_resolvable": true,
+    "known_clear_positions": {
+      "P0": [
+        500,
+        500
+      ],
+      "P1": [
+        1000,
+        500
+      ],
+      "P2": [
+        1000,
+        800
+      ],
+      "P3": [
+        500,
+        800
+      ]
+    }
+  },
+  {
+    "case": "coincident",
+    "file": "coincident.twee",
+    "sha256": "f63665a740e024a5e361546627f324ce8ddb9b1792b55b16984a87eee6ac49ea",
+    "before": [
+      1,
+      2,
+      0
+    ],
+    "known_resolvable": true,
+    "known_clear_positions": {
+      "P0": [
+        500,
+        500
+      ],
+      "P1": [
+        800,
+        500
+      ],
+      "P2": [
+        500,
+        1000
+      ],
+      "P3": [
+        800,
+        1000
+      ]
+    }
+  },
+  {
+    "case": "clean",
+    "file": "clean.twee",
+    "sha256": "5e8d75b9a72cd1afcaeb7b3646cc5d0cec1f7368b2b6275f324eaa7c3f1299f6",
+    "before": [
+      0,
+      0,
+      0
+    ],
+    "known_resolvable": false
+  },
+  {
+    "case": "isolated_overlap",
+    "file": "isolated_overlap.twee",
+    "sha256": "6ce9fbd0eb53e57209879944c2ebdc2b66bc6ea26d68fb8a2bd9bd2104f99ef6",
+    "before": [
+      0,
+      1,
+      0
+    ],
+    "known_resolvable": true,
+    "known_clear_positions": {
+      "P0": [
+        500,
+        500
+      ],
+      "P1": [
+        1000,
+        500
+      ]
+    }
+  },
+  {
+    "case": "connected_overlap",
+    "file": "connected_overlap.twee",
+    "sha256": "adf06218e2172f4e0b7bd640bc3cb24cd10de327da92848f888943bf6edb50fb",
+    "before": [
+      1,
+      1,
+      1
+    ],
+    "known_resolvable": true,
+    "known_clear_positions": {
+      "P0": [
+        500,
+        500
+      ],
+      "P1": [
+        1000,
+        500
+      ],
+      "P2": [
+        750,
+        1000
+      ]
+    }
+  },
+  {
+    "case": "through_isolated",
+    "file": "through_isolated.twee",
+    "sha256": "e584fe80a571da6355922139925a930603454fc5e27a6a44037401e433f6cf36",
+    "before": [
+      0,
+      0,
+      1
+    ],
+    "known_resolvable": true,
+    "known_clear_positions": {
+      "P0": [
+        500,
+        500
+      ],
+      "P1": [
+        500,
+        1000
+      ],
+      "P2": [
+        1000,
+        500
+      ]
+    }
+  },
+  {
+    "case": "through_connected",
+    "file": "through_connected.twee",
+    "sha256": "481d38cd9ba76522c25530ea382e13ee73f2ff1000829e335c58dff96f4de6f8",
+    "before": [
+      0,
+      0,
+      1
+    ],
+    "known_resolvable": true,
+    "known_clear_positions": {
+      "P0": [
+        500,
+        500
+      ],
+      "P1": [
+        500,
+        1000
+      ],
+      "P2": [
+        1500,
+        500
+      ],
+      "P3": [
+        1500,
+        1000
+      ]
+    }
+  },
+  {
+    "case": "border_only",
+    "file": "border_only.twee",
+    "sha256": "da0a8b50743446027bccf723f022a8081efe1fd135a118e504615b81ecf88701",
+    "before": [
+      0,
+      0,
+      0
+    ],
+    "known_resolvable": false
+  },
+  {
+    "case": "cycle",
+    "file": "cycle.twee",
+    "sha256": "a35feef5fdb5d2e5a41b99fe826fd9f0ebb861c50c6f148afc0597f87b6ea6c1",
+    "before": [
+      0,
+      0,
+      0
+    ],
+    "known_resolvable": false
+  },
+  {
+    "case": "parallel_occurrences",
+    "file": "parallel_occurrences.twee",
+    "sha256": "cda380247a05431a6d4aaf3a70eb5488ec01770fe89f9562b95691d4823f8df0",
+    "before": [
+      0,
+      0,
+      0
+    ],
+    "known_resolvable": false
+  },
+  {
+    "case": "self_loop",
+    "file": "self_loop.twee",
+    "sha256": "7df0478afa2ca0e1e400454d2bbba7571a3f9de9d2d4417f5640e4cd3e94921e",
+    "before": [
+      0,
+      0,
+      0
+    ],
+    "known_resolvable": false
+  },
+  {
+    "case": "reciprocal",
+    "file": "reciprocal.twee",
+    "sha256": "f2f16549e43ad54c3f09ba12cf7ebb677fb72a32d2c3a3ac6ba82c311e626979",
+    "before": [
+      1,
+      0,
+      0
+    ],
+    "known_resolvable": false
+  },
+  {
+    "case": "empty",
+    "file": "empty.twee",
+    "sha256": "45e3a62ea1b3c31df65b0f7a7bac769ddf9aafc4006bc7cf379d19b2c289c23c",
+    "before": [
+      0,
+      0,
+      0
+    ],
+    "known_resolvable": false
+  }
+]

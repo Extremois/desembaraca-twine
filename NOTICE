@@ -1,0 +1,9 @@
+TwineEdgeOverlap
+Copyright 2026 Francisco Bezerra
+
+Licensed under the Apache License, Version 2.0. See LICENSE.
+
+Graphviz and Python are external prerequisites and are not included in this
+project's source distribution. ELK.js and Node.js were used only for experiments.
+No Twine source code or third-party layout-engine binaries are bundled here.
+See docs/third-party.md for the dependency inventory and source references.

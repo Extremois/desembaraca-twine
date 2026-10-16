@@ -1,0 +1,24 @@
+# Python and local development environments
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Packaging artifacts
+build/
+dist/
+*.egg-info/
+
+# Local scratch files and editor state
+.tmp/
+*.tmp
+*.swp
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+.env
+.env.*

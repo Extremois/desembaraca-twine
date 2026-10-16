@@ -1,0 +1,18 @@
+:: StoryTitle
+Synthetic border_only
+
+:: StoryData
+{"ifid": "11111111-1111-4111-8111-111111111111", "format": "Harlowe", "format-version": "3.3.9", "start": "P0"}
+
+:: P0 [test] {"position": "500,500", "size": "100,100", "custom": {"retain": true}}
+Synthetic passage.
+[[P1]]
+
+:: P1 [test] {"position": "1000,500", "size": "100,100", "custom": {"retain": true}}
+Synthetic passage.
+
+
+:: P2 [test] {"position": "795,499.8076211353316", "size": "10,10", "custom": {"retain": true}}
+Synthetic passage.
+
+

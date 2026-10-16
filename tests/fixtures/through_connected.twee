@@ -1,0 +1,22 @@
+:: StoryTitle
+Synthetic through_connected
+
+:: StoryData
+{"ifid": "11111111-1111-4111-8111-111111111111", "format": "Harlowe", "format-version": "3.3.9", "start": "P0"}
+
+:: P0 [test] {"position": "500,500", "size": "100,100", "custom": {"retain": true}}
+Synthetic passage.
+[[P1]]
+
+:: P1 [test] {"position": "500,900", "size": "100,100", "custom": {"retain": true}}
+Synthetic passage.
+
+
+:: P2 [test] {"position": "500,700", "size": "100,100", "custom": {"retain": true}}
+Synthetic passage.
+[[P3]]
+
+:: P3 [test] {"position": "800,700", "size": "100,100", "custom": {"retain": true}}
+Synthetic passage.
+
+
