@@ -22,6 +22,12 @@ where = ["src"]
 include = ["twine_edge_overlap*"]
 namespaces = false
 
+[tool.setuptools]
+include-package-data = false
+
+[tool.setuptools.package-data]
+twine_edge_overlap = ["runtime-manifest.json", "third_party/graphviz-16.1.0/*"]
+
 [tool.pytest.ini_options]
 pythonpath = ["src", "tests"]
 testpaths = ["tests"]
