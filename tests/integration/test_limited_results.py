@@ -3,6 +3,7 @@ import tempfile
 import unittest
 from unittest.mock import patch
 from common import fixture
+from runtime_support import blocked_network,controlled_runtime
 from twine_edge_overlap.application import run
 from twine_edge_overlap.domain.model import Metrics
 from twine_edge_overlap.domain.result import classify
@@ -11,12 +12,16 @@ from twine_edge_overlap.formats.profile import parse,verify
 
 
 class LimitedResultsTests(unittest.TestCase):
+    def setUp(self):
+        self.enterContext(blocked_network())
+        self.enterContext(patch('twine_edge_overlap.application.ensure_runtime',side_effect=AssertionError('unexpected acquisition')))
+
     def execute(self,engine,case='coincident',**kwargs):
         with tempfile.TemporaryDirectory() as folder:
             source=Path(folder)/'input.twee'
             original=fixture(case)
             source.write_bytes(original)
-            result=run(source,engine=engine,**kwargs)
+            result=run(source,engine=engine,runtime_provider=controlled_runtime,**kwargs)
             self.assertEqual(source.read_bytes(),original)
             verify(parse(original),parse(result.path.read_bytes()))
             self.assertTrue(all(a<=b for a,b in zip(result.after.values,result.before.values)))
@@ -78,5 +83,5 @@ class LimitedResultsTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as folder:
             source=Path(folder)/'input.twee'
             source.write_bytes(fixture('crossing'))
-            with self.assertRaises(BudgetError): run(source,seconds=0)
+            with self.assertRaises(BudgetError): run(source,seconds=0,runtime_provider=controlled_runtime)
             self.assertEqual(list(Path(folder).glob('*.layout*.twee')),[])

@@ -1,0 +1,54 @@
+{
+  "scope": "Current Windows 11 AMD64 host; no VM or clean-machine validation",
+  "tests": [
+    {
+      "python": "3.14.6",
+      "tests": 122,
+      "elapsed_seconds": 39.003,
+      "failures": 0,
+      "errors": 0,
+      "skips": 0,
+      "log": ".tmp\\convergence-tests-314.log",
+      "log_sha256": "eb37af5ea35198f0ea2bc19717584fc55b0ca0079b0bcba4d6dbacd400c92c09"
+    },
+    {
+      "python": "3.12.10",
+      "tests": 122,
+      "elapsed_seconds": 37.277,
+      "failures": 0,
+      "errors": 0,
+      "skips": 0,
+      "log": ".tmp\\convergence-tests-312.log",
+      "log_sha256": "bbbce2973aa34d74f739c580374723e2bba73ab19cbf00a845c3adcc2772eace"
+    }
+  ],
+  "artifacts": [
+    {
+      "artifact": "twine_edge_overlap-0.1.0.dev0-py3-none-any.whl",
+      "sha256": "00e86d7d3e31270ee9a4dc3cb17650a3bf1dd2f85364a4d8cf5c2a05c8afb16d",
+      "offline_layout": 0,
+      "notices": 29,
+      "venv": "C:\\Users\\franc\\AppData\\Local\\Temp\\twine-distribution-f0anhb3n\\wheel",
+      "updated_runtime_and_adapter_sources_verified": true
+    },
+    {
+      "artifact": "twine_edge_overlap-0.1.0.dev0.tar.gz",
+      "sha256": "4f85b4833bb39215021eea3129e3849a20bc193319f2cd98815dc8e6b11eb89a",
+      "offline_layout": 0,
+      "notices": 29,
+      "venv": "C:\\Users\\franc\\AppData\\Local\\Temp\\twine-distribution-f0anhb3n\\sdist",
+      "updated_runtime_and_adapter_sources_verified": true
+    }
+  ],
+  "compileall_exit_code": 0,
+  "twine_reopened": false,
+  "deferred_tasks": [
+    "T022",
+    "T043"
+  ],
+  "pending_visual_tasks": [
+    "T028",
+    "T048"
+  ],
+  "full_acceptance_task": "T044"
+}

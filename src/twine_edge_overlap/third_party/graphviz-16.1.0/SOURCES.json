@@ -1,0 +1,587 @@
+{
+  "dependency_commit": "ff985525b23a1a72ddb1a89482ea12233c3cbe85",
+  "components": {
+    "graphviz": {
+      "files": [
+        "Graphviz-16.1.0-win32/bin/acyclic.exe",
+        "Graphviz-16.1.0-win32/bin/bcomps.exe",
+        "Graphviz-16.1.0-win32/bin/ccomps.exe",
+        "Graphviz-16.1.0-win32/bin/cdt.dll",
+        "Graphviz-16.1.0-win32/bin/cgraph++.dll",
+        "Graphviz-16.1.0-win32/bin/cgraph.dll",
+        "Graphviz-16.1.0-win32/bin/circo.exe",
+        "Graphviz-16.1.0-win32/bin/cluster.exe",
+        "Graphviz-16.1.0-win32/bin/config8",
+        "Graphviz-16.1.0-win32/bin/dijkstra.exe",
+        "Graphviz-16.1.0-win32/bin/dot.exe",
+        "Graphviz-16.1.0-win32/bin/dot2gxl.exe",
+        "Graphviz-16.1.0-win32/bin/dot_builtins.exe",
+        "Graphviz-16.1.0-win32/bin/dot_sandbox",
+        "Graphviz-16.1.0-win32/bin/edgepaint.exe",
+        "Graphviz-16.1.0-win32/bin/fdp.exe",
+        "Graphviz-16.1.0-win32/bin/gc.exe",
+        "Graphviz-16.1.0-win32/bin/gdtclft.dll",
+        "Graphviz-16.1.0-win32/bin/gml2gv.exe",
+        "Graphviz-16.1.0-win32/bin/graphml2gv.exe",
+        "Graphviz-16.1.0-win32/bin/gv2gml.exe",
+        "Graphviz-16.1.0-win32/bin/gv2gxl.exe",
+        "Graphviz-16.1.0-win32/bin/gvc++.dll",
+        "Graphviz-16.1.0-win32/bin/gvc.dll",
+        "Graphviz-16.1.0-win32/bin/gvcolor.exe",
+        "Graphviz-16.1.0-win32/bin/gvgen.exe",
+        "Graphviz-16.1.0-win32/bin/gvmap.exe",
+        "Graphviz-16.1.0-win32/bin/gvmap.sh",
+        "Graphviz-16.1.0-win32/bin/gvpack.exe",
+        "Graphviz-16.1.0-win32/bin/gvplugin_core.dll",
+        "Graphviz-16.1.0-win32/bin/gvplugin_dot_layout.dll",
+        "Graphviz-16.1.0-win32/bin/gvplugin_gd.dll",
+        "Graphviz-16.1.0-win32/bin/gvplugin_gdiplus.dll",
+        "Graphviz-16.1.0-win32/bin/gvplugin_kitty.dll",
+        "Graphviz-16.1.0-win32/bin/gvplugin_neato_layout.dll",
+        "Graphviz-16.1.0-win32/bin/gvplugin_pango.dll",
+        "Graphviz-16.1.0-win32/bin/gvplugin_vt.dll",
+        "Graphviz-16.1.0-win32/bin/gvplugin_webp.dll",
+        "Graphviz-16.1.0-win32/bin/gvpr.dll",
+        "Graphviz-16.1.0-win32/bin/gvpr.exe",
+        "Graphviz-16.1.0-win32/bin/gxl2dot.exe",
+        "Graphviz-16.1.0-win32/bin/gxl2gv.exe",
+        "Graphviz-16.1.0-win32/bin/mingle.exe",
+        "Graphviz-16.1.0-win32/bin/mm2gv.exe",
+        "Graphviz-16.1.0-win32/bin/neato.exe",
+        "Graphviz-16.1.0-win32/bin/nop.exe",
+        "Graphviz-16.1.0-win32/bin/osage.exe",
+        "Graphviz-16.1.0-win32/bin/patchwork.exe",
+        "Graphviz-16.1.0-win32/bin/pathplan.dll",
+        "Graphviz-16.1.0-win32/bin/prune.exe",
+        "Graphviz-16.1.0-win32/bin/sccmap.exe",
+        "Graphviz-16.1.0-win32/bin/sfdp.exe",
+        "Graphviz-16.1.0-win32/bin/tcldot.dll",
+        "Graphviz-16.1.0-win32/bin/tcldot_builtin.dll",
+        "Graphviz-16.1.0-win32/bin/tclplan.dll",
+        "Graphviz-16.1.0-win32/bin/tred.exe",
+        "Graphviz-16.1.0-win32/bin/twopi.exe",
+        "Graphviz-16.1.0-win32/bin/unflatten.exe",
+        "Graphviz-16.1.0-win32/bin/xdot.dll",
+        "Graphviz-16.1.0-win32/include/graphviz/AGraph.h",
+        "Graphviz-16.1.0-win32/include/graphviz/arith.h",
+        "Graphviz-16.1.0-win32/include/graphviz/cdt.h",
+        "Graphviz-16.1.0-win32/include/graphviz/cgraph.h",
+        "Graphviz-16.1.0-win32/include/graphviz/color.h",
+        "Graphviz-16.1.0-win32/include/graphviz/geom.h",
+        "Graphviz-16.1.0-win32/include/graphviz/graphviz_version.h",
+        "Graphviz-16.1.0-win32/include/graphviz/gvc.h",
+        "Graphviz-16.1.0-win32/include/graphviz/gvcext.h",
+        "Graphviz-16.1.0-win32/include/graphviz/gvcjob.h",
+        "Graphviz-16.1.0-win32/include/graphviz/gvcommon.h",
+        "Graphviz-16.1.0-win32/include/graphviz/gvconfig.h",
+        "Graphviz-16.1.0-win32/include/graphviz/GVContext.h",
+        "Graphviz-16.1.0-win32/include/graphviz/GVLayout.h",
+        "Graphviz-16.1.0-win32/include/graphviz/gvplugin.h",
+        "Graphviz-16.1.0-win32/include/graphviz/gvplugin_device.h",
+        "Graphviz-16.1.0-win32/include/graphviz/gvplugin_layout.h",
+        "Graphviz-16.1.0-win32/include/graphviz/gvplugin_loadimage.h",
+        "Graphviz-16.1.0-win32/include/graphviz/gvplugin_render.h",
+        "Graphviz-16.1.0-win32/include/graphviz/gvplugin_textlayout.h",
+        "Graphviz-16.1.0-win32/include/graphviz/gvpr.h",
+        "Graphviz-16.1.0-win32/include/graphviz/GVRenderData.h",
+        "Graphviz-16.1.0-win32/include/graphviz/pack.h",
+        "Graphviz-16.1.0-win32/include/graphviz/pathgeom.h",
+        "Graphviz-16.1.0-win32/include/graphviz/pathplan.h",
+        "Graphviz-16.1.0-win32/include/graphviz/textspan.h",
+        "Graphviz-16.1.0-win32/include/graphviz/types.h",
+        "Graphviz-16.1.0-win32/include/graphviz/usershape.h",
+        "Graphviz-16.1.0-win32/include/graphviz/xdot.h",
+        "Graphviz-16.1.0-win32/lib/cdt.lib",
+        "Graphviz-16.1.0-win32/lib/cgraph++.lib",
+        "Graphviz-16.1.0-win32/lib/cgraph.lib",
+        "Graphviz-16.1.0-win32/lib/cmake/graphviz/graphvizConfig.cmake",
+        "Graphviz-16.1.0-win32/lib/cmake/graphviz/graphvizTargets-release.cmake",
+        "Graphviz-16.1.0-win32/lib/cmake/graphviz/graphvizTargets.cmake",
+        "Graphviz-16.1.0-win32/lib/gdtclft.lib",
+        "Graphviz-16.1.0-win32/lib/graphviz/tcl/pkgIndex.tcl",
+        "Graphviz-16.1.0-win32/lib/gvc++.lib",
+        "Graphviz-16.1.0-win32/lib/gvc.lib",
+        "Graphviz-16.1.0-win32/lib/gvplugin_core.lib",
+        "Graphviz-16.1.0-win32/lib/gvplugin_dot_layout.lib",
+        "Graphviz-16.1.0-win32/lib/gvplugin_gd.lib",
+        "Graphviz-16.1.0-win32/lib/gvplugin_gdiplus.lib",
+        "Graphviz-16.1.0-win32/lib/gvplugin_kitty.lib",
+        "Graphviz-16.1.0-win32/lib/gvplugin_neato_layout.lib",
+        "Graphviz-16.1.0-win32/lib/gvplugin_pango.lib",
+        "Graphviz-16.1.0-win32/lib/gvplugin_vt.lib",
+        "Graphviz-16.1.0-win32/lib/gvplugin_webp.lib",
+        "Graphviz-16.1.0-win32/lib/gvpr.lib",
+        "Graphviz-16.1.0-win32/lib/pathplan.lib",
+        "Graphviz-16.1.0-win32/lib/pkgconfig/libcdt.pc",
+        "Graphviz-16.1.0-win32/lib/pkgconfig/libcgraph.pc",
+        "Graphviz-16.1.0-win32/lib/pkgconfig/libgvc.pc",
+        "Graphviz-16.1.0-win32/lib/pkgconfig/libgvpr.pc",
+        "Graphviz-16.1.0-win32/lib/pkgconfig/libpathplan.pc",
+        "Graphviz-16.1.0-win32/lib/pkgconfig/libxdot.pc",
+        "Graphviz-16.1.0-win32/lib/tcldot.lib",
+        "Graphviz-16.1.0-win32/lib/tcldot_builtin.lib",
+        "Graphviz-16.1.0-win32/lib/tclplan.lib",
+        "Graphviz-16.1.0-win32/lib/xdot.lib",
+        "Graphviz-16.1.0-win32/share/graphviz/graphs/directed/abstract.gv",
+        "Graphviz-16.1.0-win32/share/graphviz/graphs/directed/alf.gv",
+        "Graphviz-16.1.0-win32/share/graphviz/graphs/directed/arrows.gv",
+        "Graphviz-16.1.0-win32/share/graphviz/graphs/directed/awilliams.gv",
+        "Graphviz-16.1.0-win32/share/graphviz/graphs/directed/biological.gv",
+        "Graphviz-16.1.0-win32/share/graphviz/graphs/directed/clust.gv",
+        "Graphviz-16.1.0-win32/share/graphviz/graphs/directed/clust1.gv",
+        "Graphviz-16.1.0-win32/share/graphviz/graphs/directed/clust2.gv",
+        "Graphviz-16.1.0-win32/share/graphviz/graphs/directed/clust3.gv",
+        "Graphviz-16.1.0-win32/share/graphviz/graphs/directed/clust4.gv",
+        "Graphviz-16.1.0-win32/share/graphviz/graphs/directed/clust5.gv",
+        "Graphviz-16.1.0-win32/share/graphviz/graphs/directed/crazy.gv",
+        "Graphviz-16.1.0-win32/share/graphviz/graphs/directed/ctext.gv",
+        "Graphviz-16.1.0-win32/share/graphviz/graphs/directed/dfa.gv",
+        "Graphviz-16.1.0-win32/share/graphviz/graphs/directed/fig6.gv",
+        "Graphviz-16.1.0-win32/share/graphviz/graphs/directed/fsm.gv",
+        "Graphviz-16.1.0-win32/share/graphviz/graphs/directed/grammar.gv",
+        "Graphviz-16.1.0-win32/share/graphviz/graphs/directed/hashtable.gv",
+        "Graphviz-16.1.0-win32/share/graphviz/graphs/directed/honda-tokoro.gv",
+        "Graphviz-16.1.0-win32/share/graphviz/graphs/directed/japanese.gv",
+        "Graphviz-16.1.0-win32/share/graphviz/graphs/directed/jcctree.gv",
+        "Graphviz-16.1.0-win32/share/graphviz/graphs/directed/jsort.gv",
+        "Graphviz-16.1.0-win32/share/graphviz/graphs/directed/KW91.gv",
+        "Graphviz-16.1.0-win32/share/graphviz/graphs/directed/Latin1.gv",
+        "Graphviz-16.1.0-win32/share/graphviz/graphs/directed/ldbxtried.gv",
+        "Graphviz-16.1.0-win32/share/graphviz/graphs/directed/longflat.gv",
+        "Graphviz-16.1.0-win32/share/graphviz/graphs/directed/mike.gv",
+        "Graphviz-16.1.0-win32/share/graphviz/graphs/directed/NaN.gv",
+        "Graphviz-16.1.0-win32/share/graphviz/graphs/directed/nhg.gv",
+        "Graphviz-16.1.0-win32/share/graphviz/graphs/directed/oldarrows.gv",
+        "Graphviz-16.1.0-win32/share/graphviz/graphs/directed/pgram.gv",
+        "Graphviz-16.1.0-win32/share/graphviz/graphs/directed/pm2way.gv",
+        "Graphviz-16.1.0-win32/share/graphviz/graphs/directed/pmpipe.gv",
+        "Graphviz-16.1.0-win32/share/graphviz/graphs/directed/polypoly.gv",
+        "Graphviz-16.1.0-win32/share/graphviz/graphs/directed/proc3d.gv",
+        "Graphviz-16.1.0-win32/share/graphviz/graphs/directed/psfonttest.gv",
+        "Graphviz-16.1.0-win32/share/graphviz/graphs/directed/record2.gv",
+        "Graphviz-16.1.0-win32/share/graphviz/graphs/directed/records.gv",
+        "Graphviz-16.1.0-win32/share/graphviz/graphs/directed/rowe.gv",
+        "Graphviz-16.1.0-win32/share/graphviz/graphs/directed/russian.gv",
+        "Graphviz-16.1.0-win32/share/graphviz/graphs/directed/sdh.gv",
+        "Graphviz-16.1.0-win32/share/graphviz/graphs/directed/shells.gv",
+        "Graphviz-16.1.0-win32/share/graphviz/graphs/directed/states.gv",
+        "Graphviz-16.1.0-win32/share/graphviz/graphs/directed/structs.gv",
+        "Graphviz-16.1.0-win32/share/graphviz/graphs/directed/switch.gv",
+        "Graphviz-16.1.0-win32/share/graphviz/graphs/directed/table.gv",
+        "Graphviz-16.1.0-win32/share/graphviz/graphs/directed/train11.gv",
+        "Graphviz-16.1.0-win32/share/graphviz/graphs/directed/trapeziumlr.gv",
+        "Graphviz-16.1.0-win32/share/graphviz/graphs/directed/tree.gv",
+        "Graphviz-16.1.0-win32/share/graphviz/graphs/directed/triedds.gv",
+        "Graphviz-16.1.0-win32/share/graphviz/graphs/directed/try.gv",
+        "Graphviz-16.1.0-win32/share/graphviz/graphs/directed/unix.gv",
+        "Graphviz-16.1.0-win32/share/graphviz/graphs/directed/unix2.gv",
+        "Graphviz-16.1.0-win32/share/graphviz/graphs/directed/viewfile.gv",
+        "Graphviz-16.1.0-win32/share/graphviz/graphs/directed/world.gv",
+        "Graphviz-16.1.0-win32/share/graphviz/graphs/undirected/ER.gv",
+        "Graphviz-16.1.0-win32/share/graphviz/graphs/undirected/Heawood.gv",
+        "Graphviz-16.1.0-win32/share/graphviz/graphs/undirected/ngk10_4.gv",
+        "Graphviz-16.1.0-win32/share/graphviz/graphs/undirected/Petersen.gv",
+        "Graphviz-16.1.0-win32/share/graphviz/graphs/undirected/process.gv",
+        "Graphviz-16.1.0-win32/share/graphviz/gvpr/addedges",
+        "Graphviz-16.1.0-win32/share/graphviz/gvpr/addranks",
+        "Graphviz-16.1.0-win32/share/graphviz/gvpr/addrings",
+        "Graphviz-16.1.0-win32/share/graphviz/gvpr/anon",
+        "Graphviz-16.1.0-win32/share/graphviz/gvpr/attr",
+        "Graphviz-16.1.0-win32/share/graphviz/gvpr/bb",
+        "Graphviz-16.1.0-win32/share/graphviz/gvpr/bbox",
+        "Graphviz-16.1.0-win32/share/graphviz/gvpr/binduce",
+        "Graphviz-16.1.0-win32/share/graphviz/gvpr/bipart",
+        "Graphviz-16.1.0-win32/share/graphviz/gvpr/chkclusters",
+        "Graphviz-16.1.0-win32/share/graphviz/gvpr/chkedges",
+        "Graphviz-16.1.0-win32/share/graphviz/gvpr/cliptree",
+        "Graphviz-16.1.0-win32/share/graphviz/gvpr/col",
+        "Graphviz-16.1.0-win32/share/graphviz/gvpr/collapse",
+        "Graphviz-16.1.0-win32/share/graphviz/gvpr/color",
+        "Graphviz-16.1.0-win32/share/graphviz/gvpr/cycle",
+        "Graphviz-16.1.0-win32/share/graphviz/gvpr/dechain",
+        "Graphviz-16.1.0-win32/share/graphviz/gvpr/deghist",
+        "Graphviz-16.1.0-win32/share/graphviz/gvpr/deledges",
+        "Graphviz-16.1.0-win32/share/graphviz/gvpr/delmulti",
+        "Graphviz-16.1.0-win32/share/graphviz/gvpr/delnodes",
+        "Graphviz-16.1.0-win32/share/graphviz/gvpr/depath",
+        "Graphviz-16.1.0-win32/share/graphviz/gvpr/dijkstra",
+        "Graphviz-16.1.0-win32/share/graphviz/gvpr/flatten",
+        "Graphviz-16.1.0-win32/share/graphviz/gvpr/get-layers-list",
+        "Graphviz-16.1.0-win32/share/graphviz/gvpr/group",
+        "Graphviz-16.1.0-win32/share/graphviz/gvpr/histogram",
+        "Graphviz-16.1.0-win32/share/graphviz/gvpr/indent",
+        "Graphviz-16.1.0-win32/share/graphviz/gvpr/knbhd",
+        "Graphviz-16.1.0-win32/share/graphviz/gvpr/maxdeg",
+        "Graphviz-16.1.0-win32/share/graphviz/gvpr/path",
+        "Graphviz-16.1.0-win32/share/graphviz/gvpr/rotate",
+        "Graphviz-16.1.0-win32/share/graphviz/gvpr/scale",
+        "Graphviz-16.1.0-win32/share/graphviz/gvpr/scalexy",
+        "Graphviz-16.1.0-win32/share/graphviz/gvpr/span",
+        "Graphviz-16.1.0-win32/share/graphviz/gvpr/topon",
+        "Graphviz-16.1.0-win32/share/graphviz/gvpr/treetoclust",
+        "Graphviz-16.1.0-win32/share/man/man1/acyclic.1",
+        "Graphviz-16.1.0-win32/share/man/man1/bcomps.1",
+        "Graphviz-16.1.0-win32/share/man/man1/ccomps.1",
+        "Graphviz-16.1.0-win32/share/man/man1/circo.1",
+        "Graphviz-16.1.0-win32/share/man/man1/cluster.1",
+        "Graphviz-16.1.0-win32/share/man/man1/dijkstra.1",
+        "Graphviz-16.1.0-win32/share/man/man1/dot.1",
+        "Graphviz-16.1.0-win32/share/man/man1/dot2gxl.1",
+        "Graphviz-16.1.0-win32/share/man/man1/dot_sandbox.1",
+        "Graphviz-16.1.0-win32/share/man/man1/edgepaint.1",
+        "Graphviz-16.1.0-win32/share/man/man1/fdp.1",
+        "Graphviz-16.1.0-win32/share/man/man1/gc.1",
+        "Graphviz-16.1.0-win32/share/man/man1/gml2gv.1",
+        "Graphviz-16.1.0-win32/share/man/man1/graphml2gv.1",
+        "Graphviz-16.1.0-win32/share/man/man1/gv2gml.1",
+        "Graphviz-16.1.0-win32/share/man/man1/gv2gxl.1",
+        "Graphviz-16.1.0-win32/share/man/man1/gvcolor.1",
+        "Graphviz-16.1.0-win32/share/man/man1/gvgen.1",
+        "Graphviz-16.1.0-win32/share/man/man1/gvmap.1",
+        "Graphviz-16.1.0-win32/share/man/man1/gvmap.sh.1",
+        "Graphviz-16.1.0-win32/share/man/man1/gvpack.1",
+        "Graphviz-16.1.0-win32/share/man/man1/gvpr.1",
+        "Graphviz-16.1.0-win32/share/man/man1/gxl2dot.1",
+        "Graphviz-16.1.0-win32/share/man/man1/gxl2gv.1",
+        "Graphviz-16.1.0-win32/share/man/man1/mingle.1",
+        "Graphviz-16.1.0-win32/share/man/man1/mm2gv.1",
+        "Graphviz-16.1.0-win32/share/man/man1/neato.1",
+        "Graphviz-16.1.0-win32/share/man/man1/nop.1",
+        "Graphviz-16.1.0-win32/share/man/man1/osage.1",
+        "Graphviz-16.1.0-win32/share/man/man1/patchwork.1",
+        "Graphviz-16.1.0-win32/share/man/man1/prune.1",
+        "Graphviz-16.1.0-win32/share/man/man1/sccmap.1",
+        "Graphviz-16.1.0-win32/share/man/man1/sfdp.1",
+        "Graphviz-16.1.0-win32/share/man/man1/tred.1",
+        "Graphviz-16.1.0-win32/share/man/man1/twopi.1",
+        "Graphviz-16.1.0-win32/share/man/man1/unflatten.1",
+        "Graphviz-16.1.0-win32/share/man/man3/cdt.3",
+        "Graphviz-16.1.0-win32/share/man/man3/cgraph.3",
+        "Graphviz-16.1.0-win32/share/man/man3/gdtclft.3tcl",
+        "Graphviz-16.1.0-win32/share/man/man3/gvc.3",
+        "Graphviz-16.1.0-win32/share/man/man3/gvpr.3",
+        "Graphviz-16.1.0-win32/share/man/man3/pack.3",
+        "Graphviz-16.1.0-win32/share/man/man3/pathplan.3",
+        "Graphviz-16.1.0-win32/share/man/man3/tcldot.3tcl",
+        "Graphviz-16.1.0-win32/share/man/man3/xdot.3"
+      ],
+      "source_references": [
+        "https://gitlab.com/graphviz/graphviz/-/tree/16.1.0",
+        "https://gitlab.com/graphviz/graphviz/-/archive/16.1.0/graphviz-16.1.0.tar.gz"
+      ],
+      "version": "16.1.0",
+      "library_license": "EPL-2.0"
+    },
+    "ann": {
+      "files": [
+        "Graphviz-16.1.0-win32/bin/ANN.dll"
+      ],
+      "source_references": [
+        "https://www.cs.umd.edu/~mount/ANN/",
+        "https://www.cs.umd.edu/~mount/ANN/Files/1.1.2/ann_1.1.2.tar.gz",
+        "https://gitlab.com/graphviz/graphviz-windows-dependencies/-/tree/ff985525b23a1a72ddb1a89482ea12233c3cbe85/x86/include/ANN"
+      ],
+      "version": "1.1.2",
+      "library_license": "LGPL-2.1-or-later"
+    },
+    "brotli": {
+      "files": [
+        "Graphviz-16.1.0-win32/bin/brotlicommon.dll",
+        "Graphviz-16.1.0-win32/bin/brotlidec.dll"
+      ],
+      "source_references": [
+        "https://gitlab.com/graphviz/graphviz-windows-dependencies/-/tree/ff985525b23a1a72ddb1a89482ea12233c3cbe85/vcpkg/installed/x86-windows/share/brotli",
+        "git+https://github.com/google/brotli@v1.1.0"
+      ],
+      "version": "1.1.0",
+      "recipe_license": "MIT"
+    },
+    "bzip2": {
+      "files": [
+        "Graphviz-16.1.0-win32/bin/bz2.dll"
+      ],
+      "source_references": [
+        "https://gitlab.com/graphviz/graphviz-windows-dependencies/-/tree/ff985525b23a1a72ddb1a89482ea12233c3cbe85/vcpkg/installed/x86-windows/share/bzip2",
+        "https://sourceware.org/pub/bzip2/bzip2-1.0.8.tar.gz"
+      ],
+      "version": "1.0.8",
+      "recipe_license": "bzip2-1.0.6"
+    },
+    "cairo": {
+      "files": [
+        "Graphviz-16.1.0-win32/bin/cairo-2.dll"
+      ],
+      "source_references": [
+        "https://gitlab.com/graphviz/graphviz-windows-dependencies/-/tree/ff985525b23a1a72ddb1a89482ea12233c3cbe85/vcpkg/installed/x86-windows/share/cairo"
+      ],
+      "version": "1.18.0",
+      "recipe_license": "LGPL-2.1-only OR MPL-1.1"
+    },
+    "microsoft-runtime": {
+      "files": [
+        "Graphviz-16.1.0-win32/bin/concrt140.dll",
+        "Graphviz-16.1.0-win32/bin/msvcp140.dll",
+        "Graphviz-16.1.0-win32/bin/msvcp140_1.dll",
+        "Graphviz-16.1.0-win32/bin/msvcp140_2.dll",
+        "Graphviz-16.1.0-win32/bin/msvcp140_atomic_wait.dll",
+        "Graphviz-16.1.0-win32/bin/msvcp140_codecvt_ids.dll",
+        "Graphviz-16.1.0-win32/bin/vcruntime140.dll"
+      ],
+      "source_references": [
+        "https://visualstudio.microsoft.com/license-terms/vs2022-cruntime/",
+        "https://visualstudio.microsoft.com/wp-content/uploads/2021/09/Visual-C-Runtime-2015-2022-License-1.docx",
+        "https://learn.microsoft.com/en-us/visualstudio/releases/2022/redistribution"
+      ],
+      "version": "14.44.35211.0",
+      "library_license": "Microsoft Visual C++ 2015-2022 Runtime terms"
+    },
+    "libffi": {
+      "files": [
+        "Graphviz-16.1.0-win32/bin/ffi-8.dll"
+      ],
+      "source_references": [
+        "https://gitlab.com/graphviz/graphviz-windows-dependencies/-/tree/ff985525b23a1a72ddb1a89482ea12233c3cbe85/vcpkg/installed/x86-windows/share/libffi",
+        "https://github.com/libffi/libffi/releases/download/v3.4.6/libffi-3.4.6.tar.gz"
+      ],
+      "version": "3.4.6",
+      "recipe_license": "MIT"
+    },
+    "fontconfig": {
+      "files": [
+        "Graphviz-16.1.0-win32/bin/fontconfig-1.dll"
+      ],
+      "source_references": [
+        "https://gitlab.com/graphviz/graphviz-windows-dependencies/-/tree/ff985525b23a1a72ddb1a89482ea12233c3cbe85/vcpkg/installed/x86-windows/share/fontconfig"
+      ],
+      "version": "2.14.2",
+      "recipe_license": "MIT"
+    },
+    "freetype": {
+      "files": [
+        "Graphviz-16.1.0-win32/bin/freetype.dll"
+      ],
+      "source_references": [
+        "https://gitlab.com/graphviz/graphviz-windows-dependencies/-/tree/ff985525b23a1a72ddb1a89482ea12233c3cbe85/vcpkg/installed/x86-windows/share/freetype",
+        "https://sourceforge.net/projects/freetype/freetype2/files/${FT_VERSION}/freetype-${FT_VERSION}.tar.xz"
+      ],
+      "version": "2.12.1",
+      "recipe_license": "FTL OR GPL-2.0-or-later"
+    },
+    "fribidi": {
+      "files": [
+        "Graphviz-16.1.0-win32/bin/fribidi-0.dll"
+      ],
+      "source_references": [
+        "https://gitlab.com/graphviz/graphviz-windows-dependencies/-/tree/ff985525b23a1a72ddb1a89482ea12233c3cbe85/vcpkg/installed/x86-windows/share/fribidi",
+        "git+https://github.com/fribidi/fribidi@v1.0.13"
+      ],
+      "version": "1.0.13",
+      "recipe_license": "LGPL-2.1-or-later"
+    },
+    "getopt-win32": {
+      "files": [
+        "Graphviz-16.1.0-win32/bin/getopt.dll"
+      ],
+      "source_references": [
+        "https://gitlab.com/graphviz/graphviz-windows-dependencies/-/tree/ff985525b23a1a72ddb1a89482ea12233c3cbe85/vcpkg/installed/x86-windows/share/getopt-win32",
+        "git+https://github.com/xiaozhuai/getopt-win32@b69a586f0b1aa37b77c3cf0a9dedba1900007678"
+      ],
+      "version": "1.1.0.20220925",
+      "recipe_license": "LGPL-3.0-only"
+    },
+    "glib": {
+      "files": [
+        "Graphviz-16.1.0-win32/bin/gio-2.0-0.dll",
+        "Graphviz-16.1.0-win32/bin/glib-2.0-0.dll",
+        "Graphviz-16.1.0-win32/bin/gmodule-2.0-0.dll",
+        "Graphviz-16.1.0-win32/bin/gobject-2.0-0.dll"
+      ],
+      "source_references": [
+        "https://gitlab.com/graphviz/graphviz-windows-dependencies/-/tree/ff985525b23a1a72ddb1a89482ea12233c3cbe85/vcpkg/installed/x86-windows/share/glib",
+        "https://download.gnome.org/sources/glib/2.78/glib-2.78.4.tar.xz"
+      ],
+      "version": "2.78.4",
+      "recipe_license": "LGPL-2.1-or-later"
+    },
+    "gts": {
+      "files": [
+        "Graphviz-16.1.0-win32/bin/gts.dll"
+      ],
+      "source_references": [
+        "https://gitlab.com/graphviz/graphviz-windows-dependencies/-/tree/ff985525b23a1a72ddb1a89482ea12233c3cbe85/vcpkg/installed/x86-windows/share/gts",
+        "https://sourceforge.net/projects/gts/gts/files/0.7.6/gts-0.7.6.tar.gz"
+      ],
+      "version": "0.7.6",
+      "recipe_license": "LGPL-2.0-or-later"
+    },
+    "harfbuzz": {
+      "files": [
+        "Graphviz-16.1.0-win32/bin/harfbuzz.dll"
+      ],
+      "source_references": [
+        "https://gitlab.com/graphviz/graphviz-windows-dependencies/-/tree/ff985525b23a1a72ddb1a89482ea12233c3cbe85/vcpkg/installed/x86-windows/share/harfbuzz",
+        "git+https://github.com/harfbuzz/harfbuzz@9.0.0"
+      ],
+      "version": "9.0.0",
+      "recipe_license": "MIT-Modern-Variant"
+    },
+    "libiconv": {
+      "files": [
+        "Graphviz-16.1.0-win32/bin/iconv-2.dll"
+      ],
+      "source_references": [
+        "https://gitlab.com/graphviz/graphviz-windows-dependencies/-/tree/ff985525b23a1a72ddb1a89482ea12233c3cbe85/vcpkg/installed/x86-windows/share/libiconv",
+        "https://ftp.gnu.org/gnu/libiconv/libiconv-1.17.tar.gz"
+      ],
+      "version": "1.17",
+      "recipe_license": "NOASSERTION",
+      "library_license": "LGPL-2.1-or-later (library; tools are not included)"
+    },
+    "gettext-libintl": {
+      "files": [
+        "Graphviz-16.1.0-win32/bin/intl-8.dll"
+      ],
+      "source_references": [
+        "https://gitlab.com/graphviz/graphviz-windows-dependencies/-/tree/ff985525b23a1a72ddb1a89482ea12233c3cbe85/vcpkg/installed/x86-windows/share/gettext-libintl",
+        "https://ftp.gnu.org/pub/gnu/gettext/gettext-0.21.1.tar.gz"
+      ],
+      "version": "0.21.1",
+      "recipe_license": "LGPL-2.1-or-later"
+    },
+    "libjpeg-turbo": {
+      "files": [
+        "Graphviz-16.1.0-win32/bin/jpeg62.dll"
+      ],
+      "source_references": [
+        "https://gitlab.com/graphviz/graphviz-windows-dependencies/-/tree/ff985525b23a1a72ddb1a89482ea12233c3cbe85/vcpkg/installed/x86-windows/share/libjpeg-turbo",
+        "git+https://github.com/libjpeg-turbo/libjpeg-turbo@3.0.1"
+      ],
+      "version": "3.0.1",
+      "recipe_license": "BSD-3-Clause"
+    },
+    "expat": {
+      "files": [
+        "Graphviz-16.1.0-win32/bin/libexpat.dll"
+      ],
+      "source_references": [
+        "https://gitlab.com/graphviz/graphviz-windows-dependencies/-/tree/ff985525b23a1a72ddb1a89482ea12233c3cbe85/vcpkg/installed/x86-windows/share/expat",
+        "git+https://github.com/libexpat/libexpat@${REF}"
+      ],
+      "version": "2.5.0",
+      "recipe_license": "MIT"
+    },
+    "libgd": {
+      "files": [
+        "Graphviz-16.1.0-win32/bin/libgd.dll"
+      ],
+      "source_references": [
+        "https://gitlab.com/graphviz/graphviz-windows-dependencies/-/tree/ff985525b23a1a72ddb1a89482ea12233c3cbe85/vcpkg/installed/x86-windows/share/libgd",
+        "git+https://github.com/libgd/libgd@b5319a41286107b53daa0e08e402aa1819764bdc"
+      ],
+      "version": "2.3.3",
+      "recipe_license": "GD"
+    },
+    "liblzma": {
+      "files": [
+        "Graphviz-16.1.0-win32/bin/liblzma.dll"
+      ],
+      "source_references": [
+        "https://gitlab.com/graphviz/graphviz-windows-dependencies/-/tree/ff985525b23a1a72ddb1a89482ea12233c3cbe85/vcpkg/installed/x86-windows/share/liblzma",
+        "git+https://github.com/tukaani-project/xz@v5.4.4"
+      ],
+      "version": "5.4.4",
+      "recipe_license": "NOASSERTION",
+      "library_license": "Public domain (liblzma; see component notice)"
+    },
+    "libpng": {
+      "files": [
+        "Graphviz-16.1.0-win32/bin/libpng16.dll"
+      ],
+      "source_references": [
+        "https://gitlab.com/graphviz/graphviz-windows-dependencies/-/tree/ff985525b23a1a72ddb1a89482ea12233c3cbe85/vcpkg/installed/x86-windows/share/libpng",
+        "git+https://github.com/glennrp/libpng@v1.6.39",
+        "https://downloads.sourceforge.net/project/libpng-apng/libpng16/1.6.39/${LIBPNG_APNG_PATCH_NAME}.gz"
+      ],
+      "version": "1.6.39",
+      "recipe_license": "libpng-2.0"
+    },
+    "libwebp": {
+      "files": [
+        "Graphviz-16.1.0-win32/bin/libsharpyuv.dll",
+        "Graphviz-16.1.0-win32/bin/libwebp.dll"
+      ],
+      "source_references": [
+        "https://gitlab.com/graphviz/graphviz-windows-dependencies/-/tree/ff985525b23a1a72ddb1a89482ea12233c3cbe85/vcpkg/installed/x86-windows/share/libwebp",
+        "git+https://github.com/webmproject/libwebp@v1.4.0"
+      ],
+      "version": "1.4.0",
+      "recipe_license": "BSD-3-Clause"
+    },
+    "pango": {
+      "files": [
+        "Graphviz-16.1.0-win32/bin/pango-1.0-0.dll",
+        "Graphviz-16.1.0-win32/bin/pangocairo-1.0-0.dll",
+        "Graphviz-16.1.0-win32/bin/pangoft2-1.0-0.dll",
+        "Graphviz-16.1.0-win32/bin/pangowin32-1.0-0.dll"
+      ],
+      "source_references": [
+        "https://gitlab.com/graphviz/graphviz-windows-dependencies/-/tree/ff985525b23a1a72ddb1a89482ea12233c3cbe85/vcpkg/installed/x86-windows/share/pango"
+      ],
+      "version": "1.50.14",
+      "recipe_license": "LGPL-2.0-or-later"
+    },
+    "pcre2": {
+      "files": [
+        "Graphviz-16.1.0-win32/bin/pcre2-8.dll"
+      ],
+      "source_references": [
+        "https://gitlab.com/graphviz/graphviz-windows-dependencies/-/tree/ff985525b23a1a72ddb1a89482ea12233c3cbe85/vcpkg/installed/x86-windows/share/pcre2",
+        "git+https://github.com/PCRE2Project/pcre2@pcre2-10.43"
+      ],
+      "version": "10.43",
+      "recipe_license": "BSD-3-Clause"
+    },
+    "pixman": {
+      "files": [
+        "Graphviz-16.1.0-win32/bin/pixman-1-0.dll"
+      ],
+      "source_references": [
+        "https://gitlab.com/graphviz/graphviz-windows-dependencies/-/tree/ff985525b23a1a72ddb1a89482ea12233c3cbe85/vcpkg/installed/x86-windows/share/pixman"
+      ],
+      "version": "0.43.4",
+      "recipe_license": "MIT"
+    },
+    "tcl": {
+      "files": [
+        "Graphviz-16.1.0-win32/bin/tcl86t.dll"
+      ],
+      "source_references": [
+        "https://gitlab.com/graphviz/graphviz-windows-dependencies/-/tree/ff985525b23a1a72ddb1a89482ea12233c3cbe85/vcpkg/installed/x86-windows/share/tcl",
+        "https://www.tcl-lang.org/software/tcltk/"
+      ],
+      "version": "8.6 (tcl86t.dll)",
+      "library_license": "TCL"
+    },
+    "tiff": {
+      "files": [
+        "Graphviz-16.1.0-win32/bin/tiff.dll"
+      ],
+      "source_references": [
+        "https://gitlab.com/graphviz/graphviz-windows-dependencies/-/tree/ff985525b23a1a72ddb1a89482ea12233c3cbe85/vcpkg/installed/x86-windows/share/tiff"
+      ],
+      "version": "4.6.0",
+      "recipe_license": "libtiff"
+    },
+    "zlib": {
+      "files": [
+        "Graphviz-16.1.0-win32/bin/zlib1.dll"
+      ],
+      "source_references": [
+        "https://gitlab.com/graphviz/graphviz-windows-dependencies/-/tree/ff985525b23a1a72ddb1a89482ea12233c3cbe85/vcpkg/installed/x86-windows/share/zlib",
+        "git+https://github.com/madler/zlib@v1.3"
+      ],
+      "version": "1.3",
+      "recipe_license": "Zlib"
+    }
+  }
+}
