@@ -1,0 +1,817 @@
+{
+  "geometry": "twine-2.12.1",
+  "target_editor_observation": "curves or bends, confirmed by user (option B)",
+  "eligible_for_motor_selection": true,
+  "options": {
+    "graphviz": {
+      "rankdir": "LR",
+      "nodesep": "0.7",
+      "ranksep": "1",
+      "splines": "line"
+    },
+    "elkjs": {
+      "elk.algorithm": "layered",
+      "elk.direction": "RIGHT",
+      "elk.edgeRouting": "POLYLINE",
+      "elk.spacing.nodeNode": "50",
+      "elk.layered.spacing.nodeNodeBetweenLayers": "72",
+      "elk.randomSeed": "1"
+    }
+  },
+  "coordinate_limit": 10000000,
+  "rounding_decimal_places": 6,
+  "graphviz_version": {
+    "engine": "graphviz",
+    "status": "ready",
+    "returncode": 0,
+    "diagnostic": "dot - graphviz version 16.1.0 (20260904.0139)",
+    "probe_seconds": 0.0326
+  },
+  "elkjs_package": "0.12.0",
+  "cases": [
+    {
+      "case": "crossing",
+      "nodes": 4,
+      "semantic_edges": 2,
+      "original": [
+        1,
+        0,
+        0
+      ],
+      "graphviz": {
+        "counts": [
+          0,
+          0,
+          0
+        ],
+        "seconds": 0.0497,
+        "positions": {
+          "0": [
+            0.0,
+            150.0
+          ],
+          "1": [
+            0.0,
+            0.0
+          ],
+          "2": [
+            172.0,
+            0.0
+          ],
+          "3": [
+            172.0,
+            150.0
+          ]
+        },
+        "non_regression": true
+      },
+      "elkjs": {
+        "counts": [
+          0,
+          0,
+          0
+        ],
+        "seconds": 0.3471,
+        "positions": {
+          "0": [
+            12,
+            12
+          ],
+          "1": [
+            12,
+            132
+          ],
+          "2": [
+            184,
+            132
+          ],
+          "3": [
+            184,
+            12
+          ]
+        },
+        "non_regression": true
+      },
+      "status": "measured_from_source_profile",
+      "seconds": 0.3973
+    },
+    {
+      "case": "coincident",
+      "nodes": 4,
+      "semantic_edges": 2,
+      "original": [
+        1,
+        2,
+        0
+      ],
+      "graphviz": {
+        "counts": [
+          0,
+          0,
+          0
+        ],
+        "seconds": 0.0395,
+        "positions": {
+          "0": [
+            0.0,
+            150.0
+          ],
+          "1": [
+            172.0,
+            150.0
+          ],
+          "2": [
+            0.0,
+            0.0
+          ],
+          "3": [
+            172.0,
+            0.0
+          ]
+        },
+        "non_regression": true
+      },
+      "elkjs": {
+        "counts": [
+          0,
+          0,
+          0
+        ],
+        "seconds": 0.3187,
+        "positions": {
+          "0": [
+            12,
+            12
+          ],
+          "1": [
+            184,
+            12
+          ],
+          "2": [
+            12,
+            132
+          ],
+          "3": [
+            184,
+            132
+          ]
+        },
+        "non_regression": true
+      },
+      "status": "measured_from_source_profile",
+      "seconds": 0.3584
+    },
+    {
+      "case": "clean",
+      "nodes": 2,
+      "semantic_edges": 1,
+      "original": [
+        0,
+        0,
+        0
+      ],
+      "graphviz": {
+        "counts": [
+          0,
+          0,
+          0
+        ],
+        "seconds": 0.0427,
+        "positions": {
+          "0": [
+            0.0,
+            0.0
+          ],
+          "1": [
+            172.0,
+            0.0
+          ]
+        },
+        "non_regression": true
+      },
+      "elkjs": {
+        "counts": [
+          0,
+          0,
+          0
+        ],
+        "seconds": 0.3175,
+        "positions": {
+          "0": [
+            12,
+            12
+          ],
+          "1": [
+            184,
+            12
+          ]
+        },
+        "non_regression": true
+      },
+      "status": "measured_from_source_profile",
+      "seconds": 0.3602
+    },
+    {
+      "case": "isolated_overlap",
+      "nodes": 2,
+      "semantic_edges": 0,
+      "original": [
+        0,
+        1,
+        0
+      ],
+      "graphviz": {
+        "counts": [
+          0,
+          0,
+          0
+        ],
+        "seconds": 0.0463,
+        "positions": {
+          "0": [
+            0.0,
+            150.0
+          ],
+          "1": [
+            0.0,
+            0.0
+          ]
+        },
+        "non_regression": true
+      },
+      "elkjs": {
+        "counts": [
+          0,
+          0,
+          0
+        ],
+        "seconds": 0.2861,
+        "positions": {
+          "0": [
+            12,
+            12
+          ],
+          "1": [
+            132,
+            12
+          ]
+        },
+        "non_regression": true
+      },
+      "status": "measured_from_source_profile",
+      "seconds": 0.3325
+    },
+    {
+      "case": "connected_overlap",
+      "nodes": 3,
+      "semantic_edges": 2,
+      "original": [
+        1,
+        1,
+        1
+      ],
+      "graphviz": {
+        "counts": [
+          0,
+          0,
+          0
+        ],
+        "seconds": 0.0448,
+        "positions": {
+          "0": [
+            0.0,
+            0.0
+          ],
+          "1": [
+            0.0,
+            150.0
+          ],
+          "2": [
+            172.0,
+            75.0
+          ]
+        },
+        "non_regression": true
+      },
+      "elkjs": {
+        "counts": [
+          0,
+          0,
+          0
+        ],
+        "seconds": 0.3262,
+        "positions": {
+          "0": [
+            12,
+            162
+          ],
+          "1": [
+            12,
+            12
+          ],
+          "2": [
+            187.240741,
+            87
+          ]
+        },
+        "non_regression": true
+      },
+      "status": "measured_from_source_profile",
+      "seconds": 0.3713
+    },
+    {
+      "case": "through_isolated",
+      "nodes": 3,
+      "semantic_edges": 1,
+      "original": [
+        0,
+        0,
+        1
+      ],
+      "graphviz": {
+        "counts": [
+          0,
+          0,
+          0
+        ],
+        "seconds": 0.043,
+        "positions": {
+          "0": [
+            0.0,
+            150.0
+          ],
+          "1": [
+            172.0,
+            150.0
+          ],
+          "2": [
+            0.0,
+            0.0
+          ]
+        },
+        "non_regression": true
+      },
+      "elkjs": {
+        "counts": [
+          0,
+          0,
+          0
+        ],
+        "seconds": 0.3205,
+        "positions": {
+          "0": [
+            12,
+            132
+          ],
+          "1": [
+            184,
+            132
+          ],
+          "2": [
+            12,
+            12
+          ]
+        },
+        "non_regression": true
+      },
+      "status": "measured_from_source_profile",
+      "seconds": 0.3636
+    },
+    {
+      "case": "through_connected",
+      "nodes": 4,
+      "semantic_edges": 2,
+      "original": [
+        0,
+        0,
+        1
+      ],
+      "graphviz": {
+        "counts": [
+          0,
+          0,
+          0
+        ],
+        "seconds": 0.0365,
+        "positions": {
+          "0": [
+            0.0,
+            150.0
+          ],
+          "1": [
+            172.0,
+            150.0
+          ],
+          "2": [
+            0.0,
+            0.0
+          ],
+          "3": [
+            172.0,
+            0.0
+          ]
+        },
+        "non_regression": true
+      },
+      "elkjs": {
+        "counts": [
+          0,
+          0,
+          0
+        ],
+        "seconds": 0.3072,
+        "positions": {
+          "0": [
+            12,
+            12
+          ],
+          "1": [
+            184,
+            12
+          ],
+          "2": [
+            12,
+            132
+          ],
+          "3": [
+            184,
+            132
+          ]
+        },
+        "non_regression": true
+      },
+      "status": "measured_from_source_profile",
+      "seconds": 0.3439
+    },
+    {
+      "case": "border_only",
+      "nodes": 3,
+      "semantic_edges": 1,
+      "original": [
+        0,
+        0,
+        0
+      ],
+      "graphviz": {
+        "counts": [
+          0,
+          0,
+          0
+        ],
+        "seconds": 0.0442,
+        "positions": {
+          "0": [
+            0.0,
+            60.0
+          ],
+          "1": [
+            172.0,
+            60.0
+          ],
+          "2": [
+            45.0,
+            0.0
+          ]
+        },
+        "non_regression": true
+      },
+      "elkjs": {
+        "counts": [
+          0,
+          0,
+          0
+        ],
+        "seconds": 0.3649,
+        "positions": {
+          "0": [
+            12,
+            42
+          ],
+          "1": [
+            184,
+            42
+          ],
+          "2": [
+            12,
+            12
+          ]
+        },
+        "non_regression": true
+      },
+      "status": "measured_from_source_profile",
+      "seconds": 0.4092
+    },
+    {
+      "case": "cycle",
+      "nodes": 3,
+      "semantic_edges": 3,
+      "original": [
+        0,
+        0,
+        0
+      ],
+      "graphviz": {
+        "counts": [
+          0,
+          0,
+          1
+        ],
+        "seconds": 0.051,
+        "positions": {
+          "0": [
+            0.0,
+            63.0
+          ],
+          "1": [
+            172.0,
+            0.0
+          ],
+          "2": [
+            344.0,
+            63.0
+          ]
+        },
+        "non_regression": false
+      },
+      "elkjs": {
+        "counts": [
+          0,
+          0,
+          0
+        ],
+        "seconds": 0.3311,
+        "positions": {
+          "0": [
+            12,
+            12
+          ],
+          "1": [
+            184.768519,
+            42.5
+          ],
+          "2": [
+            357.537037,
+            12
+          ]
+        },
+        "non_regression": true
+      },
+      "status": "measured_from_source_profile",
+      "seconds": 0.383
+    },
+    {
+      "case": "parallel_occurrences",
+      "nodes": 2,
+      "semantic_edges": 2,
+      "original": [
+        0,
+        0,
+        0
+      ],
+      "graphviz": {
+        "counts": [
+          0,
+          0,
+          0
+        ],
+        "seconds": 0.0466,
+        "positions": {
+          "0": [
+            0.0,
+            0.0
+          ],
+          "1": [
+            172.0,
+            0.0
+          ]
+        },
+        "non_regression": true
+      },
+      "elkjs": {
+        "counts": [
+          0,
+          0,
+          0
+        ],
+        "seconds": 0.2985,
+        "positions": {
+          "0": [
+            12,
+            12
+          ],
+          "1": [
+            184,
+            12
+          ]
+        },
+        "non_regression": true
+      },
+      "status": "measured_from_source_profile",
+      "seconds": 0.3452
+    },
+    {
+      "case": "self_loop",
+      "nodes": 1,
+      "semantic_edges": 1,
+      "original": [
+        0,
+        0,
+        0
+      ],
+      "graphviz": {
+        "counts": [
+          0,
+          0,
+          0
+        ],
+        "seconds": 0.1551,
+        "positions": {
+          "0": [
+            0.0,
+            50.0
+          ]
+        },
+        "non_regression": true
+      },
+      "elkjs": {
+        "counts": [
+          0,
+          0,
+          0
+        ],
+        "seconds": 0.3136,
+        "positions": {
+          "0": [
+            12,
+            22
+          ]
+        },
+        "non_regression": true
+      },
+      "status": "measured_from_source_profile",
+      "seconds": 0.4688
+    },
+    {
+      "case": "reciprocal",
+      "nodes": 2,
+      "semantic_edges": 2,
+      "original": [
+        1,
+        0,
+        0
+      ],
+      "graphviz": {
+        "counts": [
+          1,
+          0,
+          0
+        ],
+        "seconds": 0.0452,
+        "positions": {
+          "0": [
+            0.0,
+            0.0
+          ],
+          "1": [
+            172.0,
+            0.0
+          ]
+        },
+        "non_regression": true
+      },
+      "elkjs": {
+        "counts": [
+          1,
+          0,
+          0
+        ],
+        "seconds": 0.2853,
+        "positions": {
+          "0": [
+            184,
+            12
+          ],
+          "1": [
+            12,
+            12
+          ]
+        },
+        "non_regression": true
+      },
+      "status": "measured_from_source_profile",
+      "seconds": 0.3306
+    },
+    {
+      "case": "local_sample",
+      "nodes": 9,
+      "semantic_edges": 14,
+      "original": [
+        1,
+        0,
+        2
+      ],
+      "graphviz": {
+        "counts": [
+          3,
+          0,
+          3
+        ],
+        "seconds": 0.0567,
+        "positions": {
+          "0": [
+            1204.0,
+            0.0
+          ],
+          "1": [
+            1204.0,
+            150.0
+          ],
+          "2": [
+            1032.0,
+            75.0
+          ],
+          "3": [
+            688.0,
+            75.0
+          ],
+          "4": [
+            860.0,
+            75.0
+          ],
+          "5": [
+            344.0,
+            63.0
+          ],
+          "6": [
+            516.0,
+            189.0
+          ],
+          "7": [
+            172.0,
+            177.0
+          ],
+          "8": [
+            0.0,
+            177.0
+          ]
+        },
+        "non_regression": false,
+        "preserved": true,
+        "review_copy": ".tmp\\layout-comparison\\curved-lr-v1-graphviz-review.twee"
+      },
+      "elkjs": {
+        "counts": [
+          5,
+          0,
+          6
+        ],
+        "seconds": 0.3437,
+        "positions": {
+          "0": [
+            1226.972222,
+            12
+          ],
+          "1": [
+            1226.972222,
+            162
+          ],
+          "2": [
+            1050.935185,
+            101.333333
+          ],
+          "3": [
+            704.472222,
+            97.166667
+          ],
+          "4": [
+            878.935185,
+            101.333333
+          ],
+          "5": [
+            358.611111,
+            113.833333
+          ],
+          "6": [
+            531.62963,
+            48.666667
+          ],
+          "7": [
+            186,
+            69.5
+          ],
+          "8": [
+            12,
+            69.5
+          ]
+        },
+        "non_regression": false,
+        "preserved": true,
+        "review_copy": ".tmp\\layout-comparison\\curved-lr-v1-elkjs-review.twee"
+      },
+      "status": "measured_from_source_profile",
+      "seconds": 0.4149
+    }
+  ],
+  "source_unchanged": true,
+  "source_sha256": "217846fe1cf38d36af552f54bdb9e632a6d8e23c5e014a4149820e6d1102358b"
+}
