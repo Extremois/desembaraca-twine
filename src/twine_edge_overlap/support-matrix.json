@@ -1,0 +1,3299 @@
+{
+  "schema_version": 1,
+  "reference_date": "2026-10-17",
+  "scope_source": "specs/003-add-cross-platform-support/support-matrix.md",
+  "targets": [
+    {
+      "id": "windows-11-stable-x86_64-distribution-default",
+      "reference_date": "2026-10-17",
+      "os": "windows",
+      "distribution_id": "windows",
+      "display_name": "Windows",
+      "version": "11",
+      "channel": "stable",
+      "arch": "x86_64",
+      "cpu_variant": "distribution-default",
+      "snapshot_id": null,
+      "availability": "published",
+      "required_python_minors": [
+        "3.12",
+        "3.14"
+      ],
+      "application_revision": null,
+      "artifact_id": null,
+      "maintenance_state": "maintained",
+      "free_eligibility": "without-paid-subscription",
+      "maintenance_sources": [],
+      "status": "pendente",
+      "python_qualifications": [
+        {
+          "target_id": "windows-11-stable-x86_64-distribution-default",
+          "python_minor": "3.12",
+          "status": "pendente",
+          "application_revision": null,
+          "artifact_id": null,
+          "evidence_ids": [],
+          "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+        },
+        {
+          "target_id": "windows-11-stable-x86_64-distribution-default",
+          "python_minor": "3.14",
+          "status": "pendente",
+          "application_revision": null,
+          "artifact_id": null,
+          "evidence_ids": [],
+          "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+        }
+      ],
+      "evidence_ids": [],
+      "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+    },
+    {
+      "id": "macos-15-stable-x86_64-distribution-default",
+      "reference_date": "2026-10-17",
+      "os": "darwin",
+      "distribution_id": "macos",
+      "display_name": "macOS",
+      "version": "15",
+      "channel": "stable",
+      "arch": "x86_64",
+      "cpu_variant": "distribution-default",
+      "snapshot_id": null,
+      "availability": "published",
+      "required_python_minors": [
+        "3.12",
+        "3.14"
+      ],
+      "application_revision": null,
+      "artifact_id": null,
+      "maintenance_state": "maintained",
+      "free_eligibility": "without-paid-subscription",
+      "maintenance_sources": [
+        "https://developer.apple.com/developer-id/"
+      ],
+      "status": "pendente",
+      "python_qualifications": [
+        {
+          "target_id": "macos-15-stable-x86_64-distribution-default",
+          "python_minor": "3.12",
+          "status": "pendente",
+          "application_revision": null,
+          "artifact_id": null,
+          "evidence_ids": [],
+          "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+        },
+        {
+          "target_id": "macos-15-stable-x86_64-distribution-default",
+          "python_minor": "3.14",
+          "status": "pendente",
+          "application_revision": null,
+          "artifact_id": null,
+          "evidence_ids": [],
+          "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+        }
+      ],
+      "evidence_ids": [],
+      "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+    },
+    {
+      "id": "macos-15-stable-aarch64-distribution-default",
+      "reference_date": "2026-10-17",
+      "os": "darwin",
+      "distribution_id": "macos",
+      "display_name": "macOS",
+      "version": "15",
+      "channel": "stable",
+      "arch": "aarch64",
+      "cpu_variant": "distribution-default",
+      "snapshot_id": null,
+      "availability": "published",
+      "required_python_minors": [
+        "3.12",
+        "3.14"
+      ],
+      "application_revision": null,
+      "artifact_id": null,
+      "maintenance_state": "maintained",
+      "free_eligibility": "without-paid-subscription",
+      "maintenance_sources": [
+        "https://developer.apple.com/developer-id/"
+      ],
+      "status": "pendente",
+      "python_qualifications": [
+        {
+          "target_id": "macos-15-stable-aarch64-distribution-default",
+          "python_minor": "3.12",
+          "status": "pendente",
+          "application_revision": null,
+          "artifact_id": null,
+          "evidence_ids": [],
+          "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+        },
+        {
+          "target_id": "macos-15-stable-aarch64-distribution-default",
+          "python_minor": "3.14",
+          "status": "pendente",
+          "application_revision": null,
+          "artifact_id": null,
+          "evidence_ids": [],
+          "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+        }
+      ],
+      "evidence_ids": [],
+      "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+    },
+    {
+      "id": "ubuntu-18.04-stable-x86_64-distribution-default",
+      "reference_date": "2026-10-17",
+      "os": "linux",
+      "distribution_id": "ubuntu",
+      "display_name": "Ubuntu",
+      "version": "18.04",
+      "channel": "stable",
+      "arch": "x86_64",
+      "cpu_variant": "distribution-default",
+      "snapshot_id": null,
+      "availability": "published",
+      "required_python_minors": [
+        "3.12",
+        "3.14"
+      ],
+      "application_revision": null,
+      "artifact_id": null,
+      "maintenance_state": "conditional-security",
+      "free_eligibility": "eligible-account-required",
+      "maintenance_sources": [
+        "https://documentation.ubuntu.com/release-notes/26.10/",
+        "https://ubuntu.com/about/release-cycle",
+        "https://ubuntu.com/pro/docs/"
+      ],
+      "status": "pendente",
+      "python_qualifications": [
+        {
+          "target_id": "ubuntu-18.04-stable-x86_64-distribution-default",
+          "python_minor": "3.12",
+          "status": "pendente",
+          "application_revision": null,
+          "artifact_id": null,
+          "evidence_ids": [],
+          "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+        },
+        {
+          "target_id": "ubuntu-18.04-stable-x86_64-distribution-default",
+          "python_minor": "3.14",
+          "status": "pendente",
+          "application_revision": null,
+          "artifact_id": null,
+          "evidence_ids": [],
+          "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+        }
+      ],
+      "evidence_ids": [],
+      "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+    },
+    {
+      "id": "ubuntu-18.04-stable-aarch64-distribution-default",
+      "reference_date": "2026-10-17",
+      "os": "linux",
+      "distribution_id": "ubuntu",
+      "display_name": "Ubuntu",
+      "version": "18.04",
+      "channel": "stable",
+      "arch": "aarch64",
+      "cpu_variant": "distribution-default",
+      "snapshot_id": null,
+      "availability": "published",
+      "required_python_minors": [
+        "3.12",
+        "3.14"
+      ],
+      "application_revision": null,
+      "artifact_id": null,
+      "maintenance_state": "conditional-security",
+      "free_eligibility": "eligible-account-required",
+      "maintenance_sources": [
+        "https://documentation.ubuntu.com/release-notes/26.10/",
+        "https://ubuntu.com/about/release-cycle",
+        "https://ubuntu.com/pro/docs/"
+      ],
+      "status": "pendente",
+      "python_qualifications": [
+        {
+          "target_id": "ubuntu-18.04-stable-aarch64-distribution-default",
+          "python_minor": "3.12",
+          "status": "pendente",
+          "application_revision": null,
+          "artifact_id": null,
+          "evidence_ids": [],
+          "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+        },
+        {
+          "target_id": "ubuntu-18.04-stable-aarch64-distribution-default",
+          "python_minor": "3.14",
+          "status": "pendente",
+          "application_revision": null,
+          "artifact_id": null,
+          "evidence_ids": [],
+          "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+        }
+      ],
+      "evidence_ids": [],
+      "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+    },
+    {
+      "id": "ubuntu-20.04-stable-x86_64-distribution-default",
+      "reference_date": "2026-10-17",
+      "os": "linux",
+      "distribution_id": "ubuntu",
+      "display_name": "Ubuntu",
+      "version": "20.04",
+      "channel": "stable",
+      "arch": "x86_64",
+      "cpu_variant": "distribution-default",
+      "snapshot_id": null,
+      "availability": "published",
+      "required_python_minors": [
+        "3.12",
+        "3.14"
+      ],
+      "application_revision": null,
+      "artifact_id": null,
+      "maintenance_state": "conditional-security",
+      "free_eligibility": "eligible-account-required",
+      "maintenance_sources": [
+        "https://documentation.ubuntu.com/release-notes/26.10/",
+        "https://ubuntu.com/about/release-cycle",
+        "https://ubuntu.com/pro/docs/"
+      ],
+      "status": "pendente",
+      "python_qualifications": [
+        {
+          "target_id": "ubuntu-20.04-stable-x86_64-distribution-default",
+          "python_minor": "3.12",
+          "status": "pendente",
+          "application_revision": null,
+          "artifact_id": null,
+          "evidence_ids": [],
+          "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+        },
+        {
+          "target_id": "ubuntu-20.04-stable-x86_64-distribution-default",
+          "python_minor": "3.14",
+          "status": "pendente",
+          "application_revision": null,
+          "artifact_id": null,
+          "evidence_ids": [],
+          "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+        }
+      ],
+      "evidence_ids": [],
+      "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+    },
+    {
+      "id": "ubuntu-20.04-stable-aarch64-distribution-default",
+      "reference_date": "2026-10-17",
+      "os": "linux",
+      "distribution_id": "ubuntu",
+      "display_name": "Ubuntu",
+      "version": "20.04",
+      "channel": "stable",
+      "arch": "aarch64",
+      "cpu_variant": "distribution-default",
+      "snapshot_id": null,
+      "availability": "published",
+      "required_python_minors": [
+        "3.12",
+        "3.14"
+      ],
+      "application_revision": null,
+      "artifact_id": null,
+      "maintenance_state": "conditional-security",
+      "free_eligibility": "eligible-account-required",
+      "maintenance_sources": [
+        "https://documentation.ubuntu.com/release-notes/26.10/",
+        "https://ubuntu.com/about/release-cycle",
+        "https://ubuntu.com/pro/docs/"
+      ],
+      "status": "pendente",
+      "python_qualifications": [
+        {
+          "target_id": "ubuntu-20.04-stable-aarch64-distribution-default",
+          "python_minor": "3.12",
+          "status": "pendente",
+          "application_revision": null,
+          "artifact_id": null,
+          "evidence_ids": [],
+          "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+        },
+        {
+          "target_id": "ubuntu-20.04-stable-aarch64-distribution-default",
+          "python_minor": "3.14",
+          "status": "pendente",
+          "application_revision": null,
+          "artifact_id": null,
+          "evidence_ids": [],
+          "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+        }
+      ],
+      "evidence_ids": [],
+      "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+    },
+    {
+      "id": "ubuntu-22.04-stable-x86_64-distribution-default",
+      "reference_date": "2026-10-17",
+      "os": "linux",
+      "distribution_id": "ubuntu",
+      "display_name": "Ubuntu",
+      "version": "22.04",
+      "channel": "stable",
+      "arch": "x86_64",
+      "cpu_variant": "distribution-default",
+      "snapshot_id": null,
+      "availability": "published",
+      "required_python_minors": [
+        "3.12",
+        "3.14"
+      ],
+      "application_revision": null,
+      "artifact_id": null,
+      "maintenance_state": "maintained",
+      "free_eligibility": "without-paid-subscription",
+      "maintenance_sources": [
+        "https://documentation.ubuntu.com/release-notes/26.10/",
+        "https://ubuntu.com/about/release-cycle",
+        "https://ubuntu.com/pro/docs/"
+      ],
+      "status": "pendente",
+      "python_qualifications": [
+        {
+          "target_id": "ubuntu-22.04-stable-x86_64-distribution-default",
+          "python_minor": "3.12",
+          "status": "pendente",
+          "application_revision": null,
+          "artifact_id": null,
+          "evidence_ids": [],
+          "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+        },
+        {
+          "target_id": "ubuntu-22.04-stable-x86_64-distribution-default",
+          "python_minor": "3.14",
+          "status": "pendente",
+          "application_revision": null,
+          "artifact_id": null,
+          "evidence_ids": [],
+          "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+        }
+      ],
+      "evidence_ids": [],
+      "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+    },
+    {
+      "id": "ubuntu-22.04-stable-aarch64-distribution-default",
+      "reference_date": "2026-10-17",
+      "os": "linux",
+      "distribution_id": "ubuntu",
+      "display_name": "Ubuntu",
+      "version": "22.04",
+      "channel": "stable",
+      "arch": "aarch64",
+      "cpu_variant": "distribution-default",
+      "snapshot_id": null,
+      "availability": "published",
+      "required_python_minors": [
+        "3.12",
+        "3.14"
+      ],
+      "application_revision": null,
+      "artifact_id": null,
+      "maintenance_state": "maintained",
+      "free_eligibility": "without-paid-subscription",
+      "maintenance_sources": [
+        "https://documentation.ubuntu.com/release-notes/26.10/",
+        "https://ubuntu.com/about/release-cycle",
+        "https://ubuntu.com/pro/docs/"
+      ],
+      "status": "pendente",
+      "python_qualifications": [
+        {
+          "target_id": "ubuntu-22.04-stable-aarch64-distribution-default",
+          "python_minor": "3.12",
+          "status": "pendente",
+          "application_revision": null,
+          "artifact_id": null,
+          "evidence_ids": [],
+          "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+        },
+        {
+          "target_id": "ubuntu-22.04-stable-aarch64-distribution-default",
+          "python_minor": "3.14",
+          "status": "pendente",
+          "application_revision": null,
+          "artifact_id": null,
+          "evidence_ids": [],
+          "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+        }
+      ],
+      "evidence_ids": [],
+      "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+    },
+    {
+      "id": "ubuntu-24.04-stable-x86_64-distribution-default",
+      "reference_date": "2026-10-17",
+      "os": "linux",
+      "distribution_id": "ubuntu",
+      "display_name": "Ubuntu",
+      "version": "24.04",
+      "channel": "stable",
+      "arch": "x86_64",
+      "cpu_variant": "distribution-default",
+      "snapshot_id": null,
+      "availability": "published",
+      "required_python_minors": [
+        "3.12",
+        "3.14"
+      ],
+      "application_revision": null,
+      "artifact_id": null,
+      "maintenance_state": "maintained",
+      "free_eligibility": "without-paid-subscription",
+      "maintenance_sources": [
+        "https://documentation.ubuntu.com/release-notes/26.10/",
+        "https://ubuntu.com/about/release-cycle",
+        "https://ubuntu.com/pro/docs/"
+      ],
+      "status": "pendente",
+      "python_qualifications": [
+        {
+          "target_id": "ubuntu-24.04-stable-x86_64-distribution-default",
+          "python_minor": "3.12",
+          "status": "pendente",
+          "application_revision": null,
+          "artifact_id": null,
+          "evidence_ids": [],
+          "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+        },
+        {
+          "target_id": "ubuntu-24.04-stable-x86_64-distribution-default",
+          "python_minor": "3.14",
+          "status": "pendente",
+          "application_revision": null,
+          "artifact_id": null,
+          "evidence_ids": [],
+          "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+        }
+      ],
+      "evidence_ids": [],
+      "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+    },
+    {
+      "id": "ubuntu-24.04-stable-aarch64-distribution-default",
+      "reference_date": "2026-10-17",
+      "os": "linux",
+      "distribution_id": "ubuntu",
+      "display_name": "Ubuntu",
+      "version": "24.04",
+      "channel": "stable",
+      "arch": "aarch64",
+      "cpu_variant": "distribution-default",
+      "snapshot_id": null,
+      "availability": "published",
+      "required_python_minors": [
+        "3.12",
+        "3.14"
+      ],
+      "application_revision": null,
+      "artifact_id": null,
+      "maintenance_state": "maintained",
+      "free_eligibility": "without-paid-subscription",
+      "maintenance_sources": [
+        "https://documentation.ubuntu.com/release-notes/26.10/",
+        "https://ubuntu.com/about/release-cycle",
+        "https://ubuntu.com/pro/docs/"
+      ],
+      "status": "pendente",
+      "python_qualifications": [
+        {
+          "target_id": "ubuntu-24.04-stable-aarch64-distribution-default",
+          "python_minor": "3.12",
+          "status": "pendente",
+          "application_revision": null,
+          "artifact_id": null,
+          "evidence_ids": [],
+          "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+        },
+        {
+          "target_id": "ubuntu-24.04-stable-aarch64-distribution-default",
+          "python_minor": "3.14",
+          "status": "pendente",
+          "application_revision": null,
+          "artifact_id": null,
+          "evidence_ids": [],
+          "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+        }
+      ],
+      "evidence_ids": [],
+      "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+    },
+    {
+      "id": "ubuntu-26.04-stable-x86_64-distribution-default",
+      "reference_date": "2026-10-17",
+      "os": "linux",
+      "distribution_id": "ubuntu",
+      "display_name": "Ubuntu",
+      "version": "26.04",
+      "channel": "stable",
+      "arch": "x86_64",
+      "cpu_variant": "distribution-default",
+      "snapshot_id": null,
+      "availability": "published",
+      "required_python_minors": [
+        "3.12",
+        "3.14"
+      ],
+      "application_revision": null,
+      "artifact_id": null,
+      "maintenance_state": "maintained",
+      "free_eligibility": "without-paid-subscription",
+      "maintenance_sources": [
+        "https://documentation.ubuntu.com/release-notes/26.10/",
+        "https://ubuntu.com/about/release-cycle",
+        "https://ubuntu.com/pro/docs/"
+      ],
+      "status": "pendente",
+      "python_qualifications": [
+        {
+          "target_id": "ubuntu-26.04-stable-x86_64-distribution-default",
+          "python_minor": "3.12",
+          "status": "pendente",
+          "application_revision": null,
+          "artifact_id": null,
+          "evidence_ids": [],
+          "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+        },
+        {
+          "target_id": "ubuntu-26.04-stable-x86_64-distribution-default",
+          "python_minor": "3.14",
+          "status": "pendente",
+          "application_revision": null,
+          "artifact_id": null,
+          "evidence_ids": [],
+          "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+        }
+      ],
+      "evidence_ids": [],
+      "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+    },
+    {
+      "id": "ubuntu-26.04-stable-aarch64-distribution-default",
+      "reference_date": "2026-10-17",
+      "os": "linux",
+      "distribution_id": "ubuntu",
+      "display_name": "Ubuntu",
+      "version": "26.04",
+      "channel": "stable",
+      "arch": "aarch64",
+      "cpu_variant": "distribution-default",
+      "snapshot_id": null,
+      "availability": "published",
+      "required_python_minors": [
+        "3.12",
+        "3.14"
+      ],
+      "application_revision": null,
+      "artifact_id": null,
+      "maintenance_state": "maintained",
+      "free_eligibility": "without-paid-subscription",
+      "maintenance_sources": [
+        "https://documentation.ubuntu.com/release-notes/26.10/",
+        "https://ubuntu.com/about/release-cycle",
+        "https://ubuntu.com/pro/docs/"
+      ],
+      "status": "pendente",
+      "python_qualifications": [
+        {
+          "target_id": "ubuntu-26.04-stable-aarch64-distribution-default",
+          "python_minor": "3.12",
+          "status": "pendente",
+          "application_revision": null,
+          "artifact_id": null,
+          "evidence_ids": [],
+          "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+        },
+        {
+          "target_id": "ubuntu-26.04-stable-aarch64-distribution-default",
+          "python_minor": "3.14",
+          "status": "pendente",
+          "application_revision": null,
+          "artifact_id": null,
+          "evidence_ids": [],
+          "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+        }
+      ],
+      "evidence_ids": [],
+      "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+    },
+    {
+      "id": "ubuntu-26.10-stable-x86_64-distribution-default",
+      "reference_date": "2026-10-17",
+      "os": "linux",
+      "distribution_id": "ubuntu",
+      "display_name": "Ubuntu",
+      "version": "26.10",
+      "channel": "stable",
+      "arch": "x86_64",
+      "cpu_variant": "distribution-default",
+      "snapshot_id": null,
+      "availability": "published",
+      "required_python_minors": [
+        "3.12",
+        "3.14"
+      ],
+      "application_revision": null,
+      "artifact_id": null,
+      "maintenance_state": "maintained",
+      "free_eligibility": "without-paid-subscription",
+      "maintenance_sources": [
+        "https://documentation.ubuntu.com/release-notes/26.10/",
+        "https://ubuntu.com/about/release-cycle",
+        "https://ubuntu.com/pro/docs/"
+      ],
+      "status": "pendente",
+      "python_qualifications": [
+        {
+          "target_id": "ubuntu-26.10-stable-x86_64-distribution-default",
+          "python_minor": "3.12",
+          "status": "pendente",
+          "application_revision": null,
+          "artifact_id": null,
+          "evidence_ids": [],
+          "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+        },
+        {
+          "target_id": "ubuntu-26.10-stable-x86_64-distribution-default",
+          "python_minor": "3.14",
+          "status": "pendente",
+          "application_revision": null,
+          "artifact_id": null,
+          "evidence_ids": [],
+          "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+        }
+      ],
+      "evidence_ids": [],
+      "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+    },
+    {
+      "id": "ubuntu-26.10-stable-aarch64-distribution-default",
+      "reference_date": "2026-10-17",
+      "os": "linux",
+      "distribution_id": "ubuntu",
+      "display_name": "Ubuntu",
+      "version": "26.10",
+      "channel": "stable",
+      "arch": "aarch64",
+      "cpu_variant": "distribution-default",
+      "snapshot_id": null,
+      "availability": "published",
+      "required_python_minors": [
+        "3.12",
+        "3.14"
+      ],
+      "application_revision": null,
+      "artifact_id": null,
+      "maintenance_state": "maintained",
+      "free_eligibility": "without-paid-subscription",
+      "maintenance_sources": [
+        "https://documentation.ubuntu.com/release-notes/26.10/",
+        "https://ubuntu.com/about/release-cycle",
+        "https://ubuntu.com/pro/docs/"
+      ],
+      "status": "pendente",
+      "python_qualifications": [
+        {
+          "target_id": "ubuntu-26.10-stable-aarch64-distribution-default",
+          "python_minor": "3.12",
+          "status": "pendente",
+          "application_revision": null,
+          "artifact_id": null,
+          "evidence_ids": [],
+          "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+        },
+        {
+          "target_id": "ubuntu-26.10-stable-aarch64-distribution-default",
+          "python_minor": "3.14",
+          "status": "pendente",
+          "application_revision": null,
+          "artifact_id": null,
+          "evidence_ids": [],
+          "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+        }
+      ],
+      "evidence_ids": [],
+      "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+    },
+    {
+      "id": "debian-12-stable-x86_64-distribution-default",
+      "reference_date": "2026-10-17",
+      "os": "linux",
+      "distribution_id": "debian",
+      "display_name": "Debian",
+      "version": "12",
+      "channel": "stable",
+      "arch": "x86_64",
+      "cpu_variant": "distribution-default",
+      "snapshot_id": null,
+      "availability": "published",
+      "required_python_minors": [
+        "3.12",
+        "3.14"
+      ],
+      "application_revision": null,
+      "artifact_id": null,
+      "maintenance_state": "maintained",
+      "free_eligibility": "without-paid-subscription",
+      "maintenance_sources": [
+        "https://wiki.debian.org/LTS/",
+        "https://www.debian.org/releases/index.en.html"
+      ],
+      "status": "pendente",
+      "python_qualifications": [
+        {
+          "target_id": "debian-12-stable-x86_64-distribution-default",
+          "python_minor": "3.12",
+          "status": "pendente",
+          "application_revision": null,
+          "artifact_id": null,
+          "evidence_ids": [],
+          "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+        },
+        {
+          "target_id": "debian-12-stable-x86_64-distribution-default",
+          "python_minor": "3.14",
+          "status": "pendente",
+          "application_revision": null,
+          "artifact_id": null,
+          "evidence_ids": [],
+          "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+        }
+      ],
+      "evidence_ids": [],
+      "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+    },
+    {
+      "id": "debian-12-stable-aarch64-distribution-default",
+      "reference_date": "2026-10-17",
+      "os": "linux",
+      "distribution_id": "debian",
+      "display_name": "Debian",
+      "version": "12",
+      "channel": "stable",
+      "arch": "aarch64",
+      "cpu_variant": "distribution-default",
+      "snapshot_id": null,
+      "availability": "published",
+      "required_python_minors": [
+        "3.12",
+        "3.14"
+      ],
+      "application_revision": null,
+      "artifact_id": null,
+      "maintenance_state": "maintained",
+      "free_eligibility": "without-paid-subscription",
+      "maintenance_sources": [
+        "https://wiki.debian.org/LTS/",
+        "https://www.debian.org/releases/index.en.html"
+      ],
+      "status": "pendente",
+      "python_qualifications": [
+        {
+          "target_id": "debian-12-stable-aarch64-distribution-default",
+          "python_minor": "3.12",
+          "status": "pendente",
+          "application_revision": null,
+          "artifact_id": null,
+          "evidence_ids": [],
+          "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+        },
+        {
+          "target_id": "debian-12-stable-aarch64-distribution-default",
+          "python_minor": "3.14",
+          "status": "pendente",
+          "application_revision": null,
+          "artifact_id": null,
+          "evidence_ids": [],
+          "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+        }
+      ],
+      "evidence_ids": [],
+      "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+    },
+    {
+      "id": "debian-13-stable-x86_64-distribution-default",
+      "reference_date": "2026-10-17",
+      "os": "linux",
+      "distribution_id": "debian",
+      "display_name": "Debian",
+      "version": "13",
+      "channel": "stable",
+      "arch": "x86_64",
+      "cpu_variant": "distribution-default",
+      "snapshot_id": null,
+      "availability": "published",
+      "required_python_minors": [
+        "3.12",
+        "3.14"
+      ],
+      "application_revision": null,
+      "artifact_id": null,
+      "maintenance_state": "maintained",
+      "free_eligibility": "without-paid-subscription",
+      "maintenance_sources": [
+        "https://wiki.debian.org/LTS/",
+        "https://www.debian.org/releases/index.en.html"
+      ],
+      "status": "pendente",
+      "python_qualifications": [
+        {
+          "target_id": "debian-13-stable-x86_64-distribution-default",
+          "python_minor": "3.12",
+          "status": "pendente",
+          "application_revision": null,
+          "artifact_id": null,
+          "evidence_ids": [],
+          "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+        },
+        {
+          "target_id": "debian-13-stable-x86_64-distribution-default",
+          "python_minor": "3.14",
+          "status": "pendente",
+          "application_revision": null,
+          "artifact_id": null,
+          "evidence_ids": [],
+          "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+        }
+      ],
+      "evidence_ids": [],
+      "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+    },
+    {
+      "id": "debian-13-stable-aarch64-distribution-default",
+      "reference_date": "2026-10-17",
+      "os": "linux",
+      "distribution_id": "debian",
+      "display_name": "Debian",
+      "version": "13",
+      "channel": "stable",
+      "arch": "aarch64",
+      "cpu_variant": "distribution-default",
+      "snapshot_id": null,
+      "availability": "published",
+      "required_python_minors": [
+        "3.12",
+        "3.14"
+      ],
+      "application_revision": null,
+      "artifact_id": null,
+      "maintenance_state": "maintained",
+      "free_eligibility": "without-paid-subscription",
+      "maintenance_sources": [
+        "https://wiki.debian.org/LTS/",
+        "https://www.debian.org/releases/index.en.html"
+      ],
+      "status": "pendente",
+      "python_qualifications": [
+        {
+          "target_id": "debian-13-stable-aarch64-distribution-default",
+          "python_minor": "3.12",
+          "status": "pendente",
+          "application_revision": null,
+          "artifact_id": null,
+          "evidence_ids": [],
+          "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+        },
+        {
+          "target_id": "debian-13-stable-aarch64-distribution-default",
+          "python_minor": "3.14",
+          "status": "pendente",
+          "application_revision": null,
+          "artifact_id": null,
+          "evidence_ids": [],
+          "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+        }
+      ],
+      "evidence_ids": [],
+      "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+    },
+    {
+      "id": "fedora-43-stable-x86_64-distribution-default",
+      "reference_date": "2026-10-17",
+      "os": "linux",
+      "distribution_id": "fedora",
+      "display_name": "Fedora",
+      "version": "43",
+      "channel": "stable",
+      "arch": "x86_64",
+      "cpu_variant": "distribution-default",
+      "snapshot_id": null,
+      "availability": "published",
+      "required_python_minors": [
+        "3.12",
+        "3.14"
+      ],
+      "application_revision": null,
+      "artifact_id": null,
+      "maintenance_state": "maintained",
+      "free_eligibility": "without-paid-subscription",
+      "maintenance_sources": [
+        "https://fedoramagazine.org/announcing-fedora-linux-44/",
+        "https://torrent.fedoraproject.org/index.html"
+      ],
+      "status": "pendente",
+      "python_qualifications": [
+        {
+          "target_id": "fedora-43-stable-x86_64-distribution-default",
+          "python_minor": "3.12",
+          "status": "pendente",
+          "application_revision": null,
+          "artifact_id": null,
+          "evidence_ids": [],
+          "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+        },
+        {
+          "target_id": "fedora-43-stable-x86_64-distribution-default",
+          "python_minor": "3.14",
+          "status": "pendente",
+          "application_revision": null,
+          "artifact_id": null,
+          "evidence_ids": [],
+          "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+        }
+      ],
+      "evidence_ids": [],
+      "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+    },
+    {
+      "id": "fedora-43-stable-aarch64-distribution-default",
+      "reference_date": "2026-10-17",
+      "os": "linux",
+      "distribution_id": "fedora",
+      "display_name": "Fedora",
+      "version": "43",
+      "channel": "stable",
+      "arch": "aarch64",
+      "cpu_variant": "distribution-default",
+      "snapshot_id": null,
+      "availability": "published",
+      "required_python_minors": [
+        "3.12",
+        "3.14"
+      ],
+      "application_revision": null,
+      "artifact_id": null,
+      "maintenance_state": "maintained",
+      "free_eligibility": "without-paid-subscription",
+      "maintenance_sources": [
+        "https://fedoramagazine.org/announcing-fedora-linux-44/",
+        "https://torrent.fedoraproject.org/index.html"
+      ],
+      "status": "pendente",
+      "python_qualifications": [
+        {
+          "target_id": "fedora-43-stable-aarch64-distribution-default",
+          "python_minor": "3.12",
+          "status": "pendente",
+          "application_revision": null,
+          "artifact_id": null,
+          "evidence_ids": [],
+          "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+        },
+        {
+          "target_id": "fedora-43-stable-aarch64-distribution-default",
+          "python_minor": "3.14",
+          "status": "pendente",
+          "application_revision": null,
+          "artifact_id": null,
+          "evidence_ids": [],
+          "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+        }
+      ],
+      "evidence_ids": [],
+      "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+    },
+    {
+      "id": "fedora-44-stable-x86_64-distribution-default",
+      "reference_date": "2026-10-17",
+      "os": "linux",
+      "distribution_id": "fedora",
+      "display_name": "Fedora",
+      "version": "44",
+      "channel": "stable",
+      "arch": "x86_64",
+      "cpu_variant": "distribution-default",
+      "snapshot_id": null,
+      "availability": "published",
+      "required_python_minors": [
+        "3.12",
+        "3.14"
+      ],
+      "application_revision": null,
+      "artifact_id": null,
+      "maintenance_state": "maintained",
+      "free_eligibility": "without-paid-subscription",
+      "maintenance_sources": [
+        "https://fedoramagazine.org/announcing-fedora-linux-44/",
+        "https://torrent.fedoraproject.org/index.html"
+      ],
+      "status": "pendente",
+      "python_qualifications": [
+        {
+          "target_id": "fedora-44-stable-x86_64-distribution-default",
+          "python_minor": "3.12",
+          "status": "pendente",
+          "application_revision": null,
+          "artifact_id": null,
+          "evidence_ids": [],
+          "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+        },
+        {
+          "target_id": "fedora-44-stable-x86_64-distribution-default",
+          "python_minor": "3.14",
+          "status": "pendente",
+          "application_revision": null,
+          "artifact_id": null,
+          "evidence_ids": [],
+          "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+        }
+      ],
+      "evidence_ids": [],
+      "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+    },
+    {
+      "id": "fedora-44-stable-aarch64-distribution-default",
+      "reference_date": "2026-10-17",
+      "os": "linux",
+      "distribution_id": "fedora",
+      "display_name": "Fedora",
+      "version": "44",
+      "channel": "stable",
+      "arch": "aarch64",
+      "cpu_variant": "distribution-default",
+      "snapshot_id": null,
+      "availability": "published",
+      "required_python_minors": [
+        "3.12",
+        "3.14"
+      ],
+      "application_revision": null,
+      "artifact_id": null,
+      "maintenance_state": "maintained",
+      "free_eligibility": "without-paid-subscription",
+      "maintenance_sources": [
+        "https://fedoramagazine.org/announcing-fedora-linux-44/",
+        "https://torrent.fedoraproject.org/index.html"
+      ],
+      "status": "pendente",
+      "python_qualifications": [
+        {
+          "target_id": "fedora-44-stable-aarch64-distribution-default",
+          "python_minor": "3.12",
+          "status": "pendente",
+          "application_revision": null,
+          "artifact_id": null,
+          "evidence_ids": [],
+          "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+        },
+        {
+          "target_id": "fedora-44-stable-aarch64-distribution-default",
+          "python_minor": "3.14",
+          "status": "pendente",
+          "application_revision": null,
+          "artifact_id": null,
+          "evidence_ids": [],
+          "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+        }
+      ],
+      "evidence_ids": [],
+      "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+    },
+    {
+      "id": "rhel-8.10-stable-x86_64-distribution-default",
+      "reference_date": "2026-10-17",
+      "os": "linux",
+      "distribution_id": "rhel",
+      "display_name": "RHEL",
+      "version": "8.10",
+      "channel": "stable",
+      "arch": "x86_64",
+      "cpu_variant": "distribution-default",
+      "snapshot_id": null,
+      "availability": "published",
+      "required_python_minors": [
+        "3.12",
+        "3.14"
+      ],
+      "application_revision": null,
+      "artifact_id": null,
+      "maintenance_state": "conditional-security",
+      "free_eligibility": "eligible-account-required",
+      "maintenance_sources": [
+        "https://access.redhat.com/articles/red-hat-enterprise-linux-release-dates",
+        "https://developers.redhat.com/terms-and-conditions"
+      ],
+      "status": "pendente",
+      "python_qualifications": [
+        {
+          "target_id": "rhel-8.10-stable-x86_64-distribution-default",
+          "python_minor": "3.12",
+          "status": "pendente",
+          "application_revision": null,
+          "artifact_id": null,
+          "evidence_ids": [],
+          "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+        },
+        {
+          "target_id": "rhel-8.10-stable-x86_64-distribution-default",
+          "python_minor": "3.14",
+          "status": "pendente",
+          "application_revision": null,
+          "artifact_id": null,
+          "evidence_ids": [],
+          "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+        }
+      ],
+      "evidence_ids": [],
+      "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+    },
+    {
+      "id": "rhel-8.10-stable-aarch64-distribution-default",
+      "reference_date": "2026-10-17",
+      "os": "linux",
+      "distribution_id": "rhel",
+      "display_name": "RHEL",
+      "version": "8.10",
+      "channel": "stable",
+      "arch": "aarch64",
+      "cpu_variant": "distribution-default",
+      "snapshot_id": null,
+      "availability": "published",
+      "required_python_minors": [
+        "3.12",
+        "3.14"
+      ],
+      "application_revision": null,
+      "artifact_id": null,
+      "maintenance_state": "conditional-security",
+      "free_eligibility": "eligible-account-required",
+      "maintenance_sources": [
+        "https://access.redhat.com/articles/red-hat-enterprise-linux-release-dates",
+        "https://developers.redhat.com/terms-and-conditions"
+      ],
+      "status": "pendente",
+      "python_qualifications": [
+        {
+          "target_id": "rhel-8.10-stable-aarch64-distribution-default",
+          "python_minor": "3.12",
+          "status": "pendente",
+          "application_revision": null,
+          "artifact_id": null,
+          "evidence_ids": [],
+          "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+        },
+        {
+          "target_id": "rhel-8.10-stable-aarch64-distribution-default",
+          "python_minor": "3.14",
+          "status": "pendente",
+          "application_revision": null,
+          "artifact_id": null,
+          "evidence_ids": [],
+          "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+        }
+      ],
+      "evidence_ids": [],
+      "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+    },
+    {
+      "id": "rhel-9.8-stable-x86_64-distribution-default",
+      "reference_date": "2026-10-17",
+      "os": "linux",
+      "distribution_id": "rhel",
+      "display_name": "RHEL",
+      "version": "9.8",
+      "channel": "stable",
+      "arch": "x86_64",
+      "cpu_variant": "distribution-default",
+      "snapshot_id": null,
+      "availability": "published",
+      "required_python_minors": [
+        "3.12",
+        "3.14"
+      ],
+      "application_revision": null,
+      "artifact_id": null,
+      "maintenance_state": "conditional-security",
+      "free_eligibility": "eligible-account-required",
+      "maintenance_sources": [
+        "https://access.redhat.com/articles/red-hat-enterprise-linux-release-dates",
+        "https://developers.redhat.com/terms-and-conditions"
+      ],
+      "status": "pendente",
+      "python_qualifications": [
+        {
+          "target_id": "rhel-9.8-stable-x86_64-distribution-default",
+          "python_minor": "3.12",
+          "status": "pendente",
+          "application_revision": null,
+          "artifact_id": null,
+          "evidence_ids": [],
+          "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+        },
+        {
+          "target_id": "rhel-9.8-stable-x86_64-distribution-default",
+          "python_minor": "3.14",
+          "status": "pendente",
+          "application_revision": null,
+          "artifact_id": null,
+          "evidence_ids": [],
+          "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+        }
+      ],
+      "evidence_ids": [],
+      "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+    },
+    {
+      "id": "rhel-9.8-stable-aarch64-distribution-default",
+      "reference_date": "2026-10-17",
+      "os": "linux",
+      "distribution_id": "rhel",
+      "display_name": "RHEL",
+      "version": "9.8",
+      "channel": "stable",
+      "arch": "aarch64",
+      "cpu_variant": "distribution-default",
+      "snapshot_id": null,
+      "availability": "published",
+      "required_python_minors": [
+        "3.12",
+        "3.14"
+      ],
+      "application_revision": null,
+      "artifact_id": null,
+      "maintenance_state": "conditional-security",
+      "free_eligibility": "eligible-account-required",
+      "maintenance_sources": [
+        "https://access.redhat.com/articles/red-hat-enterprise-linux-release-dates",
+        "https://developers.redhat.com/terms-and-conditions"
+      ],
+      "status": "pendente",
+      "python_qualifications": [
+        {
+          "target_id": "rhel-9.8-stable-aarch64-distribution-default",
+          "python_minor": "3.12",
+          "status": "pendente",
+          "application_revision": null,
+          "artifact_id": null,
+          "evidence_ids": [],
+          "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+        },
+        {
+          "target_id": "rhel-9.8-stable-aarch64-distribution-default",
+          "python_minor": "3.14",
+          "status": "pendente",
+          "application_revision": null,
+          "artifact_id": null,
+          "evidence_ids": [],
+          "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+        }
+      ],
+      "evidence_ids": [],
+      "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+    },
+    {
+      "id": "rhel-10.2-stable-x86_64-distribution-default",
+      "reference_date": "2026-10-17",
+      "os": "linux",
+      "distribution_id": "rhel",
+      "display_name": "RHEL",
+      "version": "10.2",
+      "channel": "stable",
+      "arch": "x86_64",
+      "cpu_variant": "distribution-default",
+      "snapshot_id": null,
+      "availability": "published",
+      "required_python_minors": [
+        "3.12",
+        "3.14"
+      ],
+      "application_revision": null,
+      "artifact_id": null,
+      "maintenance_state": "conditional-security",
+      "free_eligibility": "eligible-account-required",
+      "maintenance_sources": [
+        "https://access.redhat.com/articles/red-hat-enterprise-linux-release-dates",
+        "https://developers.redhat.com/terms-and-conditions"
+      ],
+      "status": "pendente",
+      "python_qualifications": [
+        {
+          "target_id": "rhel-10.2-stable-x86_64-distribution-default",
+          "python_minor": "3.12",
+          "status": "pendente",
+          "application_revision": null,
+          "artifact_id": null,
+          "evidence_ids": [],
+          "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+        },
+        {
+          "target_id": "rhel-10.2-stable-x86_64-distribution-default",
+          "python_minor": "3.14",
+          "status": "pendente",
+          "application_revision": null,
+          "artifact_id": null,
+          "evidence_ids": [],
+          "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+        }
+      ],
+      "evidence_ids": [],
+      "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+    },
+    {
+      "id": "rhel-10.2-stable-aarch64-distribution-default",
+      "reference_date": "2026-10-17",
+      "os": "linux",
+      "distribution_id": "rhel",
+      "display_name": "RHEL",
+      "version": "10.2",
+      "channel": "stable",
+      "arch": "aarch64",
+      "cpu_variant": "distribution-default",
+      "snapshot_id": null,
+      "availability": "published",
+      "required_python_minors": [
+        "3.12",
+        "3.14"
+      ],
+      "application_revision": null,
+      "artifact_id": null,
+      "maintenance_state": "conditional-security",
+      "free_eligibility": "eligible-account-required",
+      "maintenance_sources": [
+        "https://access.redhat.com/articles/red-hat-enterprise-linux-release-dates",
+        "https://developers.redhat.com/terms-and-conditions"
+      ],
+      "status": "pendente",
+      "python_qualifications": [
+        {
+          "target_id": "rhel-10.2-stable-aarch64-distribution-default",
+          "python_minor": "3.12",
+          "status": "pendente",
+          "application_revision": null,
+          "artifact_id": null,
+          "evidence_ids": [],
+          "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+        },
+        {
+          "target_id": "rhel-10.2-stable-aarch64-distribution-default",
+          "python_minor": "3.14",
+          "status": "pendente",
+          "application_revision": null,
+          "artifact_id": null,
+          "evidence_ids": [],
+          "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+        }
+      ],
+      "evidence_ids": [],
+      "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+    },
+    {
+      "id": "rocky-8.10-stable-x86_64-distribution-default",
+      "reference_date": "2026-10-17",
+      "os": "linux",
+      "distribution_id": "rocky",
+      "display_name": "Rocky Linux",
+      "version": "8.10",
+      "channel": "stable",
+      "arch": "x86_64",
+      "cpu_variant": "distribution-default",
+      "snapshot_id": null,
+      "availability": "published",
+      "required_python_minors": [
+        "3.12",
+        "3.14"
+      ],
+      "application_revision": null,
+      "artifact_id": null,
+      "maintenance_state": "maintained",
+      "free_eligibility": "without-paid-subscription",
+      "maintenance_sources": [
+        "https://docs.rockylinux.org/latest/releases/"
+      ],
+      "status": "pendente",
+      "python_qualifications": [
+        {
+          "target_id": "rocky-8.10-stable-x86_64-distribution-default",
+          "python_minor": "3.12",
+          "status": "pendente",
+          "application_revision": null,
+          "artifact_id": null,
+          "evidence_ids": [],
+          "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+        },
+        {
+          "target_id": "rocky-8.10-stable-x86_64-distribution-default",
+          "python_minor": "3.14",
+          "status": "pendente",
+          "application_revision": null,
+          "artifact_id": null,
+          "evidence_ids": [],
+          "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+        }
+      ],
+      "evidence_ids": [],
+      "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+    },
+    {
+      "id": "rocky-8.10-stable-aarch64-distribution-default",
+      "reference_date": "2026-10-17",
+      "os": "linux",
+      "distribution_id": "rocky",
+      "display_name": "Rocky Linux",
+      "version": "8.10",
+      "channel": "stable",
+      "arch": "aarch64",
+      "cpu_variant": "distribution-default",
+      "snapshot_id": null,
+      "availability": "published",
+      "required_python_minors": [
+        "3.12",
+        "3.14"
+      ],
+      "application_revision": null,
+      "artifact_id": null,
+      "maintenance_state": "maintained",
+      "free_eligibility": "without-paid-subscription",
+      "maintenance_sources": [
+        "https://docs.rockylinux.org/latest/releases/"
+      ],
+      "status": "pendente",
+      "python_qualifications": [
+        {
+          "target_id": "rocky-8.10-stable-aarch64-distribution-default",
+          "python_minor": "3.12",
+          "status": "pendente",
+          "application_revision": null,
+          "artifact_id": null,
+          "evidence_ids": [],
+          "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+        },
+        {
+          "target_id": "rocky-8.10-stable-aarch64-distribution-default",
+          "python_minor": "3.14",
+          "status": "pendente",
+          "application_revision": null,
+          "artifact_id": null,
+          "evidence_ids": [],
+          "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+        }
+      ],
+      "evidence_ids": [],
+      "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+    },
+    {
+      "id": "rocky-9.8-stable-x86_64-distribution-default",
+      "reference_date": "2026-10-17",
+      "os": "linux",
+      "distribution_id": "rocky",
+      "display_name": "Rocky Linux",
+      "version": "9.8",
+      "channel": "stable",
+      "arch": "x86_64",
+      "cpu_variant": "distribution-default",
+      "snapshot_id": null,
+      "availability": "published",
+      "required_python_minors": [
+        "3.12",
+        "3.14"
+      ],
+      "application_revision": null,
+      "artifact_id": null,
+      "maintenance_state": "maintained",
+      "free_eligibility": "without-paid-subscription",
+      "maintenance_sources": [
+        "https://docs.rockylinux.org/latest/releases/"
+      ],
+      "status": "pendente",
+      "python_qualifications": [
+        {
+          "target_id": "rocky-9.8-stable-x86_64-distribution-default",
+          "python_minor": "3.12",
+          "status": "pendente",
+          "application_revision": null,
+          "artifact_id": null,
+          "evidence_ids": [],
+          "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+        },
+        {
+          "target_id": "rocky-9.8-stable-x86_64-distribution-default",
+          "python_minor": "3.14",
+          "status": "pendente",
+          "application_revision": null,
+          "artifact_id": null,
+          "evidence_ids": [],
+          "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+        }
+      ],
+      "evidence_ids": [],
+      "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+    },
+    {
+      "id": "rocky-9.8-stable-aarch64-distribution-default",
+      "reference_date": "2026-10-17",
+      "os": "linux",
+      "distribution_id": "rocky",
+      "display_name": "Rocky Linux",
+      "version": "9.8",
+      "channel": "stable",
+      "arch": "aarch64",
+      "cpu_variant": "distribution-default",
+      "snapshot_id": null,
+      "availability": "published",
+      "required_python_minors": [
+        "3.12",
+        "3.14"
+      ],
+      "application_revision": null,
+      "artifact_id": null,
+      "maintenance_state": "maintained",
+      "free_eligibility": "without-paid-subscription",
+      "maintenance_sources": [
+        "https://docs.rockylinux.org/latest/releases/"
+      ],
+      "status": "pendente",
+      "python_qualifications": [
+        {
+          "target_id": "rocky-9.8-stable-aarch64-distribution-default",
+          "python_minor": "3.12",
+          "status": "pendente",
+          "application_revision": null,
+          "artifact_id": null,
+          "evidence_ids": [],
+          "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+        },
+        {
+          "target_id": "rocky-9.8-stable-aarch64-distribution-default",
+          "python_minor": "3.14",
+          "status": "pendente",
+          "application_revision": null,
+          "artifact_id": null,
+          "evidence_ids": [],
+          "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+        }
+      ],
+      "evidence_ids": [],
+      "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+    },
+    {
+      "id": "rocky-10.2-stable-x86_64-distribution-default",
+      "reference_date": "2026-10-17",
+      "os": "linux",
+      "distribution_id": "rocky",
+      "display_name": "Rocky Linux",
+      "version": "10.2",
+      "channel": "stable",
+      "arch": "x86_64",
+      "cpu_variant": "distribution-default",
+      "snapshot_id": null,
+      "availability": "published",
+      "required_python_minors": [
+        "3.12",
+        "3.14"
+      ],
+      "application_revision": null,
+      "artifact_id": null,
+      "maintenance_state": "maintained",
+      "free_eligibility": "without-paid-subscription",
+      "maintenance_sources": [
+        "https://docs.rockylinux.org/latest/releases/"
+      ],
+      "status": "pendente",
+      "python_qualifications": [
+        {
+          "target_id": "rocky-10.2-stable-x86_64-distribution-default",
+          "python_minor": "3.12",
+          "status": "pendente",
+          "application_revision": null,
+          "artifact_id": null,
+          "evidence_ids": [],
+          "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+        },
+        {
+          "target_id": "rocky-10.2-stable-x86_64-distribution-default",
+          "python_minor": "3.14",
+          "status": "pendente",
+          "application_revision": null,
+          "artifact_id": null,
+          "evidence_ids": [],
+          "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+        }
+      ],
+      "evidence_ids": [],
+      "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+    },
+    {
+      "id": "rocky-10.2-stable-aarch64-distribution-default",
+      "reference_date": "2026-10-17",
+      "os": "linux",
+      "distribution_id": "rocky",
+      "display_name": "Rocky Linux",
+      "version": "10.2",
+      "channel": "stable",
+      "arch": "aarch64",
+      "cpu_variant": "distribution-default",
+      "snapshot_id": null,
+      "availability": "published",
+      "required_python_minors": [
+        "3.12",
+        "3.14"
+      ],
+      "application_revision": null,
+      "artifact_id": null,
+      "maintenance_state": "maintained",
+      "free_eligibility": "without-paid-subscription",
+      "maintenance_sources": [
+        "https://docs.rockylinux.org/latest/releases/"
+      ],
+      "status": "pendente",
+      "python_qualifications": [
+        {
+          "target_id": "rocky-10.2-stable-aarch64-distribution-default",
+          "python_minor": "3.12",
+          "status": "pendente",
+          "application_revision": null,
+          "artifact_id": null,
+          "evidence_ids": [],
+          "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+        },
+        {
+          "target_id": "rocky-10.2-stable-aarch64-distribution-default",
+          "python_minor": "3.14",
+          "status": "pendente",
+          "application_revision": null,
+          "artifact_id": null,
+          "evidence_ids": [],
+          "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+        }
+      ],
+      "evidence_ids": [],
+      "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+    },
+    {
+      "id": "almalinux-8.10-stable-x86_64-distribution-default",
+      "reference_date": "2026-10-17",
+      "os": "linux",
+      "distribution_id": "almalinux",
+      "display_name": "AlmaLinux",
+      "version": "8.10",
+      "channel": "stable",
+      "arch": "x86_64",
+      "cpu_variant": "distribution-default",
+      "snapshot_id": null,
+      "availability": "published",
+      "required_python_minors": [
+        "3.12",
+        "3.14"
+      ],
+      "application_revision": null,
+      "artifact_id": null,
+      "maintenance_state": "maintained",
+      "free_eligibility": "without-paid-subscription",
+      "maintenance_sources": [
+        "https://wiki.almalinux.org/release-notes/"
+      ],
+      "status": "pendente",
+      "python_qualifications": [
+        {
+          "target_id": "almalinux-8.10-stable-x86_64-distribution-default",
+          "python_minor": "3.12",
+          "status": "pendente",
+          "application_revision": null,
+          "artifact_id": null,
+          "evidence_ids": [],
+          "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+        },
+        {
+          "target_id": "almalinux-8.10-stable-x86_64-distribution-default",
+          "python_minor": "3.14",
+          "status": "pendente",
+          "application_revision": null,
+          "artifact_id": null,
+          "evidence_ids": [],
+          "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+        }
+      ],
+      "evidence_ids": [],
+      "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+    },
+    {
+      "id": "almalinux-8.10-stable-aarch64-distribution-default",
+      "reference_date": "2026-10-17",
+      "os": "linux",
+      "distribution_id": "almalinux",
+      "display_name": "AlmaLinux",
+      "version": "8.10",
+      "channel": "stable",
+      "arch": "aarch64",
+      "cpu_variant": "distribution-default",
+      "snapshot_id": null,
+      "availability": "published",
+      "required_python_minors": [
+        "3.12",
+        "3.14"
+      ],
+      "application_revision": null,
+      "artifact_id": null,
+      "maintenance_state": "maintained",
+      "free_eligibility": "without-paid-subscription",
+      "maintenance_sources": [
+        "https://wiki.almalinux.org/release-notes/"
+      ],
+      "status": "pendente",
+      "python_qualifications": [
+        {
+          "target_id": "almalinux-8.10-stable-aarch64-distribution-default",
+          "python_minor": "3.12",
+          "status": "pendente",
+          "application_revision": null,
+          "artifact_id": null,
+          "evidence_ids": [],
+          "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+        },
+        {
+          "target_id": "almalinux-8.10-stable-aarch64-distribution-default",
+          "python_minor": "3.14",
+          "status": "pendente",
+          "application_revision": null,
+          "artifact_id": null,
+          "evidence_ids": [],
+          "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+        }
+      ],
+      "evidence_ids": [],
+      "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+    },
+    {
+      "id": "almalinux-9.8-stable-x86_64-distribution-default",
+      "reference_date": "2026-10-17",
+      "os": "linux",
+      "distribution_id": "almalinux",
+      "display_name": "AlmaLinux",
+      "version": "9.8",
+      "channel": "stable",
+      "arch": "x86_64",
+      "cpu_variant": "distribution-default",
+      "snapshot_id": null,
+      "availability": "published",
+      "required_python_minors": [
+        "3.12",
+        "3.14"
+      ],
+      "application_revision": null,
+      "artifact_id": null,
+      "maintenance_state": "maintained",
+      "free_eligibility": "without-paid-subscription",
+      "maintenance_sources": [
+        "https://wiki.almalinux.org/release-notes/"
+      ],
+      "status": "pendente",
+      "python_qualifications": [
+        {
+          "target_id": "almalinux-9.8-stable-x86_64-distribution-default",
+          "python_minor": "3.12",
+          "status": "pendente",
+          "application_revision": null,
+          "artifact_id": null,
+          "evidence_ids": [],
+          "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+        },
+        {
+          "target_id": "almalinux-9.8-stable-x86_64-distribution-default",
+          "python_minor": "3.14",
+          "status": "pendente",
+          "application_revision": null,
+          "artifact_id": null,
+          "evidence_ids": [],
+          "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+        }
+      ],
+      "evidence_ids": [],
+      "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+    },
+    {
+      "id": "almalinux-9.8-stable-aarch64-distribution-default",
+      "reference_date": "2026-10-17",
+      "os": "linux",
+      "distribution_id": "almalinux",
+      "display_name": "AlmaLinux",
+      "version": "9.8",
+      "channel": "stable",
+      "arch": "aarch64",
+      "cpu_variant": "distribution-default",
+      "snapshot_id": null,
+      "availability": "published",
+      "required_python_minors": [
+        "3.12",
+        "3.14"
+      ],
+      "application_revision": null,
+      "artifact_id": null,
+      "maintenance_state": "maintained",
+      "free_eligibility": "without-paid-subscription",
+      "maintenance_sources": [
+        "https://wiki.almalinux.org/release-notes/"
+      ],
+      "status": "pendente",
+      "python_qualifications": [
+        {
+          "target_id": "almalinux-9.8-stable-aarch64-distribution-default",
+          "python_minor": "3.12",
+          "status": "pendente",
+          "application_revision": null,
+          "artifact_id": null,
+          "evidence_ids": [],
+          "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+        },
+        {
+          "target_id": "almalinux-9.8-stable-aarch64-distribution-default",
+          "python_minor": "3.14",
+          "status": "pendente",
+          "application_revision": null,
+          "artifact_id": null,
+          "evidence_ids": [],
+          "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+        }
+      ],
+      "evidence_ids": [],
+      "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+    },
+    {
+      "id": "almalinux-10.2-stable-x86_64-distribution-default",
+      "reference_date": "2026-10-17",
+      "os": "linux",
+      "distribution_id": "almalinux",
+      "display_name": "AlmaLinux",
+      "version": "10.2",
+      "channel": "stable",
+      "arch": "x86_64",
+      "cpu_variant": "distribution-default",
+      "snapshot_id": null,
+      "availability": "published",
+      "required_python_minors": [
+        "3.12",
+        "3.14"
+      ],
+      "application_revision": null,
+      "artifact_id": null,
+      "maintenance_state": "maintained",
+      "free_eligibility": "without-paid-subscription",
+      "maintenance_sources": [
+        "https://wiki.almalinux.org/release-notes/"
+      ],
+      "status": "pendente",
+      "python_qualifications": [
+        {
+          "target_id": "almalinux-10.2-stable-x86_64-distribution-default",
+          "python_minor": "3.12",
+          "status": "pendente",
+          "application_revision": null,
+          "artifact_id": null,
+          "evidence_ids": [],
+          "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+        },
+        {
+          "target_id": "almalinux-10.2-stable-x86_64-distribution-default",
+          "python_minor": "3.14",
+          "status": "pendente",
+          "application_revision": null,
+          "artifact_id": null,
+          "evidence_ids": [],
+          "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+        }
+      ],
+      "evidence_ids": [],
+      "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+    },
+    {
+      "id": "almalinux-10.2-stable-x86_64-x86-64-v2",
+      "reference_date": "2026-10-17",
+      "os": "linux",
+      "distribution_id": "almalinux",
+      "display_name": "AlmaLinux",
+      "version": "10.2",
+      "channel": "stable",
+      "arch": "x86_64",
+      "cpu_variant": "x86-64-v2",
+      "snapshot_id": null,
+      "availability": "published",
+      "required_python_minors": [
+        "3.12",
+        "3.14"
+      ],
+      "application_revision": null,
+      "artifact_id": null,
+      "maintenance_state": "maintained",
+      "free_eligibility": "without-paid-subscription",
+      "maintenance_sources": [
+        "https://wiki.almalinux.org/release-notes/"
+      ],
+      "status": "pendente",
+      "python_qualifications": [
+        {
+          "target_id": "almalinux-10.2-stable-x86_64-x86-64-v2",
+          "python_minor": "3.12",
+          "status": "pendente",
+          "application_revision": null,
+          "artifact_id": null,
+          "evidence_ids": [],
+          "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+        },
+        {
+          "target_id": "almalinux-10.2-stable-x86_64-x86-64-v2",
+          "python_minor": "3.14",
+          "status": "pendente",
+          "application_revision": null,
+          "artifact_id": null,
+          "evidence_ids": [],
+          "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+        }
+      ],
+      "evidence_ids": [],
+      "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+    },
+    {
+      "id": "almalinux-10.2-stable-aarch64-distribution-default",
+      "reference_date": "2026-10-17",
+      "os": "linux",
+      "distribution_id": "almalinux",
+      "display_name": "AlmaLinux",
+      "version": "10.2",
+      "channel": "stable",
+      "arch": "aarch64",
+      "cpu_variant": "distribution-default",
+      "snapshot_id": null,
+      "availability": "published",
+      "required_python_minors": [
+        "3.12",
+        "3.14"
+      ],
+      "application_revision": null,
+      "artifact_id": null,
+      "maintenance_state": "maintained",
+      "free_eligibility": "without-paid-subscription",
+      "maintenance_sources": [
+        "https://wiki.almalinux.org/release-notes/"
+      ],
+      "status": "pendente",
+      "python_qualifications": [
+        {
+          "target_id": "almalinux-10.2-stable-aarch64-distribution-default",
+          "python_minor": "3.12",
+          "status": "pendente",
+          "application_revision": null,
+          "artifact_id": null,
+          "evidence_ids": [],
+          "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+        },
+        {
+          "target_id": "almalinux-10.2-stable-aarch64-distribution-default",
+          "python_minor": "3.14",
+          "status": "pendente",
+          "application_revision": null,
+          "artifact_id": null,
+          "evidence_ids": [],
+          "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+        }
+      ],
+      "evidence_ids": [],
+      "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+    },
+    {
+      "id": "opensuse-leap-16.0-stable-x86_64-distribution-default",
+      "reference_date": "2026-10-17",
+      "os": "linux",
+      "distribution_id": "opensuse-leap",
+      "display_name": "openSUSE Leap",
+      "version": "16.0",
+      "channel": "stable",
+      "arch": "x86_64",
+      "cpu_variant": "distribution-default",
+      "snapshot_id": null,
+      "availability": "published",
+      "required_python_minors": [
+        "3.12",
+        "3.14"
+      ],
+      "application_revision": null,
+      "artifact_id": null,
+      "maintenance_state": "maintained",
+      "free_eligibility": "without-paid-subscription",
+      "maintenance_sources": [
+        "https://get.opensuse.org/leap/16.0/",
+        "https://news.opensuse.org/2026/09/24/leap-rc/"
+      ],
+      "status": "pendente",
+      "python_qualifications": [
+        {
+          "target_id": "opensuse-leap-16.0-stable-x86_64-distribution-default",
+          "python_minor": "3.12",
+          "status": "pendente",
+          "application_revision": null,
+          "artifact_id": null,
+          "evidence_ids": [],
+          "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+        },
+        {
+          "target_id": "opensuse-leap-16.0-stable-x86_64-distribution-default",
+          "python_minor": "3.14",
+          "status": "pendente",
+          "application_revision": null,
+          "artifact_id": null,
+          "evidence_ids": [],
+          "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+        }
+      ],
+      "evidence_ids": [],
+      "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+    },
+    {
+      "id": "opensuse-leap-16.0-stable-aarch64-distribution-default",
+      "reference_date": "2026-10-17",
+      "os": "linux",
+      "distribution_id": "opensuse-leap",
+      "display_name": "openSUSE Leap",
+      "version": "16.0",
+      "channel": "stable",
+      "arch": "aarch64",
+      "cpu_variant": "distribution-default",
+      "snapshot_id": null,
+      "availability": "published",
+      "required_python_minors": [
+        "3.12",
+        "3.14"
+      ],
+      "application_revision": null,
+      "artifact_id": null,
+      "maintenance_state": "maintained",
+      "free_eligibility": "without-paid-subscription",
+      "maintenance_sources": [
+        "https://get.opensuse.org/leap/16.0/",
+        "https://news.opensuse.org/2026/09/24/leap-rc/"
+      ],
+      "status": "pendente",
+      "python_qualifications": [
+        {
+          "target_id": "opensuse-leap-16.0-stable-aarch64-distribution-default",
+          "python_minor": "3.12",
+          "status": "pendente",
+          "application_revision": null,
+          "artifact_id": null,
+          "evidence_ids": [],
+          "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+        },
+        {
+          "target_id": "opensuse-leap-16.0-stable-aarch64-distribution-default",
+          "python_minor": "3.14",
+          "status": "pendente",
+          "application_revision": null,
+          "artifact_id": null,
+          "evidence_ids": [],
+          "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+        }
+      ],
+      "evidence_ids": [],
+      "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+    },
+    {
+      "id": "opensuse-tumbleweed-rolling-tumbleweed-x86_64-distribution-default",
+      "reference_date": "2026-10-17",
+      "os": "linux",
+      "distribution_id": "opensuse-tumbleweed",
+      "display_name": "openSUSE Tumbleweed",
+      "version": "rolling",
+      "channel": "tumbleweed",
+      "arch": "x86_64",
+      "cpu_variant": "distribution-default",
+      "snapshot_id": null,
+      "availability": "published",
+      "required_python_minors": [
+        "3.12",
+        "3.14"
+      ],
+      "application_revision": null,
+      "artifact_id": null,
+      "maintenance_state": "maintained",
+      "free_eligibility": "without-paid-subscription",
+      "maintenance_sources": [
+        "https://forums.opensuse.org/tag/tumbleweed-news"
+      ],
+      "status": "pendente",
+      "python_qualifications": [
+        {
+          "target_id": "opensuse-tumbleweed-rolling-tumbleweed-x86_64-distribution-default",
+          "python_minor": "3.12",
+          "status": "pendente",
+          "application_revision": null,
+          "artifact_id": null,
+          "evidence_ids": [],
+          "pending_reason": "Native acceptance, two Python slots and Twine review not executed. Snapshot must be captured from a real dated image."
+        },
+        {
+          "target_id": "opensuse-tumbleweed-rolling-tumbleweed-x86_64-distribution-default",
+          "python_minor": "3.14",
+          "status": "pendente",
+          "application_revision": null,
+          "artifact_id": null,
+          "evidence_ids": [],
+          "pending_reason": "Native acceptance, two Python slots and Twine review not executed. Snapshot must be captured from a real dated image."
+        }
+      ],
+      "evidence_ids": [],
+      "pending_reason": "Native acceptance, two Python slots and Twine review not executed. Snapshot must be captured from a real dated image."
+    },
+    {
+      "id": "opensuse-tumbleweed-rolling-tumbleweed-aarch64-distribution-default",
+      "reference_date": "2026-10-17",
+      "os": "linux",
+      "distribution_id": "opensuse-tumbleweed",
+      "display_name": "openSUSE Tumbleweed",
+      "version": "rolling",
+      "channel": "tumbleweed",
+      "arch": "aarch64",
+      "cpu_variant": "distribution-default",
+      "snapshot_id": null,
+      "availability": "published",
+      "required_python_minors": [
+        "3.12",
+        "3.14"
+      ],
+      "application_revision": null,
+      "artifact_id": null,
+      "maintenance_state": "maintained",
+      "free_eligibility": "without-paid-subscription",
+      "maintenance_sources": [
+        "https://forums.opensuse.org/tag/tumbleweed-news"
+      ],
+      "status": "pendente",
+      "python_qualifications": [
+        {
+          "target_id": "opensuse-tumbleweed-rolling-tumbleweed-aarch64-distribution-default",
+          "python_minor": "3.12",
+          "status": "pendente",
+          "application_revision": null,
+          "artifact_id": null,
+          "evidence_ids": [],
+          "pending_reason": "Native acceptance, two Python slots and Twine review not executed. Snapshot must be captured from a real dated image."
+        },
+        {
+          "target_id": "opensuse-tumbleweed-rolling-tumbleweed-aarch64-distribution-default",
+          "python_minor": "3.14",
+          "status": "pendente",
+          "application_revision": null,
+          "artifact_id": null,
+          "evidence_ids": [],
+          "pending_reason": "Native acceptance, two Python slots and Twine review not executed. Snapshot must be captured from a real dated image."
+        }
+      ],
+      "evidence_ids": [],
+      "pending_reason": "Native acceptance, two Python slots and Twine review not executed. Snapshot must be captured from a real dated image."
+    },
+    {
+      "id": "arch-rolling-rolling-x86_64-distribution-default",
+      "reference_date": "2026-10-17",
+      "os": "linux",
+      "distribution_id": "arch",
+      "display_name": "Arch Linux",
+      "version": "rolling",
+      "channel": "rolling",
+      "arch": "x86_64",
+      "cpu_variant": "distribution-default",
+      "snapshot_id": null,
+      "availability": "published",
+      "required_python_minors": [
+        "3.12",
+        "3.14"
+      ],
+      "application_revision": null,
+      "artifact_id": null,
+      "maintenance_state": "maintained",
+      "free_eligibility": "without-paid-subscription",
+      "maintenance_sources": [
+        "https://wiki.archlinux.org/title/Arch_Linux?useskinversion=1"
+      ],
+      "status": "pendente",
+      "python_qualifications": [
+        {
+          "target_id": "arch-rolling-rolling-x86_64-distribution-default",
+          "python_minor": "3.12",
+          "status": "pendente",
+          "application_revision": null,
+          "artifact_id": null,
+          "evidence_ids": [],
+          "pending_reason": "Native acceptance, two Python slots and Twine review not executed. Snapshot must be captured from a real dated image."
+        },
+        {
+          "target_id": "arch-rolling-rolling-x86_64-distribution-default",
+          "python_minor": "3.14",
+          "status": "pendente",
+          "application_revision": null,
+          "artifact_id": null,
+          "evidence_ids": [],
+          "pending_reason": "Native acceptance, two Python slots and Twine review not executed. Snapshot must be captured from a real dated image."
+        }
+      ],
+      "evidence_ids": [],
+      "pending_reason": "Native acceptance, two Python slots and Twine review not executed. Snapshot must be captured from a real dated image."
+    },
+    {
+      "id": "archarm-rolling-rolling-aarch64-distribution-default",
+      "reference_date": "2026-10-17",
+      "os": "linux",
+      "distribution_id": "archarm",
+      "display_name": "Arch Linux ARM",
+      "version": "rolling",
+      "channel": "rolling",
+      "arch": "aarch64",
+      "cpu_variant": "distribution-default",
+      "snapshot_id": null,
+      "availability": "published",
+      "required_python_minors": [
+        "3.12",
+        "3.14"
+      ],
+      "application_revision": null,
+      "artifact_id": null,
+      "maintenance_state": "maintained",
+      "free_eligibility": "without-paid-subscription",
+      "maintenance_sources": [
+        "https://archlinuxarm.org/about"
+      ],
+      "status": "pendente",
+      "python_qualifications": [
+        {
+          "target_id": "archarm-rolling-rolling-aarch64-distribution-default",
+          "python_minor": "3.12",
+          "status": "pendente",
+          "application_revision": null,
+          "artifact_id": null,
+          "evidence_ids": [],
+          "pending_reason": "Native acceptance, two Python slots and Twine review not executed. Snapshot must be captured from a real dated image."
+        },
+        {
+          "target_id": "archarm-rolling-rolling-aarch64-distribution-default",
+          "python_minor": "3.14",
+          "status": "pendente",
+          "application_revision": null,
+          "artifact_id": null,
+          "evidence_ids": [],
+          "pending_reason": "Native acceptance, two Python slots and Twine review not executed. Snapshot must be captured from a real dated image."
+        }
+      ],
+      "evidence_ids": [],
+      "pending_reason": "Native acceptance, two Python slots and Twine review not executed. Snapshot must be captured from a real dated image."
+    },
+    {
+      "id": "manjaro-rolling-stable-x86_64-distribution-default",
+      "reference_date": "2026-10-17",
+      "os": "linux",
+      "distribution_id": "manjaro",
+      "display_name": "Manjaro",
+      "version": "rolling",
+      "channel": "stable",
+      "arch": "x86_64",
+      "cpu_variant": "distribution-default",
+      "snapshot_id": null,
+      "availability": "published",
+      "required_python_minors": [
+        "3.12",
+        "3.14"
+      ],
+      "application_revision": null,
+      "artifact_id": null,
+      "maintenance_state": "maintained",
+      "free_eligibility": "without-paid-subscription",
+      "maintenance_sources": [
+        "https://manjaro.org/products/download/arm/",
+        "https://manjaro.org/products/download/x86/"
+      ],
+      "status": "pendente",
+      "python_qualifications": [
+        {
+          "target_id": "manjaro-rolling-stable-x86_64-distribution-default",
+          "python_minor": "3.12",
+          "status": "pendente",
+          "application_revision": null,
+          "artifact_id": null,
+          "evidence_ids": [],
+          "pending_reason": "Native acceptance, two Python slots and Twine review not executed. Snapshot must be captured from a real dated image."
+        },
+        {
+          "target_id": "manjaro-rolling-stable-x86_64-distribution-default",
+          "python_minor": "3.14",
+          "status": "pendente",
+          "application_revision": null,
+          "artifact_id": null,
+          "evidence_ids": [],
+          "pending_reason": "Native acceptance, two Python slots and Twine review not executed. Snapshot must be captured from a real dated image."
+        }
+      ],
+      "evidence_ids": [],
+      "pending_reason": "Native acceptance, two Python slots and Twine review not executed. Snapshot must be captured from a real dated image."
+    },
+    {
+      "id": "manjaro-rolling-stable-aarch64-distribution-default",
+      "reference_date": "2026-10-17",
+      "os": "linux",
+      "distribution_id": "manjaro",
+      "display_name": "Manjaro",
+      "version": "rolling",
+      "channel": "stable",
+      "arch": "aarch64",
+      "cpu_variant": "distribution-default",
+      "snapshot_id": null,
+      "availability": "unconfirmed",
+      "required_python_minors": [
+        "3.12",
+        "3.14"
+      ],
+      "application_revision": null,
+      "artifact_id": null,
+      "maintenance_state": "maintained",
+      "free_eligibility": "without-paid-subscription",
+      "maintenance_sources": [
+        "https://manjaro.org/products/download/arm/",
+        "https://manjaro.org/products/download/x86/"
+      ],
+      "status": "pendente",
+      "python_qualifications": [
+        {
+          "target_id": "manjaro-rolling-stable-aarch64-distribution-default",
+          "python_minor": "3.12",
+          "status": "pendente",
+          "application_revision": null,
+          "artifact_id": null,
+          "evidence_ids": [],
+          "pending_reason": "Native acceptance, two Python slots and Twine review not executed. Snapshot must be captured from a real dated image. Maintained ARM image/device availability must be identified."
+        },
+        {
+          "target_id": "manjaro-rolling-stable-aarch64-distribution-default",
+          "python_minor": "3.14",
+          "status": "pendente",
+          "application_revision": null,
+          "artifact_id": null,
+          "evidence_ids": [],
+          "pending_reason": "Native acceptance, two Python slots and Twine review not executed. Snapshot must be captured from a real dated image. Maintained ARM image/device availability must be identified."
+        }
+      ],
+      "evidence_ids": [],
+      "pending_reason": "Native acceptance, two Python slots and Twine review not executed. Snapshot must be captured from a real dated image. Maintained ARM image/device availability must be identified."
+    },
+    {
+      "id": "alpine-3.21-stable-x86_64-distribution-default",
+      "reference_date": "2026-10-17",
+      "os": "linux",
+      "distribution_id": "alpine",
+      "display_name": "Alpine",
+      "version": "3.21",
+      "channel": "stable",
+      "arch": "x86_64",
+      "cpu_variant": "distribution-default",
+      "snapshot_id": null,
+      "availability": "published",
+      "required_python_minors": [
+        "3.12",
+        "3.14"
+      ],
+      "application_revision": null,
+      "artifact_id": null,
+      "maintenance_state": "maintained",
+      "free_eligibility": "without-paid-subscription",
+      "maintenance_sources": [
+        "https://alpinelinux.org/releases/",
+        "https://www.alpinelinux.org/downloads/"
+      ],
+      "status": "pendente",
+      "python_qualifications": [
+        {
+          "target_id": "alpine-3.21-stable-x86_64-distribution-default",
+          "python_minor": "3.12",
+          "status": "pendente",
+          "application_revision": null,
+          "artifact_id": null,
+          "evidence_ids": [],
+          "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+        },
+        {
+          "target_id": "alpine-3.21-stable-x86_64-distribution-default",
+          "python_minor": "3.14",
+          "status": "pendente",
+          "application_revision": null,
+          "artifact_id": null,
+          "evidence_ids": [],
+          "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+        }
+      ],
+      "evidence_ids": [],
+      "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+    },
+    {
+      "id": "alpine-3.21-stable-aarch64-distribution-default",
+      "reference_date": "2026-10-17",
+      "os": "linux",
+      "distribution_id": "alpine",
+      "display_name": "Alpine",
+      "version": "3.21",
+      "channel": "stable",
+      "arch": "aarch64",
+      "cpu_variant": "distribution-default",
+      "snapshot_id": null,
+      "availability": "published",
+      "required_python_minors": [
+        "3.12",
+        "3.14"
+      ],
+      "application_revision": null,
+      "artifact_id": null,
+      "maintenance_state": "maintained",
+      "free_eligibility": "without-paid-subscription",
+      "maintenance_sources": [
+        "https://alpinelinux.org/releases/",
+        "https://www.alpinelinux.org/downloads/"
+      ],
+      "status": "pendente",
+      "python_qualifications": [
+        {
+          "target_id": "alpine-3.21-stable-aarch64-distribution-default",
+          "python_minor": "3.12",
+          "status": "pendente",
+          "application_revision": null,
+          "artifact_id": null,
+          "evidence_ids": [],
+          "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+        },
+        {
+          "target_id": "alpine-3.21-stable-aarch64-distribution-default",
+          "python_minor": "3.14",
+          "status": "pendente",
+          "application_revision": null,
+          "artifact_id": null,
+          "evidence_ids": [],
+          "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+        }
+      ],
+      "evidence_ids": [],
+      "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+    },
+    {
+      "id": "alpine-3.22-stable-x86_64-distribution-default",
+      "reference_date": "2026-10-17",
+      "os": "linux",
+      "distribution_id": "alpine",
+      "display_name": "Alpine",
+      "version": "3.22",
+      "channel": "stable",
+      "arch": "x86_64",
+      "cpu_variant": "distribution-default",
+      "snapshot_id": null,
+      "availability": "published",
+      "required_python_minors": [
+        "3.12",
+        "3.14"
+      ],
+      "application_revision": null,
+      "artifact_id": null,
+      "maintenance_state": "maintained",
+      "free_eligibility": "without-paid-subscription",
+      "maintenance_sources": [
+        "https://alpinelinux.org/releases/",
+        "https://www.alpinelinux.org/downloads/"
+      ],
+      "status": "pendente",
+      "python_qualifications": [
+        {
+          "target_id": "alpine-3.22-stable-x86_64-distribution-default",
+          "python_minor": "3.12",
+          "status": "pendente",
+          "application_revision": null,
+          "artifact_id": null,
+          "evidence_ids": [],
+          "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+        },
+        {
+          "target_id": "alpine-3.22-stable-x86_64-distribution-default",
+          "python_minor": "3.14",
+          "status": "pendente",
+          "application_revision": null,
+          "artifact_id": null,
+          "evidence_ids": [],
+          "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+        }
+      ],
+      "evidence_ids": [],
+      "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+    },
+    {
+      "id": "alpine-3.22-stable-aarch64-distribution-default",
+      "reference_date": "2026-10-17",
+      "os": "linux",
+      "distribution_id": "alpine",
+      "display_name": "Alpine",
+      "version": "3.22",
+      "channel": "stable",
+      "arch": "aarch64",
+      "cpu_variant": "distribution-default",
+      "snapshot_id": null,
+      "availability": "published",
+      "required_python_minors": [
+        "3.12",
+        "3.14"
+      ],
+      "application_revision": null,
+      "artifact_id": null,
+      "maintenance_state": "maintained",
+      "free_eligibility": "without-paid-subscription",
+      "maintenance_sources": [
+        "https://alpinelinux.org/releases/",
+        "https://www.alpinelinux.org/downloads/"
+      ],
+      "status": "pendente",
+      "python_qualifications": [
+        {
+          "target_id": "alpine-3.22-stable-aarch64-distribution-default",
+          "python_minor": "3.12",
+          "status": "pendente",
+          "application_revision": null,
+          "artifact_id": null,
+          "evidence_ids": [],
+          "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+        },
+        {
+          "target_id": "alpine-3.22-stable-aarch64-distribution-default",
+          "python_minor": "3.14",
+          "status": "pendente",
+          "application_revision": null,
+          "artifact_id": null,
+          "evidence_ids": [],
+          "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+        }
+      ],
+      "evidence_ids": [],
+      "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+    },
+    {
+      "id": "alpine-3.23-stable-x86_64-distribution-default",
+      "reference_date": "2026-10-17",
+      "os": "linux",
+      "distribution_id": "alpine",
+      "display_name": "Alpine",
+      "version": "3.23",
+      "channel": "stable",
+      "arch": "x86_64",
+      "cpu_variant": "distribution-default",
+      "snapshot_id": null,
+      "availability": "published",
+      "required_python_minors": [
+        "3.12",
+        "3.14"
+      ],
+      "application_revision": null,
+      "artifact_id": null,
+      "maintenance_state": "maintained",
+      "free_eligibility": "without-paid-subscription",
+      "maintenance_sources": [
+        "https://alpinelinux.org/releases/",
+        "https://www.alpinelinux.org/downloads/"
+      ],
+      "status": "pendente",
+      "python_qualifications": [
+        {
+          "target_id": "alpine-3.23-stable-x86_64-distribution-default",
+          "python_minor": "3.12",
+          "status": "pendente",
+          "application_revision": null,
+          "artifact_id": null,
+          "evidence_ids": [],
+          "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+        },
+        {
+          "target_id": "alpine-3.23-stable-x86_64-distribution-default",
+          "python_minor": "3.14",
+          "status": "pendente",
+          "application_revision": null,
+          "artifact_id": null,
+          "evidence_ids": [],
+          "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+        }
+      ],
+      "evidence_ids": [],
+      "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+    },
+    {
+      "id": "alpine-3.23-stable-aarch64-distribution-default",
+      "reference_date": "2026-10-17",
+      "os": "linux",
+      "distribution_id": "alpine",
+      "display_name": "Alpine",
+      "version": "3.23",
+      "channel": "stable",
+      "arch": "aarch64",
+      "cpu_variant": "distribution-default",
+      "snapshot_id": null,
+      "availability": "published",
+      "required_python_minors": [
+        "3.12",
+        "3.14"
+      ],
+      "application_revision": null,
+      "artifact_id": null,
+      "maintenance_state": "maintained",
+      "free_eligibility": "without-paid-subscription",
+      "maintenance_sources": [
+        "https://alpinelinux.org/releases/",
+        "https://www.alpinelinux.org/downloads/"
+      ],
+      "status": "pendente",
+      "python_qualifications": [
+        {
+          "target_id": "alpine-3.23-stable-aarch64-distribution-default",
+          "python_minor": "3.12",
+          "status": "pendente",
+          "application_revision": null,
+          "artifact_id": null,
+          "evidence_ids": [],
+          "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+        },
+        {
+          "target_id": "alpine-3.23-stable-aarch64-distribution-default",
+          "python_minor": "3.14",
+          "status": "pendente",
+          "application_revision": null,
+          "artifact_id": null,
+          "evidence_ids": [],
+          "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+        }
+      ],
+      "evidence_ids": [],
+      "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+    },
+    {
+      "id": "alpine-3.24-stable-x86_64-distribution-default",
+      "reference_date": "2026-10-17",
+      "os": "linux",
+      "distribution_id": "alpine",
+      "display_name": "Alpine",
+      "version": "3.24",
+      "channel": "stable",
+      "arch": "x86_64",
+      "cpu_variant": "distribution-default",
+      "snapshot_id": null,
+      "availability": "published",
+      "required_python_minors": [
+        "3.12",
+        "3.14"
+      ],
+      "application_revision": null,
+      "artifact_id": null,
+      "maintenance_state": "maintained",
+      "free_eligibility": "without-paid-subscription",
+      "maintenance_sources": [
+        "https://alpinelinux.org/releases/",
+        "https://www.alpinelinux.org/downloads/"
+      ],
+      "status": "pendente",
+      "python_qualifications": [
+        {
+          "target_id": "alpine-3.24-stable-x86_64-distribution-default",
+          "python_minor": "3.12",
+          "status": "pendente",
+          "application_revision": null,
+          "artifact_id": null,
+          "evidence_ids": [],
+          "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+        },
+        {
+          "target_id": "alpine-3.24-stable-x86_64-distribution-default",
+          "python_minor": "3.14",
+          "status": "pendente",
+          "application_revision": null,
+          "artifact_id": null,
+          "evidence_ids": [],
+          "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+        }
+      ],
+      "evidence_ids": [],
+      "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+    },
+    {
+      "id": "alpine-3.24-stable-aarch64-distribution-default",
+      "reference_date": "2026-10-17",
+      "os": "linux",
+      "distribution_id": "alpine",
+      "display_name": "Alpine",
+      "version": "3.24",
+      "channel": "stable",
+      "arch": "aarch64",
+      "cpu_variant": "distribution-default",
+      "snapshot_id": null,
+      "availability": "published",
+      "required_python_minors": [
+        "3.12",
+        "3.14"
+      ],
+      "application_revision": null,
+      "artifact_id": null,
+      "maintenance_state": "maintained",
+      "free_eligibility": "without-paid-subscription",
+      "maintenance_sources": [
+        "https://alpinelinux.org/releases/",
+        "https://www.alpinelinux.org/downloads/"
+      ],
+      "status": "pendente",
+      "python_qualifications": [
+        {
+          "target_id": "alpine-3.24-stable-aarch64-distribution-default",
+          "python_minor": "3.12",
+          "status": "pendente",
+          "application_revision": null,
+          "artifact_id": null,
+          "evidence_ids": [],
+          "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+        },
+        {
+          "target_id": "alpine-3.24-stable-aarch64-distribution-default",
+          "python_minor": "3.14",
+          "status": "pendente",
+          "application_revision": null,
+          "artifact_id": null,
+          "evidence_ids": [],
+          "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+        }
+      ],
+      "evidence_ids": [],
+      "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+    },
+    {
+      "id": "postmarketos-26.06-stable-x86_64-distribution-default",
+      "reference_date": "2026-10-17",
+      "os": "linux",
+      "distribution_id": "postmarketos",
+      "display_name": "postmarketOS",
+      "version": "26.06",
+      "channel": "stable",
+      "arch": "x86_64",
+      "cpu_variant": "distribution-default",
+      "snapshot_id": null,
+      "availability": "published",
+      "required_python_minors": [
+        "3.12",
+        "3.14"
+      ],
+      "application_revision": null,
+      "artifact_id": null,
+      "maintenance_state": "maintained",
+      "free_eligibility": "without-paid-subscription",
+      "maintenance_sources": [
+        "https://postmarketos.org/download/"
+      ],
+      "status": "pendente",
+      "python_qualifications": [
+        {
+          "target_id": "postmarketos-26.06-stable-x86_64-distribution-default",
+          "python_minor": "3.12",
+          "status": "pendente",
+          "application_revision": null,
+          "artifact_id": null,
+          "evidence_ids": [],
+          "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+        },
+        {
+          "target_id": "postmarketos-26.06-stable-x86_64-distribution-default",
+          "python_minor": "3.14",
+          "status": "pendente",
+          "application_revision": null,
+          "artifact_id": null,
+          "evidence_ids": [],
+          "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+        }
+      ],
+      "evidence_ids": [],
+      "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+    },
+    {
+      "id": "postmarketos-26.06-stable-aarch64-distribution-default",
+      "reference_date": "2026-10-17",
+      "os": "linux",
+      "distribution_id": "postmarketos",
+      "display_name": "postmarketOS",
+      "version": "26.06",
+      "channel": "stable",
+      "arch": "aarch64",
+      "cpu_variant": "distribution-default",
+      "snapshot_id": null,
+      "availability": "unconfirmed",
+      "required_python_minors": [
+        "3.12",
+        "3.14"
+      ],
+      "application_revision": null,
+      "artifact_id": null,
+      "maintenance_state": "maintained",
+      "free_eligibility": "without-paid-subscription",
+      "maintenance_sources": [
+        "https://postmarketos.org/download/"
+      ],
+      "status": "pendente",
+      "python_qualifications": [
+        {
+          "target_id": "postmarketos-26.06-stable-aarch64-distribution-default",
+          "python_minor": "3.12",
+          "status": "pendente",
+          "application_revision": null,
+          "artifact_id": null,
+          "evidence_ids": [],
+          "pending_reason": "Native acceptance, two Python slots and Twine review not executed. Maintained ARM image/device availability must be identified."
+        },
+        {
+          "target_id": "postmarketos-26.06-stable-aarch64-distribution-default",
+          "python_minor": "3.14",
+          "status": "pendente",
+          "application_revision": null,
+          "artifact_id": null,
+          "evidence_ids": [],
+          "pending_reason": "Native acceptance, two Python slots and Twine review not executed. Maintained ARM image/device availability must be identified."
+        }
+      ],
+      "evidence_ids": [],
+      "pending_reason": "Native acceptance, two Python slots and Twine review not executed. Maintained ARM image/device availability must be identified."
+    },
+    {
+      "id": "linuxmint-21-stable-x86_64-distribution-default",
+      "reference_date": "2026-10-17",
+      "os": "linux",
+      "distribution_id": "linuxmint",
+      "display_name": "Linux Mint",
+      "version": "21",
+      "channel": "stable",
+      "arch": "x86_64",
+      "cpu_variant": "distribution-default",
+      "snapshot_id": null,
+      "availability": "published",
+      "required_python_minors": [
+        "3.12",
+        "3.14"
+      ],
+      "application_revision": null,
+      "artifact_id": null,
+      "maintenance_state": "maintained",
+      "free_eligibility": "without-paid-subscription",
+      "maintenance_sources": [
+        "https://linuxmint.com/download_all.php"
+      ],
+      "status": "pendente",
+      "python_qualifications": [
+        {
+          "target_id": "linuxmint-21-stable-x86_64-distribution-default",
+          "python_minor": "3.12",
+          "status": "pendente",
+          "application_revision": null,
+          "artifact_id": null,
+          "evidence_ids": [],
+          "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+        },
+        {
+          "target_id": "linuxmint-21-stable-x86_64-distribution-default",
+          "python_minor": "3.14",
+          "status": "pendente",
+          "application_revision": null,
+          "artifact_id": null,
+          "evidence_ids": [],
+          "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+        }
+      ],
+      "evidence_ids": [],
+      "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+    },
+    {
+      "id": "linuxmint-21.1-stable-x86_64-distribution-default",
+      "reference_date": "2026-10-17",
+      "os": "linux",
+      "distribution_id": "linuxmint",
+      "display_name": "Linux Mint",
+      "version": "21.1",
+      "channel": "stable",
+      "arch": "x86_64",
+      "cpu_variant": "distribution-default",
+      "snapshot_id": null,
+      "availability": "published",
+      "required_python_minors": [
+        "3.12",
+        "3.14"
+      ],
+      "application_revision": null,
+      "artifact_id": null,
+      "maintenance_state": "maintained",
+      "free_eligibility": "without-paid-subscription",
+      "maintenance_sources": [
+        "https://linuxmint.com/download_all.php"
+      ],
+      "status": "pendente",
+      "python_qualifications": [
+        {
+          "target_id": "linuxmint-21.1-stable-x86_64-distribution-default",
+          "python_minor": "3.12",
+          "status": "pendente",
+          "application_revision": null,
+          "artifact_id": null,
+          "evidence_ids": [],
+          "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+        },
+        {
+          "target_id": "linuxmint-21.1-stable-x86_64-distribution-default",
+          "python_minor": "3.14",
+          "status": "pendente",
+          "application_revision": null,
+          "artifact_id": null,
+          "evidence_ids": [],
+          "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+        }
+      ],
+      "evidence_ids": [],
+      "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+    },
+    {
+      "id": "linuxmint-21.2-stable-x86_64-distribution-default",
+      "reference_date": "2026-10-17",
+      "os": "linux",
+      "distribution_id": "linuxmint",
+      "display_name": "Linux Mint",
+      "version": "21.2",
+      "channel": "stable",
+      "arch": "x86_64",
+      "cpu_variant": "distribution-default",
+      "snapshot_id": null,
+      "availability": "published",
+      "required_python_minors": [
+        "3.12",
+        "3.14"
+      ],
+      "application_revision": null,
+      "artifact_id": null,
+      "maintenance_state": "maintained",
+      "free_eligibility": "without-paid-subscription",
+      "maintenance_sources": [
+        "https://linuxmint.com/download_all.php"
+      ],
+      "status": "pendente",
+      "python_qualifications": [
+        {
+          "target_id": "linuxmint-21.2-stable-x86_64-distribution-default",
+          "python_minor": "3.12",
+          "status": "pendente",
+          "application_revision": null,
+          "artifact_id": null,
+          "evidence_ids": [],
+          "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+        },
+        {
+          "target_id": "linuxmint-21.2-stable-x86_64-distribution-default",
+          "python_minor": "3.14",
+          "status": "pendente",
+          "application_revision": null,
+          "artifact_id": null,
+          "evidence_ids": [],
+          "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+        }
+      ],
+      "evidence_ids": [],
+      "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+    },
+    {
+      "id": "linuxmint-21.3-stable-x86_64-distribution-default",
+      "reference_date": "2026-10-17",
+      "os": "linux",
+      "distribution_id": "linuxmint",
+      "display_name": "Linux Mint",
+      "version": "21.3",
+      "channel": "stable",
+      "arch": "x86_64",
+      "cpu_variant": "distribution-default",
+      "snapshot_id": null,
+      "availability": "published",
+      "required_python_minors": [
+        "3.12",
+        "3.14"
+      ],
+      "application_revision": null,
+      "artifact_id": null,
+      "maintenance_state": "maintained",
+      "free_eligibility": "without-paid-subscription",
+      "maintenance_sources": [
+        "https://linuxmint.com/download_all.php"
+      ],
+      "status": "pendente",
+      "python_qualifications": [
+        {
+          "target_id": "linuxmint-21.3-stable-x86_64-distribution-default",
+          "python_minor": "3.12",
+          "status": "pendente",
+          "application_revision": null,
+          "artifact_id": null,
+          "evidence_ids": [],
+          "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+        },
+        {
+          "target_id": "linuxmint-21.3-stable-x86_64-distribution-default",
+          "python_minor": "3.14",
+          "status": "pendente",
+          "application_revision": null,
+          "artifact_id": null,
+          "evidence_ids": [],
+          "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+        }
+      ],
+      "evidence_ids": [],
+      "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+    },
+    {
+      "id": "linuxmint-22-stable-x86_64-distribution-default",
+      "reference_date": "2026-10-17",
+      "os": "linux",
+      "distribution_id": "linuxmint",
+      "display_name": "Linux Mint",
+      "version": "22",
+      "channel": "stable",
+      "arch": "x86_64",
+      "cpu_variant": "distribution-default",
+      "snapshot_id": null,
+      "availability": "published",
+      "required_python_minors": [
+        "3.12",
+        "3.14"
+      ],
+      "application_revision": null,
+      "artifact_id": null,
+      "maintenance_state": "maintained",
+      "free_eligibility": "without-paid-subscription",
+      "maintenance_sources": [
+        "https://linuxmint.com/download_all.php"
+      ],
+      "status": "pendente",
+      "python_qualifications": [
+        {
+          "target_id": "linuxmint-22-stable-x86_64-distribution-default",
+          "python_minor": "3.12",
+          "status": "pendente",
+          "application_revision": null,
+          "artifact_id": null,
+          "evidence_ids": [],
+          "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+        },
+        {
+          "target_id": "linuxmint-22-stable-x86_64-distribution-default",
+          "python_minor": "3.14",
+          "status": "pendente",
+          "application_revision": null,
+          "artifact_id": null,
+          "evidence_ids": [],
+          "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+        }
+      ],
+      "evidence_ids": [],
+      "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+    },
+    {
+      "id": "linuxmint-22.1-stable-x86_64-distribution-default",
+      "reference_date": "2026-10-17",
+      "os": "linux",
+      "distribution_id": "linuxmint",
+      "display_name": "Linux Mint",
+      "version": "22.1",
+      "channel": "stable",
+      "arch": "x86_64",
+      "cpu_variant": "distribution-default",
+      "snapshot_id": null,
+      "availability": "published",
+      "required_python_minors": [
+        "3.12",
+        "3.14"
+      ],
+      "application_revision": null,
+      "artifact_id": null,
+      "maintenance_state": "maintained",
+      "free_eligibility": "without-paid-subscription",
+      "maintenance_sources": [
+        "https://linuxmint.com/download_all.php"
+      ],
+      "status": "pendente",
+      "python_qualifications": [
+        {
+          "target_id": "linuxmint-22.1-stable-x86_64-distribution-default",
+          "python_minor": "3.12",
+          "status": "pendente",
+          "application_revision": null,
+          "artifact_id": null,
+          "evidence_ids": [],
+          "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+        },
+        {
+          "target_id": "linuxmint-22.1-stable-x86_64-distribution-default",
+          "python_minor": "3.14",
+          "status": "pendente",
+          "application_revision": null,
+          "artifact_id": null,
+          "evidence_ids": [],
+          "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+        }
+      ],
+      "evidence_ids": [],
+      "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+    },
+    {
+      "id": "linuxmint-22.2-stable-x86_64-distribution-default",
+      "reference_date": "2026-10-17",
+      "os": "linux",
+      "distribution_id": "linuxmint",
+      "display_name": "Linux Mint",
+      "version": "22.2",
+      "channel": "stable",
+      "arch": "x86_64",
+      "cpu_variant": "distribution-default",
+      "snapshot_id": null,
+      "availability": "published",
+      "required_python_minors": [
+        "3.12",
+        "3.14"
+      ],
+      "application_revision": null,
+      "artifact_id": null,
+      "maintenance_state": "maintained",
+      "free_eligibility": "without-paid-subscription",
+      "maintenance_sources": [
+        "https://linuxmint.com/download_all.php"
+      ],
+      "status": "pendente",
+      "python_qualifications": [
+        {
+          "target_id": "linuxmint-22.2-stable-x86_64-distribution-default",
+          "python_minor": "3.12",
+          "status": "pendente",
+          "application_revision": null,
+          "artifact_id": null,
+          "evidence_ids": [],
+          "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+        },
+        {
+          "target_id": "linuxmint-22.2-stable-x86_64-distribution-default",
+          "python_minor": "3.14",
+          "status": "pendente",
+          "application_revision": null,
+          "artifact_id": null,
+          "evidence_ids": [],
+          "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+        }
+      ],
+      "evidence_ids": [],
+      "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+    },
+    {
+      "id": "linuxmint-22.3-stable-x86_64-distribution-default",
+      "reference_date": "2026-10-17",
+      "os": "linux",
+      "distribution_id": "linuxmint",
+      "display_name": "Linux Mint",
+      "version": "22.3",
+      "channel": "stable",
+      "arch": "x86_64",
+      "cpu_variant": "distribution-default",
+      "snapshot_id": null,
+      "availability": "published",
+      "required_python_minors": [
+        "3.12",
+        "3.14"
+      ],
+      "application_revision": null,
+      "artifact_id": null,
+      "maintenance_state": "maintained",
+      "free_eligibility": "without-paid-subscription",
+      "maintenance_sources": [
+        "https://linuxmint.com/download_all.php"
+      ],
+      "status": "pendente",
+      "python_qualifications": [
+        {
+          "target_id": "linuxmint-22.3-stable-x86_64-distribution-default",
+          "python_minor": "3.12",
+          "status": "pendente",
+          "application_revision": null,
+          "artifact_id": null,
+          "evidence_ids": [],
+          "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+        },
+        {
+          "target_id": "linuxmint-22.3-stable-x86_64-distribution-default",
+          "python_minor": "3.14",
+          "status": "pendente",
+          "application_revision": null,
+          "artifact_id": null,
+          "evidence_ids": [],
+          "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+        }
+      ],
+      "evidence_ids": [],
+      "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+    },
+    {
+      "id": "linuxmint-lmde-7-stable-x86_64-distribution-default",
+      "reference_date": "2026-10-17",
+      "os": "linux",
+      "distribution_id": "linuxmint",
+      "display_name": "Linux Mint",
+      "version": "lmde-7",
+      "channel": "stable",
+      "arch": "x86_64",
+      "cpu_variant": "distribution-default",
+      "snapshot_id": null,
+      "availability": "published",
+      "required_python_minors": [
+        "3.12",
+        "3.14"
+      ],
+      "application_revision": null,
+      "artifact_id": null,
+      "maintenance_state": "maintained",
+      "free_eligibility": "without-paid-subscription",
+      "maintenance_sources": [
+        "https://linuxmint.com/download_all.php"
+      ],
+      "status": "pendente",
+      "python_qualifications": [
+        {
+          "target_id": "linuxmint-lmde-7-stable-x86_64-distribution-default",
+          "python_minor": "3.12",
+          "status": "pendente",
+          "application_revision": null,
+          "artifact_id": null,
+          "evidence_ids": [],
+          "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+        },
+        {
+          "target_id": "linuxmint-lmde-7-stable-x86_64-distribution-default",
+          "python_minor": "3.14",
+          "status": "pendente",
+          "application_revision": null,
+          "artifact_id": null,
+          "evidence_ids": [],
+          "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+        }
+      ],
+      "evidence_ids": [],
+      "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
+    }
+  ],
+  "exclusions_source": "specs/003-add-cross-platform-support/support-matrix.md#exclusoes-verificaveis"
+}

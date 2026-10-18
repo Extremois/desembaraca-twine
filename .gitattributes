@@ -1,3 +1,15 @@
 # Preserve the exact bytes pinned by runtime-manifest.json on every checkout.
 # Vendor notices also retain their original whitespace.
 src/twine_edge_overlap/third_party/graphviz-16.1.0/* -text -whitespace
+src/twine_edge_overlap/runtime-manifest.json -text
+src/twine_edge_overlap/runtime_assets/*.json -text
+src/twine_edge_overlap/runtime-catalog.json -text
+src/twine_edge_overlap/support-matrix.json -text
+tools/runtime/*.json -text
+tools/runtime/licenses/*.json -text
+tools/runtime/*.sh text eol=lf
+specs/003-add-cross-platform-support/evidence/**/*.txt -text -whitespace
+specs/003-add-cross-platform-support/evidence/**/*.log -text -whitespace
+# Evidence files are referenced by byte hashes, including review outputs.
+specs/003-add-cross-platform-support/evidence/**/*.json -text
+specs/003-add-cross-platform-support/evidence/**/*.twee -text

@@ -64,7 +64,7 @@ def blocked_network():
         yield
 
 
-def synthetic_artifact():
+def synthetic_artifact(platform_name=None):
     from twine_edge_overlap import runtime
     content = {'bin/dot.exe': b'controlled executable', 'bin/config8': b'controlled config'}
     archive = archive_bytes(content)
@@ -73,6 +73,14 @@ def synthetic_artifact():
                 archive_sha256=hashlib.sha256(archive).hexdigest(), executable_relative_path='bin/dot.exe',
                 files=[dict(path=name, size=len(value), sha256=hashlib.sha256(value).hexdigest()) for name,value in content.items()])
     data['notices'] = data['notices'][:1]
+    if platform_name in ('linux', 'darwin'):
+        # Controlled bytes only: this fixture never qualifies a native bundle.
+        data.update(schema_version=2, platform=platform_name, artifact_arch='x86_64',
+                    abi='glibc' if platform_name=='linux' else 'darwin', build_variant='controlled-test',
+                    minimum_os='15' if platform_name=='darwin' else '0', minimum_libc='2.27', minimum_kernel='4.15')
+        for entry in data['files']:
+            entry['mode'] = 0o755 if entry['path']==data['executable_relative_path'] else 0o644
+        data['_manifest_sha256'] = hashlib.sha256(json.dumps(data,sort_keys=True).encode()).hexdigest()
     return runtime.Artifact(data), archive
 
 
@@ -80,6 +88,14 @@ def synthetic_runner(command, **kwargs):
     if '-V' in command:
         return ProcessResult(0,b'',b'dot - graphviz version 16.1.0')
     return ProcessResult(0,json.dumps({'bb':'0,0,100,200','objects':[{'name':'n0','pos':'50,150'},{'name':'n1','pos':'50,50'}]}).encode(),b'')
+
+
+def active_artifact():
+    """Metadata of the host's real qualified component, without another acquisition."""
+    from twine_edge_overlap.runtime import load_manifest
+    from twine_edge_overlap.runtime_catalog import load_catalog,select_artifact,verified_manifest
+    from twine_edge_overlap.runtime_platform import detect_host
+    return load_manifest(verified_manifest(select_artifact(load_catalog(),detect_host())))
 
 
 def controlled_runtime():

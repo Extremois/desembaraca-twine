@@ -19,7 +19,11 @@ def run(path,*,engine=None,seconds=GLOBAL_SECONDS,runtime_provider=None,progress
     original=parse(source_bytes,deadline)
     preparation_start=time.monotonic()
     runtime=(runtime_provider() if runtime_provider is not None else ensure_runtime(progress=progress))
-    deadline+=time.monotonic()-preparation_start
+    preparation_elapsed=time.monotonic()-preparation_start
+    # Acquisition is excluded, but local host/snapshot classification consumes the
+    # existing processing allowance. Injected providers keep their old contract.
+    classification=max(0.0,min(preparation_elapsed,getattr(runtime,'classification_seconds',0.0)))
+    deadline+=preparation_elapsed-classification
     try:
         if time.monotonic()>=deadline:
             raise TimeoutError()

@@ -7,7 +7,7 @@ import unittest
 import time
 from common import ROOT
 from runtime_support import synthetic_artifact,synthetic_runner,ControlledTransport,blocked_network
-from twine_edge_overlap.runtime import RuntimeManager
+from twine_edge_overlap.runtime import RuntimeManager,load_manifest
 from twine_edge_overlap.errors import DependencyError
 
 
@@ -23,6 +23,7 @@ def checkpoint(current):
     if current==stage: os._exit(77)
 class SlowTransport(ControlledTransport):
     def open(self,*args,**kwargs):
+        if stage=='during_download': os._exit(77)
         time.sleep(.3)
         return super().open(*args,**kwargs)
 manager=RuntimeManager(artifact=load_manifest(manifest),cache_root=cache,opener=SlowTransport(Path(archive).read_bytes()),runner=synthetic_runner,checkpoint=checkpoint)
@@ -71,9 +72,11 @@ with manager.locked():
 
     def setup_paths(self,folder):
         root=Path(folder)
-        artifact,archive=synthetic_artifact()
+        # Controlled payload for the host's runtime schema, not native engine evidence.
+        artifact,archive=synthetic_artifact(sys.platform if sys.platform in ('linux','darwin') else None)
         manifest=root/'manifest.json'
-        manifest.write_text(json.dumps(artifact.data),encoding='utf-8')
+        manifest.write_text(json.dumps({key:value for key,value in artifact.data.items() if not key.startswith('_')}),encoding='utf-8')
+        artifact=load_manifest(manifest)
         zip_path=root/'archive.zip'
         zip_path.write_bytes(archive)
         return root,artifact,archive,manifest,zip_path

@@ -64,7 +64,8 @@ class ManifestTests(unittest.TestCase):
 
     def test_missing_manifest_and_unsupported_platform(self):
         with self.assertRaises(DependencyError): runtime.load_manifest(ROOT/'missing-manifest.json')
-        with patch.object(runtime.sys,'platform','linux'), self.assertRaises(DependencyError):
+        from twine_edge_overlap.runtime_platform import HostEnvironment
+        with patch.object(runtime.runtime_platform,'detect_host',return_value=HostEnvironment(os='unsupported-test',arch='unknown')), self.assertRaises(DependencyError):
             runtime.check_platform()
 
 

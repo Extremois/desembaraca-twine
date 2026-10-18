@@ -11,6 +11,7 @@ htmlcov/
 build/
 dist/
 *.egg-info/
+tools/runtime/artifacts/
 
 # Local scratch files and editor state
 .tmp/
