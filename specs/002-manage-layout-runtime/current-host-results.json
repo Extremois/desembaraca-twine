@@ -1,0 +1,389 @@
+{
+  "scope": "Current Windows host; no VM; not a clean-machine acceptance run",
+  "runs": [
+    {
+      "environment": {
+        "python": "3.14.6",
+        "windows": "10.0.26200",
+        "architecture": "AMD64",
+        "clean_machine": false
+      },
+      "archive_sha256": "37906f29ede26cf1952f8cf942c1e7814ab86ef448130136c8607b1b6ffe0870",
+      "scenarios": [
+        {
+          "scenario": "first_use_real_download",
+          "code": 0,
+          "expected": 0,
+          "elapsed_seconds": 5.56,
+          "stdout": "Estado: sucesso\nLayout melhorado sem aumentar nenhuma das três contagens\nArquivo gerado: C:\\Users\\franc\\OneDrive\\Desktop\\Twinee\\desembaraca-twine\\.tmp\\current-host-314-network\\primeiro uso com acentos ação.layout.twee\nPares de arestas: 1 -> 0\nPares de nós: 0 -> 0\nPares aresta–nó: 0 -> 0\n",
+          "stderr": "Preparando componente de processamento; a obtenção do pacote requer internet.\n"
+        },
+        {
+          "scenario": "prepare_offline",
+          "code": 1,
+          "expected": 0,
+          "elapsed_seconds": 0.075,
+          "stdout": "",
+          "stderr": "Preparando componente de processamento; a obtenção do pacote requer internet.\nFalha inesperada de processamento (AssertionError); nenhuma saída válida anunciada. Consulte a documentação ou relate o erro.\n"
+        },
+        {
+          "scenario": "prepare_offline",
+          "code": 0,
+          "expected": 0,
+          "elapsed_seconds": 3.047,
+          "stdout": "Componentes de processamento prontos para uso sem internet.\n",
+          "stderr": ""
+        },
+        {
+          "scenario": "offline_crossing",
+          "code": 0,
+          "expected": 0,
+          "elapsed_seconds": 0.276,
+          "stdout": "Estado: sucesso\nLayout melhorado sem aumentar nenhuma das três contagens\nArquivo gerado: C:\\Users\\franc\\OneDrive\\Desktop\\Twinee\\desembaraca-twine\\.tmp\\current-host-314-network\\crossing.layout.twee\nPares de arestas: 1 -> 0\nPares de nós: 0 -> 0\nPares aresta–nó: 0 -> 0\n",
+          "stderr": ""
+        },
+        {
+          "scenario": "offline_coincident",
+          "code": 0,
+          "expected": 0,
+          "elapsed_seconds": 0.292,
+          "stdout": "Estado: sucesso\nLayout melhorado sem aumentar nenhuma das três contagens\nArquivo gerado: C:\\Users\\franc\\OneDrive\\Desktop\\Twinee\\desembaraca-twine\\.tmp\\current-host-314-network\\coincident.layout.twee\nPares de arestas: 1 -> 0\nPares de nós: 2 -> 0\nPares aresta–nó: 0 -> 0\n",
+          "stderr": ""
+        },
+        {
+          "scenario": "offline_isolated_overlap",
+          "code": 0,
+          "expected": 0,
+          "elapsed_seconds": 0.33,
+          "stdout": "Estado: sucesso\nLayout melhorado sem aumentar nenhuma das três contagens\nArquivo gerado: C:\\Users\\franc\\OneDrive\\Desktop\\Twinee\\desembaraca-twine\\.tmp\\current-host-314-network\\isolated_overlap.layout.twee\nPares de arestas: 0 -> 0\nPares de nós: 1 -> 0\nPares aresta–nó: 0 -> 0\n",
+          "stderr": ""
+        },
+        {
+          "scenario": "offline_connected_overlap",
+          "code": 0,
+          "expected": 0,
+          "elapsed_seconds": 0.309,
+          "stdout": "Estado: sucesso\nLayout melhorado sem aumentar nenhuma das três contagens\nArquivo gerado: C:\\Users\\franc\\OneDrive\\Desktop\\Twinee\\desembaraca-twine\\.tmp\\current-host-314-network\\connected_overlap.layout.twee\nPares de arestas: 1 -> 0\nPares de nós: 1 -> 0\nPares aresta–nó: 1 -> 0\n",
+          "stderr": ""
+        },
+        {
+          "scenario": "offline_through_isolated",
+          "code": 0,
+          "expected": 0,
+          "elapsed_seconds": 0.291,
+          "stdout": "Estado: sucesso\nLayout melhorado sem aumentar nenhuma das três contagens\nArquivo gerado: C:\\Users\\franc\\OneDrive\\Desktop\\Twinee\\desembaraca-twine\\.tmp\\current-host-314-network\\through_isolated.layout.twee\nPares de arestas: 0 -> 0\nPares de nós: 0 -> 0\nPares aresta–nó: 1 -> 0\n",
+          "stderr": ""
+        },
+        {
+          "scenario": "offline_through_connected",
+          "code": 0,
+          "expected": 0,
+          "elapsed_seconds": 0.307,
+          "stdout": "Estado: sucesso\nLayout melhorado sem aumentar nenhuma das três contagens\nArquivo gerado: C:\\Users\\franc\\OneDrive\\Desktop\\Twinee\\desembaraca-twine\\.tmp\\current-host-314-network\\through_connected.layout.twee\nPares de arestas: 0 -> 0\nPares de nós: 0 -> 0\nPares aresta–nó: 1 -> 0\n",
+          "stderr": ""
+        },
+        {
+          "scenario": "repair_offline_preserves_selection",
+          "code": 1,
+          "expected": 1,
+          "elapsed_seconds": 0.031,
+          "stdout": "",
+          "stderr": "Reparo solicitado: obter novamente o componente requer internet.\nPreparando componente de processamento; a obtenção do pacote requer internet.\nFalha inesperada de processamento (AssertionError); nenhuma saída válida anunciada. Consulte a documentação ou relate o erro.\n"
+        },
+        {
+          "scenario": "process_after_failed_repair",
+          "code": 0,
+          "expected": 0,
+          "elapsed_seconds": 0.274,
+          "stdout": "Estado: sucesso\nLayout melhorado sem aumentar nenhuma das três contagens\nArquivo gerado: C:\\Users\\franc\\OneDrive\\Desktop\\Twinee\\desembaraca-twine\\.tmp\\current-host-314-network\\crossing.layout-2.twee\nPares de arestas: 1 -> 0\nPares de nós: 0 -> 0\nPares aresta–nó: 0 -> 0\n",
+          "stderr": ""
+        }
+      ],
+      "layouts": [
+        {
+          "case": "primeiro uso com acentos ação",
+          "source_sha256": "37e467081d00b2d32459ff9c7fe4d9791c27624dd70c5d0eec221ea1403eea8c",
+          "output_sha256": "9c0ac2a2b907eeb3229ab8ef56b4ff5a1dbe65fae9df812694c7864c022a7c1e",
+          "output": ".tmp\\current-host-314-network\\primeiro uso com acentos ação.layout.twee",
+          "after": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "case": "crossing",
+          "source_sha256": "37e467081d00b2d32459ff9c7fe4d9791c27624dd70c5d0eec221ea1403eea8c",
+          "output_sha256": "9c0ac2a2b907eeb3229ab8ef56b4ff5a1dbe65fae9df812694c7864c022a7c1e",
+          "output": ".tmp\\current-host-314-network\\crossing.layout.twee",
+          "after": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "case": "coincident",
+          "source_sha256": "202e150356a32f500f2d4d1923ff9e1c626d188fc3d02d517469206359991e5c",
+          "output_sha256": "a870267b461224252dbb643b70c3a998a90da0b2dec1400bdf6a32b7167029d3",
+          "output": ".tmp\\current-host-314-network\\coincident.layout.twee",
+          "after": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "case": "isolated_overlap",
+          "source_sha256": "88c49d60ada1fabf3f2688541f7ae9aa2cc830d001a122a03563a1c2e4ea03ec",
+          "output_sha256": "c49c4576372f8d573544a3a150beedd9591dcfd9cb7d77bf858ed7a44b9ef962",
+          "output": ".tmp\\current-host-314-network\\isolated_overlap.layout.twee",
+          "after": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "case": "connected_overlap",
+          "source_sha256": "a3a56336f555b82d32ff99423c61f81b7917337ce83aa4cf9870c576bc407643",
+          "output_sha256": "862a119b556213e49b22b249e9581fb69dd1a8561edf014b201db903e3663e87",
+          "output": ".tmp\\current-host-314-network\\connected_overlap.layout.twee",
+          "after": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "case": "through_isolated",
+          "source_sha256": "6c2d6201c7d2a4f57ec175d1521e9191c7efff9646d5ffe8fb9854454e2037fc",
+          "output_sha256": "da3fcd38728a11e115786c6145784a5bfef4163484627f33676e9d2287c4d0dc",
+          "output": ".tmp\\current-host-314-network\\through_isolated.layout.twee",
+          "after": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "case": "through_connected",
+          "source_sha256": "181eb31417f85d09010efc6f5f7008c7cab31fbfebd2a00f325b02d41a8eda98",
+          "output_sha256": "a2ff3b953d6ec8ed4b0d7c0792e2960397624090672ca4c68221d74f72c092d2",
+          "output": ".tmp\\current-host-314-network\\through_connected.layout.twee",
+          "after": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "case": "crossing",
+          "source_sha256": "37e467081d00b2d32459ff9c7fe4d9791c27624dd70c5d0eec221ea1403eea8c",
+          "output_sha256": "9c0ac2a2b907eeb3229ab8ef56b4ff5a1dbe65fae9df812694c7864c022a7c1e",
+          "output": ".tmp\\current-host-314-network\\crossing.layout-2.twee",
+          "after": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "twine_reopened": false,
+      "initial_cache_absent": true,
+      "artifact_identity": "graphviz-16.1.0-windows-win32-37906f29ede26cf1952f8cf942c1e7814ab86ef448130136c8607b1b6ffe0870",
+      "generation_id": "bfbd577686cd42d7a3d025e4e00c7fd9",
+      "offline_notices_verified": 29,
+      "previous_outputs_preserved": true,
+      "evidence_directory": ".tmp/current-host-314-network"
+    },
+    {
+      "environment": {
+        "python": "3.12.10",
+        "windows": "10.0.26200",
+        "architecture": "AMD64",
+        "clean_machine": false
+      },
+      "archive_sha256": "37906f29ede26cf1952f8cf942c1e7814ab86ef448130136c8607b1b6ffe0870",
+      "scenarios": [
+        {
+          "scenario": "first_use_real_download",
+          "code": 0,
+          "expected": 0,
+          "elapsed_seconds": 5.5,
+          "stdout": "Estado: sucesso\nLayout melhorado sem aumentar nenhuma das três contagens\nArquivo gerado: C:\\Users\\franc\\OneDrive\\Desktop\\Twinee\\desembaraca-twine\\.tmp\\current-host-312\\primeiro uso com acentos ação.layout.twee\nPares de arestas: 1 -> 0\nPares de nós: 0 -> 0\nPares aresta–nó: 0 -> 0\n",
+          "stderr": "Preparando componente de processamento; a obtenção do pacote requer internet.\n"
+        },
+        {
+          "scenario": "prepare_offline",
+          "code": 0,
+          "expected": 0,
+          "elapsed_seconds": 0.328,
+          "stdout": "Componentes de processamento prontos para uso sem internet.\n",
+          "stderr": ""
+        },
+        {
+          "scenario": "offline_crossing",
+          "code": 0,
+          "expected": 0,
+          "elapsed_seconds": 0.422,
+          "stdout": "Estado: sucesso\nLayout melhorado sem aumentar nenhuma das três contagens\nArquivo gerado: C:\\Users\\franc\\OneDrive\\Desktop\\Twinee\\desembaraca-twine\\.tmp\\current-host-312\\crossing.layout.twee\nPares de arestas: 1 -> 0\nPares de nós: 0 -> 0\nPares aresta–nó: 0 -> 0\n",
+          "stderr": ""
+        },
+        {
+          "scenario": "offline_coincident",
+          "code": 0,
+          "expected": 0,
+          "elapsed_seconds": 0.344,
+          "stdout": "Estado: sucesso\nLayout melhorado sem aumentar nenhuma das três contagens\nArquivo gerado: C:\\Users\\franc\\OneDrive\\Desktop\\Twinee\\desembaraca-twine\\.tmp\\current-host-312\\coincident.layout.twee\nPares de arestas: 1 -> 0\nPares de nós: 2 -> 0\nPares aresta–nó: 0 -> 0\n",
+          "stderr": ""
+        },
+        {
+          "scenario": "offline_isolated_overlap",
+          "code": 0,
+          "expected": 0,
+          "elapsed_seconds": 0.313,
+          "stdout": "Estado: sucesso\nLayout melhorado sem aumentar nenhuma das três contagens\nArquivo gerado: C:\\Users\\franc\\OneDrive\\Desktop\\Twinee\\desembaraca-twine\\.tmp\\current-host-312\\isolated_overlap.layout.twee\nPares de arestas: 0 -> 0\nPares de nós: 1 -> 0\nPares aresta–nó: 0 -> 0\n",
+          "stderr": ""
+        },
+        {
+          "scenario": "offline_connected_overlap",
+          "code": 0,
+          "expected": 0,
+          "elapsed_seconds": 0.328,
+          "stdout": "Estado: sucesso\nLayout melhorado sem aumentar nenhuma das três contagens\nArquivo gerado: C:\\Users\\franc\\OneDrive\\Desktop\\Twinee\\desembaraca-twine\\.tmp\\current-host-312\\connected_overlap.layout.twee\nPares de arestas: 1 -> 0\nPares de nós: 1 -> 0\nPares aresta–nó: 1 -> 0\n",
+          "stderr": ""
+        },
+        {
+          "scenario": "offline_through_isolated",
+          "code": 0,
+          "expected": 0,
+          "elapsed_seconds": 0.328,
+          "stdout": "Estado: sucesso\nLayout melhorado sem aumentar nenhuma das três contagens\nArquivo gerado: C:\\Users\\franc\\OneDrive\\Desktop\\Twinee\\desembaraca-twine\\.tmp\\current-host-312\\through_isolated.layout.twee\nPares de arestas: 0 -> 0\nPares de nós: 0 -> 0\nPares aresta–nó: 1 -> 0\n",
+          "stderr": ""
+        },
+        {
+          "scenario": "offline_through_connected",
+          "code": 0,
+          "expected": 0,
+          "elapsed_seconds": 0.328,
+          "stdout": "Estado: sucesso\nLayout melhorado sem aumentar nenhuma das três contagens\nArquivo gerado: C:\\Users\\franc\\OneDrive\\Desktop\\Twinee\\desembaraca-twine\\.tmp\\current-host-312\\through_connected.layout.twee\nPares de arestas: 0 -> 0\nPares de nós: 0 -> 0\nPares aresta–nó: 1 -> 0\n",
+          "stderr": ""
+        },
+        {
+          "scenario": "repair_offline_preserves_selection",
+          "code": 1,
+          "expected": 1,
+          "elapsed_seconds": 0.031,
+          "stdout": "",
+          "stderr": "Reparo solicitado: obter novamente o componente requer internet.\nPreparando componente de processamento; a obtenção do pacote requer internet.\nFalha inesperada de processamento (AssertionError); nenhuma saída válida anunciada. Consulte a documentação ou relate o erro.\n"
+        },
+        {
+          "scenario": "process_after_failed_repair",
+          "code": 0,
+          "expected": 0,
+          "elapsed_seconds": 0.312,
+          "stdout": "Estado: sucesso\nLayout melhorado sem aumentar nenhuma das três contagens\nArquivo gerado: C:\\Users\\franc\\OneDrive\\Desktop\\Twinee\\desembaraca-twine\\.tmp\\current-host-312\\crossing.layout-2.twee\nPares de arestas: 1 -> 0\nPares de nós: 0 -> 0\nPares aresta–nó: 0 -> 0\n",
+          "stderr": ""
+        }
+      ],
+      "layouts": [
+        {
+          "case": "primeiro uso com acentos ação",
+          "source_sha256": "37e467081d00b2d32459ff9c7fe4d9791c27624dd70c5d0eec221ea1403eea8c",
+          "output_sha256": "9c0ac2a2b907eeb3229ab8ef56b4ff5a1dbe65fae9df812694c7864c022a7c1e",
+          "output": ".tmp\\current-host-312\\primeiro uso com acentos ação.layout.twee",
+          "after": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "case": "crossing",
+          "source_sha256": "37e467081d00b2d32459ff9c7fe4d9791c27624dd70c5d0eec221ea1403eea8c",
+          "output_sha256": "9c0ac2a2b907eeb3229ab8ef56b4ff5a1dbe65fae9df812694c7864c022a7c1e",
+          "output": ".tmp\\current-host-312\\crossing.layout.twee",
+          "after": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "case": "coincident",
+          "source_sha256": "202e150356a32f500f2d4d1923ff9e1c626d188fc3d02d517469206359991e5c",
+          "output_sha256": "a870267b461224252dbb643b70c3a998a90da0b2dec1400bdf6a32b7167029d3",
+          "output": ".tmp\\current-host-312\\coincident.layout.twee",
+          "after": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "case": "isolated_overlap",
+          "source_sha256": "88c49d60ada1fabf3f2688541f7ae9aa2cc830d001a122a03563a1c2e4ea03ec",
+          "output_sha256": "c49c4576372f8d573544a3a150beedd9591dcfd9cb7d77bf858ed7a44b9ef962",
+          "output": ".tmp\\current-host-312\\isolated_overlap.layout.twee",
+          "after": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "case": "connected_overlap",
+          "source_sha256": "a3a56336f555b82d32ff99423c61f81b7917337ce83aa4cf9870c576bc407643",
+          "output_sha256": "862a119b556213e49b22b249e9581fb69dd1a8561edf014b201db903e3663e87",
+          "output": ".tmp\\current-host-312\\connected_overlap.layout.twee",
+          "after": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "case": "through_isolated",
+          "source_sha256": "6c2d6201c7d2a4f57ec175d1521e9191c7efff9646d5ffe8fb9854454e2037fc",
+          "output_sha256": "da3fcd38728a11e115786c6145784a5bfef4163484627f33676e9d2287c4d0dc",
+          "output": ".tmp\\current-host-312\\through_isolated.layout.twee",
+          "after": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "case": "through_connected",
+          "source_sha256": "181eb31417f85d09010efc6f5f7008c7cab31fbfebd2a00f325b02d41a8eda98",
+          "output_sha256": "a2ff3b953d6ec8ed4b0d7c0792e2960397624090672ca4c68221d74f72c092d2",
+          "output": ".tmp\\current-host-312\\through_connected.layout.twee",
+          "after": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "case": "crossing",
+          "source_sha256": "37e467081d00b2d32459ff9c7fe4d9791c27624dd70c5d0eec221ea1403eea8c",
+          "output_sha256": "9c0ac2a2b907eeb3229ab8ef56b4ff5a1dbe65fae9df812694c7864c022a7c1e",
+          "output": ".tmp\\current-host-312\\crossing.layout-2.twee",
+          "after": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "twine_reopened": false,
+      "initial_cache_absent": true,
+      "artifact_identity": "graphviz-16.1.0-windows-win32-37906f29ede26cf1952f8cf942c1e7814ab86ef448130136c8607b1b6ffe0870",
+      "generation_id": "9cee648601fc4eef9af609dabed44f97",
+      "offline_notices_verified": 29,
+      "previous_outputs_preserved": true,
+      "evidence_directory": ".tmp/current-host-312"
+    }
+  ]
+}

@@ -1,0 +1,109 @@
+{
+  "artifact_identity": "graphviz-16.1.0-windows-win32-37906f29ede26cf1952f8cf942c1e7814ab86ef448130136c8607b1b6ffe0870",
+  "generation_id": "56ab30557ca7471aa576d2344c27a3ec",
+  "python": "3.14.6",
+  "cases": [
+    {
+      "case": "crossing",
+      "source_sha256": "37e467081d00b2d32459ff9c7fe4d9791c27624dd70c5d0eec221ea1403eea8c",
+      "output_sha256": "9c0ac2a2b907eeb3229ab8ef56b4ff5a1dbe65fae9df812694c7864c022a7c1e",
+      "before": [
+        1,
+        0,
+        0
+      ],
+      "after": [
+        0,
+        0,
+        0
+      ],
+      "review_file": ".tmp/managed-review-9cdeab09/crossing.layout.twee",
+      "twine_reopened": false
+    },
+    {
+      "case": "coincident",
+      "source_sha256": "202e150356a32f500f2d4d1923ff9e1c626d188fc3d02d517469206359991e5c",
+      "output_sha256": "a870267b461224252dbb643b70c3a998a90da0b2dec1400bdf6a32b7167029d3",
+      "before": [
+        1,
+        2,
+        0
+      ],
+      "after": [
+        0,
+        0,
+        0
+      ],
+      "review_file": ".tmp/managed-review-9cdeab09/coincident.layout.twee",
+      "twine_reopened": false
+    },
+    {
+      "case": "isolated_overlap",
+      "source_sha256": "88c49d60ada1fabf3f2688541f7ae9aa2cc830d001a122a03563a1c2e4ea03ec",
+      "output_sha256": "c49c4576372f8d573544a3a150beedd9591dcfd9cb7d77bf858ed7a44b9ef962",
+      "before": [
+        0,
+        1,
+        0
+      ],
+      "after": [
+        0,
+        0,
+        0
+      ],
+      "review_file": ".tmp/managed-review-9cdeab09/isolated_overlap.layout.twee",
+      "twine_reopened": false
+    },
+    {
+      "case": "connected_overlap",
+      "source_sha256": "a3a56336f555b82d32ff99423c61f81b7917337ce83aa4cf9870c576bc407643",
+      "output_sha256": "862a119b556213e49b22b249e9581fb69dd1a8561edf014b201db903e3663e87",
+      "before": [
+        1,
+        1,
+        1
+      ],
+      "after": [
+        0,
+        0,
+        0
+      ],
+      "review_file": ".tmp/managed-review-9cdeab09/connected_overlap.layout.twee",
+      "twine_reopened": false
+    },
+    {
+      "case": "through_isolated",
+      "source_sha256": "6c2d6201c7d2a4f57ec175d1521e9191c7efff9646d5ffe8fb9854454e2037fc",
+      "output_sha256": "da3fcd38728a11e115786c6145784a5bfef4163484627f33676e9d2287c4d0dc",
+      "before": [
+        0,
+        0,
+        1
+      ],
+      "after": [
+        0,
+        0,
+        0
+      ],
+      "review_file": ".tmp/managed-review-9cdeab09/through_isolated.layout.twee",
+      "twine_reopened": false
+    },
+    {
+      "case": "through_connected",
+      "source_sha256": "181eb31417f85d09010efc6f5f7008c7cab31fbfebd2a00f325b02d41a8eda98",
+      "output_sha256": "a2ff3b953d6ec8ed4b0d7c0792e2960397624090672ca4c68221d74f72c092d2",
+      "before": [
+        0,
+        0,
+        1
+      ],
+      "after": [
+        0,
+        0,
+        0
+      ],
+      "review_file": ".tmp/managed-review-9cdeab09/through_connected.layout.twee",
+      "twine_reopened": false
+    }
+  ]
+}

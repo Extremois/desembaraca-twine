@@ -7,6 +7,7 @@ import time
 import unittest
 from unittest.mock import patch
 from common import fixture
+from runtime_support import blocked_network,controlled_runtime
 from twine_edge_overlap.application import run
 from twine_edge_overlap.engines import graphviz
 from twine_edge_overlap.engines.process import run_bounded,ProcessLimitError,ProcessResult
@@ -15,6 +16,11 @@ from twine_edge_overlap.formats.profile import parse
 
 
 class EngineFailureTests(unittest.TestCase):
+    def setUp(self):
+        self.enterContext(blocked_network())
+        self.enterContext(patch('twine_edge_overlap.application.ensure_runtime',side_effect=AssertionError('unexpected acquisition')))
+        self.enterContext(patch.object(graphviz,'ensure_runtime',side_effect=AssertionError('unexpected acquisition')))
+
     def test_malformed_json_ids_and_nonfinite_coordinates(self):
         doc=parse(fixture())
         valid={'bb':'0,0,400,500','objects':[{'name':'n0','pos':'50,450'},{'name':'n1','pos':'350,50'}]}
@@ -29,9 +35,9 @@ class EngineFailureTests(unittest.TestCase):
     def test_error_exit_and_output_limit_are_typed(self):
         doc=parse(fixture())
         with patch.object(graphviz,'run_bounded',return_value=ProcessResult(7,b'',b'failure')),self.assertRaises(EngineError):
-            graphviz.layout(doc,time.monotonic()+30)
+            graphviz.layout(doc,time.monotonic()+30,runtime=controlled_runtime())
         with patch.object(graphviz,'run_bounded',side_effect=ProcessLimitError('limit')),self.assertRaises(BudgetError):
-            graphviz.layout(doc,time.monotonic()+30)
+            graphviz.layout(doc,time.monotonic()+30,runtime=controlled_runtime())
 
     def test_timeout_and_combined_output_are_bounded(self):
         start=time.monotonic()
@@ -56,7 +62,7 @@ class EngineFailureTests(unittest.TestCase):
         def malformed(doc,deadline): raise EngineError('JSON inválido controlado')
         with tempfile.TemporaryDirectory() as folder:
             source=Path(folder)/'story.twee';source.write_bytes(fixture('crossing'))
-            result=run(source,engine=malformed)
+            result=run(source,engine=malformed,runtime_provider=controlled_runtime)
             self.assertEqual(result.status,'limitações')
             self.assertEqual(result.path.read_bytes(),source.read_bytes())
             self.assertIn('JSON inválido',result.reason)

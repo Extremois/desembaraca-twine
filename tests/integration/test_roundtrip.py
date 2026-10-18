@@ -16,7 +16,7 @@ class RoundtripTests(unittest.TestCase):
         self.assertEqual(doc.edges,candidate.edges)
 
     def test_bom_crlf_and_tags_survive(self):
-        raw=b'\xef\xbb\xbf'+fixture().replace(b'\n',b'\r\n')
+        raw=b'\xef\xbb\xbf'+fixture().replace(b'\r\n',b'\n').replace(b'\n',b'\r\n')
         doc=parse(raw)
         self.assertEqual(serialize(doc,{n.id:(n.x,n.y) for n in doc.nodes}),raw)
 
