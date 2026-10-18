@@ -1,0 +1,85 @@
+name: Collect one configured native cell
+on:
+  workflow_call:
+    inputs:
+      runner_label:
+        type: string
+        required: true
+      runner_os:
+        type: string
+        required: true
+      target_id:
+        type: string
+        default: ''
+      arch:
+        type: string
+        default: ''
+      python_minor:
+        type: string
+        required: true
+      application_revision:
+        type: string
+        required: true
+      candidate_run_id:
+        type: string
+        required: true
+      candidate_name:
+        type: string
+        required: true
+      package_sha256:
+        type: string
+        required: true
+      artifact_id:
+        type: string
+        required: true
+      image_id:
+        type: string
+        required: true
+      image_digest:
+        type: string
+        required: true
+permissions:
+  contents: read
+  actions: read
+jobs:
+  collect:
+    runs-on: [self-hosted, '${{ inputs.runner_os }}', '${{ inputs.runner_label }}']
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.application_revision }}
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        id: py312
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-python@v5
+        id: py314
+        with:
+          python-version: '3.14'
+      - uses: actions/download-artifact@v4
+        with:
+          name: ${{ inputs.candidate_name }}
+          run-id: ${{ inputs.candidate_run_id }}
+          github-token: ${{ github.token }}
+          path: candidate
+      - name: Collect installed candidate evidence (does not approve support)
+        env:
+          TWINE_TARGET: ${{ inputs.target_id }}
+          TWINE_ARCH: ${{ inputs.arch }}
+          TWINE_PYTHON312: ${{ steps.py312.outputs.python-path }}
+          TWINE_PYTHON314: ${{ steps.py314.outputs.python-path }}
+          TWINE_PYTHON_MINOR: ${{ inputs.python_minor }}
+          TWINE_APPLICATION_REVISION: ${{ inputs.application_revision }}
+          TWINE_PACKAGE_SHA256: ${{ inputs.package_sha256 }}
+          TWINE_ARTIFACT_ID: ${{ inputs.artifact_id }}
+          TWINE_IMAGE_ID: ${{ inputs.image_id }}
+          TWINE_IMAGE_DIGEST: ${{ inputs.image_digest }}
+        run: python tools/runtime/run-qualification-ci.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: evidence-${{ inputs.runner_label }}-${{ inputs.python_minor }}-${{ github.run_id }}
+          path: evidence/
+          if-no-files-found: warn

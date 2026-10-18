@@ -1,0 +1,40 @@
+name: Cross-platform foundation
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  contracts:
+    name: Pure contracts (${{ matrix.os }}, Python ${{ matrix.python }})
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-24.04, windows-latest, macos-15]
+        python: ['3.12', '3.14']
+    runs-on: ${{ matrix.os }}
+    env:
+      PYTHONUTF8: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Identify runner (not native support qualification)
+        run: python -c "import platform, sys; print(platform.platform(), platform.machine(), sys.version)"
+      - name: Standard-library foundation tests, without managed native engine
+        run: python tests/run_foundation.py
+  windows-acceptance:
+    if: github.event_name == 'workflow_dispatch' && vars.TWINE_WINDOWS11_RUNNER == 'enabled'
+    runs-on: [self-hosted, Windows, X64, twine-windows11]
+    strategy:
+      fail-fast: false
+      matrix:
+        python: ['3.12', '3.14']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - run: python -m unittest discover -s tests -v
