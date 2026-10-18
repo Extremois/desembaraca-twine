@@ -1,0 +1,253 @@
+# Registros por alvo
+
+Cada registro de QualificationEvidence contém:
+
+- id, target_id, python_minor (quando aplicável), python_patch, python_origin;
+- application_revision, artifact_id, artifact_sha256, recipe_revision;
+- image_id/digest, os/version, kernel, cpu, architecture, environment_kind;
+- snapshot_id e inventário canônico do ambiente de teste para rolling;
+- captured_at UTC, comandos executados, status/código/resultado e identificação dos logs;
+- hashes de originais/saídas, invariantes e três métricas antes/depois;
+- observação de tentativas de rede; preparo/reparo/falhas/interrupção/crash/concorrência;
+- Twine versão, seis saídas reabertas, revisor e referência à evidência visual;
+- limitações, simulações, passos não executados e pending_reason.
+
+environment_kind distingue native, wsl, container, emulated e simulated. Valores simulados não aprovam alvos nativos. Cada SupportTarget possui dois slots PythonQualification, 3.12 e 3.14; só pode ser validado com ambos e gates comuns completos na mesma revisão/artefato/snapshot.
+
+Não conter histórias privadas, caminhos pessoais desnecessários ou credenciais. Inventário público é exclusivamente do ambiente de teste. Não gerar resultado fictício para preencher campos ausentes: manter o ensaio e a tarefa pendentes.
+
+O coletor distingue `checks` observados de `pending_checks`: ausência de ensaio
+não é aprovação nem falha observada. `source_state: dirty` impede promoção de
+suporte. Logs publicados usam caminhos relativos e SHA-256 verificado; os
+registros de regressão local não substituem a evidência nativa por célula.
+
+Somente licenças e revisão Twine podem ser gates comuns aos dois Pythons.
+Instalação, primeiro uso, offline e preservação exigem evidência própria em cada
+slot. Revisão Twine deve identificar versão, revisor e hashes das seis saídas
+efetivamente reabertas; testes de geometria não a substituem. A proposta de
+promoção não altera automaticamente o catálogo ou o registro de suporte.
+
+O estado consolidado está em [support-ledger.md](support-ledger.md); os resultados
+locais mais recentes e seus limites estão em [validation.md](../validation.md).
+
+`windows-review-003/` contém seis saídas públicas efetivamente produzidas no
+Windows atual, com hashes vinculados a `windows-review-collection.json`.
+`review_status: pending` registra ausência de revisão visual. Não usar esses
+arquivos como prova de execução Linux/macOS. `security-limits.json` é auditoria
+local de código/contratos; não encerra os ensaios nativos ou a tarefa T080 inteira.
+
+`linux-wsl-candidate-inventory.json` é inventário real do rebuild experimental sem
+RPATH; não é manifesto do runtime e não contém URL. `local-inventory-smoke.json`
+vincula o inventário, o log de build redigido e os testes. O corpus correspondente
+está em `linux-wsl-no-rpath-corpus.json`. A glibc mínima e a auditoria de dependências
+continuam pendentes; esses arquivos não aprovam Linux nativo ou outra arquitetura.
+
+`candidate-packaging-smoke.json` registra dois ZIPs reais do build WSL com bytes
+idênticos, inventário/modos conferidos e recusa de sobrescrita. Os ZIPs não foram
+publicados; `qualified: false` continua explícito. Empacotar não concede aprovação
+de dependências/licenças, ABI, assinatura ou ensaios nativos por célula.
+
+`linux-linkage-capture.json` registra os arquivos reais lidos pelo linker em outro
+build WSL e seus hashes, com caminhos SDK redigidos. Não é prova dos membros
+incorporados de cada arquivo estático nem aprovação jurídica. O ledger
+`tools/runtime/licenses/linux.json` permanece não aprovado; nenhuma variante
+recebe suporte por esse levantamento.
+
+`linux-prerequisites.md` documenta a obtenção privada de CPython 3.12.15 e 3.14.8
+no WSL existente. `linux-private-python-prerequisites.json` registra arquivos,
+hashes, venv/pip e duas execuções da fundação. `linux-package-installation.json`
+e seu log registram quatro instalações reais de wheel/sdist fora do checkout.
+O catálogo somente Windows recusou processamento POSIX como esperado; esses
+ensaios parciais não aprovam primeiro uso, offline ou células nativas.
+
+`linux-zig-baseline.json` registra um experimento privado de Graphviz com Zig
+0.15.2/alvo glibc 2.27: build completo, símbolos até 2.14, ausência de RPATH e
+recusa de uma dependência não aprovada. Inclui hashes, wrappers redigidos e
+logs das quatro tentativas. `linux-zig-corpus-3.12.json` e
+`linux-zig-corpus-3.14.json` vinculam o mesmo executável aos 13 casos públicos
+e relocação. `qualified: false` é obrigatório: não há auditoria LLVM, captura
+equivalente das entradas do linker, execução no baseline antigo ou célula
+nativa aprovada. Esses relatórios não substituem os builds GCC anteriores.
+
+`linux-zig-lld-capture.json` registra o build posterior com alvo explícito de
+kernel Linux 4.15/glibc 2.27 e captura real de 73 entradas pelo LLD direto.
+O hash do executável coincide com a referência do driver; os seis arquivos
+estáticos SDK e 11 arquivos de licença observados têm hashes registrados,
+sem auditoria aprovada. `linux-zig-lld-corpus-3.12.json` e
+`linux-zig-lld-corpus-3.14.json` cobrem 13 casos e relocação desses mesmos bytes.
+O corpus foi executado no primeiro relink, e a segunda saída preservou bytes
+enquanto passou a classificar os arquivos Graphviz no escopo do build pai.
+Logs redigidos estão em `linux-zig-lld-capture.logs/`. O alvo de kernel, a nota
+ABI e os símbolos medidos não substituem execução no baseline antigo; os
+registros anteriores continuam preservados como evidência histórica.
+
+`linux-zig-sdk-source-audit.json` registra uma nova execução de relink com
+`--why-extract`: 147 extrações observadas, vinculadas a arquivos já identificados
+por SHA-256. Entre os arquivos estáticos SDK, somente `libc_nonshared.a` teve
+linhas de extração neste comando: `fstat-2.32.o` e `elf-init-2.33.o`. `crt1.o`
+é entrada direta. Zero linhas dos outros arquivos não dispensam revisão de
+templates, código inline ou headers incluídos nos objetos Graphviz.
+
+Foram comparados 1.947 arquivos de fontes/headers/avisos de cinco diretórios
+SDK com o arquivo de distribuição cujo SHA foi verificado. O relatório contém
+contagens, hashes canônicos e algoritmo dos manifestos, fontes selecionadas e
+avisos copiados em `linux-zig-sdk-source-audit/`, junto dos logs redigidos.
+Os manifestos completos permanecem no SDK privado; o arquivo de distribuição
+fixado permite recalculá-los. Não são árvores completas dos projetos upstream.
+`source_to_binary_complete: false`, `approved: false` e `qualified: false`
+registram a revisão ainda incompleta de fontes, includes, exceções por arquivo
+e obrigações de distribuição. Nenhum aviso foi adicionado ao bundle candidato
+como se a auditoria já estivesse concluída.
+
+`linux-graphviz-source-audit.json` cruza as extrações reais com objetos compilados
+por igualdade de bytes e com seus arquivos `.o.d`. São 181 objetos, 322 fontes/
+headers Graphviz verificados contra o arquivo original, nove arquivos gerados e
+162 headers externos. O relatório revalida executável, proveniência pai,
+metadados de linkedição e TSV de extrações antes de aceitar os vínculos.
+Referências de dependências usam índices numéricos para evitar repetir caminhos;
+o hash do relatório privado original foi preservado, e a cópia pública tem
+caminhos privados redigidos.
+
+`linux-graphviz-source-audit/` contém três avisos candidatos copiados do arquivo
+original e conferidos por hash: `AUTHORS`, `COPYING` e `lib/rbtree/LICENSE`.
+Os demais nomes de avisos do arquivo permanecem candidatos, sem presumir sua
+aplicação. Os parsers gerados por Bison e os identificadores de licença dos
+headers externos exigem revisão própria. `approved: false`, `qualified: false`
+e `declared_source_to_binary_complete: false` permanecem explícitos.
+
+`linux-notice-draft.json` registra uma candidata privada nova com 14 arquivos
+de avisos/referências, executável inalterado, 162 headers externos comparados
+com o SDK fixado e nove arquivos gerados conferidos contra a evidência.
+`linux-notice-draft/` contém os avisos exatos e o log da recusa da auditoria
+incompleta pelo inspetor. Inclui o aviso ColorBrewer presente em `brewer_colors`,
+preservado além dos arquivos nomeados `LICENSE`/`COPYING`, e os prefixos de
+licença/exceção dos quatro arquivos Bison.
+
+O ZIP de 15 arquivos ficou somente em armazenamento local privado; seus hashes, inventário/modos
+e conferência de payloads estão no relatório. Nem o ZIP nem o executável foram
+copiados para a evidência pública. Fonte/oferta completa, aplicabilidade dos
+avisos e origens dos dados W3C/color_names continuam em revisão. Essa candidata
+não é um bundle qualificado ou uma auditoria aprovada.
+
+Uma cópia idêntica para revisão no Windows está na pasta ignorada
+`tools/runtime/artifacts/linux-glibc/linux-glibc-x86_64-notice-draft/`, com ZIP,
+inventário, resumo, proveniência e registro de revisão. A cópia do ZIP preserva
+os modos codificados e seus hashes; não foi extraído como runtime Windows.
+
+`linux-musl-static.json` registra um build separado de musl x86_64 totalmente
+estático, executado como experimento explícito entre libcs no WSL Ubuntu/glibc.
+Contém fatos do SDK/host/alvo, inspeção ELF sem interpreter, seção dinâmica,
+NEEDED ou símbolos GLIBC, 66 entradas reais do linker e 324 extrações observadas.
+Os bytes do relink coincidem com a referência e com o build original.
+
+`linux-musl-corpus-3.12.json` e `linux-musl-corpus-3.14.json` cobrem os 13 casos
+e relocação desse executável. `linux-musl-graphviz-sources.json` registra seus
+181 objetos/322 fontes Graphviz, nove gerados e 58 headers externos. Esses 58
+headers e 2.467 arquivos da árvore musl distribuída pelo SDK foram comparados
+com o arquivo original fixado. Logs redigidos e `musl-COPYRIGHT.txt` ficam em
+`linux-musl-static.logs/`. A versão upstream musl não foi inferida: o SDK não
+inclui VERSION, e o relatório registra `musl_version: null`.
+
+São evidências WSL de build/corpus/integridade. Não há instalação dos Pythons
+musl, aquisição normal do runtime ou aceite Alpine. Auditorias e avisos glibc
+não foram reutilizados como aprovação dessa variante; Alpine nativo, ARM64,
+licenças/fontes dos sete arquivos estáticos SDK e mínimos de kernel/CPU
+continuam pendentes. O catálogo distribuído segue sem entrada POSIX.
+
+`linux-musl-notice-draft.json` registra a preparação independente de 14 arquivos
+de avisos/referências para o executável musl já ensaiado. Os bytes integrais
+estão em `linux-musl-notice-draft/`, incluindo COPYRIGHT musl em vez de LICENSES
+glibc, os três avisos LLVM, licença raiz Zig e materiais Graphviz/Bison/ColorBrewer.
+Foram novamente conferidos os 58 headers e nove arquivos gerados. O relatório
+ELF foi vinculado por hash e preservado na saída privada. Recibos exatos estão
+também na pasta ignorada `tools/runtime/artifacts/linux-musl/linux-musl-x86_64-notice-draft/`.
+
+As observações do linker incluem membros de libc.a, libzigc.a e compiler_rt;
+contagens zero de outros archives não dispensam revisão de headers/inline.
+O COPYRIGHT musl remete a termos específicos de arquivos, inclusive matemática.
+A coleta não decide sua aplicabilidade nem encerra a oferta de fontes. Não foi
+criado inventário/ZIP com versão musl inferida ou baseline não qualificada.
+`approved: false` e `qualified: false` permanecem explícitos.
+
+`linux-musl-candidate-package.json` registra o passo posterior: inventário
+local com `native_linkage: static-elf`, `minimum_libc: null` e 15 arquivos,
+seguido de dois ZIPs byte a byte idênticos de 7.355.837 bytes. A criação foi
+explícita, vinculada ao build/SDK/relatório ELF estático. Conteúdo, modos e
+timestamps do ZIP foram conferidos. Uma cópia exata do ZIP, inventário e resumo
+está na pasta ignorada de revisão musl indicada acima. Esses arquivos complementam
+os recibos de avisos existentes, sem substituir sua proveniência.
+
+O inspetor recusou o `review.json` de rascunho por ausência de auditoria revisada
+vinculada à proveniência. Inventariar e empacotar não aprovou licenças nem executou
+o probe. Os bytes do motor são os mesmos já ensaiados no corpus; não houve nova
+execução do corpus ou qualificação nativa. O manifesto/catálogo distribuído não
+foi modificado e o ZIP continua local.
+
+`linux-musl-object-sources.json` cruza os 177 membros musl de libc.a observados
+nas extrações com os bytes dos objetos reais e suas unidades de compilação
+DWARF. As 177 fontes identificadas (237.720 bytes) foram conferidas contra o SDK
+fixado. Dezesseis fontes têm comentários iniciais, preservados integralmente no
+relatório, incluindo atribuições de arquivos matemáticos, qsort e código x86_64.
+Nomes de funções/variáveis DWARF não são tratados como fontes. Nenhum caminho
+pessoal foi incluído; os hashes de saídas DWARF referem-se aos dados privados
+originais, cujos textos completos não foram publicados.
+
+`linux-musl-source-notice-package.json` registra uma nova cópia com esses 16
+comentários por arquivo, somados aos 14 avisos/referências anteriores. O ZIP
+tem 31 arquivos e 7.368.435 bytes, foi produzido duas vezes com bytes idênticos
+e tem conteúdo/modos conferidos. Os 30 avisos públicos estão em
+`linux-musl-source-notices/`; o ZIP/recibos exatos estão na nova pasta ignorada
+`tools/runtime/artifacts/linux-musl/linux-musl-x86_64-source-notice-draft/`.
+O candidato anterior foi preservado.
+
+A preparação recalculou hashes dos fontes e prefixos no SDK fixado antes da
+cópia. A inspeção real continuou recusando o rascunho de auditoria antes do
+probe. O motor conserva o mesmo hash, portanto não houve novo ensaio de corpus.
+Essa correspondência DWARF não prova compilação reproduzível, retenção de
+seções ou revisão exaustiva de licenças. Headers transitivos, startup direto,
+libzigc/compiler_rt/LLVM, dados/geradores e qualificação nativa seguem pendentes.
+
+`linux-musl-zig-runtime-sources.json` complementa a coleta com os três objetos
+de startup/runtime: crt1.o direto e um membro observado de cada archive libzigc.a
+e libcompiler_rt.a. Hashes de archives/membros/objetos, relatório de extração e
+inspector foram conferidos. As tabelas DWARF4 têm 1, 20 e 245 entradas,
+respectivamente. O relatório separa referências de tabelas dos dois entrypoints
+explicitamente coletados (`lib/c.zig`, `lib/compiler_rt.zig`). Ao todo foram
+conferidos **260 arquivos SDK**, 1.753.358 bytes, contra o arquivo original fixado.
+
+Os **49 prefixos de comentários** completos estão no JSON e em
+`linux-musl-zig-runtime-sources/`. Dezessete arquivos têm indicadores textuais de
+licença/origem, todos no prefixo inicial neste recorte; isso não equivale a uma
+busca semântica exaustiva. Há referências a código portado de musl e Go que
+continuam exigindo revisão específica de atribuição e termos.
+
+Um `builtin.zig` gerado foi identificado nas tabelas dos dois runtimes e teve
+seus bytes atuais inventariados separadamente. Esse hash não autentica os bytes
+durante o build nem os transforma em fonte distribuída pelo SDK. Uma cópia exata
+para revisão, com o relatório, está na pasta ignorada
+`tools/runtime/artifacts/linux-musl/zig-runtime-source-review/`.
+
+Tabelas de arquivos podem listar código sem seções retidas. Esses dados não
+substituem fontes transitivas completas, revisão dos componentes restantes ou
+auditoria aprovada. Não houve novo candidato/ZIP, alteração de notices existentes,
+execução do motor, promoção de suporte ou publicação remota.
+
+`linux-musl-runtime-notice-package.json` registra a integração posterior desses
+49 prefixos Zig em uma nova cópia local, somados aos 30 arquivos de comentários/
+avisos/referências anteriores. A preparação conferiu novamente todas as 260 fontes
+de runtime e seus prefixos no SDK fixado, vinculando os dois relatórios de fontes
+por hash à nova proveniência. O builtin gerado permaneceu separado; não há
+`builtin.zig` no ZIP.
+
+O pacote tem **80 arquivos**, **7.393.576 bytes** e foi reproduzido duas vezes
+com bytes idênticos. Conteúdo, modos e hashes foram conferidos. Os 79 arquivos
+de revisão estão em `linux-musl-runtime-notices/`. ZIP, inventário, proveniência,
+review e relatório estático exatos estão na pasta ignorada
+`tools/runtime/artifacts/linux-musl/linux-musl-x86_64-runtime-notice-draft/`.
+Os candidatos anteriores foram preservados.
+
+A auditoria incompleta foi novamente recusada pelo inspetor antes do probe.
+Comentários de fontes incluem documentação e referências de origem: sua cópia
+não decide aplicabilidade de licenças nem substitui textos canônicos/oferta
+completa. O motor não mudou; o corpus não foi repetido. Sem qualificação nativa,
+entrada de catálogo, URL de distribuição ou publicação remota.

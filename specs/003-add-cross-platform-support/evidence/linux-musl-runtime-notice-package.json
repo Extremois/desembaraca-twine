@@ -1,0 +1,1052 @@
+{
+  "kind": "musl-runtime-notice-candidate-not-approved",
+  "approved": false,
+  "qualified": false,
+  "captured_at": "2026-10-18T22:27:28.058897+00:00",
+  "environment_kind": "wsl",
+  "artifact_id": "linux-musl-x86_64",
+  "executable_sha256": "a58b2f30b70a0393ff0cec93d40e7b039015d1ad2bbdc8a9c60634334519942f",
+  "provenance_sha256": "63bc32568e16a91385f3eba2f818896ab01fcc390388a98db7d28283dbe146ad",
+  "inventory_sha256": "b42af38fbb9361afb8085ff5727cff43e061486605e9e29faba9124f3382a2a8",
+  "private_review_sha256": "524500edb4b6a57f41ab2a3ac95e4fa0c2bfb1d7171e0cf905a2a76b48a0bfa7",
+  "archive_sha256": "10b37b433a85216f17c65b6e09b58b3c8c26422ea302763efd10a8a11c610410",
+  "archive_bytes": 7393576,
+  "archive_repeat_byte_identical": true,
+  "file_count": 80,
+  "notices": [
+    {
+      "path": "third-party-notices/Graphviz-AUTHORS.txt",
+      "sha256": "182eaf397edc803d0e44a25708ba70ecafc143c0f610ea7048c6b9687a939ff0",
+      "size": 694,
+      "origin": {
+        "kind": "graphviz-source-archive",
+        "path": "AUTHORS",
+        "archive_sha256": "1e028b2b3e84e946c1d3e8c47590f8f0741bba1041fe6eff36eee87e598ea249",
+        "source_sha256": "182eaf397edc803d0e44a25708ba70ecafc143c0f610ea7048c6b9687a939ff0"
+      }
+    },
+    {
+      "path": "third-party-notices/Graphviz-COPYING.txt",
+      "sha256": "0becf16567beb77fa252b7664631dd177c8f9a1889e48995b45379c7130e5303",
+      "size": 14198,
+      "origin": {
+        "kind": "graphviz-source-archive",
+        "path": "COPYING",
+        "archive_sha256": "1e028b2b3e84e946c1d3e8c47590f8f0741bba1041fe6eff36eee87e598ea249",
+        "source_sha256": "0becf16567beb77fa252b7664631dd177c8f9a1889e48995b45379c7130e5303"
+      }
+    },
+    {
+      "path": "third-party-notices/ColorBrewer.txt",
+      "sha256": "09598cbb53b21f3cab841d5be8ceee6ef9bc0387f3b60330da94e9c98f4ada19",
+      "size": 2130,
+      "origin": {
+        "kind": "graphviz-source-archive",
+        "path": "lib/common/brewer_colors",
+        "archive_sha256": "1e028b2b3e84e946c1d3e8c47590f8f0741bba1041fe6eff36eee87e598ea249",
+        "source_sha256": "a069692c03e8bcd402fbd88b2e664a7cc0f39870c05cc1d751413f8302a7d34e"
+      }
+    },
+    {
+      "path": "third-party-notices/Graphviz-lib__rbtree__LICENSE.txt",
+      "sha256": "fcb423209a3a3909f41e629a4973eab3995ceb93136dd72485fb12ad3de29dfc",
+      "size": 1048,
+      "origin": {
+        "kind": "graphviz-source-archive",
+        "path": "lib/rbtree/LICENSE",
+        "archive_sha256": "1e028b2b3e84e946c1d3e8c47590f8f0741bba1041fe6eff36eee87e598ea249",
+        "source_sha256": "fcb423209a3a3909f41e629a4973eab3995ceb93136dd72485fb12ad3de29dfc"
+      }
+    },
+    {
+      "path": "third-party-notices/SDK-LICENSE.txt",
+      "sha256": "5c537d6853e005298a285d508cff9ac7192cea23576c840d485b2b586a7ff177",
+      "size": 1080,
+      "origin": {
+        "kind": "sdk-source-archive",
+        "path": "LICENSE",
+        "archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+        "source_sha256": "5c537d6853e005298a285d508cff9ac7192cea23576c840d485b2b586a7ff177"
+      }
+    },
+    {
+      "path": "third-party-notices/SDK-lib__libc__musl__COPYRIGHT.txt",
+      "sha256": "f9bc4423732350eb0b3f7ed7e91d530298476f8fec0c6c427a1c04ade22655af",
+      "size": 6204,
+      "origin": {
+        "kind": "sdk-source-archive",
+        "path": "lib/libc/musl/COPYRIGHT",
+        "archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+        "source_sha256": "f9bc4423732350eb0b3f7ed7e91d530298476f8fec0c6c427a1c04ade22655af"
+      }
+    },
+    {
+      "path": "third-party-notices/SDK-lib__libcxx__LICENSE.TXT.txt",
+      "sha256": "539dd7aed86e8a4f12cbdd0e6c50c189c7d74847e4fecc64ce2c6ee3a01da38b",
+      "size": 16703,
+      "origin": {
+        "kind": "sdk-source-archive",
+        "path": "lib/libcxx/LICENSE.TXT",
+        "archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+        "source_sha256": "539dd7aed86e8a4f12cbdd0e6c50c189c7d74847e4fecc64ce2c6ee3a01da38b"
+      }
+    },
+    {
+      "path": "third-party-notices/SDK-lib__libcxxabi__LICENSE.TXT.txt",
+      "sha256": "e2b35be49f7284a45b7baca8fc7b3ab7440e7902392b2528a457816b5bb2a15c",
+      "size": 16706,
+      "origin": {
+        "kind": "sdk-source-archive",
+        "path": "lib/libcxxabi/LICENSE.TXT",
+        "archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+        "source_sha256": "e2b35be49f7284a45b7baca8fc7b3ab7440e7902392b2528a457816b5bb2a15c"
+      }
+    },
+    {
+      "path": "third-party-notices/SDK-lib__libunwind__LICENSE.TXT.txt",
+      "sha256": "b5efebcaca80879234098e52d1725e6d9eb8fb96a19fce625d39184b705f7b6d",
+      "size": 16706,
+      "origin": {
+        "kind": "sdk-source-archive",
+        "path": "lib/libunwind/LICENSE.TXT",
+        "archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+        "source_sha256": "b5efebcaca80879234098e52d1725e6d9eb8fb96a19fce625d39184b705f7b6d"
+      }
+    },
+    {
+      "path": "third-party-notices/musl-source-lib__libc__musl__src__math__acos.c.txt",
+      "sha256": "00e4450ab1ffd72751892acf5f406e6ef14dc25e31b9d2409091c27805a41153",
+      "size": 1194,
+      "origin": {
+        "kind": "sdk-source-comment-prefix",
+        "path": "lib/libc/musl/src/math/acos.c",
+        "archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+        "source_sha256": "cc6f9017e7e2e0ef01516fa12c68aa63865e6415c90dc039dfce9abffae09a4c",
+        "offset": 0,
+        "length": 1194
+      }
+    },
+    {
+      "path": "third-party-notices/musl-source-lib__libc__musl__src__math__asin.c.txt",
+      "sha256": "16e4c9d33a06c014651a46f607bc777d8f92cb625aeebca97fbf2efb6441a8c5",
+      "size": 1546,
+      "origin": {
+        "kind": "sdk-source-comment-prefix",
+        "path": "lib/libc/musl/src/math/asin.c",
+        "archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+        "source_sha256": "9302dd0b2f302f7b7decce82e737ed250bae1bcc65c19eaf3d7ec19010892e63",
+        "offset": 0,
+        "length": 1546
+      }
+    },
+    {
+      "path": "third-party-notices/musl-source-lib__libc__musl__src__math__atan.c.txt",
+      "sha256": "79d56218788d2a27bcb1cf05f51446c763f65d4c8f419a3bbcd074e464b735f5",
+      "size": 1308,
+      "origin": {
+        "kind": "sdk-source-comment-prefix",
+        "path": "lib/libc/musl/src/math/atan.c",
+        "archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+        "source_sha256": "1cffb67a65456ae0bc5f07a94df04a4f18ebc1ac0bffe3219250c4e0555ee01d",
+        "offset": 0,
+        "length": 1308
+      }
+    },
+    {
+      "path": "third-party-notices/musl-source-lib__libc__musl__src__math__atan2.c.txt",
+      "sha256": "02552e5f14ecd5d6ed4c022f38c88890f2e11e5722751f039032638ab3c663c4",
+      "size": 1503,
+      "origin": {
+        "kind": "sdk-source-comment-prefix",
+        "path": "lib/libc/musl/src/math/atan2.c",
+        "archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+        "source_sha256": "a5f94b09b10b4e72bb15d94ae403c9dfd27d7ad881ecd729000004429acfca63",
+        "offset": 0,
+        "length": 1503
+      }
+    },
+    {
+      "path": "third-party-notices/musl-source-lib__libc__musl__src__math__cbrt.c.txt",
+      "sha256": "8b96b75f42c2319887a8f8a25a0dfe058539ef538d2e0741115b9804ceb61c51",
+      "size": 509,
+      "origin": {
+        "kind": "sdk-source-comment-prefix",
+        "path": "lib/libc/musl/src/math/cbrt.c",
+        "archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+        "source_sha256": "af442893d4048c0eb485b93b5628792fb796d45ffc0f88c682041366c7da611d",
+        "offset": 0,
+        "length": 509
+      }
+    },
+    {
+      "path": "third-party-notices/musl-source-lib__libc__musl__src__math__exp.c.txt",
+      "sha256": "d879464986502f5a108b0b25095f85968c7fe617f656407b6ebb2d8b1be9874f",
+      "size": 113,
+      "origin": {
+        "kind": "sdk-source-comment-prefix",
+        "path": "lib/libc/musl/src/math/exp.c",
+        "archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+        "source_sha256": "7db56f21ca9b8915d36dd5099b707aafeb6a736eae798e19b76b074764e75f34",
+        "offset": 0,
+        "length": 113
+      }
+    },
+    {
+      "path": "third-party-notices/musl-source-lib__libc__musl__src__math__exp_data.c.txt",
+      "sha256": "af710fc02739f06f406db14d25b1432e1aafbecf2b064e63d2e8515c1894a99b",
+      "size": 121,
+      "origin": {
+        "kind": "sdk-source-comment-prefix",
+        "path": "lib/libc/musl/src/math/exp_data.c",
+        "archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+        "source_sha256": "c55dff64e369fe816cd8ce367064989bb119f85783599680d1a329031c660689",
+        "offset": 0,
+        "length": 121
+      }
+    },
+    {
+      "path": "third-party-notices/musl-source-lib__libc__musl__src__math__log.c.txt",
+      "sha256": "3b0f4b6e0ba95a6f9205a61c3e20c272cb6f4d0b50ab2865340ff43a57c69932",
+      "size": 116,
+      "origin": {
+        "kind": "sdk-source-comment-prefix",
+        "path": "lib/libc/musl/src/math/log.c",
+        "archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+        "source_sha256": "a0694d8587a0d145d0f8ae87cbffba014d7988bc2ebcbfad94cea73b394c9ecc",
+        "offset": 0,
+        "length": 116
+      }
+    },
+    {
+      "path": "third-party-notices/musl-source-lib__libc__musl__src__math__log10.c.txt",
+      "sha256": "a10b1a81999d6e187cc65a869b53fcc2168bbd62b4b8ffb7b932726ddb2a5081",
+      "size": 691,
+      "origin": {
+        "kind": "sdk-source-comment-prefix",
+        "path": "lib/libc/musl/src/math/log10.c",
+        "archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+        "source_sha256": "ef9b4b1f0918cf1fcb797f9fa4d4ffe177bfa27f668d74a41d613bfbcd83850a",
+        "offset": 0,
+        "length": 691
+      }
+    },
+    {
+      "path": "third-party-notices/musl-source-lib__libc__musl__src__math__log2.c.txt",
+      "sha256": "1811ecaf980210c8286b1bbd6e08a494f751b73f9bbecc410de5f29ffee2ff8d",
+      "size": 117,
+      "origin": {
+        "kind": "sdk-source-comment-prefix",
+        "path": "lib/libc/musl/src/math/log2.c",
+        "archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+        "source_sha256": "281e4fc0f737419e245019d8bc8a8ca53032c2d88c31d08561e9e59dcb4b4640",
+        "offset": 0,
+        "length": 117
+      }
+    },
+    {
+      "path": "third-party-notices/musl-source-lib__libc__musl__src__math__log2_data.c.txt",
+      "sha256": "aeae385a739a08c7d276c5462f16c88f81ccab39dfca123ac70b219c4a9ae5b8",
+      "size": 97,
+      "origin": {
+        "kind": "sdk-source-comment-prefix",
+        "path": "lib/libc/musl/src/math/log2_data.c",
+        "archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+        "source_sha256": "5a62bb213f19dc1364cddb612e3d13831e382f5ae6f7fafd7064362f53478dfb",
+        "offset": 0,
+        "length": 97
+      }
+    },
+    {
+      "path": "third-party-notices/musl-source-lib__libc__musl__src__math__log_data.c.txt",
+      "sha256": "13755d13feb33602c841286fcd7a637820a7bbe08474bdd8b14991584f336823",
+      "size": 96,
+      "origin": {
+        "kind": "sdk-source-comment-prefix",
+        "path": "lib/libc/musl/src/math/log_data.c",
+        "archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+        "source_sha256": "e96bcd99d88fc57e0f3686299014f4b949a6212603ce237f39e16cedc155617a",
+        "offset": 0,
+        "length": 96
+      }
+    },
+    {
+      "path": "third-party-notices/musl-source-lib__libc__musl__src__math__pow.c.txt",
+      "sha256": "19941f43d6fb6c02a46feb375e14e57daccf9e400fe1f0b4c7dc08aae603d41c",
+      "size": 113,
+      "origin": {
+        "kind": "sdk-source-comment-prefix",
+        "path": "lib/libc/musl/src/math/pow.c",
+        "archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+        "source_sha256": "b06f0a08d74fcff8cced7afa2c0e47e301e3e8a19c0de5becdec28cd7b014027",
+        "offset": 0,
+        "length": 113
+      }
+    },
+    {
+      "path": "third-party-notices/musl-source-lib__libc__musl__src__math__pow_data.c.txt",
+      "sha256": "e237d73cc422efa2525decfa88f5017a754b5e7d82719b4f989f28e6968ce977",
+      "size": 112,
+      "origin": {
+        "kind": "sdk-source-comment-prefix",
+        "path": "lib/libc/musl/src/math/pow_data.c",
+        "archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+        "source_sha256": "2052ec913f9b4a2170a98a6fcbcd7694f5dec220036b00c36106a2b4b65a4c55",
+        "offset": 0,
+        "length": 112
+      }
+    },
+    {
+      "path": "third-party-notices/musl-source-lib__libc__musl__src__stdlib__qsort.c.txt",
+      "sha256": "8095fd5bdc520e0b8688763e208e4f8ef7690ede2134c89860db4f685ca9e3af",
+      "size": 1342,
+      "origin": {
+        "kind": "sdk-source-comment-prefix",
+        "path": "lib/libc/musl/src/stdlib/qsort.c",
+        "archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+        "source_sha256": "3a838cc7f83f4746df6063f567be1ebb2f7d204243342122acd43f44d2434ec6",
+        "offset": 0,
+        "length": 1342
+      }
+    },
+    {
+      "path": "third-party-notices/musl-source-lib__libc__musl__src__thread__x86_64____set_thread_area.s.txt",
+      "sha256": "e67a3c298a153360228cc1051633c5164692cc786afb6a4a9102b19787e5bc74",
+      "size": 80,
+      "origin": {
+        "kind": "sdk-source-comment-prefix",
+        "path": "lib/libc/musl/src/thread/x86_64/__set_thread_area.s",
+        "archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+        "source_sha256": "9a6299228be5f8f467652263e8f98c1f9ab2e0937243589b8c5642f0ebe3236d",
+        "offset": 0,
+        "length": 80
+      }
+    },
+    {
+      "path": "third-party-notices/zig-runtime-source-lib__c.zig.txt",
+      "sha256": "92bcb7aa4dce1ee1f082e584e54dd1a71f4d4af95ed1eadd5fbef51c604140d7",
+      "size": 217,
+      "origin": {
+        "kind": "sdk-source-comment-prefix",
+        "path": "lib/c.zig",
+        "archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+        "source_sha256": "b39fec9941872a61508e463ee0bc35087bf7613b56c95f1193c93c2d1a59ad9c",
+        "offset": 0,
+        "length": 217
+      }
+    },
+    {
+      "path": "third-party-notices/zig-runtime-source-lib__compiler_rt__absv.zig.txt",
+      "sha256": "ff07ce33e61c2dbaebd3b78a382876ee5f7e48864f521ee26f7773ca705ceaec",
+      "size": 74,
+      "origin": {
+        "kind": "sdk-source-comment-prefix",
+        "path": "lib/compiler_rt/absv.zig",
+        "archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+        "source_sha256": "32364c5a658e894772d817b2081c077e5c078c57db862a3d9f1862d1379187e7",
+        "offset": 0,
+        "length": 74
+      }
+    },
+    {
+      "path": "third-party-notices/zig-runtime-source-lib__compiler_rt__arm.zig.txt",
+      "sha256": "c6e3708aac39cdead97bbfcf64562558e79dad2a07a12a8e51f53206f0ed64e1",
+      "size": 108,
+      "origin": {
+        "kind": "sdk-source-comment-prefix",
+        "path": "lib/compiler_rt/arm.zig",
+        "archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+        "source_sha256": "bbb5b371dbb8dbc5b54cda6fa2293cc2ba2d0d685ae870924694b13d98198fb5",
+        "offset": 0,
+        "length": 108
+      }
+    },
+    {
+      "path": "third-party-notices/zig-runtime-source-lib__compiler_rt__ceil.zig.txt",
+      "sha256": "431617e264124f79828010f1d56f2567d8cf81c4af1e3f6230762519218c4af0",
+      "size": 228,
+      "origin": {
+        "kind": "sdk-source-comment-prefix",
+        "path": "lib/compiler_rt/ceil.zig",
+        "archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+        "source_sha256": "c0b94f955196844864638c527fa4a30dea10e6a3b66132fe61cab7830b5b3310",
+        "offset": 0,
+        "length": 228
+      }
+    },
+    {
+      "path": "third-party-notices/zig-runtime-source-lib__compiler_rt__cmpdf2.zig.txt",
+      "sha256": "094f16c8139413e86da80b43ba7dacd5aa954881777052117bc132f51d6da73c",
+      "size": 161,
+      "origin": {
+        "kind": "sdk-source-comment-prefix",
+        "path": "lib/compiler_rt/cmpdf2.zig",
+        "archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+        "source_sha256": "f015febc2a1fc858676b546c98a1b2f9e6eac5038bac18e5c070819ceaed04df",
+        "offset": 0,
+        "length": 161
+      }
+    },
+    {
+      "path": "third-party-notices/zig-runtime-source-lib__compiler_rt__cmphf2.zig.txt",
+      "sha256": "094f16c8139413e86da80b43ba7dacd5aa954881777052117bc132f51d6da73c",
+      "size": 161,
+      "origin": {
+        "kind": "sdk-source-comment-prefix",
+        "path": "lib/compiler_rt/cmphf2.zig",
+        "archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+        "source_sha256": "db02f8a6bfcfdd3e00b0b1fed696f9cdbc984dfaced2765b956b03396eee3a1f",
+        "offset": 0,
+        "length": 161
+      }
+    },
+    {
+      "path": "third-party-notices/zig-runtime-source-lib__compiler_rt__cmpsf2.zig.txt",
+      "sha256": "094f16c8139413e86da80b43ba7dacd5aa954881777052117bc132f51d6da73c",
+      "size": 161,
+      "origin": {
+        "kind": "sdk-source-comment-prefix",
+        "path": "lib/compiler_rt/cmpsf2.zig",
+        "archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+        "source_sha256": "b31b176202ca43576893d2381cac51d386b503f6f69bf74ccc0b5d41a3e975c1",
+        "offset": 0,
+        "length": 161
+      }
+    },
+    {
+      "path": "third-party-notices/zig-runtime-source-lib__compiler_rt__cmptf2.zig.txt",
+      "sha256": "094f16c8139413e86da80b43ba7dacd5aa954881777052117bc132f51d6da73c",
+      "size": 161,
+      "origin": {
+        "kind": "sdk-source-comment-prefix",
+        "path": "lib/compiler_rt/cmptf2.zig",
+        "archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+        "source_sha256": "a4410c123c822074ffad44b7b00036667b5ba6d04fbb7ecb9ccdc6c1faf5e3d3",
+        "offset": 0,
+        "length": 161
+      }
+    },
+    {
+      "path": "third-party-notices/zig-runtime-source-lib__compiler_rt__cmpxf2.zig.txt",
+      "sha256": "094f16c8139413e86da80b43ba7dacd5aa954881777052117bc132f51d6da73c",
+      "size": 161,
+      "origin": {
+        "kind": "sdk-source-comment-prefix",
+        "path": "lib/compiler_rt/cmpxf2.zig",
+        "archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+        "source_sha256": "0cafca634bd4cc424f9873132b60cc0b3f05a3cf3e3f7c6648eec1f42ce1d135",
+        "offset": 0,
+        "length": 161
+      }
+    },
+    {
+      "path": "third-party-notices/zig-runtime-source-lib__compiler_rt__divdf3.zig.txt",
+      "sha256": "1f7c203412b0e310e656eb05709455bdaefb41d72431412fa0a72732b41877e0",
+      "size": 145,
+      "origin": {
+        "kind": "sdk-source-comment-prefix",
+        "path": "lib/compiler_rt/divdf3.zig",
+        "archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+        "source_sha256": "b0b7ccd2d1ecd49b83c365c9f953f741de195ff6783948b9958b7bcee3ac03dc",
+        "offset": 0,
+        "length": 145
+      }
+    },
+    {
+      "path": "third-party-notices/zig-runtime-source-lib__compiler_rt__divsf3.zig.txt",
+      "sha256": "97896f0117ab37634d7a75227f830274ec065d07ce7a36feeaf620c784da9a98",
+      "size": 145,
+      "origin": {
+        "kind": "sdk-source-comment-prefix",
+        "path": "lib/compiler_rt/divsf3.zig",
+        "archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+        "source_sha256": "b7f48d5c91774014a9849cfe0f277bede977ddd6c193a3255a3ba130132221b8",
+        "offset": 0,
+        "length": 145
+      }
+    },
+    {
+      "path": "third-party-notices/zig-runtime-source-lib__compiler_rt__exp.zig.txt",
+      "sha256": "8ffc6a7b847cbbc1daf8142bb2e3dd02a9fda593797f34fa33e902a7605336af",
+      "size": 239,
+      "origin": {
+        "kind": "sdk-source-comment-prefix",
+        "path": "lib/compiler_rt/exp.zig",
+        "archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+        "source_sha256": "cfdd306d366211e654ac9395092c8fa2f32773aef0609fbb877705f129ee502a",
+        "offset": 0,
+        "length": 239
+      }
+    },
+    {
+      "path": "third-party-notices/zig-runtime-source-lib__compiler_rt__exp2.zig.txt",
+      "sha256": "ba31fb59051991117d8ea0389bb9be4f8a5869ec613f7e7897f1af95cd26d02d",
+      "size": 241,
+      "origin": {
+        "kind": "sdk-source-comment-prefix",
+        "path": "lib/compiler_rt/exp2.zig",
+        "archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+        "source_sha256": "97ec14c5f51690fcad9c8c2d82cee3a8ea1cdd682689a6340dd5438ea973dedc",
+        "offset": 0,
+        "length": 241
+      }
+    },
+    {
+      "path": "third-party-notices/zig-runtime-source-lib__compiler_rt__floor.zig.txt",
+      "sha256": "9599b2b8bfe88149ae7a1814cb8ab3b17682d1a8be3b8d321e5558871482e554",
+      "size": 248,
+      "origin": {
+        "kind": "sdk-source-comment-prefix",
+        "path": "lib/compiler_rt/floor.zig",
+        "archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+        "source_sha256": "7aa25d35a1d93393fe55b49c9db7420dfaafcc60d8e63078d6ca846285e3678e",
+        "offset": 0,
+        "length": 248
+      }
+    },
+    {
+      "path": "third-party-notices/zig-runtime-source-lib__compiler_rt__fma.zig.txt",
+      "sha256": "9077e7a20993a3e7ac4d2284fd38d67f657280e95ea563c00cef72552a49bb8b",
+      "size": 287,
+      "origin": {
+        "kind": "sdk-source-comment-prefix",
+        "path": "lib/compiler_rt/fma.zig",
+        "archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+        "source_sha256": "f8d4321338ca607be9a80d6e11593f0f56bab4618c6efcbb27e1da824e700a39",
+        "offset": 0,
+        "length": 287
+      }
+    },
+    {
+      "path": "third-party-notices/zig-runtime-source-lib__compiler_rt__gedf2.zig.txt",
+      "sha256": "094f16c8139413e86da80b43ba7dacd5aa954881777052117bc132f51d6da73c",
+      "size": 161,
+      "origin": {
+        "kind": "sdk-source-comment-prefix",
+        "path": "lib/compiler_rt/gedf2.zig",
+        "archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+        "source_sha256": "6e894212203e9983f69bf2c38178e20fe67613309b81e94493ef2d17cc692090",
+        "offset": 0,
+        "length": 161
+      }
+    },
+    {
+      "path": "third-party-notices/zig-runtime-source-lib__compiler_rt__gehf2.zig.txt",
+      "sha256": "094f16c8139413e86da80b43ba7dacd5aa954881777052117bc132f51d6da73c",
+      "size": 161,
+      "origin": {
+        "kind": "sdk-source-comment-prefix",
+        "path": "lib/compiler_rt/gehf2.zig",
+        "archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+        "source_sha256": "ce31442790acf50eb8c0ffa00cf3561361ee9c02aed9a903c65af7288ee5499d",
+        "offset": 0,
+        "length": 161
+      }
+    },
+    {
+      "path": "third-party-notices/zig-runtime-source-lib__compiler_rt__gesf2.zig.txt",
+      "sha256": "094f16c8139413e86da80b43ba7dacd5aa954881777052117bc132f51d6da73c",
+      "size": 161,
+      "origin": {
+        "kind": "sdk-source-comment-prefix",
+        "path": "lib/compiler_rt/gesf2.zig",
+        "archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+        "source_sha256": "a997a88b6afe173f24267c0db49064984d4e76fbbcd67d8f1e915c646c3d1e68",
+        "offset": 0,
+        "length": 161
+      }
+    },
+    {
+      "path": "third-party-notices/zig-runtime-source-lib__compiler_rt__getf2.zig.txt",
+      "sha256": "094f16c8139413e86da80b43ba7dacd5aa954881777052117bc132f51d6da73c",
+      "size": 161,
+      "origin": {
+        "kind": "sdk-source-comment-prefix",
+        "path": "lib/compiler_rt/getf2.zig",
+        "archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+        "source_sha256": "44c8e974ef9fea0bc76f7433c89a2a82bc157cfcd439fd00bac25ec826d6506a",
+        "offset": 0,
+        "length": 161
+      }
+    },
+    {
+      "path": "third-party-notices/zig-runtime-source-lib__compiler_rt__int.zig.txt",
+      "sha256": "bd0df320974138c4854fd0818d5245fd0af83e948b56765942e6c95521719299",
+      "size": 53,
+      "origin": {
+        "kind": "sdk-source-comment-prefix",
+        "path": "lib/compiler_rt/int.zig",
+        "archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+        "source_sha256": "f585dc04dc09e239b714df0b33d6cc700e97ce69ab8d91e33cd12304a4339885",
+        "offset": 0,
+        "length": 53
+      }
+    },
+    {
+      "path": "third-party-notices/zig-runtime-source-lib__compiler_rt__log.zig.txt",
+      "sha256": "a3df508f6c9ca384858ccf475cefbed89efc31c9cc2d68f89f0398fca128951f",
+      "size": 242,
+      "origin": {
+        "kind": "sdk-source-comment-prefix",
+        "path": "lib/compiler_rt/log.zig",
+        "archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+        "source_sha256": "57f6bdac99d1507aa7157da17ae935d8e65cf708d62ba463f1096ccdb955d1e5",
+        "offset": 0,
+        "length": 242
+      }
+    },
+    {
+      "path": "third-party-notices/zig-runtime-source-lib__compiler_rt__log10.zig.txt",
+      "sha256": "cab72da0ea23d9b10b23e113aa502bd04dfc74560603c94701386a0c1f454a9d",
+      "size": 248,
+      "origin": {
+        "kind": "sdk-source-comment-prefix",
+        "path": "lib/compiler_rt/log10.zig",
+        "archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+        "source_sha256": "2df80603e051dd6d37dbbf9f35a2f827cec8930b5a6e3bb4de10954310203e17",
+        "offset": 0,
+        "length": 248
+      }
+    },
+    {
+      "path": "third-party-notices/zig-runtime-source-lib__compiler_rt__log2.zig.txt",
+      "sha256": "54f148f3cc708094512c454ee0fc149a1da5b3cc84bdb9a854a684b7a860d6fd",
+      "size": 246,
+      "origin": {
+        "kind": "sdk-source-comment-prefix",
+        "path": "lib/compiler_rt/log2.zig",
+        "archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+        "source_sha256": "f340b3537f055c5eb0d5049706eb8a9da379ad0a75cde3ccd63e2d7611c6b83e",
+        "offset": 0,
+        "length": 246
+      }
+    },
+    {
+      "path": "third-party-notices/zig-runtime-source-lib__compiler_rt__modti3.zig.txt",
+      "sha256": "53311551e595ab672b6d277064b565e19d5d80b6d395b10c8a221cbcfe5b667d",
+      "size": 143,
+      "origin": {
+        "kind": "sdk-source-comment-prefix",
+        "path": "lib/compiler_rt/modti3.zig",
+        "archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+        "source_sha256": "cfb039667be4642a66b3ce469f29576f1315caa6107ef8c2ddd07a1da3127e9e",
+        "offset": 0,
+        "length": 143
+      }
+    },
+    {
+      "path": "third-party-notices/zig-runtime-source-lib__compiler_rt__negXi2.zig.txt",
+      "sha256": "a96d97cd6b679598f38b0d214f11ff1f145e1308cd8c00c426f4025811bb77ce",
+      "size": 292,
+      "origin": {
+        "kind": "sdk-source-comment-prefix",
+        "path": "lib/compiler_rt/negXi2.zig",
+        "archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+        "source_sha256": "0d03f772c07d546fe5ea6e992dd1df081624c5eb64b30dcac4820a2b16f49c1f",
+        "offset": 0,
+        "length": 292
+      }
+    },
+    {
+      "path": "third-party-notices/zig-runtime-source-lib__compiler_rt__negv.zig.txt",
+      "sha256": "2f72a4903c836f05f32d99770fa280ba824c16290ad967658ddc15ca6e7b00eb",
+      "size": 120,
+      "origin": {
+        "kind": "sdk-source-comment-prefix",
+        "path": "lib/compiler_rt/negv.zig",
+        "archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+        "source_sha256": "87624315a6065634e4d7bef4e8b432b4d94387b340fb5aad97d09f157e52bf16",
+        "offset": 0,
+        "length": 120
+      }
+    },
+    {
+      "path": "third-party-notices/zig-runtime-source-lib__compiler_rt__parity.zig.txt",
+      "sha256": "084467e27e5a2e077d97edc4df7fe82d3d033ba88766f608fb363147bee473a2",
+      "size": 110,
+      "origin": {
+        "kind": "sdk-source-comment-prefix",
+        "path": "lib/compiler_rt/parity.zig",
+        "archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+        "source_sha256": "a87ff798b17d81fe2897d1234028098a515128e4bf221371423017664a0d6752",
+        "offset": 0,
+        "length": 110
+      }
+    },
+    {
+      "path": "third-party-notices/zig-runtime-source-lib__compiler_rt__popcount.zig.txt",
+      "sha256": "21db96a942ea16360d1c68d13b4f597807bf3bd2fe9611261883e69b5d9dc45f",
+      "size": 407,
+      "origin": {
+        "kind": "sdk-source-comment-prefix",
+        "path": "lib/compiler_rt/popcount.zig",
+        "archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+        "source_sha256": "865096ed33eea80b5aa0f38266fc53ae2d634119a19406883be6e45405954f3c",
+        "offset": 0,
+        "length": 407
+      }
+    },
+    {
+      "path": "third-party-notices/zig-runtime-source-lib__compiler_rt__powiXf2.zig.txt",
+      "sha256": "608759edfecca2d52e2682066009c4cd8ddc64c7e4b7ffe1fdc59469bd45cdce",
+      "size": 294,
+      "origin": {
+        "kind": "sdk-source-comment-prefix",
+        "path": "lib/compiler_rt/powiXf2.zig",
+        "archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+        "source_sha256": "99fba8a25c1dbfdeebae0e61e89ebef6c72a958e10499caa50e60812f08f4d25",
+        "offset": 0,
+        "length": 294
+      }
+    },
+    {
+      "path": "third-party-notices/zig-runtime-source-lib__compiler_rt__rem_pio2.zig.txt",
+      "sha256": "f93c1f2e7c5f1311497a8452784c40662869b5d59222f1d6298df5cd2aee0a71",
+      "size": 186,
+      "origin": {
+        "kind": "sdk-source-comment-prefix",
+        "path": "lib/compiler_rt/rem_pio2.zig",
+        "archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+        "source_sha256": "908c7ee93fc246ce3405fa3a4303b8dbbc9a6c527f5e792fd59d6ab3cff79f27",
+        "offset": 0,
+        "length": 186
+      }
+    },
+    {
+      "path": "third-party-notices/zig-runtime-source-lib__compiler_rt__rem_pio2_large.zig.txt",
+      "sha256": "ef7a8240fe00082688de96e45b3304c1d43e42c5c83198c3c5a85ab4f35d11b2",
+      "size": 192,
+      "origin": {
+        "kind": "sdk-source-comment-prefix",
+        "path": "lib/compiler_rt/rem_pio2_large.zig",
+        "archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+        "source_sha256": "30251d81ce0fd09130d359cd92f03ef2cbe1247ca6ead4a1b41b047745bdef0a",
+        "offset": 0,
+        "length": 192
+      }
+    },
+    {
+      "path": "third-party-notices/zig-runtime-source-lib__compiler_rt__rem_pio2f.zig.txt",
+      "sha256": "17c33bfc16f76c683e278f9a55469a090dd93e6a54cbf7f953038b3e2f119651",
+      "size": 187,
+      "origin": {
+        "kind": "sdk-source-comment-prefix",
+        "path": "lib/compiler_rt/rem_pio2f.zig",
+        "archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+        "source_sha256": "a41741ff67bf8def1d237d62ef07bb0ec7d5198459958eb1420028052727a17a",
+        "offset": 0,
+        "length": 187
+      }
+    },
+    {
+      "path": "third-party-notices/zig-runtime-source-lib__compiler_rt__round.zig.txt",
+      "sha256": "600d166c256dc93850976d707f1359c2081e99ce80852865973ce4168136420d",
+      "size": 248,
+      "origin": {
+        "kind": "sdk-source-comment-prefix",
+        "path": "lib/compiler_rt/round.zig",
+        "archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+        "source_sha256": "81ba3ee7cf24f55010da8de1b2b19cc91971bf3ed36b56859020ef4a33be4b18",
+        "offset": 0,
+        "length": 248
+      }
+    },
+    {
+      "path": "third-party-notices/zig-runtime-source-lib__compiler_rt__sin.zig.txt",
+      "sha256": "9c40c6a20da3909ae52dfddf708e694fb17a29d268c40d6d17570cbfc5f72f88",
+      "size": 244,
+      "origin": {
+        "kind": "sdk-source-comment-prefix",
+        "path": "lib/compiler_rt/sin.zig",
+        "archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+        "source_sha256": "91eb3f8e29e6c82b2a704ab0b47438e2b51e16bd3e1be622ccf264f061f290d5",
+        "offset": 0,
+        "length": 244
+      }
+    },
+    {
+      "path": "third-party-notices/zig-runtime-source-lib__compiler_rt__ssp.zig.txt",
+      "sha256": "89084ae1cee5ef56b863aad244c10636c54f0b51e50fe90290bcf792bfab1487",
+      "size": 342,
+      "origin": {
+        "kind": "sdk-source-comment-prefix",
+        "path": "lib/compiler_rt/ssp.zig",
+        "archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+        "source_sha256": "87840e8a8c0eacff737dfd2238727862b9389c8afe4207e6cfda9b1bc2e23453",
+        "offset": 0,
+        "length": 342
+      }
+    },
+    {
+      "path": "third-party-notices/zig-runtime-source-lib__compiler_rt__subo.zig.txt",
+      "sha256": "36635814d5e6a959f4e3be9cd100f7ecc6cc7cf7f50551b7ec3a73deca34911e",
+      "size": 127,
+      "origin": {
+        "kind": "sdk-source-comment-prefix",
+        "path": "lib/compiler_rt/subo.zig",
+        "archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+        "source_sha256": "531690f488c8c97072a612d8c7cd5820df68378bd825d51ddaf16044c351438c",
+        "offset": 0,
+        "length": 127
+      }
+    },
+    {
+      "path": "third-party-notices/zig-runtime-source-lib__compiler_rt__tan.zig.txt",
+      "sha256": "040856b79ab06734fc648b6488e74d6f560d8926b60e7b106bc42235274e1e38",
+      "size": 283,
+      "origin": {
+        "kind": "sdk-source-comment-prefix",
+        "path": "lib/compiler_rt/tan.zig",
+        "archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+        "source_sha256": "828484649e0a61f634bd1bea179255ec24ee9c77b1511a99ccad2b874e0e1a6c",
+        "offset": 0,
+        "length": 283
+      }
+    },
+    {
+      "path": "third-party-notices/zig-runtime-source-lib__compiler_rt__trig.zig.txt",
+      "sha256": "c22e45048bf20909c455b4d7f9bf42b4c146cdb2fd914d359ef6d76d1b963554",
+      "size": 2333,
+      "origin": {
+        "kind": "sdk-source-comment-prefix",
+        "path": "lib/compiler_rt/trig.zig",
+        "archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+        "source_sha256": "5375b04c419bf910fd4cfe1a667629eb2cf55b56e76c72ae8f9ab4c327092342",
+        "offset": 0,
+        "length": 2333
+      }
+    },
+    {
+      "path": "third-party-notices/zig-runtime-source-lib__compiler_rt__trunc.zig.txt",
+      "sha256": "183b8637c105a8095792651a924cfa82dc986bf67d6e20fd1163014c745c4fca",
+      "size": 230,
+      "origin": {
+        "kind": "sdk-source-comment-prefix",
+        "path": "lib/compiler_rt/trunc.zig",
+        "archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+        "source_sha256": "dcd2d0715b5ce3df820f383e531ea06726ddf6b22e51f4ab950392e1ce46e30a",
+        "offset": 0,
+        "length": 230
+      }
+    },
+    {
+      "path": "third-party-notices/zig-runtime-source-lib__std__Target.zig.txt",
+      "sha256": "5a2b4fc50e209a40e3cdcaa455aa0efe6ac65f282f380103b03fb21f329218b2",
+      "size": 232,
+      "origin": {
+        "kind": "sdk-source-comment-prefix",
+        "path": "lib/std/Target.zig",
+        "archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+        "source_sha256": "c5ab967bb0c816d58f4a9a4e68b32e4faae455ca313731b804d239a934c906af",
+        "offset": 0,
+        "length": 232
+      }
+    },
+    {
+      "path": "third-party-notices/zig-runtime-source-lib__std__Target__x86.zig.txt",
+      "sha256": "e0c505d113c7e603f26c57f45821afed3aeb1bdf0c320920cd0c0b0f68fb2f79",
+      "size": 67,
+      "origin": {
+        "kind": "sdk-source-comment-prefix",
+        "path": "lib/std/Target/x86.zig",
+        "archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+        "source_sha256": "8f11891f9cc91835134d14a51f93356066b73cae9d532429890fd30209a1f075",
+        "offset": 0,
+        "length": 67
+      }
+    },
+    {
+      "path": "third-party-notices/zig-runtime-source-lib__std__ascii.zig.txt",
+      "sha256": "17da8cf7ff87554a406810aee0290e0c011a1450af53960df57f7f68a3bef094",
+      "size": 536,
+      "origin": {
+        "kind": "sdk-source-comment-prefix",
+        "path": "lib/std/ascii.zig",
+        "archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+        "source_sha256": "245e0e29ff75a5cbcf294bade7a32b35d1a5e0242bad59342822831c56f97b88",
+        "offset": 0,
+        "length": 536
+      }
+    },
+    {
+      "path": "third-party-notices/zig-runtime-source-lib__std__builtin.zig.txt",
+      "sha256": "b88116f127772e3671dca8fad1b7cac98e0a9beb688ddade3d9c627d3ec324da",
+      "size": 52,
+      "origin": {
+        "kind": "sdk-source-comment-prefix",
+        "path": "lib/std/builtin.zig",
+        "archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+        "source_sha256": "7120b362de4a6be0b712971dbb261469d13a061108c9aa68f965728e9937e826",
+        "offset": 0,
+        "length": 52
+      }
+    },
+    {
+      "path": "third-party-notices/zig-runtime-source-lib__std__crypto.zig.txt",
+      "sha256": "f6b3a92dce6a10a982c77c2f043126c7d70610b649925c3ddaa0c368ab8a551c",
+      "size": 19,
+      "origin": {
+        "kind": "sdk-source-comment-prefix",
+        "path": "lib/std/crypto.zig",
+        "archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+        "source_sha256": "41bde1efcf6ddd6f1adbaefbb2559ff7dc281bf00da03b91cb069a7bf952066c",
+        "offset": 0,
+        "length": 19
+      }
+    },
+    {
+      "path": "third-party-notices/zig-runtime-source-lib__std__debug__no_panic.zig.txt",
+      "sha256": "be4e6b50538df8b2dbf249db22c77017767127afb5190bcba058155781dffd95",
+      "size": 223,
+      "origin": {
+        "kind": "sdk-source-comment-prefix",
+        "path": "lib/std/debug/no_panic.zig",
+        "archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+        "source_sha256": "7dc6fe2fbbda856c1d601c2732d8364095db03c6441b6bd5961aa12c8d167367",
+        "offset": 0,
+        "length": 223
+      }
+    },
+    {
+      "path": "third-party-notices/zig-runtime-source-lib__std__log.zig.txt",
+      "sha256": "93c1faf6ba8f8a99c9c87b99679b68493401fc7e66680bc999db0faaaebd12ff",
+      "size": 3028,
+      "origin": {
+        "kind": "sdk-source-comment-prefix",
+        "path": "lib/std/log.zig",
+        "archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+        "source_sha256": "a501bbda527d502fcc1cd0595a20c2487076c7e83c7636d6910ec2935ce8d59e",
+        "offset": 0,
+        "length": 3028
+      }
+    },
+    {
+      "path": "third-party-notices/zig-runtime-source-lib__std__math__ilogb.zig.txt",
+      "sha256": "385765963cc7797dfef2e1e53af2a1cf30bdc319b6dfb570aef5ac5c213dd24a",
+      "size": 287,
+      "origin": {
+        "kind": "sdk-source-comment-prefix",
+        "path": "lib/std/math/ilogb.zig",
+        "archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+        "source_sha256": "a6b7569ae4ad22f6ac6324bb3c7074866e7cd93b15d7db8c42102b58fc8c99c9",
+        "offset": 0,
+        "length": 287
+      }
+    },
+    {
+      "path": "third-party-notices/zig-runtime-source-lib__std__simd.zig.txt",
+      "sha256": "17259986fd4b616fd47cc418d03c34c9390a1dc18ae76ce586e3030af282ec40",
+      "size": 257,
+      "origin": {
+        "kind": "sdk-source-comment-prefix",
+        "path": "lib/std/simd.zig",
+        "archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+        "source_sha256": "cc554020cebe55782b38c18c56a011b61a42f332781e5d0a5b1be3003eddd7a3",
+        "offset": 0,
+        "length": 257
+      }
+    },
+    {
+      "path": "third-party-notices/zig-runtime-source-lib__std__start.zig.txt",
+      "sha256": "93ed7911642f612bbe58b32612dd3932bfdf9eb01e2ad8475a9bb70741faa8f1",
+      "size": 80,
+      "origin": {
+        "kind": "sdk-source-comment-prefix",
+        "path": "lib/std/start.zig",
+        "archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+        "source_sha256": "48e9190a5286a9d1239b28239b4d04107d403789371e42ed0514c78f658c8f40",
+        "offset": 0,
+        "length": 80
+      }
+    },
+    {
+      "path": "third-party-notices/Bison-lib__cgraph__grammar.c.txt",
+      "sha256": "b979bc0e49fa1efed0fad3af4ecc582b471da7662626cebfd0d5f998b1119f72",
+      "size": 1532,
+      "origin": {
+        "kind": "generated-file-prefix",
+        "path": "lib/cgraph/grammar.c",
+        "source_sha256": "026eaf9778874448665c99d1b2be17e3a514793e7811a9f8b2293132529f3687",
+        "offset": 0,
+        "length": 1532
+      }
+    },
+    {
+      "path": "third-party-notices/Bison-lib__cgraph__grammar.h.txt",
+      "sha256": "ecd76b7233bacbeeafca33a46b80f4120864e3de861e7d0a7d7c6fcce3d664dd",
+      "size": 1527,
+      "origin": {
+        "kind": "generated-file-prefix",
+        "path": "lib/cgraph/grammar.h",
+        "source_sha256": "126a642c03555a7ffc0bf28c3ec262fbac954e79fa9617f3fcfccbcf453a4553",
+        "offset": 0,
+        "length": 1527
+      }
+    },
+    {
+      "path": "third-party-notices/Bison-lib__common__htmlparse.c.txt",
+      "sha256": "b979bc0e49fa1efed0fad3af4ecc582b471da7662626cebfd0d5f998b1119f72",
+      "size": 1532,
+      "origin": {
+        "kind": "generated-file-prefix",
+        "path": "lib/common/htmlparse.c",
+        "source_sha256": "8083919644d067f2045ddf53b8cd732bb858752e3103473d3b023a36cd212552",
+        "offset": 0,
+        "length": 1532
+      }
+    },
+    {
+      "path": "third-party-notices/Bison-lib__common__htmlparse.h.txt",
+      "sha256": "ecd76b7233bacbeeafca33a46b80f4120864e3de861e7d0a7d7c6fcce3d664dd",
+      "size": 1527,
+      "origin": {
+        "kind": "generated-file-prefix",
+        "path": "lib/common/htmlparse.h",
+        "source_sha256": "6e10e83a940d08e770b9c02bbc7523a481775a065994bf8d52f6707a0150b560",
+        "offset": 0,
+        "length": 1527
+      }
+    },
+    {
+      "path": "third-party-notices/SOURCE-REFERENCES.txt",
+      "sha256": "6f5ea5a2d1756065c777a99b910ac8f5d104e870b16891df3f68a21c7277c16e",
+      "size": 442,
+      "origin": {
+        "kind": "maintainer-draft-reference"
+      }
+    }
+  ],
+  "notice_files_directory": "linux-musl-runtime-notices",
+  "sdk_headers_verified": 58,
+  "generated_graphviz_files_verified": 9,
+  "musl_sources_verified": 177,
+  "zig_runtime_sources_verified": 260,
+  "musl_comment_files": 16,
+  "zig_runtime_comment_files": 49,
+  "source_evidence": [
+    {
+      "path": "linux-musl-object-sources.json",
+      "sha256": "014cb34615f16b012aef7fb82d95abb6676a3b540c1f9a4537b2e336827e3e3b"
+    },
+    {
+      "path": "linux-musl-zig-runtime-sources.json",
+      "sha256": "4483a23046f4567b26b32eed8ad1536864afa09ef31e9d8e4f5137deee1f83ef"
+    }
+  ],
+  "generated_builtin_bundled": false,
+  "audit_refusal": "Reviewed audit must bind the exact build provenance",
+  "native_linkage": "static-elf",
+  "minimum_libc": null,
+  "local_review_copy": "tools/runtime/artifacts/linux-musl/linux-musl-x86_64-runtime-notice-draft",
+  "tools_sha256": {
+    "prepare-draft-notices": "c29f48ed69cb78bc50c74363f5d104a8e89b6e4bbf0530e5969c7fcb3e2bf174",
+    "verify-artifact": "6897ad6e452e0d464cccd077e622594242acabce32eb48910327b1e89a31c3fa",
+    "pack-candidate": "f6b866a3c1a8a35687e65d05fb82b0a2143d2cc462d7030d19d756a1e83c8498"
+  },
+  "limitations": [
+    "Draft comment prefixes preserve review material, not an approved/exhaustive license inventory",
+    "DWARF may overapproximate retained code; transitive sources and third-party attribution/source offer remain pending",
+    "Generated builtin remains separate local review material and its current hash does not attest build-time bytes",
+    "No approved audit, native Alpine/ARM64/kernel/CPU acceptance, catalog change or publication",
+    "Unchanged executable: earlier corpus evidence retained; no new corpus run"
+  ]
+}

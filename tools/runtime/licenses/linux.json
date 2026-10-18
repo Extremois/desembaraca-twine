@@ -1,0 +1,441 @@
+{
+  "kind": "linux-license-audit-ledger-not-approved-audit",
+  "schema_version": 1,
+  "approved": false,
+  "graphviz_source_lock": {
+    "url": "https://gitlab.com/graphviz/graphviz/-/archive/16.1.0/graphviz-16.1.0.tar.gz",
+    "sha256": "1e028b2b3e84e946c1d3e8c47590f8f0741bba1041fe6eff36eee87e598ea249",
+    "declared_project_license": "EPL-2.0",
+    "copying_sha256": "0becf16567beb77fa252b7664631dd177c8f9a1889e48995b45379c7130e5303"
+  },
+  "artifacts": [
+    {
+      "artifact_id": "linux-glibc-x86_64",
+      "status": "pending",
+      "approved": false,
+      "environment_kind": "wsl",
+      "executable_sha256": "b9b16ddaddd87e2b855a259a6d2d6b49c4e7649bd43a6f87d0dc67ddbbc655b1",
+      "provenance_sha256": "f32611b295b3c8b468edc3109e6ef70069117021ab4cc3d0a36486b030a174f9",
+      "linkage_evidence": "specs/003-add-cross-platform-support/evidence/linux-linkage-capture.json",
+      "observed_static_sdk_inputs": [
+        {
+          "file": "crtbeginS.o",
+          "sha256": "178f90d86c9bf8c3bf0746e288bed4af492c4b65397d54caf386a9b807d8e2c5",
+          "source_url": null,
+          "source_sha256": null,
+          "notice_sha256": null,
+          "status": "pending-source-notice-review"
+        },
+        {
+          "file": "crtendS.o",
+          "sha256": "b4b7d9001893f0baf4ebfbe12df8d5cf0dd7f69643a5caae04d956d1a443b246",
+          "source_url": null,
+          "source_sha256": null,
+          "notice_sha256": null,
+          "status": "pending-source-notice-review"
+        },
+        {
+          "file": "libgcc.a",
+          "sha256": "d9c2e7a0c0f3dbfc0ff2dec153b0d044cf49d66d64d736b5d1db8ae25ca9c75e",
+          "source_url": null,
+          "source_sha256": null,
+          "notice_sha256": null,
+          "status": "pending-source-notice-review"
+        },
+        {
+          "file": "libgcc_eh.a",
+          "sha256": "050160c9613ecf99b449bb34743fb8b2f4aafb3ae03a38a63e69a6926f956140",
+          "source_url": null,
+          "source_sha256": null,
+          "notice_sha256": null,
+          "status": "pending-source-notice-review"
+        },
+        {
+          "file": "libstdc++.a",
+          "sha256": "993dfc23322500e516204ea416b98af99140eafd6c498b5a519cd847e024ef0b",
+          "source_url": null,
+          "source_sha256": null,
+          "notice_sha256": null,
+          "status": "pending-source-notice-review"
+        },
+        {
+          "file": "Scrt1.o",
+          "sha256": "75c40260f996747732aeaac415985947403f7992916bc5d35465e1f9e6c93082",
+          "source_url": null,
+          "source_sha256": null,
+          "notice_sha256": null,
+          "status": "pending-source-notice-review"
+        },
+        {
+          "file": "crti.o",
+          "sha256": "077ccb6c68db1794da3ee262c4a16a3c6f8e902845dd0829110ad4b7065e5aa3",
+          "source_url": null,
+          "source_sha256": null,
+          "notice_sha256": null,
+          "status": "pending-source-notice-review"
+        },
+        {
+          "file": "crtn.o",
+          "sha256": "a2266079f95b84ccc2162ebbf279bcd78858a748aa1882e0bdb912316c76a58f",
+          "source_url": null,
+          "source_sha256": null,
+          "notice_sha256": null,
+          "status": "pending-source-notice-review"
+        },
+        {
+          "file": "libc_nonshared.a",
+          "sha256": "8fc3f78f6a5cac0cbe80a4fd96a00dcf5269425941fa33a0f2b7d25b96941662",
+          "source_url": null,
+          "source_sha256": null,
+          "notice_sha256": null,
+          "status": "pending-source-notice-review"
+        }
+      ],
+      "pending_reason": "Nine static SDK inputs plus upstream Graphviz subcomponents require source/notice and compatibility review; no audited bundle."
+    },
+    {
+      "artifact_id": "linux-glibc-aarch64",
+      "status": "pending",
+      "approved": false,
+      "pending_reason": "No native build/linkage/source-notice audit available for this variant."
+    },
+    {
+      "artifact_id": "linux-musl-x86_64",
+      "status": "pending",
+      "approved": false,
+      "pending_reason": "Static cross-libc build and WSL evidence available; native Alpine build/acceptance and license audit remain pending."
+    },
+    {
+      "artifact_id": "linux-musl-aarch64",
+      "status": "pending",
+      "approved": false,
+      "pending_reason": "No native build/linkage/source-notice audit available for this variant."
+    }
+  ],
+  "limitations": [
+    "Pinned upstream COPYING does not by itself audit all included subcomponents or compiler runtimes.",
+    "This pending ledger cannot be supplied as an approved --audit record or promote support."
+  ],
+  "experimental_builds": [
+    {
+      "artifact_id": "linux-glibc-x86_64",
+      "approved": false,
+      "status": "pending",
+      "executable_sha256": "beaa54239cc77d98840aedf73b94e5e14407ab5f32acd893cedd3c37fb2f76f6",
+      "provenance_sha256": "855f737682e9eba268d82ea07df547548612b1b12ed51f2da426c177fe694938",
+      "linkage_evidence": "specs/003-add-cross-platform-support/evidence/linux-zig-lld-capture.json",
+      "observed_static_sdk_inputs": [
+        {
+          "file": "crt1.o",
+          "sha256": "85196dc81028540ebff9094c9665843d044404b0fb04b07265c9aa9207f03c74",
+          "size": 4384,
+          "status": "pending-source-notice-review"
+        },
+        {
+          "file": "libcompiler_rt.a",
+          "sha256": "774f584814b53e457c8abc1f41429da06d4a464102dfd98f3fba84b451f5a4aa",
+          "size": 1676582,
+          "status": "pending-source-notice-review"
+        },
+        {
+          "file": "libc_nonshared.a",
+          "sha256": "83b2417090556a26a7bf0e06ecff7a339dde88b19834e01b393bbb19704ab0b1",
+          "size": 68184,
+          "status": "pending-source-notice-review"
+        },
+        {
+          "file": "libc++.a",
+          "sha256": "0f06c311d211204130361b6efe09aae294e354742dc258e673b5a1cc07bb6888",
+          "size": 13955288,
+          "status": "pending-source-notice-review"
+        },
+        {
+          "file": "libc++abi.a",
+          "sha256": "b3d43414eed7b6bb2b1218d7f549af68f72e6583340ac0821bbfd928082ab858",
+          "size": 2041490,
+          "status": "pending-source-notice-review"
+        },
+        {
+          "file": "libunwind.a",
+          "sha256": "046b613804ac9b9132f2d988c2ea1955b87fbf500a6487c6090d58e641f000f7",
+          "size": 310224,
+          "status": "pending-source-notice-review"
+        }
+      ],
+      "observed_sdk_license_files": [
+        {
+          "path": "LICENSE",
+          "size": 1080,
+          "sha256": "5c537d6853e005298a285d508cff9ac7192cea23576c840d485b2b586a7ff177",
+          "status": "observed-not-reviewed-or-approved"
+        },
+        {
+          "path": "lib/libc/glibc/LICENSES",
+          "size": 19665,
+          "sha256": "b22a69aa3f80a5201818c66cb0df0f25f9fa13cf5861b0093a058dbd12d50dce",
+          "status": "observed-not-reviewed-or-approved"
+        },
+        {
+          "path": "lib/libc/mingw/COPYING",
+          "size": 2326,
+          "sha256": "99a69660981156c21336fdb5661f89341b013c94e4bf9e1c7467b4745718397f",
+          "status": "observed-not-reviewed-or-approved"
+        },
+        {
+          "path": "lib/libc/wasi/LICENSE",
+          "size": 831,
+          "sha256": "673f577e363e80e0058bd78214683f045d1d0c63930969a87f01a1d87d7cf1d6",
+          "status": "observed-not-reviewed-or-approved"
+        },
+        {
+          "path": "lib/libc/wasi/LICENSE-APACHE",
+          "size": 10847,
+          "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",
+          "status": "observed-not-reviewed-or-approved"
+        },
+        {
+          "path": "lib/libc/wasi/LICENSE-APACHE-LLVM",
+          "size": 12243,
+          "sha256": "268872b9816f90fd8e85db5a28d33f8150ebb8dd016653fb39ef1f94f2686bc5",
+          "status": "observed-not-reviewed-or-approved"
+        },
+        {
+          "path": "lib/libc/wasi/LICENSE-MIT",
+          "size": 1023,
+          "sha256": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3",
+          "status": "observed-not-reviewed-or-approved"
+        },
+        {
+          "path": "lib/libc/wasi/libc-bottom-half/cloudlibc/LICENSE",
+          "size": 1292,
+          "sha256": "c8b789cf5a746611e6300a0cc7750dbf92b61912a709d04e639245f7290656d0",
+          "status": "observed-not-reviewed-or-approved"
+        },
+        {
+          "path": "lib/libcxx/LICENSE.TXT",
+          "size": 16703,
+          "sha256": "539dd7aed86e8a4f12cbdd0e6c50c189c7d74847e4fecc64ce2c6ee3a01da38b",
+          "status": "observed-not-reviewed-or-approved"
+        },
+        {
+          "path": "lib/libcxxabi/LICENSE.TXT",
+          "size": 16706,
+          "sha256": "e2b35be49f7284a45b7baca8fc7b3ab7440e7902392b2528a457816b5bb2a15c",
+          "status": "observed-not-reviewed-or-approved"
+        },
+        {
+          "path": "lib/libunwind/LICENSE.TXT",
+          "size": 16706,
+          "sha256": "b5efebcaca80879234098e52d1725e6d9eb8fb96a19fce625d39184b705f7b6d",
+          "status": "observed-not-reviewed-or-approved"
+        }
+      ]
+    },
+    {
+      "artifact_id": "linux-musl-x86_64",
+      "approved": false,
+      "status": "pending",
+      "executable_sha256": "a58b2f30b70a0393ff0cec93d40e7b039015d1ad2bbdc8a9c60634334519942f",
+      "provenance_sha256": "c4cf7cfedb0a08158a4954cd8f1263cb9b8b04571e44a6d6f36d2628b07798e6",
+      "linkage_evidence": "specs/003-add-cross-platform-support/evidence/linux-musl-static.json",
+      "observed_static_sdk_inputs": [
+        {
+          "file": "libc++abi.a",
+          "sha256": "2d29aa4da92be7dfb144de8fbac7de6209da2dc33bb87f4bef4ebcb923a680f7",
+          "size": 2008078
+        },
+        {
+          "file": "libc.a",
+          "sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "size": 8601322
+        },
+        {
+          "file": "libunwind.a",
+          "sha256": "2bb7cb9d4b6403af17ac52dd6def32e6e47f94c2f040a58e95e9df72e9b4a839",
+          "size": 298898
+        },
+        {
+          "file": "crt1.o",
+          "sha256": "9d368a3fc8fd67bbf70bbd37cfee47bb96c1bf8ca802ac74861cabb3812af7b6",
+          "size": 3992
+        },
+        {
+          "file": "libzigc.a",
+          "sha256": "6d80c5e65a9dd862453d3b3046595620ee6fd5f2d2deb253bd21acd635a66b61",
+          "size": 49314
+        },
+        {
+          "file": "libcompiler_rt.a",
+          "sha256": "596fb2eb5e84701ddd0079a3a5ad6065a9ca5916518f38ad522d8f1de559cc2a",
+          "size": 1674862
+        },
+        {
+          "file": "libc++.a",
+          "sha256": "79676011395f14ff8a9b83734f028ff16ae3e8cbd8a9ec8ea618f211b5bd5d3c",
+          "size": 13718908
+        }
+      ],
+      "pending_reason": "Static musl cross-libc experiment and WSL corpus only; independent source/license and native Alpine qualification pending"
+    }
+  ],
+  "experimental_source_evidence": [
+    {
+      "artifact_id": "linux-glibc-x86_64",
+      "approved": false,
+      "executable_sha256": "beaa54239cc77d98840aedf73b94e5e14407ab5f32acd893cedd3c37fb2f76f6",
+      "provenance_sha256": "8e9545e475ffa7b2caa8e6f814bdc0f31afa6f4a2e73ed946e6f270daee05b75",
+      "evidence": "specs/003-add-cross-platform-support/evidence/linux-zig-sdk-source-audit.json",
+      "sdk_source_integrity_verified": true,
+      "source_to_binary_complete": false,
+      "extraction_row_count": 147,
+      "source_trees": {
+        "glibc": {
+          "files": 297,
+          "bytes": 1432667,
+          "canonical_manifest_sha256": "1340318bfff950d8dd94e876454ef00bfbd4174d0522c8c9507def5e7b7a95ed",
+          "prefix": "lib/libc/glibc/"
+        },
+        "libc++": {
+          "files": 1283,
+          "bytes": 9275207,
+          "canonical_manifest_sha256": "57ffebbb5eb91232408ac12665e72b8fbb047f049cc8f4f5920a42a83d66c0ea",
+          "prefix": "lib/libcxx/"
+        },
+        "libc++abi": {
+          "files": 34,
+          "bytes": 544786,
+          "canonical_manifest_sha256": "783a7239dacc5c1e95df82482ed9a4308105e3495bd2b24a5b59d33bfd51538d",
+          "prefix": "lib/libcxxabi/"
+        },
+        "libunwind": {
+          "files": 33,
+          "bytes": 725175,
+          "canonical_manifest_sha256": "dd29c5430d5b2f32ec7081a362cd35d2fddcc058264ea55fcd5562e7a35ada69",
+          "prefix": "lib/libunwind/"
+        },
+        "compiler_rt": {
+          "files": 300,
+          "bytes": 692905,
+          "canonical_manifest_sha256": "fc244c455b77cd1a0ffbc13bca9b9b2342e978e923738c4ec8c34ec2b322f258",
+          "prefix": "lib/compiler_rt/"
+        }
+      }
+    },
+    {
+      "artifact_id": "linux-musl-x86_64",
+      "approved": false,
+      "qualified": false,
+      "executable_sha256": "a58b2f30b70a0393ff0cec93d40e7b039015d1ad2bbdc8a9c60634334519942f",
+      "provenance_sha256": "c4cf7cfedb0a08158a4954cd8f1263cb9b8b04571e44a6d6f36d2628b07798e6",
+      "evidence": "specs/003-add-cross-platform-support/evidence/linux-musl-object-sources.json",
+      "source_to_binary_complete": false,
+      "summary": {
+        "observed_members": 177,
+        "members_with_source": 177,
+        "sources_verified": 177,
+        "sources_with_leading_comments": 16
+      }
+    },
+    {
+      "artifact_id": "linux-musl-x86_64",
+      "approved": false,
+      "qualified": false,
+      "executable_sha256": "a58b2f30b70a0393ff0cec93d40e7b039015d1ad2bbdc8a9c60634334519942f",
+      "provenance_sha256": "c4cf7cfedb0a08158a4954cd8f1263cb9b8b04571e44a6d6f36d2628b07798e6",
+      "evidence": "specs/003-add-cross-platform-support/evidence/linux-musl-zig-runtime-sources.json",
+      "source_to_binary_complete": false,
+      "summary": {
+        "objects": 3,
+        "sdk_sources_verified": 260,
+        "generated_files_hashed": 1,
+        "sources_with_leading_comments": 49,
+        "sources_with_license_indicators": 17,
+        "sources_with_indicators_outside_prefix": 0
+      },
+      "scope": "crt1.o, libzigc.a and libcompiler_rt.a object observations; source file tables may overapproximate"
+    }
+  ],
+  "graphviz_source_evidence": [
+    {
+      "artifact_id": "linux-glibc-x86_64",
+      "approved": false,
+      "executable_sha256": "beaa54239cc77d98840aedf73b94e5e14407ab5f32acd893cedd3c37fb2f76f6",
+      "provenance_sha256": "8e9545e475ffa7b2caa8e6f814bdc0f31afa6f4a2e73ed946e6f270daee05b75",
+      "evidence": "specs/003-add-cross-platform-support/evidence/linux-graphviz-source-audit.json",
+      "summary": {
+        "objects": 181,
+        "verified_graphviz_source_files": 322,
+        "generated_files": 9,
+        "external_files": 162
+      },
+      "pending": [
+        "Generated parsers and source/tool provenance",
+        "External transitive headers and per-file license obligations",
+        "Notice applicability and complete source offer",
+        "Other Linux artifact variants and native baseline qualification"
+      ]
+    }
+  ],
+  "draft_notice_candidates": [
+    {
+      "artifact_id": "linux-glibc-x86_64",
+      "approved": false,
+      "executable_sha256": "beaa54239cc77d98840aedf73b94e5e14407ab5f32acd893cedd3c37fb2f76f6",
+      "provenance_sha256": "090c087798b4e01a1f6be94bddb3dcaea43aae43440a2b115cc336a8e91d4abe",
+      "archive_sha256": "b9e889f911663ffb68d03b2f787684f8c2431ab3ce3f3ecb61f240e0dab6c249",
+      "archive_bytes": 6155410,
+      "notices": 14,
+      "sdk_headers_verified": 162,
+      "evidence": "specs/003-add-cross-platform-support/evidence/linux-notice-draft.json"
+    },
+    {
+      "artifact_id": "linux-musl-x86_64",
+      "approved": false,
+      "qualified": false,
+      "executable_sha256": "a58b2f30b70a0393ff0cec93d40e7b039015d1ad2bbdc8a9c60634334519942f",
+      "provenance_sha256": "daba2f9a893a98f746a101cd3de7d07261b3af51e076690bdbb60891c5055a03",
+      "notices": 14,
+      "sdk_headers_verified": 58,
+      "generated_files_verified": 9,
+      "archive_sha256": "dfcd0bf5641e28cb6986bbcefe41f77a348016345c824b9c388032dc908b3562",
+      "evidence": "specs/003-add-cross-platform-support/evidence/linux-musl-notice-draft.json",
+      "pending": "Per-file musl/Zig/LLVM and data/generator review, complete source offer and native kernel/CPU/Alpine/ARM64 qualification; ZIP remains local",
+      "archive_bytes": 7355837,
+      "inventory_sha256": "f07f0b66e2a997384bcc9041e65c841fdf195747d3c54acf265caf094c02ea5f",
+      "package_evidence": "specs/003-add-cross-platform-support/evidence/linux-musl-candidate-package.json"
+    },
+    {
+      "artifact_id": "linux-musl-x86_64",
+      "approved": false,
+      "qualified": false,
+      "executable_sha256": "a58b2f30b70a0393ff0cec93d40e7b039015d1ad2bbdc8a9c60634334519942f",
+      "provenance_sha256": "658e51e830b80642cf2915d1fc7b4cae81c0cc8c1fa12ba3fb71695760d0caf4",
+      "archive_sha256": "471263cf178713d22502141bda44ef3d3e6c7446f8fb9ec08d219cc1eb5d5ace",
+      "archive_bytes": 7368435,
+      "inventory_sha256": "a2785ab457bf8a6dd6e1deb8020f5f5807d1dfa7a17b5971abd5d59e42470467",
+      "notices": 30,
+      "sdk_headers_verified": 58,
+      "musl_sources_verified": 177,
+      "musl_source_comment_files": 16,
+      "evidence": "specs/003-add-cross-platform-support/evidence/linux-musl-source-notice-package.json",
+      "pending": "Per-file applicability and transitive headers, startup, Zig/LLVM and generated/data review, complete corresponding sources and native qualification"
+    },
+    {
+      "artifact_id": "linux-musl-x86_64",
+      "approved": false,
+      "qualified": false,
+      "executable_sha256": "a58b2f30b70a0393ff0cec93d40e7b039015d1ad2bbdc8a9c60634334519942f",
+      "provenance_sha256": "63bc32568e16a91385f3eba2f818896ab01fcc390388a98db7d28283dbe146ad",
+      "archive_sha256": "10b37b433a85216f17c65b6e09b58b3c8c26422ea302763efd10a8a11c610410",
+      "archive_bytes": 7393576,
+      "inventory_sha256": "b42af38fbb9361afb8085ff5727cff43e061486605e9e29faba9124f3382a2a8",
+      "notices": 79,
+      "sdk_headers_verified": 58,
+      "musl_sources_verified": 177,
+      "zig_runtime_sources_verified": 260,
+      "generated_builtin_bundled": false,
+      "evidence": "specs/003-add-cross-platform-support/evidence/linux-musl-runtime-notice-package.json",
+      "pending": "Draft source comments only: third-party applicability/canonical notices, transitive sources, generated/data/source offer review and native qualification remain pending"
+    }
+  ]
+}

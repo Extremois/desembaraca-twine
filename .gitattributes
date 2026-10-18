@@ -11,5 +11,6 @@ tools/runtime/*.sh text eol=lf
 specs/003-add-cross-platform-support/evidence/**/*.txt -text -whitespace
 specs/003-add-cross-platform-support/evidence/**/*.log -text -whitespace
 # Evidence files are referenced by byte hashes, including review outputs.
+specs/003-add-cross-platform-support/evidence/** -text -whitespace
 specs/003-add-cross-platform-support/evidence/**/*.json -text
 specs/003-add-cross-platform-support/evidence/**/*.twee -text

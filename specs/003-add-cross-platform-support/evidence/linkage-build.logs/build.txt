@@ -1,0 +1,1089 @@
+-- The C compiler identification is GNU 15.2.0
+-- The CXX compiler identification is GNU 15.2.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found BISON: /usr/bin/bison (found suitable version "3.8.2", minimum required is "3.0")
+-- Found FLEX: /usr/bin/flex (found version "2.6.4")
+-- skipping Ghostscript discovery because -DWITH_GHOSTSCRIPT=OFF
+-- Found PkgConfig: /usr/bin/pkg-config (found version "2.5.1")
+-- skipping GDK discovery because -DWITH_GDK=OFF
+-- Checking for module 'gdk-pixbuf-2.0'
+--   Package 'gdk-pixbuf-2.0' not found
+-- Checking for module 'lasi'
+--   Package 'lasi' not found
+-- skipping Poppler discovery because -DWITH_POPPLER=OFF
+-- skipping librsvg discovery because -DWITH_RSVG=OFF
+-- skipping libwebp discovery because -DWITH_WEBP=OFF
+-- skipping x11, xrender discovery because -DWITH_X=OFF
+-- Found Python3: /usr/bin/python3 (found version "3.14.4") found components: Interpreter
+fatal: not a git repository (or any of the parent directories): .git
+fatal: not a git repository (or any of the parent directories): .git
+fatal: not a git repository (or any of the parent directories): .git
+fatal: not a git repository (or any of the parent directories): .git
+fatal: not a git repository (or any of the parent directories): .git
+fatal: not a git repository (or any of the parent directories): .git
+Warning: build not started in a Git clone: setting version date to 0.
+-- Graphviz version: 16.1.0
+-- Looking for sys/inotify.h
+-- Looking for sys/inotify.h - found
+-- Looking for sys/ioctl.h
+-- Looking for sys/ioctl.h - found
+-- Looking for sys/mman.h
+-- Looking for sys/mman.h - found
+-- Looking for sys/select.h
+-- Looking for sys/select.h - found
+-- Looking for sys/time.h
+-- Looking for sys/time.h - found
+-- Looking for getopt.h
+-- Looking for getopt.h - found
+-- Looking for dl_iterate_phdr
+-- Looking for dl_iterate_phdr - found
+-- Looking for drand48
+-- Looking for drand48 - found
+-- Looking for inotify_init1
+-- Looking for inotify_init1 - found
+-- Looking for memrchr
+-- Looking for memrchr - found
+-- Pangocairo not found, so do not have pango_fc_font_lock_face
+-- Looking for setenv
+-- Looking for setenv - found
+-- Looking for setmode
+-- Looking for setmode - not found
+-- Looking for srand48
+-- Looking for srand48 - found
+-- Looking for strcasestr
+-- Looking for strcasestr - found
+-- Performing Test HAVE_C_WCAST_FUNCTION_TYPE
+-- Performing Test HAVE_C_WCAST_FUNCTION_TYPE - Success
+-- Performing Test HAVE_C_WFORMAT_OVERFLOW_2
+-- Performing Test HAVE_C_WFORMAT_OVERFLOW_2 - Success
+-- Performing Test HAVE_C_WIMPLICIT_FALLTHROUGH
+-- Performing Test HAVE_C_WIMPLICIT_FALLTHROUGH - Success
+-- Performing Test HAVE_C_WMAYBE_UNINITIALIZED
+-- Performing Test HAVE_C_WMAYBE_UNINITIALIZED - Success
+-- Performing Test HAVE_C_WMISSING_FIELD_INITIALIZERS
+-- Performing Test HAVE_C_WMISSING_FIELD_INITIALIZERS - Success
+-- Performing Test HAVE_C_WMISSING_PROTOTYPES
+-- Performing Test HAVE_C_WMISSING_PROTOTYPES - Success
+-- Performing Test HAVE_C_WSHADOW
+-- Performing Test HAVE_C_WSHADOW - Success
+-- Performing Test HAVE_C_WUNDEF
+-- Performing Test HAVE_C_WUNDEF - Success
+-- Performing Test HAVE_C_WUNUSED_BUT_SET_VARIABLE
+-- Performing Test HAVE_C_WUNUSED_BUT_SET_VARIABLE - Success
+-- Performing Test HAVE_C_WUNUSED_PARAMETER
+-- Performing Test HAVE_C_WUNUSED_PARAMETER - Success
+-- Performing Test HAVE_CXX_WMISSING_FIELD_INITIALIZERS
+-- Performing Test HAVE_CXX_WMISSING_FIELD_INITIALIZERS - Success
+-- Performing Test HAVE_CXX_WSHADOW
+-- Performing Test HAVE_CXX_WSHADOW - Success
+-- Performing Test HAVE_CXX_WSIGN_COMPARE
+-- Performing Test HAVE_CXX_WSIGN_COMPARE - Success
+-- Performing Test HAVE_CXX_WUNUSED_FUNCTION
+-- Performing Test HAVE_CXX_WUNUSED_FUNCTION - Success
+-- Performing Test HAVE_CXX_WUNUSED_LABEL
+-- Performing Test HAVE_CXX_WUNUSED_LABEL - Success
+-- Performing Test HAVE_CXX_WUNUSED_PARAMETER
+-- Performing Test HAVE_CXX_WUNUSED_PARAMETER - Success
+-- Performing Test HAVE_CXX_WUNUSED_VARIABLE
+-- Performing Test HAVE_CXX_WUNUSED_VARIABLE - Success
+-- The following OPTIONAL packages have been found:
+
+ * PkgConfig
+
+-- The following REQUIRED packages have been found:
+
+ * BISON (required version >= 3.0)
+ * FLEX
+ * Python3
+
+-- Configuring done (4.7s)
+-- Generating done (0.4s)
+CMake Warning:
+  Manually-specified variables were not used by the project:
+
+    CMAKE_DISABLE_FIND_PACKAGE_Fontconfig
+    CMAKE_DISABLE_FIND_PACKAGE_GLUT
+    CMAKE_DISABLE_FIND_PACKAGE_GS
+    CMAKE_DISABLE_FIND_PACKAGE_GTK2
+    CMAKE_DISABLE_FIND_PACKAGE_LTDL
+
+
+-- Build files have been written to: /var/tmp/desembaraca-graphviz-003-linkage/build
+[  0%] Building C object lib/util/CMakeFiles/util.dir/arena.c.o
+[  0%] Building C object lib/cdt/CMakeFiles/cdt.dir/dtclose.c.o
+[  0%] Building C object lib/cdt/CMakeFiles/cdt.dir/dtdisc.c.o
+[  0%] Building C object lib/util/CMakeFiles/util.dir/base64.c.o
+[  1%] Building C object lib/cdt/CMakeFiles/cdt.dir/dtextract.c.o
+[  3%] Building C object lib/util/CMakeFiles/util.dir/gv_find_me.c.o
+[  3%] Building C object lib/cdt/CMakeFiles/cdt.dir/dtflatten.c.o
+[  3%] Building C object lib/util/CMakeFiles/util.dir/gv_fopen.c.o
+[  3%] Building C object lib/cdt/CMakeFiles/cdt.dir/dthash.c.o
+[  3%] Building C object lib/util/CMakeFiles/util.dir/list.c.o
+[  3%] Building C object lib/cdt/CMakeFiles/cdt.dir/dtmethod.c.o
+[  4%] Building C object lib/cdt/CMakeFiles/cdt.dir/dtopen.c.o
+[  4%] Building C object lib/util/CMakeFiles/util.dir/random.c.o
+[  4%] Building C object lib/cdt/CMakeFiles/cdt.dir/dtrenew.c.o
+[  6%] Building C object lib/util/CMakeFiles/util.dir/xml.c.o
+[  6%] Building C object lib/cdt/CMakeFiles/cdt.dir/dtrestore.c.o
+[  6%] Building C object lib/cdt/CMakeFiles/cdt.dir/dtsize.c.o
+[  6%] Linking C static library libutil.a
+[  8%] Building C object lib/cdt/CMakeFiles/cdt.dir/dtstat.c.o
+[  8%] Built target util
+[  8%] [BISON][HTMLparse] Building parser with bison 3.8.2
+[  8%] Building C object lib/cdt/CMakeFiles/cdt.dir/dtstrhash.c.o
+/var/tmp/desembaraca-graphviz-003-linkage/source/graphviz-16.1.0/lib/common/htmlparse.y: warning: 2 shift/reduce conflicts [-Wconflicts-sr]
+/var/tmp/desembaraca-graphviz-003-linkage/source/graphviz-16.1.0/lib/common/htmlparse.y: note: rerun with option '-Wcounterexamples' to generate conflict counterexamples
+[  8%] Building C object lib/cdt/CMakeFiles/cdt.dir/dttree.c.o
+[  8%] generate color table
+[  8%] Building C object lib/cdt/CMakeFiles/cdt.dir/dtview.c.o
+[  9%] Building C object lib/cdt/CMakeFiles/cdt.dir/dtwalk.c.o
+[  9%] Linking C static library libcdt.a
+[ 11%] generate entities.h
+[ 11%] Built target cdt
+[ 11%] Building C object lib/pathplan/CMakeFiles/pathplan.dir/cvt.c.o
+[ 11%] Building C object lib/common/CMakeFiles/common_obj.dir/args.c.o
+[ 11%] Building C object lib/pathplan/CMakeFiles/pathplan.dir/inpoly.c.o
+[ 11%] Building C object lib/common/CMakeFiles/common_obj.dir/arrows.c.o
+[ 11%] Building C object lib/pathplan/CMakeFiles/pathplan.dir/route.c.o
+[ 12%] Building C object lib/pathplan/CMakeFiles/pathplan.dir/shortest.c.o
+[ 14%] Building C object lib/common/CMakeFiles/common_obj.dir/colxlate.c.o
+[ 14%] Building C object lib/pathplan/CMakeFiles/pathplan.dir/shortestpth.c.o
+[ 14%] Building C object lib/pathplan/CMakeFiles/pathplan.dir/solvers.c.o
+[ 14%] Building C object lib/common/CMakeFiles/common_obj.dir/ellipse.c.o
+[ 14%] Building C object lib/pathplan/CMakeFiles/pathplan.dir/triang.c.o
+[ 14%] Building C object lib/common/CMakeFiles/common_obj.dir/emit.c.o
+[ 16%] Building C object lib/pathplan/CMakeFiles/pathplan.dir/util.c.o
+[ 16%] Building C object lib/pathplan/CMakeFiles/pathplan.dir/visibility.c.o
+[ 16%] Linking C static library libpathplan.a
+[ 16%] Built target pathplan
+[ 16%] Building C object lib/xdot/CMakeFiles/xdot.dir/xdot.c.o
+[ 17%] Linking C static library libxdot.a
+[ 17%] Building C object lib/common/CMakeFiles/common_obj.dir/geom.c.o
+[ 17%] Built target xdot
+[ 19%] Building C object lib/ortho/CMakeFiles/ortho_obj.dir/fPQ.c.o
+[ 20%] Building C object lib/common/CMakeFiles/common_obj.dir/globals.c.o
+[ 20%] Building C object lib/ortho/CMakeFiles/ortho_obj.dir/maze.c.o
+[ 20%] Building C object lib/common/CMakeFiles/common_obj.dir/htmllex.c.o
+[ 20%] Building C object lib/ortho/CMakeFiles/ortho_obj.dir/ortho.c.o
+[ 20%] Building C object lib/common/CMakeFiles/common_obj.dir/htmltable.c.o
+[ 20%] Building C object lib/ortho/CMakeFiles/ortho_obj.dir/partition.c.o
+[ 20%] Building C object lib/common/CMakeFiles/common_obj.dir/input.c.o
+[ 22%] Building C object lib/ortho/CMakeFiles/ortho_obj.dir/rawgraph.c.o
+[ 24%] Building C object lib/common/CMakeFiles/common_obj.dir/labels.c.o
+[ 24%] Building C object lib/ortho/CMakeFiles/ortho_obj.dir/sgraph.c.o
+[ 24%] Building C object lib/common/CMakeFiles/common_obj.dir/ns.c.o
+[ 24%] Building C object lib/ortho/CMakeFiles/ortho_obj.dir/trapezoid.c.o
+[ 24%] Built target ortho_obj
+[ 24%] Building C object lib/pack/CMakeFiles/pack_obj.dir/ccomps.c.o
+[ 24%] Building C object lib/common/CMakeFiles/common_obj.dir/output.c.o
+[ 25%] Building C object lib/pack/CMakeFiles/pack_obj.dir/pack.c.o
+[ 25%] Building C object lib/common/CMakeFiles/common_obj.dir/pointset.c.o
+[ 27%] Building C object lib/common/CMakeFiles/common_obj.dir/postproc.c.o
+[ 27%] Built target pack_obj
+[ 27%] Building C object lib/rbtree/CMakeFiles/rbtree.dir/red_black_tree.c.o
+[ 27%] Building C object lib/common/CMakeFiles/common_obj.dir/psusershape.c.o
+[ 27%] Linking C static library librbtree.a
+[ 27%] Built target rbtree
+[ 27%] Building C object lib/sparse/CMakeFiles/sparse.dir/clustering.c.o
+[ 27%] Building C object lib/common/CMakeFiles/common_obj.dir/routespl.c.o
+[ 27%] Building C object lib/sparse/CMakeFiles/sparse.dir/color_palette.c.o
+[ 29%] Building C object lib/common/CMakeFiles/common_obj.dir/shapes.c.o
+[ 29%] Building C object lib/sparse/CMakeFiles/sparse.dir/colorutil.c.o
+[ 30%] Building C object lib/sparse/CMakeFiles/sparse.dir/DotIO.c.o
+[ 30%] Building C object lib/sparse/CMakeFiles/sparse.dir/general.c.o
+[ 30%] Building C object lib/common/CMakeFiles/common_obj.dir/splines.c.o
+[ 30%] Building C object lib/sparse/CMakeFiles/sparse.dir/mq.c.o
+[ 30%] Building C object lib/sparse/CMakeFiles/sparse.dir/QuadTree.c.o
+[ 30%] Building C object lib/common/CMakeFiles/common_obj.dir/taper.c.o
+[ 30%] Building C object lib/common/CMakeFiles/common_obj.dir/textspan.c.o
+[ 32%] Building C object lib/sparse/CMakeFiles/sparse.dir/SparseMatrix.c.o
+/var/tmp/desembaraca-graphviz-003-linkage/source/graphviz-16.1.0/lib/sparse/SparseMatrix.c: In function ‘SparseMatrix_coordinate_form_add_entry_’:
+/var/tmp/desembaraca-graphviz-003-linkage/source/graphviz-16.1.0/lib/sparse/SparseMatrix.c:928:58: warning: unused parameter ‘type’ [-Wunused-parameter]
+  928 |                                                      int type) {
+      |                                                      ~~~~^~~~
+[ 33%] Building C object lib/common/CMakeFiles/common_obj.dir/textspan_lut.c.o
+[ 33%] Building C object lib/common/CMakeFiles/common_obj.dir/timing.c.o
+[ 33%] Linking C static library libsparse.a
+[ 33%] Built target sparse
+[ 33%] Building C object lib/common/CMakeFiles/common_obj.dir/utils.c.o
+[ 35%] [FLEX][Scan] Building scanner with flex 2.6.4
+[ 35%] [BISON][Grammar] Building parser with bison 3.8.2
+[ 35%] Building C object lib/cgraph/CMakeFiles/cgraph.dir/acyclic.c.o
+[ 35%] Building C object lib/cgraph/CMakeFiles/cgraph.dir/agerror.c.o
+[ 35%] Building C object lib/common/CMakeFiles/common_obj.dir/htmlparse.c.o
+[ 35%] Building C object lib/cgraph/CMakeFiles/cgraph.dir/apply.c.o
+[ 37%] Building C object lib/cgraph/CMakeFiles/cgraph.dir/attr.c.o
+[ 37%] Built target common_obj
+[ 38%] Building C object lib/label/CMakeFiles/label.dir/index.c.o
+[ 38%] Building C object lib/cgraph/CMakeFiles/cgraph.dir/edge.c.o
+[ 38%] Building C object lib/label/CMakeFiles/label.dir/node.c.o
+[ 38%] Building C object lib/label/CMakeFiles/label.dir/rectangle.c.o
+[ 38%] Building C object lib/cgraph/CMakeFiles/cgraph.dir/graph.c.o
+[ 38%] Building C object lib/label/CMakeFiles/label.dir/split.q.c.o
+[ 38%] Building C object lib/cgraph/CMakeFiles/cgraph.dir/id.c.o
+[ 40%] Building C object lib/label/CMakeFiles/label.dir/xlabels.c.o
+[ 41%] Building C object lib/cgraph/CMakeFiles/cgraph.dir/imap.c.o
+[ 41%] Linking C static library liblabel.a
+[ 41%] Building C object lib/cgraph/CMakeFiles/cgraph.dir/ingraphs.c.o
+[ 41%] Built target label
+[ 41%] Building C object lib/cgraph/CMakeFiles/cgraph.dir/io.c.o
+[ 41%] Linking C static library libortho.a
+[ 41%] Building C object lib/cgraph/CMakeFiles/cgraph.dir/node.c.o
+[ 41%] Built target ortho
+[ 41%] Linking C static library libpack.a
+[ 43%] Building C object lib/cgraph/CMakeFiles/cgraph.dir/node_induce.c.o
+[ 43%] Built target pack
+[ 43%] Building C object lib/cgraph/CMakeFiles/cgraph.dir/obj.c.o
+[ 43%] Building C object lib/cgraph/CMakeFiles/cgraph.dir/rec.c.o
+[ 43%] Building C object lib/cgraph/CMakeFiles/cgraph.dir/refstr.c.o
+[ 45%] Building C object lib/cgraph/CMakeFiles/cgraph.dir/subg.c.o
+[ 45%] Building C object lib/cgraph/CMakeFiles/cgraph.dir/tred.c.o
+[ 45%] Building C object lib/cgraph/CMakeFiles/cgraph.dir/unflatten.c.o
+[ 46%] Building C object lib/cgraph/CMakeFiles/cgraph.dir/utils.c.o
+[ 46%] Building C object lib/cgraph/CMakeFiles/cgraph.dir/write.c.o
+[ 46%] Building C object lib/cgraph/CMakeFiles/cgraph.dir/grammar.c.o
+[ 46%] Building C object lib/cgraph/CMakeFiles/cgraph.dir/scan.c.o
+[ 46%] Linking C static library libcgraph.a
+[ 46%] Built target cgraph
+[ 48%] Building C object lib/circogen/CMakeFiles/circogen.dir/block.c.o
+[ 48%] Linking C static library libcommon.a
+[ 48%] Built target common
+[ 48%] Building C object lib/circogen/CMakeFiles/circogen.dir/blockpath.c.o
+[ 48%] Building C object lib/dotgen/CMakeFiles/dotgen.dir/aspect.c.o
+[ 48%] Building C object lib/dotgen/CMakeFiles/dotgen.dir/acyclic.c.o
+[ 48%] Building C object lib/circogen/CMakeFiles/circogen.dir/blocktree.c.o
+[ 48%] Building C object lib/dotgen/CMakeFiles/dotgen.dir/class1.c.o
+[ 50%] Building C object lib/circogen/CMakeFiles/circogen.dir/circpos.c.o
+[ 51%] Building C object lib/dotgen/CMakeFiles/dotgen.dir/class2.c.o
+[ 51%] Building C object lib/circogen/CMakeFiles/circogen.dir/circular.c.o
+[ 51%] Building C object lib/dotgen/CMakeFiles/dotgen.dir/cluster.c.o
+[ 51%] Building C object lib/circogen/CMakeFiles/circogen.dir/circularinit.c.o
+[ 51%] Building C object lib/dotgen/CMakeFiles/dotgen.dir/compound.c.o
+[ 51%] Building C object lib/circogen/CMakeFiles/circogen.dir/edgelist.c.o
+[ 51%] Building C object lib/dotgen/CMakeFiles/dotgen.dir/conc.c.o
+[ 53%] Building C object lib/circogen/CMakeFiles/circogen.dir/nodelist.c.o
+[ 54%] Building C object lib/dotgen/CMakeFiles/dotgen.dir/decomp.c.o
+[ 54%] Linking C static library libcircogen.a
+[ 54%] Building C object lib/dotgen/CMakeFiles/dotgen.dir/dotinit.c.o
+[ 54%] Built target circogen
+[ 54%] Building C object lib/osage/CMakeFiles/osage.dir/osageinit.c.o
+[ 54%] Building C object lib/dotgen/CMakeFiles/dotgen.dir/dotsplines.c.o
+[ 56%] Linking C static library libosage.a
+[ 56%] Built target osage
+[ 58%] Building C object lib/twopigen/CMakeFiles/twopigen.dir/circle.c.o
+[ 58%] Building C object lib/twopigen/CMakeFiles/twopigen.dir/twopiinit.c.o
+[ 58%] Linking C static library libtwopigen.a
+[ 58%] Building C object lib/dotgen/CMakeFiles/dotgen.dir/fastgr.c.o
+[ 58%] Built target twopigen
+[ 59%] Building C object lib/gvc/CMakeFiles/gvc.dir/gvc.c.o
+[ 61%] Building C object lib/dotgen/CMakeFiles/dotgen.dir/flat.c.o
+[ 61%] Building C object lib/gvc/CMakeFiles/gvc.dir/gvconfig.c.o
+[ 61%] Building C object lib/dotgen/CMakeFiles/dotgen.dir/mincross.c.o
+[ 61%] Building C object lib/gvc/CMakeFiles/gvc.dir/gvcontext.c.o
+[ 61%] Building C object lib/gvc/CMakeFiles/gvc.dir/gvdevice.c.o
+[ 61%] Building C object lib/dotgen/CMakeFiles/dotgen.dir/position.c.o
+[ 62%] Building C object lib/gvc/CMakeFiles/gvc.dir/gvevent.c.o
+[ 62%] Building C object lib/gvc/CMakeFiles/gvc.dir/gvjobs.c.o
+[ 64%] Building C object lib/dotgen/CMakeFiles/dotgen.dir/rank.c.o
+[ 64%] Building C object lib/gvc/CMakeFiles/gvc.dir/gvlayout.c.o
+[ 64%] Building C object lib/gvc/CMakeFiles/gvc.dir/gvloadimage.c.o
+[ 64%] Building C object lib/dotgen/CMakeFiles/dotgen.dir/sameport.c.o
+[ 66%] Building C object lib/gvc/CMakeFiles/gvc.dir/gvplugin.c.o
+[ 66%] Linking C static library libdotgen.a
+[ 66%] Built target dotgen
+[ 66%] Building C object lib/gvc/CMakeFiles/gvc.dir/gvrender.c.o
+[ 66%] Building C object lib/gvc/CMakeFiles/gvc.dir/gvtextlayout.c.o
+[ 67%] Building C object lib/gvc/CMakeFiles/gvc.dir/gvtool_tred.c.o
+[ 67%] Building C object lib/gvc/CMakeFiles/gvc.dir/gvusershape.c.o
+[ 67%] Linking C static library libgvc.a
+[ 67%] Built target gvc
+[ 69%] Building C object lib/fdpgen/CMakeFiles/fdpgen.dir/clusteredges.c.o
+[ 69%] Building C object plugin/vt/CMakeFiles/gvplugin_vt.dir/gvplugin_vt.c.o
+[ 69%] Linking C static library libgvplugin_vt.a
+[ 69%] Building C object lib/fdpgen/CMakeFiles/fdpgen.dir/comp.c.o
+[ 69%] Built target gvplugin_vt
+[ 69%] Building C object lib/neatogen/CMakeFiles/neatogen.dir/adjust.c.o
+[ 69%] Building C object lib/fdpgen/CMakeFiles/fdpgen.dir/dbg.c.o
+[ 70%] Building C object lib/fdpgen/CMakeFiles/fdpgen.dir/fdpinit.c.o
+[ 70%] Building C object lib/neatogen/CMakeFiles/neatogen.dir/bfs.c.o
+[ 70%] Building C object lib/fdpgen/CMakeFiles/fdpgen.dir/grid.c.o
+[ 70%] Building C object lib/neatogen/CMakeFiles/neatogen.dir/call_tri.c.o
+[ 70%] Building C object lib/fdpgen/CMakeFiles/fdpgen.dir/layout.c.o
+[ 72%] Building C object lib/neatogen/CMakeFiles/neatogen.dir/circuit.c.o
+[ 72%] Building C object lib/neatogen/CMakeFiles/neatogen.dir/closest.c.o
+[ 72%] Building C object lib/fdpgen/CMakeFiles/fdpgen.dir/tlayout.c.o
+[ 72%] Building C object lib/neatogen/CMakeFiles/neatogen.dir/compute_hierarchy.c.o
+[ 74%] Building C object lib/fdpgen/CMakeFiles/fdpgen.dir/xlayout.c.o
+[ 74%] Building C object lib/neatogen/CMakeFiles/neatogen.dir/conjgrad.c.o
+[ 74%] Linking C static library libfdpgen.a
+[ 75%] Building C object lib/neatogen/CMakeFiles/neatogen.dir/constrained_majorization.c.o
+[ 75%] Built target fdpgen
+[ 75%] Building C object lib/patchwork/CMakeFiles/patchwork.dir/patchwork.c.o
+[ 75%] Building C object lib/neatogen/CMakeFiles/neatogen.dir/constraint.c.o
+[ 75%] Building C object lib/patchwork/CMakeFiles/patchwork.dir/patchworkinit.c.o
+[ 75%] Building C object lib/neatogen/CMakeFiles/neatogen.dir/delaunay.c.o
+[ 75%] Building C object lib/patchwork/CMakeFiles/patchwork.dir/tree_map.c.o
+[ 75%] Building C object lib/neatogen/CMakeFiles/neatogen.dir/dijkstra.c.o
+[ 77%] Linking C static library libpatchwork.a
+[ 77%] Built target patchwork
+[ 79%] Building C object lib/neatogen/CMakeFiles/neatogen.dir/edges.c.o
+[ 79%] Building C object plugin/core/CMakeFiles/gvplugin_core.dir/gvloadimage_core.c.o
+[ 79%] Building C object lib/neatogen/CMakeFiles/neatogen.dir/embed_graph.c.o
+[ 80%] Building C object plugin/core/CMakeFiles/gvplugin_core.dir/gvplugin_core.c.o
+[ 80%] Building C object plugin/core/CMakeFiles/gvplugin_core.dir/gvrender_core_dot.c.o
+[ 80%] Building C object lib/neatogen/CMakeFiles/neatogen.dir/geometry.c.o
+[ 80%] Building C object lib/neatogen/CMakeFiles/neatogen.dir/heap.c.o
+[ 80%] Building C object plugin/core/CMakeFiles/gvplugin_core.dir/gvrender_core_json.c.o
+[ 82%] Building C object lib/neatogen/CMakeFiles/neatogen.dir/hedges.c.o
+[ 82%] Building C object lib/neatogen/CMakeFiles/neatogen.dir/info.c.o
+[ 82%] Building C object plugin/core/CMakeFiles/gvplugin_core.dir/gvrender_core_fig.c.o
+[ 82%] Building C object lib/neatogen/CMakeFiles/neatogen.dir/kkutils.c.o
+[ 83%] Building C object plugin/core/CMakeFiles/gvplugin_core.dir/gvrender_core_map.c.o
+[ 83%] Building C object lib/neatogen/CMakeFiles/neatogen.dir/legal.c.o
+[ 83%] Building C object plugin/core/CMakeFiles/gvplugin_core.dir/gvrender_core_pic.c.o
+[ 83%] Building C object plugin/core/CMakeFiles/gvplugin_core.dir/gvrender_core_pov.c.o
+[ 85%] Building C object lib/neatogen/CMakeFiles/neatogen.dir/lu.c.o
+[ 85%] Building C object lib/neatogen/CMakeFiles/neatogen.dir/matinv.c.o
+[ 85%] Building C object plugin/core/CMakeFiles/gvplugin_core.dir/gvrender_core_ps.c.o
+[ 85%] Building C object lib/neatogen/CMakeFiles/neatogen.dir/matrix_ops.c.o
+[ 87%] Building C object plugin/core/CMakeFiles/gvplugin_core.dir/gvrender_core_svg.c.o
+[ 87%] Building C object lib/neatogen/CMakeFiles/neatogen.dir/multispline.c.o
+[ 87%] Building C object plugin/core/CMakeFiles/gvplugin_core.dir/gvrender_core_tk.c.o
+[ 87%] Linking C static library libgvplugin_core.a
+[ 88%] Building C object lib/neatogen/CMakeFiles/neatogen.dir/neatoinit.c.o
+[ 88%] Built target gvplugin_core
+[ 88%] Building C object plugin/dot_layout/CMakeFiles/gvplugin_dot_layout.dir/gvplugin_dot_layout.c.o
+[ 90%] Building C object plugin/dot_layout/CMakeFiles/gvplugin_dot_layout.dir/gvlayout_dot_layout.c.o
+[ 90%] Linking C static library libgvplugin_dot_layout.a
+[ 90%] Building C object lib/neatogen/CMakeFiles/neatogen.dir/neatosplines.c.o
+[ 90%] Built target gvplugin_dot_layout
+[ 90%] Building C object lib/neatogen/CMakeFiles/neatogen.dir/opt_arrangement.c.o
+[ 91%] Building C object lib/neatogen/CMakeFiles/neatogen.dir/overlap.c.o
+[ 91%] Building C object lib/neatogen/CMakeFiles/neatogen.dir/pca.c.o
+[ 91%] Building C object lib/neatogen/CMakeFiles/neatogen.dir/poly.c.o
+[ 91%] Building C object lib/neatogen/CMakeFiles/neatogen.dir/quad_prog_solve.c.o
+[ 93%] Building C object lib/neatogen/CMakeFiles/neatogen.dir/site.c.o
+[ 93%] Building C object lib/neatogen/CMakeFiles/neatogen.dir/smart_ini_x.c.o
+[ 93%] Building C object lib/neatogen/CMakeFiles/neatogen.dir/solve.c.o
+[ 93%] Building C object lib/neatogen/CMakeFiles/neatogen.dir/stuff.c.o
+[ 95%] Building C object lib/neatogen/CMakeFiles/neatogen.dir/stress.c.o
+[ 95%] Building C object lib/neatogen/CMakeFiles/neatogen.dir/voronoi.c.o
+[ 95%] Building C object lib/neatogen/CMakeFiles/neatogen.dir/sgd.c.o
+[ 95%] Building C object lib/neatogen/CMakeFiles/neatogen.dir/randomkit.c.o
+[ 96%] Linking C static library libneatogen.a
+[ 96%] Built target neatogen
+[ 98%] Building C object plugin/neato_layout/CMakeFiles/gvplugin_neato_layout.dir/gvplugin_neato_layout.c.o
+[ 98%] Building C object plugin/neato_layout/CMakeFiles/gvplugin_neato_layout.dir/gvlayout_neato_layout.c.o
+[ 98%] Linking C static library libgvplugin_neato_layout.a
+[ 98%] Built target gvplugin_neato_layout
+[ 98%] Building C object cmd/dot/CMakeFiles/dot.dir/dot.c.o
+[ 98%] Building CXX object cmd/dot/CMakeFiles/dot.dir/dot_builtins.cpp.o
+[100%] Linking CXX executable dot
+/var/tmp/desembaraca-graphviz-003-linkage/source/graphviz-16.1.0/lib/common/htmltable.c: In function ‘make_html_label’:
+/var/tmp/desembaraca-graphviz-003-linkage/source/graphviz-16.1.0/lib/common/htmltable.c:1879:7: warning: ‘env.g’ may be used uninitialized [-Wmaybe-uninitialized]
+ 1879 |     g = env.g->root;
+      |       ^
+/var/tmp/desembaraca-graphviz-003-linkage/source/graphviz-16.1.0/lib/common/htmltable.c:1864:15: note: ‘env.g’ was declared here
+ 1864 |     htmlenv_t env;
+      |               ^
+/var/tmp/desembaraca-graphviz-003-linkage/source/graphviz-16.1.0/lib/common/emit.c: In function ‘emit_edge_graphics’:
+/var/tmp/desembaraca-graphviz-003-linkage/source/graphviz-16.1.0/lib/common/emit.c:2516:17: warning: ‘MEM[(struct pointf * *)&bz]’ may be used uninitialized [-Wmaybe-uninitialized]
+ 2516 |                 arrow_gen(job, EMIT_TDRAW, bz.sp, bz.list[0],
+      |                 ^
+/var/tmp/desembaraca-graphviz-003-linkage/source/graphviz-16.1.0/lib/common/emit.c:2356:12: note: ‘MEM[(struct pointf * *)&bz]’ was declared here
+ 2356 |     bezier bz;
+      |            ^
+/var/tmp/desembaraca-graphviz-003-linkage/source/graphviz-16.1.0/lib/common/emit.c:2356:12: warning: ‘MEM[(long unsigned int *)&bz + 8B]’ may be used uninitialized [-Wmaybe-uninitialized]
+/var/tmp/desembaraca-graphviz-003-linkage/source/graphviz-16.1.0/lib/common/emit.c:2508:16: warning: ‘bz.sflag’ may be used uninitialized [-Wmaybe-uninitialized]
+ 2508 |             if (bz.sflag) {
+      |                ^
+/var/tmp/desembaraca-graphviz-003-linkage/source/graphviz-16.1.0/lib/common/emit.c:2356:12: note: ‘bz.sflag’ was declared here
+ 2356 |     bezier bz;
+      |            ^
+/var/tmp/desembaraca-graphviz-003-linkage/source/graphviz-16.1.0/lib/common/emit.c:2519:16: warning: ‘bz.eflag’ may be used uninitialized [-Wmaybe-uninitialized]
+ 2519 |             if (bz.eflag) {
+      |                ^
+/var/tmp/desembaraca-graphviz-003-linkage/source/graphviz-16.1.0/lib/common/emit.c:2356:12: note: ‘bz.eflag’ was declared here
+ 2356 |     bezier bz;
+      |            ^
+Linking dot as circo
+Linking dot as fdp
+Linking dot as neato
+Linking dot as osage
+Linking dot as patchwork
+Linking dot as twopi
+[100%] Built target dot
+{
+  "artifact_id": "linux-glibc-x86_64",
+  "recipe": {
+    "schema_version": 1,
+    "id": "linux-glibc-x86_64",
+    "os": "linux",
+    "arch": "x86_64",
+    "abi": "glibc",
+    "source_lock": "source-lock.json",
+    "cmake": {
+      "BUILD_SHARED_LIBS": "OFF",
+      "ENABLE_LTDL": "OFF",
+      "WITH_EXPAT": "OFF",
+      "WITH_ZLIB": "OFF",
+      "WITH_GVEDIT": "OFF",
+      "WITH_SMYRNA": "OFF",
+      "WITH_GDK": "OFF",
+      "WITH_GHOSTSCRIPT": "OFF",
+      "WITH_GTK": "OFF",
+      "WITH_POPPLER": "OFF",
+      "WITH_QUARTZ": "OFF",
+      "WITH_RSVG": "OFF",
+      "WITH_WEBP": "OFF",
+      "WITH_X": "OFF",
+      "ENABLE_TCL": "OFF",
+      "ENABLE_SWIG": "OFF",
+      "with_digcola": "OFF",
+      "with_ipsepcola": "OFF",
+      "with_sfdp": "OFF",
+      "with_cxx_api": "OFF",
+      "with_cxx_tests": "OFF",
+      "CMAKE_DISABLE_FIND_PACKAGE_ANN": "ON",
+      "CMAKE_DISABLE_FIND_PACKAGE_CAIRO": "ON",
+      "CMAKE_DISABLE_FIND_PACKAGE_GTS": "ON",
+      "CMAKE_DISABLE_FIND_PACKAGE_PANGOCAIRO": "ON",
+      "CMAKE_DISABLE_FIND_PACKAGE_Freetype": "ON",
+      "CMAKE_DISABLE_FIND_PACKAGE_GLUT": "ON",
+      "CMAKE_DISABLE_FIND_PACKAGE_GTK2": "ON",
+      "CMAKE_DISABLE_FIND_PACKAGE_Fontconfig": "ON",
+      "CMAKE_DISABLE_FIND_PACKAGE_GD": "ON",
+      "CMAKE_DISABLE_FIND_PACKAGE_GS": "ON",
+      "CMAKE_DISABLE_FIND_PACKAGE_LTDL": "ON",
+      "CMAKE_DISABLE_FIND_PACKAGE_AA": "ON",
+      "CMAKE_DISABLE_FIND_PACKAGE_DevIL": "ON",
+      "CMAKE_EXE_LINKER_FLAGS": "-static-libstdc++ -static-libgcc",
+      "CMAKE_C_FLAGS": "-march=x86-64 -mtune=generic",
+      "CMAKE_CXX_FLAGS": "-march=x86-64 -mtune=generic",
+      "ENABLE_SHARP": "OFF",
+      "ENABLE_D": "OFF",
+      "ENABLE_GO": "OFF",
+      "ENABLE_GUILE": "OFF",
+      "ENABLE_JAVA": "OFF",
+      "ENABLE_JAVASCRIPT": "OFF",
+      "ENABLE_LUA": "OFF",
+      "ENABLE_PERL": "OFF",
+      "ENABLE_PHP": "OFF",
+      "ENABLE_PYTHON": "OFF",
+      "ENABLE_R": "OFF",
+      "ENABLE_RUBY": "OFF",
+      "CMAKE_SKIP_RPATH": "ON"
+    },
+    "qualification": "pending-native-build-and-audit",
+    "sdk_environment_digest": null,
+    "baseline_target": "Ubuntu 18.04 or older glibc ABI",
+    "required_evidence": [
+      "native build",
+      "compiler/sysroot/image digests",
+      "dependency closure and ABI symbols",
+      "source/license audit",
+      "relocation",
+      "six known layouts",
+      "cell qualification"
+    ],
+    "notes": "Graphviz internal libraries/plugins statically linked using upstream dot_builtins; libc/OS linkage remains platform-specific. No universal Linux claim."
+  },
+  "source": {
+    "schema_version": 1,
+    "engine": "graphviz",
+    "version": "16.1.0",
+    "url": "https://gitlab.com/graphviz/graphviz/-/archive/16.1.0/graphviz-16.1.0.tar.gz",
+    "sha256": "1e028b2b3e84e946c1d3e8c47590f8f0741bba1041fe6eff36eee87e598ea249",
+    "size": 41189481,
+    "git_revision": "e41c710710be080ad37af1b51c6e2f8beffa9ee5",
+    "license": "EPL-2.0",
+    "license_path": "COPYING",
+    "license_sha256": "0becf16567beb77fa252b7664631dd177c8f9a1889e48995b45379c7130e5303",
+    "qualification": "source-only; no POSIX binary qualified"
+  },
+  "recipe_sha256": "ce509aa37846e078bca9765abae6bc425a6bbd6a75eabff806ff5999c4b48f44",
+  "output": "/var/tmp/desembaraca-graphviz-003-linkage",
+  "qualification": "build-only; dependency/license/corpus/signature qualification still required",
+  "sdk": {
+    "cmake": {
+      "path": "/usr/bin/cmake",
+      "sha256": "6e1dccda39845415d68eabb934c598998949c99ec4668625d571aee1827b05c7"
+    },
+    "c_compiler": {
+      "path": "/usr/bin/cc",
+      "sha256": "b5f1b773a7c733738352000c92a077dc5852a1a2fc6d836b1e411be1e9ec5f88"
+    },
+    "cxx_compiler": {
+      "path": "/usr/bin/c++",
+      "sha256": "e6718f7e0c7d057c3ff77b550c603da9bc4030e3ede3c053705acce1293dbe4d"
+    },
+    "environment_digest": "f121160922e6f2f21775a83f953bf8e8bfae281fd44c767f483eb9912ba740c9",
+    "facts": {
+      "tools": {
+        "cmake": {
+          "path": "/usr/bin/cmake",
+          "sha256": "6e1dccda39845415d68eabb934c598998949c99ec4668625d571aee1827b05c7"
+        },
+        "c_compiler": {
+          "path": "/usr/bin/cc",
+          "sha256": "b5f1b773a7c733738352000c92a077dc5852a1a2fc6d836b1e411be1e9ec5f88"
+        },
+        "cxx_compiler": {
+          "path": "/usr/bin/c++",
+          "sha256": "e6718f7e0c7d057c3ff77b550c603da9bc4030e3ede3c053705acce1293dbe4d"
+        }
+      },
+      "inventory_sha256": "7ea576c80f67074764e62b50b8a4ef6b8ddf037f2c848e4248f614c9b79343d5",
+      "os_release": "PRETTY_NAME=\"Ubuntu 26.04 LTS\"\nNAME=\"Ubuntu\"\nVERSION_ID=\"26.04\"\nVERSION=\"26.04 (Resolute Raccoon)\"\nVERSION_CODENAME=resolute\nID=ubuntu\nID_LIKE=debian\nHOME_URL=\"https://www.ubuntu.com/\"\nSUPPORT_URL=\"https://help.ubuntu.com/\"\nBUG_REPORT_URL=\"https://bugs.launchpad.net/ubuntu/\"\nPRIVACY_POLICY_URL=\"https://www.ubuntu.com/legal/terms-and-policies/privacy-policy\"\nUBUNTU_CODENAME=resolute\nLOGO=ubuntu-logo\n",
+      "arch": "x86_64",
+      "libc": [
+        "glibc",
+        "2.43"
+      ],
+      "kernel": "6.18.33.1-microsoft-standard-WSL2"
+    },
+    "qualification": "WSL development smoke only; not Ubuntu 18.04 baseline or full native distro acceptance"
+  },
+  "native_os": "linux",
+  "native_arch": "x86_64",
+  "libc": "2.43",
+  "kernel": "6.18.33.1-microsoft-standard-WSL2",
+  "completed": true,
+  "linkage": {
+    "recorded": true,
+    "kind": "linker-read-inputs-not-member-proof",
+    "executable_sha256": "b9b16ddaddd87e2b855a259a6d2d6b49c4e7649bd43a6f87d0dc67ddbbc655b1",
+    "link_command_sha256": "925a758590a8cfe0fd86a1356ac92d3330c75959f58dc0eb962080d04f46f624",
+    "dependency_file_sha256": "9e7cc930106d9b975dae50105515650effd4080ce40e99337449c4e0fd760748",
+    "inputs": [
+      {
+        "path": "cmd/dot/CMakeFiles/dot.dir/dot.c.o",
+        "scope": "build",
+        "size": 11832,
+        "sha256": "278dc54403f4133ede6ab6b74470d70a2d62041d9081608432c760c1776d0fdf",
+        "references": 1
+      },
+      {
+        "path": "cmd/dot/CMakeFiles/dot.dir/dot_builtins.cpp.o",
+        "scope": "build",
+        "size": 4960,
+        "sha256": "9669358b50a9cd5024a9fecb51d14f547da0c4f21cd83e20fd56800899b8e46d",
+        "references": 1
+      },
+      {
+        "path": "lib/cdt/libcdt.a",
+        "scope": "build",
+        "size": 139798,
+        "sha256": "b85e3ca5a7160124b928a4faf8db3121b66e5f9e2b52c98f4bbe9ff9d33258de",
+        "references": 2
+      },
+      {
+        "path": "lib/cgraph/libcgraph.a",
+        "scope": "build",
+        "size": 757718,
+        "sha256": "982f1e1a5f7c4b83c5d1d8912c2c2a3384be309d9db789110f2c80eae5754a8f",
+        "references": 2
+      },
+      {
+        "path": "lib/circogen/libcircogen.a",
+        "scope": "build",
+        "size": 274556,
+        "sha256": "095cf72a688c94997e74b986c79fc28d3d6a28a78641bdf6425facdb4dbc0d03",
+        "references": 1
+      },
+      {
+        "path": "lib/common/CMakeFiles/common_obj.dir/args.c.o",
+        "scope": "build",
+        "size": 21696,
+        "sha256": "622082a69366fb06cb32e28f9f1e9a397d19a48a56a8b75ae9f0c0d8dc8215de",
+        "references": 1
+      },
+      {
+        "path": "lib/common/CMakeFiles/common_obj.dir/arrows.c.o",
+        "scope": "build",
+        "size": 83464,
+        "sha256": "498c9f3da16d8b91728c3881792228aea8e97d3a3d57b450ce70f4bdf1560de2",
+        "references": 1
+      },
+      {
+        "path": "lib/common/CMakeFiles/common_obj.dir/colxlate.c.o",
+        "scope": "build",
+        "size": 102176,
+        "sha256": "64afd7c32a854876436a1186ff7d2f3884c4a70db2c647d54dfa8793d9c7958a",
+        "references": 1
+      },
+      {
+        "path": "lib/common/CMakeFiles/common_obj.dir/ellipse.c.o",
+        "scope": "build",
+        "size": 22888,
+        "sha256": "4bbb1c319d86661054d3456fc3b6f0ef7831bd188ad64b16b7ebbc040fb1a848",
+        "references": 1
+      },
+      {
+        "path": "lib/common/CMakeFiles/common_obj.dir/emit.c.o",
+        "scope": "build",
+        "size": 315216,
+        "sha256": "357ab62650b3103d490a81fca37a9678aafaa15de60a0de08dd0161356eba471",
+        "references": 1
+      },
+      {
+        "path": "lib/common/CMakeFiles/common_obj.dir/geom.c.o",
+        "scope": "build",
+        "size": 18368,
+        "sha256": "88d3a805674a7abffe3df9b23ffbfe7d349f724b37603d7a3b6c3852ee3e4549",
+        "references": 1
+      },
+      {
+        "path": "lib/common/CMakeFiles/common_obj.dir/globals.c.o",
+        "scope": "build",
+        "size": 10080,
+        "sha256": "989eb85f4a429f9198403ea927daef27619e3e47dde942bcf68a538893e7c2ee",
+        "references": 1
+      },
+      {
+        "path": "lib/common/CMakeFiles/common_obj.dir/htmllex.c.o",
+        "scope": "build",
+        "size": 12776,
+        "sha256": "71e7d97ee195b281c5f689f2ad326afb772485eed30a2969672a8b7aee4341b9",
+        "references": 1
+      },
+      {
+        "path": "lib/common/CMakeFiles/common_obj.dir/htmlparse.c.o",
+        "scope": "build",
+        "size": 80296,
+        "sha256": "31c0b874d5b583ff4dd5b98904d354a0d96f10012aaf9b2901614d84c7f2f0fb",
+        "references": 1
+      },
+      {
+        "path": "lib/common/CMakeFiles/common_obj.dir/htmltable.c.o",
+        "scope": "build",
+        "size": 141264,
+        "sha256": "c2c3cbb4a5ae0b647ac95e3cec63299707828b62960b625a7d7aeca158c8b329",
+        "references": 1
+      },
+      {
+        "path": "lib/common/CMakeFiles/common_obj.dir/input.c.o",
+        "scope": "build",
+        "size": 90712,
+        "sha256": "002a6f5372ea463a7f2859eb317ded7d02f678716852c2dbf9fa1158a471d697",
+        "references": 1
+      },
+      {
+        "path": "lib/common/CMakeFiles/common_obj.dir/labels.c.o",
+        "scope": "build",
+        "size": 64328,
+        "sha256": "b514a3f9fc8901733f33548c8039c4c1d7d7607cc0f6a89b8206d9be2301b4e4",
+        "references": 1
+      },
+      {
+        "path": "lib/common/CMakeFiles/common_obj.dir/ns.c.o",
+        "scope": "build",
+        "size": 111872,
+        "sha256": "95ae0faae8a4970a7ff02a6986ae97ed71e0f241dba0ed93f4afb5ec1e01dc79",
+        "references": 1
+      },
+      {
+        "path": "lib/common/CMakeFiles/common_obj.dir/output.c.o",
+        "scope": "build",
+        "size": 68584,
+        "sha256": "3378b9286e0c4ea142edbfa821c46bd249bd9c994fdfe7b852295c015d513a93",
+        "references": 1
+      },
+      {
+        "path": "lib/common/CMakeFiles/common_obj.dir/pointset.c.o",
+        "scope": "build",
+        "size": 23584,
+        "sha256": "c5fc30a48e9c2c54d7c0aad34341794af5e6d1fbb25168541488bd235a72573f",
+        "references": 1
+      },
+      {
+        "path": "lib/common/CMakeFiles/common_obj.dir/postproc.c.o",
+        "scope": "build",
+        "size": 73848,
+        "sha256": "dce3b6f5893aa186f422223ae4f5eca1bd2e4b6b30b2bce9960b9e42b37c66a3",
+        "references": 1
+      },
+      {
+        "path": "lib/common/CMakeFiles/common_obj.dir/psusershape.c.o",
+        "scope": "build",
+        "size": 47832,
+        "sha256": "185bda7a94fff6dcbb673219d6ed2e030a60ea0c7899980ef271fa43a5a4ac1f",
+        "references": 1
+      },
+      {
+        "path": "lib/common/CMakeFiles/common_obj.dir/routespl.c.o",
+        "scope": "build",
+        "size": 78672,
+        "sha256": "ff1750a98b947834bf1c82f3ba47a66a11cd5e54763ffc98b78a0c12d539bb87",
+        "references": 1
+      },
+      {
+        "path": "lib/common/CMakeFiles/common_obj.dir/shapes.c.o",
+        "scope": "build",
+        "size": 216728,
+        "sha256": "32f3f659c846a0ebe15bffb2be8c9fa0cf13039e74def3bb9a6c6b930cc48c43",
+        "references": 1
+      },
+      {
+        "path": "lib/common/CMakeFiles/common_obj.dir/splines.c.o",
+        "scope": "build",
+        "size": 92024,
+        "sha256": "9a6f52595ed144b16bdbb5355c3c7374060bb552d22351cb94f59157d85a4667",
+        "references": 1
+      },
+      {
+        "path": "lib/common/CMakeFiles/common_obj.dir/taper.c.o",
+        "scope": "build",
+        "size": 24064,
+        "sha256": "2fd5361eeaa59573ef576e7299161489cf1bf2d5a9928c42172df1a48ab85969",
+        "references": 1
+      },
+      {
+        "path": "lib/common/CMakeFiles/common_obj.dir/textspan.c.o",
+        "scope": "build",
+        "size": 30800,
+        "sha256": "a08cd6198c9df998026d068cc7f290511d639fb8fc45850be668edc5f9332cf2",
+        "references": 1
+      },
+      {
+        "path": "lib/common/CMakeFiles/common_obj.dir/textspan_lut.c.o",
+        "scope": "build",
+        "size": 45360,
+        "sha256": "79ff7c3de336435ed215d95db7cf8d81e4b2883e1a6f2ba9498894e6e14bf457",
+        "references": 1
+      },
+      {
+        "path": "lib/common/CMakeFiles/common_obj.dir/timing.c.o",
+        "scope": "build",
+        "size": 4824,
+        "sha256": "963d940133e916e0a947ec0c05e068148162977dd9c181d3236fed9baeec96be",
+        "references": 1
+      },
+      {
+        "path": "lib/common/CMakeFiles/common_obj.dir/utils.c.o",
+        "scope": "build",
+        "size": 166288,
+        "sha256": "cc5c29797e72505e835a00772fd257678861cd7f685752402ede3b888862b82c",
+        "references": 1
+      },
+      {
+        "path": "lib/common/libcommon.a",
+        "scope": "build",
+        "size": 1953448,
+        "sha256": "8a4c7c170a8f388a14e5c0656e1e1ae9442cc82f44aec5585e1d2b8aff8aac20",
+        "references": 1
+      },
+      {
+        "path": "lib/dotgen/libdotgen.a",
+        "scope": "build",
+        "size": 904596,
+        "sha256": "f2427b63350c9854a8cedb3cb02df2f5816a77999a4fbd79c964b848a232924b",
+        "references": 1
+      },
+      {
+        "path": "lib/fdpgen/libfdpgen.a",
+        "scope": "build",
+        "size": 293822,
+        "sha256": "af9bca28e6b43856fed1555a560a8707badac511d8e1d151fbdc0086a594969e",
+        "references": 1
+      },
+      {
+        "path": "lib/gvc/libgvc.a",
+        "scope": "build",
+        "size": 519560,
+        "sha256": "92fde26ddaee582d8adee90f6e58b47bf802b9d4cae4f0d6b28a0de2494c6255",
+        "references": 2
+      },
+      {
+        "path": "lib/label/liblabel.a",
+        "scope": "build",
+        "size": 105350,
+        "sha256": "98ae5d95ec3450a9345947f9d737ec0ca0946af8fb9d668316bd181accb7985d",
+        "references": 1
+      },
+      {
+        "path": "lib/neatogen/libneatogen.a",
+        "scope": "build",
+        "size": 1077808,
+        "sha256": "b6ac62358661a631a9490109ca275abbb86f5bb38c9f93ab61c04b00824f2887",
+        "references": 1
+      },
+      {
+        "path": "lib/ortho/CMakeFiles/ortho_obj.dir/fPQ.c.o",
+        "scope": "build",
+        "size": 16232,
+        "sha256": "49781c3a2e12c943f909daff0c1d9a4579b03a081c7171b3c891dc5bf741fd4e",
+        "references": 1
+      },
+      {
+        "path": "lib/ortho/CMakeFiles/ortho_obj.dir/maze.c.o",
+        "scope": "build",
+        "size": 45296,
+        "sha256": "8178647f5c00bcea38e519a0fcb2f69aa51274f759569063d2b8eab20199f358",
+        "references": 1
+      },
+      {
+        "path": "lib/ortho/CMakeFiles/ortho_obj.dir/ortho.c.o",
+        "scope": "build",
+        "size": 123584,
+        "sha256": "a7e0f74ebc7d5d08ffc749a7d1eb210b2025d8a42ea77e102988f3f32351803c",
+        "references": 1
+      },
+      {
+        "path": "lib/ortho/CMakeFiles/ortho_obj.dir/partition.c.o",
+        "scope": "build",
+        "size": 49680,
+        "sha256": "22b15e54c1c310fe1c438b106b2f2a6068ce74ac154a04412d774c2357e1f154",
+        "references": 1
+      },
+      {
+        "path": "lib/ortho/CMakeFiles/ortho_obj.dir/rawgraph.c.o",
+        "scope": "build",
+        "size": 21792,
+        "sha256": "a0eb81475abf27cd2a58af1cdb7665d0b2d404f82fbfa8f90aeadb3cc8f0eea5",
+        "references": 1
+      },
+      {
+        "path": "lib/ortho/CMakeFiles/ortho_obj.dir/sgraph.c.o",
+        "scope": "build",
+        "size": 19120,
+        "sha256": "fd187a14edc63946c2e6df5e07c28af6972e4a674d77f6d44952c34c118ab325",
+        "references": 1
+      },
+      {
+        "path": "lib/ortho/CMakeFiles/ortho_obj.dir/trapezoid.c.o",
+        "scope": "build",
+        "size": 62304,
+        "sha256": "26de19c01dd9f59c1c2199e4a837d91808f760ed1bfbb81a3b4640ede09d2c21",
+        "references": 1
+      },
+      {
+        "path": "lib/ortho/libortho.a",
+        "scope": "build",
+        "size": 338900,
+        "sha256": "a4293a82c7b1f7e29c6b950f9e02026034ca8920d1abf108db50bf11dc2ec66e",
+        "references": 1
+      },
+      {
+        "path": "lib/osage/libosage.a",
+        "scope": "build",
+        "size": 45032,
+        "sha256": "333c046eb7025ed4a6ddf6c05df7b0505ad1c72c6737675a1ac6c15829bc0b5c",
+        "references": 1
+      },
+      {
+        "path": "lib/pack/CMakeFiles/pack_obj.dir/ccomps.c.o",
+        "scope": "build",
+        "size": 63288,
+        "sha256": "08a8e11626aa13c4558e6507e9f48e657de5ddcbe6b3cc2b6ad7c9c220062e18",
+        "references": 1
+      },
+      {
+        "path": "lib/pack/CMakeFiles/pack_obj.dir/pack.c.o",
+        "scope": "build",
+        "size": 97720,
+        "sha256": "35f314f92e14d53590af33553e254c7547e6590dddbbf3ec0e28ed81c7935d92",
+        "references": 1
+      },
+      {
+        "path": "lib/pack/libpack.a",
+        "scope": "build",
+        "size": 161456,
+        "sha256": "0feefbbcd09ab0db24c54a64c82416f358fb60df112f11d875745feca46c6487",
+        "references": 1
+      },
+      {
+        "path": "lib/patchwork/libpatchwork.a",
+        "scope": "build",
+        "size": 75368,
+        "sha256": "120b7d2618b1e1995f38233833ebc6340ea2ca9ff0220937fe0f2a4e13ddbbe2",
+        "references": 1
+      },
+      {
+        "path": "lib/pathplan/libpathplan.a",
+        "scope": "build",
+        "size": 166160,
+        "sha256": "815a8e7da7e63fcb6902b96584b9d234f773961d399eecbff970e2775e3a40ef",
+        "references": 2
+      },
+      {
+        "path": "lib/rbtree/librbtree.a",
+        "scope": "build",
+        "size": 20924,
+        "sha256": "303a13d594343f1644c42f27190c5a64ba802a032b1e767b6b71edcd3942b4e7",
+        "references": 1
+      },
+      {
+        "path": "lib/sparse/libsparse.a",
+        "scope": "build",
+        "size": 570232,
+        "sha256": "8907e312dee736b20b42ea52f7ed3d4d880a7e00254c37bb427574f80983d3bb",
+        "references": 1
+      },
+      {
+        "path": "lib/twopigen/libtwopigen.a",
+        "scope": "build",
+        "size": 66930,
+        "sha256": "f852224cd8e7d7cd376ac1f05d32116a0ddfbb2ce5db9891d4025c6e9c5a386d",
+        "references": 1
+      },
+      {
+        "path": "lib/util/libutil.a",
+        "scope": "build",
+        "size": 104668,
+        "sha256": "9b7ff7967df3054c1bcb51f5a57da98b6d775883c6e0daccdb01fefdabab3f81",
+        "references": 1
+      },
+      {
+        "path": "lib/xdot/libxdot.a",
+        "scope": "build",
+        "size": 84460,
+        "sha256": "3f453b1f26266e4cf37eb42395b3d65fac9a29557d99598162ab5eb068d79d18",
+        "references": 2
+      },
+      {
+        "path": "plugin/core/libgvplugin_core.a",
+        "scope": "build",
+        "size": 577446,
+        "sha256": "8df331a911fdeff9c746a985078eb36b662d12d0c07fa360d6e84ac81d3c02db",
+        "references": 1
+      },
+      {
+        "path": "plugin/dot_layout/libgvplugin_dot_layout.a",
+        "scope": "build",
+        "size": 9794,
+        "sha256": "9d411756f39b7289e884700f436b0ce39afcf4f1380790100fc4adc593198f6e",
+        "references": 1
+      },
+      {
+        "path": "plugin/neato_layout/libgvplugin_neato_layout.a",
+        "scope": "build",
+        "size": 16042,
+        "sha256": "b49bb90cc2dae445180e559658aa913f1cf47bd051c01ffb1bd8ccf3e526e671",
+        "references": 1
+      },
+      {
+        "path": "plugin/vt/libgvplugin_vt.a",
+        "scope": "build",
+        "size": 37168,
+        "sha256": "10714bb0dfa297ad2f9d310509e3f5ec7acce78eed45e7d32cde334b06d999d4",
+        "references": 1
+      },
+      {
+        "path": "/usr/lib/gcc/x86_64-linux-gnu/15/crtbeginS.o",
+        "scope": "sdk",
+        "size": 2744,
+        "sha256": "178f90d86c9bf8c3bf0746e288bed4af492c4b65397d54caf386a9b807d8e2c5",
+        "references": 1
+      },
+      {
+        "path": "/usr/lib/gcc/x86_64-linux-gnu/15/crtendS.o",
+        "scope": "sdk",
+        "size": 1160,
+        "sha256": "b4b7d9001893f0baf4ebfbe12df8d5cf0dd7f69643a5caae04d956d1a443b246",
+        "references": 1
+      },
+      {
+        "path": "/usr/lib/gcc/x86_64-linux-gnu/15/libgcc.a",
+        "scope": "sdk",
+        "size": 3237076,
+        "sha256": "d9c2e7a0c0f3dbfc0ff2dec153b0d044cf49d66d64d736b5d1db8ae25ca9c75e",
+        "references": 2
+      },
+      {
+        "path": "/usr/lib/gcc/x86_64-linux-gnu/15/libgcc_eh.a",
+        "scope": "sdk",
+        "size": 71426,
+        "sha256": "050160c9613ecf99b449bb34743fb8b2f4aafb3ae03a38a63e69a6926f956140",
+        "references": 2
+      },
+      {
+        "path": "/usr/lib/gcc/x86_64-linux-gnu/15/libstdc++.a",
+        "scope": "sdk",
+        "size": 6730712,
+        "sha256": "993dfc23322500e516204ea416b98af99140eafd6c498b5a519cd847e024ef0b",
+        "references": 1
+      },
+      {
+        "path": "/usr/lib/x86_64-linux-gnu/Scrt1.o",
+        "scope": "sdk",
+        "size": 1656,
+        "sha256": "75c40260f996747732aeaac415985947403f7992916bc5d35465e1f9e6c93082",
+        "references": 1
+      },
+      {
+        "path": "/usr/lib/x86_64-linux-gnu/crti.o",
+        "scope": "sdk",
+        "size": 1192,
+        "sha256": "077ccb6c68db1794da3ee262c4a16a3c6f8e902845dd0829110ad4b7065e5aa3",
+        "references": 1
+      },
+      {
+        "path": "/usr/lib/x86_64-linux-gnu/crtn.o",
+        "scope": "sdk",
+        "size": 760,
+        "sha256": "a2266079f95b84ccc2162ebbf279bcd78858a748aa1882e0bdb912316c76a58f",
+        "references": 1
+      },
+      {
+        "path": "/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2",
+        "scope": "sdk",
+        "size": 254864,
+        "sha256": "bda779ea9e9ad234f60315477d7cfd0bdde861cd8ddd9df8cdaf62f18c4cec14",
+        "references": 2
+      },
+      {
+        "path": "/usr/lib/x86_64-linux-gnu/libc.so",
+        "scope": "sdk",
+        "size": 287,
+        "sha256": "649e1aa91af2551216685f45effca270fcc09ef39e28acd4b22745f0ae77e7f2",
+        "references": 3
+      },
+      {
+        "path": "/usr/lib/x86_64-linux-gnu/libc.so.6",
+        "scope": "sdk",
+        "size": 2190608,
+        "sha256": "85e64f97e348786a8fb4d9f3d52fec289e2fb86bba20f0731dfe61990525e0f7",
+        "references": 1
+      },
+      {
+        "path": "/usr/lib/x86_64-linux-gnu/libc_nonshared.a",
+        "scope": "sdk",
+        "size": 5594,
+        "sha256": "8fc3f78f6a5cac0cbe80a4fd96a00dcf5269425941fa33a0f2b7d25b96941662",
+        "references": 1
+      },
+      {
+        "path": "/usr/lib/x86_64-linux-gnu/libm.so",
+        "scope": "sdk",
+        "size": 148,
+        "sha256": "0789aa234121bb6b77f060e40577027323ae1e7531a430fe208d29e57a697e4a",
+        "references": 6
+      },
+      {
+        "path": "/usr/lib/x86_64-linux-gnu/libm.so.6",
+        "scope": "sdk",
+        "size": 1198376,
+        "sha256": "1c488db6f4fe8cecb72456bc018de000b7a9b539c2994864b0416b5e8371b3d8",
+        "references": 2
+      },
+      {
+        "path": "/usr/lib/x86_64-linux-gnu/libmvec.so.1",
+        "scope": "sdk",
+        "size": 1022240,
+        "sha256": "2f2e7f4ad88e1b13f2f8345c826b25f85ba61c93527d91e59dd0d2943eac6e80",
+        "references": 2
+      }
+    ]
+  },
+  "executable_sha256": "b9b16ddaddd87e2b855a259a6d2d6b49c4e7649bd43a6f87d0dc67ddbbc655b1"
+}

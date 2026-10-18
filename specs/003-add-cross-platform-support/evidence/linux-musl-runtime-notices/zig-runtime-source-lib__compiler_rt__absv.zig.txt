@@ -1,0 +1,2 @@
+/// absv - absolute oVerflow
+/// * @panic if value can not be represented
