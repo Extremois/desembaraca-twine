@@ -11,7 +11,7 @@ class Parser(argparse.ArgumentParser):
 
 
 def main(argv=None):
-    parser=Parser(prog='twine-edge-overlap',description='Reorganiza um arquivo Twee sem sobrescrever o original.')
+    parser=Parser(prog='desembaraca-twine',description='Reorganiza um arquivo Twee sem sobrescrever o original.')
     parser.add_argument('caminho',nargs='?',help='Caminho de um arquivo .twee com metadados de layout')
     actions=parser.add_mutually_exclusive_group()
     actions.add_argument('--prepare-runtime',action='store_true',help='Prepara os componentes para uso posterior sem internet.')

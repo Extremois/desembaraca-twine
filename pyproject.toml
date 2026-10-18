@@ -15,7 +15,7 @@ dependencies = []
 dev = ["pytest>=8"]
 
 [project.scripts]
-twine-edge-overlap = "twine_edge_overlap.cli:main"
+desembaraca-twine = "twine_edge_overlap.cli:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]
