@@ -62,6 +62,22 @@ jobs:
           python tools/runtime/pack-candidate.py --root "$RUNNER_TEMP/twine-notices/candidate" --inventory .tmp/native-linux/inventory.json --provenance "$RUNNER_TEMP/twine-notices/provenance.json" --output "$RUNNER_TEMP/twine-package"
       - name: Corpus and Unicode relocation on Python 3.12
         run: '"${{ steps.python312.outputs.python-path }}" tools/runtime/observe-linux-network.py --build-output "$RUNNER_TEMP/twine-notices" --environment-kind native --report .tmp/native-linux/network-312.json --corpus-report .tmp/native-linux/corpus-312.json'
+      - name: Collect source material separately from the runtime
+        run: |
+          python tools/runtime/pack-sources.py --graphviz "$RUNNER_TEMP/twine-sdk/graphviz.tar.gz" --sdk "$RUNNER_TEMP/twine-sdk/zig.tar.xz" --provenance "$RUNNER_TEMP/twine-notices/provenance.json" --output "$RUNNER_TEMP/twine-sources"
+          cp "$RUNNER_TEMP/twine-sources/sources.json" .tmp/native-linux/sources.json
+      - name: Rebuild using exported sources and recipes
+        shell: bash
+        run: |
+          set -o pipefail
+          mkdir "$RUNNER_TEMP/twine-source-replay"
+          tar -xzf "$RUNNER_TEMP/twine-sources/sources.tar.gz" -C "$RUNNER_TEMP/twine-source-replay"
+          cd "$RUNNER_TEMP/twine-source-replay"
+          python tools/runtime/prepare-linux-ci.py --work "$RUNNER_TEMP/twine-replay-sdk"
+          cp -a sdk/lib/. "$RUNNER_TEMP/twine-replay-sdk/sdk/zig-x86_64-linux-0.15.2/lib/"
+          python tools/runtime/build-common.py --artifact-id linux-glibc-x86_64 --source-archive graphviz.tar.gz --sdk-record "$RUNNER_TEMP/twine-replay-sdk/sdk-record.json" --output "$RUNNER_TEMP/twine-replay-build" --execute 2>&1 | tee "$GITHUB_WORKSPACE/.tmp/native-linux/source-rebuild.log"
+          cd "$GITHUB_WORKSPACE"
+          python tools/runtime/observe-linux-network.py --build-output "$RUNNER_TEMP/twine-replay-build" --environment-kind native --report .tmp/native-linux/rebuilt-network.json --corpus-report .tmp/native-linux/rebuilt-corpus.json
       - name: Corpus and Unicode relocation on Python 3.14
         run: '"${{ steps.python314.outputs.python-path }}" tools/runtime/observe-linux-network.py --build-output "$RUNNER_TEMP/twine-notices" --environment-kind native --report .tmp/native-linux/network-314.json --corpus-report .tmp/native-linux/corpus-314.json'
       - name: Retain candidate and measurements for audit (not a qualified release)
@@ -82,3 +98,11 @@ jobs:
             ${{ runner.temp }}/twine-notices/review.json
             ${{ runner.temp }}/twine-notices/candidate/third-party-notices/
             ${{ runner.temp }}/twine-package/
+            ${{ runner.temp }}/twine-replay-build/provenance.json
+      - name: Retain source review material (not a published source offer)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: linux-glibc-x86_64-source-review-${{ github.sha }}
+          retention-days: 7
+          path: ${{ runner.temp }}/twine-sources/
