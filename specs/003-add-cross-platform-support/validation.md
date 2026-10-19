@@ -1261,3 +1261,47 @@ Não contém SDK Apple ou binários. T049/T050 estão concluídas, **48/84**;
 auditoria completa de dependências/fontes, assinatura/notarização, distribuição
 real e aceite instalado permanecem em T051/T052/T056 e gates comuns. Nenhuma
 entrada Darwin foi admitida ao catálogo ativo.
+
+## Objetos e fontes macOS para auditoria T052 — 2026-10-19
+
+`audit-macos-link.py` lê o mapa Apple produzido pelo build e exige mesmo destino,
+arquitetura, hash do executável e proveniência. Hashes de membros de archives são
+conferidos contra os objetos compilados; suas declarações de dependência são
+lidas com limites e as fontes Graphviz são comparadas com o tarball fixado.
+Inputs SDK são registrados separadamente; não há aprovação automática de licença.
+
+A primeira rodada Intel compilou, mas o coletor recusou a decodificação UTF-8 de
+símbolos com bytes arbitrários. O mapa real revelou também destino relativo e
+índices sem nome. A correção decodifica estritamente apenas cabeçalho/seção de
+objetos, resolve o destino relativo ao diretório de link e preserva o mapa inteiro
+por hash. Índices sem nome ficam como `unnamed-map-slot`, com origem não resolvida;
+não são descartados ou convertidos em prova de ausência de código. O teste novo
+foi observado falhando antes da correção e depois passou; a regressão local soma
+**185 testes**, sete skips Windows.
+
+A revisão `ec91469411f9e3796debcd37b151903fd8740103` passou nos
+[dois jobs macOS](https://github.com/Extremois/desembaraca-twine/actions/runs/39309593258),
+na [regressão compartilhada](https://github.com/Extremois/desembaraca-twine/actions/runs/39309593365)
+e no [build/reconstrução Linux](https://github.com/Extremois/desembaraca-twine/actions/runs/39309593277).
+Cada arquitetura macOS vinculou **181 objetos a 322 fontes Graphviz**, com nove
+entradas geradas e 217 externas. Intel registra 372 índices de objetos e Apple
+Silicon 371; ambos contêm 181 índices sem nome ainda não resolvidos. As fontes
+fixadas foram reconferidas independentemente após download, assim como vínculos
+entre mapas, relatórios, pacotes, inventários, proveniências e corpus nos dois
+Pythons. Os executáveis continuam iguais aos dos builds T049/T050.
+
+Recibos de [Intel](evidence/macos-link-source-2026-10-19/macos-x86_64/summary.json)
+e [Apple Silicon](evidence/macos-link-source-2026-10-19/macos-arm64/summary.json)
+preservam mapas/relatórios comprimidos e metadados, sem binários ou headers Apple.
+`tools/runtime/licenses/macos.json` registra observações e pendências por artefato.
+O aviso oficial Flex Apple 35, revisão
+`8548f53e24244c0a411dea128a21686b61d29df4`, foi obtido e comparado byte a byte:
+1.855 bytes, mesmo SHA-256 do texto upstream já preservado. A origem Apple está
+fixada em `material-source-lock.json`; essa igualdade não prova correspondência
+do scanner gerado ou aprovação do bundle completo.
+
+T052 permanece parcial, sem auditoria aprovada, oferta permanente, assinatura ou
+notarização. T051 depende de identidade Developer ID Application e perfil
+notarytool em ambiente Mac autorizado; sua disponibilidade foi solicitada ao
+mantenedor, sem solicitar valores de credenciais. A auditoria e os trabalhos
+Linux podem avançar independentemente dessa informação. Total **48/84**.

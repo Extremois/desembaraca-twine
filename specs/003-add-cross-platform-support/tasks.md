@@ -22,6 +22,8 @@
 
 **Conclusão dos builds macOS em 2026-10-19**: a rodada consolidada passou em Intel e Apple Silicon. Foram conferidas 37.452 entradas/656.877.420 bytes do SDK, ferramentas reais, pacotes, corpus e load commands. O [recibo consolidado](evidence/macos-native-build-2026-10-19/summary.json) conclui T049/T050, total 48/84. T051/T052/T056 seguem abertas: build nativo não concede assinatura, auditoria ou suporte oficial.
 
+**Insumos da auditoria macOS em 2026-10-19**: mapa do linker vinculou 181 objetos compilados a 322 fontes Graphviz em cada arquitetura; nove entradas geradas e 217 externas registradas. Recibos de [Intel](evidence/macos-link-source-2026-10-19/macos-x86_64/summary.json) e [Apple Silicon](evidence/macos-link-source-2026-10-19/macos-arm64/summary.json), corpus/rede Python nos dois slots e regressões CI aprovados. Ledger macOS iniciado e aviso Flex Apple 35 fixado por revisão/hash. T052 permanece parcial: 181 índices sem nome por mapa, material gerado, SDK e revisão por arquivo continuam pendentes, sem promoção de suporte.
+
 **Tests**: exigidos explicitamente por FR-007/008/013/016 e SC-001–010. Acrescentar casos de contrato antes do comportamento correspondente, observar falha pertinente e executar regressões após a implementação; testes já corretos podem passar. Não exigir falha artificial do baseline.
 
 **Organization**: setup → fundação → histórias US1/US2/US3 (P1) → US4 (P2) → fechamento. Caminhos são relativos à raiz do repositório. Arquivos novos são entregáveis futuros, não arquivos já existentes.

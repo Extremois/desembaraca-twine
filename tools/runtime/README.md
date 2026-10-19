@@ -55,6 +55,15 @@ dias. O pacote de build contém apenas o aviso Graphviz inicial; notices e
 auditoria completos continuam em T052. Não há uso de credenciais Apple,
 assinatura Developer ID, notarização ou promoção de suporte nessa execução.
 
+`audit-macos-link.py` confere o mapa produzido pelo linker Apple contra o
+executável concluído, os objetos/membros de archives e as declarações de entradas
+do compilador. Fontes Graphviz observadas são comparadas com o tarball fixado.
+A seção de objetos é decodificada estritamente; bytes arbitrários nos nomes de
+símbolos permanecem no mapa original, preservado por hash. Índices sem nome são
+registrados como origem pendente. O relatório não prova retenção de seções ou
+fechamento completo de fontes e não aprova licenças. O ledger
+`licenses/macos.json` acompanha essas pendências por artefato.
+
 Para revisar as fontes da candidata glibc x64, `pack-sources.py --help` descreve
 o coletor separado do ZIP do runtime. O workflow também reconstrói o motor a
 partir desse pacote em uma pasta nova. As entradas e comandos estão em

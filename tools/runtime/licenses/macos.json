@@ -22,9 +22,26 @@
         "/usr/lib/libc++.1.dylib"
       ],
       "notice_scope": "Initial build contains Graphviz COPYING only; not complete third-party notices",
-      "source_link_evidence": null,
+      "source_link_evidence": "specs/003-add-cross-platform-support/evidence/macos-link-source-2026-10-19/macos-x86_64/summary.json",
       "signature_evidence": null,
-      "notarization_evidence": null
+      "notarization_evidence": null,
+      "source_link_observations": [
+        {
+          "executable_sha256": "d8ab197fbdfa9312050f4c4827f4bb612f7f4d1d021d4308a9850ee1a1104fff",
+          "provenance_sha256": "96c85e7cee6dd71245fe5a2f46afec005a62f701ab56d437b0bf17374940a768",
+          "evidence": "specs/003-add-cross-platform-support/evidence/macos-link-source-2026-10-19/macos-x86_64/summary.json",
+          "approved": false,
+          "source_evidence_sha256": "400e9062eba1987f73ef30f07c31950a5639ce81cf4ef1f701bf126c6758e5e8",
+          "summary": {
+            "objects": 372,
+            "verified_graphviz_sources": 322,
+            "unnamed_map_slots": 181,
+            "generated_inputs": 9,
+            "external_inputs": 217
+          }
+        }
+      ],
+      "source_link_provenance_sha256": "96c85e7cee6dd71245fe5a2f46afec005a62f701ab56d437b0bf17374940a768"
     },
     {
       "artifact_id": "macos-arm64",
@@ -39,9 +56,26 @@
         "/usr/lib/libc++.1.dylib"
       ],
       "notice_scope": "Initial build contains Graphviz COPYING only; not complete third-party notices",
-      "source_link_evidence": null,
+      "source_link_evidence": "specs/003-add-cross-platform-support/evidence/macos-link-source-2026-10-19/macos-arm64/summary.json",
       "signature_evidence": null,
-      "notarization_evidence": null
+      "notarization_evidence": null,
+      "source_link_observations": [
+        {
+          "executable_sha256": "774115a1a9e4b2385d33fa55fe02de0d8728cb0984967d445528c6fe04f97dac",
+          "provenance_sha256": "c3d2179990d38f6b83327268a8d661aed69e99cf51524c9ea645010c1b7527fc",
+          "evidence": "specs/003-add-cross-platform-support/evidence/macos-link-source-2026-10-19/macos-arm64/summary.json",
+          "approved": false,
+          "source_evidence_sha256": "4f2bc6cc8ac1283b32a003f7d7a81236f1ed7c9e41d12131e99d70f68a519e0c",
+          "summary": {
+            "objects": 371,
+            "verified_graphviz_sources": 322,
+            "unnamed_map_slots": 181,
+            "generated_inputs": 9,
+            "external_inputs": 217
+          }
+        }
+      ],
+      "source_link_provenance_sha256": "c3d2179990d38f6b83327268a8d661aed69e99cf51524c9ea645010c1b7527fc"
     }
   ],
   "generator_notice_material": {
