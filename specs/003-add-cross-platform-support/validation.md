@@ -1,5 +1,48 @@
 # Evidência de implementação — feature 003
 
+## Link e fontes dos builds musl — 2026-10-19
+
+O commit `40b3e38f3dc6bef2fe64b17f66e1f812460bd7f1` passou no
+[CI musl das duas arquiteturas](https://github.com/Extremois/desembaraca-twine/actions/runs/39331380978).
+O relink aceita host musl da CPU correspondente, preservando o experimento
+anterior glibc→musl somente em x64. Arquitetura, tradução e proveniência divergentes
+continuam rejeitadas. O teste novo observou a rejeição anterior e passou após
+a alteração; ELF é conferido novamente com a arquitetura real do alvo.
+
+Os recibos de [x64](evidence/alpine-musl-link-source-2026-10-19/x86_64/summary.json)
+e [ARM64](evidence/alpine-musl-link-source-2026-10-19/aarch64/summary.json) vinculam
+181 objetos compilados a 322 fontes Graphviz fixadas por arquitetura. As 322
+fontes foram reconferidas contra o tarball original após download. Cada build
+registra nove entradas geradas, 58 externas e 66 inputs de link; x64 registra
+324 extrações e ARM64, 320. Destas, libc.a contribuiu com 177/173 observações,
+mais uma de libzigc.a e uma de libcompiler_rt.a por arquitetura. São extrações
+observadas, sem afirmar retenção após descarte de seções ou revisão de licenças.
+
+Os executáveis são byte-idênticos à referência do compilador e ao build original;
+ZIPs/motores mantêm os hashes do recibo inicial abaixo. Proveniência, inventário,
+inspeção ELF, dependências do link, extrações, corpus e rastros foram conferidos.
+Os 13 casos/relocação e zero chamadas de rede passaram em CPython 3.12.13/3.14.5
+em cada arquitetura, com controles positivos. Ambiente permanece container
+Alpine/CPU correspondente sobre kernel Ubuntu, sem aprovação de célula Alpine.
+
+A [fundação de seis slots](evidence/github-actions-foundation-musl-2026-10-19.json)
+passou com 203 testes por slot. Localmente, a fundação passou em Python 3.12 e
+3.14 com 203 testes/sete skips em cada. A suíte completa passou com 279 testes,
+11 skips Windows em cada (63,331 s em 3.12 e 72,049 s em 3.14). A primeira
+execução restrita falhou por acesso ao cache fora do workspace; com acesso ao
+cache existente, as duas passaram. Nenhuma instalação global foi necessária.
+
+T029/T030 permanecem parciais: revisão do material gerado/SDK, avisos completos,
+fontes correspondentes, auditoria e aceitação instalada/nativa continuam pendentes.
+Total **48/84**, catálogo ativo Windows preservado.
+
+Na mesma revisão, passaram também os builds/regressões
+[glibc x64](https://github.com/Extremois/desembaraca-twine/actions/runs/39331381030),
+[glibc ARM64](https://github.com/Extremois/desembaraca-twine/actions/runs/39331380940)
+e [macOS Intel/Apple Silicon](https://github.com/Extremois/desembaraca-twine/actions/runs/39331380907).
+Esses resultados confirmam a regressão das candidatas existentes; não ampliam
+a qualificação da matriz ou a aprovação dos pacotes.
+
 ## Builds musl em Alpine fixado — 2026-10-19
 
 O commit `369c98dbf21094efda66c7abf8bca0644f638b80` passou no

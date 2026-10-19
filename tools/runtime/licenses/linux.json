@@ -196,6 +196,28 @@
           "image_test": "python@sha256:1a5f0303fd8941565b5bbda3fac2345148a9fd8245d575c2971ccefcd77c78f6",
           "status": "static-build-and-public-corpus-observed; source-notice-audit-and-native-cell-qualification-pending"
         }
+      ],
+      "container_link_source_observations": [
+        {
+          "approved": false,
+          "qualified": false,
+          "evidence": "specs/003-add-cross-platform-support/evidence/alpine-musl-link-source-2026-10-19/x86_64/summary.json",
+          "revision": "40b3e38f3dc6bef2fe64b17f66e1f812460bd7f1",
+          "environment_kind": "container",
+          "executable_sha256": "f4dfee4e052704b1a7efdb7b6a4c43583ccaa062aec800b76224dae24eb2b69b",
+          "provenance_sha256": "e5e61de74f74d2bfa194c6dfcdb7887e6e5b9a86dbba7052cdf3a751866d3085",
+          "source_observations": {
+            "objects": 181,
+            "verified_graphviz_source_files": 322,
+            "generated_files": 9,
+            "external_files": 58
+          },
+          "link_input_count": 66,
+          "archive_extraction_rows": 324,
+          "byte_identical_to_compiler": true,
+          "byte_identical_to_parent": true,
+          "status": "Graphviz-sources-verified; generated-SDK-sources-notices-and-native-cell-qualification-pending"
+        }
       ]
     },
     {
@@ -216,6 +238,28 @@
           "image_build": "python@sha256:07b3a3b85d5b208f164a3276d5eb9c51e0ce61bbe4cb7ab4df0da50d5a78dc11",
           "image_test": "python@sha256:27b691f87878a079100a3d8fafcd66b3c54d931598f307bcb54617c395f5b43c",
           "status": "static-build-and-public-corpus-observed; source-notice-audit-and-native-cell-qualification-pending"
+        }
+      ],
+      "container_link_source_observations": [
+        {
+          "approved": false,
+          "qualified": false,
+          "evidence": "specs/003-add-cross-platform-support/evidence/alpine-musl-link-source-2026-10-19/aarch64/summary.json",
+          "revision": "40b3e38f3dc6bef2fe64b17f66e1f812460bd7f1",
+          "environment_kind": "container",
+          "executable_sha256": "2d7a4b6024eb000c33ecf8b14d1a32d0aac8dde65bed00de138604d081fd3ee4",
+          "provenance_sha256": "4895fff32f11cac6e61f5ef61e6615a728a278964d7203ef6a73b7db5c361ba1",
+          "source_observations": {
+            "objects": 181,
+            "verified_graphviz_source_files": 322,
+            "generated_files": 9,
+            "external_files": 58
+          },
+          "link_input_count": 66,
+          "archive_extraction_rows": 320,
+          "byte_identical_to_compiler": true,
+          "byte_identical_to_parent": true,
+          "status": "Graphviz-sources-verified; generated-SDK-sources-notices-and-native-cell-qualification-pending"
         }
       ]
     }
