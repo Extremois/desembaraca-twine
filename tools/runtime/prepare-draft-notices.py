@@ -147,6 +147,15 @@ def archive_files(path,prefix,names):
     return found
 
 
+def inputs_svg_origin(graphviz_archive):
+    raw=archive_files(graphviz_archive,'graphviz-16.1.0',{'lib/common/svgcolor_names'})['lib/common/svgcolor_names']
+    prefix=[]
+    for line in raw.splitlines(keepends=True):
+        if line.strip() and not line.startswith(b'#'):break
+        prefix.append(line)
+    return b''.join(prefix)
+
+
 def sdk_notice_names(record,linked_build):
     artifact=record.get('artifact_id')
     if not record.get('completed') or artifact not in ('linux-glibc-x86_64','linux-musl-x86_64'):
@@ -169,7 +178,7 @@ def sdk_notice_names(record,linked_build):
 
 
 def prepare(linked_build,source_build,evidence,graphviz_archive,sdk_archive,sdk_root,output,
-            musl_object_evidence=None,zig_runtime_evidence=None):
+            musl_object_evidence=None,zig_runtime_evidence=None,data_evidence=None):
     record=json.loads(audit.bounded(linked_build/'provenance.json',8*1024**2))
     source=json.loads(audit.bounded(evidence,8*1024**2))
     sdk_names=sdk_notice_names(record,linked_build)
@@ -238,6 +247,31 @@ def prepare(linked_build,source_build,evidence,graphviz_archive,sdk_archive,sdk_
     flex_license,flex_origin=flex_scanner_notice(audit.bounded(source_build/'build'/scanner_name,8*1024**2),generator)
     flex_origin.update(generated_path=scanner_name,generated_sha256=generated[scanner_name]['sha256'])
     materials.append(('Flex-2.6.4-COPYING.txt',flex_license,flex_origin))
+    data_review=None
+    if data_evidence is not None:
+        data_spec=importlib.util.spec_from_file_location('notice_data_inputs',HERE/'audit-graphviz-data.py')
+        data_audit=importlib.util.module_from_spec(data_spec);data_spec.loader.exec_module(data_audit)
+        data_review=json.loads(audit.bounded(data_evidence,8*1024**2))
+        # Recompute the small deterministic report. A supplied receipt cannot
+        # attach somebody else's generated table/reference comparison to a build.
+        if data_review!=data_audit.collect(source_build,linked_build,graphviz_archive,evidence):
+            raise ValueError('Data evidence differs from this build and pinned references')
+        reference_lock=data_review['references']['references']['xorg-rgb-1.1.0-COPYING']
+        materials.append(('Xorg-rgb-1.1.0-COPYING.txt',data_audit.reference_material('xorg-rgb-1.1.0-COPYING'),
+            dict(kind='pinned-reference-license-material',source_url=reference_lock['url'],
+                 archive_sha256=reference_lock['archive_sha256'],archive_member=reference_lock['archive_member'],
+                 source_sha256=reference_lock['sha256'],qualification='Reference material; applicability remains under review')))
+        origins=('Generated Graphviz data review material; not complete license approval.\n'
+            '147 SVG color values match SVG 1.1 Second Edition (W3C Recommendation, 16 August 2011):\n'
+            'https://www.w3.org/TR/2011/REC-SVG11-20110816/types.html#ColorKeywords\n'
+            '252 entity values match HTML 4.01 (W3C Recommendation, 24 December 1999):\n'
+            'https://www.w3.org/TR/1999/REC-html401-19991224/sgml/entities.html\n'
+            '674 color values match X.Org rgb 1.1.0 after case/space alias normalization.\n'
+            'Graphviz-specific differences: gray/grey = 192,192,192 (X.Org: 190,190,190);\n'
+            'invis/none/transparent = 255,255,254 with alpha 0, absent in that reference.\n'
+            'Graphviz source provenance for SVG data is preserved below:\n').encode()+inputs_svg_origin(graphviz_archive)
+        materials.append(('DATA-ORIGINS.txt',origins,dict(kind='maintainer-data-comparison-reference',
+            data_evidence_sha256=builder.digest(data_evidence),qualification='Value correspondence and generated-byte reproduction; historical copying and license applicability remain under review')))
     references=('Draft notice review material; approval and source offer remain incomplete.\n\n'
                 'Graphviz 16.1.0 source:\n'+lock['url']+'\nSHA-256: '+lock['sha256']+'\n\n'
                 'SDK archive used for source/header verification:\n'+facts['archive_url']+'\nSHA-256: '+facts['archive_sha256']+'\n').encode()
@@ -272,6 +306,9 @@ def prepare(linked_build,source_build,evidence,graphviz_archive,sdk_archive,sdk_
         review.update(zig_runtime_evidence_sha256=runtime_evidence_sha,zig_runtime_sources_verified=len(runtime_sources),
             zig_runtime_comment_files=sum(bool(i['leading_comment_bytes']) for i in runtime_sources.values()))
         review['pending'].append('Generated builtin is separate review material; runtime source comments do not resolve third-party applicability')
+    if data_review is not None:
+        review.update(data_evidence_sha256=builder.digest(data_evidence),data_comparison=data_review['comparison'],
+                      data_tables_reproduced=data_review['outputs'])
     (output/'review.json').write_text(json.dumps(review,indent=2)+'\n')
     record.update(output=str(output),qualification='draft notices only; no approved audit or support',
                   notice_preparation=dict(review_sha256=builder.digest(output/'review.json'),approved=False))
@@ -285,6 +322,7 @@ def main():
         parser.add_argument('--'+name,type=Path,required=True)
     parser.add_argument('--musl-object-evidence',type=Path,help='Optional byte-bound musl object/source observations; comments rechecked against pinned SDK')
     parser.add_argument('--zig-runtime-evidence',type=Path,help='Optional startup/Zig source observations; only pinned SDK source prefixes are bundled')
+    parser.add_argument('--data-evidence',type=Path,help='Optional reference/table evidence; recomputed before adding source-origin and X.Org notice material')
     args=parser.parse_args()
     try:
         result=prepare(**{name:path.resolve() if path is not None else None for name,path in vars(args).items()})

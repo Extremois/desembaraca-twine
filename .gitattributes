@@ -8,6 +8,7 @@ src/twine_edge_overlap/support-matrix.json -text
 tools/runtime/*.json -text
 tools/runtime/licenses/*.json -text
 tools/runtime/licenses/*-COPYING.txt -text -whitespace
+tools/runtime/licenses/data-references/** -text -whitespace
 tools/runtime/*.sh text eol=lf
 specs/003-add-cross-platform-support/evidence/**/*.txt -text -whitespace
 specs/003-add-cross-platform-support/evidence/**/*.log -text -whitespace

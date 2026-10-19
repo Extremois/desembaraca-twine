@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "purpose": "Pinned source comparison material, not a complete license audit",
+  "references": {
+    "svg11-types.html": {
+      "url": "https://www.w3.org/TR/2011/REC-SVG11-20110816/types.html",
+      "sha256": "92e6a601c7ee9946e6eec116fbbc31d226272d8853c1a73a2735f7e247fa1551",
+      "size": 205048,
+      "file": "svg11-types.html.gz",
+      "stored_sha256": "9ef743cb4fd99b86589fe7ae0c929e123d92cccd7aef3bb2d1c0a13893d9359e"
+    },
+    "html401-entities.html": {
+      "url": "https://www.w3.org/TR/1999/REC-html401-19991224/sgml/entities.html",
+      "sha256": "604f28d1a1ef222bef5fefab8e2935cddac019cb96aad6bd11d184d57f6d553e",
+      "size": 41360,
+      "file": "html401-entities.html.gz",
+      "stored_sha256": "fe346fa3caa8d0eef19875f820d18e6b48b9dd73c4ffcb1c51d84af2c2bbc40f"
+    },
+    "xorg-rgb-1.1.0-rgb.txt": {
+      "url": "https://xorg.freedesktop.org/archive/individual/app/rgb-1.1.0.tar.xz",
+      "archive_sha256": "fc03d7f56e5b2a617668167f8927948cce54f93097e7ccd9f056077f479ed37b",
+      "archive_size": 132824,
+      "archive_member": "rgb-1.1.0/rgb.txt",
+      "file": "xorg-rgb-1.1.0-rgb.txt",
+      "sha256": "3ab43100fec61f86ae6b7abebbf62fda355dff88c7ec9f0eed332520ddbb7965",
+      "size": 17975,
+      "stored_sha256": "3ab43100fec61f86ae6b7abebbf62fda355dff88c7ec9f0eed332520ddbb7965"
+    },
+    "xorg-rgb-1.1.0-COPYING": {
+      "url": "https://xorg.freedesktop.org/archive/individual/app/rgb-1.1.0.tar.xz",
+      "archive_sha256": "fc03d7f56e5b2a617668167f8927948cce54f93097e7ccd9f056077f479ed37b",
+      "archive_size": 132824,
+      "archive_member": "rgb-1.1.0/COPYING",
+      "file": "xorg-rgb-1.1.0-COPYING",
+      "sha256": "1d08eb3384f5dedc7735bcfae1aa58cb64643ca9389edce3312b1c3cefbfdaa7",
+      "size": 2275,
+      "stored_sha256": "1d08eb3384f5dedc7735bcfae1aa58cb64643ca9389edce3312b1c3cefbfdaa7"
+    }
+  }
+}
