@@ -9,7 +9,13 @@ primeira execução usa runners hospedados para a regressão compartilhada. Isso
 dispensa provisionar uma VM local; a aceitação do bundle Ubuntu continua exigindo
 as etapas de auditoria/pacote/rede/revisão descritas abaixo.
 
-## Recurso necessário do mantenedor
+## Runner disponível e pendências de aceite
+
+O acesso ao runner Ubuntu 24.04 x64 hospedado está resolvido pelo GitHub Actions.
+O workflow `linux-candidate.yml` prepara fonte/SDK privados e executa build e
+corpus com os dois Pythons. Não é mais necessário o mantenedor fornecer outra
+máquina Ubuntu para iniciar esse incremento. As condições abaixo continuam
+descrevendo o ambiente e os gates para o aceite completo da célula.
 
 Identificar uma máquina ou runner existente com Ubuntu 24.04 x86_64, CPU nativa
 e kernel/imagem registrados. Pode ser um ambiente remoto; não será criada VM no

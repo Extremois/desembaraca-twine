@@ -4,6 +4,23 @@ Estas ferramentas não são executadas na instalação do usuário. O catálogo 
 continua com o artefato Windows legado; nenhuma receita POSIX constitui suporte
 oficial antes de build, auditoria e qualificação de suas células.
 
+## Build experimental no GitHub Actions
+
+O workflow `linux-candidate.yml` constrói Graphviz 16.1.0 em Ubuntu 24.04 x64
+hospedado. `prepare-linux-ci.py --work DIRETORIO_NOVO` baixa explicitamente a
+fonte e Zig 0.15.2, verifica tamanho/SHA-256 antes de extrair e prepara wrappers
+privados para `x86_64-linux.4.15-gnu.2.27`, sem instalação global. O CMake e os
+geradores vêm da imagem do runner; seus caminhos, hashes e versões ficam no
+registro SDK, junto da identificação da imagem. A imagem hospedada pode mudar:
+esse registro identifica a execução, sem prometer rebuild idêntico.
+
+Depois do build, o corpus de 13 casos e a relocação em caminho com espaços e
+Unicode são executados em CPython 3.12 e 3.14. Logs, candidata e proveniência
+ficam em artefato de Actions por sete dias. Os testes bloqueiam rede Python;
+isso não substitui observação nativa de rede. Não há publicação de release ou
+admissão automática no catálogo. Auditoria de fontes/licenças, baseline antigo,
+instalação da distribuição e aceite completo continuam como etapas separadas.
+
 ## Build offline por variante
 
 `source-lock.json` fixa os bytes reais do arquivo-fonte Graphviz 16.1.0,

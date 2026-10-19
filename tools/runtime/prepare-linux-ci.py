@@ -96,7 +96,7 @@ def prepare(work):
             raise ValueError('Missing runner build dependency: ' + name)
         host_tools[name] = dict(**executable(path), version=subprocess.check_output(
             [path, '--version'], text=True, timeout=10).splitlines()[0])
-    facts = dict(provider='Zig', archive=ZIG, target=TARGET, environment_kind='native',
+    facts = dict(provider='Zig', archive=ZIG, zig_sha256=digest(zig), target=TARGET, environment_kind='native',
                  kernel=platform.release(), host=platform.platform(), tools=tools,
                  host_tools=host_tools, image_os=os.environ.get('ImageOS'),
                  image_version=os.environ.get('ImageVersion'), runner_arch=os.environ.get('RUNNER_ARCH'),
