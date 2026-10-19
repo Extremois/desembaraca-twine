@@ -105,13 +105,16 @@ def capture_extractions(path, linkage, build_root):
 def relink_variant(host, record):
     variants = {'linux-glibc-x86_64': ('x86_64', 'glibc'),
                 'linux-glibc-aarch64': ('aarch64', 'glibc'),
-                'linux-musl-x86_64': ('x86_64', 'musl')}
+                'linux-musl-x86_64': ('x86_64', 'musl'),
+                'linux-musl-aarch64': ('aarch64', 'musl')}
     variant = variants.get(record.get('artifact_id'))
     if variant is None or record.get('completed') is not True:
         raise ValueError('Expected a completed supported Linux source build')
     arch, abi = variant
-    if (host.os, host.arch, host.libc_family, host.translated) != ('linux', arch, 'glibc', False):
-        raise ValueError('Relink requires the matching native Linux glibc host')
+    legacy_cross_libc = (arch, abi, host.libc_family) == ('x86_64', 'musl', 'glibc')
+    if ((host.os, host.arch, host.translated) != ('linux', arch, False)
+            or (host.libc_family != abi and not legacy_cross_libc)):
+        raise ValueError('Relink requires matching Linux CPU/ABI or the existing x64 static cross-libc experiment')
     recipe = record.get('recipe', {})
     if not isinstance(recipe, dict):
         raise ValueError('Source recipe must be an object')
@@ -178,7 +181,7 @@ def relink(source_output, output, zig):
     shutil.copyfile(cwd / 'dot', binary)
     binary.chmod(0o755)
     if musl:
-        builder.elf_verifier().elf_architecture(binary,'x86_64')
+        builder.elf_verifier().elf_architecture(binary,record['native_arch'])
         measured=run_bounded([inspector['path'],'--program-headers','--dynamic','--version-info',str(binary)],
                              cwd=output,env=environment,timeout=30,max_output=8*1024**2)
         if measured.returncode:raise ValueError('Relink static ELF inspection failed')

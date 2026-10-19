@@ -85,6 +85,12 @@ material de revisão, sem constituir oferta permanente aprovada.
 runners CPU correspondentes, sem QEMU. As imagens oficiais Python 3.12/3.14 são
 fixadas por digest de plataforma em `alpine-ci-images.json`; a arquitetura do
 host e do container precisa coincidir. O SDK Zig também é fixado por hash.
+Depois do build, o relink registra os inputs reais e as extrações de arquivos
+estáticos, exigindo igualdade com a saída de referência do compilador. A inspeção
+ELF usa a arquitetura do alvo e exige novamente ausência de ligação dinâmica.
+O coletor Graphviz vincula objetos compilados e dependências às fontes do tarball
+fixado. Esses relatórios são observações para revisão, sem aprovar licenças ou
+fechamento transitivo do SDK.
 `prepare-linux-ci.py --libc musl --environment-kind container` registra esse
 contexto e usa alvo `ARCH-linux.4.15-musl`, CPU baseline.
 

@@ -18,6 +18,26 @@ def tool(name):
 
 
 class BuildToolTests(unittest.TestCase):
+    def test_musl_relink_accepts_matching_cpu_and_abi_with_provenance_guards(self):
+        from twine_edge_overlap.runtime_platform import HostEnvironment
+        relinker=tool('relink-zig')
+        for arch in ('x86_64','aarch64'):
+            record=dict(completed=True,artifact_id='linux-musl-'+arch,
+                        native_os='linux',native_arch=arch,
+                        recipe=dict(os='linux',arch=arch,abi='musl'))
+            host=HostEnvironment(os='linux',arch=arch,libc_family='musl')
+            self.assertTrue(relinker.relink_variant(host,record))
+            for bad in (HostEnvironment(os='linux',arch=arch,libc_family='musl',translated=True),
+                        HostEnvironment(os='linux',arch='aarch64' if arch=='x86_64' else 'x86_64',libc_family='musl'),
+                        HostEnvironment(os='linux',arch=arch,libc_family='unknown')):
+                with self.assertRaises(ValueError):relinker.relink_variant(bad,record)
+            for bad in (dict(record,completed=False),dict(record,native_arch='wrong'),
+                        dict(record,recipe=dict(os='linux',arch=arch,abi='glibc'))):
+                with self.assertRaises(ValueError):relinker.relink_variant(host,bad)
+        # Preserve the previously measured x64 cross-libc experiment only.
+        with self.assertRaises(ValueError):
+            relinker.relink_variant(HostEnvironment(os='linux',arch='aarch64',libc_family='glibc'),record)
+
     def test_musl_sdk_target_is_explicit_and_unknown_libc_refused(self):
         bootstrap=tool('prepare-linux-ci')
         for arch in ('x86_64','aarch64'):
