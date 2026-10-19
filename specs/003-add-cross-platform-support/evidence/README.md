@@ -251,3 +251,13 @@ Comentários de fontes incluem documentação e referências de origem: sua cóp
 não decide aplicabilidade de licenças nem substitui textos canônicos/oferta
 completa. O motor não mudou; o corpus não foi repetido. Sem qualificação nativa,
 entrada de catálogo, URL de distribuição ou publicação remota.
+
+`local-continuation-2026-10-19.json` registra o novo ensaio de entrada inválida
+antes de aquisição/rede Python, a regressão de 162 testes e a conferência do
+entrypoint da revisão remota Windows. A URL imutável respondeu HTTP 200 ao HEAD;
+não houve nova instalação remota nem aceite POSIX. A auditoria anterior de
+segurança foi preservada, com comparação dos hashes de fonte e escopo parcial.
+
+`next-actions.md` identifica o executor Ubuntu 24.04 x86_64 necessário ao primeiro
+incremento, os dados de acesso/ambiente a informar e as etapas de auditoria e
+aceitação ainda abertas. Não provisiona infraestrutura nem autoriza publicação.

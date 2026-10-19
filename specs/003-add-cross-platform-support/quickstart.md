@@ -14,6 +14,15 @@ Ter diretórios de usuário com escrita/execução, acesso HTTPS para instalaç�
 
 ## 1. Instalar a candidata, sem checkout obrigatório
 
+A URL fixa do README aponta ao MVP Windows da spec 002, que ainda usa o comando
+`twine-edge-overlap`; o módulo Python também funciona nessa revisão. Ela não
+contém a spec 003 nem permite qualificar Linux/macOS. A branch local atual é
+`feat/003-add-cross-platform-support`. O envio dessa branch para testes no Actions
+não publica nem qualifica um bundle POSIX. Os comandos
+`desembaraca-twine` deste guia pertencem à candidata nova, que ainda precisa dos
+artefatos/auditorias/ambientes indicados abaixo. Não substituir CANDIDATE_URL pela
+URL antiga para tentar concluir a aceitação POSIX.
+
 Em shell POSIX, usar `python3.12` ou `python3.14` conforme o ensaio:
 
 ```sh

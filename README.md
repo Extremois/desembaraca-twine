@@ -71,31 +71,32 @@ mudanças na política do PowerShell.
 Com Python e pip disponíveis, execute de qualquer pasta:
 
 ```powershell
-python -m pip install --user --upgrade --force-reinstall "https://github.com/Extremois/desembaraca-twine/archive/refs/heads/feat/002-manage-layout-runtime.zip"
+python -m pip install --user --upgrade --force-reinstall "https://github.com/Extremois/desembaraca-twine/archive/3ad9b6632140149a65586d2a5519687c93b8b323.zip"
 ```
 
-O pip obtém o ZIP da branch de desenvolvimento diretamente do GitHub; não é
-necessário instalar Git nem baixar o projeto manualmente. A instalação requer
-internet e pode baixar ferramentas de build do índice Python. A reinstalação
-forçada permite atualizar o código mesmo enquanto a versão de desenvolvimento
-do pacote continuar igual. Essa branch está em validação; consulte o estado abaixo.
+A URL fixa o commit do MVP Windows anteriormente enviado ao repositório. Git e
+checkout manual não são necessários. A instalação requer internet e pode baixar
+ferramentas de build do índice Python. Reinstalar a mesma URL mantém essa revisão,
+sem buscar alterações posteriores.
 
-Com a pasta `Scripts` da instalação de usuário do Python no PATH, use:
+Esse commit ainda instala o comando antigo `twine-edge-overlap`. A renomeação
+para `desembaraca-twine` pertence à branch de desenvolvimento da spec 003 e não
+está incluída nessa URL fixa do MVP.
+Para a revisão remota, com a pasta `Scripts` do Python no PATH, use:
 
 ```powershell
-desembaraca-twine 'C:\Grafos\história.twee'
+twine-edge-overlap 'C:\Grafos\história.twee'
 ```
 
-Se o terminal não reconhecer o comando, use a chamada pelo Python, que funciona
-sem adicionar a pasta `Scripts` ao PATH:
+A chamada por módulo funciona nessa revisão sem adicionar `Scripts` ao PATH:
 
 ```powershell
 python -m twine_edge_overlap.cli 'C:\Grafos\história.twee'
 ```
 
-As opções `--prepare-runtime` e `--repair-runtime` também estão disponíveis nessas
-invocações. O Graphviz continua sendo obtido automaticamente na primeira
-preparação e reutilizado offline depois.
+As opções `--prepare-runtime` e `--repair-runtime` também estão disponíveis.
+Graphviz é obtido na primeira preparação e reutilizado offline depois. Esse MVP
+remoto não contém os candidatos Linux/macOS nem a implementação local da spec 003.
 
 ### Resultado e limites
 
@@ -261,31 +262,32 @@ PowerShell policy changes.
 With Python and pip available, run from any directory:
 
 ```powershell
-python -m pip install --user --upgrade --force-reinstall "https://github.com/Extremois/desembaraca-twine/archive/refs/heads/feat/002-manage-layout-runtime.zip"
+python -m pip install --user --upgrade --force-reinstall "https://github.com/Extremois/desembaraca-twine/archive/3ad9b6632140149a65586d2a5519687c93b8b323.zip"
 ```
 
-Pip downloads the development branch ZIP directly from GitHub; Git and a manual
-checkout are not required. Installation needs internet access and may download
-build tools from the Python package index. Forced reinstallation updates the code
-even while the development package version stays the same. This branch is still
-under validation; see its status below.
+The URL pins the Windows MVP commit previously pushed to the repository. Git and
+a manual checkout are not required. Installation needs internet and may download
+tools from the Python package index. Reinstalling this URL keeps that revision
+rather than fetching later changes.
 
-With the Python user installation's `Scripts` directory on PATH, use:
+This commit still installs the legacy `twine-edge-overlap` command. The rename to
+`desembaraca-twine` belongs to the spec 003 development branch and is not included
+in this pinned MVP URL.
+For the remote revision, with the Python `Scripts` directory on PATH, use:
 
 ```powershell
-desembaraca-twine 'C:\Graphs\story.twee'
+twine-edge-overlap 'C:\Graphs\story.twee'
 ```
 
-If the terminal does not recognize the command, invoke the Python module instead;
-this works without adding the `Scripts` directory to PATH:
+The module invocation works on that revision without adding `Scripts` to PATH:
 
 ```powershell
 python -m twine_edge_overlap.cli 'C:\Graphs\story.twee'
 ```
 
-Both invocations also accept `--prepare-runtime` and `--repair-runtime`. Graphviz
-is still downloaded automatically during initial preparation and reused offline
-afterwards.
+Both invocations accept `--prepare-runtime` and `--repair-runtime`. Graphviz is
+downloaded during initial preparation and reused offline afterwards. This remote
+MVP does not include Linux/macOS candidates or the local spec 003 implementation.
 
 ### Results and limits
 

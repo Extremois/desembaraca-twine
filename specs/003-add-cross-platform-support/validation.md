@@ -682,203 +682,235 @@ verificados nos dois Pythons. T030 continua parcial e o total permanece
 **46/84 tarefas**, sem VM, instalação global, mudança de catálogo, commit,
 push ou publicação.
 
-### Continua??o: invent?rio e ZIP locais do musl est?tico
+### Continuação: inventário e ZIP locais do musl estático
 
-O invent?rio local passou a separar medi??o est?tica de baseline de compatibilidade.
-O novo flag expl?cito `--static-elf` aceita somente receita Linux musl com `-static`,
-fatos coerentes do SDK e quatro resultados est?ticos cujo relat?rio tem hash
-vinculado ? proveni?ncia. Registra `native_linkage: static-elf` e
-`minimum_libc: null`. O caminho convencional continua exigindo vers?o m?nima;
-combinar os dois modos ou usar o flag fora da cria??o do invent?rio ? recusado.
-N?o h? mudan?a no schema do manifesto distribu?do, sele??o de runtime ou cat?logo.
-A decis?o e seus limites est?o registrados em research.md.
+O inventário local passou a separar medição estática de baseline de compatibilidade.
+O novo flag explícito `--static-elf` aceita somente receita Linux musl com `-static`,
+fatos coerentes do SDK e quatro resultados estáticos cujo relatório tem hash
+vinculado à proveniência. Registra `native_linkage: static-elf` e
+`minimum_libc: null`. O caminho convencional continua exigindo versão mínima;
+combinar os dois modos ou usar o flag fora da criação do inventário é recusado.
+Não há mudança no schema do manifesto distribuído, seleção de runtime ou catálogo.
+A decisão e seus limites estão registrados em research.md.
 
-Tr?s testes novos cobrem empacotamento sem vers?o inventada, preserva??o do gate
-de auditoria antes de executar processos, receita/SDK/medi??o incompat?veis,
-relat?rio alterado e cria??o expl?cita com modos POSIX reais no WSL. O caso
-positivo falhou inicialmente no contrato anterior de vers?o obrigat?ria; passou
-ap?s a implementa??o. A cobertura de cria??o POSIX ? skip no Windows. Na verifica??o
-sint?tica da barreira de auditoria, o Windows confere conte?do sem simular modos
-POSIX; no WSL os modos reais s?o conferidos.
+Três testes novos cobrem empacotamento sem versão inventada, preservação do gate
+de auditoria antes de executar processos, receita/SDK/medição incompatíveis,
+relatório alterado e criação explícita com modos POSIX reais no WSL. O caso
+positivo falhou inicialmente no contrato anterior de versão obrigatória; passou
+após a implementação. A cobertura de criação POSIX é skip no Windows. Na verificação
+sintética da barreira de auditoria, o Windows confere conteúdo sem simular modos
+POSIX; no WSL os modos reais são conferidos.
 
-O candidato com avisos de proveni?ncia
+O candidato com avisos de proveniência
 `daba2f9a893a98f746a101cd3de7d07261b3af51e076690bdbb60891c5055a03`
 foi inventariado em 15 arquivos. Dois empacotamentos independentes produziram ZIPs
-byte a byte id?nticos, com **7.355.837 bytes** e SHA-256
+byte a byte idênticos, com **7.355.837 bytes** e SHA-256
 `dfcd0bf5641e28cb6986bbcefe41f77a348016345c824b9c388032dc908b3562`.
-Conte?do, hashes, tamanhos, modos e timestamps foram conferidos. O invent?rio tem SHA
+Conteúdo, hashes, tamanhos, modos e timestamps foram conferidos. O inventário tem SHA
 `f07f0b66e2a997384bcc9041e65c841fdf195747d3c54acf265caf094c02ea5f`.
-H? c?pia exata do ZIP/invent?rio/resumo na pasta local ignorada de revis?o musl,
-junto dos recibos anteriores. O motor mant?m os bytes dos ensaios de corpus
-anteriores; n?o se atribuiu nova execu??o do corpus a esta etapa.
+Há cópia exata do ZIP/inventário/resumo na pasta local ignorada de revisão musl,
+junto dos recibos anteriores. O motor mantém os bytes dos ensaios de corpus
+anteriores; não se atribuiu nova execução do corpus a esta etapa.
 
 O inspetor real recusou o review.json incompleto com
-`Reviewed audit must bind the exact build provenance`, antes do probe. N?o foram
-criadas auditoria aprovada, baseline nativa, URL remota ou entrada de cat?logo.
-A auditoria de fontes/licen?as e a qualifica??o Alpine/ARM64/kernel/CPU permanecem
-pendentes. Ver [recibo e invent?rio resumido](evidence/linux-musl-candidate-package.json).
+`Reviewed audit must bind the exact build provenance`, antes do probe. Não foram
+criadas auditoria aprovada, baseline nativa, URL remota ou entrada de catálogo.
+A auditoria de fontes/licenças e a qualificação Alpine/ARM64/kernel/CPU permanecem
+pendentes. Ver [recibo e inventário resumido](evidence/linux-musl-candidate-package.json).
 
-Funda??o: **150 testes** em Windows/Python 3.14.6 (21,872 s; 7 skips),
+Fundação: **150 testes** em Windows/Python 3.14.6 (21,872 s; 7 skips),
 Windows/Python 3.12.10 (21,372 s; 7 skips) e WSL/Python 3.14.8 (43,146 s;
-5 skips). Os skips n?o qualificam ambiente nativo. T029/T030 continuam parciais;
-o total permanece **46/84**, sem VM, instala??o global, commit, push ou publica??o.
+5 skips). Os skips não qualificam ambiente nativo. T029/T030 continuam parciais;
+o total permanece **46/84**, sem VM, instalação global, commit, push ou publicação.
 
-### Continua??o: fontes dos objetos musl e avisos por arquivo
+### Continuação: fontes dos objetos musl e avisos por arquivo
 
-Novo coletor `tools/runtime/audit-musl-objects.py`: valida hashes do execut?vel,
-SDK/inspector, archive musl e TSV de extra??es contra a proveni?ncia do relink.
+Novo coletor `tools/runtime/audit-musl-objects.py`: valida hashes do executável,
+SDK/inspector, archive musl e TSV de extrações contra a proveniência do relink.
 Compara os bytes de cada membro observado com seu objeto real e executa somente
 readelf fixado, com profundidade DWARF limitada. Interpreta atributos apenas das
-unidades de compila??o de n?vel zero, recusa fontes externas ao SDK e compara
-os fontes identificados com os bytes do arquivo SDK fixado. N?o compila nem
+unidades de compilação de nível zero, recusa fontes externas ao SDK e compara
+os fontes identificados com os bytes do arquivo SDK fixado. Não compila nem
 executa o candidato; limites de 120 s agregados, 5.000 objetos/fontes, 64 MiB de
-fontes e 8 MiB por sa?da de inspe??o. Um primeiro script explorat?rio tentou usar
+fontes e 8 MiB por saída de inspeção. Um primeiro script exploratório tentou usar
 um campo archive inexistente nas linhas; foi corrigido para archive_sha256 antes
-da coleta final. Nenhum resultado dessa tentativa foi usado como evid?ncia.
+da coleta final. Nenhum resultado dessa tentativa foi usado como evidência.
 
 Os **177 membros** libc.a observados foram associados a **177 fontes**,
-237.720 bytes, todas conferidas contra o SDK. **16 fontes** t?m coment?rios
-iniciais, incluindo atribui??es/termos de arquivos matem?ticos, qsort e c?digo
-x86_64. O relat?rio preserva esses prefixos integralmente e registra o hash das
-sa?das DWARF privadas, sem publicar seus caminhos pessoais. Isso documenta
-correspond?ncia de metadados, n?o prova compila??o reproduz?vel ou reten??o de
-se??es. Ver [fontes observadas](evidence/linux-musl-object-sources.json).
+237.720 bytes, todas conferidas contra o SDK. **16 fontes** têm comentários
+iniciais, incluindo atribuições/termos de arquivos matemáticos, qsort e código
+x86_64. O relatório preserva esses prefixos integralmente e registra o hash das
+saídas DWARF privadas, sem publicar seus caminhos pessoais. Isso documenta
+correspondência de metadados, não prova compilação reproduzível ou retenção de
+seções. Ver [fontes observadas](evidence/linux-musl-object-sources.json).
 
-`prepare-draft-notices.py --musl-object-evidence` exige evid?ncia do build/SDK
-exatos. Recalcula hashes das fontes e coment?rios diretamente no SDK fixado,
-antes de gerar uma sa?da nova. O candidato agora tem **30 avisos/refer?ncias**
-e 31 arquivos no invent?rio; os candidatos anteriores foram preservados.
+`prepare-draft-notices.py --musl-object-evidence` exige evidência do build/SDK
+exatos. Recalcula hashes das fontes e comentários diretamente no SDK fixado,
+antes de gerar uma saída nova. O candidato agora tem **30 avisos/referências**
+e 31 arquivos no inventário; os candidatos anteriores foram preservados.
 Motor inalterado, SHA
 `a58b2f30b70a0393ff0cec93d40e7b039015d1ad2bbdc8a9c60634334519942f`.
-Nova proveni?ncia SHA
+Nova proveniência SHA
 `658e51e830b80642cf2915d1fc7b4cae81c0cc8c1fa12ba3fb71695760d0caf4`.
-Dois ZIPs byte a byte id?nticos: **7.368.435 bytes**, SHA
+Dois ZIPs byte a byte idênticos: **7.368.435 bytes**, SHA
 `471263cf178713d22502141bda44ef3d3e6c7446f8fb9ec08d219cc1eb5d5ace`.
-Conte?do/modos/hashes foram conferidos e o inspetor real continuou recusando a
-auditoria incompleta antes do probe. N?o houve nova execu??o do corpus, pois os
-bytes do motor s?o os mesmos dos ensaios anteriores. Ver
+Conteúdo/modos/hashes foram conferidos e o inspetor real continuou recusando a
+auditoria incompleta antes do probe. Não houve nova execução do corpus, pois os
+bytes do motor são os mesmos dos ensaios anteriores. Ver
 [recibo do pacote com avisos por fonte](evidence/linux-musl-source-notice-package.json).
 
-Quatro testes novos cobrem leitura de unidades de compila??o sem confundir
-nomes de fun??es, campos amb?guos, caminhos com espa?os, fontes fora do SDK,
-raiz relativa desconhecida, preserva??o de coment?rios e v?nculo exato da
-evid?ncia, inclusive duplicatas/travessias. Os tr?s primeiros falharam por falta
-do coletor antes da implementa??o; o contrato adicional da prepara??o passou.
-Funda??o: **154 testes**, Windows/Python 3.14.6 (21,811 s; 7 skips),
+Quatro testes novos cobrem leitura de unidades de compilação sem confundir
+nomes de funções, campos ambíguos, caminhos com espaços, fontes fora do SDK,
+raiz relativa desconhecida, preservação de comentários e vínculo exato da
+evidência, inclusive duplicatas/travessias. Os três primeiros falharam por falta
+do coletor antes da implementação; o contrato adicional da preparação passou.
+Fundação: **154 testes**, Windows/Python 3.14.6 (21,811 s; 7 skips),
 Windows/Python 3.12.10 (21,159 s; 7 skips), WSL/Python 3.14.8 (44,186 s;
-5 skips). Skips continuam sem valor de qualifica??o nativa.
+5 skips). Skips continuam sem valor de qualificação nativa.
 
-T030 avan?ou na coleta por arquivo, mas headers transitivos, demais trechos de
+T030 avançou na coleta por arquivo, mas headers transitivos, demais trechos de
 fontes, startup direto, libzigc/compiler_rt/LLVM, geradores/dados e oferta completa
-de fontes ainda exigem revis?o. Nenhum audit aprovado foi produzido. Total
+de fontes ainda exigem revisão. Nenhum audit aprovado foi produzido. Total
 **46/84 tarefas**; Alpine/ARM64/macOS e baselines nativas permanecem pendentes,
-sem VM, instala??o global, mudan?a de cat?logo, commit, push ou publica??o.
+sem VM, instalação global, mudança de catálogo, commit, push ou publicação.
 
-### Continua??o: startup e runtimes Zig do candidato musl
+### Continuação: startup e runtimes Zig do candidato musl
 
 `tools/runtime/audit-zig-runtime.py` complementa o coletor musl com crt1.o direto
-e os membros observados de libzigc.a/libcompiler_rt.a. Confere proveni?ncia,
-execut?vel, SDK/inspector, extra??es e bytes de archives/membros/objetos. Executa
-somente readelf fixado, com limites de 120 s, 8 MiB por sa?da, 1 MiB por fonte,
-5.000 refer?ncias por tabela e 64 MiB agregados de fontes. Interpreta exatamente
-uma tabela DWARF4 por objeto e recusa vers?es/?ndices amb?guos ou travessias.
+e os membros observados de libzigc.a/libcompiler_rt.a. Confere proveniência,
+executável, SDK/inspector, extrações e bytes de archives/membros/objetos. Executa
+somente readelf fixado, com limites de 120 s, 8 MiB por saída, 1 MiB por fonte,
+5.000 referências por tabela e 64 MiB agregados de fontes. Interpreta exatamente
+uma tabela DWARF4 por objeto e recusa versões/índices ambíguos ou travessias.
 
 O startup aponta a `lib/libc/musl/crt/crt1.c`. Os dois runtimes usam nomes de CU
-virtuais zigc/compiler_rt; n?o foram tratados como caminhos de arquivos existentes.
-As tabelas identificam 1, 20 e 245 refer?ncias, respectivamente. Junto dos dois
+virtuais zigc/compiler_rt; não foram tratados como caminhos de arquivos existentes.
+As tabelas identificam 1, 20 e 245 referências, respectivamente. Junto dos dois
 entrypoints explicitamente coletados, foram conferidos **260 arquivos SDK**,
 **1.753.358 bytes**, contra o arquivo original fixado. Fonte de entrypoint tem
-r?tulo pr?prio e n?o ? apresentada como observa??o DWARF. Ver
+rótulo próprio e não é apresentada como observação DWARF. Ver
 [fontes startup/Zig](evidence/linux-musl-zig-runtime-sources.json).
 
 Um builtin.zig gerado foi observado nos dois runtimes, com hash atual
 `0795924d103f617454ad0b2eef7c93ee285efe20d2445b4cb00eba519933bd04`.
-Foi copiado sem altera??o para a pasta ignorada de revis?o, junto do relat?rio.
-Esse hash descreve os bytes atuais e n?o comprova os bytes durante o build.
-Fontes geradas n?o foram misturadas com arquivos do SDK fixado.
+Foi copiado sem alteração para a pasta ignorada de revisão, junto do relatório.
+Esse hash descreve os bytes atuais e não comprova os bytes durante o build.
+Fontes geradas não foram misturadas com arquivos do SDK fixado.
 
-Os **49 prefixos de coment?rios** completos foram preservados em JSON e arquivos
-p?blicos de evid?ncia com hashes conferidos. Um scanner limitado sinaliza linhas
-com refer?ncias a licen?a/origem em todo o conte?do: 17 arquivos t?m indicadores,
-todos dentro dos prefixos neste recorte. Existem refer?ncias a fontes portadas de
-musl e Go; a coleta n?o decide suas obriga??es. Tabelas podem superestimar fontes
-com c?digo retido, e busca textual n?o equivale a revis?o sem?ntica exaustiva.
+Os **49 prefixos de comentários** completos foram preservados em JSON e arquivos
+públicos de evidência com hashes conferidos. Um scanner limitado sinaliza linhas
+com referências a licença/origem em todo o conteúdo: 17 arquivos têm indicadores,
+todos dentro dos prefixos neste recorte. Existem referências a fontes portadas de
+musl e Go; a coleta não decide suas obrigações. Tabelas podem superestimar fontes
+com código retido, e busca textual não equivale a revisão semântica exaustiva.
 Nenhum aviso foi incorporado automaticamente a um novo candidato ou aprovado.
 
-Quatro testes novos cobrem tabelas com espa?os/diret?rio zero, vers?o n?o prevista,
-m?ltiplas tabelas, ?ndices/entradas duplicados ou desconhecidos, travessias,
-confinamento de builtin gerado e detec??o de indicadores depois do prefixo.
-Os tr?s testes iniciais falharam por aus?ncia do coletor antes da implementa??o;
-o quarto validou o scanner adicionado. Funda??o: **158 testes** em
+Quatro testes novos cobrem tabelas com espaços/diretório zero, versão não prevista,
+múltiplas tabelas, índices/entradas duplicados ou desconhecidos, travessias,
+confinamento de builtin gerado e detecção de indicadores depois do prefixo.
+Os três testes iniciais falharam por ausência do coletor antes da implementação;
+o quarto validou o scanner adicionado. Fundação: **158 testes** em
 Windows/Python 3.14.6 (21,755 s; 7 skips), Windows/Python 3.12.10 (21,232 s;
-7 skips) e WSL/Python 3.14.8 (44,242 s; 5 skips). Skips n?o qualificam SO nativo.
+7 skips) e WSL/Python 3.14.8 (44,242 s; 5 skips). Skips não qualificam SO nativo.
 
-Hashes dos ZIPs anteriores foram novamente conferidos e permanecem id?nticos.
-Motor e cat?logos n?o foram alterados. T030 segue parcial: faltam revis?o de
+Hashes dos ZIPs anteriores foram novamente conferidos e permanecem idênticos.
+Motor e catálogos não foram alterados. T030 segue parcial: faltam revisão de
 aplicabilidade por arquivo, fontes transitivas/geradores/dados e auditoria final,
-al?m da qualifica??o nativa dos bundles. Total **46/84 tarefas**. Sem VM,
-instala??o global, execu??o nova do motor/corpus, commit, push ou publica??o.
+além da qualificação nativa dos bundles. Total **46/84 tarefas**. Sem VM,
+instalação global, execução nova do motor/corpus, commit, push ou publicação.
 
-### Continua??o: integrar coment?rios dos runtimes ao candidato musl
+### Continuação: integrar comentários dos runtimes ao candidato musl
 
-`prepare-draft-notices.py` agora aceita `--zig-runtime-evidence`, combin?vel com
-`--musl-object-evidence`. A valida??o compartilhada exige tipo de relat?rio,
-proveni?ncia, execut?vel e SDK exatos, caminhos can?nicos/?nicos e fontes dentro
-do SDK permitido. Os arquivos gerados s?o separados e n?o aceitos como fontes
-SDK. Antes da c?pia, a prepara??o recalcula hash/tamanho de cada fonte e de seu
-prefixo diretamente nos bytes do arquivo SDK fixado. A leitura dos coment?rios
-presentes no JSON n?o ? usada como fonte dos textos empacotados.
+`prepare-draft-notices.py` agora aceita `--zig-runtime-evidence`, combinável com
+`--musl-object-evidence`. A validação compartilhada exige tipo de relatório,
+proveniência, executável e SDK exatos, caminhos canônicos/únicos e fontes dentro
+do SDK permitido. Os arquivos gerados são separados e não aceitos como fontes
+SDK. Antes da cópia, a preparação recalcula hash/tamanho de cada fonte e de seu
+prefixo diretamente nos bytes do arquivo SDK fixado. A leitura dos comentários
+presentes no JSON não é usada como fonte dos textos empacotados.
 
-Dois testes novos falharam por aus?ncia das fun??es antes da implementa??o e
+Dois testes novos falharam por ausência das funções antes da implementação e
 passaram depois. Cobrem identidade exata do runtime/SDK, recusa de builtin gerado
-como fonte SDK e detec??o de recibos de fonte/prefixo adulterados. A extra??o do
+como fonte SDK e detecção de recibos de fonte/prefixo adulterados. A extração do
 validador comum preservou os testes e comportamento anteriores de avisos musl.
 
-A execu??o real conferiu novamente 58 headers, nove arquivos gerados Graphviz,
-177 fontes musl e 260 fontes do startup/runtime Zig. Nova sa?da independente:
-**79 arquivos de coment?rios/avisos/refer?ncias**, somando os 49 prefixos Zig aos
-30 anteriores, e 80 arquivos no invent?rio. N?o inclui builtin.zig gerado. Sua
-c?pia local anterior para revis?o permanece separada. O dot mant?m SHA
+A execução real conferiu novamente 58 headers, nove arquivos gerados Graphviz,
+177 fontes musl e 260 fontes do startup/runtime Zig. Nova saída independente:
+**79 arquivos de comentários/avisos/referências**, somando os 49 prefixos Zig aos
+30 anteriores, e 80 arquivos no inventário. Não inclui builtin.zig gerado. Sua
+cópia local anterior para revisão permanece separada. O dot mantém SHA
 `a58b2f30b70a0393ff0cec93d40e7b039015d1ad2bbdc8a9c60634334519942f`.
-Nova proveni?ncia SHA
+Nova proveniência SHA
 `63bc32568e16a91385f3eba2f818896ab01fcc390388a98db7d28283dbe146ad`.
 
-Dois ZIPs byte a byte id?nticos: **7.393.576 bytes**, SHA-256
+Dois ZIPs byte a byte idênticos: **7.393.576 bytes**, SHA-256
 `10b37b433a85216f17c65b6e09b58b3c8c26422ea302763efd10a8a11c610410`.
-Conte?do, tamanhos, hashes e modos foram conferidos. H? c?pia local ignorada
-com ZIP/invent?rio/proveni?ncia/review/relat?rio est?tico; avisos e recibos
-p?blicos de evid?ncia est?o vinculados por hash. Ver
-[pacote com coment?rios runtime](evidence/linux-musl-runtime-notice-package.json).
-O inspetor real recusou o rascunho de auditoria antes do probe. N?o se repetiu
+Conteúdo, tamanhos, hashes e modos foram conferidos. Há cópia local ignorada
+com ZIP/inventário/proveniência/review/relatório estático; avisos e recibos
+públicos de evidência estão vinculados por hash. Ver
+[pacote com comentários runtime](evidence/linux-musl-runtime-notice-package.json).
+O inspetor real recusou o rascunho de auditoria antes do probe. Não se repetiu
 o corpus para o motor inalterado nem se alteraram os candidatos anteriores.
 
-Funda??o: **160 testes** em Windows/Python 3.14.6 (22,157 s; 7 skips),
+Fundação: **160 testes** em Windows/Python 3.14.6 (22,157 s; 7 skips),
 Windows/Python 3.12.10 (21,651 s; 7 skips), WSL/Python 3.14.8 (44,668 s;
-5 skips). Skips n?o qualificam ambientes nativos. Esses coment?rios preservam
-material de revis?o, incluindo documenta??o/origem; n?o aprovam aplicabilidade,
-textos can?nicos ou oferta completa de fontes. T030 continua parcial e o total
-permanece **46/84**, sem VM, instala??o global, novo motor, promo??o de suporte,
-commit, push ou publica??o remota.
+5 skips). Skips não qualificam ambientes nativos. Esses comentários preservam
+material de revisão, incluindo documentação/origem; não aprovam aplicabilidade,
+textos canônicos ou oferta completa de fontes. T030 continua parcial e o total
+permanece **46/84**, sem VM, instalação global, novo motor, promoção de suporte,
+commit, push ou publicação remota.
 
-### Organiza??o dos commits e branch da implementa??o parcial
+### Organização dos commits e branch da implementação parcial
 
-Por solicita??o do mantenedor, a implementa??o parcial foi organizada em
-`feat/003-add-cross-platform-support`, criada de `dev`. A dev local avan?ou por
-fast-forward at? origin/dev j? conhecido, commit
-`50105db` (merge da spec 002). O conte?do dessa base ? id?ntico ao HEAD anterior
-`3ad9b66`; a branch feat/002-manage-layout-runtime foi preservada. N?o houve
+Por solicitação do mantenedor, a implementação parcial foi organizada em
+`feat/003-add-cross-platform-support`, criada de `dev`. A dev local avançou por
+fast-forward até origin/dev já conhecido, commit
+`50105db` (merge da spec 002). O conteúdo dessa base é idêntico ao HEAD anterior
+`3ad9b66`; a branch feat/002-manage-layout-runtime foi preservada. Não houve
 merge da feature 003 em dev/main nem push.
 
-Separa??o por assunto: renomea??o da CLI; especifica??o/matriz; runtime POSIX e
-testes compartilhados; ferramentas/workflows/testes de qualifica??o; documenta??o,
-ledger e evid?ncias. Uma ?nica branch da spec mant?m essas partes dependentes.
-Os ZIPs/bin?rios/SDKs e scratch continuam ignorados e fora dos commits.
+Separação por assunto: renomeação da CLI; especificação/matriz; runtime POSIX e
+testes compartilhados; ferramentas/workflows/testes de qualificação; documentação,
+ledger e evidências. Uma única branch da spec mantém essas partes dependentes.
+Os ZIPs/binários/SDKs e scratch continuam ignorados e fora dos commits.
 
-Os bytes de c?digo/receitas/evid?ncias existentes foram preservados. Atributos
-Git passaram a preservar tamb?m arquivos de evid?ncia sem extens?o (por exemplo,
-AUTHORS/COPYING), evitando normaliza??o CRLF que invalidaria hashes. O cabe?alho
+Os bytes de código/receitas/evidências existentes foram preservados. Atributos
+Git passaram a preservar também arquivos de evidência sem extensão (por exemplo,
+AUTHORS/COPYING), evitando normalização CRLF que invalidaria hashes. O cabeçalho
 de tasks.md foi atualizado para a branch atual e sua linha vazia final foi
-removida. As valida??es anteriores continuam com seus commits/source_state
-originais: gravar commits agora n?o converte ensaios dirty/WSL em qualifica??o
+removida. As validações anteriores continuam com seus commits/source_state
+originais: gravar commits agora não converte ensaios dirty/WSL em qualificação
 nativa. A feature permanece parcial, **46/84 tarefas**, com **160 testes** na
-?ltima regress?o dos dois Pythons Windows e do Python privado WSL.
+última regressão dos dois Pythons Windows e do Python privado WSL.
+
+
+### Continuação de 2026-10-19: entrada inválida e recurso para próximo aceite
+
+O worker de qualificação agora testa entrada UTF-8 inválida antes do primeiro
+arquivo válido. Exige código 1, original intacto e nenhuma chamada de aquisição
+ou rede Python, contando tentativas mesmo quando a CLI captura o erro. A
+interceptação é removida antes da aquisição normal. O driver nativo exige a nova
+observação; relatórios anteriores não são promovidos retroativamente. Dois testes
+novos falharam por ausência do ensaio e passaram após a implementação.
+
+A documentação PT/EN tinha uma inconsistência: o ZIP remoto da spec 002 ainda
+instala twine-edge-overlap, mas o exemplo usava o novo desembaraca-twine. O README
+agora fixa o commit publicado, usa o comando real dessa revisão e distingue a
+branch local 003. HTTPS HEAD confirmou resposta final 200/application/zip; o
+entrypoint foi conferido no commit exato do Git. Não houve nova instalação remota
+nem download completo com hash. A consulta web falhou; a primeira consulta curl
+foi bloqueada pelo sandbox e a consulta autorizada fora dele teve sucesso.
+
+Fundação: **162 testes**, Windows/Python 3.14.6 (34,622 s; 7 skips),
+Windows/Python 3.12.10 (34,204 s; 7 skips), WSL/Python 3.14.8 (104,798 s;
+5 skips). Os doze hashes de fonte restantes do registro anterior de segurança
+permanecem iguais; somente worker e seus testes mudaram nessa lista. A auditoria
+anterior foi preservada. Ver [recibo](evidence/local-continuation-2026-10-19.json).
+
+Foram restaurados acentos perdidos na escrita de registros anteriores via
+PowerShell. Essa correção é textual: números, hashes e resultados permanecem.
+O próximo aceite exige um executor Ubuntu 24.04 x86_64 nativo; o WSL atual não
+o substitui. [Recursos e sequência](evidence/next-actions.md) distinguem essa
+dependência da auditoria do bundle ainda aberta. Não houve VM, provisionamento,
+CI remoto, commit/push ou publicação. T023/T048/T079/T080 seguem parciais;
+total **46/84**. Alterações novas permanecem locais na branch 003.
