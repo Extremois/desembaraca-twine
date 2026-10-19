@@ -31,6 +31,15 @@ jobs:
         id: python314
         with:
           python-version: '3.14'
+      - name: Ensure syscall tracer on ephemeral runner
+        shell: bash
+        run: |
+          if ! command -v strace >/dev/null; then
+            sudo apt-get update -qq
+            sudo apt-get install --yes --no-install-recommends strace
+          fi
+          strace --version
+          strace --kill-on-exit -qq true
       - name: Prepare pinned private SDK and source
         run: python tools/runtime/prepare-linux-ci.py --work "$RUNNER_TEMP/twine-sdk"
       - name: Build experimental native x64 glibc candidate
@@ -43,9 +52,9 @@ jobs:
       - name: Bind compiled Graphviz sources to the pinned archive
         run: python tools/runtime/audit-graphviz-sources.py --source-build "$RUNNER_TEMP/twine-build" --linked-build "$RUNNER_TEMP/twine-linked" --source-archive "$RUNNER_TEMP/twine-sdk/graphviz.tar.gz" --report .tmp/native-linux/graphviz-source-evidence.json
       - name: Corpus and Unicode relocation on Python 3.12
-        run: '"${{ steps.python312.outputs.python-path }}" tools/runtime/smoke-corpus.py --build-output "$RUNNER_TEMP/twine-linked" --environment-kind native --report .tmp/native-linux/corpus-312.json'
+        run: '"${{ steps.python312.outputs.python-path }}" tools/runtime/observe-linux-network.py --build-output "$RUNNER_TEMP/twine-linked" --environment-kind native --report .tmp/native-linux/network-312.json --corpus-report .tmp/native-linux/corpus-312.json'
       - name: Corpus and Unicode relocation on Python 3.14
-        run: '"${{ steps.python314.outputs.python-path }}" tools/runtime/smoke-corpus.py --build-output "$RUNNER_TEMP/twine-linked" --environment-kind native --report .tmp/native-linux/corpus-314.json'
+        run: '"${{ steps.python314.outputs.python-path }}" tools/runtime/observe-linux-network.py --build-output "$RUNNER_TEMP/twine-linked" --environment-kind native --report .tmp/native-linux/network-314.json --corpus-report .tmp/native-linux/corpus-314.json'
       - name: Retain candidate and measurements for audit (not a qualified release)
         if: always()
         uses: actions/upload-artifact@v4

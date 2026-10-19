@@ -18,6 +18,33 @@ def tool(name):
 
 
 class BuildToolTests(unittest.TestCase):
+    def test_native_network_trace_handles_children_and_split_exec(self):
+        observer = tool('observe-linux-network')
+        trace = ('execve("/usr/bin/python3", ["python3"], 0x0) = 0\n'
+                 '[pid 42] execve("/tmp/engine/dot", ["dot", "-V"], 0x0 <unfinished ...>\n'
+                 '[pid 42] <... execve resumed>) = 0\n'
+                 '--- SIGCHLD {si_signo=SIGCHLD} ---\n')
+        result = observer.parse_trace(trace)
+        self.assertEqual(result['network_syscalls'], {})
+        self.assertEqual(result['successful_executables'], ['/usr/bin/python3', '/tmp/engine/dot'])
+
+    def test_native_network_trace_counts_failed_attempts_and_unix_sockets(self):
+        observer = tool('observe-linux-network')
+        trace = ('execve("/usr/bin/python3", [], 0x0) = 0\n'
+                 '[pid 42] socket(AF_INET, SOCK_STREAM, IPPROTO_IP) = 3\n'
+                 '[pid 42] connect(3, {sa_family=AF_INET}, 16) = -1 ECONNREFUSED\n'
+                 '[pid 42] socket(AF_UNIX, SOCK_STREAM, 0) = 4\n')
+        self.assertEqual(observer.parse_trace(trace)['network_syscalls'], {'socket': 2, 'connect': 1})
+
+    def test_native_network_trace_refuses_missing_incomplete_or_unrecognized_output(self):
+        observer = tool('observe-linux-network')
+        for trace in ('', 'strace: ptrace denied\n',
+                      'execve("/tmp/dot", [], 0x0 <unfinished ...>\n',
+                      'execve("/tmp/dot", [], 0x0) = -1 ENOENT\n',
+                      'execve("/tmp/dot", [], 0x0) = 0\ninvalid output\n'):
+            with self.subTest(trace=trace), self.assertRaises(ValueError):
+                observer.parse_trace(trace)
+
     def test_ci_source_download_rejects_tampering_and_preserves_existing_file(self):
         import io
         bootstrap = tool('prepare-linux-ci')
