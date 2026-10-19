@@ -772,6 +772,24 @@
         "Artifacts retained seven days, not an immutable public source offer",
         "Per-file applicability, full reviewed license audit, old kernel/CPU and installed-cell qualification remain pending"
       ]
+    },
+    {
+      "artifact_id": "linux-glibc-aarch64",
+      "approved": false,
+      "evidence": "specs/003-add-cross-platform-support/evidence/linux-arm64-source-rebuild-2026-10-19/summary.json",
+      "executable_sha256": "933b6c63370bdd3e814627e2a9a06176416c8da017a21dcbc96d8137dbc17e22",
+      "source_archive_sha256": "00afe5506d3ba7117a7255bcf9c071882f6aba5d67a3399843b80c0d646a3271",
+      "source_files_verified": 18158,
+      "sdk_files_verified": 18102,
+      "rebuild_completed": true,
+      "rebuilt_executable_sha256": "e5cca07b6a9a80b7ba9d58910baf25be550a62dbbb54e498f5f3da83103967bb",
+      "byte_identical": false,
+      "pending": [
+        "Functional source rebuild, not byte-for-byte reproducibility",
+        "SDK compiler is reacquired by verified hash; host build tools come from recorded runner image",
+        "Artifacts retained seven days, not an immutable public source offer",
+        "Per-file applicability, full reviewed license audit, old kernel/CPU and installed-cell qualification remain pending"
+      ]
     }
   ]
 }

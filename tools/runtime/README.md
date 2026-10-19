@@ -68,9 +68,16 @@ prefixos de fontes e headers observados, Bison/Flex, referências de dados e GPL
 `NOTICE-ORIGINS.json` permite conferir nomes, hashes e origens offline; headers
 sem prefixo são registrados no review. O primeiro pacote, preservado como
 evidência histórica, continha somente COPYING Graphviz. Aplicabilidade por
-arquivo, outros avisos necessários, oferta de fontes/reconstrução e qualificação
+arquivo, outros avisos necessários, oferta permanente de fontes e qualificação
 das células ainda precisam de conclusão. Alvo de compilação não comprova execução no kernel,
 CPU ou distribuição mais antigos; não há emulação ou promoção do catálogo.
+
+O workflow exporta um pacote de fontes separado e o reconstrói em pasta nova
+com as receitas e a árvore SDK exportadas, readquirindo o compilador por hash.
+O motor reconstruído passa pelo corpus/relocação sob observação de rede;
+a demonstração é funcional, sem promessa de igualdade de bytes. Veja
+[REBUILD-SOURCES.md](REBUILD-SOURCES.md). Artefatos de sete dias continuam sendo
+material de revisão, sem constituir oferta permanente aprovada.
 
 ### Candidatas macOS nativas
 

@@ -1553,3 +1553,64 @@ A revisão passou também na
 [regressão de seis slots](https://github.com/Extremois/desembaraca-twine/actions/runs/39322753407),
 no [build/reconstrução Linux x64](https://github.com/Extremois/desembaraca-twine/actions/runs/39322753406)
 e nos [builds macOS Intel/Apple Silicon](https://github.com/Extremois/desembaraca-twine/actions/runs/39322753572).
+
+### Fontes exportadas e reconstrução ARM64
+
+`pack-sources.py` seleciona o SDK glibc x64/ARM64 pelo artifact_id, confere
+arquivo/receita/proveniência e exige identidade nativa aarch64 no percurso ARM.
+O novo teste foi observado falhando antes da implementação; valida exportação
+ARM e recusa de SDK/arquitetura divergentes antes de criar a saída.
+A suíte local inicial passou com **199 testes**, sete skips Windows.
+
+A revisão `162a57bd67817809f38e8801336bb87eecc0ead7` passou na
+[reconstrução ARM64](https://github.com/Extremois/desembaraca-twine/actions/runs/39325624157),
+no [build/reconstrução x64](https://github.com/Extremois/desembaraca-twine/actions/runs/39325624176)
+e nos [builds macOS](https://github.com/Extremois/desembaraca-twine/actions/runs/39325624652).
+A regressão compartilhada encontrou a falha numérica descrita abaixo; seu
+resultado original não foi substituído por aprovação.
+
+O [recibo ARM64](evidence/linux-arm64-source-rebuild-2026-10-19/summary.json)
+preserva manifesto comprimido, proveniências original/reconstruída, log,
+corpus e rastros/controlos de rede. O pacote tem **68.324.128 bytes**, SHA-256
+`00afe5506d3ba7117a7255bcf9c071882f6aba5d67a3399843b80c0d646a3271`.
+Após download foram conferidos **18.158 arquivos**, seus modos/timestamps,
+tamanhos/hashes, proveniência e receita. Os **18.102 arquivos SDK** foram também
+comparados com o tarball Zig ARM64 fixado, sem incluir o compilador executável.
+O material inclui árvore lib/ completa, com componentes de outras plataformas;
+isso não declara sua presença no dot.
+
+O workflow extraiu o pacote em pasta nova, readquiriu o compilador por hash,
+copiou a árvore SDK exportada e executou as receitas/módulos Python exportados
+com cache privado novo. Os testes do resultado usam o checkout público da mesma
+execução, conforme REBUILD-SOURCES.md. O motor reconstruído tem SHA-256
+`e5cca07b6a9a80b7ba9d58910baf25be550a62dbbb54e498f5f3da83103967bb`;
+é diferente de `933b6c…17e22`, portanto a reconstrução demonstrada é funcional.
+Os 13 casos/relocação e zero chamadas de rede observadas passaram no Python
+3.14.8 reconstruído; a candidata original passou nos slots 3.12.15/3.14.8.
+Hashes dos relatórios e rastros, inclusive controles positivos, foram conferidos.
+O relatório ABI do reconstruído registra libc/libm/libpthread e maior símbolo
+glibc 2.17; não acrescenta qualificação no kernel/CPU ou distribuição mínimos.
+
+O artifact de sete dias não é oferta permanente ou auditoria aprovada. Revisão
+por arquivo, fechamento transitivo/obrigações, disponibilidade das fontes e
+aceite nativo por célula permanecem pendentes. T030/T066 parciais, **48/84**.
+
+### Limite do timeout rolling após arredondamento
+
+A [rodada inicial](https://github.com/Extremois/desembaraca-twine/actions/runs/39325624416)
+falhou somente no Windows Python 3.12 ao verificar que cada consulta recebesse
+no máximo cinco segundos. A subtração de ponto flutuante podia resultar em
+`5.000000000000002` mesmo sem tempo decorrido. Um relógio controlado em 11.002
+reproduziu a falha; `min(SECONDS, deadline - clock())` conserva o prazo agregado
+restante e impõe também o teto da consulta. O teste novo falhou antes da correção.
+
+O commit `456059b4fbb5b943cf83b842500d8e5a4a8313b3` passou nos
+[seis slots de regressão](https://github.com/Extremois/desembaraca-twine/actions/runs/39326296051).
+As suítes locais Python 3.12/3.14 passaram com **200 testes**, sete skips Windows.
+Log original e resultado corrigido estão preservados separadamente no recibo
+de reconstrução; a falha original continua registrada como failure.
+
+A revisão corrigida também passou novamente nas
+[reconstruções ARM64](https://github.com/Extremois/desembaraca-twine/actions/runs/39326296041)
+e [x64](https://github.com/Extremois/desembaraca-twine/actions/runs/39326296085),
+além dos [builds macOS Intel/Apple Silicon](https://github.com/Extremois/desembaraca-twine/actions/runs/39326296072).
