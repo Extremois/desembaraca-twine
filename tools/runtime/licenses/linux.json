@@ -97,7 +97,7 @@
       "artifact_id": "linux-glibc-aarch64",
       "status": "pending",
       "approved": false,
-      "pending_reason": "Native ARM64 Graphviz object/source bindings recorded; SDK compiler_rt/glibc, generated material, per-file source/license review and qualification remain pending.",
+      "pending_reason": "Native Graphviz and selected SDK source observations available; generated material, transitive source closure, per-file applicability, complete notices/source offer and qualification remain pending.",
       "native_build_observations": [
         {
           "approved": false,
@@ -145,6 +145,35 @@
             }
           ],
           "scope": "Observed archive extractions; no section retention, complete source closure or license approval"
+        }
+      ],
+      "native_sdk_source_observations": [
+        {
+          "approved": false,
+          "qualified": false,
+          "source_to_binary_complete": false,
+          "evidence": "specs/003-add-cross-platform-support/evidence/linux-arm64-sdk-sources-2026-10-19/summary.json",
+          "executable_sha256": "933b6c63370bdd3e814627e2a9a06176416c8da017a21dcbc96d8137dbc17e22",
+          "provenance_sha256": "fc3b63fe1fa3cd13c9ac0e7227d57ec154fc3fe0cd2f484185babe69bf38254c",
+          "summaries": {
+            "zig-runtime-evidence": {
+              "objects": 1,
+              "sdk_sources_verified": 246,
+              "generated_files_hashed": 1,
+              "sources_with_leading_comments": 45,
+              "sources_with_license_indicators": 17,
+              "sources_with_indicators_outside_prefix": 0
+            },
+            "glibc-object-evidence": {
+              "objects": 3,
+              "observed_source_units": 4,
+              "sources_verified": 5,
+              "sources_with_leading_comments": 5,
+              "sdk_inputs": 14
+            }
+          },
+          "sdk_source_files_verified": 251,
+          "scope": "Observed compiler_rt line tables and glibc compilation units; generated builtin hashes and license indicators are review material, not full source closure or approval"
         }
       ]
     },

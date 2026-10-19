@@ -1460,3 +1460,48 @@ A revisão também passou na
 [regressão compartilhada](https://github.com/Extremois/desembaraca-twine/actions/runs/39317852478),
 no [build/reconstrução Linux x64](https://github.com/Extremois/desembaraca-twine/actions/runs/39317852242)
 e nos [builds macOS Intel/Apple Silicon](https://github.com/Extremois/desembaraca-twine/actions/runs/39317852374).
+
+### Fontes SDK ARM64: compiler_rt e glibc
+
+A revisão `f3144197249fbbe0774d1c453431b913aea61bc1` passou na
+[coleta nativa ARM64](https://github.com/Extremois/desembaraca-twine/actions/runs/39321396516).
+Os coletores mantêm os percursos separados: um membro compiler_rt, três objetos
+startup/libc_nonshared e nenhuma aprovação automática de novas bibliotecas.
+Dois testes foram observados falhando antes da implementação; a regressão local
+Python 3.14 passou com 194 testes. Uma falha Windows intermitente na rodada
+Python 3.12 foi investigada e corrigida separadamente, conforme registro abaixo.
+
+O [recibo SDK](evidence/linux-arm64-sdk-sources-2026-10-19/summary.json) preserva
+os relatórios vinculados à proveniência exata. O runtime teve **246 fontes SDK**
+observadas e conferidas, 45 com comentários iniciais e 17 com indicadores de
+licença; um `builtin.zig` gerado foi apenas identificado por hash. Glibc teve
+**três objetos, quatro unidades observadas e cinco fontes** incluindo material
+startup adicional, todas com prefixos preservados. As **251 fontes** foram
+reconferidas após download diretamente no tarball SDK fixado, incluindo bytes,
+prefixos e indicadores. Corpus/relocação/rede passaram nos dois Pythons;
+executável e ZIP permaneceram byte-idênticos ao primeiro ARM64.
+
+Tabelas de arquivos DWARF podem incluir material que não foi retido no binário.
+O hash atual de builtin gerado não comprova seus bytes no momento da compilação.
+Fechamento transitivo, aplicabilidade por arquivo, avisos completos, fonte
+correspondente/reconstrução e qualificação continuam pendentes. T030 parcial,
+total **48/84**, sem promoção de catálogo.
+
+A revisão passou também na
+[regressão compartilhada](https://github.com/Extremois/desembaraca-twine/actions/runs/39321396490),
+no [build/reconstrução x64](https://github.com/Extremois/desembaraca-twine/actions/runs/39321396481)
+e nos [builds macOS](https://github.com/Extremois/desembaraca-twine/actions/runs/39321396487).
+
+### Corrida Windows na inicialização do lock de preparação
+
+A regressão local Python 3.12 encontrou `PermissionError` em `stream.flush()`
+quando duas preparações concorriam: o byte inicial podia ser gravado depois
+que outro processo já o havia bloqueado. A gravação foi removida;
+[`_locking` admite bytes além de EOF](https://learn.microsoft.com/en-us/cpp/c-runtime-library/reference/locking),
+portanto não é necessário materializar o byte para coordenar processos.
+
+O teste novo mantém o byte de um arquivo vazio bloqueado em outro processo e
+exige timeout limitado do concorrente, sem escrita nem interrupção do dono.
+Reproduziu deterministicamente o PermissionError com o código anterior e
+passou com a correção; após liberar o dono, o mesmo arquivo pode ser bloqueado.
+A suíte passou com **195 testes**, sete skips Windows, em Python 3.12 e 3.14.
