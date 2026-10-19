@@ -1,5 +1,41 @@
 # Evidência de implementação — feature 003
 
+## Builds musl em Alpine fixado — 2026-10-19
+
+O commit `369c98dbf21094efda66c7abf8bca0644f638b80` passou no
+[CI musl x64/ARM64](https://github.com/Extremois/desembaraca-twine/actions/runs/39330306276).
+Os recibos de [x64](evidence/alpine-musl-container-2026-10-19/x86_64/summary.json)
+e [ARM64](evidence/alpine-musl-container-2026-10-19/aarch64/summary.json) preservam
+proveniência, inventário, inspeção ELF, imagens Docker, inventário apk,
+corpus e rastros. Hashes/tamanhos/modos de cada arquivo dos ZIPs foram conferidos
+após download; nenhum binário/SDK foi incorporado ao Git.
+
+| Variante | Motor SHA-256 | Bytes | ZIP bytes |
+|---|---|---|---|
+| musl x86_64 | `f4dfee4e052704b1a7efdb7b6a4c43583ccaa062aec800b76224dae24eb2b69b` | 7.229.144 | 7.243.610 |
+| musl aarch64 | `2d7a4b6024eb000c33ecf8b14d1a32d0aac8dde65bed00de138604d081fd3ee4` | 7.237.144 | 7.251.610 |
+
+Ambos os ELF são estáticos, sem interpretador, seção dinâmica, bibliotecas
+NEEDED ou símbolos glibc. Cada motor passou nos 13 casos e na relocação Unicode
+em CPython 3.12.13 e 3.14.5; strace registrou zero chamadas de rede no corpus,
+oito execuções de dot e controle positivo de conexão em processo filho por slot.
+As imagens oficiais Python/Alpine 3.22 foram fixadas por digest específico da
+arquitetura em `tools/runtime/alpine-ci-images.json`. Os pacotes adicionados são
+registrados, sem promessa de reprodução byte-idêntica do ambiente.
+
+A CPU corresponde ao alvo e não houve emulação; o kernel continua sendo do
+runner Ubuntu (7.0.0-1017-azure x64 e 6.17.0-1022-azure ARM64). Isso não aprova
+Alpine nativo, kernels/CPUs mínimos, demais versões, instalação, recuperação ou
+reabertura Twine. O pacote inicial tem apenas o motor e Graphviz COPYING;
+fontes/avisos do SDK, revisão de licenças e oferta de fontes permanecem abertos.
+Os ledgers continuam `approved: false`/`qualified: false`, catálogo Windows
+preservado e T026/T027/T029/T030 parciais; **48/84** tarefas concluídas.
+
+As duas suítes locais passaram com 202 testes em Python 3.12 e 3.14, sete skips
+Windows em cada. Os dois novos testes observaram falha antes da implementação.
+A [regressão de seis slots](https://github.com/Extremois/desembaraca-twine/actions/runs/39330306797)
+passou na mesma revisão.
+
 ## Baseline e escopo
 
 - Branch preservada: feat/002-manage-layout-runtime; commit inicial 3ad9b6632140149a65586d2a5519687c93b8b323.

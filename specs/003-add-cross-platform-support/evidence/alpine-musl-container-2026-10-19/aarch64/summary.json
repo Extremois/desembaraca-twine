@@ -1,0 +1,175 @@
+{
+  "kind": "alpine-musl-container-build-receipt",
+  "approved": false,
+  "qualified": false,
+  "revision": "369c98dbf21094efda66c7abf8bca0644f638b80",
+  "run_id": 39330306276,
+  "job_id": 118326506897,
+  "actions_artifact_id": 12223682713,
+  "url": "https://github.com/Extremois/desembaraca-twine/actions/runs/39330306276",
+  "artifact_id": "linux-musl-aarch64",
+  "environment_kind": "container",
+  "cpu_arch": "aarch64",
+  "artifact_sha256": "7746ec811169f89fc20c97896f3c9875e7ca021cde8cd28cefd05fb210b5160e",
+  "executable_sha256": "2d7a4b6024eb000c33ecf8b14d1a32d0aac8dde65bed00de138604d081fd3ee4",
+  "executable_size": 7237144,
+  "provenance_sha256": "344ea005db48c04d13d5aa44237acf774138603ec9cb1f00d0167fcd42852f9e",
+  "sdk_environment_digest": "9f904cb62d6751ae72e14a7b53d0648bb57cf4f9f5569c15c4c3c8985d942bf7",
+  "image_lock_sha256": "d4e51c6e9c92d4cb9314a4562bcbc96b67f49836de62894a3120adc5ade647bb",
+  "image_build": "python@sha256:07b3a3b85d5b208f164a3276d5eb9c51e0ce61bbe4cb7ab4df0da50d5a78dc11",
+  "image_test": "python@sha256:27b691f87878a079100a3d8fafcd66b3c54d931598f307bcb54617c395f5b43c",
+  "kernel": "6.17.0-1022-azure",
+  "host_libc": "1.2.5",
+  "target": "aarch64-linux.4.15-musl",
+  "no_interpreter": true,
+  "no_dynamic_section": true,
+  "no_needed_libraries": true,
+  "no_glibc_symbols": true,
+  "candidate_archive_sha256": "70c0199a7a351b2340df2ec24c346321408266654e92b3d2963f01bc44ebc48c",
+  "candidate_archive_bytes": 7251610,
+  "candidate_file_count": 2,
+  "corpus": [
+    {
+      "python": "3.12.13",
+      "cases": 13,
+      "passed": true,
+      "network_syscalls": {},
+      "dot_executions": 8
+    },
+    {
+      "python": "3.14.5",
+      "cases": 13,
+      "passed": true,
+      "network_syscalls": {},
+      "dot_executions": 8
+    }
+  ],
+  "retained_files": {
+    "network-312.control.trace.gz": {
+      "sha256": "5b73b23ea2fcf67c89b91eb1b5c0c0facb2a144c45f43f8127bdd8014401aa2e",
+      "bytes": 483,
+      "original_sha256": "8004e16079321634fd30bcb13db9bc9f102f2bae4f19f7a9d8c6c18e0b2591f0",
+      "original_bytes": 905
+    },
+    "network-312.corpus.trace.gz": {
+      "sha256": "97ca046f220b9a5cfae6a7b2a19bacba06497a8586641a9d51fd96a2a50367b3",
+      "bytes": 592,
+      "original_sha256": "4524eb2cc990b1cc0a7365e919a87b8b6bb857a11f3d0c62fb9de14b5d526e72",
+      "original_bytes": 3527
+    },
+    "corpus-312.json": {
+      "sha256": "e78410bf5a9bc3b052eb6e70b08bf9c8de47ae7fa9bf89bd03a324c6b63275f1",
+      "bytes": 5502,
+      "original_sha256": "e78410bf5a9bc3b052eb6e70b08bf9c8de47ae7fa9bf89bd03a324c6b63275f1",
+      "original_bytes": 5502
+    },
+    "network-312.json": {
+      "sha256": "57721c71f3919fe87e89f3fa300375ca197074b6718191d6675a5aaf43b1d8af",
+      "bytes": 1356,
+      "original_sha256": "57721c71f3919fe87e89f3fa300375ca197074b6718191d6675a5aaf43b1d8af",
+      "original_bytes": 1356
+    },
+    "network-314.control.trace.gz": {
+      "sha256": "322d184e09dd7bbacb46a2b3ba630dbd580b199b7839e6e387873aae739ae983",
+      "bytes": 482,
+      "original_sha256": "b14ffc24fea557571fda6587dad09a225d93d3fbd9d550830ff02f2e7ccdbf63",
+      "original_bytes": 901
+    },
+    "network-314.corpus.trace.gz": {
+      "sha256": "343702309e38ace928329ce314d1d7bfb22304d48782ef32eba2ec11b3aa4b1f",
+      "bytes": 594,
+      "original_sha256": "fef3436606ec109de884605aff998e495dc41034d2abecb2c42f64a5927c8557",
+      "original_bytes": 3495
+    },
+    "corpus-314.json": {
+      "sha256": "08688e6aeab99656962bd34fd8b1c58bd30a0e7e2e0bacf5f450eae152451ccf",
+      "bytes": 5501,
+      "original_sha256": "08688e6aeab99656962bd34fd8b1c58bd30a0e7e2e0bacf5f450eae152451ccf",
+      "original_bytes": 5501
+    },
+    "network-314.json": {
+      "sha256": "6c83acc2cb1a3fb15b552208d36742d61823432ed106e8df8f0939e163d4a8dc",
+      "bytes": 1355,
+      "original_sha256": "6c83acc2cb1a3fb15b552208d36742d61823432ed106e8df8f0939e163d4a8dc",
+      "original_bytes": 1355
+    },
+    "build-image.json": {
+      "sha256": "ecc378bf42e192bbd7f60bd08bd61bb1d6bf85c0333fab5119d4e717332276d8",
+      "bytes": 2796,
+      "original_sha256": "ecc378bf42e192bbd7f60bd08bd61bb1d6bf85c0333fab5119d4e717332276d8",
+      "original_bytes": 2796
+    },
+    "test-image.json": {
+      "sha256": "53522fdd93c42a6d5edad13b886a263f39dcf0203c617b0de0433388c82fe115",
+      "bytes": 2695,
+      "original_sha256": "53522fdd93c42a6d5edad13b886a263f39dcf0203c617b0de0433388c82fe115",
+      "original_bytes": 2695
+    },
+    "provenance.json": {
+      "sha256": "344ea005db48c04d13d5aa44237acf774138603ec9cb1f00d0167fcd42852f9e",
+      "bytes": 7685,
+      "original_sha256": "344ea005db48c04d13d5aa44237acf774138603ec9cb1f00d0167fcd42852f9e",
+      "original_bytes": 7685
+    },
+    "sdk-record.json": {
+      "sha256": "621a67a21f0156b9f3928d941429ea754e536f779aaece650b4a0dbc65ff520f",
+      "bytes": 3402,
+      "original_sha256": "621a67a21f0156b9f3928d941429ea754e536f779aaece650b4a0dbc65ff520f",
+      "original_bytes": 3402
+    },
+    "inventory.json": {
+      "sha256": "a512792a64cb5771ff43c2838c92986255dab269f04efb110235e6d19cac5af2",
+      "bytes": 806,
+      "original_sha256": "a512792a64cb5771ff43c2838c92986255dab269f04efb110235e6d19cac5af2",
+      "original_bytes": 806
+    },
+    "candidate.json": {
+      "sha256": "bf62e27b8f5e8a054bebcf9c74fa89f6498a22612cb61649279eb068abc7e4ad",
+      "bytes": 864,
+      "original_sha256": "bf62e27b8f5e8a054bebcf9c74fa89f6498a22612cb61649279eb068abc7e4ad",
+      "original_bytes": 864
+    },
+    "static-elf-inspection.txt": {
+      "sha256": "b058b7158963671a4d2850a06d61ee5f5a0554259126e3661cd3a96cdf6f9ef6",
+      "bytes": 1923,
+      "original_sha256": "b058b7158963671a4d2850a06d61ee5f5a0554259126e3661cd3a96cdf6f9ef6",
+      "original_bytes": 1923
+    },
+    "os-release.txt": {
+      "sha256": "87f0a3b549cb5b2e2dd2e9c1b7d0b1eab8c79fca107c034ec1fd48d52922277b",
+      "bytes": 188,
+      "original_sha256": "87f0a3b549cb5b2e2dd2e9c1b7d0b1eab8c79fca107c034ec1fd48d52922277b",
+      "original_bytes": 188
+    },
+    "apk-packages.txt": {
+      "sha256": "685a14b60384f7f4ec1150025dd7430acf27a2dbc9cc400fa0cdbb21c21c2157",
+      "bytes": 4131,
+      "original_sha256": "685a14b60384f7f4ec1150025dd7430acf27a2dbc9cc400fa0cdbb21c21c2157",
+      "original_bytes": 4131
+    },
+    "kernel.txt": {
+      "sha256": "0630d4185a9dda877e333656c1789aa7d245bbc66e14c5842729f17238fb66d2",
+      "bytes": 95,
+      "original_sha256": "0630d4185a9dda877e333656c1789aa7d245bbc66e14c5842729f17238fb66d2",
+      "original_bytes": 95
+    },
+    "elf.txt": {
+      "sha256": "e21f106f871bd255b712cc2502641b6fb5172b19a2a4acec1071f5eda7f92460",
+      "bytes": 2750,
+      "original_sha256": "e21f106f871bd255b712cc2502641b6fb5172b19a2a4acec1071f5eda7f92460",
+      "original_bytes": 2750
+    },
+    "build.log.gz": {
+      "sha256": "7f03d82168c4f9992ca48c2eeac19877682be64e7f29ebcb91cb5cf4ee99315f",
+      "bytes": 6744,
+      "original_sha256": "86ac73a1ad31e8b06b445ebdc0ef1147f15a84a9d1919880596301cf2b2ae564",
+      "original_bytes": 34279
+    }
+  },
+  "limitations": [
+    "Native matching CPU and Alpine userland; Ubuntu runner kernel, not native Alpine cell acceptance",
+    "Initial bundle has Graphviz COPYING only; SDK sources/notices, license audit and source offer pending",
+    "Image digest pinned; added package versions recorded, not a byte-identical environment rebuild promise",
+    "Old kernel/CPU, Alpine 3.21-3.24 matrix, installed-package/offline/recovery/Twine qualification pending"
+  ]
+}

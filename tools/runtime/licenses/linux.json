@@ -181,13 +181,43 @@
       "artifact_id": "linux-musl-x86_64",
       "status": "pending",
       "approved": false,
-      "pending_reason": "Static cross-libc build and WSL evidence available; native Alpine build/acceptance and license audit remain pending."
+      "pending_reason": "Static cross-libc build and WSL evidence available; native Alpine build/acceptance and license audit remain pending.",
+      "container_build_observations": [
+        {
+          "approved": false,
+          "qualified": false,
+          "evidence": "specs/003-add-cross-platform-support/evidence/alpine-musl-container-2026-10-19/x86_64/summary.json",
+          "revision": "369c98dbf21094efda66c7abf8bca0644f638b80",
+          "environment_kind": "container",
+          "executable_sha256": "f4dfee4e052704b1a7efdb7b6a4c43583ccaa062aec800b76224dae24eb2b69b",
+          "provenance_sha256": "43659eb65f38539c5cb041cc7d84b9140a547eef815b69dede2d165497810166",
+          "candidate_archive_sha256": "ae3cee7377d49087d31e68af64025f0df095393a494bb99e325b1a080defe113",
+          "image_build": "python@sha256:9381e50cc82f4279b949fcd2d2f5e57cf97b1da2399eb956502364ceea2f4e83",
+          "image_test": "python@sha256:1a5f0303fd8941565b5bbda3fac2345148a9fd8245d575c2971ccefcd77c78f6",
+          "status": "static-build-and-public-corpus-observed; source-notice-audit-and-native-cell-qualification-pending"
+        }
+      ]
     },
     {
       "artifact_id": "linux-musl-aarch64",
       "status": "pending",
       "approved": false,
-      "pending_reason": "No native build/linkage/source-notice audit available for this variant."
+      "pending_reason": "No native build/linkage/source-notice audit available for this variant.",
+      "container_build_observations": [
+        {
+          "approved": false,
+          "qualified": false,
+          "evidence": "specs/003-add-cross-platform-support/evidence/alpine-musl-container-2026-10-19/aarch64/summary.json",
+          "revision": "369c98dbf21094efda66c7abf8bca0644f638b80",
+          "environment_kind": "container",
+          "executable_sha256": "2d7a4b6024eb000c33ecf8b14d1a32d0aac8dde65bed00de138604d081fd3ee4",
+          "provenance_sha256": "344ea005db48c04d13d5aa44237acf774138603ec9cb1f00d0167fcd42852f9e",
+          "candidate_archive_sha256": "70c0199a7a351b2340df2ec24c346321408266654e92b3d2963f01bc44ebc48c",
+          "image_build": "python@sha256:07b3a3b85d5b208f164a3276d5eb9c51e0ce61bbe4cb7ab4df0da50d5a78dc11",
+          "image_test": "python@sha256:27b691f87878a079100a3d8fafcd66b3c54d931598f307bcb54617c395f5b43c",
+          "status": "static-build-and-public-corpus-observed; source-notice-audit-and-native-cell-qualification-pending"
+        }
+      ]
     }
   ],
   "limitations": [
