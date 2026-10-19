@@ -1,0 +1,222 @@
+{
+  "environment_kind": "native",
+  "python": "3.14.7",
+  "kernel": "24.6.0",
+  "arch": "arm64",
+  "engine_sha256": "774115a1a9e4b2385d33fa55fe02de0d8728cb0984967d445528c6fe04f97dac",
+  "source_sha256": "1e028b2b3e84e946c1d3e8c47590f8f0741bba1041fe6eff36eee87e598ea249",
+  "recipe_sha256": "c4b5367482caea4f90e4dd15b4234d9dcfe5ea6b09ba8f5f7bc908c6f212c2e3",
+  "cases": [
+    {
+      "case": "crossing",
+      "input_sha256": "d7c694abfcf286588792ea3f537bebafbe45eb4a7774252782bda6dc8319b25b",
+      "output_sha256": "aa821f1611a98d479811f652197070728904bd2afe31c8e6fca64ed9fbec8e8b",
+      "before": [
+        1,
+        0,
+        0
+      ],
+      "after": [
+        0,
+        0,
+        0
+      ],
+      "status": "sucesso"
+    },
+    {
+      "case": "coincident",
+      "input_sha256": "f63665a740e024a5e361546627f324ce8ddb9b1792b55b16984a87eee6ac49ea",
+      "output_sha256": "8644eeb3404043bec66b149c0ed3f2f4bea0600914a944e75c5f6464b78c1ed6",
+      "before": [
+        1,
+        2,
+        0
+      ],
+      "after": [
+        0,
+        0,
+        0
+      ],
+      "status": "sucesso"
+    },
+    {
+      "case": "clean",
+      "input_sha256": "5e8d75b9a72cd1afcaeb7b3646cc5d0cec1f7368b2b6275f324eaa7c3f1299f6",
+      "output_sha256": "5e8d75b9a72cd1afcaeb7b3646cc5d0cec1f7368b2b6275f324eaa7c3f1299f6",
+      "before": [
+        0,
+        0,
+        0
+      ],
+      "after": [
+        0,
+        0,
+        0
+      ],
+      "status": "sucesso"
+    },
+    {
+      "case": "isolated_overlap",
+      "input_sha256": "6ce9fbd0eb53e57209879944c2ebdc2b66bc6ea26d68fb8a2bd9bd2104f99ef6",
+      "output_sha256": "bef1e0132bce9b72f1317cdbb43d3c2a54e604632459cbda2c5af7d52c17a03a",
+      "before": [
+        0,
+        1,
+        0
+      ],
+      "after": [
+        0,
+        0,
+        0
+      ],
+      "status": "sucesso"
+    },
+    {
+      "case": "connected_overlap",
+      "input_sha256": "adf06218e2172f4e0b7bd640bc3cb24cd10de327da92848f888943bf6edb50fb",
+      "output_sha256": "137e849cfdf04ef3db7ed9057a7142ebecc403ee78952f307138ff5ecca72618",
+      "before": [
+        1,
+        1,
+        1
+      ],
+      "after": [
+        0,
+        0,
+        0
+      ],
+      "status": "sucesso"
+    },
+    {
+      "case": "through_isolated",
+      "input_sha256": "e584fe80a571da6355922139925a930603454fc5e27a6a44037401e433f6cf36",
+      "output_sha256": "f2460867ce13305139836fc5737093e3e513fae53c4bee8fe0742fe5fc98c341",
+      "before": [
+        0,
+        0,
+        1
+      ],
+      "after": [
+        0,
+        0,
+        0
+      ],
+      "status": "sucesso"
+    },
+    {
+      "case": "through_connected",
+      "input_sha256": "481d38cd9ba76522c25530ea382e13ee73f2ff1000829e335c58dff96f4de6f8",
+      "output_sha256": "8c13ace7ce2f65beff622e529456029fda6c7e1f624a5046886a7065f60a2f3f",
+      "before": [
+        0,
+        0,
+        1
+      ],
+      "after": [
+        0,
+        0,
+        0
+      ],
+      "status": "sucesso"
+    },
+    {
+      "case": "border_only",
+      "input_sha256": "da0a8b50743446027bccf723f022a8081efe1fd135a118e504615b81ecf88701",
+      "output_sha256": "da0a8b50743446027bccf723f022a8081efe1fd135a118e504615b81ecf88701",
+      "before": [
+        0,
+        0,
+        0
+      ],
+      "after": [
+        0,
+        0,
+        0
+      ],
+      "status": "sucesso"
+    },
+    {
+      "case": "cycle",
+      "input_sha256": "a35feef5fdb5d2e5a41b99fe826fd9f0ebb861c50c6f148afc0597f87b6ea6c1",
+      "output_sha256": "a35feef5fdb5d2e5a41b99fe826fd9f0ebb861c50c6f148afc0597f87b6ea6c1",
+      "before": [
+        0,
+        0,
+        0
+      ],
+      "after": [
+        0,
+        0,
+        0
+      ],
+      "status": "sucesso"
+    },
+    {
+      "case": "parallel_occurrences",
+      "input_sha256": "cda380247a05431a6d4aaf3a70eb5488ec01770fe89f9562b95691d4823f8df0",
+      "output_sha256": "cda380247a05431a6d4aaf3a70eb5488ec01770fe89f9562b95691d4823f8df0",
+      "before": [
+        0,
+        0,
+        0
+      ],
+      "after": [
+        0,
+        0,
+        0
+      ],
+      "status": "sucesso"
+    },
+    {
+      "case": "self_loop",
+      "input_sha256": "7df0478afa2ca0e1e400454d2bbba7571a3f9de9d2d4417f5640e4cd3e94921e",
+      "output_sha256": "7df0478afa2ca0e1e400454d2bbba7571a3f9de9d2d4417f5640e4cd3e94921e",
+      "before": [
+        0,
+        0,
+        0
+      ],
+      "after": [
+        0,
+        0,
+        0
+      ],
+      "status": "sucesso"
+    },
+    {
+      "case": "reciprocal",
+      "input_sha256": "f2f16549e43ad54c3f09ba12cf7ebb677fb72a32d2c3a3ac6ba82c311e626979",
+      "output_sha256": "f2f16549e43ad54c3f09ba12cf7ebb677fb72a32d2c3a3ac6ba82c311e626979",
+      "before": [
+        1,
+        0,
+        0
+      ],
+      "after": [
+        1,
+        0,
+        0
+      ],
+      "status": "limita\u00e7\u00f5es"
+    },
+    {
+      "case": "empty",
+      "input_sha256": "45e3a62ea1b3c31df65b0f7a7bac769ddf9aafc4006bc7cf379d19b2c289c23c",
+      "output_sha256": "45e3a62ea1b3c31df65b0f7a7bac769ddf9aafc4006bc7cf379d19b2c289c23c",
+      "before": [
+        0,
+        0,
+        0
+      ],
+      "after": [
+        0,
+        0,
+        0
+      ],
+      "status": "sucesso"
+    }
+  ],
+  "passed": true,
+  "python_network_attempts": 0,
+  "qualification": "library smoke only; no installation, full cell, native network tracing, Twine, license audit or oldest ABI qualification"
+}

@@ -1201,3 +1201,42 @@ Git ou ao download do runtime. Essa retenção temporária não constitui oferta
 permanente de fontes. Revisão por arquivo, auditoria completa, baseline antigo
 e qualificação instalada seguem pendentes; T030/T066 continuam parciais,
 **46/84**, catálogo POSIX sem promoção.
+
+## Builds macOS nativos iniciais — 2026-10-19
+
+O workflow `macos-candidate.yml` constrói cada arquitetura em seu próprio runner
+macOS 15: Intel e Apple Silicon. O preparador recusa outro SO/arquitetura ou
+Rosetta e exige Xcode 16.4 build 16F6 e SDK 15.5; não usa `xcode-select` global,
+credenciais Apple ou mecanismos de bypass. Bison vem do runner efêmero, com
+instalação Homebrew somente quando ausente. O compilador/CMake são conferidos
+pelos hashes do registro SDK antes do build. O alvo mínimo da receita é 15.0.
+
+A revisão `5f7694fe5c9fd9c3995d9e00466d1cc1b2836299` passou nos
+[dois jobs nativos](https://github.com/Extremois/desembaraca-twine/actions/runs/39276064428).
+Cada arquitetura executou os 13 casos e a relocação com espaços/Unicode em
+CPython 3.12.10 e 3.14.7, preservando entradas/dados e sem regressões. A
+interceptação de rede desse smoke cobre chamadas Python; não é observação
+nativa de syscalls nem ensaio de instalação offline/Gatekeeper.
+
+Após baixar os artefatos, foram conferidos inventário, ZIP, hashes/tamanhos/modos,
+timestamps e vínculo com a proveniência. Os load commands Mach-O foram lidos
+diretamente dos bytes: arquitetura thin correta, LC_BUILD_VERSION com mínimo
+15.0/SDK 15.5, loader `/usr/lib/dyld`, zero LC_RPATH e dependências dinâmicas
+somente em `/usr/lib/libSystem.B.dylib` e `/usr/lib/libc++.1.dylib`.
+O [recibo inicial](evidence/macos-native-initial-build-2026-10-19/summary.json)
+preserva relatórios, comandos otool, logs e proveniências sem incorporar binários.
+
+A conferência encontrou hashes de despachantes `/usr/bin` nos registros de
+Flex/make/otool. A revisão seguinte resolve os executáveis reais por `xcrun`,
+usa make explícito e propaga `DEVELOPER_DIR` ao build. Foi acrescentado um
+inventário limitado da árvore SDK com hashes de arquivos e destinos de links
+internos; arquivos Apple não são copiados para o artifact. O teste de identidade
+SDK foi observado falhando antes da implementação e depois passou; a regressão
+local atual soma **182 testes**, sete skips Windows.
+
+A execução consolidada da revisão `17670cda323ea82af55f5a5910f03068d2997d66`,
+[39279242817](https://github.com/Extremois/desembaraca-twine/actions/runs/39279242817),
+ainda estava na fila ao preparar este registro. Por isso o recibo inicial não
+recebe campos do SDK que não mediu, e T049/T050 continuam parciais. Pacotes de
+build têm somente o aviso Graphviz inicial: auditoria/fontes/notices completos,
+assinatura/notarização e aceite instalado são pendências T051/T052/T056.

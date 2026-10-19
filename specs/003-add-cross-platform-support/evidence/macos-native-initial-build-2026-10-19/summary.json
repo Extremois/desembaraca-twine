@@ -1,0 +1,224 @@
+{
+  "kind": "native-macos-recipe-build-and-relocation",
+  "run_id": 39276064428,
+  "revision": "5f7694fe5c9fd9c3995d9e00466d1cc1b2836299",
+  "url": "https://github.com/Extremois/desembaraca-twine/actions/runs/39276064428",
+  "variants": [
+    {
+      "artifact_id": "macos-x86_64",
+      "arch": "x86_64",
+      "job_id": 118140561837,
+      "actions_artifact_id": 12197537589,
+      "actions_artifact_sha256": "9775f5feaddd46c9bde5fcd794b0bd796928d88c2b2efe43ac6f6c2677bd226d",
+      "executable_sha256": "d8ab197fbdfa9312050f4c4827f4bb612f7f4d1d021d4308a9850ee1a1104fff",
+      "candidate_archive_sha256": "7745352abf3fd4d2a084e1e162214632bfe6c28824ca0593884829434a4d7ed9",
+      "candidate_archive_bytes": 1402754,
+      "source_sha256": "1e028b2b3e84e946c1d3e8c47590f8f0741bba1041fe6eff36eee87e598ea249",
+      "recipe_sha256": "f6d92635ea605927091eb1a0717c97471b1c16c83cc0dbdd6184b22c5242e51a",
+      "image_os": "macos15",
+      "image_version": "20260824.0482.1",
+      "kernel": "24.6.0",
+      "macos": "15.7.9",
+      "sdk_tree_sha256": null,
+      "sdk_tree_entries": null,
+      "sdk_tree_bytes": null,
+      "deployment": {
+        "minimum": "15.0",
+        "sdk": "15.5"
+      },
+      "libraries": [
+        "/usr/lib/libSystem.B.dylib",
+        "/usr/lib/libc++.1.dylib"
+      ],
+      "rpath_commands": 0,
+      "loader": "/usr/lib/dyld",
+      "corpus": [
+        {
+          "python": "3.12.10",
+          "cases": 13,
+          "passed": true
+        },
+        {
+          "python": "3.14.7",
+          "cases": 13,
+          "passed": true
+        }
+      ],
+      "qualified": false,
+      "approved": false
+    },
+    {
+      "artifact_id": "macos-arm64",
+      "arch": "aarch64",
+      "job_id": 118140561464,
+      "actions_artifact_id": 12197387660,
+      "actions_artifact_sha256": "cb9bda2613f33519f8b7529a8fc99b486e39b9bd9b5d08378098010edfd3f2d4",
+      "executable_sha256": "774115a1a9e4b2385d33fa55fe02de0d8728cb0984967d445528c6fe04f97dac",
+      "candidate_archive_sha256": "26a8340f8fb8cd58fbd6c71b11348f17e167066a99d21a008977559e0738014e",
+      "candidate_archive_bytes": 1255970,
+      "source_sha256": "1e028b2b3e84e946c1d3e8c47590f8f0741bba1041fe6eff36eee87e598ea249",
+      "recipe_sha256": "c4b5367482caea4f90e4dd15b4234d9dcfe5ea6b09ba8f5f7bc908c6f212c2e3",
+      "image_os": "macos15",
+      "image_version": "20260907.0337.1",
+      "kernel": "24.6.0",
+      "macos": "15.7.9",
+      "sdk_tree_sha256": null,
+      "sdk_tree_entries": null,
+      "sdk_tree_bytes": null,
+      "deployment": {
+        "minimum": "15.0",
+        "sdk": "15.5"
+      },
+      "libraries": [
+        "/usr/lib/libSystem.B.dylib",
+        "/usr/lib/libc++.1.dylib"
+      ],
+      "rpath_commands": 0,
+      "loader": "/usr/lib/dyld",
+      "corpus": [
+        {
+          "python": "3.12.10",
+          "cases": 13,
+          "passed": true
+        },
+        {
+          "python": "3.14.7",
+          "cases": 13,
+          "passed": true
+        }
+      ],
+      "qualified": false,
+      "approved": false
+    }
+  ],
+  "retained_files": {
+    "macos-x86_64/corpus-312.json": {
+      "sha256": "82df13fc80e6c601ea4b5f3312b879de09975894525b4730ee5466fe35bd3eec",
+      "bytes": 5348,
+      "original_sha256": "82df13fc80e6c601ea4b5f3312b879de09975894525b4730ee5466fe35bd3eec",
+      "original_bytes": 5348
+    },
+    "macos-x86_64/corpus-314.json": {
+      "sha256": "26ffb109c65bfbfd7043f8091280c7efe668774e1952b441dcdd2ef99b97d025",
+      "bytes": 5347,
+      "original_sha256": "26ffb109c65bfbfd7043f8091280c7efe668774e1952b441dcdd2ef99b97d025",
+      "original_bytes": 5347
+    },
+    "macos-x86_64/provenance.json": {
+      "sha256": "d2c416bbad447b4c25ece9cd51c986e038726da3c28dd8a601d083693a13cad9",
+      "bytes": 6631,
+      "original_sha256": "d2c416bbad447b4c25ece9cd51c986e038726da3c28dd8a601d083693a13cad9",
+      "original_bytes": 6631
+    },
+    "macos-x86_64/inventory.json": {
+      "sha256": "ff3d34601625a87c7d051ba20ccc441e41c1b1b8c6f9bd804a1097bc73bbd81a",
+      "bytes": 744,
+      "original_sha256": "ff3d34601625a87c7d051ba20ccc441e41c1b1b8c6f9bd804a1097bc73bbd81a",
+      "original_bytes": 744
+    },
+    "macos-x86_64/candidate.json": {
+      "sha256": "856be0a76701bcc747cb03931b95a4e7a331c90ed84e3430751cc2af003961cb",
+      "bytes": 860,
+      "original_sha256": "856be0a76701bcc747cb03931b95a4e7a331c90ed84e3430751cc2af003961cb",
+      "original_bytes": 860
+    },
+    "macos-x86_64/sdk-record.json": {
+      "sha256": "0788b115776f0fdde1b0995f0b4203cb202a575ac1acbb5c5e55d9bfe4fd7b22",
+      "bytes": 2869,
+      "original_sha256": "0788b115776f0fdde1b0995f0b4203cb202a575ac1acbb5c5e55d9bfe4fd7b22",
+      "original_bytes": 2869
+    },
+    "macos-x86_64/otool-libraries.txt": {
+      "sha256": "7b611dbaa5715471067747737a9c68a01fae6384f1cde4caae0292ceb6e0d761",
+      "bytes": 229,
+      "original_sha256": "7b611dbaa5715471067747737a9c68a01fae6384f1cde4caae0292ceb6e0d761",
+      "original_bytes": 229
+    },
+    "macos-x86_64/otool-load-commands.txt": {
+      "sha256": "df9c12538b598427ae7939bb390468fd8060d28bcbd519cd6eec58630f8de9c5",
+      "bytes": 5708,
+      "original_sha256": "df9c12538b598427ae7939bb390468fd8060d28bcbd519cd6eec58630f8de9c5",
+      "original_bytes": 5708
+    },
+    "macos-x86_64/file.txt": {
+      "sha256": "9f929696d6f771736b18d43f4acf4d5149997f461bd240daa66b77be83f5be92",
+      "bytes": 94,
+      "original_sha256": "9f929696d6f771736b18d43f4acf4d5149997f461bd240daa66b77be83f5be92",
+      "original_bytes": 94
+    },
+    "macos-x86_64/build.log.gz": {
+      "sha256": "fea95d4f179aaa8bbd55cff04bb3357362592dff4290c428eba6ca61141092b6",
+      "bytes": 6757,
+      "original_sha256": "4c6e8f961c60f58beab2cfc032f8f64760448e2284d261d4f6ac5f39ef4fb521",
+      "original_bytes": 35651
+    },
+    "macos-arm64/corpus-312.json": {
+      "sha256": "619cad17c1cdfa99d17137795e0018dadcf73e6b52586e5c4e97e12172747c2c",
+      "bytes": 5347,
+      "original_sha256": "619cad17c1cdfa99d17137795e0018dadcf73e6b52586e5c4e97e12172747c2c",
+      "original_bytes": 5347
+    },
+    "macos-arm64/corpus-314.json": {
+      "sha256": "13c1d28782a7a64c71bb5380f11b584b73ad7e2dcb1d8d112f5d9a251681acad",
+      "bytes": 5346,
+      "original_sha256": "13c1d28782a7a64c71bb5380f11b584b73ad7e2dcb1d8d112f5d9a251681acad",
+      "original_bytes": 5346
+    },
+    "macos-arm64/provenance.json": {
+      "sha256": "cdb3f71df35ad6f02a3536b47c0564b965bc547ad6515e8cb07b79c04532f364",
+      "bytes": 6639,
+      "original_sha256": "cdb3f71df35ad6f02a3536b47c0564b965bc547ad6515e8cb07b79c04532f364",
+      "original_bytes": 6639
+    },
+    "macos-arm64/inventory.json": {
+      "sha256": "a9d403ff496978a6a2840cc67fdbd0cdc98990f285f55b7cd5daf75d1840cf42",
+      "bytes": 744,
+      "original_sha256": "a9d403ff496978a6a2840cc67fdbd0cdc98990f285f55b7cd5daf75d1840cf42",
+      "original_bytes": 744
+    },
+    "macos-arm64/candidate.json": {
+      "sha256": "38c8b111d0db98d32247812b5ded4f85197691983f831102864cbdd62281b4bd",
+      "bytes": 860,
+      "original_sha256": "38c8b111d0db98d32247812b5ded4f85197691983f831102864cbdd62281b4bd",
+      "original_bytes": 860
+    },
+    "macos-arm64/sdk-record.json": {
+      "sha256": "59f723fce58ac4c7528c37130db3b920ab4f0b91bc3d3f2e4ce32602edbce3d6",
+      "bytes": 2877,
+      "original_sha256": "59f723fce58ac4c7528c37130db3b920ab4f0b91bc3d3f2e4ce32602edbce3d6",
+      "original_bytes": 2877
+    },
+    "macos-arm64/otool-libraries.txt": {
+      "sha256": "7b611dbaa5715471067747737a9c68a01fae6384f1cde4caae0292ceb6e0d761",
+      "bytes": 229,
+      "original_sha256": "7b611dbaa5715471067747737a9c68a01fae6384f1cde4caae0292ceb6e0d761",
+      "original_bytes": 229
+    },
+    "macos-arm64/otool-load-commands.txt": {
+      "sha256": "3b9a23ab3b35c1aed40099021c744da3be0d98246f65150f6f431c0387068bc2",
+      "bytes": 6011,
+      "original_sha256": "3b9a23ab3b35c1aed40099021c744da3be0d98246f65150f6f431c0387068bc2",
+      "original_bytes": 6011
+    },
+    "macos-arm64/file.txt": {
+      "sha256": "1b90d1f08f4a32330c5d37a0da5c1a59175c83f794ad3b8d03589a567b937229",
+      "bytes": 93,
+      "original_sha256": "1b90d1f08f4a32330c5d37a0da5c1a59175c83f794ad3b8d03589a567b937229",
+      "original_bytes": 93
+    },
+    "macos-arm64/build.log.gz": {
+      "sha256": "529c3b8f292f209c90d0dac9efd2027da28a404835530724a52d1322b63613b6",
+      "bytes": 6769,
+      "original_sha256": "321dee653b6eb1c5524b0ce2f67f94f0e1dbcf809ab114477ae70d1c092870e5",
+      "original_bytes": 35664
+    }
+  },
+  "qualified": false,
+  "approved": false,
+  "scope": "Partial T049/T050 initial native evidence; real dispatched tool hashes/full SDK inventory pending",
+  "pending": [
+    "Dependency/member source and license audit plus complete notices/source offer",
+    "Authorized Developer ID signing/notarization and normal distributed Gatekeeper acceptance",
+    "Installed wheel/sdist/cache acceptance, native offline tracing, recovery and Twine review"
+  ]
+}
