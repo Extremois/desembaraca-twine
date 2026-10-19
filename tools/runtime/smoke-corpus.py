@@ -35,7 +35,11 @@ def smoke(build, environment_kind):
         relocated = work / ('engine with spaces and ' + chr(0xe7))
         relocated.mkdir()
         executable = relocated / 'dot'
-        shutil.copyfile(binary, executable)
+        # Keep relocation copying in regular file I/O: shutil's Linux fast-copy
+        # may use sendfile, which strace also classifies as a network syscall.
+        # The network observer deliberately keeps that class fail-closed.
+        with binary.open('rb') as source_binary, executable.open('xb') as destination_binary:
+            shutil.copyfileobj(source_binary, destination_binary)
         executable.chmod(0o755)
         env = runtime_environment(executable, host_os=provenance['native_os'])
         handle = RuntimeHandle('experimental-local-build', 'local-smoke', relocated, executable, relocated, env)
