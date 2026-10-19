@@ -1505,3 +1505,11 @@ exige timeout limitado do concorrente, sem escrita nem interrupção do dono.
 Reproduziu deterministicamente o PermissionError com o código anterior e
 passou com a correção; após liberar o dono, o mesmo arquivo pode ser bloqueado.
 A suíte passou com **195 testes**, sete skips Windows, em Python 3.12 e 3.14.
+
+Os casos de primeira preparação concorrente e lock vazio passaram também em
+três repetições locais cada (seis ensaios). O commit `cadc80c`, incluído na revisão
+`cfecd1b28a83abab2700d299635301981759b68f`, passou nos
+[seis slots de regressão](https://github.com/Extremois/desembaraca-twine/actions/runs/39322109441),
+incluindo execução do caso novo no Windows com Python 3.12 e 3.14. O job separado
+de aceite Windows 11 nativo continua pendente/skipped por ausência de runner
+configurado; essa regressão não o substitui.
