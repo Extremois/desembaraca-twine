@@ -248,9 +248,8 @@ def preparation_lock(path, *, deadline, check):
     with os.fdopen(descriptor, 'r+b') as stream:
         if os.name == 'nt':
             import msvcrt
-            if path.stat().st_size == 0:
-                stream.write(b'\0')
-                stream.flush()
+            # Windows permits locking beyond EOF. Initializing byte zero here
+            # races another owner's byte-range lock and can fail before retry.
             def lock():
                 stream.seek(0)
                 msvcrt.locking(stream.fileno(), msvcrt.LK_NBLCK, 1)

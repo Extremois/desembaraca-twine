@@ -1,4 +1,5 @@
 from pathlib import Path
+import os
 import json
 import subprocess
 import sys
@@ -33,6 +34,35 @@ Path(result).write_text(handle.generation_id)
 
 
 class ConcurrentRuntimeTests(unittest.TestCase):
+    @unittest.skipUnless(os.name=='nt','Windows byte-range locking')
+    def test_empty_windows_lock_contender_waits_without_writing_locked_byte(self):
+        import msvcrt
+        from twine_edge_overlap.runtime_platform import preparation_lock
+        contender = r'''
+import sys,time
+from pathlib import Path
+sys.path.insert(0,sys.argv[1])
+from twine_edge_overlap.runtime_platform import preparation_lock,LockBusyError
+try:
+    with preparation_lock(Path(sys.argv[2]),deadline=time.monotonic()+.2,check=lambda:None):
+        raise AssertionError('contender acquired owner lock')
+except LockBusyError:
+    pass
+'''
+        with tempfile.TemporaryDirectory() as folder:
+            path=Path(folder)/'prepare.lock'
+            with path.open('w+b',buffering=0) as owner:
+                msvcrt.locking(owner.fileno(),msvcrt.LK_NBLCK,1)
+                try:
+                    result=subprocess.run([sys.executable,'-c',contender,str(ROOT/'src'),str(path)],capture_output=True,timeout=5)
+                    self.assertEqual(result.returncode,0,result.stderr.decode(errors='replace'))
+                    self.assertEqual(path.stat().st_size,0)
+                finally:
+                    owner.seek(0)
+                    msvcrt.locking(owner.fileno(),msvcrt.LK_UNLCK,1)
+            with preparation_lock(path,deadline=time.monotonic()+1,check=lambda:None):
+                self.assertEqual(path.stat().st_size,0)
+
     def test_lock_wait_is_bounded_and_does_not_stop_owner(self):
         holder = r'''
 import sys,time
