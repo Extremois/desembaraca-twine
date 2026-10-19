@@ -1,0 +1,91 @@
+name: Linux ARM64 Graphviz candidate
+on:
+  push:
+    branches: [feat/003-add-cross-platform-support]
+    paths:
+      - '.github/workflows/linux-arm64-candidate.yml'
+      - 'tools/runtime/**'
+      - 'src/**'
+      - 'tests/fixtures/**'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: linux-arm64-candidate-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  native-build:
+    runs-on: ubuntu-24.04-arm
+    timeout-minutes: 25
+    env:
+      PYTHONUTF8: '1'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        id: python312
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-python@v5
+        id: python314
+        with:
+          python-version: '3.14'
+      - name: Ensure build tools and tracer on ephemeral runner
+        shell: bash
+        run: |
+          missing=()
+          for tool in cmake make bison flex strace readelf; do
+            if ! command -v "$tool" >/dev/null; then
+              if [ "$tool" = readelf ]; then missing+=(binutils); else missing+=("$tool"); fi
+            fi
+          done
+          if [ "${#missing[@]}" -gt 0 ]; then
+            sudo apt-get update -qq
+            sudo apt-get install --yes --no-install-recommends "${missing[@]}"
+          fi
+          strace --kill-on-exit -qq true
+      - name: Prepare pinned native ARM64 SDK and source
+        run: python tools/runtime/prepare-linux-ci.py --work "$RUNNER_TEMP/twine-arm64-sdk" --arch aarch64
+      - name: Build experimental native ARM64 glibc candidate
+        shell: bash
+        run: |
+          set -o pipefail
+          mkdir -p .tmp/native-linux-arm64
+          python tools/runtime/build-common.py --artifact-id linux-glibc-aarch64 --source-archive "$RUNNER_TEMP/twine-arm64-sdk/graphviz.tar.gz" --sdk-record "$RUNNER_TEMP/twine-arm64-sdk/sdk-record.json" --output "$RUNNER_TEMP/twine-arm64-build" --execute 2>&1 | tee .tmp/native-linux-arm64/build.log
+      - name: Inspect ELF architecture, loader, dependencies and glibc baseline
+        shell: bash
+        run: |
+          readelf --file-header --program-headers --dynamic --version-info "$RUNNER_TEMP/twine-arm64-build/candidate/bin/dot" > .tmp/native-linux-arm64/elf.txt
+          python - <<'PY'
+          import importlib.util, os
+          from pathlib import Path
+          spec = importlib.util.spec_from_file_location('verifier', 'tools/runtime/verify-artifact.py')
+          verifier = importlib.util.module_from_spec(spec)
+          spec.loader.exec_module(verifier)
+          verifier.elf_architecture(Path(os.environ['RUNNER_TEMP']) / 'twine-arm64-build/candidate/bin/dot', 'aarch64')
+          text = Path('.tmp/native-linux-arm64/elf.txt').read_text()
+          verifier.linux_dependencies(text, ['libc.so.6', 'libm.so.6', 'libpthread.so.0', 'libdl.so.2', 'librt.so.1'], '2.27')
+          if '[Requesting program interpreter: /lib/ld-linux-aarch64.so.1]' not in text:
+              raise ValueError('Unexpected ARM64 glibc loader')
+          PY
+      - name: Corpus, Unicode relocation and native network observation on Python 3.12
+        run: '"${{ steps.python312.outputs.python-path }}" tools/runtime/observe-linux-network.py --build-output "$RUNNER_TEMP/twine-arm64-build" --environment-kind native --report .tmp/native-linux-arm64/network-312.json --corpus-report .tmp/native-linux-arm64/corpus-312.json'
+      - name: Corpus, Unicode relocation and native network observation on Python 3.14
+        run: '"${{ steps.python314.outputs.python-path }}" tools/runtime/observe-linux-network.py --build-output "$RUNNER_TEMP/twine-arm64-build" --environment-kind native --report .tmp/native-linux-arm64/network-314.json --corpus-report .tmp/native-linux-arm64/corpus-314.json'
+      - name: Inventory and package without approving licenses or support
+        run: |
+          python tools/runtime/verify-artifact.py --root "$RUNNER_TEMP/twine-arm64-build/candidate" --provenance "$RUNNER_TEMP/twine-arm64-build/provenance.json" --write-inventory .tmp/native-linux-arm64/inventory.json --minimum-libc 2.27
+          python tools/runtime/pack-candidate.py --root "$RUNNER_TEMP/twine-arm64-build/candidate" --inventory .tmp/native-linux-arm64/inventory.json --provenance "$RUNNER_TEMP/twine-arm64-build/provenance.json" --output "$RUNNER_TEMP/twine-arm64-package"
+      - name: Retain unqualified native ARM64 build for review
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: linux-glibc-aarch64-unqualified-${{ github.sha }}
+          retention-days: 7
+          include-hidden-files: true
+          path: |
+            .tmp/native-linux-arm64/
+            ${{ runner.temp }}/twine-arm64-sdk/sdk-record.json
+            ${{ runner.temp }}/twine-arm64-build/provenance.json
+            ${{ runner.temp }}/twine-arm64-package/

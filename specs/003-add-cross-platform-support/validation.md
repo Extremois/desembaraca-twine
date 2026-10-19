@@ -1382,3 +1382,21 @@ aparece em 179/183 avisos, LLVM em 24 e GPL nos quatro prefixos Bison.
 T052 permanece parcial:
 aplicabilidade por arquivo, outros textos eventualmente necessários, dados
 gerados, fontes, assinatura e aceite instalado ainda exigem conclusão.
+
+### Primeiro workflow Linux glibc ARM64 nativo
+
+O preparador Linux aceita x86_64/aarch64, exigindo correspondência com o host
+antes de criar diretórios ou baixar material. O tarball ARM64 Zig 0.15.2 tem
+49.471.996 bytes e SHA-256
+`958ed7d1e00d0ea76590d27666efbf7a932281b3d7ba0c6b01b0ff26498f667f`,
+conferido contra o índice oficial. O executável de 158.849.208 bytes tem SHA-256
+`931b8e9a9327dac87bc439067f07604219510fa541133ff6e542c6243968cc86`.
+O alvo é `aarch64-linux.4.15-gnu.2.27`, CPU baseline, sem traduzir flags x86.
+
+Dois testes novos verificam seleção de arquitetura e executam o código do wrapper
+com interceptação de execv, incluindo recusa de flags x86 no ARM. Foram observados
+falhando antes da implementação; a suíte local passou com **191 testes**, sete
+skips Windows. O workflow independente `linux-arm64-candidate.yml` prepara build,
+inspeção ELF/loader/símbolos e corpus/rede nos dois Pythons no Ubuntu ARM64 nativo.
+Resultado nativo ainda será registrado após a primeira rodada. T025/T028 seguem
+parciais até evidências próprias; não há aprovação por associação ao x64.

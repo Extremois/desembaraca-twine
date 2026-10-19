@@ -35,6 +35,24 @@ instalação da distribuição e aceite completo continuam como etapas separadas
 
 ## Build offline por variante
 
+### Candidata Linux ARM64 nativa
+
+`linux-arm64-candidate.yml` executa no runner `ubuntu-24.04-arm` e exige
+`prepare-linux-ci.py --work PASTA_NOVA --arch aarch64`. O preparador autentica
+arquivo e executável Zig 0.15.2 específicos de ARM64, usa CPU baseline e alvo
+`aarch64-linux.4.15-gnu.2.27`; recusa arquitetura diferente antes de baixar.
+O preparador x64 continua disponível sem `--arch`, selecionando o host nativo.
+Ferramentas ausentes são instaladas somente no runner efêmero.
+
+O workflow confere ELF AArch64, loader `/lib/ld-linux-aarch64.so.1`, bibliotecas,
+RPATH e limite de símbolos glibc 2.27, preservando o relatório readelf. Executa
+os 13 casos/relocação Unicode com Python 3.12/3.14 sob strace e controle positivo
+de detecção de sockets. Inventário e ZIP permanecem experimentais por sete dias.
+O pacote inicial contém somente o aviso Graphviz: fechamento de fontes/objetos,
+avisos completos, reconstrução e qualificação das células ainda precisam de
+evidências ARM64 próprias. Alvo de compilação não comprova execução no kernel,
+CPU ou distribuição mais antigos; não há emulação ou promoção do catálogo.
+
 ### Candidatas macOS nativas
 
 `macos-candidate.yml` usa runners macOS 15 separados: `macos-15-intel` e

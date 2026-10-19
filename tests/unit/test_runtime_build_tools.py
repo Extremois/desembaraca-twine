@@ -18,6 +18,35 @@ def tool(name):
 
 
 class BuildToolTests(unittest.TestCase):
+    def test_linux_sdk_selects_exact_native_architecture_before_download(self):
+        bootstrap = tool('prepare-linux-ci')
+        for arch in ('x86_64', 'aarch64'):
+            with patch.object(bootstrap.platform, 'system', return_value='Linux'), patch.object(bootstrap.platform, 'machine', return_value=arch):
+                lock, target = bootstrap.native_sdk(arch)
+                self.assertIn('zig-' + arch + '-linux-0.15.2', lock['url'])
+                self.assertEqual(target, arch + '-linux.4.15-gnu.2.27')
+                other = 'aarch64' if arch == 'x86_64' else 'x86_64'
+                with self.assertRaises(ValueError):
+                    bootstrap.native_sdk(other)
+        with patch.object(bootstrap.platform, 'system', return_value='Windows'):
+            with self.assertRaises(ValueError):
+                bootstrap.native_sdk('aarch64')
+
+    def test_linux_sdk_arm_flags_do_not_translate_x86_options(self):
+        bootstrap = tool('prepare-linux-ci')
+        import sys
+        for arch in ('x86_64', 'aarch64'):
+            code = bootstrap.compiler_wrapper('/private/zig', '/private/cache', arch, 'cc', arch + '-linux.4.15-gnu.2.27')
+            with patch.dict(os.environ), patch.object(sys, 'argv', ['cc', '-march=x86-64', '-mtune=generic', '-O2']), patch.object(os, 'execv') as execute:
+                if arch == 'x86_64':
+                    exec(code, {})
+                    self.assertEqual(execute.call_args.args[1][-1], '-O2')
+                    self.assertNotIn('-march=x86-64', execute.call_args.args[1])
+                else:
+                    with self.assertRaises(SystemExit):
+                        exec(code, {})
+                    execute.assert_not_called()
+
     def test_native_network_trace_handles_children_and_split_exec(self):
         observer = tool('observe-linux-network')
         trace = ('execve("/usr/bin/python3", ["python3"], 0x0) = 0\n'
