@@ -14,26 +14,37 @@ Ter diretórios de usuário com escrita/execução, acesso HTTPS para instalaç�
 
 ## 1. Instalar a candidata, sem checkout obrigatório
 
-A URL fixa do README aponta ao MVP Windows da spec 002, que ainda usa o comando
-`twine-edge-overlap`; o módulo Python também funciona nessa revisão. Ela não
-contém a spec 003 nem permite qualificar Linux/macOS. A branch local atual é
-`feat/003-add-cross-platform-support`. O envio dessa branch para testes no Actions
-não publica nem qualifica um bundle POSIX. Os comandos
-`desembaraca-twine` deste guia pertencem à candidata nova, que ainda precisa dos
-artefatos/auditorias/ambientes indicados abaixo. Não substituir CANDIDATE_URL pela
-URL antiga para tentar concluir a aceitação POSIX.
+A URL imutável abaixo e no README contém a revisão pública
+`40b3e38f3dc6bef2fe64b17f66e1f812460bd7f1`, com comando `desembaraca-twine`
+e código da spec 003. Permite instalar e consultar help em Linux/macOS/Windows,
+mas o catálogo continua somente Windows: não permite concluir a aceitação POSIX.
+A branch `feat/003-add-cross-platform-support` não é URL imutável nem release.
 
 Em shell POSIX, usar `python3.12` ou `python3.14` conforme o ensaio:
 
 ```sh
 python3.12 -m venv "$HOME/.venvs/desembaraca-twine"
-. "$HOME/.venvs/desembaraca-twine/bin/activate"
+"$HOME/.venvs/desembaraca-twine/bin/python" -m pip install "https://github.com/Extremois/desembaraca-twine/archive/40b3e38f3dc6bef2fe64b17f66e1f812460bd7f1.zip"
+"$HOME/.venvs/desembaraca-twine/bin/desembaraca-twine" --help
+"$HOME/.venvs/desembaraca-twine/bin/python" -m twine_edge_overlap --help
 ```
 
-Definir `CANDIDATE_URL` como URL real do ZIP de um commit ou release que **contenha a implementação e manifestos qualificados**; registrá-la com commit/hash na evidência. Não usar a branch atual como prova de suporte Linux/macOS nem inserir URL fictícia no catálogo.
+Esse fluxo dispensa ativação/PATH, Git e Graphviz global. Para usar 3.14, trocar
+o interpretador no primeiro comando. Não reaproveitar uma venv de outra versão.
+Instalação requer HTTPS ao GitHub e ao índice Python; help não adquire o motor.
+O workflow `documented-installation.yml` executa instalação e as três chamadas de
+help em venv externa, com PATH contendo somente a venv e sem runtime preparado.
+Esse é teste dos comandos documentados, não qualificação de célula ou motor.
+
+**Somente para uma futura candidata POSIX qualificada**: definir `CANDIDATE_URL`
+como URL real de commit/release que contenha os manifestos e artefatos qualificados,
+registrando commit/hash na evidência. Essa URL ainda não existe no catálogo atual.
+Não substituir o requisito de qualificação pela URL de desenvolvimento acima.
+Os percursos 2–5 dependem dessa candidata e dos demais gates. Com ela disponível:
 
 ```sh
-python -m pip install "$CANDIDATE_URL"
+"$HOME/.venvs/desembaraca-twine/bin/python" -m pip install "$CANDIDATE_URL"
+. "$HOME/.venvs/desembaraca-twine/bin/activate"
 desembaraca-twine --help
 ```
 
@@ -41,7 +52,7 @@ Em PowerShell, usar o Python nativo selecionado e chamar diretamente a venv, sem
 
 ```powershell
 python -m venv "$HOME\.venvs\desembaraca-twine"
-& "$HOME\.venvs\desembaraca-twine\Scripts\python.exe" -m pip install $env:CANDIDATE_URL
+& "$HOME\.venvs\desembaraca-twine\Scripts\python.exe" -m pip install "https://github.com/Extremois/desembaraca-twine/archive/40b3e38f3dc6bef2fe64b17f66e1f812460bd7f1.zip"
 & "$HOME\.venvs\desembaraca-twine\Scripts\desembaraca-twine.exe" --help
 ```
 

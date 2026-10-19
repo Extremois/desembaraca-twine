@@ -71,57 +71,68 @@ mudanças na política do PowerShell.
 Com Python e pip disponíveis, execute de qualquer pasta:
 
 ```powershell
-python -m pip install --user --upgrade --force-reinstall "https://github.com/Extremois/desembaraca-twine/archive/3ad9b6632140149a65586d2a5519687c93b8b323.zip"
+python -m venv "$HOME\.venvs\desembaraca-twine"
+& "$HOME\.venvs\desembaraca-twine\Scripts\python.exe" -m pip install "https://github.com/Extremois/desembaraca-twine/archive/40b3e38f3dc6bef2fe64b17f66e1f812460bd7f1.zip"
 ```
 
-A URL fixa o commit do MVP Windows anteriormente enviado ao repositório. Git e
+A URL fixa uma revisão de desenvolvimento já enviada ao repositório. Git e
 checkout manual não são necessários. A instalação requer internet e pode baixar
 ferramentas de build do índice Python. Reinstalar a mesma URL mantém essa revisão,
 sem buscar alterações posteriores.
 
-Esse commit ainda instala o comando antigo `twine-edge-overlap`. A renomeação
-para `desembaraca-twine` pertence à branch de desenvolvimento da spec 003 e não
-está incluída nessa URL fixa do MVP.
-Para a revisão remota, com a pasta `Scripts` do Python no PATH, use:
+Essa revisão instala o comando atual `desembaraca-twine`. Use o caminho da venv
+para executar de qualquer pasta, sem alterar o PATH:
 
 ```powershell
-twine-edge-overlap 'C:\Grafos\história.twee'
+& "$HOME\.venvs\desembaraca-twine\Scripts\desembaraca-twine.exe" 'C:\Grafos\história.twee'
 ```
 
 A chamada por módulo funciona nessa revisão sem adicionar `Scripts` ao PATH:
 
 ```powershell
-python -m twine_edge_overlap.cli 'C:\Grafos\história.twee'
+& "$HOME\.venvs\desembaraca-twine\Scripts\python.exe" -m twine_edge_overlap 'C:\Grafos\história.twee'
 ```
 
 As opções `--prepare-runtime` e `--repair-runtime` também estão disponíveis.
-Graphviz é obtido na primeira preparação e reutilizado offline depois. Esse MVP
-remoto não contém os candidatos Linux/macOS nem a implementação local da spec 003.
+Graphviz é obtido na primeira preparação e reutilizado offline depois. Essa revisão
+remoto contém o código da spec 003, mas seu catálogo continua somente Windows.
 
 ### Resultado e limites
 
 #### Linux e macOS: estado da implementação
 
-O pacote Python já tem seleção de plataforma e cache POSIX, mas esta revisão ainda
-não distribui um motor Linux/macOS qualificado. Os comandos abaixo descrevem o
-percurso de uma candidata com componente compatível; a candidata atual recusa a
-execução POSIX enquanto esse componente não estiver no catálogo. A URL remota
-anterior não representa uma entrega desta feature em andamento.
+O pacote Python já tem seleção de plataforma e cache POSIX. A revisão remota acima
+permite instalar e consultar a CLI nos dois sistemas, mas ainda não distribui um
+motor Linux/macOS qualificado. `--prepare-runtime`, reparo e processamento POSIX
+recusam a execução enquanto faltar esse componente no catálogo.
 
 Com CPython **3.12 ou 3.14 nativo**, incluindo venv/pip, uma candidata pode ser
 instalada sem alterar o Python do sistema ou exigir Git/Graphviz:
 
 ```sh
-python3 -m venv .venv
-.venv/bin/python -m pip install /caminho/para/candidata.whl
-.venv/bin/desembaraca-twine --prepare-runtime
-.venv/bin/python -m twine_edge_overlap '/caminho/história.twee'
+python3.12 -m venv "$HOME/.venvs/desembaraca-twine"
+"$HOME/.venvs/desembaraca-twine/bin/python" -m pip install "https://github.com/Extremois/desembaraca-twine/archive/40b3e38f3dc6bef2fe64b17f66e1f812460bd7f1.zip"
+"$HOME/.venvs/desembaraca-twine/bin/desembaraca-twine" --help
+"$HOME/.venvs/desembaraca-twine/bin/python" -m twine_edge_overlap --help
 ```
 
+Troque `python3.12` por `python3.14` para usar essa versão. Confirme a versão com
+`python3.12 --version`; o interpretador escolhido precisa oferecer venv e pip.
 Use o caminho absoluto ao Python/console da venv para chamar de outra pasta.
 Linux usa XDG_CACHE_HOME absoluto, com fallback `~/.cache`; macOS usa
 `~/Library/Caches`, ambos com `DesembaracaTwine/runtimes/graphviz/` abaixo da base.
 Python precisa corresponder à arquitetura nativa; Rosetta não qualifica um Mac.
+No Linux, use CPython x86_64 ou aarch64 da origem indicada para sua distribuição.
+No macOS 15, use CPython Intel no Mac Intel e arm64 no Apple Silicon; confira com
+`python3.12 -c 'import platform; print(platform.machine())'`. Os instaladores de
+[Python para macOS](https://www.python.org/downloads/macos/) são uma origem possível;
+a instalação da ferramenta usa apenas a venv. Reserve 2 GiB, escrita no perfil e
+na pasta da história, e filesystem que permita execução e publicação por hardlink.
+Instalar o pacote requer HTTPS ao GitHub e ao índice Python. Quando houver bundle
+qualificado, prepare com `--prepare-runtime` antes de ficar offline; cache saudável
+não tenta rede. `--repair-runtime` requer rede e preserva a geração saudável em falha.
+No macOS, mantenha as proteções normais e use somente a distribuição assinada e
+notarizada quando disponível. Nenhum comando deste guia remove quarentena.
 As origens dos dois Pythons ainda precisam ser ensaiadas por célula da matriz.
 Há um [procedimento parcial de pré-requisitos Linux](specs/003-add-cross-platform-support/evidence/linux-prerequisites.md), ensaiado com instalações privadas dos dois Pythons no WSL; ele não aprova as células nativas.
 Algumas versões da matriz dependem de elegibilidade gratuita, como Ubuntu Pro ou
@@ -262,57 +273,68 @@ PowerShell policy changes.
 With Python and pip available, run from any directory:
 
 ```powershell
-python -m pip install --user --upgrade --force-reinstall "https://github.com/Extremois/desembaraca-twine/archive/3ad9b6632140149a65586d2a5519687c93b8b323.zip"
+python -m venv "$HOME\.venvs\desembaraca-twine"
+& "$HOME\.venvs\desembaraca-twine\Scripts\python.exe" -m pip install "https://github.com/Extremois/desembaraca-twine/archive/40b3e38f3dc6bef2fe64b17f66e1f812460bd7f1.zip"
 ```
 
-The URL pins the Windows MVP commit previously pushed to the repository. Git and
+The URL pins a development revision already pushed to the repository. Git and
 a manual checkout are not required. Installation needs internet and may download
 tools from the Python package index. Reinstalling this URL keeps that revision
 rather than fetching later changes.
 
-This commit still installs the legacy `twine-edge-overlap` command. The rename to
-`desembaraca-twine` belongs to the spec 003 development branch and is not included
-in this pinned MVP URL.
-For the remote revision, with the Python `Scripts` directory on PATH, use:
+This revision installs the current `desembaraca-twine` command. Use the venv path
+from any working directory without changing PATH:
 
 ```powershell
-twine-edge-overlap 'C:\Graphs\story.twee'
+& "$HOME\.venvs\desembaraca-twine\Scripts\desembaraca-twine.exe" 'C:\Graphs\story.twee'
 ```
 
 The module invocation works on that revision without adding `Scripts` to PATH:
 
 ```powershell
-python -m twine_edge_overlap.cli 'C:\Graphs\story.twee'
+& "$HOME\.venvs\desembaraca-twine\Scripts\python.exe" -m twine_edge_overlap 'C:\Graphs\story.twee'
 ```
 
 Both invocations accept `--prepare-runtime` and `--repair-runtime`. Graphviz is
 downloaded during initial preparation and reused offline afterwards. This remote
-MVP does not include Linux/macOS candidates or the local spec 003 implementation.
+revision includes spec 003 code, but its catalog still contains only Windows.
 
 ### Results and limits
 
 #### Linux and macOS: implementation status
 
-The Python package includes platform selection and POSIX caching, but this revision
-does not yet distribute a qualified Linux/macOS engine. The commands below describe
-a candidate containing a compatible engine; the current candidate refuses POSIX
-execution until that engine is in its catalog. The earlier remote URL does not
-represent delivery of this feature under development.
+The Python package includes platform selection and POSIX caching. The remote revision
+above allows installation and CLI help on both systems, but does not yet distribute
+a qualified Linux/macOS engine. POSIX preparation, repair, and processing are refused
+until that component is in the catalog.
 
 With **native CPython 3.12 or 3.14**, including venv/pip, install a candidate without
 replacing the system Python or requiring Git/Graphviz:
 
 ```sh
-python3 -m venv .venv
-.venv/bin/python -m pip install /path/to/candidate.whl
-.venv/bin/desembaraca-twine --prepare-runtime
-.venv/bin/python -m twine_edge_overlap '/path/to/story.twee'
+python3.12 -m venv "$HOME/.venvs/desembaraca-twine"
+"$HOME/.venvs/desembaraca-twine/bin/python" -m pip install "https://github.com/Extremois/desembaraca-twine/archive/40b3e38f3dc6bef2fe64b17f66e1f812460bd7f1.zip"
+"$HOME/.venvs/desembaraca-twine/bin/desembaraca-twine" --help
+"$HOME/.venvs/desembaraca-twine/bin/python" -m twine_edge_overlap --help
 ```
 
+Replace `python3.12` with `python3.14` to use that version. Check the version with
+`python3.12 --version`; the selected interpreter must provide venv and pip.
 Use the absolute path to the venv Python/console from another working directory.
 Linux uses absolute XDG_CACHE_HOME with `~/.cache` as fallback; macOS uses
 `~/Library/Caches`, each followed by `DesembaracaTwine/runtimes/graphviz/`.
 Python must match the native architecture; Rosetta does not qualify a Mac.
+On Linux, use CPython x86_64 or aarch64 from the origin documented for your distribution.
+On macOS 15, use Intel CPython on Intel and arm64 on Apple Silicon; check with
+`python3.12 -c 'import platform; print(platform.machine())'`. The
+[macOS Python installers](https://www.python.org/downloads/macos/) are one possible
+origin; the tool installs only in its venv. Allow 2 GiB, write access to the profile
+and story directory, and a filesystem allowing execution and hardlink publication.
+Package installation needs HTTPS to GitHub and the Python package index. Once a
+qualified bundle is available, use `--prepare-runtime` before going offline; a healthy
+cache attempts no network access. Repair needs network access and preserves the
+healthy generation on failure. On macOS, keep normal protections and use the signed,
+notarized distribution when available. No command here removes quarantine.
 Interpreter origins for both Python versions still need testing in each matrix cell.
 A [partial Linux prerequisites procedure](specs/003-add-cross-platform-support/evidence/linux-prerequisites.md) was tested with private installations of both Python versions in WSL; it does not qualify native cells.
 Some matrix versions depend on free eligibility, such as Ubuntu Pro or RHEL
