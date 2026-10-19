@@ -43,5 +43,14 @@
     "size": 35149,
     "file": "gpl-3.0-COPYING.txt",
     "purpose": "Full license reference for observed macOS notices; no per-file applicability, compiler source equivalence or bundle approval"
+  },
+  "apsl_1_1_copying": {
+    "url": "https://raw.githubusercontent.com/apple-oss-distributions/IOSerialFamily/ed4bc21ffe5d80594cc3771ac6527ea62d50dc45/APPLE_LICENSE",
+    "source_tag": "IOSerialFamily-7",
+    "source_commit": "ed4bc21ffe5d80594cc3771ac6527ea62d50dc45",
+    "sha256": "359a21ed59e82096455398ea10c5bc8c3ff28e7acf7935b77751d70e3630fc95",
+    "size": 19930,
+    "file": "apsl-1.1-COPYING.txt",
+    "purpose": "Full historical license reference for explicit APSL 1.1 header declarations; not replaced with APSL 2.0 or redistribution approval"
   }
 }

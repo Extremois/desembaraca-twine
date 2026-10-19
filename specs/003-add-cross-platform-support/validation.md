@@ -1348,9 +1348,9 @@ T052 permanece parcial, total **48/84**, catálogo ativo somente Windows.
 
 ### Textos completos e índice offline dos avisos macOS
 
-O preparador agora acrescenta APSL 2.0, Apache 2.0 com exceções LLVM e GPL 3
+O preparador agora acrescenta APSL 1.1/2.0, Apache 2.0 com exceções LLVM e GPL 3
 quando encontra as respectivas declarações nos avisos preservados. Os textos
-foram obtidos dos projetos oficiais Apple/XNU, LLVM e GNU e fixados por URL,
+foram obtidos dos projetos oficiais Apple/IOSerialFamily/XNU, LLVM e GNU e fixados por URL,
 tamanho e SHA-256 em `material-source-lock.json`. O material LLVM é uma
 referência de licença, sem alegar equivalência com as fontes do compilador Apple.
 Os prefixos Bison e suas exceções permanecem preservados separadamente.

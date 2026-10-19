@@ -25,6 +25,8 @@ builder = common.builder
 def canonical_references(materials):
     # These are references to explicit declarations, not a license classifier.
     rules = (
+        ('apsl_1_1_copying', 'APSL-1.1-COPYING.txt',
+         lambda name, raw: b'Apple Public Source License' in raw and b'Version 1.1' in raw),
         ('apsl_2_copying', 'APSL-2.0-COPYING.txt',
          lambda name, raw: b'Apple Public Source License' in raw and b'Version 2.0' in raw),
         ('llvm_17_license_reference', 'LLVM-license-reference-COPYING.txt',

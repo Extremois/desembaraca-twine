@@ -18,12 +18,16 @@ class MacosNoticeTests(unittest.TestCase):
     def test_canonical_texts_follow_observed_notices_without_claiming_approval(self):
         module = tool('prepare-macos-notices')
         materials = [('apple.txt', b'Apple Public Source License\n * Version 2.0', {}),
+                     ('apple-legacy.txt', b'Apple Public Source License Version 1.1', {}),
                      ('clang.txt', b'SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception', {}),
                      ('Bison-parser.txt', b'GNU General Public License\n * version 3', {})]
         references = module.canonical_references(materials)
-        self.assertEqual(len(references), 3)
+        self.assertEqual(len(references), 4)
         self.assertEqual({item[2]['referenced_by'][0] for item in references},
-                         {'apple.txt', 'clang.txt', 'Bison-parser.txt'})
+                         {'apple.txt', 'apple-legacy.txt', 'clang.txt', 'Bison-parser.txt'})
+        by_name = {name: origin['referenced_by'] for name, _, origin in references}
+        self.assertEqual(by_name['APSL-1.1-COPYING.txt'], ['apple-legacy.txt'])
+        self.assertEqual(by_name['APSL-2.0-COPYING.txt'], ['apple.txt'])
         for name, raw, origin in references:
             self.assertEqual(hashlib.sha256(raw).hexdigest(), origin['source_sha256'])
             self.assertIn('pending', origin['applicability'])
