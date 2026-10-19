@@ -984,3 +984,44 @@ como artefato experimental de CI por sete dias; nenhuma release/catalogação
 foi realizada. T024/T028/T036 avançaram parcialmente, mas os critérios
 agregados de build/auditoria/aceite ainda faltam: contagem mantida em **46/84**.
 Não foi criada VM local, nem houve merge em dev/main ou mudança global de SDK.
+
+### Corpus Linux com observação de rede nativa — 2026-10-19
+
+`observe-linux-network.py` executa o corpus público sob strace, seguindo
+processos filhos e observando `%network,execve`. Antes do corpus, exige detectar
+socket/conexão de um filho CPython contra loopback. Cada execução exige zero
+chamadas da classe de rede, corpus aprovado e execuções do `dot` observadas;
+trace vazio, truncado ou desconhecido reprova. Há limites de 15 s/1 MiB para
+o controle e 180 s/8 MiB agregados para os 13 casos, preservando os limites de
+processamento existentes por arquivo/motor. `--kill-on-exit` encerra os processos
+rastreados se o tracer terminar. Só o runner efêmero recebe strace, se ausente.
+
+Três testes novos foram observados falhando antes de existir o observador,
+depois passaram: filhos/execve interrompido, tentativas falhas/sockets locais e
+traces ausentes/incompletos/desconhecidos. A regressão local executou 167 testes
+com sete skips Windows; o módulo de ferramentas passou com 29 testes e dois
+skips específicos de plataforma.
+
+O [primeiro ensaio](https://github.com/Extremois/desembaraca-twine/actions/runs/39241714866)
+detectou o controle e aprovou o corpus, mas reprovou duas chamadas `sendfile`
+da cópia de relocação feita por shutil. Essa syscall também pertence à classe
+de rede do strace. A cópia passou a usar streams de arquivos via copyfileobj;
+o observador manteve a exigência de zero chamadas e não recebeu exceção para
+sendfile. O teste nativo foi repetido após essa correção.
+
+A revisão `054fdb94236b64a3c9f6cd61346c7830c8d24825` passou no
+[ensaio nativo 39242166311](https://github.com/Extremois/desembaraca-twine/actions/runs/39242166311)
+e na [regressão das seis combinações 39242166088](https://github.com/Extremois/desembaraca-twine/actions/runs/39242166088).
+CPython 3.12.15 e 3.14.8 executaram 13 casos cada, com oito execuções do `dot`
+observadas por percurso e zero chamadas da classe de rede. Em cada controle,
+foram detectadas socket, connect e getsockopt no processo filho. Tracer 6.8,
+kernel `6.17.0-1022-azure`, imagem ubuntu24 `20261012.334.1`; o executável manteve
+SHA-256 `43ce8d686720467c21be91cab4b8f3b246baae49c2cfe293714ebdf8a82f5716`.
+
+O [recibo de rede](evidence/linux-network-observation-2026-10-19/summary.json)
+vincula relatórios de corpus/rede, proveniência e traces gzip preservados.
+O teste ocorreu com rede disponível, usando somente fixtures públicas; não
+é isolamento de rede nem sandbox contra código hostil. A aquisição, instalação
+remota, recuperação e aceite completo da célula ainda exigem seus próprios
+ensaios. Nenhum gate de catálogo foi promovido. Contagem mantida em **46/84**,
+com progresso parcial registrado em T036/T080 e sem VM ou mudança global local.

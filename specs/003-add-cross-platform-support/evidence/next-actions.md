@@ -40,6 +40,13 @@ seu próprio aceite e autorização. Ainda não há bundle POSIX qualificado com
 
 ## Trabalho do projeto antes da aceitação
 
+Build, corpus/relocação e observação nativa de rede do corpus público já foram
+executados no Ubuntu hospedado, com os dois Pythons. Ver
+[recibo do build](github-actions-native-linux-2026-10-19.json) e
+[ensaio de rede](linux-network-observation-2026-10-19/summary.json). A observação
+da instalação/aquisição/recuperação permanece separada; o próximo bloqueio do
+bundle para uso normal continua sendo auditoria e notices completos.
+
 1. Encerrar a auditoria do bundle glibc x86_64: fontes correspondentes, dados e
    geradores Graphviz, componentes estáticos, notices e dependências do SO.
 2. Medir/verificar o artefato e executar seu corpus/relocação no ambiente definido.

@@ -16,8 +16,20 @@ esse registro identifica a execução, sem prometer rebuild idêntico.
 
 Depois do build, o corpus de 13 casos e a relocação em caminho com espaços e
 Unicode são executados em CPython 3.12 e 3.14. Logs, candidata e proveniência
-ficam em artefato de Actions por sete dias. Os testes bloqueiam rede Python;
-isso não substitui observação nativa de rede. Não há publicação de release ou
+ficam em artefato de Actions por sete dias. `observe-linux-network.py` executa
+esse corpus sob `strace -f`, com a classe `%network` e registro de `execve`.
+Antes de observar a candidata, exige detectar uma tentativa de conexão local
+feita por um processo filho. O aceite desse ensaio exige zero chamadas de
+socket/rede, inclusive chamadas que falhem e sockets locais, além de execuções
+do `dot` observadas. O tracer encerra os processos rastreados caso termine;
+tempo e saída têm limites, e logs desconhecidos/incompletos reprovam o ensaio.
+Ver [opções oficiais do strace](https://github.com/strace/strace/blob/v6.8/doc/strace.1.in).
+
+Esse ensaio observa o corpus público com rede disponível no runner; não isola
+a máquina da rede nem cobre aquisição/instalação/recuperação. O relatório
+registra versão/hash do tracer e hashes do corpus e dos traces, incluindo o
+controle. Se necessário, o workflow instala o tracer apenas no runner efêmero.
+Não há publicação de release ou
 admissão automática no catálogo. Auditoria de fontes/licenças, baseline antigo,
 instalação da distribuição e aceite completo continuam como etapas separadas.
 

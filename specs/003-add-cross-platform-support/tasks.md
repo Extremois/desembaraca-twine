@@ -8,6 +8,8 @@
 
 **Incremento nativo em 2026-10-19**: build glibc x64 executado no Ubuntu 24.04 hospedado, com fonte/SDK fixados, entradas de link/fontes capturadas e 13 casos do corpus aprovados em CPython 3.12/3.14. Ver [recibo nativo](evidence/github-actions-native-linux-2026-10-19.json). Avança os insumos de T024/T028 e do futuro aceite T036; não conclui auditoria, instalação, rede nativa offline ou a variante ARM64. Checkboxes agregados permanecem abertos.
 
+**Observação nativa de rede em 2026-10-19**: o corpus público dessa candidata passou sob strace no Ubuntu x64, nos dois Pythons, com zero chamadas da classe de rede e controle de conexão em processo filho detectado. Ver [relatório de rede](evidence/linux-network-observation-2026-10-19/summary.json). Esse subensaio não conclui instalação/aquisição/recuperação nem o aceite agregado T036/T080.
+
 **Tests**: exigidos explicitamente por FR-007/008/013/016 e SC-001–010. Acrescentar casos de contrato antes do comportamento correspondente, observar falha pertinente e executar regressões após a implementação; testes já corretos podem passar. Não exigir falha artificial do baseline.
 
 **Organization**: setup → fundação → histórias US1/US2/US3 (P1) → US4 (P2) → fechamento. Caminhos são relativos à raiz do repositório. Arquivos novos são entregáveis futuros, não arquivos já existentes.

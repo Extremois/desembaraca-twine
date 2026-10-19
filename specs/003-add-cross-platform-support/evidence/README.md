@@ -282,3 +282,12 @@ bytes originais do relatório de fontes (hashes comprimido e original no resumo)
 Os relatórios continuam disponíveis após expirar o artefato Actions de sete
 dias. Esse incremento é build/corpus nativo, com auditoria/aceite pendentes;
 não constitui qualificação de célula, revisão de licença ou entrada de catálogo.
+
+`linux-network-observation-2026-10-19/summary.json` registra o corpus público
+da candidata Linux sob rastreamento de syscalls em Ubuntu 24.04 x64, com
+CPython 3.12/3.14. Os dois controles de processo filho detectaram socket e
+conexão locais; os dois percursos do corpus tiveram zero chamadas da classe
+de rede e oito execuções do `dot`. O diretório preserva proveniência, relatórios
+e traces gzip com hashes dos bytes comprimidos e originais. O runner tinha
+rede disponível: este é um ensaio observado do corpus, sem concluir instalação,
+aquisição, recuperação ou o gate offline de uma célula inteira.
