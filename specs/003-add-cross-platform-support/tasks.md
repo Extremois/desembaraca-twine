@@ -1,5 +1,7 @@
 # Tasks: Uso do Desembaraça Twine em Linux e macOS
 
+**Fontes ARM64 em 2026-10-19**: [captura nativa](evidence/linux-arm64-link-source-2026-10-19/summary.json) vinculou 181 objetos a 322 fontes Graphviz fixadas, nove entradas geradas e 181 externas. O link registrou 73 entradas/148 extrações e preservou os bytes do executável; corpus/rede passaram em ambos os Pythons. O SDK contribuiu com dois membros glibc e um de compiler_rt (`__extendsftf2`), registrado para revisão própria. T028/T030 parciais, sem concluir fontes geradas/SDK, licenças ou qualificação; total 48/84.
+
 **Build ARM64 em 2026-10-19**: [candidata glibc aarch64 nativa](evidence/linux-arm64-native-build-2026-10-19/summary.json) construída no Ubuntu 24.04 ARM64, SDK/compilador fixados por hash. ELF/loader, símbolos até glibc 2.17, relocação Unicode, 13 casos e ausência de chamadas de rede no corpus conferidos nos dois Pythons. Pacote e rastros verificados após download. Avanço parcial de T025/T028/T030; fontes/objetos, avisos completos, baseline antigo e aceite instalado pendentes, sem promoção do catálogo. Total 48/84.
 
 **Feature**: `003-add-cross-platform-support` | **Data**: 2026-10-17

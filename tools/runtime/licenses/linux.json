@@ -97,7 +97,7 @@
       "artifact_id": "linux-glibc-aarch64",
       "status": "pending",
       "approved": false,
-      "pending_reason": "Native ARM64 build/corpus/network observations available; linker/source closure and complete source-notice audit remain pending.",
+      "pending_reason": "Native ARM64 Graphviz object/source bindings recorded; SDK compiler_rt/glibc, generated material, per-file source/license review and qualification remain pending.",
       "native_build_observations": [
         {
           "approved": false,
@@ -106,6 +106,45 @@
           "executable_sha256": "933b6c63370bdd3e814627e2a9a06176416c8da017a21dcbc96d8137dbc17e22",
           "provenance_sha256": "646c06d1aba84e476bdea2cd4ff10d6b8044dbf441ed7228f78994b1819ea9d9",
           "scope": "Initial native ARM64 build/corpus/network observations; only Graphviz COPYING bundled, complete source/license audit pending"
+        }
+      ],
+      "native_link_source_observations": [
+        {
+          "approved": false,
+          "qualified": false,
+          "evidence": "specs/003-add-cross-platform-support/evidence/linux-arm64-link-source-2026-10-19/summary.json",
+          "executable_sha256": "933b6c63370bdd3e814627e2a9a06176416c8da017a21dcbc96d8137dbc17e22",
+          "provenance_sha256": "1fb8531923b4abc4ddb0d0aa9b60e27f1f11871855e52bb86b0eb2bc4bfef6a9",
+          "graphviz_sources": {
+            "objects": 181,
+            "verified_graphviz_source_files": 322,
+            "generated_files": 9,
+            "external_files": 181
+          },
+          "sdk_archive_extractions": [
+            {
+              "archive_name": "libc_nonshared.a",
+              "reference": "/home/runner/work/_temp/twine-arm64-build/build/lib/common/CMakeFiles/common_obj.dir/psusershape.c.o",
+              "archive_sha256": "2db42f3e95c93b1b04ecb61b51035e83ef032801eceefb89b0d3654742b77a3c",
+              "member": "/home/runner/work/_temp/twine-arm64-sdk/cache/o/38de756c29c663a553a6d417bdf8e15d/fstat-2.32.o",
+              "symbol": "fstat"
+            },
+            {
+              "archive_name": "libc_nonshared.a",
+              "reference": "/home/runner/work/_temp/twine-arm64-sdk/cache/o/920d1e37e43d8aeee0bd1e935b76a00d/crt1.o",
+              "archive_sha256": "2db42f3e95c93b1b04ecb61b51035e83ef032801eceefb89b0d3654742b77a3c",
+              "member": "/home/runner/work/_temp/twine-arm64-sdk/cache/o/f789d8b83bf175b7108888a33e9150ef/elf-init-2.33.o",
+              "symbol": "__libc_csu_init"
+            },
+            {
+              "archive_name": "libcompiler_rt.a",
+              "reference": "/home/runner/work/_temp/twine-arm64-build/build/lib/neatogen/libneatogen.a(stress.c.o)",
+              "archive_sha256": "00d7cad16eced7116f95f90a152bbff96d4b787091a193104c989cf113ecf357",
+              "member": "/home/runner/work/_temp/twine-arm64-sdk/cache/o/82b5f871e567cea1112c0f528d5dd09e/libcompiler_rt_zcu.o",
+              "symbol": "__extendsftf2"
+            }
+          ],
+          "scope": "Observed archive extractions; no section retention, complete source closure or license approval"
         }
       ]
     },

@@ -1424,3 +1424,39 @@ A mesma revisão passou na
 [regressão de seis combinações](https://github.com/Extremois/desembaraca-twine/actions/runs/39316088056),
 nos [dois builds macOS](https://github.com/Extremois/desembaraca-twine/actions/runs/39316088020)
 e no [build/reconstrução Linux x64](https://github.com/Extremois/desembaraca-twine/actions/runs/39316088025).
+
+### Objetos e fontes do link Linux ARM64
+
+`relink-zig.py` agora aceita glibc aarch64 no host nativo correspondente e
+confere OS/arquitetura/ABI da receita e proveniência antes de criar a saída.
+Permanece exigindo igualdade de bytes entre o link LLD observado e a referência
+do compilador. A captura musl continua restrita ao percurso x64 estático existente.
+O novo teste de seleção foi observado falhando antes da implementação; os
+testes de recusa de link divergente e de musl sem inspeção continuam passando.
+A suíte local passou com **192 testes** em Python 3.12 e 3.14, sete skips Windows.
+
+A revisão `5e689a956cb70657e9872609688072ef50e5793b` passou na
+[captura ARM64 nativa](https://github.com/Extremois/desembaraca-twine/actions/runs/39317852362).
+O [recibo de fontes](evidence/linux-arm64-link-source-2026-10-19/summary.json)
+preserva proveniência pai/filha, metadados LLD, evidência de objetos/fontes,
+inventário, corpus e rastros. Depois do download foram conferidos hashes e modos
+do pacote, vínculos dos relatórios, ELF/loader e as **322 fontes Graphviz**
+novamente contra o tarball fixado. O motor e o ZIP permaneceram byte-idênticos
+ao primeiro build ARM64, com hashes `933b6c…17e22` e `60d6bb…6f703`.
+
+Foram observados **181 objetos**, **nove arquivos gerados**, **181 entradas
+externas**, **73 entradas do link** e **148 linhas de extração**. O SDK teve
+dois membros de libc_nonshared (fstat e elf-init) e um de libcompiler_rt,
+`libcompiler_rt_zcu.o`, solicitado pelo símbolo `__extendsftf2`. Esses registros
+não provam retenção de seções ou fontes correspondentes completas; o membro
+compiler_rt exige revisão própria e não recebe aprovação por comparação com x64.
+
+Os 13 casos, relocação e zero chamadas de rede observadas passaram em ambos os
+Pythons, com controle positivo conferido. T028/T030 continuam parciais: SDK,
+material gerado, avisos completos, fontes/reconstrução e aceite instalado seguem
+pendentes. Catálogo somente Windows e total **48/84** preservados.
+
+A revisão também passou na
+[regressão compartilhada](https://github.com/Extremois/desembaraca-twine/actions/runs/39317852478),
+no [build/reconstrução Linux x64](https://github.com/Extremois/desembaraca-twine/actions/runs/39317852242)
+e nos [builds macOS Intel/Apple Silicon](https://github.com/Extremois/desembaraca-twine/actions/runs/39317852374).
