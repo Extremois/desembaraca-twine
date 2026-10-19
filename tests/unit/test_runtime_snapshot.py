@@ -10,6 +10,16 @@ META = dict(distribution_id='arch', version_id=None, build_id=None, channel='rol
 
 
 class SnapshotTests(unittest.TestCase):
+    def test_query_timeout_never_exceeds_budget_after_float_rounding(self):
+        calls=[]
+        def runner(command,**options):
+            calls.append(options['timeout'])
+            self.assertTrue(0 < options['timeout'] <= 5)
+            return ProcessResult(0,b'a 1\n',b'')
+        result=collect_snapshot('pacman',lambda:META.copy(),runner=runner,clock=lambda:11.002)
+        self.assertTrue(result.known)
+        self.assertEqual(len(calls),2)
+
     def test_reference_snapshot_rechecks_identity_and_keeps_labels_out_of_hash(self):
         from dataclasses import replace
         from twine_edge_overlap.runtime_catalog import EnvironmentSnapshot, CatalogError

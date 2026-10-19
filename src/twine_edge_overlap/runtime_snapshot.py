@@ -108,7 +108,7 @@ def collect_snapshot(manager, identity_reader, *, runner=run_bounded, clock=time
         command = COMMANDS[manager]
         for _ in range(2):
             metadata = identity_reader()
-            remaining = deadline - clock()
+            remaining = min(SECONDS, deadline - clock())
             if remaining <= 0:
                 raise TimeoutError()
             result = runner(command, timeout=remaining, max_output=MAX_OUTPUT - total,
