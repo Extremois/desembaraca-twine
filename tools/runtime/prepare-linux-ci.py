@@ -85,7 +85,7 @@ def prepare(work):
     wrapper = work / 'cmake-math'
     wrapper.write_text('#!/usr/bin/python3\nimport os,sys\nargs=sys.argv[1:]\n'
                        'if "-S" in args: args.append("-DMATH_LIB=m")\n'
-                       f'os.execv({str(cmake)!r},["cmake",*args])\n', encoding='utf-8')
+                       f'os.execv({str(cmake)!r},[{str(cmake)!r},*args])\n', encoding='utf-8')
     wrapper.chmod(0o755)
     tools['cmake'] = executable(wrapper)
     tools['elf_inspector'] = executable(shutil.which('readelf') or '/usr/bin/readelf')

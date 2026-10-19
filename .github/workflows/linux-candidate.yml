@@ -37,7 +37,7 @@ jobs:
         shell: bash
         run: |
           mkdir -p .tmp/native-linux
-          python tools/runtime/build-common.py --artifact-id linux-glibc-x86_64 --source-archive "$RUNNER_TEMP/twine-sdk/graphviz.tar.gz" --sdk-record "$RUNNER_TEMP/twine-sdk/sdk-record.json" --output "$RUNNER_TEMP/twine-build" --execute > .tmp/native-linux/build.log 2>&1
+          python tools/runtime/build-common.py --artifact-id linux-glibc-x86_64 --source-archive "$RUNNER_TEMP/twine-sdk/graphviz.tar.gz" --sdk-record "$RUNNER_TEMP/twine-sdk/sdk-record.json" --output "$RUNNER_TEMP/twine-build" --execute 2>&1 | tee .tmp/native-linux/build.log
       - name: Corpus and Unicode relocation on Python 3.12
         run: '"${{ steps.python312.outputs.python-path }}" tools/runtime/smoke-corpus.py --build-output "$RUNNER_TEMP/twine-build" --environment-kind native --report .tmp/native-linux/corpus-312.json'
       - name: Corpus and Unicode relocation on Python 3.14
