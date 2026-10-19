@@ -60,6 +60,8 @@ jobs:
           /usr/bin/otool -L "$RUNNER_TEMP/twine-macos-build/candidate/bin/dot" > .tmp/native-macos/otool-libraries.txt
           /usr/bin/otool -l "$RUNNER_TEMP/twine-macos-build/candidate/bin/dot" > .tmp/native-macos/otool-load-commands.txt
           /usr/bin/file "$RUNNER_TEMP/twine-macos-build/candidate/bin/dot" > .tmp/native-macos/file.txt
+      - name: Bind linker-map objects and compiler inputs for source review
+        run: python tools/runtime/audit-macos-link.py --build-output "$RUNNER_TEMP/twine-macos-build" --map "$RUNNER_TEMP/twine-macos-sdk/link-map.txt" --source-archive "$RUNNER_TEMP/twine-macos-sdk/graphviz.tar.gz" --report .tmp/native-macos/link-source-evidence.json
       - name: Public corpus and Unicode relocation on Python 3.12
         run: '"${{ steps.python312.outputs.python-path }}" tools/runtime/smoke-corpus.py --build-output "$RUNNER_TEMP/twine-macos-build" --environment-kind native --report .tmp/native-macos/corpus-312.json'
       - name: Public corpus and Unicode relocation on Python 3.14
@@ -79,5 +81,6 @@ jobs:
             .tmp/native-macos/
             ${{ runner.temp }}/twine-macos-sdk/sdk-record.json
             ${{ runner.temp }}/twine-macos-sdk/sdk-inventory.json
+            ${{ runner.temp }}/twine-macos-sdk/link-map.txt
             ${{ runner.temp }}/twine-macos-build/provenance.json
             ${{ runner.temp }}/twine-macos-package/
