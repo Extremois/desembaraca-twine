@@ -291,3 +291,12 @@ de rede e oito execuções do `dot`. O diretório preserva proveniência, relat�
 e traces gzip com hashes dos bytes comprimidos e originais. O runner tinha
 rede disponível: este é um ensaio observado do corpus, sem concluir instalação,
 aquisição, recuperação ou o gate offline de uma célula inteira.
+
+`linux-native-notice-package-2026-10-19/summary.json` registra o primeiro ZIP
+glibc x64 gerado no CI nativo com 15 notices, inventário e proveniência
+correspondentes. Os relatórios e notices foram preservados sem os binários;
+o relatório de fontes e os traces estão em gzip com hashes dos bytes originais.
+Os 16 arquivos do ZIP tiveram conteúdo, tamanho, permissões e timestamps
+verificados após download do artefato Actions. Inclui conferência do Flex 2.6.4,
+162 headers SDK, nove arquivos gerados e corpus/rede nos dois Pythons. A
+coleção permanece rascunho: não é auditoria aprovada nem distribuição admitida.

@@ -1025,3 +1025,45 @@ O teste ocorreu com rede disponível, usando somente fixtures públicas; não
 remota, recuperação e aceite completo da célula ainda exigem seus próprios
 ensaios. Nenhum gate de catálogo foi promovido. Contagem mantida em **46/84**,
 com progresso parcial registrado em T036/T080 e sem VM ou mudança global local.
+
+### Notices e ZIP candidato no CI nativo — 2026-10-19
+
+`prepare-draft-notices.py` passou a aceitar a identidade do SDK no formato
+aninhado do CI e no legado, recusando conflitos de URL/hash. O preparo confere
+o executável Flex registrado no SDK e as macros 2.6.4 do scanner incluído na
+evidência de compilação. O COPYING oficial do Flex foi adquirido de sua origem
+upstream e fixado por tamanho/SHA-256, incluindo integralmente a exceção para
+scanners gerados. Esse texto não foi substituído por uma interpretação ou por
+uma classificação automática da licença do bundle inteiro.
+
+Dois novos testes falharam antes dos helpers e depois passaram, cobrindo
+identidades SDK conflitantes e versões/macros divergentes do Flex. Os dez
+testes de notices passaram; a regressão local executou **169 testes**, com sete
+skips Windows. O gate existente de recusa de fonte alterada foi preservado,
+antes do preparo de qualquer candidata.
+
+O workflow agora prepara os notices após capturar as fontes, gera inventário
+local e ZIP e executa o corpus/rede sobre a candidata resultante. A revisão
+`06c7b1c4ba09dddcd447c4c5158a20f797fb8c37` passou no
+[job nativo 39243501932](https://github.com/Extremois/desembaraca-twine/actions/runs/39243501932)
+e na [regressão compartilhada 39243501864](https://github.com/Extremois/desembaraca-twine/actions/runs/39243501864).
+Foram conferidos 162 headers externos e nove arquivos gerados; produzidos
+15 notices mais o executável, totalizando 16 entradas no ZIP de **6.137.313 bytes**.
+SHA-256 do ZIP candidato:
+`6b1fca184ceba8f324d465437d0f5af0b96ca54871db8eaacfe31cf2a0c2c62c`.
+
+Após baixar o artefato Actions, foram reconferidos os hashes/tamanhos de cada
+entrada, permissões do inventário, timestamps fixos e a correspondência dos
+notices com review.json. CPython 3.12.15 e 3.14.8 passaram nos 13 casos com
+zero chamadas da classe de rede, oito execuções do dot por percurso e controle
+de conexão detectado. O executável permaneceu com hash
+`43ce8d686720467c21be91cab4b8f3b246baae49c2cfe293714ebdf8a82f5716`.
+
+O [recibo do pacote](evidence/linux-native-notice-package-2026-10-19/summary.json)
+vincula inventário, proveniência, revisão, avisos originais, fontes e traces
+preservados. O ledger `tools/runtime/licenses/linux.json` ganhou esse candidato
+nativo, preservando os experimentos WSL anteriores. `approved` e `qualified`
+continuam falsos: aplicabilidade por arquivo SDK/dados, proveniência W3C/X11,
+fontes correspondentes completas e aceite nativo ainda faltam. O ZIP é somente
+artefato de CI por sete dias; não houve release nem entrada POSIX no catálogo.
+T028/T030 avançaram parcialmente; contagem mantida em **46/84**.

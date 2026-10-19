@@ -1,0 +1,111 @@
+{
+  "kind": "local-candidate-inventory",
+  "schema_version": 1,
+  "qualification": "inventory-only-not-qualified",
+  "artifact_id": "linux-glibc-x86_64",
+  "platform": "linux",
+  "artifact_arch": "x86_64",
+  "abi": "glibc",
+  "provenance_sha256": "8c004a78ea227f03d8cbbbdde159cf9f0064902a28cf7e91cca8745ad07db11b",
+  "executable_relative_path": "bin/dot",
+  "files": [
+    {
+      "path": "bin/dot",
+      "size": 6037288,
+      "mode": 493,
+      "sha256": "43ce8d686720467c21be91cab4b8f3b246baae49c2cfe293714ebdf8a82f5716"
+    },
+    {
+      "path": "third-party-notices/Bison-lib__cgraph__grammar.c.txt",
+      "size": 1532,
+      "mode": 420,
+      "sha256": "b979bc0e49fa1efed0fad3af4ecc582b471da7662626cebfd0d5f998b1119f72"
+    },
+    {
+      "path": "third-party-notices/Bison-lib__cgraph__grammar.h.txt",
+      "size": 1527,
+      "mode": 420,
+      "sha256": "ecd76b7233bacbeeafca33a46b80f4120864e3de861e7d0a7d7c6fcce3d664dd"
+    },
+    {
+      "path": "third-party-notices/Bison-lib__common__htmlparse.c.txt",
+      "size": 1532,
+      "mode": 420,
+      "sha256": "b979bc0e49fa1efed0fad3af4ecc582b471da7662626cebfd0d5f998b1119f72"
+    },
+    {
+      "path": "third-party-notices/Bison-lib__common__htmlparse.h.txt",
+      "size": 1527,
+      "mode": 420,
+      "sha256": "ecd76b7233bacbeeafca33a46b80f4120864e3de861e7d0a7d7c6fcce3d664dd"
+    },
+    {
+      "path": "third-party-notices/ColorBrewer.txt",
+      "size": 2130,
+      "mode": 420,
+      "sha256": "09598cbb53b21f3cab841d5be8ceee6ef9bc0387f3b60330da94e9c98f4ada19"
+    },
+    {
+      "path": "third-party-notices/Flex-2.6.4-COPYING.txt",
+      "size": 1855,
+      "mode": 420,
+      "sha256": "97fd685958d93be7f8dab939bb8161dbd6afb0718c63bfc337c24321aea44273"
+    },
+    {
+      "path": "third-party-notices/Graphviz-AUTHORS.txt",
+      "size": 694,
+      "mode": 420,
+      "sha256": "182eaf397edc803d0e44a25708ba70ecafc143c0f610ea7048c6b9687a939ff0"
+    },
+    {
+      "path": "third-party-notices/Graphviz-COPYING.txt",
+      "size": 14198,
+      "mode": 420,
+      "sha256": "0becf16567beb77fa252b7664631dd177c8f9a1889e48995b45379c7130e5303"
+    },
+    {
+      "path": "third-party-notices/Graphviz-lib__rbtree__LICENSE.txt",
+      "size": 1048,
+      "mode": 420,
+      "sha256": "fcb423209a3a3909f41e629a4973eab3995ceb93136dd72485fb12ad3de29dfc"
+    },
+    {
+      "path": "third-party-notices/SDK-LICENSE.txt",
+      "size": 1080,
+      "mode": 420,
+      "sha256": "5c537d6853e005298a285d508cff9ac7192cea23576c840d485b2b586a7ff177"
+    },
+    {
+      "path": "third-party-notices/SDK-lib__libc__glibc__LICENSES.txt",
+      "size": 19665,
+      "mode": 420,
+      "sha256": "b22a69aa3f80a5201818c66cb0df0f25f9fa13cf5861b0093a058dbd12d50dce"
+    },
+    {
+      "path": "third-party-notices/SDK-lib__libcxx__LICENSE.TXT.txt",
+      "size": 16703,
+      "mode": 420,
+      "sha256": "539dd7aed86e8a4f12cbdd0e6c50c189c7d74847e4fecc64ce2c6ee3a01da38b"
+    },
+    {
+      "path": "third-party-notices/SDK-lib__libcxxabi__LICENSE.TXT.txt",
+      "size": 16706,
+      "mode": 420,
+      "sha256": "e2b35be49f7284a45b7baca8fc7b3ab7440e7902392b2528a457816b5bb2a15c"
+    },
+    {
+      "path": "third-party-notices/SDK-lib__libunwind__LICENSE.TXT.txt",
+      "size": 16706,
+      "mode": 420,
+      "sha256": "b5efebcaca80879234098e52d1725e6d9eb8fb96a19fce625d39184b705f7b6d"
+    },
+    {
+      "path": "third-party-notices/SOURCE-REFERENCES.txt",
+      "size": 442,
+      "mode": 420,
+      "sha256": "6f5ea5a2d1756065c777a99b910ac8f5d104e870b16891df3f68a21c7277c16e"
+    }
+  ],
+  "notices": [],
+  "minimum_libc": "2.27"
+}

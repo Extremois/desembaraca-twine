@@ -10,6 +10,8 @@
 
 **Observação nativa de rede em 2026-10-19**: o corpus público dessa candidata passou sob strace no Ubuntu x64, nos dois Pythons, com zero chamadas da classe de rede e controle de conexão em processo filho detectado. Ver [relatório de rede](evidence/linux-network-observation-2026-10-19/summary.json). Esse subensaio não conclui instalação/aquisição/recuperação nem o aceite agregado T036/T080.
 
+**Pacote nativo em 2026-10-19**: CI gerou ZIP glibc x64 com 15 notices vinculados ao build, inventário e conferência do gerador Flex 2.6.4. Hashes/modos dos 16 arquivos foram conferidos após baixar o artefato; corpus e rede passaram nos dois Pythons. Ver [recibo do pacote](evidence/linux-native-notice-package-2026-10-19/summary.json). T028/T030 seguem parciais até completar auditoria de componentes/fontes e qualificação.
+
 **Tests**: exigidos explicitamente por FR-007/008/013/016 e SC-001–010. Acrescentar casos de contrato antes do comportamento correspondente, observar falha pertinente e executar regressões após a implementação; testes já corretos podem passar. Não exigir falha artificial do baseline.
 
 **Organization**: setup → fundação → histórias US1/US2/US3 (P1) → US4 (P2) → fechamento. Caminhos são relativos à raiz do repositório. Arquivos novos são entregáveis futuros, não arquivos já existentes.

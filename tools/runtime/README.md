@@ -160,6 +160,23 @@ incluindo licença/atribuição, e os comentários de licença/exceção present
 quatro arquivos Bison. Copia também avisos Graphviz/SDK selecionados dos arquivos
 verificados, sem decidir automaticamente que a coleção está completa.
 
+O registro SDK pode usar `facts.archive: {url, sha256}` (CI) ou os campos
+legados `archive_url`/`archive_sha256`; identidades conflitantes são recusadas.
+O preparo também exige `facts.host_tools.flex` com caminho absoluto, SHA-256
+e versão `flex 2.6.4`. Confere o executável do gerador e as três macros de versão
+do scanner já vinculado à evidência de compilação. O texto oficial de COPYING
+do Flex, incluindo a exceção de scanners gerados, está fixado por tamanho/hash
+em `licenses/material-source-lock.json` e entra no pacote sem alterações.
+Essa conferência resolve esse material do gerador; a aplicação das demais
+licenças e a completude das fontes continuam sob revisão.
+
+O CI nativo executa esse preparo, gera inventário e ZIP candidato e repete o
+corpus com rastreamento de rede nos dois Pythons. O ZIP mantém os bytes/modos
+inventariados e timestamps fixos. É um artefato experimental de revisão com
+`approved: false`/`qualified: false`, sem manifesto de distribuição ou promoção
+automática do catálogo. A receita de inspeção mantém a exigência de auditoria
+aprovada, mesmo quando o inventário e o pacote foram gerados com sucesso.
+
 O percurso experimental aceita glibc x86_64 ou musl x86_64 estático. Para musl,
 exige fatos do SDK compatíveis e o relatório ELF medido, confere seu hash e
 recusa interpreter, dependências dinâmicas ou símbolos GLIBC. Preserva uma

@@ -436,6 +436,23 @@
       "generated_builtin_bundled": false,
       "evidence": "specs/003-add-cross-platform-support/evidence/linux-musl-runtime-notice-package.json",
       "pending": "Draft source comments only: third-party applicability/canonical notices, transitive sources, generated/data/source offer review and native qualification remain pending"
+    },
+    {
+      "artifact_id": "linux-glibc-x86_64",
+      "environment_kind": "native",
+      "approved": false,
+      "qualified": false,
+      "executable_sha256": "43ce8d686720467c21be91cab4b8f3b246baae49c2cfe293714ebdf8a82f5716",
+      "provenance_sha256": "8c004a78ea227f03d8cbbbdde159cf9f0064902a28cf7e91cca8745ad07db11b",
+      "archive_sha256": "6b1fca184ceba8f324d465437d0f5af0b96ca54871db8eaacfe31cf2a0c2c62c",
+      "archive_bytes": 6137313,
+      "inventory_sha256": "2d9aebd601075728a4c1f15560e53916f421901024b206c37c37e823a7cb4a69",
+      "notices": 15,
+      "sdk_headers_verified": 162,
+      "generated_files_verified": 9,
+      "evidence": "specs/003-add-cross-platform-support/evidence/linux-native-notice-package-2026-10-19/summary.json",
+      "flex_generator_version": "2.6.4",
+      "pending": "Per-file SDK/data applicability, W3C/X11 origins, complete corresponding sources, native baseline and whole-cell acceptance"
     }
   ]
 }
