@@ -13,6 +13,26 @@ def tool():
 
 
 class DraftNoticesTests(unittest.TestCase):
+    def test_glibc_source_notices_require_matching_variant_build_and_sdk(self):
+        module=tool()
+        with tempfile.TemporaryDirectory() as folder:
+            root=Path(folder);(root/'provenance.json').write_text('synthetic glibc build')
+            record=dict(artifact_id='linux-glibc-x86_64',executable_sha256='a'*64,
+                        sdk=dict(facts=dict(archive=dict(sha256='b'*64))))
+            data=dict(kind='glibc-object-source-observations-not-license-approval',
+                provenance_sha256=module.builder.digest(root/'provenance.json'),executable_sha256='a'*64,
+                sdk_archive_sha256='b'*64,sources=[dict(path='lib/libc/glibc/csu/init.c',sha256='c'*64)])
+            evidence=root/'glibc.json'
+            def write():evidence.write_text(json.dumps(data))
+            write();sources,_=module.glibc_notice_sources(record,root,evidence)
+            self.assertEqual(list(sources),['lib/libc/glibc/csu/init.c'])
+            for key,value in (('sdk_archive_sha256','d'*64),('provenance_sha256','e'*64),('executable_sha256','f'*64)):
+                original=data[key];data[key]=value;write()
+                with self.assertRaises(ValueError):module.glibc_notice_sources(record,root,evidence)
+                data[key]=original
+            data['sources'][0]['path']='lib/libc/musl/start.c';write()
+            with self.assertRaises(ValueError):module.glibc_notice_sources(record,root,evidence)
+
     def test_sdk_archive_identity_accepts_ci_and_legacy_records_without_conflicts(self):
         module=tool()
         expected=dict(url='https://example.invalid/sdk',sha256='a'*64)

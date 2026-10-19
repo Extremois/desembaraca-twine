@@ -91,14 +91,17 @@ def source_notice_prefix(data):
     return data[:end]
 
 
-def object_notice_sources(record,linked_build,evidence,kind,prefixes):
+def object_notice_sources(record,linked_build,evidence,kind,prefixes,*,artifacts=('linux-musl-x86_64',)):
     if evidence is None:return {},None
     data=json.loads(audit.bounded(evidence,8*1024**2))
-    if (record['artifact_id']!='linux-musl-x86_64'
+    facts=record['sdk']['facts']
+    sdk_sha=facts.get('archive_sha256',facts.get('archive',{}).get('sha256'))
+    if (not isinstance(sdk_sha,str) or not re.fullmatch(r'[0-9a-f]{64}',sdk_sha)
+            or record['artifact_id'] not in artifacts
             or data.get('kind')!=kind
             or data.get('provenance_sha256')!=builder.digest(linked_build/'provenance.json')
             or data.get('executable_sha256')!=record['executable_sha256']
-            or data.get('sdk_archive_sha256')!=record['sdk']['facts']['archive_sha256']):
+            or data.get('sdk_archive_sha256')!=sdk_sha):
         raise ValueError('Object evidence does not match this build and SDK')
     entries=data.get('sources')
     if not isinstance(entries,list) or not 0<len(entries)<=5000:raise ValueError('Invalid source evidence count')
@@ -115,6 +118,11 @@ def object_notice_sources(record,linked_build,evidence,kind,prefixes):
 def musl_notice_sources(record,linked_build,evidence):
     return object_notice_sources(record,linked_build,evidence,
         'musl-object-source-observations-not-license-approval',('lib/libc/musl/',))
+
+
+def glibc_notice_sources(record,linked_build,evidence):
+    return object_notice_sources(record,linked_build,evidence,
+        'glibc-object-source-observations-not-license-approval',('lib/libc/glibc/',),artifacts=('linux-glibc-x86_64',))
 
 
 def zig_runtime_notice_sources(record,linked_build,evidence):
@@ -178,7 +186,7 @@ def sdk_notice_names(record,linked_build):
 
 
 def prepare(linked_build,source_build,evidence,graphviz_archive,sdk_archive,sdk_root,output,
-            musl_object_evidence=None,zig_runtime_evidence=None,data_evidence=None):
+            musl_object_evidence=None,zig_runtime_evidence=None,data_evidence=None,glibc_object_evidence=None):
     record=json.loads(audit.bounded(linked_build/'provenance.json',8*1024**2))
     source=json.loads(audit.bounded(evidence,8*1024**2))
     sdk_names=sdk_notice_names(record,linked_build)
@@ -198,6 +206,7 @@ def prepare(linked_build,source_build,evidence,graphviz_archive,sdk_archive,sdk_
         raise ValueError('Source archive differs from recorded bytes')
     if builder.digest(sdk_root/'zig')!=facts['zig_sha256']:raise ValueError('SDK root differs from build')
     musl_sources,musl_evidence_sha=musl_notice_sources(record,linked_build,musl_object_evidence)
+    glibc_sources,glibc_evidence_sha=glibc_notice_sources(record,linked_build,glibc_object_evidence)
     runtime_sources,runtime_evidence_sha=zig_runtime_notice_sources(record,linked_build,zig_runtime_evidence)
     dependencies=source['dependencies'].values() if isinstance(source['dependencies'],dict) else source['dependencies']
     dependencies=list(dependencies)
@@ -213,7 +222,7 @@ def prepare(linked_build,source_build,evidence,graphviz_archive,sdk_archive,sdk_
         if builder.digest(source_build/'build'/name,maximum=8*1024**2)!=item['sha256']:raise ValueError('Generated input changed')
     graphviz_names={'COPYING','AUTHORS','lib/rbtree/LICENSE','lib/common/brewer_colors'}
     graphviz=archive_files(graphviz_archive,'graphviz-16.1.0',graphviz_names)
-    sdk=archive_files(sdk_archive,sdk_root.name,sdk_names|set(external)|set(musl_sources)|set(runtime_sources))
+    sdk=archive_files(sdk_archive,sdk_root.name,sdk_names|set(external)|set(musl_sources)|set(glibc_sources)|set(runtime_sources))
     for name,sha in external.items():
         if hashlib.sha256(sdk[name]).hexdigest()!=sha:raise ValueError('SDK header differs from pinned archive')
     materials=[]
@@ -225,7 +234,7 @@ def prepare(linked_build,source_build,evidence,graphviz_archive,sdk_archive,sdk_
     for name in sorted(sdk_names):
         materials.append(('SDK-'+name.replace('/','__')+'.txt',sdk[name],
                           dict(kind='sdk-source-archive',path=name,archive_sha256=facts['archive_sha256'],source_sha256=hashlib.sha256(sdk[name]).hexdigest())))
-    for label,entries in (('musl-source',musl_sources),('zig-runtime-source',runtime_sources)):
+    for label,entries in (('musl-source',musl_sources),('glibc-source',glibc_sources),('zig-runtime-source',runtime_sources)):
         for name,item in sorted(entries.items()):
             prefix=verified_source_prefix(sdk[name],item)
             if prefix:
@@ -302,6 +311,9 @@ def prepare(linked_build,source_build,evidence,graphviz_archive,sdk_archive,sdk_
     if musl_evidence_sha:
         review.update(musl_object_evidence_sha256=musl_evidence_sha,musl_sources_verified=len(musl_sources),
             musl_source_comment_files=sum(bool(i['leading_comment_bytes']) for i in musl_sources.values()))
+    if glibc_evidence_sha:
+        review.update(glibc_object_evidence_sha256=glibc_evidence_sha,glibc_sources_verified=len(glibc_sources),
+            glibc_source_comment_files=sum(bool(i['leading_comment_bytes']) for i in glibc_sources.values()))
     if runtime_evidence_sha:
         review.update(zig_runtime_evidence_sha256=runtime_evidence_sha,zig_runtime_sources_verified=len(runtime_sources),
             zig_runtime_comment_files=sum(bool(i['leading_comment_bytes']) for i in runtime_sources.values()))
@@ -321,6 +333,7 @@ def main():
     for name in ('linked-build','source-build','evidence','graphviz-archive','sdk-archive','sdk-root','output'):
         parser.add_argument('--'+name,type=Path,required=True)
     parser.add_argument('--musl-object-evidence',type=Path,help='Optional byte-bound musl object/source observations; comments rechecked against pinned SDK')
+    parser.add_argument('--glibc-object-evidence',type=Path,help='Optional glibc startup/member observations; source comment prefixes rechecked against pinned SDK')
     parser.add_argument('--zig-runtime-evidence',type=Path,help='Optional startup/Zig source observations; only pinned SDK source prefixes are bundled')
     parser.add_argument('--data-evidence',type=Path,help='Optional reference/table evidence; recomputed before adding source-origin and X.Org notice material')
     args=parser.parse_args()
