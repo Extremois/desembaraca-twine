@@ -20,6 +20,9 @@ URL = 'https://github.com/Extremois/desembaraca-twine/archive/' + REVISION + '.z
 def collect(work):
     work = work.resolve()
     checkout = Path(__file__).resolve().parents[2]
+    for relative in ('README.md', 'specs/003-add-cross-platform-support/quickstart.md'):
+        if URL not in (checkout/relative).read_text(encoding='utf-8'):
+            raise ValueError('Documented immutable URL differs from smoke-test source')
     if work.is_relative_to(checkout):
         raise ValueError('Use a new work directory outside the checkout')
     work.mkdir(parents=True, exist_ok=False)

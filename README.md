@@ -178,9 +178,11 @@ o prazo. Veja o [contrato do formato](specs/001-reduce-edge-overlap/contracts/fo
 
 O suporte a Linux e macOS está em implementação na [feature 003](specs/003-add-cross-platform-support/validation.md).
 A detecção de plataforma, o cache POSIX e os testes compartilhados já existem;
-o catálogo distribuído ainda contém apenas o motor Windows. Builds Linux locais
-são experimentais. A [matriz proposta](specs/003-add-cross-platform-support/support-matrix.md)
-não representa plataformas já qualificadas. Não há instalador Linux/macOS disponível nesta revisão.
+o catálogo distribuído ainda contém apenas o motor Windows. Os builds glibc/musl
+e macOS passaram no CI, mas continuam experimentais. A
+[matriz proposta](specs/003-add-cross-platform-support/support-matrix.md)
+não representa plataformas já qualificadas. A instalação do pacote Python está
+disponível; o motor Linux/macOS para uso normal ainda não está distribuído.
 
 Motor gerenciado e testes de preservação, layout, offline e recuperação implementados.
 A validação local usa Windows 11 com CPython 3.12 e 3.14, incluindo primeiro uso
@@ -379,9 +381,11 @@ cooperative; I/O can finish after the deadline. See the
 
 Linux and macOS support is being implemented in [feature 003](specs/003-add-cross-platform-support/validation.md).
 Platform detection, POSIX caching and shared tests are present; the distributed
-catalog still contains only the Windows engine. Local Linux builds are experimental.
+catalog still contains only the Windows engine. The glibc/musl and macOS builds
+passed CI but remain experimental.
 The [proposed matrix](specs/003-add-cross-platform-support/support-matrix.md) does not
-represent qualified platforms. This revision does not provide a Linux/macOS installer.
+represent qualified platforms. Python package installation is available; a
+Linux/macOS engine for normal use is not yet distributed.
 
 The managed engine and preservation, layout, offline, and recovery tests are implemented.
 Local validation uses Windows 11 with CPython 3.12 and 3.14, including first use

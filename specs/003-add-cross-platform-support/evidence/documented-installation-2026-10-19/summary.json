@@ -1,0 +1,199 @@
+{
+  "kind": "documented-installation-validation",
+  "qualified": false,
+  "approved": false,
+  "passed": true,
+  "run_id": 39334233456,
+  "url": "https://github.com/Extremois/desembaraca-twine/actions/runs/39334233456",
+  "workflow_revision": "ac31e29f57c4adbd2a296ea1ec71c92584adf76e",
+  "installed_revision": "40b3e38f3dc6bef2fe64b17f66e1f812460bd7f1",
+  "tasks": [
+    "T035",
+    "T055",
+    "T079"
+  ],
+  "slots": [
+    {
+      "label": "macos-15-3.12",
+      "artifact_id": 12226261119,
+      "artifact_sha256": "83e3a32af36524108d9b5e1bd1525ba9103e577dc9cadff2c722c5211ea7be06",
+      "report_sha256": "6b719865038f2d8b635ee206ecf068bb7876f10ae415e6a168eb0f4d83cfe845",
+      "python": "3.12.10",
+      "os": "Darwin",
+      "arch": "arm64",
+      "source_archive_sha256": "e6d09369119ba7c76f2886d5082b9d575aa64e18a0391ea239d78595825bf39c",
+      "passed": true
+    },
+    {
+      "label": "macos-15-3.14",
+      "artifact_id": 12226416212,
+      "artifact_sha256": "da08fe4b78c9acbc8a998c47f1578705a77a732e8ddd5dea63e10d1133384028",
+      "report_sha256": "19dc972ed23c6497b4d3f810def213176e08fe335fa7f7e25dffffcc1d16486f",
+      "python": "3.14.7",
+      "os": "Darwin",
+      "arch": "arm64",
+      "source_archive_sha256": "e6d09369119ba7c76f2886d5082b9d575aa64e18a0391ea239d78595825bf39c",
+      "passed": true
+    },
+    {
+      "label": "macos-15-intel-3.12",
+      "artifact_id": 12226550893,
+      "artifact_sha256": "c1955892b12fda728330c0aa3cd228f6d594c5b1fa6eeb146665223a86fc39ad",
+      "report_sha256": "85d50e5d942e30c7299ea4d6293a966e8483bb142a3717006cc774f46f4e530c",
+      "python": "3.12.10",
+      "os": "Darwin",
+      "arch": "x86_64",
+      "source_archive_sha256": "e6d09369119ba7c76f2886d5082b9d575aa64e18a0391ea239d78595825bf39c",
+      "passed": true
+    },
+    {
+      "label": "macos-15-intel-3.14",
+      "artifact_id": 12225861400,
+      "artifact_sha256": "5021293a0c0aa0787f3b9e7ae423fd74b8c9b7caf0e1a20b485e59bb9c299285",
+      "report_sha256": "f89f7df00fcfd590cab09cddeefd59b74832b9c56dcae0afa4318d3088dc8f87",
+      "python": "3.14.7",
+      "os": "Darwin",
+      "arch": "x86_64",
+      "source_archive_sha256": "e6d09369119ba7c76f2886d5082b9d575aa64e18a0391ea239d78595825bf39c",
+      "passed": true
+    },
+    {
+      "label": "ubuntu-24.04-3.12",
+      "artifact_id": 12225716495,
+      "artifact_sha256": "667538c6863d045bd12648c017e9d525052c01347fbad211830934e54a562dc0",
+      "report_sha256": "212e422dbe7d8b837aa016a796bd253d473b7737decc6c51e2325e6432475c98",
+      "python": "3.12.15",
+      "os": "Linux",
+      "arch": "x86_64",
+      "source_archive_sha256": "e6d09369119ba7c76f2886d5082b9d575aa64e18a0391ea239d78595825bf39c",
+      "passed": true
+    },
+    {
+      "label": "ubuntu-24.04-3.14",
+      "artifact_id": 12225114341,
+      "artifact_sha256": "fd6b2eaebc7ebba18163ec67fc98fe9f734fe3187c26462dd579d8c40c91a923",
+      "report_sha256": "33544f3978160b566bb71f0ee5f5c1736cd5f8915566c3d0bf5a990597bc9f6d",
+      "python": "3.14.8",
+      "os": "Linux",
+      "arch": "x86_64",
+      "source_archive_sha256": "e6d09369119ba7c76f2886d5082b9d575aa64e18a0391ea239d78595825bf39c",
+      "passed": true
+    },
+    {
+      "label": "ubuntu-24.04-arm-3.12",
+      "artifact_id": 12225821507,
+      "artifact_sha256": "3d6182428bf96b06ed6818c659181e2963abaa18ba8622eaae65717f19fc0422",
+      "report_sha256": "c2dc30bb3392d2dd92a07882dff37445771e77602bca54ecfd98da2dd2b44d2a",
+      "python": "3.12.15",
+      "os": "Linux",
+      "arch": "aarch64",
+      "source_archive_sha256": "e6d09369119ba7c76f2886d5082b9d575aa64e18a0391ea239d78595825bf39c",
+      "passed": true
+    },
+    {
+      "label": "ubuntu-24.04-arm-3.14",
+      "artifact_id": 12226246586,
+      "artifact_sha256": "4ccb487c6ecd565f5dadec43782ba8a848ce1d0c4c1a74560d910ef29def370d",
+      "report_sha256": "dca002af7644ccb3d8066fab85ac9eead7cdf3393eee3a546c8f4303b8cad2df",
+      "python": "3.14.8",
+      "os": "Linux",
+      "arch": "aarch64",
+      "source_archive_sha256": "e6d09369119ba7c76f2886d5082b9d575aa64e18a0391ea239d78595825bf39c",
+      "passed": true
+    },
+    {
+      "label": "windows-latest-3.12",
+      "artifact_id": 12225412961,
+      "artifact_sha256": "6ef339c1cfa34ced168b7b2a2efb191149dda8f2bbcf4adbcfc057726fab0c96",
+      "report_sha256": "cec872355a14ba5262fd666480a9f858543b1c78764c2d371908069d601d17ff",
+      "python": "3.12.10",
+      "os": "Windows",
+      "arch": "AMD64",
+      "source_archive_sha256": "e6d09369119ba7c76f2886d5082b9d575aa64e18a0391ea239d78595825bf39c",
+      "passed": true
+    },
+    {
+      "label": "windows-latest-3.14",
+      "artifact_id": 12225149321,
+      "artifact_sha256": "73cda13731fc22e46b0319263a3d28a0a9109aaaebe0a3062574ba8a00907412",
+      "report_sha256": "a90201736d58d11609c98d5b4e92fb16d1f87e7dc936583bf76c686745e4fdcc",
+      "python": "3.14.8",
+      "os": "Windows",
+      "arch": "AMD64",
+      "source_archive_sha256": "e6d09369119ba7c76f2886d5082b9d575aa64e18a0391ea239d78595825bf39c",
+      "passed": true
+    }
+  ],
+  "jobs": [
+    {
+      "id": 118339576098,
+      "name": "remote-install (macos-15, 3.14)",
+      "url": "https://github.com/Extremois/desembaraca-twine/actions/runs/39334233456/job/118339576098",
+      "conclusion": "success"
+    },
+    {
+      "id": 118339576312,
+      "name": "remote-install (ubuntu-24.04-arm, 3.12)",
+      "url": "https://github.com/Extremois/desembaraca-twine/actions/runs/39334233456/job/118339576312",
+      "conclusion": "success"
+    },
+    {
+      "id": 118339576351,
+      "name": "remote-install (ubuntu-24.04-arm, 3.14)",
+      "url": "https://github.com/Extremois/desembaraca-twine/actions/runs/39334233456/job/118339576351",
+      "conclusion": "success"
+    },
+    {
+      "id": 118339576356,
+      "name": "remote-install (macos-15-intel, 3.14)",
+      "url": "https://github.com/Extremois/desembaraca-twine/actions/runs/39334233456/job/118339576356",
+      "conclusion": "success"
+    },
+    {
+      "id": 118339576377,
+      "name": "remote-install (windows-latest, 3.14)",
+      "url": "https://github.com/Extremois/desembaraca-twine/actions/runs/39334233456/job/118339576377",
+      "conclusion": "success"
+    },
+    {
+      "id": 118339576394,
+      "name": "remote-install (windows-latest, 3.12)",
+      "url": "https://github.com/Extremois/desembaraca-twine/actions/runs/39334233456/job/118339576394",
+      "conclusion": "success"
+    },
+    {
+      "id": 118339576424,
+      "name": "remote-install (macos-15-intel, 3.12)",
+      "url": "https://github.com/Extremois/desembaraca-twine/actions/runs/39334233456/job/118339576424",
+      "conclusion": "success"
+    },
+    {
+      "id": 118339576434,
+      "name": "remote-install (macos-15, 3.12)",
+      "url": "https://github.com/Extremois/desembaraca-twine/actions/runs/39334233456/job/118339576434",
+      "conclusion": "success"
+    },
+    {
+      "id": 118339576435,
+      "name": "remote-install (ubuntu-24.04, 3.12)",
+      "url": "https://github.com/Extremois/desembaraca-twine/actions/runs/39334233456/job/118339576435",
+      "conclusion": "success"
+    },
+    {
+      "id": 118339576469,
+      "name": "remote-install (ubuntu-24.04, 3.14)",
+      "url": "https://github.com/Extremois/desembaraca-twine/actions/runs/39334233456/job/118339576469",
+      "conclusion": "success"
+    }
+  ],
+  "checked": [
+    "Immutable archive installation outside checkout in fresh native Python venv",
+    "Console, package module and legacy CLI module help",
+    "No Git or Graphviz on restricted PATH; no engine preparation",
+    "Packaged catalogs, support matrix and third-party notices"
+  ],
+  "limitations": [
+    "Installation/help and documentation only; no POSIX runtime catalog entry or support promotion",
+    "Linux and macOS engine acceptance remains pending; Windows hosted runner is not Windows 11 clean acceptance"
+  ]
+}

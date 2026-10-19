@@ -147,11 +147,11 @@ Preencher [QualificationEvidence](data-model.md) e aplicar [support-policy.md](c
 
 ### Agregação dos dois interpretadores
 
-Com registros de ensaio isolados, verificar que somente Python 3.12 completo deixa o alvo sem aprovação; executar 3.12 duas vezes também não substitui 3.14. Combinar evidência de outro artefato, revisão ou snapshot deve ser rejeitado. Somente os dois slots válidos e gates comuns completos permitem proposta de validação. Esses são cenários de dados no harness futuro, sem simular aprovação nativa.
+Com registros de ensaio isolados, verificar que somente Python 3.12 completo deixa o alvo sem aprovação; executar 3.12 duas vezes também não substitui 3.14. Combinar evidência de outro artefato, revisão ou snapshot deve ser rejeitado. Somente os dois slots válidos e gates comuns completos permitem proposta de validação. Esses são cenários de dados no harness, sem simular aprovação nativa.
 
 ### Reconhecimento de snapshots rolling
 
-Em Arch/Arch ARM/Manjaro/Tumbleweed, a consulta inicial de referência pode ser inspecionada pelos comandos locais abaixo; o harness futuro usa argv fixa sem shell e calcula a canonicalização do [contrato](contracts/support-policy.md#reconhecimento-de-rolling). Rodar somente o comando correspondente ao gerenciador já presente, sem instalar outro:
+Em Arch/Arch ARM/Manjaro/Tumbleweed, a consulta inicial de referência pode ser inspecionada pelos comandos locais abaixo; o harness usa argv fixa sem shell e calcula a canonicalização do [contrato](contracts/support-policy.md#reconhecimento-de-rolling). Rodar somente o comando correspondente ao gerenciador já presente, sem instalar outro:
 
 ```sh
 /usr/bin/pacman --query --color never

@@ -1,0 +1,122 @@
+{
+  "kind": "documented-remote-install-and-help-smoke",
+  "passed": true,
+  "qualified": false,
+  "revision": "40b3e38f3dc6bef2fe64b17f66e1f812460bd7f1",
+  "url": "https://github.com/Extremois/desembaraca-twine/archive/40b3e38f3dc6bef2fe64b17f66e1f812460bd7f1.zip",
+  "python": "3.14.8",
+  "os": "Linux",
+  "arch": "aarch64",
+  "outside_checkout": true,
+  "path_contains_only_venv": true,
+  "engine_prepared": false,
+  "installed": {
+    "direct_url": {
+      "archive_info": {
+        "hash": "sha256=e6d09369119ba7c76f2886d5082b9d575aa64e18a0391ea239d78595825bf39c",
+        "hashes": {
+          "sha256": "e6d09369119ba7c76f2886d5082b9d575aa64e18a0391ea239d78595825bf39c"
+        }
+      },
+      "url": "https://github.com/Extremois/desembaraca-twine/archive/40b3e38f3dc6bef2fe64b17f66e1f812460bd7f1.zip"
+    },
+    "files": {
+      "twine_edge_overlap-0.1.0.dev0.dist-info/direct_url.json": "2c0b807d0f8a33a3e3745b85dc00e5e66874b961a48832e820b5955125a31d55",
+      "twine_edge_overlap/runtime-catalog.json": "525580c22ac27e58cfbf74ca6877e25f09a696bf07813ae4a1bdad059d72b762",
+      "twine_edge_overlap/runtime-manifest.json": "8aed45fdbd206069cf7e37df8b505a979acaa219bb3f013f2dd9c7f11e680f9d",
+      "twine_edge_overlap/support-matrix.json": "be3e8a77e3836d1125658c00a75fbf0e3584f1e26a166a053583336c29a5d295",
+      "twine_edge_overlap/third_party/graphviz-16.1.0/SOURCES.json": "8cd2a88eb55995f4f5c825173640c85cf81ef5416eb70feda31cdfa1278ed831",
+      "twine_edge_overlap/third_party/graphviz-16.1.0/ann.txt": "1cf89f4ddaa9d7ace5b94245915a7c473e2a585ca5fffe74ad4e7b51e9614097",
+      "twine_edge_overlap/third_party/graphviz-16.1.0/brotli.txt": "3d180008e36922a4e8daec11c34c7af264fed5962d07924aea928c38e8663c94",
+      "twine_edge_overlap/third_party/graphviz-16.1.0/bzip2.txt": "c6dbbf828498be844a89eaa3b84adbab3199e342eb5cb2ed2f0d4ba7ec0f38a3",
+      "twine_edge_overlap/third_party/graphviz-16.1.0/cairo.txt": "d4d94ac5251d63fd0c5fadb706899a39ed060f04a55ae2319de04846729a53f0",
+      "twine_edge_overlap/third_party/graphviz-16.1.0/expat.txt": "122f2c27000472a201d337b9b31f7eb2b52d091b02857061a8880371612d9534",
+      "twine_edge_overlap/third_party/graphviz-16.1.0/fontconfig.txt": "51a51aa9823704fd90bccc616cdd17ebabb5b2b3e9cbde886ca02c7002288067",
+      "twine_edge_overlap/third_party/graphviz-16.1.0/freetype.txt": "b73152045aafe7291796bb4bc442c35f4c3c4a8f7985ba13f0a3761945d4ce74",
+      "twine_edge_overlap/third_party/graphviz-16.1.0/fribidi.txt": "32434afcc8666ba060e111d715bfdb6c2d5dd8a35fa4d3ab8ad67d8f850d2f2b",
+      "twine_edge_overlap/third_party/graphviz-16.1.0/getopt-win32.txt": "a5681bf9b05db14d86776930017c647ad9e6e56ff6bbcfdf21e5848288dfaf1b",
+      "twine_edge_overlap/third_party/graphviz-16.1.0/gettext-libintl.txt": "3fe5361f24b7c49ba12911c08f5a33f9cb18871d95d9fb881f5b8a4793e04288",
+      "twine_edge_overlap/third_party/graphviz-16.1.0/glib.txt": "fa6f36630bb1e0c571d34b2bbdf188d08495c9dbf58f28cac112f303fc1f58fb",
+      "twine_edge_overlap/third_party/graphviz-16.1.0/graphviz.txt": "0becf16567beb77fa252b7664631dd177c8f9a1889e48995b45379c7130e5303",
+      "twine_edge_overlap/third_party/graphviz-16.1.0/gts.txt": "d245807f90032872d1438d741ed21e2490e1175dc8aa3afa5ddb6c8e529b58e5",
+      "twine_edge_overlap/third_party/graphviz-16.1.0/harfbuzz.txt": "ba8f810f2455c2f08e2d56bb49b72f37fcf68f1f4fade38977cfd7372050ad64",
+      "twine_edge_overlap/third_party/graphviz-16.1.0/libffi.txt": "67894089811f93fca47a76f85e017da6f8582d4ba0905963c6e0f1ad6df7a195",
+      "twine_edge_overlap/third_party/graphviz-16.1.0/libgd.txt": "005f4b6b0141d1bd11d371bbf7d4f67947f85a4906b7f5465f942204cf918ba3",
+      "twine_edge_overlap/third_party/graphviz-16.1.0/libiconv.txt": "f1765263d8a5016a9dfabd33a9f5e57049584e376f8b6f374ef942c8dace3966",
+      "twine_edge_overlap/third_party/graphviz-16.1.0/libjpeg-turbo.txt": "60c756742db3ad1913304e8b13f0e86e22e51adb50cc0b3333c163f7e45ceec1",
+      "twine_edge_overlap/third_party/graphviz-16.1.0/liblzma.txt": "72d7ef9c98be319fd34ce88b45203b36d5936f9c49e82bf3198ffee5e0c7d87e",
+      "twine_edge_overlap/third_party/graphviz-16.1.0/libpng.txt": "dfe5a536b0e5a531f844fb9c101a3089aca60772a503893b8e15f9457e369960",
+      "twine_edge_overlap/third_party/graphviz-16.1.0/libwebp.txt": "7806e0de568ec6ca764d6e52a3765fb81ee838ca190ad7c5263ac45be782f6eb",
+      "twine_edge_overlap/third_party/graphviz-16.1.0/microsoft-runtime.txt": "76c6045b291b9fbd6049453142f8ca6f10e3d0e57b63aff6e57fe8398f04cef1",
+      "twine_edge_overlap/third_party/graphviz-16.1.0/pango.txt": "d245807f90032872d1438d741ed21e2490e1175dc8aa3afa5ddb6c8e529b58e5",
+      "twine_edge_overlap/third_party/graphviz-16.1.0/pcre2.txt": "030087e2e8dd7c1bdd26057d25d4ded8f45bbf01ad458d68665ad04b8b0fbedf",
+      "twine_edge_overlap/third_party/graphviz-16.1.0/pixman.txt": "fac9270f0987b96ff4533fca3548c633e02083cbba4a0172a3b149b2e4019793",
+      "twine_edge_overlap/third_party/graphviz-16.1.0/tcl.txt": "c0a69a2bfd757361ec7e6143973b103c90409316b49e9c88db26ad6388e79f16",
+      "twine_edge_overlap/third_party/graphviz-16.1.0/tiff.txt": "0780558a8bfba0af1160ec1ff11ade4f41c0d7deafd6ecfc796b492a788e380d",
+      "twine_edge_overlap/third_party/graphviz-16.1.0/zlib.txt": "845efc77857d485d91fb3e0b884aaa929368c717ae8186b66fe1ed2495753243"
+    },
+    "git_available": false,
+    "graphviz_available": false
+  },
+  "commands": [
+    {
+      "arguments": [
+        "<venv>/bin/python",
+        "-m",
+        "pip",
+        "install",
+        "--disable-pip-version-check",
+        "--no-cache-dir",
+        "https://github.com/Extremois/desembaraca-twine/archive/40b3e38f3dc6bef2fe64b17f66e1f812460bd7f1.zip"
+      ],
+      "returncode": 0,
+      "stdout_sha256": "c000d1dff8daadc5a15b2d94a66f26b6438666bdc3f7f8c9b6b7449385862e46",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "arguments": [
+        "<venv>/bin/desembaraca-twine",
+        "--help"
+      ],
+      "returncode": 0,
+      "stdout_sha256": "2ab33261960fefa1a5ca61e16a30d5c084c0dcc21ad6a69f9c5e1137bc9f8d5b",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "arguments": [
+        "<venv>/bin/python",
+        "-m",
+        "twine_edge_overlap",
+        "--help"
+      ],
+      "returncode": 0,
+      "stdout_sha256": "2ab33261960fefa1a5ca61e16a30d5c084c0dcc21ad6a69f9c5e1137bc9f8d5b",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "arguments": [
+        "<venv>/bin/python",
+        "-m",
+        "twine_edge_overlap.cli",
+        "--help"
+      ],
+      "returncode": 0,
+      "stdout_sha256": "2ab33261960fefa1a5ca61e16a30d5c084c0dcc21ad6a69f9c5e1137bc9f8d5b",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "arguments": [
+        "<venv>/bin/python",
+        "-c",
+        "import hashlib,importlib.metadata as m,json,pathlib,shutil\nd=m.distribution('twine-edge-overlap')\nfiles={str(p):hashlib.sha256(pathlib.Path(d.locate_file(p)).read_bytes()).hexdigest()\n       for p in d.files if str(p).endswith('.json') or '/third_party/' in str(p)}\nimport twine_edge_overlap\nprint(json.dumps(dict(direct_url=json.loads(d.read_text('direct_url.json')),\n    package_path=str(pathlib.Path(twine_edge_overlap.__file__).resolve()),files=files,\n    git_available=shutil.which('git') is not None,graphviz_available=shutil.which('dot') is not None)))"
+      ],
+      "returncode": 0,
+      "stdout_sha256": "0916b2b940f7797dc0a4ff939b50ac00388a386fa585c914ed19b50b9f047172",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "limitations": [
+    "Installation/help only; distributed catalog still Windows-only",
+    "No POSIX native-engine preparation, cell acceptance or support promotion"
+  ]
+}

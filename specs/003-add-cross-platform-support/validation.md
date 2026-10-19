@@ -1,5 +1,36 @@
 # Evidência de implementação — feature 003
 
+## Fechamento da documentação de instalação — 2026-10-19
+
+**T035, T055 e T079 concluídas; 51/84 tarefas, 33 pendentes.** O README PT/EN
+e o quickstart agora apontam para o ZIP público imutável da revisão
+`40b3e38f3dc6bef2fe64b17f66e1f812460bd7f1`, que instala o comando atual.
+Foram revisados Python nativo/venv/pip, arquitetura, caminhos externos sem PATH,
+internet/espaço/permissões, cache/offline/reparo e recuperação macOS sob as
+proteções normais. Instruções de desenvolvimento e aceitação condicionada estão
+identificadas; nenhuma URL futura é apresentada como disponível.
+
+O [recibo com dez relatórios](evidence/documented-installation-2026-10-19/summary.json)
+registra o [CI aprovado](https://github.com/Extremois/desembaraca-twine/actions/runs/39334233456)
+da revisão de documentação `ac31e29f57c4adbd2a296ea1ec71c92584adf76e`.
+Linux Ubuntu 24.04 x64/ARM64, macOS 15 Intel/Apple Silicon e Windows hospedado
+instalaram a mesma origem em CPython 3.12/3.14, em venvs novas fora do checkout,
+com espaços/acentos no caminho. PATH continha somente a venv; Git e Graphviz
+não estavam disponíveis. Console, módulo do pacote e módulo CLI responderam
+ao help; catálogos/matriz/notices foram encontrados no pacote instalado.
+O SHA-256 do ZIP registrado pelo pip foi o mesmo nos dez slots:
+`e6d09369119ba7c76f2886d5082b9d575aa64e18a0391ea239d78595825bf39c`.
+A fundação também passou na [mesma revisão](https://github.com/Extremois/desembaraca-twine/actions/runs/39334233402).
+
+O fechamento é dos requisitos de **documentação e comandos disponíveis**, sem
+aprovar um motor POSIX. Os registros anteriores que mantinham T035/T055 abertas
+por indisponibilidade de bundles ficam como histórico; os requisitos dessas tasks
+permitem documentar a matriz proposta versus validada e explicitar alvos pendentes.
+A URL instala código Python; preparo/reparo/processamento Linux/macOS continuam
+indisponíveis no catálogo distribuído. T031/T052/T056/T078/T083 e as demais
+qualificações permanecem abertas; o ensaio Windows hospedado não aprova Windows
+11 limpo nem reabertura Twine. Não houve instalação global ou criação de VM.
+
 ## Link e fontes dos builds musl — 2026-10-19
 
 O commit `40b3e38f3dc6bef2fe64b17f66e1f812460bd7f1` passou no

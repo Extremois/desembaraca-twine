@@ -79,9 +79,10 @@ Contagens de tarefas são rastreabilidade de trabalho, não aprovação de requi
 
 ## Evidência parcial e limites
 
-- Windows: regressão nos dois Pythons e coletor em venv externa, com código não commitado; Windows limpo e Twine pendentes.
+- Windows: regressão nos dois Pythons e coletor em venv externa, com revisões registradas nas evidências; Windows limpo e Twine pendentes.
 - Ubuntu 26.04 x86_64 WSL: fundação e corpus de biblioteca com build experimental GLIBC_2.38; não aprova uma célula nativa.
-- Demais imagens/arquiteturas: não disponíveis nesta sessão; nenhum resultado herdado de outra distribuição/ABI.
+- Builds CI glibc/musl x64/ARM64 e macOS Intel/Apple Silicon registrados em validation.md; permanecem candidatas, sem qualificação integral de célula. Nenhum resultado é herdado de outra distribuição/ABI.
+- Instalação remota/help: dez slots nativos aprovados; ver documented-installation-2026-10-19/summary.json. Documentação T035/T055/T079 concluída; não equivale à aceitação do motor POSIX.
 - Linux US1 AC1 (instalação/primeiro uso), AC2 (offline) e AC3 (compatibilidade/aviso) ainda exigem ensaio da célula com ambos os Pythons.
 - Logs/digests de imagem, rede nativa, falhas, licenças e seis reaberturas Twine precisam estar completos antes de promover.
 
@@ -89,10 +90,10 @@ Contagens de tarefas são rastreabilidade de trabalho, não aprovação de requi
 
 | Requisito | Tarefas relacionadas | Tarefas verificadas | Gate de encerramento |
 |---|---|---|---|
-| FR-001 | T007, T008, T009, T010, T011, T012, T013, T014, T015, T016, T017, T018, T019, T020, T024, T025, T026, T027, T028, T029, T030, T031, T032, T033, T034, T036, T037, T038, T039, T040, T041, T042, T043, T044, T045, T049, T050, T051, T052, T053, T054, T055, T056 | 18/43 | pendente: evidências específicas e matriz completa |
-| FR-002 | T007, T008, T009, T010, T011, T012, T013, T014, T015, T016, T017, T018, T019, T020, T024, T025, T026, T027, T028, T029, T030, T031, T032, T033, T034, T036, T037, T038, T039, T040, T041, T042, T043, T044, T045, T049, T050, T051, T052, T053, T054, T055, T056 | 18/43 | pendente: evidências específicas e matriz completa |
+| FR-001 | T007, T008, T009, T010, T011, T012, T013, T014, T015, T016, T017, T018, T019, T020, T024, T025, T026, T027, T028, T029, T030, T031, T032, T033, T034, T036, T037, T038, T039, T040, T041, T042, T043, T044, T045, T049, T050, T051, T052, T053, T054, T055, T056 | 21/43 | pendente: evidências específicas e matriz completa |
+| FR-002 | T007, T008, T009, T010, T011, T012, T013, T014, T015, T016, T017, T018, T019, T020, T024, T025, T026, T027, T028, T029, T030, T031, T032, T033, T034, T036, T037, T038, T039, T040, T041, T042, T043, T044, T045, T049, T050, T051, T052, T053, T054, T055, T056 | 21/43 | pendente: evidências específicas e matriz completa |
 | FR-003 | T002, T013, T032, T033, T070, T074, T075, T081, T082 | 7/9 | pendente: evidências específicas e matriz completa |
-| FR-004 | T018, T022, T033, T035, T047, T055, T078, T079 | 3/8 | pendente: evidências específicas e matriz completa |
+| FR-004 | T018, T022, T033, T035, T047, T055, T078, T079 | 6/8 | pendente: evidências específicas e matriz completa |
 | FR-005 | T021, T023, T036, T037, T038, T039, T040, T041, T042, T043, T044, T045, T048, T056, T062, T076 | 2/16 | pendente: evidências específicas e matriz completa |
 | FR-006 | T036, T037, T038, T039, T040, T041, T042, T043, T044, T045, T056, T057, T062, T063 | 2/14 | pendente: evidências específicas e matriz completa |
 | FR-007 | T036, T037, T038, T039, T040, T041, T042, T043, T044, T045, T056, T057, T062, T063 | 2/14 | pendente: evidências específicas e matriz completa |
@@ -100,20 +101,20 @@ Contagens de tarefas são rastreabilidade de trabalho, não aprovação de requi
 | FR-009 | T058, T059, T060, T061, T064, T065, T067, T068, T069, T070, T071, T072, T073 | 12/13 | pendente: evidências específicas e matriz completa |
 | FR-010 | T010, T015, T016, T067, T068, T069, T070, T071, T072, T073, T074, T075, T076, T077 | 13/14 | pendente: evidências específicas e matriz completa |
 | FR-011 | T010, T015, T016, T067, T068, T069, T070, T071, T072, T073, T074, T075, T076, T077 | 13/14 | pendente: evidências específicas e matriz completa |
-| FR-012 | T018, T022, T033, T035, T047, T055, T078, T079 | 3/8 | pendente: evidências específicas e matriz completa |
+| FR-012 | T018, T022, T033, T035, T047, T055, T078, T079 | 6/8 | pendente: evidências específicas e matriz completa |
 | FR-013 | T001, T004, T012, T021, T064, T065 | 5/6 | pendente: evidências específicas e matriz completa |
-| FR-014 | T019, T020, T030, T031, T049, T050, T051, T052, T066, T080 | 2/10 | pendente: evidências específicas e matriz completa |
+| FR-014 | T019, T020, T030, T031, T049, T050, T051, T052, T066, T080 | 4/10 | pendente: evidências específicas e matriz completa |
 | FR-015 | T011, T032, T062, T071, T080 | 4/5 | pendente: evidências específicas e matriz completa |
-| FR-016 | T003, T036, T037, T038, T039, T040, T041, T042, T043, T044, T045, T046, T056, T062, T063, T064, T065, T066, T076, T078, T079, T080, T081, T082, T083, T084 | 5/26 | pendente: evidências específicas e matriz completa |
+| FR-016 | T003, T036, T037, T038, T039, T040, T041, T042, T043, T044, T045, T046, T056, T062, T063, T064, T065, T066, T076, T078, T079, T080, T081, T082, T083, T084 | 6/26 | pendente: evidências específicas e matriz completa |
 | FR-017 | T002, T013, T032, T033, T070, T074, T075, T081, T082 | 7/9 | pendente: evidências específicas e matriz completa |
 | FR-018 | T002, T013, T032, T033, T070, T074, T075, T081, T082 | 7/9 | pendente: evidências específicas e matriz completa |
-| SC-001 | T022, T023, T024, T025, T026, T027, T028, T029, T030, T031, T032, T033, T034, T035, T036, T037, T038, T039, T040, T041, T042, T043, T044, T045, T046, T047, T048, T049, T050, T051, T052, T053, T054, T055, T056, T078, T079 | 7/37 | pendente: evidências específicas e matriz completa |
+| SC-001 | T022, T023, T024, T025, T026, T027, T028, T029, T030, T031, T032, T033, T034, T035, T036, T037, T038, T039, T040, T041, T042, T043, T044, T045, T046, T047, T048, T049, T050, T051, T052, T053, T054, T055, T056, T078, T079 | 12/37 | pendente: evidências específicas e matriz completa |
 | SC-002 | T057, T058, T059, T060, T061, T062, T063, T064, T065, T066 | 7/10 | pendente: evidências específicas e matriz completa |
 | SC-003 | T057, T058, T059, T060, T061, T062, T063, T064, T065, T066 | 7/10 | pendente: evidências específicas e matriz completa |
-| SC-004 | T022, T023, T024, T025, T026, T027, T028, T029, T030, T031, T032, T033, T034, T035, T036, T037, T038, T039, T040, T041, T042, T043, T044, T045, T046, T047, T048, T049, T050, T051, T052, T053, T054, T055, T056, T078, T079 | 7/37 | pendente: evidências específicas e matriz completa |
+| SC-004 | T022, T023, T024, T025, T026, T027, T028, T029, T030, T031, T032, T033, T034, T035, T036, T037, T038, T039, T040, T041, T042, T043, T044, T045, T046, T047, T048, T049, T050, T051, T052, T053, T054, T055, T056, T078, T079 | 12/37 | pendente: evidências específicas e matriz completa |
 | SC-005 | T067, T068, T069, T070, T071, T072, T073, T074, T075, T076, T077 | 10/11 | pendente: evidências específicas e matriz completa |
 | SC-006 | T057, T058, T059, T060, T061, T062, T063, T064, T065, T066 | 7/10 | pendente: evidências específicas e matriz completa |
-| SC-007 | T022, T023, T024, T025, T026, T027, T028, T029, T030, T031, T032, T033, T034, T035, T036, T037, T038, T039, T040, T041, T042, T043, T044, T045, T046, T047, T048, T049, T050, T051, T052, T053, T054, T055, T056, T078, T079 | 7/37 | pendente: evidências específicas e matriz completa |
+| SC-007 | T022, T023, T024, T025, T026, T027, T028, T029, T030, T031, T032, T033, T034, T035, T036, T037, T038, T039, T040, T041, T042, T043, T044, T045, T046, T047, T048, T049, T050, T051, T052, T053, T054, T055, T056, T078, T079 | 12/37 | pendente: evidências específicas e matriz completa |
 | SC-008 | T002, T003, T070, T074, T075, T081, T082, T083, T084 | 6/9 | pendente: evidências específicas e matriz completa |
 | SC-009 | T002, T003, T070, T074, T075, T081, T082, T083, T084 | 6/9 | pendente: evidências específicas e matriz completa |
 | SC-010 | T002, T003, T070, T074, T075, T081, T082, T083, T084 | 6/9 | pendente: evidências específicas e matriz completa |
