@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "flex_2_6_4_copying": {
+    "url": "https://raw.githubusercontent.com/westes/flex/v2.6.4/COPYING",
+    "sha256": "97fd685958d93be7f8dab939bb8161dbd6afb0718c63bfc337c24321aea44273",
+    "size": 1855,
+    "file": "flex-2.6.4-COPYING.txt",
+    "purpose": "Preserve upstream text, including generated-scanner exception; not approval of a complete bundle"
+  }
+}
