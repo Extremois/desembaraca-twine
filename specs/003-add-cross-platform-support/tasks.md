@@ -1,5 +1,7 @@
 # Tasks: Uso do Desembaraça Twine em Linux e macOS
 
+**Build ARM64 em 2026-10-19**: [candidata glibc aarch64 nativa](evidence/linux-arm64-native-build-2026-10-19/summary.json) construída no Ubuntu 24.04 ARM64, SDK/compilador fixados por hash. ELF/loader, símbolos até glibc 2.17, relocação Unicode, 13 casos e ausência de chamadas de rede no corpus conferidos nos dois Pythons. Pacote e rastros verificados após download. Avanço parcial de T025/T028/T030; fontes/objetos, avisos completos, baseline antigo e aceite instalado pendentes, sem promoção do catálogo. Total 48/84.
+
 **Feature**: `003-add-cross-platform-support` | **Data**: 2026-10-17
 
 **Input**: [spec.md](spec.md), [plan.md](plan.md), [research.md](research.md), [support-matrix.md](support-matrix.md), [data-model.md](data-model.md), [contracts/](contracts/), [quickstart.md](quickstart.md) e constituição 1.0.1.

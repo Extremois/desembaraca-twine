@@ -1,0 +1,85 @@
+{
+  "c_compiler": {
+    "path": "/home/runner/work/_temp/twine-arm64-sdk/c_compiler",
+    "sha256": "22e6e45888f2a14641e7e76c7c2230ee24fd82b24eee849873416889699bf28c"
+  },
+  "cxx_compiler": {
+    "path": "/home/runner/work/_temp/twine-arm64-sdk/cxx_compiler",
+    "sha256": "814ce3ac4aff441437449b167e104ef5f5ce50f47e80c896648d96bf74d062f2"
+  },
+  "cmake": {
+    "path": "/home/runner/work/_temp/twine-arm64-sdk/cmake-math",
+    "sha256": "5fa3f4f832dc4a05ef7defb706f6d204e13d05ba88dbb6cdd29086302317df1a"
+  },
+  "elf_inspector": {
+    "path": "/usr/bin/aarch64-linux-gnu-readelf",
+    "sha256": "6bca2bbd23b072db9e9a19ae0e65cf7b7c15c08a3c2cf01dd56453e1ac9340b1"
+  },
+  "facts": {
+    "provider": "Zig",
+    "archive": {
+      "version": "0.15.2",
+      "url": "https://ziglang.org/download/0.15.2/zig-aarch64-linux-0.15.2.tar.xz",
+      "sha256": "958ed7d1e00d0ea76590d27666efbf7a932281b3d7ba0c6b01b0ff26498f667f",
+      "size": 49471996,
+      "executable_sha256": "931b8e9a9327dac87bc439067f07604219510fa541133ff6e542c6243968cc86"
+    },
+    "zig_sha256": "931b8e9a9327dac87bc439067f07604219510fa541133ff6e542c6243968cc86",
+    "target": "aarch64-linux.4.15-gnu.2.27",
+    "environment_kind": "native",
+    "kernel": "6.17.0-1022-azure",
+    "host": "Linux-6.17.0-1022-azure-aarch64-with-glibc2.39",
+    "tools": {
+      "c_compiler": {
+        "path": "/home/runner/work/_temp/twine-arm64-sdk/c_compiler",
+        "sha256": "22e6e45888f2a14641e7e76c7c2230ee24fd82b24eee849873416889699bf28c"
+      },
+      "cxx_compiler": {
+        "path": "/home/runner/work/_temp/twine-arm64-sdk/cxx_compiler",
+        "sha256": "814ce3ac4aff441437449b167e104ef5f5ce50f47e80c896648d96bf74d062f2"
+      },
+      "cmake": {
+        "path": "/home/runner/work/_temp/twine-arm64-sdk/cmake-math",
+        "sha256": "5fa3f4f832dc4a05ef7defb706f6d204e13d05ba88dbb6cdd29086302317df1a"
+      },
+      "elf_inspector": {
+        "path": "/usr/bin/aarch64-linux-gnu-readelf",
+        "sha256": "6bca2bbd23b072db9e9a19ae0e65cf7b7c15c08a3c2cf01dd56453e1ac9340b1"
+      }
+    },
+    "host_tools": {
+      "cmake": {
+        "path": "/usr/local/bin/cmake",
+        "sha256": "52b0d0363cfbe58f39285503658d0f7f2796b3149d8982315d2e57c293838837",
+        "version": "cmake version 3.31.6"
+      },
+      "make": {
+        "path": "/usr/bin/make",
+        "sha256": "abbecc214fcadef6530d1cc137bde7ceb74cae3f6b992c7d10a8669a7314c7e0",
+        "version": "GNU Make 4.3"
+      },
+      "bison": {
+        "path": "/usr/bin/bison",
+        "sha256": "746581750f75fe81394562ab14f2d0942addface479685b9a11840ab8d002959",
+        "version": "bison (GNU Bison) 3.8.2"
+      },
+      "flex": {
+        "path": "/usr/bin/flex",
+        "sha256": "b0b03937b2b0ed6c8992dbee72c1978c4b545c14c8444b5256fb87d67a30f676",
+        "version": "flex 2.6.4"
+      }
+    },
+    "image_os": "ubuntu24-arm64",
+    "image_version": "20261012.149.1",
+    "runner_arch": "ARM64",
+    "compiler": {
+      "path": "/home/runner/work/_temp/twine-arm64-sdk/sdk/zig-aarch64-linux-0.15.2/zig",
+      "sha256": "931b8e9a9327dac87bc439067f07604219510fa541133ff6e542c6243968cc86"
+    },
+    "target_arch": "aarch64",
+    "flag_translation": "No x86 flag translation; ARM64 baseline CPU",
+    "math_library": "MATH_LIB=m; no absolute host libm",
+    "qualification": "experimental SDK; compiler target is not oldest kernel/CPU qualification"
+  },
+  "environment_digest": "01fa9d9da13f891bd91a34ca2c7c5d3af56aabad6fc834582e127144f155dd0d"
+}

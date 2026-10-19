@@ -1398,5 +1398,29 @@ com interceptação de execv, incluindo recusa de flags x86 no ARM. Foram observ
 falhando antes da implementação; a suíte local passou com **191 testes**, sete
 skips Windows. O workflow independente `linux-arm64-candidate.yml` prepara build,
 inspeção ELF/loader/símbolos e corpus/rede nos dois Pythons no Ubuntu ARM64 nativo.
-Resultado nativo ainda será registrado após a primeira rodada. T025/T028 seguem
-parciais até evidências próprias; não há aprovação por associação ao x64.
+O [primeiro build nativo](https://github.com/Extremois/desembaraca-twine/actions/runs/39316088153)
+da revisão `3021bdd3d0477d5c94ea3514dd5d0c742a60ad0a` passou. O
+[recibo ARM64](evidence/linux-arm64-native-build-2026-10-19/summary.json) preserva
+SDK/proveniência, readelf, corpus, observação/controle de rede, inventário e log.
+O runner registrou imagem `ubuntu24-arm64` `20261012.149.1`, kernel
+`6.17.0-1022-azure` e glibc 2.39. Os Pythons nativos foram 3.12.15 e 3.14.8.
+
+Após download, hashes/tamanhos/modos/timestamps do ZIP foram conferidos;
+cabeçalho ELF AArch64 e segmento PT_INTERP foram lidos diretamente do binário.
+O motor tem 6.801.616 bytes, SHA-256
+`933b6c63370bdd3e814627e2a9a06176416c8da017a21dcbc96d8137dbc17e22`,
+loader `/lib/ld-linux-aarch64.so.1`, dependências libc/libm/libpthread e maior
+símbolo glibc 2.17 observado. Não foram observados RPATH/RUNPATH no readelf.
+Isso não substitui execução em kernel/CPU/glibc antigos.
+
+Os 13 casos e relocação Unicode passaram em cada Python; strace acompanhou
+oito execuções do motor por slot, sem chamadas de rede no corpus. O controle
+positivo em subprocesso detectou sockets/conexões e todos os hashes dos rastros
+foram conferidos. O pacote de 6.816.082 bytes contém somente o motor e COPYING
+Graphviz; não há fechamento de fontes/objetos ou avisos completos aprovado.
+T025/T028/T030 permanecem parciais, total **48/84**, sem promoção de suporte.
+
+A mesma revisão passou na
+[regressão de seis combinações](https://github.com/Extremois/desembaraca-twine/actions/runs/39316088056),
+nos [dois builds macOS](https://github.com/Extremois/desembaraca-twine/actions/runs/39316088020)
+e no [build/reconstrução Linux x64](https://github.com/Extremois/desembaraca-twine/actions/runs/39316088025).

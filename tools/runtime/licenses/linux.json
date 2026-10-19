@@ -97,7 +97,17 @@
       "artifact_id": "linux-glibc-aarch64",
       "status": "pending",
       "approved": false,
-      "pending_reason": "No native build/linkage/source-notice audit available for this variant."
+      "pending_reason": "Native ARM64 build/corpus/network observations available; linker/source closure and complete source-notice audit remain pending.",
+      "native_build_observations": [
+        {
+          "approved": false,
+          "qualified": false,
+          "evidence": "specs/003-add-cross-platform-support/evidence/linux-arm64-native-build-2026-10-19/summary.json",
+          "executable_sha256": "933b6c63370bdd3e814627e2a9a06176416c8da017a21dcbc96d8137dbc17e22",
+          "provenance_sha256": "646c06d1aba84e476bdea2cd4ff10d6b8044dbf441ed7228f78994b1819ea9d9",
+          "scope": "Initial native ARM64 build/corpus/network observations; only Graphviz COPYING bundled, complete source/license audit pending"
+        }
+      ]
     },
     {
       "artifact_id": "linux-musl-x86_64",
