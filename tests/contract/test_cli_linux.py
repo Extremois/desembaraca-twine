@@ -2,6 +2,7 @@
 import contextlib
 import io
 import os
+from pathlib import Path
 import unittest
 from unittest.mock import patch
 from common import fixture
@@ -28,7 +29,10 @@ class LinuxCliTests(unittest.TestCase):
                     self.assertEqual(code,0,err)
                     self.assertIn('melhor esforço',err)
                     self.assertNotIn('Aviso:',out)
-                    self.assertIn(str(root).replace('\\\\?\\',''),out.replace('\\\\?\\',''))
+                    generated=Path(next(line.removeprefix('Arquivo gerado: ') for line in out.splitlines()
+                                        if line.startswith('Arquivo gerado: ')))
+                    self.assertTrue(generated.is_absolute() and generated.is_file())
+                    self.assertTrue(generated.parent.samefile(root))
                     self.assertEqual(out.count(' -> '),3)
                 self.assertEqual(source.read_bytes(),fixture())
                 self.assertEqual(len(transport.calls),1)

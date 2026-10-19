@@ -1,6 +1,7 @@
 """Darwin metadata simulation; real signing/Intel/ARM acceptance is separate."""
 import contextlib
 import io
+from pathlib import Path
 import unittest
 from common import fixture
 from posix_support import simulated_runtime
@@ -25,6 +26,9 @@ class MacCliTests(unittest.TestCase):
             out,err=io.StringIO(),io.StringIO()
             with contextlib.redirect_stdout(out),contextlib.redirect_stderr(err):
                 self.assertEqual(cli.main([str(source)]),0,err.getvalue())
-            self.assertIn(str(root),out.getvalue())
+            generated=Path(next(line.removeprefix('Arquivo gerado: ') for line in out.getvalue().splitlines()
+                                if line.startswith('Arquivo gerado: ')))
+            self.assertTrue(generated.is_absolute() and generated.is_file())
+            self.assertTrue(generated.parent.samefile(root))
             self.assertIn('melhor esforço',err.getvalue())
             self.assertEqual(source.read_bytes(),fixture())
