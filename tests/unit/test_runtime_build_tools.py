@@ -18,6 +18,35 @@ def tool(name):
 
 
 class BuildToolTests(unittest.TestCase):
+    def test_ci_source_download_rejects_tampering_and_preserves_existing_file(self):
+        import io
+        bootstrap = tool('prepare-linux-ci')
+        lock = dict(url='https://example.invalid/pinned', size=4,
+                    sha256=hashlib.sha256(b'good').hexdigest())
+        with tempfile.TemporaryDirectory() as folder:
+            target = Path(folder) / 'source'
+            for content in (b'evil', b'good-extra', b'bad'):
+                with patch.object(bootstrap.urllib.request, 'urlopen', return_value=io.BytesIO(content)):
+                    with self.assertRaises(ValueError):
+                        bootstrap.download(lock, target)
+                self.assertFalse(target.exists())
+            target.write_bytes(b'existing')
+            with patch.object(bootstrap.urllib.request, 'urlopen', return_value=io.BytesIO(b'good')):
+                with self.assertRaises(FileExistsError):
+                    bootstrap.download(lock, target)
+            self.assertEqual(target.read_bytes(), b'existing')
+
+    def test_ci_source_download_accepts_only_exact_pinned_bytes(self):
+        import io
+        bootstrap = tool('prepare-linux-ci')
+        with tempfile.TemporaryDirectory() as folder:
+            target = Path(folder) / 'source'
+            lock = dict(url='https://example.invalid/pinned', size=4,
+                        sha256=hashlib.sha256(b'good').hexdigest())
+            with patch.object(bootstrap.urllib.request, 'urlopen', return_value=io.BytesIO(b'good')):
+                bootstrap.download(lock, target)
+            self.assertEqual(target.read_bytes(), b'good')
+
     def test_cross_libc_build_requires_explicit_static_musl_experiment(self):
         builder=tool('build-common')
         from twine_edge_overlap.runtime_platform import HostEnvironment
