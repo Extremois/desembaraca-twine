@@ -300,3 +300,13 @@ Os 16 arquivos do ZIP tiveram conteúdo, tamanho, permissões e timestamps
 verificados após download do artefato Actions. Inclui conferência do Flex 2.6.4,
 162 headers SDK, nove arquivos gerados e corpus/rede nos dois Pythons. A
 coleção permanece rascunho: não é auditoria aprovada nem distribuição admitida.
+
+`linux-native-data-package-2026-10-19/graphviz-data-evidence.json` vincula os
+seis inputs do arquivo Graphviz fixado aos dois headers reproduzidos e aos
+valores das referências oficiais: 147 cores SVG, 252 entidades e 674 cores
+X.Org coincidentes, com cinco diferenças Graphviz explícitas. `summary.json`
+vincula esse relatório ao novo ZIP com 17 notices, inventário, proveniência,
+corpus e traces nos dois Pythons. As referências usadas estão fixadas por hash
+em `tools/runtime/licenses/data-references/`. Igualdade de valores e reprodução
+dos headers são verificações técnicas; a cadeia histórica de cópia e a
+aplicabilidade das licenças continuam sob revisão.

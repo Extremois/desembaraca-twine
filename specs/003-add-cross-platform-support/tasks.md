@@ -12,6 +12,8 @@
 
 **Pacote nativo em 2026-10-19**: CI gerou ZIP glibc x64 com 15 notices vinculados ao build, inventário e conferência do gerador Flex 2.6.4. Hashes/modos dos 16 arquivos foram conferidos após baixar o artefato; corpus e rede passaram nos dois Pythons. Ver [recibo do pacote](evidence/linux-native-notice-package-2026-10-19/summary.json). T028/T030 seguem parciais até completar auditoria de componentes/fontes e qualificação.
 
+**Dados gerados em 2026-10-19**: CI reproduziu em bytes colortbl.h/entities.h a partir dos seis inputs fixados e comparou os valores com W3C/X.Org; cinco diferenças Graphviz registradas. Pacote atualizado com 17 notices e corpus/rede aprovados nos dois Pythons. Ver [evidência dos dados](evidence/linux-native-data-package-2026-10-19/graphviz-data-evidence.json). T030 permanece parcial: correspondência técnica não conclui a cadeia histórica/aplicabilidade de licenças nem a auditoria SDK/fontes.
+
 **Tests**: exigidos explicitamente por FR-007/008/013/016 e SC-001–010. Acrescentar casos de contrato antes do comportamento correspondente, observar falha pertinente e executar regressões após a implementação; testes já corretos podem passar. Não exigir falha artificial do baseline.
 
 **Organization**: setup → fundação → histórias US1/US2/US3 (P1) → US4 (P2) → fechamento. Caminhos são relativos à raiz do repositório. Arquivos novos são entregáveis futuros, não arquivos já existentes.

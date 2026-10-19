@@ -1067,3 +1067,49 @@ continuam falsos: aplicabilidade por arquivo SDK/dados, proveniência W3C/X11,
 fontes correspondentes completas e aceite nativo ainda faltam. O ZIP é somente
 artefato de CI por sete dias; não houve release nem entrada POSIX no catálogo.
 T028/T030 avançaram parcialmente; contagem mantida em **46/84**.
+
+### Correspondência e reprodução dos dados Graphviz — 2026-10-19
+
+Foram obtidas referências oficiais W3C SVG 1.1 Second Edition (2011), HTML 4.01
+(1999) e X.Org rgb 1.1.0 (2022), preservadas com hashes/tamanhos e origem em
+`tools/runtime/licenses/data-references/`. O arquivo X.Org foi lido sem executar
+seus programas; rgb.txt e COPYING foram preservados separadamente com hashes
+dos membros e do arquivo original. O CI usa esses bytes locais sem downloads
+adicionais de referências.
+
+`audit-graphviz-data.py` compara os seis inputs originais com o tar Graphviz
+fixado, vincula a evidência ao executável/proveniências e recompõe as tabelas
+em temporário com os geradores upstream conferidos. As saídas devem coincidir
+em bytes com os headers usados na compilação e seus hashes. Limites por gerador:
+10 segundos/1 MiB de stdout+stderr; leitura de referência até 1 MiB e headers até
+8 MiB. O preparo de notices refaz a conferência do relatório antes de incorporá-lo.
+
+Quatro testes foram observados falhando antes da implementação e depois
+passaram: aliases conflitantes/canais inválidos, parsing W3C sem executar HTML,
+diferenças inesperadas Graphviz/X.Org e material de referência fixado. A
+regressão local passou com **173 testes**, sete skips Windows.
+
+Na revisão `a605dfeb870e3f8c2039971a299272d4f075aab9`, o
+[job nativo 39245172539](https://github.com/Extremois/desembaraca-twine/actions/runs/39245172539)
+e a [regressão compartilhada 39245172427](https://github.com/Extremois/desembaraca-twine/actions/runs/39245172427)
+passaram. Foram reproduzidos `colortbl.h` (102.902 bytes) e `entities.h` (4.751
+bytes). As 147 cores SVG e as 252 entidades coincidiram com W3C; 674 cores
+coincidiram com X.Org após normalização de caixa/espaços. As cinco diferenças
+conhecidas são gray/grey (192 no Graphviz versus 190 no X.Org), e os três nomes
+invis/none/transparent com alpha zero, ausentes nessa referência X.Org.
+
+O pacote passou a conter 17 notices e o executável: 18 arquivos, 6.140.748 bytes,
+SHA-256 `ada65a144386e1207217f8725a0335e94abc557767c6d12bb068756a8132d210`.
+Foram conferidos após download todos os hashes/modos/timestamps do ZIP e
+preservados os relatórios/notices/traces no
+[recibo dos dados](evidence/linux-native-data-package-2026-10-19/summary.json).
+Os 13 casos passaram nos dois Pythons com zero chamadas de rede observadas e
+controle de conexão detectado. O executável manteve o hash do incremento anterior.
+
+O novo COPYING X.Org e DATA-ORIGINS preservam o material de origem/referência.
+O ledger diferencia correspondência numérica/reprodução de código gerado da
+cadeia histórica de cópia e da decisão de aplicabilidade de licença: essas
+últimas não foram aprovadas por comparação automática. Auditoria dos inputs
+estáticos SDK, fontes correspondentes completas e qualificação permanecem
+pendentes. Não houve admissão no catálogo nem release; T030 segue parcial e
+a contagem permanece **46/84**.

@@ -170,6 +170,22 @@ em `licenses/material-source-lock.json` e entra no pacote sem alterações.
 Essa conferência resolve esse material do gerador; a aplicação das demais
 licenças e a completude das fontes continuam sob revisão.
 
+`audit-graphviz-data.py` confere os seis inputs originais das tabelas de cores
+e entidades contra o arquivo-fonte fixado. Executa os dois geradores upstream
+com tempo/saída limitados, em temporário isolado, e exige igualdade de bytes
+entre a reconstrução e os headers registrados na evidência de compilação.
+Também compara os valores com referências W3C SVG 1.1/HTML 4.01 e X.Org rgb
+1.1.0, preservadas com hashes em `licenses/data-references/`, sem rede no CI.
+Registra as cinco diferenças conhecidas da tabela Graphviz em relação ao rgb
+do X.Org e recusa outras diferenças; aliases de caixa/espaços só são aceitos
+quando os valores coincidem.
+
+O preparo de notices recebe esse relatório em `--data-evidence`, refaz a
+conferência e adiciona o COPYING do X.Org e `DATA-ORIGINS.txt`, preservando o
+comentário de origem SVG presente na fonte. A comparação prova correspondência
+dos valores e dos bytes gerados. Ela não prova a cadeia histórica de cópia nem
+conclui a aplicação das licenças; os indicadores de aprovação continuam falsos.
+
 O CI nativo executa esse preparo, gera inventário e ZIP candidato e repete o
 corpus com rastreamento de rede nos dois Pythons. O ZIP mantém os bytes/modos
 inventariados e timestamps fixos. É um artefato experimental de revisão com

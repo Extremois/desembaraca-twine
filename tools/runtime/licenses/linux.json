@@ -453,6 +453,113 @@
       "evidence": "specs/003-add-cross-platform-support/evidence/linux-native-notice-package-2026-10-19/summary.json",
       "flex_generator_version": "2.6.4",
       "pending": "Per-file SDK/data applicability, W3C/X11 origins, complete corresponding sources, native baseline and whole-cell acceptance"
+    },
+    {
+      "artifact_id": "linux-glibc-x86_64",
+      "environment_kind": "native",
+      "approved": false,
+      "qualified": false,
+      "executable_sha256": "43ce8d686720467c21be91cab4b8f3b246baae49c2cfe293714ebdf8a82f5716",
+      "provenance_sha256": "3cb3a1df7ac1ee188e565e870323425d663028ba8addeea0fbd6d62e0a608e9d",
+      "archive_sha256": "ada65a144386e1207217f8725a0335e94abc557767c6d12bb068756a8132d210",
+      "archive_bytes": 6140748,
+      "inventory_sha256": "3fb4f079421a52d4d122b937e0dc82a8074a978e1e0a7f8de681cb77a873e3a1",
+      "notices": 17,
+      "sdk_headers_verified": 162,
+      "generated_files_verified": 9,
+      "evidence": "specs/003-add-cross-platform-support/evidence/linux-native-data-package-2026-10-19/summary.json",
+      "flex_generator_version": "2.6.4",
+      "pending": "Per-file SDK/data license applicability and historical copying, complete corresponding sources, native baseline and whole-cell acceptance"
+    }
+  ],
+  "generated_data_evidence": [
+    {
+      "artifact_id": "linux-glibc-x86_64",
+      "approved": false,
+      "qualified": false,
+      "executable_sha256": "43ce8d686720467c21be91cab4b8f3b246baae49c2cfe293714ebdf8a82f5716",
+      "provenance_sha256": "b7a855a49452763c251cc16fed7cc6cd27d897c956a665b4848dfe35fde7ff52",
+      "evidence": "specs/003-add-cross-platform-support/evidence/linux-native-data-package-2026-10-19/graphviz-data-evidence.json",
+      "comparison": {
+        "svg_colors_matched": 147,
+        "html_entities_matched": 252,
+        "xorg": {
+          "matched": 674,
+          "differences": {
+            "gray": {
+              "graphviz": [
+                192,
+                192,
+                192,
+                255
+              ],
+              "reference": [
+                190,
+                190,
+                190
+              ]
+            },
+            "grey": {
+              "graphviz": [
+                192,
+                192,
+                192,
+                255
+              ],
+              "reference": [
+                190,
+                190,
+                190
+              ]
+            },
+            "invis": {
+              "graphviz": [
+                255,
+                255,
+                254,
+                0
+              ],
+              "reference": null
+            },
+            "none": {
+              "graphviz": [
+                255,
+                255,
+                254,
+                0
+              ],
+              "reference": null
+            },
+            "transparent": {
+              "graphviz": [
+                255,
+                255,
+                254,
+                0
+              ],
+              "reference": null
+            }
+          }
+        }
+      },
+      "reproduced_tables": [
+        {
+          "path": "lib/common/common/colortbl.h",
+          "sha256": "7cd53d4b8667696af35a23911a93875797511d5a70c1b46987c7e80d0563d6f3",
+          "size": 102902,
+          "generator": "make_colortbl.py",
+          "reproduced": true
+        },
+        {
+          "path": "lib/common/common/entities.h",
+          "sha256": "3c4c841918e18424c51f58423e510b1537be15a1c6518ec25d88321a5fee2da1",
+          "size": 4751,
+          "generator": "entities.py",
+          "reproduced": true
+        }
+      ],
+      "historical_copying_proven": false,
+      "pending": "Historical copying and license applicability review remain distinct from verified reference values and reproduced tables"
     }
   ]
 }
