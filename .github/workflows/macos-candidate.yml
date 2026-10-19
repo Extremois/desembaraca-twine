@@ -78,5 +78,6 @@ jobs:
           path: |
             .tmp/native-macos/
             ${{ runner.temp }}/twine-macos-sdk/sdk-record.json
+            ${{ runner.temp }}/twine-macos-sdk/sdk-inventory.json
             ${{ runner.temp }}/twine-macos-build/provenance.json
             ${{ runner.temp }}/twine-macos-package/

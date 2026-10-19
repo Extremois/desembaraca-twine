@@ -3,6 +3,7 @@ from pathlib import Path
 import tempfile
 import unittest
 from unittest.mock import patch
+import hashlib
 
 HERE = Path(__file__).resolve().parents[2] / 'tools/runtime'
 
@@ -15,6 +16,19 @@ def tool():
 
 
 class MacosCITests(unittest.TestCase):
+    def test_sdk_identity_binds_header_bytes_and_enforces_expansion_budget(self):
+        module = tool()
+        with tempfile.TemporaryDirectory() as directory:
+            sdk = Path(directory)
+            (sdk / 'header.h').write_bytes(b'first')
+            first = module.sdk_identity(sdk)
+            self.assertEqual(first['files'][0]['sha256'], hashlib.sha256(b'first').hexdigest())
+            (sdk / 'header.h').write_bytes(b'other')
+            self.assertNotEqual(first['sha256'], module.sdk_identity(sdk)['sha256'])
+            with patch.object(module, 'MAX_SDK_BYTES', 2):
+                with self.assertRaises(ValueError):
+                    module.sdk_identity(sdk)
+
     def test_requires_matching_native_architecture_before_creating_output(self):
         module = tool()
         with tempfile.TemporaryDirectory() as directory:

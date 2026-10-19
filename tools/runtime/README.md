@@ -35,6 +35,26 @@ instalação da distribuição e aceite completo continuam como etapas separadas
 
 ## Build offline por variante
 
+### Candidatas macOS nativas
+
+`macos-candidate.yml` usa runners macOS 15 separados: `macos-15-intel` e
+`macos-15` Apple Silicon. `prepare-macos-ci.py --work PASTA_NOVA --arch x86_64`
+(ou `aarch64`) exige arquitetura nativa, Xcode 16.4 build 16F6 e SDK 15.5.
+Seleciona o Xcode por `DEVELOPER_DIR` no processo, sem alterar `xcode-select`.
+Registra hashes dos compiladores, ferramentas reais obtidas por `xcrun`,
+SDKSettings, arquivos/links da árvore SDK e versões/imagem do runner. O inventário
+preserva somente nomes relativos, tamanhos/hashes e destinos de links, sem copiar
+o SDK Apple para o artifact. Isso identifica a execução, sem prometer rebuild
+idêntico ou qualificar a imagem como célula de suporte.
+
+O workflow fornece Bison 3 via Homebrew somente no runner efêmero quando ausente.
+A receita fixa deployment target 15.0 e usa bibliotecas Graphviz internas
+estáticas. Cada arquitetura executa o corpus e relocação Unicode em Python
+3.12/3.14 e preserva inventário, medições Mach-O, proveniência e ZIP por sete
+dias. O pacote de build contém apenas o aviso Graphviz inicial; notices e
+auditoria completos continuam em T052. Não há uso de credenciais Apple,
+assinatura Developer ID, notarização ou promoção de suporte nessa execução.
+
 Para revisar as fontes da candidata glibc x64, `pack-sources.py --help` descreve
 o coletor separado do ZIP do runtime. O workflow também reconstrói o motor a
 partir desse pacote em uma pasta nova. As entradas e comandos estão em

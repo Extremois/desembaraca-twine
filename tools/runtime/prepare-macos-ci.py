@@ -15,6 +15,34 @@ SPEC = importlib.util.spec_from_file_location('macos_source_download', HERE / 'p
 DOWNLOADER = importlib.util.module_from_spec(SPEC)
 SPEC.loader.exec_module(DOWNLOADER)
 DEVELOPER = Path('/Applications/Xcode_16.4.app/Contents/Developer')
+MAX_SDK_BYTES = 4 * 1024**3
+
+
+def sdk_identity(root):
+    """Hash source/header/stub bytes and link destinations without copying SDK."""
+    root = Path(root).resolve(strict=True)
+    rows, total = [], 0
+    for path in sorted(root.rglob('*')):
+        if len(rows) >= 100000:
+            raise ValueError('SDK inventory count exceeds budget')
+        name = path.relative_to(root).as_posix()
+        if path.is_symlink():
+            target = os.readlink(path)
+            if not path.resolve().is_relative_to(root):
+                raise ValueError('SDK link escapes recorded tree')
+            rows.append(dict(path=name, type='symlink', target=target))
+        elif path.is_file():
+            size = path.stat().st_size
+            total += size
+            if size > 64 * 1024**2 or total > MAX_SDK_BYTES:
+                raise ValueError('SDK file bytes exceed budget')
+            rows.append(dict(path=name, type='file', size=size, sha256=DOWNLOADER.digest(path)))
+        elif not path.is_dir():
+            raise ValueError('SDK contains a special file')
+    if not rows:
+        raise ValueError('SDK inventory is empty')
+    canonical = json.dumps(rows, sort_keys=True, separators=(',', ':')).encode()
+    return dict(sha256=hashlib.sha256(canonical).hexdigest(), bytes=total, entries=len(rows), files=rows)
 
 
 def command(args):
@@ -67,6 +95,8 @@ def prepare(work, arch):
     work.mkdir(mode=0o700, parents=True, exist_ok=False)
     source = json.loads((HERE / 'source-lock.json').read_bytes())
     DOWNLOADER.download(source, work / 'graphviz.tar.gz')
+    sdk_inventory = sdk_identity(sdk)
+    (work / 'sdk-inventory.json').write_text(json.dumps(sdk_inventory, indent=2) + '\n', encoding='utf-8')
     wrapper = work / 'cmake-native'
     wrapper.write_text(cmake_wrapper(cmake['path'], sdk, bison['path'], flex['path'], sys.executable,
                                     make['path']), encoding='utf-8')
@@ -79,12 +109,13 @@ def prepare(work, arch):
         host_tools[name]['version'] = command([host_tools[name]['path'], '--version']).splitlines()[0]
     facts = dict(provider='Apple Xcode', xcode=version, developer_dir=str(DEVELOPER),
         sdk_path=str(sdk), sdk_version=sdk_version, sdk_settings_sha256=DOWNLOADER.digest(sdk / 'SDKSettings.json'),
+        sdk_tree_sha256=sdk_inventory['sha256'], sdk_tree_entries=sdk_inventory['entries'], sdk_tree_bytes=sdk_inventory['bytes'],
         compiler_version=command([tools['c_compiler']['path'], '--version']), host_tools=host_tools,
         target_os='darwin', target_arch=arch, deployment_target='15.0', environment_kind='native',
         kernel=platform.release(), macos=platform.mac_ver()[0],
         image_os=os.environ.get('ImageOS'), image_version=os.environ.get('ImageVersion'),
         runner_arch=os.environ.get('RUNNER_ARCH'),
-        limitations='SDKSettings/tool hashes identify this run; full SDK tree and dependency/license audit still pending')
+        limitations='SDK tree/tool hashes identify this run; dependency/license audit and qualified environment snapshot still pending')
     record = dict(**tools, facts=facts,
         environment_digest=hashlib.sha256(json.dumps(facts, sort_keys=True, separators=(',', ':')).encode()).hexdigest())
     (work / 'sdk-record.json').write_text(json.dumps(record, indent=2) + '\n', encoding='utf-8')
