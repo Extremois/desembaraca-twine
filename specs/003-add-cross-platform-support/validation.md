@@ -1163,3 +1163,41 @@ O ledger distingue declaração de licença e material observado de aprovação
 de compatibilidade. Obrigações/aplicabilidade por arquivo, oferta completa de
 fontes, baseline antigo e qualificação continuam pendentes. T028/T030 seguem
 parciais, total **46/84**, sem admissão de runtime POSIX, release ou VM local.
+
+## Fontes exportadas e reconstrução nativa — 2026-10-19
+
+`pack-sources.py` reúne material de fontes separado do ZIP do runtime: tarball
+Graphviz original, árvore `lib/` e licença raiz do SDK fixado, scripts/receitas,
+referências de licença e os módulos Python auxiliares com licença Apache.
+Não coleta compilador executável, caches ou o restante do checkout. Recusa
+archives adulterados, links/traversal, proveniência/receita divergente e saídas
+existentes; registra limites de expansão e manifesto por arquivo. Os dois testes
+novos verificam essas recusas e a execução da receita fora do checkout.
+
+A primeira execução encontrou falta dos módulos auxiliares exportados; o teste
+isolado reproduziu a falha antes da correção. A revisão
+`a84931f1464061e4225a5841f3888be3d2d851ce` passou com **179 testes locais**,
+sete skips, e nas seis combinações da
+[regressão compartilhada](https://github.com/Extremois/desembaraca-twine/actions/runs/39273788359).
+O [workflow nativo](https://github.com/Extremois/desembaraca-twine/actions/runs/39273788202)
+exportou, extraiu em diretório novo e reconstruiu o motor usando essas fontes e
+receitas. O SDK compilador foi adquirido novamente por hash; os geradores e
+ferramentas do host vieram da imagem registrada. O corpus usa o checkout da
+execução para verificar a aplicação, sem depender dele para compilar o motor.
+
+O pacote contém **18.150 arquivos**, incluindo **18.102 arquivos SDK**, com
+68.279.518 bytes comprimidos. Todos os tamanhos/hashes do manifesto foram
+conferidos após download, assim como ausência do compilador e vínculo com a
+proveniência original. A candidata original passou nos 13 casos em Python
+3.12.15/3.14.8; o motor reconstruído passou nos 13 casos em 3.14.8. Os três
+ensaios observaram zero chamadas de rede e detectaram o controle em processo
+filho. O executável reconstruído tem hash diferente: comprova reconstrução
+funcional, sem alegar reprodução byte a byte.
+
+O [recibo](evidence/linux-source-rebuild-2026-10-19/summary.json) preserva
+manifesto comprimido, proveniências, corpus, traces e log de reconstrução.
+O pacote grande permanece no artifact de CI por sete dias, sem incorporá-lo ao
+Git ou ao download do runtime. Essa retenção temporária não constitui oferta
+permanente de fontes. Revisão por arquivo, auditoria completa, baseline antigo
+e qualificação instalada seguem pendentes; T030/T066 continuam parciais,
+**46/84**, catálogo POSIX sem promoção.

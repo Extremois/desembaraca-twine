@@ -659,5 +659,25 @@
       ],
       "canonical_lgpl_material": "tools/runtime/licenses/lgpl-2.1-COPYING.txt"
     }
+  ],
+  "source_review_packages": [
+    {
+      "artifact_id": "linux-glibc-x86_64",
+      "approved": false,
+      "evidence": "specs/003-add-cross-platform-support/evidence/linux-source-rebuild-2026-10-19/summary.json",
+      "executable_sha256": "43ce8d686720467c21be91cab4b8f3b246baae49c2cfe293714ebdf8a82f5716",
+      "source_archive_sha256": "c7519a11144cebce389a31b5b1f4fd886f25caaffc62b2089f4048b22d6f7752",
+      "source_files_verified": 18150,
+      "sdk_files_verified": 18102,
+      "rebuild_completed": true,
+      "rebuilt_executable_sha256": "e712acb3f95800ba373096c21611e299b819daf67ae9b0981cb59ed6b9cb8ff6",
+      "byte_identical": false,
+      "pending": [
+        "Functional source rebuild, not byte-for-byte reproducibility",
+        "SDK compiler is reacquired by verified hash; host build tools come from recorded runner image",
+        "Artifacts retained seven days, not an immutable public source offer",
+        "Per-file applicability, full reviewed license audit, old kernel/CPU and installed-cell qualification remain pending"
+      ]
+    }
   ]
 }

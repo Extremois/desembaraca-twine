@@ -16,6 +16,8 @@
 
 **Objetos SDK em 2026-10-19**: CI conferiu três objetos/quatro unidades e cinco fontes glibc contra o SDK fixado; preservou os avisos por fonte e corrigiu a ausência da LGPL 2.1 integral. Pacote com 23 notices, corpus/rede nos dois Pythons aprovados. Ver [recibo glibc](evidence/linux-native-glibc-license-package-2026-10-19/summary.json). Declarações/exceções são registradas por arquivo; T028/T030 continuam parciais até revisão completa das obrigações/fontes e qualificação.
 
+**Fontes e reconstrução em 2026-10-19**: pacote separado com 18.150 arquivos, incluindo 18.102 fontes/headers/dados/avisos do SDK e o tarball Graphviz original. Hashes conferidos após download; receitas exportadas reconstruíram o motor no Ubuntu nativo e passaram pelos 13 casos sob strace. A reconstrução é funcional, com binário diferente em bytes. Ver [recibo de reconstrução](evidence/linux-source-rebuild-2026-10-19/summary.json). T030/T066 avançam parcialmente; oferta permanente, revisão por arquivo e qualificação seguem pendentes, sem alterar 46/84.
+
 **Tests**: exigidos explicitamente por FR-007/008/013/016 e SC-001–010. Acrescentar casos de contrato antes do comportamento correspondente, observar falha pertinente e executar regressões após a implementação; testes já corretos podem passar. Não exigir falha artificial do baseline.
 
 **Organization**: setup → fundação → histórias US1/US2/US3 (P1) → US4 (P2) → fechamento. Caminhos são relativos à raiz do repositório. Arquivos novos são entregáveis futuros, não arquivos já existentes.

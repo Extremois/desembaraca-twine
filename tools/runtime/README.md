@@ -35,6 +35,12 @@ instalação da distribuição e aceite completo continuam como etapas separadas
 
 ## Build offline por variante
 
+Para revisar as fontes da candidata glibc x64, `pack-sources.py --help` descreve
+o coletor separado do ZIP do runtime. O workflow também reconstrói o motor a
+partir desse pacote em uma pasta nova. As entradas e comandos estão em
+[REBUILD-SOURCES.md](REBUILD-SOURCES.md). O artifact de fontes dura sete dias;
+não substitui a oferta permanente nem a revisão completa de licenças.
+
 `source-lock.json` fixa os bytes reais do arquivo-fonte Graphviz 16.1.0,
 revisão Git e licença. Obtenha esse arquivo da URL registrada e confira o hash.
 As seis receitas não instalam compiladores nem dependências automaticamente.
