@@ -102,16 +102,31 @@ def capture_extractions(path, linkage, build_root):
                        extracted_member_count=len(members[absolute])) for absolute, item in sorted(archives.items())])
 
 
+def relink_variant(host, record):
+    variants = {'linux-glibc-x86_64': ('x86_64', 'glibc'),
+                'linux-glibc-aarch64': ('aarch64', 'glibc'),
+                'linux-musl-x86_64': ('x86_64', 'musl')}
+    variant = variants.get(record.get('artifact_id'))
+    if variant is None or record.get('completed') is not True:
+        raise ValueError('Expected a completed supported Linux source build')
+    arch, abi = variant
+    if (host.os, host.arch, host.libc_family, host.translated) != ('linux', arch, 'glibc', False):
+        raise ValueError('Relink requires the matching native Linux glibc host')
+    recipe = record.get('recipe', {})
+    if not isinstance(recipe, dict):
+        raise ValueError('Source recipe must be an object')
+    if ((record.get('native_os'), record.get('native_arch')) != ('linux', arch)
+            or (recipe.get('os'), recipe.get('arch'), recipe.get('abi')) != ('linux', arch, abi)):
+        raise ValueError('Source provenance architecture or ABI differs from its artifact')
+    return abi == 'musl'
+
+
 def relink(source_output, output, zig):
     source_output = source_output.resolve(strict=True)
     provenance_path = source_output / 'provenance.json'
     record = json.loads(provenance_path.read_text(encoding='utf-8'))
     host = detect_host()
-    if (host.os, host.arch, host.libc_family, host.translated) != ('linux', 'x86_64', 'glibc', False):
-        raise ValueError('This experimental relink requires native Linux glibc x86_64 instructions')
-    if not record.get('completed') or record['artifact_id'] not in ('linux-glibc-x86_64','linux-musl-x86_64'):
-        raise ValueError('Expected completed glibc or static musl x86_64 source build')
-    musl = record['artifact_id']=='linux-musl-x86_64'
+    musl = relink_variant(host, record)
     if musl and any(record.get('static_elf_inspection',{}).get(key) is not True for key in
                     ('no_interpreter','no_dynamic_section','no_needed_libraries','no_glibc_symbols')):
         raise ValueError('musl relink requires measured static source candidate')

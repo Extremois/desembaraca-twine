@@ -44,6 +44,12 @@ arquivo e executável Zig 0.15.2 específicos de ARM64, usa CPU baseline e alvo
 O preparador x64 continua disponível sem `--arch`, selecionando o host nativo.
 Ferramentas ausentes são instaladas somente no runner efêmero.
 
+`relink-zig.py` refaz o link no mesmo host/SDK, exige igualdade de bytes com a
+referência do compilador e captura entradas e extrações de archives. O coletor
+`audit-graphviz-sources.py` confere os objetos e as declarações de dependência do
+compilador, comparando fontes Graphviz com o tarball fixado. Isso registra as
+entradas observadas; retenção de seções e auditoria de licenças continuam separadas.
+
 O workflow confere ELF AArch64, loader `/lib/ld-linux-aarch64.so.1`, bibliotecas,
 RPATH e limite de símbolos glibc 2.27, preservando o relatório readelf. Executa
 os 13 casos/relocação Unicode com Python 3.12/3.14 sob strace e controle positivo

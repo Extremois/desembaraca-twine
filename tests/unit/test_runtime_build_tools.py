@@ -18,6 +18,25 @@ def tool(name):
 
 
 class BuildToolTests(unittest.TestCase):
+    def test_relink_requires_native_host_and_matching_completed_provenance(self):
+        from twine_edge_overlap.runtime_platform import HostEnvironment
+        relinker = tool('relink-zig')
+        for arch in ('x86_64', 'aarch64'):
+            record = dict(completed=True, artifact_id='linux-glibc-' + arch,
+                          native_os='linux', native_arch=arch,
+                          recipe=dict(os='linux', arch=arch, abi='glibc'))
+            host = HostEnvironment(os='linux', arch=arch, libc_family='glibc')
+            self.assertFalse(relinker.relink_variant(host, record))
+            for bad_host in (HostEnvironment(os='linux', arch=arch, libc_family='musl'),
+                             HostEnvironment(os='linux', arch=arch, libc_family='glibc', translated=True),
+                             HostEnvironment(os='linux', arch='aarch64' if arch=='x86_64' else 'x86_64', libc_family='glibc')):
+                with self.assertRaises(ValueError):
+                    relinker.relink_variant(bad_host, record)
+            for altered in (dict(record, completed=False), dict(record, native_arch='wrong'),
+                            dict(record, recipe=dict(os='linux', arch=arch, abi='musl'))):
+                with self.assertRaises(ValueError):
+                    relinker.relink_variant(host, altered)
+
     def test_linux_sdk_selects_exact_native_architecture_before_download(self):
         bootstrap = tool('prepare-linux-ci')
         for arch in ('x86_64', 'aarch64'):
@@ -207,7 +226,8 @@ class BuildToolTests(unittest.TestCase):
         from twine_edge_overlap.runtime_platform import HostEnvironment
         with tempfile.TemporaryDirectory() as folder:
             root=Path(folder)
-            (root/'provenance.json').write_text(json.dumps(dict(completed=True,artifact_id='linux-musl-x86_64')))
+            (root/'provenance.json').write_text(json.dumps(dict(completed=True,artifact_id='linux-musl-x86_64',
+                native_os='linux',native_arch='x86_64',recipe=dict(os='linux',arch='x86_64',abi='musl'))))
             with patch.object(relinker,'detect_host',return_value=HostEnvironment(os='linux',arch='x86_64',libc_family='glibc')):
                 with self.assertRaisesRegex(ValueError,'static'):relinker.relink(root,root/'new',root/'zig')
             self.assertFalse((root/'new').exists())
@@ -227,6 +247,7 @@ class BuildToolTests(unittest.TestCase):
             zig=root/'zig'
             zig.write_bytes(b'synthetic zig, never executed')
             record=dict(completed=True,artifact_id='linux-glibc-x86_64',
+                        native_os='linux',native_arch='x86_64',recipe=dict(os='linux',arch='x86_64',abi='glibc'),
                         executable_sha256=relinker.builder.digest(original),
                         sdk=dict(cxx_compiler=dict(path=str(compiler),sha256=relinker.builder.digest(compiler)),
                                  facts=dict(zig_sha256=relinker.builder.digest(zig))))
