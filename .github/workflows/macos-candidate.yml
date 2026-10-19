@@ -62,14 +62,16 @@ jobs:
           /usr/bin/file "$RUNNER_TEMP/twine-macos-build/candidate/bin/dot" > .tmp/native-macos/file.txt
       - name: Bind linker-map objects and compiler inputs for source review
         run: python tools/runtime/audit-macos-link.py --build-output "$RUNNER_TEMP/twine-macos-build" --map "$RUNNER_TEMP/twine-macos-sdk/link-map.txt" --source-archive "$RUNNER_TEMP/twine-macos-sdk/graphviz.tar.gz" --report .tmp/native-macos/link-source-evidence.json
+      - name: Prepare byte-bound draft notices for this macOS build
+        run: python tools/runtime/prepare-macos-notices.py --build "$RUNNER_TEMP/twine-macos-build" --evidence .tmp/native-macos/link-source-evidence.json --source-archive "$RUNNER_TEMP/twine-macos-sdk/graphviz.tar.gz" --map-path "$RUNNER_TEMP/twine-macos-sdk/link-map.txt" --output "$RUNNER_TEMP/twine-macos-notices"
       - name: Public corpus and Unicode relocation on Python 3.12
-        run: '"${{ steps.python312.outputs.python-path }}" tools/runtime/smoke-corpus.py --build-output "$RUNNER_TEMP/twine-macos-build" --environment-kind native --report .tmp/native-macos/corpus-312.json'
+        run: '"${{ steps.python312.outputs.python-path }}" tools/runtime/smoke-corpus.py --build-output "$RUNNER_TEMP/twine-macos-notices" --environment-kind native --report .tmp/native-macos/corpus-312.json'
       - name: Public corpus and Unicode relocation on Python 3.14
-        run: '"${{ steps.python314.outputs.python-path }}" tools/runtime/smoke-corpus.py --build-output "$RUNNER_TEMP/twine-macos-build" --environment-kind native --report .tmp/native-macos/corpus-314.json'
+        run: '"${{ steps.python314.outputs.python-path }}" tools/runtime/smoke-corpus.py --build-output "$RUNNER_TEMP/twine-macos-notices" --environment-kind native --report .tmp/native-macos/corpus-314.json'
       - name: Inventory and package without approving audit or signature
         run: |
-          python tools/runtime/verify-artifact.py --root "$RUNNER_TEMP/twine-macos-build/candidate" --provenance "$RUNNER_TEMP/twine-macos-build/provenance.json" --write-inventory .tmp/native-macos/inventory.json
-          python tools/runtime/pack-candidate.py --root "$RUNNER_TEMP/twine-macos-build/candidate" --inventory .tmp/native-macos/inventory.json --provenance "$RUNNER_TEMP/twine-macos-build/provenance.json" --output "$RUNNER_TEMP/twine-macos-package"
+          python tools/runtime/verify-artifact.py --root "$RUNNER_TEMP/twine-macos-notices/candidate" --provenance "$RUNNER_TEMP/twine-macos-notices/provenance.json" --write-inventory .tmp/native-macos/inventory.json
+          python tools/runtime/pack-candidate.py --root "$RUNNER_TEMP/twine-macos-notices/candidate" --inventory .tmp/native-macos/inventory.json --provenance "$RUNNER_TEMP/twine-macos-notices/provenance.json" --output "$RUNNER_TEMP/twine-macos-package"
       - name: Retain unqualified native build for review
         if: always()
         uses: actions/upload-artifact@v4
@@ -83,4 +85,6 @@ jobs:
             ${{ runner.temp }}/twine-macos-sdk/sdk-inventory.json
             ${{ runner.temp }}/twine-macos-sdk/link-map.txt
             ${{ runner.temp }}/twine-macos-build/provenance.json
+            ${{ runner.temp }}/twine-macos-notices/provenance.json
+            ${{ runner.temp }}/twine-macos-notices/review.json
             ${{ runner.temp }}/twine-macos-package/

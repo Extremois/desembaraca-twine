@@ -1,0 +1,148 @@
+"""Prepare byte-bound macOS draft notices; never approve, sign or publish them."""
+import argparse
+import hashlib
+import importlib.util
+import json
+from pathlib import Path
+import shutil
+import tarfile
+
+HERE = Path(__file__).resolve().parent
+
+
+def load(name):
+    spec = importlib.util.spec_from_file_location(name.replace('-', '_'), HERE / (name + '.py'))
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module
+
+
+common = load('prepare-draft-notices')
+link_audit = load('audit-macos-link')
+builder = common.builder
+
+
+def header_notice(row, developer):
+    developer = Path(developer).resolve(strict=True)
+    path = Path(row['path']).resolve(strict=True)
+    if not path.is_relative_to(developer):
+        raise ValueError('Compiler header outside recorded Xcode')
+    raw = common.audit.bounded(path, 8 * 1024**2)
+    if len(raw) != row['size'] or hashlib.sha256(raw).hexdigest() != row['sha256']:
+        raise ValueError('Compiler header changed after source observation')
+    prefix = common.source_notice_prefix(raw)
+    return prefix, dict(kind='recorded-xcode-header-prefix', path=path.relative_to(developer).as_posix(),
+        source_sha256=row['sha256'], offset=0, length=len(prefix),
+        qualification='Leading comment material only; applicability and complete text remain under review')
+
+
+def prepare(build, evidence, source_archive, map_path, output):
+    build, evidence, source_archive, map_path, output = map(Path, (build, evidence, source_archive, map_path, output))
+    if output.exists() or output.is_symlink():
+        raise FileExistsError('Notice output already exists')
+    record = json.loads(common.audit.bounded(build / 'provenance.json', 8 * 1024**2))
+    if record['artifact_id'] not in ('macos-arm64', 'macos-x86_64'):
+        raise ValueError('Completed native macOS candidate required')
+    observed = json.loads(common.audit.bounded(evidence, 8 * 1024**2))
+    # Recompute the observation against objects, headers, map and pinned source.
+    if observed != link_audit.collect(build, map_path, source_archive):
+        raise ValueError('Source observation differs from this native build')
+    dependencies = list(observed['dependencies'].values())
+    generated = {}
+    for row in dependencies:
+        if row['origin'] != 'generated':
+            continue
+        path = Path(row['path'])
+        if not path.is_relative_to(build / 'build'):
+            raise ValueError('Generated input outside build')
+        raw = common.audit.bounded(path, 8 * 1024**2)
+        if len(raw) != row['size'] or hashlib.sha256(raw).hexdigest() != row['sha256']:
+            raise ValueError('Generated input changed')
+        generated[path.relative_to(build / 'build').as_posix()] = (raw, row)
+    graphviz_names = {'COPYING', 'AUTHORS', 'lib/rbtree/LICENSE', 'lib/common/brewer_colors'}
+    files = common.archive_files(source_archive, 'graphviz-16.1.0', graphviz_names)
+    materials = []
+    for name in sorted(graphviz_names):
+        raw = files[name]
+        filename = 'ColorBrewer.txt' if name.endswith('brewer_colors') else 'Graphviz-' + name.replace('/', '__') + '.txt'
+        materials.append((filename, common.color_notice(raw) if name.endswith('brewer_colors') else raw,
+            dict(kind='pinned-graphviz-source', path=name, source_sha256=hashlib.sha256(raw).hexdigest(),
+                 archive_sha256=record['source']['sha256'])))
+    for name in ('lib/cgraph/grammar.c', 'lib/cgraph/grammar.h', 'lib/common/htmlparse.c', 'lib/common/htmlparse.h'):
+        raw, row = generated[name]
+        prefix = common.bison_notice(raw)
+        materials.append(('Bison-' + name.replace('/', '__') + '.txt', prefix,
+            dict(kind='generated-parser-prefix', path=name, source_sha256=row['sha256'], offset=0, length=len(prefix))))
+    scanner, scanner_row = generated['lib/cgraph/scan.c']
+    generator = record['sdk']['facts']['host_tools']['flex']
+    generator_path = Path(generator['path']).resolve(strict=True)
+    developer = Path(record['sdk']['facts']['developer_dir']).resolve(strict=True)
+    if not generator_path.is_relative_to(developer) or builder.digest(generator_path) != generator['sha256']:
+        raise ValueError('Recorded Apple Flex generator missing or changed')
+    flex, flex_origin = common.flex_scanner_notice(scanner, generator, apple=True)
+    flex_origin.update(generated_path='lib/cgraph/scan.c', generated_sha256=scanner_row['sha256'],
+                       recorded_generator_version=generator['version'])
+    materials.append(('Flex-Apple-35-COPYING.txt', flex, flex_origin))
+    headers = []
+    for row in sorted((row for row in dependencies if row['origin'] == 'external'), key=lambda row: row['path']):
+        prefix, origin = header_notice(row, developer)
+        headers.append(dict(**origin, prefix_sha256=hashlib.sha256(prefix).hexdigest(),
+                            status='prefix-preserved-review-pending' if prefix else 'no-leading-comment-review-pending'))
+        if prefix:
+            filename = 'SDK-header-' + hashlib.sha256(origin['path'].encode()).hexdigest()[:24] + '.txt'
+            materials.append((filename, prefix, origin))
+    references = ('Draft macOS source/notice review material; not an approved source offer.\n\n'
+        'Graphviz source:\n' + record['source']['url'] + '\nSHA-256: ' + record['source']['sha256'] + '\n\n'
+        'Xcode: ' + record['sdk']['facts']['xcode'].replace('\n', '; ') + '\n'
+        'SDK tree SHA-256: ' + record['sdk']['facts']['sdk_tree_sha256'] + '\n'
+        'Header notices are leading comments, not a redistribution of the Apple SDK.\n'
+        'Complete texts, applicability, generated data and corresponding-source offer remain under review.\n').encode()
+    materials.append(('SOURCE-REFERENCES.txt', references, dict(kind='maintainer-source-review-reference')))
+    if len(materials) > 5000 or sum(len(raw) for _, raw, _ in materials) > 16 * 1024**2:
+        raise ValueError('Notice material exceeds budget')
+    output.mkdir(mode=0o700, parents=True, exist_ok=False)
+    candidate = output / 'candidate'
+    (candidate / 'bin').mkdir(parents=True)
+    binary = candidate / 'bin/dot'
+    shutil.copyfile(build / 'candidate/bin/dot', binary)
+    binary.chmod(0o755)
+    if builder.digest(binary) != record['executable_sha256']:
+        raise ValueError('Engine changed during notice copy')
+    notices = candidate / 'third-party-notices'
+    notices.mkdir()
+    inventory = []
+    for name, raw, origin in materials:
+        target = notices / name
+        with target.open('xb') as stream:
+            stream.write(raw)
+        target.chmod(0o644)
+        inventory.append(dict(path=target.relative_to(candidate).as_posix(), size=len(raw),
+                              sha256=hashlib.sha256(raw).hexdigest(), origin=origin))
+    review = dict(kind='macos-draft-notice-review', approved=False, qualified=False,
+        artifact_id=record['artifact_id'], executable_sha256=record['executable_sha256'],
+        parent_provenance_sha256=builder.digest(build / 'provenance.json'), source_evidence_sha256=builder.digest(evidence),
+        notices=inventory, headers=headers, generated_inputs_verified=len(generated),
+        pending=['Per-file applicability and complete canonical texts', 'Generated data provenance/notices',
+                 'Unnamed linker-map slots and SDK contribution review', 'Complete corresponding-source offer',
+                 'Approved audit, signing/notarization and installed native acceptance'])
+    (output / 'review.json').write_text(json.dumps(review, indent=2) + '\n', encoding='utf-8')
+    record.update(output=str(output), qualification='draft macOS notices only; no approved audit or support',
+        notice_preparation=dict(approved=False, review_sha256=builder.digest(output / 'review.json')))
+    (output / 'provenance.json').write_text(json.dumps(record, indent=2) + '\n', encoding='utf-8')
+    return review
+
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    for name in ('build', 'evidence', 'source-archive', 'map-path', 'output'):
+        parser.add_argument('--' + name, type=Path, required=True)
+    args = parser.parse_args()
+    try:
+        report = prepare(**{key: value.resolve() for key, value in vars(args).items()})
+        print(json.dumps(dict(notices=len(report['notices']), headers=len(report['headers']), approved=False)))
+    except (OSError, ValueError, KeyError, TypeError, tarfile.TarError) as exc:
+        parser.exit(1, type(exc).__name__ + ': ' + str(exc) + '\n')
+
+
+if __name__ == '__main__':
+    main()
