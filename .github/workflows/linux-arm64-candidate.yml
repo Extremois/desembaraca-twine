@@ -89,6 +89,22 @@ jobs:
         run: |
           python tools/runtime/verify-artifact.py --root "$RUNNER_TEMP/twine-arm64-notices/candidate" --provenance "$RUNNER_TEMP/twine-arm64-notices/provenance.json" --write-inventory .tmp/native-linux-arm64/inventory.json --minimum-libc 2.27
           python tools/runtime/pack-candidate.py --root "$RUNNER_TEMP/twine-arm64-notices/candidate" --inventory .tmp/native-linux-arm64/inventory.json --provenance "$RUNNER_TEMP/twine-arm64-notices/provenance.json" --output "$RUNNER_TEMP/twine-arm64-package"
+      - name: Collect ARM64 source material separately from the runtime
+        run: |
+          python tools/runtime/pack-sources.py --graphviz "$RUNNER_TEMP/twine-arm64-sdk/graphviz.tar.gz" --sdk "$RUNNER_TEMP/twine-arm64-sdk/zig.tar.xz" --provenance "$RUNNER_TEMP/twine-arm64-notices/provenance.json" --output "$RUNNER_TEMP/twine-arm64-sources"
+          cp "$RUNNER_TEMP/twine-arm64-sources/sources.json" .tmp/native-linux-arm64/sources.json
+      - name: Rebuild ARM64 using only exported sources and recipes
+        shell: bash
+        run: |
+          set -o pipefail
+          mkdir "$RUNNER_TEMP/twine-arm64-source-replay"
+          tar -xzf "$RUNNER_TEMP/twine-arm64-sources/sources.tar.gz" -C "$RUNNER_TEMP/twine-arm64-source-replay"
+          cd "$RUNNER_TEMP/twine-arm64-source-replay"
+          python tools/runtime/prepare-linux-ci.py --work "$RUNNER_TEMP/twine-arm64-replay-sdk" --arch aarch64
+          cp -a sdk/lib/. "$RUNNER_TEMP/twine-arm64-replay-sdk/sdk/zig-aarch64-linux-0.15.2/lib/"
+          python tools/runtime/build-common.py --artifact-id linux-glibc-aarch64 --source-archive graphviz.tar.gz --sdk-record "$RUNNER_TEMP/twine-arm64-replay-sdk/sdk-record.json" --output "$RUNNER_TEMP/twine-arm64-replay-build" --execute 2>&1 | tee "$GITHUB_WORKSPACE/.tmp/native-linux-arm64/source-rebuild.log"
+          cd "$GITHUB_WORKSPACE"
+          python tools/runtime/observe-linux-network.py --build-output "$RUNNER_TEMP/twine-arm64-replay-build" --environment-kind native --report .tmp/native-linux-arm64/rebuilt-network.json --corpus-report .tmp/native-linux-arm64/rebuilt-corpus.json
       - name: Retain unqualified native ARM64 build for review
         if: always()
         uses: actions/upload-artifact@v4
@@ -107,3 +123,11 @@ jobs:
             ${{ runner.temp }}/twine-arm64-notices/provenance.json
             ${{ runner.temp }}/twine-arm64-notices/review.json
             ${{ runner.temp }}/twine-arm64-package/
+            ${{ runner.temp }}/twine-arm64-replay-build/provenance.json
+      - name: Retain ARM64 source review material (not a published source offer)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: linux-glibc-aarch64-source-review-${{ github.sha }}
+          retention-days: 7
+          path: ${{ runner.temp }}/twine-arm64-sources/

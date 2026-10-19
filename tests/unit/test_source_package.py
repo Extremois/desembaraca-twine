@@ -19,7 +19,7 @@ class SourcePackageTests(unittest.TestCase):
         self.module = importlib.util.module_from_spec(SPEC)
         SPEC.loader.exec_module(self.module)
 
-    def fixture(self, root, bad=None):
+    def fixture(self, root, bad=None, arch='x86_64'):
         graphviz = root / 'graphviz.tar.gz'
         graphviz.write_bytes(b'pinned graphviz archive')
         sdk = root / 'sdk.tar.xz'
@@ -34,12 +34,33 @@ class SourcePackageTests(unittest.TestCase):
                 archive.addfile(bad)
         lock = lambda path: dict(sha256=hashlib.sha256(path.read_bytes()).hexdigest(), size=path.stat().st_size)
         source, toolchain = lock(graphviz), lock(sdk)
-        recipe = self.module.HERE / 'linux-glibc-x86_64.json'
+        artifact='linux-glibc-'+arch
+        recipe = self.module.HERE / (artifact+'.json')
         provenance = root / 'provenance.json'
-        provenance.write_text(json.dumps(dict(artifact_id='linux-glibc-x86_64', completed=True,
+        provenance.write_text(json.dumps(dict(artifact_id=artifact, completed=True,native_os='linux',native_arch=arch,
             executable_sha256='a' * 64, source=source, recipe_sha256=hashlib.sha256(recipe.read_bytes()).hexdigest(),
             sdk=dict(facts=dict(archive=toolchain)))), encoding='utf-8')
         return graphviz, sdk, provenance, source, toolchain
+
+    def test_arm_source_export_selects_arm_sdk_and_rejects_mismatched_provenance(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root=Path(directory)
+            graphviz,sdk,provenance,source,toolchain=self.fixture(root,arch='aarch64')
+            with patch.object(self.module,'SOURCE_LOCK',source), patch.object(self.module,'SDK_LOCK_ARM64',toolchain):
+                report=self.module.pack(graphviz,sdk,provenance,root/'output')
+                self.assertEqual(report['artifact_id'],'linux-glibc-aarch64')
+                with tarfile.open(root/'output/sources.tar.gz') as archive:
+                    manifest=json.load(archive.extractfile('manifest.json'))
+                    self.assertEqual(manifest['sdk_archive_sha256'],toolchain['sha256'])
+                    self.assertNotIn('sdk/zig',archive.getnames())
+                record=json.loads(provenance.read_bytes())
+                record['native_arch']='x86_64';provenance.write_text(json.dumps(record))
+                with self.assertRaises(ValueError):self.module.pack(graphviz,sdk,provenance,root/'wrong-arch')
+                self.assertFalse((root/'wrong-arch').exists())
+                record['native_arch']='aarch64';record['sdk']['facts']['archive']['sha256']='0'*64
+                provenance.write_text(json.dumps(record))
+                with self.assertRaises(ValueError):self.module.pack(graphviz,sdk,provenance,root/'wrong-sdk')
+                self.assertFalse((root/'wrong-sdk').exists())
 
     def test_preserves_sources_excludes_compiler_and_binds_candidate(self):
         with tempfile.TemporaryDirectory() as directory:

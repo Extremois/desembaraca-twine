@@ -20,6 +20,7 @@ SPEC = importlib.util.spec_from_file_location('source_sdk_preparer', HERE / 'pre
 PREPARER = importlib.util.module_from_spec(SPEC)
 SPEC.loader.exec_module(PREPARER)
 SDK_LOCK = PREPARER.ZIG
+SDK_LOCK_ARM64 = PREPARER.ZIG_ARM64
 MAX_EXPANDED = 512 * 1024**2
 MAX_FILE = 64 * 1024**2
 MAX_FILES = 30000
@@ -77,13 +78,19 @@ def pack(graphviz, sdk, provenance, output):
     if output.exists() or output.is_symlink():
         raise FileExistsError('Source output already exists')
     pinned(graphviz, SOURCE_LOCK)
-    pinned(sdk, SDK_LOCK)
     provenance_bytes = bounded(provenance, 8 * 1024**2)
     record = json.loads(provenance_bytes)
-    recipe = HERE / 'linux-glibc-x86_64.json'
-    if (record['artifact_id'] != 'linux-glibc-x86_64' or record.get('completed') is not True
+    artifact=record['artifact_id']
+    if artifact not in ('linux-glibc-x86_64','linux-glibc-aarch64'):
+        raise ValueError('Unsupported source material artifact')
+    sdk_lock=SDK_LOCK if artifact=='linux-glibc-x86_64' else SDK_LOCK_ARM64
+    if artifact=='linux-glibc-aarch64' and (record.get('native_os'),record.get('native_arch'))!=('linux','aarch64'):
+        raise ValueError('ARM64 source material requires matching native provenance')
+    pinned(sdk, sdk_lock)
+    recipe = HERE / (artifact+'.json')
+    if (record.get('completed') is not True
             or record['source']['sha256'] != SOURCE_LOCK['sha256']
-            or record['sdk']['facts']['archive']['sha256'] != SDK_LOCK['sha256']
+            or record['sdk']['facts']['archive']['sha256'] != sdk_lock['sha256']
             or record['recipe_sha256'] != digest(recipe)):
         raise ValueError('Source material does not match candidate provenance')
     # Enumerate only maintainer recipes, scripts, notices and reference data.
@@ -131,7 +138,7 @@ def pack(graphviz, sdk, provenance, output):
                         manifest = dict(kind='candidate-source-review-material', approved=False,
                             artifact_id=record['artifact_id'], executable_sha256=record['executable_sha256'],
                             provenance_sha256=hashlib.sha256(provenance_bytes).hexdigest(),
-                            graphviz_archive_sha256=SOURCE_LOCK['sha256'], sdk_archive_sha256=SDK_LOCK['sha256'],
+                            graphviz_archive_sha256=SOURCE_LOCK['sha256'], sdk_archive_sha256=sdk_lock['sha256'],
                             sdk_scope='Complete lib/ tree and root LICENSE; compiler executable excluded',
                             files=rows.copy(), pending=['per-file applicability and complete source offer review',
                             'rebuild/relink execution from exported sources', 'immutable public source distribution'])
@@ -140,7 +147,7 @@ def pack(graphviz, sdk, provenance, output):
                 os.fsync(stream.fileno())
             # Recheck archives after reading; never certify changed input bytes.
             pinned(graphviz, SOURCE_LOCK)
-            pinned(sdk, SDK_LOCK)
+            pinned(sdk, sdk_lock)
             report = dict(kind=manifest['kind'], approved=False, artifact_id=record['artifact_id'],
                 executable_sha256=record['executable_sha256'], provenance_sha256=manifest['provenance_sha256'],
                 archive='sources.tar.gz', archive_sha256=digest(temporary), archive_bytes=temporary.stat().st_size,

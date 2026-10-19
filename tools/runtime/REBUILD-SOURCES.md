@@ -1,6 +1,7 @@
-# Reconstrução da candidata Linux glibc x64
+# Reconstrução das candidatas Linux glibc x64/ARM64
 
-O artefato `linux-glibc-x86_64-source-review-*` contém `sources.tar.gz` e um
+O artefato `linux-glibc-x86_64-source-review-*` ou
+`linux-glibc-aarch64-source-review-*` contém `sources.tar.gz` e um
 recibo SHA-256. É material para revisão, ainda sem aprovação de oferta completa
 de fontes ou publicação permanente. Não é necessário para usar o runtime.
 
@@ -12,7 +13,7 @@ incluído. `manifest.json` relaciona tamanho/hash de cada entrada e vincula o
 material ao executável e à proveniência da candidata. A árvore SDK inclui
 material de outras plataformas; sua inclusão não declara que foi ligado ao dot.
 
-Use Linux x86_64 glibc, filesystem POSIX e diretórios novos. São necessários
+Use Linux glibc nativo da arquitetura da candidata, filesystem POSIX e diretórios novos. São necessários
 Python 3.12 ou 3.14, CMake, make, Bison, Flex e readelf. As versões/hashes usados
 originalmente estão em `candidate-provenance.json`, em `sdk.facts.host_tools`;
 a imagem do runner também está registrada. A imagem hospedada pode mudar, e
@@ -29,6 +30,19 @@ python3 tools/runtime/prepare-linux-ci.py --work /tmp/twine-rebuild-sdk
 cp -a sdk/lib/. /tmp/twine-rebuild-sdk/sdk/zig-x86_64-linux-0.15.2/lib/
 python3 tools/runtime/build-common.py --artifact-id linux-glibc-x86_64 --source-archive graphviz.tar.gz --sdk-record /tmp/twine-rebuild-sdk/sdk-record.json --output /tmp/twine-rebuild-output --execute
 ```
+
+Para ARM64, em host Linux aarch64 nativo, use diretórios novos e os comandos:
+
+```sh
+python3 tools/runtime/prepare-linux-ci.py --work /tmp/twine-arm64-rebuild-sdk --arch aarch64
+cp -a sdk/lib/. /tmp/twine-arm64-rebuild-sdk/sdk/zig-aarch64-linux-0.15.2/lib/
+python3 tools/runtime/build-common.py --artifact-id linux-glibc-aarch64 --source-archive graphviz.tar.gz --sdk-record /tmp/twine-arm64-rebuild-sdk/sdk-record.json --output /tmp/twine-arm64-rebuild-output --execute
+```
+
+O exportador seleciona e autentica o SDK específico da arquitetura e a receita
+da proveniência. Os workflows x64 e ARM64 executam suas reconstruções em pastas
+novas, copiando a árvore SDK exportada e usando cache de compilação privado novo.
+Os testes do motor reconstruído usam o checkout público da mesma execução.
 
 O resultado está em `/tmp/twine-rebuild-output/candidate/bin/dot`. O CMake refaz
 as tabelas e parsers a partir das fontes Graphviz; o Zig recompila os objetos
