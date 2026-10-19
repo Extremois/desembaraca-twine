@@ -55,8 +55,14 @@ dias. `prepare-macos-notices.py` cria uma candidata nova com textos Graphviz,
 prefixos Bison, aviso Flex Apple e comentários iniciais dos headers observados.
 Confere novamente as fontes/objetos e os bytes dos headers; arquivos sem prefixo
 identificável permanecem registrados para revisão. O runtime é copiado sem
-alteração de bytes, e `review.json` vincula cada aviso à sua origem. Textos
-canônicos completos, dados gerados, aplicabilidade e oferta de fontes continuam
+alteração de bytes, e `review.json` vincula cada aviso à sua origem. A candidata
+inclui também `NOTICE-ORIGINS.json`: índice offline com tamanho, hash e origem
+de todos os demais avisos, vinculado à proveniência e à observação de fontes.
+Declarações explícitas nos prefixos acrescentam textos completos APSL 1.1/2.0,
+Apache 2.0 com exceções LLVM e GPL 3, fixados em `material-source-lock.json`.
+As versões APSL permanecem separadas; o texto LLVM não estabelece equivalência
+com as fontes do compilador Apple. Esses textos não concedem aprovação por
+arquivo ou ao pacote. Outros textos necessários, dados gerados, aplicabilidade e oferta de fontes continuam
 pendentes em T052. Não há uso de credenciais Apple,
 assinatura Developer ID, notarização ou promoção de suporte nessa execução.
 

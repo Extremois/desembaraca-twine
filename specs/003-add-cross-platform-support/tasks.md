@@ -26,6 +26,8 @@
 
 **Rascunhos de avisos macOS em 2026-10-19**: candidatas de [Intel](evidence/macos-draft-notices-2026-10-19/macos-x86_64/summary.json) e [Apple Silicon](evidence/macos-draft-notices-2026-10-19/macos-arm64/summary.json) contêm 227 avisos cada, incluindo prefixos dos 217 headers observados, quatro avisos Bison, Flex Apple e textos Graphviz. Hashes/modos dos 228 arquivos por pacote conferidos após download; executáveis preservados, corpus nos dois Pythons e regressões CI aprovados. T052 continua parcial: textos canônicos completos, aplicabilidade, dados gerados, fontes e assinatura/qualificação seguem pendentes. Total 48/84.
 
+**Textos e índice offline macOS em 2026-10-19**: o preparador inclui referências completas APSL 1.1/2.0, Apache/LLVM e GPL 3, fixadas por origem/hash, mantendo as exceções nos avisos dos geradores. `NOTICE-ORIGINS.json` vincula offline os 231 demais avisos à proveniência e à observação de fontes. Testes locais passam em Python 3.12/3.14 (189 em cada); o [CI da revisão](https://github.com/Extremois/desembaraca-twine/actions/runs/39314104394) valida os pacotes nativos. T052 permanece parcial, sem aprovação de aplicabilidade ou promoção do catálogo; total 48/84.
+
 **Tests**: exigidos explicitamente por FR-007/008/013/016 e SC-001–010. Acrescentar casos de contrato antes do comportamento correspondente, observar falha pertinente e executar regressões após a implementação; testes já corretos podem passar. Não exigir falha artificial do baseline.
 
 **Organization**: setup → fundação → histórias US1/US2/US3 (P1) → US4 (P2) → fechamento. Caminhos são relativos à raiz do repositório. Arquivos novos são entregáveis futuros, não arquivos já existentes.

@@ -1362,7 +1362,23 @@ evitar uma dependência circular; o inventário externo confere também o índic
 Todos os registros continuam sem aprovação ou qualificação.
 
 Dois testes novos foram observados falhando antes da implementação. A suíte
-local passou com **189 testes**, sete skips Windows. A validação nativa da nova
-composição será registrada após a execução do CI. T052 permanece parcial:
+local passou com **189 testes**, sete skips Windows, tanto no Python 3.12 quanto
+no 3.14. A revisão `24ed0e9c2a7c1cd26d3aa418f093ed4af1903d0a` passou nos
+[dois builds macOS](https://github.com/Extremois/desembaraca-twine/actions/runs/39314104394)
+nas [seis combinações de regressão](https://github.com/Extremois/desembaraca-twine/actions/runs/39314104359)
+e no [build/reconstrução Linux](https://github.com/Extremois/desembaraca-twine/actions/runs/39314104405).
+
+Os ZIPs baixados contêm **233 arquivos**, sendo o executável preservado e **232
+avisos**, incluindo o índice dos 231 demais. Hashes, tamanhos, modos, timestamps,
+referências do índice, proveniência e corpus foram conferidos após download.
+Os 13 casos passaram nos dois Pythons por arquitetura. Recibos de
+[Apple Silicon](evidence/macos-offline-notices-2026-10-19/macos-arm64/summary.json)
+e [Intel](evidence/macos-offline-notices-2026-10-19/macos-x86_64/summary.json)
+preservam textos novos e metadados comprimidos, sem duplicar os demais headers
+ou incorporar executáveis. Os ZIPs medem 1.882.436 e 2.038.789 bytes,
+respectivamente. Há duas declarações APSL 1.1 no ARM e três no Intel; APSL 2.0
+aparece em 179/183 avisos, LLVM em 24 e GPL nos quatro prefixos Bison.
+
+T052 permanece parcial:
 aplicabilidade por arquivo, outros textos eventualmente necessários, dados
 gerados, fontes, assinatura e aceite instalado ainda exigem conclusão.

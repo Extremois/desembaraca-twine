@@ -53,6 +53,22 @@
           "sdk_headers_verified": 217,
           "sdk_prefixes_preserved": 217,
           "candidate_archive_sha256": "f6540ca05f7a4f93e069434ef8cc43dd0c28eacfef939253312d79cbbc8166ba"
+        },
+        {
+          "approved": false,
+          "qualified": false,
+          "evidence": "specs/003-add-cross-platform-support/evidence/macos-offline-notices-2026-10-19/macos-x86_64/summary.json",
+          "executable_sha256": "d8ab197fbdfa9312050f4c4827f4bb612f7f4d1d021d4308a9850ee1a1104fff",
+          "provenance_sha256": "4d004b38271af98435c35290bc50f61519d7d5a47e44d41658fe625fcd97c0aa",
+          "notice_count": 232,
+          "offline_index_payloads": 231,
+          "canonical_reference_counts": {
+            "APSL-1.1-COPYING.txt": 3,
+            "APSL-2.0-COPYING.txt": 183,
+            "LLVM-license-reference-COPYING.txt": 24,
+            "GPL-3.0-COPYING.txt": 4
+          },
+          "candidate_archive_sha256": "0700ee097328d183f6882ce13e6f20700da264fb12c3351fdb529ab273500b6b"
         }
       ]
     },
@@ -100,6 +116,22 @@
           "sdk_headers_verified": 217,
           "sdk_prefixes_preserved": 217,
           "candidate_archive_sha256": "3adc1e18283508ea737cd815cbdb5b75d9c6b7901f3c1a22664ed540bcfb1988"
+        },
+        {
+          "approved": false,
+          "qualified": false,
+          "evidence": "specs/003-add-cross-platform-support/evidence/macos-offline-notices-2026-10-19/macos-arm64/summary.json",
+          "executable_sha256": "774115a1a9e4b2385d33fa55fe02de0d8728cb0984967d445528c6fe04f97dac",
+          "provenance_sha256": "a48b9d93d305865c0282131b5fbe2f191afe17bad39312eac4b20c4537fe1e7a",
+          "notice_count": 232,
+          "offline_index_payloads": 231,
+          "canonical_reference_counts": {
+            "APSL-1.1-COPYING.txt": 2,
+            "APSL-2.0-COPYING.txt": 179,
+            "LLVM-license-reference-COPYING.txt": 24,
+            "GPL-3.0-COPYING.txt": 4
+          },
+          "candidate_archive_sha256": "b62dc72155c83103a4ba6a329a84f6e71233a5b9254920ce34d2da7779f02c03"
         }
       ]
     }
