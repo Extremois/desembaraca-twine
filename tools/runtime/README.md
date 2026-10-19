@@ -79,6 +79,28 @@ a demonstração é funcional, sem promessa de igualdade de bytes. Veja
 [REBUILD-SOURCES.md](REBUILD-SOURCES.md). Artefatos de sete dias continuam sendo
 material de revisão, sem constituir oferta permanente aprovada.
 
+### Candidatas musl em userland Alpine
+
+`linux-musl-candidate.yml` compila x86_64/aarch64 em containers Alpine 3.22 nos
+runners CPU correspondentes, sem QEMU. As imagens oficiais Python 3.12/3.14 são
+fixadas por digest de plataforma em `alpine-ci-images.json`; a arquitetura do
+host e do container precisa coincidir. O SDK Zig também é fixado por hash.
+`prepare-linux-ci.py --libc musl --environment-kind container` registra esse
+contexto e usa alvo `ARCH-linux.4.15-musl`, CPU baseline.
+
+O script instala ferramentas somente no container efêmero, registra pacotes,
+imagem e kernel, constrói um motor estático e exige ausência de PT_INTERP,
+NEEDED, seção dinâmica e símbolos glibc. O mesmo motor executa corpus/relocação
+sob strace nos dois Pythons, com controle positivo de sockets. O checkout é
+montado somente para leitura; SDK/cache privados não são enviados como artifact.
+Pacote e metadados são rascunhos não aprovados, inicialmente com COPYING
+Graphviz. Auditoria/fontes/avisos completos continuam pendentes.
+
+O kernel continua sendo o do runner Ubuntu: esse ensaio não conclui a célula
+Alpine nativa ou a matriz 3.21–3.24. O digest fixa a imagem de base; versões dos
+pacotes adicionados são registradas em cada execução, sem prometer reconstrução
+byte a byte desse ambiente. Nenhuma configuração local do usuário é alterada.
+
 ### Candidatas macOS nativas
 
 `macos-candidate.yml` usa runners macOS 15 separados: `macos-15-intel` e

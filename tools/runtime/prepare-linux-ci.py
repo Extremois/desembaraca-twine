@@ -27,11 +27,12 @@ ZIG_ARM64 = dict(version='0.15.2',
     executable_sha256='931b8e9a9327dac87bc439067f07604219510fa541133ff6e542c6243968cc86')
 
 
-def native_sdk(arch):
+def native_sdk(arch, libc='glibc'):
     if (platform.system() != 'Linux' or arch not in ('x86_64', 'aarch64')
-            or platform.machine() != arch):
+            or platform.machine() != arch or libc not in ('glibc','musl')):
         raise ValueError('This SDK requires the matching native Linux architecture')
-    return (ZIG if arch == 'x86_64' else ZIG_ARM64), arch + '-linux.4.15-gnu.2.27'
+    suffix='-linux.4.15-gnu.2.27' if libc=='glibc' else '-linux.4.15-musl'
+    return (ZIG if arch == 'x86_64' else ZIG_ARM64), arch + suffix
 
 
 def compiler_wrapper(zig, cache, arch, mode, target):
@@ -74,9 +75,10 @@ def executable(path):
     return dict(path=str(path), sha256=digest(path))
 
 
-def prepare(work, arch=None):
+def prepare(work, arch=None, libc='glibc', environment_kind='native'):
     arch = platform.machine() if arch is None else arch
-    compiler_lock, target = native_sdk(arch)
+    compiler_lock, target = native_sdk(arch,libc)
+    if environment_kind not in ('native','container'):raise ValueError('Unsupported build environment kind')
     work = Path(work).resolve()
     work.mkdir(mode=0o700, parents=True, exist_ok=False)
     source = json.loads((HERE / 'source-lock.json').read_text(encoding='utf-8'))
@@ -112,12 +114,14 @@ def prepare(work, arch=None):
             raise ValueError('Missing runner build dependency: ' + name)
         host_tools[name] = dict(**executable(path), version=subprocess.check_output(
             [path, '--version'], text=True, timeout=10).splitlines()[0])
-    facts = dict(provider='Zig', archive=compiler_lock, zig_sha256=digest(zig), target=target, environment_kind='native',
+    facts = dict(provider='Zig', archive=compiler_lock, zig_sha256=digest(zig), target=target, environment_kind=environment_kind,
                  kernel=platform.release(), host=platform.platform(), tools=tools,
                  host_tools=host_tools, image_os=os.environ.get('ImageOS'),
                  image_version=os.environ.get('ImageVersion'), runner_arch=os.environ.get('RUNNER_ARCH'),
                  compiler=executable(zig),
                  target_arch=arch,
+                 target_os='linux',target_libc_family=libc,static_linking=libc=='musl',
+                 container_image=os.environ.get('TWINE_BUILD_CONTAINER_IMAGE') if environment_kind=='container' else None,
                  flag_translation=('Only -march=x86-64 and -mtune=generic become -mcpu=baseline'
                                    if arch == 'x86_64' else 'No x86 flag translation; ARM64 baseline CPU'),
                  math_library='MATH_LIB=m; no absolute host libm',
@@ -131,5 +135,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--work', type=Path, required=True)
     parser.add_argument('--arch', choices=('x86_64', 'aarch64'))
+    parser.add_argument('--libc',choices=('glibc','musl'),default='glibc')
+    parser.add_argument('--environment-kind',choices=('native','container'),default='native')
     args = parser.parse_args()
-    prepare(args.work, args.arch)
+    prepare(args.work, args.arch,args.libc,args.environment_kind)

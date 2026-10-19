@@ -1,0 +1,85 @@
+name: Alpine musl Graphviz candidates
+on:
+  push:
+    branches: [feat/003-add-cross-platform-support]
+    paths:
+      - '.github/workflows/linux-musl-candidate.yml'
+      - 'tools/runtime/**'
+      - 'src/**'
+      - 'tests/fixtures/**'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: linux-musl-candidate-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  alpine-build:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - runner: ubuntu-24.04
+            arch: x86_64
+          - runner: ubuntu-24.04-arm
+            arch: aarch64
+    runs-on: ${{ matrix.runner }}
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Select pinned Alpine images for matching native CPU
+        id: images
+        shell: bash
+        env:
+          TARGET_ARCH: ${{ matrix.arch }}
+        run: |
+          test "$(uname -m)" = "$TARGET_ARCH"
+          python - <<'PY'
+          import json,os
+          from pathlib import Path
+          images=json.loads(Path('tools/runtime/alpine-ci-images.json').read_bytes())['images']
+          with open(os.environ['GITHUB_OUTPUT'],'a') as stream:
+              for key,version in [('build','3.12'),('test','3.14')]:
+                  image=images[version]['platforms'][os.environ['TARGET_ARCH']]
+                  stream.write(key+'='+image['reference']+'\n')
+                  if key=='build':
+                      stream.write('oci_arch='+image['oci_arch']+'\n')
+          PY
+      - name: Build and test static musl in pinned Alpine userland Python 3.12
+        shell: bash
+        env:
+          BUILD_IMAGE: ${{ steps.images.outputs.build }}
+          TARGET_ARCH: ${{ matrix.arch }}
+          OCI_ARCH: ${{ steps.images.outputs.oci_arch }}
+        run: |
+          mkdir "$RUNNER_TEMP/twine-musl"
+          docker pull --platform "linux/$OCI_ARCH" "$BUILD_IMAGE"
+          docker image inspect "$BUILD_IMAGE" > "$RUNNER_TEMP/twine-musl/build-image.json"
+          docker run --rm --platform "linux/$OCI_ARCH" -e TWINE_BUILD_CONTAINER_IMAGE="$BUILD_IMAGE" -e ImageOS -e ImageVersion -e RUNNER_ARCH -v "$GITHUB_WORKSPACE:/workspace:ro" -v "$RUNNER_TEMP/twine-musl:/work" --workdir /workspace "$BUILD_IMAGE" sh tools/runtime/build-musl-ci.sh "$TARGET_ARCH" /work
+      - name: Test same engine in pinned Alpine userland Python 3.14
+        shell: bash
+        env:
+          TEST_IMAGE: ${{ steps.images.outputs.test }}
+          OCI_ARCH: ${{ steps.images.outputs.oci_arch }}
+        run: |
+          docker pull --platform "linux/$OCI_ARCH" "$TEST_IMAGE"
+          docker image inspect "$TEST_IMAGE" > "$RUNNER_TEMP/twine-musl/test-image.json"
+          docker run --rm --platform "linux/$OCI_ARCH" -v "$GITHUB_WORKSPACE:/workspace:ro" -v "$RUNNER_TEMP/twine-musl:/work" --workdir /workspace "$TEST_IMAGE" sh -ec 'apk add --no-cache strace binutils; python tools/runtime/observe-linux-network.py --build-output /work/build --environment-kind container --report /work/network-314.json --corpus-report /work/corpus-314.json'
+      - name: Retain unqualified container build and measurements
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: linux-musl-${{ matrix.arch }}-container-unqualified-${{ github.sha }}
+          retention-days: 7
+          include-hidden-files: true
+          path: |
+            ${{ runner.temp }}/twine-musl/build.log
+            ${{ runner.temp }}/twine-musl/evidence/
+            ${{ runner.temp }}/twine-musl/*.json
+            ${{ runner.temp }}/twine-musl/*.txt
+            ${{ runner.temp }}/twine-musl/*.trace

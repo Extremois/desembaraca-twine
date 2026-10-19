@@ -138,22 +138,27 @@ def confirm_static_linkage(text):
     elf_verifier().linux_dependencies(text,[],'0',require_static=True)
 
 
+def requires_static_inspection(recipe):
+    return recipe.get('abi')=='musl' and '-static' in shlex.split(recipe['cmake'].get('CMAKE_EXE_LINKER_FLAGS',''))
+
+
 def execute(record, archive, sdk_path, *, cross_libc_experiment=False):
     host = detect_host()
     recipe = record['recipe']
     mode = build_mode(host,recipe,cross_libc_experiment)
+    inspect_static=requires_static_inspection(recipe)
     sdk = json.loads(Path(sdk_path).read_text(encoding='utf-8'))
     if not isinstance(sdk.get('environment_digest'), str) or not re.fullmatch(r'[0-9a-f]{64}',sdk['environment_digest']):
         raise ValueError('Reviewed SDK/container environment digest required')
     tools = {}
-    keys = ('cmake', 'c_compiler', 'cxx_compiler') + (('elf_inspector',) if cross_libc_experiment else ())
+    keys = ('cmake', 'c_compiler', 'cxx_compiler') + (('elf_inspector',) if inspect_static else ())
     for key in keys:
         item = sdk[key]
         path = Path(item['path'])
         if not path.is_absolute() or not path.is_file() or digest(path) != item['sha256']:
             raise ValueError('SDK tool is missing or changed: ' + key)
         tools[key] = str(path)
-    if cross_libc_experiment:
+    if inspect_static:
         facts=sdk.get('facts',{})
         if (facts.get('target_libc_family')!='musl' or facts.get('target_os')!='linux'
                 or facts.get('target_arch')!=recipe['arch'] or facts.get('static_linking') is not True):
@@ -191,7 +196,7 @@ def execute(record, archive, sdk_path, *, cross_libc_experiment=False):
     binary.parent.mkdir(parents=True)
     shutil.copyfile(candidates[0], binary)
     binary.chmod(0o755)
-    if cross_libc_experiment:
+    if inspect_static:
         elf_verifier().elf_architecture(binary,recipe['arch'])
         inspection=run_bounded([tools['elf_inspector'],'--program-headers','--dynamic','--version-info',str(binary)],
                                timeout=30,max_output=8*1024**2,env=environment,cwd=output)

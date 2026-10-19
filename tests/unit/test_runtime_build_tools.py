@@ -18,6 +18,23 @@ def tool(name):
 
 
 class BuildToolTests(unittest.TestCase):
+    def test_musl_sdk_target_is_explicit_and_unknown_libc_refused(self):
+        bootstrap=tool('prepare-linux-ci')
+        for arch in ('x86_64','aarch64'):
+            with patch.object(bootstrap.platform,'system',return_value='Linux'),patch.object(bootstrap.platform,'machine',return_value=arch):
+                lock,target=bootstrap.native_sdk(arch,'musl')
+                self.assertEqual(target,arch+'-linux.4.15-musl')
+                self.assertIn('zig-'+arch+'-linux-',lock['url'])
+                with self.assertRaises(ValueError):bootstrap.native_sdk(arch,'unknown')
+
+    def test_native_musl_recipe_requires_the_same_static_elf_inspection(self):
+        builder=tool('build-common')
+        for arch in ('x86_64','aarch64'):
+            recipe=json.loads((ROOT/'tools/runtime'/('linux-musl-'+arch+'.json')).read_bytes())
+            self.assertTrue(builder.requires_static_inspection(recipe))
+        self.assertFalse(builder.requires_static_inspection(dict(abi='glibc',cmake=dict(CMAKE_EXE_LINKER_FLAGS='-static-libstdc++'))))
+        self.assertFalse(builder.requires_static_inspection(dict(abi='musl',cmake={})))
+
     def test_relink_requires_native_host_and_matching_completed_provenance(self):
         from twine_edge_overlap.runtime_platform import HostEnvironment
         relinker = tool('relink-zig')
