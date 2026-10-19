@@ -13,5 +13,14 @@
     "size": 1855,
     "file": "flex-2.6.4-COPYING.txt",
     "purpose": "Preserve upstream text, including generated-scanner exception; not approval of a complete bundle"
+  },
+  "flex_apple_35_copying": {
+    "url": "https://raw.githubusercontent.com/apple-oss-distributions/flex/8548f53e24244c0a411dea128a21686b61d29df4/COPYING",
+    "source_tag": "flex-35",
+    "source_commit": "8548f53e24244c0a411dea128a21686b61d29df4",
+    "sha256": "97fd685958d93be7f8dab939bb8161dbd6afb0718c63bfc337c24321aea44273",
+    "size": 1855,
+    "file": "flex-2.6.4-COPYING.txt",
+    "purpose": "Apple flex-35 notice verified byte-identical to upstream material; not proof of scanner skeleton correspondence or complete macOS license audit"
   }
 }
