@@ -946,3 +946,41 @@ Esse resultado valida a fundação compartilhada sem bundle POSIX qualificado.
 Não promove células da matriz nem conclui assinatura/notarização, Windows 11
 limpo, macOS Intel, rede nativa offline ou revisão Twine. O total permanece
 **46/84**. Não houve merge em dev/main nem publicação de release/bundle.
+
+### Build nativo Linux no GitHub Actions — 2026-10-19
+
+O incremento removeu a dependência de uma máquina Ubuntu fornecida pelo
+mantenedor para iniciar o build. `linux-candidate.yml` usa Ubuntu 24.04 x64
+hospedado, fonte Graphviz 16.1.0 e Zig 0.15.2 conferidos por tamanho/SHA-256,
+SDK privado e registro da imagem/ferramentas. Dois testes novos verificam
+recusa de download adulterado/truncado/excessivo e preservação de arquivo
+preexistente; a regressão local passou com 164 testes, sete skips Windows.
+
+A primeira execução parou no wrapper CMake: o argv[0] genérico impedia localizar
+os módulos da instalação do runner. A correção preserva o caminho absoluto.
+O build corrigido e o corpus passaram; em seguida o workflow passou a executar
+também a captura de entradas de link e a conferência de fontes compiladas.
+
+A revisão `94792d820e191a351d0fd9673fc3b25ee465e316` passou no
+[build nativo 39240832314](https://github.com/Extremois/desembaraca-twine/actions/runs/39240832314)
+e nos seis jobs da
+[regressão 39240832316](https://github.com/Extremois/desembaraca-twine/actions/runs/39240832316).
+Imagem ubuntu24 `20261012.334.1`, kernel `6.17.0-1022-azure`, CPU x64; corpus de
+13 casos com Python 3.12.15 e 3.14.8, preservação dos originais, métricas sem
+regressão e relocação em caminho com espaços/Unicode. A candidata tem SHA-256
+`43ce8d686720467c21be91cab4b8f3b246baae49c2cfe293714ebdf8a82f5716`.
+
+Foram capturadas 73 entradas de link, 147 extrações de bibliotecas e 181 objetos,
+com 322 fontes Graphviz verificadas, nove arquivos gerados e 162 dependências
+externas. O relink coincidiu em bytes com a referência do compilador. O maior
+símbolo GLIBC observado foi 2.14; isso não prova execução no baseline antigo.
+O alvo do compilador continua Linux 4.15/glibc 2.27. O loader dinâmico segue
+entre as dependências cuja política precisa de revisão. O corpus bloqueia rede
+Python, sem substituir observação nativa de rede.
+
+O [recibo nativo](evidence/github-actions-native-linux-2026-10-19.json) vincula
+corpus, proveniência, SDK e relatório de fontes preservados. A candidata fica
+como artefato experimental de CI por sete dias; nenhuma release/catalogação
+foi realizada. T024/T028/T036 avançaram parcialmente, mas os critérios
+agregados de build/auditoria/aceite ainda faltam: contagem mantida em **46/84**.
+Não foi criada VM local, nem houve merge em dev/main ou mudança global de SDK.

@@ -6,6 +6,8 @@
 
 **Estado**: implementação parcial em andamento: 46/84 tarefas concluídas, 38 pendentes. Setup, fundação, contratos e ferramentas de qualificação foram implementados e ensaiados; builds POSIX e aceitação nativa continuam pendentes. O catálogo ativo continua somente Windows. Branch de implementa??o: `feat/003-add-cross-platform-support`, criada de `dev`; branch anterior `feat/002-manage-layout-runtime` preservada. Ver [validation.md](validation.md) e [ledger de suporte](evidence/support-ledger.md).
 
+**Incremento nativo em 2026-10-19**: build glibc x64 executado no Ubuntu 24.04 hospedado, com fonte/SDK fixados, entradas de link/fontes capturadas e 13 casos do corpus aprovados em CPython 3.12/3.14. Ver [recibo nativo](evidence/github-actions-native-linux-2026-10-19.json). Avança os insumos de T024/T028 e do futuro aceite T036; não conclui auditoria, instalação, rede nativa offline ou a variante ARM64. Checkboxes agregados permanecem abertos.
+
 **Tests**: exigidos explicitamente por FR-007/008/013/016 e SC-001–010. Acrescentar casos de contrato antes do comportamento correspondente, observar falha pertinente e executar regressões após a implementação; testes já corretos podem passar. Não exigir falha artificial do baseline.
 
 **Organization**: setup → fundação → histórias US1/US2/US3 (P1) → US4 (P2) → fechamento. Caminhos são relativos à raiz do repositório. Arquivos novos são entregáveis futuros, não arquivos já existentes.

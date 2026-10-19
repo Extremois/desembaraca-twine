@@ -272,3 +272,13 @@ A primeira execução revelou comparações textuais incompatíveis com o alias
 Windows RUNNER~1. A correção exige arquivo absoluto existente e identidade de
 diretório por samefile, sem depender da grafia do caminho. A falha inicial e
 a revisão corrigida ficam associadas no relatório.
+
+`github-actions-native-linux-2026-10-19.json` registra o build real em Ubuntu
+24.04 x64 hospedado, captura do linker/fontes e corpus com CPython 3.12/3.14.
+Os dois relatórios `github-actions-native-linux-corpus-*.json` preservam cada
+caso e suas métricas. Proveniência e SDK estão nos arquivos correspondentes;
+`github-actions-native-linux-sources-2026-10-19.json.gz` preserva em gzip os
+bytes originais do relatório de fontes (hashes comprimido e original no resumo).
+Os relatórios continuam disponíveis após expirar o artefato Actions de sete
+dias. Esse incremento é build/corpus nativo, com auditoria/aceite pendentes;
+não constitui qualificação de célula, revisão de licença ou entrada de catálogo.
