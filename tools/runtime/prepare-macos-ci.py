@@ -30,8 +30,8 @@ def executable(path):
     return dict(path=str(path), sha256=DOWNLOADER.digest(path))
 
 
-def cmake_wrapper(cmake, sdk, bison, flex, python):
-    arguments = ['-G', 'Unix Makefiles', '-DCMAKE_MAKE_PROGRAM=/usr/bin/make',
+def cmake_wrapper(cmake, sdk, bison, flex, python, make='/usr/bin/make'):
+    arguments = ['-G', 'Unix Makefiles', '-DCMAKE_MAKE_PROGRAM=' + str(make),
         '-DCMAKE_OSX_SYSROOT=' + str(sdk), '-DBISON_EXECUTABLE=' + str(bison),
         '-DFLEX_EXECUTABLE=' + str(flex), '-DPython3_EXECUTABLE=' + str(python), '-DMATH_LIB=m']
     return ('#!' + str(python) + '\nimport os,sys\nargs=sys.argv[1:]\n'
@@ -58,7 +58,9 @@ def prepare(work, arch):
     # or xcode-select mutation occurs in this preparer.
     prefix = Path(command(['brew', '--prefix', 'bison']))
     bison = executable(prefix / 'bin/bison')
-    flex = executable('/usr/bin/flex')
+    flex = executable(command(['/usr/bin/xcrun', '--find', 'flex']))
+    make = executable(command(['/usr/bin/xcrun', '--find', 'make']))
+    otool = executable(command(['/usr/bin/xcrun', '--find', 'otool']))
     cmake = executable(shutil.which('cmake') or '')
     compilers = DEVELOPER / 'Toolchains/XcodeDefault.xctoolchain/usr/bin'
     work = Path(work).resolve()
@@ -66,12 +68,13 @@ def prepare(work, arch):
     source = json.loads((HERE / 'source-lock.json').read_bytes())
     DOWNLOADER.download(source, work / 'graphviz.tar.gz')
     wrapper = work / 'cmake-native'
-    wrapper.write_text(cmake_wrapper(cmake['path'], sdk, bison['path'], flex['path'], sys.executable), encoding='utf-8')
+    wrapper.write_text(cmake_wrapper(cmake['path'], sdk, bison['path'], flex['path'], sys.executable,
+                                    make['path']), encoding='utf-8')
     wrapper.chmod(0o755)
     tools = dict(cmake=executable(wrapper), c_compiler=executable(compilers / 'clang'),
                  cxx_compiler=executable(compilers / 'clang++'))
-    host_tools = dict(cmake=cmake, bison=bison, flex=flex, make=executable('/usr/bin/make'),
-                      python=executable(sys.executable), otool=executable('/usr/bin/otool'))
+    host_tools = dict(cmake=cmake, bison=bison, flex=flex, make=make,
+                      python=executable(sys.executable), otool=otool)
     for name in ('cmake', 'bison', 'flex', 'make'):
         host_tools[name]['version'] = command([host_tools[name]['path'], '--version']).splitlines()[0]
     facts = dict(provider='Apple Xcode', xcode=version, developer_dir=str(DEVELOPER),

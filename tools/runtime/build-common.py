@@ -179,7 +179,7 @@ def execute(record, archive, sdk_path, *, cross_libc_experiment=False):
                   host_libc_family=host.libc_family, target_libc_family=recipe['abi'],build_execution_kind=mode)
     provenance = output / 'provenance.json'
     provenance.write_text(json.dumps(record, indent=2) + '\n', encoding='utf-8')
-    environment = {key:os.environ[key] for key in ('HOME','LANG','LC_ALL','TMPDIR','SDKROOT') if key in os.environ}
+    environment = {key:os.environ[key] for key in ('HOME','LANG','LC_ALL','TMPDIR','SDKROOT','DEVELOPER_DIR') if key in os.environ}
     # Never discover Windows interop executables or user wrappers from a WSL PATH.
     environment['PATH'] = '/usr/bin:/bin:/usr/sbin:/sbin'
     for command, timeout in ((configure,120), ([tools['cmake'], '--build', str(build), '--target', 'dot', '--parallel', '2'],600)):

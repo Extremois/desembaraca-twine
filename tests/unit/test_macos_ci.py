@@ -27,8 +27,9 @@ class MacosCITests(unittest.TestCase):
     def test_cmake_wrapper_uses_absolute_argv0_and_explicit_generators(self):
         module = tool()
         text = module.cmake_wrapper('/private/cmake', '/private/sdk', '/private/bison',
-                                    '/private/flex', '/private/python')
+                                    '/private/flex', '/private/python', '/private/make')
         self.assertIn("['/private/cmake',*args]", text)
         for argument in ('-DCMAKE_OSX_SYSROOT=/private/sdk', '-DBISON_EXECUTABLE=/private/bison',
-                         '-DFLEX_EXECUTABLE=/private/flex', '-DPython3_EXECUTABLE=/private/python'):
+                         '-DFLEX_EXECUTABLE=/private/flex', '-DPython3_EXECUTABLE=/private/python',
+                         '-DCMAKE_MAKE_PROGRAM=/private/make'):
             self.assertIn(argument, text)
