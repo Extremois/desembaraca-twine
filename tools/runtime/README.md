@@ -402,6 +402,14 @@ O percurso usa pasta externa com espaços/acentos e confere cache, modos, corpus
 prontidão idempotente. Em Mac exige Developer ID, timestamp/hardened runtime,
 codesign e avaliação spctl habilitada, sem contornar proteções.
 
+Antes do primeiro arquivo válido, o worker também executa uma entrada UTF-8
+inválida e exige código 1 sem chamar a aquisição do runtime ou tentar rede Python.
+As tentativas são contadas mesmo quando a CLI captura o erro. A interceptação é
+removida antes da aquisição normal; não simula download, motor ou aprovação de
+offline nativo. O resultado é registrado em
+`observations.invalid_input_refused_without_acquisition` e exigido pelo driver
+de aceitação. Relatórios antigos não ganham esse resultado retroativamente.
+
 ## Assinatura macOS (execução nativa ainda pendente)
 
 `sh tools/runtime/sign-macos.sh --help` prepara o fluxo explícito do mantenedor.

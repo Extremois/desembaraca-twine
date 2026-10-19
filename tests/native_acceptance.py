@@ -35,6 +35,7 @@ class InstalledCandidateAcceptance:
         self.assertTrue(self.record['checks']['first_run'])
         observed=self.record['observations']
         self.assertTrue(observed['cache_matches_platform'])
+        self.assertTrue(observed['invalid_input_refused_without_acquisition'])
         self.assertEqual(observed['runtime_schema'],2)
         self.assertEqual(observed['executable_mode'],0o755)
         self.assertTrue(observed['healthy_generation_reused'])

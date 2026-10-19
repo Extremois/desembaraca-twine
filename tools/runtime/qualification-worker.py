@@ -13,6 +13,30 @@ import sys
 from unittest.mock import patch
 
 
+def invalid_input_trial(cli,work):
+    """An invalid first file must fail before acquisition, even if errors are caught."""
+    from twine_edge_overlap import application
+    source=work/'invalid-first-input.twee'
+    with source.open('xb') as stream:stream.write(b'\xff')
+    acquired=[];network=[]
+    def acquisition(*args,**kwargs):
+        acquired.append(True)
+        raise AssertionError('Invalid input attempted runtime acquisition')
+    def connection(*args,**kwargs):
+        network.append(True)
+        raise AssertionError('Invalid input attempted Python network')
+    with ExitStack() as stack:
+        stack.enter_context(patch.object(application,'ensure_runtime',side_effect=acquisition))
+        for name in ('socket.getaddrinfo','socket.socket.connect','socket.create_connection'):
+            stack.enter_context(patch(name,side_effect=connection))
+        with redirect_stdout(io.StringIO()),redirect_stderr(io.StringIO()):
+            try:code=cli([str(source)])
+            except AssertionError as exc:raise ValueError('Invalid first input attempted acquisition/network') from exc
+    if code!=1 or acquired or network or source.read_bytes()!=b'\xff':
+        raise ValueError('Invalid first input was not refused before acquisition/network')
+    return dict(exit_code=code,acquisition_attempts=0,python_network_attempts=0)
+
+
 def collect(request):
     from twine_edge_overlap.runtime import ensure_runtime
     from twine_edge_overlap.runtime_catalog import load_catalog,select_artifact,verified_manifest
@@ -46,6 +70,7 @@ def collect(request):
     artifact=load_manifest(verified_manifest(descriptor))
     fixture_root=Path(request['fixture_root'])
     cases=json.loads((fixture_root/'cases.json').read_text())
+    invalid_trial=invalid_input_trial(cli,work)
     source=work/cases[0]['file']
     source.write_bytes((fixture_root/cases[0]['file']).read_bytes())
     output,errors=io.StringIO(),io.StringIO()
@@ -125,10 +150,11 @@ def collect(request):
                 snapshot_id=snapshot.snapshot_id if snapshot.known else None,checks=checks,passed=True,
                 pending_checks=sorted(GATES-set(checks)),
                 observations=dict(cache_matches_platform=handle.root.resolve().is_relative_to(cache_directory(host).resolve()),
+                                  invalid_input_refused_without_acquisition=invalid_trial['exit_code']==1,
                                   executable_mode=stat.S_IMODE(handle.executable.stat().st_mode),runtime_schema=artifact.data['schema_version'],
                                   healthy_generation_reused=True,macos_security_assessed=security_assessed,
                                   paths_with_spaces_and_accents=' ' in str(work) and chr(0xe7) in str(work)),
-                commands=['external venv installation --no-index','console script --help','python -m twine_edge_overlap --help','CLI first valid file','CLI --prepare-runtime','public corpus using normal installed runtime'],
+                commands=['external venv installation --no-index','console script --help','python -m twine_edge_overlap --help','CLI invalid first input without acquisition','CLI first valid file','CLI --prepare-runtime','public corpus using normal installed runtime'],
                 corpus=corpus,network=dict(observation='python-only',attempts=0),
                 log_text=output.getvalue()+'\n'+errors.getvalue(),
                 installation={request['package_mode']:True,'outside_checkout':True},

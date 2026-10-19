@@ -9,6 +9,32 @@ from unit.test_runtime_build_tools import tool
 
 
 class QualificationToolTests(unittest.TestCase):
+    def test_invalid_first_input_is_rejected_before_acquisition_without_network(self):
+        worker=tool('qualification-worker')
+        from twine_edge_overlap.cli import main
+        with tempfile.TemporaryDirectory() as folder:
+            root=Path(folder)
+            observed=worker.invalid_input_trial(main,root)
+            self.assertEqual(observed,dict(exit_code=1,acquisition_attempts=0,python_network_attempts=0))
+            self.assertEqual((root/'invalid-first-input.twee').read_bytes(),b'\xff')
+            self.assertEqual(list(root.glob('*.layout*.twee')),[])
+
+    def test_invalid_input_trial_detects_swallowed_acquisition_and_network_attempts(self):
+        worker=tool('qualification-worker')
+        from twine_edge_overlap import application
+        import socket
+        def acquired(_):
+            try:application.ensure_runtime()
+            except AssertionError:pass
+            return 1
+        def connected(_):
+            try:socket.getaddrinfo('example.invalid',443)
+            except AssertionError:pass
+            return 1
+        for cli in (acquired,connected,lambda _:0):
+            with self.subTest(cli=cli),tempfile.TemporaryDirectory() as folder:
+                with self.assertRaises(ValueError):worker.invalid_input_trial(cli,Path(folder))
+
     def test_review_export_preserves_exact_six_public_outputs_without_overwrite(self):
         collector=tool('qualify-target')
         cases=json.loads((ROOT/'tests/fixtures/cases.json').read_text())
