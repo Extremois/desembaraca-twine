@@ -22,5 +22,26 @@
     "size": 1855,
     "file": "flex-2.6.4-COPYING.txt",
     "purpose": "Apple flex-35 notice verified byte-identical to upstream material; not proof of scanner skeleton correspondence or complete macOS license audit"
+  },
+  "apsl_2_copying": {
+    "url": "https://raw.githubusercontent.com/apple-oss-distributions/xnu/f6217f891ac0bb64f3d375211650a4c1ff8ca1ea/APPLE_LICENSE",
+    "sha256": "e5881019d8766c1e88a5fe1dbca4ba40c78011d41fcb18f6e9f50df60182685b",
+    "size": 19829,
+    "file": "apsl-2.0-COPYING.txt",
+    "purpose": "Full license reference for observed macOS notices; no per-file applicability, compiler source equivalence or bundle approval"
+  },
+  "llvm_17_license_reference": {
+    "url": "https://raw.githubusercontent.com/llvm/llvm-project/llvmorg-17.0.6/llvm/LICENSE.TXT",
+    "sha256": "8d85c1057d742e597985c7d4e6320b015a9139385cff4cbae06ffc0ebe89afee",
+    "size": 15141,
+    "file": "llvm-17.0.6-COPYING.txt",
+    "purpose": "Full license reference for observed macOS notices; no per-file applicability, compiler source equivalence or bundle approval"
+  },
+  "gpl_3_copying": {
+    "url": "https://www.gnu.org/licenses/gpl-3.0.txt",
+    "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+    "size": 35149,
+    "file": "gpl-3.0-COPYING.txt",
+    "purpose": "Full license reference for observed macOS notices; no per-file applicability, compiler source equivalence or bundle approval"
   }
 }

@@ -1345,3 +1345,24 @@ textos canônicos completos, dados gerados, índices sem nome, oferta de fontes,
 assinatura/notarização e aceite instalado permanecem pendentes. Os arquivos
 preservados são material de revisão, não uma auditoria aprovada ou liberação.
 T052 permanece parcial, total **48/84**, catálogo ativo somente Windows.
+
+### Textos completos e índice offline dos avisos macOS
+
+O preparador agora acrescenta APSL 2.0, Apache 2.0 com exceções LLVM e GPL 3
+quando encontra as respectivas declarações nos avisos preservados. Os textos
+foram obtidos dos projetos oficiais Apple/XNU, LLVM e GNU e fixados por URL,
+tamanho e SHA-256 em `material-source-lock.json`. O material LLVM é uma
+referência de licença, sem alegar equivalência com as fontes do compilador Apple.
+Os prefixos Bison e suas exceções permanecem preservados separadamente.
+
+`NOTICE-ORIGINS.json` acompanha a candidata e registra nome, tamanho, hash e
+origem de todos os demais avisos, além dos hashes da proveniência pai e da
+observação de fontes. O índice exclui explicitamente seu próprio hash para
+evitar uma dependência circular; o inventário externo confere também o índice.
+Todos os registros continuam sem aprovação ou qualificação.
+
+Dois testes novos foram observados falhando antes da implementação. A suíte
+local passou com **189 testes**, sete skips Windows. A validação nativa da nova
+composição será registrada após a execução do CI. T052 permanece parcial:
+aplicabilidade por arquivo, outros textos eventualmente necessários, dados
+gerados, fontes, assinatura e aceite instalado ainda exigem conclusão.

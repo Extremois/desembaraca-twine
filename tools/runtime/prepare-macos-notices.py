@@ -22,6 +22,36 @@ link_audit = load('audit-macos-link')
 builder = common.builder
 
 
+def canonical_references(materials):
+    # These are references to explicit declarations, not a license classifier.
+    rules = (
+        ('apsl_2_copying', 'APSL-2.0-COPYING.txt',
+         lambda name, raw: b'Apple Public Source License' in raw and b'Version 2.0' in raw),
+        ('llvm_17_license_reference', 'LLVM-license-reference-COPYING.txt',
+         lambda name, raw: b'Apache-2.0 WITH LLVM-exception' in raw),
+        ('gpl_3_copying', 'GPL-3.0-COPYING.txt',
+         lambda name, raw: name.startswith('Bison-') and b'GNU General Public License' in raw and b'version 3' in raw),
+    )
+    result = []
+    for key, filename, matches in rules:
+        referenced_by = sorted(name for name, raw, _ in materials if matches(name, raw))
+        if referenced_by:
+            raw, origin = common.license_material(key)
+            origin.update(referenced_by=referenced_by,
+                applicability='Per-file applicability pending; reference text does not identify compiler sources or approve redistribution')
+            result.append((filename, raw, origin))
+    return result
+
+
+def origin_index(materials, parent_sha256, evidence_sha256):
+    report = dict(kind='macos-offline-notice-origins', schema_version=1, approved=False, qualified=False,
+        parent_provenance_sha256=parent_sha256, source_evidence_sha256=evidence_sha256,
+        scope='Payload notices excluding this index; complete applicability/source review remains pending',
+        notices=[dict(path=name, size=len(raw), sha256=hashlib.sha256(raw).hexdigest(), origin=origin)
+                 for name, raw, origin in materials])
+    return (json.dumps(report, indent=2, sort_keys=True) + '\n').encode('utf-8')
+
+
 def header_notice(row, developer):
     developer = Path(developer).resolve(strict=True)
     path = Path(row['path']).resolve(strict=True)
@@ -96,8 +126,14 @@ def prepare(build, evidence, source_archive, map_path, output):
         'Xcode: ' + record['sdk']['facts']['xcode'].replace('\n', '; ') + '\n'
         'SDK tree SHA-256: ' + record['sdk']['facts']['sdk_tree_sha256'] + '\n'
         'Header notices are leading comments, not a redistribution of the Apple SDK.\n'
-        'Complete texts, applicability, generated data and corresponding-source offer remain under review.\n').encode()
+        'Referenced license texts and byte-bound NOTICE-ORIGINS.json are included offline.\n'
+        'LLVM reference text does not identify the sources of the Apple compiler.\n'
+        'Additional texts, applicability, generated data and corresponding-source offer remain under review.\n').encode()
     materials.append(('SOURCE-REFERENCES.txt', references, dict(kind='maintainer-source-review-reference')))
+    materials.extend(canonical_references(materials))
+    materials.append(('NOTICE-ORIGINS.json', origin_index(materials,
+        builder.digest(build / 'provenance.json'), builder.digest(evidence)),
+        dict(kind='maintainer-offline-notice-origin-index', scope='Other notice payloads only; no self hash')))
     if len(materials) > 5000 or sum(len(raw) for _, raw, _ in materials) > 16 * 1024**2:
         raise ValueError('Notice material exceeds budget')
     output.mkdir(mode=0o700, parents=True, exist_ok=False)
@@ -122,7 +158,7 @@ def prepare(build, evidence, source_archive, map_path, output):
         artifact_id=record['artifact_id'], executable_sha256=record['executable_sha256'],
         parent_provenance_sha256=builder.digest(build / 'provenance.json'), source_evidence_sha256=builder.digest(evidence),
         notices=inventory, headers=headers, generated_inputs_verified=len(generated),
-        pending=['Per-file applicability and complete canonical texts', 'Generated data provenance/notices',
+        pending=['Per-file applicability and any additional required texts', 'Generated data provenance/notices',
                  'Unnamed linker-map slots and SDK contribution review', 'Complete corresponding-source offer',
                  'Approved audit, signing/notarization and installed native acceptance'])
     (output / 'review.json').write_text(json.dumps(review, indent=2) + '\n', encoding='utf-8')
