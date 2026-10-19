@@ -5,9 +5,13 @@ on:
   workflow_dispatch:
 permissions:
   contents: read
+concurrency:
+  group: foundation-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 jobs:
   contracts:
     name: Pure contracts (${{ matrix.os }}, Python ${{ matrix.python }})
+    timeout-minutes: 15
     strategy:
       fail-fast: false
       matrix:
@@ -18,22 +22,27 @@ jobs:
       PYTHONUTF8: '1'
     steps:
       - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
       - uses: actions/setup-python@v5
         with:
           python-version: ${{ matrix.python }}
       - name: Identify runner (not native support qualification)
-        run: python -c "import platform, sys; print(platform.platform(), platform.machine(), sys.version)"
+        run: python -c "import os, platform, sys; print(platform.platform(), platform.machine(), sys.version); print('image', os.environ.get('ImageOS'), os.environ.get('ImageVersion'), 'runner_arch', os.environ.get('RUNNER_ARCH'))"
       - name: Standard-library foundation tests, without managed native engine
         run: python tests/run_foundation.py
   windows-acceptance:
     if: github.event_name == 'workflow_dispatch' && vars.TWINE_WINDOWS11_RUNNER == 'enabled'
     runs-on: [self-hosted, Windows, X64, twine-windows11]
+    timeout-minutes: 30
     strategy:
       fail-fast: false
       matrix:
         python: ['3.12', '3.14']
     steps:
       - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
       - uses: actions/setup-python@v5
         with:
           python-version: ${{ matrix.python }}
