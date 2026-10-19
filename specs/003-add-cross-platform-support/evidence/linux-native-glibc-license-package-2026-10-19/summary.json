@@ -1,0 +1,332 @@
+{
+  "kind": "native-linux-draft-notice-candidate-package",
+  "approved": false,
+  "qualified": false,
+  "artifact_id": "linux-glibc-x86_64",
+  "environment_kind": "native",
+  "commit": "90e0accace407e4d74fef598fc5d56f84e6fc8b3",
+  "run_url": "https://github.com/Extremois/desembaraca-twine/actions/runs/39247789821",
+  "artifact_zip_sha256": "63a3c885c6ad80edd678b8a62d537e32d448a132e406211c8781f291015979de",
+  "executable_sha256": "43ce8d686720467c21be91cab4b8f3b246baae49c2cfe293714ebdf8a82f5716",
+  "provenance_sha256": "8471fabc74e72cfd674b0f96374f6703de0ffd16b31376f785d447ee437fd424",
+  "archive_sha256": "2ed85bdd25236de6e5f4f11905410c30aa9e9199f95acd0c00a58bb436cde858",
+  "archive_bytes": 6177938,
+  "inventory_sha256": "37d63b601616df7538df3822c9a37ce4d37bcd816d393b5bd8728a3b0242bc72",
+  "notices": 23,
+  "sdk_headers_verified": 162,
+  "generated_files_verified": 9,
+  "flex_generator": {
+    "kind": "pinned-generator-license-material",
+    "source_url": "https://raw.githubusercontent.com/westes/flex/v2.6.4/COPYING",
+    "source_sha256": "97fd685958d93be7f8dab939bb8161dbd6afb0718c63bfc337c24321aea44273",
+    "generator_version": "2.6.4",
+    "generator_sha256": "6b70611fd650c8216b5c8c1a54a69ed470cd82c63ec0dc095dd4d9782bc3efbb",
+    "qualification": "Recorded generator/scanner versions agree; preserves upstream generated-scanner exception, no bundle approval",
+    "generated_path": "lib/cgraph/scan.c",
+    "generated_sha256": "1975262c8d142dd7b51184db9b9b75d828d841da97c62e31a9dc220ed8d1694c"
+  },
+  "data_comparison": {
+    "svg_colors_matched": 147,
+    "html_entities_matched": 252,
+    "xorg": {
+      "matched": 674,
+      "differences": {
+        "gray": {
+          "graphviz": [
+            192,
+            192,
+            192,
+            255
+          ],
+          "reference": [
+            190,
+            190,
+            190
+          ]
+        },
+        "grey": {
+          "graphviz": [
+            192,
+            192,
+            192,
+            255
+          ],
+          "reference": [
+            190,
+            190,
+            190
+          ]
+        },
+        "invis": {
+          "graphviz": [
+            255,
+            255,
+            254,
+            0
+          ],
+          "reference": null
+        },
+        "none": {
+          "graphviz": [
+            255,
+            255,
+            254,
+            0
+          ],
+          "reference": null
+        },
+        "transparent": {
+          "graphviz": [
+            255,
+            255,
+            254,
+            0
+          ],
+          "reference": null
+        }
+      }
+    }
+  },
+  "data_tables_reproduced": [
+    {
+      "path": "lib/common/common/colortbl.h",
+      "sha256": "7cd53d4b8667696af35a23911a93875797511d5a70c1b46987c7e80d0563d6f3",
+      "size": 102902,
+      "generator": "make_colortbl.py",
+      "reproduced": true
+    },
+    {
+      "path": "lib/common/common/entities.h",
+      "sha256": "3c4c841918e18424c51f58423e510b1537be15a1c6518ec25d88321a5fee2da1",
+      "size": 4751,
+      "generator": "entities.py",
+      "reproduced": true
+    }
+  ],
+  "data_evidence_sha256": "4455fc9a1a901bcb148cad9e7a081a49c39b171fde7af0d4a4538e58b9d6123b",
+  "glibc_objects": {
+    "objects": 3,
+    "observed_source_units": 4,
+    "sources_verified": 5,
+    "sources_with_leading_comments": 5,
+    "sdk_inputs": 14
+  },
+  "glibc_object_evidence_sha256": "c7de45566844efe6878ddee9bd3280ca1fc51d85408dc219622e5f2a0c63468f",
+  "glibc_canonical_lgpl_sha256": "20e50fe7aae3e56378ebf0417d9de904f55a0e61e4df315333e632a4d3555d95",
+  "archive_files_verified": 24,
+  "archive_modes_verified": true,
+  "archive_fixed_timestamps_verified": true,
+  "corpus": [
+    {
+      "python": "3.12.15",
+      "cases": 13,
+      "dot_executions": 8,
+      "network_syscalls": {}
+    },
+    {
+      "python": "3.14.8",
+      "cases": 13,
+      "dot_executions": 8,
+      "network_syscalls": {}
+    }
+  ],
+  "pending": [
+    "Per-file license applicability and complete source offer",
+    "W3C/X11 data provenance and notice applicability",
+    "Other canonical license texts as applicable",
+    "Final audited inventory and native baseline/cell qualification"
+  ],
+  "artifact_retention_days": 7,
+  "files": [
+    {
+      "file": "candidate.json",
+      "sha256": "fc2fe17f58f3194be8171c9e70dba6a6b8ea436660972cee686ebff57bc8c9a5",
+      "uncompressed_sha256": "fc2fe17f58f3194be8171c9e70dba6a6b8ea436660972cee686ebff57bc8c9a5"
+    },
+    {
+      "file": "inventory.json",
+      "sha256": "37d63b601616df7538df3822c9a37ce4d37bcd816d393b5bd8728a3b0242bc72",
+      "uncompressed_sha256": "37d63b601616df7538df3822c9a37ce4d37bcd816d393b5bd8728a3b0242bc72"
+    },
+    {
+      "file": "review.json",
+      "sha256": "0af5578f60b2da93078ec29a0eac2e311c75b8412446f560bfb056ec5e11a709",
+      "uncompressed_sha256": "0af5578f60b2da93078ec29a0eac2e311c75b8412446f560bfb056ec5e11a709"
+    },
+    {
+      "file": "provenance.json",
+      "sha256": "8471fabc74e72cfd674b0f96374f6703de0ffd16b31376f785d447ee437fd424",
+      "uncompressed_sha256": "8471fabc74e72cfd674b0f96374f6703de0ffd16b31376f785d447ee437fd424"
+    },
+    {
+      "file": "graphviz-source-evidence.json.gz",
+      "sha256": "f01126a156e2b01f42ad2babb3dd703b9368bc9c76a3ba73329d9f16663ffa8c",
+      "uncompressed_sha256": "8861700b227371425260c9fcdcc8f0cd497d1d7e209705c8698d90ffca4e429d"
+    },
+    {
+      "file": "graphviz-data-evidence.json",
+      "sha256": "4455fc9a1a901bcb148cad9e7a081a49c39b171fde7af0d4a4538e58b9d6123b",
+      "uncompressed_sha256": "4455fc9a1a901bcb148cad9e7a081a49c39b171fde7af0d4a4538e58b9d6123b"
+    },
+    {
+      "file": "glibc-object-evidence.json",
+      "sha256": "c7de45566844efe6878ddee9bd3280ca1fc51d85408dc219622e5f2a0c63468f",
+      "uncompressed_sha256": "c7de45566844efe6878ddee9bd3280ca1fc51d85408dc219622e5f2a0c63468f"
+    },
+    {
+      "file": "network-312.json",
+      "sha256": "98dc588e99c3a68c3927b1a474e0b37c6e2322ee738a0c68f77bd0c4eb81c3df",
+      "uncompressed_sha256": "98dc588e99c3a68c3927b1a474e0b37c6e2322ee738a0c68f77bd0c4eb81c3df"
+    },
+    {
+      "file": "corpus-312.json",
+      "sha256": "d363b59c23f699bdefb49135edbcf40a81d63fea885dcb19eb18b7ff7bf19897",
+      "uncompressed_sha256": "d363b59c23f699bdefb49135edbcf40a81d63fea885dcb19eb18b7ff7bf19897"
+    },
+    {
+      "file": "network-312.control.trace.gz",
+      "sha256": "f3fff5f9a1716bd83c085b8272f124525611a04a0718e228733ab50ddb06f6ea",
+      "uncompressed_sha256": "388c117737466fe1b0e602b75237dfcedfccd392192b58bc8a4ab723dcb46592"
+    },
+    {
+      "file": "network-312.corpus.trace.gz",
+      "sha256": "229e8c7fcce37d328546b307e87c0061779abd8759b7df6aba4548812cb58c97",
+      "uncompressed_sha256": "e57f2ccb107512efa958a1ded374f0f6db0fefad317d2237ef288ee265df739f"
+    },
+    {
+      "file": "network-314.json",
+      "sha256": "5be1b71b2845a0c12a5844a31fa0ec20b76882a787a4df32990ebd8a8abb0807",
+      "uncompressed_sha256": "5be1b71b2845a0c12a5844a31fa0ec20b76882a787a4df32990ebd8a8abb0807"
+    },
+    {
+      "file": "corpus-314.json",
+      "sha256": "923a505bf4d3db9a99f8c565d3e2bac08b95fa596eac0ca2561b3e40cc98b4b7",
+      "uncompressed_sha256": "923a505bf4d3db9a99f8c565d3e2bac08b95fa596eac0ca2561b3e40cc98b4b7"
+    },
+    {
+      "file": "network-314.control.trace.gz",
+      "sha256": "0d32c6a27ed809e04e3512511384ba415b98c9bff3afd94b7f42efd683dd0855",
+      "uncompressed_sha256": "b5fd681f115f868038bce60e1c16604165c9bf7aa30b87c3989946edcb0c7a1e"
+    },
+    {
+      "file": "network-314.corpus.trace.gz",
+      "sha256": "c26cb07362d561b793b90a2ea420f1a52eb9e8dfaf9411ee57d314df61c55e77",
+      "uncompressed_sha256": "67b837bb4494709a6d5d1bf24d93c04532705bb45a52c9a05709d8be787d73bb"
+    },
+    {
+      "file": "notices/Bison-lib__cgraph__grammar.c.txt",
+      "sha256": "b979bc0e49fa1efed0fad3af4ecc582b471da7662626cebfd0d5f998b1119f72",
+      "uncompressed_sha256": "b979bc0e49fa1efed0fad3af4ecc582b471da7662626cebfd0d5f998b1119f72"
+    },
+    {
+      "file": "notices/Bison-lib__cgraph__grammar.h.txt",
+      "sha256": "ecd76b7233bacbeeafca33a46b80f4120864e3de861e7d0a7d7c6fcce3d664dd",
+      "uncompressed_sha256": "ecd76b7233bacbeeafca33a46b80f4120864e3de861e7d0a7d7c6fcce3d664dd"
+    },
+    {
+      "file": "notices/Bison-lib__common__htmlparse.c.txt",
+      "sha256": "b979bc0e49fa1efed0fad3af4ecc582b471da7662626cebfd0d5f998b1119f72",
+      "uncompressed_sha256": "b979bc0e49fa1efed0fad3af4ecc582b471da7662626cebfd0d5f998b1119f72"
+    },
+    {
+      "file": "notices/Bison-lib__common__htmlparse.h.txt",
+      "sha256": "ecd76b7233bacbeeafca33a46b80f4120864e3de861e7d0a7d7c6fcce3d664dd",
+      "uncompressed_sha256": "ecd76b7233bacbeeafca33a46b80f4120864e3de861e7d0a7d7c6fcce3d664dd"
+    },
+    {
+      "file": "notices/ColorBrewer.txt",
+      "sha256": "09598cbb53b21f3cab841d5be8ceee6ef9bc0387f3b60330da94e9c98f4ada19",
+      "uncompressed_sha256": "09598cbb53b21f3cab841d5be8ceee6ef9bc0387f3b60330da94e9c98f4ada19"
+    },
+    {
+      "file": "notices/DATA-ORIGINS.txt",
+      "sha256": "24f0edb2c3c1d67dec4bf35e8ef2aab7e5de6f525dbdd6a198b8a8053b3b526c",
+      "uncompressed_sha256": "24f0edb2c3c1d67dec4bf35e8ef2aab7e5de6f525dbdd6a198b8a8053b3b526c"
+    },
+    {
+      "file": "notices/Flex-2.6.4-COPYING.txt",
+      "sha256": "97fd685958d93be7f8dab939bb8161dbd6afb0718c63bfc337c24321aea44273",
+      "uncompressed_sha256": "97fd685958d93be7f8dab939bb8161dbd6afb0718c63bfc337c24321aea44273"
+    },
+    {
+      "file": "notices/Graphviz-AUTHORS.txt",
+      "sha256": "182eaf397edc803d0e44a25708ba70ecafc143c0f610ea7048c6b9687a939ff0",
+      "uncompressed_sha256": "182eaf397edc803d0e44a25708ba70ecafc143c0f610ea7048c6b9687a939ff0"
+    },
+    {
+      "file": "notices/Graphviz-COPYING.txt",
+      "sha256": "0becf16567beb77fa252b7664631dd177c8f9a1889e48995b45379c7130e5303",
+      "uncompressed_sha256": "0becf16567beb77fa252b7664631dd177c8f9a1889e48995b45379c7130e5303"
+    },
+    {
+      "file": "notices/Graphviz-lib__rbtree__LICENSE.txt",
+      "sha256": "fcb423209a3a3909f41e629a4973eab3995ceb93136dd72485fb12ad3de29dfc",
+      "uncompressed_sha256": "fcb423209a3a3909f41e629a4973eab3995ceb93136dd72485fb12ad3de29dfc"
+    },
+    {
+      "file": "notices/LGPL-2.1-COPYING.txt",
+      "sha256": "20e50fe7aae3e56378ebf0417d9de904f55a0e61e4df315333e632a4d3555d95",
+      "uncompressed_sha256": "20e50fe7aae3e56378ebf0417d9de904f55a0e61e4df315333e632a4d3555d95"
+    },
+    {
+      "file": "notices/SDK-LICENSE.txt",
+      "sha256": "5c537d6853e005298a285d508cff9ac7192cea23576c840d485b2b586a7ff177",
+      "uncompressed_sha256": "5c537d6853e005298a285d508cff9ac7192cea23576c840d485b2b586a7ff177"
+    },
+    {
+      "file": "notices/SDK-lib__libc__glibc__LICENSES.txt",
+      "sha256": "b22a69aa3f80a5201818c66cb0df0f25f9fa13cf5861b0093a058dbd12d50dce",
+      "uncompressed_sha256": "b22a69aa3f80a5201818c66cb0df0f25f9fa13cf5861b0093a058dbd12d50dce"
+    },
+    {
+      "file": "notices/SDK-lib__libcxx__LICENSE.TXT.txt",
+      "sha256": "539dd7aed86e8a4f12cbdd0e6c50c189c7d74847e4fecc64ce2c6ee3a01da38b",
+      "uncompressed_sha256": "539dd7aed86e8a4f12cbdd0e6c50c189c7d74847e4fecc64ce2c6ee3a01da38b"
+    },
+    {
+      "file": "notices/SDK-lib__libcxxabi__LICENSE.TXT.txt",
+      "sha256": "e2b35be49f7284a45b7baca8fc7b3ab7440e7902392b2528a457816b5bb2a15c",
+      "uncompressed_sha256": "e2b35be49f7284a45b7baca8fc7b3ab7440e7902392b2528a457816b5bb2a15c"
+    },
+    {
+      "file": "notices/SDK-lib__libunwind__LICENSE.TXT.txt",
+      "sha256": "b5efebcaca80879234098e52d1725e6d9eb8fb96a19fce625d39184b705f7b6d",
+      "uncompressed_sha256": "b5efebcaca80879234098e52d1725e6d9eb8fb96a19fce625d39184b705f7b6d"
+    },
+    {
+      "file": "notices/SOURCE-REFERENCES.txt",
+      "sha256": "6f5ea5a2d1756065c777a99b910ac8f5d104e870b16891df3f68a21c7277c16e",
+      "uncompressed_sha256": "6f5ea5a2d1756065c777a99b910ac8f5d104e870b16891df3f68a21c7277c16e"
+    },
+    {
+      "file": "notices/Xorg-rgb-1.1.0-COPYING.txt",
+      "sha256": "1d08eb3384f5dedc7735bcfae1aa58cb64643ca9389edce3312b1c3cefbfdaa7",
+      "uncompressed_sha256": "1d08eb3384f5dedc7735bcfae1aa58cb64643ca9389edce3312b1c3cefbfdaa7"
+    },
+    {
+      "file": "notices/glibc-source-lib__libc__glibc__csu__abi-note.S.txt",
+      "sha256": "610d4102608ad923087a58e2b3a6e34ee45484330a6df096a33278d9e8668a05",
+      "uncompressed_sha256": "610d4102608ad923087a58e2b3a6e34ee45484330a6df096a33278d9e8668a05"
+    },
+    {
+      "file": "notices/glibc-source-lib__libc__glibc__csu__elf-init-2.33.c.txt",
+      "sha256": "754e3120bb12bda04a831d1e08b544b152930bf7275577b3fc995d337cbbaee3",
+      "uncompressed_sha256": "754e3120bb12bda04a831d1e08b544b152930bf7275577b3fc995d337cbbaee3"
+    },
+    {
+      "file": "notices/glibc-source-lib__libc__glibc__csu__init.c.txt",
+      "sha256": "1860d3b2f1c52f3d56f965cec59098343a4d270ab7f1543502825a699a7b70c5",
+      "uncompressed_sha256": "1860d3b2f1c52f3d56f965cec59098343a4d270ab7f1543502825a699a7b70c5"
+    },
+    {
+      "file": "notices/glibc-source-lib__libc__glibc__io__fstat-2.32.c.txt",
+      "sha256": "eb44f02340cb9e3c7d07a5a6e6be063298d2f40d6264c118f9d5628f55673d4c",
+      "uncompressed_sha256": "eb44f02340cb9e3c7d07a5a6e6be063298d2f40d6264c118f9d5628f55673d4c"
+    },
+    {
+      "file": "notices/glibc-source-lib__libc__glibc__sysdeps__x86_64__start-2.33.S.txt",
+      "sha256": "d3e9ecbc293723e00a641e08ca21f0c2edb30dd115858f53ba3acfd7be3e8c6e",
+      "uncompressed_sha256": "d3e9ecbc293723e00a641e08ca21f0c2edb30dd115858f53ba3acfd7be3e8c6e"
+    }
+  ]
+}

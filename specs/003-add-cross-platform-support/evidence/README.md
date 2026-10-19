@@ -310,3 +310,13 @@ corpus e traces nos dois Pythons. As referências usadas estão fixadas por hash
 em `tools/runtime/licenses/data-references/`. Igualdade de valores e reprodução
 dos headers são verificações técnicas; a cadeia histórica de cópia e a
 aplicabilidade das licenças continuam sob revisão.
+
+`linux-native-glibc-license-package-2026-10-19/glibc-object-evidence.json`
+registra a inspeção de três objetos, quatro unidades de compilação e cinco
+fontes glibc verificadas no SDK. Distingue abi-note.S adicional das fontes
+observadas, e registra os 14 inputs SDK, incluindo bibliotecas sem extrações
+reportadas e inputs compartilhados de link. `source-declarations.json` registra
+as declarações nos comentários preservados; csu/init.c não contém a exceção de
+link presente nos outros quatro prefixos. O pacote tem 23 notices, incluindo
+cinco prefixos por fonte e a LGPL 2.1 integral fixada por hash. O summary vincula
+inventário, relatório, notices, corpus e traces; tudo permanece não aprovado.

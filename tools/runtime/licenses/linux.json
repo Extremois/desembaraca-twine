@@ -470,6 +470,23 @@
       "evidence": "specs/003-add-cross-platform-support/evidence/linux-native-data-package-2026-10-19/summary.json",
       "flex_generator_version": "2.6.4",
       "pending": "Per-file SDK/data license applicability and historical copying, complete corresponding sources, native baseline and whole-cell acceptance"
+    },
+    {
+      "artifact_id": "linux-glibc-x86_64",
+      "environment_kind": "native",
+      "approved": false,
+      "qualified": false,
+      "executable_sha256": "43ce8d686720467c21be91cab4b8f3b246baae49c2cfe293714ebdf8a82f5716",
+      "provenance_sha256": "8471fabc74e72cfd674b0f96374f6703de0ffd16b31376f785d447ee437fd424",
+      "archive_sha256": "2ed85bdd25236de6e5f4f11905410c30aa9e9199f95acd0c00a58bb436cde858",
+      "archive_bytes": 6177938,
+      "inventory_sha256": "37d63b601616df7538df3822c9a37ce4d37bcd816d393b5bd8728a3b0242bc72",
+      "notices": 23,
+      "sdk_headers_verified": 162,
+      "generated_files_verified": 9,
+      "evidence": "specs/003-add-cross-platform-support/evidence/linux-native-glibc-license-package-2026-10-19/summary.json",
+      "flex_generator_version": "2.6.4",
+      "pending": "Per-file applicability including init.c without the other prefixes linking exception; complete corresponding sources, native baseline and whole-cell acceptance"
     }
   ],
   "generated_data_evidence": [
@@ -560,6 +577,87 @@
       ],
       "historical_copying_proven": false,
       "pending": "Historical copying and license applicability review remain distinct from verified reference values and reproduced tables"
+    }
+  ],
+  "glibc_object_source_evidence": [
+    {
+      "artifact_id": "linux-glibc-x86_64",
+      "approved": false,
+      "qualified": false,
+      "executable_sha256": "43ce8d686720467c21be91cab4b8f3b246baae49c2cfe293714ebdf8a82f5716",
+      "provenance_sha256": "6202b10c2db173ce7a8a0e4511ce655427b20f5735ca63aa5ec78c2c4d61d287",
+      "evidence": "specs/003-add-cross-platform-support/evidence/linux-native-glibc-license-package-2026-10-19/glibc-object-evidence.json",
+      "summary": {
+        "objects": 3,
+        "observed_source_units": 4,
+        "sources_verified": 5,
+        "sources_with_leading_comments": 5,
+        "sdk_inputs": 14
+      },
+      "pending": [
+        "DWARF compilation units do not cover all transitive headers, assembly or retained sections",
+        "Zero extraction rows are observations, not proof that an input contributes no code",
+        "abi-note.S is additional pinned material, not an observed compilation-unit binding",
+        "Per-file applicability, complete source offer and reviewed audit remain pending"
+      ],
+      "source_declarations": [
+        {
+          "path": "lib/libc/glibc/csu/abi-note.S",
+          "source_sha256": "9abb7d71812ff5009197a67c57e3f8ae3138dd5be57c1a8e534e859c6e689ffc",
+          "role": "additional-startup-source-material-not-object-observation",
+          "declared_license": "LGPL-2.1-or-later",
+          "unlimited_linking_permission_in_prefix": true,
+          "notice_file": "notices/glibc-source-lib__libc__glibc__csu__abi-note.S.txt",
+          "prefix_sha256": "610d4102608ad923087a58e2b3a6e34ee45484330a6df096a33278d9e8668a05",
+          "approved": false,
+          "scope": "Declarations read in preserved leading comments; not a complete per-file applicability decision"
+        },
+        {
+          "path": "lib/libc/glibc/csu/elf-init-2.33.c",
+          "source_sha256": "2d9b3d9b6af5d2ad6bf8a881e3c34f0bd7478f9709b62dfe9d48a749a5768519",
+          "role": "observed-compilation-unit",
+          "declared_license": "LGPL-2.1-or-later",
+          "unlimited_linking_permission_in_prefix": true,
+          "notice_file": "notices/glibc-source-lib__libc__glibc__csu__elf-init-2.33.c.txt",
+          "prefix_sha256": "754e3120bb12bda04a831d1e08b544b152930bf7275577b3fc995d337cbbaee3",
+          "approved": false,
+          "scope": "Declarations read in preserved leading comments; not a complete per-file applicability decision"
+        },
+        {
+          "path": "lib/libc/glibc/csu/init.c",
+          "source_sha256": "a06cd917584e309bf39f6f7a6158519e60a35e6ff8b3e96df8308d170c908f33",
+          "role": "observed-compilation-unit",
+          "declared_license": "LGPL-2.1-or-later",
+          "unlimited_linking_permission_in_prefix": false,
+          "notice_file": "notices/glibc-source-lib__libc__glibc__csu__init.c.txt",
+          "prefix_sha256": "1860d3b2f1c52f3d56f965cec59098343a4d270ab7f1543502825a699a7b70c5",
+          "approved": false,
+          "scope": "Declarations read in preserved leading comments; not a complete per-file applicability decision"
+        },
+        {
+          "path": "lib/libc/glibc/io/fstat-2.32.c",
+          "source_sha256": "a835e5cfb407c00c15aead0247d713a536d651d1fef1236b4a87aaf7a27eec68",
+          "role": "observed-compilation-unit",
+          "declared_license": "LGPL-2.1-or-later",
+          "unlimited_linking_permission_in_prefix": true,
+          "notice_file": "notices/glibc-source-lib__libc__glibc__io__fstat-2.32.c.txt",
+          "prefix_sha256": "eb44f02340cb9e3c7d07a5a6e6be063298d2f40d6264c118f9d5628f55673d4c",
+          "approved": false,
+          "scope": "Declarations read in preserved leading comments; not a complete per-file applicability decision"
+        },
+        {
+          "path": "lib/libc/glibc/sysdeps/x86_64/start-2.33.S",
+          "source_sha256": "d3daf6434b838a91785c5ac771a7f01d08cc9234274ca5a13282e530dd22a058",
+          "role": "observed-compilation-unit",
+          "declared_license": "LGPL-2.1-or-later",
+          "unlimited_linking_permission_in_prefix": true,
+          "notice_file": "notices/glibc-source-lib__libc__glibc__sysdeps__x86_64__start-2.33.S.txt",
+          "prefix_sha256": "d3e9ecbc293723e00a641e08ca21f0c2edb30dd115858f53ba3acfd7be3e8c6e",
+          "approved": false,
+          "scope": "Declarations read in preserved leading comments; not a complete per-file applicability decision"
+        }
+      ],
+      "canonical_lgpl_material": "tools/runtime/licenses/lgpl-2.1-COPYING.txt"
     }
   ]
 }

@@ -193,6 +193,24 @@ inventariados e timestamps fixos. É um artefato experimental de revisão com
 automática do catálogo. A receita de inspeção mantém a exigência de auditoria
 aprovada, mesmo quando o inventário e o pacote foram gerados com sucesso.
 
+`audit-glibc-objects.py` confere os inputs SDK e o relatório de extrações do
+linker antes de inspecionar `crt1.o` e os membros observados de libc_nonshared.
+Os objetos do cache devem coincidir com os bytes dos membros dos arquivos
+estáticos. As unidades de compilação DWARF são resolvidas apenas dentro da
+árvore glibc do SDK e as fontes são comparadas com seu arquivo fixado. O
+relatório distingue fontes observadas de `abi-note.S`, que é material adicional
+de startup e não recebeu vínculo por unidade de compilação nessa inspeção.
+Também registra inputs compartilhados de link e arquivos estáticos sem extrações;
+zero linhas de extração não vira aprovação ou prova automática de ausência.
+
+Com `--glibc-object-evidence`, o preparo de notices exige a mesma variante,
+proveniência, executável e SDK, depois reconfere os prefixos de comentários nos
+bytes originais. O pacote glibc inclui ainda a LGPL 2.1 integral da origem GNU,
+fixada por tamanho/hash. O arquivo glibc/LICENSES cobre avisos adicionais e não
+substitui esse texto. Exceções de link são tratadas por arquivo: o prefixo de
+csu/init.c declara LGPL 2.1 ou posterior e não contém a exceção observada em
+outros arquivos. Essa coleta não aprova a compatibilidade do bundle inteiro.
+
 O percurso experimental aceita glibc x86_64 ou musl x86_64 estático. Para musl,
 exige fatos do SDK compatíveis e o relatório ELF medido, confere seu hash e
 recusa interpreter, dependências dinâmicas ou símbolos GLIBC. Preserva uma

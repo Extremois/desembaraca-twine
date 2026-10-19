@@ -1113,3 +1113,53 @@ cadeia histórica de cópia e da decisão de aplicabilidade de licença: essas
 estáticos SDK, fontes correspondentes completas e qualificação permanecem
 pendentes. Não houve admissão no catálogo nem release; T030 segue parcial e
 a contagem permanece **46/84**.
+
+### Objetos glibc, fontes observadas e texto LGPL integral — 2026-10-19
+
+`audit-glibc-objects.py` confere a candidata, o arquivo/compiler SDK, o inspetor
+e o relatório real de extrações. Os objetos de libc_nonshared devem coincidir
+com os membros dos arquivos estáticos e permanecer dentro do cache registrado.
+Inspeciona unidades DWARF com readelf fixado por hash, resolve fontes apenas
+na árvore glibc e compara os bytes ao arquivo SDK. Limites: 120 s agregados,
+10 s/8 MiB por inspeção, 64 MiB por objeto/arquivo estático e por fontes agregadas,
+1 MiB por fonte. Não executa código da candidata ou faz rede.
+
+No CI nativo foram observados crt1.o e dois membros de libc_nonshared.a,
+totalizando três objetos/quatro unidades: start-2.33.S, init.c, fstat-2.32.c e
+elf-init-2.33.c. abi-note.S é a quinta fonte fixada como material adicional,
+distinta de uma unidade observada. Os 14 inputs SDK, inclusive compartilhados
+de link e arquivos sem extrações, ficam registrados sem inferir ausência de
+código por zero linhas. Cabeçalhos transitivos, assembly não observado e
+retenção de seções continuam fora dessa prova.
+
+Os cinco prefixos de comentários foram preservados por fonte. A revisão
+identificou uma lacuna nos notices anteriores: glibc/LICENSES reúne avisos de
+terceiros e não é o texto completo da LGPL 2.1. Foi obtido o texto oficial GNU,
+fixado em 26.419 bytes/SHA-256 e incluído no pacote glibc. O prefixo de init.c
+declara LGPL 2.1 ou posterior sem a exceção de link observada nos outros quatro;
+as declarações foram registradas por arquivo, sem aplicar uma exceção global.
+
+Quatro testes novos foram observados falhando antes da implementação e depois
+passaram: objetos alterados/fora do cache, variantes/inputs ambíguos, notices
+de outra proveniência/SDK e texto canônico alterado ou truncado. A regressão
+local passou com **177 testes**, sete skips Windows; módulo de notices com
+12 testes aprovados.
+
+A primeira execução dessa etapa de objetos,
+[39246694224](https://github.com/Extremois/desembaraca-twine/actions/runs/39246694224),
+passou. Após a inclusão do texto LGPL integral, a revisão
+`90e0accace407e4d74fef598fc5d56f84e6fc8b3` passou no
+[job nativo 39247789821](https://github.com/Extremois/desembaraca-twine/actions/runs/39247789821)
+e na [regressão compartilhada 39247789912](https://github.com/Extremois/desembaraca-twine/actions/runs/39247789912).
+O pacote corrigido contém 23 notices e o executável: **24 arquivos, 6.177.938
+bytes**, SHA-256 `2ed85bdd25236de6e5f4f11905410c30aa9e9199f95acd0c00a58bb436cde858`.
+Os hashes/tamanhos/modos/timestamps foram conferidos após download, incluindo
+os bytes oficiais da LGPL. Os 13 casos e o controle de rede passaram nos dois
+Pythons, com zero chamadas da classe de rede no corpus e oito execuções do dot.
+
+O [recibo glibc](evidence/linux-native-glibc-license-package-2026-10-19/summary.json)
+vincula fontes, avisos, inventário, proveniência, corpus e traces preservados.
+O ledger distingue declaração de licença e material observado de aprovação
+de compatibilidade. Obrigações/aplicabilidade por arquivo, oferta completa de
+fontes, baseline antigo e qualificação continuam pendentes. T028/T030 seguem
+parciais, total **46/84**, sem admissão de runtime POSIX, release ou VM local.

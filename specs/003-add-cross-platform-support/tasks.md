@@ -14,6 +14,8 @@
 
 **Dados gerados em 2026-10-19**: CI reproduziu em bytes colortbl.h/entities.h a partir dos seis inputs fixados e comparou os valores com W3C/X.Org; cinco diferenças Graphviz registradas. Pacote atualizado com 17 notices e corpus/rede aprovados nos dois Pythons. Ver [evidência dos dados](evidence/linux-native-data-package-2026-10-19/graphviz-data-evidence.json). T030 permanece parcial: correspondência técnica não conclui a cadeia histórica/aplicabilidade de licenças nem a auditoria SDK/fontes.
 
+**Objetos SDK em 2026-10-19**: CI conferiu três objetos/quatro unidades e cinco fontes glibc contra o SDK fixado; preservou os avisos por fonte e corrigiu a ausência da LGPL 2.1 integral. Pacote com 23 notices, corpus/rede nos dois Pythons aprovados. Ver [recibo glibc](evidence/linux-native-glibc-license-package-2026-10-19/summary.json). Declarações/exceções são registradas por arquivo; T028/T030 continuam parciais até revisão completa das obrigações/fontes e qualificação.
+
 **Tests**: exigidos explicitamente por FR-007/008/013/016 e SC-001–010. Acrescentar casos de contrato antes do comportamento correspondente, observar falha pertinente e executar regressões após a implementação; testes já corretos podem passar. Não exigir falha artificial do baseline.
 
 **Organization**: setup → fundação → histórias US1/US2/US3 (P1) → US4 (P2) → fechamento. Caminhos são relativos à raiz do repositório. Arquivos novos são entregáveis futuros, não arquivos já existentes.
