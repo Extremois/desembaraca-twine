@@ -13,6 +13,23 @@ def tool():
 
 
 class DraftNoticesTests(unittest.TestCase):
+    def test_canonical_glibc_license_is_full_and_rejects_changed_material(self):
+        module=tool()
+        data,origin=module.license_material('lgpl_2_1_copying')
+        self.assertEqual(len(data),26419)
+        self.assertIn(b'GNU LESSER GENERAL PUBLIC LICENSE',data)
+        self.assertIn(b'END OF TERMS AND CONDITIONS',data)
+        self.assertIn(b'How to Apply These Terms',data)
+        with tempfile.TemporaryDirectory() as folder:
+            from unittest.mock import patch
+            root=Path(folder);(root/'licenses').mkdir()
+            lock=dict(lgpl_2_1_copying=dict(url=origin['source_url'],sha256=origin['source_sha256'],
+                                           file='copying.txt',size=len(data)))
+            (root/'licenses/material-source-lock.json').write_text(json.dumps(lock))
+            (root/'licenses/copying.txt').write_bytes(data[:-1])
+            with patch.object(module,'HERE',root),self.assertRaises(ValueError):
+                module.license_material('lgpl_2_1_copying')
+
     def test_glibc_source_notices_require_matching_variant_build_and_sdk(self):
         module=tool()
         with tempfile.TemporaryDirectory() as folder:

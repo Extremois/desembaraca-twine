@@ -18,6 +18,16 @@ audit=importlib.util.module_from_spec(spec);spec.loader.exec_module(audit)
 builder=audit.builder
 
 
+def license_material(name):
+    item=json.loads(audit.bounded(HERE/'licenses/material-source-lock.json',65536))[name]
+    filename=Path(item['file'])
+    if filename.name!=str(filename):raise ValueError('License material must be a local filename')
+    data=audit.bounded(HERE/'licenses'/filename,65536)
+    if len(data)!=item['size'] or hashlib.sha256(data).hexdigest()!=item['sha256']:
+        raise ValueError('Pinned canonical license text changed')
+    return data,dict(kind='pinned-canonical-license-text',source_url=item['url'],source_sha256=item['sha256'])
+
+
 def sdk_archive_identity(facts):
     nested=facts.get('archive',{})
     if not isinstance(nested,dict):raise ValueError('Invalid SDK archive identity')
@@ -234,6 +244,9 @@ def prepare(linked_build,source_build,evidence,graphviz_archive,sdk_archive,sdk_
     for name in sorted(sdk_names):
         materials.append(('SDK-'+name.replace('/','__')+'.txt',sdk[name],
                           dict(kind='sdk-source-archive',path=name,archive_sha256=facts['archive_sha256'],source_sha256=hashlib.sha256(sdk[name]).hexdigest())))
+    if record['artifact_id']=='linux-glibc-x86_64':
+        lgpl_text,lgpl_origin=license_material('lgpl_2_1_copying')
+        materials.append(('LGPL-2.1-COPYING.txt',lgpl_text,lgpl_origin))
     for label,entries in (('musl-source',musl_sources),('glibc-source',glibc_sources),('zig-runtime-source',runtime_sources)):
         for name,item in sorted(entries.items()):
             prefix=verified_source_prefix(sdk[name],item)

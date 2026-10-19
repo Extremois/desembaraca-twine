@@ -1,5 +1,12 @@
 {
   "schema_version": 1,
+  "lgpl_2_1_copying": {
+    "url": "https://www.gnu.org/licenses/old-licenses/lgpl-2.1.txt",
+    "sha256": "20e50fe7aae3e56378ebf0417d9de904f55a0e61e4df315333e632a4d3555d95",
+    "size": 26419,
+    "file": "lgpl-2.1-COPYING.txt",
+    "purpose": "Full canonical LGPL 2.1 text for glibc source notices; not blanket application of a per-file linking exception"
+  },
   "flex_2_6_4_copying": {
     "url": "https://raw.githubusercontent.com/westes/flex/v2.6.4/COPYING",
     "sha256": "97fd685958d93be7f8dab939bb8161dbd6afb0718c63bfc337c24321aea44273",
