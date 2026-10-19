@@ -565,6 +565,22 @@
       "evidence": "specs/003-add-cross-platform-support/evidence/linux-native-glibc-license-package-2026-10-19/summary.json",
       "flex_generator_version": "2.6.4",
       "pending": "Per-file applicability including init.c without the other prefixes linking exception; complete corresponding sources, native baseline and whole-cell acceptance"
+    },
+    {
+      "artifact_id": "linux-glibc-aarch64",
+      "approved": false,
+      "qualified": false,
+      "evidence": "specs/003-add-cross-platform-support/evidence/linux-arm64-draft-notices-2026-10-19/summary.json",
+      "executable_sha256": "933b6c63370bdd3e814627e2a9a06176416c8da017a21dcbc96d8137dbc17e22",
+      "provenance_sha256": "d885f0ad208b86274277ae6b9451faf8678b905754512ebbab185fc422639295",
+      "notice_count": 229,
+      "offline_index_payloads": 228,
+      "sdk_headers_verified": 181,
+      "sdk_header_prefixes_preserved": 159,
+      "sdk_headers_without_prefix": 22,
+      "sdk_sources_verified": 251,
+      "candidate_archive_sha256": "b28c394674b104482710a16d37852b36630d5bfacb971f114491aa5483cfaf65",
+      "scope": "Byte-bound draft notices and offline origin index, not complete per-file applicability, source offer or support approval"
     }
   ],
   "generated_data_evidence": [

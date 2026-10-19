@@ -1,0 +1,1780 @@
+{
+  "artifact_id": "linux-glibc-aarch64",
+  "recipe": {
+    "schema_version": 1,
+    "id": "linux-glibc-aarch64",
+    "os": "linux",
+    "arch": "aarch64",
+    "abi": "glibc",
+    "source_lock": "source-lock.json",
+    "cmake": {
+      "BUILD_SHARED_LIBS": "OFF",
+      "ENABLE_LTDL": "OFF",
+      "WITH_EXPAT": "OFF",
+      "WITH_ZLIB": "OFF",
+      "WITH_GVEDIT": "OFF",
+      "WITH_SMYRNA": "OFF",
+      "WITH_GDK": "OFF",
+      "WITH_GHOSTSCRIPT": "OFF",
+      "WITH_GTK": "OFF",
+      "WITH_POPPLER": "OFF",
+      "WITH_QUARTZ": "OFF",
+      "WITH_RSVG": "OFF",
+      "WITH_WEBP": "OFF",
+      "WITH_X": "OFF",
+      "ENABLE_TCL": "OFF",
+      "ENABLE_SWIG": "OFF",
+      "with_digcola": "OFF",
+      "with_ipsepcola": "OFF",
+      "with_sfdp": "OFF",
+      "with_cxx_api": "OFF",
+      "with_cxx_tests": "OFF",
+      "CMAKE_DISABLE_FIND_PACKAGE_ANN": "ON",
+      "CMAKE_DISABLE_FIND_PACKAGE_CAIRO": "ON",
+      "CMAKE_DISABLE_FIND_PACKAGE_GTS": "ON",
+      "CMAKE_DISABLE_FIND_PACKAGE_PANGOCAIRO": "ON",
+      "CMAKE_DISABLE_FIND_PACKAGE_Freetype": "ON",
+      "CMAKE_DISABLE_FIND_PACKAGE_GLUT": "ON",
+      "CMAKE_DISABLE_FIND_PACKAGE_GTK2": "ON",
+      "CMAKE_DISABLE_FIND_PACKAGE_Fontconfig": "ON",
+      "CMAKE_DISABLE_FIND_PACKAGE_GD": "ON",
+      "CMAKE_DISABLE_FIND_PACKAGE_GS": "ON",
+      "CMAKE_DISABLE_FIND_PACKAGE_LTDL": "ON",
+      "CMAKE_DISABLE_FIND_PACKAGE_AA": "ON",
+      "CMAKE_DISABLE_FIND_PACKAGE_DevIL": "ON",
+      "CMAKE_EXE_LINKER_FLAGS": "-static-libstdc++ -static-libgcc",
+      "ENABLE_SHARP": "OFF",
+      "ENABLE_D": "OFF",
+      "ENABLE_GO": "OFF",
+      "ENABLE_GUILE": "OFF",
+      "ENABLE_JAVA": "OFF",
+      "ENABLE_JAVASCRIPT": "OFF",
+      "ENABLE_LUA": "OFF",
+      "ENABLE_PERL": "OFF",
+      "ENABLE_PHP": "OFF",
+      "ENABLE_PYTHON": "OFF",
+      "ENABLE_R": "OFF",
+      "ENABLE_RUBY": "OFF",
+      "CMAKE_SKIP_RPATH": "ON"
+    },
+    "qualification": "pending-native-build-and-audit",
+    "sdk_environment_digest": null,
+    "baseline_target": "Ubuntu 18.04 or older glibc ABI",
+    "required_evidence": [
+      "native build",
+      "compiler/sysroot/image digests",
+      "dependency closure and ABI symbols",
+      "source/license audit",
+      "relocation",
+      "six known layouts",
+      "cell qualification"
+    ],
+    "notes": "Graphviz internal libraries/plugins statically linked using upstream dot_builtins; libc/OS linkage remains platform-specific. No universal Linux claim."
+  },
+  "source": {
+    "schema_version": 1,
+    "engine": "graphviz",
+    "version": "16.1.0",
+    "url": "https://gitlab.com/graphviz/graphviz/-/archive/16.1.0/graphviz-16.1.0.tar.gz",
+    "sha256": "1e028b2b3e84e946c1d3e8c47590f8f0741bba1041fe6eff36eee87e598ea249",
+    "size": 41189481,
+    "git_revision": "e41c710710be080ad37af1b51c6e2f8beffa9ee5",
+    "license": "EPL-2.0",
+    "license_path": "COPYING",
+    "license_sha256": "0becf16567beb77fa252b7664631dd177c8f9a1889e48995b45379c7130e5303",
+    "qualification": "source-only; no POSIX binary qualified"
+  },
+  "recipe_sha256": "463052e4ad857b3e989d09df28bbc1ffc40eb0024411d00bfcdefc82776b48b4",
+  "output": "/home/runner/work/_temp/twine-arm64-linked",
+  "qualification": "experimental-relink-only; no dependency/license/native-cell approval",
+  "sdk": {
+    "c_compiler": {
+      "path": "/home/runner/work/_temp/twine-arm64-sdk/c_compiler",
+      "sha256": "22e6e45888f2a14641e7e76c7c2230ee24fd82b24eee849873416889699bf28c"
+    },
+    "cxx_compiler": {
+      "path": "/home/runner/work/_temp/twine-arm64-sdk/cxx_compiler",
+      "sha256": "814ce3ac4aff441437449b167e104ef5f5ce50f47e80c896648d96bf74d062f2"
+    },
+    "cmake": {
+      "path": "/home/runner/work/_temp/twine-arm64-sdk/cmake-math",
+      "sha256": "5fa3f4f832dc4a05ef7defb706f6d204e13d05ba88dbb6cdd29086302317df1a"
+    },
+    "elf_inspector": {
+      "path": "/usr/bin/aarch64-linux-gnu-readelf",
+      "sha256": "6bca2bbd23b072db9e9a19ae0e65cf7b7c15c08a3c2cf01dd56453e1ac9340b1"
+    },
+    "facts": {
+      "provider": "Zig",
+      "archive": {
+        "version": "0.15.2",
+        "url": "https://ziglang.org/download/0.15.2/zig-aarch64-linux-0.15.2.tar.xz",
+        "sha256": "958ed7d1e00d0ea76590d27666efbf7a932281b3d7ba0c6b01b0ff26498f667f",
+        "size": 49471996,
+        "executable_sha256": "931b8e9a9327dac87bc439067f07604219510fa541133ff6e542c6243968cc86"
+      },
+      "zig_sha256": "931b8e9a9327dac87bc439067f07604219510fa541133ff6e542c6243968cc86",
+      "target": "aarch64-linux.4.15-gnu.2.27",
+      "environment_kind": "native",
+      "kernel": "6.17.0-1022-azure",
+      "host": "Linux-6.17.0-1022-azure-aarch64-with-glibc2.39",
+      "tools": {
+        "c_compiler": {
+          "path": "/home/runner/work/_temp/twine-arm64-sdk/c_compiler",
+          "sha256": "22e6e45888f2a14641e7e76c7c2230ee24fd82b24eee849873416889699bf28c"
+        },
+        "cxx_compiler": {
+          "path": "/home/runner/work/_temp/twine-arm64-sdk/cxx_compiler",
+          "sha256": "814ce3ac4aff441437449b167e104ef5f5ce50f47e80c896648d96bf74d062f2"
+        },
+        "cmake": {
+          "path": "/home/runner/work/_temp/twine-arm64-sdk/cmake-math",
+          "sha256": "5fa3f4f832dc4a05ef7defb706f6d204e13d05ba88dbb6cdd29086302317df1a"
+        },
+        "elf_inspector": {
+          "path": "/usr/bin/aarch64-linux-gnu-readelf",
+          "sha256": "6bca2bbd23b072db9e9a19ae0e65cf7b7c15c08a3c2cf01dd56453e1ac9340b1"
+        }
+      },
+      "host_tools": {
+        "cmake": {
+          "path": "/usr/local/bin/cmake",
+          "sha256": "52b0d0363cfbe58f39285503658d0f7f2796b3149d8982315d2e57c293838837",
+          "version": "cmake version 3.31.6"
+        },
+        "make": {
+          "path": "/usr/bin/make",
+          "sha256": "abbecc214fcadef6530d1cc137bde7ceb74cae3f6b992c7d10a8669a7314c7e0",
+          "version": "GNU Make 4.3"
+        },
+        "bison": {
+          "path": "/usr/bin/bison",
+          "sha256": "746581750f75fe81394562ab14f2d0942addface479685b9a11840ab8d002959",
+          "version": "bison (GNU Bison) 3.8.2"
+        },
+        "flex": {
+          "path": "/usr/bin/flex",
+          "sha256": "b0b03937b2b0ed6c8992dbee72c1978c4b545c14c8444b5256fb87d67a30f676",
+          "version": "flex 2.6.4"
+        }
+      },
+      "image_os": "ubuntu24-arm64",
+      "image_version": "20261012.149.1",
+      "runner_arch": "ARM64",
+      "compiler": {
+        "path": "/home/runner/work/_temp/twine-arm64-sdk/sdk/zig-aarch64-linux-0.15.2/zig",
+        "sha256": "931b8e9a9327dac87bc439067f07604219510fa541133ff6e542c6243968cc86"
+      },
+      "target_arch": "aarch64",
+      "flag_translation": "No x86 flag translation; ARM64 baseline CPU",
+      "math_library": "MATH_LIB=m; no absolute host libm",
+      "qualification": "experimental SDK; compiler target is not oldest kernel/CPU qualification"
+    },
+    "environment_digest": "01fa9d9da13f891bd91a34ca2c7c5d3af56aabad6fc834582e127144f155dd0d"
+  },
+  "native_os": "linux",
+  "native_arch": "aarch64",
+  "libc": "2.39",
+  "kernel": "6.17.0-1022-azure",
+  "completed": true,
+  "host_libc_family": "glibc",
+  "target_libc_family": "glibc",
+  "build_execution_kind": "native-host-toolchain",
+  "linkage": {
+    "recorded": true,
+    "kind": "linker-read-inputs-not-member-proof",
+    "executable_sha256": "933b6c63370bdd3e814627e2a9a06176416c8da017a21dcbc96d8137dbc17e22",
+    "link_command_sha256": "3d056f83329a44eb249f076d79918beb2574f2b3ec272912301bd76e17b5ed8c",
+    "dependency_file_sha256": "caca5861ac8b80f99289a59c965d4f3f4883ed7a1fc93577ae9f0267e8c36c8e",
+    "inputs": [
+      {
+        "path": "cmd/dot/CMakeFiles/dot.dir/dot.c.o",
+        "scope": "build",
+        "size": 19968,
+        "sha256": "37ed372a7ec995d1eb69bcff9e0af077dfe178bed7dfdf49c95e3243c6cba185",
+        "references": 1
+      },
+      {
+        "path": "cmd/dot/CMakeFiles/dot.dir/dot_builtins.cpp.o",
+        "scope": "build",
+        "size": 3536,
+        "sha256": "6c38cc061346bb20a047b36e3542d4d1c1d65a40865c75a378b628ca3f73dbe7",
+        "references": 1
+      },
+      {
+        "path": "lib/cdt/libcdt.a",
+        "scope": "build",
+        "size": 126782,
+        "sha256": "d74e6824cbf704442891adb3931c4cb458131d935d8de4ae5be3a33009226dc3",
+        "references": 1
+      },
+      {
+        "path": "lib/cgraph/libcgraph.a",
+        "scope": "build",
+        "size": 1067638,
+        "sha256": "625477edb2c2cc29a3f907361bcb6b9891d8437fe22eb3d857a83bb74f7feab5",
+        "references": 1
+      },
+      {
+        "path": "lib/circogen/libcircogen.a",
+        "scope": "build",
+        "size": 481484,
+        "sha256": "e757fcfa1e929f483795b31916dfa9ff8afbe21e283b7fdec6b1eff0c94e95af",
+        "references": 1
+      },
+      {
+        "path": "lib/common/CMakeFiles/common_obj.dir/args.c.o",
+        "scope": "build",
+        "size": 41376,
+        "sha256": "35a190f7a1a51c30206b74609a9bd60c6c5df00f0ef0d047d3ebbf20a8f590d2",
+        "references": 1
+      },
+      {
+        "path": "lib/common/CMakeFiles/common_obj.dir/arrows.c.o",
+        "scope": "build",
+        "size": 140248,
+        "sha256": "f7cf6e805343bac110ddf8b980610cffd73c29e26c0b9f183d1d63dd1241c379",
+        "references": 1
+      },
+      {
+        "path": "lib/common/CMakeFiles/common_obj.dir/colxlate.c.o",
+        "scope": "build",
+        "size": 291064,
+        "sha256": "25e890ef868351068865d39aa291619c11f76a01a3b47f827ab9aae58ba91429",
+        "references": 1
+      },
+      {
+        "path": "lib/common/CMakeFiles/common_obj.dir/ellipse.c.o",
+        "scope": "build",
+        "size": 35896,
+        "sha256": "e741ace1bc5e8cf844e23be7622f0e9707ce54acb6fec8443efd221a1af08bcb",
+        "references": 1
+      },
+      {
+        "path": "lib/common/CMakeFiles/common_obj.dir/emit.c.o",
+        "scope": "build",
+        "size": 512752,
+        "sha256": "5668eeb7be519b38bf846e2591eded31bb9014495f76eccafaebbde55f76ebfe",
+        "references": 1
+      },
+      {
+        "path": "lib/common/CMakeFiles/common_obj.dir/geom.c.o",
+        "scope": "build",
+        "size": 16800,
+        "sha256": "0b37c89400d91cd598eeee61462ef402c8d5c874d9d04980ebdf7bcbb4d91c4e",
+        "references": 1
+      },
+      {
+        "path": "lib/common/CMakeFiles/common_obj.dir/globals.c.o",
+        "scope": "build",
+        "size": 20776,
+        "sha256": "d3c5fdc6895b4f8a78dce7ebd3314dd99d05a49ffe4545689c4a630af96b9f0b",
+        "references": 1
+      },
+      {
+        "path": "lib/common/CMakeFiles/common_obj.dir/htmllex.c.o",
+        "scope": "build",
+        "size": 42824,
+        "sha256": "c3b5a76b488e31760cc32af275465f3137e82664206e42cd72c2c8a38bc53f2e",
+        "references": 1
+      },
+      {
+        "path": "lib/common/CMakeFiles/common_obj.dir/htmlparse.c.o",
+        "scope": "build",
+        "size": 119648,
+        "sha256": "4720e982abd58fd26c0e1b9c172c733c45ac4b89c2bcdef8795ea01d93d77dde",
+        "references": 1
+      },
+      {
+        "path": "lib/common/CMakeFiles/common_obj.dir/htmltable.c.o",
+        "scope": "build",
+        "size": 191248,
+        "sha256": "78f077b1cfc52f3a5d4c75a52dbe9cbb9b075e106412349ef30565b5c439f57d",
+        "references": 1
+      },
+      {
+        "path": "lib/common/CMakeFiles/common_obj.dir/input.c.o",
+        "scope": "build",
+        "size": 143312,
+        "sha256": "5b3f4b74eec903a8291dbcd7190018f8866f4b6a72df17e713fb928db894cbe9",
+        "references": 1
+      },
+      {
+        "path": "lib/common/CMakeFiles/common_obj.dir/labels.c.o",
+        "scope": "build",
+        "size": 125144,
+        "sha256": "7a30502bcdc503ebfa0b61c134d5d91018689cb0187540e3c4ec194375f0e5bd",
+        "references": 1
+      },
+      {
+        "path": "lib/common/CMakeFiles/common_obj.dir/ns.c.o",
+        "scope": "build",
+        "size": 164504,
+        "sha256": "797e0d7c6fc343dc746b99ffab4369a0a18bcdae0153ea1fa0268b0a3e809d9f",
+        "references": 1
+      },
+      {
+        "path": "lib/common/CMakeFiles/common_obj.dir/output.c.o",
+        "scope": "build",
+        "size": 171856,
+        "sha256": "5be2c1b292f49ef8c2c476f5250e723c7f4eb5814c6d0736881aea96672b3035",
+        "references": 1
+      },
+      {
+        "path": "lib/common/CMakeFiles/common_obj.dir/pointset.c.o",
+        "scope": "build",
+        "size": 28736,
+        "sha256": "ddbf5b53e96f11279d06109fde7c6287f20df171e97760188db71e069fd4811a",
+        "references": 1
+      },
+      {
+        "path": "lib/common/CMakeFiles/common_obj.dir/postproc.c.o",
+        "scope": "build",
+        "size": 112176,
+        "sha256": "3a815765dc18507e435f315469ee1f4445bff73e6288aac2368bea763a162744",
+        "references": 1
+      },
+      {
+        "path": "lib/common/CMakeFiles/common_obj.dir/psusershape.c.o",
+        "scope": "build",
+        "size": 76336,
+        "sha256": "f61e3ed94691fc3f3e204b5001479347290ad7f8986301a2c46a587a3151fc70",
+        "references": 1
+      },
+      {
+        "path": "lib/common/CMakeFiles/common_obj.dir/routespl.c.o",
+        "scope": "build",
+        "size": 130024,
+        "sha256": "e29744317305f4e14175a009100a164cc292c5568c70940d19d9e933208cb142",
+        "references": 1
+      },
+      {
+        "path": "lib/common/CMakeFiles/common_obj.dir/shapes.c.o",
+        "scope": "build",
+        "size": 325144,
+        "sha256": "4cda754ee4e7773a4234242a6288829cd78e0e79d2fe85e16c5a0559b08ab437",
+        "references": 1
+      },
+      {
+        "path": "lib/common/CMakeFiles/common_obj.dir/splines.c.o",
+        "scope": "build",
+        "size": 136016,
+        "sha256": "4198e96b4509cea2072dc93c5b21e8f157a8452c2954ff4673a58c1bda5ba3a0",
+        "references": 1
+      },
+      {
+        "path": "lib/common/CMakeFiles/common_obj.dir/taper.c.o",
+        "scope": "build",
+        "size": 34704,
+        "sha256": "679f4f45042641466721d87abf5bf9140894d577a8ec064eeeecefc70571e876",
+        "references": 1
+      },
+      {
+        "path": "lib/common/CMakeFiles/common_obj.dir/textspan.c.o",
+        "scope": "build",
+        "size": 57552,
+        "sha256": "c41af1af1668d1f2cba22f70f74b3613ca43dc73a8e8a4e6b71673383e2145d3",
+        "references": 1
+      },
+      {
+        "path": "lib/common/CMakeFiles/common_obj.dir/textspan_lut.c.o",
+        "scope": "build",
+        "size": 48272,
+        "sha256": "1c9c70e217283c7655e3354c4692343480de40e3c09ce6c9119b9334ff988495",
+        "references": 1
+      },
+      {
+        "path": "lib/common/CMakeFiles/common_obj.dir/timing.c.o",
+        "scope": "build",
+        "size": 4136,
+        "sha256": "c37e29bd19b68fbec9c7850e417e3388c66ca7d83f182c5c08e1118699dd6d31",
+        "references": 1
+      },
+      {
+        "path": "lib/common/CMakeFiles/common_obj.dir/utils.c.o",
+        "scope": "build",
+        "size": 292400,
+        "sha256": "e45ceacd59f58098ee6104319ff5a1ac59afb6d1208d164eed05104dced28184",
+        "references": 1
+      },
+      {
+        "path": "lib/common/libcommon.a",
+        "scope": "build",
+        "size": 3268648,
+        "sha256": "3167df582113a2fcbb12e0b35c04ce7b6f65859c9d68bfaf3bb4eb044e620809",
+        "references": 1
+      },
+      {
+        "path": "lib/dotgen/libdotgen.a",
+        "scope": "build",
+        "size": 1540484,
+        "sha256": "1f90a3851e6f85338b3c83220cf32cfd7984652edfa2a70f0d2911808b63517a",
+        "references": 1
+      },
+      {
+        "path": "lib/fdpgen/libfdpgen.a",
+        "scope": "build",
+        "size": 533622,
+        "sha256": "42c0b3cf61e26ab1f0a36582485484b09b82939905224ad4f473334bb9059fc1",
+        "references": 1
+      },
+      {
+        "path": "lib/gvc/libgvc.a",
+        "scope": "build",
+        "size": 919040,
+        "sha256": "53f24fa5d5a9ee4cf06520a9ac2dcd0c4a860fa7af4517b386cf3d92273f60d7",
+        "references": 1
+      },
+      {
+        "path": "lib/label/liblabel.a",
+        "scope": "build",
+        "size": 125198,
+        "sha256": "909b685e273c985debe0f609dafaaf27c8628807dafabcede56a62d2aaf68e2e",
+        "references": 1
+      },
+      {
+        "path": "lib/neatogen/libneatogen.a",
+        "scope": "build",
+        "size": 1836872,
+        "sha256": "5262cd896352d802e5e17b2cbfa2ecfb9809d7d1f614595f3f2f47d4565a5438",
+        "references": 1
+      },
+      {
+        "path": "lib/ortho/CMakeFiles/ortho_obj.dir/fPQ.c.o",
+        "scope": "build",
+        "size": 18936,
+        "sha256": "5bfc95764a9e1276042d66394c7b6e876240223d3fdb71d19f1d39d84565811b",
+        "references": 1
+      },
+      {
+        "path": "lib/ortho/CMakeFiles/ortho_obj.dir/maze.c.o",
+        "scope": "build",
+        "size": 70880,
+        "sha256": "c03e0e61d6b483b0ea7834f22f1a4d09417f34ced98a7e05ed7248e4bb895ec0",
+        "references": 1
+      },
+      {
+        "path": "lib/ortho/CMakeFiles/ortho_obj.dir/ortho.c.o",
+        "scope": "build",
+        "size": 194264,
+        "sha256": "be84b0314806e4dacac1a73e5abf81c12307a48f8e3d15e8c07842d0109cc105",
+        "references": 1
+      },
+      {
+        "path": "lib/ortho/CMakeFiles/ortho_obj.dir/partition.c.o",
+        "scope": "build",
+        "size": 77952,
+        "sha256": "407988c19aac36007500da69ccc1bfd85204808c623f3a4875bbefe913794899",
+        "references": 1
+      },
+      {
+        "path": "lib/ortho/CMakeFiles/ortho_obj.dir/rawgraph.c.o",
+        "scope": "build",
+        "size": 24848,
+        "sha256": "75893420ba93b2ad2d64dfdab25b4f3636f701a8656f56e77217d749d3d85d23",
+        "references": 1
+      },
+      {
+        "path": "lib/ortho/CMakeFiles/ortho_obj.dir/sgraph.c.o",
+        "scope": "build",
+        "size": 24728,
+        "sha256": "9fdf9db6a9317c1986bf4b561425103f9307395454ad17054cba5b3c58d5169b",
+        "references": 1
+      },
+      {
+        "path": "lib/ortho/CMakeFiles/ortho_obj.dir/trapezoid.c.o",
+        "scope": "build",
+        "size": 106688,
+        "sha256": "be084aa9ef6bd65252c5e122bd93ea9af2fb7ac6f2625c4159184c1fe2c6edba",
+        "references": 1
+      },
+      {
+        "path": "lib/ortho/libortho.a",
+        "scope": "build",
+        "size": 519188,
+        "sha256": "cd2c589453645c4991acf0d27966c7a465116069aa96a812aa4f5d60f07d505d",
+        "references": 1
+      },
+      {
+        "path": "lib/osage/libosage.a",
+        "scope": "build",
+        "size": 81632,
+        "sha256": "9a81f2a9b975ca600cbe75a1b31c1f59927af1eae21a103361c9f7201d0ce406",
+        "references": 1
+      },
+      {
+        "path": "lib/pack/CMakeFiles/pack_obj.dir/ccomps.c.o",
+        "scope": "build",
+        "size": 114088,
+        "sha256": "ac3589f517d35662b7cde590bf339220f2f7b52f35b90f6ee27841ca541e38e4",
+        "references": 1
+      },
+      {
+        "path": "lib/pack/CMakeFiles/pack_obj.dir/pack.c.o",
+        "scope": "build",
+        "size": 175192,
+        "sha256": "34925adfb0ea3c9639b0a4b1f192f371e3698b1721dc2cf5e859d1be602d3b4f",
+        "references": 1
+      },
+      {
+        "path": "lib/pack/libpack.a",
+        "scope": "build",
+        "size": 289728,
+        "sha256": "791db365b7683e3e5759cf98a2dfadb832f0fd209ca0dc97f1f79e8ecb4ab927",
+        "references": 1
+      },
+      {
+        "path": "lib/patchwork/libpatchwork.a",
+        "scope": "build",
+        "size": 148856,
+        "sha256": "f226fcf344e96bb97afb206e0357c42f2d0de408daa83dd6cc5f662b89ddd541",
+        "references": 1
+      },
+      {
+        "path": "lib/pathplan/libpathplan.a",
+        "scope": "build",
+        "size": 228232,
+        "sha256": "8926aac8b82a7c01ae2c202aa3eb31ead21b4eec39d8fc4b9e323db4fcff7f6d",
+        "references": 1
+      },
+      {
+        "path": "lib/rbtree/librbtree.a",
+        "scope": "build",
+        "size": 20916,
+        "sha256": "986fddf8c996a03ee0701d760c04b9b788ab5a78deefb20fb61f32b41321a892",
+        "references": 1
+      },
+      {
+        "path": "lib/sparse/libsparse.a",
+        "scope": "build",
+        "size": 736472,
+        "sha256": "59b71fee049ae647b8f2163d0f9c6f087200d14b7bcc8df354e56baad17a0880",
+        "references": 1
+      },
+      {
+        "path": "lib/twopigen/libtwopigen.a",
+        "scope": "build",
+        "size": 134914,
+        "sha256": "66cee7d082d24a55f6e6e626c753201dd1867d7c7e13978dd6c01f151bae9ff4",
+        "references": 1
+      },
+      {
+        "path": "lib/util/libutil.a",
+        "scope": "build",
+        "size": 125988,
+        "sha256": "92dd632f13c4fa13722cbdc24f0f4cd4bf4c27d3b7e1dc855b77c5f636387b3b",
+        "references": 1
+      },
+      {
+        "path": "lib/xdot/libxdot.a",
+        "scope": "build",
+        "size": 157716,
+        "sha256": "b3124a3daac52fdca2fe7bc24d2ac7791c2f82d0c9c87375477ee9fc91db9444",
+        "references": 1
+      },
+      {
+        "path": "plugin/core/libgvplugin_core.a",
+        "scope": "build",
+        "size": 988662,
+        "sha256": "34666353f77b9876d74127e9b85b10e4c238024c438ff799cce39e210bc6e651",
+        "references": 1
+      },
+      {
+        "path": "plugin/dot_layout/libgvplugin_dot_layout.a",
+        "scope": "build",
+        "size": 15546,
+        "sha256": "a2968c500ba4d4badc706357fe1471ae61a7d5b2be377aeb36c69ad81b8a4ab9",
+        "references": 1
+      },
+      {
+        "path": "plugin/neato_layout/libgvplugin_neato_layout.a",
+        "scope": "build",
+        "size": 20450,
+        "sha256": "7495182e152e73bf9c2f4cd6425f943ad83d821335aab428d825b63d30d0144e",
+        "references": 1
+      },
+      {
+        "path": "plugin/vt/libgvplugin_vt.a",
+        "scope": "build",
+        "size": 91880,
+        "sha256": "fd834fc514df614b5774975e7eaf6cea8cad4dbb6cbbea42eda18a9b3b4f4fff",
+        "references": 1
+      },
+      {
+        "path": "/home/runner/work/_temp/twine-arm64-sdk/cache/o/171ad53e576c4bedebbc31d452b1e977/libc.so.6",
+        "scope": "sdk",
+        "size": 214488,
+        "sha256": "99da381339e7739b9014cb30d98cbd2864fe4f97ab962dbb9ef2bfaa7bf52cb2",
+        "references": 1
+      },
+      {
+        "path": "/home/runner/work/_temp/twine-arm64-sdk/cache/o/171ad53e576c4bedebbc31d452b1e977/libdl.so.2",
+        "scope": "sdk",
+        "size": 4552,
+        "sha256": "59b6219c8884206e669fb0dc4a19abce86f7fac5542cadb04060a33320968c04",
+        "references": 1
+      },
+      {
+        "path": "/home/runner/work/_temp/twine-arm64-sdk/cache/o/171ad53e576c4bedebbc31d452b1e977/libld.so.2",
+        "scope": "sdk",
+        "size": 4920,
+        "sha256": "f6b2ff04277281f080c326516499fe00dc2aa678eca9a394e7e58d3a0fca7d70",
+        "references": 1
+      },
+      {
+        "path": "/home/runner/work/_temp/twine-arm64-sdk/cache/o/171ad53e576c4bedebbc31d452b1e977/libm.so.6",
+        "scope": "sdk",
+        "size": 94048,
+        "sha256": "5f6c9a7f941fbf0f5a6b0608c695e69c626013e3e2f3147cc5994b654e15a0b6",
+        "references": 1
+      },
+      {
+        "path": "/home/runner/work/_temp/twine-arm64-sdk/cache/o/171ad53e576c4bedebbc31d452b1e977/libpthread.so.0",
+        "scope": "sdk",
+        "size": 28768,
+        "sha256": "434f6bbe1723da435ef192046b277f72f56adc741d3519c0008689346b7aa815",
+        "references": 1
+      },
+      {
+        "path": "/home/runner/work/_temp/twine-arm64-sdk/cache/o/171ad53e576c4bedebbc31d452b1e977/libresolv.so.2",
+        "scope": "sdk",
+        "size": 14376,
+        "sha256": "349c94485450287c585d32c9e3c9195a3a4e0a6344c410364dc5e8069bf3c96d",
+        "references": 1
+      },
+      {
+        "path": "/home/runner/work/_temp/twine-arm64-sdk/cache/o/171ad53e576c4bedebbc31d452b1e977/librt.so.1",
+        "scope": "sdk",
+        "size": 7120,
+        "sha256": "ad5cfb9fc549aed15a8e2a4569a8a290a91036916dc77792b331415198bdc5e3",
+        "references": 1
+      },
+      {
+        "path": "/home/runner/work/_temp/twine-arm64-sdk/cache/o/171ad53e576c4bedebbc31d452b1e977/libutil.so.1",
+        "scope": "sdk",
+        "size": 4312,
+        "sha256": "8935a28477a51989f89385dbec825b54c4d0fc69ef756766d55a95d33a9a7ddc",
+        "references": 1
+      },
+      {
+        "path": "/home/runner/work/_temp/twine-arm64-sdk/cache/o/1773dd242bd9d6cac75023a028729945/libc_nonshared.a",
+        "scope": "sdk",
+        "size": 71134,
+        "sha256": "2db42f3e95c93b1b04ecb61b51035e83ef032801eceefb89b0d3654742b77a3c",
+        "references": 1
+      },
+      {
+        "path": "/home/runner/work/_temp/twine-arm64-sdk/cache/o/4f58cc681c0ac6aa3891587e3094c27d/libc++abi.a",
+        "scope": "sdk",
+        "size": 2164070,
+        "sha256": "decf33bee0031941acfa8c01407f19d9504b2bddf7035342f9ec8f29c58108ac",
+        "references": 1
+      },
+      {
+        "path": "/home/runner/work/_temp/twine-arm64-sdk/cache/o/79eaa63c75b259b654d01782ce46be8e/libunwind.a",
+        "scope": "sdk",
+        "size": 323078,
+        "sha256": "71522dcaade5aa5b8c85e2709dfeb7f02db4efbb0c5e9c5edb2f7124e2590ad9",
+        "references": 1
+      },
+      {
+        "path": "/home/runner/work/_temp/twine-arm64-sdk/cache/o/82b5f871e567cea1112c0f528d5dd09e/libcompiler_rt.a",
+        "scope": "sdk",
+        "size": 1758248,
+        "sha256": "00d7cad16eced7116f95f90a152bbff96d4b787091a193104c989cf113ecf357",
+        "references": 1
+      },
+      {
+        "path": "/home/runner/work/_temp/twine-arm64-sdk/cache/o/920d1e37e43d8aeee0bd1e935b76a00d/crt1.o",
+        "scope": "sdk",
+        "size": 4680,
+        "sha256": "7abf09d70cfb711ec71a999dfca868452488f17cd5a993cbc255765b72f35984",
+        "references": 1
+      },
+      {
+        "path": "/home/runner/work/_temp/twine-arm64-sdk/cache/o/f41bf5ce7f3a8c9019f9d491158d8264/libc++.a",
+        "scope": "sdk",
+        "size": 14261088,
+        "sha256": "35577002a5b8f86df33e5ffeac9cecec08e935945f608d6c1a21c02769b8faac",
+        "references": 1
+      }
+    ],
+    "archive_extractions": {
+      "recorded": true,
+      "kind": "archive-extraction-observations-not-section-retention-or-license-approval",
+      "report_sha256": "6f1e6a5647fab120d221012e7a7da05f1d5aef2c056ee6574c9e23a55541d144",
+      "row_count": 148,
+      "rows": [
+        {
+          "reference": "/home/runner/work/_temp/twine-arm64-build/build/lib/common/CMakeFiles/common_obj.dir/emit.c.o",
+          "archive_sha256": "d74e6824cbf704442891adb3931c4cb458131d935d8de4ae5be3a33009226dc3",
+          "member": "dtclose.c.o",
+          "symbol": "dtclose"
+        },
+        {
+          "reference": "/home/runner/work/_temp/twine-arm64-build/build/lib/common/CMakeFiles/common_obj.dir/pointset.c.o",
+          "archive_sha256": "d74e6824cbf704442891adb3931c4cb458131d935d8de4ae5be3a33009226dc3",
+          "member": "dtflatten.c.o",
+          "symbol": "dtflatten"
+        },
+        {
+          "reference": "/home/runner/work/_temp/twine-arm64-build/build/lib/cdt/libcdt.a(dtopen.c.o)",
+          "archive_sha256": "d74e6824cbf704442891adb3931c4cb458131d935d8de4ae5be3a33009226dc3",
+          "member": "dtdisc.c.o",
+          "symbol": "dtdisc"
+        },
+        {
+          "reference": "/home/runner/work/_temp/twine-arm64-build/build/lib/common/CMakeFiles/common_obj.dir/emit.c.o",
+          "archive_sha256": "d74e6824cbf704442891adb3931c4cb458131d935d8de4ae5be3a33009226dc3",
+          "member": "dtopen.c.o",
+          "symbol": "dtopen"
+        },
+        {
+          "reference": "/home/runner/work/_temp/twine-arm64-build/build/lib/cdt/libcdt.a(dtdisc.c.o)",
+          "archive_sha256": "d74e6824cbf704442891adb3931c4cb458131d935d8de4ae5be3a33009226dc3",
+          "member": "dtrestore.c.o",
+          "symbol": "dtrestore"
+        },
+        {
+          "reference": "/home/runner/work/_temp/twine-arm64-build/build/lib/common/CMakeFiles/common_obj.dir/pointset.c.o",
+          "archive_sha256": "d74e6824cbf704442891adb3931c4cb458131d935d8de4ae5be3a33009226dc3",
+          "member": "dtsize.c.o",
+          "symbol": "dtsize"
+        },
+        {
+          "reference": "/home/runner/work/_temp/twine-arm64-build/build/lib/cdt/libcdt.a(dtdisc.c.o)",
+          "archive_sha256": "d74e6824cbf704442891adb3931c4cb458131d935d8de4ae5be3a33009226dc3",
+          "member": "dtstrhash.c.o",
+          "symbol": "dtstrhash"
+        },
+        {
+          "reference": "/home/runner/work/_temp/twine-arm64-build/build/lib/common/CMakeFiles/common_obj.dir/emit.c.o",
+          "archive_sha256": "d74e6824cbf704442891adb3931c4cb458131d935d8de4ae5be3a33009226dc3",
+          "member": "dttree.c.o",
+          "symbol": "Dtoset"
+        },
+        {
+          "reference": "/home/runner/work/_temp/twine-arm64-build/build/lib/cdt/libcdt.a(dtclose.c.o)",
+          "archive_sha256": "d74e6824cbf704442891adb3931c4cb458131d935d8de4ae5be3a33009226dc3",
+          "member": "dtview.c.o",
+          "symbol": "dtview"
+        },
+        {
+          "reference": "/home/runner/work/_temp/twine-arm64-build/build/lib/common/CMakeFiles/common_obj.dir/input.c.o",
+          "archive_sha256": "625477edb2c2cc29a3f907361bcb6b9891d8437fe22eb3d857a83bb74f7feab5",
+          "member": "agerror.c.o",
+          "symbol": "agseterr"
+        },
+        {
+          "reference": "/home/runner/work/_temp/twine-arm64-build/build/lib/cgraph/libcgraph.a(attr.c.o)",
+          "archive_sha256": "625477edb2c2cc29a3f907361bcb6b9891d8437fe22eb3d857a83bb74f7feab5",
+          "member": "apply.c.o",
+          "symbol": "agapply"
+        },
+        {
+          "reference": "/home/runner/work/_temp/twine-arm64-build/build/lib/common/CMakeFiles/common_obj.dir/arrows.c.o",
+          "archive_sha256": "625477edb2c2cc29a3f907361bcb6b9891d8437fe22eb3d857a83bb74f7feab5",
+          "member": "attr.c.o",
+          "symbol": "agattr_text"
+        },
+        {
+          "reference": "/home/runner/work/_temp/twine-arm64-build/build/lib/cgraph/libcgraph.a(edge.c.o)",
+          "archive_sha256": "d74e6824cbf704442891adb3931c4cb458131d935d8de4ae5be3a33009226dc3",
+          "member": "dtextract.c.o",
+          "symbol": "dtextract"
+        },
+        {
+          "reference": "/home/runner/work/_temp/twine-arm64-build/build/lib/common/CMakeFiles/common_obj.dir/emit.c.o",
+          "archive_sha256": "625477edb2c2cc29a3f907361bcb6b9891d8437fe22eb3d857a83bb74f7feab5",
+          "member": "edge.c.o",
+          "symbol": "agfstout"
+        },
+        {
+          "reference": "/home/runner/work/_temp/twine-arm64-build/build/lib/pack/CMakeFiles/pack_obj.dir/ccomps.c.o",
+          "archive_sha256": "625477edb2c2cc29a3f907361bcb6b9891d8437fe22eb3d857a83bb74f7feab5",
+          "member": "graph.c.o",
+          "symbol": "agopen"
+        },
+        {
+          "reference": "/home/runner/work/_temp/twine-arm64-build/build/lib/cgraph/libcgraph.a(edge.c.o)",
+          "archive_sha256": "625477edb2c2cc29a3f907361bcb6b9891d8437fe22eb3d857a83bb74f7feab5",
+          "member": "id.c.o",
+          "symbol": "agmapnametoid"
+        },
+        {
+          "reference": "/home/runner/work/_temp/twine-arm64-build/build/lib/cgraph/libcgraph.a(id.c.o)",
+          "archive_sha256": "625477edb2c2cc29a3f907361bcb6b9891d8437fe22eb3d857a83bb74f7feab5",
+          "member": "imap.c.o",
+          "symbol": "aginternalmaplookup"
+        },
+        {
+          "reference": "/home/runner/work/_temp/twine-arm64-build/build/lib/cgraph/libcgraph.a(graph.c.o)",
+          "archive_sha256": "625477edb2c2cc29a3f907361bcb6b9891d8437fe22eb3d857a83bb74f7feab5",
+          "member": "io.c.o",
+          "symbol": "AgIoDisc"
+        },
+        {
+          "reference": "/home/runner/work/_temp/twine-arm64-build/build/lib/cgraph/libcgraph.a(node.c.o)",
+          "archive_sha256": "d74e6824cbf704442891adb3931c4cb458131d935d8de4ae5be3a33009226dc3",
+          "member": "dtrenew.c.o",
+          "symbol": "dtrenew"
+        },
+        {
+          "reference": "/home/runner/work/_temp/twine-arm64-build/build/lib/cgraph/libcgraph.a(edge.c.o)",
+          "archive_sha256": "625477edb2c2cc29a3f907361bcb6b9891d8437fe22eb3d857a83bb74f7feab5",
+          "member": "node.c.o",
+          "symbol": "node_set_find"
+        },
+        {
+          "reference": "/home/runner/work/_temp/twine-arm64-build/build/lib/pack/CMakeFiles/pack_obj.dir/ccomps.c.o",
+          "archive_sha256": "625477edb2c2cc29a3f907361bcb6b9891d8437fe22eb3d857a83bb74f7feab5",
+          "member": "node_induce.c.o",
+          "symbol": "graphviz_node_induce"
+        },
+        {
+          "reference": "/home/runner/work/_temp/twine-arm64-build/build/lib/common/CMakeFiles/common_obj.dir/utils.c.o",
+          "archive_sha256": "625477edb2c2cc29a3f907361bcb6b9891d8437fe22eb3d857a83bb74f7feab5",
+          "member": "obj.c.o",
+          "symbol": "agdelete"
+        },
+        {
+          "reference": "/home/runner/work/_temp/twine-arm64-build/build/lib/common/CMakeFiles/common_obj.dir/output.c.o",
+          "archive_sha256": "625477edb2c2cc29a3f907361bcb6b9891d8437fe22eb3d857a83bb74f7feab5",
+          "member": "rec.c.o",
+          "symbol": "aggetrec"
+        },
+        {
+          "reference": "/home/runner/work/_temp/twine-arm64-build/build/lib/cgraph/libcgraph.a(graph.c.o)",
+          "archive_sha256": "625477edb2c2cc29a3f907361bcb6b9891d8437fe22eb3d857a83bb74f7feab5",
+          "member": "refstr.c.o",
+          "symbol": "agstrclose"
+        },
+        {
+          "reference": "/home/runner/work/_temp/twine-arm64-build/build/lib/cgraph/libcgraph.a(obj.c.o)",
+          "archive_sha256": "625477edb2c2cc29a3f907361bcb6b9891d8437fe22eb3d857a83bb74f7feab5",
+          "member": "subg.c.o",
+          "symbol": "agidsubg"
+        },
+        {
+          "reference": "/home/runner/work/_temp/twine-arm64-build/build/lib/cgraph/libcgraph.a(attr.c.o)",
+          "archive_sha256": "625477edb2c2cc29a3f907361bcb6b9891d8437fe22eb3d857a83bb74f7feab5",
+          "member": "utils.c.o",
+          "symbol": "agdtopen"
+        },
+        {
+          "reference": "/home/runner/work/_temp/twine-arm64-build/build/lib/common/CMakeFiles/common_obj.dir/output.c.o",
+          "archive_sha256": "625477edb2c2cc29a3f907361bcb6b9891d8437fe22eb3d857a83bb74f7feab5",
+          "member": "write.c.o",
+          "symbol": "agstrcanon"
+        },
+        {
+          "reference": "/home/runner/work/_temp/twine-arm64-build/build/lib/common/CMakeFiles/common_obj.dir/input.c.o",
+          "archive_sha256": "625477edb2c2cc29a3f907361bcb6b9891d8437fe22eb3d857a83bb74f7feab5",
+          "member": "grammar.c.o",
+          "symbol": "agconcat"
+        },
+        {
+          "reference": "/home/runner/work/_temp/twine-arm64-build/build/lib/cgraph/libcgraph.a(grammar.c.o)",
+          "archive_sha256": "625477edb2c2cc29a3f907361bcb6b9891d8437fe22eb3d857a83bb74f7feab5",
+          "member": "scan.c.o",
+          "symbol": "aaglex"
+        },
+        {
+          "reference": "/home/runner/work/_temp/twine-arm64-build/build/cmd/dot/CMakeFiles/dot.dir/dot.c.o",
+          "archive_sha256": "53f24fa5d5a9ee4cf06520a9ac2dcd0c4a860fa7af4517b386cf3d92273f60d7",
+          "member": "gvc.c.o",
+          "symbol": "gvContextPlugins"
+        },
+        {
+          "reference": "/home/runner/work/_temp/twine-arm64-build/build/lib/gvc/libgvc.a(gvc.c.o)",
+          "archive_sha256": "53f24fa5d5a9ee4cf06520a9ac2dcd0c4a860fa7af4517b386cf3d92273f60d7",
+          "member": "gvconfig.c.o",
+          "symbol": "gvconfig_plugin_install_from_library"
+        },
+        {
+          "reference": "/home/runner/work/_temp/twine-arm64-build/build/lib/gvc/libgvc.a(gvc.c.o)",
+          "archive_sha256": "53f24fa5d5a9ee4cf06520a9ac2dcd0c4a860fa7af4517b386cf3d92273f60d7",
+          "member": "gvcontext.c.o",
+          "symbol": "gvNEWcontext"
+        },
+        {
+          "reference": "/home/runner/work/_temp/twine-arm64-build/build/lib/common/CMakeFiles/common_obj.dir/psusershape.c.o",
+          "archive_sha256": "53f24fa5d5a9ee4cf06520a9ac2dcd0c4a860fa7af4517b386cf3d92273f60d7",
+          "member": "gvdevice.c.o",
+          "symbol": "gvwrite"
+        },
+        {
+          "reference": "/home/runner/work/_temp/twine-arm64-build/build/lib/common/CMakeFiles/common_obj.dir/emit.c.o",
+          "archive_sha256": "53f24fa5d5a9ee4cf06520a9ac2dcd0c4a860fa7af4517b386cf3d92273f60d7",
+          "member": "gvevent.c.o",
+          "symbol": "gvevent_key_binding"
+        },
+        {
+          "reference": "/home/runner/work/_temp/twine-arm64-build/build/lib/common/CMakeFiles/common_obj.dir/input.c.o",
+          "archive_sha256": "53f24fa5d5a9ee4cf06520a9ac2dcd0c4a860fa7af4517b386cf3d92273f60d7",
+          "member": "gvjobs.c.o",
+          "symbol": "gvjobs_output_filename"
+        },
+        {
+          "reference": "/home/runner/work/_temp/twine-arm64-build/build/lib/common/CMakeFiles/common_obj.dir/input.c.o",
+          "archive_sha256": "53f24fa5d5a9ee4cf06520a9ac2dcd0c4a860fa7af4517b386cf3d92273f60d7",
+          "member": "gvlayout.c.o",
+          "symbol": "gvlayout_select"
+        },
+        {
+          "reference": "/home/runner/work/_temp/twine-arm64-build/build/lib/gvc/libgvc.a(gvconfig.c.o)",
+          "archive_sha256": "53f24fa5d5a9ee4cf06520a9ac2dcd0c4a860fa7af4517b386cf3d92273f60d7",
+          "member": "gvplugin.c.o",
+          "symbol": "gvplugin_install"
+        },
+        {
+          "reference": "/home/runner/work/_temp/twine-arm64-build/build/lib/gvc/libgvc.a(gvrender.c.o)",
+          "archive_sha256": "53f24fa5d5a9ee4cf06520a9ac2dcd0c4a860fa7af4517b386cf3d92273f60d7",
+          "member": "gvloadimage.c.o",
+          "symbol": "gvloadimage"
+        },
+        {
+          "reference": "/home/runner/work/_temp/twine-arm64-build/build/lib/common/CMakeFiles/common_obj.dir/emit.c.o",
+          "archive_sha256": "53f24fa5d5a9ee4cf06520a9ac2dcd0c4a860fa7af4517b386cf3d92273f60d7",
+          "member": "gvrender.c.o",
+          "symbol": "gvrender_select"
+        },
+        {
+          "reference": "/home/runner/work/_temp/twine-arm64-build/build/lib/gvc/libgvc.a(gvconfig.c.o)",
+          "archive_sha256": "53f24fa5d5a9ee4cf06520a9ac2dcd0c4a860fa7af4517b386cf3d92273f60d7",
+          "member": "gvtextlayout.c.o",
+          "symbol": "gvtextlayout_select"
+        },
+        {
+          "reference": "/home/runner/work/_temp/twine-arm64-build/build/lib/gvc/libgvc.a(gvrender.c.o)",
+          "archive_sha256": "53f24fa5d5a9ee4cf06520a9ac2dcd0c4a860fa7af4517b386cf3d92273f60d7",
+          "member": "gvusershape.c.o",
+          "symbol": "gvusershape_find"
+        },
+        {
+          "reference": "/home/runner/work/_temp/twine-arm64-build/build/plugin/core/libgvplugin_core.a(gvplugin_core.c.o)",
+          "archive_sha256": "34666353f77b9876d74127e9b85b10e4c238024c438ff799cce39e210bc6e651",
+          "member": "gvloadimage_core.c.o",
+          "symbol": "gvloadimage_core_types"
+        },
+        {
+          "reference": "/home/runner/work/_temp/twine-arm64-build/build/cmd/dot/CMakeFiles/dot.dir/dot_builtins.cpp.o",
+          "archive_sha256": "34666353f77b9876d74127e9b85b10e4c238024c438ff799cce39e210bc6e651",
+          "member": "gvplugin_core.c.o",
+          "symbol": "gvplugin_core_LTX_library"
+        },
+        {
+          "reference": "/home/runner/work/_temp/twine-arm64-build/build/plugin/core/libgvplugin_core.a(gvloadimage_core.c.o)",
+          "archive_sha256": "34666353f77b9876d74127e9b85b10e4c238024c438ff799cce39e210bc6e651",
+          "member": "gvrender_core_dot.c.o",
+          "symbol": "core_loadimage_xdot"
+        },
+        {
+          "reference": "/home/runner/work/_temp/twine-arm64-build/build/plugin/core/libgvplugin_core.a(gvplugin_core.c.o)",
+          "archive_sha256": "34666353f77b9876d74127e9b85b10e4c238024c438ff799cce39e210bc6e651",
+          "member": "gvrender_core_json.c.o",
+          "symbol": "gvrender_json_types"
+        },
+        {
+          "reference": "/home/runner/work/_temp/twine-arm64-build/build/plugin/core/libgvplugin_core.a(gvplugin_core.c.o)",
+          "archive_sha256": "34666353f77b9876d74127e9b85b10e4c238024c438ff799cce39e210bc6e651",
+          "member": "gvrender_core_fig.c.o",
+          "symbol": "gvrender_fig_types"
+        },
+        {
+          "reference": "/home/runner/work/_temp/twine-arm64-build/build/plugin/core/libgvplugin_core.a(gvplugin_core.c.o)",
+          "archive_sha256": "34666353f77b9876d74127e9b85b10e4c238024c438ff799cce39e210bc6e651",
+          "member": "gvrender_core_map.c.o",
+          "symbol": "gvrender_map_types"
+        },
+        {
+          "reference": "/home/runner/work/_temp/twine-arm64-build/build/plugin/core/libgvplugin_core.a(gvplugin_core.c.o)",
+          "archive_sha256": "34666353f77b9876d74127e9b85b10e4c238024c438ff799cce39e210bc6e651",
+          "member": "gvrender_core_pic.c.o",
+          "symbol": "gvrender_pic_types"
+        },
+        {
+          "reference": "/home/runner/work/_temp/twine-arm64-build/build/plugin/core/libgvplugin_core.a(gvplugin_core.c.o)",
+          "archive_sha256": "34666353f77b9876d74127e9b85b10e4c238024c438ff799cce39e210bc6e651",
+          "member": "gvrender_core_pov.c.o",
+          "symbol": "gvrender_pov_types"
+        },
+        {
+          "reference": "/home/runner/work/_temp/twine-arm64-build/build/plugin/core/libgvplugin_core.a(gvplugin_core.c.o)",
+          "archive_sha256": "34666353f77b9876d74127e9b85b10e4c238024c438ff799cce39e210bc6e651",
+          "member": "gvrender_core_ps.c.o",
+          "symbol": "gvrender_ps_types"
+        },
+        {
+          "reference": "/home/runner/work/_temp/twine-arm64-build/build/plugin/core/libgvplugin_core.a(gvplugin_core.c.o)",
+          "archive_sha256": "34666353f77b9876d74127e9b85b10e4c238024c438ff799cce39e210bc6e651",
+          "member": "gvrender_core_svg.c.o",
+          "symbol": "gvrender_svg_types"
+        },
+        {
+          "reference": "/home/runner/work/_temp/twine-arm64-build/build/plugin/core/libgvplugin_core.a(gvplugin_core.c.o)",
+          "archive_sha256": "34666353f77b9876d74127e9b85b10e4c238024c438ff799cce39e210bc6e651",
+          "member": "gvrender_core_tk.c.o",
+          "symbol": "gvrender_tk_types"
+        },
+        {
+          "reference": "/home/runner/work/_temp/twine-arm64-build/build/cmd/dot/CMakeFiles/dot.dir/dot_builtins.cpp.o",
+          "archive_sha256": "a2968c500ba4d4badc706357fe1471ae61a7d5b2be377aeb36c69ad81b8a4ab9",
+          "member": "gvplugin_dot_layout.c.o",
+          "symbol": "gvplugin_dot_layout_LTX_library"
+        },
+        {
+          "reference": "/home/runner/work/_temp/twine-arm64-build/build/plugin/dot_layout/libgvplugin_dot_layout.a(gvplugin_dot_layout.c.o)",
+          "archive_sha256": "a2968c500ba4d4badc706357fe1471ae61a7d5b2be377aeb36c69ad81b8a4ab9",
+          "member": "gvlayout_dot_layout.c.o",
+          "symbol": "gvlayout_dot_layout"
+        },
+        {
+          "reference": "/home/runner/work/_temp/twine-arm64-build/build/cmd/dot/CMakeFiles/dot.dir/dot_builtins.cpp.o",
+          "archive_sha256": "7495182e152e73bf9c2f4cd6425f943ad83d821335aab428d825b63d30d0144e",
+          "member": "gvplugin_neato_layout.c.o",
+          "symbol": "gvplugin_neato_layout_LTX_library"
+        },
+        {
+          "reference": "/home/runner/work/_temp/twine-arm64-build/build/plugin/neato_layout/libgvplugin_neato_layout.a(gvplugin_neato_layout.c.o)",
+          "archive_sha256": "7495182e152e73bf9c2f4cd6425f943ad83d821335aab428d825b63d30d0144e",
+          "member": "gvlayout_neato_layout.c.o",
+          "symbol": "gvlayout_neato_types"
+        },
+        {
+          "reference": "/home/runner/work/_temp/twine-arm64-build/build/cmd/dot/CMakeFiles/dot.dir/dot_builtins.cpp.o",
+          "archive_sha256": "fd834fc514df614b5774975e7eaf6cea8cad4dbb6cbbea42eda18a9b3b4f4fff",
+          "member": "gvplugin_vt.c.o",
+          "symbol": "gvplugin_vt_LTX_library"
+        },
+        {
+          "reference": "/home/runner/work/_temp/twine-arm64-build/build/lib/common/CMakeFiles/common_obj.dir/routespl.c.o",
+          "archive_sha256": "8926aac8b82a7c01ae2c202aa3eb31ead21b4eec39d8fc4b9e323db4fcff7f6d",
+          "member": "route.c.o",
+          "symbol": "Proutespline"
+        },
+        {
+          "reference": "/home/runner/work/_temp/twine-arm64-build/build/lib/common/CMakeFiles/common_obj.dir/routespl.c.o",
+          "archive_sha256": "8926aac8b82a7c01ae2c202aa3eb31ead21b4eec39d8fc4b9e323db4fcff7f6d",
+          "member": "shortest.c.o",
+          "symbol": "Pshortestpath"
+        },
+        {
+          "reference": "/home/runner/work/_temp/twine-arm64-build/build/lib/pathplan/libpathplan.a(route.c.o)",
+          "archive_sha256": "8926aac8b82a7c01ae2c202aa3eb31ead21b4eec39d8fc4b9e323db4fcff7f6d",
+          "member": "solvers.c.o",
+          "symbol": "solve3"
+        },
+        {
+          "reference": "/home/runner/work/_temp/twine-arm64-build/build/lib/pathplan/libpathplan.a(shortest.c.o)",
+          "archive_sha256": "8926aac8b82a7c01ae2c202aa3eb31ead21b4eec39d8fc4b9e323db4fcff7f6d",
+          "member": "triang.c.o",
+          "symbol": "ccw"
+        },
+        {
+          "reference": "/home/runner/work/_temp/twine-arm64-build/build/lib/common/CMakeFiles/common_obj.dir/emit.c.o",
+          "archive_sha256": "8926aac8b82a7c01ae2c202aa3eb31ead21b4eec39d8fc4b9e323db4fcff7f6d",
+          "member": "util.c.o",
+          "symbol": "freePath"
+        },
+        {
+          "reference": "/home/runner/work/_temp/twine-arm64-build/build/lib/common/CMakeFiles/common_obj.dir/emit.c.o",
+          "archive_sha256": "b3124a3daac52fdca2fe7bc24d2ac7791c2f82d0c9c87375477ee9fc91db9444",
+          "member": "xdot.c.o",
+          "symbol": "parseXDotF"
+        },
+        {
+          "reference": "/home/runner/work/_temp/twine-arm64-build/build/lib/dotgen/libdotgen.a(cluster.c.o)",
+          "archive_sha256": "1f90a3851e6f85338b3c83220cf32cfd7984652edfa2a70f0d2911808b63517a",
+          "member": "class2.c.o",
+          "symbol": "class2"
+        },
+        {
+          "reference": "/home/runner/work/_temp/twine-arm64-build/build/lib/dotgen/libdotgen.a(class1.c.o)",
+          "archive_sha256": "1f90a3851e6f85338b3c83220cf32cfd7984652edfa2a70f0d2911808b63517a",
+          "member": "cluster.c.o",
+          "symbol": "mark_clusters"
+        },
+        {
+          "reference": "/home/runner/work/_temp/twine-arm64-build/build/lib/dotgen/libdotgen.a(dotinit.c.o)",
+          "archive_sha256": "1f90a3851e6f85338b3c83220cf32cfd7984652edfa2a70f0d2911808b63517a",
+          "member": "class1.c.o",
+          "symbol": "nonconstraint_edge"
+        },
+        {
+          "reference": "/home/runner/work/_temp/twine-arm64-build/build/lib/dotgen/libdotgen.a(dotinit.c.o)",
+          "archive_sha256": "1f90a3851e6f85338b3c83220cf32cfd7984652edfa2a70f0d2911808b63517a",
+          "member": "aspect.c.o",
+          "symbol": "setAspect"
+        },
+        {
+          "reference": "/home/runner/work/_temp/twine-arm64-build/build/lib/dotgen/libdotgen.a(dotinit.c.o)",
+          "archive_sha256": "1f90a3851e6f85338b3c83220cf32cfd7984652edfa2a70f0d2911808b63517a",
+          "member": "compound.c.o",
+          "symbol": "dot_compoundEdges"
+        },
+        {
+          "reference": "/home/runner/work/_temp/twine-arm64-build/build/plugin/dot_layout/libgvplugin_dot_layout.a(gvlayout_dot_layout.c.o)",
+          "archive_sha256": "1f90a3851e6f85338b3c83220cf32cfd7984652edfa2a70f0d2911808b63517a",
+          "member": "dotinit.c.o",
+          "symbol": "dot_cleanup"
+        },
+        {
+          "reference": "/home/runner/work/_temp/twine-arm64-build/build/lib/dotgen/libdotgen.a(dotinit.c.o)",
+          "archive_sha256": "1f90a3851e6f85338b3c83220cf32cfd7984652edfa2a70f0d2911808b63517a",
+          "member": "dotsplines.c.o",
+          "symbol": "dot_splines"
+        },
+        {
+          "reference": "/home/runner/work/_temp/twine-arm64-build/build/lib/dotgen/libdotgen.a(class2.c.o)",
+          "archive_sha256": "1f90a3851e6f85338b3c83220cf32cfd7984652edfa2a70f0d2911808b63517a",
+          "member": "fastgr.c.o",
+          "symbol": "find_fast_edge"
+        },
+        {
+          "reference": "/home/runner/work/_temp/twine-arm64-build/build/lib/dotgen/libdotgen.a(mincross.c.o)",
+          "archive_sha256": "1f90a3851e6f85338b3c83220cf32cfd7984652edfa2a70f0d2911808b63517a",
+          "member": "decomp.c.o",
+          "symbol": "decompose"
+        },
+        {
+          "reference": "/home/runner/work/_temp/twine-arm64-build/build/lib/dotgen/libdotgen.a(dotinit.c.o)",
+          "archive_sha256": "1f90a3851e6f85338b3c83220cf32cfd7984652edfa2a70f0d2911808b63517a",
+          "member": "mincross.c.o",
+          "symbol": "dot_mincross"
+        },
+        {
+          "reference": "/home/runner/work/_temp/twine-arm64-build/build/lib/dotgen/libdotgen.a(position.c.o)",
+          "archive_sha256": "1f90a3851e6f85338b3c83220cf32cfd7984652edfa2a70f0d2911808b63517a",
+          "member": "conc.c.o",
+          "symbol": "dot_concentrate"
+        },
+        {
+          "reference": "/home/runner/work/_temp/twine-arm64-build/build/lib/dotgen/libdotgen.a(position.c.o)",
+          "archive_sha256": "1f90a3851e6f85338b3c83220cf32cfd7984652edfa2a70f0d2911808b63517a",
+          "member": "flat.c.o",
+          "symbol": "flat_edges"
+        },
+        {
+          "reference": "/home/runner/work/_temp/twine-arm64-build/build/lib/dotgen/libdotgen.a(dotinit.c.o)",
+          "archive_sha256": "1f90a3851e6f85338b3c83220cf32cfd7984652edfa2a70f0d2911808b63517a",
+          "member": "position.c.o",
+          "symbol": "dot_position"
+        },
+        {
+          "reference": "/home/runner/work/_temp/twine-arm64-build/build/lib/dotgen/libdotgen.a(rank.c.o)",
+          "archive_sha256": "1f90a3851e6f85338b3c83220cf32cfd7984652edfa2a70f0d2911808b63517a",
+          "member": "acyclic.c.o",
+          "symbol": "reverse_edge"
+        },
+        {
+          "reference": "/home/runner/work/_temp/twine-arm64-build/build/lib/dotgen/libdotgen.a(conc.c.o)",
+          "archive_sha256": "1f90a3851e6f85338b3c83220cf32cfd7984652edfa2a70f0d2911808b63517a",
+          "member": "rank.c.o",
+          "symbol": "dot_scan_ranks"
+        },
+        {
+          "reference": "/home/runner/work/_temp/twine-arm64-build/build/lib/dotgen/libdotgen.a(dotinit.c.o)",
+          "archive_sha256": "1f90a3851e6f85338b3c83220cf32cfd7984652edfa2a70f0d2911808b63517a",
+          "member": "sameport.c.o",
+          "symbol": "dot_sameports"
+        },
+        {
+          "reference": "/home/runner/work/_temp/twine-arm64-build/build/lib/circogen/libcircogen.a(circular.c.o)",
+          "archive_sha256": "e757fcfa1e929f483795b31916dfa9ff8afbe21e283b7fdec6b1eff0c94e95af",
+          "member": "block.c.o",
+          "symbol": "initBlocklist"
+        },
+        {
+          "reference": "/home/runner/work/_temp/twine-arm64-build/build/lib/circogen/libcircogen.a(circular.c.o)",
+          "archive_sha256": "e757fcfa1e929f483795b31916dfa9ff8afbe21e283b7fdec6b1eff0c94e95af",
+          "member": "blocktree.c.o",
+          "symbol": "createBlocktree"
+        },
+        {
+          "reference": "/home/runner/work/_temp/twine-arm64-build/build/lib/circogen/libcircogen.a(circpos.c.o)",
+          "archive_sha256": "e757fcfa1e929f483795b31916dfa9ff8afbe21e283b7fdec6b1eff0c94e95af",
+          "member": "blockpath.c.o",
+          "symbol": "layout_block"
+        },
+        {
+          "reference": "/home/runner/work/_temp/twine-arm64-build/build/lib/circogen/libcircogen.a(circular.c.o)",
+          "archive_sha256": "e757fcfa1e929f483795b31916dfa9ff8afbe21e283b7fdec6b1eff0c94e95af",
+          "member": "circpos.c.o",
+          "symbol": "circPos"
+        },
+        {
+          "reference": "/home/runner/work/_temp/twine-arm64-build/build/lib/circogen/libcircogen.a(circularinit.c.o)",
+          "archive_sha256": "e757fcfa1e929f483795b31916dfa9ff8afbe21e283b7fdec6b1eff0c94e95af",
+          "member": "circular.c.o",
+          "symbol": "circularLayout"
+        },
+        {
+          "reference": "/home/runner/work/_temp/twine-arm64-build/build/plugin/neato_layout/libgvplugin_neato_layout.a(gvlayout_neato_layout.c.o)",
+          "archive_sha256": "e757fcfa1e929f483795b31916dfa9ff8afbe21e283b7fdec6b1eff0c94e95af",
+          "member": "circularinit.c.o",
+          "symbol": "circo_layout"
+        },
+        {
+          "reference": "/home/runner/work/_temp/twine-arm64-build/build/lib/circogen/libcircogen.a(blockpath.c.o)",
+          "archive_sha256": "e757fcfa1e929f483795b31916dfa9ff8afbe21e283b7fdec6b1eff0c94e95af",
+          "member": "edgelist.c.o",
+          "symbol": "init_edgelist"
+        },
+        {
+          "reference": "/home/runner/work/_temp/twine-arm64-build/build/lib/circogen/libcircogen.a(blockpath.c.o)",
+          "archive_sha256": "e757fcfa1e929f483795b31916dfa9ff8afbe21e283b7fdec6b1eff0c94e95af",
+          "member": "nodelist.c.o",
+          "symbol": "appendNodelist"
+        },
+        {
+          "reference": "/home/runner/work/_temp/twine-arm64-build/build/plugin/neato_layout/libgvplugin_neato_layout.a(gvlayout_neato_layout.c.o)",
+          "archive_sha256": "42c0b3cf61e26ab1f0a36582485484b09b82939905224ad4f473334bb9059fc1",
+          "member": "fdpinit.c.o",
+          "symbol": "fdp_cleanup"
+        },
+        {
+          "reference": "/home/runner/work/_temp/twine-arm64-build/build/lib/pathplan/libpathplan.a(visibility.c.o)",
+          "archive_sha256": "8926aac8b82a7c01ae2c202aa3eb31ead21b4eec39d8fc4b9e323db4fcff7f6d",
+          "member": "inpoly.c.o",
+          "symbol": "in_poly"
+        },
+        {
+          "reference": "/home/runner/work/_temp/twine-arm64-build/build/lib/pathplan/libpathplan.a(cvt.c.o)",
+          "archive_sha256": "8926aac8b82a7c01ae2c202aa3eb31ead21b4eec39d8fc4b9e323db4fcff7f6d",
+          "member": "visibility.c.o",
+          "symbol": "visibility"
+        },
+        {
+          "reference": "/home/runner/work/_temp/twine-arm64-build/build/lib/pathplan/libpathplan.a(cvt.c.o)",
+          "archive_sha256": "8926aac8b82a7c01ae2c202aa3eb31ead21b4eec39d8fc4b9e323db4fcff7f6d",
+          "member": "shortestpth.c.o",
+          "symbol": "makePath"
+        },
+        {
+          "reference": "/home/runner/work/_temp/twine-arm64-build/build/lib/fdpgen/libfdpgen.a(clusteredges.c.o)",
+          "archive_sha256": "8926aac8b82a7c01ae2c202aa3eb31ead21b4eec39d8fc4b9e323db4fcff7f6d",
+          "member": "cvt.c.o",
+          "symbol": "Pobsopen"
+        },
+        {
+          "reference": "/home/runner/work/_temp/twine-arm64-build/build/lib/fdpgen/libfdpgen.a(layout.c.o)",
+          "archive_sha256": "42c0b3cf61e26ab1f0a36582485484b09b82939905224ad4f473334bb9059fc1",
+          "member": "clusteredges.c.o",
+          "symbol": "compoundEdges"
+        },
+        {
+          "reference": "/home/runner/work/_temp/twine-arm64-build/build/lib/fdpgen/libfdpgen.a(layout.c.o)",
+          "archive_sha256": "42c0b3cf61e26ab1f0a36582485484b09b82939905224ad4f473334bb9059fc1",
+          "member": "comp.c.o",
+          "symbol": "findCComp"
+        },
+        {
+          "reference": "/home/runner/work/_temp/twine-arm64-build/build/plugin/neato_layout/libgvplugin_neato_layout.a(gvlayout_neato_layout.c.o)",
+          "archive_sha256": "42c0b3cf61e26ab1f0a36582485484b09b82939905224ad4f473334bb9059fc1",
+          "member": "layout.c.o",
+          "symbol": "fdp_layout"
+        },
+        {
+          "reference": "/home/runner/work/_temp/twine-arm64-build/build/lib/fdpgen/libfdpgen.a(grid.c.o)",
+          "archive_sha256": "d74e6824cbf704442891adb3931c4cb458131d935d8de4ae5be3a33009226dc3",
+          "member": "dtwalk.c.o",
+          "symbol": "dtwalk"
+        },
+        {
+          "reference": "/home/runner/work/_temp/twine-arm64-build/build/lib/fdpgen/libfdpgen.a(tlayout.c.o)",
+          "archive_sha256": "42c0b3cf61e26ab1f0a36582485484b09b82939905224ad4f473334bb9059fc1",
+          "member": "grid.c.o",
+          "symbol": "mkGrid"
+        },
+        {
+          "reference": "/home/runner/work/_temp/twine-arm64-build/build/lib/fdpgen/libfdpgen.a(layout.c.o)",
+          "archive_sha256": "42c0b3cf61e26ab1f0a36582485484b09b82939905224ad4f473334bb9059fc1",
+          "member": "tlayout.c.o",
+          "symbol": "fdp_initParams"
+        },
+        {
+          "reference": "/home/runner/work/_temp/twine-arm64-build/build/lib/fdpgen/libfdpgen.a(layout.c.o)",
+          "archive_sha256": "42c0b3cf61e26ab1f0a36582485484b09b82939905224ad4f473334bb9059fc1",
+          "member": "xlayout.c.o",
+          "symbol": "fdp_xLayout"
+        },
+        {
+          "reference": "/home/runner/work/_temp/twine-arm64-build/build/lib/fdpgen/libfdpgen.a(layout.c.o)",
+          "archive_sha256": "5262cd896352d802e5e17b2cbfa2ecfb9809d7d1f614595f3f2f47d4565a5438",
+          "member": "adjust.c.o",
+          "symbol": "normalize"
+        },
+        {
+          "reference": "/home/runner/work/_temp/twine-arm64-build/build/lib/neatogen/libneatogen.a(adjust.c.o)",
+          "archive_sha256": "5262cd896352d802e5e17b2cbfa2ecfb9809d7d1f614595f3f2f47d4565a5438",
+          "member": "constraint.c.o",
+          "symbol": "cAdjust"
+        },
+        {
+          "reference": "/home/runner/work/_temp/twine-arm64-build/build/lib/neatogen/libneatogen.a(adjust.c.o)",
+          "archive_sha256": "5262cd896352d802e5e17b2cbfa2ecfb9809d7d1f614595f3f2f47d4565a5438",
+          "member": "edges.c.o",
+          "symbol": "pymax"
+        },
+        {
+          "reference": "/home/runner/work/_temp/twine-arm64-build/build/lib/neatogen/libneatogen.a(adjust.c.o)",
+          "archive_sha256": "5262cd896352d802e5e17b2cbfa2ecfb9809d7d1f614595f3f2f47d4565a5438",
+          "member": "geometry.c.o",
+          "symbol": "geominit"
+        },
+        {
+          "reference": "/home/runner/work/_temp/twine-arm64-build/build/lib/neatogen/libneatogen.a(adjust.c.o)",
+          "archive_sha256": "5262cd896352d802e5e17b2cbfa2ecfb9809d7d1f614595f3f2f47d4565a5438",
+          "member": "info.c.o",
+          "symbol": "addVertex"
+        },
+        {
+          "reference": "/home/runner/work/_temp/twine-arm64-build/build/lib/fdpgen/libfdpgen.a(clusteredges.c.o)",
+          "archive_sha256": "5262cd896352d802e5e17b2cbfa2ecfb9809d7d1f614595f3f2f47d4565a5438",
+          "member": "legal.c.o",
+          "symbol": "Plegal_arrangement"
+        },
+        {
+          "reference": "/home/runner/work/_temp/twine-arm64-build/build/lib/neatogen/libneatogen.a(matinv.c.o)",
+          "archive_sha256": "5262cd896352d802e5e17b2cbfa2ecfb9809d7d1f614595f3f2f47d4565a5438",
+          "member": "lu.c.o",
+          "symbol": "lu_decompose"
+        },
+        {
+          "reference": "/home/runner/work/_temp/twine-arm64-build/build/lib/neatogen/libneatogen.a(circuit.c.o)",
+          "archive_sha256": "5262cd896352d802e5e17b2cbfa2ecfb9809d7d1f614595f3f2f47d4565a5438",
+          "member": "matinv.c.o",
+          "symbol": "matinv"
+        },
+        {
+          "reference": "/home/runner/work/_temp/twine-arm64-build/build/lib/neatogen/libneatogen.a(neatoinit.c.o)",
+          "archive_sha256": "5262cd896352d802e5e17b2cbfa2ecfb9809d7d1f614595f3f2f47d4565a5438",
+          "member": "circuit.c.o",
+          "symbol": "circuit_model"
+        },
+        {
+          "reference": "/home/runner/work/_temp/twine-arm64-build/build/lib/neatogen/libneatogen.a(kkutils.c.o)",
+          "archive_sha256": "5262cd896352d802e5e17b2cbfa2ecfb9809d7d1f614595f3f2f47d4565a5438",
+          "member": "bfs.c.o",
+          "symbol": "bfs"
+        },
+        {
+          "reference": "/home/runner/work/_temp/twine-arm64-build/build/lib/neatogen/libneatogen.a(kkutils.c.o)",
+          "archive_sha256": "5262cd896352d802e5e17b2cbfa2ecfb9809d7d1f614595f3f2f47d4565a5438",
+          "member": "dijkstra.c.o",
+          "symbol": "ngdijkstra"
+        },
+        {
+          "reference": "/home/runner/work/_temp/twine-arm64-build/build/lib/neatogen/libneatogen.a(neatoinit.c.o)",
+          "archive_sha256": "5262cd896352d802e5e17b2cbfa2ecfb9809d7d1f614595f3f2f47d4565a5438",
+          "member": "kkutils.c.o",
+          "symbol": "compute_apsp_artificial_weights"
+        },
+        {
+          "reference": "/home/runner/work/_temp/twine-arm64-build/build/lib/neatogen/libneatogen.a(neatoinit.c.o)",
+          "archive_sha256": "5262cd896352d802e5e17b2cbfa2ecfb9809d7d1f614595f3f2f47d4565a5438",
+          "member": "delaunay.c.o",
+          "symbol": "freeGraphData"
+        },
+        {
+          "reference": "/home/runner/work/_temp/twine-arm64-build/build/lib/circogen/libcircogen.a(circularinit.c.o)",
+          "archive_sha256": "5262cd896352d802e5e17b2cbfa2ecfb9809d7d1f614595f3f2f47d4565a5438",
+          "member": "neatoinit.c.o",
+          "symbol": "neato_init_node"
+        },
+        {
+          "reference": "/home/runner/work/_temp/twine-arm64-build/build/lib/fdpgen/libfdpgen.a(clusteredges.c.o)",
+          "archive_sha256": "5262cd896352d802e5e17b2cbfa2ecfb9809d7d1f614595f3f2f47d4565a5438",
+          "member": "neatosplines.c.o",
+          "symbol": "makeSelfArcs"
+        },
+        {
+          "reference": "/home/runner/work/_temp/twine-arm64-build/build/lib/neatogen/libneatogen.a(adjust.c.o)",
+          "archive_sha256": "5262cd896352d802e5e17b2cbfa2ecfb9809d7d1f614595f3f2f47d4565a5438",
+          "member": "poly.c.o",
+          "symbol": "breakPoly"
+        },
+        {
+          "reference": "/home/runner/work/_temp/twine-arm64-build/build/lib/neatogen/libneatogen.a(stuff.c.o)",
+          "archive_sha256": "5262cd896352d802e5e17b2cbfa2ecfb9809d7d1f614595f3f2f47d4565a5438",
+          "member": "solve.c.o",
+          "symbol": "solve"
+        },
+        {
+          "reference": "/home/runner/work/_temp/twine-arm64-build/build/lib/neatogen/libneatogen.a(lu.c.o)",
+          "archive_sha256": "5262cd896352d802e5e17b2cbfa2ecfb9809d7d1f614595f3f2f47d4565a5438",
+          "member": "stuff.c.o",
+          "symbol": "new_array"
+        },
+        {
+          "reference": "/home/runner/work/_temp/twine-arm64-build/build/lib/neatogen/libneatogen.a(stress.c.o)",
+          "archive_sha256": "5262cd896352d802e5e17b2cbfa2ecfb9809d7d1f614595f3f2f47d4565a5438",
+          "member": "matrix_ops.c.o",
+          "symbol": "orthog1"
+        },
+        {
+          "reference": "/home/runner/work/_temp/twine-arm64-build/build/lib/neatogen/libneatogen.a(stress.c.o)",
+          "archive_sha256": "5262cd896352d802e5e17b2cbfa2ecfb9809d7d1f614595f3f2f47d4565a5438",
+          "member": "embed_graph.c.o",
+          "symbol": "embed_graph"
+        },
+        {
+          "reference": "/home/runner/work/_temp/twine-arm64-build/build/lib/neatogen/libneatogen.a(pca.c.o)",
+          "archive_sha256": "5262cd896352d802e5e17b2cbfa2ecfb9809d7d1f614595f3f2f47d4565a5438",
+          "member": "closest.c.o",
+          "symbol": "closest_pairs2graph"
+        },
+        {
+          "reference": "/home/runner/work/_temp/twine-arm64-build/build/lib/neatogen/libneatogen.a(stress.c.o)",
+          "archive_sha256": "5262cd896352d802e5e17b2cbfa2ecfb9809d7d1f614595f3f2f47d4565a5438",
+          "member": "pca.c.o",
+          "symbol": "PCA_alloc"
+        },
+        {
+          "reference": "/home/runner/work/_temp/twine-arm64-build/build/lib/neatogen/libneatogen.a(stress.c.o)",
+          "archive_sha256": "5262cd896352d802e5e17b2cbfa2ecfb9809d7d1f614595f3f2f47d4565a5438",
+          "member": "conjgrad.c.o",
+          "symbol": "conjugate_gradient_f"
+        },
+        {
+          "reference": "/home/runner/work/_temp/twine-arm64-build/build/lib/neatogen/libneatogen.a(neatoinit.c.o)",
+          "archive_sha256": "5262cd896352d802e5e17b2cbfa2ecfb9809d7d1f614595f3f2f47d4565a5438",
+          "member": "stress.c.o",
+          "symbol": "stress_majorization_kD_mkernel"
+        },
+        {
+          "reference": "/home/runner/work/_temp/twine-arm64-build/build/lib/neatogen/libneatogen.a(voronoi.c.o)",
+          "archive_sha256": "5262cd896352d802e5e17b2cbfa2ecfb9809d7d1f614595f3f2f47d4565a5438",
+          "member": "heap.c.o",
+          "symbol": "PQinitialize"
+        },
+        {
+          "reference": "/home/runner/work/_temp/twine-arm64-build/build/lib/neatogen/libneatogen.a(voronoi.c.o)",
+          "archive_sha256": "5262cd896352d802e5e17b2cbfa2ecfb9809d7d1f614595f3f2f47d4565a5438",
+          "member": "site.c.o",
+          "symbol": "bottomsite"
+        },
+        {
+          "reference": "/home/runner/work/_temp/twine-arm64-build/build/lib/neatogen/libneatogen.a(voronoi.c.o)",
+          "archive_sha256": "5262cd896352d802e5e17b2cbfa2ecfb9809d7d1f614595f3f2f47d4565a5438",
+          "member": "hedges.c.o",
+          "symbol": "ELinitialize"
+        },
+        {
+          "reference": "/home/runner/work/_temp/twine-arm64-build/build/lib/neatogen/libneatogen.a(adjust.c.o)",
+          "archive_sha256": "5262cd896352d802e5e17b2cbfa2ecfb9809d7d1f614595f3f2f47d4565a5438",
+          "member": "voronoi.c.o",
+          "symbol": "voronoi"
+        },
+        {
+          "reference": "/home/runner/work/_temp/twine-arm64-build/build/lib/neatogen/libneatogen.a(neatoinit.c.o)",
+          "archive_sha256": "5262cd896352d802e5e17b2cbfa2ecfb9809d7d1f614595f3f2f47d4565a5438",
+          "member": "sgd.c.o",
+          "symbol": "sgd"
+        },
+        {
+          "reference": "/home/runner/work/_temp/twine-arm64-build/build/lib/neatogen/libneatogen.a(sgd.c.o)",
+          "archive_sha256": "5262cd896352d802e5e17b2cbfa2ecfb9809d7d1f614595f3f2f47d4565a5438",
+          "member": "randomkit.c.o",
+          "symbol": "rk_seed"
+        },
+        {
+          "reference": "/home/runner/work/_temp/twine-arm64-build/build/plugin/neato_layout/libgvplugin_neato_layout.a(gvlayout_neato_layout.c.o)",
+          "archive_sha256": "9a81f2a9b975ca600cbe75a1b31c1f59927af1eae21a103361c9f7201d0ce406",
+          "member": "osageinit.c.o",
+          "symbol": "osage_layout"
+        },
+        {
+          "reference": "/home/runner/work/_temp/twine-arm64-build/build/lib/patchwork/libpatchwork.a(patchworkinit.c.o)",
+          "archive_sha256": "f226fcf344e96bb97afb206e0357c42f2d0de408daa83dd6cc5f662b89ddd541",
+          "member": "patchwork.c.o",
+          "symbol": "patchworkLayout"
+        },
+        {
+          "reference": "/home/runner/work/_temp/twine-arm64-build/build/plugin/neato_layout/libgvplugin_neato_layout.a(gvlayout_neato_layout.c.o)",
+          "archive_sha256": "f226fcf344e96bb97afb206e0357c42f2d0de408daa83dd6cc5f662b89ddd541",
+          "member": "patchworkinit.c.o",
+          "symbol": "patchwork_layout"
+        },
+        {
+          "reference": "/home/runner/work/_temp/twine-arm64-build/build/lib/patchwork/libpatchwork.a(patchwork.c.o)",
+          "archive_sha256": "f226fcf344e96bb97afb206e0357c42f2d0de408daa83dd6cc5f662b89ddd541",
+          "member": "tree_map.c.o",
+          "symbol": "tree_map"
+        },
+        {
+          "reference": "/home/runner/work/_temp/twine-arm64-build/build/lib/neatogen/libneatogen.a(adjust.c.o)",
+          "archive_sha256": "59b71fee049ae647b8f2163d0f9c6f087200d14b7bcc8df354e56baad17a0880",
+          "member": "SparseMatrix.c.o",
+          "symbol": "SparseMatrix_from_coordinate_arrays"
+        },
+        {
+          "reference": "/home/runner/work/_temp/twine-arm64-build/build/lib/twopigen/libtwopigen.a(twopiinit.c.o)",
+          "archive_sha256": "66cee7d082d24a55f6e6e626c753201dd1867d7c7e13978dd6c01f151bae9ff4",
+          "member": "circle.c.o",
+          "symbol": "circleLayout"
+        },
+        {
+          "reference": "/home/runner/work/_temp/twine-arm64-build/build/plugin/neato_layout/libgvplugin_neato_layout.a(gvlayout_neato_layout.c.o)",
+          "archive_sha256": "66cee7d082d24a55f6e6e626c753201dd1867d7c7e13978dd6c01f151bae9ff4",
+          "member": "twopiinit.c.o",
+          "symbol": "twopi_layout"
+        },
+        {
+          "reference": "/home/runner/work/_temp/twine-arm64-build/build/lib/label/liblabel.a(node.c.o)",
+          "archive_sha256": "909b685e273c985debe0f609dafaaf27c8628807dafabcede56a62d2aaf68e2e",
+          "member": "rectangle.c.o",
+          "symbol": "InitRect"
+        },
+        {
+          "reference": "/home/runner/work/_temp/twine-arm64-build/build/lib/label/liblabel.a(node.c.o)",
+          "archive_sha256": "909b685e273c985debe0f609dafaaf27c8628807dafabcede56a62d2aaf68e2e",
+          "member": "split.q.c.o",
+          "symbol": "SplitNode"
+        },
+        {
+          "reference": "/home/runner/work/_temp/twine-arm64-build/build/lib/label/liblabel.a(index.c.o)",
+          "archive_sha256": "909b685e273c985debe0f609dafaaf27c8628807dafabcede56a62d2aaf68e2e",
+          "member": "node.c.o",
+          "symbol": "RTreeNewNode"
+        },
+        {
+          "reference": "/home/runner/work/_temp/twine-arm64-build/build/lib/label/liblabel.a(xlabels.c.o)",
+          "archive_sha256": "909b685e273c985debe0f609dafaaf27c8628807dafabcede56a62d2aaf68e2e",
+          "member": "index.c.o",
+          "symbol": "RTreeOpen"
+        },
+        {
+          "reference": "/home/runner/work/_temp/twine-arm64-build/build/lib/common/CMakeFiles/common_obj.dir/postproc.c.o",
+          "archive_sha256": "909b685e273c985debe0f609dafaaf27c8628807dafabcede56a62d2aaf68e2e",
+          "member": "xlabels.c.o",
+          "symbol": "placeLabels"
+        },
+        {
+          "reference": "/home/runner/work/_temp/twine-arm64-build/build/lib/neatogen/libneatogen.a(edges.c.o)",
+          "archive_sha256": "92dd632f13c4fa13722cbdc24f0f4cd4bf4c27d3b7e1dc855b77c5f636387b3b",
+          "member": "arena.c.o",
+          "symbol": "gv_arena_alloc"
+        },
+        {
+          "reference": "/home/runner/work/_temp/twine-arm64-build/build/lib/common/CMakeFiles/common_obj.dir/input.c.o",
+          "archive_sha256": "92dd632f13c4fa13722cbdc24f0f4cd4bf4c27d3b7e1dc855b77c5f636387b3b",
+          "member": "gv_fopen.c.o",
+          "symbol": "gv_fopen"
+        },
+        {
+          "reference": "/home/runner/work/_temp/twine-arm64-build/build/lib/common/CMakeFiles/common_obj.dir/ellipse.c.o",
+          "archive_sha256": "92dd632f13c4fa13722cbdc24f0f4cd4bf4c27d3b7e1dc855b77c5f636387b3b",
+          "member": "list.c.o",
+          "symbol": "gv_list_append_slot_"
+        },
+        {
+          "reference": "/home/runner/work/_temp/twine-arm64-build/build/lib/gvc/libgvc.a(gvdevice.c.o)",
+          "archive_sha256": "92dd632f13c4fa13722cbdc24f0f4cd4bf4c27d3b7e1dc855b77c5f636387b3b",
+          "member": "xml.c.o",
+          "symbol": "gv_xml_escape"
+        },
+        {
+          "reference": "/home/runner/work/_temp/twine-arm64-build/build/lib/common/CMakeFiles/common_obj.dir/psusershape.c.o",
+          "archive_sha256": "2db42f3e95c93b1b04ecb61b51035e83ef032801eceefb89b0d3654742b77a3c",
+          "member": "/home/runner/work/_temp/twine-arm64-sdk/cache/o/38de756c29c663a553a6d417bdf8e15d/fstat-2.32.o",
+          "symbol": "fstat"
+        },
+        {
+          "reference": "/home/runner/work/_temp/twine-arm64-sdk/cache/o/920d1e37e43d8aeee0bd1e935b76a00d/crt1.o",
+          "archive_sha256": "2db42f3e95c93b1b04ecb61b51035e83ef032801eceefb89b0d3654742b77a3c",
+          "member": "/home/runner/work/_temp/twine-arm64-sdk/cache/o/f789d8b83bf175b7108888a33e9150ef/elf-init-2.33.o",
+          "symbol": "__libc_csu_init"
+        },
+        {
+          "reference": "/home/runner/work/_temp/twine-arm64-build/build/lib/neatogen/libneatogen.a(stress.c.o)",
+          "archive_sha256": "00d7cad16eced7116f95f90a152bbff96d4b787091a193104c989cf113ecf357",
+          "member": "/home/runner/work/_temp/twine-arm64-sdk/cache/o/82b5f871e567cea1112c0f528d5dd09e/libcompiler_rt_zcu.o",
+          "symbol": "__extendsftf2"
+        }
+      ],
+      "archives": [
+        {
+          "path": "lib/cdt/libcdt.a",
+          "scope": "build",
+          "archive_sha256": "d74e6824cbf704442891adb3931c4cb458131d935d8de4ae5be3a33009226dc3",
+          "extracted_member_count": 12
+        },
+        {
+          "path": "lib/cgraph/libcgraph.a",
+          "scope": "build",
+          "archive_sha256": "625477edb2c2cc29a3f907361bcb6b9891d8437fe22eb3d857a83bb74f7feab5",
+          "extracted_member_count": 18
+        },
+        {
+          "path": "lib/circogen/libcircogen.a",
+          "scope": "build",
+          "archive_sha256": "e757fcfa1e929f483795b31916dfa9ff8afbe21e283b7fdec6b1eff0c94e95af",
+          "extracted_member_count": 8
+        },
+        {
+          "path": "lib/common/libcommon.a",
+          "scope": "build",
+          "archive_sha256": "3167df582113a2fcbb12e0b35c04ce7b6f65859c9d68bfaf3bb4eb044e620809",
+          "extracted_member_count": 0
+        },
+        {
+          "path": "lib/dotgen/libdotgen.a",
+          "scope": "build",
+          "archive_sha256": "1f90a3851e6f85338b3c83220cf32cfd7984652edfa2a70f0d2911808b63517a",
+          "extracted_member_count": 16
+        },
+        {
+          "path": "lib/fdpgen/libfdpgen.a",
+          "scope": "build",
+          "archive_sha256": "42c0b3cf61e26ab1f0a36582485484b09b82939905224ad4f473334bb9059fc1",
+          "extracted_member_count": 7
+        },
+        {
+          "path": "lib/gvc/libgvc.a",
+          "scope": "build",
+          "archive_sha256": "53f24fa5d5a9ee4cf06520a9ac2dcd0c4a860fa7af4517b386cf3d92273f60d7",
+          "extracted_member_count": 12
+        },
+        {
+          "path": "lib/label/liblabel.a",
+          "scope": "build",
+          "archive_sha256": "909b685e273c985debe0f609dafaaf27c8628807dafabcede56a62d2aaf68e2e",
+          "extracted_member_count": 5
+        },
+        {
+          "path": "lib/neatogen/libneatogen.a",
+          "scope": "build",
+          "archive_sha256": "5262cd896352d802e5e17b2cbfa2ecfb9809d7d1f614595f3f2f47d4565a5438",
+          "extracted_member_count": 30
+        },
+        {
+          "path": "lib/ortho/libortho.a",
+          "scope": "build",
+          "archive_sha256": "cd2c589453645c4991acf0d27966c7a465116069aa96a812aa4f5d60f07d505d",
+          "extracted_member_count": 0
+        },
+        {
+          "path": "lib/osage/libosage.a",
+          "scope": "build",
+          "archive_sha256": "9a81f2a9b975ca600cbe75a1b31c1f59927af1eae21a103361c9f7201d0ce406",
+          "extracted_member_count": 1
+        },
+        {
+          "path": "lib/pack/libpack.a",
+          "scope": "build",
+          "archive_sha256": "791db365b7683e3e5759cf98a2dfadb832f0fd209ca0dc97f1f79e8ecb4ab927",
+          "extracted_member_count": 0
+        },
+        {
+          "path": "lib/patchwork/libpatchwork.a",
+          "scope": "build",
+          "archive_sha256": "f226fcf344e96bb97afb206e0357c42f2d0de408daa83dd6cc5f662b89ddd541",
+          "extracted_member_count": 3
+        },
+        {
+          "path": "lib/pathplan/libpathplan.a",
+          "scope": "build",
+          "archive_sha256": "8926aac8b82a7c01ae2c202aa3eb31ead21b4eec39d8fc4b9e323db4fcff7f6d",
+          "extracted_member_count": 9
+        },
+        {
+          "path": "lib/rbtree/librbtree.a",
+          "scope": "build",
+          "archive_sha256": "986fddf8c996a03ee0701d760c04b9b788ab5a78deefb20fb61f32b41321a892",
+          "extracted_member_count": 0
+        },
+        {
+          "path": "lib/sparse/libsparse.a",
+          "scope": "build",
+          "archive_sha256": "59b71fee049ae647b8f2163d0f9c6f087200d14b7bcc8df354e56baad17a0880",
+          "extracted_member_count": 1
+        },
+        {
+          "path": "lib/twopigen/libtwopigen.a",
+          "scope": "build",
+          "archive_sha256": "66cee7d082d24a55f6e6e626c753201dd1867d7c7e13978dd6c01f151bae9ff4",
+          "extracted_member_count": 2
+        },
+        {
+          "path": "lib/util/libutil.a",
+          "scope": "build",
+          "archive_sha256": "92dd632f13c4fa13722cbdc24f0f4cd4bf4c27d3b7e1dc855b77c5f636387b3b",
+          "extracted_member_count": 4
+        },
+        {
+          "path": "lib/xdot/libxdot.a",
+          "scope": "build",
+          "archive_sha256": "b3124a3daac52fdca2fe7bc24d2ac7791c2f82d0c9c87375477ee9fc91db9444",
+          "extracted_member_count": 1
+        },
+        {
+          "path": "plugin/core/libgvplugin_core.a",
+          "scope": "build",
+          "archive_sha256": "34666353f77b9876d74127e9b85b10e4c238024c438ff799cce39e210bc6e651",
+          "extracted_member_count": 11
+        },
+        {
+          "path": "plugin/dot_layout/libgvplugin_dot_layout.a",
+          "scope": "build",
+          "archive_sha256": "a2968c500ba4d4badc706357fe1471ae61a7d5b2be377aeb36c69ad81b8a4ab9",
+          "extracted_member_count": 2
+        },
+        {
+          "path": "plugin/neato_layout/libgvplugin_neato_layout.a",
+          "scope": "build",
+          "archive_sha256": "7495182e152e73bf9c2f4cd6425f943ad83d821335aab428d825b63d30d0144e",
+          "extracted_member_count": 2
+        },
+        {
+          "path": "plugin/vt/libgvplugin_vt.a",
+          "scope": "build",
+          "archive_sha256": "fd834fc514df614b5774975e7eaf6cea8cad4dbb6cbbea42eda18a9b3b4f4fff",
+          "extracted_member_count": 1
+        },
+        {
+          "path": "/home/runner/work/_temp/twine-arm64-sdk/cache/o/1773dd242bd9d6cac75023a028729945/libc_nonshared.a",
+          "scope": "sdk",
+          "archive_sha256": "2db42f3e95c93b1b04ecb61b51035e83ef032801eceefb89b0d3654742b77a3c",
+          "extracted_member_count": 2
+        },
+        {
+          "path": "/home/runner/work/_temp/twine-arm64-sdk/cache/o/4f58cc681c0ac6aa3891587e3094c27d/libc++abi.a",
+          "scope": "sdk",
+          "archive_sha256": "decf33bee0031941acfa8c01407f19d9504b2bddf7035342f9ec8f29c58108ac",
+          "extracted_member_count": 0
+        },
+        {
+          "path": "/home/runner/work/_temp/twine-arm64-sdk/cache/o/79eaa63c75b259b654d01782ce46be8e/libunwind.a",
+          "scope": "sdk",
+          "archive_sha256": "71522dcaade5aa5b8c85e2709dfeb7f02db4efbb0c5e9c5edb2f7124e2590ad9",
+          "extracted_member_count": 0
+        },
+        {
+          "path": "/home/runner/work/_temp/twine-arm64-sdk/cache/o/82b5f871e567cea1112c0f528d5dd09e/libcompiler_rt.a",
+          "scope": "sdk",
+          "archive_sha256": "00d7cad16eced7116f95f90a152bbff96d4b787091a193104c989cf113ecf357",
+          "extracted_member_count": 1
+        },
+        {
+          "path": "/home/runner/work/_temp/twine-arm64-sdk/cache/o/f41bf5ce7f3a8c9019f9d491158d8264/libc++.a",
+          "scope": "sdk",
+          "archive_sha256": "35577002a5b8f86df33e5ffeac9cecec08e935945f608d6c1a21c02769b8faac",
+          "extracted_member_count": 0
+        }
+      ]
+    }
+  },
+  "executable_sha256": "933b6c63370bdd3e814627e2a9a06176416c8da017a21dcbc96d8137dbc17e22",
+  "relink": {
+    "parent_provenance_sha256": "646c06d1aba84e476bdea2cd4ff10d6b8044dbf441ed7228f78994b1819ea9d9",
+    "parent_output": "/home/runner/work/_temp/twine-arm64-build",
+    "compiler_reference_sha256": "933b6c63370bdd3e814627e2a9a06176416c8da017a21dcbc96d8137dbc17e22",
+    "byte_identical_to_compiler": true,
+    "zig_sha256": "931b8e9a9327dac87bc439067f07604219510fa541133ff6e542c6243968cc86",
+    "byte_identical_to_source": true,
+    "compiler_verbose_sha256": "579704aff60b6ccc9b558d777d0d2787e66db7e219829519a6d456c3bde65d39",
+    "tool_sha256": "a5c44de171c18243ace01b71f8b8e2103dc9ebd6821934f241693246066e853c"
+  }
+}

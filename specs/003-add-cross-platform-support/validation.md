@@ -1513,3 +1513,43 @@ três repetições locais cada (seis ensaios). O commit `cadc80c`, incluído na 
 incluindo execução do caso novo no Windows com Python 3.12 e 3.14. O job separado
 de aceite Windows 11 nativo continua pendente/skipped por ausência de runner
 configurado; essa regressão não o substitui.
+
+### Pacote ARM64 com avisos e índice offline
+
+`prepare-draft-notices.py` agora aceita o build glibc aarch64 com receita e
+proveniência nativas correspondentes. Exige relatórios próprios de glibc,
+compiler_rt e dados gerados; recusa relatório de outra variante mesmo se os
+demais campos coincidirem. Reconfere bytes do executável, fontes/prefixos,
+headers, saídas geradas e material de licença contra as origens fixadas.
+Três testes novos cobrem esses contratos; dois foram observados falhando antes
+da implementação. A suíte local passou com **198 testes** em Python 3.12/3.14,
+sete skips Windows.
+
+A revisão `542d060db9f73797c3b49f290e030fec3c588ac6` passou no
+[workflow ARM64 nativo](https://github.com/Extremois/desembaraca-twine/actions/runs/39322753386).
+O [recibo da candidata](evidence/linux-arm64-draft-notices-2026-10-19/summary.json)
+preserva **229 avisos**, proveniência pai/filha, relatórios e corpus. Inclui
+prefixos de 159 headers e 50 fontes SDK, textos SDK e LGPL/GPL completos,
+Graphviz/Bison/Flex, referências de dados e índice offline dos **228 outros
+avisos**. Os 22 headers sem prefixo estão registrados, sem presumir ausência
+de obrigações. O índice exclui seu próprio hash; o inventário externo o inclui.
+
+Após download foram conferidos os **230 arquivos** do ZIP, hashes, modos,
+tamanhos/timestamps, origens do índice, todos os **181 headers** e os textos
+retirados do SDK diretamente contra o tarball fixado. As 251 fontes dos
+relatórios SDK também foram reconferidas com prefixos/indicadores. Os 13 casos,
+relocação Unicode e zero chamadas de rede observadas passaram em ambos os
+Pythons. O pacote tem **7.262.834 bytes**, SHA-256
+`b28c394674b104482710a16d37852b36630d5bfacb971f114491aa5483cfaf65`.
+O motor mantém `933b6c…17e22`.
+
+Os textos são rascunhos vinculados aos bytes, com `approved: false` e
+`qualified: false`. Não encerram aplicabilidade por arquivo, possíveis textos
+adicionais, retenção de seções/fechamento transitivo, oferta completa de fontes,
+reconstrução ou qualificação de células. T030 parcial, **48/84**, catálogo ativo
+somente Windows.
+
+A revisão passou também na
+[regressão de seis slots](https://github.com/Extremois/desembaraca-twine/actions/runs/39322753407),
+no [build/reconstrução Linux x64](https://github.com/Extremois/desembaraca-twine/actions/runs/39322753406)
+e nos [builds macOS Intel/Apple Silicon](https://github.com/Extremois/desembaraca-twine/actions/runs/39322753572).
