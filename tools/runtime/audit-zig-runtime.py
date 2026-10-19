@@ -1,4 +1,4 @@
-"""Observe startup/Zig runtime sources in a private static musl relink.
+"""Observe selected startup/Zig runtime sources in a private Linux relink.
 
 Only the pinned readelf is executed. Line-table presence does not establish
 retained code, an exhaustive dependency graph or an approved license audit.
@@ -71,14 +71,26 @@ def license_indicators(data):
     return items
 
 
+def runtime_profile(record):
+    if record.get('artifact_id')=='linux-musl-x86_64':
+        return {'crt1.o','libzigc.a','libcompiler_rt.a'},('lib/c.zig','lib/compiler_rt.zig')
+    recipe=record.get('recipe',{})
+    if (record.get('artifact_id')=='linux-glibc-aarch64' and record.get('completed') is True
+            and (record.get('native_os'),record.get('native_arch'))==('linux','aarch64')
+            and (recipe.get('os'),recipe.get('arch'),recipe.get('abi'))==('linux','aarch64','glibc')):
+        return {'libcompiler_rt.a'},('lib/compiler_rt.zig',)
+    raise ValueError('Expected supported musl startup or native ARM64 glibc runtime record')
+
+
 def collect(linked_build,sdk_root,sdk_archive):
     started=time.monotonic()
     record=json.loads(audit.bounded(linked_build/'provenance.json',8*1024**2))
-    if record.get('artifact_id')!='linux-musl-x86_64':raise ValueError('Expected musl x86_64 relink')
-    notices.sdk_notice_names(record,linked_build)
+    required,entrypoints=runtime_profile(record)
+    if record['artifact_id']=='linux-musl-x86_64':notices.sdk_notice_names(record,linked_build)
     if builder.digest(linked_build/'candidate/bin/dot')!=record['executable_sha256']:raise ValueError('Executable changed')
     facts=record['sdk']['facts']
-    if builder.digest(sdk_archive)!=facts['archive_sha256'] or builder.digest(sdk_root/'zig')!=facts['zig_sha256']:
+    identity=notices.sdk_archive_identity(facts)
+    if builder.digest(sdk_archive)!=identity['sha256'] or builder.digest(sdk_root/'zig')!=facts['zig_sha256']:
         raise ValueError('SDK differs from pinned build')
     inspector=record['sdk']['elf_inspector'];inspector_path=Path(inspector['path'])
     if not inspector_path.is_absolute() or builder.digest(inspector_path)!=inspector['sha256']:raise ValueError('ELF inspector changed')
@@ -89,11 +101,11 @@ def collect(linked_build,sdk_root,sdk_archive):
     entries={}
     for item in record['linkage']['inputs']:
         name=Path(item['path']).name
-        if item['scope']=='sdk' and name in ('crt1.o','libzigc.a','libcompiler_rt.a'):
+        if item['scope']=='sdk' and name in required:
             if name in entries:raise ValueError('Ambiguous runtime input')
             entries[name]=item
-    if set(entries)!= {'crt1.o','libzigc.a','libcompiler_rt.a'}:raise ValueError('Runtime inputs incomplete')
-    cache=Path(entries['libzigc.a']['path']).parents[2].resolve(strict=True)
+    if set(entries)!=required:raise ValueError('Runtime inputs incomplete')
+    cache=Path(entries['libcompiler_rt.a']['path']).parents[2].resolve(strict=True)
     sources={};generated={};objects=[];total=0
     for name,item in sorted(entries.items()):
         path=Path(item['path']);payload=audit.bounded(path,64*1024**2)
@@ -142,7 +154,7 @@ def collect(linked_build,sdk_root,sdk_archive):
             info_report_sha256=hashlib.sha256(reports[0]).hexdigest(),line_report_sha256=hashlib.sha256(reports[1]).hexdigest(),
             line_table_files=observed_sources))
     # Explicit entrypoints are additional source material, never inferred from virtual CU names.
-    for name in ('lib/c.zig','lib/compiler_rt.zig'):
+    for name in entrypoints:
         data=audit.bounded(sdk_root/name,1024**2)
         sources[name]=dict(path=name,size=len(data),sha256=hashlib.sha256(data).hexdigest(),role='explicit-source-entrypoint-not-line-table-observation')
     pinned=notices.archive_files(sdk_archive,sdk_root.name,set(sources))
@@ -154,7 +166,7 @@ def collect(linked_build,sdk_root,sdk_archive):
     if time.monotonic()-started>120:raise ValueError('Runtime source audit exceeded deadline')
     return dict(kind='zig-startup-runtime-source-observations-not-approved',approved=False,qualified=False,source_to_binary_complete=False,
         artifact_id=record['artifact_id'],executable_sha256=record['executable_sha256'],provenance_sha256=builder.digest(linked_build/'provenance.json'),
-        sdk_archive_sha256=facts['archive_sha256'],inspector_sha256=inspector['sha256'],tool_sha256=builder.digest(Path(__file__)),
+        sdk_archive_sha256=identity['sha256'],inspector_sha256=inspector['sha256'],tool_sha256=builder.digest(Path(__file__)),
         objects=objects,sources=sorted(sources.values(),key=lambda i:i['path']),generated_files=sorted(generated.values(),key=lambda i:i['path']),
         summary=dict(objects=len(objects),sdk_sources_verified=len(sources),generated_files_hashed=len(generated),
             sources_with_leading_comments=sum(bool(i['leading_comment_bytes']) for i in sources.values()),

@@ -17,6 +17,18 @@ def table(directories,files,version=4):
 
 
 class ZigRuntimeAuditTests(unittest.TestCase):
+    def test_runtime_profile_keeps_arm_glibc_separate_from_musl_startup(self):
+        audit=module()
+        record=dict(completed=True,artifact_id='linux-glibc-aarch64',native_os='linux',native_arch='aarch64',
+                    recipe=dict(os='linux',arch='aarch64',abi='glibc'))
+        self.assertEqual(audit.runtime_profile(record),({'libcompiler_rt.a'},('lib/compiler_rt.zig',)))
+        for bad in (dict(record,native_arch='x86_64'),dict(record,completed=False),
+                    dict(record,artifact_id='linux-glibc-x86_64'),
+                    dict(record,recipe=dict(os='linux',arch='aarch64',abi='musl'))):
+            with self.assertRaises(ValueError):audit.runtime_profile(bad)
+        self.assertEqual(audit.runtime_profile(dict(artifact_id='linux-musl-x86_64')),
+            ({'crt1.o','libzigc.a','libcompiler_rt.a'},('lib/c.zig','lib/compiler_rt.zig')))
+
     def test_license_indicators_include_later_lines_without_treating_them_as_approval(self):
         audit=module()
         data=(b'// Copyright synthetic header\nconst x = 1;\n'

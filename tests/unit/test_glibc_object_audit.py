@@ -12,6 +12,13 @@ def tool():
 
 
 class GlibcObjectAuditTests(unittest.TestCase):
+    def test_arm_runtime_extraction_is_explicitly_separate_and_unknown_archives_refused(self):
+        module=tool()
+        self.assertEqual(module.archive_source_scope('linux-glibc-aarch64','libc_nonshared.a'),'glibc')
+        self.assertEqual(module.archive_source_scope('linux-glibc-aarch64','libcompiler_rt.a'),'separate-runtime-review')
+        for artifact,name in (('linux-glibc-x86_64','libcompiler_rt.a'),('linux-glibc-aarch64','unknown.a')):
+            with self.assertRaises(ValueError):module.archive_source_scope(artifact,name)
+
     def test_member_observation_requires_exact_bytes_and_cache_containment(self):
         module=tool()
         with tempfile.TemporaryDirectory() as folder:
@@ -31,6 +38,10 @@ class GlibcObjectAuditTests(unittest.TestCase):
         record=dict(completed=True,artifact_id='linux-glibc-x86_64',linkage=dict(inputs=[
             dict(path='/cache/o/hash/crt1.o',scope='sdk'),dict(path='/cache/o/hash/libc_nonshared.a',scope='sdk')]))
         self.assertEqual(set(module.sdk_inputs(record)),{'crt1.o','libc_nonshared.a'})
+        arm=dict(record,artifact_id='linux-glibc-aarch64',native_os='linux',native_arch='aarch64',
+                 recipe=dict(os='linux',arch='aarch64',abi='glibc'))
+        self.assertEqual(set(module.sdk_inputs(arm)),{'crt1.o','libc_nonshared.a'})
+        with self.assertRaises(ValueError):module.sdk_inputs(dict(arm,native_arch='x86_64'))
         for changed in (dict(record,artifact_id='linux-musl-x86_64'),dict(record,completed=False),
                         dict(record,linkage=dict(inputs=record['linkage']['inputs'][1:])),
                         dict(record,linkage=dict(inputs=record['linkage']['inputs']+[dict(path='/other/crt1.o',scope='sdk')]))):

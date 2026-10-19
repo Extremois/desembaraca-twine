@@ -50,6 +50,14 @@ referência do compilador e captura entradas e extrações de archives. O coleto
 compilador, comparando fontes Graphviz com o tarball fixado. Isso registra as
 entradas observadas; retenção de seções e auditoria de licenças continuam separadas.
 
+No ARM64, `audit-zig-runtime.py` confere o membro extraído de `libcompiler_rt.a`,
+suas tabelas DWARF e os arquivos encontrados contra o SDK fixado.
+`audit-glibc-objects.py` observa separadamente startup/`libc_nonshared`; registra
+`compiler_rt` como contribuição que exige o relatório próprio. Arquivos
+`builtin.zig` gerados têm hashes registrados sem serem tratados como fontes
+originais fixadas. Comentários e indicadores de licença são material de revisão;
+não comprovam retenção de seções ou o fechamento transitivo das fontes.
+
 O workflow confere ELF AArch64, loader `/lib/ld-linux-aarch64.so.1`, bibliotecas,
 RPATH e limite de símbolos glibc 2.27, preservando o relatório readelf. Executa
 os 13 casos/relocação Unicode com Python 3.12/3.14 sob strace e controle positivo

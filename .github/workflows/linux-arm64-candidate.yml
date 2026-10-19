@@ -57,6 +57,10 @@ jobs:
         run: python tools/runtime/relink-zig.py --source-output "$RUNNER_TEMP/twine-arm64-build" --output "$RUNNER_TEMP/twine-arm64-linked" --zig "$RUNNER_TEMP/twine-arm64-sdk/sdk/zig-aarch64-linux-0.15.2/zig"
       - name: Bind compiled ARM64 Graphviz sources to the pinned archive
         run: python tools/runtime/audit-graphviz-sources.py --source-build "$RUNNER_TEMP/twine-arm64-build" --linked-build "$RUNNER_TEMP/twine-arm64-linked" --source-archive "$RUNNER_TEMP/twine-arm64-sdk/graphviz.tar.gz" --report .tmp/native-linux-arm64/graphviz-source-evidence.json
+      - name: Observe ARM64 Zig runtime sources from extracted member
+        run: python tools/runtime/audit-zig-runtime.py --linked-build "$RUNNER_TEMP/twine-arm64-linked" --sdk-root "$RUNNER_TEMP/twine-arm64-sdk/sdk/zig-aarch64-linux-0.15.2" --sdk-archive "$RUNNER_TEMP/twine-arm64-sdk/zig.tar.xz" --report .tmp/native-linux-arm64/zig-runtime-evidence.json
+      - name: Observe ARM64 glibc startup and nonshared sources separately
+        run: python tools/runtime/audit-glibc-objects.py --linked-build "$RUNNER_TEMP/twine-arm64-linked" --sdk-root "$RUNNER_TEMP/twine-arm64-sdk/sdk/zig-aarch64-linux-0.15.2" --sdk-archive "$RUNNER_TEMP/twine-arm64-sdk/zig.tar.xz" --report .tmp/native-linux-arm64/glibc-object-evidence.json
       - name: Inspect ELF architecture, loader, dependencies and glibc baseline
         shell: bash
         run: |

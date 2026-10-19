@@ -1,4 +1,4 @@
-"""Observe glibc startup/archive sources in an exact experimental x64 relink.
+"""Observe glibc startup/archive sources in an exact experimental Linux relink.
 
 Only pinned readelf runs. Debug metadata is source evidence, not an exhaustive
 transitive-source proof or license approval. No download or candidate mutation.
@@ -17,8 +17,13 @@ audit=musl.audit;builder=musl.builder;notices=musl.notices
 
 
 def sdk_inputs(record):
-    if record.get('completed') is not True or record.get('artifact_id')!='linux-glibc-x86_64':
-        raise ValueError('Expected completed glibc x64 experimental relink')
+    if record.get('completed') is not True or record.get('artifact_id') not in ('linux-glibc-x86_64','linux-glibc-aarch64'):
+        raise ValueError('Expected completed glibc experimental relink')
+    if record['artifact_id']=='linux-glibc-aarch64':
+        recipe=record.get('recipe',{})
+        if ((record.get('native_os'),record.get('native_arch'))!=('linux','aarch64')
+                or (recipe.get('os'),recipe.get('arch'),recipe.get('abi'))!=('linux','aarch64','glibc')):
+            raise ValueError('ARM64 glibc provenance must match its native recipe')
     inputs={}
     for item in record['linkage']['inputs']:
         if item['scope']!='sdk':continue
@@ -27,6 +32,12 @@ def sdk_inputs(record):
         inputs[name]=item
     if not {'crt1.o','libc_nonshared.a'}.issubset(inputs):raise ValueError('Missing glibc startup/archive')
     return inputs
+
+
+def archive_source_scope(artifact,name):
+    if name=='libc_nonshared.a':return 'glibc'
+    if artifact=='linux-glibc-aarch64' and name=='libcompiler_rt.a':return 'separate-runtime-review'
+    raise ValueError('New SDK archive extraction requires separate source review')
 
 
 def observed_member(name,members,cache):
@@ -71,11 +82,14 @@ def collect(linked_build,sdk_root,sdk_archive):
         elif name.endswith('.a'):
             kind='static-archive'
             if rows:
-                if name!='libc_nonshared.a':raise ValueError('New SDK archive extraction requires separate source review')
-                members=audit.ar_members(payload)
-                for member in sorted({r['member'] for r in rows}):
-                    selected.append(dict(input=name,input_sha256=item['sha256'],
-                        path=observed_member(member,members,cache),member=Path(member).name))
+                scope=archive_source_scope(record['artifact_id'],name)
+                if scope=='separate-runtime-review':
+                    kind='static-archive-requires-separate-runtime-source-review'
+                else:
+                    members=audit.ar_members(payload)
+                    for member in sorted({r['member'] for r in rows}):
+                        selected.append(dict(input=name,input_sha256=item['sha256'],
+                            path=observed_member(member,members,cache),member=Path(member).name))
         elif '.so.' in name:
             if rows:raise ValueError('Shared SDK input unexpectedly has archive extractions')
             kind='link-time-shared-input-not-bundled'
@@ -127,6 +141,7 @@ def collect(linked_build,sdk_root,sdk_archive):
         pending=['DWARF compilation units do not cover all transitive headers, assembly or retained sections',
                  'Zero extraction rows are observations, not proof that an input contributes no code',
                  'abi-note.S is additional pinned material, not an observed compilation-unit binding',
+                 'Inputs marked separate-runtime-source-review are not covered by this glibc source observation',
                  'Per-file applicability, complete source offer and reviewed audit remain pending'])
 
 
