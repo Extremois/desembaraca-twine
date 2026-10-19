@@ -261,3 +261,14 @@ segurança foi preservada, com comparação dos hashes de fonte e escopo parcial
 `next-actions.md` identifica o executor Ubuntu 24.04 x86_64 necessário ao primeiro
 incremento, os dados de acesso/ambiente a informar e as etapas de auditoria e
 aceitação ainda abertas. Não provisiona infraestrutura nem autoriza publicação.
+
+`github-actions-foundation-2026-10-19.json` registra a regressão remota aprovada:
+seis jobs de Ubuntu 24.04 x64, Windows hospedado x64 e macOS 15 ARM64, cada um
+com Python 3.12/3.14. Cada job executou 162 testes com skips explícitos. O resumo
+tem versão da imagem, URL e hash dos logs originais. Não qualifica bundle POSIX,
+Windows 11 limpo, macOS Intel ou revisão Twine.
+
+A primeira execução revelou comparações textuais incompatíveis com o alias
+Windows RUNNER~1. A correção exige arquivo absoluto existente e identidade de
+diretório por samefile, sem depender da grafia do caminho. A falha inicial e
+a revisão corrigida ficam associadas no relatório.

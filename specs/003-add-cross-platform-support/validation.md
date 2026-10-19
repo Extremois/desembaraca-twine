@@ -914,3 +914,35 @@ o substitui. [Recursos e sequência](evidence/next-actions.md) distinguem essa
 dependência da auditoria do bundle ainda aberta. Não houve VM, provisionamento,
 CI remoto, commit/push ou publicação. T023/T048/T079/T080 seguem parciais;
 total **46/84**. Alterações novas permanecem locais na branch 003.
+
+### GitHub Actions: preparação, envio e primeira regressão remota
+
+O mantenedor autorizou commits, envio da branch e execução no Actions. A API
+confirmou repositório público, Actions habilitado e acesso de escrita/administração
+existente. Nenhum segredo foi cadastrado ou exibido e nenhuma permissão ampliada.
+Foram usados runners padrão hospedados, sem VM ou runner local. Workflow com
+contents:read, checkout sem persistência de credenciais, 15 minutos por job da
+fundação e cancelamento de execuções substituídas na mesma branch. A aceitação
+Windows self-hosted continua condicionada à configuração própria e foi skip.
+
+Foram commitados o ensaio de entrada inválida, documentação e configuração CI,
+e enviada feat/003-add-cross-platform-support. A primeira execução,
+[39237935160](https://github.com/Extremois/desembaraca-twine/actions/runs/39237935160),
+passou Ubuntu/macOS, mas falhou em dois contratos nos dois Pythons Windows:
+tempfile usava RUNNER~1 e a aplicação retornava o caminho longo equivalente.
+As asserções passaram a exigir caminho absoluto, arquivo existente e mesmo
+diretório por identidade filesystem, sem modificar a CLI de produção. Os testes
+afetados passaram localmente antes do commit/envio da correção.
+
+A revisão c90b18180394c05e77466eea3d571a39ca5ba1c7 passou os **seis jobs** da
+[execução 39238641187](https://github.com/Extremois/desembaraca-twine/actions/runs/39238641187):
+Ubuntu 24.04 X64, Windows hospedado X64 e macOS 15 ARM64, com Python 3.12/3.14.
+Cada job executou **162 testes**: 5 skips em Linux/macOS e 7 em Windows. Versões
+das imagens e hashes dos logs originais estão no
+[recibo CI](evidence/github-actions-foundation-2026-10-19.json); os logs completos
+foram mantidos na pasta local ignorada.
+
+Esse resultado valida a fundação compartilhada sem bundle POSIX qualificado.
+Não promove células da matriz nem conclui assinatura/notarização, Windows 11
+limpo, macOS Intel, rede nativa offline ou revisão Twine. O total permanece
+**46/84**. Não houve merge em dev/main nem publicação de release/bundle.
