@@ -6,6 +6,8 @@ from pathlib import Path
 import tarfile
 import tempfile
 import unittest
+import subprocess
+import sys
 from unittest.mock import patch
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -52,6 +54,11 @@ class SourcePackageTests(unittest.TestCase):
                     manifest = json.load(archive.extractfile('manifest.json'))
                     self.assertEqual(manifest['executable_sha256'], 'a' * 64)
                     self.assertFalse(manifest['approved'])
+                    extracted = root / 'extracted'
+                    archive.extractall(extracted, filter='data')
+                command = subprocess.run([sys.executable, str(extracted / 'tools/runtime/build-common.py'), '--help'],
+                    cwd=extracted, capture_output=True, text=True, timeout=10)
+                self.assertEqual(command.returncode, 0, command.stderr)
                 self.assertEqual(report['sdk_files'], 2)
                 record = json.loads(provenance.read_bytes())
                 record['sdk']['facts']['archive']['sha256'] = '0' * 64

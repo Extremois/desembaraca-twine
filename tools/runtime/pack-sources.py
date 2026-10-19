@@ -91,6 +91,13 @@ def pack(graphviz, sdk, provenance, output):
     paths = sorted([path for path in HERE.iterdir() if path.suffix in ('.py', '.json', '.sh', '.md')]
                    + [path for path in (HERE / 'licenses').rglob('*') if path.is_file()])
     local = [('tools/runtime/' + path.relative_to(HERE).as_posix(), bounded(path)) for path in paths]
+    # build-common imports host detection and bounded process execution. Preserve
+    # their exact source dependencies so the exported recipe works independently.
+    for name in ('LICENSE', 'src/twine_edge_overlap/__init__.py',
+                 'src/twine_edge_overlap/runtime_platform.py',
+                 'src/twine_edge_overlap/engines/__init__.py',
+                 'src/twine_edge_overlap/engines/process.py'):
+        local.append((name, bounded(HERE.parents[1] / name)))
     local += [('graphviz.tar.gz', bounded(graphviz)), ('candidate-provenance.json', provenance_bytes)]
     rows, total = [], 0
 

@@ -6,7 +6,8 @@ de fontes ou publicação permanente. Não é necessário para usar o runtime.
 
 O arquivo reúne o tarball Graphviz original, a árvore `lib/` completa do Zig
 0.15.2 (fontes, headers, dados e avisos), a licença raiz do SDK, scripts,
-receitas e referências de licença do mantenedor. O compilador Zig não está
+receitas, os módulos Python auxiliares do build com sua licença Apache e
+referências de licença do mantenedor. O compilador Zig não está
 incluído. `manifest.json` relaciona tamanho/hash de cada entrada e vincula o
 material ao executável e à proveniência da candidata. A árvore SDK inclui
 material de outras plataformas; sua inclusão não declara que foi ligado ao dot.
@@ -39,7 +40,7 @@ recusar essas fontes modificadas. Alterações não recebem aprovação automát
 
 O corpus público e o observador de rede exigem também o checkout de testes e
 `src/` da revisão correspondente do projeto, mais `strace`. Esses arquivos da
-aplicação não fazem parte deste pacote de fontes do motor. A reconstrução no
+aplicação, além dos auxiliares do build, não fazem parte deste pacote. A reconstrução no
 workflow usa o checkout da própria execução para verificar 13 casos novamente.
 Revisão das obrigações por arquivo, disponibilidade permanente das fontes,
 baseline antigo e qualificação de instalação continuam pendentes.
