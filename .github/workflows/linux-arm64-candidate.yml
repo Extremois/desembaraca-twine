@@ -61,6 +61,10 @@ jobs:
         run: python tools/runtime/audit-zig-runtime.py --linked-build "$RUNNER_TEMP/twine-arm64-linked" --sdk-root "$RUNNER_TEMP/twine-arm64-sdk/sdk/zig-aarch64-linux-0.15.2" --sdk-archive "$RUNNER_TEMP/twine-arm64-sdk/zig.tar.xz" --report .tmp/native-linux-arm64/zig-runtime-evidence.json
       - name: Observe ARM64 glibc startup and nonshared sources separately
         run: python tools/runtime/audit-glibc-objects.py --linked-build "$RUNNER_TEMP/twine-arm64-linked" --sdk-root "$RUNNER_TEMP/twine-arm64-sdk/sdk/zig-aarch64-linux-0.15.2" --sdk-archive "$RUNNER_TEMP/twine-arm64-sdk/zig.tar.xz" --report .tmp/native-linux-arm64/glibc-object-evidence.json
+      - name: Verify generated data and prepare byte-bound ARM64 notices
+        run: |
+          python tools/runtime/audit-graphviz-data.py --source-build "$RUNNER_TEMP/twine-arm64-build" --linked-build "$RUNNER_TEMP/twine-arm64-linked" --source-archive "$RUNNER_TEMP/twine-arm64-sdk/graphviz.tar.gz" --compiler-evidence .tmp/native-linux-arm64/graphviz-source-evidence.json --report .tmp/native-linux-arm64/graphviz-data-evidence.json
+          python tools/runtime/prepare-draft-notices.py --linked-build "$RUNNER_TEMP/twine-arm64-linked" --source-build "$RUNNER_TEMP/twine-arm64-build" --evidence .tmp/native-linux-arm64/graphviz-source-evidence.json --graphviz-archive "$RUNNER_TEMP/twine-arm64-sdk/graphviz.tar.gz" --sdk-archive "$RUNNER_TEMP/twine-arm64-sdk/zig.tar.xz" --sdk-root "$RUNNER_TEMP/twine-arm64-sdk/sdk/zig-aarch64-linux-0.15.2" --glibc-object-evidence .tmp/native-linux-arm64/glibc-object-evidence.json --zig-runtime-evidence .tmp/native-linux-arm64/zig-runtime-evidence.json --data-evidence .tmp/native-linux-arm64/graphviz-data-evidence.json --output "$RUNNER_TEMP/twine-arm64-notices"
       - name: Inspect ELF architecture, loader, dependencies and glibc baseline
         shell: bash
         run: |
@@ -78,13 +82,13 @@ jobs:
               raise ValueError('Unexpected ARM64 glibc loader')
           PY
       - name: Corpus, Unicode relocation and native network observation on Python 3.12
-        run: '"${{ steps.python312.outputs.python-path }}" tools/runtime/observe-linux-network.py --build-output "$RUNNER_TEMP/twine-arm64-linked" --environment-kind native --report .tmp/native-linux-arm64/network-312.json --corpus-report .tmp/native-linux-arm64/corpus-312.json'
+        run: '"${{ steps.python312.outputs.python-path }}" tools/runtime/observe-linux-network.py --build-output "$RUNNER_TEMP/twine-arm64-notices" --environment-kind native --report .tmp/native-linux-arm64/network-312.json --corpus-report .tmp/native-linux-arm64/corpus-312.json'
       - name: Corpus, Unicode relocation and native network observation on Python 3.14
-        run: '"${{ steps.python314.outputs.python-path }}" tools/runtime/observe-linux-network.py --build-output "$RUNNER_TEMP/twine-arm64-linked" --environment-kind native --report .tmp/native-linux-arm64/network-314.json --corpus-report .tmp/native-linux-arm64/corpus-314.json'
+        run: '"${{ steps.python314.outputs.python-path }}" tools/runtime/observe-linux-network.py --build-output "$RUNNER_TEMP/twine-arm64-notices" --environment-kind native --report .tmp/native-linux-arm64/network-314.json --corpus-report .tmp/native-linux-arm64/corpus-314.json'
       - name: Inventory and package without approving licenses or support
         run: |
-          python tools/runtime/verify-artifact.py --root "$RUNNER_TEMP/twine-arm64-linked/candidate" --provenance "$RUNNER_TEMP/twine-arm64-linked/provenance.json" --write-inventory .tmp/native-linux-arm64/inventory.json --minimum-libc 2.27
-          python tools/runtime/pack-candidate.py --root "$RUNNER_TEMP/twine-arm64-linked/candidate" --inventory .tmp/native-linux-arm64/inventory.json --provenance "$RUNNER_TEMP/twine-arm64-linked/provenance.json" --output "$RUNNER_TEMP/twine-arm64-package"
+          python tools/runtime/verify-artifact.py --root "$RUNNER_TEMP/twine-arm64-notices/candidate" --provenance "$RUNNER_TEMP/twine-arm64-notices/provenance.json" --write-inventory .tmp/native-linux-arm64/inventory.json --minimum-libc 2.27
+          python tools/runtime/pack-candidate.py --root "$RUNNER_TEMP/twine-arm64-notices/candidate" --inventory .tmp/native-linux-arm64/inventory.json --provenance "$RUNNER_TEMP/twine-arm64-notices/provenance.json" --output "$RUNNER_TEMP/twine-arm64-package"
       - name: Retain unqualified native ARM64 build for review
         if: always()
         uses: actions/upload-artifact@v4
@@ -100,4 +104,6 @@ jobs:
             ${{ runner.temp }}/twine-arm64-linked/compiler-verbose.txt
             ${{ runner.temp }}/twine-arm64-linked/lld-output.txt
             ${{ runner.temp }}/twine-arm64-linked/build/cmd/dot/CMakeFiles/dot.dir/
+            ${{ runner.temp }}/twine-arm64-notices/provenance.json
+            ${{ runner.temp }}/twine-arm64-notices/review.json
             ${{ runner.temp }}/twine-arm64-package/

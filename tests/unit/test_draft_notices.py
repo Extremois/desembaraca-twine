@@ -13,6 +13,42 @@ def tool():
 
 
 class DraftNoticesTests(unittest.TestCase):
+    def test_arm_notice_selection_requires_matching_native_recipe(self):
+        module=tool()
+        record=dict(completed=True,artifact_id='linux-glibc-aarch64',native_os='linux',native_arch='aarch64',
+                    recipe=dict(os='linux',arch='aarch64',abi='glibc'))
+        self.assertIn('lib/libc/glibc/LICENSES',module.sdk_notice_names(record,ROOT))
+        for bad in (dict(record,native_arch='x86_64'),dict(record,completed=False),
+                    dict(record,recipe=dict(os='linux',arch='aarch64',abi='musl'))):
+            with self.assertRaises(ValueError):module.sdk_notice_names(bad,ROOT)
+
+    def test_arm_sources_require_exact_artifact_even_when_other_hashes_match(self):
+        module=tool()
+        with tempfile.TemporaryDirectory() as folder:
+            root=Path(folder);(root/'provenance.json').write_bytes(b'ARM build')
+            record=dict(artifact_id='linux-glibc-aarch64',executable_sha256='a'*64,
+                        sdk=dict(facts=dict(archive=dict(sha256='b'*64))))
+            data=dict(kind='zig-startup-runtime-source-observations-not-approved',artifact_id=record['artifact_id'],
+                provenance_sha256=module.builder.digest(root/'provenance.json'),executable_sha256='a'*64,
+                sdk_archive_sha256='b'*64,sources=[dict(path='lib/compiler_rt/example.zig',sha256='c'*64)])
+            path=root/'runtime.json';path.write_text(json.dumps(data))
+            self.assertEqual(len(module.zig_runtime_notice_sources(record,root,path)[0]),1)
+            data['artifact_id']='linux-musl-x86_64';path.write_text(json.dumps(data))
+            with self.assertRaises(ValueError):module.zig_runtime_notice_sources(record,root,path)
+
+    def test_arm_notice_preparation_refuses_missing_sdk_or_data_evidence_before_output(self):
+        module=tool()
+        with tempfile.TemporaryDirectory() as folder:
+            root=Path(folder)
+            record=dict(completed=True,artifact_id='linux-glibc-aarch64',native_os='linux',native_arch='aarch64',
+                        recipe=dict(os='linux',arch='aarch64',abi='glibc'))
+            (root/'provenance.json').write_text(json.dumps(record))
+            evidence=root/'sources.json';evidence.write_text('{}')
+            output=root/'new'
+            with self.assertRaisesRegex(ValueError,'requires its own'):
+                module.prepare(root,root,evidence,root/'source.tar',root/'sdk.tar',root/'sdk',output)
+            self.assertFalse(output.exists())
+
     def test_canonical_glibc_license_is_full_and_rejects_changed_material(self):
         module=tool()
         data,origin=module.license_material('lgpl_2_1_copying')

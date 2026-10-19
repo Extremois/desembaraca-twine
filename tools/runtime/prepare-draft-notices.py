@@ -110,6 +110,7 @@ def object_notice_sources(record,linked_build,evidence,kind,prefixes,*,artifacts
     sdk_sha=facts.get('archive_sha256',facts.get('archive',{}).get('sha256'))
     if (not isinstance(sdk_sha,str) or not re.fullmatch(r'[0-9a-f]{64}',sdk_sha)
             or record['artifact_id'] not in artifacts
+            or (record['artifact_id']=='linux-glibc-aarch64' and data.get('artifact_id')!=record['artifact_id'])
             or data.get('kind')!=kind
             or data.get('provenance_sha256')!=builder.digest(linked_build/'provenance.json')
             or data.get('executable_sha256')!=record['executable_sha256']
@@ -134,12 +135,12 @@ def musl_notice_sources(record,linked_build,evidence):
 
 def glibc_notice_sources(record,linked_build,evidence):
     return object_notice_sources(record,linked_build,evidence,
-        'glibc-object-source-observations-not-license-approval',('lib/libc/glibc/',),artifacts=('linux-glibc-x86_64',))
+        'glibc-object-source-observations-not-license-approval',('lib/libc/glibc/',),artifacts=('linux-glibc-x86_64','linux-glibc-aarch64'))
 
 
 def zig_runtime_notice_sources(record,linked_build,evidence):
     return object_notice_sources(record,linked_build,evidence,
-        'zig-startup-runtime-source-observations-not-approved',('lib/',))
+        'zig-startup-runtime-source-observations-not-approved',('lib/',),artifacts=('linux-musl-x86_64','linux-glibc-aarch64'))
 
 
 def verified_source_prefix(data,item):
@@ -178,10 +179,15 @@ def inputs_svg_origin(graphviz_archive):
 
 def sdk_notice_names(record,linked_build):
     artifact=record.get('artifact_id')
-    if not record.get('completed') or artifact not in ('linux-glibc-x86_64','linux-musl-x86_64'):
-        raise ValueError('Expected completed experimental Linux x86_64 build')
+    if not record.get('completed') or artifact not in ('linux-glibc-x86_64','linux-glibc-aarch64','linux-musl-x86_64'):
+        raise ValueError('Expected completed supported experimental Linux build')
+    if artifact=='linux-glibc-aarch64':
+        recipe=record.get('recipe',{})
+        if ((record.get('native_os'),record.get('native_arch'))!=('linux','aarch64')
+                or (recipe.get('os'),recipe.get('arch'),recipe.get('abi'))!=('linux','aarch64','glibc')):
+            raise ValueError('ARM64 notice build does not match its native recipe')
     common={'LICENSE','lib/libcxx/LICENSE.TXT','lib/libcxxabi/LICENSE.TXT','lib/libunwind/LICENSE.TXT'}
-    if artifact=='linux-glibc-x86_64':return common|{'lib/libc/glibc/LICENSES'}
+    if artifact in ('linux-glibc-x86_64','linux-glibc-aarch64'):return common|{'lib/libc/glibc/LICENSES'}
     measured=record.get('static_elf_inspection',{})
     if any(measured.get(key) is not True for key in
            ('no_interpreter','no_dynamic_section','no_needed_libraries','no_glibc_symbols')):
@@ -202,6 +208,9 @@ def prepare(linked_build,source_build,evidence,graphviz_archive,sdk_archive,sdk_
     record=json.loads(audit.bounded(linked_build/'provenance.json',8*1024**2))
     source=json.loads(audit.bounded(evidence,8*1024**2))
     sdk_names=sdk_notice_names(record,linked_build)
+    arm=record['artifact_id']=='linux-glibc-aarch64'
+    if arm and any(item is None for item in (glibc_object_evidence,zig_runtime_evidence,data_evidence)):
+        raise ValueError('ARM64 draft requires its own glibc, runtime and generated-data evidence')
     if source['provenance_sha256']!=builder.digest(linked_build/'provenance.json') or source['executable_sha256']!=record['executable_sha256']:
         raise ValueError('Source evidence does not match linked build')
     if record['relink']['parent_provenance_sha256']!=builder.digest(source_build/'provenance.json'):
@@ -246,7 +255,7 @@ def prepare(linked_build,source_build,evidence,graphviz_archive,sdk_archive,sdk_
     for name in sorted(sdk_names):
         materials.append(('SDK-'+name.replace('/','__')+'.txt',sdk[name],
                           dict(kind='sdk-source-archive',path=name,archive_sha256=facts['archive_sha256'],source_sha256=hashlib.sha256(sdk[name]).hexdigest())))
-    if record['artifact_id']=='linux-glibc-x86_64':
+    if record['artifact_id'] in ('linux-glibc-x86_64','linux-glibc-aarch64'):
         lgpl_text,lgpl_origin=license_material('lgpl_2_1_copying')
         materials.append(('LGPL-2.1-COPYING.txt',lgpl_text,lgpl_origin))
     for label,entries in (('musl-source',musl_sources),('glibc-source',glibc_sources),('zig-runtime-source',runtime_sources)):
@@ -300,6 +309,29 @@ def prepare(linked_build,source_build,evidence,graphviz_archive,sdk_archive,sdk_
                 'Graphviz 16.1.0 source:\n'+lock['url']+'\nSHA-256: '+lock['sha256']+'\n\n'
                 'SDK archive used for source/header verification:\n'+facts['archive_url']+'\nSHA-256: '+facts['archive_sha256']+'\n').encode()
     materials.append(('SOURCE-REFERENCES.txt',references,dict(kind='maintainer-draft-reference')))
+    headers=[]
+    if arm:
+        for name in sorted(external):
+            prefix=source_notice_prefix(sdk[name])
+            headers.append(dict(path=name,source_sha256=external[name],prefix_sha256=hashlib.sha256(prefix).hexdigest(),
+                                prefix_bytes=len(prefix),applicability='pending'))
+            if prefix:
+                filename='SDK-header-'+hashlib.sha256(name.encode()).hexdigest()[:24]+'.txt'
+                materials.append((filename,prefix,dict(kind='pinned-sdk-header-prefix',path=name,
+                    archive_sha256=facts['archive_sha256'],source_sha256=external[name],offset=0,length=len(prefix))))
+        gpl,gpl_origin=license_material('gpl_3_copying')
+        gpl_origin.update(scope='Reference for preserved Bison notices; parser exceptions remain separate, applicability pending')
+        materials.append(('GPL-3.0-COPYING.txt',gpl,gpl_origin))
+        index=dict(kind='linux-arm64-offline-notice-origins',approved=False,qualified=False,
+            parent_provenance_sha256=builder.digest(linked_build/'provenance.json'),
+            source_evidence_sha256=builder.digest(evidence),
+            scope='All other notice payloads; applicability and complete source review pending',
+            notices=[dict(path=name,size=len(raw),sha256=hashlib.sha256(raw).hexdigest(),origin=origin)
+                     for name,raw,origin in materials])
+        materials.append(('NOTICE-ORIGINS.json',(json.dumps(index,indent=2,sort_keys=True)+'\n').encode(),
+                          dict(kind='maintainer-offline-notice-origin-index',scope='Other notice payloads only; no self hash')))
+    if len(materials)>5000 or sum(len(raw) for _,raw,_ in materials)>16*1024**2:
+        raise ValueError('Notice material exceeds preparation budget')
     output.mkdir(mode=0o700,parents=True,exist_ok=False)
     if record['artifact_id']=='linux-musl-x86_64':
         shutil.copyfile(linked_build/'static-elf-inspection.txt',output/'static-elf-inspection.txt')
@@ -336,6 +368,9 @@ def prepare(linked_build,source_build,evidence,graphviz_archive,sdk_archive,sdk_
     if data_review is not None:
         review.update(data_evidence_sha256=builder.digest(data_evidence),data_comparison=data_review['comparison'],
                       data_tables_reproduced=data_review['outputs'])
+    if arm:
+        review.update(sdk_headers=headers,sdk_header_prefixes_preserved=sum(bool(row['prefix_bytes']) for row in headers),
+                      offline_origin_index='third-party-notices/NOTICE-ORIGINS.json')
     (output/'review.json').write_text(json.dumps(review,indent=2)+'\n')
     record.update(output=str(output),qualification='draft notices only; no approved audit or support',
                   notice_preparation=dict(review_sha256=builder.digest(output/'review.json'),approved=False))

@@ -62,9 +62,14 @@ O workflow confere ELF AArch64, loader `/lib/ld-linux-aarch64.so.1`, bibliotecas
 RPATH e limite de símbolos glibc 2.27, preservando o relatório readelf. Executa
 os 13 casos/relocação Unicode com Python 3.12/3.14 sob strace e controle positivo
 de detecção de sockets. Inventário e ZIP permanecem experimentais por sete dias.
-O pacote inicial contém somente o aviso Graphviz: fechamento de fontes/objetos,
-avisos completos, reconstrução e qualificação das células ainda precisam de
-evidências ARM64 próprias. Alvo de compilação não comprova execução no kernel,
+`prepare-draft-notices.py` exige os relatórios ARM64 próprios de glibc, runtime
+e dados gerados. Cria outra candidata com textos Graphviz/SDK, LGPL integral,
+prefixos de fontes e headers observados, Bison/Flex, referências de dados e GPL.
+`NOTICE-ORIGINS.json` permite conferir nomes, hashes e origens offline; headers
+sem prefixo são registrados no review. O primeiro pacote, preservado como
+evidência histórica, continha somente COPYING Graphviz. Aplicabilidade por
+arquivo, outros avisos necessários, oferta de fontes/reconstrução e qualificação
+das células ainda precisam de conclusão. Alvo de compilação não comprova execução no kernel,
 CPU ou distribuição mais antigos; não há emulação ou promoção do catálogo.
 
 ### Candidatas macOS nativas
