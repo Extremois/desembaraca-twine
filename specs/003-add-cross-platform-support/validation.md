@@ -1305,3 +1305,43 @@ notarização. T051 depende de identidade Developer ID Application e perfil
 notarytool em ambiente Mac autorizado; sua disponibilidade foi solicitada ao
 mantenedor, sem solicitar valores de credenciais. A auditoria e os trabalhos
 Linux podem avançar independentemente dessa informação. Total **48/84**.
+
+## Rascunhos de avisos macOS por build — 2026-10-19
+
+`prepare-macos-notices.py` prepara uma candidata nova, mantendo o build original.
+Recalcula a observação de objetos/fontes, confere os arquivos gerados e cada
+header contra seus hashes observados e exige o executável Flex real do Xcode.
+A variante Apple aceita somente `flex 2.6.4 Apple(flex-35)` com macros de scanner
+2.6.4 e o texto fixado na revisão Apple; o percurso Linux continua separado.
+Comentários iniciais dos headers são preservados com origem, offset/tamanho e
+hash; ausência de prefixo seria registrada como pendência, sem inventar aviso.
+
+Dois testes novos cobrem variante/versão do gerador, origem fora do Xcode e bytes
+alterados do header. Foram observados falhando antes da implementação e depois
+passaram. A regressão local soma **187 testes**, sete skips Windows. A revisão
+`bbdd18a66992e213197c3a8cd2b1160f4348969b` passou nos
+[dois builds macOS](https://github.com/Extremois/desembaraca-twine/actions/runs/39311029537),
+na [regressão compartilhada](https://github.com/Extremois/desembaraca-twine/actions/runs/39311029512)
+e no [build/reconstrução Linux](https://github.com/Extremois/desembaraca-twine/actions/runs/39311029388).
+
+Cada pacote contém **227 arquivos de avisos**, incluindo quatro textos Graphviz,
+quatro prefixos Bison, aviso Flex Apple, 217 prefixos de headers e referências de
+origem. Os 217 headers de cada build tinham prefixo inicial; isso não significa
+que cada prefixo contenha todos os termos aplicáveis. SDK e código dos headers
+fora dos comentários não são incorporados aos pacotes. Os executáveis mantiveram
+os hashes anteriores, e os 13 casos/relocação passaram nos dois Pythons em cada
+arquitetura com o novo diretório de candidata.
+
+Após download foram conferidos hashes/tamanhos/modos/timestamps dos **228 arquivos**
+por ZIP e os vínculos entre review, inventário, proveniência pai/filha, fontes e
+corpus. O ZIP Apple Silicon tem 1.643.394 bytes; Intel, 1.799.452 bytes. Os recibos
+de [Intel](evidence/macos-draft-notices-2026-10-19/macos-x86_64/summary.json) e
+[Apple Silicon](evidence/macos-draft-notices-2026-10-19/macos-arm64/summary.json)
+preservam os textos de aviso e metadados, sem ZIPs/binários. O ledger macOS
+registra esses rascunhos separadamente das observações anteriores.
+
+Todos continuam com `approved: false` e `qualified: false`. Revisão por arquivo,
+textos canônicos completos, dados gerados, índices sem nome, oferta de fontes,
+assinatura/notarização e aceite instalado permanecem pendentes. Os arquivos
+preservados são material de revisão, não uma auditoria aprovada ou liberação.
+T052 permanece parcial, total **48/84**, catálogo ativo somente Windows.

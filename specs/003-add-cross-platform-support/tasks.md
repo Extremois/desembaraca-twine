@@ -24,6 +24,8 @@
 
 **Insumos da auditoria macOS em 2026-10-19**: mapa do linker vinculou 181 objetos compilados a 322 fontes Graphviz em cada arquitetura; nove entradas geradas e 217 externas registradas. Recibos de [Intel](evidence/macos-link-source-2026-10-19/macos-x86_64/summary.json) e [Apple Silicon](evidence/macos-link-source-2026-10-19/macos-arm64/summary.json), corpus/rede Python nos dois slots e regressões CI aprovados. Ledger macOS iniciado e aviso Flex Apple 35 fixado por revisão/hash. T052 permanece parcial: 181 índices sem nome por mapa, material gerado, SDK e revisão por arquivo continuam pendentes, sem promoção de suporte.
 
+**Rascunhos de avisos macOS em 2026-10-19**: candidatas de [Intel](evidence/macos-draft-notices-2026-10-19/macos-x86_64/summary.json) e [Apple Silicon](evidence/macos-draft-notices-2026-10-19/macos-arm64/summary.json) contêm 227 avisos cada, incluindo prefixos dos 217 headers observados, quatro avisos Bison, Flex Apple e textos Graphviz. Hashes/modos dos 228 arquivos por pacote conferidos após download; executáveis preservados, corpus nos dois Pythons e regressões CI aprovados. T052 continua parcial: textos canônicos completos, aplicabilidade, dados gerados, fontes e assinatura/qualificação seguem pendentes. Total 48/84.
+
 **Tests**: exigidos explicitamente por FR-007/008/013/016 e SC-001–010. Acrescentar casos de contrato antes do comportamento correspondente, observar falha pertinente e executar regressões após a implementação; testes já corretos podem passar. Não exigir falha artificial do baseline.
 
 **Organization**: setup → fundação → histórias US1/US2/US3 (P1) → US4 (P2) → fechamento. Caminhos são relativos à raiz do repositório. Arquivos novos são entregáveis futuros, não arquivos já existentes.

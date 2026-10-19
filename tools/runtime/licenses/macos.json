@@ -41,7 +41,20 @@
           }
         }
       ],
-      "source_link_provenance_sha256": "96c85e7cee6dd71245fe5a2f46afec005a62f701ab56d437b0bf17374940a768"
+      "source_link_provenance_sha256": "96c85e7cee6dd71245fe5a2f46afec005a62f701ab56d437b0bf17374940a768",
+      "draft_notice_packages": [
+        {
+          "approved": false,
+          "qualified": false,
+          "evidence": "specs/003-add-cross-platform-support/evidence/macos-draft-notices-2026-10-19/macos-x86_64/summary.json",
+          "executable_sha256": "d8ab197fbdfa9312050f4c4827f4bb612f7f4d1d021d4308a9850ee1a1104fff",
+          "provenance_sha256": "6d7d9e0622f22d35a7bdb729418f9e194c02191224195f8995e7cb7ea87a2cae",
+          "notice_count": 227,
+          "sdk_headers_verified": 217,
+          "sdk_prefixes_preserved": 217,
+          "candidate_archive_sha256": "f6540ca05f7a4f93e069434ef8cc43dd0c28eacfef939253312d79cbbc8166ba"
+        }
+      ]
     },
     {
       "artifact_id": "macos-arm64",
@@ -75,7 +88,20 @@
           }
         }
       ],
-      "source_link_provenance_sha256": "c3d2179990d38f6b83327268a8d661aed69e99cf51524c9ea645010c1b7527fc"
+      "source_link_provenance_sha256": "c3d2179990d38f6b83327268a8d661aed69e99cf51524c9ea645010c1b7527fc",
+      "draft_notice_packages": [
+        {
+          "approved": false,
+          "qualified": false,
+          "evidence": "specs/003-add-cross-platform-support/evidence/macos-draft-notices-2026-10-19/macos-arm64/summary.json",
+          "executable_sha256": "774115a1a9e4b2385d33fa55fe02de0d8728cb0984967d445528c6fe04f97dac",
+          "provenance_sha256": "03f0b324022584e22091a4ae0c6414a48edcbacc488d55a0586bdc429e1e0406",
+          "notice_count": 227,
+          "sdk_headers_verified": 217,
+          "sdk_prefixes_preserved": 217,
+          "candidate_archive_sha256": "3adc1e18283508ea737cd815cbdb5b75d9c6b7901f3c1a22664ed540bcfb1988"
+        }
+      ]
     }
   ],
   "generator_notice_material": {

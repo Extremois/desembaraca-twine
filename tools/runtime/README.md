@@ -51,8 +51,13 @@ O workflow fornece Bison 3 via Homebrew somente no runner efêmero quando ausent
 A receita fixa deployment target 15.0 e usa bibliotecas Graphviz internas
 estáticas. Cada arquitetura executa o corpus e relocação Unicode em Python
 3.12/3.14 e preserva inventário, medições Mach-O, proveniência e ZIP por sete
-dias. O pacote de build contém apenas o aviso Graphviz inicial; notices e
-auditoria completos continuam em T052. Não há uso de credenciais Apple,
+dias. `prepare-macos-notices.py` cria uma candidata nova com textos Graphviz,
+prefixos Bison, aviso Flex Apple e comentários iniciais dos headers observados.
+Confere novamente as fontes/objetos e os bytes dos headers; arquivos sem prefixo
+identificável permanecem registrados para revisão. O runtime é copiado sem
+alteração de bytes, e `review.json` vincula cada aviso à sua origem. Textos
+canônicos completos, dados gerados, aplicabilidade e oferta de fontes continuam
+pendentes em T052. Não há uso de credenciais Apple,
 assinatura Developer ID, notarização ou promoção de suporte nessa execução.
 
 `audit-macos-link.py` confere o mapa produzido pelo linker Apple contra o
