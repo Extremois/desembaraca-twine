@@ -15,8 +15,15 @@ builder = SOURCES.builder
 
 
 def parse_map(text):
-    if len(text.encode()) > 16 * 1024**2:
+    raw = text if isinstance(text, bytes) else text.encode()
+    if len(raw) > 16 * 1024**2:
         raise ValueError('Linker map exceeds budget')
+    end = raw.find(b'# Sections:\n')
+    if end < 0:
+        raise ValueError('Incomplete linker map object section')
+    # Symbol spellings can contain arbitrary constant bytes. Decode the audited
+    # object-name section strictly, preserving the complete raw map's digest.
+    text = raw[:end + len(b'# Sections:\n')].decode('utf-8')
     paths = re.findall(r'^# Path: (.+)$', text, re.M)
     arch = re.findall(r'^# Arch: (.+)$', text, re.M)
     if len(paths) != 1 or len(arch) != 1 or text.count('# Object files:') != 1:
@@ -26,19 +33,24 @@ def parse_map(text):
         raise ValueError('Incomplete linker map object section')
     rows, indices = [], set()
     for line in section[1].split('# Sections:\n', 1)[0].splitlines():
-        match = re.fullmatch(r'\[\s*(\d+)\]\s+(.+)', line)
+        if not line.strip():
+            continue
+        match = re.fullmatch(r'\[\s*(\d+)\][ \t]*(.*)', line)
         if not match or int(match[1]) in indices or len(indices) >= 10000:
             raise ValueError('Invalid, duplicate or excessive map object')
         index, value = int(match[1]), match[2]
         indices.add(index)
         if value == 'linker synthesized':
             continue
+        if value == '':
+            rows.append(dict(index=index, path=None, member=None))
+            continue
         member = re.fullmatch(r'(.+\.a)\(([^()/]+)\)', value)
         if value.endswith(')') and not member:
             raise ValueError('Unrecognized archive member notation')
         rows.append(dict(index=index, path=member[1] if member else value,
                          member=member[2] if member else None))
-    if not rows:
+    if not any(row['path'] for row in rows):
         raise ValueError('No observed object inputs')
     return dict(path=paths[0], arch=arch[0], objects=rows)
 
@@ -60,10 +72,11 @@ def collect(output, map_path, archive):
     if str(map_path) != record['sdk']['facts']['link_map']:
         raise ValueError('Map differs from recorded compiler configuration')
     raw = SOURCES.bounded(map_path, 16 * 1024**2)
-    parsed = parse_map(raw.decode())
+    parsed = parse_map(raw)
     expected_arch = 'arm64' if host.arch == 'aarch64' else 'x86_64'
     build, source = output / 'build', output / 'source/graphviz-16.1.0'
-    original = Path(parsed['path']).resolve(strict=True)
+    original = Path(parsed['path'])
+    original = (original if original.is_absolute() else build / 'cmd/dot' / original).resolve(strict=True)
     if (parsed['arch'] != expected_arch or not original.is_relative_to(build)
             or builder.digest(original) != record['executable_sha256']):
         raise ValueError('Map output is not the completed native candidate')
@@ -72,6 +85,9 @@ def collect(output, map_path, archive):
     compiled = list(build.rglob('*.o'))
     total = dependency_bytes = 0
     for row in parsed['objects']:
+        if row['path'] is None:
+            objects.append(dict(**row, scope='unnamed-map-slot', source_binding='unresolved'))
+            continue
         # macOS system dylibs can live only in the shared cache. A map spelling
         # is a runtime-library reference, not proof of independently read bytes.
         if row['member'] is None and row['path'] in ('/usr/lib/libSystem.B.dylib', '/usr/lib/libc++.1.dylib'):
@@ -139,9 +155,11 @@ def collect(output, map_path, archive):
         provenance_sha256=builder.digest(provenance), map_sha256=hashlib.sha256(raw).hexdigest(),
         source=record['source'], inputs=list(inputs.values()), objects=objects, dependencies=dependencies,
         summary=dict(objects=len(objects), verified_graphviz_sources=len(verified),
+                     unnamed_map_slots=sum(o['scope'] == 'unnamed-map-slot' for o in objects),
                      generated_inputs=sum(v['origin'] == 'generated' for v in dependencies.values()),
                      external_inputs=sum(v['origin'] == 'external' for v in dependencies.values())),
         pending=['Map membership and compiler declarations do not prove retained sections or complete source closure',
+                 'Unnamed map slots remain unresolved; empty names do not prove absence of code',
                  'SDK objects, generated material and all per-file notices/licenses require review',
                  'No signing, notarization, release or support qualification'])
 

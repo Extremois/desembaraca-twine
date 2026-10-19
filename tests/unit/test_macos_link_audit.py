@@ -12,6 +12,14 @@ def tool():
 
 
 class MacosLinkTests(unittest.TestCase):
+    def test_map_decodes_object_paths_strictly_without_decoding_symbol_payloads(self):
+        prefix = b'# Path: dot\n# Arch: x86_64\n# Object files:\n[ 1] dot.o\n# Sections:\n'
+        report = tool().parse_map(prefix.replace(b'# Sections:', b'[ 2] \n\n# Sections:')+b'# Symbols:\n\x89PNG')
+        self.assertEqual(report['path'], 'dot')
+        self.assertIsNone(report['objects'][1]['path'])
+        with self.assertRaises(ValueError):
+            tool().parse_map(prefix.replace(b'dot.o', b'\x89.o'))
+
     def test_map_preserves_spaces_and_member_identity(self):
         report = tool().parse_map('# Path: /tmp/build dot\n# Arch: arm64\n# Object files:\n'
             '[ 0] linker synthesized\n[ 1] CMakeFiles/dot.dir/dot.c.o\n'
