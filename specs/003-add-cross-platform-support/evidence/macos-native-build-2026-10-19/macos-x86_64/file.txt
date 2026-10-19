@@ -1,0 +1,1 @@
+/Users/runner/work/_temp/twine-macos-build/candidate/bin/dot: Mach-O 64-bit executable x86_64

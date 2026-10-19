@@ -1,0 +1,67 @@
+{
+  "cmake": {
+    "path": "/Users/runner/work/_temp/twine-macos-sdk/cmake-native",
+    "sha256": "a2b0367ec291f0cb63fc8952effca2e4110fa05add9d5242456e4ac7ba50e449"
+  },
+  "c_compiler": {
+    "path": "/Applications/Xcode_16.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang",
+    "sha256": "4c458256bcdf913774de1bb4a37768244d3b41f32ad55afb2dfec3432f46f4fe"
+  },
+  "cxx_compiler": {
+    "path": "/Applications/Xcode_16.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++",
+    "sha256": "4c458256bcdf913774de1bb4a37768244d3b41f32ad55afb2dfec3432f46f4fe"
+  },
+  "facts": {
+    "provider": "Apple Xcode",
+    "xcode": "Xcode 16.4\nBuild version 16F6",
+    "developer_dir": "/Applications/Xcode_16.4.app/Contents/Developer",
+    "sdk_path": "/Applications/Xcode_16.4.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk",
+    "sdk_version": "15.5",
+    "sdk_settings_sha256": "58a133735f0a55a624a1703067059f6e78925e51725ec6e1f966072e142c9c42",
+    "sdk_tree_sha256": "23b430378377d48cf9c2c8c95d87ac0638eef76caaa637b496d87f7ce512ab4c",
+    "sdk_tree_entries": 37452,
+    "sdk_tree_bytes": 656877420,
+    "compiler_version": "Apple clang version 17.0.0 (clang-1700.0.13.5)\nTarget: x86_64-apple-darwin24.6.0\nThread model: posix\nInstalledDir: /Applications/Xcode_16.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin",
+    "host_tools": {
+      "cmake": {
+        "path": "/usr/local/bin/cmake",
+        "sha256": "373896cd3b471845648989b56f07cd41854d75e571f690b9ef4126b7da15006e",
+        "version": "cmake version 4.4.2"
+      },
+      "bison": {
+        "path": "/usr/local/opt/bison/bin/bison",
+        "sha256": "371b7c9a6c5c20aa93e27d11a1450548055f10432a88c16293e8f178a65140d7",
+        "version": "bison (GNU Bison) 3.8.2"
+      },
+      "flex": {
+        "path": "/Applications/Xcode_16.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/flex",
+        "sha256": "ab177c6ac8bf8319e01a401af47390322d935d520b6ae833873eef232d44f577",
+        "version": "flex 2.6.4 Apple(flex-35)"
+      },
+      "make": {
+        "path": "/Applications/Xcode_16.4.app/Contents/Developer/usr/bin/make",
+        "sha256": "3c78fecd1cc5d92944fc7fddbceabab7d2ef4102ab7d0c1e9d59f557e374e621",
+        "version": "GNU Make 3.81"
+      },
+      "python": {
+        "path": "/Library/Frameworks/Python.framework/Versions/3.14/bin/python",
+        "sha256": "81c87d90892fe12428ee3b78a675c57c62d6c479236fb359ad5b2d7f07c38b2c"
+      },
+      "otool": {
+        "path": "/Applications/Xcode_16.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/otool",
+        "sha256": "1cb32a54070f97a9a33bad5f16bbd6b5d5cb69fb4164d46a419197f405853a24"
+      }
+    },
+    "target_os": "darwin",
+    "target_arch": "x86_64",
+    "deployment_target": "15.0",
+    "environment_kind": "native",
+    "kernel": "24.6.0",
+    "macos": "15.7.9",
+    "image_os": "macos15",
+    "image_version": "20260824.0482.1",
+    "runner_arch": "X64",
+    "limitations": "SDK tree/tool hashes identify this run; dependency/license audit and qualified environment snapshot still pending"
+  },
+  "environment_digest": "814f3ff2c4c1b6eef725e34be19c7fc40b5a3a2cb7fe28ff5e939097707ec74c"
+}

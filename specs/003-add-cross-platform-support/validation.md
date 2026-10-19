@@ -1240,3 +1240,24 @@ ainda estava na fila ao preparar este registro. Por isso o recibo inicial não
 recebe campos do SDK que não mediu, e T049/T050 continuam parciais. Pacotes de
 build têm somente o aviso Graphviz inicial: auditoria/fontes/notices completos,
 assinatura/notarização e aceite instalado são pendências T051/T052/T056.
+
+## Conclusão dos builds macOS T049/T050 — 2026-10-19
+
+A [rodada consolidada 39279242817](https://github.com/Extremois/desembaraca-twine/actions/runs/39279242817)
+da revisão `17670cda323ea82af55f5a5910f03068d2997d66` passou em ambos os
+runners nativos. Os pacotes baixados foram conferidos contra seus inventários,
+proveniências e hashes, incluindo cabeçalhos/load commands Mach-O. Os binários
+e ZIPs permaneceram iguais aos da rodada inicial em cada arquitetura.
+
+O SDK completo registra **37.452 entradas e 656.877.420 bytes** por build;
+o digest canônico `23b430378377d48cf9c2c8c95d87ac0638eef76caaa637b496d87f7ce512ab4c`
+foi recalculado do inventário e conferido com o registro SDK de cada arquitetura.
+Flex/make/otool agora identificam as ferramentas reais no Xcode 16.4 selecionado.
+Os 13 casos/relocação passaram em CPython 3.12.10 e 3.14.7 em cada arquitetura.
+
+O [recibo consolidado](evidence/macos-native-build-2026-10-19/summary.json)
+preserva inventários SDK comprimidos, corpus, logs, load commands e proveniências.
+Não contém SDK Apple ou binários. T049/T050 estão concluídas, **48/84**;
+auditoria completa de dependências/fontes, assinatura/notarização, distribuição
+real e aceite instalado permanecem em T051/T052/T056 e gates comuns. Nenhuma
+entrada Darwin foi admitida ao catálogo ativo.
