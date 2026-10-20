@@ -1,0 +1,44 @@
+/*************************************************************************
+ * Copyright (c) 2011 AT&T Intellectual Property 
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v2.0
+ * which accompanies this distribution, and is available at
+ * https://www.eclipse.org/org/documents/epl-2.0/EPL-2.0.html
+ *
+ * Contributors: Details at https://graphviz.org
+ *************************************************************************/
+
+/*
+ * This code was (mostly) written by Ken Turkowski, who said:
+ *
+ * Oh, that. I wrote it in college the first time. It's open source - I think I
+ * posted it after seeing so many people solve equations by inverting matrices
+ * by computing minors naïvely.
+ * -Ken
+ *
+ * The views represented here are mine and are not necessarily shared by
+ * my employer.
+   	Ken Turkowski			turk@apple.com
+	Immersive Media Technologist 	http://www.worldserver.com/turk/
+	Apple Computer, Inc.
+	1 Infinite Loop, MS 302-3VR
+	Cupertino, CA 95014
+ */
+
+
+
+/* This module solves linear equations in several variables (Ax = b) using
+ * LU decomposition with partial pivoting and row equilibration.  Although
+ * slightly more work than Gaussian elimination, it is faster for solving
+ * several equations using the same coefficient matrix.  It is
+ * particularly useful for matrix inversion, by sequentially solving the
+ * equations with the columns of the unit matrix.
+ *
+ * lu_decompose() decomposes the coefficient matrix into the LU matrix,
+ * and lu_solve() solves the series of matrix equations using the
+ * previous LU decomposition.
+ *
+ *	Ken Turkowski (apple!turk)
+ *	written 3/2/79, revised and enhanced 8/9/83.
+ */
+

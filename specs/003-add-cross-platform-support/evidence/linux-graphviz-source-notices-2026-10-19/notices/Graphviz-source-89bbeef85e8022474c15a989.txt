@@ -1,0 +1,20 @@
+/*************************************************************************
+ * Copyright (c) 2011 AT&T Intellectual Property 
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v2.0
+ * which accompanies this distribution, and is available at
+ * https://www.eclipse.org/org/documents/epl-2.0/EPL-2.0.html
+ *
+ * Contributors: Details at https://graphviz.org
+ *************************************************************************/
+
+/* Comments on the SVG coordinate system (SN 8 Dec 2006):
+   The initial <svg> element defines the SVG coordinate system so
+   that the graphviz canvas (in units of points) fits the intended
+   absolute size in inches.  After this, the situation should be
+   that "px" = "pt" in SVG, so we can dispense with stating units.
+   Also, the input units (such as fontsize) should be preserved
+   without scaling in the output SVG (as long as the graph size
+   was not constrained.)
+ */
+

@@ -1,0 +1,29 @@
+/// \file
+/// \brief String tokenization
+/// \ingroup cgraph_utils
+///
+/// This is essentially equivalent to `strtok` but with two main improvements:
+///
+///   1. The input string is not modified. This means, if you have a `const`
+///      string, you do not need to `strdup` it in order to tokenize it. This
+///      (combined with other properties like no opaque struct pointers) enables
+///      you to tokenize a string with no heap allocation.
+///
+///   2. No global state. All the state for tokenization is contained in the
+///      `tok_t` struct.
+///
+/// The above two properties are intended to make string tokenization scalable
+/// (no locks, no thread-shared state) and transparent to the compiler (a good
+/// optimizing compiler implements all the string.h functions we use as
+/// built-ins and, if `separators` is a compile-time literal, can typically
+/// flatten everything into a tight loop with no function calls).
+///
+/// Sample usage:
+///
+///   const char my_input[] = "foo; bar:/baz";
+///   for (tok_t t = tok(my_input, ";:/"); !tok_end(&t); tok_next(&t)) {
+///     strview_t s = tok_get(&t);
+///     printf("%.*s\n", (int)s.size, s.data);
+///   }
+///   // prints “foo”, “ bar”, “baz”
+

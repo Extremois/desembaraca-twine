@@ -152,6 +152,70 @@ def verified_source_prefix(data,item):
     return prefix
 
 
+def append_header_notices(materials,external,sdk,facts):
+    """Preserve every verified SDK header prefix, including explicit empty rows."""
+    headers=[]
+    for name in sorted(external):
+        data=sdk[name]
+        if hashlib.sha256(data).hexdigest()!=external[name]:
+            raise ValueError('SDK header differs from pinned archive')
+        prefix=source_notice_prefix(data)
+        headers.append(dict(path=name,source_sha256=external[name],prefix_sha256=hashlib.sha256(prefix).hexdigest(),
+                            prefix_bytes=len(prefix),applicability='pending'))
+        if prefix:
+            filename='SDK-header-'+hashlib.sha256(name.encode()).hexdigest()[:24]+'.txt'
+            materials.append((filename,prefix,dict(kind='pinned-sdk-header-prefix',path=name,
+                archive_sha256=facts['archive_sha256'],source_sha256=external[name],offset=0,length=len(prefix))))
+    return headers
+
+
+def graphviz_source_materials(dependencies,archive,lock):
+    """Recheck observed upstream source bytes and preserve per-file comments."""
+    if builder.digest(archive)!=lock['sha256']:
+        raise ValueError('Graphviz archive differs from pinned source')
+    entries={}
+    for item in dependencies:
+        if item.get('origin')!='source':continue
+        name=item.get('path');path=PurePosixPath(name) if isinstance(name,str) else None
+        size=item.get('size')
+        if (not name or '\\' in name or '\0' in name or path.is_absolute() or '..' in path.parts
+                or path.as_posix()!=name or name in entries or len(name)>4096
+                or not re.fullmatch(r'[0-9a-f]{64}',item.get('sha256',''))
+                or type(size) is not int or not 0<=size<=1024**2):
+            raise ValueError('Invalid or duplicate Graphviz source record')
+        entries[name]=item
+        if len(entries)>5000:raise ValueError('Too many Graphviz source records')
+    if not entries or sum(item['size'] for item in entries.values())>64*1024**2:
+        raise ValueError('Missing or excessive Graphviz source records')
+    sources=archive_files(archive,'graphviz-16.1.0',set(entries))
+    rows=[];materials=[]
+    for name,item in sorted(entries.items()):
+        data=sources[name]
+        if len(data)!=item['size'] or hashlib.sha256(data).hexdigest()!=item['sha256']:
+            raise ValueError('Graphviz source differs from pinned archive')
+        prefix=source_notice_prefix(data)
+        later=[];offset=0
+        for number,line in enumerate(data.splitlines(keepends=True),1):
+            if offset>=len(prefix) and re.search(rb'copyright|SPDX-License-Identifier|licen[cs]e|public domain',line,re.IGNORECASE):
+                if len(later)>=256 or len(line)>4096:
+                    raise ValueError('Graphviz source indicators exceed review limit')
+                later.append(dict(line=number,offset=offset,text=line.decode('utf-8').rstrip('\r\n')))
+            offset+=len(line)
+        rows.append(dict(path=name,source_sha256=item['sha256'],size=len(data),
+            prefix_sha256=hashlib.sha256(prefix).hexdigest(),prefix_bytes=len(prefix),applicability='pending',
+            later_license_indicators=later))
+        if prefix:
+            filename='Graphviz-source-'+hashlib.sha256(name.encode()).hexdigest()[:24]+'.txt'
+            materials.append((filename,prefix,dict(kind='pinned-graphviz-source-prefix',path=name,
+                archive_sha256=lock['sha256'],source_sha256=item['sha256'],offset=0,length=len(prefix))))
+        if later:
+            filename='Graphviz-source-reference-'+hashlib.sha256(name.encode()).hexdigest()[:24]+'.txt'
+            materials.append((filename,data,dict(kind='pinned-graphviz-source-additional-reference',path=name,
+                archive_sha256=lock['sha256'],source_sha256=item['sha256'],offset=0,length=len(data),
+                scope='Full source for review of later license-related text; indicator matches are not license decisions')))
+    return rows,materials
+
+
 def archive_files(path,prefix,names):
     found={};count=expanded=0
     with tarfile.open(path) as archive:
@@ -212,7 +276,6 @@ def prepare(linked_build,source_build,evidence,graphviz_archive,sdk_archive,sdk_
     sdk_names=sdk_notice_names(record,linked_build)
     arm=record['artifact_id']=='linux-glibc-aarch64'
     musl=record['artifact_id'] in ('linux-musl-x86_64','linux-musl-aarch64')
-    extended=arm or musl
     if arm and any(item is None for item in (glibc_object_evidence,zig_runtime_evidence,data_evidence)):
         raise ValueError('ARM64 draft requires its own glibc, runtime and generated-data evidence')
     if record['artifact_id']=='linux-musl-aarch64' and any(item is None for item in (musl_object_evidence,zig_runtime_evidence,data_evidence)):
@@ -237,6 +300,7 @@ def prepare(linked_build,source_build,evidence,graphviz_archive,sdk_archive,sdk_
     runtime_sources,runtime_evidence_sha=zig_runtime_notice_sources(record,linked_build,zig_runtime_evidence)
     dependencies=source['dependencies'].values() if isinstance(source['dependencies'],dict) else source['dependencies']
     dependencies=list(dependencies)
+    graphviz_sources,graphviz_materials=graphviz_source_materials(dependencies,graphviz_archive,lock)
     external={}
     for item in dependencies:
         if item['origin']!='external':continue
@@ -252,7 +316,7 @@ def prepare(linked_build,source_build,evidence,graphviz_archive,sdk_archive,sdk_
     sdk=archive_files(sdk_archive,sdk_root.name,sdk_names|set(external)|set(musl_sources)|set(glibc_sources)|set(runtime_sources))
     for name,sha in external.items():
         if hashlib.sha256(sdk[name]).hexdigest()!=sha:raise ValueError('SDK header differs from pinned archive')
-    materials=[]
+    materials=list(graphviz_materials)
     for name in sorted(graphviz_names):
         data=graphviz[name]
         materials.append((('ColorBrewer.txt' if name.endswith('brewer_colors') else 'Graphviz-'+name.replace('/','__')+'.txt'),
@@ -315,27 +379,20 @@ def prepare(linked_build,source_build,evidence,graphviz_archive,sdk_archive,sdk_
                 'Graphviz 16.1.0 source:\n'+lock['url']+'\nSHA-256: '+lock['sha256']+'\n\n'
                 'SDK archive used for source/header verification:\n'+facts['archive_url']+'\nSHA-256: '+facts['archive_sha256']+'\n').encode()
     materials.append(('SOURCE-REFERENCES.txt',references,dict(kind='maintainer-draft-reference')))
-    headers=[]
-    if extended:
-        for name in sorted(external):
-            prefix=source_notice_prefix(sdk[name])
-            headers.append(dict(path=name,source_sha256=external[name],prefix_sha256=hashlib.sha256(prefix).hexdigest(),
-                                prefix_bytes=len(prefix),applicability='pending'))
-            if prefix:
-                filename='SDK-header-'+hashlib.sha256(name.encode()).hexdigest()[:24]+'.txt'
-                materials.append((filename,prefix,dict(kind='pinned-sdk-header-prefix',path=name,
-                    archive_sha256=facts['archive_sha256'],source_sha256=external[name],offset=0,length=len(prefix))))
-        gpl,gpl_origin=license_material('gpl_3_copying')
-        gpl_origin.update(scope='Reference for preserved Bison notices; parser exceptions remain separate, applicability pending')
-        materials.append(('GPL-3.0-COPYING.txt',gpl,gpl_origin))
-        index=dict(kind='linux-arm64-offline-notice-origins' if arm else 'linux-musl-offline-notice-origins',approved=False,qualified=False,
-            parent_provenance_sha256=builder.digest(linked_build/'provenance.json'),
-            source_evidence_sha256=builder.digest(evidence),
-            scope='All other notice payloads; applicability and complete source review pending',
-            notices=[dict(path=name,size=len(raw),sha256=hashlib.sha256(raw).hexdigest(),origin=origin)
-                     for name,raw,origin in materials])
-        materials.append(('NOTICE-ORIGINS.json',(json.dumps(index,indent=2,sort_keys=True)+'\n').encode(),
-                          dict(kind='maintainer-offline-notice-origin-index',scope='Other notice payloads only; no self hash')))
+    headers=append_header_notices(materials,external,sdk,facts)
+    gpl,gpl_origin=license_material('gpl_3_copying')
+    gpl_origin.update(scope='Reference for preserved Bison notices; parser exceptions remain separate, applicability pending')
+    materials.append(('GPL-3.0-COPYING.txt',gpl,gpl_origin))
+    index_kind=('linux-arm64-offline-notice-origins' if arm else
+                'linux-musl-offline-notice-origins' if musl else 'linux-glibc-offline-notice-origins')
+    index=dict(kind=index_kind,approved=False,qualified=False,
+        parent_provenance_sha256=builder.digest(linked_build/'provenance.json'),
+        source_evidence_sha256=builder.digest(evidence),
+        scope='All other notice payloads; applicability and complete source review pending',
+        notices=[dict(path=name,size=len(raw),sha256=hashlib.sha256(raw).hexdigest(),origin=origin)
+                 for name,raw,origin in materials])
+    materials.append(('NOTICE-ORIGINS.json',(json.dumps(index,indent=2,sort_keys=True)+'\n').encode(),
+                      dict(kind='maintainer-offline-notice-origin-index',scope='Other notice payloads only; no self hash')))
     if len(materials)>5000 or sum(len(raw) for _,raw,_ in materials)>16*1024**2:
         raise ValueError('Notice material exceeds preparation budget')
     output.mkdir(mode=0o700,parents=True,exist_ok=False)
@@ -361,6 +418,9 @@ def prepare(linked_build,source_build,evidence,graphviz_archive,sdk_archive,sdk_
         pending=['Per-file license applicability and complete source offer','W3C/X11 data provenance and notice applicability',
                  'Other canonical license texts as applicable','Final audited inventory and native baseline/cell qualification'],
         flex_generator=flex_origin)
+    review.update(graphviz_sources=graphviz_sources,graphviz_sources_verified=len(graphviz_sources),
+                  graphviz_source_prefixes_preserved=sum(bool(row['prefix_bytes']) for row in graphviz_sources),
+                  graphviz_additional_source_references=sum(bool(row['later_license_indicators']) for row in graphviz_sources))
     if musl_evidence_sha:
         review.update(musl_object_evidence_sha256=musl_evidence_sha,musl_sources_verified=len(musl_sources),
             musl_source_comment_files=sum(bool(i['leading_comment_bytes']) for i in musl_sources.values()))
@@ -374,9 +434,8 @@ def prepare(linked_build,source_build,evidence,graphviz_archive,sdk_archive,sdk_
     if data_review is not None:
         review.update(data_evidence_sha256=builder.digest(data_evidence),data_comparison=data_review['comparison'],
                       data_tables_reproduced=data_review['outputs'])
-    if extended:
-        review.update(sdk_headers=headers,sdk_header_prefixes_preserved=sum(bool(row['prefix_bytes']) for row in headers),
-                      offline_origin_index='third-party-notices/NOTICE-ORIGINS.json')
+    review.update(sdk_headers=headers,sdk_header_prefixes_preserved=sum(bool(row['prefix_bytes']) for row in headers),
+                  offline_origin_index='third-party-notices/NOTICE-ORIGINS.json')
     (output/'review.json').write_text(json.dumps(review,indent=2)+'\n')
     record.update(output=str(output),qualification='draft notices only; no approved audit or support',
                   notice_preparation=dict(review_sha256=builder.digest(output/'review.json'),approved=False))

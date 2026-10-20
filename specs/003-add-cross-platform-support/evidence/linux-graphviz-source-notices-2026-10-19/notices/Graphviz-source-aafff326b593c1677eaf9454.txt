@@ -1,0 +1,12 @@
+/**
+ * @file
+ * @brief container data types API
+ * @ingroup public_apis
+ *
+ * **CDT** manages run-time dictionaries using standard container data types:
+ * unordered set/multiset, ordered set/multiset, list, and stack.
+ *
+ * [man 3 cdt](https://graphviz.org/pdf/cdt.3.pdf)
+ *
+ */
+

@@ -269,6 +269,31 @@ distribuição e seus notices empacotados continuam obrigatórios para admissão
 
 ## ZIP candidato local
 
+O preparador de avisos preserva os comentários iniciais dos headers SDK observados
+nas quatro variantes Linux, incluindo glibc x64. Headers sem comentário inicial
+ficam explicitamente registrados para revisão. Cada candidata nova inclui a GPL 3
+integral como referência dos avisos Bison e `NOTICE-ORIGINS.json`, com origem,
+tamanho e hash de todos os demais avisos para consulta offline. Os textos e
+exceções preservados continuam sujeitos à auditoria de aplicabilidade por arquivo.
+Isso não atualiza pacotes históricos: cada build precisa gerar uma nova candidata.
+
+O mesmo preparo reconfere tamanho e SHA-256 de cada entrada Graphviz com origem
+`source` nas dependências observadas do compilador, contra o tarball fixado.
+Preserva seus comentários iniciais em `Graphviz-source-*.txt` e registra todos
+os arquivos em `review.json`, inclusive os sem prefixo. Caminhos inválidos,
+duplicatas, fontes ausentes ou bytes divergentes reprovam antes de criar a saída.
+Esses materiais também entram no índice offline. A coleta local das quatro
+variantes encontrou 322 fontes iguais, 303 prefixos e 19 arquivos sem prefixo;
+inclui os avisos próprios de `randomkit.c` e `randomkit.h`. Comentários de
+documentação sem declaração de licença não resolvem a aplicabilidade por arquivo.
+
+O preparo também procura indicadores de licença/atribuição após o prefixo. Para
+cada fonte com ocorrência, preserva o arquivo original completo em
+`Graphviz-source-reference-*.txt`, com posições das linhas em `review.json`.
+Isso mantém o contexto integral da atribuição, inclusive MurmurHash em
+`lib/cgraph/refstr.c` e a declaração em `lib/label/index.h`. Os indicadores são
+uma fila de revisão; não atribuem licenças automaticamente.
+
 Para preparar **avisos em rascunho por build**, usar
 `python3 tools/runtime/prepare-draft-notices.py --help`. Fornecer `--linked-build`,
 `--source-build`, o relatório privado de `audit-graphviz-sources.py` em

@@ -1,0 +1,3 @@
+/// @file
+/// @brief C analog of C++’s `std::optional`
+

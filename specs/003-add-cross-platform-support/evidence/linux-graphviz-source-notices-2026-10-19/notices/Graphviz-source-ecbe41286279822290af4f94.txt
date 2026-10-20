@@ -1,0 +1,6 @@
+/// @file
+/// @brief arithmetic overflow helpers
+/// @ingroup cgraph_utils
+///
+/// Replace this with stdckdint.h when moving to C23.
+

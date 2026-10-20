@@ -1,0 +1,3 @@
+/// @file
+/// @brief wrapper around `fopen` for internal library usage
+

@@ -959,5 +959,24 @@
       "byte_identical": false,
       "status": "exported-sources-and-functional-rebuild-verified; per-file-audit-and-permanent-source-offer-pending"
     }
+  ],
+  "graphviz_source_notice_reviews": [
+    {
+      "approved": false,
+      "qualified": false,
+      "evidence": "specs/003-add-cross-platform-support/evidence/linux-graphviz-source-notices-2026-10-19/summary.json",
+      "source_archive_sha256": "1e028b2b3e84e946c1d3e8c47590f8f0741bba1041fe6eff36eee87e598ea249",
+      "artifact_ids": [
+        "linux-glibc-x86_64",
+        "linux-glibc-aarch64",
+        "linux-musl-x86_64",
+        "linux-musl-aarch64"
+      ],
+      "sources_per_artifact": 322,
+      "prefixes_preserved_per_artifact": 303,
+      "empty_prefixes_per_artifact": 19,
+      "scope": "Local recheck of pinned original sources bound to historical builds; runtime archives unchanged",
+      "pending": "Per-file applicability, transitive source closure, source offer and fresh native candidate packaging"
+    }
   ]
 }

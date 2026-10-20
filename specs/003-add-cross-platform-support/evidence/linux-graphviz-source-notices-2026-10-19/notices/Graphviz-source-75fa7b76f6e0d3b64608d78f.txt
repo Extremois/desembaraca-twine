@@ -1,0 +1,17 @@
+/*************************************************************************
+ * Copyright (c) 2011 AT&T Intellectual Property 
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v2.0
+ * which accompanies this distribution, and is available at
+ * https://www.eclipse.org/org/documents/epl-2.0/EPL-2.0.html
+ *
+ * Contributors: Details at https://graphviz.org
+ *************************************************************************/
+
+/*
+ * this implements the resistor circuit current model for
+ * computing node distance, as an alternative to shortest-path.
+ * likely it could be improved by using edge weights, somehow.
+ * Return 1 if successful; 0 otherwise (e.g., graph is disconnected).
+ */
+
