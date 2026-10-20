@@ -1,0 +1,43 @@
+{
+  "kind": "T029-private-musl-build-verification-completion",
+  "task_complete": true,
+  "approved": false,
+  "qualified": false,
+  "revision": "dcdfcce35bbde2d11c65c579a7ed3c15a4ecbe27",
+  "candidates": [
+    {
+      "artifact_id": "linux-musl-x86_64",
+      "evidence": "specs/003-add-cross-platform-support/evidence/alpine-musl-sdk-notices-2026-10-19/x86_64/summary.json",
+      "receipt_sha256": "5a60ceef492db109679305da3befba5435e1ec2f3bdeab26306a7f9ddf19fcfb",
+      "local_candidate": "tools/runtime/artifacts/linux-musl/linux-musl-x86_64",
+      "archive_sha256": "7524dcc3f25636e09e80210dea64d50842c79f3095d9929e58dfd9d02e7f9dd4",
+      "archive_bytes": 7461934,
+      "build_complete": true,
+      "qualified": false
+    },
+    {
+      "artifact_id": "linux-musl-aarch64",
+      "evidence": "specs/003-add-cross-platform-support/evidence/alpine-musl-sdk-notices-2026-10-19/aarch64/summary.json",
+      "receipt_sha256": "c45e7cea39c67888df94354a9e879f785801b57d2a9b04a56b60139ff6e68d71",
+      "local_candidate": "tools/runtime/artifacts/linux-musl/linux-musl-aarch64",
+      "archive_sha256": "c2d49d401ed60963a30ccd7c9befd211b98c0b0df73e3361820318a2a392f23a",
+      "archive_bytes": 7470068,
+      "build_complete": true,
+      "qualified": false
+    }
+  ],
+  "scope": "Both private candidate builds and measured verification complete; license audit and platform qualification are separate tasks",
+  "checks": [
+    "Pinned source, SDK, recipe and platform-specific image",
+    "ELF64 matching architecture; no interpreter, dynamic section, NEEDED libraries or glibc symbols",
+    "Inventory and ZIP hashes, sizes, modes and limits; executable bytes unchanged",
+    "Unicode relocation, dot json0, 13 corpus cases and private-cache integration on both Pythons",
+    "Zero native network syscalls in corpus and cache tests with positive child control",
+    "Build-specific draft notices and observed SDK source/header bytes verified against pinned archives"
+  ],
+  "limitations": [
+    "T026/T027 retain Alpine-version/baseline and qualified-dependency work",
+    "T030 approved per-file license audit, full corresponding source offer and transitive closure pending",
+    "Containers do not qualify native Alpine kernels/versions; no public POSIX catalog or release"
+  ]
+}

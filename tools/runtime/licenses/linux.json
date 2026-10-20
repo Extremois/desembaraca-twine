@@ -218,6 +218,36 @@
           "byte_identical_to_parent": true,
           "status": "Graphviz-sources-verified; generated-SDK-sources-notices-and-native-cell-qualification-pending"
         }
+      ],
+      "container_sdk_notice_observations": [
+        {
+          "approved": false,
+          "qualified": false,
+          "evidence": "specs/003-add-cross-platform-support/evidence/alpine-musl-sdk-notices-2026-10-19/x86_64/summary.json",
+          "revision": "dcdfcce35bbde2d11c65c579a7ed3c15a4ecbe27",
+          "environment_kind": "container",
+          "executable_sha256": "f4dfee4e052704b1a7efdb7b6a4c43583ccaa062aec800b76224dae24eb2b69b",
+          "candidate_archive_sha256": "7524dcc3f25636e09e80210dea64d50842c79f3095d9929e58dfd9d02e7f9dd4",
+          "provenance_sha256": "fca4fa3832f16196029a81d1e5595ed824b84599b8e6e5698b17d79343b99a4e",
+          "notices": 107,
+          "sdk_sources_verified": 437,
+          "sdk_headers_verified": 58,
+          "musl_observations": {
+            "observed_members": 177,
+            "members_with_source": 177,
+            "sources_verified": 177,
+            "sources_with_leading_comments": 16
+          },
+          "runtime_observations": {
+            "objects": 3,
+            "sdk_sources_verified": 260,
+            "generated_files_hashed": 1,
+            "sources_with_leading_comments": 49,
+            "sources_with_license_indicators": 17,
+            "sources_with_indicators_outside_prefix": 0
+          },
+          "status": "draft-notices-and-pinned-source-observations-verified; per-file-applicability-complete-source-offer-and-qualification-pending"
+        }
       ]
     },
     {
@@ -260,6 +290,36 @@
           "byte_identical_to_compiler": true,
           "byte_identical_to_parent": true,
           "status": "Graphviz-sources-verified; generated-SDK-sources-notices-and-native-cell-qualification-pending"
+        }
+      ],
+      "container_sdk_notice_observations": [
+        {
+          "approved": false,
+          "qualified": false,
+          "evidence": "specs/003-add-cross-platform-support/evidence/alpine-musl-sdk-notices-2026-10-19/aarch64/summary.json",
+          "revision": "dcdfcce35bbde2d11c65c579a7ed3c15a4ecbe27",
+          "environment_kind": "container",
+          "executable_sha256": "2d7a4b6024eb000c33ecf8b14d1a32d0aac8dde65bed00de138604d081fd3ee4",
+          "candidate_archive_sha256": "c2d49d401ed60963a30ccd7c9befd211b98c0b0df73e3361820318a2a392f23a",
+          "provenance_sha256": "c622b110ca076aaebd405e8563c648d5da2f4db31829b3a76d0eada9690f1677",
+          "notices": 107,
+          "sdk_sources_verified": 434,
+          "sdk_headers_verified": 58,
+          "musl_observations": {
+            "observed_members": 173,
+            "members_with_source": 173,
+            "sources_verified": 173,
+            "sources_with_leading_comments": 16
+          },
+          "runtime_observations": {
+            "objects": 3,
+            "sdk_sources_verified": 261,
+            "generated_files_hashed": 1,
+            "sources_with_leading_comments": 50,
+            "sources_with_license_indicators": 17,
+            "sources_with_indicators_outside_prefix": 0
+          },
+          "status": "draft-notices-and-pinned-source-observations-verified; per-file-applicability-complete-source-offer-and-qualification-pending"
         }
       ]
     }

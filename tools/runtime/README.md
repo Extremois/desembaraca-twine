@@ -99,8 +99,12 @@ imagem e kernel, constrói um motor estático e exige ausência de PT_INTERP,
 NEEDED, seção dinâmica e símbolos glibc. O mesmo motor executa corpus/relocação
 sob strace nos dois Pythons, com controle positivo de sockets. O checkout é
 montado somente para leitura; SDK/cache privados não são enviados como artifact.
-Pacote e metadados são rascunhos não aprovados, inicialmente com COPYING
-Graphviz. Auditoria/fontes/avisos completos continuam pendentes.
+Cada arquitetura também coleta fontes de libc.a, startup e runtime Zig, confere
+os bytes contra seu arquivo SDK e prepara avisos próprios, prefixos dos headers,
+textos completos de referência e índice offline. Corpus e integração do gerenciador
+com transporte controlado passam sob strace nos dois Pythons. Pacote e metadados
+continuam rascunhos: aplicabilidade por arquivo, fechamento transitivo, oferta
+completa de fontes e auditoria aprovada permanecem pendentes.
 
 O kernel continua sendo o do runner Ubuntu: esse ensaio não conclui a célula
 Alpine nativa ou a matriz 3.21–3.24. O digest fixa a imagem de base; versões dos
@@ -350,7 +354,7 @@ de auditoria revisada e repete a medição dos ELF antes de executar o probe.
 Ver `linux-musl-candidate-package.json`: ZIP local repetível, ainda não qualificado.
 
 Para aprofundar a revisão por arquivo, `python3 tools/runtime/audit-musl-objects.py
---help` descreve o coletor de objetos musl x86_64. Fornecer relink privado,
+--help` descreve o coletor de objetos musl x86_64/aarch64. Fornecer relink privado,
 raiz/arquivo SDK fixados e relatório novo. Confere o executável, SDK, inspector,
 TSV de extrações e archive libc.a por hash; compara cada membro observado com
 o objeto real antes de executar somente o readelf registrado. Usa unidades de
@@ -368,7 +372,7 @@ DWARF e comentários iniciais são evidência parcial: não encerram revisão de
 headers transitivos, trechos posteriores, outros componentes ou fontes completas.
 
 `python3 tools/runtime/audit-zig-runtime.py --help` complementa essa coleta com
-`crt1.o`, `libzigc.a` e `libcompiler_rt.a` do mesmo relink musl x86_64. Confere
+`crt1.o`, `libzigc.a` e `libcompiler_rt.a` do mesmo relink musl x86_64/aarch64. Confere
 archive/membros/objetos e usa somente o readelf fixado. Interpreta exatamente uma
 tabela DWARF4 por objeto; versões diferentes, índices ambíguos ou fontes fora do
 SDK/cache permitido são recusados. Fontes geradas são limitadas a `builtin.zig`

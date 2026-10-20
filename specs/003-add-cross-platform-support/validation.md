@@ -1,5 +1,61 @@
 # Evidência de implementação — feature 003
 
+## Bundles e avisos musl verificados — 2026-10-19
+
+**T029 concluída; 53/84 tarefas, 31 pendentes.** O [recibo de construção](evidence/musl-build-completion-2026-10-19.json)
+consolida os dois bundles privados e sua verificação: ELF64 da CPU correspondente,
+sem interpretador/seção dinâmica/NEEDED/glibc, inventários/ZIPs por hash/tamanho/modo,
+relocação Unicode, json0, corpus e integração do gerenciador em ambos os Pythons.
+ZIP, inventário, proveniência e relatório ELF estão em
+`tools/runtime/artifacts/linux-musl/linux-musl-{x86_64,aarch64}/`, ignorados pelo Git.
+Somente metadados, rastros e avisos são versionados. T029 é construção/verificação
+das candidatas; não aprova licenças, distribuição ou células Alpine.
+
+O pipeline agora usa os coletores de fontes musl e Zig também em ARM64, com
+verificação de receita/arquitetura e identidade exata dos relatórios. Três testes
+novos falharam antes da implementação e passaram após a alteração. Relatórios
+de outra arquitetura não podem fornecer avisos para ARM64 mesmo quando os demais
+hashes coincidirem. O coletor musl aceita a identidade SDK moderna aninhada,
+preservando a identidade legada e recusando conflitos.
+
+Os recibos de [x64](evidence/alpine-musl-sdk-notices-2026-10-19/x86_64/summary.json)
+e [ARM64](evidence/alpine-musl-sdk-notices-2026-10-19/aarch64/summary.json) registram:
+
+| Medida | x64 | ARM64 |
+|---|---|---|
+| Membros libc.a observados/fontes conferidas | 177/177 | 173/173 |
+| Objetos startup/runtime Zig | 3 | 3 |
+| Fontes runtime SDK conferidas | 260 | 261 |
+| Total de fontes SDK conferidas | 437 | 434 |
+| Headers SDK conferidos/prefixos preservados | 58/23 | 58/22 |
+| Avisos / demais itens no índice offline | 107/106 | 107/106 |
+| Arquivos / bytes do ZIP | 108 / 7.461.934 | 108 / 7.470.068 |
+
+Após download, as fontes e os prefixos foram reconferidos nos tarballs fixados de
+cada arquitetura, incluindo os textos SDK integrais copiados e todos os headers
+observados. O índice offline confere hashes/tamanhos/origens dos outros 106 avisos.
+Os pacotes preservam prefixos por fonte, COPYRIGHT musl e textos SDK, avisos
+Graphviz/Bison/Flex/dados e referência GPL 3 com exceções dos geradores separadas.
+Os motores mantêm os hashes anteriores. Corpus e cache offline passaram em
+Python 3.12.13/3.14.5: zero chamadas de rede, controles positivos e 49 execuções
+dot por slot de integração. O kernel continua sendo o do runner Ubuntu.
+
+A revisão `dcdfcce35bbde2d11c65c579a7ed3c15a4ecbe27` passou no
+[CI musl](https://github.com/Extremois/desembaraca-twine/actions/runs/39349837831),
+nas regressões [glibc x64](https://github.com/Extremois/desembaraca-twine/actions/runs/39349837783),
+[glibc ARM64](https://github.com/Extremois/desembaraca-twine/actions/runs/39349837861)
+e [macOS](https://github.com/Extremois/desembaraca-twine/actions/runs/39349837795).
+A [fundação de seis slots](evidence/github-actions-foundation-musl-sdk-2026-10-19.json)
+passou com 207 testes por slot. Localmente, 207 testes em cada Python passaram,
+com oito skips Windows (28,853 s em 3.12; 29,256 s em 3.14).
+
+T030 permanece parcial: observações DWARF não provam retenção de seções ou
+fechamento transitivo, e ausência de prefixo não significa ausência de obrigações.
+Um builtin gerado por build foi registrado separadamente, sem atribuí-lo ao SDK
+fixado. Aplicabilidade por arquivo, auditoria aprovada e oferta completa de fontes
+continuam pendentes. T026/T027/T044 conservam as verificações de baseline/versões
+e qualificação nativa Alpine; o catálogo e a matriz oficiais não foram promovidos.
+
 ## Integração Linux e correção de primeiro uso — 2026-10-19
 
 **T023 concluída; 52/84 tarefas, 32 pendentes.** O teste de integração agora

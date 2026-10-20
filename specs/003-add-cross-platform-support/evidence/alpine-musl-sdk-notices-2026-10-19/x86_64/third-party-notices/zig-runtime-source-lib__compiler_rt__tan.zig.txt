@@ -1,0 +1,7 @@
+//! Ported from musl, which is licensed under the MIT license:
+//! https://git.musl-libc.org/cgit/musl/tree/COPYRIGHT
+//!
+//! https://git.musl-libc.org/cgit/musl/tree/src/math/tanf.c
+//! https://git.musl-libc.org/cgit/musl/tree/src/math/tan.c
+//! https://golang.org/src/math/tan.go
+

@@ -1,0 +1,5 @@
+//! a raised to integer power of b
+//! ported from https://github.com/llvm-mirror/compiler-rt/blob/release_80/lib/builtins/powisf2.c
+//! Multiplication order (left-to-right or right-to-left) does not matter for
+//! error propagation and this method is optimized for performance, not accuracy.
+

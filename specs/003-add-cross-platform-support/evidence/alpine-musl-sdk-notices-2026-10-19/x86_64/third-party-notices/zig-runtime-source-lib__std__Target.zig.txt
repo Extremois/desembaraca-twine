@@ -1,0 +1,5 @@
+//! All the details about the machine that will be executing code.
+//! Unlike `Query` which might leave some things as "default" or "host", this
+//! data is fully resolved into a concrete set of OS versions, CPU features,
+//! etc.
+

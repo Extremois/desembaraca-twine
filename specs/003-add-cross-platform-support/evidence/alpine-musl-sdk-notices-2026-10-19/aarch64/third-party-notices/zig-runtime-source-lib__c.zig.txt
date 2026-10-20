@@ -1,0 +1,5 @@
+//! This is Zig's multi-target implementation of libc.
+//!
+//! When `builtin.link_libc` is true, we need to export all the functions and
+//! provide a libc API compatible with the target (e.g. musl, wasi-libc, ...).
+
