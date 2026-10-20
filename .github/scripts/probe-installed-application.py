@@ -20,8 +20,11 @@ def probe(source,output):
     env=dict(PATH=str(Path(sys.executable).parent),HOME=str(output),LANG='C.UTF-8',
              PIP_NO_INDEX='1',PIP_CONFIG_FILE=os.devnull,PIP_DISABLE_PIP_VERSION_CHECK='1',PYTHONNOUSERSITE='1')
     def run(argv,timeout=30):
-        return subprocess.run([str(v) for v in argv],cwd=output,env=env,check=True,
+        result=subprocess.run([str(v) for v in argv],cwd=output,env=env,
                               stdout=subprocess.PIPE,stderr=subprocess.PIPE,timeout=timeout)
+        if result.returncode:
+            raise RuntimeError('Guest command failed: '+result.stderr.decode('utf-8',errors='replace')[-4000:])
+        return result
     run([sys.executable,'-I','-m','pip','install','--no-index','--no-deps',wheel],60)
     import twine_edge_overlap
     installed=Path(twine_edge_overlap.__file__).resolve()
@@ -51,7 +54,7 @@ def probe(source,output):
     spec=importlib.util.spec_from_file_location('network_observer',driver/'tools/runtime/observe-linux-network.py')
     observer=importlib.util.module_from_spec(spec);spec.loader.exec_module(observer)
     tracer=Path('/usr/bin/strace').resolve(strict=True)
-    version=run([tracer,'--version']).stdout.decode('utf-8').splitlines()[0]
+    version=run([tracer,'-V']).stdout.decode('utf-8').splitlines()[0]
     if version!='strace -- version 4.21':raise ValueError('Unexpected tracer in pinned Ubuntu image')
     # 4.21 predates --kill-on-exit. The owned ephemeral guest is terminated by
     # the host's finally block, including after any failed observation.
