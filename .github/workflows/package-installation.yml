@@ -42,7 +42,9 @@ jobs:
       - name: Build current source distribution and wheel
         run: python -m build --outdir "${{ runner.temp }}/current-packages"
       - name: Obtain private offline backend wheels
-        run: python -m pip download --only-binary=:all: --no-deps --dest "${{ runner.temp }}/package-wheelhouse" setuptools wheel packaging
+        run: >-
+          python -m pip download --only-binary=:all: --no-deps
+          --dest "${{ runner.temp }}/package-wheelhouse" setuptools wheel packaging
       - name: Install both formats outside checkout with restricted PATH and no index
         run: python tools/validation/check-built-packages.py --dist-dir "${{ runner.temp }}/current-packages" --wheelhouse "${{ runner.temp }}/package-wheelhouse" --report "${{ runner.temp }}/package-installation.json"
       - name: Preserve content-bound installation evidence
