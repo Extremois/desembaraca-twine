@@ -91,7 +91,7 @@ print(json.dumps(dict(files=files,licenses=licenses,direct_url=json.loads(d.read
 def validate_installation(facts, inventory, environment, archive_sha256):
     if facts['files'] != inventory['files'] or facts['licenses'] != inventory['licenses']:
         raise ValueError('Installed package differs from reviewed distribution bytes')
-    if not Path(facts['package_path']).is_relative_to(environment.resolve()):
+    if not Path(facts['package_path']).resolve().is_relative_to(environment.resolve()):
         raise ValueError('Application imported outside isolated venv')
     if facts['git_available'] or facts['graphviz_available']:
         raise ValueError('Application PATH exposes Git or global Graphviz')

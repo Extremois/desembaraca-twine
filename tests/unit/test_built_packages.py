@@ -76,6 +76,7 @@ class BuiltPackagesTests(unittest.TestCase):
             checker(facts, inventory, environment, 'c')
             for field, value in [('files', {}), ('licenses', {}), ('git_available', True),
                                  ('graphviz_available', True), ('direct_url', {}),
+                                 ('package_path', str(environment / '../checkout/__init__.py')),
                                  ('package_path', str(ROOT / 'src/twine_edge_overlap/__init__.py'))]:
                 changed = copy.deepcopy(facts)
                 changed[field] = value
