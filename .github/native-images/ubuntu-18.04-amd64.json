@@ -1,0 +1,10 @@
+{
+  "url": "https://cloud-images.ubuntu.com/releases/bionic/release-20230607/ubuntu-18.04-server-cloudimg-amd64.img",
+  "size": 405667840,
+  "sha256": "8dd2e6b5e5aad20c3f836123b300cba9861249408cbb07c359145a65d6bab6b6",
+  "checksum_manifest_url": "https://cloud-images.ubuntu.com/releases/bionic/release-20230607/SHA256SUMS",
+  "checksum_manifest_sha256": "74aba2ff5163772fe09e10b50e2da28f357d15d77b97e033ef8a26afd09dc161",
+  "release": "18.04",
+  "arch": "x86_64",
+  "scope": "Historical baseline only; security maintenance and complete cell acceptance are not approved"
+}

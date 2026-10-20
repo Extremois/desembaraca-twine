@@ -1,0 +1,45 @@
+{
+  "kind": "native-kernel-infrastructure-preflight-receipt",
+  "qualified": false,
+  "approved": false,
+  "revision": "28a03bbdfa603a1dfdf6fa14dd9c8ff0eb3bcc22",
+  "run_id": 39467889085,
+  "reports": [
+    {
+      "arch": "x86_64",
+      "report": "x86_64/elevated.json",
+      "sha256": "477c6b90f334f5163fcfd751288336008da3d3404080c6b8a1c5d92b44688cc3",
+      "elevated": true,
+      "status": "query-ready"
+    },
+    {
+      "arch": "x86_64",
+      "report": "x86_64/runner-user.json",
+      "sha256": "5d05a613a2d67f5ebac30a6ca4ca6c7faf54e7c1beebea7311aaf72edce6a483",
+      "elevated": false,
+      "status": "access-denied"
+    },
+    {
+      "arch": "aarch64",
+      "report": "aarch64/elevated.json",
+      "sha256": "be5bb40d755b0c240e481748cca854b475810c5541fc6804e4be06e7acbc5da3",
+      "elevated": true,
+      "status": "not-present"
+    },
+    {
+      "arch": "aarch64",
+      "report": "aarch64/runner-user.json",
+      "sha256": "c999fe65d08b9c0842a72d2ace848c373cffdad390fb7ed7fb1a587f2aba64de",
+      "elevated": false,
+      "status": "not-present"
+    }
+  ],
+  "conclusions": {
+    "x86_64": "KVM API accessible under sudo; guest boot/acceleration not yet proven",
+    "aarch64": "No KVM device on assigned hosted runner, including elevated access"
+  },
+  "no_vm_created": true,
+  "no_guest_executed": true,
+  "completed_tasks": 54,
+  "total_tasks": 84
+}

@@ -166,3 +166,19 @@ somente essa distinção, sem `KVM_CREATE_VM` e sem fallback para emulação.
 Qualificação continuará exigindo kernel/CPU/imagem observados no ambiente real,
 ambos os Pythons e os demais gates. Nenhuma capacidade de runner ou resultado
 de container será promovido automaticamente a suporte de distribuição.
+
+O preflight `28a03bb` confirmou KVM API 12 acessível somente com elevação no
+runner x64; `/dev/kvm` está ausente no ARM64 atribuído mesmo com elevação.
+Os recibos estão em `evidence/kvm-preflight-2026-10-20/summary.json`.
+O próximo ensaio usa exclusivamente o runner efêmero x64, com KVM obrigatório,
+imagem Ubuntu 18.04 de 20230607 fixada contra SHA256SUMS oficial e uma camada
+de escrita descartável. O mesmo motor glibc previamente construído será medido
+no kernel/loader/glibc reais do guest. `query-kvm` precisa confirmar aceleração;
+não há fallback TCG. A execução do driver é recusada fora do GitHub Linux x64.
+
+A imagem histórica serve para medir baseline, sem atualizar ou anunciar sua
+manutenção de segurança. Elegibilidade Pro, os dois Pythons suportados, revisão
+Twine e aceite instalado continuam gates próprios. O Python 3.6 do sistema
+conduz somente o probe de motor; não será contado como slot da aplicação.
+SSH usa chave efêmera, encaminhamento restrito a loopback e rede do guest
+restrita; discos/seeds/chaves não entram no artefato de evidência.
