@@ -2,6 +2,18 @@
 import os
 import sys
 import unittest
+import hashlib
+import json
+from pathlib import Path
+import platform
+import tempfile
+from unittest.mock import patch
+sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
+from common import ROOT,fixture
+from runtime_support import ControlledTransport,blocked_network
+from twine_edge_overlap.runtime import RuntimeManager,load_manifest
+from twine_edge_overlap.application import run
+from twine_edge_overlap.formats.profile import parse,verify
 from native_acceptance import InstalledCandidateAcceptance
 
 
@@ -9,3 +21,129 @@ from native_acceptance import InstalledCandidateAcceptance
                      'Requires explicit real Linux candidate and existing native SDK; no approval from skip')
 class LinuxCandidateAcceptanceTests(InstalledCandidateAcceptance,unittest.TestCase):
     pass
+
+
+class LinuxPrivateBundleIntegrationTests(unittest.TestCase):
+    """Real native bytes; controlled transfer is never distribution qualification."""
+    configuration=None
+    observations={}
+
+    @classmethod
+    def setUpClass(cls):
+        if not sys.platform.startswith('linux') or cls.configuration is None:
+            raise unittest.SkipTest('Requires explicit private Linux bundle; no approval from skip')
+        package,provenance=cls.configuration
+        cls.record=json.loads(provenance.read_bytes())
+        candidate=json.loads((package/'candidate.json').read_bytes())
+        inventory_raw=(package/'inventory.json').read_bytes()
+        cls.inventory=json.loads(inventory_raw)
+        cls.payload=(package/'candidate.zip').read_bytes()
+        digest=lambda raw:hashlib.sha256(raw).hexdigest()
+        arch={'AMD64':'x86_64','arm64':'aarch64'}.get(platform.machine(),platform.machine())
+        if (not cls.record.get('completed') or cls.record['native_os']!='linux'
+                or cls.record['native_arch']!=arch or candidate['artifact_id']!=cls.record['artifact_id']
+                or digest(cls.payload)!=candidate['archive_sha256']
+                or digest(inventory_raw)!=candidate['inventory_sha256']
+                or digest(provenance.read_bytes())!=candidate['provenance_sha256']
+                or cls.inventory['provenance_sha256']!=candidate['provenance_sha256']):
+            raise ValueError('Private bundle does not match completed native build and inventory')
+        cls.observations={}
+
+    def exercise(self,automatic):
+        with tempfile.TemporaryDirectory(prefix='linux-runtime-integration-') as folder,blocked_network():
+            work=Path(folder)
+            xdg=work/'cache com espaços ação'
+            data=dict(load_manifest().data)
+            data.update(schema_version=2,platform='linux',artifact_arch=self.record['native_arch'],
+                abi=self.record['recipe']['abi'],build_variant='private-integration-only',
+                minimum_libc='0',minimum_kernel='0',files=self.inventory['files'],
+                executable_relative_path='bin/dot',generated_files=[],
+                url='https://runtime.invalid/artifact.zip',allowed_redirect_hosts=['runtime.invalid'],
+                archive_sha256=hashlib.sha256(self.payload).hexdigest())
+            # Keep an application-packaged notice without colliding with bundle notices.
+            data['notices']=[dict(data['notices'][0],destination='third-party-notices/private-integration-application.txt')]
+            data.pop('plugin_relative_path',None)
+            manifest=work/'private-fixture.json'
+            manifest.write_text(json.dumps(data),encoding='utf-8')
+            artifact=load_manifest(manifest)
+            transport=ControlledTransport(self.payload)
+            probes=[]
+            from twine_edge_overlap.engines.process import run_bounded
+            def actual_runner(argv,**kwargs):
+                if '-V' in argv:
+                    probes.append(dict(final_destination='generations' in Path(argv[0]).parts,
+                        ready_before_probe=(Path(argv[0]).parent.parent/'ready.json').exists()))
+                return run_bounded(argv,**kwargs)
+            with patch.dict(os.environ,{'XDG_CACHE_HOME':str(xdg)}):
+                manager=RuntimeManager(artifact=artifact,opener=transport,runner=actual_runner)
+                self.assertTrue(manager.root.is_relative_to(xdg/'DesembaracaTwine/runtimes/graphviz'))
+                provider=lambda:manager.ensure()
+                source=work/'entrada com espaços ação.twee'
+                source.write_bytes(fixture('crossing'))
+                if automatic:
+                    self.assertFalse(manager.root.exists())
+                    first=run(source,runtime_provider=provider)
+                    self.assertEqual(first.after.values,(0,0,0))
+                else:
+                    manager.ensure()
+                self.assertEqual(len(transport.calls),1)
+                handle=manager.ensure()
+                self.assertEqual(handle.executable.stat().st_mode&0o777,0o755)
+                self.assertEqual(handle.root.stat().st_mode&0o777,0o700)
+                self.assertEqual(hashlib.sha256(handle.executable.read_bytes()).hexdigest(),self.record['executable_sha256'])
+                self.assertTrue(probes and all(row['final_destination'] for row in probes))
+                self.assertFalse(probes[0]['ready_before_probe'])
+                manager.opener=ControlledTransport(error=AssertionError('Offline cache attempted acquisition'))
+                # Also run from another cwd; the cache and story use absolute paths.
+                previous=Path.cwd()
+                os.chdir(work)
+                cases=[]
+                try:
+                    selected=json.loads((ROOT/'tests/fixtures/cases.json').read_text())
+                    if automatic:selected=[row for row in selected if row['case']=='crossing']
+                    for case in selected:
+                        original=fixture(case['case'])
+                        story=work/case['file'];story.write_bytes(original)
+                        result=run(story,runtime_provider=provider)
+                        output=result.path.read_bytes()
+                        verify(parse(original),parse(output))
+                        self.assertEqual(story.read_bytes(),original)
+                        self.assertTrue(all(a<=b for a,b in zip(result.after.values,result.before.values)))
+                        if case['known_resolvable']:self.assertEqual(result.after.values,(0,0,0))
+                        cases.append(dict(case=case['case'],input_sha256=hashlib.sha256(original).hexdigest(),
+                            output_sha256=hashlib.sha256(output).hexdigest(),before=result.before.values,after=result.after.values))
+                finally:os.chdir(previous)
+                self.assertEqual(manager.ensure().generation_id,handle.generation_id)
+                self.assertEqual(manager.opener.calls,[])
+                self.observations['automatic' if automatic else 'explicit']=dict(cases=cases,
+                    acquisition_calls=1,offline_acquisition_calls=0,cache_xdg=True,executable_mode=0o755,
+                    generation_mode=0o700,final_destination_probe=True,probe_before_ready=True,
+                    healthy_generation_reused=True,external_unicode_paths=True,real_engine=True,
+                    fixture_transport=True)
+
+    def test_automatic_first_use_and_healthy_offline_cache(self):
+        self.exercise(True)
+
+    def test_explicit_preparation_and_thirteen_offline_cases(self):
+        self.exercise(False)
+
+
+if __name__=='__main__':
+    import argparse
+    parser=argparse.ArgumentParser()
+    for name in ('package','provenance','report'):parser.add_argument('--'+name,type=Path,required=True)
+    parser.add_argument('--environment-kind',choices=('native','container','wsl'),required=True)
+    args=parser.parse_args()
+    if args.report.exists():parser.error('Report must be new')
+    LinuxPrivateBundleIntegrationTests.configuration=(args.package.resolve(),args.provenance.resolve())
+    suite=unittest.defaultTestLoader.loadTestsFromTestCase(LinuxPrivateBundleIntegrationTests)
+    result=unittest.TextTestRunner(stream=sys.stdout,verbosity=1).run(suite)
+    observations=LinuxPrivateBundleIntegrationTests.observations
+    report=dict(kind='linux-private-bundle-runtime-integration',passed=result.wasSuccessful(),qualified=False,
+        environment_kind=args.environment_kind,python=platform.python_version(),arch=platform.machine(),
+        engine_sha256=LinuxPrivateBundleIntegrationTests.record['executable_sha256'],
+        provenance_sha256=hashlib.sha256(args.provenance.read_bytes()).hexdigest(),
+        observations=observations,cases=observations.get('explicit',{}).get('cases',[]),
+        scope='Real native engine and production manager; controlled acquisition fixture, not distributed-candidate acceptance')
+    args.report.write_text(json.dumps(report,indent=2)+'\n',encoding='utf-8')
+    sys.exit(not result.wasSuccessful())

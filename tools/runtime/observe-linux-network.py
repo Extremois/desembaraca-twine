@@ -67,7 +67,7 @@ def sha(data):
     return hashlib.sha256(data).hexdigest()
 
 
-def observe(build, report_path, corpus_path, environment_kind):
+def observe(build, report_path, corpus_path, environment_kind, private_package=None):
     if platform.system() != 'Linux':
         raise ValueError('Native syscall observation requires Linux')
     tracer = Path(shutil.which('strace') or '/usr/bin/strace').resolve(strict=True)
@@ -94,9 +94,13 @@ def observe(build, report_path, corpus_path, environment_kind):
             or not detected['network_syscalls'].get('socket')
             or not detected['network_syscalls'].get('connect')):
         raise ValueError('Tracer failed to detect the child-process network control')
-    result = run_bounded([*arguments, sys.executable, str(ROOT / 'tools/runtime/smoke-corpus.py'),
-                          '--build-output', str(build), '--environment-kind', environment_kind,
-                          '--report', str(corpus_path)], timeout=180, max_output=8*1024**2)
+    if private_package is None:
+        command=[sys.executable,str(ROOT/'tools/runtime/smoke-corpus.py'),'--build-output',str(build)]
+    else:
+        command=[sys.executable,str(ROOT/'tests/integration/test_linux_runtime.py'),
+                 '--package',str(private_package),'--provenance',str(Path(build)/'provenance.json')]
+    result = run_bounded([*arguments,*command,'--environment-kind',environment_kind,
+                          '--report',str(corpus_path)],timeout=180,max_output=8*1024**2)
     with trace_path.open('xb') as stream:
         stream.write(result.stderr)
     traced = parse_trace(result.stderr.decode('utf-8', errors='strict'))
@@ -118,7 +122,9 @@ def observe(build, report_path, corpus_path, environment_kind):
                               network_syscalls=traced['network_syscalls'], trace_sha256=sha(result.stderr)),
                   limits=dict(corpus_seconds=180, corpus_output_bytes=8*1024**2,
                               control_seconds=15, control_output_bytes=1024**2),
-                  scope='Public local-build corpus and relocation only; not installed-package acquisition, recovery, full cell or hostile-code sandbox')
+                  scope=('Real native engine and runtime manager with controlled acquisition fixture; not distributed-candidate or full-cell acceptance'
+                         if private_package is not None else
+                         'Public local-build corpus and relocation only; not installed-package acquisition, recovery, full cell or hostile-code sandbox'))
     with report_path.open('x', encoding='utf-8') as stream:
         json.dump(report, stream, indent=2)
         stream.write('\n')
@@ -133,5 +139,6 @@ if __name__ == '__main__':
     parser.add_argument('--report', type=Path, required=True)
     parser.add_argument('--corpus-report', type=Path, required=True)
     parser.add_argument('--environment-kind', choices=('native', 'wsl', 'container', 'emulated'), required=True)
+    parser.add_argument('--private-package',type=Path,help='Exercise production runtime manager using this private package and controlled transfer fixture')
     args = parser.parse_args()
-    observe(args.build_output, args.report, args.corpus_report, args.environment_kind)
+    observe(args.build_output,args.report,args.corpus_report,args.environment_kind,args.private_package)

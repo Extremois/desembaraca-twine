@@ -7,6 +7,8 @@ on:
       - 'tools/runtime/**'
       - 'src/**'
       - 'tests/fixtures/**'
+      - 'tests/integration/test_linux_runtime.py'
+      - 'tests/runtime_support.py'
   workflow_dispatch:
 permissions:
   contents: read
@@ -62,6 +64,10 @@ jobs:
           python tools/runtime/pack-candidate.py --root "$RUNNER_TEMP/twine-notices/candidate" --inventory .tmp/native-linux/inventory.json --provenance "$RUNNER_TEMP/twine-notices/provenance.json" --output "$RUNNER_TEMP/twine-package"
       - name: Corpus and Unicode relocation on Python 3.12
         run: '"${{ steps.python312.outputs.python-path }}" tools/runtime/observe-linux-network.py --build-output "$RUNNER_TEMP/twine-notices" --environment-kind native --report .tmp/native-linux/network-312.json --corpus-report .tmp/native-linux/corpus-312.json'
+      - name: Real runtime preparation and offline cache on both Pythons
+        run: |
+          "${{ steps.python312.outputs.python-path }}" tools/runtime/observe-linux-network.py --build-output "$RUNNER_TEMP/twine-notices" --private-package "$RUNNER_TEMP/twine-package" --environment-kind native --report .tmp/native-linux/runtime-network-312.json --corpus-report .tmp/native-linux/runtime-corpus-312.json
+          "${{ steps.python314.outputs.python-path }}" tools/runtime/observe-linux-network.py --build-output "$RUNNER_TEMP/twine-notices" --private-package "$RUNNER_TEMP/twine-package" --environment-kind native --report .tmp/native-linux/runtime-network-314.json --corpus-report .tmp/native-linux/runtime-corpus-314.json
       - name: Collect source material separately from the runtime
         run: |
           python tools/runtime/pack-sources.py --graphviz "$RUNNER_TEMP/twine-sdk/graphviz.tar.gz" --sdk "$RUNNER_TEMP/twine-sdk/zig.tar.xz" --provenance "$RUNNER_TEMP/twine-notices/provenance.json" --output "$RUNNER_TEMP/twine-sources"

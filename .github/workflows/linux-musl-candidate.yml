@@ -7,6 +7,8 @@ on:
       - 'tools/runtime/**'
       - 'src/**'
       - 'tests/fixtures/**'
+      - 'tests/integration/test_linux_runtime.py'
+      - 'tests/runtime_support.py'
   workflow_dispatch:
 permissions:
   contents: read
@@ -69,7 +71,7 @@ jobs:
         run: |
           docker pull --platform "linux/$OCI_ARCH" "$TEST_IMAGE"
           docker image inspect "$TEST_IMAGE" > "$RUNNER_TEMP/twine-musl/test-image.json"
-          docker run --rm --platform "linux/$OCI_ARCH" -v "$GITHUB_WORKSPACE:/workspace:ro" -v "$RUNNER_TEMP/twine-musl:/work" --workdir /workspace "$TEST_IMAGE" sh -ec 'apk add --no-cache strace binutils; python tools/runtime/observe-linux-network.py --build-output /work/linked --environment-kind container --report /work/network-314.json --corpus-report /work/corpus-314.json'
+          docker run --rm --platform "linux/$OCI_ARCH" -v "$GITHUB_WORKSPACE:/workspace:ro" -v "$RUNNER_TEMP/twine-musl:/work" --workdir /workspace "$TEST_IMAGE" sh -ec 'apk add --no-cache strace binutils; python tools/runtime/observe-linux-network.py --build-output /work/linked --environment-kind container --report /work/network-314.json --corpus-report /work/corpus-314.json; python tools/runtime/observe-linux-network.py --build-output /work/linked --private-package /work/package --environment-kind container --report /work/runtime-network-314.json --corpus-report /work/runtime-corpus-314.json'
       - name: Retain unqualified container build and measurements
         if: always()
         uses: actions/upload-artifact@v4

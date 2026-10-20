@@ -38,3 +38,4 @@ readelf --file-header --program-headers --dynamic --version-info "$work/linked/c
 python /workspace/tools/runtime/observe-linux-network.py --build-output "$work/linked" --environment-kind container --report "$work/network-312.json" --corpus-report "$work/corpus-312.json"
 python /workspace/tools/runtime/verify-artifact.py --root "$work/linked/candidate" --provenance "$work/linked/provenance.json" --write-inventory "$work/evidence/inventory.json" --static-elf
 python /workspace/tools/runtime/pack-candidate.py --root "$work/linked/candidate" --inventory "$work/evidence/inventory.json" --provenance "$work/linked/provenance.json" --output "$work/package"
+python /workspace/tools/runtime/observe-linux-network.py --build-output "$work/linked" --private-package "$work/package" --environment-kind container --report "$work/runtime-network-312.json" --corpus-report "$work/runtime-corpus-312.json"
