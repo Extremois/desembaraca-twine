@@ -8,6 +8,7 @@ on:
       - '.github/scripts/check-native-baseline.py'
       - '.github/scripts/probe-guest-baseline.py'
       - '.github/scripts/probe-private-python.py'
+      - '.github/scripts/probe-installed-application.py'
       - '.github/native-images/ubuntu-18.04-amd64.json'
       - '.github/native-images/private-python-x64.json'
       - 'tests/unit/test_native_baseline.py'
@@ -24,7 +25,7 @@ jobs:
       matrix:
         include:
           - abi: glibc
-            python_args: --python-prerequisites
+            python_args: --python-prerequisites --python-application
             candidate_run: 39434565632
             candidate_name: linux-glibc-x86_64-unqualified-b13cd6f90db31163e62119bb83e2eb8db5ac8458
           - abi: musl
@@ -68,3 +69,4 @@ jobs:
             ${{ runner.temp }}/twine-native-baseline/evidence/*.log
             ${{ runner.temp }}/twine-native-baseline/evidence/guest/*.json
             ${{ runner.temp }}/twine-native-baseline/evidence/guest/*.txt
+            ${{ runner.temp }}/twine-native-baseline/evidence/application/*.json

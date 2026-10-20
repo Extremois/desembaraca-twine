@@ -5,6 +5,7 @@ import struct
 import io
 import tarfile
 import unittest
+import copy
 from common import ROOT
 
 
@@ -12,6 +13,26 @@ class NativeBaselineTests(unittest.TestCase):
     def setUp(self):
         spec=importlib.util.spec_from_file_location('native_baseline',ROOT/'.github/scripts/check-native-baseline.py')
         self.tool=importlib.util.module_from_spec(spec);spec.loader.exec_module(self.tool)
+
+    def test_application_evidence_rejects_wrong_wheel_missing_cases_or_failed_cache(self):
+        cases=[dict(case='case_'+str(i),known_resolvable=i<6) for i in range(13)]
+        rows=[dict(case=r['case'],before=[1,1,1],after=[0,0,0]) for r in cases]
+        flags=dict(acquisition_calls=1,offline_acquisition_calls=0,healthy_generation_reused=True,
+                   final_destination_probe=True,probe_before_ready=True,external_unicode_paths=True,
+                   real_engine=True,fixture_transport=True,executable_mode=0o755,generation_mode=0o700)
+        report=dict(passed=True,qualified=False,python='3.12.15',arch='x86_64',engine_sha256='a'*64,
+            wheel_sha256='b'*64,installed_package_verified=True,entrypoints_verified=True,
+            observations=dict(explicit=dict(flags,cases=rows),automatic=dict(flags,cases=rows[:1])),cases=rows)
+        self.tool.validate_application_report(report,'3.12.15','b'*64,'a'*64,cases)
+        mutations=[dict(wheel_sha256='c'*64),dict(python='3.14.8'),dict(cases=rows[:12]),
+                   dict(installed_package_verified=False),dict(entrypoints_verified=False)]
+        for change in mutations:
+            with self.assertRaises(ValueError):self.tool.validate_application_report(dict(report,**change),'3.12.15','b'*64,'a'*64,cases)
+        for field,value in [('offline_acquisition_calls',1),('healthy_generation_reused',False)]:
+            bad=copy.deepcopy(report);bad['observations']['explicit'][field]=value
+            with self.assertRaises(ValueError):self.tool.validate_application_report(bad,'3.12.15','b'*64,'a'*64,cases)
+        bad=copy.deepcopy(report);bad['cases'][0]['after']=[1,0,0]
+        with self.assertRaises(ValueError):self.tool.validate_application_report(bad,'3.12.15','b'*64,'a'*64,cases)
 
     def test_private_python_archive_rejects_escape_links_special_files_and_expansion(self):
         spec=importlib.util.spec_from_file_location('python_probe',ROOT/'.github/scripts/probe-private-python.py')

@@ -76,6 +76,11 @@ def probe(source,output):
         subprocess.run([str(python),'-I','-m','venv','--copies',str(venv)],env=env,check=True,timeout=120)
         raw=subprocess.check_output([str(venv/'bin/python'),'-I','-c',FACTS],env=env,timeout=30)
         facts=json.loads(raw.decode('utf-8'))
+        if (source/'application/wheel.json').exists():
+            application=output/('application-'+pin['minor'])
+            subprocess.run([str(venv/'bin/python'),'-I',str(source/'application/probe.py'),
+                '--input',str(source),'--output',str(application)],env=env,check=True,timeout=240)
+            shutil.copyfile(application/'runtime.json',output/('application-'+pin['minor']+'.json'))
         rows.append(dict(minor=pin['minor'],archive_sha256=pin['sha256'],archive_bytes=archive.stat().st_size,facts=facts))
     report=dict(kind='native-ubuntu1804-private-python-prerequisites',passed=True,qualified=False,
         system_python_before=before,system_python_after=digest(system),interpreters=rows,

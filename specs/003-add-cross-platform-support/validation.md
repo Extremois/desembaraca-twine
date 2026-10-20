@@ -1972,3 +1972,17 @@ A revisão corrigida também passou novamente nas
 [reconstruções ARM64](https://github.com/Extremois/desembaraca-twine/actions/runs/39326296041)
 e [x64](https://github.com/Extremois/desembaraca-twine/actions/runs/39326296085),
 além dos [builds macOS Intel/Apple Silicon](https://github.com/Extremois/desembaraca-twine/actions/runs/39326296072).
+# Pré-requisitos nativos Ubuntu 18.04 x64 — 2026-10-20
+
+Workflow `39473344773`, revisão `cc0cc76`, aprovado: CPython 3.12.15/3.14.8
+privados, venv em caminho Unicode com espaços, pip/ensurepip, SSL e módulos
+nativos no guest KVM Ubuntu 18.04 x64 (kernel 4.15.0-212/glibc 2.27).
+Python do SO manteve o hash. Os 13 grafos de cada motor foram reconferidos
+após download, com motores preservados; esse corpus usou o probe Python 3.6
+do guest, sem representar aplicação instalada nos venvs. Seis jobs da regressão
+`39473344641` aprovados, 233 testes por combinação.
+[Recibo independente](evidence/ubuntu1804-native-python-2026-10-20/summary.json).
+T033/T037 continuam parciais: demais células, aplicação instalada e elegibilidade
+Pro pendentes. Catálogo permanece Windows. Total 56/84. Recibos finais locais;
+nenhum segundo commit necessário apenas para registrar o resultado.
+

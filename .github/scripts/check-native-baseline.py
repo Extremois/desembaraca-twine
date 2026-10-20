@@ -83,6 +83,52 @@ def validate_python_report(report,pins):
             raise ValueError('Private CPython/venv/pip/SSL requirements failed')
 
 
+def validate_application_report(report,patch,wheel_sha,engine_sha,cases):
+    rows=report.get('cases',[])
+    if (report.get('passed') is not True or report.get('qualified') is not False
+            or report.get('python')!=patch or report.get('arch')!='x86_64'
+            or report.get('wheel_sha256')!=wheel_sha or report.get('engine_sha256')!=engine_sha
+            or report.get('installed_package_verified') is not True or report.get('entrypoints_verified') is not True
+            or len(rows)!=13 or {r.get('case') for r in rows}!={r['case'] for r in cases}):
+        raise ValueError('Incomplete installed application or corpus evidence')
+    for mode in ('automatic','explicit'):
+        observed=report.get('observations',{}).get(mode,{})
+        if (observed.get('acquisition_calls')!=1 or observed.get('offline_acquisition_calls')!=0
+                or observed.get('executable_mode')!=0o755 or observed.get('generation_mode')!=0o700
+                or any(observed.get(key) is not True for key in ('healthy_generation_reused','final_destination_probe',
+                    'probe_before_ready','external_unicode_paths','real_engine','fixture_transport'))):
+            raise ValueError('Preparation/cache/runtime observation failed')
+    for item in cases:
+        row=next(r for r in rows if r['case']==item['case'])
+        before,after=row.get('before',[]),row.get('after',[])
+        if (len(before)!=3 or len(after)!=3 or any(a>b for a,b in zip(after,before))
+                or (item['known_resolvable'] and after!=[0,0,0])):
+            raise ValueError('Corpus regressed or known reference did not finish clean')
+
+
+def prepare_application(artifact,work):
+    folder=work/'input/application';folder.mkdir()
+    subprocess.run([sys.executable,'-m','pip','wheel','--no-deps','--wheel-dir',str(folder),str(ROOT)],check=True,timeout=180)
+    wheels=list(folder.glob('*.whl'))
+    if len(wheels)!=1:raise ValueError('Expected exactly one development wheel')
+    wheel=wheels[0];payload=bounded(wheel,128*1024**2);files=[]
+    with zipfile.ZipFile(io.BytesIO(payload)) as archive:
+        for item in archive.infolist():
+            if item.filename.startswith('twine_edge_overlap/') and not item.is_dir():
+                files.append(dict(path=item.filename,sha256=digest(archive.read(item))))
+    pin=dict(name=wheel.name,sha256=digest(payload),size=len(payload),source_revision=os.environ.get('GITHUB_SHA'),files=files)
+    raw=(json.dumps(pin,indent=2)+'\n').encode()
+    (folder/'wheel.json').write_bytes(raw);(work/'evidence/application-wheel.json').write_bytes(raw)
+    package=next(artifact.rglob('candidate.json')).parent;private=folder/'private-package';private.mkdir()
+    for name in ('candidate.json','candidate.zip','inventory.json'):shutil.copyfile(package/name,private/name)
+    shutil.copyfile(work/'evidence/provenance.json',private/'provenance.json')
+    driver=folder/'test-driver/tests';(driver/'integration').mkdir(parents=True)
+    for name in ('common.py','runtime_support.py','native_acceptance.py','integration/test_linux_runtime.py'):
+        shutil.copyfile(ROOT/'tests'/name,driver/name)
+    shutil.copytree(ROOT/'tests/fixtures',driver/'fixtures',ignore=shutil.ignore_patterns('__pycache__','*.pyc'))
+    shutil.copyfile(ROOT/'.github/scripts/probe-installed-application.py',folder/'probe.py')
+
+
 def prepare_pythons(work):
     pin_path=ROOT/'.github/native-images/private-python-x64.json'
     pins=json.loads(pin_path.read_bytes())
@@ -206,12 +252,27 @@ def execute(work):
             if kvm.get('enabled') is not True or kvm.get('present') is not True:raise ValueError('Hardware acceleration unavailable')
             run(['scp',*options,'-P','2222','-r',str(work/'input'),'twine@127.0.0.1:/home/twine/baseline'])
             subprocess.run([*ssh,'python3 /home/twine/baseline/probe.py --input /home/twine/baseline --output /home/twine/results'],check=True,timeout=180)
-            python_report_sha=None
+            python_report_sha=None;application_reports=[]
             if (work/'input/private-python.json').exists():
                 subprocess.run([*ssh,'python3 /home/twine/baseline/probe-private-python.py --input /home/twine/baseline --output /home/twine/python-results'],check=True,timeout=360)
                 run(['scp',*options,'-P','2222','twine@127.0.0.1:/home/twine/python-results/private-python-report.json',str(evidence/'private-python-report.json')])
                 raw=bounded(evidence/'private-python-report.json');pins=json.loads(bounded(work/'input/private-python.json'))
                 validate_python_report(json.loads(raw),pins['interpreters']);python_report_sha=digest(raw)
+                if (work/'input/application/wheel.json').exists():
+                    application=evidence/'application';application.mkdir()
+                    wheel_pin=json.loads(bounded(work/'input/application/wheel.json'))
+                    cases=json.loads((ROOT/'tests/fixtures/cases.json').read_bytes())
+                    for pin_python in pins['interpreters']:
+                        name='application-'+pin_python['minor']+'.json'
+                        run(['scp',*options,'-P','2222','twine@127.0.0.1:/home/twine/python-results/'+name,str(application/name)])
+                        report=json.loads(bounded(application/name))
+                        validate_application_report(report,pin_python['patch'],wheel_pin['sha256'],expected['sha256'],cases)
+                        if (report.get('wheel_source_revision')!=os.environ.get('GITHUB_SHA')
+                                or report.get('application_outside_checkout') is not True
+                                or report.get('global_graphviz_and_git_absent') is not True):
+                            raise ValueError('Installed application revision/isolation differs from prepared wheel')
+                        application_reports.append(dict(python=pin_python['patch'],report=name,
+                            sha256=digest(bounded(application/name)),wheel_sha256=wheel_pin['sha256']))
             run(['scp',*options,'-P','2222','-r','twine@127.0.0.1:/home/twine/results',str(evidence/'guest')])
             guest=json.loads((evidence/'guest/guest.json').read_bytes());validate_baseline(guest,kvm)
             validate_engine_kind(guest,abi)
@@ -230,6 +291,7 @@ def execute(work):
                 guest_kernel=guest['kernel'],guest_glibc=guest['glibc'],guest_arch=guest['arch'],
                 guest_report_sha256=digest((evidence/'guest/guest.json').read_bytes()),cases=13,geometry_decoded=True,
                 private_python_report_sha256=python_report_sha,
+                installed_application_reports=application_reports,
                 environment_kind='native',execution='same-architecture hardware-accelerated guest; no TCG fallback',
                 scope=('Engine/kernel baseline only; CPython 3.12/3.14 application, Pro eligibility, full cell and Twine pending'
                        if abi=='glibc' else
@@ -246,9 +308,13 @@ if __name__=='__main__':
     parser.add_argument('--work',type=Path,required=True);parser.add_argument('--artifact',type=Path)
     parser.add_argument('--abi',choices=('glibc','musl'),default='glibc')
     parser.add_argument('--python-prerequisites',action='store_true')
+    parser.add_argument('--python-application',action='store_true')
     parser.add_argument('--execute',action='store_true');args=parser.parse_args()
     if args.execute:execute(args.work)
     elif args.artifact:
         prepare(args.artifact,args.work,args.abi)
         if args.python_prerequisites:prepare_pythons(args.work)
+        if args.python_application:
+            if not args.python_prerequisites:parser.error('--python-application requires --python-prerequisites')
+            prepare_application(args.artifact,args.work)
     else:parser.error('--artifact or --execute is required')

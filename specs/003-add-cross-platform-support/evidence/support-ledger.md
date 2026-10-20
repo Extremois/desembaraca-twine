@@ -144,3 +144,16 @@ O ambiente do novo kernel é Ubuntu e os ensaios Alpine continuam containers:
 essa separação é explícita e não promove T044 nem qualquer célula de suporte.
 ARM64, auditoria/fontes/catálogo e aceite instalado continuam pendentes.
 Progresso: 56/84 tarefas; 28 pendentes, sem alteração das células qualificadas.
+# Pré-requisitos Ubuntu 18.04 x64 — 2026-10-20
+
+CPython 3.12.15/3.14.8 privados aprovados no guest KVM Ubuntu 18.04 x64,
+kernel 4.15.0-212/glibc 2.27, com venv/pip/SSL e módulos nativos, preservando
+o hash do Python do SO. Workflow `39473344773`, revisão `cc0cc76`, aprovado.
+Motores glibc/musl preservados, 13 geometrias cada reconferidas após download;
+o corpus usou Python 3.6 para o probe do motor, sem aplicação instalada nos venvs.
+Regressão `39473344641`: seis combinações aprovadas, 233 testes por job.
+[Recibo](ubuntu1804-native-python-2026-10-20/summary.json).
+T033/T037 parciais, demais células/elegibilidade Pro/aplicação instalada pendentes.
+Nenhuma promoção; catálogo Windows, 56/84 tasks. Checkpoint enviado `cc0cc76`;
+recibos finais ficam locais para o próximo commit necessário.
+
