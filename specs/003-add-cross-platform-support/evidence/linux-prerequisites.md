@@ -139,7 +139,7 @@ passaram com 234 testes cada.
 Isso avança T037/T078 parcialmente e não aprova pacote final, elegibilidade
 Pro, tracing nativo de rede, Twine, recuperação completa ou demais células.
 
-### Observação nativa de rede no kernel 4.15 — preparada
+### Observação nativa de rede no kernel 4.15 — aprovada em 2026-10-20
 
 O manifesto público da imagem fixada lista `strace 4.21-1ubuntu1`; a rotina usa
 esse executável já presente no guest, sem instalar tracer ou substituir Python.
@@ -150,6 +150,37 @@ reconferidos no host e vinculados aos relatórios por SHA-256.
 
 Essa versão do tracer não oferece `--kill-on-exit`; isso fica explícito no
 relatório. O encerramento do guest efêmero pertence ao `finally` do driver host,
-inclusive após falha. O teste não promete contenção de código hostil. Execução
-CI ainda pendente; demais gates e células permanecem na mesma spec.
+inclusive após falha. O teste não promete contenção de código hostil.
+
+Workflow `39480928288`, revisão `c8f881c`, aprovado. Os traces baixados foram
+reprocessados independentemente: em cada CPython 3.12.15/3.14.8, o controle
+detectou socket/connect/getsockopt em filho real; o corpus executou o motor
+49 vezes e registrou zero chamadas da classe de rede. Os 13 casos por Python,
+seis referências zeradas, preparo automático/explícito e cache continuaram
+aprovados. Os 53 arquivos do wheel coincidem com o commit; Python do SO preservado.
+Seis jobs de regressão `39480928185` passaram com 235 testes cada.
+[Recibos e traces](ubuntu1804-native-network-2026-10-20/summary.json).
+
+O pacote no manifesto da imagem é `4.21-1ubuntu1`, mas o binário se identifica
+literalmente como `strace -- version UNKNOWN`. O recibo preserva os dois fatos,
+o SHA-256 do executável, o manifesto e a imagem fixada, sem inventar versão.
+As duas tentativas anteriores falharam na consulta/comparação da versão antes
+do tracing e têm recibos/logs separados. T037/T078/T080 continuam parciais;
+distribuição final, Pro, Twine e demais gates/células permanecem nesta spec.
+
+### Recuperação instalada no kernel 4.15 — ensaio preparado
+
+O driver de recuperação acrescenta oito cenários à aplicação instalada sob
+tracing: transferência falha, ENOSPC injetado, negação real de execução por modo
+do arquivo, arquivo corrompido, morte via `os._exit(77)` durante aquisição/antes/
+depois da seleção e dois processos de primeiro uso concorrentes. Cada cenário
+exige seis referências offline e um handle anterior ainda utilizável. Os crashes
+devem liberar o lock do SO; concorrência deve adquirir uma vez e escolher a mesma
+geração; um staging órfão de outro processo deve permanecer intocado.
+
+Todos os caminhos e caches pertencem a diretórios temporários de teste. Rede,
+erro ENOSPC e bytes corrompidos são injeções declaradas; motor, permissões,
+publicação, processos e locks são reais. O pré-ensaio no WSL existente é parcial,
+sem instalação global/VM nova e sem aprovação de célula. Execução no guest CI
+com os dois venvs instalados ainda pendente; T076 permanece agregada à matriz.
 

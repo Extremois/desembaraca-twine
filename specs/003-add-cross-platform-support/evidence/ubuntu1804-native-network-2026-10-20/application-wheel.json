@@ -1,0 +1,220 @@
+{
+  "name": "twine_edge_overlap-0.1.0.dev0-py3-none-any.whl",
+  "sha256": "2560124b59730dc60602e7b5b1a7b652bf2d8344f5320dc92d8d92218a9e680d",
+  "size": 221301,
+  "source_revision": "c8f881c6e9eeda959579bfba24ca22537bbcef78",
+  "files": [
+    {
+      "path": "twine_edge_overlap/__init__.py",
+      "sha256": "72b5c3a094b978fb6f00f3ed6f1d130cd4a582265a6be39c7ff0fc1a9707b995"
+    },
+    {
+      "path": "twine_edge_overlap/__main__.py",
+      "sha256": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d"
+    },
+    {
+      "path": "twine_edge_overlap/application.py",
+      "sha256": "2296329a56c3746d10eb4355e6e84ee1865513a224a34120213ece2ba35e1811"
+    },
+    {
+      "path": "twine_edge_overlap/cli.py",
+      "sha256": "25df713840360e05bbf16435e06809f9d973c009d9c8de871eb7f08bf5a33742"
+    },
+    {
+      "path": "twine_edge_overlap/errors.py",
+      "sha256": "d8e5a0c2db22aec7f963706bf7674923c733038c8a76ba2bb4c913cb146e162d"
+    },
+    {
+      "path": "twine_edge_overlap/files.py",
+      "sha256": "acb256a49c26a588e0406ac37da76148cffc5216f75baa47bd9f5a31e6884369"
+    },
+    {
+      "path": "twine_edge_overlap/runtime-catalog.json",
+      "sha256": "525580c22ac27e58cfbf74ca6877e25f09a696bf07813ae4a1bdad059d72b762"
+    },
+    {
+      "path": "twine_edge_overlap/runtime-manifest.json",
+      "sha256": "8aed45fdbd206069cf7e37df8b505a979acaa219bb3f013f2dd9c7f11e680f9d"
+    },
+    {
+      "path": "twine_edge_overlap/runtime.py",
+      "sha256": "ac71665246221af7f07be584459aad5ca70c6f317da102e5ba15a3f6b288872b"
+    },
+    {
+      "path": "twine_edge_overlap/runtime_catalog.py",
+      "sha256": "b8242eafe9ac685a885cb9747d8e2354aa7153b8c3dee51614ae6a2628ffa21d"
+    },
+    {
+      "path": "twine_edge_overlap/runtime_platform.py",
+      "sha256": "54e012b864639301f5b010e888bc6e1c48f146ef6f3ae44fcb6c37f585da8016"
+    },
+    {
+      "path": "twine_edge_overlap/runtime_snapshot.py",
+      "sha256": "7ac51812ecf2bd9ef38031324425a40104eec9ad3c582a2292eb2d972f4f8c9e"
+    },
+    {
+      "path": "twine_edge_overlap/support-matrix.json",
+      "sha256": "be3e8a77e3836d1125658c00a75fbf0e3584f1e26a166a053583336c29a5d295"
+    },
+    {
+      "path": "twine_edge_overlap/domain/__init__.py",
+      "sha256": "076596ea5e33e1bde515839dfb7d4f88cb43af69ce1fff2569265c3f0f382e18"
+    },
+    {
+      "path": "twine_edge_overlap/domain/arcs.py",
+      "sha256": "1ca141a1acdcc1d7e816009581c7ab84a0de0773e1ad38343abddb1061660682"
+    },
+    {
+      "path": "twine_edge_overlap/domain/geometry.py",
+      "sha256": "56f434d5a3e62d0748936f1589f5247b86e23c01c19f2aa3137431e286ddcacf"
+    },
+    {
+      "path": "twine_edge_overlap/domain/model.py",
+      "sha256": "8068a7e437acc420abcd7488bb23009867c4b1d34dedf15008a374dc398e2595"
+    },
+    {
+      "path": "twine_edge_overlap/domain/result.py",
+      "sha256": "4d03620e98da8b14162286a4f6c4d897b8e76768c0e9f8f6cdbef6509b982c41"
+    },
+    {
+      "path": "twine_edge_overlap/domain/selection.py",
+      "sha256": "823cbd6b7bdb42b29b782d7533533a5c5ea63636ba86f9d2a1a94fccfaa14786"
+    },
+    {
+      "path": "twine_edge_overlap/engines/__init__.py",
+      "sha256": "1baad87525287ee91d746a872334ae14aaddce4646e1a923bc411c4cdf480aad"
+    },
+    {
+      "path": "twine_edge_overlap/engines/graphviz.py",
+      "sha256": "98f826f28b044828da870bb3d566ff71e79bf8af1564f6eb531e0f854a3e44eb"
+    },
+    {
+      "path": "twine_edge_overlap/engines/process.py",
+      "sha256": "3d9cd67ec5053ad07a4c1fda17dffba18a1e911737985b70ebeddb623a53c45a"
+    },
+    {
+      "path": "twine_edge_overlap/formats/__init__.py",
+      "sha256": "e222582da498ddffa7839dd12cdf640a4b6f5492511cd12b671f1abdf705286b"
+    },
+    {
+      "path": "twine_edge_overlap/formats/profile.py",
+      "sha256": "c643ce6185b05a5999e97b4755924481218a0b45babb845981b26a5e226fea62"
+    },
+    {
+      "path": "twine_edge_overlap/third_party/graphviz-16.1.0/SOURCES.json",
+      "sha256": "8cd2a88eb55995f4f5c825173640c85cf81ef5416eb70feda31cdfa1278ed831"
+    },
+    {
+      "path": "twine_edge_overlap/third_party/graphviz-16.1.0/ann.txt",
+      "sha256": "1cf89f4ddaa9d7ace5b94245915a7c473e2a585ca5fffe74ad4e7b51e9614097"
+    },
+    {
+      "path": "twine_edge_overlap/third_party/graphviz-16.1.0/brotli.txt",
+      "sha256": "3d180008e36922a4e8daec11c34c7af264fed5962d07924aea928c38e8663c94"
+    },
+    {
+      "path": "twine_edge_overlap/third_party/graphviz-16.1.0/bzip2.txt",
+      "sha256": "c6dbbf828498be844a89eaa3b84adbab3199e342eb5cb2ed2f0d4ba7ec0f38a3"
+    },
+    {
+      "path": "twine_edge_overlap/third_party/graphviz-16.1.0/cairo.txt",
+      "sha256": "d4d94ac5251d63fd0c5fadb706899a39ed060f04a55ae2319de04846729a53f0"
+    },
+    {
+      "path": "twine_edge_overlap/third_party/graphviz-16.1.0/expat.txt",
+      "sha256": "122f2c27000472a201d337b9b31f7eb2b52d091b02857061a8880371612d9534"
+    },
+    {
+      "path": "twine_edge_overlap/third_party/graphviz-16.1.0/fontconfig.txt",
+      "sha256": "51a51aa9823704fd90bccc616cdd17ebabb5b2b3e9cbde886ca02c7002288067"
+    },
+    {
+      "path": "twine_edge_overlap/third_party/graphviz-16.1.0/freetype.txt",
+      "sha256": "b73152045aafe7291796bb4bc442c35f4c3c4a8f7985ba13f0a3761945d4ce74"
+    },
+    {
+      "path": "twine_edge_overlap/third_party/graphviz-16.1.0/fribidi.txt",
+      "sha256": "32434afcc8666ba060e111d715bfdb6c2d5dd8a35fa4d3ab8ad67d8f850d2f2b"
+    },
+    {
+      "path": "twine_edge_overlap/third_party/graphviz-16.1.0/getopt-win32.txt",
+      "sha256": "a5681bf9b05db14d86776930017c647ad9e6e56ff6bbcfdf21e5848288dfaf1b"
+    },
+    {
+      "path": "twine_edge_overlap/third_party/graphviz-16.1.0/gettext-libintl.txt",
+      "sha256": "3fe5361f24b7c49ba12911c08f5a33f9cb18871d95d9fb881f5b8a4793e04288"
+    },
+    {
+      "path": "twine_edge_overlap/third_party/graphviz-16.1.0/glib.txt",
+      "sha256": "fa6f36630bb1e0c571d34b2bbdf188d08495c9dbf58f28cac112f303fc1f58fb"
+    },
+    {
+      "path": "twine_edge_overlap/third_party/graphviz-16.1.0/graphviz.txt",
+      "sha256": "0becf16567beb77fa252b7664631dd177c8f9a1889e48995b45379c7130e5303"
+    },
+    {
+      "path": "twine_edge_overlap/third_party/graphviz-16.1.0/gts.txt",
+      "sha256": "d245807f90032872d1438d741ed21e2490e1175dc8aa3afa5ddb6c8e529b58e5"
+    },
+    {
+      "path": "twine_edge_overlap/third_party/graphviz-16.1.0/harfbuzz.txt",
+      "sha256": "ba8f810f2455c2f08e2d56bb49b72f37fcf68f1f4fade38977cfd7372050ad64"
+    },
+    {
+      "path": "twine_edge_overlap/third_party/graphviz-16.1.0/libffi.txt",
+      "sha256": "67894089811f93fca47a76f85e017da6f8582d4ba0905963c6e0f1ad6df7a195"
+    },
+    {
+      "path": "twine_edge_overlap/third_party/graphviz-16.1.0/libgd.txt",
+      "sha256": "005f4b6b0141d1bd11d371bbf7d4f67947f85a4906b7f5465f942204cf918ba3"
+    },
+    {
+      "path": "twine_edge_overlap/third_party/graphviz-16.1.0/libiconv.txt",
+      "sha256": "f1765263d8a5016a9dfabd33a9f5e57049584e376f8b6f374ef942c8dace3966"
+    },
+    {
+      "path": "twine_edge_overlap/third_party/graphviz-16.1.0/libjpeg-turbo.txt",
+      "sha256": "60c756742db3ad1913304e8b13f0e86e22e51adb50cc0b3333c163f7e45ceec1"
+    },
+    {
+      "path": "twine_edge_overlap/third_party/graphviz-16.1.0/liblzma.txt",
+      "sha256": "72d7ef9c98be319fd34ce88b45203b36d5936f9c49e82bf3198ffee5e0c7d87e"
+    },
+    {
+      "path": "twine_edge_overlap/third_party/graphviz-16.1.0/libpng.txt",
+      "sha256": "dfe5a536b0e5a531f844fb9c101a3089aca60772a503893b8e15f9457e369960"
+    },
+    {
+      "path": "twine_edge_overlap/third_party/graphviz-16.1.0/libwebp.txt",
+      "sha256": "7806e0de568ec6ca764d6e52a3765fb81ee838ca190ad7c5263ac45be782f6eb"
+    },
+    {
+      "path": "twine_edge_overlap/third_party/graphviz-16.1.0/microsoft-runtime.txt",
+      "sha256": "76c6045b291b9fbd6049453142f8ca6f10e3d0e57b63aff6e57fe8398f04cef1"
+    },
+    {
+      "path": "twine_edge_overlap/third_party/graphviz-16.1.0/pango.txt",
+      "sha256": "d245807f90032872d1438d741ed21e2490e1175dc8aa3afa5ddb6c8e529b58e5"
+    },
+    {
+      "path": "twine_edge_overlap/third_party/graphviz-16.1.0/pcre2.txt",
+      "sha256": "030087e2e8dd7c1bdd26057d25d4ded8f45bbf01ad458d68665ad04b8b0fbedf"
+    },
+    {
+      "path": "twine_edge_overlap/third_party/graphviz-16.1.0/pixman.txt",
+      "sha256": "fac9270f0987b96ff4533fca3548c633e02083cbba4a0172a3b149b2e4019793"
+    },
+    {
+      "path": "twine_edge_overlap/third_party/graphviz-16.1.0/tcl.txt",
+      "sha256": "c0a69a2bfd757361ec7e6143973b103c90409316b49e9c88db26ad6388e79f16"
+    },
+    {
+      "path": "twine_edge_overlap/third_party/graphviz-16.1.0/tiff.txt",
+      "sha256": "0780558a8bfba0af1160ec1ff11ade4f41c0d7deafd6ecfc796b492a788e380d"
+    },
+    {
+      "path": "twine_edge_overlap/third_party/graphviz-16.1.0/zlib.txt",
+      "sha256": "845efc77857d485d91fb3e0b884aaa929368c717ae8186b66fe1ed2495753243"
+    }
+  ]
+}

@@ -116,6 +116,21 @@ def validate_network_observation(control,corpus):
         raise ValueError('Native tracing missed the child control or observed corpus network calls')
 
 
+def validate_recovery_report(report):
+    names={'download','disk_full','execution_denied','corrupt_archive','during_download','before_select','after_select','concurrent_first_use'}
+    rows=report.get('scenarios',{})
+    if report.get('passed') is not True or report.get('real_engine') is not True or set(rows)!=names:
+        raise ValueError('Incomplete private installed-engine recovery evidence')
+    for name,row in rows.items():
+        if row.get('passed') is not True or row.get('offline_references')!=6 or row.get('old_handle_usable') is not True:
+            raise ValueError('Recovery did not preserve offline processing or old handle')
+        if name in ('during_download','before_select','after_select') and (row.get('exitcode')!=77 or row.get('lock_reacquired') is not True):
+            raise ValueError('Crash/lock recovery failed')
+    concurrent=rows['concurrent_first_use']
+    if concurrent.get('acquisition_calls')!=1 or concurrent.get('same_generation') is not True:
+        raise ValueError('Concurrent first use did not share one generation/acquisition')
+
+
 def prepare_application(artifact,work):
     folder=work/'input/application';folder.mkdir()
     subprocess.run([sys.executable,'-m','pip','wheel','--no-deps','--wheel-dir',str(folder),str(ROOT)],check=True,timeout=180)
@@ -139,6 +154,7 @@ def prepare_application(artifact,work):
     observer=folder/'test-driver/tools/runtime';observer.mkdir(parents=True)
     shutil.copyfile(ROOT/'tools/runtime/observe-linux-network.py',observer/'observe-linux-network.py')
     shutil.copyfile(ROOT/'.github/scripts/probe-installed-application.py',folder/'probe.py')
+    shutil.copyfile(ROOT/'.github/scripts/probe-installed-recovery.py',folder/'recovery.py')
 
 
 def prepare_pythons(work):
@@ -279,6 +295,7 @@ def execute(work):
                         run(['scp',*options,'-P','2222','twine@127.0.0.1:/home/twine/python-results/'+name,str(application/name)])
                         report=json.loads(bounded(application/name))
                         validate_application_report(report,pin_python['patch'],wheel_pin['sha256'],expected['sha256'],cases)
+                        validate_recovery_report(report.get('recovery',{}))
                         spec=importlib.util.spec_from_file_location('network_observer',ROOT/'tools/runtime/observe-linux-network.py')
                         observer=importlib.util.module_from_spec(spec);spec.loader.exec_module(observer)
                         traces={}

@@ -14,6 +14,21 @@ class NativeBaselineTests(unittest.TestCase):
         spec=importlib.util.spec_from_file_location('native_baseline',ROOT/'.github/scripts/check-native-baseline.py')
         self.tool=importlib.util.module_from_spec(spec);spec.loader.exec_module(self.tool)
 
+    def test_recovery_receipt_requires_every_failure_crash_and_concurrent_result(self):
+        scenarios={name:dict(passed=True,offline_references=6,old_handle_usable=True)
+            for name in ('download','disk_full','execution_denied','corrupt_archive','during_download','before_select','after_select','concurrent_first_use')}
+        scenarios['concurrent_first_use'].update(acquisition_calls=1,same_generation=True)
+        for name in ('during_download','before_select','after_select'):scenarios[name].update(exitcode=77,lock_reacquired=True)
+        report=dict(passed=True,real_engine=True,scenarios=scenarios)
+        self.tool.validate_recovery_report(report)
+        for name in scenarios:
+            bad=copy.deepcopy(report);del bad['scenarios'][name]
+            with self.assertRaises(ValueError):self.tool.validate_recovery_report(bad)
+        for name,field,value in (('download','offline_references',0),('before_select','lock_reacquired',False),
+                                 ('after_select','exitcode',0),('concurrent_first_use','acquisition_calls',2)):
+            bad=copy.deepcopy(report);bad['scenarios'][name][field]=value
+            with self.assertRaises(ValueError):self.tool.validate_recovery_report(bad)
+
     def test_network_observation_requires_child_control_and_zero_corpus_socket_calls(self):
         spec=importlib.util.spec_from_file_location('observer',ROOT/'tools/runtime/observe-linux-network.py')
         observer=importlib.util.module_from_spec(spec);spec.loader.exec_module(observer)

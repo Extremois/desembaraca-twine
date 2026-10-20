@@ -68,7 +68,7 @@ def probe(source,output):
     if (control_result.returncode or len(detected['successful_executables'])<2
             or not detected['network_syscalls'].get('socket') or not detected['network_syscalls'].get('connect')):
         raise ValueError('Native tracer did not detect the child socket/connect control')
-    result=run_bounded([*arguments,sys.executable,'-I',str(driver/'tests/integration/test_linux_runtime.py'),
+    result=run_bounded([*arguments,sys.executable,'-I',str(source/'application/recovery.py'),'--driver',str(driver),
         '--package',source/'application/private-package',
         '--provenance',source/'application/private-package/provenance.json',
         '--report',report_path,'--environment-kind','native'],cwd=output,env=env,timeout=180,max_output=8*1024**2)
@@ -90,7 +90,7 @@ def probe(source,output):
                 trace_sha256=hashlib.sha256(result.stderr).hexdigest()),
             limits=dict(control_seconds=15,control_output_bytes=1024**2,corpus_seconds=180,corpus_output_bytes=8*1024**2)),
         driver_output_sha256=hashlib.sha256(result.stdout+result.stderr).hexdigest(),
-        scope='Installed development wheel and production runtime manager with controlled acquisition; zero observed native network syscalls with child control; no distributed-candidate or full-cell acceptance')
+        scope='Installed development wheel, private real engine and recovery scenarios; controlled acquisition/errors; native network tracing; no distributed-candidate or full-cell acceptance')
     report_path.write_text(json.dumps(report,indent=2)+'\n',encoding='utf-8')
 
 

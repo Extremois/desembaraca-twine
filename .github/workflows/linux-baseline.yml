@@ -9,6 +9,7 @@ on:
       - '.github/scripts/probe-guest-baseline.py'
       - '.github/scripts/probe-private-python.py'
       - '.github/scripts/probe-installed-application.py'
+      - '.github/scripts/probe-installed-recovery.py'
       - '.github/native-images/ubuntu-18.04-amd64.json'
       - '.github/native-images/private-python-x64.json'
       - 'tests/unit/test_native_baseline.py'

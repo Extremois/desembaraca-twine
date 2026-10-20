@@ -1,0 +1,6 @@
+execve("/home/twine/python-results/venv com espa\303\247os a\303\247\303\243o 3.14/bin/python", ["/home/twine/python-results/venv com espa\303\247os a\303\247\303\243o 3.14/bin/python", "-I", "-c", "import subprocess,sys; subprocess.run([sys.executable,\"-I\",\"-c\",'import socket; s=socket.socket(); s.settimeout(1); s.connect_ex((\"127.0.0.1\",9)); s.close()'],check=True)"], 0x7fffd2b4a240 /* 7 vars */) = 0
+[pid  3253] execve("/home/twine/python-results/venv com espa\303\247os a\303\247\303\243o 3.14/bin/python", ["/home/twine/python-results/venv com espa\303\247os a\303\247\303\243o 3.14/bin/python", "-I", "-c", "import socket; s=socket.socket(); s.settimeout(1); s.connect_ex((\"127.0.0.1\",9)); s.close()"], 0x7ffd79fa6920 /* 7 vars */) = 0
+[pid  3253] socket(AF_INET, SOCK_STREAM|SOCK_CLOEXEC, IPPROTO_IP) = 3
+[pid  3253] connect(3, {sa_family=AF_INET, sin_port=htons(9), sin_addr=inet_addr("127.0.0.1")}, 16) = -1 EINPROGRESS (Operation now in progress)
+[pid  3253] getsockopt(3, SOL_SOCKET, SO_ERROR, [111], [4]) = 0
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_EXITED, si_pid=3253, si_uid=1000, si_status=0, si_utime=1, si_stime=0} ---

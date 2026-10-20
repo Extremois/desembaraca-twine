@@ -172,3 +172,20 @@ candidata remota final, tracing nativo, Pro, Twine ou recuperação completa.
 T037/T078 avançaram parcialmente, demais células mantidas; nenhuma promoção,
 catálogo Windows e 56/84 tasks. Checkpoint enviado; recibos finais locais.
 
+## Observação nativa de rede Ubuntu 18.04 x64 — 2026-10-20
+
+Revisão `c8f881c`, workflow `39480928288`, aprovado: traces brutos reconferidos
+para os dois Pythons privados do guest KVM. Controle socket/connect/getsockopt
+detectado em filho; 49 execuções do motor por Python, zero syscalls de rede no
+corpus/preparo controlado/cache. Treze casos e seis referências zeradas por
+Python, wheel/53 arquivos conferidos contra commit, Python do SO preservado.
+Seis jobs `39480928185` aprovados com 235 testes cada.
+[Recibo e traces](ubuntu1804-native-network-2026-10-20/summary.json).
+
+Pacote do tracer `4.21-1ubuntu1` segundo manifesto; autoidentificação `UNKNOWN`
+preservada com hash real. Duas tentativas anteriores falharam antes do tracing,
+sem qualificação. Sem kill-on-exit; encerramento pertence ao guest efêmero sob
+controle do host. T037/T078/T080 parciais, candidata remota final/Pro/Twine/
+demais gates e células pendentes. Catálogo Windows; 56/84 tasks. Checkpoints
+necessários enviados; recibos finais ficam locais até o próximo necessário.
+

@@ -2002,3 +2002,22 @@ sem tracing nativo. Não é aceite da candidata pública final ou de toda a cél
 T037/T078 permanecem parciais, Pro/Twine/recuperação/demais células pendentes;
 catálogo Windows e total 56/84 preservados. Recibos finais locais.
 
+## Rede nativa no guest Ubuntu 18.04 x64 — 2026-10-20
+
+Workflow `39480928288`, revisão `c8f881c`, aprovado: aplicação instalada sob
+strace seguindo filhos, nos CPythons 3.12.15/3.14.8 do guest KVM Linux 4.15/
+glibc 2.27. Traces baixados e reprocessados: controles socket/connect/getsockopt
+detectados; 49 execuções do motor por Python com zero syscalls de rede no corpus,
+preparo controlado e cache. Treze casos/seis referências zeradas por Python,
+53 arquivos do wheel conferidos contra o commit e Python do SO preservado.
+Regressão `39480928185`: seis jobs aprovados, 235 testes cada.
+[Recibos/traces](evidence/ubuntu1804-native-network-2026-10-20/summary.json).
+
+Manifesto da imagem lista strace `4.21-1ubuntu1`; binário reporta `UNKNOWN`,
+preservado como fato e identificado por SHA-256/imagem fixada. Duas falhas
+anteriores ocorreram antes do tracing e têm registros separados. Tracer sem
+kill-on-exit; driver encerra somente seu guest efêmero inclusive após falha.
+T037/T078/T080 parciais: aquisição inicial controlada, candidata remota final,
+Pro, Twine, demais limites/gates/células continuam pendentes. Nenhuma promoção,
+catálogo Windows; 56/84. Recibos finais locais.
+
