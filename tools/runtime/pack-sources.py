@@ -112,6 +112,10 @@ def pack(graphviz, sdk, provenance, output):
     # their exact source dependencies so the exported recipe works independently.
     for name in ('LICENSE', 'src/twine_edge_overlap/__init__.py',
                  'src/twine_edge_overlap/runtime_platform.py',
+                 'src/twine_edge_overlap/runtime.py',
+                 'src/twine_edge_overlap/runtime_catalog.py',
+                 'src/twine_edge_overlap/runtime_snapshot.py',
+                 'src/twine_edge_overlap/errors.py',
                  'src/twine_edge_overlap/engines/__init__.py',
                  'src/twine_edge_overlap/engines/process.py'):
         local.append((name, bounded(HERE.parents[1] / name)))

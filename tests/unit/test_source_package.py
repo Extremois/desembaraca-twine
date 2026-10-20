@@ -105,6 +105,9 @@ class SourcePackageTests(unittest.TestCase):
                 command = subprocess.run([sys.executable, str(extracted / 'tools/runtime/build-common.py'), '--help'],
                     cwd=extracted, capture_output=True, text=True, timeout=10)
                 self.assertEqual(command.returncode, 0, command.stderr)
+                inspection = subprocess.run([sys.executable, str(extracted / 'tools/runtime/verify-artifact.py'), '--help'],
+                    cwd=extracted, capture_output=True, text=True, timeout=10)
+                self.assertEqual(inspection.returncode, 0, inspection.stderr)
                 self.assertEqual(report['sdk_files'], 2)
                 record = json.loads(provenance.read_bytes())
                 record['sdk']['facts']['archive']['sha256'] = '0' * 64
