@@ -1,4 +1,4 @@
-"""Real installed-engine recovery in a disposable guest; acquisition/errors are controlled."""
+"""Real installed-engine recovery on disposable POSIX hosts; acquisition/errors are controlled."""
 import argparse
 import errno
 import hashlib
@@ -26,6 +26,7 @@ def worker(args):
     def checkpoint(stage):
         if stage==args.stage:os._exit(77)
     if args.stage=='normal':
+        Path(str(args.result)+'.ready').write_text('ready',encoding='ascii')
         deadline=time.monotonic()+10
         while not args.start.exists():
             if time.monotonic()>deadline:raise TimeoutError('Worker start barrier expired')
@@ -37,7 +38,7 @@ def worker(args):
         args.result.write_text(handle.generation_id,encoding='ascii')
 
 
-def exercise(args,bundle):
+def exercise(args,bundle,*,process_only=False):
     from runtime_support import ControlledTransport,blocked_network
     from twine_edge_overlap.runtime import RuntimeManager,load_manifest
     from twine_edge_overlap.errors import DependencyError
@@ -52,7 +53,7 @@ def exercise(args,bundle):
     with tempfile.TemporaryDirectory(prefix='native-private-recovery-') as folder,blocked_network():
         root=Path(folder);archive=root/'candidate.zip';archive.write_bytes(bundle.payload)
         data=dict(load_manifest().data)
-        data.update(schema_version=2,platform='linux',artifact_arch=bundle.record['native_arch'],
+        data.update(schema_version=2,platform=bundle.platform_name,artifact_arch=bundle.record['native_arch'],
             abi=bundle.record['recipe']['abi'],build_variant='private-recovery-only',
             minimum_libc='0',minimum_kernel='0',minimum_os='15',files=bundle.inventory['files'],
             executable_relative_path='bin/dot',generated_files=[],url='https://runtime.invalid/artifact.zip',
@@ -83,7 +84,7 @@ def exercise(args,bundle):
             return [sys.executable,'-I',str(Path(__file__).resolve()),'--worker','--driver',str(args.driver),
                 '--cache',str(cache),'--manifest',str(manifest),'--archive',str(archive),
                 '--stage',stage,'--result',str(result),'--start',str(start)]
-        for name in ('download','disk_full','execution_denied','corrupt_archive'):
+        for name in (() if process_only else ('download','disk_full','execution_denied','corrupt_archive')):
             work=root/name;work.mkdir();current=manager(work/'cache');old=current.ensure()
             active=(current.root/'active.json').read_bytes()
             if name=='download':current.opener=ControlledTransport(error=ConnectionError('injected transfer failure'))
@@ -118,6 +119,11 @@ def exercise(args,bundle):
             if child.returncode!=77:raise AssertionError('Crash worker did not exit at checkpoint: '+child.stderr.decode(errors='replace'))
             orphans=set(current.root.glob('staging-*'))
             if stage=='during_download' and len(orphans)!=1:raise AssertionError('Crash did not leave expected staging orphan')
+            def orphan_snapshot():
+                return {str(path.relative_to(current.root)):
+                        (path.stat().st_mode&0o777, digest(path.read_bytes()) if path.is_file() else None)
+                        for orphan in orphans for path in [orphan,*orphan.rglob('*')]}
+            orphan_before=orphan_snapshot()
             current.opener=ControlledTransport(error=AssertionError('Offline crash recovery attempted acquisition'))
             resumed=current.ensure()
             if (resumed.generation_id==old.generation_id)!=(stage!='after_select'):raise AssertionError('Crash selected wrong generation')
@@ -125,14 +131,22 @@ def exercise(args,bundle):
             rows=offline_refs(current,work);usable=old_handle(old,work)
             current.opener=ControlledTransport(bundle.payload);replacement=current.ensure(force_repair=True)
             if replacement.generation_id==resumed.generation_id:raise AssertionError('Crash retry did not publish a new generation')
-            if any(not path.is_dir() for path in orphans):raise AssertionError('Unowned staging orphan was removed')
+            if any(not path.is_dir() for path in orphans) or orphan_snapshot()!=orphan_before:
+                raise AssertionError('Unowned staging orphan was removed or changed')
             scenarios[stage]=dict(passed=True,exitcode=child.returncode,lock_reacquired=True,
                 offline_references=len(rows),cases=rows,old_handle_usable=usable,orphan_untouched=True,
                 selection='new' if stage=='after_select' else 'previous')
         work=root/'concurrent_first_use';work.mkdir();cache=work/'cache';start=work/'start'
         outputs=[work/'one.txt',work/'two.txt'];children=[]
         try:
-            children=[subprocess.Popen(command(cache,'normal',path,start),stdout=subprocess.PIPE,stderr=subprocess.PIPE) for path in outputs]
+            for path in outputs:
+                children.append(subprocess.Popen(command(cache,'normal',path,start),stdout=subprocess.PIPE,stderr=subprocess.PIPE))
+            deadline=time.monotonic()+10
+            while not all(Path(str(path)+'.ready').exists() for path in outputs):
+                if any(child.poll() is not None for child in children):
+                    raise AssertionError('Concurrent worker exited before readiness barrier')
+                if time.monotonic()>deadline:raise TimeoutError('Concurrent readiness barrier expired')
+                time.sleep(.02)
             start.write_text('start',encoding='ascii')
             for child in children:
                 stdout,stderr=child.communicate(timeout=30)
@@ -144,7 +158,8 @@ def exercise(args,bundle):
             if old.generation_id!=generations[0] or current.opener.calls:raise AssertionError('Concurrent generation was not reusable offline')
             rows=offline_refs(current,work)
             scenarios['concurrent_first_use']=dict(passed=True,acquisition_calls=len(calls),same_generation=True,
-                offline_references=len(rows),cases=rows,old_handle_usable=old_handle(old,work),workers=2)
+                offline_references=len(rows),cases=rows,old_handle_usable=old_handle(old,work),workers=2,
+                workers_ready=2,start_barrier=True)
         finally:
             for child in children:
                 if child.poll() is None:child.kill();child.communicate(timeout=5)

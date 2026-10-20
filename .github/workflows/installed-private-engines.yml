@@ -5,6 +5,7 @@ on:
     branches: [feat/003-add-cross-platform-support]
     paths:
       - '.github/workflows/installed-private-engines.yml'
+      - '.github/scripts/probe-installed-recovery.py'
       - 'tools/validation/check-built-packages.py'
       - 'tests/unit/test_built_packages.py'
       - 'tests/integration/test_linux_runtime.py'

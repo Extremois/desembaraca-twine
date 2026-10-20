@@ -4,11 +4,13 @@ import errno
 import sys
 import unittest
 import hashlib
+import importlib.util
 import json
 from pathlib import Path
 import platform
 import tempfile
 from unittest.mock import patch
+from types import SimpleNamespace
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
 from common import ROOT,fixture
 from runtime_support import ControlledTransport,blocked_network
@@ -58,6 +60,13 @@ class LinuxPrivateBundleIntegrationTests(unittest.TestCase):
 
     def inspect_prepared_runtime(self,handle):
         return {}
+
+    def process_recovery(self):
+        path=ROOT/'.github/scripts/probe-installed-recovery.py'
+        spec=importlib.util.spec_from_file_location('installed_process_recovery',path)
+        driver=importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(driver)
+        return driver.exercise(SimpleNamespace(driver=ROOT),self,process_only=True)
 
     def failed_repairs(self, manager, previous, work):
         """Real cached engine; transport/disk failures are explicit injections."""
@@ -167,6 +176,7 @@ class LinuxPrivateBundleIntegrationTests(unittest.TestCase):
                 self.assertFalse(probes[0]['ready_before_probe'])
                 native_inspection=self.inspect_prepared_runtime(handle)
                 recovery={} if automatic else self.failed_repairs(manager,handle,work)
+                process_recovery={} if automatic else self.process_recovery()
                 manager.opener=ControlledTransport(error=AssertionError('Offline cache attempted acquisition'))
                 # Also run from another cwd; the cache and story use absolute paths.
                 previous=Path.cwd()
@@ -193,7 +203,8 @@ class LinuxPrivateBundleIntegrationTests(unittest.TestCase):
                     acquisition_calls=1,offline_acquisition_calls=0,cache_xdg=self.platform_name=='linux',executable_mode=0o755,
                     generation_mode=0o700,final_destination_probe=True,probe_before_ready=True,
                     healthy_generation_reused=True,external_unicode_paths=True,real_engine=True,
-                    fixture_transport=True,native_inspection=native_inspection,recovery=recovery)
+                    fixture_transport=True,native_inspection=native_inspection,recovery=recovery,
+                    process_recovery=process_recovery)
 
     def test_automatic_first_use_and_healthy_offline_cache(self):
         self.exercise(True)

@@ -19,6 +19,33 @@ def tool():
 
 
 class BuiltPackagesTests(unittest.TestCase):
+    def test_process_recovery_requires_native_exits_lock_release_and_shared_generation(self):
+        validate = tool().validate_process_recovery
+        cases = [dict(case='known', known_resolvable=True)]
+        flags = dict(passed=True, exitcode=77, lock_reacquired=True, orphan_untouched=True,
+            old_handle_usable=True, offline_references=1,
+            cases=[dict(case='known', after=[0, 0, 0])])
+        rows = {stage: dict(copy.deepcopy(flags), selection='new' if stage=='after_select' else 'previous')
+                for stage in ('during_download', 'before_select', 'after_select')}
+        rows['concurrent_first_use'] = dict(copy.deepcopy(flags), acquisition_calls=1,
+            same_generation=True, workers=2, workers_ready=2, start_barrier=True)
+        report = dict(passed=True, real_engine=True, scenarios=rows)
+        validate(report, cases)
+        for mutation in ('missing', 'exit', 'lock', 'selector', 'orphan', 'network', 'generation', 'barrier', 'reference'):
+            changed = copy.deepcopy(report)
+            changed_rows = changed['scenarios']
+            if mutation == 'missing': del changed_rows['during_download']
+            elif mutation == 'exit': changed_rows['during_download']['exitcode'] = 0
+            elif mutation == 'lock': changed_rows['before_select']['lock_reacquired'] = False
+            elif mutation == 'selector': changed_rows['after_select']['selection'] = 'previous'
+            elif mutation == 'orphan': changed_rows['during_download']['orphan_untouched'] = False
+            elif mutation == 'network': changed_rows['concurrent_first_use']['acquisition_calls'] = 2
+            elif mutation == 'generation': changed_rows['concurrent_first_use']['same_generation'] = False
+            elif mutation == 'barrier': changed_rows['concurrent_first_use']['workers_ready'] = 1
+            else: changed_rows['after_select']['cases'] = []
+            with self.subTest(mutation=mutation), self.assertRaises(ValueError):
+                validate(changed, cases)
+
     def test_failed_repair_receipts_require_every_fault_and_offline_reference(self):
         validate = tool().validate_recovery_result
         cases = [dict(case='known', known_resolvable=True)]

@@ -155,6 +155,9 @@ def prepare_application(artifact,work):
     shutil.copyfile(ROOT/'tools/runtime/observe-linux-network.py',observer/'observe-linux-network.py')
     shutil.copyfile(ROOT/'.github/scripts/probe-installed-application.py',folder/'probe.py')
     shutil.copyfile(ROOT/'.github/scripts/probe-installed-recovery.py',folder/'recovery.py')
+    processes=folder/'test-driver/.github/scripts'
+    processes.mkdir(parents=True)
+    shutil.copyfile(ROOT/'.github/scripts/probe-installed-recovery.py',processes/'probe-installed-recovery.py')
 
 
 def prepare_pythons(work):

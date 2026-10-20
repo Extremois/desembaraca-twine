@@ -189,11 +189,37 @@ def validate_recovery_result(rows, cases):
         raise ValueError('Native execution permission denial was not observed')
 
 
+def validate_process_recovery(report, cases):
+    expected = {item['case'] for item in cases if item['known_resolvable']}
+    stages = {'during_download', 'before_select', 'after_select', 'concurrent_first_use'}
+    if (not isinstance(report, dict) or report.get('passed') is not True
+            or report.get('real_engine') is not True or set(report.get('scenarios', {})) != stages):
+        raise ValueError('Native process recovery scenarios are incomplete')
+    for name, row in report['scenarios'].items():
+        references = row.get('cases', [])
+        if (row.get('passed') is not True or row.get('old_handle_usable') is not True
+                or row.get('offline_references') != len(expected)
+                or len(references) != len(expected) or {r['case'] for r in references} != expected
+                or any(r.get('after') != [0, 0, 0] or any(type(n) is not int for n in r['after'])
+                       for r in references)):
+            raise ValueError('Native process recovery did not preserve complete offline processing')
+        if name == 'concurrent_first_use':
+            if (row.get('workers') != 2 or row.get('acquisition_calls') != 1
+                    or row.get('same_generation') is not True or row.get('workers_ready') != 2
+                    or row.get('start_barrier') is not True):
+                raise ValueError('Concurrent first use duplicated acquisition or selected generations')
+        elif (row.get('exitcode') != 77 or row.get('lock_reacquired') is not True
+                or row.get('orphan_untouched') is not True
+                or row.get('selection') != ('new' if name == 'after_select' else 'previous')):
+            raise ValueError('Crash did not preserve selector, orphan or release its lock')
+
+
 def stage_engine_driver(work):
     driver = work / 'test-driver'
     files = ('tests/common.py', 'tests/runtime_support.py', 'tests/native_acceptance.py',
         'tests/integration/__init__.py', 'tests/integration/test_linux_runtime.py',
-        'tests/integration/test_macos_runtime.py', 'tools/runtime/verify-artifact.py')
+        'tests/integration/test_macos_runtime.py', 'tools/runtime/verify-artifact.py',
+        '.github/scripts/probe-installed-recovery.py')
     for name in files:
         target = driver / name
         target.parent.mkdir(parents=True, exist_ok=True)
@@ -287,6 +313,7 @@ def collect(wheel, sdist, wheelhouse, *, engine_artifact=None, engine_id=None):
                 cases = json.loads((ROOT / 'tests/fixtures/cases.json').read_bytes())
                 validate_engine_result(runtime_report, fixture, cases, sys.platform)
                 validate_recovery_result(runtime_report['observations']['explicit'].get('recovery'), cases)
+                validate_process_recovery(runtime_report['observations']['explicit'].get('process_recovery'), cases)
             records.append(dict(mode=mode, archive_sha256=digest(package.read_bytes()),
                 package_files_verified=len(inventory['files']), licenses_verified=inventory['licenses'],
                 installed_file_hashes=facts['files'], entrypoints_verified=3,
