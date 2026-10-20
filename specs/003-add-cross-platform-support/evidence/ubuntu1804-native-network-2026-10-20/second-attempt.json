@@ -1,0 +1,14 @@
+{
+  "kind": "native-network-observation-second-attempt",
+  "passed": false,
+  "qualified": false,
+  "revision": "550a06dbeb1ca69abbc28ef7d0d69637f5988aae",
+  "run_id": 39480447418,
+  "job_id": 118827299316,
+  "failure": "-V succeeded, but exact version-line comparison rejected packaged tracer before control or corpus tracing",
+  "correction": "Record the reported version rather than assume its exact header; immutable image hash and actual tracer SHA identify bytes, child control validates capability",
+  "raw_log_sha256": "8c0efa543119820c37f8b7e50788e8813ca4dc8cdb5bb0c99dd689444a0d7e19",
+  "raw_log_gzip": "second-attempt.log.gz",
+  "foundation_run": 39480447470,
+  "foundation_jobs_passed": 6
+}

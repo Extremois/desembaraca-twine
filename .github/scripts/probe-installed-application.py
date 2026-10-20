@@ -55,7 +55,8 @@ def probe(source,output):
     observer=importlib.util.module_from_spec(spec);spec.loader.exec_module(observer)
     tracer=Path('/usr/bin/strace').resolve(strict=True)
     version=run([tracer,'-V']).stdout.decode('utf-8').splitlines()[0]
-    if version!='strace -- version 4.21':raise ValueError('Unexpected tracer in pinned Ubuntu image')
+    if 'strace' not in version.lower() or len(version)>256:
+        raise ValueError('Unrecognized tracer version output: '+repr(version))
     # 4.21 predates --kill-on-exit. The owned ephemeral guest is terminated by
     # the host's finally block, including after any failed observation.
     arguments=[str(tracer),'-f','-qq','-s','256','-e','trace=%network,execve','--']
