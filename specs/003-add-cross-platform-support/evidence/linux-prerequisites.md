@@ -91,3 +91,22 @@ O [recibo de 16 slots](alpine-userland-compatibility-2026-10-20/summary.json) co
 | 3.24.2 | x86_64 | 3.14.8 | PASS | PASS |
 | 3.24.2 | aarch64 | 3.12.15 | PASS | PASS |
 | 3.24.2 | aarch64 | 3.14.8 | PASS | PASS |
+# Ensaio nativo Ubuntu 18.04 x64 — preparação em 2026-10-20
+
+O workflow `linux-baseline.yml` passou a levar os mesmos dois arquivos CPython
+3.12.15/3.14.8 já fixados no ensaio WSL ao guest KVM Ubuntu 18.04 x64.
+Os pins independentes estão em `.github/native-images/private-python-x64.json`.
+O host efêmero baixa os arquivos via HTTPS e verifica tamanho/SHA-256; o guest,
+sem acesso à internet, reconfere os arquivos e os extrai em diretórios privados.
+Não há instalação de Python no sistema nem inclusão desses interpretadores nos
+pacotes do projeto.
+
+A rotina exige os patches exatos, CPython x64 de 64 bits com GIL, venv com cópias
+em caminho Unicode com espaços, pip/ensurepip, SSL e contexto de certificados,
+além da importação de ctypes/sqlite3/zlib. Compara o hash do Python do sistema
+antes/depois. O relatório é conferido pelo host e seu hash fica vinculado à
+medição de kernel/glibc/KVM do mesmo guest. A execução nativa ainda precisa
+ser conferida após o próximo checkpoint; os resultados WSL anteriores não
+servem como aprovação desta execução. T033/T037 permanecem abertas para a
+matriz completa, elegibilidade Pro e percurso da aplicação instalada.
+

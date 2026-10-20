@@ -13,6 +13,7 @@ import subprocess
 import sys
 import time
 import urllib.request
+import urllib.parse
 import zipfile
 
 ROOT=Path(__file__).resolve().parents[2]
@@ -64,6 +65,43 @@ def bounded(path,limit=16*1024**2):
     with path.open('rb') as stream:raw=stream.read(limit+1)
     if len(raw)>limit:raise ValueError('Baseline input exceeds bound')
     return raw
+
+
+def validate_python_report(report,pins):
+    rows=report.get('interpreters',[])
+    if (report.get('passed') is not True or len(rows)!=2
+            or {r.get('minor') for r in rows}!={'3.12','3.14'}
+            or not re.fullmatch(r'[0-9a-f]{64}',report.get('system_python_before',''))
+            or report['system_python_before']!=report.get('system_python_after')):
+        raise ValueError('Incomplete private Python prerequisite report or changed system Python')
+    for pin in pins:
+        row=next(r for r in rows if r['minor']==pin['minor']);facts=row.get('facts',{})
+        if (row.get('archive_sha256')!=pin['sha256'] or facts.get('python')!=pin['patch']
+                or facts.get('implementation')!='CPython' or facts.get('arch')!='x86_64' or facts.get('bits')!=64
+                or facts.get('venv_active') is not True or facts.get('gil_disabled') is not False
+                or facts.get('ssl_context') is not True or not facts.get('pip') or not facts.get('ensurepip')):
+            raise ValueError('Private CPython/venv/pip/SSL requirements failed')
+
+
+def prepare_pythons(work):
+    pin_path=ROOT/'.github/native-images/private-python-x64.json'
+    pins=json.loads(pin_path.read_bytes())
+    for pin in pins['interpreters']:
+        hasher=hashlib.sha256();received=0
+        with urllib.request.urlopen(pin['url'],timeout=30) as incoming,(work/'input'/('python-'+pin['minor']+'.tar.gz')).open('xb') as output:
+            origin=urllib.parse.urlsplit(incoming.geturl())
+            if origin.scheme!='https' or origin.hostname not in ('github.com','release-assets.githubusercontent.com','objects.githubusercontent.com'):
+                raise ValueError('Unexpected interpreter download origin')
+            while True:
+                chunk=incoming.read(1024**2)
+                if not chunk:break
+                received+=len(chunk)
+                if received>pin['size']:raise ValueError('Interpreter download exceeds pin')
+                hasher.update(chunk);output.write(chunk)
+        if received!=pin['size'] or hasher.hexdigest()!=pin['sha256']:raise ValueError('Private interpreter archive changed')
+    shutil.copyfile(pin_path,work/'input/private-python.json')
+    shutil.copyfile(pin_path,work/'evidence/private-python-pins.json')
+    shutil.copyfile(ROOT/'.github/scripts/probe-private-python.py',work/'input/probe-private-python.py')
 
 
 def prepare(artifact,work,abi='glibc'):
@@ -168,6 +206,12 @@ def execute(work):
             if kvm.get('enabled') is not True or kvm.get('present') is not True:raise ValueError('Hardware acceleration unavailable')
             run(['scp',*options,'-P','2222','-r',str(work/'input'),'twine@127.0.0.1:/home/twine/baseline'])
             subprocess.run([*ssh,'python3 /home/twine/baseline/probe.py --input /home/twine/baseline --output /home/twine/results'],check=True,timeout=180)
+            python_report_sha=None
+            if (work/'input/private-python.json').exists():
+                subprocess.run([*ssh,'python3 /home/twine/baseline/probe-private-python.py --input /home/twine/baseline --output /home/twine/python-results'],check=True,timeout=360)
+                run(['scp',*options,'-P','2222','twine@127.0.0.1:/home/twine/python-results/private-python-report.json',str(evidence/'private-python-report.json')])
+                raw=bounded(evidence/'private-python-report.json');pins=json.loads(bounded(work/'input/private-python.json'))
+                validate_python_report(json.loads(raw),pins['interpreters']);python_report_sha=digest(raw)
             run(['scp',*options,'-P','2222','-r','twine@127.0.0.1:/home/twine/results',str(evidence/'guest')])
             guest=json.loads((evidence/'guest/guest.json').read_bytes());validate_baseline(guest,kvm)
             validate_engine_kind(guest,abi)
@@ -185,6 +229,7 @@ def execute(work):
                 candidate_run_id=expected['run_id'],artifact_id=expected['artifact_id'],engine_sha256=expected['sha256'],image_pin=pin,kvm=kvm,
                 guest_kernel=guest['kernel'],guest_glibc=guest['glibc'],guest_arch=guest['arch'],
                 guest_report_sha256=digest((evidence/'guest/guest.json').read_bytes()),cases=13,geometry_decoded=True,
+                private_python_report_sha256=python_report_sha,
                 environment_kind='native',execution='same-architecture hardware-accelerated guest; no TCG fallback',
                 scope=('Engine/kernel baseline only; CPython 3.12/3.14 application, Pro eligibility, full cell and Twine pending'
                        if abi=='glibc' else
@@ -200,7 +245,10 @@ if __name__=='__main__':
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--work',type=Path,required=True);parser.add_argument('--artifact',type=Path)
     parser.add_argument('--abi',choices=('glibc','musl'),default='glibc')
+    parser.add_argument('--python-prerequisites',action='store_true')
     parser.add_argument('--execute',action='store_true');args=parser.parse_args()
     if args.execute:execute(args.work)
-    elif args.artifact:prepare(args.artifact,args.work,args.abi)
+    elif args.artifact:
+        prepare(args.artifact,args.work,args.abi)
+        if args.python_prerequisites:prepare_pythons(args.work)
     else:parser.error('--artifact or --execute is required')

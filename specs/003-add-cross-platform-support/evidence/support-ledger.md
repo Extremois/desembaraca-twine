@@ -133,3 +133,14 @@ identificou API acessível com elevação no runner x64 e ausência de dispositi
 no ARM64 atribuído. Todas as distribuições e arquiteturas permanecem na spec.
 Progresso de tarefas: 55/84, com 29 pendentes; células qualificadas permanecem
 inalteradas. A VM de teste foi criada somente no runner efêmero GitHub.
+
+## Receita musl x64: cobertura e kernel mínimo
+
+A [revisão T026](linux-x64-kernel-baselines-2026-10-20/musl-recipe-completion.json)
+combina oito slots Alpine x64 já observados com execução do mesmo ELF estático
+no kernel Linux 4.15 nativo em KVM. Fecha a receita privada T026, com fonte/SDK,
+hash/proveniência e limites conferidos, sem reutilizar o binário glibc.
+O ambiente do novo kernel é Ubuntu e os ensaios Alpine continuam containers:
+essa separação é explícita e não promove T044 nem qualquer célula de suporte.
+ARM64, auditoria/fontes/catálogo e aceite instalado continuam pendentes.
+Progresso: 56/84 tarefas; 28 pendentes, sem alteração das células qualificadas.

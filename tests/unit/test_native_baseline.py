@@ -2,6 +2,8 @@ import importlib.util
 from pathlib import Path
 import tempfile
 import struct
+import io
+import tarfile
 import unittest
 from common import ROOT
 
@@ -10,6 +12,40 @@ class NativeBaselineTests(unittest.TestCase):
     def setUp(self):
         spec=importlib.util.spec_from_file_location('native_baseline',ROOT/'.github/scripts/check-native-baseline.py')
         self.tool=importlib.util.module_from_spec(spec);spec.loader.exec_module(self.tool)
+
+    def test_private_python_archive_rejects_escape_links_special_files_and_expansion(self):
+        spec=importlib.util.spec_from_file_location('python_probe',ROOT/'.github/scripts/probe-private-python.py')
+        tool=importlib.util.module_from_spec(spec);spec.loader.exec_module(tool)
+        def member(name,kind=tarfile.REGTYPE,target='',size=0):
+            row=tarfile.TarInfo(name);row.type=kind;row.linkname=target;row.size=size;return row
+        good=[member('python',tarfile.DIRTYPE),member('python/bin/python3.12'),
+              member('python/bin/python3',tarfile.SYMTYPE,'python3.12')]
+        tool.validate_members(good)
+        for rows in ([member('../escape')],[member('/python/file')],
+                     [member('python/link',tarfile.SYMTYPE,'../../escape')],
+                     [member('python/link',tarfile.SYMTYPE,'bin'),member('python/link/file')],
+                     [member('python/fifo',tarfile.FIFOTYPE)],
+                     [member('python/a'),member('python/a')],
+                     [member('python/big',size=65*1024**2)]):
+            with self.assertRaises(ValueError):tool.validate_members(rows)
+        with tempfile.TemporaryDirectory() as folder:
+            root=Path(folder);archive=root/'input.tar.gz'
+            with tarfile.open(archive,'w:gz') as stream:
+                row=member('python/bin/python3.12',size=4);row.mode=0o755
+                stream.addfile(row,io.BytesIO(b'test'))
+            tool.extract_private(archive,root/'private')
+            self.assertEqual((root/'private/python/bin/python3.12').read_bytes(),b'test')
+
+    def test_private_python_report_requires_both_exact_patches_and_unchanged_system(self):
+        pins=[dict(minor='3.12',patch='3.12.15',sha256='a'*64),dict(minor='3.14',patch='3.14.8',sha256='b'*64)]
+        rows=[dict(minor=p['minor'],archive_sha256=p['sha256'],facts=dict(python=p['patch'],implementation='CPython',
+              arch='x86_64',bits=64,venv_active=True,gil_disabled=False,ssl_context=True,pip='test',ensurepip='test')) for p in pins]
+        report=dict(passed=True,system_python_before='c'*64,system_python_after='c'*64,interpreters=rows)
+        self.tool.validate_python_report(report,pins)
+        for replacement in (dict(interpreters=rows[:1]),dict(system_python_after='d'*64),dict(passed=False)):
+            with self.assertRaises(ValueError):self.tool.validate_python_report(dict(report,**replacement),pins)
+        rows[1]['facts']['python']='3.14.0'
+        with self.assertRaises(ValueError):self.tool.validate_python_report(report,pins)
 
     def test_host_kernel_wrong_distribution_or_unaccelerated_guest_cannot_approve_baseline(self):
         guest=dict(identity=dict(ID='ubuntu',VERSION_ID='18.04'),arch='x86_64',kernel='4.15.0-213-generic',glibc='glibc 2.27')
