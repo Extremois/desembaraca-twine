@@ -512,6 +512,17 @@ locais ao ambiente de teste; não copiá-la integralmente para um relatório pú
 O coletor lê a regra gerada como dados, sem executar make/shell, com limites de
 8 MiB de metadados, 10.000 referências e 1 GiB de entradas distintas.
 
+O relink Zig também gera `link-map.txt` e `allocated-sections.json`. O leitor
+`link-map.py` confronta as seções alocadas do ELF com o mapa LLD, os inputs com
+hash e as observações de extração de membros. Imports presentes apenas no DWARF,
+seções de debug e rótulos de símbolos não são contados como contribuições
+alocadas. A proveniência vincula os hashes do mapa, relatório e executável;
+o relink exige bytes iguais à referência do compilador. Os workflows preservam
+esses dois relatórios nas quatro variantes Linux. Limites: mapa/relatório de
+8 MiB, 100.000 linhas, ELF de 64 MiB e 4.096 seções.
+Essa evidência não decide licenças nem elimina a cobertura de inputs exigida
+abaixo; a relação entre fonte, código e dados ainda precisa de revisão.
+
 `components[].link_input_sha256` da auditoria deve cobrir todos os hashes dos
 arquivos estáticos `.a` e `.o` registrados. O inspetor Linux recusa auditoria sem
 esse vínculo, sem metadados de linkedição ou com cobertura incompleta. Conferir

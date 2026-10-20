@@ -161,6 +161,24 @@ def verified_source_prefix(data,item):
     return prefix
 
 
+def runtime_reference_materials(sdk,sources):
+    """Preserve historical Go terms without treating a URL as current algorithm provenance."""
+    selected=[]
+    for name,item in sources.items():
+        prefix=verified_source_prefix(sdk[name],item)
+        if b'golang.org' not in prefix:continue
+        lock=json.loads(audit.bounded(HERE/'licenses/material-source-lock.json',65536))['go_tangent_history']
+        if (name!=lock['source_path'] or item['sha256']!=lock['source_sha256']
+                or b'https://golang.org/src/math/tan.go' not in prefix):
+            raise ValueError('Runtime Go reference requires its own byte-bound history review')
+        data,origin=license_material('go_1_17_license')
+        origin.update(related_source=name,related_source_sha256=item['sha256'],
+            replacement_commit=lock['replacement_commit'],
+            scope='Conservative preservation for historical tangent documentation/tests; upstream replaced the Go algorithm with musl')
+        selected.append(('Go-BSD-3-Clause-LICENSE.txt',data,origin))
+    return selected
+
+
 def append_header_notices(materials,external,sdk,facts):
     """Preserve every verified SDK header prefix, including explicit empty rows."""
     headers=[]
@@ -351,6 +369,7 @@ def prepare(linked_build,source_build,evidence,graphviz_archive,sdk_archive,sdk_
                 materials.append((label+'-'+name.replace('/','__')+'.txt',prefix,
                     dict(kind='sdk-source-comment-prefix',path=name,archive_sha256=facts['archive_sha256'],
                          source_sha256=item['sha256'],offset=0,length=len(prefix))))
+    materials.extend(runtime_reference_materials(sdk,runtime_sources))
     for name in ('lib/cgraph/grammar.c','lib/cgraph/grammar.h','lib/common/htmlparse.c','lib/common/htmlparse.h'):
         if name not in generated:raise ValueError('Bison output is absent from compiler evidence')
         data=audit.bounded(source_build/'build'/name,8*1024**2)

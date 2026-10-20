@@ -1,0 +1,54 @@
+{
+  "kind": "zig-tangent-upstream-history-review",
+  "approved": false,
+  "qualified": false,
+  "replacement_commit": "e24398361dacc4b995ec67043746561927f5f1d2",
+  "replacement_parent": "a1b79ea5857a52332d9da49d261a7fd04e52a466",
+  "primary_commit_url": "https://github.com/ziglang/zig/commit/e24398361dacc4b995ec67043746561927f5f1d2",
+  "commit_api_sha256": "3c82a35dd3331593863ddf5a5af5690b0a4e7aeb193683db07d7d74f4d99ba20",
+  "sources": {
+    "before": {
+      "url": "https://raw.githubusercontent.com/ziglang/zig/a1b79ea5857a52332d9da49d261a7fd04e52a466/lib/std/math/tan.zig",
+      "size": 3455,
+      "sha256": "c359d3641dcb83de3ac1a85e003b7e63460518b3b83299cef497dbddcfd268f7"
+    },
+    "after": {
+      "url": "https://raw.githubusercontent.com/ziglang/zig/e24398361dacc4b995ec67043746561927f5f1d2/lib/std/math/tan.zig",
+      "size": 4651,
+      "sha256": "d1d1b9e1a0e26ca8a242d99b24e75346baafd0d786dc9be9c4adce50026c0c4e"
+    },
+    "current": {
+      "url": "https://raw.githubusercontent.com/ziglang/zig/0.15.2/lib/compiler_rt/tan.zig",
+      "size": 6175,
+      "sha256": "828484649e0a61f634bd1bea179255ec24ee9c77b1511a99ccad2b874e0e1a6c"
+    },
+    "go-license": {
+      "url": "https://raw.githubusercontent.com/golang/go/go1.17/LICENSE",
+      "size": 1479,
+      "sha256": "2d36597f7117c38b006835ae7f537487207d8ec407aa9d9980794b2030cbc067"
+    }
+  },
+  "sdk_bindings": [
+    {
+      "arch": "x86_64",
+      "archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+      "source_sha256": "828484649e0a61f634bd1bea179255ec24ee9c77b1511a99ccad2b874e0e1a6c"
+    },
+    {
+      "arch": "aarch64",
+      "archive_sha256": "958ed7d1e00d0ea76590d27666efbf7a932281b3d7ba0c6b01b0ff26498f667f",
+      "source_sha256": "828484649e0a61f634bd1bea179255ec24ee9c77b1511a99ccad2b874e0e1a6c"
+    }
+  ],
+  "findings": [
+    "Upstream explicitly replaced Go tangent implementation with musl tangent implementation",
+    "The old Go source URL remains in the comment after replacement; it is not evidence that the Go/Cephes polynomial still implements current tangent",
+    "Current tagged source matches both pinned SDK archives byte-for-byte",
+    "Tests and API documentation from the previous file persist; preserve Go BSD terms conservatively rather than claim all historical material was replaced"
+  ],
+  "limits": [
+    "History review concerns tangent only; no complete runtime-license approval",
+    "DWARF source presence does not establish retained machine-code sections",
+    "musl math per-file upstream notices still require review separately from the musl root MIT text"
+  ]
+}

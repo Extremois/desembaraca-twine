@@ -1,5 +1,18 @@
 {
   "schema_version": 1,
+  "go_tangent_history": {
+    "source_path": "lib/compiler_rt/tan.zig",
+    "source_sha256": "828484649e0a61f634bd1bea179255ec24ee9c77b1511a99ccad2b874e0e1a6c",
+    "replacement_commit": "e24398361dacc4b995ec67043746561927f5f1d2",
+    "purpose": "Upstream replaced Go tangent with musl; retain Go BSD terms conservatively for historical documentation/tests"
+  },
+  "go_1_17_license": {
+    "url": "https://raw.githubusercontent.com/golang/go/go1.17/LICENSE",
+    "sha256": "2d36597f7117c38b006835ae7f537487207d8ec407aa9d9980794b2030cbc067",
+    "size": 1479,
+    "file": "go-1.17-COPYING.txt",
+    "purpose": "Historical tangent reference terms; not a claim that current runtime uses the replaced Go/Cephes algorithm"
+  },
   "lgpl_2_1_copying": {
     "url": "https://www.gnu.org/licenses/old-licenses/lgpl-2.1.txt",
     "sha256": "20e50fe7aae3e56378ebf0417d9de904f55a0e61e4df315333e632a4d3555d95",

@@ -9,7 +9,7 @@ test "$(uname -m)" = "$arch"
 mkdir -p "$work"
 mkdir "$work/evidence"
 retain() {
-    for name in sdk/sdk-record.json build/provenance.json build/static-elf-inspection.txt linked/provenance.json linked/static-elf-inspection.txt notices/provenance.json notices/static-elf-inspection.txt notices/review.json package/candidate.json package/candidate.zip; do
+    for name in sdk/sdk-record.json build/provenance.json build/static-elf-inspection.txt linked/provenance.json linked/static-elf-inspection.txt linked/allocated-sections.json linked/build/cmd/dot/CMakeFiles/dot.dir/link-map.txt notices/provenance.json notices/static-elf-inspection.txt notices/review.json package/candidate.json package/candidate.zip; do
         if test -f "$work/$name"; then
             cp "$work/$name" "$work/evidence/$(basename "$name")"
             chmod 644 "$work/evidence/$(basename "$name")"

@@ -100,6 +100,8 @@ jobs:
             ${{ runner.temp }}/twine-linked/provenance.json
             ${{ runner.temp }}/twine-linked/compiler-verbose.txt
             ${{ runner.temp }}/twine-linked/lld-output.txt
+            ${{ runner.temp }}/twine-linked/allocated-sections.json
+            ${{ runner.temp }}/twine-linked/build/cmd/dot/CMakeFiles/dot.dir/link-map.txt
             ${{ runner.temp }}/twine-notices/provenance.json
             ${{ runner.temp }}/twine-notices/review.json
             ${{ runner.temp }}/twine-notices/candidate/third-party-notices/

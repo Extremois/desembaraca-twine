@@ -1177,5 +1177,16 @@
       "evidence": "specs/003-add-cross-platform-support/evidence/linux-component-obligations-ci-2026-10-20/musl-aarch64/summary.json",
       "pending": "Per-component applicability, ISO conditions, third-party provenance and complete source retention/offer"
     }
+  ],
+  "zig_tangent_history_reviews": [
+    {
+      "approved": false,
+      "qualified": false,
+      "evidence": "specs/003-add-cross-platform-support/evidence/zig-tangent-origin-2026-10-20/summary.json",
+      "history_point_resolved": true,
+      "replacement_commit": "e24398361dacc4b995ec67043746561927f5f1d2",
+      "sdk_source_sha256": "828484649e0a61f634bd1bea179255ec24ee9c77b1511a99ccad2b874e0e1a6c",
+      "native_package_confirmation": false
+    }
   ]
 }

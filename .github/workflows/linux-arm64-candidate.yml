@@ -127,6 +127,7 @@ jobs:
             ${{ runner.temp }}/twine-arm64-linked/provenance.json
             ${{ runner.temp }}/twine-arm64-linked/compiler-verbose.txt
             ${{ runner.temp }}/twine-arm64-linked/lld-output.txt
+            ${{ runner.temp }}/twine-arm64-linked/allocated-sections.json
             ${{ runner.temp }}/twine-arm64-linked/build/cmd/dot/CMakeFiles/dot.dir/
             ${{ runner.temp }}/twine-arm64-notices/provenance.json
             ${{ runner.temp }}/twine-arm64-notices/review.json

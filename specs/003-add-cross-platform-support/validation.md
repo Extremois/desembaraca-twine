@@ -1,5 +1,42 @@
 # Evidência de implementação — feature 003
 
+## Integração macOS e prioridade de fechamento — 2026-10-20
+
+Os commits `32fa383` e `b1f608e` implementaram e corrigiram o percurso privado
+do gerenciador real no macOS. O [recibo consolidado](evidence/macos-runtime-integration-2026-10-20/summary.json)
+confere quatro slots nativos Intel/Apple Silicon × Python 3.12/3.14: aquisição
+controlada do ZIP, primeiro uso/preparo, Library/Caches, probe final, modos,
+13 casos, preservação e seis referências `(0,0,0)`. Os dois ZIPs, inventários
+e proveniências foram reconferidos após download. Seis jobs de fundação com
+217 testes passaram; regressão do driver Linux compartilhado passou nas quatro
+variantes. A falha inicial do driver por `os.listxattr` foi preservada antes da
+correção com `/usr/bin/xattr` somente para leitura.
+
+Gatekeeper estava habilitado; SIP já estava desabilitado nos runners e permaneceu
+assim. Não se alteraram proteções ou quarentena. A aquisição fixture e a ausência
+de assinatura/quarentena não demonstram aceitação da distribuição. T048 permanece
+parcial para esse critério final; T051/T056 continuam independentes. **54/84**.
+
+O usuário priorizou encerrar tarefas antes de iniciar novas implementações.
+O próximo avanço deve resolver critérios finais, priorizando a auditoria que
+desbloqueia a entrega Linux, em vez de repetir coleta de avisos já conferidos.
+A matriz completa continua vigente: o mantenedor confirmou explicitamente em
+2026-10-20 que todos os alvos permanecem nesta spec. Não transferir distros ou
+macOS para specs futuras como atalho de fechamento. Os 30 IDs restantes se agrupam assim:
+
+| Tarefas | Critério que ainda impede fechamento |
+| --- | --- |
+| T024–T027 | Baselines e cobertura de versões reais; build em host recente/container não os comprova |
+| T030/T031/T066 | Decisões de aplicabilidade/terceiros, oferta/retenção de fontes e pacote/manifesto final com origem real |
+| T033/T036–T045/T076/T078/T083 | Pré-requisitos, instalação, corpus, recuperação e pacotes finais em cada célula/Python da matriz |
+| T048/T051/T052/T056 | Candidata macOS assinada/notarizada, auditoria e percurso distribuído sob proteções normais; credenciais Apple ausentes |
+| T063/T065 | Revisão visual real no Twine por célula e aceitação Windows limpa em ambiente existente autorizado |
+| T080/T082/T084 | Auditoria final, promoção e revisão integral dependentes das evidências anteriores |
+
+As evidências novas são mantidas locais até outro commit necessário; não houve
+release, publicação de runtime ou promoção de catálogo. `debug.log`, preexistente
+à consolidação, não foi incluído nos commits.
+
 ## Construção glibc consolidada e reconstrução musl — 2026-10-19
 
 **T028 concluída; 54/84 tarefas, 30 pendentes.** O [recibo glibc](evidence/glibc-build-completion-2026-10-19/summary.json)

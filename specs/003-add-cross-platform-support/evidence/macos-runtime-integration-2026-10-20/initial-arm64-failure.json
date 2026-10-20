@@ -1,0 +1,37 @@
+{
+  "kind": "macos-private-bundle-runtime-integration",
+  "passed": false,
+  "qualified": false,
+  "environment_kind": "native",
+  "python": "3.12.10",
+  "arch": "arm64",
+  "os_version": "15.7.9",
+  "kernel": "24.6.0",
+  "engine_sha256": "774115a1a9e4b2385d33fa55fe02de0d8728cb0984967d445528c6fe04f97dac",
+  "provenance_sha256": "6ed2af855fde12bc0f59dddab44f6154f35af63505ece39e7b68d683b4871cba",
+  "security_before": {
+    "gatekeeper": {
+      "returncode": 0,
+      "output": "assessments enabled"
+    },
+    "sip": {
+      "returncode": 0,
+      "output": "System Integrity Protection status: disabled."
+    }
+  },
+  "security_after": {
+    "gatekeeper": {
+      "returncode": 0,
+      "output": "assessments enabled"
+    },
+    "sip": {
+      "returncode": 0,
+      "output": "System Integrity Protection status: disabled."
+    }
+  },
+  "tests": 2,
+  "skipped": 0,
+  "observations": {},
+  "cases": [],
+  "scope": "Real engine and production runtime manager; fixture acquisition, Python-only network guard; no signed/quarantined distributed-candidate acceptance"
+}

@@ -1,0 +1,29 @@
+{
+  "kind": "native-macos-private-manager-integration",
+  "approved": false,
+  "qualified": false,
+  "artifact_id": "macos-x86_64",
+  "actions_artifact_id": 12259848528,
+  "actions_archive_sha256": "9727457f3e9ac601044e945bddfe327b5e8be26a792c9f49a51cf3ee8211d580",
+  "candidate_archive_sha256": "ec0e27e30a2948ef79937cf720c6d31f4cb0e831d9c4fb799f84409fab114272",
+  "provenance_sha256": "0f3103a1dc15e334a5a6d73b2ac999e9bdeee513dac9c0f9eff14ddc86232a24",
+  "inventory_sha256": "b9d2c309fb08d4edfb2cf0a618286e6394ca9e2c6e554d1380d0b05eec73e9f3",
+  "inventory_files": 233,
+  "reports": [
+    {
+      "python": "3.12.10",
+      "file": "runtime-312.json",
+      "sha256": "0bdca415a049069f7af0277d4813df0091de43e6ef9d83a817256afc78803ff1"
+    },
+    {
+      "python": "3.14.7",
+      "file": "runtime-314.json",
+      "sha256": "34534baf4341cde82f8381b9a29c8712958a50a62e088770c8bc7a4a77efeece"
+    }
+  ],
+  "limitations": [
+    "Controlled transfer and Python-only network guard; not native network isolation",
+    "Signature/notarization, quarantined download and installed-candidate qualification remain pending",
+    "Security states are observed, not altered; see reports for actual hosted-runner SIP state"
+  ]
+}

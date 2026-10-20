@@ -13,6 +13,40 @@ def tool():
 
 
 class DraftNoticesTests(unittest.TestCase):
+    def test_historical_go_terms_follow_only_byte_bound_reviewed_tangent_source(self):
+        import hashlib
+        from unittest.mock import patch
+        module=tool()
+        prefix=b'// Ported from musl.\n// https://golang.org/src/math/tan.go\n'
+        source=prefix+b'fn tangent() void {}\n'
+        name='lib/compiler_rt/tan.zig'
+        observed=dict(size=len(source),sha256=hashlib.sha256(source).hexdigest(),leading_comment_bytes=len(prefix),
+            leading_comment_sha256=hashlib.sha256(prefix).hexdigest())
+        with tempfile.TemporaryDirectory() as folder:
+            root=Path(folder);(root/'licenses').mkdir()
+            lock=json.loads((module.HERE/'licenses/material-source-lock.json').read_bytes())
+            lock['go_tangent_history']['source_sha256']=observed['sha256']
+            (root/'licenses/material-source-lock.json').write_text(json.dumps(lock))
+            filename=lock['go_1_17_license']['file']
+            (root/'licenses'/filename).write_bytes((module.HERE/'licenses'/filename).read_bytes())
+            with patch.object(module,'HERE',root):
+                rows=module.runtime_reference_materials({name:source},{name:observed})
+                self.assertEqual(len(rows),1)
+                self.assertEqual(rows[0][0],'Go-BSD-3-Clause-LICENSE.txt')
+                self.assertIn(b'Copyright (c) 2009 The Go Authors',rows[0][1])
+                self.assertIn(b'Neither the name of Google Inc.',rows[0][1])
+                self.assertEqual(rows[0][2]['related_source_sha256'],observed['sha256'])
+                self.assertEqual(module.runtime_reference_materials({},{}),[])
+                with self.assertRaises(ValueError):
+                    module.runtime_reference_materials({name:source+b'changed'},{name:observed})
+                changed=source.replace(b'tangent',b'changed')
+                with self.assertRaises(ValueError):
+                    module.runtime_reference_materials({name:changed},{name:dict(observed,sha256=hashlib.sha256(changed).hexdigest())})
+                # A link in an unrelated runtime source cannot borrow tangent's review.
+                with self.assertRaises(ValueError):
+                    module.runtime_reference_materials({'lib/compiler_rt/other.zig':source},
+                        {'lib/compiler_rt/other.zig':observed})
+
     def test_x64_glibc_package_preserves_header_notices_and_offline_origins(self):
         import hashlib
         import io

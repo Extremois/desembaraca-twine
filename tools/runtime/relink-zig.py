@@ -21,6 +21,8 @@ from twine_edge_overlap.runtime_platform import detect_host
 spec = importlib.util.spec_from_file_location('runtime_builder', HERE / 'build-common.py')
 builder = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(builder)
+map_spec=importlib.util.spec_from_file_location('runtime_link_map',HERE/'link-map.py')
+link_map=importlib.util.module_from_spec(map_spec);map_spec.loader.exec_module(link_map)
 
 
 def arguments(text):
@@ -167,6 +169,7 @@ def relink(source_output, output, zig):
         raise ValueError('Reference compiler link failed; see compiler-verbose.txt')
     link = [str(zig), 'ld.lld', *lld_arguments(result.stderr.decode('utf-8'), reference, original_cwd)]
     link.append('--why-extract=CMakeFiles/dot.dir/why-extract.tsv')
+    link.append('--Map=CMakeFiles/dot.dir/link-map.txt')
     # JSON is a record only. capture_linkage hashes it; nothing reads it as code.
     (cwd / 'CMakeFiles/dot.dir/link.txt').write_text(json.dumps(link) + '\n', encoding='utf-8')
     result = run_bounded(link, cwd=cwd, env=environment, timeout=120, max_output=8*1024**2)
@@ -194,6 +197,15 @@ def relink(source_output, output, zig):
         raise ValueError('Direct LLD dependency capture is missing')
     linkage['archive_extractions'] = capture_extractions(cwd / 'CMakeFiles/dot.dir/why-extract.tsv',
                                                         linkage, source_output / 'build')
+    retained=link_map.capture(cwd/'CMakeFiles/dot.dir/link-map.txt',binary,linkage,source_output/'build')
+    retained_bytes=(json.dumps(retained,indent=2)+'\n').encode()
+    if len(retained_bytes)>8*1024**2:raise ValueError('Allocated-section report exceeds limit')
+    retained_path=output/'allocated-sections.json'
+    retained_path.write_bytes(retained_bytes)
+    linkage['allocated_input_sections']=dict(kind=retained['kind'],approved=False,qualified=False,
+        executable_sha256=retained['executable_sha256'],map_sha256=retained['map_sha256'],
+        report_sha256=builder.digest(retained_path),sections=len(retained['sections']),
+        allocated_output_sections=retained['allocated_output_sections'])
     record.update(output=str(output), executable_sha256=builder.digest(binary), linkage=linkage,
         qualification='experimental-relink-only; no dependency/license/native-cell approval',
         relink=dict(parent_provenance_sha256=builder.digest(provenance_path),

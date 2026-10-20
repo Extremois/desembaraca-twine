@@ -16,7 +16,7 @@ continuam separados por `artifact_id` no ledger `linux.json`.
 | Flex 2.6.4 | COPYING contém texto BSD e esclarecimento próprio sobre scanners gerados | Gerador/versão/macros conferidos; texto integral preservado. Não estender a exceção do scanner a componentes sem esse fundamento |
 | RGB X.Org | O COPYING preservado contém blocos The Open Group e Oracle com suas condições | Manter os dois blocos. Correspondência de valores não demonstra sozinha a origem histórica de todas as entradas Graphviz |
 | Glibc startup/nonshared | Fontes observadas declaram LGPL-2.1-ou-posterior; quatro prefixos contêm permissão de link, `csu/init.c` não contém a mesma exceção | Textos e fontes preservados; não aplicar a exceção dos demais arquivos a `init.c`. Fechar atendimento das obrigações de link/fontes por build |
-| Runtime Zig | Fontes observadas incluem portas musl; `tan.zig` também referencia Go | Incluir COPYRIGHT musl quando houver evidência de fontes de runtime, inclusive em glibc ARM64. Referência Go e demais proveniências exigem fechamento próprio; o LICENSE raiz Zig não substitui termos de terceiros |
+| Runtime Zig | Fontes observadas incluem portas musl; a referência Go de `tan.zig` é anterior à substituição oficial do algoritmo pela musl | COPYRIGHT musl preservado inclusive em glibc ARM64. Histórico Go conferido contra ambos SDKs; preparo passa a preservar BSD Go conservadoramente para documentação/testes históricos. Avisos específicos das portas matemáticas musl continuam sob revisão; o LICENSE raiz Zig não substitui termos de terceiros |
 | Entidades HTML/SVG | Avisos W3C datados, copyright/status e avisos ISO internos preservados separadamente | Aplicabilidade/condição ISO e política pertinente permanecem pendentes; ver [revisão W3C](data-references/w3c/REVIEW.md) |
 
 As duas correções de preparo deste incremento são o reconhecimento explícito
@@ -39,3 +39,13 @@ A recuperação pública foi repetida para as quatro exportações da revisão
 Os [recibos atuais](../../../specs/003-add-cross-platform-support/evidence/public-source-recovery-current-2026-10-20/summary.json)
 preservam o pin e os hashes, sem substituir a revisão anterior nem aprovar
 retenção/oferta. O procedimento está em [REBUILD-SOURCES.md](../REBUILD-SOURCES.md).
+
+O ponto histórico Go foi esclarecido pelo commit oficial
+[`e243983`](https://github.com/ziglang/zig/commit/e24398361dacc4b995ec67043746561927f5f1d2):
+o algoritmo Go foi substituído pelo musl, mas o link Go e partes de testes/documentação
+permaneceram. O arquivo da tag Zig 0.15.2 corresponde byte a byte aos dois SDKs
+fixados. A revisão não atribui automaticamente o algoritmo Go/Cephes ao código
+atual nem afirma que todo material histórico foi substituído. O preparo inclui
+o BSD completo do Go como preservação conservadora quando a fonte `tan.zig`
+observada corresponde ao hash revisado; outra fonte/hash exige revisão própria.
+Essa inclusão ainda aguarda o próximo empacotamento nativo, sem alterar ZIPs existentes.

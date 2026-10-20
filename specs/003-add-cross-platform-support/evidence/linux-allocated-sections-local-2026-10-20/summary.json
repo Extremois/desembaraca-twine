@@ -1,0 +1,41 @@
+{
+  "kind": "local-lld-allocation-inspection-not-native-qualification",
+  "task": "T030",
+  "task_complete": false,
+  "approved": false,
+  "qualified": false,
+  "environment_kind": "wsl",
+  "source_state": "working-tree",
+  "executable_sha256": "beaa54239cc77d98840aedf73b94e5e14407ab5f32acd893cedd3c37fb2f76f6",
+  "provenance_sha256": "712a19eeefaf665d0acb669bb99c4208cf3ee7384eb41198a854a7714a134198",
+  "report_sha256": "f6e18b7e64748292e0ef1212bcf64419751ca85efa0504cf0a4953a433e4b14b",
+  "map_sha256": "c3b13b44788780a6d36471d1decaab89f3e06cb3ab71aad1677fcb9d053834c0",
+  "allocated_input_sections": 625,
+  "allocated_output_sections": 23,
+  "byte_identical_to_compiler": true,
+  "known_hashed_link_inputs": 73,
+  "parser_sha256": "b7d89b0ee9e3716243cfcc6bb74678cc18b1c3a7ae54cc67ded93f6ea4a87544",
+  "parser_tests_sha256": "3ec7d1ad0d075d08c84177939d71273e18443f69239ab3cea4c99a5ed3b7201e",
+  "tests": [
+    {
+      "python": "3.14",
+      "tests": 221,
+      "skipped": 8,
+      "seconds": 25.656,
+      "passed": true
+    },
+    {
+      "python": "3.12",
+      "tests": 221,
+      "skipped": 8,
+      "seconds": 25.494,
+      "passed": true
+    }
+  ],
+  "regression": "Missing reader failed first; synthetic binary/map cases reject unknown inputs/members, out-of-range or missing allocations, changed ELF and malformed/excessive section tables",
+  "pending": [
+    "Native confirmation for four Linux variants",
+    "Source-to-instruction applicability, complete source offer and remaining component license decisions",
+    "No distro/kernel/hardware qualification inferred from WSL"
+  ]
+}
