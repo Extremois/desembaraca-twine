@@ -1241,7 +1241,7 @@
     {
       "approved": false,
       "qualified": false,
-      "native_package_confirmation": false,
+      "native_package_confirmation": true,
       "evidence": "specs/003-add-cross-platform-support/evidence/runtime-math-notices-2026-10-20/summary.json",
       "reviewed_sdk_sources": 19,
       "historical_c_references": 42,
@@ -1251,7 +1251,9 @@
         "linux-musl-x86_64",
         "linux-musl-aarch64"
       ],
-      "scope": "Conservative preservation; exact translation ancestry and applicability pending"
+      "scope": "Conservative preservation; exact translation ancestry and applicability pending",
+      "native_revision": "29ce91235c57a22c66f9c9078c39d89e47b23bce",
+      "native_evidence": "specs/003-add-cross-platform-support/evidence/runtime-math-notices-ci-2026-10-20/summary.json"
     }
   ]
 }

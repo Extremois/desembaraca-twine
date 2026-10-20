@@ -1,0 +1,26 @@
+{
+  "kind": "native-math-notice-package-confirmation",
+  "approved": false,
+  "qualified": false,
+  "revision": "29ce91235c57a22c66f9c9078c39d89e47b23bce",
+  "workflow_run": 39422077992,
+  "artifact_download_id": 12264920999,
+  "artifact_id": "linux-glibc-aarch64",
+  "download_archive_sha256": "712a291a0422c0cdcbe8e6650bc49a3ad546d1eac2e538d9636ef1ef6f81499b",
+  "candidate_archive_sha256": "8c8b3e73397033b74404b68d9207bbfdc742dc1271f96ea2809ee2c92bc1eebe",
+  "provenance_sha256": "64d805c82e496159d53ab035cf7d02729c8b699aa688981b45a669bfd53f28c6",
+  "inventory_sha256": "88c8fca3906daf407ee145e892cb4cea701833bd31b9840b7b947f8cc742d627",
+  "executable_sha256": "933b6c63370bdd3e814627e2a9a06176416c8da017a21dcbc96d8137dbc17e22",
+  "engine_unchanged": true,
+  "additional_math_notice_materials": 28,
+  "notice_count": 571,
+  "all_inventory_bytes_and_modes_verified": true,
+  "all_historical_math_material_bytes_verified": true,
+  "local_preparation_proof": "../../runtime-math-notices-2026-10-20/summary.json",
+  "pending": [
+    "Exact translation ancestry and applicability",
+    "ISO terms applicability",
+    "Other component audit and permanent corresponding-source offer",
+    "Native distribution qualification"
+  ]
+}

@@ -691,3 +691,12 @@ manifesto, auditoria atualizada para a proveniência assinada, distribuição re
 ensaio offline/Gatekeeper continuam obrigatórios. Timestamp torna bytes assinados
 não necessariamente reprodutíveis. Neste host só foram verificados sintaxe e
 recusa fora do macOS; T051 continua aberta até executar ambas as variantes.
+
+O workflow `linux-musl-candidate.yml` também reutiliza os dois bundles estáticos
+nos userlands Alpine 3.21, 3.22, 3.23 e 3.24, com CPython 3.12/3.14 em CPU
+correspondente. `alpine-compatibility-images.json` fixa os 16 slots por digest.
+`check-alpine-userland.py` exige identidade/patch Alpine, CPython, CPU e imagem
+corretos, verifica venv/pip em caminho Unicode e executa o gerenciador real,
+preparo/cache offline e corpus sob strace com controle positivo de rede.
+Os recibos preservam kernel real e a classificação `container`; aquisição é
+controlada e esses resultados não qualificam células Alpine nem promovem suporte.

@@ -93,3 +93,76 @@ jobs:
           name: linux-musl-${{ matrix.arch }}-source-review-${{ github.sha }}
           retention-days: 7
           path: ${{ runner.temp }}/twine-musl/source-review/
+  alpine-userland-compatibility:
+    name: Alpine userland ${{ matrix.alpine }} (${{ matrix.arch }}, both Pythons)
+    needs: alpine-build
+    strategy:
+      fail-fast: false
+      matrix:
+        alpine: ['3.21', '3.22', '3.23', '3.24']
+        include:
+          - arch: x86_64
+            runner: ubuntu-24.04
+            oci_arch: amd64
+          - arch: aarch64
+            runner: ubuntu-24.04-arm
+            oci_arch: arm64
+        arch: [x86_64, aarch64]
+    runs-on: ${{ matrix.runner }}
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/download-artifact@v4
+        with:
+          name: linux-musl-${{ matrix.arch }}-container-unqualified-${{ github.sha }}
+          path: ${{ runner.temp }}/twine-musl-input
+      - name: Select immutable userland images for this release and CPU
+        id: images
+        shell: bash
+        env:
+          ALPINE_RELEASE: ${{ matrix.alpine }}
+          TARGET_ARCH: ${{ matrix.arch }}
+        run: |
+          test "$(uname -m)" = "$TARGET_ARCH"
+          python - <<'PY'
+          import json,os
+          from pathlib import Path
+          lock=json.loads(Path('tools/runtime/alpine-compatibility-images.json').read_bytes())
+          with open(os.environ['GITHUB_OUTPUT'],'a') as stream:
+              for minor,key in [('3.12','python312'),('3.14','python314')]:
+                  rows=[r for r in lock['images'] if (r['alpine'],r['python'])==(os.environ['ALPINE_RELEASE'],minor)]
+                  if len(rows)!=1:raise ValueError('Missing or ambiguous pinned slot')
+                  stream.write(key+'='+rows[0]['platforms'][os.environ['TARGET_ARCH']]['reference']+'\n')
+          PY
+      - name: Check venv, private runtime, corpus and network on both Pythons
+        shell: bash
+        env:
+          PYTHON312_IMAGE: ${{ steps.images.outputs.python312 }}
+          PYTHON314_IMAGE: ${{ steps.images.outputs.python314 }}
+          ALPINE_RELEASE: ${{ matrix.alpine }}
+          TARGET_ARCH: ${{ matrix.arch }}
+          OCI_ARCH: ${{ matrix.oci_arch }}
+        run: |
+          mkdir "$RUNNER_TEMP/twine-musl-compatibility"
+          for minor in 3.12 3.14; do
+            case "$minor" in 3.12) image="$PYTHON312_IMAGE" ;; 3.14) image="$PYTHON314_IMAGE" ;; esac
+            docker pull --platform "linux/$OCI_ARCH" "$image"
+            docker image inspect "$image" > "$RUNNER_TEMP/twine-musl-compatibility/image-$minor.json"
+            docker run --rm --platform "linux/$OCI_ARCH" -e GITHUB_SHA -e "SLOT_IMAGE=$image" -e "SLOT_MINOR=$minor" -e ALPINE_RELEASE -e TARGET_ARCH -v "$GITHUB_WORKSPACE:/workspace:ro" -v "$RUNNER_TEMP/twine-musl-input:/candidate:ro" -v "$RUNNER_TEMP/twine-musl-compatibility:/work" --workdir /workspace "$image" sh -ec 'apk add --no-cache strace binutils; python tools/runtime/check-alpine-userland.py --package /candidate/evidence --work "/work/python-$SLOT_MINOR" --alpine "$ALPINE_RELEASE" --arch "$TARGET_ARCH" --python "$SLOT_MINOR" --image "$SLOT_IMAGE"'
+          done
+      - name: Retain userland compatibility evidence (not native Alpine qualification)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: alpine-${{ matrix.alpine }}-${{ matrix.arch }}-userland-compatibility-${{ github.sha }}
+          retention-days: 7
+          path: |
+            ${{ runner.temp }}/twine-musl-compatibility/image-*.json
+            ${{ runner.temp }}/twine-musl-compatibility/python-*/*.json
+            ${{ runner.temp }}/twine-musl-compatibility/python-*/*.txt
+            ${{ runner.temp }}/twine-musl-compatibility/python-*/*.trace

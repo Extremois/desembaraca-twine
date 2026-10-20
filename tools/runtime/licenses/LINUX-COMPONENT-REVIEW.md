@@ -75,3 +75,11 @@ Ver `data-references/musl-math/REVIEW.md` e o recibo
 O ensaio comprova seleção/preparo por bytes; não comprova ancestralidade exata
 da tradução, aplicabilidade final, pacote nativo atualizado ou fechamento T030.
 ISO, outros componentes e oferta/retenção de fontes continuam pendentes.
+
+A confirmação nativa ocorreu no checkpoint `29ce912`: cinco workflows aprovados,
+quatro ZIPs Linux conferidos após download e 28 materiais exatos em cada uma das
+três variantes pertinentes. Os quatro motores preservam seus bytes; oito ensaios
+de runtime/rede e os seis jobs de fundação passaram. Os recibos finais estão em
+`specs/003-add-cross-platform-support/evidence/runtime-math-notices-ci-2026-10-20/`.
+Isso fecha a confirmação dos novos avisos no pacote, mantendo a aprovação T030
+e a revisão de aplicabilidade/oferta pendentes.
