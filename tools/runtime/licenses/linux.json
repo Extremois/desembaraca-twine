@@ -978,5 +978,106 @@
       "scope": "Local recheck of pinned original sources bound to historical builds; runtime archives unchanged",
       "pending": "Per-file applicability, transitive source closure, source offer and fresh native candidate packaging"
     }
+  ],
+  "native_source_notice_packages": [
+    {
+      "artifact_id": "linux-glibc-x86_64",
+      "approved": false,
+      "qualified": false,
+      "executable_sha256": "43ce8d686720467c21be91cab4b8f3b246baae49c2cfe293714ebdf8a82f5716",
+      "candidate_archive_sha256": "60202b49c67b9d0c7b64de8e5f8343642c6ae85872ce876f63ea1a3499ddd5a1",
+      "notices": 471,
+      "evidence": "specs/003-add-cross-platform-support/evidence/linux-source-notice-packages-2026-10-19/glibc-x86_64/summary.json",
+      "review_revision": "7d0476f3943e679ff1e151bf656f9992084209ba",
+      "pending": "Per-file applicability, transitive-source audit, permanent source offer and platform qualification"
+    },
+    {
+      "artifact_id": "linux-glibc-aarch64",
+      "approved": false,
+      "qualified": false,
+      "executable_sha256": "933b6c63370bdd3e814627e2a9a06176416c8da017a21dcbc96d8137dbc17e22",
+      "candidate_archive_sha256": "422774339880c987f29b9ea7365fb2f025a0476c96b7bd2c70335c57d1070ab2",
+      "notices": 534,
+      "evidence": "specs/003-add-cross-platform-support/evidence/linux-source-notice-packages-2026-10-19/glibc-aarch64/summary.json",
+      "review_revision": "7d0476f3943e679ff1e151bf656f9992084209ba",
+      "pending": "Per-file applicability, transitive-source audit, permanent source offer and platform qualification"
+    },
+    {
+      "artifact_id": "linux-musl-x86_64",
+      "approved": false,
+      "qualified": false,
+      "executable_sha256": "f4dfee4e052704b1a7efdb7b6a4c43583ccaa062aec800b76224dae24eb2b69b",
+      "candidate_archive_sha256": "1c512bba5a7272159684625bba20fd76ecd0224bcb41b2b4ebad0225ecffbb23",
+      "notices": 412,
+      "evidence": "specs/003-add-cross-platform-support/evidence/linux-source-notice-packages-2026-10-19/musl-x86_64/summary.json",
+      "review_revision": "7d0476f3943e679ff1e151bf656f9992084209ba",
+      "pending": "Per-file applicability, transitive-source audit, permanent source offer and platform qualification"
+    },
+    {
+      "artifact_id": "linux-musl-aarch64",
+      "approved": false,
+      "qualified": false,
+      "executable_sha256": "2d7a4b6024eb000c33ecf8b14d1a32d0aac8dde65bed00de138604d081fd3ee4",
+      "candidate_archive_sha256": "91b2ff65a5601e775688e8c92d79ff55a1b7185dd8cb967cfc04d63bd0f7aecd",
+      "notices": 412,
+      "evidence": "specs/003-add-cross-platform-support/evidence/linux-source-notice-packages-2026-10-19/musl-aarch64/summary.json",
+      "review_revision": "7d0476f3943e679ff1e151bf656f9992084209ba",
+      "pending": "Per-file applicability, transitive-source audit, permanent source offer and platform qualification"
+    }
+  ],
+  "public_source_recovery_reviews": [
+    {
+      "artifact_id": "linux-glibc-x86_64",
+      "approved": false,
+      "qualified": false,
+      "evidence": "specs/003-add-cross-platform-support/evidence/public-source-recovery-2026-10-20/x86_64.json",
+      "project_revision": "7d0476f3943e679ff1e151bf656f9992084209ba",
+      "source_entries_recovered": 18162,
+      "pending": "Per-file applicability, complete corresponding-source review and retention/hosting policy"
+    },
+    {
+      "artifact_id": "linux-glibc-aarch64",
+      "approved": false,
+      "qualified": false,
+      "evidence": "specs/003-add-cross-platform-support/evidence/public-source-recovery-2026-10-20/aarch64.json",
+      "project_revision": "7d0476f3943e679ff1e151bf656f9992084209ba",
+      "source_entries_recovered": 18162,
+      "pending": "Per-file applicability, complete corresponding-source review and retention/hosting policy"
+    },
+    {
+      "artifact_id": "linux-musl-x86_64",
+      "approved": false,
+      "qualified": false,
+      "evidence": "specs/003-add-cross-platform-support/evidence/public-source-recovery-2026-10-20/musl-x86_64.json",
+      "project_revision": "7d0476f3943e679ff1e151bf656f9992084209ba",
+      "source_entries_recovered": 18162,
+      "pending": "Per-file applicability, complete corresponding-source review and retention/hosting policy"
+    },
+    {
+      "artifact_id": "linux-musl-aarch64",
+      "approved": false,
+      "qualified": false,
+      "evidence": "specs/003-add-cross-platform-support/evidence/public-source-recovery-2026-10-20/musl-aarch64.json",
+      "project_revision": "7d0476f3943e679ff1e151bf656f9992084209ba",
+      "source_entries_recovered": 18162,
+      "pending": "Per-file applicability, complete corresponding-source review and retention/hosting policy"
+    }
+  ],
+  "w3c_policy_reviews": [
+    {
+      "approved": false,
+      "qualified": false,
+      "evidence": "specs/003-add-cross-platform-support/evidence/w3c-policy-review-2026-10-20/summary.json",
+      "artifacts": [
+        "linux-glibc-x86_64",
+        "linux-glibc-aarch64",
+        "linux-musl-x86_64",
+        "linux-musl-aarch64"
+      ],
+      "review_materials": 7,
+      "iso_declaration_notices": 3,
+      "native_package_confirmation": false,
+      "pending": "Policy applicability, ISO SGML-use condition, historical provenance and fresh native packaging confirmation"
+    }
   ]
 }

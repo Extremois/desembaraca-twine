@@ -1,0 +1,38 @@
+W3C reference review material; license applicability remains pending.
+Source: https://www.w3.org/TR/1999/REC-html401-19991224/
+Observed destination: https://www.w3.org/TR/1999/REC-html401-19991224/
+Raw source SHA-256: 1a9393902a9a1926c3aa34add33304b49e09a96439451f7957dd72b69d51c9e9
+
+next (https://www.w3.org/TR/1999/REC-html401-19991224/about.html)
+table of contents (https://www.w3.org/TR/1999/REC-html401-19991224/#minitoc)
+elements (https://www.w3.org/TR/1999/REC-html401-19991224/index/elements.html) attributes (https://www.w3.org/TR/1999/REC-html401-19991224/index/attributes.html) index (https://www.w3.org/TR/1999/REC-html401-19991224/index/list.html)
+(https://www.w3.org/)
+HTML 4.01 Specification
+W3C Recommendation 24 December 1999
+This version:
+http://www.w3.org/TR/1999/REC-html401-19991224 (https://www.w3.org/TR/1999/REC-html401-19991224)
+(plain text [794Kb] (https://www.w3.org/TR/1999/REC-html401-19991224/html40.txt) , gzip'ed
+tar archive of HTML files [371Kb] (https://www.w3.org/TR/1999/REC-html401-19991224/html40.tgz) , a .zip archive of
+HTML files [405Kb] (https://www.w3.org/TR/1999/REC-html401-19991224/html40.zip) , gzip'ed Postscript file [746Kb,
+389 pages] (https://www.w3.org/TR/1999/REC-html401-19991224/html40.ps.gz) , gzip'ed PDF file [963Kb] (https://www.w3.org/TR/1999/REC-html401-19991224/html40.pdf.gz) )
+Latest version of HTML 4.01:
+http://www.w3.org/TR/html401 (https://www.w3.org/TR/html401)
+Latest version of HTML 4:
+http://www.w3.org/TR/html4 (https://www.w3.org/TR/html4)
+Latest version of HTML:
+http://www.w3.org/TR/html (https://www.w3.org/TR/html)
+Previous version of HTML 4.01:
+http://www.w3.org/TR/1999/PR-html40-19990824 (https://www.w3.org/TR/1999/PR-html40-19990824 )
+Previous HTML 4 Recommendation:
+http://www.w3.org/TR/1998/REC-html40-19980424 (https://www.w3.org/TR/1998/REC-html40-19980424)
+Editors:
+Dave Raggett (https://www.w3.org/People/Raggett) <dsr@w3.org (mailto:dsr@w3.org) >
+Arnaud Le Hors, W3C
+Ian Jacobs, W3C
+Copyright (https://www.w3.org/Consortium/Legal/ipr-notice#Copyright)
+©1997-1999 W3C (https://www.w3.org/) ® (MIT (http://www.lcs.mit.edu/) ,
+INRIA (http://www.inria.fr/) , Keio (http://www.keio.ac.jp/) ), All Rights
+Reserved. W3C liability (https://www.w3.org/Consortium/Legal/ipr-notice#Legal_Disclaimer) ,
+trademark (https://www.w3.org/Consortium/Legal/ipr-notice#W3C_Trademarks) , document
+use (https://www.w3.org/Consortium/Legal/copyright-documents-19990405) and software
+licensing (https://www.w3.org/Consortium/Legal/copyright-software-19980720) rules apply.

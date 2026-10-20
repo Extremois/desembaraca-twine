@@ -37,7 +37,9 @@ class DraftNoticesTests(unittest.TestCase):
             graphviz_files.update({'lib/common/example.c':b'/* Copyright Graphviz fixture. */\nint example;\n// Copyright embedded fixture.\n',
                                   'lib/common/empty.h':b'int no_source_prefix;\n'})
             graphviz_files['lib/common/brewer_colors']=(b'# Apache-Style Software License for ColorBrewer\n'
-                b'# Copyright fixture\n# THIS SOFTWARE IS PROVIDED fixture\n/color 1 2 3\n')
+                b'# Copyright fixture\n# This product includes color specifications and designs developed\n'
+                b'# by Cynthia Brewer (http://colorbrewer.org/).\n'
+                b'# THIS SOFTWARE IS PROVIDED fixture\n/color 1 2 3\n')
             def archive(path,prefix,files):
                 with tarfile.open(path,'w') as stream:
                     for name,data in files.items():
@@ -98,6 +100,9 @@ class DraftNoticesTests(unittest.TestCase):
                 self.assertEqual(hashlib.sha256(data).hexdigest(),item['sha256'])
             notices={item['path'].split('/')[-1] for item in review['notices']}
             self.assertIn('GPL-3.0-COPYING.txt',notices)
+            acknowledgment=candidate/'third-party-notices/ColorBrewer-ACKNOWLEDGMENT.txt'
+            self.assertIn(b'This product includes color specifications and designs developed by Cynthia Brewer',
+                          acknowledgment.read_bytes())
             self.assertEqual(sum(name.startswith('SDK-header-') for name in notices),1)
             self.assertEqual(sum(name.startswith('Graphviz-source-') for name in notices),2)
             reference=next(candidate/'third-party-notices'/name for name in notices
@@ -166,6 +171,8 @@ class DraftNoticesTests(unittest.TestCase):
         record=dict(completed=True,artifact_id='linux-glibc-aarch64',native_os='linux',native_arch='aarch64',
                     recipe=dict(os='linux',arch='aarch64',abi='glibc'))
         self.assertIn('lib/libc/glibc/LICENSES',module.sdk_notice_names(record,ROOT))
+        self.assertIn('lib/libc/musl/COPYRIGHT',module.sdk_notice_names(record,ROOT,include_runtime_sources=True))
+        self.assertNotIn('lib/libc/musl/COPYRIGHT',module.sdk_notice_names(record,ROOT))
         for bad in (dict(record,native_arch='x86_64'),dict(record,completed=False),
                     dict(record,recipe=dict(os='linux',arch='aarch64',abi='musl'))):
             with self.assertRaises(ValueError):module.sdk_notice_names(bad,ROOT)

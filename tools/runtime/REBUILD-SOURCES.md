@@ -5,6 +5,54 @@ contêm `sources.tar.gz` e um
 recibo SHA-256. É material para revisão, ainda sem aprovação de oferta completa
 de fontes ou publicação permanente. Não é necessário para usar o runtime.
 
+## Recuperação das fontes por origens públicas
+
+As receitas e os auxiliares usados nas candidatas da revisão `7d0476f` estão
+no [arquivo público dessa revisão](https://github.com/Extremois/desembaraca-twine/archive/7d0476f3943e679ff1e151bf656f9992084209ba.zip),
+acessível sem autenticação. O SHA-256 observado é
+`c069987ed0ed6cd811c72aee1430a123b06e47d3659f0d2388ad2dd8fe14ade1`
+(13.267.688 bytes), registrado em `public-recipe-source-lock.json`.
+Graphviz está no [tarball 16.1.0 fixado](https://gitlab.com/graphviz/graphviz/-/archive/16.1.0/graphviz-16.1.0.tar.gz);
+os SDKs completos estão em [Zig Linux x64](https://ziglang.org/download/0.15.2/zig-x86_64-linux-0.15.2.tar.xz)
+e [Zig Linux ARM64](https://ziglang.org/download/0.15.2/zig-aarch64-linux-0.15.2.tar.xz).
+Os tamanhos e hashes ficam em `source-lock.json` e `prepare-linux-ci.py`.
+Essas origens permitem recuperar os bytes das fontes sem usar o armazenamento
+temporário de Actions. Sua disponibilidade atual não garante hospedagem futura
+nem aprova a oferta de fontes correspondente às licenças.
+
+Para conferir uma exportação existente, baixe os três arquivos da arquitetura
+correta e use o novo verificador do mantenedor:
+
+```sh
+python3 tools/runtime/verify-public-sources.py --source-package sources.tar.gz --receipt sources.json --project project-7d0476f.zip --graphviz graphviz-16.1.0.tar.gz --sdk zig-x86_64-linux-0.15.2.tar.xz --report public-source-review.json
+```
+
+O verificador roda offline, sem extrair arquivos nem executar compiladores.
+Confere cada fonte exportada contra as origens fixadas, além do inventário,
+dos hashes e do vínculo da receita com a candidata. Para ARM64, forneça o SDK
+ARM64. `candidate-provenance.json` e `manifest.json` são metadados gerados,
+explicitamente separados das fontes recuperáveis. Mudanças nos bytes dos
+arquivos públicos reprovam a conferência; não substitua os hashes automaticamente.
+O ZIP público fixado contém as receitas daquela revisão; o verificador novo
+é uma ferramenta de revisão do checkout atual.
+
+Para reconstruir diretamente das origens públicas, extraia o ZIP do projeto
+conferido e, na raiz extraída, execute em Linux da CPU/ABI correspondente:
+
+```sh
+python3 tools/runtime/prepare-linux-ci.py --work /tmp/twine-public-sdk --arch x86_64 --libc glibc
+python3 tools/runtime/build-common.py --artifact-id linux-glibc-x86_64 --source-archive /tmp/twine-public-sdk/graphviz.tar.gz --sdk-record /tmp/twine-public-sdk/sdk-record.json --output /tmp/twine-public-build --execute
+```
+
+O preparador baixa novamente e verifica Graphviz/SDK nos endereços fixados;
+esse caminho não exige os artefatos de Actions. Em ARM64, troque `--arch` e
+o sufixo do artifact-id por `aarch64`. Em userland musl, use `--libc musl` e
+`linux-musl-ARCH`. Use pastas novas e os pré-requisitos de build abaixo. A
+conferência dos arquivos públicos é uma prova de recuperação dos bytes; não
+é uma nova execução dessas reconstruções nem uma promessa de binário idêntico.
+
+## Reconstrução do pacote exportado
+
 O arquivo reúne o tarball Graphviz original, a árvore `lib/` completa do Zig
 0.15.2 (fontes, headers, dados e avisos), a licença raiz do SDK, scripts,
 receitas, os módulos Python auxiliares do build/verificador ELF com sua licença Apache e

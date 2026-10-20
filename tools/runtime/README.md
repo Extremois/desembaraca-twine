@@ -329,9 +329,22 @@ quando os valores coincidem.
 
 O preparo de notices recebe esse relatório em `--data-evidence`, refaz a
 conferência e adiciona o COPYING do X.Org e `DATA-ORIGINS.txt`, preservando o
-comentário de origem SVG presente na fonte. A comparação prova correspondência
-dos valores e dos bytes gerados. Ela não prova a cadeia histórica de cópia nem
+comentário de origem SVG presente na fonte. A preparação também preserva seis
+referências W3C em texto offline: quatro políticas datadas e os cabeçalhos de
+copyright/status das publicações. Um sétimo material conserva os três avisos
+ISO encontrados nas declarações de entidades, conferidos contra o documento
+Graphviz e a referência W3C. Ver a [revisão dos termos e versões](licenses/data-references/w3c/REVIEW.md).
+A aplicabilidade e as condições permanecem sob revisão; os novos materiais
+precisam ser confirmados em um pacote nativo no próximo CI. A comparação prova
+correspondência dos valores e dos bytes gerados. Ela não prova a cadeia histórica de cópia nem
 conclui a aplicação das licenças; os indicadores de aprovação continuam falsos.
+
+O reconhecimento ColorBrewer exigido nos termos da fonte também recebe arquivo
+próprio, sem substituir a licença integral. Quando há evidência de fontes do
+runtime Zig, o preparo inclui o COPYRIGHT musl mesmo em glibc, pois o runtime
+contém portas musl. Isso não altera a família ABI nem declara link de libc musl
+na candidata glibc. Pendências por componente estão em
+[LINUX-COMPONENT-REVIEW.md](licenses/LINUX-COMPONENT-REVIEW.md).
 
 O CI nativo executa esse preparo, gera inventário e ZIP candidato e repete o
 corpus com rastreamento de rede nos dois Pythons. O ZIP mantém os bytes/modos

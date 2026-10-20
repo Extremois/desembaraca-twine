@@ -71,6 +71,15 @@ def color_notice(data):
     return prefix
 
 
+def color_acknowledgment(data):
+    notice=color_notice(data)
+    words=b' '.join(line.lstrip(b'# \t').strip() for line in notice.splitlines())
+    acknowledgment=(b'This product includes color specifications and designs developed '
+                    b'by Cynthia Brewer (http://colorbrewer.org/).')
+    if acknowledgment not in words:raise ValueError('Required ColorBrewer acknowledgment differs from source')
+    return acknowledgment+b'\n'
+
+
 def bison_notice(data):
     data=data[:65536]
     if not data.startswith(b'/* A Bison parser, made by GNU Bison '):
@@ -241,7 +250,7 @@ def inputs_svg_origin(graphviz_archive):
     return b''.join(prefix)
 
 
-def sdk_notice_names(record,linked_build):
+def sdk_notice_names(record,linked_build,*,include_runtime_sources=False):
     artifact=record.get('artifact_id')
     if not record.get('completed') or artifact not in ('linux-glibc-x86_64','linux-glibc-aarch64','linux-musl-x86_64','linux-musl-aarch64'):
         raise ValueError('Expected completed supported experimental Linux build')
@@ -252,6 +261,9 @@ def sdk_notice_names(record,linked_build):
                 or (recipe.get('os'),recipe.get('arch'),recipe.get('abi'))!=('linux','aarch64',abi)):
             raise ValueError('ARM64 notice build does not match its native recipe')
     common={'LICENSE','lib/libcxx/LICENSE.TXT','lib/libcxxabi/LICENSE.TXT','lib/libunwind/LICENSE.TXT'}
+    # compiler_rt includes musl ports even in a glibc build. Preserve the upstream
+    # copyright material when runtime-source evidence is supplied and validated.
+    if include_runtime_sources:common.add('lib/libc/musl/COPYRIGHT')
     if artifact in ('linux-glibc-x86_64','linux-glibc-aarch64'):return common|{'lib/libc/glibc/LICENSES'}
     measured=record.get('static_elf_inspection',{})
     if any(measured.get(key) is not True for key in
@@ -273,7 +285,7 @@ def prepare(linked_build,source_build,evidence,graphviz_archive,sdk_archive,sdk_
             musl_object_evidence=None,zig_runtime_evidence=None,data_evidence=None,glibc_object_evidence=None):
     record=json.loads(audit.bounded(linked_build/'provenance.json',8*1024**2))
     source=json.loads(audit.bounded(evidence,8*1024**2))
-    sdk_names=sdk_notice_names(record,linked_build)
+    sdk_names=sdk_notice_names(record,linked_build,include_runtime_sources=zig_runtime_evidence is not None)
     arm=record['artifact_id']=='linux-glibc-aarch64'
     musl=record['artifact_id'] in ('linux-musl-x86_64','linux-musl-aarch64')
     if arm and any(item is None for item in (glibc_object_evidence,zig_runtime_evidence,data_evidence)):
@@ -322,6 +334,10 @@ def prepare(linked_build,source_build,evidence,graphviz_archive,sdk_archive,sdk_
         materials.append((('ColorBrewer.txt' if name.endswith('brewer_colors') else 'Graphviz-'+name.replace('/','__')+'.txt'),
             color_notice(data) if name.endswith('brewer_colors') else data,
             dict(kind='graphviz-source-archive',path=name,archive_sha256=lock['sha256'],source_sha256=hashlib.sha256(data).hexdigest())))
+    color_path='lib/common/brewer_colors'
+    materials.append(('ColorBrewer-ACKNOWLEDGMENT.txt',color_acknowledgment(graphviz[color_path]),
+        dict(kind='source-required-acknowledgment',path=color_path,archive_sha256=lock['sha256'],
+             source_sha256=hashlib.sha256(graphviz[color_path]).hexdigest())))
     for name in sorted(sdk_names):
         materials.append(('SDK-'+name.replace('/','__')+'.txt',sdk[name],
                           dict(kind='sdk-source-archive',path=name,archive_sha256=facts['archive_sha256'],source_sha256=hashlib.sha256(sdk[name]).hexdigest())))
@@ -359,6 +375,14 @@ def prepare(linked_build,source_build,evidence,graphviz_archive,sdk_archive,sdk_
         # attach somebody else's generated table/reference comparison to a build.
         if data_review!=data_audit.collect(source_build,linked_build,graphviz_archive,evidence):
             raise ValueError('Data evidence differs from this build and pinned references')
+        w3c_materials,w3c_routing=data_audit.w3c_reference_materials()
+        materials.extend(w3c_materials)
+        entity_path='lib/common/entities.html'
+        entity_bytes=archive_files(graphviz_archive,'graphviz-16.1.0',{entity_path})[entity_path]
+        entity_sources=[item for item in data_review['inputs'] if item['path']==entity_path]
+        if len(entity_sources)!=1:raise ValueError('Entity input is missing from this build data evidence')
+        entity_notice=data_audit.entity_declaration_notice(entity_bytes,entity_sources[0]['sha256'])
+        materials.append(entity_notice)
         reference_lock=data_review['references']['references']['xorg-rgb-1.1.0-COPYING']
         materials.append(('Xorg-rgb-1.1.0-COPYING.txt',data_audit.reference_material('xorg-rgb-1.1.0-COPYING'),
             dict(kind='pinned-reference-license-material',source_url=reference_lock['url'],
@@ -433,7 +457,9 @@ def prepare(linked_build,source_build,evidence,graphviz_archive,sdk_archive,sdk_
         review['pending'].append('Generated builtin is separate review material; runtime source comments do not resolve third-party applicability')
     if data_review is not None:
         review.update(data_evidence_sha256=builder.digest(data_evidence),data_comparison=data_review['comparison'],
-                      data_tables_reproduced=data_review['outputs'])
+                      data_tables_reproduced=data_review['outputs'],
+                      w3c_reference_materials=len(w3c_materials),w3c_policy_routing=w3c_routing,
+                      entity_declaration_notices=entity_notice[2]['declaration_notices'])
     review.update(sdk_headers=headers,sdk_header_prefixes_preserved=sum(bool(row['prefix_bytes']) for row in headers),
                   offline_origin_index='third-party-notices/NOTICE-ORIGINS.json')
     (output/'review.json').write_text(json.dumps(review,indent=2)+'\n')
