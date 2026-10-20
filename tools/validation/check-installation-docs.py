@@ -13,8 +13,17 @@ import subprocess
 import sys
 import venv
 
-REVISION = '40b3e38f3dc6bef2fe64b17f66e1f812460bd7f1'
+REVISION = 'd90b5671cba0477649e71a52b0d94704cce81c4e'
 URL = 'https://github.com/Extremois/desembaraca-twine/archive/' + REVISION + '.zip'
+
+
+def source_digest(path):
+    raw = path.read_bytes()
+    # Git may check text out with CRLF on Windows; GitHub archives store LF.
+    # Runtime JSON and third-party notices retain their pinned binary bytes.
+    if path.suffix == '.py' or path.name in ('LICENSE', 'NOTICE'):
+        raw = raw.replace(b'\r\n', b'\n')
+    return hashlib.sha256(raw).hexdigest()
 
 
 def collect(work):
@@ -62,16 +71,18 @@ def collect(work):
             raise ValueError('Documented CLI options missing')
     raw = run([python, '-c', '''import hashlib,importlib.metadata as m,json,pathlib,shutil
 d=m.distribution('twine-edge-overlap')
-files={str(p):hashlib.sha256(pathlib.Path(d.locate_file(p)).read_bytes()).hexdigest()
-       for p in d.files if str(p).endswith('.json') or '/third_party/' in str(p)}
+files={str(p).replace('\\\\','/'):hashlib.sha256(pathlib.Path(d.locate_file(p)).read_bytes()).hexdigest()
+       for p in d.files if str(p).replace('\\\\','/').startswith('twine_edge_overlap/') and not str(p).endswith('.pyc')}
+licenses={pathlib.Path(p).name:hashlib.sha256(pathlib.Path(d.locate_file(p)).read_bytes()).hexdigest()
+          for p in d.files if str(p).endswith(('/LICENSE','/NOTICE'))}
 import twine_edge_overlap
 print(json.dumps(dict(direct_url=json.loads(d.read_text('direct_url.json')),
-    package_path=str(pathlib.Path(twine_edge_overlap.__file__).resolve()),files=files,
+    package_path=str(pathlib.Path(twine_edge_overlap.__file__).resolve()),files=files,licenses=licenses,
     git_available=shutil.which('git') is not None,graphviz_available=shutil.which('dot') is not None)))'''])
     installed = json.loads(raw)
     if installed['direct_url']['url'] != URL or not installed['direct_url']['archive_info'].get('hashes', {}).get('sha256'):
         raise ValueError('Remote source identity not recorded')
-    if not Path(installed.pop('package_path')).is_relative_to(root):
+    if not Path(installed.pop('package_path')).resolve().is_relative_to(root.resolve()):
         raise ValueError('Imported package outside fresh venv')
     if installed['git_available'] or installed['graphviz_available']:
         raise ValueError('Restricted PATH unexpectedly contains Git or Graphviz')
@@ -80,6 +91,17 @@ print(json.dumps(dict(direct_url=json.loads(d.read_text('direct_url.json')),
             raise ValueError('Missing packaged metadata: '+name)
     if not any('/third_party/' in name for name in installed['files']):
         raise ValueError('Missing packaged notices')
+    expected = {
+        path.relative_to(checkout/'src').as_posix(): source_digest(path)
+        for path in (checkout/'src/twine_edge_overlap').rglob('*')
+        if path.is_file() and '__pycache__' not in path.parts
+        and (path.suffix in ('.py', '.json') or 'third_party' in path.parts)}
+    if installed['files'] != expected:
+        raise ValueError('Remote package source/data/notices differ from current checkout')
+    if installed['licenses'] != {
+            name: source_digest(checkout/name)
+            for name in ('LICENSE', 'NOTICE')}:
+        raise ValueError('Remote package license/notice differs from current checkout')
     if any(home.rglob('ready.json')) or any(home.rglob('active.json')):
         raise ValueError('Help unexpectedly prepared an engine')
     return dict(kind='documented-remote-install-and-help-smoke',passed=True,qualified=False,

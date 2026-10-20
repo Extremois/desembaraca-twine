@@ -15,7 +15,7 @@ Ter diretórios de usuário com escrita/execução, acesso HTTPS para instalaç�
 ## 1. Instalar a candidata, sem checkout obrigatório
 
 A URL imutável abaixo e no README contém a revisão pública
-`40b3e38f3dc6bef2fe64b17f66e1f812460bd7f1`, com comando `desembaraca-twine`
+`d90b5671cba0477649e71a52b0d94704cce81c4e`, com comando `desembaraca-twine`
 e código da spec 003. Permite instalar e consultar help em Linux/macOS/Windows,
 mas o catálogo continua somente Windows: não permite concluir a aceitação POSIX.
 A branch `feat/003-add-cross-platform-support` não é URL imutável nem release.
@@ -24,7 +24,7 @@ Em shell POSIX, usar `python3.12` ou `python3.14` conforme o ensaio:
 
 ```sh
 python3.12 -m venv "$HOME/.venvs/desembaraca-twine"
-"$HOME/.venvs/desembaraca-twine/bin/python" -m pip install "https://github.com/Extremois/desembaraca-twine/archive/40b3e38f3dc6bef2fe64b17f66e1f812460bd7f1.zip"
+"$HOME/.venvs/desembaraca-twine/bin/python" -m pip install "https://github.com/Extremois/desembaraca-twine/archive/d90b5671cba0477649e71a52b0d94704cce81c4e.zip"
 "$HOME/.venvs/desembaraca-twine/bin/desembaraca-twine" --help
 "$HOME/.venvs/desembaraca-twine/bin/python" -m twine_edge_overlap --help
 ```
@@ -52,7 +52,7 @@ Em PowerShell, usar o Python nativo selecionado e chamar diretamente a venv, sem
 
 ```powershell
 python -m venv "$HOME\.venvs\desembaraca-twine"
-& "$HOME\.venvs\desembaraca-twine\Scripts\python.exe" -m pip install "https://github.com/Extremois/desembaraca-twine/archive/40b3e38f3dc6bef2fe64b17f66e1f812460bd7f1.zip"
+& "$HOME\.venvs\desembaraca-twine\Scripts\python.exe" -m pip install "https://github.com/Extremois/desembaraca-twine/archive/d90b5671cba0477649e71a52b0d94704cce81c4e.zip"
 & "$HOME\.venvs\desembaraca-twine\Scripts\desembaraca-twine.exe" --help
 ```
 
