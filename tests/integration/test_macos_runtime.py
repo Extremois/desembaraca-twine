@@ -58,13 +58,15 @@ class MacOSPrivateBundleIntegrationTests(linux.LinuxPrivateBundleIntegrationTest
         self.assertEqual(libraries.returncode,0);self.assertEqual(commands.returncode,0)
         dependencies=self.inspector.darwin_dependencies(libraries.stdout.decode('utf-8'),
             ['/usr/lib/libSystem.B.dylib','/usr/lib/libc++.1.dylib'])
+        attributes=run_bounded(['/usr/bin/xattr',str(handle.executable)],timeout=10,max_output=65536)
+        self.assertEqual(attributes.returncode,0)
         self.assertNotIn('LC_RPATH',commands.stdout.decode('utf-8'))
         self.assertEqual(security_snapshot(),self.security_before)
         return dict(thin_native_macho=True,system_libraries=dependencies,rpath=[],
             relocation='No private dylibs or search paths; system dylibs only',
             library_commands_sha256=hashlib.sha256(libraries.stdout).hexdigest(),
             load_commands_sha256=hashlib.sha256(commands.stdout).hexdigest(),
-            cache_library_caches=True,quarantine_present='com.apple.quarantine' in os.listxattr(handle.executable),
+            cache_library_caches=True,quarantine_present='com.apple.quarantine' in attributes.stdout.decode('utf-8').splitlines(),
             security_settings_unchanged=True,signature_notarization_approved=False)
 
 
