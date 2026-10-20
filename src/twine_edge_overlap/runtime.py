@@ -262,6 +262,21 @@ class RuntimeManager:
         if os.name == 'nt':
             path.mkdir(parents=True, exist_ok=True)
             return
+        # A selected XDG/cache base need not exist on first use. Create only
+        # missing ancestors, privately even with umask 000; never chmod existing
+        # user directories. The anchor was canonicalized during construction.
+        missing_parents = []
+        parent = self.anchor.parent
+        while not parent.exists():
+            missing_parents.append(parent)
+            parent = parent.parent
+        for directory in reversed(missing_parents):
+            self.check()
+            directory.mkdir(mode=0o700, exist_ok=True)
+            try:
+                runtime_platform.assert_managed_path(directory, directory, private=True)
+            except ValueError as exc:
+                raise _PreparationProblem(str(exc)) from exc
         missing = []
         current = path
         while current.is_relative_to(self.anchor) and not current.exists():

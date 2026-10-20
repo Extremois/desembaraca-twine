@@ -4,6 +4,7 @@ import os
 from pathlib import Path
 import tempfile
 import unittest
+from unittest.mock import patch
 from common import ROOT
 from runtime_support import synthetic_artifact, synthetic_runner, ControlledTransport, blocked_network
 from twine_edge_overlap import runtime
@@ -11,6 +12,24 @@ from twine_edge_overlap.errors import DependencyError
 
 
 class PosixRuntimeTests(unittest.TestCase):
+    @unittest.skipIf(os.name=='nt','POSIX cache creation and mode regression')
+    def test_missing_cache_base_is_created_privately_without_changing_parent(self):
+        artifact,archive=synthetic_artifact('linux')
+        with tempfile.TemporaryDirectory() as folder,blocked_network():
+            parent=Path(folder)
+            before=parent.stat().st_mode
+            base=parent/'new parent'/'cache base'
+            target=base/'DesembaracaTwine/runtimes/graphviz'
+            previous=os.umask(0)
+            try:
+                with patch.object(runtime,'cache_directory',return_value=target):
+                    manager=runtime.RuntimeManager(artifact=artifact,opener=ControlledTransport(archive),runner=synthetic_runner)
+                    handle=manager.ensure()
+                for path in (base.parent,base,manager.anchor,handle.root):
+                    self.assertEqual(path.stat().st_mode&0o777,0o700)
+                self.assertEqual(parent.stat().st_mode,before)
+            finally:os.umask(previous)
+
     @unittest.skipIf(os.name=='nt','POSIX umask and private control-file modes')
     def test_private_directories_and_records_do_not_depend_on_umask(self):
         artifact,archive=synthetic_artifact('linux')
