@@ -1,6 +1,8 @@
 import copy
+import hashlib
 import importlib.util
 import io
+import json
 from pathlib import Path
 import tarfile
 import tempfile
@@ -17,6 +19,75 @@ def tool():
 
 
 class BuiltPackagesTests(unittest.TestCase):
+    def test_private_engine_stage_binds_id_archive_inventory_and_provenance_before_copy(self):
+        module = tool()
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            artifact = root / 'download'
+            artifact.mkdir()
+            sha = lambda raw: hashlib.sha256(raw).hexdigest()
+            provenance = json.dumps(dict(completed=True, artifact_id='linux-glibc-x86_64',
+                executable_sha256='f' * 64)).encode()
+            inventory = json.dumps(dict(provenance_sha256=sha(provenance), files=[])).encode()
+            archive = b'controlled private archive'
+            candidate = json.dumps(dict(artifact_id='linux-glibc-x86_64', qualified=False,
+                archive_sha256=sha(archive), archive_bytes=len(archive),
+                inventory_sha256=sha(inventory), provenance_sha256=sha(provenance))).encode()
+            for name, raw in [('candidate.json', candidate), ('candidate.zip', archive),
+                              ('inventory.json', inventory), ('provenance.json', provenance)]:
+                (artifact / name).write_bytes(raw)
+            result = module.prepare_engine_fixture(artifact, root / 'staged', 'linux-glibc-x86_64')
+            self.assertEqual(result['engine_sha256'], 'f' * 64)
+            self.assertEqual((root / 'staged/candidate.zip').read_bytes(), archive)
+            with self.assertRaises(ValueError):
+                module.prepare_engine_fixture(artifact, root / 'wrong-id', 'linux-glibc-aarch64')
+            self.assertFalse((root / 'wrong-id').exists())
+            (artifact / 'candidate.zip').write_bytes(b'changed bytes')
+            with self.assertRaises(ValueError):
+                module.prepare_engine_fixture(artifact, root / 'changed', 'linux-glibc-x86_64')
+            self.assertFalse((root / 'changed').exists())
+
+    def engine_result(self):
+        fixture = dict(engine_sha256='a' * 64, provenance_sha256='b' * 64)
+        flags = dict(acquisition_calls=1, offline_acquisition_calls=0, real_engine=True,
+            fixture_transport=True, healthy_generation_reused=True, final_destination_probe=True,
+            probe_before_ready=True, external_unicode_paths=True, executable_mode=0o755, generation_mode=0o700,
+            native_inspection=dict(security_settings_unchanged=True))
+        cases = [dict(case='known', known_resolvable=True), dict(case='other', known_resolvable=False)]
+        report = dict(passed=True, qualified=False, **fixture,
+            observations=dict(automatic=copy.deepcopy(flags), explicit=copy.deepcopy(flags)),
+            cases=[dict(case='known', before=[1, 2, 3], after=[0, 0, 0]),
+                   dict(case='other', before=[1, 2, 3], after=[1, 2, 3])],
+            security_before=dict(gatekeeper='enabled'), security_after=dict(gatekeeper='enabled'))
+        return fixture, cases, report
+
+    def test_engine_result_requires_real_first_use_and_complete_offline_corpus(self):
+        fixture, cases, report = self.engine_result()
+        validate = tool().validate_engine_result
+        validate(report, fixture, cases, 'linux')
+        for mutation in ('hash', 'skip', 'acquisition', 'mode', 'duplicate', 'regression', 'known', 'nan'):
+            changed = copy.deepcopy(report)
+            if mutation == 'hash': changed['engine_sha256'] = 'c' * 64
+            elif mutation == 'skip': del changed['observations']['automatic']
+            elif mutation == 'acquisition': changed['observations']['explicit']['offline_acquisition_calls'] = 1
+            elif mutation == 'mode': changed['observations']['explicit']['executable_mode'] = 0o644
+            elif mutation == 'duplicate': changed['cases'].append(changed['cases'][0])
+            elif mutation == 'regression': changed['cases'][1]['after'][0] = 2
+            elif mutation == 'known': changed['cases'][0]['after'][0] = 1
+            else: changed['cases'][1]['after'][0] = float('nan')
+            with self.subTest(mutation=mutation), self.assertRaises(ValueError):
+                validate(changed, fixture, cases, 'linux')
+
+    def test_mac_engine_result_does_not_treat_missing_or_changed_protections_as_acceptance(self):
+        fixture, cases, report = self.engine_result()
+        validate = tool().validate_engine_result
+        validate(report, fixture, cases, 'darwin')
+        for value in (None, dict(gatekeeper='disabled')):
+            changed = copy.deepcopy(report)
+            changed['security_after'] = value
+            with self.assertRaises(ValueError):
+                validate(changed, fixture, cases, 'darwin')
+
     def fixture(self, root, omit=None, change=None, unsafe=False):
         files = {'src/twine_edge_overlap/__init__.py': b'',
                  'src/twine_edge_overlap/runtime-catalog.json': b'{"artifacts":[]}',

@@ -99,7 +99,92 @@ def validate_installation(facts, inventory, environment, archive_sha256):
         raise ValueError('Installer recorded another input archive')
 
 
-def collect(wheel, sdist, wheelhouse):
+def prepare_engine_fixture(artifact, destination, artifact_id):
+    """Stage a byte-bound private bundle; never change the installed catalog."""
+    def read(path, maximum=8 * 1024**2):
+        if path.is_symlink() or not path.is_file() or not 0 < path.stat().st_size <= maximum:
+            raise ValueError('Invalid private engine input')
+        return path.read_bytes()
+    candidates = list(artifact.rglob('candidate.json'))
+    if len(candidates) != 1:
+        raise ValueError('Expected one private engine candidate')
+    candidate_raw = read(candidates[0])
+    candidate = json.loads(candidate_raw)
+    if candidate.get('artifact_id') != artifact_id or candidate.get('qualified') is not False:
+        raise ValueError('Private engine candidate identity differs')
+    package = candidates[0].parent
+    inventory_raw = read(package / 'inventory.json')
+    archive_raw = read(package / 'candidate.zip', MAXIMUM)
+    if (digest(inventory_raw) != candidate['inventory_sha256']
+            or digest(archive_raw) != candidate['archive_sha256']
+            or len(archive_raw) != candidate['archive_bytes']):
+        raise ValueError('Private engine inventory/archive changed')
+    provenances = [read(p) for p in artifact.rglob('provenance.json')]
+    matching = [raw for raw in provenances if digest(raw) == candidate['provenance_sha256']]
+    if not matching:
+        raise ValueError('Private engine provenance is missing')
+    provenance_raw = matching[0]
+    provenance = json.loads(provenance_raw)
+    if (provenance.get('completed') is not True or provenance.get('artifact_id') != artifact_id
+            or json.loads(inventory_raw)['provenance_sha256'] != digest(provenance_raw)):
+        raise ValueError('Private engine provenance is incomplete or inconsistent')
+    destination.mkdir(exist_ok=False)
+    for name, raw in [('candidate.json', candidate_raw), ('inventory.json', inventory_raw),
+                      ('candidate.zip', archive_raw), ('provenance.json', provenance_raw)]:
+        (destination / name).write_bytes(raw)
+    return dict(artifact_id=artifact_id, engine_sha256=provenance['executable_sha256'],
+        candidate_archive_sha256=candidate['archive_sha256'], provenance_sha256=digest(provenance_raw))
+
+
+def validate_engine_result(report, fixture, cases, system):
+    if (report.get('passed') is not True or report.get('qualified') is not False
+            or report.get('engine_sha256') != fixture['engine_sha256']
+            or report.get('provenance_sha256') != fixture['provenance_sha256']):
+        raise ValueError('Private installed-engine result differs from staged bundle')
+    observations = report.get('observations', {})
+    if set(observations) != {'automatic', 'explicit'}:
+        raise ValueError('Private installed-engine first-use evidence is incomplete')
+    for row in observations.values():
+        if (row.get('acquisition_calls') != 1 or row.get('offline_acquisition_calls') != 0
+                or any(row.get(key) is not True for key in ('real_engine', 'fixture_transport',
+                    'healthy_generation_reused', 'final_destination_probe', 'probe_before_ready', 'external_unicode_paths'))
+                or row.get('executable_mode') != 0o755 or row.get('generation_mode') != 0o700):
+            raise ValueError('Private installed-engine preparation/offline invariant failed')
+    rows = report.get('cases', [])
+    expected = {item['case']: item for item in cases}
+    actual = {item['case']: item for item in rows}
+    if len(actual) != len(rows) or set(actual) != set(expected):
+        raise ValueError('Private installed-engine corpus is incomplete or duplicated')
+    for name, row in actual.items():
+        if (len(row['before']) != 3 or len(row['after']) != 3
+                or any(type(n) is not int or n < 0 for n in [*row['before'], *row['after']])
+                or any(a > b for a, b in zip(row['after'], row['before']))):
+            raise ValueError('Private installed-engine geometry regressed')
+        if expected[name]['known_resolvable'] and row['after'] != [0, 0, 0]:
+            raise ValueError('Known reference was not solved by installed engine')
+    if system == 'darwin' and (report.get('security_before') is None
+            or report['security_before'] != report.get('security_after')
+            or observations['explicit'].get('native_inspection', {}).get('security_settings_unchanged') is not True):
+        raise ValueError('macOS protection observations changed or are missing')
+
+
+def stage_engine_driver(work):
+    driver = work / 'test-driver'
+    files = ('tests/common.py', 'tests/runtime_support.py', 'tests/native_acceptance.py',
+        'tests/integration/__init__.py', 'tests/integration/test_linux_runtime.py',
+        'tests/integration/test_macos_runtime.py', 'tools/runtime/verify-artifact.py')
+    for name in files:
+        target = driver / name
+        target.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copyfile(ROOT / name, target)
+    shutil.copytree(ROOT / 'tests/fixtures', driver / 'tests/fixtures',
+        ignore=shutil.ignore_patterns('__pycache__', '*.pyc'))
+    if (driver / 'src').exists():
+        raise ValueError('Engine test driver must not expose the application checkout')
+    return driver
+
+
+def collect(wheel, sdist, wheelhouse, *, engine_artifact=None, engine_id=None):
     import venv
     for path in (wheel, sdist):
         if not path.is_file() or not 0 < path.stat().st_size <= MAXIMUM:
@@ -123,6 +208,13 @@ def collect(wheel, sdist, wheelhouse):
             shutil.copyfile(path, staged / path.name)
         profile = work / 'profile'
         profile.mkdir()
+        fixture = None
+        if engine_artifact is not None:
+            if sys.platform not in ('linux', 'darwin'):
+                raise ValueError('Private engine integration requires matching native POSIX host')
+            engine_package = work / 'private-engine'
+            fixture = prepare_engine_fixture(engine_artifact, engine_package, engine_id)
+            driver = stage_engine_driver(work)
         for mode, package in (('wheel', wheel), ('sdist', sdist)):
             environment = work / ('venv com acentos ação ' + mode)
             venv.EnvBuilder(with_pip=True).create(environment)
@@ -158,20 +250,37 @@ def collect(wheel, sdist, wheelhouse):
             validate_installation(facts, inventory, environment, digest(package.read_bytes()))
             if list(profile.rglob('active.json')) or list(profile.rglob('ready.json')):
                 raise ValueError('Help unexpectedly prepared an engine')
+            runtime_report = None
+            if fixture is not None:
+                report_path = work / ('runtime-' + mode + '.json')
+                module = 'test_macos_runtime.py' if sys.platform == 'darwin' else 'test_linux_runtime.py'
+                command = [python, '-I', driver / 'tests/integration' / module,
+                    '--package', engine_package, '--provenance', engine_package / 'provenance.json',
+                    '--report', report_path]
+                if sys.platform == 'linux':
+                    command.extend(['--environment-kind', 'wsl' if 'microsoft' in platform.release().lower() else 'native'])
+                run(command)
+                if report_path.stat().st_size > 1024**2:
+                    raise ValueError('Private engine report exceeds bound')
+                runtime_report = json.loads(report_path.read_bytes())
+                cases = json.loads((ROOT / 'tests/fixtures/cases.json').read_bytes())
+                validate_engine_result(runtime_report, fixture, cases, sys.platform)
             records.append(dict(mode=mode, archive_sha256=digest(package.read_bytes()),
                 package_files_verified=len(inventory['files']), licenses_verified=inventory['licenses'],
                 installed_file_hashes=facts['files'], entrypoints_verified=3,
                 import_from_venv=True, git_and_global_graphviz_absent=True,
-                outside_checkout=True, engine_prepared=False, commands=commands))
+                outside_checkout=True, engine_prepared=fixture is not None,
+                private_engine=runtime_report, commands=commands))
     return dict(kind='current-wheel-sdist-offline-installation-not-support-qualification',
         passed=True, qualified=False, captured_at=datetime.now(timezone.utc).isoformat(),
         application_revision=os.environ.get('GITHUB_SHA'), source_state='current-source-content-addressed',
         tool_sha256=digest(Path(__file__).read_bytes()),
         python=platform.python_version(), system=platform.system(),
-        arch=platform.machine(), records=records,
+        arch=platform.machine(), records=records, private_engine_fixture=fixture,
         build_tools=[dict(name=p.name, sha256=digest(p.read_bytes())) for p in wheels],
         limitations=['Current development packages, not final remotely distributed candidates',
-            'Installation and help only; no native engine, runtime acquisition or per-cell qualification'])
+            'Optional private engine uses controlled acquisition and a Python-only network guard',
+            'No signature/notarization approval, syscall network claim or per-cell qualification'])
 
 
 if __name__ == '__main__':
@@ -180,6 +289,8 @@ if __name__ == '__main__':
         parser.add_argument('--' + name, type=Path)
     for name in ('wheelhouse', 'report'):
         parser.add_argument('--' + name, type=Path, required=True)
+    parser.add_argument('--engine-artifact', type=Path)
+    parser.add_argument('--engine-id')
     args = parser.parse_args()
     if args.dist_dir:
         if args.wheel or args.sdist:
@@ -191,9 +302,13 @@ if __name__ == '__main__':
         args.wheel, args.sdist = wheels[0], sources[0]
     elif not args.wheel or not args.sdist:
         parser.error('Supply both --wheel/--sdist or --dist-dir')
+    if bool(args.engine_artifact) != bool(args.engine_id):
+        parser.error('Supply both --engine-artifact and --engine-id')
     if args.report.exists():
         parser.error('Preserve existing reports; choose a new file')
-    result = collect(args.wheel.resolve(), args.sdist.resolve(), args.wheelhouse.resolve())
+    result = collect(args.wheel.resolve(), args.sdist.resolve(), args.wheelhouse.resolve(),
+        engine_artifact=args.engine_artifact.resolve() if args.engine_artifact else None,
+        engine_id=args.engine_id)
     with args.report.open('x', encoding='utf-8') as stream:
         json.dump(result, stream, indent=2)
         stream.write('\n')
