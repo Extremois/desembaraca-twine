@@ -1,0 +1,68 @@
+{
+  "kind": "T028-private-glibc-build-verification-completion",
+  "task_complete": true,
+  "approved": false,
+  "qualified": false,
+  "candidates": [
+    {
+      "artifact_id": "linux-glibc-x86_64",
+      "build_revision": "860d06a4c5d03ca6ab071c047344443931debb1e",
+      "environment_kind": "native",
+      "executable_sha256": "43ce8d686720467c21be91cab4b8f3b246baae49c2cfe293714ebdf8a82f5716",
+      "archive_sha256": "2ed85bdd25236de6e5f4f11905410c30aa9e9199f95acd0c00a58bb436cde858",
+      "local_candidate": "tools/runtime/artifacts/linux-glibc/linux-glibc-x86_64",
+      "inventory_sha256": "b72fcc4269182378c9ac16047b0866826d35ad8cb5986b88119ab50b5686e40b",
+      "runtime_integration": "specs/003-add-cross-platform-support/evidence/linux-runtime-integration-2026-10-19/glibc-x86_64/summary.json",
+      "source_observations": "specs/003-add-cross-platform-support/evidence/linux-native-glibc-license-package-2026-10-19/summary.json",
+      "loader": "/lib64/ld-linux-x86-64.so.2",
+      "needed": [
+        "libm.so.6",
+        "libpthread.so.0",
+        "libc.so.6",
+        "ld-linux-x86-64.so.2"
+      ],
+      "highest_glibc_symbol": "2.14",
+      "rpath": [],
+      "static_reinspection": {
+        "report": "x86_64-elf.txt",
+        "sha256": "d80dd29df7308641a7a4e2a4cd1f82d3f0310d55c2789bce433dc3f9ab937ac1",
+        "host_kind": "existing WSL; read-only ELF parsing, no target execution"
+      },
+      "qualified": false,
+      "build_complete": true
+    },
+    {
+      "artifact_id": "linux-glibc-aarch64",
+      "build_revision": "860d06a4c5d03ca6ab071c047344443931debb1e",
+      "environment_kind": "native",
+      "executable_sha256": "933b6c63370bdd3e814627e2a9a06176416c8da017a21dcbc96d8137dbc17e22",
+      "archive_sha256": "cb24ef16a71d38950bbefb48f433c42bd2691a4871ca691a207f296f05c48c9c",
+      "local_candidate": "tools/runtime/artifacts/linux-glibc/linux-glibc-aarch64",
+      "inventory_sha256": "086a3632489bc669996a9a48af478ba49fa58e06da14f73eef84fc14a40faf81",
+      "runtime_integration": "specs/003-add-cross-platform-support/evidence/linux-runtime-integration-2026-10-19/glibc-aarch64/summary.json",
+      "source_observations": "specs/003-add-cross-platform-support/evidence/linux-arm64-sdk-sources-2026-10-19/summary.json",
+      "loader": "/lib/ld-linux-aarch64.so.1",
+      "needed": [
+        "libm.so.6",
+        "libpthread.so.0",
+        "libc.so.6"
+      ],
+      "highest_glibc_symbol": "2.17",
+      "rpath": [],
+      "static_reinspection": {
+        "report": "aarch64-elf.txt",
+        "sha256": "30f3baf7ca3738b8b4a60c3cdfbfb2d9370b27c453f9cce20be07523ffd9ee27",
+        "host_kind": "existing WSL; read-only ELF parsing, no target execution"
+      },
+      "qualified": false,
+      "build_complete": true
+    }
+  ],
+  "scope": "Both native glibc candidate builds, inventories, source observations, Unicode relocation/json0/corpus/cache verification complete",
+  "limitations": [
+    "This closes candidate construction/verification only; per-file audit T030 and catalog T031 remain pending",
+    "T024/T025 retain old OS/kernel/CPU baseline and qualified-dependency work",
+    "Read-only WSL ELF reinspection does not qualify WSL, another CPU or distribution; native execution evidence is linked separately",
+    "No official POSIX support, clean installed-cell acceptance or publication"
+  ]
+}

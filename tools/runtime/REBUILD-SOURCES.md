@@ -7,7 +7,7 @@ de fontes ou publicação permanente. Não é necessário para usar o runtime.
 
 O arquivo reúne o tarball Graphviz original, a árvore `lib/` completa do Zig
 0.15.2 (fontes, headers, dados e avisos), a licença raiz do SDK, scripts,
-receitas, os módulos Python auxiliares do build com sua licença Apache e
+receitas, os módulos Python auxiliares do build/verificador ELF com sua licença Apache e
 referências de licença do mantenedor. O compilador Zig não está
 incluído. `manifest.json` relaciona tamanho/hash de cada entrada e vincula o
 material ao executável e à proveniência da candidata. A árvore SDK inclui

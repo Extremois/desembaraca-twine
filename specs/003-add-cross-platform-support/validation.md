@@ -1,5 +1,71 @@
 # Evidência de implementação — feature 003
 
+## Construção glibc consolidada e reconstrução musl — 2026-10-19
+
+**T028 concluída; 54/84 tarefas, 30 pendentes.** O [recibo glibc](evidence/glibc-build-completion-2026-10-19/summary.json)
+consolida os dois bundles nativos x64/ARM64, fontes/objetos observados, inventários
+e ZIPs conferidos, relocação Unicode/json0, corpus e integração do gerenciador
+em ambos os Pythons. A etapa usa os mesmos critérios de construção de candidatas
+da T029; auditoria T030 e distribuição T031 são etapas separadas. Os pacotes
+verificados estão em `tools/runtime/artifacts/linux-glibc/`, ignorados pelo Git.
+
+Uma reinspeção somente de leitura dos ELF no WSL confirmou CPU, loader,
+dependências de sistema e ausência de RPATH/RUNPATH; não executou o binário ARM64
+nem substituiu a evidência nativa vinculada. Maiores símbolos glibc observados:
+2.14 x64 e 2.17 ARM64, abaixo do alvo de compilação 2.27. Isso não aprova kernel,
+CPU ou execução Ubuntu 18.04. T024/T025/T037 mantêm esses gates abertos.
+
+A exportação de fontes agora também atende musl nas duas arquiteturas, com SDK
+próprio autenticado, receita correspondente e evidência de alvo estático. O teste
+novo falhou antes da implementação e passou depois, incluindo rejeição de alvo
+divergente e inspeção dinâmica. O material reúne o tarball Graphviz original,
+árvore `lib/` completa do SDK e LICENSE, receitas, referências e módulos auxiliares
+com Apache; não coleta executável do compilador, caches, credenciais ou checkout
+inteiro. Instruções estão em [REBUILD-SOURCES.md](../../tools/runtime/REBUILD-SOURCES.md).
+
+| Pacote | Arquivos conferidos | Arquivos SDK reconferidos | Bytes do tar.gz |
+|---|---|---|---|
+| [musl x64](evidence/musl-source-rebuild-2026-10-19/x86_64/summary.json) | 18.164 | 18.102 | 68.348.021 |
+| [musl ARM64](evidence/musl-source-rebuild-2026-10-19/aarch64/summary.json) | 18.164 | 18.102 | 68.347.856 |
+
+Após download, cada arquivo do pacote foi conferido contra seu manifesto:
+hash/tamanho/modo 0644/data zero, caminhos sem travessia/duplicatas/links,
+limites e identidade da candidata. Cada entrada SDK foi reconferida contra o
+tarball original específico da CPU, fixado por hash. Os tarballs/ZIPs completos
+ficam somente em área ignorada; recibos, manifestos compactados e rastros são
+versionados. A árvore SDK também contém código de outras plataformas; sua
+presença não afirma ligação de todos esses arquivos ao motor.
+
+Os dois motores foram recompilados fora do checkout, usando as receitas/módulos
+exportados, árvore SDK exportada, compilador autenticado novamente e cache vazio.
+Original e reconstruído passaram nos 13 casos/relocação em CPython 3.12.13 e
+3.14.5, com zero chamadas de rede observadas e controles positivos. Ambos são
+estáticos e **não byte-idênticos** aos originais: a evidência é reconstrução
+funcional, sem promessa geral de reprodução em bytes. São containers musl de
+CPU correspondente sobre kernel Ubuntu, sem qualificação de células Alpine.
+
+A [rodada inicial](evidence/musl-source-rebuild-2026-10-19/initial-failure/summary.json)
+falhou nas duas CPUs: o motor compilou, mas faltavam módulos Python importados
+pelo verificador ELF no pacote exportado. Os dois logs de erro foram preservados.
+Um teste passou a executar o verificador da extração isolada: reproduziu o erro
+antes da correção e passou após incluir runtime/catalog/snapshot/errors. Essa
+falha inicial continua registrada como failure.
+
+A revisão corrigida `6f225eb6c6ece00e912d67bff9b461e008be4aca` passou no
+[CI musl](https://github.com/Extremois/desembaraca-twine/actions/runs/39352379048),
+nas regressões [glibc x64](https://github.com/Extremois/desembaraca-twine/actions/runs/39352378883),
+[glibc ARM64](https://github.com/Extremois/desembaraca-twine/actions/runs/39352378858)
+e [macOS](https://github.com/Extremois/desembaraca-twine/actions/runs/39352379133).
+A [fundação corrigida de seis slots](evidence/github-actions-foundation-musl-sources-fixed-2026-10-19.json)
+passou com 208 testes por slot; a [fundação inicial](evidence/github-actions-foundation-musl-sources-2026-10-19.json)
+é mantida separadamente. Localmente, 208 testes/oito skips em cada Python
+passaram após a correção (27,695 s em 3.12; 28,247 s em 3.14).
+
+T030/T066 permanecem parciais: revisão de aplicabilidade/obrigações por arquivo,
+fechamento transitivo e oferta permanente das fontes ainda precisam ser concluídos.
+Um artifact de sete dias não é oferta permanente. Catálogo e matriz oficiais
+continuam preservados, sem publicação de release ou criação de VM local.
+
 ## Bundles e avisos musl verificados — 2026-10-19
 
 **T029 concluída; 53/84 tarefas, 31 pendentes.** O [recibo de construção](evidence/musl-build-completion-2026-10-19.json)

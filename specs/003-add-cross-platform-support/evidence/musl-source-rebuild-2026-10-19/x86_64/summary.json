@@ -1,0 +1,208 @@
+{
+  "kind": "musl-exported-source-rebuild-receipt",
+  "approved": false,
+  "qualified": false,
+  "revision": "6f225eb6c6ece00e912d67bff9b461e008be4aca",
+  "artifact_id": "linux-musl-x86_64",
+  "arch": "x86_64",
+  "environment_kind": "container",
+  "run_id": 39352379048,
+  "job_id": 118399298630,
+  "url": "https://github.com/Extremois/desembaraca-twine/actions/runs/39352379048",
+  "source_actions_artifact_id": 12234545573,
+  "native_actions_artifact_id": 12234205992,
+  "source_archive_sha256": "e3bd748c3fbea0c1525594afaf6fe86f43d8076244dbd00597c68f83c1f49787",
+  "source_archive_bytes": 68348021,
+  "native_actions_artifact_sha256": "e72250ff425e998c4c4e344372b69ff0441ab0df5a44ce722e7d9be65d07aed3",
+  "verified_files": 18164,
+  "verified_sdk_files": 18102,
+  "original_engine_sha256": "f4dfee4e052704b1a7efdb7b6a4c43583ccaa062aec800b76224dae24eb2b69b",
+  "rebuilt_engine_sha256": "7d935f1d47925158da7aed95a74a83975e854157d62d7021855b9d31d6dcb79a",
+  "byte_identical": false,
+  "slots": [
+    {
+      "variant": "original",
+      "python": "3.12.13",
+      "cases": 13,
+      "passed": true,
+      "network_syscalls": {},
+      "dot_executions": 8
+    },
+    {
+      "variant": "original",
+      "python": "3.14.5",
+      "cases": 13,
+      "passed": true,
+      "network_syscalls": {},
+      "dot_executions": 8
+    },
+    {
+      "variant": "rebuilt",
+      "python": "3.12.13",
+      "cases": 13,
+      "passed": true,
+      "network_syscalls": {},
+      "dot_executions": 8
+    },
+    {
+      "variant": "rebuilt",
+      "python": "3.14.5",
+      "cases": 13,
+      "passed": true,
+      "network_syscalls": {},
+      "dot_executions": 8
+    }
+  ],
+  "retained_files": {
+    "sources.json": {
+      "sha256": "d56c93da07f072b756316cd355f824ff0634bb5ca0d4733d663c0cddca0c5403",
+      "bytes": 694,
+      "original_sha256": "d56c93da07f072b756316cd355f824ff0634bb5ca0d4733d663c0cddca0c5403",
+      "original_bytes": 694
+    },
+    "source-manifest.json.gz": {
+      "sha256": "6c224f9682c5b68d3c162772da31bb1cb9e43fb5b68015a2e5772af9bcc57f60",
+      "bytes": 916281,
+      "original_sha256": "729a98160b3293c101a65600ea45c084e698e39ecf8001b04d65eaeb3e726dc2",
+      "original_bytes": 3283115
+    },
+    "source-archive-verification.json": {
+      "sha256": "ad0cf091e0dbfadeb23159835a3b5677a67ff12383640a643a34eaf0d004fddb",
+      "bytes": 941,
+      "original_sha256": "ad0cf091e0dbfadeb23159835a3b5677a67ff12383640a643a34eaf0d004fddb",
+      "original_bytes": 941
+    },
+    "original-network-312.control.trace.gz": {
+      "sha256": "3ea8643250ec2ae26f120717a16a3868ba1e5d31dd1c1ddac25e9fedc347efcf",
+      "bytes": 488,
+      "original_sha256": "8f6bbab0b0e1898c71531350c8484ec3fe50219cb39f9c0e2bd5f97078c4a514",
+      "original_bytes": 905
+    },
+    "original-network-312.corpus.trace.gz": {
+      "sha256": "d4997ad8c692895a359e7e0b2a7470f8fe1257d547074c30257fb9cff0eaeeeb",
+      "bytes": 590,
+      "original_sha256": "67f193461a9035e6e882e8cd258d294f9d0b566d480784aa530a81f9db87cf19",
+      "original_bytes": 3517
+    },
+    "original-corpus-312.json": {
+      "sha256": "d105306620c3a277f8aa9e00507de206faa87a8c2785fae43c77bfa8bb885b17",
+      "bytes": 5501,
+      "original_sha256": "d105306620c3a277f8aa9e00507de206faa87a8c2785fae43c77bfa8bb885b17",
+      "original_bytes": 5501
+    },
+    "original-network-312.json": {
+      "sha256": "3a93ceaa6ad435b5b1d10cabc1134f7ad37cd7c5e66fd627c98323e15dca90c9",
+      "bytes": 1355,
+      "original_sha256": "3a93ceaa6ad435b5b1d10cabc1134f7ad37cd7c5e66fd627c98323e15dca90c9",
+      "original_bytes": 1355
+    },
+    "original-network-314.control.trace.gz": {
+      "sha256": "7aae3b1c88892961b96bcf8eceba8ffe3acc61d7eaedef51bc91ffe0e90faf0e",
+      "bytes": 483,
+      "original_sha256": "91d554cd1bed72529e41a7c8edf8714212a4525dee1821cd2beb94bfe311f138",
+      "original_bytes": 901
+    },
+    "original-network-314.corpus.trace.gz": {
+      "sha256": "4eebd661bd2a32156bf9c484202f50e7b99f49c66617e23deeb53b545083a17f",
+      "bytes": 586,
+      "original_sha256": "2aeea6628fe4a172d83c1f37c0486c761c45464535389760ae87b76ba9af60e4",
+      "original_bytes": 3509
+    },
+    "original-corpus-314.json": {
+      "sha256": "59260331d265ae52260c79d832de8e338e88c9f0732b500654e56ee7123f9ba1",
+      "bytes": 5500,
+      "original_sha256": "59260331d265ae52260c79d832de8e338e88c9f0732b500654e56ee7123f9ba1",
+      "original_bytes": 5500
+    },
+    "original-network-314.json": {
+      "sha256": "53249870b1105eb57cb5c0b385f0dec13163bfbc992fb1bffe07409ea9116ccb",
+      "bytes": 1354,
+      "original_sha256": "53249870b1105eb57cb5c0b385f0dec13163bfbc992fb1bffe07409ea9116ccb",
+      "original_bytes": 1354
+    },
+    "rebuilt-network-312.control.trace.gz": {
+      "sha256": "e51e6beee5aecb2402b113fe4ed5fe07cff8454d6f42a116c6ee38673badd023",
+      "bytes": 490,
+      "original_sha256": "5473650a8d6fe265ec1bbf3d35d0dce97e6110bde813f52d9089fbc6d54fbedf",
+      "original_bytes": 905
+    },
+    "rebuilt-network-312.corpus.trace.gz": {
+      "sha256": "8bfc9c8cb62bc16091aaf216a75f14a8a65779a2c4293ea42884f88f0e130116",
+      "bytes": 595,
+      "original_sha256": "97f74109b6eed562557cb83e1060ee5525fbcd3f9324cabf61f6484d6669c3bd",
+      "original_bytes": 3542
+    },
+    "rebuilt-corpus-312.json": {
+      "sha256": "ba302cba116518296f6ad30263fdbdb1e39ab71f86b8eddfe9fbc3f31c399e75",
+      "bytes": 5501,
+      "original_sha256": "ba302cba116518296f6ad30263fdbdb1e39ab71f86b8eddfe9fbc3f31c399e75",
+      "original_bytes": 5501
+    },
+    "rebuilt-network-312.json": {
+      "sha256": "843ea5c8c3d1f86308fab92869d91cf5c7fd4183f3652f6b20a1dc8bc39995f1",
+      "bytes": 1355,
+      "original_sha256": "843ea5c8c3d1f86308fab92869d91cf5c7fd4183f3652f6b20a1dc8bc39995f1",
+      "original_bytes": 1355
+    },
+    "rebuilt-network-314.control.trace.gz": {
+      "sha256": "586057a0318cefed327d84f8b2f34675507dea959ccb2d4d09fce6922b9292fc",
+      "bytes": 482,
+      "original_sha256": "b19aa66a11b941f3d11e3aeab13adb070141a4fb7ad97fa55531490eec919be8",
+      "original_bytes": 902
+    },
+    "rebuilt-network-314.corpus.trace.gz": {
+      "sha256": "ff6a19d2b7d8ea9dcb79b559ec2c64210fba3aabe3f0466bb288b67260c8bef2",
+      "bytes": 585,
+      "original_sha256": "74ee95eb2a98a945b2514e62ab42aa357160531fe8d2cf7f421244a15e05d661",
+      "original_bytes": 3531
+    },
+    "rebuilt-corpus-314.json": {
+      "sha256": "64590be8cdec7289e11e92ee431ec53d821c058a3ecd0dcb7cb411a8af6bed32",
+      "bytes": 5500,
+      "original_sha256": "64590be8cdec7289e11e92ee431ec53d821c058a3ecd0dcb7cb411a8af6bed32",
+      "original_bytes": 5500
+    },
+    "rebuilt-network-314.json": {
+      "sha256": "df8eb2dd29b78b3c567e467bbc4c82d563a446e881d694c8e9addbb19c3ca7cb",
+      "bytes": 1354,
+      "original_sha256": "df8eb2dd29b78b3c567e467bbc4c82d563a446e881d694c8e9addbb19c3ca7cb",
+      "original_bytes": 1354
+    },
+    "original-provenance.json.gz": {
+      "sha256": "1bd832eb491ae83a575622b52609a2efb8bbcbc2bf31ed119f506fa2fd471eee",
+      "bytes": 19617,
+      "original_sha256": "dc52bf4c5f63a18d1fcbd34f028dad2fd09b29d361cd77830de7f596a25868ba",
+      "original_bytes": 134102
+    },
+    "rebuilt-provenance.json.gz": {
+      "sha256": "37e7ccf47278cb62d4dc1fd7bfafdd6c3b1585e97411c63c2331f16e28fa1905",
+      "bytes": 2758,
+      "original_sha256": "71499f4f0db74770a418905fb005d8bf19625b4e1d1dc55af7f21d0ac6b1b227",
+      "original_bytes": 7852
+    },
+    "rebuilt-static-elf-inspection.txt": {
+      "sha256": "b3beda1cae6711bb9b8ccb2addb71ad8f7343709ecc7f2458e94fbff3e684386",
+      "bytes": 1919,
+      "original_sha256": "b3beda1cae6711bb9b8ccb2addb71ad8f7343709ecc7f2458e94fbff3e684386",
+      "original_bytes": 1919
+    },
+    "rebuilt-elf.txt": {
+      "sha256": "078ceeb71695d84d559053cf42ae601f74691b555a8a7cc8a8167240addb3efa",
+      "bytes": 2768,
+      "original_sha256": "078ceeb71695d84d559053cf42ae601f74691b555a8a7cc8a8167240addb3efa",
+      "original_bytes": 2768
+    },
+    "source-rebuild.log.gz": {
+      "sha256": "318c05428093f4ed8c6c349d13a572eec3f8810a4fc4ecc0d5ff8cff6a5d71ad",
+      "bytes": 6776,
+      "original_sha256": "011d9a3ca02c66ea2fd4bdb5bacd142e2122e812b4c4b351b19d68b7765a9559",
+      "original_bytes": 34656
+    }
+  },
+  "limitations": [
+    "Functional rebuild from exported sources and recipes with fresh authenticated SDK/cache; no general reproducibility promise",
+    "Matching CPU and musl userland in containers over Ubuntu kernel; no native Alpine cell qualification",
+    "Seven-day Actions artifact is not a permanent source offer; per-file audit and distribution remain pending",
+    "Public checkout corpus validates the rebuilt engine; application installation/Twine/recovery gates are separate"
+  ]
+}

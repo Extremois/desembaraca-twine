@@ -924,6 +924,40 @@
         "Artifacts retained seven days, not an immutable public source offer",
         "Per-file applicability, full reviewed license audit, old kernel/CPU and installed-cell qualification remain pending"
       ]
+    },
+    {
+      "artifact_id": "linux-musl-x86_64",
+      "approved": false,
+      "qualified": false,
+      "evidence": "specs/003-add-cross-platform-support/evidence/musl-source-rebuild-2026-10-19/x86_64/summary.json",
+      "revision": "6f225eb6c6ece00e912d67bff9b461e008be4aca",
+      "environment_kind": "container",
+      "source_archive_sha256": "e3bd748c3fbea0c1525594afaf6fe86f43d8076244dbd00597c68f83c1f49787",
+      "source_archive_bytes": 68348021,
+      "verified_files": 18164,
+      "verified_sdk_files": 18102,
+      "original_engine_sha256": "f4dfee4e052704b1a7efdb7b6a4c43583ccaa062aec800b76224dae24eb2b69b",
+      "rebuilt_engine_sha256": "7d935f1d47925158da7aed95a74a83975e854157d62d7021855b9d31d6dcb79a",
+      "functional_rebuild": true,
+      "byte_identical": false,
+      "status": "exported-sources-and-functional-rebuild-verified; per-file-audit-and-permanent-source-offer-pending"
+    },
+    {
+      "artifact_id": "linux-musl-aarch64",
+      "approved": false,
+      "qualified": false,
+      "evidence": "specs/003-add-cross-platform-support/evidence/musl-source-rebuild-2026-10-19/aarch64/summary.json",
+      "revision": "6f225eb6c6ece00e912d67bff9b461e008be4aca",
+      "environment_kind": "container",
+      "source_archive_sha256": "8b34159f85efca3179dfdad93c6ed06dc23674f29621bee2b7769951e57689de",
+      "source_archive_bytes": 68347856,
+      "verified_files": 18164,
+      "verified_sdk_files": 18102,
+      "original_engine_sha256": "2d7a4b6024eb000c33ecf8b14d1a32d0aac8dde65bed00de138604d081fd3ee4",
+      "rebuilt_engine_sha256": "0b0fcd6bcf785eddeaa1033133e670492eb2716e83461a1d83e6ad6c93f05f11",
+      "functional_rebuild": true,
+      "byte_identical": false,
+      "status": "exported-sources-and-functional-rebuild-verified; per-file-audit-and-permanent-source-offer-pending"
     }
   ]
 }
