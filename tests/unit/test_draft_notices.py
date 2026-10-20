@@ -13,6 +13,43 @@ def tool():
 
 
 class DraftNoticesTests(unittest.TestCase):
+    def test_runtime_math_references_preserve_individual_terms_and_reject_changed_sources(self):
+        import gzip,hashlib,shutil
+        from unittest.mock import patch
+        module=tool();original=module.HERE/'licenses/data-references/musl-math'
+        name='lib/compiler_rt/trig.zig'
+        source=b'// Ported from musl.\nfn fixture() void {}\n'
+        prefix=b'// Ported from musl.\n'
+        observed=dict(size=len(source),sha256=hashlib.sha256(source).hexdigest(),
+            leading_comment_bytes=len(prefix),leading_comment_sha256=hashlib.sha256(prefix).hexdigest())
+        with tempfile.TemporaryDirectory() as folder:
+            root=Path(folder);references=root/'licenses/data-references/musl-math'
+            shutil.copytree(original,references)
+            lock=json.loads((references/'sources.json').read_bytes())
+            lock['sources'][name].update(size=len(source),sha256=observed['sha256'])
+            (references/'sources.json').write_text(json.dumps(lock))
+            with patch.object(module,'HERE',root):
+                materials=module.runtime_math_materials({name:source},{name:observed})
+                self.assertEqual(len(materials),7)  # Six trig references plus the historical root terms.
+                text=b'\n'.join(row[1] for row in materials)
+                self.assertIn(b'Sun Microsystems',text)
+                self.assertIn(b'Permission to use, copy, modify, and distribute',text)
+                self.assertIn(b'provided that this notice',text)
+                self.assertEqual(module.runtime_math_materials({},{}),[])
+                changed=source.replace(b'fixture',b'changed')
+                with self.assertRaises(ValueError):
+                    module.runtime_math_materials({name:changed},{name:dict(observed,sha256=hashlib.sha256(changed).hexdigest())})
+                with self.assertRaises(ValueError):
+                    module.runtime_math_materials({'lib/compiler_rt/unknown.zig':source},
+                        {'lib/compiler_rt/unknown.zig':observed})
+                ref=lock['references'][lock['sources'][name]['references'][0]]
+                path=references/ref['file'];data=gzip.decompress(path.read_bytes())
+                path.write_bytes(gzip.compress(data+b'changed'))
+                with self.assertRaises(ValueError):module.runtime_math_materials({name:source},{name:observed})
+                path.write_bytes(gzip.compress(data))
+                ref['file']='../outside.gz';(references/'sources.json').write_text(json.dumps(lock))
+                with self.assertRaises(ValueError):module.runtime_math_materials({name:source},{name:observed})
+
     def test_historical_go_terms_follow_only_byte_bound_reviewed_tangent_source(self):
         import hashlib
         from unittest.mock import patch

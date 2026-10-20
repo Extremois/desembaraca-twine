@@ -4,7 +4,9 @@ Inputs are pinned archives, a completed private relink and its source evidence.
 Existing candidates stay untouched. No download, compiler or global install.
 """
 import argparse
+import gzip
 import hashlib
+import io
 import importlib.util
 import json
 from pathlib import Path, PurePosixPath
@@ -177,6 +179,54 @@ def runtime_reference_materials(sdk,sources):
             scope='Conservative preservation for historical tangent documentation/tests; upstream replaced the Go algorithm with musl')
         selected.append(('Go-BSD-3-Clause-LICENSE.txt',data,origin))
     return selected
+
+
+def runtime_math_materials(sdk,sources):
+    """Retain historical per-file terms for byte-pinned math ports conservatively."""
+    if not sources:return []
+    folder=HERE/'licenses/data-references/musl-math'
+    lock=json.loads(audit.bounded(folder/'sources.json',65536))
+    if lock.get('kind')!='pinned-musl-math-notice-references' or lock.get('approved') is not False:
+        raise ValueError('Invalid math notice reference lock')
+    references={}
+    for name,item in sorted(sources.items()):
+        prefix=verified_source_prefix(sdk[name],item)
+        selected=lock['sources'].get(name)
+        if selected is None:
+            if b'Ported from musl' in prefix:raise ValueError('Unreviewed musl math port')
+            continue
+        if (selected['sha256'],selected['size'])!=(item['sha256'],item['size']):
+            raise ValueError('Math port differs from reviewed SDK source')
+        for path in selected['references']:
+            if not re.fullmatch(r'src/math/[A-Za-z0-9_]+\.c',path):raise ValueError('Unsafe math reference path')
+            references.setdefault(path,[]).append(dict(path=name,sha256=item['sha256']))
+    if not references:return []
+    def material(item):
+        filename=item['file']
+        if (not isinstance(filename,str) or Path(filename).name!=filename or '/' in filename
+                or '\\' in filename or ':' in filename or not filename.endswith('.gz')
+                or type(item['size']) is not int or not 0<item['size']<=65536):
+            raise ValueError('Unsafe or excessive math reference material')
+        compressed=audit.bounded(folder/filename,65536)
+        with gzip.GzipFile(fileobj=io.BytesIO(compressed)) as stream:data=stream.read(65537)
+        if len(data)!=item['size'] or hashlib.sha256(data).hexdigest()!=item['sha256']:
+            raise ValueError('Pinned math reference changed')
+        return data
+    archive=lock['archive']
+    root=material(lock['copyright'])
+    materials=[('Musl-math-1.1.18-COPYRIGHT.txt',root,
+        dict(kind='historical-math-root-terms',source_url=archive['url'],archive_sha256=archive['sha256'],
+            path='COPYRIGHT',source_sha256=lock['copyright']['sha256'],scope=lock['scope']))]
+    for path,related in sorted(references.items()):
+        item=lock['references'][path];data=material(item);prefix=source_notice_prefix(data)
+        if len(prefix)!=item['prefix_bytes'] or hashlib.sha256(prefix).hexdigest()!=item['prefix_sha256']:
+            raise ValueError('Math reference prefix differs from reviewed bytes')
+        if prefix:
+            materials.append(('Musl-math-'+path.rsplit('/',1)[1]+'.txt',prefix,
+                dict(kind='historical-math-source-notice',source_url=archive['url'],archive_sha256=archive['sha256'],
+                    path=path,source_sha256=item['sha256'],offset=0,length=len(prefix),
+                    related_sdk_sources=related,scope=lock['scope'])))
+    return materials
 
 
 def append_header_notices(materials,external,sdk,facts):
@@ -370,6 +420,7 @@ def prepare(linked_build,source_build,evidence,graphviz_archive,sdk_archive,sdk_
                     dict(kind='sdk-source-comment-prefix',path=name,archive_sha256=facts['archive_sha256'],
                          source_sha256=item['sha256'],offset=0,length=len(prefix))))
     materials.extend(runtime_reference_materials(sdk,runtime_sources))
+    materials.extend(runtime_math_materials(sdk,runtime_sources))
     for name in ('lib/cgraph/grammar.c','lib/cgraph/grammar.h','lib/common/htmlparse.c','lib/common/htmlparse.h'):
         if name not in generated:raise ValueError('Bison output is absent from compiler evidence')
         data=audit.bounded(source_build/'build'/name,8*1024**2)

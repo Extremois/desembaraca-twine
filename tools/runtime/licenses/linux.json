@@ -1186,7 +1186,72 @@
       "history_point_resolved": true,
       "replacement_commit": "e24398361dacc4b995ec67043746561927f5f1d2",
       "sdk_source_sha256": "828484649e0a61f634bd1bea179255ec24ee9c77b1511a99ccad2b874e0e1a6c",
-      "native_package_confirmation": false
+      "native_package_confirmation": true,
+      "native_package_revision": "dfc93c8a29143a2d74a1b1e240d88fa3e221fabd",
+      "native_package_evidence": "specs/003-add-cross-platform-support/evidence/linux-allocated-sections-ci-2026-10-20/summary.json"
+    }
+  ],
+  "allocated_input_section_reviews": [
+    {
+      "artifact_id": "linux-glibc-x86_64",
+      "approved": false,
+      "qualified": false,
+      "revision": "dfc93c8a29143a2d74a1b1e240d88fa3e221fabd",
+      "evidence": "specs/003-add-cross-platform-support/evidence/linux-allocated-sections-ci-2026-10-20/glibc-x86_64/summary.json",
+      "allocated_input_sections": 625,
+      "allocated_output_sections": 23,
+      "independent_map_reread": true,
+      "source_to_binary_complete": false
+    },
+    {
+      "artifact_id": "linux-glibc-aarch64",
+      "approved": false,
+      "qualified": false,
+      "revision": "dfc93c8a29143a2d74a1b1e240d88fa3e221fabd",
+      "evidence": "specs/003-add-cross-platform-support/evidence/linux-allocated-sections-ci-2026-10-20/glibc-aarch64/summary.json",
+      "allocated_input_sections": 648,
+      "allocated_output_sections": 23,
+      "independent_map_reread": true,
+      "source_to_binary_complete": false
+    },
+    {
+      "artifact_id": "linux-musl-x86_64",
+      "approved": false,
+      "qualified": false,
+      "revision": "dfc93c8a29143a2d74a1b1e240d88fa3e221fabd",
+      "evidence": "specs/003-add-cross-platform-support/evidence/linux-allocated-sections-ci-2026-10-20/musl-x86_64/summary.json",
+      "allocated_input_sections": 964,
+      "allocated_output_sections": 10,
+      "independent_map_reread": true,
+      "source_to_binary_complete": false
+    },
+    {
+      "artifact_id": "linux-musl-aarch64",
+      "approved": false,
+      "qualified": false,
+      "revision": "dfc93c8a29143a2d74a1b1e240d88fa3e221fabd",
+      "evidence": "specs/003-add-cross-platform-support/evidence/linux-allocated-sections-ci-2026-10-20/musl-aarch64/summary.json",
+      "allocated_input_sections": 968,
+      "allocated_output_sections": 10,
+      "independent_map_reread": true,
+      "source_to_binary_complete": false
+    }
+  ],
+  "historical_math_notice_reviews": [
+    {
+      "approved": false,
+      "qualified": false,
+      "native_package_confirmation": false,
+      "evidence": "specs/003-add-cross-platform-support/evidence/runtime-math-notices-2026-10-20/summary.json",
+      "reviewed_sdk_sources": 19,
+      "historical_c_references": 42,
+      "additional_notice_materials_per_observed_variant": 28,
+      "artifacts": [
+        "linux-glibc-aarch64",
+        "linux-musl-x86_64",
+        "linux-musl-aarch64"
+      ],
+      "scope": "Conservative preservation; exact translation ancestry and applicability pending"
     }
   ]
 }

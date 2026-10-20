@@ -49,3 +49,29 @@ atual nem afirma que todo material histórico foi substituído. O preparo inclui
 o BSD completo do Go como preservação conservadora quando a fonte `tan.zig`
 observada corresponde ao hash revisado; outra fonte/hash exige revisão própria.
 Essa inclusão ainda aguarda o próximo empacotamento nativo, sem alterar ZIPs existentes.
+
+A inclusão Go foi confirmada nas três candidatas pertinentes da revisão
+`dfc93c8`, com conferência dos ZIPs após download. A [captura de seções alocadas](../../../specs/003-add-cross-platform-support/evidence/linux-allocated-sections-ci-2026-10-20/summary.json)
+também foi reproduzida independentemente contra os quatro ELF, mapas e inputs
+com hash. Todos preservam os bytes dos motores anteriores. Os mapas mostram
+que `libcompiler_rt.a` fornece código matemático real, incluindo trigonometria
+nas três variantes e exponenciais/logaritmos em glibc ARM64. Assim, a revisão
+dos avisos específicos dessas portas continua necessária; não há fundamento
+para descartá-los coletivamente como simples imports DWARF. A nova evidência
+delimita contribuições alocadas, sem aprovar automaticamente licenças ou fechar
+a relação exaustiva entre fonte e instruções.
+
+## Portas matemáticas: preservação histórica conservadora
+
+O preparo verifica 19 fontes Zig exatas e preserva 42 referências C originais
+da musl 1.1.18, além do COPYRIGHT histórico. São emitidos 27 prefixos individuais
+e o COPYRIGHT nas três variantes pertinentes; os termos Sun/FreeBSD não são
+substituídos pelo MIT raiz. Quinze referências sem prefixo permanecem explícitas,
+sem indicadores adicionais de copyright/permissão/redistribuição em seus corpos.
+Os dois SDKs e as observações dos builds nativos foram conferidos localmente.
+Ver `data-references/musl-math/REVIEW.md` e o recibo
+`specs/003-add-cross-platform-support/evidence/runtime-math-notices-2026-10-20/summary.json`.
+
+O ensaio comprova seleção/preparo por bytes; não comprova ancestralidade exata
+da tradução, aplicabilidade final, pacote nativo atualizado ou fechamento T030.
+ISO, outros componentes e oferta/retenção de fontes continuam pendentes.

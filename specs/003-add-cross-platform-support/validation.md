@@ -1,5 +1,29 @@
 # Evidência de implementação — feature 003
 
+## Referências matemáticas históricas — 2026-10-20
+
+**Avisos matemáticos preparados em 2026-10-20**: [recibo local](evidence/runtime-math-notices-2026-10-20/summary.json) confere 42 fontes C e COPYRIGHT contra o tarball oficial musl 1.1.18 e 19 fontes Zig contra ambos os SDKs fixados. Preparo inclui 27 prefixos individuais mais COPYRIGHT nas três variantes com fontes observadas; glibc x64 permanece sem inclusão por associação. Quinze referências sem prefixo permanecem explícitas. Teste recusa alteração de fonte/referência e caminho inseguro; fundação passou com 222 testes por Python, oito skips. Confirmação dos novos pacotes nativos e ancestralidade/aplicabilidade ainda pendentes; T030 parcial, total **54/84**. Checkpoint necessário ao CI será usado para validar a mudança nos avisos.
+
+Os arquivos originais permanecem comprimidos em `tools/runtime/licenses/data-references/musl-math/`, com hashes de fonte completa e prefixo. O preparo mantém separadamente os termos Sun/FreeBSD e o COPYRIGHT histórico. As referências `ln.c`/`lnf.c`/`__tand.c` são mapeadas explicitamente; `fmod`/`sqrt` recebem material conservador. Não se afirma uma revisão ancestral exata nem presença de todas as fontes observadas nas seções finais. Pacotes CI anteriores permanecem vinculados aos seus hashes e não são descritos como contendo os novos avisos.
+
+
+## Mapa de alocações Linux confirmado — 2026-10-20
+
+O [recibo das quatro variantes](evidence/linux-allocated-sections-ci-2026-10-20/summary.json)
+vincula a revisão `dfc93c8`, cinco workflows aprovados e seis jobs de fundação
+com 221 testes cada. O leitor foi reexecutado localmente sobre os mapas e ELF
+baixados, conferindo inputs, membros e intervalos das seções alocadas. Glibc
+x64/ARM64 e musl x64/ARM64 têm respectivamente 625/648/964/968 contribuições;
+os quatro motores mantêm seus hashes anteriores. Oito ensaios de runtime/rede
+passaram, e os termos Go foram incorporados onde a fonte revisada foi observada.
+
+O mapa não sustenta descartar as rotinas matemáticas como apenas debug/imports:
+compiler_rt contribui código trigonométrico em glibc ARM64 e nas duas musl,
+além de exponenciais/logaritmos em glibc ARM64. Atribuições por fonte continuam
+na revisão T030. Contêineres musl não qualificam células Alpine; mapas não
+concedem aprovação de fontes/licenças, entrega ou matriz. **54/84** tarefas;
+recibos finais locais aguardam outro checkpoint necessário ao CI.
+
 ## Integração macOS e prioridade de fechamento — 2026-10-20
 
 Os commits `32fa383` e `b1f608e` implementaram e corrigiram o percurso privado
