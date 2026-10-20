@@ -14,6 +14,21 @@ class NativeBaselineTests(unittest.TestCase):
         spec=importlib.util.spec_from_file_location('native_baseline',ROOT/'.github/scripts/check-native-baseline.py')
         self.tool=importlib.util.module_from_spec(spec);spec.loader.exec_module(self.tool)
 
+    def test_network_observation_requires_child_control_and_zero_corpus_socket_calls(self):
+        spec=importlib.util.spec_from_file_location('observer',ROOT/'tools/runtime/observe-linux-network.py')
+        observer=importlib.util.module_from_spec(spec);spec.loader.exec_module(observer)
+        control=observer.parse_trace('100 execve("/private/python", [], []) = 0\n'
+            '101 execve("/private/python", [], []) = 0\n101 socket(AF_INET, SOCK_STREAM, 0) = 3\n'
+            '101 connect(3, {sa_family=AF_INET}, 16) = -1 ECONNREFUSED (Connection refused)\n')
+        corpus=observer.parse_trace('100 execve("/private/python", [], []) = 0\n'
+            '102 execve("/cache/bin/dot", [], []) = 0\n')
+        self.tool.validate_network_observation(control,corpus)
+        for bad in (dict(control,network_syscalls={}),dict(control,successful_executables=['/private/python'])):
+            with self.assertRaises(ValueError):self.tool.validate_network_observation(bad,corpus)
+        for bad in (dict(corpus,network_syscalls=dict(socket=1)),
+                    dict(corpus,successful_executables=['/private/python'])):
+            with self.assertRaises(ValueError):self.tool.validate_network_observation(control,bad)
+
     def test_application_evidence_rejects_wrong_wheel_missing_cases_or_failed_cache(self):
         cases=[dict(case='case_'+str(i),known_resolvable=i<6) for i in range(13)]
         rows=[dict(case=r['case'],before=[1,1,1],after=[0,0,0]) for r in cases]

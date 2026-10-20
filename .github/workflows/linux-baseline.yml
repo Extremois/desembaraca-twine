@@ -70,3 +70,4 @@ jobs:
             ${{ runner.temp }}/twine-native-baseline/evidence/guest/*.json
             ${{ runner.temp }}/twine-native-baseline/evidence/guest/*.txt
             ${{ runner.temp }}/twine-native-baseline/evidence/application/*.json
+            ${{ runner.temp }}/twine-native-baseline/evidence/application/*.trace

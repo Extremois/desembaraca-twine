@@ -157,3 +157,18 @@ T033/T037 parciais, demais células/elegibilidade Pro/aplicação instalada pend
 Nenhuma promoção; catálogo Windows, 56/84 tasks. Checkpoint enviado `cc0cc76`;
 recibos finais ficam locais para o próximo commit necessário.
 
+## Wheel instalado no Ubuntu 18.04 x64 — 2026-10-20
+
+Ensaio nativo KVM `39474628694`, revisão `ec14368`, aprovado: CPython 3.12.15/
+3.14.8, wheel de desenvolvimento instalado offline, 53 arquivos conferidos
+contra o commit e três entrypoints. Gerenciador/motor reais, preparo automático/
+explícito, 13 casos por Python com seis referências zeradas, preservação,
+permissões, caminhos Unicode e cache sem nova aquisição. Python do SO preservado.
+Seis jobs da regressão `39474628708` aprovados com 234 testes cada.
+[Recibo](ubuntu1804-installed-wheel-2026-10-20/summary.json).
+
+Aquisição inicial controlada e observação de sockets somente Python; não aprova
+candidata remota final, tracing nativo, Pro, Twine ou recuperação completa.
+T037/T078 avançaram parcialmente, demais células mantidas; nenhuma promoção,
+catálogo Windows e 56/84 tasks. Checkpoint enviado; recibos finais locais.
+

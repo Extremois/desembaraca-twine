@@ -1,0 +1,50 @@
+{
+  "kind": "verified-native-ubuntu1804-installed-development-wheel-integration",
+  "passed": true,
+  "qualified": false,
+  "approved": false,
+  "captured_at": "2026-10-20T18:28:29.503094+00:00",
+  "revision": "ec14368e7522d8c1ae3ce719e6cb6c83fb718a75",
+  "workflow_run": 39474628694,
+  "workflow_url": "https://github.com/Extremois/desembaraca-twine/actions/runs/39474628694",
+  "artifact_id": 12287389813,
+  "artifact_sha256": "8378fdb402547651922ca7ef357eb1921a2703398bada657a4eb8fb242f17556",
+  "native_summary_sha256": "e2f328036dfc1950c078e4adc154545c4009d22741930329e42b3e5ff992b03d",
+  "wheel_sha256": "0629d4b85958a9dd5934d86cc7ba53ea7469b32c00faffed423077e14ba00bc4",
+  "installed_source_files_verified_against_commit": 53,
+  "engine_sha256": "43ce8d686720467c21be91cab4b8f3b246baae49c2cfe293714ebdf8a82f5716",
+  "kernel": "4.15.0-212-generic",
+  "glibc": "glibc 2.27",
+  "arch": "x86_64",
+  "kvm": {
+    "enabled": true,
+    "present": true
+  },
+  "interpreters": [
+    {
+      "python": "3.12.15",
+      "report": "application-3.12.json",
+      "sha256": "543573e5a5da4ea6690211d90bad802ef81f4ca54c1d84bfa9b4d9abec6d5c82",
+      "cases": 13,
+      "known_zero_references": 6
+    },
+    {
+      "python": "3.14.8",
+      "report": "application-3.14.json",
+      "sha256": "494fdd0689b6e45fb213e772e7f8bbbeee2590482e3f2ca92a58b99f90005d0b",
+      "cases": 13,
+      "known_zero_references": 6
+    }
+  ],
+  "system_python_unchanged": true,
+  "tasks_complete": 56,
+  "tasks_total": 84,
+  "limitations": [
+    "Installed development wheel only; catalog remains Windows-only and acquisition is a controlled fixture",
+    "Python socket guard and restricted guest networking; not native syscall network observation or final distribution acceptance",
+    "T037/T078 remain partial: Pro eligibility, remote final candidate, other cells, Twine and shared gates pending"
+  ],
+  "foundation_report": "foundation.json",
+  "foundation_report_sha256": "c5480730d67ad012d1f9e2c62b29ca098039fcfef0e780dbf61747992ad74f34",
+  "foundation_run": 39474628708
+}

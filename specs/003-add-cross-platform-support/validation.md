@@ -1986,3 +1986,19 @@ T033/T037 continuam parciais: demais células, aplicação instalada e elegibili
 Pro pendentes. Catálogo permanece Windows. Total 56/84. Recibos finais locais;
 nenhum segundo commit necessário apenas para registrar o resultado.
 
+## Aplicação instalada no Ubuntu 18.04 x64 — 2026-10-20
+
+Workflow `39474628694`, revisão `ec14368`, aprovado: wheel de desenvolvimento
+instalado offline nos dois venvs privados, três entrypoints, 53 arquivos
+conferidos contra o commit após download. CPython 3.12.15/3.14.8 passaram
+preparo automático/explícito pelo gerenciador real, 13 casos cada, seis
+referências zeradas, preservação, permissões, caminhos Unicode e cache sem
+nova aquisição. Python do SO preservado. Guest KVM nativo Ubuntu 18.04 x64,
+Linux 4.15.0-212/glibc 2.27. Regressão `39474628708`: seis jobs aprovados,
+234 testes cada. [Recibos](evidence/ubuntu1804-installed-wheel-2026-10-20/summary.json).
+
+A aquisição inicial é controlada por fixture; sockets são bloqueados no Python,
+sem tracing nativo. Não é aceite da candidata pública final ou de toda a célula.
+T037/T078 permanecem parciais, Pro/Twine/recuperação/demais células pendentes;
+catálogo Windows e total 56/84 preservados. Recibos finais locais.
+

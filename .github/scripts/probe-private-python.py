@@ -81,6 +81,8 @@ def probe(source,output):
             subprocess.run([str(venv/'bin/python'),'-I',str(source/'application/probe.py'),
                 '--input',str(source),'--output',str(application)],env=env,check=True,timeout=240)
             shutil.copyfile(application/'runtime.json',output/('application-'+pin['minor']+'.json'))
+            for kind in ('control','corpus'):
+                shutil.copyfile(application/('network-'+kind+'.trace'),output/('application-'+pin['minor']+'.'+kind+'.trace'))
         rows.append(dict(minor=pin['minor'],archive_sha256=pin['sha256'],archive_bytes=archive.stat().st_size,facts=facts))
     report=dict(kind='native-ubuntu1804-private-python-prerequisites',passed=True,qualified=False,
         system_python_before=before,system_python_after=digest(system),interpreters=rows,

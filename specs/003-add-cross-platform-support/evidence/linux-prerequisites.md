@@ -116,7 +116,7 @@ do guest, sem representar execução da aplicação instalada nos novos venvs.
 T033/T037 permanecem abertas para a
 matriz completa, elegibilidade Pro e percurso da aplicação instalada.
 
-### Aplicação instalada no mesmo guest — ensaio preparado
+### Aplicação instalada no mesmo guest — aprovado em 2026-10-20
 
 O modo `--python-application` constrói um wheel de desenvolvimento da revisão
 do workflow, registra SHA-256/arquivos e instala esse wheel offline nos dois
@@ -128,7 +128,28 @@ preservação, permissões, caminhos Unicode e cache sem nova aquisição.
 
 A transferência inicial do motor continua controlada por fixture; o bloqueio
 de sockets do teste observa Python, sem substituir tracing nativo de rede.
-O wheel mantém o catálogo público atual, somente Windows. Esse ensaio ainda
-precisa ser executado/conferido no CI e não aprova pacote final, elegibilidade
-Pro, Twine, recuperação completa ou demais células T037/T078.
+O wheel mantém o catálogo público atual, somente Windows. O workflow
+`39474628694`, revisão `ec14368`, passou e foi reconferido após download:
+53 arquivos do wheel coincidem com o commit; CPython 3.12.15/3.14.8 passaram
+os 13 casos cada, incluindo as seis referências zeradas e preparo automático/
+explícito. Cada modo fez uma aquisição controlada inicial e nenhuma no cache
+íntegro. O Python do SO manteve o hash. Os seis jobs da regressão `39474628708`
+passaram com 234 testes cada.
+[Recibos](ubuntu1804-installed-wheel-2026-10-20/summary.json).
+Isso avança T037/T078 parcialmente e não aprova pacote final, elegibilidade
+Pro, tracing nativo de rede, Twine, recuperação completa ou demais células.
+
+### Observação nativa de rede no kernel 4.15 — preparada
+
+O manifesto público da imagem fixada lista `strace 4.21-1ubuntu1`; a rotina usa
+esse executável já presente no guest, sem instalar tracer ou substituir Python.
+O filtro `%network,execve` e `-f` acompanham a aplicação e seus filhos. Um controle
+separado deve detectar `socket`/`connect` num filho real, antes de exigir zero
+chamadas de rede durante preparo controlado/corpus/cache. Os traces brutos serão
+reconferidos no host e vinculados aos relatórios por SHA-256.
+
+Essa versão do tracer não oferece `--kill-on-exit`; isso fica explícito no
+relatório. O encerramento do guest efêmero pertence ao `finally` do driver host,
+inclusive após falha. O teste não promete contenção de código hostil. Execução
+CI ainda pendente; demais gates e células permanecem na mesma spec.
 

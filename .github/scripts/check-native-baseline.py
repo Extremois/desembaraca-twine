@@ -2,6 +2,7 @@
 import argparse
 import hashlib
 import io
+import importlib.util
 import json
 import os
 from pathlib import Path
@@ -106,6 +107,15 @@ def validate_application_report(report,patch,wheel_sha,engine_sha,cases):
             raise ValueError('Corpus regressed or known reference did not finish clean')
 
 
+def validate_network_observation(control,corpus):
+    if (len(control.get('successful_executables',[]))<2
+            or not control.get('network_syscalls',{}).get('socket')
+            or not control.get('network_syscalls',{}).get('connect')
+            or corpus.get('network_syscalls')!={}
+            or not any(Path(path).name=='dot' for path in corpus.get('successful_executables',[]))):
+        raise ValueError('Native tracing missed the child control or observed corpus network calls')
+
+
 def prepare_application(artifact,work):
     folder=work/'input/application';folder.mkdir()
     subprocess.run([sys.executable,'-m','pip','wheel','--no-deps','--wheel-dir',str(folder),str(ROOT)],check=True,timeout=180)
@@ -126,6 +136,8 @@ def prepare_application(artifact,work):
     for name in ('common.py','runtime_support.py','native_acceptance.py','integration/test_linux_runtime.py'):
         shutil.copyfile(ROOT/'tests'/name,driver/name)
     shutil.copytree(ROOT/'tests/fixtures',driver/'fixtures',ignore=shutil.ignore_patterns('__pycache__','*.pyc'))
+    observer=folder/'test-driver/tools/runtime';observer.mkdir(parents=True)
+    shutil.copyfile(ROOT/'tools/runtime/observe-linux-network.py',observer/'observe-linux-network.py')
     shutil.copyfile(ROOT/'.github/scripts/probe-installed-application.py',folder/'probe.py')
 
 
@@ -267,6 +279,16 @@ def execute(work):
                         run(['scp',*options,'-P','2222','twine@127.0.0.1:/home/twine/python-results/'+name,str(application/name)])
                         report=json.loads(bounded(application/name))
                         validate_application_report(report,pin_python['patch'],wheel_pin['sha256'],expected['sha256'],cases)
+                        spec=importlib.util.spec_from_file_location('network_observer',ROOT/'tools/runtime/observe-linux-network.py')
+                        observer=importlib.util.module_from_spec(spec);spec.loader.exec_module(observer)
+                        traces={}
+                        for kind in ('control','corpus'):
+                            trace_name='application-'+pin_python['minor']+'.'+kind+'.trace'
+                            run(['scp',*options,'-P','2222','twine@127.0.0.1:/home/twine/python-results/'+trace_name,str(application/trace_name)])
+                            trace=bounded(application/trace_name,8*1024**2)
+                            if digest(trace)!=report['native_network'][kind]['trace_sha256']:raise ValueError('Native trace changed')
+                            traces[kind]=observer.parse_trace(trace.decode('utf-8'))
+                        validate_network_observation(traces['control'],traces['corpus'])
                         if (report.get('wheel_source_revision')!=os.environ.get('GITHUB_SHA')
                                 or report.get('application_outside_checkout') is not True
                                 or report.get('global_graphviz_and_git_absent') is not True):
