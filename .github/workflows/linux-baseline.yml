@@ -17,6 +17,16 @@ concurrency:
   cancel-in-progress: true
 jobs:
   ubuntu1804-x64:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - abi: glibc
+            candidate_run: 39434565632
+            candidate_name: linux-glibc-x86_64-unqualified-b13cd6f90db31163e62119bb83e2eb8db5ac8458
+          - abi: musl
+            candidate_run: 39434565540
+            candidate_name: linux-musl-x86_64-container-unqualified-b13cd6f90db31163e62119bb83e2eb8db5ac8458
     runs-on: ubuntu-24.04
     timeout-minutes: 15
     steps:
@@ -29,12 +39,12 @@ jobs:
       - uses: actions/download-artifact@v4
         with:
           github-token: ${{ github.token }}
-          run-id: 39434565632
-          name: linux-glibc-x86_64-unqualified-b13cd6f90db31163e62119bb83e2eb8db5ac8458
+          run-id: ${{ matrix.candidate_run }}
+          name: ${{ matrix.candidate_name }}
           path: ${{ runner.temp }}/baseline-artifact
       - name: Prepare byte-bound engine and public geometry inputs
         shell: bash
-        run: python .github/scripts/check-native-baseline.py --artifact "$RUNNER_TEMP/baseline-artifact" --work "$RUNNER_TEMP/twine-native-baseline"
+        run: python .github/scripts/check-native-baseline.py --artifact "$RUNNER_TEMP/baseline-artifact" --work "$RUNNER_TEMP/twine-native-baseline" --abi '${{ matrix.abi }}'
       - name: Install guest test tooling only on this ephemeral runner
         shell: bash
         run: |
@@ -47,7 +57,7 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: ubuntu1804-x64-engine-baseline-${{ github.sha }}
+          name: ubuntu1804-x64-${{ matrix.abi }}-engine-baseline-${{ github.sha }}
           retention-days: 7
           path: |
             ${{ runner.temp }}/twine-native-baseline/evidence/*.json

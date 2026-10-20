@@ -182,3 +182,10 @@ Twine e aceite instalado continuam gates próprios. O Python 3.6 do sistema
 conduz somente o probe de motor; não será contado como slot da aplicação.
 SSH usa chave efêmera, encaminhamento restrito a loopback e rede do guest
 restrita; discos/seeds/chaves não entram no artefato de evidência.
+
+O baseline de kernel do motor musl x64 será medido separadamente do glibc no
+mesmo tipo de guest Ubuntu 18.04/KVM. O ELF musl precisa permanecer estático,
+sem interpretador/seção dinâmica, e corresponder ao hash do motor ensaiado nos
+quatro userlands Alpine. Essa combinação investiga receita/ABI e kernel mínimo,
+sem substituir o ambiente Alpine nativo ou contar o Python 3.6 do guest como
+slot suportado. T044 e os gates de distribuição/aceitação continuam próprios.

@@ -1,4 +1,7 @@
 import importlib.util
+from pathlib import Path
+import tempfile
+import struct
 import unittest
 from common import ROOT
 
@@ -26,3 +29,34 @@ class NativeBaselineTests(unittest.TestCase):
                           ('url',pin['url'].replace('cloud-images.ubuntu.com','example.com')),
                           ('size',1024**3),('sha256','not-a-hash')]:
             with self.assertRaises(ValueError):self.tool.validate_pin(dict(pin,**{key:value}))
+
+    def test_guest_report_cannot_choose_a_path_on_the_runner(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root=Path(folder)
+            self.assertEqual(root/'clean.json',self.tool.guest_output_path(root,'clean','clean.json'))
+            for reported in ('../secret.json','/etc/shadow','clean/../../secret.json','other.json'):
+                with self.assertRaises(ValueError):self.tool.guest_output_path(root,'clean',reported)
+
+    def test_musl_baseline_requires_its_own_bytes_and_static_elf_observation(self):
+        guest=dict(abi='musl',engine_sha256='f4dfee4e052704b1a7efdb7b6a4c43583ccaa062aec800b76224dae24eb2b69b',
+                   elf=dict(no_interpreter=True,no_dynamic_section=True),loader=None)
+        self.tool.validate_engine_kind(guest,'musl')
+        for replacement in (dict(abi='glibc'),dict(engine_sha256=self.tool.ENGINE_SHA),
+                            dict(elf=dict(no_interpreter=False,no_dynamic_section=True)),dict(loader='/lib/ld-musl-x86_64.so.1')):
+            with self.assertRaises(ValueError):self.tool.validate_engine_kind(dict(guest,**replacement),'musl')
+        with self.assertRaises(ValueError):self.tool.validate_engine_kind(guest,'other')
+
+    def test_guest_checks_real_elf_headers_before_executing_the_requested_abi(self):
+        spec=importlib.util.spec_from_file_location('guest_probe',ROOT/'.github/scripts/probe-guest-baseline.py')
+        tool=importlib.util.module_from_spec(spec);spec.loader.exec_module(tool)
+        data=bytearray(120);data[:6]=b'\x7fELF\x02\x01'
+        struct.pack_into('<HH',data,16,2,62);struct.pack_into('<Q',data,32,64)
+        struct.pack_into('<HH',data,54,56,1);struct.pack_into('<I',data,64,1)
+        self.assertTrue(tool.inspect_binary(data,'musl')['no_interpreter'])
+        with self.assertRaises(ValueError):tool.inspect_binary(data,'glibc')
+        for kind in (2,3):
+            modified=bytearray(data);struct.pack_into('<I',modified,64,kind)
+            with self.assertRaises(ValueError):tool.inspect_binary(modified,'musl')
+        modified=bytearray(data);struct.pack_into('<H',modified,18,183)
+        with self.assertRaises(ValueError):tool.inspect_binary(modified,'musl')
+        with self.assertRaises(ValueError):tool.inspect_binary(data[:64],'musl')

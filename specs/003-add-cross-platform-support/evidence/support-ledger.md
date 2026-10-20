@@ -121,3 +121,15 @@ Contagens de tarefas são rastreabilidade de trabalho, não aprovação de requi
 | SC-008 | T002, T003, T070, T074, T075, T081, T082, T083, T084 | 6/9 | pendente: evidências específicas e matriz completa |
 | SC-009 | T002, T003, T070, T074, T075, T081, T082, T083, T084 | 6/9 | pendente: evidências específicas e matriz completa |
 | SC-010 | T002, T003, T070, T074, T075, T081, T082, T083, T084 | 6/9 | pendente: evidências específicas e matriz completa |
+
+## Baseline glibc x64 confirmado em kernel antigo
+
+[Ubuntu 18.04 x64 em KVM no CI](ubuntu1804-native-engine-baseline-2026-10-20/summary.json)
+fecha T024: kernel 4.15.0-212, glibc 2.27, loader/CPU registrados e o mesmo motor
+glibc aprovado nos 13 probes de geometria. Não é aceite da aplicação no Python
+3.12/3.14, não confirma elegibilidade Ubuntu Pro nem revisão Twine e não altera
+qualificação/catálogo. O [preflight KVM](kvm-preflight-2026-10-20/summary.json)
+identificou API acessível com elevação no runner x64 e ausência de dispositivo
+no ARM64 atribuído. Todas as distribuições e arquiteturas permanecem na spec.
+Progresso de tarefas: 55/84, com 29 pendentes; células qualificadas permanecem
+inalteradas. A VM de teste foi criada somente no runner efêmero GitHub.
