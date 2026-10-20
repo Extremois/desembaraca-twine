@@ -1,7 +1,7 @@
-# Reconstrução das candidatas Linux glibc x64/ARM64
+# Reconstrução das candidatas Linux glibc/musl x64/ARM64
 
-O artefato `linux-glibc-x86_64-source-review-*` ou
-`linux-glibc-aarch64-source-review-*` contém `sources.tar.gz` e um
+Os artefatos `linux-{glibc,musl}-{x86_64,aarch64}-source-review-*`
+contêm `sources.tar.gz` e um
 recibo SHA-256. É material para revisão, ainda sem aprovação de oferta completa
 de fontes ou publicação permanente. Não é necessário para usar o runtime.
 
@@ -13,7 +13,7 @@ incluído. `manifest.json` relaciona tamanho/hash de cada entrada e vincula o
 material ao executável e à proveniência da candidata. A árvore SDK inclui
 material de outras plataformas; sua inclusão não declara que foi ligado ao dot.
 
-Use Linux glibc nativo da arquitetura da candidata, filesystem POSIX e diretórios novos. São necessários
+Use Linux da arquitetura e ABI da candidata, filesystem POSIX e diretórios novos. São necessários
 Python 3.12 ou 3.14, CMake, make, Bison, Flex e readelf. As versões/hashes usados
 originalmente estão em `candidate-provenance.json`, em `sdk.facts.host_tools`;
 a imagem do runner também está registrada. A imagem hospedada pode mudar, e
@@ -39,8 +39,22 @@ cp -a sdk/lib/. /tmp/twine-arm64-rebuild-sdk/sdk/zig-aarch64-linux-0.15.2/lib/
 python3 tools/runtime/build-common.py --artifact-id linux-glibc-aarch64 --source-archive graphviz.tar.gz --sdk-record /tmp/twine-arm64-rebuild-sdk/sdk-record.json --output /tmp/twine-arm64-rebuild-output --execute
 ```
 
+Para musl x64, em userland musl e CPU x86_64 correspondente:
+
+```sh
+python3 tools/runtime/prepare-linux-ci.py --work /tmp/twine-musl-rebuild-sdk --arch x86_64 --libc musl
+cp -a sdk/lib/. /tmp/twine-musl-rebuild-sdk/sdk/zig-x86_64-linux-0.15.2/lib/
+python3 tools/runtime/build-common.py --artifact-id linux-musl-x86_64 --source-archive graphviz.tar.gz --sdk-record /tmp/twine-musl-rebuild-sdk/sdk-record.json --output /tmp/twine-musl-rebuild-output --execute
+```
+
+Para musl ARM64, use `--arch aarch64`, `zig-aarch64-linux-0.15.2` e
+`--artifact-id linux-musl-aarch64`, com novas pastas. O alvo é
+`ARCH-linux.4.15-musl`, estático, com nova inspeção ELF. Nos containers CI,
+acrescente `--environment-kind container` ao preparador: CPU correspondente e
+userland musl sobre kernel Ubuntu não aprovam uma célula Alpine nativa.
+
 O exportador seleciona e autentica o SDK específico da arquitetura e a receita
-da proveniência. Os workflows x64 e ARM64 executam suas reconstruções em pastas
+da proveniência. Os workflows glibc/musl x64 e ARM64 executam reconstruções em pastas
 novas, copiando a árvore SDK exportada e usando cache de compilação privado novo.
 Os testes do motor reconstruído usam o checkout público da mesma execução.
 
@@ -48,7 +62,7 @@ O resultado está em `/tmp/twine-rebuild-output/candidate/bin/dot`. O CMake refa
 as tabelas e parsers a partir das fontes Graphviz; o Zig recompila os objetos
 de biblioteca usando a árvore `lib/` copiada e seu cache privado novo. Preserve
 o log e a nova proveniência. Para experimentar alterações privadas nas fontes
-glibc, edite a cópia do SDK antes de executar `build-common.py`; o compilador
+glibc/musl, edite a cópia do SDK antes de executar `build-common.py`; o compilador
 continua conferido pelo hash, mas as auditorias da candidata original devem
 recusar essas fontes modificadas. Alterações não recebem aprovação automática.
 

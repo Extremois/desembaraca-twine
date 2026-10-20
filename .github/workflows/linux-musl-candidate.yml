@@ -71,7 +71,7 @@ jobs:
         run: |
           docker pull --platform "linux/$OCI_ARCH" "$TEST_IMAGE"
           docker image inspect "$TEST_IMAGE" > "$RUNNER_TEMP/twine-musl/test-image.json"
-          docker run --rm --platform "linux/$OCI_ARCH" -v "$GITHUB_WORKSPACE:/workspace:ro" -v "$RUNNER_TEMP/twine-musl:/work" --workdir /workspace "$TEST_IMAGE" sh -ec 'apk add --no-cache strace binutils; python tools/runtime/observe-linux-network.py --build-output /work/notices --environment-kind container --report /work/network-314.json --corpus-report /work/corpus-314.json; python tools/runtime/observe-linux-network.py --build-output /work/notices --private-package /work/package --environment-kind container --report /work/runtime-network-314.json --corpus-report /work/runtime-corpus-314.json'
+          docker run --rm --platform "linux/$OCI_ARCH" -v "$GITHUB_WORKSPACE:/workspace:ro" -v "$RUNNER_TEMP/twine-musl:/work" --workdir /workspace "$TEST_IMAGE" sh -ec 'apk add --no-cache strace binutils; python tools/runtime/observe-linux-network.py --build-output /work/notices --environment-kind container --report /work/network-314.json --corpus-report /work/corpus-314.json; python tools/runtime/observe-linux-network.py --build-output /work/notices --private-package /work/package --environment-kind container --report /work/runtime-network-314.json --corpus-report /work/runtime-corpus-314.json; python tools/runtime/observe-linux-network.py --build-output /work/replay-build --environment-kind container --report /work/rebuilt-network-314.json --corpus-report /work/rebuilt-corpus-314.json'
       - name: Retain unqualified container build and measurements
         if: always()
         uses: actions/upload-artifact@v4
@@ -81,7 +81,15 @@ jobs:
           include-hidden-files: true
           path: |
             ${{ runner.temp }}/twine-musl/build.log
+            ${{ runner.temp }}/twine-musl/source-rebuild.log
             ${{ runner.temp }}/twine-musl/evidence/
             ${{ runner.temp }}/twine-musl/*.json
             ${{ runner.temp }}/twine-musl/*.txt
             ${{ runner.temp }}/twine-musl/*.trace
+      - name: Retain source material separately (not a published source offer)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: linux-musl-${{ matrix.arch }}-source-review-${{ github.sha }}
+          retention-days: 7
+          path: ${{ runner.temp }}/twine-musl/source-review/

@@ -45,3 +45,25 @@ python /workspace/tools/runtime/observe-linux-network.py --build-output "$work/n
 python /workspace/tools/runtime/verify-artifact.py --root "$work/notices/candidate" --provenance "$work/notices/provenance.json" --write-inventory "$work/evidence/inventory.json" --static-elf
 python /workspace/tools/runtime/pack-candidate.py --root "$work/notices/candidate" --inventory "$work/evidence/inventory.json" --provenance "$work/notices/provenance.json" --output "$work/package"
 python /workspace/tools/runtime/observe-linux-network.py --build-output "$work/notices" --private-package "$work/package" --environment-kind container --report "$work/runtime-network-312.json" --corpus-report "$work/runtime-corpus-312.json"
+python /workspace/tools/runtime/pack-sources.py --graphviz "$work/sdk/graphviz.tar.gz" --sdk "$work/sdk/zig.tar.xz" --provenance "$work/notices/provenance.json" --output "$work/sources"
+mkdir "$work/source-review"
+cp "$work/sources/sources.tar.gz" "$work/sources/sources.json" "$work/source-review/"
+cp "$work/sources/sources.json" "$work/evidence/sources.json"
+chmod 644 "$work/source-review/sources.tar.gz" "$work/source-review/sources.json" "$work/evidence/sources.json"
+# Rebuild using the exported recipe/modules and complete SDK source tree, outside
+# the checkout, with a newly authenticated compiler SDK and a fresh cache.
+mkdir "$work/source-replay"
+tar -xzf "$work/sources/sources.tar.gz" -C "$work/source-replay"
+cd "$work/source-replay"
+python tools/runtime/prepare-linux-ci.py --work "$work/replay-sdk" --arch "$arch" --libc musl --environment-kind container
+cp -a sdk/lib/. "$work/replay-sdk/sdk/zig-$arch-linux-0.15.2/lib/"
+if ! python tools/runtime/build-common.py --artifact-id "linux-musl-$arch" --source-archive graphviz.tar.gz --sdk-record "$work/replay-sdk/sdk-record.json" --output "$work/replay-build" --execute > "$work/source-rebuild.log" 2>&1; then
+    cat "$work/source-rebuild.log"
+    exit 1
+fi
+cp "$work/replay-build/provenance.json" "$work/evidence/rebuilt-provenance.json"
+cp "$work/replay-build/static-elf-inspection.txt" "$work/evidence/rebuilt-static-elf-inspection.txt"
+chmod 644 "$work/evidence/rebuilt-provenance.json" "$work/evidence/rebuilt-static-elf-inspection.txt"
+readelf --file-header --program-headers --dynamic --version-info "$work/replay-build/candidate/bin/dot" > "$work/rebuilt-elf.txt"
+cd /workspace
+python tools/runtime/observe-linux-network.py --build-output "$work/replay-build" --environment-kind container --report "$work/rebuilt-network-312.json" --corpus-report "$work/rebuilt-corpus-312.json"

@@ -19,7 +19,7 @@ class SourcePackageTests(unittest.TestCase):
         self.module = importlib.util.module_from_spec(SPEC)
         SPEC.loader.exec_module(self.module)
 
-    def fixture(self, root, bad=None, arch='x86_64'):
+    def fixture(self, root, bad=None, arch='x86_64', abi='glibc'):
         graphviz = root / 'graphviz.tar.gz'
         graphviz.write_bytes(b'pinned graphviz archive')
         sdk = root / 'sdk.tar.xz'
@@ -34,13 +34,38 @@ class SourcePackageTests(unittest.TestCase):
                 archive.addfile(bad)
         lock = lambda path: dict(sha256=hashlib.sha256(path.read_bytes()).hexdigest(), size=path.stat().st_size)
         source, toolchain = lock(graphviz), lock(sdk)
-        artifact='linux-glibc-'+arch
+        artifact='linux-'+abi+'-'+arch
         recipe = self.module.HERE / (artifact+'.json')
         provenance = root / 'provenance.json'
         provenance.write_text(json.dumps(dict(artifact_id=artifact, completed=True,native_os='linux',native_arch=arch,
             executable_sha256='a' * 64, source=source, recipe_sha256=hashlib.sha256(recipe.read_bytes()).hexdigest(),
             sdk=dict(facts=dict(archive=toolchain)))), encoding='utf-8')
         return graphviz, sdk, provenance, source, toolchain
+
+    def test_musl_source_export_selects_native_sdk_and_requires_static_target_facts(self):
+        for arch in ('x86_64','aarch64'):
+            with self.subTest(arch=arch),tempfile.TemporaryDirectory() as directory:
+                root=Path(directory)
+                graphviz,sdk,provenance,source,toolchain=self.fixture(root,arch=arch,abi='musl')
+                record=json.loads(provenance.read_bytes())
+                record['sdk']['facts'].update(target_os='linux',target_arch=arch,target_libc_family='musl',
+                    static_linking=True,target=arch+'-linux.4.15-musl')
+                record['static_elf_inspection']=dict(no_interpreter=True,no_dynamic_section=True,
+                    no_needed_libraries=True,no_glibc_symbols=True)
+                provenance.write_text(json.dumps(record))
+                lock_name='SDK_LOCK' if arch=='x86_64' else 'SDK_LOCK_ARM64'
+                with patch.object(self.module,'SOURCE_LOCK',source),patch.object(self.module,lock_name,toolchain):
+                    result=self.module.pack(graphviz,sdk,provenance,root/'output')
+                    self.assertEqual(result['artifact_id'],'linux-musl-'+arch)
+                    record['sdk']['facts']['target_arch']='wrong'
+                    provenance.write_text(json.dumps(record))
+                    with self.assertRaises(ValueError):self.module.pack(graphviz,sdk,provenance,root/'wrong-target')
+                    self.assertFalse((root/'wrong-target').exists())
+                    record['sdk']['facts']['target_arch']=arch
+                    record['static_elf_inspection']['no_dynamic_section']=False
+                    provenance.write_text(json.dumps(record))
+                    with self.assertRaises(ValueError):self.module.pack(graphviz,sdk,provenance,root/'dynamic')
+                    self.assertFalse((root/'dynamic').exists())
 
     def test_arm_source_export_selects_arm_sdk_and_rejects_mismatched_provenance(self):
         with tempfile.TemporaryDirectory() as directory:

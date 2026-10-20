@@ -81,11 +81,21 @@ def pack(graphviz, sdk, provenance, output):
     provenance_bytes = bounded(provenance, 8 * 1024**2)
     record = json.loads(provenance_bytes)
     artifact=record['artifact_id']
-    if artifact not in ('linux-glibc-x86_64','linux-glibc-aarch64'):
+    if artifact not in ('linux-glibc-x86_64','linux-glibc-aarch64','linux-musl-x86_64','linux-musl-aarch64'):
         raise ValueError('Unsupported source material artifact')
-    sdk_lock=SDK_LOCK if artifact=='linux-glibc-x86_64' else SDK_LOCK_ARM64
-    if artifact=='linux-glibc-aarch64' and (record.get('native_os'),record.get('native_arch'))!=('linux','aarch64'):
-        raise ValueError('ARM64 source material requires matching native provenance')
+    arch='aarch64' if artifact.endswith('-aarch64') else 'x86_64'
+    musl=artifact.startswith('linux-musl-')
+    sdk_lock=SDK_LOCK if arch=='x86_64' else SDK_LOCK_ARM64
+    if (arch=='aarch64' or musl) and (record.get('native_os'),record.get('native_arch'))!=('linux',arch):
+        raise ValueError('Source material requires matching native provenance')
+    if musl:
+        facts=record.get('sdk',{}).get('facts',{})
+        measured=record.get('static_elf_inspection',{})
+        if ((facts.get('target_os'),facts.get('target_arch'),facts.get('target_libc_family'),facts.get('static_linking'))!=('linux',arch,'musl',True)
+                or facts.get('target')!=arch+'-linux.4.15-musl'
+                or any(measured.get(key) is not True for key in
+                       ('no_interpreter','no_dynamic_section','no_needed_libraries','no_glibc_symbols'))):
+            raise ValueError('musl source material requires matching static target evidence')
     pinned(sdk, sdk_lock)
     recipe = HERE / (artifact+'.json')
     if (record.get('completed') is not True
