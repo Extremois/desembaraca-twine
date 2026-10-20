@@ -36,6 +36,25 @@ arquivos públicos reprovam a conferência; não substitua os hashes automaticam
 O ZIP público fixado contém as receitas daquela revisão; o verificador novo
 é uma ferramenta de revisão do checkout atual.
 
+Para conferir outra revisão já publicada, forneça `--project-lock caminho.json`.
+Esse arquivo deve ser revisado independentemente e conter `kind` igual a
+`public-recipe-source-review-pin`, `approved: false`, o commit completo de 40
+caracteres em `revision`, a URL HTTPS do arquivo desse commit neste repositório,
+`root` igual a `desembaraca-twine-COMMIT`, `size` em bytes e `sha256` do ZIP
+baixado. Não use nome de branch nem atualize o hash para contornar uma divergência.
+O pin selecionado é preservado integralmente no relatório; a opção não altera
+o pin padrão nem aprova licenças. Sem a opção, a revisão `7d0476f` continua fixada.
+O arquivo de pin é limitado a 64 KiB e o ZIP público a 128 MiB.
+
+A revisão atual `47844106ff072cad005a8a1c795153c658b2bc89` possui seu pin em
+`specs/003-add-cross-platform-support/evidence/public-source-recovery-current-2026-10-20/project-pin.json`.
+Use o ZIP público dessa revisão e a exportação de fontes correspondente ao
+mesmo build, mantendo os arquivos Graphviz/SDK fixados acima:
+
+```sh
+python3 tools/runtime/verify-public-sources.py --project-lock specs/003-add-cross-platform-support/evidence/public-source-recovery-current-2026-10-20/project-pin.json --source-package sources.tar.gz --receipt sources.json --project project-4784410.zip --graphviz graphviz-16.1.0.tar.gz --sdk zig-x86_64-linux-0.15.2.tar.xz --report current-public-source-review.json
+```
+
 Para reconstruir diretamente das origens públicas, extraia o ZIP do projeto
 conferido e, na raiz extraída, execute em Linux da CPU/ABI correspondente:
 

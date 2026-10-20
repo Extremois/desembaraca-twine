@@ -30,13 +30,15 @@ class PublicSourcesTests(unittest.TestCase):
                 'sdk-version/lib/source.c':b'library source'})
             project=root/'project.zip'
             recipe=b'{"artifact":"fixture"}\n'
+            project_root='desembaraca-twine-'+'a'*40
             with zipfile.ZipFile(project,'w') as stream:
-                stream.writestr('project-revision/tools/runtime/linux-glibc-x86_64.json',recipe)
-                stream.writestr('project-revision/tools/runtime/build-common.py',b'fixture recipe source')
+                stream.writestr(project_root+'/tools/runtime/linux-glibc-x86_64.json',recipe)
+                stream.writestr(project_root+'/tools/runtime/build-common.py',b'fixture recipe source')
             graphviz_lock=dict(size=graphviz.stat().st_size,sha256=module.digest(graphviz),url='https://source.invalid/graphviz')
             sdk_lock=dict(size=sdk.stat().st_size,sha256=module.digest(sdk),url='https://source.invalid/sdk')
-            project_lock=dict(size=project.stat().st_size,sha256=module.digest(project),root='project-revision',
-                              url='https://source.invalid/project',revision='a'*40)
+            project_lock=dict(kind='public-recipe-source-review-pin',approved=False,
+                size=project.stat().st_size,sha256=module.digest(project),root=project_root,
+                url='https://github.com/Extremois/desembaraca-twine/archive/'+'a'*40+'.zip',revision='a'*40)
             provenance=dict(completed=True,artifact_id='linux-glibc-x86_64',executable_sha256='b'*64,
                 recipe_sha256=module.hash_bytes(recipe),source=graphviz_lock,sdk=dict(facts=dict(archive=sdk_lock)))
             provenance_raw=json.dumps(provenance).encode()
@@ -58,6 +60,16 @@ class PublicSourcesTests(unittest.TestCase):
                 self.assertEqual(result['source_files_recovered'],5)
                 self.assertEqual(result['generated_metadata_files'],['candidate-provenance.json','manifest.json'])
                 self.assertFalse(result['approved']);self.assertFalse(result['qualified'])
+                # An explicit reviewed revision works independently of the built-in older pin.
+                pin_path=root/'project-lock.json';pin_path.write_text(json.dumps(project_lock))
+                with patch.object(module,'PROJECT_LOCK',dict(project_lock,sha256='0'*64)):
+                    with self.assertRaises(ValueError):module.verify(source,receipt_path,project,graphviz,sdk)
+                    selected=module.verify(source,receipt_path,project,graphviz,sdk,project_lock=pin_path)
+                    self.assertEqual(selected['project_pin'],project_lock)
+                    self.assertEqual(selected['project_revision'],'a'*40)
+                pin_path.write_text(json.dumps(dict(project_lock,sha256='0'*64)))
+                with self.assertRaises(ValueError):
+                    module.verify(source,receipt_path,project,graphviz,sdk,project_lock=pin_path)
                 # A re-export with a consistent internal manifest still cannot replace public recipe bytes.
                 replacement=b'altered recipe source'
                 files['tools/runtime/build-common.py']=replacement
@@ -67,6 +79,19 @@ class PublicSourcesTests(unittest.TestCase):
                 receipt_path.write_text(json.dumps(receipt))
                 with self.assertRaisesRegex(ValueError,'Public project source'):
                     module.verify(source,receipt_path,project,graphviz,sdk)
+
+    def test_explicit_project_pin_is_bounded_and_cannot_change_repository_or_revision(self):
+        module=tool()
+        with tempfile.TemporaryDirectory() as folder:
+            path=Path(folder)/'pin.json'
+            valid=module.project_pin()
+            for replacement in ({'approved':True},{'size':True},{'size':128*1024**2+1},
+                    {'revision':'main'},{'url':valid['url'].replace('Extremois','other')},
+                    {'root':'../escape'},{'sha256':'z'*64}):
+                path.write_text(json.dumps(dict(valid,**replacement)))
+                with self.subTest(replacement=replacement),self.assertRaises(ValueError):module.project_pin(path)
+            path.write_bytes(b' '*65537)
+            with self.assertRaises(ValueError):module.project_pin(path)
 
     def test_project_inventory_rejects_unsafe_duplicate_and_symlink_entries(self):
         module=tool()

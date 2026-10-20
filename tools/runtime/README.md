@@ -334,8 +334,8 @@ referências W3C em texto offline: quatro políticas datadas e os cabeçalhos de
 copyright/status das publicações. Um sétimo material conserva os três avisos
 ISO encontrados nas declarações de entidades, conferidos contra o documento
 Graphviz e a referência W3C. Ver a [revisão dos termos e versões](licenses/data-references/w3c/REVIEW.md).
-A aplicabilidade e as condições permanecem sob revisão; os novos materiais
-precisam ser confirmados em um pacote nativo no próximo CI. A comparação prova
+A aplicabilidade e as condições permanecem sob revisão; os sete materiais
+foram confirmados nas quatro candidatas Linux da revisão `4784410`. A comparação prova
 correspondência dos valores e dos bytes gerados. Ela não prova a cadeia histórica de cópia nem
 conclui a aplicação das licenças; os indicadores de aprovação continuam falsos.
 
@@ -651,6 +651,17 @@ offline nativo. O resultado é registrado em
 de aceitação. Relatórios antigos não ganham esse resultado retroativamente.
 
 ## Assinatura macOS (execução nativa ainda pendente)
+
+O workflow `macos-candidate.yml` também executa a integração privada do gerenciador
+real com o ZIP nativo em cada arquitetura/Python. O driver
+`tests/integration/test_macos_runtime.py --package PASTA --provenance ARQUIVO --report NOVO_JSON`
+verifica preparo, cache Library/Caches, modos, probe antes de ready, corpus e
+dependências Mach-O após relocação. HOME é isolado e somente a transferência usa
+fixture; execução do motor e consultas Gatekeeper/SIP são reais. Os estados das
+proteções são comparados antes/depois, sem alterações. Esse ensaio não aplica
+quarentena, não aprova assinatura e observa rede somente no Python. A aceitação
+instalada continua exigindo codesign/spctl no worker, sem tratar skips ou a
+candidata unsigned como distribuição aprovada.
 
 `sh tools/runtime/sign-macos.sh --help` prepara o fluxo explícito do mantenedor.
 Requer build Darwin nativo correspondente, auditoria de fontes/licenças vinculada

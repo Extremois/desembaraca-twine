@@ -47,6 +47,7 @@ e os ZIPs de candidatas anteriores não são alterados.
 A correspondência dos 252 valores de entidades e das 147 cores SVG, e a
 reprodução dos headers gerados, estabelecem relações técnicas com os inputs.
 Elas não determinam sozinhas o regime de licença, a data/origem de cópias
-históricas nem o atendimento às condições. A incorporação dos novos avisos em
-um pacote nativo precisa ser confirmada no próximo CI; a auditoria final deve
-resolver aplicabilidade/condições por componente antes da distribuição.
+históricas nem o atendimento às condições. A incorporação dos sete materiais
+foi confirmada nas quatro candidatas Linux da revisão `4784410`, após CI e
+conferência dos ZIPs. A auditoria final ainda deve resolver aplicabilidade e
+condições por componente antes da distribuição.

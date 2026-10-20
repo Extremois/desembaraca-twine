@@ -27,11 +27,12 @@ class LinuxPrivateBundleIntegrationTests(unittest.TestCase):
     """Real native bytes; controlled transfer is never distribution qualification."""
     configuration=None
     observations={}
+    platform_name='linux'
 
     @classmethod
     def setUpClass(cls):
-        if not sys.platform.startswith('linux') or cls.configuration is None:
-            raise unittest.SkipTest('Requires explicit private Linux bundle; no approval from skip')
+        if sys.platform!=cls.platform_name or cls.configuration is None:
+            raise unittest.SkipTest('Requires explicit matching private bundle; no approval from skip')
         package,provenance=cls.configuration
         cls.record=json.loads(provenance.read_bytes())
         candidate=json.loads((package/'candidate.json').read_bytes())
@@ -40,7 +41,7 @@ class LinuxPrivateBundleIntegrationTests(unittest.TestCase):
         cls.payload=(package/'candidate.zip').read_bytes()
         digest=lambda raw:hashlib.sha256(raw).hexdigest()
         arch={'AMD64':'x86_64','arm64':'aarch64'}.get(platform.machine(),platform.machine())
-        if (not cls.record.get('completed') or cls.record['native_os']!='linux'
+        if (not cls.record.get('completed') or cls.record['native_os']!=cls.platform_name
                 or cls.record['native_arch']!=arch or candidate['artifact_id']!=cls.record['artifact_id']
                 or digest(cls.payload)!=candidate['archive_sha256']
                 or digest(inventory_raw)!=candidate['inventory_sha256']
@@ -49,14 +50,21 @@ class LinuxPrivateBundleIntegrationTests(unittest.TestCase):
             raise ValueError('Private bundle does not match completed native build and inventory')
         cls.observations={}
 
+    def cache_configuration(self,work):
+        xdg=work/'cache com espaços ação'
+        return {'XDG_CACHE_HOME':str(xdg)},xdg
+
+    def inspect_prepared_runtime(self,handle):
+        return {}
+
     def exercise(self,automatic):
-        with tempfile.TemporaryDirectory(prefix='linux-runtime-integration-') as folder,blocked_network():
+        with tempfile.TemporaryDirectory(prefix=self.platform_name+'-runtime-integration-') as folder,blocked_network():
             work=Path(folder)
-            xdg=work/'cache com espaços ação'
+            cache_environment,cache_base=self.cache_configuration(work)
             data=dict(load_manifest().data)
-            data.update(schema_version=2,platform='linux',artifact_arch=self.record['native_arch'],
+            data.update(schema_version=2,platform=self.platform_name,artifact_arch=self.record['native_arch'],
                 abi=self.record['recipe']['abi'],build_variant='private-integration-only',
-                minimum_libc='0',minimum_kernel='0',files=self.inventory['files'],
+                minimum_libc='0',minimum_kernel='0',minimum_os='15',files=self.inventory['files'],
                 executable_relative_path='bin/dot',generated_files=[],
                 url='https://runtime.invalid/artifact.zip',allowed_redirect_hosts=['runtime.invalid'],
                 archive_sha256=hashlib.sha256(self.payload).hexdigest())
@@ -74,9 +82,9 @@ class LinuxPrivateBundleIntegrationTests(unittest.TestCase):
                     probes.append(dict(final_destination='generations' in Path(argv[0]).parts,
                         ready_before_probe=(Path(argv[0]).parent.parent/'ready.json').exists()))
                 return run_bounded(argv,**kwargs)
-            with patch.dict(os.environ,{'XDG_CACHE_HOME':str(xdg)}):
+            with patch.dict(os.environ,cache_environment):
                 manager=RuntimeManager(artifact=artifact,opener=transport,runner=actual_runner)
-                self.assertTrue(manager.root.is_relative_to(xdg/'DesembaracaTwine/runtimes/graphviz'))
+                self.assertTrue(manager.root.is_relative_to(cache_base/'DesembaracaTwine/runtimes/graphviz'))
                 provider=lambda:manager.ensure()
                 source=work/'entrada com espaços ação.twee'
                 source.write_bytes(fixture('crossing'))
@@ -93,6 +101,7 @@ class LinuxPrivateBundleIntegrationTests(unittest.TestCase):
                 self.assertEqual(hashlib.sha256(handle.executable.read_bytes()).hexdigest(),self.record['executable_sha256'])
                 self.assertTrue(probes and all(row['final_destination'] for row in probes))
                 self.assertFalse(probes[0]['ready_before_probe'])
+                native_inspection=self.inspect_prepared_runtime(handle)
                 manager.opener=ControlledTransport(error=AssertionError('Offline cache attempted acquisition'))
                 # Also run from another cwd; the cache and story use absolute paths.
                 previous=Path.cwd()
@@ -116,10 +125,10 @@ class LinuxPrivateBundleIntegrationTests(unittest.TestCase):
                 self.assertEqual(manager.ensure().generation_id,handle.generation_id)
                 self.assertEqual(manager.opener.calls,[])
                 self.observations['automatic' if automatic else 'explicit']=dict(cases=cases,
-                    acquisition_calls=1,offline_acquisition_calls=0,cache_xdg=True,executable_mode=0o755,
+                    acquisition_calls=1,offline_acquisition_calls=0,cache_xdg=self.platform_name=='linux',executable_mode=0o755,
                     generation_mode=0o700,final_destination_probe=True,probe_before_ready=True,
                     healthy_generation_reused=True,external_unicode_paths=True,real_engine=True,
-                    fixture_transport=True)
+                    fixture_transport=True,native_inspection=native_inspection)
 
     def test_automatic_first_use_and_healthy_offline_cache(self):
         self.exercise(True)

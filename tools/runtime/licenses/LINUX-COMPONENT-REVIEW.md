@@ -22,11 +22,20 @@ continuam separados por `artifact_id` no ledger `linux.json`.
 As duas correções de preparo deste incremento são o reconhecimento explícito
 ColorBrewer e o COPYRIGHT musl nas candidatas glibc com evidência de runtime.
 Novos avisos W3C/ISO também estão implementados localmente. A incorporação desses
-materiais precisa ser confirmada em candidatas novas no CI antes de atualizar os
-recibos de empacotamento. Os ZIPs anteriores permanecem com seus hashes originais.
+materiais foi confirmada nas quatro candidatas da revisão `4784410`, com todos
+os workflows aprovados e avisos/índices conferidos após download. Os ZIPs
+anteriores permanecem com seus hashes originais; os novos recibos estão em
+`specs/003-add-cross-platform-support/evidence/linux-component-obligations-ci-2026-10-20/`.
 
 Para fechar T030, ainda é necessário resolver as questões de escopo/terceiros
 listadas, vincular decisões de componentes aos inputs estáticos efetivos, fechar
 oferta/retenção de fontes e revisar os avisos da candidata final. A possibilidade
 de recuperar bytes públicos e a presença de textos não concedem, isoladamente,
 aprovação de compatibilidade ou distribuição.
+
+A recuperação pública foi repetida para as quatro exportações da revisão
+`4784410`, com pin explícito e vínculo às respectivas proveniências nativas:
+18.173 entradas de fontes por candidata e dois metadados gerados separados.
+Os [recibos atuais](../../../specs/003-add-cross-platform-support/evidence/public-source-recovery-current-2026-10-20/summary.json)
+preservam o pin e os hashes, sem substituir a revisão anterior nem aprovar
+retenção/oferta. O procedimento está em [REBUILD-SOURCES.md](../REBUILD-SOURCES.md).

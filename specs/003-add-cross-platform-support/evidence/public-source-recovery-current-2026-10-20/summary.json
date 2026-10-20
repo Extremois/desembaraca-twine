@@ -1,0 +1,82 @@
+{
+  "kind": "current-candidate-public-source-recovery-review",
+  "task": "T030",
+  "task_complete": false,
+  "approved": false,
+  "qualified": false,
+  "source_state": "working-tree",
+  "candidate_revision": "47844106ff072cad005a8a1c795153c658b2bc89",
+  "project_pin": "project-pin.json",
+  "project_pin_sha256": "d0be67406fc0706408edbbafeeaa5ed1a79599cdf0c73d39bd50fef520950345",
+  "project_download": "project-download.json",
+  "project_download_sha256": "4a656cf7d4e814afee2ab2aa7421bd9f0a75f153532e731a1c0f0f07c035bee2",
+  "tool_sha256": "f5a9675c0ddc3e2a760b31f6c7de10028deed3892d2e4d95153f6bc0e4ae10ff",
+  "tests_sha256": "972cde6d1018d9a645fb82285f4b041b923a98d0bda10c102a9a297c2b5c681f",
+  "bindings": [
+    {
+      "artifact_id": "linux-glibc-x86_64",
+      "report": "glibc-x86_64.json",
+      "report_sha256": "4d66d74989d807b124b099bb08e11bee3beb7c42967b4f3e2f35e620418259e5",
+      "source_export_receipt": "glibc-x86_64-source-receipt.json",
+      "source_export_receipt_sha256": "eaa8d6ed96a62ecb96882ba94e62c7015c49d86c47c599a226f25d2ca3070a41",
+      "source_artifact_id": 12255423843,
+      "source_archive_sha256": "25e58c76a94135c80924500b170c0ad7ce0852e3d4911cdcd5b827cd86c0c93b",
+      "native_provenance_sha256": "312e0d57ee7ef8df03c44d31140b9cd8eb07241938dac487f227567075f7c621"
+    },
+    {
+      "artifact_id": "linux-glibc-aarch64",
+      "report": "glibc-aarch64.json",
+      "report_sha256": "a133e49d7983d37c5dbf93fd2124e57a3c0fdc1c76ebb6ca082605da00573672",
+      "source_export_receipt": "glibc-aarch64-source-receipt.json",
+      "source_export_receipt_sha256": "d7ae96dcc66810efefc99230fe7d2569131ba9cad2aec99c9bd92b97d48c3f4b",
+      "source_artifact_id": 12255598764,
+      "source_archive_sha256": "43ec78e07083d1b43850680b3bf96462dcec6a26e45a2b8843cfd2ef964e3cb0",
+      "native_provenance_sha256": "73cfbddcd7e2615d293af133e3ba6e5c88269fdcba8355c091e5c46bd3e2ac52"
+    },
+    {
+      "artifact_id": "linux-musl-x86_64",
+      "report": "musl-x86_64.json",
+      "report_sha256": "dc582e714c4a434f966b0c0bb8497a9112ed89e268646673f55a25b0952350f9",
+      "source_export_receipt": "musl-x86_64-source-receipt.json",
+      "source_export_receipt_sha256": "be2ba30f59d1a059ef6dbb5ee9abdcb3f0733eaca9587d69a93603c424d15eae",
+      "source_artifact_id": 12256684449,
+      "source_archive_sha256": "f3dc5887d7971320c29fb32fdc09e89139e95497a1f83b357003befcf0c67baf",
+      "native_provenance_sha256": "c59dfb3e4ea9a7ec26a3ceeeaa30eb3554432d1a47e123fb11ce59616089e9fd"
+    },
+    {
+      "artifact_id": "linux-musl-aarch64",
+      "report": "musl-aarch64.json",
+      "report_sha256": "b3fda35f563fe3a51201ad5e95a990e31604ef274ecd636d60ec34e2846293c6",
+      "source_export_receipt": "musl-aarch64-source-receipt.json",
+      "source_export_receipt_sha256": "9029545e86553851ef29cb6e469f7a3c69f71ec1010b6852cf3ef3bc76d4326d",
+      "source_artifact_id": 12255859704,
+      "source_archive_sha256": "a1bd863febf96cfc453ed8dae6620281383dd0f129dd4310f3c69f2eafcf7d63",
+      "native_provenance_sha256": "60390e265122fd1b8f904d62b111c51d3180eff9489bb43a66967e7c96a37f6a"
+    }
+  ],
+  "source_entries_per_variant": 18173,
+  "generated_metadata_per_variant": 2,
+  "tests": [
+    {
+      "python": "3.14.6",
+      "tests": 217,
+      "skipped": 8,
+      "seconds": 24.114,
+      "passed": true
+    },
+    {
+      "python": "3.12.10",
+      "tests": 217,
+      "skipped": 8,
+      "seconds": 23.919,
+      "passed": true
+    }
+  ],
+  "regression": "Explicit reviewed pin is independent of the built-in older pin; mismatched hashes, repository/revision/root and oversized pins are rejected",
+  "limitations": [
+    "Offline source-byte recovery and native provenance binding; no new compilation",
+    "Current public availability does not establish source retention or an approved corresponding-source offer",
+    "Per-component license applicability, ISO conditions and third-party provenance remain pending",
+    "No release, catalog admission or support qualification"
+  ]
+}

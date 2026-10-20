@@ -7,6 +7,9 @@ on:
       - 'tools/runtime/**'
       - 'src/**'
       - 'tests/fixtures/**'
+      - 'tests/integration/test_macos_runtime.py'
+      - 'tests/integration/test_linux_runtime.py'
+      - 'tests/runtime_support.py'
   workflow_dispatch:
 permissions:
   contents: read
@@ -72,6 +75,10 @@ jobs:
         run: |
           python tools/runtime/verify-artifact.py --root "$RUNNER_TEMP/twine-macos-notices/candidate" --provenance "$RUNNER_TEMP/twine-macos-notices/provenance.json" --write-inventory .tmp/native-macos/inventory.json
           python tools/runtime/pack-candidate.py --root "$RUNNER_TEMP/twine-macos-notices/candidate" --inventory .tmp/native-macos/inventory.json --provenance "$RUNNER_TEMP/twine-macos-notices/provenance.json" --output "$RUNNER_TEMP/twine-macos-package"
+      - name: Real runtime first use, final probe and offline cache on both Pythons
+        run: |
+          "${{ steps.python312.outputs.python-path }}" tests/integration/test_macos_runtime.py --package "$RUNNER_TEMP/twine-macos-package" --provenance "$RUNNER_TEMP/twine-macos-notices/provenance.json" --report .tmp/native-macos/runtime-312.json
+          "${{ steps.python314.outputs.python-path }}" tests/integration/test_macos_runtime.py --package "$RUNNER_TEMP/twine-macos-package" --provenance "$RUNNER_TEMP/twine-macos-notices/provenance.json" --report .tmp/native-macos/runtime-314.json
       - name: Retain unqualified native build for review
         if: always()
         uses: actions/upload-artifact@v4
