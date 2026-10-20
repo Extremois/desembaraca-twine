@@ -68,3 +68,26 @@ As demais células glibc/musl e ARM64, inclusive versões antigas, continuam
 pendentes. Não se estende o resultado WSL por parentesco de distro, ABI ou pelo
 mínimo glibc anunciado para o interpretador. Em rolling, os dois Pythons devem
 estar preparados antes da captura de referência do inventário.
+
+## Alpine: CPython/venv/pip em quatro userlands
+
+O [recibo de 16 slots](alpine-userland-compatibility-2026-10-20/summary.json) confirma CPython oficial, venv/ensurepip e pip sem substituir o Python do SO. Execução em containers efêmeros de imagem fixada, sobre CPU correspondente e kernel do runner; não qualifica o ambiente Alpine nativo nem conclui T033 para as demais distribuições. Aquisição do runtime usa fixture controlada.
+
+| Alpine observado | CPU | CPython | venv/pip | Runtime/rede offline |
+| --- | --- | --- | --- | --- |
+| 3.21.5 | x86_64 | 3.12.12 | PASS | PASS |
+| 3.21.5 | x86_64 | 3.14.1 | PASS | PASS |
+| 3.21.5 | aarch64 | 3.12.12 | PASS | PASS |
+| 3.21.5 | aarch64 | 3.14.1 | PASS | PASS |
+| 3.22.4 | x86_64 | 3.12.13 | PASS | PASS |
+| 3.22.4 | x86_64 | 3.14.5 | PASS | PASS |
+| 3.22.4 | aarch64 | 3.12.13 | PASS | PASS |
+| 3.22.4 | aarch64 | 3.14.5 | PASS | PASS |
+| 3.23.6 | x86_64 | 3.12.15 | PASS | PASS |
+| 3.23.6 | x86_64 | 3.14.8 | PASS | PASS |
+| 3.23.6 | aarch64 | 3.12.15 | PASS | PASS |
+| 3.23.6 | aarch64 | 3.14.8 | PASS | PASS |
+| 3.24.2 | x86_64 | 3.12.15 | PASS | PASS |
+| 3.24.2 | x86_64 | 3.14.8 | PASS | PASS |
+| 3.24.2 | aarch64 | 3.12.15 | PASS | PASS |
+| 3.24.2 | aarch64 | 3.14.8 | PASS | PASS |

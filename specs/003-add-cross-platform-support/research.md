@@ -146,3 +146,23 @@ libc. Auditoria revisada, nova inspeção ELF e qualificação real de kernel/CP
 Alpine continuam gates independentes. Inventários Linux convencionais conservam
 a baseline explícita. O ZIP é uma cópia para revisão, sem URL ou publicação.
 Ver [evidência do pacote estático](evidence/linux-musl-candidate-package.json).
+
+## Investigação de infraestrutura para os kernels Linux
+
+Os 16 slots Alpine já conferidos executam userlands sobre o kernel do runner;
+isso mantém os critérios nativos de baseline/aceitação pendentes. O próximo
+experimento consulta a API KVM nos runners efêmeros x64/ARM64 do GitHub, sem
+criar ou iniciar VMs e sem alterar o computador do mantenedor. Consulta normal
+e elevada distinguem disponibilidade do dispositivo de permissões do usuário.
+
+A [referência GitHub](https://docs.github.com/en/actions/reference/runners/github-hosted-runners)
+documenta aceleração de hardware Linux, mas não comprova a capacidade de cada
+runner atribuído. A [API Linux KVM](https://docs.kernel.org/virt/kvm/api.html#kvm-get-api-version)
+exige versão 12; `KVM_CHECK_EXTENSION(KVM_CAP_USER_MEMORY)` consulta a capacidade
+de memória de usuário. Essas duas consultas não demonstram boot ou execução
+acelerada de um guest. O preflight em `.github/scripts/probe-kvm.py` registra
+somente essa distinção, sem `KVM_CREATE_VM` e sem fallback para emulação.
+
+Qualificação continuará exigindo kernel/CPU/imagem observados no ambiente real,
+ambos os Pythons e os demais gates. Nenhuma capacidade de runner ou resultado
+de container será promovido automaticamente a suporte de distribuição.
