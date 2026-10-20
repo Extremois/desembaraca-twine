@@ -1,5 +1,54 @@
 # Evidência de implementação — feature 003
 
+## Integração Linux e correção de primeiro uso — 2026-10-19
+
+**T023 concluída; 52/84 tarefas, 32 pendentes.** O teste de integração agora
+executa o gerenciador de produção com os bundles reais, além do driver de
+aceitação distribuída que continua opt-in. O [recibo consolidado](evidence/linux-runtime-integration-2026-10-19/summary.json)
+registra dois testes em cada um dos oito slots: glibc/musl x64/ARM64,
+CPython 3.12 e 3.14. A aquisição usa transporte controlado identificado como
+fixture; o executável é o Graphviz construído, conferido por ZIP/inventário/
+proveniência e executado pelo runner real, sem simulação do motor.
+
+Preparo automático pelo primeiro arquivo e preparo antecipado passaram em caches
+novos, com XDG absoluto, espaços/acentos e execução de outra pasta. O teste confere
+0755 no motor, 0700 na geração, probe no destino final antes de ready, reutilização
+da geração e ausência de nova aquisição offline. O corpus de 13 casos inclui as
+seis referências limpas, preserva os originais e verifica integridade semântica e
+não regressão. Cada slot registra 49 execuções dot e zero chamadas da classe
+de rede sob strace, com controle positivo em processo filho detectado.
+
+Os recibos [glibc x64](evidence/linux-runtime-integration-2026-10-19/glibc-x86_64/summary.json)
+e [ARM64](evidence/linux-runtime-integration-2026-10-19/glibc-aarch64/summary.json)
+são nativos Ubuntu 24.04; [musl x64](evidence/linux-runtime-integration-2026-10-19/musl-x86_64/summary.json)
+e [ARM64](evidence/linux-runtime-integration-2026-10-19/musl-aarch64/summary.json)
+usam CPU correspondente em containers Alpine, sem qualificar kernel/versões Alpine.
+Foram conferidos após download os pacotes e 44 relatórios/rastros retidos.
+
+Esse percurso encontrou um erro real: se a base XDG ou seus pais não existissem,
+o primeiro preparo falhava ao criar a pasta da aplicação. O teste unitário novo
+reproduziu a falha antes da correção `caf4c8d`. Agora somente diretórios ausentes
+são criados com 0700, inclusive sob umask 000; diretórios existentes mantêm suas
+permissões. O WSL existente passou nos cinco testes POSIX e nos dois testes com
+motor real após a correção. Seus registros antes/depois são evidência WSL, sem
+strace local disponível e sem aprovação de outra célula.
+
+A revisão `860d06a4c5d03ca6ab071c047344443931debb1e` passou nos pipelines
+[glibc x64](https://github.com/Extremois/desembaraca-twine/actions/runs/39347852929),
+[glibc ARM64](https://github.com/Extremois/desembaraca-twine/actions/runs/39347852726),
+[musl](https://github.com/Extremois/desembaraca-twine/actions/runs/39347852760)
+e [macOS](https://github.com/Extremois/desembaraca-twine/actions/runs/39347852720).
+A [fundação de seis slots](evidence/github-actions-foundation-linux-runtime-2026-10-19.json)
+passou com 204 testes por slot. Localmente, a fundação passou nos dois Pythons
+com 204 testes/oito skips; a suíte completa passou com 280 testes/13 skips em
+cada (57,986 s em 3.12; 58,081 s em 3.14).
+
+O fechamento é da implementação/execução dos testes T023. Catálogo POSIX,
+download distribuído real, instalação final e aceitação integral T036–T045,
+auditoria, Twine e recuperação por célula continuam pendentes. Nenhum registro
+foi promovido no catálogo ou na matriz de suporte; não houve VM local ou
+instalação global de ferramentas.
+
 ## Fechamento da documentação de instalação — 2026-10-19
 
 **T035, T055 e T079 concluídas; 51/84 tarefas, 33 pendentes.** O README PT/EN

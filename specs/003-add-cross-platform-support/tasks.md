@@ -1,5 +1,7 @@
 # Tasks: Uso do Desembaraça Twine em Linux e macOS
 
+**Integração Linux concluída em 2026-10-19**: T023 fechada com [oito slots reais](evidence/linux-runtime-integration-2026-10-19/summary.json), glibc/musl x64/ARM64 nos dois Pythons. Gerenciador de produção, preparo automático/antecipado, cache XDG, modos/probe final, caminhos Unicode e corpus offline passaram sob strace, com 49 execuções dot e zero chamadas de rede por slot. Aquisição é fixture controlada, explicitamente separada do motor real e da qualificação de distribuição. Corrigido erro real no primeiro uso com base XDG inexistente; regressões CI/local aprovadas. Total **52/84**, 32 pendentes.
+
 **Documentação concluída em 2026-10-19**: T035/T055/T079 fechadas após atualizar README PT/EN e quickstart com URL imutável existente, nome atual do comando, venv/caminhos externos, pré-requisitos e estado entregue versus pendente. [Dez ensaios reais](evidence/documented-installation-2026-10-19/summary.json) instalaram a revisão pública em Linux x64/ARM64, macOS Intel/Apple Silicon e Windows, ambos os Pythons, sem Git/Graphviz no PATH. Console e módulos passaram; catálogo POSIX continua pendente. Este é fechamento da documentação e seus comandos disponíveis, sem conceder suporte a plataformas. Total **51/84**, 33 pendentes.
 
 **Fontes musl em 2026-10-19**: relink de [x64](evidence/alpine-musl-link-source-2026-10-19/x86_64/summary.json) e [ARM64](evidence/alpine-musl-link-source-2026-10-19/aarch64/summary.json) preservou os bytes dos motores e vinculou 181 objetos a 322 fontes Graphviz conferidas por arquitetura. Nove entradas geradas e 58 externas registradas; 66 inputs de link, 324/320 extrações. Corpus/rede nos dois Pythons e seis slots CI de fundação aprovados. Localmente, 279 testes completos e 203 de fundação em cada Python. T029/T030 continuam parciais: fontes/avisos SDK, auditoria e qualificação pendentes; total 48/84.
@@ -20,7 +22,7 @@
 
 **Input**: [spec.md](spec.md), [plan.md](plan.md), [research.md](research.md), [support-matrix.md](support-matrix.md), [data-model.md](data-model.md), [contracts/](contracts/), [quickstart.md](quickstart.md) e constituição 1.0.1.
 
-**Estado**: implementação parcial em andamento: 51/84 tarefas concluídas, 33 pendentes. Setup, fundação, contratos e ferramentas de qualificação foram implementados e ensaiados; demais variantes POSIX, auditorias e aceitação completa continuam pendentes. O catálogo ativo continua somente Windows. Branch de implementação: `feat/003-add-cross-platform-support`, criada de `dev`; branch anterior `feat/002-manage-layout-runtime` preservada. Ver [validation.md](validation.md) e [ledger de suporte](evidence/support-ledger.md).
+**Estado**: implementação parcial em andamento: 52/84 tarefas concluídas, 32 pendentes. Setup, fundação, contratos e ferramentas de qualificação foram implementados e ensaiados; demais variantes POSIX, auditorias e aceitação completa continuam pendentes. O catálogo ativo continua somente Windows. Branch de implementação: `feat/003-add-cross-platform-support`, criada de `dev`; branch anterior `feat/002-manage-layout-runtime` preservada. Ver [validation.md](validation.md) e [ledger de suporte](evidence/support-ledger.md).
 
 **Incremento nativo em 2026-10-19**: build glibc x64 executado no Ubuntu 24.04 hospedado, com fonte/SDK fixados, entradas de link/fontes capturadas e 13 casos do corpus aprovados em CPython 3.12/3.14. Ver [recibo nativo](evidence/github-actions-native-linux-2026-10-19.json). Avança os insumos de T024/T028 e do futuro aceite T036; não conclui auditoria, instalação, rede nativa offline ou a variante ARM64. Checkboxes agregados permanecem abertos.
 
@@ -106,7 +108,7 @@ Não criar VM no computador atual. Não trocar branches, fazer push/publicar rel
 ### Testes solicitados pela spec
 
 - [X] T022 [P] [US1] Adicionar `tests/contract/test_cli_linux.py` para instalação/comando/módulo, cwd, caminhos absolutos/relativos, avisos stderr de melhor esforço e rejeição ABI/arch; conservar códigos 0/2/1/130 e os contratos de `contracts/cli.md`.
-- [ ] T023 [P] [US1] Adicionar `tests/integration/test_linux_runtime.py` para primeira preparação automática/antecipada, cache XDG, modos executáveis, relocação e seis casos offline; observar tentativas de rede, não apenas indisponibilidade, e distinguir fixture simulada de runtime nativo.
+- [X] T023 [P] [US1] Adicionar `tests/integration/test_linux_runtime.py` para primeira preparação automática/antecipada, cache XDG, modos executáveis, relocação e seis casos offline; observar tentativas de rede, não apenas indisponibilidade, e distinguir fixture simulada de runtime nativo.
 
 ### Builds e integração Linux
 

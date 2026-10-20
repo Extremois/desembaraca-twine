@@ -1,0 +1,109 @@
+{
+  "kind": "linux-runtime-manager-private-bundle-integration-receipt",
+  "approved": false,
+  "qualified": false,
+  "revision": "860d06a4c5d03ca6ab071c047344443931debb1e",
+  "artifact_id": "linux-musl-x86_64",
+  "environment_kind": "container",
+  "run_id": 39347852760,
+  "job_id": 118384708178,
+  "actions_artifact_id": 12232136609,
+  "url": "https://github.com/Extremois/desembaraca-twine/actions/runs/39347852760",
+  "actions_artifact_sha256": "3dd774ffe093075f5a4fc159bdbf165225def958aae3140336d21699a4c24c13",
+  "engine_sha256": "f4dfee4e052704b1a7efdb7b6a4c43583ccaa062aec800b76224dae24eb2b69b",
+  "candidate_archive_sha256": "ae3cee7377d49087d31e68af64025f0df095393a494bb99e325b1a080defe113",
+  "provenance_sha256": "89563a2a539997eb46d0a8a246343662c7b214089ac894f43e150da126284df8",
+  "slots": [
+    {
+      "python": "3.12.13",
+      "cases": 13,
+      "automatic_cases": 1,
+      "passed": true,
+      "dot_executions": 49,
+      "network_syscalls": {}
+    },
+    {
+      "python": "3.14.5",
+      "cases": 13,
+      "automatic_cases": 1,
+      "passed": true,
+      "dot_executions": 49,
+      "network_syscalls": {}
+    }
+  ],
+  "retained_files": {
+    "network-312.control.trace.gz": {
+      "sha256": "d0416827176852501cf34f5547de9896bb6d48c7601352724e7c21fef7994618",
+      "bytes": 484,
+      "original_sha256": "22153999242d263e3e2fb1a8607b357004c16870b8c20adcef4682dc44176d3e",
+      "original_bytes": 905
+    },
+    "network-312.corpus.trace.gz": {
+      "sha256": "8626a0c29ec03593ed4c6e08647c85865adda5bc4c75cc98eadb38cf95d3a5fa",
+      "bytes": 1734,
+      "original_sha256": "36c176e97790da0731cef5cc3bbaf25f3d1e2dbe7f89b579ff153f82aee4545b",
+      "original_bytes": 42536
+    },
+    "runtime-312.json": {
+      "sha256": "47362a3910ad31ecc727a47588d5d63f83431d9ea7f1d8b7a59f1b771de854e7",
+      "bytes": 11351,
+      "original_sha256": "47362a3910ad31ecc727a47588d5d63f83431d9ea7f1d8b7a59f1b771de854e7",
+      "original_bytes": 11351
+    },
+    "network-312.json": {
+      "sha256": "aa6790440e6e00ab696d97f67770872a94c5b03168b79f0a01fe81631d93f906",
+      "bytes": 1356,
+      "original_sha256": "aa6790440e6e00ab696d97f67770872a94c5b03168b79f0a01fe81631d93f906",
+      "original_bytes": 1356
+    },
+    "network-314.control.trace.gz": {
+      "sha256": "ce0664db90e80c5a3da216d1d686cc4a8e0bf5d5a145bce461abd8d88e8d2134",
+      "bytes": 481,
+      "original_sha256": "43895adfbf1d4ff771fd385794a3b190c506a89da9c5a669c841724e54262031",
+      "original_bytes": 888
+    },
+    "network-314.corpus.trace.gz": {
+      "sha256": "5214c8f518e19c62acbb1318729da428ccb6100a17ba6b78ab5700f16378ce67",
+      "bytes": 1714,
+      "original_sha256": "f4c73c648ecb7215bfe1f3ccdde20af565c4b23c590844a03125f78d19530977",
+      "original_bytes": 42465
+    },
+    "runtime-314.json": {
+      "sha256": "ac49ccfa605d3b2638546087d7798746728ba80eb840dff21b62fd603db0761d",
+      "bytes": 11350,
+      "original_sha256": "ac49ccfa605d3b2638546087d7798746728ba80eb840dff21b62fd603db0761d",
+      "original_bytes": 11350
+    },
+    "network-314.json": {
+      "sha256": "6f1ce39baff3e0b3cef9f5d0854bf4909b973a47e6df6ecc62c272d19f29a5e0",
+      "bytes": 1355,
+      "original_sha256": "6f1ce39baff3e0b3cef9f5d0854bf4909b973a47e6df6ecc62c272d19f29a5e0",
+      "original_bytes": 1355
+    },
+    "provenance.json.gz": {
+      "sha256": "310887d30e73086a9e4108af2ab244833cbfda0ce2347a62832c2f80d875fd6c",
+      "bytes": 19533,
+      "original_sha256": "89563a2a539997eb46d0a8a246343662c7b214089ac894f43e150da126284df8",
+      "original_bytes": 133979
+    },
+    "inventory.json": {
+      "sha256": "01be9032fd475fe31522808a64ed95a420e0c47f3543667adb298695577cffd8",
+      "bytes": 804,
+      "original_sha256": "01be9032fd475fe31522808a64ed95a420e0c47f3543667adb298695577cffd8",
+      "original_bytes": 804
+    },
+    "candidate.json": {
+      "sha256": "44d8cf88b34537563ea2d3a198b6b44210efcb39e92f06eec2b4a729e4cd192a",
+      "bytes": 862,
+      "original_sha256": "44d8cf88b34537563ea2d3a198b6b44210efcb39e92f06eec2b4a729e4cd192a",
+      "original_bytes": 862
+    }
+  },
+  "task": "T023",
+  "limitations": [
+    "Real engine and production runtime manager; acquisition uses an explicitly controlled fixture",
+    "No distributed POSIX catalog, actual remote acquisition, installed package or full support-cell qualification",
+    "Container musl runs do not approve native Alpine kernel/versions",
+    "License audit, Twine, recovery matrix and support promotion remain separate gates"
+  ]
+}
