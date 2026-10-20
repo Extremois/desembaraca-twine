@@ -19,6 +19,28 @@ def tool():
 
 
 class BuiltPackagesTests(unittest.TestCase):
+    def test_failed_repair_receipts_require_every_fault_and_offline_reference(self):
+        validate = tool().validate_recovery_result
+        cases = [dict(case='known', known_resolvable=True)]
+        flags = dict(selected_generation_preserved=True, previous_handle_usable=True,
+            offline_acquisition_calls=0, failed_repair_acquisition_calls=1,
+            references=[dict(case='known', after=[0, 0, 0], original_preserved=True,
+                semantic_preserved=True)])
+        rows = {name: copy.deepcopy(flags) for name in
+            ('transfer', 'disk-space', 'corrupt-archive', 'execution-denied')}
+        rows['execution-denied']['real_execution_denial'] = True
+        validate(rows, cases)
+        for mutation in ('missing', 'selected', 'network', 'reference', 'geometry', 'denial'):
+            changed = copy.deepcopy(rows)
+            if mutation == 'missing': del changed['transfer']
+            elif mutation == 'selected': changed['transfer']['selected_generation_preserved'] = False
+            elif mutation == 'network': changed['transfer']['offline_acquisition_calls'] = 1
+            elif mutation == 'reference': changed['transfer']['references'] = []
+            elif mutation == 'geometry': changed['transfer']['references'][0]['after'] = [1, 0, 0]
+            else: changed['execution-denied']['real_execution_denial'] = False
+            with self.subTest(mutation=mutation), self.assertRaises(ValueError):
+                validate(changed, cases)
+
     def test_private_engine_stage_binds_id_archive_inventory_and_provenance_before_copy(self):
         module = tool()
         with tempfile.TemporaryDirectory() as folder:

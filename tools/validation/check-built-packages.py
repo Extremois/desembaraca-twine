@@ -168,6 +168,27 @@ def validate_engine_result(report, fixture, cases, system):
         raise ValueError('macOS protection observations changed or are missing')
 
 
+def validate_recovery_result(rows, cases):
+    expected = {item['case'] for item in cases if item['known_resolvable']}
+    if not isinstance(rows, dict) or set(rows) != {'transfer', 'disk-space', 'corrupt-archive', 'execution-denied'}:
+        raise ValueError('Private engine failed-repair scenarios are incomplete')
+    for row in rows.values():
+        refs = row.get('references', [])
+        if (row.get('selected_generation_preserved') is not True
+                or row.get('previous_handle_usable') is not True
+                or row.get('failed_repair_acquisition_calls') != 1
+                or row.get('offline_acquisition_calls') != 0
+                or len(refs) != len(expected) or {item['case'] for item in refs} != expected):
+            raise ValueError('Previous generation or complete offline corpus not preserved after failed repair')
+        for item in refs:
+            if (item.get('after') != [0, 0, 0] or any(type(n) is not int for n in item['after'])
+                    or item.get('original_preserved') is not True
+                    or item.get('semantic_preserved') is not True):
+                raise ValueError('Failed-repair offline processing did not preserve a reference')
+    if rows['execution-denied'].get('real_execution_denial') is not True:
+        raise ValueError('Native execution permission denial was not observed')
+
+
 def stage_engine_driver(work):
     driver = work / 'test-driver'
     files = ('tests/common.py', 'tests/runtime_support.py', 'tests/native_acceptance.py',
@@ -227,9 +248,9 @@ def collect(wheel, sdist, wheelhouse, *, engine_artifact=None, engine_id=None):
                 PIP_NO_INDEX='1', PIP_CONFIG_FILE=os.devnull, PIP_DISABLE_PIP_VERSION_CHECK='1',
                 PIP_NO_CACHE_DIR='1', PYTHONNOUSERSITE='1', PYTHONUTF8='1', LANG='C.UTF-8')
             commands = []
-            def run(argv):
+            def run(argv, timeout=120):
                 result = process.run_bounded([str(x) for x in argv], cwd=profile, env=env,
-                    timeout=120, max_output=8 * 1024**2)
+                    timeout=timeout, max_output=8 * 1024**2)
                 commands.append(dict(returncode=result.returncode,
                     stdout_sha256=digest(result.stdout), stderr_sha256=digest(result.stderr)))
                 if result.returncode:
@@ -259,12 +280,13 @@ def collect(wheel, sdist, wheelhouse, *, engine_artifact=None, engine_id=None):
                     '--report', report_path]
                 if sys.platform == 'linux':
                     command.extend(['--environment-kind', 'wsl' if 'microsoft' in platform.release().lower() else 'native'])
-                run(command)
+                run(command, timeout=300)
                 if report_path.stat().st_size > 1024**2:
                     raise ValueError('Private engine report exceeds bound')
                 runtime_report = json.loads(report_path.read_bytes())
                 cases = json.loads((ROOT / 'tests/fixtures/cases.json').read_bytes())
                 validate_engine_result(runtime_report, fixture, cases, sys.platform)
+                validate_recovery_result(runtime_report['observations']['explicit'].get('recovery'), cases)
             records.append(dict(mode=mode, archive_sha256=digest(package.read_bytes()),
                 package_files_verified=len(inventory['files']), licenses_verified=inventory['licenses'],
                 installed_file_hashes=facts['files'], entrypoints_verified=3,

@@ -1,5 +1,6 @@
 """Run only with a real Linux candidate; skipped drivers never approve the matrix."""
 import os
+import errno
 import sys
 import unittest
 import hashlib
@@ -12,6 +13,7 @@ sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
 from common import ROOT,fixture
 from runtime_support import ControlledTransport,blocked_network
 from twine_edge_overlap.runtime import RuntimeManager,load_manifest
+from twine_edge_overlap.errors import DependencyError
 from twine_edge_overlap.application import run
 from twine_edge_overlap.formats.profile import parse,verify
 from native_acceptance import InstalledCandidateAcceptance
@@ -56,6 +58,68 @@ class LinuxPrivateBundleIntegrationTests(unittest.TestCase):
 
     def inspect_prepared_runtime(self,handle):
         return {}
+
+    def failed_repairs(self, manager, previous, work):
+        """Real cached engine; transport/disk failures are explicit injections."""
+        selected = (manager.root/'active.json').read_bytes()
+        runner = manager.runner
+        references = [item for item in json.loads((ROOT/'tests/fixtures/cases.json').read_bytes())
+                      if item['known_resolvable']]
+        observations = {}
+        for name in ('transfer', 'disk-space', 'corrupt-archive', 'execution-denied'):
+            denial = []
+            def denied_runner(argv, **kwargs):
+                target = Path(argv[0])
+                self.assertNotEqual(target, previous.executable)
+                target.chmod(0o644)
+                try:
+                    return runner(argv, **kwargs)
+                except PermissionError:
+                    denial.append(True)
+                    raise
+            if name == 'transfer':
+                transport = ControlledTransport(error=ConnectionError('injected transfer failure'))
+            elif name == 'disk-space':
+                transport = ControlledTransport(error=OSError(errno.ENOSPC, 'injected disk exhaustion'))
+            elif name == 'corrupt-archive':
+                transport = ControlledTransport(self.payload + b'corrupted')
+            else:
+                transport = ControlledTransport(self.payload)
+                manager.runner = denied_runner
+            manager.opener = transport
+            try:
+                with self.assertRaises(DependencyError):
+                    manager.ensure(force_repair=True)
+            finally:
+                manager.runner = runner
+            self.assertEqual(len(transport.calls), 1)
+            self.assertEqual((manager.root/'active.json').read_bytes(), selected)
+            if name == 'execution-denied':
+                self.assertTrue(denial, 'Expected native exec permission failure')
+            offline = ControlledTransport(error=AssertionError('Failed repair attempted offline acquisition'))
+            manager.opener = offline
+            self.assertEqual(manager.ensure().generation_id, previous.generation_id)
+            rows = []
+            for item in references:
+                original = fixture(item['case'])
+                story = work/('recovery-'+name+'-'+item['file'])
+                story.write_bytes(original)
+                # Exercise the returned previous handle directly, then the manager.
+                result = run(story, runtime_provider=lambda: previous)
+                verify(parse(original), parse(result.path.read_bytes()))
+                self.assertEqual(story.read_bytes(), original)
+                self.assertEqual(result.after.values, (0, 0, 0))
+                rows.append(dict(case=item['case'], after=result.after.values,
+                    input_sha256=hashlib.sha256(original).hexdigest(),
+                    output_sha256=hashlib.sha256(result.path.read_bytes()).hexdigest(),
+                    original_preserved=True, semantic_preserved=True))
+            self.assertEqual(manager.ensure().generation_id, previous.generation_id)
+            self.assertFalse(offline.calls)
+            observations[name] = dict(selected_generation_preserved=True, previous_handle_usable=True,
+                failed_repair_acquisition_calls=len(transport.calls), offline_acquisition_calls=0,
+                failure_injection='native chmod/exec denial' if name == 'execution-denied' else 'controlled transport',
+                real_execution_denial=bool(denial), references=rows)
+        return observations
 
     def exercise(self,automatic):
         with tempfile.TemporaryDirectory(prefix=self.platform_name+'-runtime-integration-') as folder,blocked_network():
@@ -102,6 +166,7 @@ class LinuxPrivateBundleIntegrationTests(unittest.TestCase):
                 self.assertTrue(probes and all(row['final_destination'] for row in probes))
                 self.assertFalse(probes[0]['ready_before_probe'])
                 native_inspection=self.inspect_prepared_runtime(handle)
+                recovery={} if automatic else self.failed_repairs(manager,handle,work)
                 manager.opener=ControlledTransport(error=AssertionError('Offline cache attempted acquisition'))
                 # Also run from another cwd; the cache and story use absolute paths.
                 previous=Path.cwd()
@@ -128,7 +193,7 @@ class LinuxPrivateBundleIntegrationTests(unittest.TestCase):
                     acquisition_calls=1,offline_acquisition_calls=0,cache_xdg=self.platform_name=='linux',executable_mode=0o755,
                     generation_mode=0o700,final_destination_probe=True,probe_before_ready=True,
                     healthy_generation_reused=True,external_unicode_paths=True,real_engine=True,
-                    fixture_transport=True,native_inspection=native_inspection)
+                    fixture_transport=True,native_inspection=native_inspection,recovery=recovery)
 
     def test_automatic_first_use_and_healthy_offline_cache(self):
         self.exercise(True)
