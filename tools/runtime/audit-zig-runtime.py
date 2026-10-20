@@ -75,6 +75,10 @@ def runtime_profile(record):
     if record.get('artifact_id')=='linux-musl-x86_64':
         return {'crt1.o','libzigc.a','libcompiler_rt.a'},('lib/c.zig','lib/compiler_rt.zig')
     recipe=record.get('recipe',{})
+    if (record.get('artifact_id')=='linux-musl-aarch64' and record.get('completed') is True
+            and (record.get('native_os'),record.get('native_arch'))==('linux','aarch64')
+            and (recipe.get('os'),recipe.get('arch'),recipe.get('abi'))==('linux','aarch64','musl')):
+        return {'crt1.o','libzigc.a','libcompiler_rt.a'},('lib/c.zig','lib/compiler_rt.zig')
     if (record.get('artifact_id')=='linux-glibc-aarch64' and record.get('completed') is True
             and (record.get('native_os'),record.get('native_arch'))==('linux','aarch64')
             and (recipe.get('os'),recipe.get('arch'),recipe.get('abi'))==('linux','aarch64','glibc')):
@@ -86,7 +90,7 @@ def collect(linked_build,sdk_root,sdk_archive):
     started=time.monotonic()
     record=json.loads(audit.bounded(linked_build/'provenance.json',8*1024**2))
     required,entrypoints=runtime_profile(record)
-    if record['artifact_id']=='linux-musl-x86_64':notices.sdk_notice_names(record,linked_build)
+    if record['artifact_id'] in ('linux-musl-x86_64','linux-musl-aarch64'):notices.sdk_notice_names(record,linked_build)
     if builder.digest(linked_build/'candidate/bin/dot')!=record['executable_sha256']:raise ValueError('Executable changed')
     facts=record['sdk']['facts']
     identity=notices.sdk_archive_identity(facts)

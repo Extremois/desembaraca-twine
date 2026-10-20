@@ -13,6 +13,35 @@ def tool():
 
 
 class DraftNoticesTests(unittest.TestCase):
+    def test_arm_musl_notices_require_static_report_and_matching_sdk_architecture(self):
+        module=tool()
+        with tempfile.TemporaryDirectory() as folder:
+            root=Path(folder)
+            report=b'There is no dynamic section in this file.\n'
+            (root/'static-elf-inspection.txt').write_bytes(report)
+            record=dict(completed=True,artifact_id='linux-musl-aarch64',native_os='linux',native_arch='aarch64',
+                recipe=dict(os='linux',arch='aarch64',abi='musl'),sdk=dict(facts=dict(target_os='linux',
+                target_arch='aarch64',target_libc_family='musl',static_linking=True)),
+                static_elf_inspection=dict(no_interpreter=True,no_dynamic_section=True,no_needed_libraries=True,
+                    no_glibc_symbols=True,report_sha256=module.builder.digest(root/'static-elf-inspection.txt')))
+            self.assertIn('lib/libc/musl/COPYRIGHT',module.sdk_notice_names(record,root))
+            record['sdk']['facts']['target_arch']='x86_64'
+            with self.assertRaises(ValueError):module.sdk_notice_names(record,root)
+
+    def test_arm_musl_object_sources_refuse_another_artifact_with_matching_hashes(self):
+        module=tool()
+        with tempfile.TemporaryDirectory() as folder:
+            root=Path(folder);(root/'provenance.json').write_bytes(b'ARM musl build')
+            record=dict(artifact_id='linux-musl-aarch64',executable_sha256='a'*64,
+                        sdk=dict(facts=dict(archive=dict(sha256='b'*64))))
+            data=dict(kind='musl-object-source-observations-not-license-approval',artifact_id=record['artifact_id'],
+                provenance_sha256=module.builder.digest(root/'provenance.json'),executable_sha256='a'*64,
+                sdk_archive_sha256='b'*64,sources=[dict(path='lib/libc/musl/src/example.c',sha256='c'*64)])
+            path=root/'musl.json';path.write_text(json.dumps(data))
+            self.assertEqual(len(module.musl_notice_sources(record,root,path)[0]),1)
+            data['artifact_id']='linux-musl-x86_64';path.write_text(json.dumps(data))
+            with self.assertRaises(ValueError):module.musl_notice_sources(record,root,path)
+
     def test_arm_notice_selection_requires_matching_native_recipe(self):
         module=tool()
         record=dict(completed=True,artifact_id='linux-glibc-aarch64',native_os='linux',native_arch='aarch64',

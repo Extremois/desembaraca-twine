@@ -110,7 +110,7 @@ def object_notice_sources(record,linked_build,evidence,kind,prefixes,*,artifacts
     sdk_sha=facts.get('archive_sha256',facts.get('archive',{}).get('sha256'))
     if (not isinstance(sdk_sha,str) or not re.fullmatch(r'[0-9a-f]{64}',sdk_sha)
             or record['artifact_id'] not in artifacts
-            or (record['artifact_id']=='linux-glibc-aarch64' and data.get('artifact_id')!=record['artifact_id'])
+            or (record['artifact_id'] in ('linux-glibc-aarch64','linux-musl-aarch64') and data.get('artifact_id')!=record['artifact_id'])
             or data.get('kind')!=kind
             or data.get('provenance_sha256')!=builder.digest(linked_build/'provenance.json')
             or data.get('executable_sha256')!=record['executable_sha256']
@@ -130,7 +130,7 @@ def object_notice_sources(record,linked_build,evidence,kind,prefixes,*,artifacts
 
 def musl_notice_sources(record,linked_build,evidence):
     return object_notice_sources(record,linked_build,evidence,
-        'musl-object-source-observations-not-license-approval',('lib/libc/musl/',))
+        'musl-object-source-observations-not-license-approval',('lib/libc/musl/',),artifacts=('linux-musl-x86_64','linux-musl-aarch64'))
 
 
 def glibc_notice_sources(record,linked_build,evidence):
@@ -140,7 +140,7 @@ def glibc_notice_sources(record,linked_build,evidence):
 
 def zig_runtime_notice_sources(record,linked_build,evidence):
     return object_notice_sources(record,linked_build,evidence,
-        'zig-startup-runtime-source-observations-not-approved',('lib/',),artifacts=('linux-musl-x86_64','linux-glibc-aarch64'))
+        'zig-startup-runtime-source-observations-not-approved',('lib/',),artifacts=('linux-musl-x86_64','linux-musl-aarch64','linux-glibc-aarch64'))
 
 
 def verified_source_prefix(data,item):
@@ -179,12 +179,13 @@ def inputs_svg_origin(graphviz_archive):
 
 def sdk_notice_names(record,linked_build):
     artifact=record.get('artifact_id')
-    if not record.get('completed') or artifact not in ('linux-glibc-x86_64','linux-glibc-aarch64','linux-musl-x86_64'):
+    if not record.get('completed') or artifact not in ('linux-glibc-x86_64','linux-glibc-aarch64','linux-musl-x86_64','linux-musl-aarch64'):
         raise ValueError('Expected completed supported experimental Linux build')
-    if artifact=='linux-glibc-aarch64':
+    if artifact in ('linux-glibc-aarch64','linux-musl-aarch64'):
         recipe=record.get('recipe',{})
+        abi='musl' if artifact=='linux-musl-aarch64' else 'glibc'
         if ((record.get('native_os'),record.get('native_arch'))!=('linux','aarch64')
-                or (recipe.get('os'),recipe.get('arch'),recipe.get('abi'))!=('linux','aarch64','glibc')):
+                or (recipe.get('os'),recipe.get('arch'),recipe.get('abi'))!=('linux','aarch64',abi)):
             raise ValueError('ARM64 notice build does not match its native recipe')
     common={'LICENSE','lib/libcxx/LICENSE.TXT','lib/libcxxabi/LICENSE.TXT','lib/libunwind/LICENSE.TXT'}
     if artifact in ('linux-glibc-x86_64','linux-glibc-aarch64'):return common|{'lib/libc/glibc/LICENSES'}
@@ -193,7 +194,8 @@ def sdk_notice_names(record,linked_build):
            ('no_interpreter','no_dynamic_section','no_needed_libraries','no_glibc_symbols')):
         raise ValueError('musl notices require a measured static candidate')
     facts=record.get('sdk',{}).get('facts',{})
-    if (facts.get('target_os'),facts.get('target_arch'),facts.get('target_libc_family'),facts.get('static_linking'))!=('linux','x86_64','musl',True):
+    arch='aarch64' if artifact=='linux-musl-aarch64' else 'x86_64'
+    if (facts.get('target_os'),facts.get('target_arch'),facts.get('target_libc_family'),facts.get('static_linking'))!=('linux',arch,'musl',True):
         raise ValueError('musl SDK target facts do not match artifact')
     report=linked_build/'static-elf-inspection.txt'
     data=audit.bounded(report,8*1024**2)
@@ -209,8 +211,12 @@ def prepare(linked_build,source_build,evidence,graphviz_archive,sdk_archive,sdk_
     source=json.loads(audit.bounded(evidence,8*1024**2))
     sdk_names=sdk_notice_names(record,linked_build)
     arm=record['artifact_id']=='linux-glibc-aarch64'
+    musl=record['artifact_id'] in ('linux-musl-x86_64','linux-musl-aarch64')
+    extended=arm or musl
     if arm and any(item is None for item in (glibc_object_evidence,zig_runtime_evidence,data_evidence)):
         raise ValueError('ARM64 draft requires its own glibc, runtime and generated-data evidence')
+    if record['artifact_id']=='linux-musl-aarch64' and any(item is None for item in (musl_object_evidence,zig_runtime_evidence,data_evidence)):
+        raise ValueError('ARM64 musl draft requires its own musl, runtime and generated-data evidence')
     if source['provenance_sha256']!=builder.digest(linked_build/'provenance.json') or source['executable_sha256']!=record['executable_sha256']:
         raise ValueError('Source evidence does not match linked build')
     if record['relink']['parent_provenance_sha256']!=builder.digest(source_build/'provenance.json'):
@@ -310,7 +316,7 @@ def prepare(linked_build,source_build,evidence,graphviz_archive,sdk_archive,sdk_
                 'SDK archive used for source/header verification:\n'+facts['archive_url']+'\nSHA-256: '+facts['archive_sha256']+'\n').encode()
     materials.append(('SOURCE-REFERENCES.txt',references,dict(kind='maintainer-draft-reference')))
     headers=[]
-    if arm:
+    if extended:
         for name in sorted(external):
             prefix=source_notice_prefix(sdk[name])
             headers.append(dict(path=name,source_sha256=external[name],prefix_sha256=hashlib.sha256(prefix).hexdigest(),
@@ -322,7 +328,7 @@ def prepare(linked_build,source_build,evidence,graphviz_archive,sdk_archive,sdk_
         gpl,gpl_origin=license_material('gpl_3_copying')
         gpl_origin.update(scope='Reference for preserved Bison notices; parser exceptions remain separate, applicability pending')
         materials.append(('GPL-3.0-COPYING.txt',gpl,gpl_origin))
-        index=dict(kind='linux-arm64-offline-notice-origins',approved=False,qualified=False,
+        index=dict(kind='linux-arm64-offline-notice-origins' if arm else 'linux-musl-offline-notice-origins',approved=False,qualified=False,
             parent_provenance_sha256=builder.digest(linked_build/'provenance.json'),
             source_evidence_sha256=builder.digest(evidence),
             scope='All other notice payloads; applicability and complete source review pending',
@@ -333,7 +339,7 @@ def prepare(linked_build,source_build,evidence,graphviz_archive,sdk_archive,sdk_
     if len(materials)>5000 or sum(len(raw) for _,raw,_ in materials)>16*1024**2:
         raise ValueError('Notice material exceeds preparation budget')
     output.mkdir(mode=0o700,parents=True,exist_ok=False)
-    if record['artifact_id']=='linux-musl-x86_64':
+    if musl:
         shutil.copyfile(linked_build/'static-elf-inspection.txt',output/'static-elf-inspection.txt')
         if builder.digest(output/'static-elf-inspection.txt')!=record['static_elf_inspection']['report_sha256']:
             raise ValueError('Static ELF report changed during copy')
@@ -368,7 +374,7 @@ def prepare(linked_build,source_build,evidence,graphviz_archive,sdk_archive,sdk_
     if data_review is not None:
         review.update(data_evidence_sha256=builder.digest(data_evidence),data_comparison=data_review['comparison'],
                       data_tables_reproduced=data_review['outputs'])
-    if arm:
+    if extended:
         review.update(sdk_headers=headers,sdk_header_prefixes_preserved=sum(bool(row['prefix_bytes']) for row in headers),
                       offline_origin_index='third-party-notices/NOTICE-ORIGINS.json')
     (output/'review.json').write_text(json.dumps(review,indent=2)+'\n')

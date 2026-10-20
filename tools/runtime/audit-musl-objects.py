@@ -64,11 +64,12 @@ def notice_prefix(data):
 def collect(linked_build,sdk_root,sdk_archive):
     started=time.monotonic()
     record=json.loads(audit.bounded(linked_build/'provenance.json',8*1024**2))
-    if record.get('artifact_id')!='linux-musl-x86_64':raise ValueError('Expected musl x86_64 experimental relink')
+    if record.get('artifact_id') not in ('linux-musl-x86_64','linux-musl-aarch64'):raise ValueError('Expected supported musl experimental relink')
     notices.sdk_notice_names(record,linked_build)
     if builder.digest(linked_build/'candidate/bin/dot')!=record['executable_sha256']:raise ValueError('Executable changed')
     facts=record['sdk']['facts']
-    if builder.digest(sdk_archive)!=facts['archive_sha256'] or builder.digest(sdk_root/'zig')!=facts['zig_sha256']:
+    identity=notices.sdk_archive_identity(facts)
+    if builder.digest(sdk_archive)!=identity['sha256'] or builder.digest(sdk_root/'zig')!=facts['zig_sha256']:
         raise ValueError('SDK differs from pinned build inputs')
     inspector=record['sdk']['elf_inspector']
     inspector_path=Path(inspector['path'])
@@ -121,7 +122,7 @@ def collect(linked_build,sdk_root,sdk_archive):
     if time.monotonic()-started>120:raise ValueError('Object audit exceeded aggregate deadline')
     return dict(kind='musl-object-source-observations-not-license-approval',approved=False,qualified=False,
         source_to_binary_complete=False,artifact_id=record['artifact_id'],executable_sha256=record['executable_sha256'],
-        provenance_sha256=builder.digest(linked_build/'provenance.json'),sdk_archive_sha256=facts['archive_sha256'],
+        provenance_sha256=builder.digest(linked_build/'provenance.json'),sdk_archive_sha256=identity['sha256'],
         archive_sha256=library['sha256'],extraction_report_sha256=extraction['report_sha256'],inspector_sha256=inspector['sha256'],
         tool_sha256=builder.digest(Path(__file__)),objects=objects,sources=sorted(sources.values(),key=lambda i:i['path']),
         summary=dict(observed_members=len(objects),members_with_source=sum(bool(i['sources']) for i in objects),

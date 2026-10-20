@@ -9,7 +9,7 @@ test "$(uname -m)" = "$arch"
 mkdir -p "$work"
 mkdir "$work/evidence"
 retain() {
-    for name in sdk/sdk-record.json build/provenance.json build/static-elf-inspection.txt linked/provenance.json linked/static-elf-inspection.txt package/candidate.json package/candidate.zip; do
+    for name in sdk/sdk-record.json build/provenance.json build/static-elf-inspection.txt linked/provenance.json linked/static-elf-inspection.txt notices/provenance.json notices/static-elf-inspection.txt notices/review.json package/candidate.json package/candidate.zip; do
         if test -f "$work/$name"; then
             cp "$work/$name" "$work/evidence/$(basename "$name")"
             chmod 644 "$work/evidence/$(basename "$name")"
@@ -34,8 +34,14 @@ python /workspace/tools/runtime/audit-graphviz-sources.py --source-build "$work/
 cp "$work/linked/build/cmd/dot/CMakeFiles/dot.dir/why-extract.tsv" "$work/evidence/why-extract.tsv"
 cp "$work/linked/build/cmd/dot/CMakeFiles/dot.dir/link.d" "$work/evidence/link.d"
 chmod 644 "$work/evidence/why-extract.tsv" "$work/evidence/link.d"
-readelf --file-header --program-headers --dynamic --version-info "$work/linked/candidate/bin/dot" > "$work/elf.txt"
-python /workspace/tools/runtime/observe-linux-network.py --build-output "$work/linked" --environment-kind container --report "$work/network-312.json" --corpus-report "$work/corpus-312.json"
-python /workspace/tools/runtime/verify-artifact.py --root "$work/linked/candidate" --provenance "$work/linked/provenance.json" --write-inventory "$work/evidence/inventory.json" --static-elf
-python /workspace/tools/runtime/pack-candidate.py --root "$work/linked/candidate" --inventory "$work/evidence/inventory.json" --provenance "$work/linked/provenance.json" --output "$work/package"
-python /workspace/tools/runtime/observe-linux-network.py --build-output "$work/linked" --private-package "$work/package" --environment-kind container --report "$work/runtime-network-312.json" --corpus-report "$work/runtime-corpus-312.json"
+cp "$work/linked/provenance.json" "$work/evidence/linked-provenance.json"
+chmod 644 "$work/evidence/linked-provenance.json"
+python /workspace/tools/runtime/audit-musl-objects.py --linked-build "$work/linked" --sdk-root "$work/sdk/sdk/zig-$arch-linux-0.15.2" --sdk-archive "$work/sdk/zig.tar.xz" --report "$work/evidence/musl-object-evidence.json"
+python /workspace/tools/runtime/audit-zig-runtime.py --linked-build "$work/linked" --sdk-root "$work/sdk/sdk/zig-$arch-linux-0.15.2" --sdk-archive "$work/sdk/zig.tar.xz" --report "$work/evidence/zig-runtime-evidence.json"
+python /workspace/tools/runtime/audit-graphviz-data.py --source-build "$work/build" --linked-build "$work/linked" --source-archive "$work/sdk/graphviz.tar.gz" --compiler-evidence "$work/evidence/graphviz-source-evidence.json" --report "$work/evidence/graphviz-data-evidence.json"
+python /workspace/tools/runtime/prepare-draft-notices.py --linked-build "$work/linked" --source-build "$work/build" --evidence "$work/evidence/graphviz-source-evidence.json" --graphviz-archive "$work/sdk/graphviz.tar.gz" --sdk-archive "$work/sdk/zig.tar.xz" --sdk-root "$work/sdk/sdk/zig-$arch-linux-0.15.2" --musl-object-evidence "$work/evidence/musl-object-evidence.json" --zig-runtime-evidence "$work/evidence/zig-runtime-evidence.json" --data-evidence "$work/evidence/graphviz-data-evidence.json" --output "$work/notices"
+readelf --file-header --program-headers --dynamic --version-info "$work/notices/candidate/bin/dot" > "$work/elf.txt"
+python /workspace/tools/runtime/observe-linux-network.py --build-output "$work/notices" --environment-kind container --report "$work/network-312.json" --corpus-report "$work/corpus-312.json"
+python /workspace/tools/runtime/verify-artifact.py --root "$work/notices/candidate" --provenance "$work/notices/provenance.json" --write-inventory "$work/evidence/inventory.json" --static-elf
+python /workspace/tools/runtime/pack-candidate.py --root "$work/notices/candidate" --inventory "$work/evidence/inventory.json" --provenance "$work/notices/provenance.json" --output "$work/package"
+python /workspace/tools/runtime/observe-linux-network.py --build-output "$work/notices" --private-package "$work/package" --environment-kind container --report "$work/runtime-network-312.json" --corpus-report "$work/runtime-corpus-312.json"

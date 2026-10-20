@@ -17,6 +17,16 @@ def table(directories,files,version=4):
 
 
 class ZigRuntimeAuditTests(unittest.TestCase):
+    def test_arm_musl_profile_requires_completed_matching_native_recipe(self):
+        audit=module()
+        record=dict(completed=True,artifact_id='linux-musl-aarch64',native_os='linux',native_arch='aarch64',
+                    recipe=dict(os='linux',arch='aarch64',abi='musl'))
+        self.assertEqual(audit.runtime_profile(record),
+            ({'crt1.o','libzigc.a','libcompiler_rt.a'},('lib/c.zig','lib/compiler_rt.zig')))
+        for bad in (dict(record,completed=False),dict(record,native_arch='x86_64'),
+                    dict(record,recipe=dict(os='linux',arch='aarch64',abi='glibc'))):
+            with self.assertRaises(ValueError):audit.runtime_profile(bad)
+
     def test_runtime_profile_keeps_arm_glibc_separate_from_musl_startup(self):
         audit=module()
         record=dict(completed=True,artifact_id='linux-glibc-aarch64',native_os='linux',native_arch='aarch64',
