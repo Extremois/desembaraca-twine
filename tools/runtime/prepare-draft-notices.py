@@ -349,6 +349,58 @@ def sdk_notice_names(record,linked_build,*,include_runtime_sources=False):
     return common|{'lib/libc/musl/COPYRIGHT'}
 
 
+def source_access_notice(source, artifact_id, sdk=None):
+    """Describe source rights and access without claiming a completed source offer."""
+    lock=json.loads((HERE/'source-lock.json').read_bytes())
+    if source != lock:
+        raise ValueError('Source access notice requires the pinned Graphviz source')
+    supported=('linux-glibc-x86_64','linux-glibc-aarch64',
+               'linux-musl-x86_64','linux-musl-aarch64','macos-x86_64','macos-arm64')
+    if artifact_id not in supported:
+        raise ValueError('Unsupported source access notice artifact')
+    text=('Source and license information for '+artifact_id+'\n\n'
+        'Graphviz 16.1.0 source code is available under the Eclipse Public License 2.0.\n'
+        'The license is included in Graphviz-COPYING.txt. Third-party components\n'
+        'retain their own terms in the accompanying notices.\n'
+        'Obtain the original Graphviz source archive at:\n'+source['url']+'\n'
+        'SHA-256: '+source['sha256']+'\n'
+        'Source revision: '+source['git_revision']+'\n\n')
+    if artifact_id.startswith('linux-'):
+        expected=source_sdk_pin(artifact_id)
+        if sdk != expected:
+            raise ValueError('Source access notice SDK does not match artifact')
+        text+=('SDK archive containing the library/runtime sources used by this build:\n'
+            +sdk['url']+'\nSHA-256: '+sdk['sha256']+'\n\n')
+        if artifact_id.startswith('linux-glibc-'):
+            text+=('This executable includes GNU C Library startup/nonshared code,\n'
+                'licensed under the GNU Lesser General Public License, version 2.1\n'
+                'or later. Its use is covered by that license. The full version 2.1\n'
+                'text is in LGPL-2.1-COPYING.txt; individual source notices and\n'
+                'additional permissions are preserved separately.\n'
+                'A linking exception in one file does not cover other files.\n'
+                'The planned distribution route is LGPL 2.1 sections 6(a)/6(d):\n'
+                'provide the corresponding library and application sources, data\n'
+                'and build utilities so recipients can modify and relink the work.\n'
+                'The distribution terms must permit modification for personal use\n'
+                'and reverse engineering to debug those modifications.\n'
+                'This candidate has no completed section 6 source delivery/offer.\n'
+                'Dynamic system libc alone does not discharge these obligations\n'
+                'for the startup/nonshared code copied into the executable.\n\n')
+    text+=('Maintainer candidate: complete corresponding-source delivery and\n'
+        'component compatibility review are pending. The upstream archives above\n'
+        'do not alone supply the build-specific recipes, generated inputs and\n'
+        'relink instructions. Those must accompany the final source distribution.\n'
+        'No three-year written source offer is made by this notice.\n')
+    return text.encode('utf-8')
+
+
+def source_sdk_pin(artifact_id):
+    spec=importlib.util.spec_from_file_location('notice_source_sdk',HERE/'prepare-linux-ci.py')
+    module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module)
+    lock=module.ZIG_ARM64 if artifact_id.endswith('aarch64') else module.ZIG
+    return dict(url=lock['url'],sha256=lock['sha256'])
+
+
 def prepare(linked_build,source_build,evidence,graphviz_archive,sdk_archive,sdk_root,output,
             musl_object_evidence=None,zig_runtime_evidence=None,data_evidence=None,glibc_object_evidence=None):
     record=json.loads(audit.bounded(linked_build/'provenance.json',8*1024**2))
@@ -469,10 +521,10 @@ def prepare(linked_build,source_build,evidence,graphviz_archive,sdk_archive,sdk_
             'Graphviz source provenance for SVG data is preserved below:\n').encode()+inputs_svg_origin(graphviz_archive)
         materials.append(('DATA-ORIGINS.txt',origins,dict(kind='maintainer-data-comparison-reference',
             data_evidence_sha256=builder.digest(data_evidence),qualification='Value correspondence and generated-byte reproduction; historical copying and license applicability remain under review')))
-    references=('Draft notice review material; approval and source offer remain incomplete.\n\n'
-                'Graphviz 16.1.0 source:\n'+lock['url']+'\nSHA-256: '+lock['sha256']+'\n\n'
-                'SDK archive used for source/header verification:\n'+facts['archive_url']+'\nSHA-256: '+facts['archive_sha256']+'\n').encode()
-    materials.append(('SOURCE-REFERENCES.txt',references,dict(kind='maintainer-draft-reference')))
+    references=source_access_notice(lock,record['artifact_id'],sdk_identity)
+    materials.append(('SOURCE-REFERENCES.txt',references,dict(kind='maintainer-source-access-and-license-notice',
+        graphviz_archive_sha256=lock['sha256'],sdk_archive_sha256=facts['archive_sha256'],
+        source_delivery_complete=False)))
     headers=append_header_notices(materials,external,sdk,facts)
     gpl,gpl_origin=license_material('gpl_3_copying')
     gpl_origin.update(scope='Reference for preserved Bison notices; parser exceptions remain separate, applicability pending')

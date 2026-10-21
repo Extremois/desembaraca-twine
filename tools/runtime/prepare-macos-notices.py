@@ -123,8 +123,7 @@ def prepare(build, evidence, source_archive, map_path, output):
         if prefix:
             filename = 'SDK-header-' + hashlib.sha256(origin['path'].encode()).hexdigest()[:24] + '.txt'
             materials.append((filename, prefix, origin))
-    references = ('Draft macOS source/notice review material; not an approved source offer.\n\n'
-        'Graphviz source:\n' + record['source']['url'] + '\nSHA-256: ' + record['source']['sha256'] + '\n\n'
+    references = common.source_access_notice(record['source'], record['artifact_id']) + (
         'Xcode: ' + record['sdk']['facts']['xcode'].replace('\n', '; ') + '\n'
         'SDK tree SHA-256: ' + record['sdk']['facts']['sdk_tree_sha256'] + '\n'
         'Header notices are leading comments, not a redistribution of the Apple SDK.\n'

@@ -13,6 +13,46 @@ def tool():
 
 
 class DraftNoticesTests(unittest.TestCase):
+    def test_source_access_notices_identify_rights_and_architecture_without_false_offer(self):
+        module=tool()
+        source=json.loads((module.HERE/'source-lock.json').read_bytes())
+        for artifact in ('linux-glibc-x86_64','linux-glibc-aarch64',
+                         'linux-musl-x86_64','linux-musl-aarch64','macos-x86_64','macos-arm64'):
+            with self.subTest(artifact=artifact):
+                sdk=module.source_sdk_pin(artifact) if artifact.startswith('linux-') else None
+                text=module.source_access_notice(source,artifact,sdk).decode()
+                self.assertIn('available under the Eclipse Public License 2.0',text)
+                self.assertIn(source['url'],text)
+                self.assertIn(source['sha256'],text)
+                self.assertIn('No three-year written source offer is made',text)
+                if sdk:
+                    self.assertIn(sdk['url'],text)
+                    self.assertIn(sdk['sha256'],text)
+                    self.assertEqual('aarch64' in sdk['url'],artifact.endswith('aarch64'))
+                if artifact.startswith('linux-glibc-'):
+                    self.assertIn('GNU C Library startup/nonshared code',text)
+                    self.assertIn('LGPL-2.1-COPYING.txt',text)
+                    self.assertIn('sections 6(a)/6(d)',text)
+                    self.assertIn('reverse engineering',text)
+                    self.assertIn('no completed section 6 source delivery/offer',text)
+                else:
+                    self.assertNotIn('GNU C Library',text)
+                    self.assertNotIn('LGPL-2.1-COPYING.txt',text)
+
+    def test_source_access_notices_reject_wrong_source_and_cross_architecture_sdk(self):
+        module=tool()
+        source=json.loads((module.HERE/'source-lock.json').read_bytes())
+        sdk=module.source_sdk_pin('linux-glibc-x86_64')
+        for changed in (dict(source,sha256='0'*64),dict(source,url='https://example.invalid/source')):
+            with self.assertRaisesRegex(ValueError,'pinned Graphviz'):
+                module.source_access_notice(changed,'linux-glibc-x86_64',sdk)
+        for artifact,wrong in (('linux-glibc-aarch64',sdk),('linux-glibc-x86_64',None),
+                               ('linux-musl-aarch64',dict(sdk,sha256='0'*64))):
+            with self.subTest(artifact=artifact),self.assertRaisesRegex(ValueError,'SDK'):
+                module.source_access_notice(source,artifact,wrong)
+        with self.assertRaisesRegex(ValueError,'Unsupported'):
+            module.source_access_notice(source,'windows-x86_64',sdk)
+
     def test_runtime_math_references_preserve_individual_terms_and_reject_changed_sources(self):
         import gzip,hashlib,shutil
         from unittest.mock import patch
@@ -118,7 +158,7 @@ class DraftNoticesTests(unittest.TestCase):
                         stream.addfile(entry,io.BytesIO(data))
             graphviz=root/'graphviz.tar';sdk_archive=root/'sdk.tar'
             archive(graphviz,'graphviz-16.1.0',graphviz_files);archive(sdk_archive,'sdk',sdk_files)
-            lock=dict(url='https://example.invalid/graphviz.tar',sha256=module.builder.digest(graphviz))
+            lock=dict(url='https://example.invalid/graphviz.tar',sha256=module.builder.digest(graphviz),git_revision='a'*40)
             tool_root=root/'tool';tool_root.mkdir()
             (tool_root/'source-lock.json').write_text(json.dumps(lock))
             (tool_root/'licenses').mkdir()
@@ -153,7 +193,8 @@ class DraftNoticesTests(unittest.TestCase):
             evidence=root/'sources.json';evidence.write_text(json.dumps(dict(dependencies=dependencies,
                 provenance_sha256=module.builder.digest(linked/'provenance.json'),executable_sha256=record['executable_sha256'])))
             # Canonical materials stay real and hash checked; only the tiny upstream archive lock is synthetic.
-            with patch.object(module,'HERE',tool_root):
+            fixture_sdk=dict(url=record['sdk']['facts']['archive_url'],sha256=module.builder.digest(sdk_archive))
+            with patch.object(module,'HERE',tool_root),patch.object(module,'source_sdk_pin',return_value=fixture_sdk):
                 review=module.prepare(linked,source,evidence,graphviz,sdk_archive,sdk,root/'output')
             self.assertEqual(review['sdk_headers_verified'],2)
             self.assertEqual(review['graphviz_sources_verified'],2)
