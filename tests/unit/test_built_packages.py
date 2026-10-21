@@ -19,6 +19,19 @@ def tool():
 
 
 class BuiltPackagesTests(unittest.TestCase):
+    def test_cache_notice_result_requires_exact_before_after_bytes_and_offline_reuse(self):
+        validate=tool().validate_cache_notice_result
+        fixture=dict(engine_sha256='a'*64,provenance_sha256='b'*64)
+        expected={'third-party-notices/license.txt':'c'*64}
+        report=dict(passed=True,qualified=False,**fixture,before=expected,after=expected,
+            offline_acquisition_calls=0,initial_acquisition_calls=1,same_generation=True,
+            corruption_rejected=True,restored_snapshot_matches=True,modes_checked=True)
+        validate(report,fixture,expected)
+        for key,value in [('after',{}),('before',{}),('offline_acquisition_calls',1),
+                ('same_generation',False),('corruption_rejected',False),('modes_checked',False)]:
+            changed=copy.deepcopy(report);changed[key]=value
+            with self.subTest(key=key),self.assertRaises(ValueError):validate(changed,fixture,expected)
+
     def test_process_recovery_requires_native_exits_lock_release_and_shared_generation(self):
         validate = tool().validate_process_recovery
         cases = [dict(case='known', known_resolvable=True)]

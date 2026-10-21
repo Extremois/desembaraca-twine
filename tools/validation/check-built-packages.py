@@ -214,12 +214,23 @@ def validate_process_recovery(report, cases):
             raise ValueError('Crash did not preserve selector, orphan or release its lock')
 
 
+def validate_cache_notice_result(report, fixture, expected):
+    if (report.get('passed') is not True or report.get('qualified') is not False
+            or report.get('engine_sha256')!=fixture['engine_sha256']
+            or report.get('provenance_sha256')!=fixture['provenance_sha256']
+            or report.get('before')!=expected or report.get('after')!=expected
+            or report.get('offline_acquisition_calls')!=0 or report.get('initial_acquisition_calls')!=1
+            or any(report.get(key) is not True for key in ('same_generation','corruption_rejected',
+                'restored_snapshot_matches','modes_checked'))):
+        raise ValueError('Installed cache notices differ from inventory or offline invariants')
+
+
 def stage_engine_driver(work):
     driver = work / 'test-driver'
     files = ('tests/common.py', 'tests/runtime_support.py', 'tests/native_acceptance.py',
         'tests/integration/__init__.py', 'tests/integration/test_linux_runtime.py',
         'tests/integration/test_macos_runtime.py', 'tools/runtime/verify-artifact.py',
-        '.github/scripts/probe-installed-recovery.py')
+        '.github/scripts/probe-installed-recovery.py', '.github/scripts/probe-cache-notices.py')
     for name in files:
         target = driver / name
         target.parent.mkdir(parents=True, exist_ok=True)
@@ -231,7 +242,7 @@ def stage_engine_driver(work):
     return driver
 
 
-def collect(wheel, sdist, wheelhouse, *, engine_artifact=None, engine_id=None):
+def collect(wheel, sdist, wheelhouse, *, engine_artifact=None, engine_id=None, engine_check='runtime'):
     import venv
     for path in (wheel, sdist):
         if not path.is_file() or not 0 < path.stat().st_size <= MAXIMUM:
@@ -298,28 +309,41 @@ def collect(wheel, sdist, wheelhouse, *, engine_artifact=None, engine_id=None):
             if list(profile.rglob('active.json')) or list(profile.rglob('ready.json')):
                 raise ValueError('Help unexpectedly prepared an engine')
             runtime_report = None
+            notice_report = None
             if fixture is not None:
-                report_path = work / ('runtime-' + mode + '.json')
-                module = 'test_macos_runtime.py' if sys.platform == 'darwin' else 'test_linux_runtime.py'
-                command = [python, '-I', driver / 'tests/integration' / module,
-                    '--package', engine_package, '--provenance', engine_package / 'provenance.json',
-                    '--report', report_path]
-                if sys.platform == 'linux':
-                    command.extend(['--environment-kind', 'wsl' if 'microsoft' in platform.release().lower() else 'native'])
-                run(command, timeout=300)
-                if report_path.stat().st_size > 1024**2:
-                    raise ValueError('Private engine report exceeds bound')
-                runtime_report = json.loads(report_path.read_bytes())
-                cases = json.loads((ROOT / 'tests/fixtures/cases.json').read_bytes())
-                validate_engine_result(runtime_report, fixture, cases, sys.platform)
-                validate_recovery_result(runtime_report['observations']['explicit'].get('recovery'), cases)
-                validate_process_recovery(runtime_report['observations']['explicit'].get('process_recovery'), cases)
+                if engine_check=='notices':
+                    report_path=work/('cache-notices-'+mode+'.json')
+                    run([python,'-I',driver/'.github/scripts/probe-cache-notices.py','--driver',driver,
+                        '--package',engine_package,'--provenance',engine_package/'provenance.json','--report',report_path])
+                    if report_path.stat().st_size>1024**2:raise ValueError('Cache notice receipt exceeds bound')
+                    notice_report=json.loads(report_path.read_bytes())
+                    expected={r['path']:r['sha256'] for r in json.loads((engine_package/'inventory.json').read_bytes())['files']
+                              if r['path'].startswith('third-party-notices/')}
+                    application_notice=json.loads((ROOT/'src/twine_edge_overlap/runtime-manifest.json').read_bytes())['notices'][0]
+                    expected['third-party-notices/private-integration-application.txt']=application_notice['sha256']
+                    validate_cache_notice_result(notice_report,fixture,expected)
+                else:
+                    report_path = work / ('runtime-' + mode + '.json')
+                    module = 'test_macos_runtime.py' if sys.platform == 'darwin' else 'test_linux_runtime.py'
+                    command = [python, '-I', driver / 'tests/integration' / module,
+                        '--package', engine_package, '--provenance', engine_package / 'provenance.json',
+                        '--report', report_path]
+                    if sys.platform == 'linux':
+                        command.extend(['--environment-kind', 'wsl' if 'microsoft' in platform.release().lower() else 'native'])
+                    run(command, timeout=300)
+                    if report_path.stat().st_size > 1024**2:
+                        raise ValueError('Private engine report exceeds bound')
+                    runtime_report = json.loads(report_path.read_bytes())
+                    cases = json.loads((ROOT / 'tests/fixtures/cases.json').read_bytes())
+                    validate_engine_result(runtime_report, fixture, cases, sys.platform)
+                    validate_recovery_result(runtime_report['observations']['explicit'].get('recovery'), cases)
+                    validate_process_recovery(runtime_report['observations']['explicit'].get('process_recovery'), cases)
             records.append(dict(mode=mode, archive_sha256=digest(package.read_bytes()),
                 package_files_verified=len(inventory['files']), licenses_verified=inventory['licenses'],
                 installed_file_hashes=facts['files'], entrypoints_verified=3,
                 import_from_venv=True, git_and_global_graphviz_absent=True,
                 outside_checkout=True, engine_prepared=fixture is not None,
-                private_engine=runtime_report, commands=commands))
+                private_engine=runtime_report, cache_notices=notice_report, commands=commands))
     return dict(kind='current-wheel-sdist-offline-installation-not-support-qualification',
         passed=True, qualified=False, captured_at=datetime.now(timezone.utc).isoformat(),
         application_revision=os.environ.get('GITHUB_SHA'), source_state='current-source-content-addressed',
@@ -340,6 +364,7 @@ if __name__ == '__main__':
         parser.add_argument('--' + name, type=Path, required=True)
     parser.add_argument('--engine-artifact', type=Path)
     parser.add_argument('--engine-id')
+    parser.add_argument('--engine-check',choices=('runtime','notices'),default='runtime')
     args = parser.parse_args()
     if args.dist_dir:
         if args.wheel or args.sdist:
@@ -353,11 +378,13 @@ if __name__ == '__main__':
         parser.error('Supply both --wheel/--sdist or --dist-dir')
     if bool(args.engine_artifact) != bool(args.engine_id):
         parser.error('Supply both --engine-artifact and --engine-id')
+    if args.engine_check=='notices' and not args.engine_artifact:
+        parser.error('Notice cache check requires a private engine artifact')
     if args.report.exists():
         parser.error('Preserve existing reports; choose a new file')
     result = collect(args.wheel.resolve(), args.sdist.resolve(), args.wheelhouse.resolve(),
         engine_artifact=args.engine_artifact.resolve() if args.engine_artifact else None,
-        engine_id=args.engine_id)
+        engine_id=args.engine_id,engine_check=args.engine_check)
     with args.report.open('x', encoding='utf-8') as stream:
         json.dump(result, stream, indent=2)
         stream.write('\n')
