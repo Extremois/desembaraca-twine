@@ -1,0 +1,121 @@
+name: Musl and Windows cache notice integrity
+on:
+  workflow_dispatch:
+  push:
+    branches: [feat/003-add-cross-platform-support]
+    paths:
+      - '.github/workflows/cache-notices-more.yml'
+      - '.github/scripts/run-musl-cache-notices.py'
+      - '.github/scripts/probe-windows-cache-notices.py'
+      - '.github/scripts/probe-cache-notices.py'
+      - 'tools/validation/check-built-packages.py'
+      - 'tests/unit/test_built_packages.py'
+      - 'tests/unit/test_musl_cache_environment.py'
+      - 'src/**'
+permissions:
+  contents: read
+  actions: read
+concurrency:
+  group: cache-notices-more-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  musl:
+    name: Musl cache (${{ matrix.arch }}, Python ${{ matrix.python }})
+    strategy:
+      fail-fast: false
+      matrix:
+        arch: [x86_64, aarch64]
+        python: ['3.12', '3.14']
+        include:
+          - arch: x86_64
+            runner: ubuntu-24.04
+          - arch: aarch64
+            runner: ubuntu-24.04-arm
+    runs-on: ${{ matrix.runner }}
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/download-artifact@v4
+        with:
+          github-token: ${{ github.token }}
+          run-id: 39434565540
+          name: linux-musl-${{ matrix.arch }}-container-unqualified-b13cd6f90db31163e62119bb83e2eb8db5ac8458
+          path: ${{ runner.temp }}/musl-engine
+      - name: Select immutable Alpine userland and matching CPU
+        id: image
+        shell: bash
+        env:
+          TARGET_ARCH: ${{ matrix.arch }}
+          TARGET_PYTHON: ${{ matrix.python }}
+        run: |
+          test "$(uname -m)" = "$TARGET_ARCH"
+          python - <<'PY'
+          import json,os
+          from pathlib import Path
+          pin=json.loads(Path('tools/runtime/alpine-ci-images.json').read_bytes())['images'][os.environ['TARGET_PYTHON']]['platforms'][os.environ['TARGET_ARCH']]
+          with open(os.environ['GITHUB_OUTPUT'],'a') as stream:
+              stream.write('reference='+pin['reference']+'\noci_arch='+pin['oci_arch']+'\n')
+          PY
+      - name: Measure real musl cache as non-root user
+        shell: bash
+        env:
+          IMAGE: ${{ steps.image.outputs.reference }}
+          OCI_ARCH: ${{ steps.image.outputs.oci_arch }}
+          TARGET_ARCH: ${{ matrix.arch }}
+          TARGET_PYTHON: ${{ matrix.python }}
+        run: |
+          mkdir "$RUNNER_TEMP/musl-notices"
+          docker pull --platform "linux/$OCI_ARCH" "$IMAGE"
+          docker image inspect "$IMAGE" > "$RUNNER_TEMP/musl-notices/image.json"
+          docker run --rm --platform "linux/$OCI_ARCH" --user "$(id -u):$(id -g)" -e GITHUB_SHA -e PYTHONUTF8=1 -e HOME=/work/home -v "$GITHUB_WORKSPACE:/workspace:ro" -v "$RUNNER_TEMP/musl-engine:/artifact:ro" -v "$RUNNER_TEMP/musl-notices:/work" --workdir /workspace "$IMAGE" sh -ec 'mkdir /work/home; python .github/scripts/run-musl-cache-notices.py --artifact /artifact --work /work/slot --arch "$1" --minor "$2" --image "$3"' sh "$TARGET_ARCH" "$TARGET_PYTHON" "$IMAGE"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: musl-cache-notices-${{ matrix.arch }}-${{ matrix.python }}-${{ github.sha }}
+          retention-days: 7
+          path: |
+            ${{ runner.temp }}/musl-notices/slot/cache-notices.json
+            ${{ runner.temp }}/musl-notices/image.json
+  windows:
+    name: Windows cache (Python ${{ matrix.python }})
+    strategy:
+      fail-fast: false
+      matrix:
+        python: ['3.12', '3.14']
+    runs-on: windows-latest
+    timeout-minutes: 12
+    env:
+      PYTHONUTF8: '1'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Build development wheel and sdist
+        run: |
+          python -m pip install build
+          python -m build --outdir "${{ runner.temp }}/windows-notice-dist"
+      - name: Obtain offline build backend wheels
+        run: >-
+          python -m pip download --only-binary=:all: --no-deps
+          --dest "${{ runner.temp }}/windows-notice-wheels" setuptools wheel packaging
+      - name: Prepare official pinned engine in test-owned caches
+        run: >-
+          python tools/validation/check-built-packages.py
+          --dist-dir "${{ runner.temp }}/windows-notice-dist"
+          --wheelhouse "${{ runner.temp }}/windows-notice-wheels"
+          --engine-check windows-notices
+          --report "${{ runner.temp }}/windows-cache-notices.json"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: windows-cache-notices-${{ matrix.python }}-${{ github.sha }}
+          retention-days: 7
+          path: ${{ runner.temp }}/windows-cache-notices.json

@@ -225,12 +225,25 @@ def validate_cache_notice_result(report, fixture, expected):
         raise ValueError('Installed cache notices differ from inventory or offline invariants')
 
 
+def validate_windows_cache_notice_result(report, manifest, manifest_sha):
+    expected={row['destination']:row['sha256'] for row in manifest['notices']}
+    executable=next(row for row in manifest['files'] if row['path']==manifest['executable_relative_path'])
+    if (report.get('passed') is not True or report.get('qualified') is not False or report.get('system')!='Windows'
+            or report.get('manifest_sha256')!=manifest_sha or report.get('archive_sha256')!=manifest['archive_sha256']
+            or report.get('engine_sha256')!=executable['sha256'] or report.get('before')!=expected or report.get('after')!=expected
+            or report.get('source_acquisition')!='pinned-upstream-https' or report.get('initial_download_operations')!=1
+            or report.get('offline_acquisition_calls')!=0 or report.get('modes_checked') is not False
+            or any(report.get(key) is not True for key in ('same_generation','corruption_rejected','restored_snapshot_matches'))):
+        raise ValueError('Windows notice cache differs from pinned manifest or offline invariants')
+
+
 def stage_engine_driver(work):
     driver = work / 'test-driver'
     files = ('tests/common.py', 'tests/runtime_support.py', 'tests/native_acceptance.py',
         'tests/integration/__init__.py', 'tests/integration/test_linux_runtime.py',
         'tests/integration/test_macos_runtime.py', 'tools/runtime/verify-artifact.py',
-        '.github/scripts/probe-installed-recovery.py', '.github/scripts/probe-cache-notices.py')
+        '.github/scripts/probe-installed-recovery.py', '.github/scripts/probe-cache-notices.py',
+        '.github/scripts/probe-windows-cache-notices.py')
     for name in files:
         target = driver / name
         target.parent.mkdir(parents=True, exist_ok=True)
@@ -244,6 +257,8 @@ def stage_engine_driver(work):
 
 def collect(wheel, sdist, wheelhouse, *, engine_artifact=None, engine_id=None, engine_check='runtime'):
     import venv
+    if engine_check=='windows-notices' and (sys.platform!='win32' or engine_artifact is not None):
+        raise ValueError('Windows notice checks require Windows and the packaged official manifest')
     for path in (wheel, sdist):
         if not path.is_file() or not 0 < path.stat().st_size <= MAXIMUM:
             raise ValueError('Invalid distribution archive size')
@@ -267,6 +282,7 @@ def collect(wheel, sdist, wheelhouse, *, engine_artifact=None, engine_id=None, e
         profile = work / 'profile'
         profile.mkdir()
         fixture = None
+        if engine_check=='windows-notices':driver=stage_engine_driver(work)
         if engine_artifact is not None:
             if sys.platform not in ('linux', 'darwin'):
                 raise ValueError('Private engine integration requires matching native POSIX host')
@@ -310,7 +326,15 @@ def collect(wheel, sdist, wheelhouse, *, engine_artifact=None, engine_id=None, e
                 raise ValueError('Help unexpectedly prepared an engine')
             runtime_report = None
             notice_report = None
-            if fixture is not None:
+            if engine_check=='windows-notices':
+                report_path=work/('windows-cache-notices-'+mode+'.json')
+                run([python,'-I',driver/'.github/scripts/probe-windows-cache-notices.py',
+                    '--driver',driver,'--report',report_path],timeout=300)
+                if report_path.stat().st_size>1024**2:raise ValueError('Windows cache notice receipt exceeds bound')
+                notice_report=json.loads(report_path.read_bytes())
+                manifest_raw=(ROOT/'src/twine_edge_overlap/runtime-manifest.json').read_bytes()
+                validate_windows_cache_notice_result(notice_report,json.loads(manifest_raw),digest(manifest_raw))
+            elif fixture is not None:
                 if engine_check=='notices':
                     report_path=work/('cache-notices-'+mode+'.json')
                     run([python,'-I',driver/'.github/scripts/probe-cache-notices.py','--driver',driver,
@@ -342,17 +366,18 @@ def collect(wheel, sdist, wheelhouse, *, engine_artifact=None, engine_id=None, e
                 package_files_verified=len(inventory['files']), licenses_verified=inventory['licenses'],
                 installed_file_hashes=facts['files'], entrypoints_verified=3,
                 import_from_venv=True, git_and_global_graphviz_absent=True,
-                outside_checkout=True, engine_prepared=fixture is not None,
+                outside_checkout=True, engine_prepared=fixture is not None or engine_check=='windows-notices',
                 private_engine=runtime_report, cache_notices=notice_report, commands=commands))
     return dict(kind='current-wheel-sdist-offline-installation-not-support-qualification',
         passed=True, qualified=False, captured_at=datetime.now(timezone.utc).isoformat(),
         application_revision=os.environ.get('GITHUB_SHA'), source_state='current-source-content-addressed',
         tool_sha256=digest(Path(__file__).read_bytes()),
         python=platform.python_version(), system=platform.system(),
-        arch=platform.machine(), records=records, private_engine_fixture=fixture,
+        arch=platform.machine(), records=records, private_engine_fixture=fixture, engine_check=engine_check,
         build_tools=[dict(name=p.name, sha256=digest(p.read_bytes())) for p in wheels],
         limitations=['Current development packages, not final remotely distributed candidates',
-            'Optional private engine uses controlled acquisition and a Python-only network guard',
+            ('Windows engine uses official pinned HTTPS acquisition and test-owned cache' if engine_check=='windows-notices'
+             else 'Optional private engine uses controlled acquisition and a Python-only network guard'),
             'No signature/notarization approval, syscall network claim or per-cell qualification'])
 
 
@@ -364,7 +389,7 @@ if __name__ == '__main__':
         parser.add_argument('--' + name, type=Path, required=True)
     parser.add_argument('--engine-artifact', type=Path)
     parser.add_argument('--engine-id')
-    parser.add_argument('--engine-check',choices=('runtime','notices'),default='runtime')
+    parser.add_argument('--engine-check',choices=('runtime','notices','windows-notices'),default='runtime')
     args = parser.parse_args()
     if args.dist_dir:
         if args.wheel or args.sdist:

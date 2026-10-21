@@ -19,6 +19,23 @@ def tool():
 
 
 class BuiltPackagesTests(unittest.TestCase):
+    def test_windows_notice_receipt_requires_official_manifest_and_real_download(self):
+        validate=tool().validate_windows_cache_notice_result
+        manifest=dict(archive_sha256='a'*64,executable_relative_path='bin/dot.exe',
+            files=[dict(path='bin/dot.exe',sha256='b'*64)],
+            notices=[dict(destination='third-party-notices/license.txt',sha256='c'*64)])
+        expected={'third-party-notices/license.txt':'c'*64}
+        report=dict(passed=True,qualified=False,system='Windows',manifest_sha256='d'*64,
+            archive_sha256='a'*64,engine_sha256='b'*64,before=expected,after=expected,
+            source_acquisition='pinned-upstream-https',initial_download_operations=1,
+            offline_acquisition_calls=0,same_generation=True,corruption_rejected=True,
+            restored_snapshot_matches=True,modes_checked=False)
+        validate(report,manifest,'d'*64)
+        for key,value in [('manifest_sha256','e'*64),('after',{}),('offline_acquisition_calls',1),
+                ('source_acquisition','fixture'),('corruption_rejected',False),('system','Linux')]:
+            changed=copy.deepcopy(report);changed[key]=value
+            with self.subTest(key=key),self.assertRaises(ValueError):validate(changed,manifest,'d'*64)
+
     def test_cache_notice_result_requires_exact_before_after_bytes_and_offline_reuse(self):
         validate=tool().validate_cache_notice_result
         fixture=dict(engine_sha256='a'*64,provenance_sha256='b'*64)
