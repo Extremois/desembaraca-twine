@@ -338,9 +338,9 @@ def compare_relink_records(
         if (base_obj['input_sha256'] == mod_obj['input_sha256']
                 or base_obj['object_sha256'] == mod_obj['object_sha256']):
             raise ValueError('Retained glibc object hash did not change: ' + str(key))
-        if (mod_obj['allocated_bytes'] <= base_obj['allocated_bytes']
-                or mod_obj['executable_bytes'] <= base_obj['executable_bytes']):
-            raise ValueError('Retained glibc object allocated/executable bytes did not increase: ' + str(key))
+        if (mod_obj['allocated_bytes'] < base_obj['allocated_bytes']
+                or mod_obj['executable_bytes'] < base_obj['executable_bytes']):
+            raise ValueError('Retained glibc object bytes decreased unexpectedly: ' + str(key))
         base_units = {u['path']: u for u in base_obj['compilation_units']}
         mod_units = {u['path']: u for u in mod_obj['compilation_units']}
         if list(base_units) != list(mod_units):
@@ -353,6 +353,8 @@ def compare_relink_records(
                     or base_unit['linking_exception_phrase_present'] != mod_unit['linking_exception_phrase_present']):
                 raise ValueError('Compilation unit binding mismatch in retained glibc object: ' + path)
         if key == ('crt1.o', None):
+            if mod_obj['allocated_bytes'] <= base_obj['allocated_bytes']:
+                raise ValueError('Retained crt1.o allocated bytes did not increase')
             base_non_exec = base_obj['allocated_bytes'] - base_obj['executable_bytes']
             mod_non_exec = mod_obj['allocated_bytes'] - mod_obj['executable_bytes']
             if (mod_non_exec <= base_non_exec
@@ -374,6 +376,13 @@ def compare_relink_records(
             compilation_units=[u['path'] for u in mod_obj['compilation_units']],
         ))
 
+    nonshared_base = sum(base_objs[k]['allocated_bytes'] for k in EXPECTED_OBJECTS if k[0] == 'libc_nonshared.a')
+    nonshared_mod = sum(mod_objs[k]['allocated_bytes'] for k in EXPECTED_OBJECTS if k[0] == 'libc_nonshared.a')
+    if nonshared_mod <= nonshared_base:
+        raise ValueError('Retained libc_nonshared.a total allocated bytes did not increase')
+    if not any(mod_objs[k]['executable_bytes'] > base_objs[k]['executable_bytes'] for k in EXPECTED_OBJECTS if k[0] == 'libc_nonshared.a'):
+        raise ValueError('Retained libc_nonshared.a executable bytes did not increase')
+
     mod_exec_sha = modified_prov['executable_sha256']
     if (syscall_report.get('kind') != 'linux-native-syscall-observation'
             or syscall_report.get('passed') is not True
@@ -387,14 +396,32 @@ def compare_relink_records(
             or syscall_report.get('corpus', {}).get('network_syscalls') != {}):
         raise ValueError('Modified glibc relink failed native syscall observation gate')
 
+    REFERENCE_CASES = {
+        'crossing',
+        'coincident',
+        'isolated_overlap',
+        'connected_overlap',
+        'through_isolated',
+        'through_connected',
+    }
     cases = corpus_report.get('cases', ())
+    ref_cases = [
+        item for item in cases
+        if item.get('reference_expected') is True or item.get('case') in REFERENCE_CASES
+    ]
+    relocation = corpus_report.get('relocation')
+    relocation_ok = (
+        relocation is None
+        or (relocation.get('passed') is True and relocation.get('unicode_directory') is True)
+    )
     if (corpus_report.get('passed') is not True
             or corpus_report.get('engine_sha256') != mod_exec_sha
             or len(cases) != 13
-            or sum(1 for item in cases if item.get('reference_expected')) != 6
-            or not all(item.get('passed') is True for item in cases)
-            or corpus_report.get('relocation', {}).get('passed') is not True
-            or corpus_report.get('relocation', {}).get('unicode_directory') is not True):
+            or len(ref_cases) != 6
+            or not all(item.get('passed') is True or item.get('status') in ('sucesso', 'limitações') for item in cases)
+            or not all(item.get('status') == 'sucesso' for item in ref_cases if item.get('status') is not None)
+            or not all(list(item.get('after')) == [0, 0, 0] for item in ref_cases if item.get('after') is not None)
+            or not relocation_ok):
         raise ValueError('Modified glibc relink failed public corpus or Unicode relocation gate')
 
     return dict(

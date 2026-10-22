@@ -382,6 +382,57 @@ class GlibcRetentionTests(unittest.TestCase):
                 with self.assertRaisesRegex(ValueError, 'public corpus or Unicode relocation'):
                     verifier.compare_relink_records(*bad_corpus)
 
+                # Authentic smoke-corpus.py output format (Portuguese statuses, reference cases by name, no explicit relocation dict)
+                real_corpus_args = list(copy.deepcopy(args))
+                real_corpus_cases = [
+                    dict(case='crossing', status='sucesso', before=[1, 0, 0], after=[0, 0, 0]),
+                    dict(case='coincident', status='sucesso', before=[1, 2, 0], after=[0, 0, 0]),
+                    dict(case='clean', status='sucesso', before=[0, 0, 0], after=[0, 0, 0]),
+                    dict(case='isolated_overlap', status='sucesso', before=[0, 1, 0], after=[0, 0, 0]),
+                    dict(case='connected_overlap', status='sucesso', before=[1, 1, 1], after=[0, 0, 0]),
+                    dict(case='through_isolated', status='sucesso', before=[0, 0, 1], after=[0, 0, 0]),
+                    dict(case='through_connected', status='sucesso', before=[0, 0, 1], after=[0, 0, 0]),
+                    dict(case='border_only', status='sucesso', before=[0, 0, 0], after=[0, 0, 0]),
+                    dict(case='cycle', status='sucesso', before=[0, 0, 0], after=[0, 0, 0]),
+                    dict(case='parallel_occurrences', status='sucesso', before=[0, 0, 0], after=[0, 0, 0]),
+                    dict(case='self_loop', status='sucesso', before=[0, 0, 0], after=[0, 0, 0]),
+                    dict(case='reciprocal', status='limitações', before=[1, 0, 0], after=[1, 0, 0]),
+                    dict(case='empty', status='sucesso', before=[0, 0, 0], after=[0, 0, 0]),
+                ]
+                real_corpus_args[8] = dict(
+                    passed=True,
+                    engine_sha256=real_corpus_args[3]['executable_sha256'],
+                    cases=real_corpus_cases,
+                )
+                real_report = verifier.compare_relink_records(*real_corpus_args)
+                self.assertTrue(real_report['passed'])
+
+                bad_ref_case = list(copy.deepcopy(real_corpus_args))
+                bad_ref_case[8] = copy.deepcopy(bad_ref_case[8])
+                bad_ref_case[8]['cases'][0]['after'] = [1, 0, 0]
+                with self.assertRaisesRegex(ValueError, 'public corpus or Unicode relocation'):
+                    verifier.compare_relink_records(*bad_ref_case)
+
+                shrunk_obj = list(copy.deepcopy(args))
+                shrunk_obj[5] = copy.deepcopy(shrunk_obj[5])
+                for s in shrunk_obj[5]['sections']:
+                    if 'libc_nonshared.a' in s.get('input_path', ''):
+                        s['bytes'] = 1
+                with self.assertRaisesRegex(ValueError, 'Retained glibc object bytes decreased unexpectedly'):
+                    verifier.compare_relink_records(*shrunk_obj)
+
+                bad_nonshared_size = list(copy.deepcopy(args))
+                bad_nonshared_size[5] = copy.deepcopy(bad_nonshared_size[5])
+                # set modified nonshared sections equal to baseline so total allocated bytes don't increase
+                for s in bad_nonshared_size[5]['sections']:
+                    member = s.get('member') or ''
+                    if 'elf-init-2.33.o' in member:
+                        s['bytes'] = 95
+                    elif 'fstat-2.32.o' in member:
+                        s['bytes'] = 16
+                with self.assertRaisesRegex(ValueError, 'libc_nonshared.a total allocated bytes did not increase'):
+                    verifier.compare_relink_records(*bad_nonshared_size)
+
     def test_collect_modified_observations_enforces_pinned_rejection_and_edit_receipt(self):
         verifier = relink_verifier()
         with tempfile.TemporaryDirectory() as folder:
