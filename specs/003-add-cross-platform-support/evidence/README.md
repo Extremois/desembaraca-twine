@@ -1,5 +1,7 @@
 # Registros por alvo
 
+Pareamento de entrega de fontes correspondentes: [especificação formal](../../tools/runtime/licenses/SOURCE-PAIRING-SPECIFICATION.md) e ferramenta [verify-source-pairing.py](../../tools/runtime/verify-source-pairing.py) vinculam criptograficamente `candidate.zip` e `sources.tar.gz` sob a rota LGPL 2.1 §6(d) e EPL-2.0 §3.1.
+
 Ledger de licenças Linux: [linux.json](../../tools/runtime/licenses/linux.json) sincronizado para registrar a cobertura completa da rota LGPL 2.1 §6(a)/§6(d) sobre objetos startup/nonshared retidos e encerramento da revisão de aplicabilidade de políticas W3C/ISO.
 
 Pré-requisitos Python Linux: [estratégia e taxonomia CPython 3.12/3.14 por família](linux-prerequisites.md) documentada para todas as famílias da matriz de suporte, com isolamento estrito de venv/pip, sem `sudo` e sem alteração do Python do SO.

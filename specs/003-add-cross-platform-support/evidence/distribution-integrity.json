@@ -370,5 +370,15 @@
       "Go math/tan (BSD-3-Clause)",
       "W3C HTML 4.01 / SVG entity declarations & ISO 8879:1986 comments (W3C Software Notice and License, ASF LEGAL-386 / NETBEANS-853)"
     ]
+  },
+  "source_pairing_delivery": {
+    "specification": "tools/runtime/licenses/SOURCE-PAIRING-SPECIFICATION.md",
+    "verification_tool": "tools/runtime/verify-source-pairing.py",
+    "schema_kind": "corresponding-source-delivery-pairing",
+    "schema_version": 1,
+    "lgpl_2_1_section_6_d_route": "Equivalent access to copy corresponding source code from same designated place alongside binary distribution",
+    "epl_2_0_section_3_1_route": "Complete Graphviz source archive accompanied by license notice and build recipe",
+    "status": "specification_and_tooling_completed",
+    "catalog_distribution_status": "unpromoted_pending_authorized_release"
   }
 }

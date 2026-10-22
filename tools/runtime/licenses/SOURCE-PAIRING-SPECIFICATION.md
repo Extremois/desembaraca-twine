@@ -1,0 +1,128 @@
+# Especificação de Vinculação e Entrega de Fontes Correspondentes
+
+Este documento formaliza os requisitos de vinculação e o esquema de recibo para
+a entrega de fontes correspondentes (*corresponding source code*) ao lado de cada
+binário distribuído, atendendo conjuntamente à LGPL 2.1 §6(d), à EPL-2.0 §3.1 e
+às políticas de integridade de distribuição do Desembaraça Twine.
+
+## 1. Fundamentos contratuais e legais
+
+### 1.1 LGPL 2.1, Seções 6(a) e 6(d)
+
+A rota LGPL 2.1 §6(a)/§6(d) foi estabelecida em [SOURCE-DELIVERY-REVIEW.md](SOURCE-DELIVERY-REVIEW.md)
+e comprovada tecnicamente no checkpoint `bead45d` (relink com libc modificada e
+instruções completas em [REBUILD-SOURCES.md](../REBUILD-SOURCES.md)).
+
+- **LGPL 2.1 §6(a)**: A distribuição em fontes completas do trabalho e das bibliotecas
+  atende à permissão de modificação e relink do programa sem obrigar a entrega de
+  arquivos-objeto intermediários quando o material em fontes é suficiente e
+  acompanhado de receitas/scripts de compilação reproduzíveis.
+- **LGPL 2.1 §6(d)**: Se a distribuição do executável/biblioteca for feita mediante
+  oferta de acesso para cópia em local designado, deve-se oferecer acesso equivalente
+  para cópia dos materiais de fontes correspondentes *a partir do mesmo local*.
+  Não é permitido exigir que o usuário baixe ambos compulsoriamente nem postergar
+  o fornecimento das fontes para momento posterior à disponibilidade do binário.
+
+### 1.2 EPL-2.0, Seção 3.1
+
+O Graphviz é licenciado sob Eclipse Public License 2.0 (EPL-2.0). A seção 3.1(a)
+exige que o programa distribuído seja acompanhado do código fonte ou de oferta
+expressa de como obtê-lo sob termos conformes à EPL-2.0, mantendo todas as
+declarações de direitos autorais e licenças acessíveis offline no pacote.
+
+### 1.3 Apache-2.0 e componentes de terceiros
+
+O Desembaraça Twine é distribuído sob Apache-2.0. Nenhum componente com licença
+incompatível ou restrição proprietária é integrado. Materiais de terceiros
+(ColorBrewer Apache-2.0, musl MIT, Go BSD-3-Clause, W3C/ISO 8879:1986) preservam
+seus respectivos avisos intactos em `SOURCE-REFERENCES.txt` e no índice offline.
+
+## 2. Invariantes do par vinculador de entrega
+
+Para cada artefato executável (`artifact_id`) qualificado para distribuição, deve
+existir exatamente um par vinculador imutável composto por:
+
+1. **Arquivo binário candidato (`candidate.zip`)**:
+   - Pacote ZIP empacotado por `tools/runtime/pack-candidate.py`.
+   - Contém o executável `dot`, bibliotecas relocáveis privadas, arquivos de
+     licenças integrais, avisos offline e `SOURCE-REFERENCES.txt`.
+   - Identificado por `archive_sha256`, `archive_bytes`, `executable_sha256`,
+     `inventory_sha256` e `provenance_sha256`.
+
+2. **Arquivo de fontes correspondentes (`sources.tar.gz`)**:
+   - Tarball comprimido USTAR empacotado por `tools/runtime/pack-sources.py`.
+   - Contém o tarball oficial fixado do Graphviz (`graphviz.tar.gz`), a árvore
+     completa `lib/` e `LICENSE` do SDK Zig fixado, todas as receitas/scripts
+     de build em `tools/runtime/`, dependências internas do projeto,
+     `candidate-provenance.json` e `manifest.json`.
+   - Identificado por `archive_sha256`, `archive_bytes`, `executable_sha256`,
+     `provenance_sha256` e `manifest_sha256`.
+
+3. **Invariantes criptográficos compartilhados**:
+   - `artifact_id`: id idêntico em ambos os registros.
+   - `executable_sha256`: hash idêntico do binário `dot`.
+   - `provenance_sha256`: hash idêntico do registro de proveniência nativa.
+   - `application_revision`: commit Git exato do repositório.
+   - `recipe_revision`: hash SHA-256 da receita `tools/runtime/<artifact_id>.json`.
+
+## 3. Esquema canônico do recibo de pareamento (`pairing.json`)
+
+O recibo gerado por `tools/runtime/verify-source-pairing.py` segue o schema abaixo:
+
+```json
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "schema_version": 1,
+  "kind": "corresponding-source-delivery-pairing",
+  "artifact_id": "linux-glibc-x86_64",
+  "application_revision": "40-hex-digits",
+  "recipe_sha256": "64-hex-digits",
+  "executable_sha256": "64-hex-digits",
+  "provenance_sha256": "64-hex-digits",
+  "pairing_valid": true,
+  "candidate": {
+    "archive": "candidate.zip",
+    "sha256": "64-hex-digits",
+    "bytes": 1234567,
+    "inventory_sha256": "64-hex-digits",
+    "file_count": 480
+  },
+  "sources": {
+    "archive": "sources.tar.gz",
+    "sha256": "64-hex-digits",
+    "bytes": 68388251,
+    "file_count": 18175,
+    "sdk_files": 18102
+  },
+  "obligations": {
+    "lgpl_2_1_section_6_d": "Acesso equivalente para download das fontes completas disponibilizado no mesmo endpoint da distribuição binária",
+    "lgpl_2_1_section_6_a": "Fontes completas da biblioteca e do programa exportadas permitindo relink modificado sem dependência de objetos compilados",
+    "epl_2_0_section_3_1": "Fontes completas do Graphviz acompanhadas de declaração expressa de licença e avisos preservados",
+    "offline_notices": "Avisos SOURCE-REFERENCES.txt e textos integrais offline incorporados em ambos os arquivos"
+  },
+  "delivery_binding": {
+    "status": "unpromoted_pending_authorized_distribution",
+    "candidate_distribution_url": null,
+    "sources_distribution_url": null,
+    "channel": "provisional"
+  }
+}
+```
+
+## 4. Gates de distribuição e limites invioláveis
+
+1. **Artefatos temporários de CI não constituem distribuição pública**:
+   Execuções no GitHub Actions produzem artefatos transitórios com prazo de
+   retenção efêmero. Eles servem exclusivamente como evidência de qualificação
+   técnica e não satisfazem a obrigação de disponibilidade contínua das fontes.
+
+2. **Catálogo ativo permanece estritamente Windows**:
+   O arquivo `src/twine_edge_overlap/runtime-catalog.json` só pode incorporar
+   artefatos POSIX (Linux/macOS) após autorização humana formal, existência de
+   URLs HTTPS públicas imutáveis para ambos os arquivos (`candidate.zip` e
+   `sources.tar.gz`) e aprovação completa de todas as células alvo.
+
+3. **Invariância de recibos passados**:
+   Nenhuma revalidação ou empacotamento pode sobrescrever recibos históricos
+   ou alterar hashes registrados de revisões anteriores. Cada nova revisão
+   recebe seu próprio diretório de evidência datado.

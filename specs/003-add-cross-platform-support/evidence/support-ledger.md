@@ -5,6 +5,11 @@ Contagens de tarefas são rastreabilidade de trabalho, não aprovação de requi
 
 69 células; 138 slots Python; estados: {'pendente': 69}.
 
+T030/T066: [especificação de pareamento e entrega de fontes correspondentes](../../tools/runtime/licenses/SOURCE-PAIRING-SPECIFICATION.md):
+formalizada a vinculação de `candidate.zip` e `sources.tar.gz` via verify-source-pairing.py sob LGPL 2.1 §6(d) e EPL-2.0 §3.1,
+com recibo canônico `corresponding-source-delivery-pairing` e bloqueio de catálogo ativo mantido.
+69 células; 138 slots Python; estados: {'pendente': 69}; 57/84.
+
 T030: [alinhamento integral de licenças e relink §6(a)/§6(d) no ledger linux.json](../../tools/runtime/licenses/linux.json):
 `w3c_policy_reviews` e `glibc_retained_source_reviews` sincronizados com a conclusão da análise de aplicabilidade
 e a comprovação técnica da rota LGPL 2.1 §6(a)/§6(d), restando apenas a vinculação final das fontes na distribuição.
