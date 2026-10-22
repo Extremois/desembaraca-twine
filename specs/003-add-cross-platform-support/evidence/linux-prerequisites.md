@@ -196,3 +196,63 @@ regressão `39486677078` passaram com 236 testes cada.
 T076 permanece agregada à matriz: candidata remota final, outras células e
 gates comuns continuam pendentes, sem promoção ou alteração do catálogo.
 
+## Estratégia de obtenção de CPython 3.12 e 3.14 por família da matriz (T033)
+
+Conforme estabelecido em `contracts/support-policy.md` e na tarefa T033, a obtenção dos interpretadores CPython 3.12 e 3.14 para qualificação e uso do `desembaraca-twine` em qualquer distribuição Linux deve obedecer estritamente aos seguintes princípios:
+1. **Não substituição do Python do SO**: `/usr/bin/python3`, symlinks do sistema e bibliotecas em `/usr/lib/python*` nunca devem ser modificados, substituídos ou desinstalados. O SHA-256 do binário de sistema deve ser registrado antes e depois dos ensaios.
+2. **Sem exigência de `sudo` no uso normal**: a execução e a criação de ambientes virtuais devem ocorrer inteiramente no espaço de usuário do executor (`$HOME` ou diretório de trabalho de teste).
+3. **Não exclusão de versões antigas**: versões LTS mais antigas (como Ubuntu 18.04/20.04, RHEL 8, Debian 12) onde o Python padrão do SO é inferior a 3.12 utilizam interpretadores privados isolados (como `python-build-standalone`), sem exigir pacotes globais ou compilação local complexa.
+4. **Isolamento de venv e pip**: ambientes virtuais devem ser criados com `--copies` para evitar links frágeis para interpretadores voláteis, e `PIP_CACHE_DIR` deve apontar para diretório privado temporário para evitar contaminação do cache do usuário.
+5. **Pré-requisito em distribuições rolling**: em Arch Linux, openSUSE Tumbleweed e Manjaro, ambos os interpretadores (3.12 e 3.14) devem estar instalados e testados antes da captura canônica do fingerprint de inventário de pacotes.
+
+### Taxonomia por família de distribuição
+
+| Família | Versões da matriz | Python padrão do SO | Obtenção do slot 3.12 | Obtenção do slot 3.14 | Método de isolamento recomendado |
+|---|---|---|---|---|---|
+| **Ubuntu** | 24.04 (Noble) | 3.12.x | Padrão do sistema (`/usr/bin/python3`) | Standalone em `$HOME/.local/python314` | `venv --copies`, sem `sudo` |
+| **Ubuntu** | 22.04, 20.04, 18.04 | 3.10, 3.8, 3.6 | Standalone em `$HOME/.local/python312` | Standalone em `$HOME/.local/python314` | Extração isolada `install_only_stripped` |
+| **Ubuntu** | 26.04, 26.10 | 3.13 / 3.14 | Standalone ou pacote compatível | Padrão do sistema (`python3`) | `venv --copies` |
+| **Debian** | 12 (Bookworm) | 3.11.x | Standalone em `$HOME/.local/python312` | Standalone em `$HOME/.local/python314` | Extração de usuário sem alterar `apt` |
+| **Debian** | 13 (Trixie) | 3.12 / 3.13 | Padrão do sistema (`python3.12`) | Standalone em `$HOME/.local/python314` | `venv --copies` |
+| **Fedora** | 43, 44 | 3.13 / 3.14 | Pacote oficial `python3.12` ou standalone | Padrão do sistema (`python3.14`) | Instalação paralela de repositório ou standalone |
+| **RHEL / Rocky / Alma** | 8.10 | 3.6.8 | Standalone em `$HOME/.local/python312` | Standalone em `$HOME/.local/python314` | Extração de usuário, glibc 2.28 compatível |
+| **RHEL / Rocky / Alma** | 9.8 | 3.9.x | AppStream `python3.12` ou standalone | Standalone em `$HOME/.local/python314` | AppStream paralelo ou standalone |
+| **RHEL / Rocky / Alma** | 10.2 | 3.12.x | Padrão do sistema (`python3`) | Standalone em `$HOME/.local/python314` | `venv --copies` |
+| **openSUSE** | Leap 16.0 | 3.12.x | Padrão do sistema (`python3`) | Standalone em `$HOME/.local/python314` | `venv --copies` |
+| **openSUSE** | Tumbleweed | Rolling | Pacote `python312` ou standalone | Pacote `python314` ou standalone | Preparo pré-snapshot rolling |
+| **Arch / Manjaro** | Rolling / Stable | Rolling | Pacote oficial ou standalone | Pacote oficial ou standalone | Preparo pré-snapshot `pacman -Q` |
+| **Alpine Linux** | 3.21, 3.22, 3.23, 3.24 | 3.12 / 3.14 | `apk add python3 py3-pip` (3.12) | Repositório `testing` ou standalone musl | venv isolada com ensurepip |
+| **Mint / LMDE** | Mint 21/22, LMDE 7 | 3.10 / 3.12 | Segue base Ubuntu/Debian correspondente | Standalone em `$HOME/.local/python314` | `venv --copies`, sem `sudo` |
+| **postmarketOS** | v26.06 Generic | Alpine edge | Repositório `apk` oficial | Repositório `apk` oficial | venv isolada sem sobrescrever sistema |
+
+### Padrão de execução para scripts de qualificação
+
+Em cada ambiente, a criação das venvs de qualificação deve seguir a seguinte sequência determinística:
+
+```sh
+# 1. Definir caminhos isolados
+WORK_DIR="$(mktemp -d /tmp/twine-python-qual.XXXXXX)"
+VENV_312="$WORK_DIR/venv312"
+VENV_314="$WORK_DIR/venv314"
+export PIP_CACHE_DIR="$WORK_DIR/pip-cache"
+
+# 2. Registrar hash do Python do sistema antes
+SYSTEM_PYTHON_SHA_BEFORE="$(sha256sum /usr/bin/python3 2>/dev/null | awk '{print $1}' || true)"
+
+# 3. Criar venvs com isolamento estrito (--copies)
+"$PY312_BIN" -I -m venv --copies "$VENV_312"
+"$PY314_BIN" -I -m venv --copies "$VENV_314"
+
+# 4. Validar pip e módulos fundamentais
+"$VENV_312/bin/python" -I -m pip --version
+"$VENV_314/bin/python" -I -m pip --version
+"$VENV_312/bin/python" -I -c "import ctypes, sqlite3, ssl, zlib; print('Python 3.12 stdlib OK')"
+"$VENV_314/bin/python" -I -c "import ctypes, sqlite3, ssl, zlib; print('Python 3.14 stdlib OK')"
+
+# 5. Conferir que o Python do sistema permaneceu rigorosamente inalterado
+SYSTEM_PYTHON_SHA_AFTER="$(sha256sum /usr/bin/python3 2>/dev/null | awk '{print $1}' || true)"
+if [ "$SYSTEM_PYTHON_SHA_BEFORE" != "$SYSTEM_PYTHON_SHA_AFTER" ]; then
+    echo "ERRO: O Python do sistema foi modificado!" >&2
+    exit 1
+fi
+```

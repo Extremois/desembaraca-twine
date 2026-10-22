@@ -5,6 +5,11 @@ Contagens de tarefas são rastreabilidade de trabalho, não aprovação de requi
 
 69 células; 138 slots Python; estados: {'pendente': 69}.
 
+T033: [estratégia de obtenção de CPython 3.12/3.14 por família Linux](linux-prerequisites.md)
+documentada para todas as famílias da matriz (Ubuntu, Debian, Fedora, RHEL/Rocky/Alma, openSUSE,
+Arch/Manjaro, Alpine, Mint/LMDE/postmarketOS), com taxonomia por versão, venv isolada (--copies),
+PIP_CACHE_DIR privado e conferência estrita de invariância do Python do sistema. 69 células; 138 slots Python; estados: {'pendente': 69}; 57/84.
+
 T066/T051/T052: alinhamento do índice de integridade de distribuição e requisitos macOS.
 O [índice consolidado](distribution-integrity.json) registra a conclusão da revisão de aplicabilidade
 de licenças por componente (ColorBrewer, musl libc/math, glibc startup/nonshared §6(a)/§6(d),
