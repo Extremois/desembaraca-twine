@@ -1130,7 +1130,7 @@
       "colorbrewer_acknowledgment_verified": true,
       "supplementary_musl_notice_verified": false,
       "evidence": "specs/003-add-cross-platform-support/evidence/linux-component-obligations-ci-2026-10-20/glibc-x86_64/summary.json",
-      "pending": "Per-component applicability, ISO conditions, third-party provenance and complete source retention/offer"
+      "pending": "Final corresponding-source delivery binding and complete source retention/offer"
     },
     {
       "artifact_id": "linux-glibc-aarch64",
@@ -1145,7 +1145,7 @@
       "colorbrewer_acknowledgment_verified": true,
       "supplementary_musl_notice_verified": true,
       "evidence": "specs/003-add-cross-platform-support/evidence/linux-component-obligations-ci-2026-10-20/glibc-aarch64/summary.json",
-      "pending": "Per-component applicability, ISO conditions, third-party provenance and complete source retention/offer"
+      "pending": "Final corresponding-source delivery binding and complete source retention/offer"
     },
     {
       "artifact_id": "linux-musl-x86_64",
@@ -1160,7 +1160,7 @@
       "colorbrewer_acknowledgment_verified": true,
       "supplementary_musl_notice_verified": true,
       "evidence": "specs/003-add-cross-platform-support/evidence/linux-component-obligations-ci-2026-10-20/musl-x86_64/summary.json",
-      "pending": "Per-component applicability, ISO conditions, third-party provenance and complete source retention/offer"
+      "pending": "Final corresponding-source delivery binding and complete source retention/offer"
     },
     {
       "artifact_id": "linux-musl-aarch64",
@@ -1175,7 +1175,7 @@
       "colorbrewer_acknowledgment_verified": true,
       "supplementary_musl_notice_verified": true,
       "evidence": "specs/003-add-cross-platform-support/evidence/linux-component-obligations-ci-2026-10-20/musl-aarch64/summary.json",
-      "pending": "Per-component applicability, ISO conditions, third-party provenance and complete source retention/offer"
+      "pending": "Final corresponding-source delivery binding and complete source retention/offer"
     }
   ],
   "zig_tangent_history_reviews": [
@@ -1330,7 +1330,7 @@
     "approved": false,
     "qualified": false,
     "document": "tools/runtime/licenses/SOURCE-DELIVERY-REVIEW.md",
-    "document_sha256": "78969dea2610d69eacc916f894fcbd92e21b7122f1a8fe3d00a21f80e8eae670",
+    "document_sha256": "be71812a9b0d86c5f0a6f577fac8989b0a7fc8542cda124a4e19d91e60ed30e4",
     "evidence": "specs/003-add-cross-platform-support/evidence/source-access-notices-2026-10-20/summary.json",
     "evidence_sha256": "755b0f96542883bdae87f03e27e19d7c46f0ef5461144be84e7ea1a640e489bb",
     "native_notice_confirmation": true,
@@ -1366,7 +1366,6 @@
       ]
     },
     "separate_pending": [
-      "ISO entity-use conditions and other component applicability",
       "Platform qualification/catalog and macOS signing have their own tasks"
     ]
   }
