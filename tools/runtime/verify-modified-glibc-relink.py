@@ -27,9 +27,9 @@ COMMON_EDITS = (
     ),
     (
         'lib/libc/glibc/csu/elf-init-2.33.c',
-        '__libc_csu_init (int argc, char **argv, char **envp)\n{\n',
-        '__libc_csu_init (int argc, char **argv, char **envp)\n{\n'
-        '  extern const int _IO_stdin_used;\n'
+        'void\n__libc_csu_init (int argc, char **argv, char **envp)\n{\n',
+        'extern const int _IO_stdin_used;\n\n'
+        'void\n__libc_csu_init (int argc, char **argv, char **envp)\n{\n'
         '  __asm__ volatile ("nop" : : "r" (_IO_stdin_used));\n',
     ),
     (
@@ -65,6 +65,12 @@ def sha256_bytes(data):
 
 def detect_sdk_arch(sdk_root):
     sdk_root = Path(sdk_root)
+    by_name = [
+        arch for arch, (rel_path, _, _) in START_EDITS.items()
+        if sdk_root.name.startswith(f'zig-{arch}-') and (sdk_root / rel_path).is_file()
+    ]
+    if len(by_name) == 1:
+        return by_name[0]
     found = [
         arch for arch, (rel_path, _, _) in START_EDITS.items()
         if (sdk_root / rel_path).is_file()
@@ -265,8 +271,9 @@ def compare_relink_records(
 
     base_joined = AUDIT.allocated_source_observations(baseline_obs, baseline_alloc)
     mod_joined = AUDIT.allocated_source_observations(modified_obs, modified_alloc)
-    if (base_joined['other_allocated_sdk_inputs'] != ['libcompiler_rt.a']
-            or mod_joined['other_allocated_sdk_inputs'] != ['libcompiler_rt.a']):
+    expected_other_sdk = [] if arch == 'x86_64' else ['libcompiler_rt.a']
+    if (base_joined['other_allocated_sdk_inputs'] != expected_other_sdk
+            or mod_joined['other_allocated_sdk_inputs'] != expected_other_sdk):
         raise ValueError('Unexpected non-glibc allocated SDK inputs')
 
     base_sources = {item['path']: item for item in baseline_obs.get('sources', ())}

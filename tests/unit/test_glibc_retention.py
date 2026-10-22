@@ -169,16 +169,20 @@ class GlibcRetentionTests(unittest.TestCase):
             scope='build', input_path='cmd/dot/CMakeFiles/dot.dir/dot.c.o', input_sha256='d' * 64,
             member=None, input_section='.text', output_section='.text', bytes=256, executable=True,
         )
-        rt_sec = dict(
-            scope='sdk', input_path='/linux/cache/libcompiler_rt.a', input_sha256='e' * 64,
-            member='math.o', input_section='.text.math', output_section='.text', bytes=64, executable=True,
+        rt_sections = (
+            [dict(
+                scope='sdk', input_path='/linux/cache/libcompiler_rt.a', input_sha256='e' * 64,
+                member='math.o', input_section='.text.math', output_section='.text', bytes=64, executable=True,
+            )]
+            if arch == 'aarch64'
+            else []
         )
         baseline_alloc = dict(
             kind='lld-allocated-input-sections-not-source-closure',
             executable_sha256=base_exec,
             sections=[
                 copy.deepcopy(build_sec),
-                copy.deepcopy(rt_sec),
+                *copy.deepcopy(rt_sections),
                 dict(scope='sdk', input_path='/linux/cache/crt1.o', input_sha256='1' * 64,
                      member=None, input_section='.text', output_section='.text', bytes=38, executable=True),
                 dict(scope='sdk', input_path='/linux/cache/crt1.o', input_sha256='1' * 64,
@@ -194,7 +198,7 @@ class GlibcRetentionTests(unittest.TestCase):
             executable_sha256=mod_exec,
             sections=[
                 copy.deepcopy(build_sec),
-                copy.deepcopy(rt_sec),
+                *copy.deepcopy(rt_sections),
                 dict(scope='sdk', input_path='/linux/cache/crt1.o', input_sha256='5' * 64,
                      member=None, input_section='.text', output_section='.text', bytes=42, executable=True),
                 dict(scope='sdk', input_path='/linux/cache/crt1.o', input_sha256='5' * 64,
@@ -310,6 +314,10 @@ class GlibcRetentionTests(unittest.TestCase):
                     target = sdk_root / rel_path
                     target.parent.mkdir(parents=True, exist_ok=True)
                     target.write_bytes(('/* License notice */\n' + before_snippet).encode('utf-8'))
+                other_arch = 'aarch64' if arch == 'x86_64' else 'x86_64'
+                other_start = sdk_root / verifier.START_EDITS[other_arch][0]
+                other_start.parent.mkdir(parents=True, exist_ok=True)
+                other_start.write_bytes(b'/* Cross-target start.S also present in Zig SDK */\n')
                 receipt_path = root / 'edits.json'
                 receipt = verifier.modify_sdk(sdk_root, receipt_path, cache_dir)
                 self.assertEqual(receipt['arch'], arch)
