@@ -2212,3 +2212,46 @@ Ver [evidências consolidadas](evidence/modified-glibc-relink-2026-10-21/README.
 [ledger linux.json](../../tools/runtime/licenses/linux.json). A pendência de
 rebuild/relink controlado foi eliminada; entrega final equivalente de fontes e
 compatibilidade ISO/componentes permanecem pendentes. Total **57/84**, 27 pendentes.
+
+## T030 — aplicabilidade de entidades ISO/W3C e entrega de fontes alinhadas, 2026-10-22
+
+Encerramento formal da revisão de aplicabilidade sobre as declarações de entidades HTML/SVG e
+as condições ISO 8879:1986 em `tools/runtime/licenses/LINUX-COMPONENT-REVIEW.md` e no ledger
+`tools/runtime/licenses/linux.json`:
+1. As entidades HTML 4.01 (`lib/common/entities.html`) integram a Recomendação W3C sob
+   a *W3C Software Notice and License*, permitindo uso e redistribuição sem encargos.
+2. Os mapeamentos de caracteres e nomes de entidades constituem dados factuais de especificação
+   técnica, não monopolizáveis por direitos autorais. O precedente da Apache Software
+   Foundation ([LEGAL-386](https://issues.apache.org/jira/browse/LEGAL-386) e
+   [NETBEANS-853](https://issues.apache.org/jira/browse/NETBEANS-853)) confirma compatibilidade
+   com licenças de código aberto abertas (EPL-2.0 e Apache-2.0).
+3. A obrigação de retenção textual é integralmente satisfeita pelo arquivo
+   `W3C-HTML401-ENTITY-DECLARATION-NOTICES.txt` presente nos pacotes e fontes.
+
+O ledger `linux.json` removeu a pendência `"ISO entity-use conditions and other component applicability"`
+de `separate_pending` e atualizou `document_sha256` de `SOURCE-DELIVERY-REVIEW.md` para
+`be71812a9b0d86c5f0a6f577fac8989b0a7fc8542cda124a4e19d91e60ed30e4`, alinhando a comprovação
+de relink modificada com as obrigações da rota LGPL 2.1 §6(a)/§6(d). Todos os 5 workflows CI
+passaram no commit `8d0b35c`. A entrega final equivalente de fontes correspondentes segue
+como requisito pendente. Total **57/84**, 27 pendentes.
+
+## T066/T051/T052 — integridade de distribuição e requisitos macOS consolidados, 2026-10-22
+
+O índice de integridade de distribuição [distribution-integrity.json](evidence/distribution-integrity.json)
+foi atualizado para registrar a conclusão da análise de aplicabilidade de todas as dependências
+e subcomponentes empacotados (ColorBrewer sob Apache-2.0, musl libc/math sob MIT, glibc startup/nonshared
+sob LGPL 2.1 §6(a)/§6(d), Go `tan.zig` sob BSD-3-Clause e entidades W3C/ISO sob W3C Software License).
+As pendências no índice de integridade ficam restritas à vinculação da entrega final de fontes
+correspondentes (§6(d)/EPL-2.0 §3.1) e aos artefatos finais distribuídos e assinados.
+
+No ledger [macos.json](../../tools/runtime/licenses/macos.json), foram formalizados os requisitos
+técnicos de assinatura e notarização (`signing_and_notarization_requirements`): identidade
+`Developer ID Application`, runtime hardened, comandos da toolchain (`codesign`, `ditto`,
+`xcrun notarytool`) e verificação estrita sob Gatekeeper (`spctl --assess --type execute`) via
+[`tools/runtime/sign-macos.sh`](../../tools/runtime/sign-macos.sh) com atributo `com.apple.quarantine`
+preservado, sem desativação de SIP ou Gatekeeper.
+
+Os 5 workflows de CI foram validados com 100% de sucesso no commit `eb9b3bb` (Cross-platform
+foundation, Linux x64 glibc, Linux aarch64 glibc, Alpine musl x64/ARM64 3.21–3.24 e macOS Intel/Apple Silicon).
+Total mantido em **57/84** tarefas concluídas, 27 pendentes; catálogo ativo permanece restrito
+ao Windows qualificado.
