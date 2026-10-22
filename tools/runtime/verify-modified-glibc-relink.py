@@ -10,8 +10,10 @@ import argparse
 import hashlib
 import importlib.util
 import json
+import os
 from pathlib import Path
 import shutil
+import tempfile
 from unittest.mock import patch
 
 HERE = Path(__file__).resolve().parent
@@ -116,6 +118,7 @@ def modify_sdk(sdk_root, edit_receipt_path, cache_dir=None):
             leading_comment_sha256=sha256_bytes(after_notice),
         ))
     cache_cleared = False
+    cache_warmed = False
     if cache_dir is not None:
         cache_path = Path(cache_dir)
         if cache_path.is_symlink():
@@ -126,6 +129,27 @@ def modify_sdk(sdk_root, edit_receipt_path, cache_dir=None):
                 raise ValueError('Compiler cache path must be a dedicated cache directory outside sdk_root')
             shutil.rmtree(resolved_cache)
             cache_cleared = True
+            cxx_wrapper = resolved_cache.parent / 'cxx_compiler'
+            if cxx_wrapper.is_file() and not cxx_wrapper.is_symlink():
+                with tempfile.TemporaryDirectory(prefix='glibc-relink-warm-') as warm_dir:
+                    warm_root = Path(warm_dir)
+                    probe_src = warm_root / 'probe.cpp'
+                    probe_bin = warm_root / 'probe'
+                    probe_src.write_bytes(b'int main(void) { return 0; }\n')
+                    warm_env = {'PATH': '/usr/bin:/bin', 'LC_ALL': 'C'}
+                    for key in ('HOME', 'TMPDIR'):
+                        if key in os.environ:
+                            warm_env[key] = os.environ[key]
+                    warm = AUDIT.builder.run_bounded(
+                        [str(cxx_wrapper), str(probe_src), '-lm', '-o', str(probe_bin)],
+                        cwd=warm_root,
+                        env=warm_env,
+                        timeout=120,
+                        max_output=8 * 1024**2,
+                    )
+                    if warm.returncode != 0:
+                        raise ValueError('Failed to warm modified glibc SDK cache')
+                    cache_warmed = True
     receipt = dict(
         kind='modified-glibc-sdk-edit-receipt',
         approved=False,
@@ -134,6 +158,7 @@ def modify_sdk(sdk_root, edit_receipt_path, cache_dir=None):
         artifact_id='linux-glibc-' + arch,
         sdk_root=str(sdk_root),
         cache_cleared=cache_cleared,
+        cache_warmed=cache_warmed,
         edits=edits,
     )
     with edit_receipt_path.open('x', encoding='utf-8', newline='\n') as stream:

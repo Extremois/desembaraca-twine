@@ -319,9 +319,15 @@ class GlibcRetentionTests(unittest.TestCase):
                 other_start.parent.mkdir(parents=True, exist_ok=True)
                 other_start.write_bytes(b'/* Cross-target start.S also present in Zig SDK */\n')
                 receipt_path = root / 'edits.json'
-                receipt = verifier.modify_sdk(sdk_root, receipt_path, cache_dir)
+                cxx_wrapper = root / 'cxx_compiler'
+                cxx_wrapper.write_bytes(b'#!/usr/bin/python3\n')
+                with patch.object(verifier.AUDIT.builder, 'run_bounded') as run_bounded:
+                    run_bounded.return_value.returncode = 0
+                    receipt = verifier.modify_sdk(sdk_root, receipt_path, cache_dir)
+                    self.assertEqual(run_bounded.call_count, 1)
                 self.assertEqual(receipt['arch'], arch)
                 self.assertTrue(receipt['cache_cleared'])
+                self.assertTrue(receipt['cache_warmed'])
                 self.assertFalse(cache_dir.exists())
                 self.assertEqual(len(receipt['edits']), 4)
                 for row in receipt['edits']:
