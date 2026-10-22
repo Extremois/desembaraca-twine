@@ -5,6 +5,11 @@ Contagens de tarefas são rastreabilidade de trabalho, não aprovação de requi
 
 69 células; 138 slots Python; estados: {'pendente': 69}.
 
+T030: [alinhamento integral de licenças e relink §6(a)/§6(d) no ledger linux.json](../../tools/runtime/licenses/linux.json):
+`w3c_policy_reviews` e `glibc_retained_source_reviews` sincronizados com a conclusão da análise de aplicabilidade
+e a comprovação técnica da rota LGPL 2.1 §6(a)/§6(d), restando apenas a vinculação final das fontes na distribuição.
+69 células; 138 slots Python; estados: {'pendente': 69}; 57/84.
+
 T033: [estratégia de obtenção de CPython 3.12/3.14 por família Linux](linux-prerequisites.md)
 documentada para todas as famílias da matriz (Ubuntu, Debian, Fedora, RHEL/Rocky/Alma, openSUSE,
 Arch/Manjaro, Alpine, Mint/LMDE/postmarketOS), com taxonomia por versão, venv isolada (--copies),

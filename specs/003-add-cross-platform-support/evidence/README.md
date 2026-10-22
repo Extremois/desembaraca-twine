@@ -1,5 +1,7 @@
 # Registros por alvo
 
+Ledger de licenças Linux: [linux.json](../../tools/runtime/licenses/linux.json) sincronizado para registrar a cobertura completa da rota LGPL 2.1 §6(a)/§6(d) sobre objetos startup/nonshared retidos e encerramento da revisão de aplicabilidade de políticas W3C/ISO.
+
 Pré-requisitos Python Linux: [estratégia e taxonomia CPython 3.12/3.14 por família](linux-prerequisites.md) documentada para todas as famílias da matriz de suporte, com isolamento estrito de venv/pip, sem `sudo` e sem alteração do Python do SO.
 
 Integridade de distribuição e requisitos macOS: [índice consolidado](distribution-integrity.json) atualizado para registrar o encerramento da revisão de aplicabilidade de licenças por componente (ColorBrewer, musl, glibc startup/nonshared, Go e entidades HTML/SVG/ISO 8879:1986). O ledger [macos.json](../../tools/runtime/licenses/macos.json) incorpora a especificação formal de requisitos de assinatura Developer ID Application e notarização via `tools/runtime/sign-macos.sh` sob proteções normais do Gatekeeper (com quarentena preservada).

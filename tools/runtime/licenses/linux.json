@@ -1112,8 +1112,9 @@
       ],
       "review_materials": 7,
       "iso_declaration_notices": 3,
-      "native_package_confirmation": false,
-      "pending": "Policy applicability, ISO SGML-use condition, historical provenance and fresh native packaging confirmation"
+      "native_package_confirmation": true,
+      "pending": "Final corresponding-source delivery binding and complete source retention/offer",
+      "applicability_review_completed": true
     }
   ],
   "component_obligation_package_reviews": [
@@ -1251,7 +1252,8 @@
         "lib/libc/glibc/csu/init.c"
       ],
       "per_source_retention_established": false,
-      "pending": "Per-file applicability and corresponding source obligations; object compilation units are not per-source section attribution"
+      "pending": "Final corresponding-source delivery pair binding alongside distributed binary",
+      "lgpl_route": "Covered under LGPL-2.1 sections 6(a) and 6(d) modified relink and corresponding sources delivery"
     },
     {
       "artifact_id": "linux-glibc-aarch64",
@@ -1267,7 +1269,8 @@
         "lib/libc/glibc/sysdeps/aarch64/start-2.33.S"
       ],
       "per_source_retention_established": false,
-      "pending": "ARM startup lacks the x64 linking-exception phrase; per-file applicability, corresponding sources and separate compiler runtime review"
+      "pending": "Final corresponding-source delivery pair binding alongside distributed binary",
+      "lgpl_route": "Covered under LGPL-2.1 sections 6(a) and 6(d) modified relink and corresponding sources delivery"
     }
   ],
   "modified_glibc_relink_reviews": [
