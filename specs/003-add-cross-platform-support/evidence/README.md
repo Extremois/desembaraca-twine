@@ -1,5 +1,9 @@
 # Registros por alvo
 
+Revisão de entidades e condições ISO: [declarações de entidades HTML/SVG e condições ISO 8879:1986 concluídas](../../tools/runtime/licenses/LINUX-COMPONENT-REVIEW.md)
+no checkpoint `8d0b35c`, encerradas sob W3C Software Notice and License, dados factuais de mapeamento
+e precedente ASF LEGAL-386 / NETBEANS-853, com retenção textual comprovada nos pacotes e fontes.
+
 Reconstrução glibc modificada: [relink com biblioteca glibc modificada comprovado sob LGPL 2.1 §6(a)/§6(d)](modified-glibc-relink-2026-10-21/README.md)
 em `linux-glibc-x86_64` e `linux-glibc-aarch64` no checkpoint `bead45d`, sem recompilar
 objetos Graphviz e com zero chamadas de rede nativa no corpus.

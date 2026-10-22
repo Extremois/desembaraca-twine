@@ -5,6 +5,14 @@ Contagens de tarefas são rastreabilidade de trabalho, não aprovação de requi
 
 69 células; 138 slots Python; estados: {'pendente': 69}.
 
+T030: [revisão de entidades e condições ISO concluída](../../tools/runtime/licenses/LINUX-COMPONENT-REVIEW.md)
+no checkpoint `8d0b35c`: declarada a aplicabilidade das entidades HTML/SVG e encerrada a pendência
+ISO 8879:1986 no ledger `linux.json`. Dados factuais de mapeamento de caracteres sob W3C Software
+Notice and License e precedente ASF LEGAL-386 / NETBEANS-853 compatíveis com EPL-2.0 e Apache-2.0.
+Avisos textuais integrais preservados em `W3C-HTML401-ENTITY-DECLARATION-NOTICES.txt`. Relink glibc
+§6(a) comprovado no checkpoint `bead45d` e `document_sha256` de `SOURCE-DELIVERY-REVIEW.md` alinhado.
+Entrega equivalente de fontes correspondentes na rota §6(d)/EPL-2.0 §3.1 e gates de plataforma permanecem abertos; 57/84.
+
 T066: a [medição independente dos caches](cache-notices-more-2026-10-20/README.md)
 agora cobre as sete variantes glibc/musl/macOS/Windows, 14 slots Python e 28
 instalações wheel/sdist: 9.792 comparações de arquivos, 28 alterações recusadas
