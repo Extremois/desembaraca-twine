@@ -153,5 +153,20 @@
     "Prepare full per-build notices and corresponding-source material/immutable offer",
     "Approved artifact audit, authorized signing/notarization and native distributed acceptance"
   ],
-  "qualification": "Native build evidence only; no reviewed audit, distribution manifest or runtime catalog admission"
-}
+  "qualification": "Native build evidence only; no reviewed audit, distribution manifest or runtime catalog admission",
+  "signing_and_notarization_requirements": {
+    "identity_type": "Developer ID Application",
+    "runtime_hardened": true,
+    "toolchain_commands": [
+      "codesign --force --timestamp --options runtime --sign <identity>",
+      "codesign --verify --deep --strict",
+      "ditto -c -k --keepParent",
+      "xcrun notarytool submit <archive> --keychain-profile <profile> --wait",
+      "xcrun notarytool log <id> --keychain-profile <profile>",
+      "spctl --assess --type execute <executable>"
+    ],
+    "gatekeeper_enforcement": "Normal Gatekeeper policy; spctl must assess and approve with com.apple.quarantine preserved and without disabling Gatekeeper or SIP",
+    "script_reference": "tools/runtime/sign-macos.sh",
+    "status": "pending-authorized-developer-id-credentials"
+  }
+}

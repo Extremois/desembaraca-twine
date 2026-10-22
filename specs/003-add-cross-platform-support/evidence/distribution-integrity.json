@@ -330,8 +330,7 @@
     "sha256": "a603ce7eea40c5f533585e91c857103075946a8f2a2499edb6bab9cb9f240f3d"
   },
   "pending": [
-    "Per-component license applicability and compatibility approval",
-    "Corresponding sources and permanent source retention/offer",
+    "Final corresponding-source delivery binding and complete source retention/offer",
     "Final distributed bundles, macOS signing/notarization and complete cell acceptance"
   ],
   "limitations": [
@@ -358,5 +357,18 @@
     "sha256": "755b0f96542883bdae87f03e27e19d7c46f0ef5461144be84e7ea1a640e489bb"
   },
   "cache_evidence_applies_to_new_source_notice_archives": false,
-  "source_access_notice_update_scope": "Six newer candidate ZIPs verified separately; previous archive/cache receipts keep their original hashes"
+  "source_access_notice_update_scope": "Six newer candidate ZIPs verified separately; previous archive/cache receipts keep their original hashes",
+  "component_license_applicability_review": {
+    "status": "completed",
+    "linux_ledger": "tools/runtime/licenses/linux.json",
+    "linux_review": "tools/runtime/licenses/LINUX-COMPONENT-REVIEW.md",
+    "source_delivery_review": "tools/runtime/licenses/SOURCE-DELIVERY-REVIEW.md",
+    "reviewed_components": [
+      "ColorBrewer (Apache-2.0)",
+      "musl libc/math (MIT)",
+      "glibc retained objects/startup (LGPL-2.1-or-later §6(a)/§6(d))",
+      "Go math/tan (BSD-3-Clause)",
+      "W3C HTML 4.01 / SVG entity declarations & ISO 8879:1986 comments (W3C Software Notice and License, ASF LEGAL-386 / NETBEANS-853)"
+    ]
+  }
 }

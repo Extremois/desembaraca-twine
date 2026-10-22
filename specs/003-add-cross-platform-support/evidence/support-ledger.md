@@ -5,6 +5,15 @@ Contagens de tarefas são rastreabilidade de trabalho, não aprovação de requi
 
 69 células; 138 slots Python; estados: {'pendente': 69}.
 
+T066/T051/T052: alinhamento do índice de integridade de distribuição e requisitos macOS.
+O [índice consolidado](distribution-integrity.json) registra a conclusão da revisão de aplicabilidade
+de licenças por componente (ColorBrewer, musl libc/math, glibc startup/nonshared §6(a)/§6(d),
+Go math/tan e entidades HTML/SVG/ISO 8879:1986 sob W3C/ASF), restando apenas a vinculação final
+da entrega de fontes correspondentes e os pacotes finais distribuídos.
+O ledger [macos.json](../../tools/runtime/licenses/macos.json) incorpora a especificação formal de requisitos
+de assinatura Developer ID Application e notarização via `tools/runtime/sign-macos.sh` sob proteções normais
+do Gatekeeper (com quarentena preservada). 69 células; 138 slots Python; estados: {'pendente': 69}; 57/84.
+
 T030: [revisão de entidades e condições ISO concluída](../../tools/runtime/licenses/LINUX-COMPONENT-REVIEW.md)
 no checkpoint `8d0b35c`: declarada a aplicabilidade das entidades HTML/SVG e encerrada a pendência
 ISO 8879:1986 no ledger `linux.json`. Dados factuais de mapeamento de caracteres sob W3C Software

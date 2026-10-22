@@ -1,5 +1,7 @@
 # Registros por alvo
 
+Integridade de distribuição e requisitos macOS: [índice consolidado](distribution-integrity.json) atualizado para registrar o encerramento da revisão de aplicabilidade de licenças por componente (ColorBrewer, musl, glibc startup/nonshared, Go e entidades HTML/SVG/ISO 8879:1986). O ledger [macos.json](../../tools/runtime/licenses/macos.json) incorpora a especificação formal de requisitos de assinatura Developer ID Application e notarização via `tools/runtime/sign-macos.sh` sob proteções normais do Gatekeeper (com quarentena preservada).
+
 Revisão de entidades e condições ISO: [declarações de entidades HTML/SVG e condições ISO 8879:1986 concluídas](../../tools/runtime/licenses/LINUX-COMPONENT-REVIEW.md)
 no checkpoint `8d0b35c`, encerradas sob W3C Software Notice and License, dados factuais de mapeamento
 e precedente ASF LEGAL-386 / NETBEANS-853, com retenção textual comprovada nos pacotes e fontes.
