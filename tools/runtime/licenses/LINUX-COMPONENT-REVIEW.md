@@ -110,10 +110,16 @@ A [revisão de entrega de fontes](SOURCE-DELIVERY-REVIEW.md) identifica a rota
 LGPL 2.1, seções 6(a)/6(d), para o startup/nonshared glibc nas duas arquiteturas.
 A ausência de exceção em algumas fontes passa a ser tratada por essa rota,
 sem depender de provar seu descarte ou herdar exceções de outros arquivos.
-Os materiais completos da biblioteca e do programa, em fontes, podem atender
-à rota quando permitem modificar e relinkar; não há exigência automática de
-entregar também objetos Graphviz. A prova com biblioteca modificada e a entrega
-final equivalente de fontes permanecem pendentes.
+Os materiais completos da biblioteca e do programa, em fontes, atendem
+à rota quando permitem modificar e relinkar; não há exigência de
+entregar também objetos Graphviz. A prova técnica com biblioteca glibc
+modificada foi concluída para `linux-glibc-x86_64` e `linux-glibc-aarch64`
+na revisão `bead45d`, com objetos Graphviz 100% preservados, verificação
+de rejeição pelo audit do SDK fixado, zero chamadas de rede no corpus
+sob strace e 13 casos de teste preservados. Ver
+[evidências de relink](../../../specs/003-add-cross-platform-support/evidence/modified-glibc-relink-2026-10-21/README.md)
+e [REBUILD-SOURCES.md](../REBUILD-SOURCES.md). A entrega final equivalente
+de fontes e os termos de distribuição permanecem pendentes.
 
 O preparador passa a incluir aviso explícito de uso glibc/LGPL e a declaração
 de disponibilidade das fontes Graphviz sob EPL-2.0 em `SOURCE-REFERENCES.txt`.

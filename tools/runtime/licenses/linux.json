@@ -1270,6 +1270,42 @@
       "pending": "ARM startup lacks the x64 linking-exception phrase; per-file applicability, corresponding sources and separate compiler runtime review"
     }
   ],
+  "modified_glibc_relink_reviews": [
+    {
+      "artifact_id": "linux-glibc-x86_64",
+      "approved": false,
+      "qualified": false,
+      "revision": "bead45d8dafaa9f085bce8ff0aca7175dc3d462f",
+      "evidence": "specs/003-add-cross-platform-support/evidence/modified-glibc-relink-2026-10-21/summary.json",
+      "lgpl_section_6_mechanism": "LGPL-2.1-section-6a-and-6d-source-and-object-relink",
+      "parent_source_build_provenance_sha256": "1af947d403442f1668db333cd48e61902b62c40bb260d306509cd6b7485d1ff8",
+      "baseline_executable_sha256": "e712acb3f95800ba373096c21611e299b819daf67ae9b0981cb59ed6b9cb8ff6",
+      "modified_executable_sha256": "e4aac65b8657d424501321c609f8292634e9d0dc19da9902364427236e6f79e3",
+      "graphviz_build_inputs_unchanged": true,
+      "graphviz_allocated_sections_unchanged": true,
+      "pinned_sdk_audit_rejected_modified_build": true,
+      "corpus_passed": true,
+      "unicode_relocation_passed": true,
+      "network_syscalls_observed": 0
+    },
+    {
+      "artifact_id": "linux-glibc-aarch64",
+      "approved": false,
+      "qualified": false,
+      "revision": "bead45d8dafaa9f085bce8ff0aca7175dc3d462f",
+      "evidence": "specs/003-add-cross-platform-support/evidence/modified-glibc-relink-2026-10-21/summary.json",
+      "lgpl_section_6_mechanism": "LGPL-2.1-section-6a-and-6d-source-and-object-relink",
+      "parent_source_build_provenance_sha256": "463052e4ad857b3e989d09df28bbc1ffc40eb0024411d00bfcdefc82776b48b4",
+      "baseline_executable_sha256": "e5cca07b6a9a80b7ba9d58910baf25be550a62dbbb54e498f5f3da83103967bb",
+      "modified_executable_sha256": "10892040441e8c9c0d381c81ef40742f36f6e5e8e788647c2317fc04ef9eb21c",
+      "graphviz_build_inputs_unchanged": true,
+      "graphviz_allocated_sections_unchanged": true,
+      "pinned_sdk_audit_rejected_modified_build": true,
+      "corpus_passed": true,
+      "unicode_relocation_passed": true,
+      "network_syscalls_observed": 0
+    }
+  ],
   "historical_math_notice_reviews": [
     {
       "approved": false,
@@ -1313,8 +1349,9 @@
       "relying_on_all_files_linking_exception": false,
       "requires_per_source_instruction_attribution_to_exclude_files": false,
       "source_scope": "Preserve complete observed library source inputs conservatively; do not exclude files based on unproved discard",
+      "modified_library_relink_verified": true,
+      "modified_library_relink_evidence": "specs/003-add-cross-platform-support/evidence/modified-glibc-relink-2026-10-21/summary.json",
       "pending": [
-        "Controlled modified-library rebuild/relink and matching instructions",
         "Final corresponding-source pair binding and equivalent access alongside distributed binary",
         "Final distribution terms permitting personal modification/reverse engineering for debugging"
       ]

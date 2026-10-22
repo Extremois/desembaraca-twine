@@ -2178,3 +2178,33 @@ demais componentes/ISO. As provas de cache anteriores mantêm seus arquivos e
 não foram transferidas para os novos hashes. **57/84**, 27 pendentes, catálogo
 Windows; recibos finais locais, sem segundo commit de evidências.
 
+
+## T030 — reconstrução e relink de biblioteca glibc modificada comprovados, 2026-10-21
+
+Checkpoint `bead45d` aprovado nos runners nativos GitHub Actions:
+- `Linux Graphviz candidate` (x86_64, run `39707588053`, artefato `12396056020`)
+- `Linux ARM64 Graphviz candidate` (aarch64, run `39707588112`, artefato `12396220847`)
+- `macOS Graphviz candidates` (run `39707588111`)
+- `Cross-platform foundation` (run `39707588135`)
+
+A comprovação técnica da rota LGPL 2.1 §6(a) e §6(d) para o runtime/startup glibc
+(`crt1.o` e membros de `libc_nonshared.a`) foi concluída sem recompilar objetos do
+Graphviz (59 inputs de link e 620 seções alocadas em x64, 645 em ARM64 rigorosamente
+inalterados em bytes e hashes) e sem exigir fontes de terceiros excluídas.
+
+A modificação controlada das quatro fontes glibc observadas (`start-2.33.S`, `init.c`,
+`elf-init-2.33.c` e `fstat-2.32.c`) no SDK Zig isolado produziu novos executáveis:
+- x86_64: baseline `e712acb3f95800ba373096c21611e299b819daf67ae9b0981cb59ed6b9cb8ff6` -> modificado `e4aac65b8657d424501321c609f8292634e9d0dc19da9902364427236e6f79e3`
+- aarch64: baseline `e5cca07b6a9a80b7ba9d58910baf25be550a62dbbb54e498f5f3da83103967bb` -> modificado `10892040441e8c9c0d381c81ef40742f36f6e5e8e788647c2317fc04ef9eb21c`
+
+Ambos os executáveis modificados passaram no corpus de 13 casos sob `strace` (zero
+chamadas de rede nativa, controle de processo filho detectado, seis referências
+conferidas em diretório com espaços e acentos Unicode), foram rejeitados pela
+auditoria do SDK fixado e comprovaram aumento/retenção de `.rodata` e `libc_nonshared.a`.
+
+Ver [evidências consolidadas](evidence/modified-glibc-relink-2026-10-21/README.md),
+[resumo JSON](evidence/modified-glibc-relink-2026-10-21/summary.json),
+[REBUILD-SOURCES.md](../../tools/runtime/REBUILD-SOURCES.md) e
+[ledger linux.json](../../tools/runtime/licenses/linux.json). A pendência de
+rebuild/relink controlado foi eliminada; entrega final equivalente de fontes e
+compatibilidade ISO/componentes permanecem pendentes. Total **57/84**, 27 pendentes.

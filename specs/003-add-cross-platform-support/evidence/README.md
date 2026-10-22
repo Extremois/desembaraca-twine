@@ -1,5 +1,9 @@
 # Registros por alvo
 
+Reconstrução glibc modificada: [relink com biblioteca glibc modificada comprovado sob LGPL 2.1 §6(a)/§6(d)](modified-glibc-relink-2026-10-21/README.md)
+em `linux-glibc-x86_64` e `linux-glibc-aarch64` no checkpoint `bead45d`, sem recompilar
+objetos Graphviz e com zero chamadas de rede nativa no corpus.
+
 Incremento de fontes/avisos: [seis bundles conferidos no checkpoint 62489c8](source-access-notices-2026-10-20/README.md).
 Declaração EPL e aviso glibc/LGPL confirmados nos ZIPs, cinco workflows aprovados;
 compatibilidade e entrega final das fontes continuam pendentes. As provas de
