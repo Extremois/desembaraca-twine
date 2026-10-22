@@ -1,0 +1,32 @@
+{
+  "kind": "verified-unchanged-musl-engine-old-kernel-regression",
+  "passed": true,
+  "qualified": false,
+  "revision": "eea100c37599517e09b6626d1edb82b599a1b19c",
+  "workflow_run": 39515645035,
+  "artifact_id": 12307782009,
+  "artifact_sha256": "0bd160c8ca720e708549777d24f4e0bfe06a208a1cc32dd7ca5bd4b4ddf7f178",
+  "kernel": "4.15.0-212-generic",
+  "arch": "x86_64",
+  "cases": 13,
+  "engine_sha256": "f4dfee4e052704b1a7efdb7b6a4c43583ccaa062aec800b76224dae24eb2b69b",
+  "kvm": {
+    "enabled": true,
+    "present": true
+  },
+  "reports": [
+    {
+      "file": "native-summary.json",
+      "sha256": "590cdf8069531f5d1e7222c04af94cd002020f68b40b164a0fb8419b0e248da7"
+    },
+    {
+      "file": "guest.json",
+      "sha256": "bef08035a4004f75b050589f73638fc7aa7fac146adde7a20a33ce0766702d08"
+    },
+    {
+      "file": "qmp-kvm.json",
+      "sha256": "11ea5a70b9ea4a315991cc7f0c58c8f9f78449e51b54287810d861c386312ffc"
+    }
+  ],
+  "scope": "Static musl engine in Ubuntu KVM kernel; no installed application or native Alpine cell acceptance"
+}

@@ -1,0 +1,25 @@
+{
+  "kind": "local-candidate-archive",
+  "qualified": false,
+  "artifact_id": "macos-arm64",
+  "platform": "darwin",
+  "artifact_arch": "aarch64",
+  "abi": "darwin",
+  "archive": "candidate.zip",
+  "archive_sha256": "37c27809562066aa4ec30be4fd419af20e1d0636796e56347f06dbca75f7040b",
+  "archive_bytes": 1883041,
+  "inventory": "inventory.json",
+  "inventory_sha256": "a3c79768c0059e09db91c02433416ff6f9540ba95ab721c5d05c5616f400a97d",
+  "provenance_sha256": "2ae7be4291ed2facd349d20145641473da0a38c43d4037cee62dd16f8da9d3e3",
+  "file_count": 233,
+  "source_modes_checked": true,
+  "zip_modes": "from-validated-inventory",
+  "compression": "stored",
+  "pending": [
+    "dependency/license audit",
+    "native inspection/ABI",
+    "signing/notarization if applicable",
+    "real immutable distribution URL and runtime manifest",
+    "native cell acceptance"
+  ]
+}

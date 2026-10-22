@@ -1,0 +1,229 @@
+{
+  "kind": "current-wheel-sdist-offline-installation-not-support-qualification",
+  "passed": true,
+  "qualified": false,
+  "captured_at": "2026-10-20T21:29:56.618189+00:00",
+  "application_revision": "986518c015cb71044b129a433f78fbd01ce4112b",
+  "source_state": "current-source-content-addressed",
+  "tool_sha256": "edffb50300f8ceb04ce53ab33f389c76a6302943df6892210cd19391cf633dcd",
+  "python": "3.14.8",
+  "system": "Windows",
+  "arch": "AMD64",
+  "records": [
+    {
+      "mode": "wheel",
+      "archive_sha256": "16c0ffe8797606d7cb4b313133f32aa13bae1c86859c96b0b1637401af220a28",
+      "package_files_verified": 53,
+      "licenses_verified": {
+        "LICENSE": "29e490fcadfab8a7c67ba29f748c5b381fe32712ec477802182e3f36f0e821f4",
+        "NOTICE": "1ed39c4e8a25992bc92df9553bd72cad2f4191e61f7729672601a8ee41303045"
+      },
+      "installed_file_hashes": {
+        "twine_edge_overlap/__init__.py": "cee6e390d73f349b5b05bc4b2f9501f20e0ff761a7e27a60c95255115bc59b82",
+        "twine_edge_overlap/__main__.py": "482b8693e2fe6dbd732e3d7961e03827d3efa187bad11d29da188be580ebbeea",
+        "twine_edge_overlap/application.py": "e011ebe5ef1ab4a980238dd62b8ea1d950d4aac6172d9d2e5764a24bd226f3bd",
+        "twine_edge_overlap/cli.py": "8eabe90bc4f1b05dd33d46327b7c17bc9fa4eff5936f54360a9d71188a27c652",
+        "twine_edge_overlap/domain/__init__.py": "a756b6c72ddc6b46896c1901cddd723783adaef53e3b7d0d966e534df0ea26f3",
+        "twine_edge_overlap/domain/arcs.py": "72311c1e6938d33b8f1b03181323e5b32f484edbd5d2946b017a77644bdff28c",
+        "twine_edge_overlap/domain/geometry.py": "f88a67b9d9a4fff55edf4c709532619af0f87aebf5d0cd6bc6d60b0fb59cac48",
+        "twine_edge_overlap/domain/model.py": "0d82e3f3e0dd120df53f366ae1ddda129146f222f7ee3f01a7c06fbb18610a80",
+        "twine_edge_overlap/domain/result.py": "57697cfc3b7c629887200f9db54ccae63e19e4a1a109337639741038fbd4a546",
+        "twine_edge_overlap/domain/selection.py": "e6fc14964e95a40297057328574eee4bf548fc2f54a4bd250d0db6269293dc8f",
+        "twine_edge_overlap/engines/__init__.py": "60e046e374519cf1363b2d3546343673818d00c85278ad1c8c8c3651927719a3",
+        "twine_edge_overlap/engines/graphviz.py": "218dd40b9de3f78394286f96003a2f0aec3e7ef08955ce81479c1b319426a2a6",
+        "twine_edge_overlap/engines/process.py": "54219fb40a6c2f8a7db034f8454c9d31b77fd63ede38e09639ae7404fd7f7d81",
+        "twine_edge_overlap/errors.py": "4248a22e72943410bb1133206126ab096d143cbfd7b4b2314f994b847185c8cf",
+        "twine_edge_overlap/files.py": "301a50479ae75488263c4f966f1eb5299ddd5b65aad4280f52df0ccc55869186",
+        "twine_edge_overlap/formats/__init__.py": "54d6ee8fd9b5d60bf5227f761cbee4de07caf987e57c57657bc4454c96602f61",
+        "twine_edge_overlap/formats/profile.py": "14ca026f83b79ac01afb92d314ab6fa9cb6902c1ad11470e6cc57244398187e4",
+        "twine_edge_overlap/runtime-catalog.json": "525580c22ac27e58cfbf74ca6877e25f09a696bf07813ae4a1bdad059d72b762",
+        "twine_edge_overlap/runtime-manifest.json": "8aed45fdbd206069cf7e37df8b505a979acaa219bb3f013f2dd9c7f11e680f9d",
+        "twine_edge_overlap/runtime.py": "f595f4980bf6d5c6183d6237a79f01bb432f55e95ad2a3513360538ae7948593",
+        "twine_edge_overlap/runtime_catalog.py": "308de7483f2a9e2d6be69d708be892d4a0ba31256444dba93c2823220c0c7078",
+        "twine_edge_overlap/runtime_platform.py": "9c8772aa34589ae7fda615c9021e1fc14f1b93235018167d200f4e486ba26de8",
+        "twine_edge_overlap/runtime_snapshot.py": "12b7c0d10950ff218a441e52468b622d06db7f08c594d164824f83242ec6ee1a",
+        "twine_edge_overlap/support-matrix.json": "be3e8a77e3836d1125658c00a75fbf0e3584f1e26a166a053583336c29a5d295",
+        "twine_edge_overlap/third_party/graphviz-16.1.0/SOURCES.json": "8cd2a88eb55995f4f5c825173640c85cf81ef5416eb70feda31cdfa1278ed831",
+        "twine_edge_overlap/third_party/graphviz-16.1.0/ann.txt": "1cf89f4ddaa9d7ace5b94245915a7c473e2a585ca5fffe74ad4e7b51e9614097",
+        "twine_edge_overlap/third_party/graphviz-16.1.0/brotli.txt": "3d180008e36922a4e8daec11c34c7af264fed5962d07924aea928c38e8663c94",
+        "twine_edge_overlap/third_party/graphviz-16.1.0/bzip2.txt": "c6dbbf828498be844a89eaa3b84adbab3199e342eb5cb2ed2f0d4ba7ec0f38a3",
+        "twine_edge_overlap/third_party/graphviz-16.1.0/cairo.txt": "d4d94ac5251d63fd0c5fadb706899a39ed060f04a55ae2319de04846729a53f0",
+        "twine_edge_overlap/third_party/graphviz-16.1.0/expat.txt": "122f2c27000472a201d337b9b31f7eb2b52d091b02857061a8880371612d9534",
+        "twine_edge_overlap/third_party/graphviz-16.1.0/fontconfig.txt": "51a51aa9823704fd90bccc616cdd17ebabb5b2b3e9cbde886ca02c7002288067",
+        "twine_edge_overlap/third_party/graphviz-16.1.0/freetype.txt": "b73152045aafe7291796bb4bc442c35f4c3c4a8f7985ba13f0a3761945d4ce74",
+        "twine_edge_overlap/third_party/graphviz-16.1.0/fribidi.txt": "32434afcc8666ba060e111d715bfdb6c2d5dd8a35fa4d3ab8ad67d8f850d2f2b",
+        "twine_edge_overlap/third_party/graphviz-16.1.0/getopt-win32.txt": "a5681bf9b05db14d86776930017c647ad9e6e56ff6bbcfdf21e5848288dfaf1b",
+        "twine_edge_overlap/third_party/graphviz-16.1.0/gettext-libintl.txt": "3fe5361f24b7c49ba12911c08f5a33f9cb18871d95d9fb881f5b8a4793e04288",
+        "twine_edge_overlap/third_party/graphviz-16.1.0/glib.txt": "fa6f36630bb1e0c571d34b2bbdf188d08495c9dbf58f28cac112f303fc1f58fb",
+        "twine_edge_overlap/third_party/graphviz-16.1.0/graphviz.txt": "0becf16567beb77fa252b7664631dd177c8f9a1889e48995b45379c7130e5303",
+        "twine_edge_overlap/third_party/graphviz-16.1.0/gts.txt": "d245807f90032872d1438d741ed21e2490e1175dc8aa3afa5ddb6c8e529b58e5",
+        "twine_edge_overlap/third_party/graphviz-16.1.0/harfbuzz.txt": "ba8f810f2455c2f08e2d56bb49b72f37fcf68f1f4fade38977cfd7372050ad64",
+        "twine_edge_overlap/third_party/graphviz-16.1.0/libffi.txt": "67894089811f93fca47a76f85e017da6f8582d4ba0905963c6e0f1ad6df7a195",
+        "twine_edge_overlap/third_party/graphviz-16.1.0/libgd.txt": "005f4b6b0141d1bd11d371bbf7d4f67947f85a4906b7f5465f942204cf918ba3",
+        "twine_edge_overlap/third_party/graphviz-16.1.0/libiconv.txt": "f1765263d8a5016a9dfabd33a9f5e57049584e376f8b6f374ef942c8dace3966",
+        "twine_edge_overlap/third_party/graphviz-16.1.0/libjpeg-turbo.txt": "60c756742db3ad1913304e8b13f0e86e22e51adb50cc0b3333c163f7e45ceec1",
+        "twine_edge_overlap/third_party/graphviz-16.1.0/liblzma.txt": "72d7ef9c98be319fd34ce88b45203b36d5936f9c49e82bf3198ffee5e0c7d87e",
+        "twine_edge_overlap/third_party/graphviz-16.1.0/libpng.txt": "dfe5a536b0e5a531f844fb9c101a3089aca60772a503893b8e15f9457e369960",
+        "twine_edge_overlap/third_party/graphviz-16.1.0/libwebp.txt": "7806e0de568ec6ca764d6e52a3765fb81ee838ca190ad7c5263ac45be782f6eb",
+        "twine_edge_overlap/third_party/graphviz-16.1.0/microsoft-runtime.txt": "76c6045b291b9fbd6049453142f8ca6f10e3d0e57b63aff6e57fe8398f04cef1",
+        "twine_edge_overlap/third_party/graphviz-16.1.0/pango.txt": "d245807f90032872d1438d741ed21e2490e1175dc8aa3afa5ddb6c8e529b58e5",
+        "twine_edge_overlap/third_party/graphviz-16.1.0/pcre2.txt": "030087e2e8dd7c1bdd26057d25d4ded8f45bbf01ad458d68665ad04b8b0fbedf",
+        "twine_edge_overlap/third_party/graphviz-16.1.0/pixman.txt": "fac9270f0987b96ff4533fca3548c633e02083cbba4a0172a3b149b2e4019793",
+        "twine_edge_overlap/third_party/graphviz-16.1.0/tcl.txt": "c0a69a2bfd757361ec7e6143973b103c90409316b49e9c88db26ad6388e79f16",
+        "twine_edge_overlap/third_party/graphviz-16.1.0/tiff.txt": "0780558a8bfba0af1160ec1ff11ade4f41c0d7deafd6ecfc796b492a788e380d",
+        "twine_edge_overlap/third_party/graphviz-16.1.0/zlib.txt": "845efc77857d485d91fb3e0b884aaa929368c717ae8186b66fe1ed2495753243"
+      },
+      "entrypoints_verified": 3,
+      "import_from_venv": true,
+      "git_and_global_graphviz_absent": true,
+      "outside_checkout": true,
+      "engine_prepared": false,
+      "commands": [
+        {
+          "returncode": 0,
+          "stdout_sha256": "ad10f5595fb02998ad1555db0f36c64b67b13f520beef72c0e5925334ae7fe3e",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "returncode": 0,
+          "stdout_sha256": "063399c15f6b10e74b195edf6a63cab4c086e0d031b9733e329723b6021d0703",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "returncode": 0,
+          "stdout_sha256": "67f7b4f42fbd9a8c6e8b3cb6a7126734f6da2976d7834b289f1d82a2d607835a",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "returncode": 0,
+          "stdout_sha256": "67f7b4f42fbd9a8c6e8b3cb6a7126734f6da2976d7834b289f1d82a2d607835a",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "returncode": 0,
+          "stdout_sha256": "e5e61dc5977d8dd246e876d0b64e9144d4f3e14c04c4daf3f2ba2d745756d5ba",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ]
+    },
+    {
+      "mode": "sdist",
+      "archive_sha256": "022d4ba63396640adec0a252986a22555dd8aeb829af2bc24daf332b2cc68afb",
+      "package_files_verified": 53,
+      "licenses_verified": {
+        "LICENSE": "29e490fcadfab8a7c67ba29f748c5b381fe32712ec477802182e3f36f0e821f4",
+        "NOTICE": "1ed39c4e8a25992bc92df9553bd72cad2f4191e61f7729672601a8ee41303045"
+      },
+      "installed_file_hashes": {
+        "twine_edge_overlap/__init__.py": "cee6e390d73f349b5b05bc4b2f9501f20e0ff761a7e27a60c95255115bc59b82",
+        "twine_edge_overlap/__main__.py": "482b8693e2fe6dbd732e3d7961e03827d3efa187bad11d29da188be580ebbeea",
+        "twine_edge_overlap/application.py": "e011ebe5ef1ab4a980238dd62b8ea1d950d4aac6172d9d2e5764a24bd226f3bd",
+        "twine_edge_overlap/cli.py": "8eabe90bc4f1b05dd33d46327b7c17bc9fa4eff5936f54360a9d71188a27c652",
+        "twine_edge_overlap/domain/__init__.py": "a756b6c72ddc6b46896c1901cddd723783adaef53e3b7d0d966e534df0ea26f3",
+        "twine_edge_overlap/domain/arcs.py": "72311c1e6938d33b8f1b03181323e5b32f484edbd5d2946b017a77644bdff28c",
+        "twine_edge_overlap/domain/geometry.py": "f88a67b9d9a4fff55edf4c709532619af0f87aebf5d0cd6bc6d60b0fb59cac48",
+        "twine_edge_overlap/domain/model.py": "0d82e3f3e0dd120df53f366ae1ddda129146f222f7ee3f01a7c06fbb18610a80",
+        "twine_edge_overlap/domain/result.py": "57697cfc3b7c629887200f9db54ccae63e19e4a1a109337639741038fbd4a546",
+        "twine_edge_overlap/domain/selection.py": "e6fc14964e95a40297057328574eee4bf548fc2f54a4bd250d0db6269293dc8f",
+        "twine_edge_overlap/engines/__init__.py": "60e046e374519cf1363b2d3546343673818d00c85278ad1c8c8c3651927719a3",
+        "twine_edge_overlap/engines/graphviz.py": "218dd40b9de3f78394286f96003a2f0aec3e7ef08955ce81479c1b319426a2a6",
+        "twine_edge_overlap/engines/process.py": "54219fb40a6c2f8a7db034f8454c9d31b77fd63ede38e09639ae7404fd7f7d81",
+        "twine_edge_overlap/errors.py": "4248a22e72943410bb1133206126ab096d143cbfd7b4b2314f994b847185c8cf",
+        "twine_edge_overlap/files.py": "301a50479ae75488263c4f966f1eb5299ddd5b65aad4280f52df0ccc55869186",
+        "twine_edge_overlap/formats/__init__.py": "54d6ee8fd9b5d60bf5227f761cbee4de07caf987e57c57657bc4454c96602f61",
+        "twine_edge_overlap/formats/profile.py": "14ca026f83b79ac01afb92d314ab6fa9cb6902c1ad11470e6cc57244398187e4",
+        "twine_edge_overlap/runtime-catalog.json": "525580c22ac27e58cfbf74ca6877e25f09a696bf07813ae4a1bdad059d72b762",
+        "twine_edge_overlap/runtime-manifest.json": "8aed45fdbd206069cf7e37df8b505a979acaa219bb3f013f2dd9c7f11e680f9d",
+        "twine_edge_overlap/runtime.py": "f595f4980bf6d5c6183d6237a79f01bb432f55e95ad2a3513360538ae7948593",
+        "twine_edge_overlap/runtime_catalog.py": "308de7483f2a9e2d6be69d708be892d4a0ba31256444dba93c2823220c0c7078",
+        "twine_edge_overlap/runtime_platform.py": "9c8772aa34589ae7fda615c9021e1fc14f1b93235018167d200f4e486ba26de8",
+        "twine_edge_overlap/runtime_snapshot.py": "12b7c0d10950ff218a441e52468b622d06db7f08c594d164824f83242ec6ee1a",
+        "twine_edge_overlap/support-matrix.json": "be3e8a77e3836d1125658c00a75fbf0e3584f1e26a166a053583336c29a5d295",
+        "twine_edge_overlap/third_party/graphviz-16.1.0/SOURCES.json": "8cd2a88eb55995f4f5c825173640c85cf81ef5416eb70feda31cdfa1278ed831",
+        "twine_edge_overlap/third_party/graphviz-16.1.0/ann.txt": "1cf89f4ddaa9d7ace5b94245915a7c473e2a585ca5fffe74ad4e7b51e9614097",
+        "twine_edge_overlap/third_party/graphviz-16.1.0/brotli.txt": "3d180008e36922a4e8daec11c34c7af264fed5962d07924aea928c38e8663c94",
+        "twine_edge_overlap/third_party/graphviz-16.1.0/bzip2.txt": "c6dbbf828498be844a89eaa3b84adbab3199e342eb5cb2ed2f0d4ba7ec0f38a3",
+        "twine_edge_overlap/third_party/graphviz-16.1.0/cairo.txt": "d4d94ac5251d63fd0c5fadb706899a39ed060f04a55ae2319de04846729a53f0",
+        "twine_edge_overlap/third_party/graphviz-16.1.0/expat.txt": "122f2c27000472a201d337b9b31f7eb2b52d091b02857061a8880371612d9534",
+        "twine_edge_overlap/third_party/graphviz-16.1.0/fontconfig.txt": "51a51aa9823704fd90bccc616cdd17ebabb5b2b3e9cbde886ca02c7002288067",
+        "twine_edge_overlap/third_party/graphviz-16.1.0/freetype.txt": "b73152045aafe7291796bb4bc442c35f4c3c4a8f7985ba13f0a3761945d4ce74",
+        "twine_edge_overlap/third_party/graphviz-16.1.0/fribidi.txt": "32434afcc8666ba060e111d715bfdb6c2d5dd8a35fa4d3ab8ad67d8f850d2f2b",
+        "twine_edge_overlap/third_party/graphviz-16.1.0/getopt-win32.txt": "a5681bf9b05db14d86776930017c647ad9e6e56ff6bbcfdf21e5848288dfaf1b",
+        "twine_edge_overlap/third_party/graphviz-16.1.0/gettext-libintl.txt": "3fe5361f24b7c49ba12911c08f5a33f9cb18871d95d9fb881f5b8a4793e04288",
+        "twine_edge_overlap/third_party/graphviz-16.1.0/glib.txt": "fa6f36630bb1e0c571d34b2bbdf188d08495c9dbf58f28cac112f303fc1f58fb",
+        "twine_edge_overlap/third_party/graphviz-16.1.0/graphviz.txt": "0becf16567beb77fa252b7664631dd177c8f9a1889e48995b45379c7130e5303",
+        "twine_edge_overlap/third_party/graphviz-16.1.0/gts.txt": "d245807f90032872d1438d741ed21e2490e1175dc8aa3afa5ddb6c8e529b58e5",
+        "twine_edge_overlap/third_party/graphviz-16.1.0/harfbuzz.txt": "ba8f810f2455c2f08e2d56bb49b72f37fcf68f1f4fade38977cfd7372050ad64",
+        "twine_edge_overlap/third_party/graphviz-16.1.0/libffi.txt": "67894089811f93fca47a76f85e017da6f8582d4ba0905963c6e0f1ad6df7a195",
+        "twine_edge_overlap/third_party/graphviz-16.1.0/libgd.txt": "005f4b6b0141d1bd11d371bbf7d4f67947f85a4906b7f5465f942204cf918ba3",
+        "twine_edge_overlap/third_party/graphviz-16.1.0/libiconv.txt": "f1765263d8a5016a9dfabd33a9f5e57049584e376f8b6f374ef942c8dace3966",
+        "twine_edge_overlap/third_party/graphviz-16.1.0/libjpeg-turbo.txt": "60c756742db3ad1913304e8b13f0e86e22e51adb50cc0b3333c163f7e45ceec1",
+        "twine_edge_overlap/third_party/graphviz-16.1.0/liblzma.txt": "72d7ef9c98be319fd34ce88b45203b36d5936f9c49e82bf3198ffee5e0c7d87e",
+        "twine_edge_overlap/third_party/graphviz-16.1.0/libpng.txt": "dfe5a536b0e5a531f844fb9c101a3089aca60772a503893b8e15f9457e369960",
+        "twine_edge_overlap/third_party/graphviz-16.1.0/libwebp.txt": "7806e0de568ec6ca764d6e52a3765fb81ee838ca190ad7c5263ac45be782f6eb",
+        "twine_edge_overlap/third_party/graphviz-16.1.0/microsoft-runtime.txt": "76c6045b291b9fbd6049453142f8ca6f10e3d0e57b63aff6e57fe8398f04cef1",
+        "twine_edge_overlap/third_party/graphviz-16.1.0/pango.txt": "d245807f90032872d1438d741ed21e2490e1175dc8aa3afa5ddb6c8e529b58e5",
+        "twine_edge_overlap/third_party/graphviz-16.1.0/pcre2.txt": "030087e2e8dd7c1bdd26057d25d4ded8f45bbf01ad458d68665ad04b8b0fbedf",
+        "twine_edge_overlap/third_party/graphviz-16.1.0/pixman.txt": "fac9270f0987b96ff4533fca3548c633e02083cbba4a0172a3b149b2e4019793",
+        "twine_edge_overlap/third_party/graphviz-16.1.0/tcl.txt": "c0a69a2bfd757361ec7e6143973b103c90409316b49e9c88db26ad6388e79f16",
+        "twine_edge_overlap/third_party/graphviz-16.1.0/tiff.txt": "0780558a8bfba0af1160ec1ff11ade4f41c0d7deafd6ecfc796b492a788e380d",
+        "twine_edge_overlap/third_party/graphviz-16.1.0/zlib.txt": "845efc77857d485d91fb3e0b884aaa929368c717ae8186b66fe1ed2495753243"
+      },
+      "entrypoints_verified": 3,
+      "import_from_venv": true,
+      "git_and_global_graphviz_absent": true,
+      "outside_checkout": true,
+      "engine_prepared": false,
+      "commands": [
+        {
+          "returncode": 0,
+          "stdout_sha256": "9778cbbe2af439d0d4a41228b8626d934a7d6a31c45a8236fc72a62d3dbc770a",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "returncode": 0,
+          "stdout_sha256": "7005a51d3d939fb0e9d985a30b5882e1c5b689271a8d5c16bb6d0a5fbf0781a4",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "returncode": 0,
+          "stdout_sha256": "063399c15f6b10e74b195edf6a63cab4c086e0d031b9733e329723b6021d0703",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "returncode": 0,
+          "stdout_sha256": "67f7b4f42fbd9a8c6e8b3cb6a7126734f6da2976d7834b289f1d82a2d607835a",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "returncode": 0,
+          "stdout_sha256": "67f7b4f42fbd9a8c6e8b3cb6a7126734f6da2976d7834b289f1d82a2d607835a",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "returncode": 0,
+          "stdout_sha256": "dba96bd74bbbda8499d39ca1b4f261e06efc51482a336c46905329caecc5a540",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ]
+    }
+  ],
+  "build_tools": [
+    {
+      "name": "packaging-26.3-py3-none-any.whl",
+      "sha256": "d7193f7c8e4e93f444fde0262bf90af30e16fa0ad0ad44cb553c87339b23cd1c"
+    },
+    {
+      "name": "setuptools-84.2.1-py3-none-any.whl",
+      "sha256": "ca140b45d5325a9478f880e351484f62fef15f336462e449ca0c03c873d589c2"
+    },
+    {
+      "name": "wheel-0.48.0-py3-none-any.whl",
+      "sha256": "3217dcc807155e45db462d7ef2431f5ddda0d7273b700d05a67b271ceb1287ab"
+    }
+  ],
+  "limitations": [
+    "Current development packages, not final remotely distributed candidates",
+    "Installation and help only; no native engine, runtime acquisition or per-cell qualification"
+  ]
+}

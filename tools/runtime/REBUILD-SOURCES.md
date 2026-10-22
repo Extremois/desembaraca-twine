@@ -5,6 +5,15 @@ contêm `sources.tar.gz` e um
 recibo SHA-256. É material para revisão, ainda sem aprovação de oferta completa
 de fontes ou publicação permanente. Não é necessário para usar o runtime.
 
+As obrigações da entrega final e a rota escolhida para glibc estão descritas
+em [revisão de entrega de fontes](licenses/SOURCE-DELIVERY-REVIEW.md).
+O planejamento usa entrega completa com acesso equivalente, conforme LGPL
+2.1, seções 6(a)/6(d). Não foi emitida a oferta escrita de três anos da
+alternativa 6(c). Reconstruir o programa original e relinkar `dot` com as
+fontes `glibc` retidas modificadas (sem recompilar os objetos Graphviz) são
+verificados nos workflows nativos `x86_64` e `aarch64`; o vínculo final do
+pacote de fontes correspondente ao artefato distribuído continua pendente.
+
 ## Recuperação das fontes por origens públicas
 
 As receitas e os auxiliares usados nas candidatas da revisão `7d0476f` estão
@@ -46,7 +55,7 @@ O pin selecionado é preservado integralmente no relatório; a opção não alte
 o pin padrão nem aprova licenças. Sem a opção, a revisão `7d0476f` continua fixada.
 O arquivo de pin é limitado a 64 KiB e o ZIP público a 128 MiB.
 
-A revisão atual `47844106ff072cad005a8a1c795153c658b2bc89` possui seu pin em
+Uma revisão adicional já conferida, `47844106ff072cad005a8a1c795153c658b2bc89`, possui seu pin em
 `specs/003-add-cross-platform-support/evidence/public-source-recovery-current-2026-10-20/project-pin.json`.
 Use o ZIP público dessa revisão e a exportação de fontes correspondente ao
 mesmo build, mantendo os arquivos Graphviz/SDK fixados acima:
@@ -132,6 +141,34 @@ o log e a nova proveniência. Para experimentar alterações privadas nas fontes
 glibc/musl, edite a cópia do SDK antes de executar `build-common.py`; o compilador
 continua conferido pelo hash, mas as auditorias da candidata original devem
 recusar essas fontes modificadas. Alterações não recebem aprovação automática.
+
+## Relink controlado com fontes glibc modificadas (LGPL 2.1 §6(a)/§6(d))
+
+Para relinkar `dot` contra versões modificadas das quatro fontes `glibc`
+observadas (`lib/libc/glibc/sysdeps/{x86_64,aarch64}/start-2.33.S`,
+`lib/libc/glibc/csu/init.c`, `lib/libc/glibc/csu/elf-init-2.33.c` e
+`lib/libc/glibc/io/fstat-2.32.c`) sem recompilar os objetos Graphviz já
+gerados em `/tmp/twine-rebuild-output/build`:
+
+```sh
+python3 tools/runtime/relink-zig.py --source-output /tmp/twine-rebuild-output --output /tmp/twine-rebuild-linked --zig /tmp/twine-rebuild-sdk/sdk/zig-x86_64-linux-0.15.2/zig
+python3 tools/runtime/audit-glibc-objects.py --linked-build /tmp/twine-rebuild-linked --sdk-root /tmp/twine-rebuild-sdk/sdk/zig-x86_64-linux-0.15.2 --sdk-archive /tmp/twine-rebuild-sdk/zig.tar.xz --report /tmp/twine-rebuild-linked/glibc-object-sources.json
+python3 tools/runtime/verify-modified-glibc-relink.py --modify-sdk --sdk-root /tmp/twine-rebuild-sdk/sdk/zig-x86_64-linux-0.15.2 --cache-dir /tmp/twine-rebuild-sdk/cache --edit-receipt /tmp/twine-modified-glibc-edits.json
+python3 tools/runtime/relink-zig.py --source-output /tmp/twine-rebuild-output --output /tmp/twine-modified-glibc-linked --zig /tmp/twine-rebuild-sdk/sdk/zig-x86_64-linux-0.15.2/zig
+```
+
+Em ARM64, substitua `zig-x86_64-linux-0.15.2` por `zig-aarch64-linux-0.15.2` e
+os diretórios por `/tmp/twine-arm64-*`. O passo `--modify-sdk` invalida apenas
+o cache privado do Zig (`/tmp/twine-rebuild-sdk/cache`) para que `relink-zig.py`
+recompile exclusivamente `crt1.o` e `libc_nonshared.a` e relinke os 181 objetos
+Graphviz existentes em `/tmp/twine-rebuild-output/build` sem recompilá-los.
+O verificador `--verify` confirma que os 181 objetos Graphviz e suas seções
+alocadas permanecem idênticos, que os três objetos `glibc` retidos
+(`crt1.o`, `libc_nonshared.a(elf-init-2.33.o)` e
+`libc_nonshared.a(fstat-2.32.o)`) incorporam as modificações (incluindo
+`.rodata` de `init.c`), que a auditoria do SDK pinado original rejeita o build
+modificado e que o executável relinkado passa nos 13 casos do corpus público e
+na realocação Unicode com zero syscalls de rede sob `strace`.
 
 O corpus público e o observador de rede exigem também o checkout de testes e
 `src/` da revisão correspondente do projeto, mais `strace`. Esses arquivos da

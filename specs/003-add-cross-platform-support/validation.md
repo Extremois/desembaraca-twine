@@ -1,5 +1,13 @@
 # Evidência de implementação — feature 003
 
+**Integração instalada com motores privados — 2026-10-20**: [recibos conferidos](evidence/installed-private-engines-2026-10-20/runtime/summary.json) registram 16 instalações wheel/sdist nos quatro hosts POSIX × dois Pythons, com 208 casos e 96 referências zeradas. Código instalado e dados/notices conferidos; driver externo sem aplicação fonte, cache e probes finais reais, preservação de originais/semântica e modos 0755/0700. Obtenção controlada e guard de rede Python permanecem explícitos; estados de proteção macOS não foram alterados e não há aprovação de assinatura/quarentena. Três workflows aprovados em `d90b567`; a fundação tem 242 testes por job, com skips registrados. Novos índices parciais por plataforma apontam a mesma revisão; T036/T048/T056/T078 continuam abertas para candidata final e gates restantes. **57/84**, catálogo só Windows. Checkpoint enviado; recibos finais locais. Ver [escopo e reprodução](evidence/installed-private-engines-2026-10-20/README.md).
+
+**T078 — instalação wheel/sdist no CI, 2026-10-20**: [índice canônico](evidence/package-installation.json) e [recibos conferidos](evidence/current-packages-2026-10-20/ci-current/summary.json) comprovam 20 instalações/60 invocações de entrypoint em dez combinações hospedadas, nos dois Pythons. Cada formato preservou 53 arquivos de pacote e LICENSE/NOTICE; importação pelo venv externo, origem do pip e ausência de Git/Graphviz global foram verificados. Instalações não fizeram acesso a índice, usando wheelhouse privado no sdist; nenhum motor preparado pelo help. Ambos workflows finais passaram em `23c0663`: instalação `39509399309` e fundação `39509399274`, seis jobs com 239 testes. Skips permanecem explícitos; a suíte local tem cinco testes glibc adicionais ainda não enviados. A correção de aliases de temporários e as tentativas anteriores estão preservadas na revisão. T078 continua parcial para candidatas finais remotas e demais imagens/células/motor. Total **57/84**, catálogo só Windows; checkpoints necessários enviados e recibos finais locais.
+
+**T080 concluída — 2026-10-20**: [auditoria atual dos mecanismos](evidence/security-audit-2026-10-20/README.md) fecha limites/privacidade/escopo de escrita descritos na tarefa. Três execuções novas de 59 contratos passaram, com hashes e skips explícitos: Windows CPython 3.12/3.14 e WSL existente 3.14. As fontes e contratos existentes correspondem ao commit dos seis jobs CI preservados, incluindo os contratos POSIX. O relatório anterior foi preservado e o consolidado `security-limits.json` registra escopo, evidência, correção da contagem de subtestes e limitações. A T080 não substitui ensaios de pacotes finais, licenças, assinatura ou aceite por célula: T030/T051/T066/T076/T078/T082 e demais tarefas de plataforma continuam abertas. Total atual **57/84**, 27 pendentes; catálogo somente Windows, sem novo commit.
+
+**T030 — cruzamento glibc por conteúdo, 2026-10-20**: [recibo e reprodução](evidence/glibc-retained-source-review-2026-10-20/README.md) vinculam seis objetos retidos, de dois motores nativos preservados, às respectivas observações de fonte; seis fontes distintas e seus avisos foram reconferidos no SDK fixado. A revisão passa a distinguir a ausência da exceção adicional no startup ARM64, sem transferir termos entre fontes do objeto combinado `crt1.o`. Cinco testes novos cobrem integridade/identidade/ambiguidade e limites de atribuição por fonte. Fundação local aprovada com 241 testes em cada Python 3.12/3.14, oito skips por execução; ledger de licenças conferido pelo reprodutor. T030 continua aberta para auditoria completa; sem nova execução nativa, publicação ou commit. Total **56/84**.
+
 **T026 concluída — receita privada musl x64, 2026-10-20**: [revisão dos critérios](evidence/linux-x64-kernel-baselines-2026-10-20/musl-recipe-completion.json) vincula o mesmo motor/proveniência aos oito slots Alpine 3.21–3.24 × Python 3.12/3.14 e ao ensaio KVM no Linux 4.15.0-212. Motor permaneceu estático, sem interpretador/seção dinâmica/NEEDED/versões GLIBC; 13 grafos no kernel antigo foram reconferidos após download. Nos userlands Alpine, seis referências zeradas, preservação e cache offline passaram em cada slot. Tamanho/contagem do pacote dentro dos limites. Isso fecha construção/receita/mínimo de kernel da T026; o guest continua identificado como Ubuntu e os userlands como containers. T044 mantém a qualificação nativa de cada Alpine e seus kernels, T030/T031 mantêm auditoria/catálogo e ARM64 não herda o resultado. Regressão glibc também aprovada no mesmo workflow e conferida após download; ambos os motores preservados. Seis jobs CI com 231 testes aprovados. Total **56/84**, 28 pendentes. Um checkpoint necessário `1836681` enviado; recibos finais locais para o próximo commit necessário.
 
 **Baseline de kernel musl x64 preparado em 2026-10-20**: workflow KVM passa a executar glibc e musl em jobs independentes, reutilizando os motores `43ce8d…`/`f4dfee…` sem recompilar. Seleção valida artifact_id/ABI/CPU/proveniência/hash; probe do guest lê ELF64 antes de executar e exige ausência de interpretador/seção dinâmica para musl, sem aplicar ldd ao estático. Preparo local conferiu ambos os pacotes reais e 13 DOTs por ABI; teste recusa ABI trocada, fonte errada, ELF dinâmico/ARM e tabelas truncadas. Ensaio musl busca comprovar o mínimo Linux 4.15 da receita, complementar aos oito slots Alpine x64 já observados; não transforma o guest Ubuntu em aceite nativo Alpine. Execução CI pendente; T026 aberta até conferir o resultado, T044 preservada. Total **55/84**.
@@ -2020,4 +2028,153 @@ kill-on-exit; driver encerra somente seu guest efêmero inclusive após falha.
 T037/T078/T080 parciais: aquisição inicial controlada, candidata remota final,
 Pro, Twine, demais limites/gates/células continuam pendentes. Nenhuma promoção,
 catálogo Windows; 56/84. Recibos finais locais.
+
+## Recuperação instalada Ubuntu 18.04 x64 — 2026-10-20
+
+Workflow `39486677086`, revisão `58f69b0`, aprovado: oito cenários por Python
+3.12.15/3.14.8 no guest KVM, com wheel instalado, motor privado real e tracing.
+Cada cenário executou seis referências offline: 48 por Python. Os três crashes
+reais via os._exit liberaram locks e mantiveram a seleção correta antes/depois
+da publicação; staging órfão preservado. Concorrência entre dois processos fez
+uma aquisição e selecionou a mesma geração reutilizável offline. Reparo falho
+preservou a geração anterior e permitiu nova tentativa; handles antigos seguiram
+utilizáveis. Negação de execução ocorreu por modo real do arquivo; transferência,
+ENOSPC e bytes corrompidos são injeções declaradas, sem encher disco.
+
+Traces reprocessados após download: 245 execuções do motor por Python, zero
+syscalls de rede no corpus ampliado, controle positivo detectado. Os 53 arquivos
+do wheel coincidem com o commit; Python do SO preservado. Regressão `39486677078`:
+seis jobs aprovados, 236 testes cada. [Recibos](evidence/ubuntu1804-installed-recovery-2026-10-20/summary.json).
+Pré-ensaio WSL separado e sem qualificação. T076/T037/T078/T080 parciais; demais
+células/candidata final/Pro/gates comuns pendentes. Catálogo Windows, 56/84.
+Checkpoint enviado; recibos finais locais até o próximo commit necessário.
+
+## Instalação remota do código atual — 2026-10-20
+
+README PT/EN e quickstart usam agora a revisão pública imutável `d90b567`.
+Workflow `39513702063`, no checkpoint `752b6c3`: dez instalações aprovadas em
+Ubuntu x64/ARM64, macOS Intel/Apple Silicon e Windows hospedado, CPython 3.12/3.14.
+Todos os 53 arquivos Python/dados/avisos e LICENSE/NOTICE conferidos após
+instalação, origem SHA-256 única registrada pelo pip, três entrypoints e importação
+externa aprovados. Venvs novas, perfil isolado, PATH sem Git/Graphviz; help não
+preparou motor. [Recibos e limites](evidence/documented-installation-2026-10-20/README.md).
+Regressão `39513702103`: seis jobs aprovados, 242 testes por job, skips explícitos.
+T078 continua parcial: não é candidata final com motor POSIX qualificado nem
+aceite de toda a matriz. Catálogo Windows, **57/84**; recibos finais locais.
+
+## T076 — recuperação ampliada em pacotes instalados, 2026-10-20
+
+Checkpoint `a00efdd`; workflow `39514473848` aprovado nos oito slots Ubuntu
+24.04 x64/ARM64 e macOS Intel/Apple Silicon × CPython 3.12/3.14. Wheel/sdist
+externos, aplicação e motor reais: quatro falhas por instalação, 64 cenários
+e 384 referências offline zeradas após as falhas, com seleção anterior e
+handle preservados. Transferência/ENOSPC/corrupção controlados; negação real
+de execução por chmod na nova geração. Bloqueio de rede somente Python.
+[Recibos e limites](evidence/installed-posix-recovery-2026-10-20/README.md).
+
+Dez jobs de instalação `39514473842` e seis de regressão `39514473838`
+também passaram; 243 testes por job. Local 3.14: 248 testes; 3.12: sete
+testes focados do verificador. [Índice integral T076](evidence/recovery.json)
+preserva 69 células/138 slots, dez slots com observação nativa parcial em
+cinco células, incluindo a revisão Ubuntu 18.04 anterior. Não há fechamento
+integral: crash/concorrência nos novos runners, candidata final, demais células
+e gates comuns pendentes. Gatekeeper/SIP mantidos no estado anterior, sem
+assinatura/notarização/quarentena aprovadas; SIP já desabilitado. Catálogo
+Windows, **57/84**; recibos finais locais, sem segundo commit.
+
+## T076 — crash e concorrência nos pacotes POSIX instalados, 2026-10-20
+
+Checkpoint `eea100c`; workflow `39515644989`: oito slots Ubuntu 24.04/macOS,
+x64/ARM64 × CPython 3.12/3.14, wheel/sdist, aprovados. O driver compartilhado
+executa três encerramentos reais de processo e dois primeiros usos com barreira
+de prontidão: uma aquisição/geração, seletores antes/depois da publicação corretos,
+locks recuperados e bytes/modos dos órfãos preservados. Com os quatro reparos
+falhos repetidos, são 128 cenários e 768 referências offline, além do corpus
+regular e provas do handle anterior. [Recibos e limites](evidence/installed-posix-processes-2026-10-20/README.md).
+
+Instalação `39515644954` e regressão `39515644946` aprovadas: dez combinações
+wheel/sdist e seis jobs de 244 testes. Local: 249 testes no 3.14; oito casos
+focados no 3.12. [Índice T076](evidence/recovery.json) preserva 69 células/138
+slots e o índice anterior. Crash/concorrência dos oito slots privados deixam
+de ser pendências; candidata final, ambientes canônicos, demais células e gates
+comuns continuam pendentes. Bloqueio de rede somente Python nesses slots;
+sem assinatura/notarização/quarentena ou promoção. **57/84**, catálogo Windows;
+recibos finais locais, sem commit adicional.
+
+A [regressão Ubuntu 18.04](evidence/ubuntu1804-process-driver-2026-10-20/README.md)
+também passou: workflow `39515645035`, glibc/musl, KVM/kernel 4.15.0-212.
+Wheel glibc nos dois Pythons: suítes externas/nested, 389 execuções dot por Python,
+zero syscalls de rede e controle positivo detectado, traces reprocessados após
+download. O motor musl inalterado passou nos 13 casos do kernel antigo; não é
+aceite Alpine. Contagens separadas dos oito slots hospedados; índice T076 atualizado
+sem aprovação de célula, distribuição ou suporte.
+
+## T066 — conferência offline de integridade, 2026-10-20
+
+[Recibo e revisão](evidence/distribution-integrity-2026-10-20/README.md): seis
+bundles POSIX, 2.419 arquivos e 2.407 avisos vinculados ao índice de origens,
+bytes/tamanhos/modos codificados/inventário/proveniência conferidos; licença
+Graphviz fixada presente. Wheel/sdist: 53 arquivos e LICENSE/NOTICE conferidos
+contra a fonte atual. Oito recibos instalados ligados por hash aos mesmos quatro
+bundles glibc/macOS; execução não transferida para musl. Novo verificador e
+quatro testes permanecem locais. Fundação 3.12: 253 testes/oito skips; 3.14:
+252 na primeira rodada, oito skips, e quatro casos focados aprovados após
+acrescentar o último teste. Sem novo CI ou commit.
+
+Integridade do índice não conclui ancestralidade histórica/aplicabilidade de
+licenças, oferta/retenção de fontes, cache independente/Windows ou pacotes finais.
+T066 continua parcial, total **57/84**, catálogo Windows; nenhuma promoção.
+
+## T066 — avisos dos caches nativos instalados, 2026-10-20
+
+Workflow `39521002551`, checkpoint `cf72421`: oito slots glibc/macOS e 16
+instalações wheel/sdist aprovados, 6.076 arquivos de avisos comparados antes/depois
+do uso offline, sem aquisição. Medição independente verificou bytes/tamanhos/modos
+e inventário, incluindo índice de origens e aviso do pacote Python; 16 corrupções
+recusadas e 16 restaurações confirmadas. Probes/gerenciador nativos reais,
+transporte controlado, rede bloqueada somente Python. [Recibos e limites](evidence/cache-notices-2026-10-20/README.md).
+
+Regressão do modo existente `39521002577`, instalação `39521002558` e fundação
+`39521002416` também aprovadas; seis jobs com 247 testes cada. Local: 256 casos,
+nove skips, com nove testes anteriores ainda locais. O [índice consolidado](evidence/distribution-integrity.json)
+preserva o recibo original dos seis bundles e seus índices de origens. A falta
+de medição independente do cache está resolvida para esses quatro bundles privados;
+musl/Windows, aplicabilidade de licenças/fontes, pacotes finais e demais gates
+continuam pendentes. **57/84**, catálogo Windows; recibos finais locais.
+
+## T066 — cobertura técnica de cache das sete variantes, 2026-10-20
+
+Checkpoint `ec5ff25`, cinco workflows aprovados. O novo `39525752863` mediu
+musl x64/ARM64 e Windows nos dois Pythons, wheel/sdist: 12 instalações e 3.716
+comparações. A regressão glibc/macOS `39525752771` confirmou mais 16 instalações
+e 6.076 comparações. [Recibos e limites](evidence/cache-notices-more-2026-10-20/README.md):
+sete variantes, 14 slots, 28 instalações, 9.792 arquivos antes/depois, 28 corrupções
+recusadas e restaurações exatas, sem aquisição offline. Musl executou em CPU
+correspondente, usuário não root, Alpine 3.22 fixado sobre kernel Ubuntu;
+Windows adquiriu o arquivo oficial fixado em caches temporários privados.
+
+Instalação `39525752730`, modo de integração existente `39525752853` e fundação
+`39525752804` também aprovados; seis jobs com 249 testes cada. Localmente 258
+casos/nove skips e 13 testes focados em 3.12/um skip. O [índice T066](evidence/distribution-integrity.json)
+retirou a falta de medição técnica de cache, preservando o índice anterior e
+manifesto Windows. Licenças/fontes, pacotes finais, assinatura e aceites nativos/
+visuais permanecem pendentes; container musl e Windows hospedado não qualificam
+Alpine nativo ou Win11 limpo. **57/84**, catálogo Windows; recibos finais locais.
+
+## T030/T052/T066 — declaração de fontes e aviso glibc, 2026-10-20
+
+Checkpoint necessário `62489c8` enviado; cinco workflows aprovados. A
+[conferência dos seis ZIPs](evidence/source-access-notices-2026-10-20/README.md)
+validou 2.419 arquivos, 2.407 payloads de avisos/origens e os hashes inalterados
+dos motores. A declaração identifica fontes Graphviz sob EPL-2.0, revisão/URL/hash,
+e uso de código glibc startup/nonshared com LGPL nos dois bundles pertinentes.
+Fundação: seis jobs de 251 testes; localmente 260 em cada Python, nove skips.
+
+A rota de fontes escolhida é LGPL 2.1 6(a)/6(d), sem oferta escrita 6(c).
+A ausência de exceção em alguns arquivos será coberta por entrega completa e
+relink, sem depender de descarte por arquivo. Restam prova de relink com a
+biblioteca modificada, vínculo/entrega final das fontes e compatibilidade dos
+demais componentes/ISO. As provas de cache anteriores mantêm seus arquivos e
+não foram transferidas para os novos hashes. **57/84**, 27 pendentes, catálogo
+Windows; recibos finais locais, sem segundo commit de evidências.
 

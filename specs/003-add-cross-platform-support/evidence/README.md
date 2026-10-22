@@ -1,5 +1,10 @@
 # Registros por alvo
 
+Incremento de fontes/avisos: [seis bundles conferidos no checkpoint 62489c8](source-access-notices-2026-10-20/README.md).
+Declaração EPL e aviso glibc/LGPL confirmados nos ZIPs, cinco workflows aprovados;
+compatibilidade e entrega final das fontes continuam pendentes. As provas de
+cache anteriores mantêm seus hashes, separadas desses pacotes atualizados.
+
 Cada registro de QualificationEvidence contém:
 
 - id, target_id, python_minor (quando aplicável), python_patch, python_origin;
@@ -30,11 +35,23 @@ promoção não altera automaticamente o catálogo ou o registro de suporte.
 O estado consolidado está em [support-ledger.md](support-ledger.md); os resultados
 locais mais recentes e seus limites estão em [validation.md](../validation.md).
 
+`package-installation.json` indexa a evidência parcial da T078: vinte instalações
+dos wheel/sdist atuais em dez combinações hospedadas, com recibos/hashes em
+`current-packages-2026-10-20/`. A tarefa continua aberta para candidatas finais
+remotas, motor privado e restante da matriz, sem promoção de suporte.
+
+`installed-private-engines-2026-10-20/` complementa esse índice com os motores
+reais em wheel/sdist instalados, sem aplicação fonte no driver. Os índices
+`linux-ubuntu-24.04.json` e `macos.json` continuam parciais: transporte controlado,
+guard de rede Python e gates finais pendentes não aprovam uma célula.
+
 `windows-review-003/` contém seis saídas públicas efetivamente produzidas no
 Windows atual, com hashes vinculados a `windows-review-collection.json`.
 `review_status: pending` registra ausência de revisão visual. Não usar esses
-arquivos como prova de execução Linux/macOS. `security-limits.json` é auditoria
-local de código/contratos; não encerra os ensaios nativos ou a tarefa T080 inteira.
+arquivos como prova de execução Linux/macOS. `security-limits.json` consolida a
+auditoria dos mecanismos de código/contratos da T080, concluída com a
+[revisão de 2026-10-20](security-audit-2026-10-20/README.md). Não encerra ensaios
+nativos por célula, aceitação dos pacotes finais ou auditorias de distribuição.
 
 `linux-wsl-candidate-inventory.json` é inventário real do rebuild experimental sem
 RPATH; não é manifesto do runtime e não contém URL. `local-inventory-smoke.json`
@@ -275,6 +292,50 @@ a revisão corrigida ficam associadas no relatório.
 
 `github-actions-native-linux-2026-10-19.json` registra o build real em Ubuntu
 24.04 x64 hospedado, captura do linker/fontes e corpus com CPython 3.12/3.14.
+`documented-installation-2026-10-20/summary.json` preserva dez instalações remotas
+da revisão atual `d90b567`, com 53 arquivos e LICENSE/NOTICE conferidos, três
+entrypoints, venv externa e PATH sem Git/Graphviz. README/quickstart atualizados;
+sem preparo de motor ou qualificação de célula. O diretório anterior continua
+registrando a URL antiga. Detalhes e limites no README do novo diretório.
+
+`recovery.json` consolida a T076 nas 69 células/138 slots, sem conceder aceite
+por observação parcial. `installed-posix-recovery-2026-10-20/` preserva oito
+relatórios de motores reais instalados: 64 reparos falhos, 384 referências
+offline, seleção e geração anterior preservadas. Há também dez relatórios
+de instalação básica e seis jobs de regressão. Escopos de injeção, negação real
+e segurança macOS estão no README do diretório; T076 permanece parcial.
+
+`installed-posix-processes-2026-10-20/` amplia os ensaios instalados com três
+crashes reais e dois primeiros usos sincronizados em Ubuntu/macOS, ambas as
+arquiteturas e Pythons. São 128 cenários/768 referências após falhas somando
+os reparos falhos repetidos, sem aquisição offline ou regressão. O diretório
+preserva recibos de runtime, pacotes, regressão e o índice anterior; `recovery.json`
+mantém distribuição final, ambientes e demais células pendentes. Detalhes no README.
+
+`distribution-integrity.json` preserva a conferência offline da T066: seis
+bundles POSIX, 2.419 arquivos, 2.407 avisos vinculados ao índice de origens,
+53 arquivos wheel/sdist e LICENSE/NOTICE. Oito recibos instalados foram ligados
+aos mesmos quatro bundles glibc/macOS por hash. Ferramenta, fontes preservadas,
+testes, entradas e limites estão em `distribution-integrity-2026-10-20/`.
+Isso não aprova aplicabilidade das licenças, oferta de fontes, cache independente,
+Windows ou pacotes finais; T066 permanece parcial, sem novo CI/commit.
+
+`cache-notices-2026-10-20/` registra a medição independente dos avisos no cache
+real em oito slots glibc/macOS, wheel/sdist: 6.076 arquivos comparados antes/depois
+do uso offline e 16 alterações de teste recusadas/restauradas. Há recibos brutos,
+instalação básica, regressão do modo anterior e seis jobs de fundação aprovados.
+`distribution-integrity.json` agora consolida os recibos dos arquivos e dos caches;
+o recibo original permanece em `distribution-integrity-2026-10-20/final-check.json`.
+Cache musl/Windows, compatibilidade/fontes e pacotes finais continuam pendentes.
+
+`cache-notices-more-2026-10-20/` conclui a medição técnica de avisos nos caches
+dos sete bundles: 14 slots Python, 28 instalações wheel/sdist e 9.792 comparações
+antes/depois do uso offline, 28 alterações recusadas/restauradas. Musl é CPU
+nativa em Alpine fixado sobre kernel Ubuntu; Windows é runner hospedado com
+aquisição oficial fixada. Não há aceite nativo Alpine ou Win11 limpo por associação.
+`distribution-integrity.json` mantém licenças/fontes, pacotes finais e aceites
+pendentes, preservando índices anteriores. Detalhes e todos os recibos no README.
+
 Os dois relatórios `github-actions-native-linux-corpus-*.json` preservam cada
 caso e suas métricas. Proveniência e SDK estão nos arquivos correspondentes;
 `github-actions-native-linux-sources-2026-10-19.json.gz` preserva em gzip os

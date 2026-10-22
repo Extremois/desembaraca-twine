@@ -15,7 +15,7 @@ continuam separados por `artifact_id` no ledger `linux.json`.
 | Bison | Quatro arquivos gerados preservam aviso GPL e exceção de uso do parser | Manter exceção junto do aviso e GPL integral como referência. Não tratar a GPL sem a exceção como único termo do parser gerado |
 | Flex 2.6.4 | COPYING contém texto BSD e esclarecimento próprio sobre scanners gerados | Gerador/versão/macros conferidos; texto integral preservado. Não estender a exceção do scanner a componentes sem esse fundamento |
 | RGB X.Org | O COPYING preservado contém blocos The Open Group e Oracle com suas condições | Manter os dois blocos. Correspondência de valores não demonstra sozinha a origem histórica de todas as entradas Graphviz |
-| Glibc startup/nonshared | Fontes observadas declaram LGPL-2.1-ou-posterior; quatro prefixos contêm permissão de link, `csu/init.c` não contém a mesma exceção | Textos e fontes preservados; não aplicar a exceção dos demais arquivos a `init.c`. Fechar atendimento das obrigações de link/fontes por build |
+| Glibc startup/nonshared | Fontes observadas declaram LGPL-2.1-ou-posterior; em x64, quatro dos cinco prefixos contêm permissão de link. Em ARM64, são três: `sysdeps/aarch64/start-2.33.S` também não contém a exceção. `csu/init.c` não a contém em nenhuma arquitetura | Textos e fontes preservados; não transferir exceções entre arquivos ou arquiteturas. O cruzamento por hash dos objetos/seções está registrado abaixo; fechar atendimento das obrigações de link/fontes por build |
 | Runtime Zig | Fontes observadas incluem portas musl; a referência Go de `tan.zig` é anterior à substituição oficial do algoritmo pela musl | COPYRIGHT musl preservado inclusive em glibc ARM64. Histórico Go conferido contra ambos SDKs; preparo passa a preservar BSD Go conservadoramente para documentação/testes históricos. Avisos específicos das portas matemáticas musl continuam sob revisão; o LICENSE raiz Zig não substitui termos de terceiros |
 | Entidades HTML/SVG | Avisos W3C datados, copyright/status e avisos ISO internos preservados separadamente | Aplicabilidade/condição ISO e política pertinente permanecem pendentes; ver [revisão W3C](data-references/w3c/REVIEW.md) |
 
@@ -83,3 +83,45 @@ de runtime/rede e os seis jobs de fundação passaram. Os recibos finais estão 
 `specs/003-add-cross-platform-support/evidence/runtime-math-notices-ci-2026-10-20/`.
 Isso fecha a confirmação dos novos avisos no pacote, mantendo a aprovação T030
 e a revisão de aplicabilidade/oferta pendentes.
+
+## Glibc: objetos retidos e diferenças entre arquiteturas
+
+O [cruzamento reproduzível](../../../specs/003-add-cross-platform-support/evidence/glibc-retained-source-review-2026-10-20/summary.json)
+vincula seis objetos observados às seções alocadas dos dois motores, usando
+hash do executável, hash do input e membro único dentro do arquivo estático.
+As seis fontes distintas e seus prefixos foram conferidos novamente no SDK
+fixado, incluindo ambas as versões de `start-2.33.S`.
+
+Isso corrige a generalização anterior sobre quatro prefixos com exceção:
+ela só descreve x64. O startup ARM64 não apresenta o mesmo texto adicional,
+embora a observação de compilação e suas seções executáveis estejam presentes.
+O fato de um objeto combinado `crt1.o` fornecer `.text` não atribui todos
+os seus bytes a cada unidade fonte nem estende uma exceção a `init.c`.
+Os mapas não mostram `.rodata` de `crt1.o`; essa ausência isolada também não
+constitui uma prova exaustiva de descarte de uma unidade fonte.
+
+O runtime matemático ARM64 fica explicitamente fora desse cruzamento glibc,
+com revisão própria já registrada. A ferramenta mantém as duas arquiteturas
+separadas e não aprova T030, publicação ou catálogo.
+
+## Decisão de rota de fontes e avisos de acesso
+
+A [revisão de entrega de fontes](SOURCE-DELIVERY-REVIEW.md) identifica a rota
+LGPL 2.1, seções 6(a)/6(d), para o startup/nonshared glibc nas duas arquiteturas.
+A ausência de exceção em algumas fontes passa a ser tratada por essa rota,
+sem depender de provar seu descarte ou herdar exceções de outros arquivos.
+Os materiais completos da biblioteca e do programa, em fontes, podem atender
+à rota quando permitem modificar e relinkar; não há exigência automática de
+entregar também objetos Graphviz. A prova com biblioteca modificada e a entrega
+final equivalente de fontes permanecem pendentes.
+
+O preparador passa a incluir aviso explícito de uso glibc/LGPL e a declaração
+de disponibilidade das fontes Graphviz sob EPL-2.0 em `SOURCE-REFERENCES.txt`.
+MacOS recebe a declaração Graphviz, sem atribuição glibc. A declaração registra
+que os tarballs originais sozinhos não substituem os materiais específicos do
+build, nem constituem oferta escrita de três anos. Esse prazo pertence à
+alternativa 6(c), que não foi escolhida. A confirmação ocorreu nos seis ZIPs da revisão `62489c8`, com 2.419 arquivos
+e 2.407 payloads de avisos conferidos e motores inalterados. Ver
+[recibos nativos](../../../specs/003-add-cross-platform-support/evidence/source-access-notices-2026-10-20/summary.json).
+Os recibos anteriores não são alterados; as medições de cache anteriores
+continuam ligadas aos seus próprios hashes de bundle.

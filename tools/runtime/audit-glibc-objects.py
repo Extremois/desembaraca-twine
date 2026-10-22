@@ -7,13 +7,86 @@ import argparse
 import hashlib
 import importlib.util
 import json
-from pathlib import Path
+from pathlib import Path, PurePosixPath
 import time
 
 HERE=Path(__file__).resolve().parent
 spec=importlib.util.spec_from_file_location('glibc_source_observer',HERE/'audit-musl-objects.py')
 musl=importlib.util.module_from_spec(spec);spec.loader.exec_module(musl)
 audit=musl.audit;builder=musl.builder;notices=musl.notices
+
+
+def allocated_source_observations(observations, allocations):
+    """Join prior object observations to retained sections by content identity.
+
+    The result deliberately keeps every compilation unit of a combined object.
+    A retained crt1.o section does not establish which of its source files
+    contributed bytes; in particular it cannot extend one file's exception to
+    another file. Archive hash plus unique member name binds archive members.
+    """
+    if (observations.get('kind') != 'glibc-object-source-observations-not-license-approval'
+            or observations.get('artifact_id') not in ('linux-glibc-x86_64', 'linux-glibc-aarch64')
+            or allocations.get('kind') != 'lld-allocated-input-sections-not-source-closure'
+            or observations.get('executable_sha256') != allocations.get('executable_sha256')
+            or not observations.get('executable_sha256')):
+        raise ValueError('Expected glibc observations and allocations for the same executable')
+    sources = {item['path']: item for item in observations['sources']}
+    if len(sources) != len(observations['sources']):
+        raise ValueError('Ambiguous observed source')
+    objects = {}
+    for item in observations['objects']:
+        key = (item['input_sha256'], item['member'])
+        if key in objects:
+            raise ValueError('Ambiguous observed archive member or direct object')
+        if item['member'] is None and item['input_sha256'] != item['object_sha256']:
+            raise ValueError('Direct object differs from hashed input')
+        objects[key] = item
+    retained = {}
+    other_sdk_inputs = set()
+    for row in allocations['sections']:
+        if row['scope'] != 'sdk':
+            continue
+        name = PurePosixPath(row['input_path']).name
+        if name not in ('crt1.o', 'libc_nonshared.a'):
+            other_sdk_inputs.add(name)
+            continue
+        member = PurePosixPath(row['member']).name if row['member'] is not None else None
+        key = (row['input_sha256'], member)
+        item = objects.get(key)
+        if item is None or item['input'] != name:
+            raise ValueError('Allocated glibc section lacks matching object content evidence')
+        if type(row['bytes']) is not int or row['bytes'] <= 0:
+            raise ValueError('Expected positive allocated section size')
+        retained.setdefault(key, []).append(row)
+    if not retained:
+        raise ValueError('No allocated glibc objects')
+    rows = []
+    for key, sections in retained.items():
+        item = objects[key]
+        units = []
+        for path in item['sources']:
+            source = sources[path]
+            prefix = source['leading_comments'].encode('utf-8')
+            if (len(prefix) != source['leading_comment_bytes']
+                    or hashlib.sha256(prefix).hexdigest() != source['leading_comment_sha256']):
+                raise ValueError('Source notice differs from recorded bytes')
+            normalized = ' '.join(source['leading_comments'].split())
+            units.append(dict(path=path, sha256=source['sha256'],
+                linking_exception_phrase_present=(
+                    'permission to link the compiled version of this file' in normalized)))
+        rows.append(dict(input=item['input'], input_sha256=item['input_sha256'],
+            member=item['member'], object_sha256=item['object_sha256'],
+            allocated_bytes=sum(row['bytes'] for row in sections),
+            executable_bytes=sum(row['bytes'] for row in sections if row['executable']),
+            input_sections=sorted({row['input_section'] for row in sections}),
+            compilation_units=units, per_source_retention_established=False))
+    return dict(kind='glibc-retained-object-source-join-not-license-approval',
+        approved=False, qualified=False, source_to_binary_complete=False,
+        artifact_id=observations['artifact_id'], executable_sha256=observations['executable_sha256'],
+        objects=rows, other_allocated_sdk_inputs=sorted(other_sdk_inputs),
+        limitations=['Object compilation units are not per-source section attribution',
+            'Phrase presence is a textual observation, not a license decision',
+            'Other SDK inputs require their own review; no catalog admission or distribution approval'])
 
 
 def sdk_inputs(record):

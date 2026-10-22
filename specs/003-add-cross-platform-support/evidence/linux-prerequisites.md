@@ -168,7 +168,7 @@ As duas tentativas anteriores falharam na consulta/comparação da versão antes
 do tracing e têm recibos/logs separados. T037/T078/T080 continuam parciais;
 distribuição final, Pro, Twine e demais gates/células permanecem nesta spec.
 
-### Recuperação instalada no kernel 4.15 — ensaio preparado
+### Recuperação instalada no kernel 4.15 — aprovada em 2026-10-20
 
 O driver de recuperação acrescenta oito cenários à aplicação instalada sob
 tracing: transferência falha, ENOSPC injetado, negação real de execução por modo
@@ -181,6 +181,18 @@ geração; um staging órfão de outro processo deve permanecer intocado.
 Todos os caminhos e caches pertencem a diretórios temporários de teste. Rede,
 erro ENOSPC e bytes corrompidos são injeções declaradas; motor, permissões,
 publicação, processos e locks são reais. O pré-ensaio no WSL existente é parcial,
-sem instalação global/VM nova e sem aprovação de célula. Execução no guest CI
-com os dois venvs instalados ainda pendente; T076 permanece agregada à matriz.
+sem instalação global/VM nova e sem aprovação de célula.
+
+O workflow `39486677086`, revisão `58f69b0`, passou no guest Ubuntu 18.04 x64
+com CPython 3.12.15/3.14.8 instalados. Artefatos baixados e reconferidos: oito
+cenários, 48 referências offline e 245 execuções do motor por Python, sem
+syscalls de rede no corpus ampliado e com controle positivo detectado. Crashes
+liberaram locks e respeitaram a seleção antes/depois da publicação; staging
+órfão permaneceu intocado. Os dois concorrentes compartilharam uma aquisição/
+geração e o cache funcionou offline depois. Handles anteriores e Python do SO
+preservados; 53 arquivos do wheel conferidos contra o commit. Seis jobs de
+regressão `39486677078` passaram com 236 testes cada.
+[Recibos e traces](ubuntu1804-installed-recovery-2026-10-20/summary.json).
+T076 permanece agregada à matriz: candidata remota final, outras células e
+gates comuns continuam pendentes, sem promoção ou alteração do catálogo.
 

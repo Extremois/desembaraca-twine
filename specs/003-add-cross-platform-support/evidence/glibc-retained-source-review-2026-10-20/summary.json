@@ -1,0 +1,222 @@
+{
+  "kind": "glibc-retained-source-review",
+  "approved": false,
+  "qualified": false,
+  "sdk_archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+  "tool_sha256": "a5e9a1b55a48f997cdac71b91131fbdd9c25c49a22fa77097eb21a14d893a541",
+  "sources_verified": [
+    {
+      "path": "lib/libc/glibc/csu/abi-note.S",
+      "sha256": "9abb7d71812ff5009197a67c57e3f8ae3138dd5be57c1a8e534e859c6e689ffc",
+      "size": 3083
+    },
+    {
+      "path": "lib/libc/glibc/csu/elf-init-2.33.c",
+      "sha256": "2d9b3d9b6af5d2ad6bf8a881e3c34f0bd7478f9709b62dfe9d48a749a5768519",
+      "size": 3822
+    },
+    {
+      "path": "lib/libc/glibc/csu/init.c",
+      "sha256": "a06cd917584e309bf39f6f7a6158519e60a35e6ff8b3e96df8308d170c908f33",
+      "size": 1103
+    },
+    {
+      "path": "lib/libc/glibc/io/fstat-2.32.c",
+      "sha256": "a835e5cfb407c00c15aead0247d713a536d651d1fef1236b4a87aaf7a27eec68",
+      "size": 2410
+    },
+    {
+      "path": "lib/libc/glibc/sysdeps/aarch64/start-2.33.S",
+      "sha256": "32a1e8179cba14fdaa319e494a303f54dffbbc66c8637088fc40679bf289bbef",
+      "size": 3442
+    },
+    {
+      "path": "lib/libc/glibc/sysdeps/x86_64/start-2.33.S",
+      "sha256": "d3daf6434b838a91785c5ac771a7f01d08cc9234274ca5a13282e530dd22a058",
+      "size": 4672
+    }
+  ],
+  "variants": [
+    {
+      "kind": "glibc-retained-object-source-join-not-license-approval",
+      "approved": false,
+      "qualified": false,
+      "source_to_binary_complete": false,
+      "artifact_id": "linux-glibc-x86_64",
+      "executable_sha256": "43ce8d686720467c21be91cab4b8f3b246baae49c2cfe293714ebdf8a82f5716",
+      "objects": [
+        {
+          "input": "crt1.o",
+          "input_sha256": "b05e3c08b80759446a3b08f404401b56e773147d9320c3cfb8770e548361c5f8",
+          "member": null,
+          "object_sha256": "b05e3c08b80759446a3b08f404401b56e773147d9320c3cfb8770e548361c5f8",
+          "allocated_bytes": 124,
+          "executable_bytes": 44,
+          "input_sections": [
+            ".eh_frame+0x0",
+            ".note.ABI-tag",
+            ".text"
+          ],
+          "compilation_units": [
+            {
+              "path": "lib/libc/glibc/sysdeps/x86_64/start-2.33.S",
+              "sha256": "d3daf6434b838a91785c5ac771a7f01d08cc9234274ca5a13282e530dd22a058",
+              "linking_exception_phrase_present": true
+            },
+            {
+              "path": "lib/libc/glibc/csu/init.c",
+              "sha256": "a06cd917584e309bf39f6f7a6158519e60a35e6ff8b3e96df8308d170c908f33",
+              "linking_exception_phrase_present": false
+            }
+          ],
+          "per_source_retention_established": false
+        },
+        {
+          "input": "libc_nonshared.a",
+          "input_sha256": "c999fbff5f8c4c66bda1b4a24c4eed19e906751b9e106e81e4d570daf87a4bbe",
+          "member": "fstat-2.32.o",
+          "object_sha256": "95514f5166be8f3ec5f03f6eb7b6d3179c07eba1a683a8c596476168d1d9ad9a",
+          "allocated_bytes": 20,
+          "executable_bytes": 20,
+          "input_sections": [
+            ".text"
+          ],
+          "compilation_units": [
+            {
+              "path": "lib/libc/glibc/io/fstat-2.32.c",
+              "sha256": "a835e5cfb407c00c15aead0247d713a536d651d1fef1236b4a87aaf7a27eec68",
+              "linking_exception_phrase_present": true
+            }
+          ],
+          "per_source_retention_established": false
+        },
+        {
+          "input": "libc_nonshared.a",
+          "input_sha256": "c999fbff5f8c4c66bda1b4a24c4eed19e906751b9e106e81e4d570daf87a4bbe",
+          "member": "elf-init-2.33.o",
+          "object_sha256": "33af0b86ccdb3b61aa50144e64ed35db7bfe0cb62ea1fb94cd06989a01819456",
+          "allocated_bytes": 118,
+          "executable_bytes": 118,
+          "input_sections": [
+            ".text"
+          ],
+          "compilation_units": [
+            {
+              "path": "lib/libc/glibc/csu/elf-init-2.33.c",
+              "sha256": "2d9b3d9b6af5d2ad6bf8a881e3c34f0bd7478f9709b62dfe9d48a749a5768519",
+              "linking_exception_phrase_present": true
+            }
+          ],
+          "per_source_retention_established": false
+        }
+      ],
+      "other_allocated_sdk_inputs": [],
+      "limitations": [
+        "Object compilation units are not per-source section attribution",
+        "Phrase presence is a textual observation, not a license decision",
+        "Other SDK inputs require their own review; no catalog admission or distribution approval"
+      ],
+      "inputs": [
+        {
+          "path": "specs/003-add-cross-platform-support/evidence/linux-native-glibc-license-package-2026-10-19/glibc-object-evidence.json",
+          "sha256": "c7de45566844efe6878ddee9bd3280ca1fc51d85408dc219622e5f2a0c63468f"
+        },
+        {
+          "path": "specs/003-add-cross-platform-support/evidence/linux-allocated-sections-ci-2026-10-20/glibc-x86_64/allocated-sections.json.gz",
+          "sha256": "ede66a0445740a113e825fbdb26e092d835aca9a0f682636219f6297cefab30f"
+        }
+      ]
+    },
+    {
+      "kind": "glibc-retained-object-source-join-not-license-approval",
+      "approved": false,
+      "qualified": false,
+      "source_to_binary_complete": false,
+      "artifact_id": "linux-glibc-aarch64",
+      "executable_sha256": "933b6c63370bdd3e814627e2a9a06176416c8da017a21dcbc96d8137dbc17e22",
+      "objects": [
+        {
+          "input": "crt1.o",
+          "input_sha256": "7abf09d70cfb711ec71a999dfca868452488f17cd5a993cbc255765b72f35984",
+          "member": null,
+          "object_sha256": "7abf09d70cfb711ec71a999dfca868452488f17cd5a993cbc255765b72f35984",
+          "allocated_bytes": 88,
+          "executable_bytes": 56,
+          "input_sections": [
+            ".note.ABI-tag",
+            ".text"
+          ],
+          "compilation_units": [
+            {
+              "path": "lib/libc/glibc/sysdeps/aarch64/start-2.33.S",
+              "sha256": "32a1e8179cba14fdaa319e494a303f54dffbbc66c8637088fc40679bf289bbef",
+              "linking_exception_phrase_present": false
+            },
+            {
+              "path": "lib/libc/glibc/csu/init.c",
+              "sha256": "a06cd917584e309bf39f6f7a6158519e60a35e6ff8b3e96df8308d170c908f33",
+              "linking_exception_phrase_present": false
+            }
+          ],
+          "per_source_retention_established": false
+        },
+        {
+          "input": "libc_nonshared.a",
+          "input_sha256": "2db42f3e95c93b1b04ecb61b51035e83ef032801eceefb89b0d3654742b77a3c",
+          "member": "fstat-2.32.o",
+          "object_sha256": "360d8b56e38375a18cd53b2dc59b1c2089fd03ff0d1fa2467cabe97ee023ba60",
+          "allocated_bytes": 16,
+          "executable_bytes": 16,
+          "input_sections": [
+            ".text"
+          ],
+          "compilation_units": [
+            {
+              "path": "lib/libc/glibc/io/fstat-2.32.c",
+              "sha256": "a835e5cfb407c00c15aead0247d713a536d651d1fef1236b4a87aaf7a27eec68",
+              "linking_exception_phrase_present": true
+            }
+          ],
+          "per_source_retention_established": false
+        },
+        {
+          "input": "libc_nonshared.a",
+          "input_sha256": "2db42f3e95c93b1b04ecb61b51035e83ef032801eceefb89b0d3654742b77a3c",
+          "member": "elf-init-2.33.o",
+          "object_sha256": "bb27801b7489a3bc18e2c37749cf90783c32a8fd77606c5e11265198278c2d22",
+          "allocated_bytes": 120,
+          "executable_bytes": 120,
+          "input_sections": [
+            ".text"
+          ],
+          "compilation_units": [
+            {
+              "path": "lib/libc/glibc/csu/elf-init-2.33.c",
+              "sha256": "2d9b3d9b6af5d2ad6bf8a881e3c34f0bd7478f9709b62dfe9d48a749a5768519",
+              "linking_exception_phrase_present": true
+            }
+          ],
+          "per_source_retention_established": false
+        }
+      ],
+      "other_allocated_sdk_inputs": [
+        "libcompiler_rt.a"
+      ],
+      "limitations": [
+        "Object compilation units are not per-source section attribution",
+        "Phrase presence is a textual observation, not a license decision",
+        "Other SDK inputs require their own review; no catalog admission or distribution approval"
+      ],
+      "inputs": [
+        {
+          "path": "specs/003-add-cross-platform-support/evidence/linux-arm64-sdk-sources-2026-10-19/glibc-object-evidence.json.gz",
+          "sha256": "b3f49db74dd4538ea9ae34c774ca946c28b91d349549931ca2304b635a426369"
+        },
+        {
+          "path": "specs/003-add-cross-platform-support/evidence/linux-allocated-sections-ci-2026-10-20/glibc-aarch64/allocated-sections.json.gz",
+          "sha256": "51b3e9bb62ad0c3a8c86959435fc01647ab1877df46b6be902a3c6635fca9db8"
+        }
+      ]
+    }
+  ]
+}

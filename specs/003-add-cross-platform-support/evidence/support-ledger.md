@@ -5,6 +5,40 @@ Contagens de tarefas são rastreabilidade de trabalho, não aprovação de requi
 
 69 células; 138 slots Python; estados: {'pendente': 69}.
 
+T066: a [medição independente dos caches](cache-notices-more-2026-10-20/README.md)
+agora cobre as sete variantes glibc/musl/macOS/Windows, 14 slots Python e 28
+instalações wheel/sdist: 9.792 comparações de arquivos, 28 alterações recusadas
+e restaurações exatas. Musl mantém escopo de container Alpine em CPU nativa e
+Windows de runner hospedado; não substituem aceites de célula. Licenças/fontes,
+artefatos finais e demais gates continuam pendentes. Estados preservados, 57/84.
+
+T066: [medição independente dos avisos em cache](cache-notices-2026-10-20/README.md)
+aprovada em oito slots glibc/macOS, wheel/sdist: 6.076 arquivos antes/depois,
+16 corrupções recusadas e restaurações exatas, nenhuma aquisição offline. O
+[índice consolidado](distribution-integrity.json) preserva a conferência anterior
+dos seis bundles e registra cache musl/Windows, compatibilidade/fontes e pacotes
+finais ainda pendentes. Estados preservados; 57/84, sem promoção POSIX.
+
+T066: [conferência offline da distribuição](distribution-integrity-2026-10-20/README.md)
+registrada para os seis bundles POSIX, sem alterar estados. São 2.419 arquivos
+e 2.407 avisos com bytes/índice conferidos, além do wheel/sdist e oito recibos
+instalados vinculados por hash. Aplicabilidade de licenças, fontes/retensão,
+cache independente/Windows e pacotes finais permanecem gates abertos; 57/84.
+
+T076: [crash/concorrência nos pacotes instalados](installed-posix-processes-2026-10-20/README.md)
+aprovados nos oito slots Ubuntu 24.04/macOS, wheel/sdist. A rodada totaliza 128
+cenários/768 referências após falhas, com barreira de prontidão, uma aquisição,
+seletores/locks e bytes/modos do staging órfão conferidos. O [índice atual](recovery.json)
+retira crash/concorrência das pendências desses ensaios privados, preservando
+distribuição final, ambientes canônicos e demais células. Sem promoção, 57/84.
+
+T076: o [índice de recuperação](recovery.json) registra observações nativas
+parciais em cinco células/dez slots. A rodada instalada Ubuntu 24.04/macOS
+passou em 64 reparos falhos/384 referências offline, wheel/sdist nos dois
+Pythons. [Recibos e limites](installed-posix-recovery-2026-10-20/README.md).
+Crash/concorrência nos novos runners, candidata final, demais ambientes e gates
+comuns continuam pendentes; estados da matriz preservados, total 57/84.
+
 | Alvo | Estado agregado | Python 3.12 | Python 3.14 | Imagem nativa | Artefato qualificado | US1 AC1–3 |
 |---|---|---|---|---|---|---|
 | `windows-11-stable-x86_64-distribution-default` | pendente | pendente | pendente | pendente | pendente | não se aplica |
@@ -79,13 +113,9 @@ Contagens de tarefas são rastreabilidade de trabalho, não aprovação de requi
 
 ## Evidência parcial e limites
 
-- Windows: regressão nos dois Pythons e coletor em venv externa, com revisões registradas nas evidências; Windows limpo e Twine pendentes.
+- Windows: regressão nos dois Pythons e coletor em venv externa, com código não commitado; Windows limpo e Twine pendentes.
 - Ubuntu 26.04 x86_64 WSL: fundação e corpus de biblioteca com build experimental GLIBC_2.38; não aprova uma célula nativa.
-- Builds glibc/musl x64/ARM64 e macOS Intel/Apple Silicon registrados em validation.md; não qualificam integralmente células. Nenhum resultado é herdado de outra distribuição/ABI.
-- T028/T029: quatro bundles candidatos Linux construídos e verificados; recibos glibc-build-completion-2026-10-19/summary.json e musl-build-completion-2026-10-19.json. Auditoria, baseline antigo e qualificação pendentes.
-- T023: gerenciador com motor real aprovado em oito slots; linux-runtime-integration-2026-10-19/summary.json. Aquisição controlada.
-- T035/T055/T079: instalação remota/help aprovada em dez slots; documented-installation-2026-10-19/summary.json.
-- Fontes musl x64/ARM64 exportadas, conferidas e reconstruídas funcionalmente; musl-source-rebuild-2026-10-19/. T030/T066 permanecem parciais.
+- Demais imagens/arquiteturas: não disponíveis nesta sessão; nenhum resultado herdado de outra distribuição/ABI.
 - Linux US1 AC1 (instalação/primeiro uso), AC2 (offline) e AC3 (compatibilidade/aviso) ainda exigem ensaio da célula com ambos os Pythons.
 - Logs/digests de imagem, rede nativa, falhas, licenças e seis reaberturas Twine precisam estar completos antes de promover.
 
@@ -93,8 +123,8 @@ Contagens de tarefas são rastreabilidade de trabalho, não aprovação de requi
 
 | Requisito | Tarefas relacionadas | Tarefas verificadas | Gate de encerramento |
 |---|---|---|---|
-| FR-001 | T007, T008, T009, T010, T011, T012, T013, T014, T015, T016, T017, T018, T019, T020, T024, T025, T026, T027, T028, T029, T030, T031, T032, T033, T034, T036, T037, T038, T039, T040, T041, T042, T043, T044, T045, T049, T050, T051, T052, T053, T054, T055, T056 | 23/43 | pendente: evidências específicas e matriz completa |
-| FR-002 | T007, T008, T009, T010, T011, T012, T013, T014, T015, T016, T017, T018, T019, T020, T024, T025, T026, T027, T028, T029, T030, T031, T032, T033, T034, T036, T037, T038, T039, T040, T041, T042, T043, T044, T045, T049, T050, T051, T052, T053, T054, T055, T056 | 23/43 | pendente: evidências específicas e matriz completa |
+| FR-001 | T007, T008, T009, T010, T011, T012, T013, T014, T015, T016, T017, T018, T019, T020, T024, T025, T026, T027, T028, T029, T030, T031, T032, T033, T034, T036, T037, T038, T039, T040, T041, T042, T043, T044, T045, T049, T050, T051, T052, T053, T054, T055, T056 | 25/43 | pendente: evidências específicas e matriz completa |
+| FR-002 | T007, T008, T009, T010, T011, T012, T013, T014, T015, T016, T017, T018, T019, T020, T024, T025, T026, T027, T028, T029, T030, T031, T032, T033, T034, T036, T037, T038, T039, T040, T041, T042, T043, T044, T045, T049, T050, T051, T052, T053, T054, T055, T056 | 25/43 | pendente: evidências específicas e matriz completa |
 | FR-003 | T002, T013, T032, T033, T070, T074, T075, T081, T082 | 7/9 | pendente: evidências específicas e matriz completa |
 | FR-004 | T018, T022, T033, T035, T047, T055, T078, T079 | 6/8 | pendente: evidências específicas e matriz completa |
 | FR-005 | T021, T023, T036, T037, T038, T039, T040, T041, T042, T043, T044, T045, T048, T056, T062, T076 | 3/16 | pendente: evidências específicas e matriz completa |
@@ -106,21 +136,44 @@ Contagens de tarefas são rastreabilidade de trabalho, não aprovação de requi
 | FR-011 | T010, T015, T016, T067, T068, T069, T070, T071, T072, T073, T074, T075, T076, T077 | 13/14 | pendente: evidências específicas e matriz completa |
 | FR-012 | T018, T022, T033, T035, T047, T055, T078, T079 | 6/8 | pendente: evidências específicas e matriz completa |
 | FR-013 | T001, T004, T012, T021, T064, T065 | 5/6 | pendente: evidências específicas e matriz completa |
-| FR-014 | T019, T020, T030, T031, T049, T050, T051, T052, T066, T080 | 4/10 | pendente: evidências específicas e matriz completa |
-| FR-015 | T011, T032, T062, T071, T080 | 4/5 | pendente: evidências específicas e matriz completa |
-| FR-016 | T003, T036, T037, T038, T039, T040, T041, T042, T043, T044, T045, T046, T056, T062, T063, T064, T065, T066, T076, T078, T079, T080, T081, T082, T083, T084 | 6/26 | pendente: evidências específicas e matriz completa |
+| FR-014 | T019, T020, T030, T031, T049, T050, T051, T052, T066, T080 | 5/10 | pendente: evidências específicas e matriz completa |
+| FR-015 | T011, T032, T062, T071, T080 | 5/5 | pendente: evidências específicas e matriz completa |
+| FR-016 | T003, T036, T037, T038, T039, T040, T041, T042, T043, T044, T045, T046, T056, T062, T063, T064, T065, T066, T076, T078, T079, T080, T081, T082, T083, T084 | 7/26 | pendente: evidências específicas e matriz completa |
 | FR-017 | T002, T013, T032, T033, T070, T074, T075, T081, T082 | 7/9 | pendente: evidências específicas e matriz completa |
 | FR-018 | T002, T013, T032, T033, T070, T074, T075, T081, T082 | 7/9 | pendente: evidências específicas e matriz completa |
-| SC-001 | T022, T023, T024, T025, T026, T027, T028, T029, T030, T031, T032, T033, T034, T035, T036, T037, T038, T039, T040, T041, T042, T043, T044, T045, T046, T047, T048, T049, T050, T051, T052, T053, T054, T055, T056, T078, T079 | 15/37 | pendente: evidências específicas e matriz completa |
+| SC-001 | T022, T023, T024, T025, T026, T027, T028, T029, T030, T031, T032, T033, T034, T035, T036, T037, T038, T039, T040, T041, T042, T043, T044, T045, T046, T047, T048, T049, T050, T051, T052, T053, T054, T055, T056, T078, T079 | 17/37 | pendente: evidências específicas e matriz completa |
 | SC-002 | T057, T058, T059, T060, T061, T062, T063, T064, T065, T066 | 7/10 | pendente: evidências específicas e matriz completa |
 | SC-003 | T057, T058, T059, T060, T061, T062, T063, T064, T065, T066 | 7/10 | pendente: evidências específicas e matriz completa |
-| SC-004 | T022, T023, T024, T025, T026, T027, T028, T029, T030, T031, T032, T033, T034, T035, T036, T037, T038, T039, T040, T041, T042, T043, T044, T045, T046, T047, T048, T049, T050, T051, T052, T053, T054, T055, T056, T078, T079 | 15/37 | pendente: evidências específicas e matriz completa |
+| SC-004 | T022, T023, T024, T025, T026, T027, T028, T029, T030, T031, T032, T033, T034, T035, T036, T037, T038, T039, T040, T041, T042, T043, T044, T045, T046, T047, T048, T049, T050, T051, T052, T053, T054, T055, T056, T078, T079 | 17/37 | pendente: evidências específicas e matriz completa |
 | SC-005 | T067, T068, T069, T070, T071, T072, T073, T074, T075, T076, T077 | 10/11 | pendente: evidências específicas e matriz completa |
 | SC-006 | T057, T058, T059, T060, T061, T062, T063, T064, T065, T066 | 7/10 | pendente: evidências específicas e matriz completa |
-| SC-007 | T022, T023, T024, T025, T026, T027, T028, T029, T030, T031, T032, T033, T034, T035, T036, T037, T038, T039, T040, T041, T042, T043, T044, T045, T046, T047, T048, T049, T050, T051, T052, T053, T054, T055, T056, T078, T079 | 15/37 | pendente: evidências específicas e matriz completa |
+| SC-007 | T022, T023, T024, T025, T026, T027, T028, T029, T030, T031, T032, T033, T034, T035, T036, T037, T038, T039, T040, T041, T042, T043, T044, T045, T046, T047, T048, T049, T050, T051, T052, T053, T054, T055, T056, T078, T079 | 17/37 | pendente: evidências específicas e matriz completa |
 | SC-008 | T002, T003, T070, T074, T075, T081, T082, T083, T084 | 6/9 | pendente: evidências específicas e matriz completa |
 | SC-009 | T002, T003, T070, T074, T075, T081, T082, T083, T084 | 6/9 | pendente: evidências específicas e matriz completa |
 | SC-010 | T002, T003, T070, T074, T075, T081, T082, T083, T084 | 6/9 | pendente: evidências específicas e matriz completa |
+
+## T078: instalação atual de wheel e sdist
+
+A [integração instalada com motor privado](installed-private-engines-2026-10-20/runtime/summary.json)
+acrescenta 16 instalações e 208 casos/96 referências zeradas nos quatro hosts
+POSIX, com ambos os Pythons e formatos. Primeiro uso/cache/probe/permissões
+foram reais; obtenção e observação de rede permanecem controlada/Python.
+Os índices [Ubuntu](linux-ubuntu-24.04.json), [macOS](macos.json) e
+[instalação](package-installation.json) não promovem células nem fecham as
+tarefas agregadas. T036/T048/T056/T078 continuam parciais; 57/84.
+
+[Dez combinações hospedadas](current-packages-2026-10-20/ci-current/summary.json)
+passaram em ambos os formatos, com vinte instalações externas e hashes
+conferidos. O [índice canônico](package-installation.json) mantém T078 parcial
+para candidatas finais e a matriz inteira; nenhuma célula foi promovida.
+Fundação do mesmo commit aprovada nos seis jobs, 239 testes por job.
+
+## T080: auditoria dos mecanismos concluída
+
+57/84 tarefas concluídas; 27 pendentes. A revisão atual está em
+[security-audit-2026-10-20/README.md](security-audit-2026-10-20/README.md).
+Qualificação nativa, pacotes finais e catálogo POSIX continuam pendentes.
+As notas históricas abaixo preservam suas contagens e estados originais.
 
 ## Baseline glibc x64 confirmado em kernel antigo
 
@@ -188,4 +241,21 @@ sem qualificação. Sem kill-on-exit; encerramento pertence ao guest efêmero so
 controle do host. T037/T078/T080 parciais, candidata remota final/Pro/Twine/
 demais gates e células pendentes. Catálogo Windows; 56/84 tasks. Checkpoints
 necessários enviados; recibos finais ficam locais até o próximo necessário.
+
+## Recuperação com aplicação instalada — Ubuntu 18.04 x64, 2026-10-20
+
+Revisão `58f69b0`, workflow `39486677086`, aprovado e artefatos reconferidos:
+oito cenários por Python 3.12.15/3.14.8, wheel instalado, motor privado real.
+Quarenta e oito referências offline por Python, handles antigos utilizáveis,
+locks liberados após três crashes, seleção atômica respeitada, staging órfão
+preservado. Dois primeiros usos concorrentes compartilharam aquisição/geração.
+Negação de execução é real; transferência/ENOSPC/bytes corrompidos são injetados.
+Traces ampliados: 245 execuções do motor e zero syscalls de rede por Python,
+com controle positivo. Cinquenta e três arquivos do wheel conferidos contra o
+commit; Python do SO preservado. Seis jobs `39486677078` com 236 testes aprovados.
+[Recibo](ubuntu1804-installed-recovery-2026-10-20/summary.json).
+
+Pré-ensaio WSL separado. T076/T037/T078/T080 parciais; outras células, candidata
+remota final, Pro e gates comuns permanecem pendentes. Sem promoção, catálogo
+Windows; 56/84. Um checkpoint necessário enviado; recibos finais locais.
 

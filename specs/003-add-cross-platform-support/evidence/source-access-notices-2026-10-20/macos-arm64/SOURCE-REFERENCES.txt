@@ -1,0 +1,21 @@
+Source and license information for macos-arm64
+
+Graphviz 16.1.0 source code is available under the Eclipse Public License 2.0.
+The license is included in Graphviz-COPYING.txt. Third-party components
+retain their own terms in the accompanying notices.
+Obtain the original Graphviz source archive at:
+https://gitlab.com/graphviz/graphviz/-/archive/16.1.0/graphviz-16.1.0.tar.gz
+SHA-256: 1e028b2b3e84e946c1d3e8c47590f8f0741bba1041fe6eff36eee87e598ea249
+Source revision: e41c710710be080ad37af1b51c6e2f8beffa9ee5
+
+Maintainer candidate: complete corresponding-source delivery and
+component compatibility review are pending. The upstream archives above
+do not alone supply the build-specific recipes, generated inputs and
+relink instructions. Those must accompany the final source distribution.
+No three-year written source offer is made by this notice.
+Xcode: Xcode 16.4; Build version 16F6
+SDK tree SHA-256: 23b430378377d48cf9c2c8c95d87ac0638eef76caaa637b496d87f7ce512ab4c
+Header notices are leading comments, not a redistribution of the Apple SDK.
+Referenced license texts and byte-bound NOTICE-ORIGINS.json are included offline.
+LLVM reference text does not identify the sources of the Apple compiler.
+Additional texts, applicability, generated data and corresponding-source offer remain under review.

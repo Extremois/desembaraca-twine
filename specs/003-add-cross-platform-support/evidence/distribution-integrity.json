@@ -1,0 +1,362 @@
+{
+  "kind": "partial-distribution-integrity-evidence-index",
+  "task": "T066",
+  "task_complete": false,
+  "passed": true,
+  "qualified": false,
+  "license_compatibility_approved": false,
+  "captured_at": "2026-10-21T01:17:54.325745+00:00",
+  "archive_checks": {
+    "path": "specs/003-add-cross-platform-support/evidence/distribution-integrity-2026-10-20/final-check.json",
+    "sha256": "bad3b2c0848021832f4a7491d5f8887de9b0f3afede0a24459597dea902e4ae5"
+  },
+  "archive_check_index": {
+    "path": "specs/003-add-cross-platform-support/evidence/distribution-integrity-2026-10-20/summary.json",
+    "sha256": "01f63cbed24a5b8b1cdaae3ba27cf9ae20a14e0759715832d3184436a199d5d2"
+  },
+  "archive_bundles": 6,
+  "archive_files_verified": 2419,
+  "archive_notice_payloads_verified": 2407,
+  "package_files_verified": 53,
+  "cache_checks": [
+    {
+      "path": "specs/003-add-cross-platform-support/evidence/cache-notices-more-2026-10-20/posix/summary.json",
+      "sha256": "ee81b62ddb1313b54a16b0eb59dd28f3059f4c4233c3bf655fef0f0a4a37a16c"
+    },
+    {
+      "path": "specs/003-add-cross-platform-support/evidence/cache-notices-more-2026-10-20/additional/summary.json",
+      "sha256": "77db66de3aa1cdc8d4041fec5faed410412d701dda92d43c81b9eb77901c250b"
+    }
+  ],
+  "cache_notice_files_per_snapshot_total": 9792,
+  "cache_corruption_checks": 28,
+  "cache_restored_snapshots": 28,
+  "cache_slots": [
+    {
+      "artifact_id": "linux-glibc-x86_64",
+      "python": "3.12.15",
+      "arch": "x86_64",
+      "report": {
+        "path": "specs/003-add-cross-platform-support/evidence/cache-notices-more-2026-10-20/posix/ubuntu-24.04-3.12.json",
+        "sha256": "2a95a0735e8922a4d366a5339325c0a622a5cc1a9e877c8c1cfdf93e8fe459b2"
+      },
+      "notice_files_per_format": 480,
+      "installed_modes": [
+        "wheel",
+        "sdist"
+      ],
+      "environment": {
+        "environment_kind": "hosted-native",
+        "runner": "ubuntu-24.04"
+      }
+    },
+    {
+      "artifact_id": "linux-glibc-x86_64",
+      "python": "3.14.8",
+      "arch": "x86_64",
+      "report": {
+        "path": "specs/003-add-cross-platform-support/evidence/cache-notices-more-2026-10-20/posix/ubuntu-24.04-3.14.json",
+        "sha256": "ec6c1f221ae0f66c40f0c6cd593f27a724d2f229cd7021b327b5b90efb696c09"
+      },
+      "notice_files_per_format": 480,
+      "installed_modes": [
+        "wheel",
+        "sdist"
+      ],
+      "environment": {
+        "environment_kind": "hosted-native",
+        "runner": "ubuntu-24.04"
+      }
+    },
+    {
+      "artifact_id": "linux-glibc-aarch64",
+      "python": "3.12.15",
+      "arch": "aarch64",
+      "report": {
+        "path": "specs/003-add-cross-platform-support/evidence/cache-notices-more-2026-10-20/posix/ubuntu-24.04-arm-3.12.json",
+        "sha256": "aec8b90d2d1c7b7f56d288a6e3dc604f3aa199d50564b5cf0242568901a05707"
+      },
+      "notice_files_per_format": 573,
+      "installed_modes": [
+        "wheel",
+        "sdist"
+      ],
+      "environment": {
+        "environment_kind": "hosted-native",
+        "runner": "ubuntu-24.04-arm"
+      }
+    },
+    {
+      "artifact_id": "linux-glibc-aarch64",
+      "python": "3.14.8",
+      "arch": "aarch64",
+      "report": {
+        "path": "specs/003-add-cross-platform-support/evidence/cache-notices-more-2026-10-20/posix/ubuntu-24.04-arm-3.14.json",
+        "sha256": "875ef0074ee5023d76d1afe087ee6c0577a7ad3986dc1c7dec608d6f518b3b7d"
+      },
+      "notice_files_per_format": 573,
+      "installed_modes": [
+        "wheel",
+        "sdist"
+      ],
+      "environment": {
+        "environment_kind": "hosted-native",
+        "runner": "ubuntu-24.04-arm"
+      }
+    },
+    {
+      "artifact_id": "macos-arm64",
+      "python": "3.12.10",
+      "arch": "arm64",
+      "report": {
+        "path": "specs/003-add-cross-platform-support/evidence/cache-notices-more-2026-10-20/posix/macos-15-3.12.json",
+        "sha256": "09a53d9c72739894020811dff7635a64c17b142bb26d1362f2df8cca571efb76"
+      },
+      "notice_files_per_format": 233,
+      "installed_modes": [
+        "wheel",
+        "sdist"
+      ],
+      "environment": {
+        "environment_kind": "hosted-native",
+        "runner": "macos-15"
+      }
+    },
+    {
+      "artifact_id": "macos-arm64",
+      "python": "3.14.7",
+      "arch": "arm64",
+      "report": {
+        "path": "specs/003-add-cross-platform-support/evidence/cache-notices-more-2026-10-20/posix/macos-15-3.14.json",
+        "sha256": "a25bd0be1cfb52fc81d93a922716614568951333fa3a5e40d07d466de1170d8d"
+      },
+      "notice_files_per_format": 233,
+      "installed_modes": [
+        "wheel",
+        "sdist"
+      ],
+      "environment": {
+        "environment_kind": "hosted-native",
+        "runner": "macos-15"
+      }
+    },
+    {
+      "artifact_id": "macos-x86_64",
+      "python": "3.12.10",
+      "arch": "x86_64",
+      "report": {
+        "path": "specs/003-add-cross-platform-support/evidence/cache-notices-more-2026-10-20/posix/macos-15-intel-3.12.json",
+        "sha256": "31d5799e2df1e27789a350fb56324f90791e4d70a0ac903a040956410a332f50"
+      },
+      "notice_files_per_format": 233,
+      "installed_modes": [
+        "wheel",
+        "sdist"
+      ],
+      "environment": {
+        "environment_kind": "hosted-native",
+        "runner": "macos-15-intel"
+      }
+    },
+    {
+      "artifact_id": "macos-x86_64",
+      "python": "3.14.7",
+      "arch": "x86_64",
+      "report": {
+        "path": "specs/003-add-cross-platform-support/evidence/cache-notices-more-2026-10-20/posix/macos-15-intel-3.14.json",
+        "sha256": "737d2a6f4d9774ff892e9113ea5688e1ba6b944e6bb2b8c5e929a30868fa503c"
+      },
+      "notice_files_per_format": 233,
+      "installed_modes": [
+        "wheel",
+        "sdist"
+      ],
+      "environment": {
+        "environment_kind": "hosted-native",
+        "runner": "macos-15-intel"
+      }
+    },
+    {
+      "artifact_id": "linux-musl-x86_64",
+      "python": "3.12.13",
+      "arch": "x86_64",
+      "report": {
+        "path": "specs/003-add-cross-platform-support/evidence/cache-notices-more-2026-10-20/additional/musl-cache-notices-x86_64-3.12.json",
+        "sha256": "123f1b22361f92a8b83c5693ec7017b27d23326d826e9bf9f71f7b5a2724e9ca"
+      },
+      "notice_files_per_format": 450,
+      "installed_modes": [
+        "wheel",
+        "sdist"
+      ],
+      "environment": {
+        "arch": "x86_64",
+        "python_minor": "3.12",
+        "distribution": "alpine",
+        "version": "3.22.4",
+        "uid": 1001,
+        "environment_kind": "container",
+        "image": "python@sha256:9381e50cc82f4279b949fcd2d2f5e57cf97b1da2399eb956502364ceea2f4e83",
+        "kernel": "7.0.0-1017-azure",
+        "native_cpu": true,
+        "limitation": "Alpine userland on Ubuntu hosted kernel; no native Alpine cell qualification"
+      }
+    },
+    {
+      "artifact_id": "linux-musl-x86_64",
+      "python": "3.14.5",
+      "arch": "x86_64",
+      "report": {
+        "path": "specs/003-add-cross-platform-support/evidence/cache-notices-more-2026-10-20/additional/musl-cache-notices-x86_64-3.14.json",
+        "sha256": "94a49db41e2b17d3efcd1723f4c677d397a7d7a77e3b14f4d8881298ac8abab8"
+      },
+      "notice_files_per_format": 450,
+      "installed_modes": [
+        "wheel",
+        "sdist"
+      ],
+      "environment": {
+        "arch": "x86_64",
+        "python_minor": "3.14",
+        "distribution": "alpine",
+        "version": "3.22.4",
+        "uid": 1001,
+        "environment_kind": "container",
+        "image": "python@sha256:1a5f0303fd8941565b5bbda3fac2345148a9fd8245d575c2971ccefcd77c78f6",
+        "kernel": "6.17.0-1022-azure",
+        "native_cpu": true,
+        "limitation": "Alpine userland on Ubuntu hosted kernel; no native Alpine cell qualification"
+      }
+    },
+    {
+      "artifact_id": "linux-musl-aarch64",
+      "python": "3.12.13",
+      "arch": "aarch64",
+      "report": {
+        "path": "specs/003-add-cross-platform-support/evidence/cache-notices-more-2026-10-20/additional/musl-cache-notices-aarch64-3.12.json",
+        "sha256": "4f48c6c4b76a1e852f8b1ce19a55dd52052404e69587db6140e2ee01ec794ddc"
+      },
+      "notice_files_per_format": 450,
+      "installed_modes": [
+        "wheel",
+        "sdist"
+      ],
+      "environment": {
+        "arch": "aarch64",
+        "python_minor": "3.12",
+        "distribution": "alpine",
+        "version": "3.22.4",
+        "uid": 1001,
+        "environment_kind": "container",
+        "image": "python@sha256:07b3a3b85d5b208f164a3276d5eb9c51e0ce61bbe4cb7ab4df0da50d5a78dc11",
+        "kernel": "7.0.0-1017-azure",
+        "native_cpu": true,
+        "limitation": "Alpine userland on Ubuntu hosted kernel; no native Alpine cell qualification"
+      }
+    },
+    {
+      "artifact_id": "linux-musl-aarch64",
+      "python": "3.14.5",
+      "arch": "aarch64",
+      "report": {
+        "path": "specs/003-add-cross-platform-support/evidence/cache-notices-more-2026-10-20/additional/musl-cache-notices-aarch64-3.14.json",
+        "sha256": "b6d3986bbadd175932d4aa5ffd6dbd8dd50a779647d370ff358d3627f5195763"
+      },
+      "notice_files_per_format": 450,
+      "installed_modes": [
+        "wheel",
+        "sdist"
+      ],
+      "environment": {
+        "arch": "aarch64",
+        "python_minor": "3.14",
+        "distribution": "alpine",
+        "version": "3.22.4",
+        "uid": 1001,
+        "environment_kind": "container",
+        "image": "python@sha256:27b691f87878a079100a3d8fafcd66b3c54d931598f307bcb54617c395f5b43c",
+        "kernel": "7.0.0-1017-azure",
+        "native_cpu": true,
+        "limitation": "Alpine userland on Ubuntu hosted kernel; no native Alpine cell qualification"
+      }
+    },
+    {
+      "artifact_id": "graphviz-16.1.0-windows-legacy",
+      "python": "3.12.10",
+      "arch": "AMD64",
+      "report": {
+        "path": "specs/003-add-cross-platform-support/evidence/cache-notices-more-2026-10-20/additional/windows-cache-notices-3.12.json",
+        "sha256": "434fcc9693cc93931940f68df07744f728e8bf4da4a257134af000c2ed3d63fa"
+      },
+      "notice_files_per_format": 29,
+      "installed_modes": [
+        "wheel",
+        "sdist"
+      ],
+      "environment": {
+        "environment_kind": "hosted-windows",
+        "limitation": "Not a clean Windows 11 acceptance environment"
+      }
+    },
+    {
+      "artifact_id": "graphviz-16.1.0-windows-legacy",
+      "python": "3.14.8",
+      "arch": "AMD64",
+      "report": {
+        "path": "specs/003-add-cross-platform-support/evidence/cache-notices-more-2026-10-20/additional/windows-cache-notices-3.14.json",
+        "sha256": "a278abfde701807cf7131a8719982231810a33599d971fc9f4ee40c3fb032805"
+      },
+      "notice_files_per_format": 29,
+      "installed_modes": [
+        "wheel",
+        "sdist"
+      ],
+      "environment": {
+        "environment_kind": "hosted-windows",
+        "limitation": "Not a clean Windows 11 acceptance environment"
+      }
+    }
+  ],
+  "foundation": {
+    "path": "specs/003-add-cross-platform-support/evidence/cache-notices-more-2026-10-20/foundation.json",
+    "sha256": "ea518ffb95130542911faabee2277619e0e4248fab346f6bfa760ab3ac9d899f"
+  },
+  "package_regression": {
+    "path": "specs/003-add-cross-platform-support/evidence/cache-notices-more-2026-10-20/packages/summary.json",
+    "sha256": "45be242dfb0be22c41ef21702653e3c3bc83c808ae801b2a9ddb5c4151e0d861"
+  },
+  "runtime_regression": {
+    "path": "specs/003-add-cross-platform-support/evidence/cache-notices-more-2026-10-20/runtime-regression/summary.json",
+    "sha256": "a603ce7eea40c5f533585e91c857103075946a8f2a2499edb6bab9cb9f240f3d"
+  },
+  "pending": [
+    "Per-component license applicability and compatibility approval",
+    "Corresponding sources and permanent source retention/offer",
+    "Final distributed bundles, macOS signing/notarization and complete cell acceptance"
+  ],
+  "limitations": [
+    "Private POSIX development bundles and currently packaged Windows manifest; no support promotion",
+    "Musl cache measured on native CPU in pinned Alpine container over Ubuntu kernel; no native Alpine acceptance",
+    "Hosted Windows cache measurement does not replace clean Windows 11 acceptance",
+    "Real engine probes; fixture acquisition on POSIX, official pinned HTTPS on Windows; Python-only offline network guard"
+  ],
+  "application_revision": "ec5ff25f838416aea8a7526367bb1820df04e9a2",
+  "previous_index": {
+    "path": "specs/003-add-cross-platform-support/evidence/cache-notices-more-2026-10-20/previous-distribution-index.json",
+    "sha256": "b4430a23e295c5c466b60b56109265d20574f9f8ae50655ce926dd8bca7fa5c8"
+  },
+  "measured_cache_variants": 7,
+  "cache_python_slots": 14,
+  "cache_installations": 28,
+  "remaining_cache_variants": [],
+  "windows_manifest": {
+    "path": "specs/003-add-cross-platform-support/evidence/cache-notices-more-2026-10-20/windows-manifest.json",
+    "sha256": "8aed45fdbd206069cf7e37df8b505a979acaa219bb3f013f2dd9c7f11e680f9d"
+  },
+  "source_access_notice_update": {
+    "path": "specs/003-add-cross-platform-support/evidence/source-access-notices-2026-10-20/summary.json",
+    "sha256": "755b0f96542883bdae87f03e27e19d7c46f0ef5461144be84e7ea1a640e489bb"
+  },
+  "cache_evidence_applies_to_new_source_notice_archives": false,
+  "source_access_notice_update_scope": "Six newer candidate ZIPs verified separately; previous archive/cache receipts keep their original hashes"
+}

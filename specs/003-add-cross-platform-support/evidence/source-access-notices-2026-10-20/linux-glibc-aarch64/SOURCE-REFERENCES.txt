@@ -1,0 +1,34 @@
+Source and license information for linux-glibc-aarch64
+
+Graphviz 16.1.0 source code is available under the Eclipse Public License 2.0.
+The license is included in Graphviz-COPYING.txt. Third-party components
+retain their own terms in the accompanying notices.
+Obtain the original Graphviz source archive at:
+https://gitlab.com/graphviz/graphviz/-/archive/16.1.0/graphviz-16.1.0.tar.gz
+SHA-256: 1e028b2b3e84e946c1d3e8c47590f8f0741bba1041fe6eff36eee87e598ea249
+Source revision: e41c710710be080ad37af1b51c6e2f8beffa9ee5
+
+SDK archive containing the library/runtime sources used by this build:
+https://ziglang.org/download/0.15.2/zig-aarch64-linux-0.15.2.tar.xz
+SHA-256: 958ed7d1e00d0ea76590d27666efbf7a932281b3d7ba0c6b01b0ff26498f667f
+
+This executable includes GNU C Library startup/nonshared code,
+licensed under the GNU Lesser General Public License, version 2.1
+or later. Its use is covered by that license. The full version 2.1
+text is in LGPL-2.1-COPYING.txt; individual source notices and
+additional permissions are preserved separately.
+A linking exception in one file does not cover other files.
+The planned distribution route is LGPL 2.1 sections 6(a)/6(d):
+provide the corresponding library and application sources, data
+and build utilities so recipients can modify and relink the work.
+The distribution terms must permit modification for personal use
+and reverse engineering to debug those modifications.
+This candidate has no completed section 6 source delivery/offer.
+Dynamic system libc alone does not discharge these obligations
+for the startup/nonshared code copied into the executable.
+
+Maintainer candidate: complete corresponding-source delivery and
+component compatibility review are pending. The upstream archives above
+do not alone supply the build-specific recipes, generated inputs and
+relink instructions. Those must accompany the final source distribution.
+No three-year written source offer is made by this notice.

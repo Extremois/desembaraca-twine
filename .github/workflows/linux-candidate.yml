@@ -84,6 +84,18 @@ jobs:
           python tools/runtime/build-common.py --artifact-id linux-glibc-x86_64 --source-archive graphviz.tar.gz --sdk-record "$RUNNER_TEMP/twine-replay-sdk/sdk-record.json" --output "$RUNNER_TEMP/twine-replay-build" --execute 2>&1 | tee "$GITHUB_WORKSPACE/.tmp/native-linux/source-rebuild.log"
           cd "$GITHUB_WORKSPACE"
           python tools/runtime/observe-linux-network.py --build-output "$RUNNER_TEMP/twine-replay-build" --environment-kind native --report .tmp/native-linux/rebuilt-network.json --corpus-report .tmp/native-linux/rebuilt-corpus.json
+      - name: Verify controlled modified-glibc relink from exported sources
+        shell: bash
+        run: |
+          set -o pipefail
+          cd "$RUNNER_TEMP/twine-source-replay"
+          python tools/runtime/relink-zig.py --source-output "$RUNNER_TEMP/twine-replay-build" --output "$RUNNER_TEMP/twine-replay-linked" --zig "$RUNNER_TEMP/twine-replay-sdk/sdk/zig-x86_64-linux-0.15.2/zig"
+          python tools/runtime/audit-glibc-objects.py --linked-build "$RUNNER_TEMP/twine-replay-linked" --sdk-root "$RUNNER_TEMP/twine-replay-sdk/sdk/zig-x86_64-linux-0.15.2" --sdk-archive "$RUNNER_TEMP/twine-replay-sdk/zig.tar.xz" --report "$RUNNER_TEMP/twine-replay-linked/glibc-object-sources.json"
+          python tools/runtime/verify-modified-glibc-relink.py --modify-sdk --sdk-root "$RUNNER_TEMP/twine-replay-sdk/sdk/zig-x86_64-linux-0.15.2" --cache-dir "$RUNNER_TEMP/twine-replay-sdk/cache" --edit-receipt "$GITHUB_WORKSPACE/.tmp/native-linux/modified-glibc-edits.json"
+          python tools/runtime/relink-zig.py --source-output "$RUNNER_TEMP/twine-replay-build" --output "$RUNNER_TEMP/twine-modified-glibc-linked" --zig "$RUNNER_TEMP/twine-replay-sdk/sdk/zig-x86_64-linux-0.15.2/zig"
+          cd "$GITHUB_WORKSPACE"
+          python tools/runtime/observe-linux-network.py --build-output "$RUNNER_TEMP/twine-modified-glibc-linked" --environment-kind native --report .tmp/native-linux/modified-glibc-network.json --corpus-report .tmp/native-linux/modified-glibc-corpus.json
+          python "$RUNNER_TEMP/twine-source-replay/tools/runtime/verify-modified-glibc-relink.py" --verify --baseline-linked "$RUNNER_TEMP/twine-replay-linked" --modified-linked "$RUNNER_TEMP/twine-modified-glibc-linked" --modified-sdk-root "$RUNNER_TEMP/twine-replay-sdk/sdk/zig-x86_64-linux-0.15.2" --sdk-archive "$RUNNER_TEMP/twine-replay-sdk/zig.tar.xz" --edit-receipt .tmp/native-linux/modified-glibc-edits.json --syscall-report .tmp/native-linux/modified-glibc-network.json --corpus-report .tmp/native-linux/modified-glibc-corpus.json --modified-observations-out .tmp/native-linux/modified-glibc-object-sources.json --report .tmp/native-linux/modified-glibc-relink.json
       - name: Corpus and Unicode relocation on Python 3.14
         run: '"${{ steps.python314.outputs.python-path }}" tools/runtime/observe-linux-network.py --build-output "$RUNNER_TEMP/twine-notices" --environment-kind native --report .tmp/native-linux/network-314.json --corpus-report .tmp/native-linux/corpus-314.json'
       - name: Retain candidate and measurements for audit (not a qualified release)
@@ -107,6 +119,13 @@ jobs:
             ${{ runner.temp }}/twine-notices/candidate/third-party-notices/
             ${{ runner.temp }}/twine-package/
             ${{ runner.temp }}/twine-replay-build/provenance.json
+            ${{ runner.temp }}/twine-replay-linked/provenance.json
+            ${{ runner.temp }}/twine-replay-linked/allocated-sections.json
+            ${{ runner.temp }}/twine-replay-linked/glibc-object-sources.json
+            ${{ runner.temp }}/twine-modified-glibc-linked/provenance.json
+            ${{ runner.temp }}/twine-modified-glibc-linked/allocated-sections.json
+            ${{ runner.temp }}/twine-modified-glibc-linked/compiler-verbose.txt
+            ${{ runner.temp }}/twine-modified-glibc-linked/lld-output.txt
       - name: Retain source review material (not a published source offer)
         if: always()
         uses: actions/upload-artifact@v4

@@ -1,8 +1,8 @@
 {
   "kind": "local-source-and-contract-audit-not-support-qualification",
   "task": "T080",
-  "captured_at": "2026-10-18T11:25:24.529163+00:00",
-  "reviewer": "Codex: source inspection and isolated contract execution",
+  "captured_at": "2026-10-20T21:18:21.415645+00:00",
+  "reviewer": "Codex: current application source review and isolated security contracts",
   "working_tree_dirty": true,
   "limits": [
     {
@@ -136,16 +136,18 @@
     }
   ],
   "limitations": [
-    "This is the application-code audit required by T080, not native artifact/license/security qualification for any new support cell.",
-    "Controlled transports/probes are not native engine trials; actual process-output/deadline tests use the production runner with CPython children.",
-    "No native syscall network trace, native macOS execution or full Linux distribution matrix; these remain separate pending gates.",
-    "Deadlines are cooperative with up to two seconds direct-process cleanup; arbitrary process trees or hostile same-user cache races are not claimed contained.",
-    "Suite results observed in tool output; no VM, provisioning, remote CI or publication."
+    "Application-code audit, not native artifact/license/signature acceptance or qualification of any support cell",
+    "Controlled download/probe/fault fixtures are not real CDN or native engine acceptance",
+    "Existing WSL is not a native Linux support cell; native POSIX contract coverage is corroborated separately by the prior hosted CI",
+    "POSIX skips on Windows and Windows junction/byte-range-lock skips on WSL are preserved, including skipped subtests",
+    "Cooperative deadlines and up to two seconds direct-process cleanup; no arbitrary process-tree containment or hostile same-user race guarantee",
+    "No claim of exhaustive filesystem monitoring: write scope combines source review with isolated-cache and external-sentinel tests",
+    "No new CI run, native bundle execution, global install, VM creation, catalog promotion or publication in this audit"
   ],
   "source_sha256": {
-    "src/twine_edge_overlap/runtime.py": "dab6499fdc5abe5f417d5ed8f9242d711f1bda7be0c98e8b3c819b273af669cb",
-    "src/twine_edge_overlap/runtime_platform.py": "2f811109e2528ed1fcc8d8eab16577f771c466df216cf718feb9c7c6ccf1deb8",
-    "src/twine_edge_overlap/runtime_snapshot.py": "8a255c6a0b13eb132215a1ebac3bf11b70682c29ed1bdb7b5899db46243c871f",
+    "src/twine_edge_overlap/runtime.py": "f595f4980bf6d5c6183d6237a79f01bb432f55e95ad2a3513360538ae7948593",
+    "src/twine_edge_overlap/runtime_platform.py": "54e012b864639301f5b010e888bc6e1c48f146ef6f3ae44fcb6c37f585da8016",
+    "src/twine_edge_overlap/runtime_snapshot.py": "7ac51812ecf2bd9ef38031324425a40104eec9ad3c582a2292eb2d972f4f8c9e",
     "src/twine_edge_overlap/application.py": "e011ebe5ef1ab4a980238dd62b8ea1d950d4aac6172d9d2e5764a24bd226f3bd",
     "src/twine_edge_overlap/engines/process.py": "54219fb40a6c2f8a7db034f8454c9d31b77fd63ede38e09639ae7404fd7f7d81",
     "src/twine_edge_overlap/engines/graphviz.py": "218dd40b9de3f78394286f96003a2f0aec3e7ef08955ce81479c1b319426a2a6",
@@ -153,10 +155,123 @@
     "src/twine_edge_overlap/formats/profile.py": "14ca026f83b79ac01afb92d314ab6fa9cb6902c1ad11470e6cc57244398187e4",
     "src/twine_edge_overlap/files.py": "301a50479ae75488263c4f966f1eb5299ddd5b65aad4280f52df0ccc55869186",
     "tools/runtime/qualify-target.py": "bc816c95261f980b5acbad6022792b1602e0bfab867fc0286db0e3603a29caa9",
-    "tools/runtime/qualification-worker.py": "e518cce677570a3b0b05255387e3559f1cc35a51b5435efbc93691ce184ebe4a",
+    "tools/runtime/qualification-worker.py": "bff219d650944a7d026aafae8fabcf34617a41b43ca9494090c16e09dc72947a",
     "tools/runtime/run-qualification-ci.py": "9ea6ee1626623770a978fcda67337f413583a6294555e5a95486b1de1072b9a1",
     "tests/unit/test_security_limits.py": "90fc273806d799f6ff222c90274ca8efb52d129338d7c5b64eb3e5620a531fed",
-    "tests/unit/test_qualification_tools.py": "ad699d1412f7185f573fbaf0a2519179aee57476414f78aae1e2d08c2d18ed5a"
+    "tests/unit/test_qualification_tools.py": "f2a810cd14a175e0bbb85bb87e8a944ef7d24b1c1156178900b87da26ad66887"
   },
-  "task_status": "partial: local code audit complete; final packages and per-cell prerequisites remain pending"
+  "task_status": "complete: application limits, privacy and write-scope audit; native distribution acceptance remains in its own open tasks",
+  "application_revision": "58f69b0bfc8675b2d6cd6bc23f318ec2349965b4",
+  "source_state": "working-tree-content-addressed",
+  "previous_audit": {
+    "path": "specs/003-add-cross-platform-support/evidence/security-audit-2026-10-20/previous-security-limits.json",
+    "sha256": "741e7962814d435b16b23c6b7f1e29ac102a967844a71000796f998e484d9e37"
+  },
+  "current_executions": [
+    {
+      "path": "specs/003-add-cross-platform-support/evidence/security-audit-2026-10-20/python-3.12.json",
+      "sha256": "2be9326720e50c6798ed0a440683a5be88a790c03ad97d944367fd6038cfde23",
+      "environment": "current Windows",
+      "python": "3.12.10",
+      "tests": 59,
+      "skipped_records": 4,
+      "skipped_parent_tests": 4,
+      "passed": true
+    },
+    {
+      "path": "specs/003-add-cross-platform-support/evidence/security-audit-2026-10-20/python-3.14.json",
+      "sha256": "9e881aed80115ca5a9f1e7c3c1ae67db05561c610b393e08cb387a7065b96f0f",
+      "environment": "current Windows",
+      "python": "3.14.6",
+      "tests": 59,
+      "skipped_records": 4,
+      "skipped_parent_tests": 4,
+      "passed": true
+    },
+    {
+      "path": "specs/003-add-cross-platform-support/evidence/security-audit-2026-10-20/python-wsl-3.14.json",
+      "sha256": "9c87622d05fab4ac7ae8089f10554a1423de35329cce875de0f7f087e60732fe",
+      "environment": "existing WSL",
+      "python": "3.14.8",
+      "tests": 59,
+      "skipped_records": 6,
+      "skipped_parent_tests": 3,
+      "passed": true
+    }
+  ],
+  "foundation_evidence": {
+    "path": "specs/003-add-cross-platform-support/evidence/ubuntu1804-installed-recovery-2026-10-20/foundation.json",
+    "sha256": "8e4e7493502ebabadae84d1156de75d0ed223ec7d862a48e19142c55d4f8d568"
+  },
+  "ci_source_binding": {
+    "application_revision": "58f69b0bfc8675b2d6cd6bc23f318ec2349965b4",
+    "existing_application_and_contracts_unchanged": true,
+    "git_blob_sha1": {
+      "src/twine_edge_overlap/__init__.py": "3853b39bf03f023c8f25795112a2edef90b5a742",
+      "src/twine_edge_overlap/__main__.py": "eb53e2f31b2f703ad32ef64b8a41faa3e7d18e08",
+      "src/twine_edge_overlap/application.py": "d1e8f98149744952f3025a43c27f79057762912e",
+      "src/twine_edge_overlap/cli.py": "c0c9690bea8c981bdee80718cdf42104fc50e6a3",
+      "src/twine_edge_overlap/domain/__init__.py": "f24fd00ee21e2fc261a3bbd0f8ef1d4326b1f33d",
+      "src/twine_edge_overlap/domain/arcs.py": "c0e03c4f05baf10071e1598b93270be72506bb9c",
+      "src/twine_edge_overlap/domain/geometry.py": "74eb5ef22c05d4c44b76d04aee724add46a366d1",
+      "src/twine_edge_overlap/domain/model.py": "516cedcd1dd2dee7bcd9584c4d0392b81c099eca",
+      "src/twine_edge_overlap/domain/result.py": "1ee795aa16d7c9577a1a16778d2a25739a8c946d",
+      "src/twine_edge_overlap/domain/selection.py": "6206176160fbe31109e12f7a1c17477a21c02e54",
+      "src/twine_edge_overlap/engines/__init__.py": "9c631cedf34c4e882c6fd88b6acd29b629d2b001",
+      "src/twine_edge_overlap/engines/graphviz.py": "06d5eac07adbe819986dfbd61f78fa8ae9e9167d",
+      "src/twine_edge_overlap/engines/process.py": "830c76222825eccd750f916792b1290effda24f4",
+      "src/twine_edge_overlap/errors.py": "c732a5e5b76ec8221ec73aeae7548f4dfbffdd50",
+      "src/twine_edge_overlap/files.py": "0d79505596e0f10bdbc1994845658758676096b1",
+      "src/twine_edge_overlap/formats/__init__.py": "ba018e9dfe35a3ba323bdb025512bf59ab7c51da",
+      "src/twine_edge_overlap/formats/profile.py": "f9d82e9b9fc89855878e387416a64cf5feb14f09",
+      "src/twine_edge_overlap/runtime.py": "371e771542998f659203afc83a32131d863059a3",
+      "src/twine_edge_overlap/runtime_catalog.py": "3cab088da13bf395d39f96ddc6f057603a80e417",
+      "src/twine_edge_overlap/runtime_platform.py": "b1a21eb2bb6a6f93607226227699523008698e55",
+      "src/twine_edge_overlap/runtime_snapshot.py": "745d252351198098c1bd684f1bace30232ccb12b",
+      "tests/contract/test_cross_platform_results.py": "025bf4af0a9dea5c719128fc0bcba9d78e7b754e",
+      "tests/integration/test_runtime_budget.py": "f1018dd45353d2eeeed25ffd3f83c7278d1f2092",
+      "tests/integration/test_runtime_concurrency.py": "acef0b948bfaeb69a060036b861ab55e416d08a8",
+      "tests/integration/test_runtime_crash.py": "031b0ee8b163cbf36c110232b2acdd06ec26cfff",
+      "tests/integration/test_runtime_recovery.py": "26f4d2afef85090bae250986ac2d20d009ea5fcc",
+      "tests/unit/test_runtime_archives.py": "03bf985b552efc2af8b32c7cf8e7b6f8c5fb3d8a",
+      "tests/unit/test_runtime_platform.py": "0659d00269b51f8545473561342463fceb9b6a7c",
+      "tests/unit/test_runtime_posix.py": "9c3ef804be46d44de7ab4f40901f7c501f411c05",
+      "tests/unit/test_runtime_repair.py": "f20f589dc328fd96fe7f7b4b2b0a7babd0050d23",
+      "tests/unit/test_runtime_snapshot.py": "af68bd8657ad7c00f51aaa799a4468824c3e22eb",
+      "tests/unit/test_security_limits.py": "361d1a98864f002adfaac8df2c0d885242d2a1cc",
+      "tests/common.py": "8e2d8b2dce09e63626fae5a420148f168a0ac251",
+      "tests/runtime_support.py": "5ba8c996aa48440860a904e4843667995530d25e",
+      "tests/posix_support.py": "30707104e2b8acd54c224cbc3c23aa1d4e0e584e"
+    },
+    "scope": "21 production Python files, 11 security contract modules and shared test helpers; audit collector is new local code"
+  },
+  "application_source_sha256": {
+    "src/twine_edge_overlap/__init__.py": "cee6e390d73f349b5b05bc4b2f9501f20e0ff761a7e27a60c95255115bc59b82",
+    "src/twine_edge_overlap/__main__.py": "482b8693e2fe6dbd732e3d7961e03827d3efa187bad11d29da188be580ebbeea",
+    "src/twine_edge_overlap/application.py": "e011ebe5ef1ab4a980238dd62b8ea1d950d4aac6172d9d2e5764a24bd226f3bd",
+    "src/twine_edge_overlap/cli.py": "8eabe90bc4f1b05dd33d46327b7c17bc9fa4eff5936f54360a9d71188a27c652",
+    "src/twine_edge_overlap/domain/__init__.py": "a756b6c72ddc6b46896c1901cddd723783adaef53e3b7d0d966e534df0ea26f3",
+    "src/twine_edge_overlap/domain/arcs.py": "72311c1e6938d33b8f1b03181323e5b32f484edbd5d2946b017a77644bdff28c",
+    "src/twine_edge_overlap/domain/geometry.py": "f88a67b9d9a4fff55edf4c709532619af0f87aebf5d0cd6bc6d60b0fb59cac48",
+    "src/twine_edge_overlap/domain/model.py": "0d82e3f3e0dd120df53f366ae1ddda129146f222f7ee3f01a7c06fbb18610a80",
+    "src/twine_edge_overlap/domain/result.py": "57697cfc3b7c629887200f9db54ccae63e19e4a1a109337639741038fbd4a546",
+    "src/twine_edge_overlap/domain/selection.py": "e6fc14964e95a40297057328574eee4bf548fc2f54a4bd250d0db6269293dc8f",
+    "src/twine_edge_overlap/engines/__init__.py": "60e046e374519cf1363b2d3546343673818d00c85278ad1c8c8c3651927719a3",
+    "src/twine_edge_overlap/engines/graphviz.py": "218dd40b9de3f78394286f96003a2f0aec3e7ef08955ce81479c1b319426a2a6",
+    "src/twine_edge_overlap/engines/process.py": "54219fb40a6c2f8a7db034f8454c9d31b77fd63ede38e09639ae7404fd7f7d81",
+    "src/twine_edge_overlap/errors.py": "4248a22e72943410bb1133206126ab096d143cbfd7b4b2314f994b847185c8cf",
+    "src/twine_edge_overlap/files.py": "301a50479ae75488263c4f966f1eb5299ddd5b65aad4280f52df0ccc55869186",
+    "src/twine_edge_overlap/formats/__init__.py": "54d6ee8fd9b5d60bf5227f761cbee4de07caf987e57c57657bc4454c96602f61",
+    "src/twine_edge_overlap/formats/profile.py": "14ca026f83b79ac01afb92d314ab6fa9cb6902c1ad11470e6cc57244398187e4",
+    "src/twine_edge_overlap/runtime.py": "f595f4980bf6d5c6183d6237a79f01bb432f55e95ad2a3513360538ae7948593",
+    "src/twine_edge_overlap/runtime_catalog.py": "b8242eafe9ac685a885cb9747d8e2354aa7153b8c3dee51614ae6a2628ffa21d",
+    "src/twine_edge_overlap/runtime_platform.py": "54e012b864639301f5b010e888bc6e1c48f146ef6f3ae44fcb6c37f585da8016",
+    "src/twine_edge_overlap/runtime_snapshot.py": "7ac51812ecf2bd9ef38031324425a40104eec9ad3c582a2292eb2d972f4f8c9e"
+  },
+  "completion_basis": [
+    "T080 audits the application mechanisms enumerated in its task text; every listed limit and privacy/write-scope path was reviewed",
+    "Current code and existing security contracts match the six successful CI foundation jobs across Windows, Linux and macOS",
+    "Fresh content-bound local runs cover Windows Python 3.12/3.14 and existing WSL Python 3.14; skips are explicit, never passes",
+    "Final package and per-cell tests stay open under T066, T076, T078, T082 and their platform tasks; no support status or catalog change"
+  ]
 }

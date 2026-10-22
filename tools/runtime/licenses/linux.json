@@ -1237,6 +1237,39 @@
       "source_to_binary_complete": false
     }
   ],
+  "glibc_retained_source_reviews": [
+    {
+      "artifact_id": "linux-glibc-x86_64",
+      "approved": false,
+      "qualified": false,
+      "evidence": "specs/003-add-cross-platform-support/evidence/glibc-retained-source-review-2026-10-20/summary.json",
+      "executable_sha256": "43ce8d686720467c21be91cab4b8f3b246baae49c2cfe293714ebdf8a82f5716",
+      "retained_objects_joined": 3,
+      "allocated_bytes": 262,
+      "executable_bytes": 182,
+      "observed_sources_without_link_exception_phrase": [
+        "lib/libc/glibc/csu/init.c"
+      ],
+      "per_source_retention_established": false,
+      "pending": "Per-file applicability and corresponding source obligations; object compilation units are not per-source section attribution"
+    },
+    {
+      "artifact_id": "linux-glibc-aarch64",
+      "approved": false,
+      "qualified": false,
+      "evidence": "specs/003-add-cross-platform-support/evidence/glibc-retained-source-review-2026-10-20/summary.json",
+      "executable_sha256": "933b6c63370bdd3e814627e2a9a06176416c8da017a21dcbc96d8137dbc17e22",
+      "retained_objects_joined": 3,
+      "allocated_bytes": 224,
+      "executable_bytes": 192,
+      "observed_sources_without_link_exception_phrase": [
+        "lib/libc/glibc/csu/init.c",
+        "lib/libc/glibc/sysdeps/aarch64/start-2.33.S"
+      ],
+      "per_source_retention_established": false,
+      "pending": "ARM startup lacks the x64 linking-exception phrase; per-file applicability, corresponding sources and separate compiler runtime review"
+    }
+  ],
   "historical_math_notice_reviews": [
     {
       "approved": false,
@@ -1255,5 +1288,49 @@
       "native_revision": "29ce91235c57a22c66f9c9078c39d89e47b23bce",
       "native_evidence": "specs/003-add-cross-platform-support/evidence/runtime-math-notices-ci-2026-10-20/summary.json"
     }
-  ]
+  ],
+  "source_delivery_strategy_review": {
+    "kind": "selected-compliance-route-not-completed-source-delivery",
+    "approved": false,
+    "qualified": false,
+    "document": "tools/runtime/licenses/SOURCE-DELIVERY-REVIEW.md",
+    "document_sha256": "78969dea2610d69eacc916f894fcbd92e21b7122f1a8fe3d00a21f80e8eae670",
+    "evidence": "specs/003-add-cross-platform-support/evidence/source-access-notices-2026-10-20/summary.json",
+    "evidence_sha256": "755b0f96542883bdae87f03e27e19d7c46f0ef5461144be84e7ea1a640e489bb",
+    "native_notice_confirmation": true,
+    "revision": "62489c84dfd4cf95a11f38877087b795f7d5274c",
+    "glibc": {
+      "artifacts": [
+        "linux-glibc-x86_64",
+        "linux-glibc-aarch64"
+      ],
+      "license": "LGPL-2.1-or-later",
+      "selected_source_delivery_sections": [
+        "6(a)",
+        "6(d)"
+      ],
+      "written_offer_6c_issued": false,
+      "relying_on_all_files_linking_exception": false,
+      "requires_per_source_instruction_attribution_to_exclude_files": false,
+      "source_scope": "Preserve complete observed library source inputs conservatively; do not exclude files based on unproved discard",
+      "pending": [
+        "Controlled modified-library rebuild/relink and matching instructions",
+        "Final corresponding-source pair binding and equivalent access alongside distributed binary",
+        "Final distribution terms permitting personal modification/reverse engineering for debugging"
+      ]
+    },
+    "graphviz": {
+      "license": "EPL-2.0",
+      "source_rights_statement": "SOURCE-REFERENCES.txt",
+      "license_notice": "Graphviz-COPYING.txt",
+      "source_identity": "Pinned URL, SHA-256 and source revision",
+      "pending": [
+        "Final build-specific complete source delivery and third-party compatibility review"
+      ]
+    },
+    "separate_pending": [
+      "ISO entity-use conditions and other component applicability",
+      "Platform qualification/catalog and macOS signing have their own tasks"
+    ]
+  }
 }
