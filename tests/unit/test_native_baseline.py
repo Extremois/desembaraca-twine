@@ -181,6 +181,28 @@ class NativeBaselineTests(unittest.TestCase):
                     self.tool.execute(root,'18.04')
                 download.assert_not_called();boot.assert_not_called()
 
+    def test_resolute_requires_its_own_kernel_libc_image_and_cpu_variant(self):
+        import json
+        guest=dict(identity=dict(ID='ubuntu',VERSION_ID='26.04'),arch='x86_64',
+                   kernel='7.0.0-38-generic',glibc='glibc 2.43')
+        kvm=dict(enabled=True,present=True)
+        self.tool.validate_baseline(guest,kvm,'26.04')
+        pin=json.loads((ROOT/'.github/native-images/ubuntu-26.04-amd64.json').read_bytes())
+        self.tool.validate_pin(pin,'26.04')
+        for key,value in [('kernel','6.17.0-1022-azure'),('kernel','5.15.0-198-generic'),
+                          ('glibc','glibc 2.35'),('arch','aarch64'),
+                          ('identity',dict(ID='ubuntu',VERSION_ID='22.04'))]:
+            with self.subTest(key=key),self.assertRaises(ValueError):
+                self.tool.validate_baseline(dict(guest,**{key:value}),kvm,'26.04')
+        for key,value in [('url',pin['url'].replace('release-20261016','release')),
+                          ('url',pin['url'].replace('amd64.img','amd64v3.img')),
+                          ('arch','aarch64'),('release','22.04'),('size',1024**3+1)]:
+            with self.subTest(pin_key=key),self.assertRaises(ValueError):
+                self.tool.validate_pin(dict(pin,**{key:value}),'26.04')
+        with self.assertRaises(ValueError):self.tool.validate_pin(pin,'22.04')
+        with self.assertRaises(ValueError):
+            self.tool.validate_baseline(guest,dict(present=True,enabled=False),'26.04')
+
     def test_image_pin_refuses_mutable_or_foreign_origins_and_excessive_downloads(self):
         pin=dict(url='https://cloud-images.ubuntu.com/releases/bionic/release-20230607/ubuntu-18.04-server-cloudimg-amd64.img',
                  size=405667840,sha256='8dd2e6b5e5aad20c3f836123b300cba9861249408cbb07c359145a65d6bab6b6')

@@ -1,5 +1,16 @@
 # Pré-requisitos Python Linux: evidência parcial
 
+## Ubuntu 22.04 x64 nativo — 2026-10-27
+
+O [ensaio nativo conferido](ubuntu2204-native-2026-10-27/README.md) cobre
+CPython 3.12.15 e 3.14.8 privados em Ubuntu 22.04 x64 com kernel
+5.15.0-198/glibc 2.35. Venvs/pip/SSL, wheel externo, três entrypoints,
+53 arquivos contra o commit, corpus/rede/recuperação passaram; o Python do SO
+conservou seu hash. A mesma revisão repetiu 18.04 e 20.04 como regressão.
+Os arquivos dos interpretadores continuam fixados pelos pins abaixo e são
+obtidos pelo host, sem instalação global ou rede no guest. Não conclui T033
+para a matriz, modalidades remotas/sdist, manutenção, ARM64 ou demais versões.
+
 ## Ubuntu 20.04 x64 nativo e regressão 18.04 — 2026-10-27
 
 O [ensaio KVM conferido](ubuntu2004-native-2026-10-27/README.md) executou

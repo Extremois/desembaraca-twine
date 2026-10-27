@@ -1,0 +1,301 @@
+{
+  "kind": "partial-native-private-ubuntu-other-evidence-index",
+  "task": "T037",
+  "task_complete": false,
+  "qualified": false,
+  "captured_at": "2026-10-27T19:37:18.231553+00:00",
+  "registry": {
+    "path": "tools/runtime/support-targets.json",
+    "sha256": "be3e8a77e3836d1125658c00a75fbf0e3584f1e26a166a053583336c29a5d295"
+  },
+  "application_revision": "1c556872f4b74af61038ff53acac382ab1eb368a",
+  "evidence": {
+    "path": "specs/003-add-cross-platform-support/evidence/ubuntu2004-native-2026-10-27/summary.json",
+    "sha256": "14bb87d24c5a06658d50664c7d6dcbb319ca60b768ae0d74d218849e2b632d9d"
+  },
+  "expected_targets": 10,
+  "expected_python_slots": 20,
+  "complete_targets": 0,
+  "targets_with_partial_native_observations": 2,
+  "python_slots_with_partial_native_observations": 4,
+  "targets": [
+    {
+      "target_id": "ubuntu-18.04-stable-x86_64-distribution-default",
+      "version": "18.04",
+      "arch": "x86_64",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "partial-native-observation",
+          "evidence": {
+            "path": "specs/003-add-cross-platform-support/evidence/ubuntu2004-native-2026-10-27/summary.json",
+            "sha256": "14bb87d24c5a06658d50664c7d6dcbb319ca60b768ae0d74d218849e2b632d9d"
+          },
+          "observed_python": "3.12.15"
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "partial-native-observation",
+          "evidence": {
+            "path": "specs/003-add-cross-platform-support/evidence/ubuntu2004-native-2026-10-27/summary.json",
+            "sha256": "14bb87d24c5a06658d50664c7d6dcbb319ca60b768ae0d74d218849e2b632d9d"
+          },
+          "observed_python": "3.14.8"
+        }
+      ],
+      "pending_reason": "Final distributed candidate, installation modalities, eligibility, Twine and remaining common gates"
+    },
+    {
+      "target_id": "ubuntu-18.04-stable-aarch64-distribution-default",
+      "version": "18.04",
+      "arch": "aarch64",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "observed_python": null
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "observed_python": null
+        }
+      ],
+      "pending_reason": "Final distributed candidate, installation modalities, eligibility, Twine and remaining common gates"
+    },
+    {
+      "target_id": "ubuntu-20.04-stable-x86_64-distribution-default",
+      "version": "20.04",
+      "arch": "x86_64",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "partial-native-observation",
+          "evidence": {
+            "path": "specs/003-add-cross-platform-support/evidence/ubuntu2004-native-2026-10-27/summary.json",
+            "sha256": "14bb87d24c5a06658d50664c7d6dcbb319ca60b768ae0d74d218849e2b632d9d"
+          },
+          "observed_python": "3.12.15"
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "partial-native-observation",
+          "evidence": {
+            "path": "specs/003-add-cross-platform-support/evidence/ubuntu2004-native-2026-10-27/summary.json",
+            "sha256": "14bb87d24c5a06658d50664c7d6dcbb319ca60b768ae0d74d218849e2b632d9d"
+          },
+          "observed_python": "3.14.8"
+        }
+      ],
+      "pending_reason": "Final distributed candidate, installation modalities, eligibility, Twine and remaining common gates"
+    },
+    {
+      "target_id": "ubuntu-20.04-stable-aarch64-distribution-default",
+      "version": "20.04",
+      "arch": "aarch64",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "observed_python": null
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "observed_python": null
+        }
+      ],
+      "pending_reason": "Final distributed candidate, installation modalities, eligibility, Twine and remaining common gates"
+    },
+    {
+      "target_id": "ubuntu-22.04-stable-x86_64-distribution-default",
+      "version": "22.04",
+      "arch": "x86_64",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "observed_python": null
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "observed_python": null
+        }
+      ],
+      "pending_reason": "Final distributed candidate, installation modalities, eligibility, Twine and remaining common gates"
+    },
+    {
+      "target_id": "ubuntu-22.04-stable-aarch64-distribution-default",
+      "version": "22.04",
+      "arch": "aarch64",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "observed_python": null
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "observed_python": null
+        }
+      ],
+      "pending_reason": "Final distributed candidate, installation modalities, eligibility, Twine and remaining common gates"
+    },
+    {
+      "target_id": "ubuntu-26.04-stable-x86_64-distribution-default",
+      "version": "26.04",
+      "arch": "x86_64",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "observed_python": null
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "observed_python": null
+        }
+      ],
+      "pending_reason": "Final distributed candidate, installation modalities, eligibility, Twine and remaining common gates"
+    },
+    {
+      "target_id": "ubuntu-26.04-stable-aarch64-distribution-default",
+      "version": "26.04",
+      "arch": "aarch64",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "observed_python": null
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "observed_python": null
+        }
+      ],
+      "pending_reason": "Final distributed candidate, installation modalities, eligibility, Twine and remaining common gates"
+    },
+    {
+      "target_id": "ubuntu-26.10-stable-x86_64-distribution-default",
+      "version": "26.10",
+      "arch": "x86_64",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "observed_python": null
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "observed_python": null
+        }
+      ],
+      "pending_reason": "Final distributed candidate, installation modalities, eligibility, Twine and remaining common gates"
+    },
+    {
+      "target_id": "ubuntu-26.10-stable-aarch64-distribution-default",
+      "version": "26.10",
+      "arch": "aarch64",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "observed_python": null
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "observed_python": null
+        }
+      ],
+      "pending_reason": "Final distributed candidate, installation modalities, eligibility, Twine and remaining common gates"
+    }
+  ],
+  "limitations": [
+    "Private development wheel and controlled runtime acquisition; no final remote candidate or sdist acceptance",
+    "Ubuntu historical images; no Pro/ESM eligibility assertion",
+    "Musl engine kernel observation on Ubuntu; no native Alpine qualification",
+    "No local VM, Twine review, ARM64 qualification, catalog or support promotion"
+  ]
+}
