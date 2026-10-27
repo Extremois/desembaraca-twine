@@ -1,0 +1,1704 @@
+{
+  "kind": "native-ci-linux-source-pairing-review",
+  "candidate_revision": "a825f0d80bd7892de0e307656d28070885a9d1ed",
+  "source_state": "working-tree-review-of-committed-candidate",
+  "reviewed_on": "2026-10-27",
+  "qualified": false,
+  "approved": false,
+  "task_complete": false,
+  "tasks": [
+    "T030",
+    "T066"
+  ],
+  "runs": [
+    {
+      "id": 40565098533,
+      "name": "Cross-platform foundation",
+      "revision": "a825f0d80bd7892de0e307656d28070885a9d1ed",
+      "url": "https://github.com/Extremois/desembaraca-twine/actions/runs/40565098533",
+      "status": "completed",
+      "conclusion": "success",
+      "jobs": [
+        {
+          "id": 122404168956,
+          "name": "Pure contracts (windows-latest, Python 3.12)",
+          "status": "completed",
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Set up job",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Identify runner (not native support qualification)",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Standard-library foundation tests, without managed native engine",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Complete job",
+              "status": "completed",
+              "conclusion": "success"
+            }
+          ]
+        },
+        {
+          "id": 122404169232,
+          "name": "Pure contracts (macos-15, Python 3.14)",
+          "status": "completed",
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Set up job",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Identify runner (not native support qualification)",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Standard-library foundation tests, without managed native engine",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Complete job",
+              "status": "completed",
+              "conclusion": "success"
+            }
+          ]
+        },
+        {
+          "id": 122404169234,
+          "name": "Pure contracts (macos-15, Python 3.12)",
+          "status": "completed",
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Set up job",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Identify runner (not native support qualification)",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Standard-library foundation tests, without managed native engine",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Complete job",
+              "status": "completed",
+              "conclusion": "success"
+            }
+          ]
+        },
+        {
+          "id": 122404169406,
+          "name": "Pure contracts (ubuntu-24.04, Python 3.12)",
+          "status": "completed",
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Set up job",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Identify runner (not native support qualification)",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Standard-library foundation tests, without managed native engine",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Complete job",
+              "status": "completed",
+              "conclusion": "success"
+            }
+          ]
+        },
+        {
+          "id": 122404169439,
+          "name": "Pure contracts (windows-latest, Python 3.14)",
+          "status": "completed",
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Set up job",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Identify runner (not native support qualification)",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Standard-library foundation tests, without managed native engine",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Complete job",
+              "status": "completed",
+              "conclusion": "success"
+            }
+          ]
+        },
+        {
+          "id": 122404169494,
+          "name": "Pure contracts (ubuntu-24.04, Python 3.14)",
+          "status": "completed",
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Set up job",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Identify runner (not native support qualification)",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Standard-library foundation tests, without managed native engine",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Complete job",
+              "status": "completed",
+              "conclusion": "success"
+            }
+          ]
+        },
+        {
+          "id": 122404171369,
+          "name": "windows-acceptance",
+          "status": "completed",
+          "conclusion": "skipped",
+          "steps": []
+        }
+      ]
+    },
+    {
+      "id": 40565098269,
+      "name": "Linux Graphviz candidate",
+      "revision": "a825f0d80bd7892de0e307656d28070885a9d1ed",
+      "url": "https://github.com/Extremois/desembaraca-twine/actions/runs/40565098269",
+      "status": "completed",
+      "conclusion": "success",
+      "jobs": [
+        {
+          "id": 122404169306,
+          "name": "build-and-corpus",
+          "status": "completed",
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Set up job",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Ensure syscall tracer on ephemeral runner",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Prepare pinned private SDK and source",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Build experimental native x64 glibc candidate",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Capture actual linker inputs and extracted archive members",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Bind compiled Graphviz sources to the pinned archive",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Prepare byte-bound draft notices (audit approval remains pending)",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Inventory and package the experimental candidate",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Corpus and Unicode relocation on Python 3.12",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Real runtime preparation and offline cache on both Pythons",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Collect source material separately from the runtime",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Verify binary and source archive pairing without approving delivery",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Rebuild using exported sources and recipes",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Verify controlled modified-glibc relink from exported sources",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Corpus and Unicode relocation on Python 3.14",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Retain candidate and measurements for audit (not a qualified release)",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Retain source review material (not a published source offer)",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Complete job",
+              "status": "completed",
+              "conclusion": "success"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 40565098572,
+      "name": "Linux ARM64 Graphviz candidate",
+      "revision": "a825f0d80bd7892de0e307656d28070885a9d1ed",
+      "url": "https://github.com/Extremois/desembaraca-twine/actions/runs/40565098572",
+      "status": "completed",
+      "conclusion": "success",
+      "jobs": [
+        {
+          "id": 122404168550,
+          "name": "native-build",
+          "status": "completed",
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Set up job",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Ensure build tools and tracer on ephemeral runner",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Prepare pinned native ARM64 SDK and source",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Build experimental native ARM64 glibc candidate",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Capture actual ARM64 linker inputs and archive extractions",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Bind compiled ARM64 Graphviz sources to the pinned archive",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Observe ARM64 Zig runtime sources from extracted member",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Observe ARM64 glibc startup and nonshared sources separately",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Verify generated data and prepare byte-bound ARM64 notices",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Inspect ELF architecture, loader, dependencies and glibc baseline",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Corpus, Unicode relocation and native network observation on Python 3.12",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Corpus, Unicode relocation and native network observation on Python 3.14",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Inventory and package without approving licenses or support",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Real ARM64 runtime preparation and offline cache on both Pythons",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Export ARM64 source review package",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Verify ARM64 binary and source archive pairing without approving delivery",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Rebuild ARM64 using only exported sources and recipes",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Verify controlled modified-glibc ARM64 relink from exported sources",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Retain unqualified native ARM64 build for review",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Retain ARM64 source review material (not a published source offer)",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Complete job",
+              "status": "completed",
+              "conclusion": "success"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 40565098360,
+      "name": "macOS Graphviz candidates",
+      "revision": "a825f0d80bd7892de0e307656d28070885a9d1ed",
+      "url": "https://github.com/Extremois/desembaraca-twine/actions/runs/40565098360",
+      "status": "completed",
+      "conclusion": "success",
+      "jobs": [
+        {
+          "id": 122404168989,
+          "name": "native-build (macos-15, aarch64, macos-arm64)",
+          "status": "completed",
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Set up job",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Ensure Bison 3 on the ephemeral runner",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Record explicit native Xcode SDK and pinned source",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Build the native experimental candidate",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Record Mach-O dependencies and deployment commands",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Bind linker-map objects and compiler inputs for source review",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Prepare byte-bound draft notices for this macOS build",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Public corpus and Unicode relocation on Python 3.12",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Public corpus and Unicode relocation on Python 3.14",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Inventory and package without approving audit or signature",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Real runtime first use, final probe and offline cache on both Pythons",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Retain unqualified native build for review",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Complete job",
+              "status": "completed",
+              "conclusion": "success"
+            }
+          ]
+        },
+        {
+          "id": 122404169447,
+          "name": "native-build (macos-15-intel, x86_64, macos-x86_64)",
+          "status": "completed",
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Set up job",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Ensure Bison 3 on the ephemeral runner",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Record explicit native Xcode SDK and pinned source",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Build the native experimental candidate",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Record Mach-O dependencies and deployment commands",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Bind linker-map objects and compiler inputs for source review",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Prepare byte-bound draft notices for this macOS build",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Public corpus and Unicode relocation on Python 3.12",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Public corpus and Unicode relocation on Python 3.14",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Inventory and package without approving audit or signature",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Real runtime first use, final probe and offline cache on both Pythons",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Retain unqualified native build for review",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Complete job",
+              "status": "completed",
+              "conclusion": "success"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 40565098367,
+      "name": "Alpine musl Graphviz candidates",
+      "revision": "a825f0d80bd7892de0e307656d28070885a9d1ed",
+      "url": "https://github.com/Extremois/desembaraca-twine/actions/runs/40565098367",
+      "status": "completed",
+      "conclusion": "success",
+      "jobs": [
+        {
+          "id": 122404169287,
+          "name": "alpine-build (ubuntu-24.04-arm, aarch64)",
+          "status": "completed",
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Set up job",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Select pinned Alpine images for matching native CPU",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Build and test static musl in pinned Alpine userland Python 3.12",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Test same engine in pinned Alpine userland Python 3.14",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Retain unqualified container build and measurements",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Retain source material separately (not a published source offer)",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Complete job",
+              "status": "completed",
+              "conclusion": "success"
+            }
+          ]
+        },
+        {
+          "id": 122404169698,
+          "name": "alpine-build (ubuntu-24.04, x86_64)",
+          "status": "completed",
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Set up job",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Select pinned Alpine images for matching native CPU",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Build and test static musl in pinned Alpine userland Python 3.12",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Test same engine in pinned Alpine userland Python 3.14",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Retain unqualified container build and measurements",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Retain source material separately (not a published source offer)",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Complete job",
+              "status": "completed",
+              "conclusion": "success"
+            }
+          ]
+        },
+        {
+          "id": 122407713587,
+          "name": "Alpine userland 3.21 (aarch64, both Pythons)",
+          "status": "completed",
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Set up job",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/download-artifact@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Select immutable userland images for this release and CPU",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Check venv, private runtime, corpus and network on both Pythons",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Retain userland compatibility evidence (not native Alpine qualification)",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Complete job",
+              "status": "completed",
+              "conclusion": "success"
+            }
+          ]
+        },
+        {
+          "id": 122407713588,
+          "name": "Alpine userland 3.21 (x86_64, both Pythons)",
+          "status": "completed",
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Set up job",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/download-artifact@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Select immutable userland images for this release and CPU",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Check venv, private runtime, corpus and network on both Pythons",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Retain userland compatibility evidence (not native Alpine qualification)",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Complete job",
+              "status": "completed",
+              "conclusion": "success"
+            }
+          ]
+        },
+        {
+          "id": 122407713626,
+          "name": "Alpine userland 3.23 (aarch64, both Pythons)",
+          "status": "completed",
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Set up job",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/download-artifact@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Select immutable userland images for this release and CPU",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Check venv, private runtime, corpus and network on both Pythons",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Retain userland compatibility evidence (not native Alpine qualification)",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Complete job",
+              "status": "completed",
+              "conclusion": "success"
+            }
+          ]
+        },
+        {
+          "id": 122407713693,
+          "name": "Alpine userland 3.23 (x86_64, both Pythons)",
+          "status": "completed",
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Set up job",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/download-artifact@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Select immutable userland images for this release and CPU",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Check venv, private runtime, corpus and network on both Pythons",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Retain userland compatibility evidence (not native Alpine qualification)",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Complete job",
+              "status": "completed",
+              "conclusion": "success"
+            }
+          ]
+        },
+        {
+          "id": 122407713718,
+          "name": "Alpine userland 3.24 (x86_64, both Pythons)",
+          "status": "completed",
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Set up job",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/download-artifact@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Select immutable userland images for this release and CPU",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Check venv, private runtime, corpus and network on both Pythons",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Retain userland compatibility evidence (not native Alpine qualification)",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Complete job",
+              "status": "completed",
+              "conclusion": "success"
+            }
+          ]
+        },
+        {
+          "id": 122407713722,
+          "name": "Alpine userland 3.22 (x86_64, both Pythons)",
+          "status": "completed",
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Set up job",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/download-artifact@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Select immutable userland images for this release and CPU",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Check venv, private runtime, corpus and network on both Pythons",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Retain userland compatibility evidence (not native Alpine qualification)",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Complete job",
+              "status": "completed",
+              "conclusion": "success"
+            }
+          ]
+        },
+        {
+          "id": 122407713723,
+          "name": "Alpine userland 3.24 (aarch64, both Pythons)",
+          "status": "completed",
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Set up job",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/download-artifact@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Select immutable userland images for this release and CPU",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Check venv, private runtime, corpus and network on both Pythons",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Retain userland compatibility evidence (not native Alpine qualification)",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Complete job",
+              "status": "completed",
+              "conclusion": "success"
+            }
+          ]
+        },
+        {
+          "id": 122407713816,
+          "name": "Alpine userland 3.22 (aarch64, both Pythons)",
+          "status": "completed",
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Set up job",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/download-artifact@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Select immutable userland images for this release and CPU",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Check venv, private runtime, corpus and network on both Pythons",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Retain userland compatibility evidence (not native Alpine qualification)",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Complete job",
+              "status": "completed",
+              "conclusion": "success"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "downloads": [
+    {
+      "id": 12763905006,
+      "name": "linux-glibc-x86_64-unqualified-a825f0d80bd7892de0e307656d28070885a9d1ed",
+      "bytes": 3288960,
+      "sha256": "cc271966d911d01a4e7018e317b9e0e751a10b95bfa9f96584b72f40be58a978",
+      "file": "actions-artifact-12763905006.zip",
+      "run_id": 40565098269
+    },
+    {
+      "id": 12761129921,
+      "name": "linux-glibc-x86_64-source-review-a825f0d80bd7892de0e307656d28070885a9d1ed",
+      "bytes": 68437272,
+      "sha256": "436800f0b6f58b44e4d616beecc2d41520860484b732956f6487e4fbe12c148b",
+      "file": "actions-artifact-12761129921.zip",
+      "run_id": 40565098269
+    },
+    {
+      "id": 12762418275,
+      "name": "linux-glibc-aarch64-source-review-a825f0d80bd7892de0e307656d28070885a9d1ed",
+      "bytes": 68434212,
+      "sha256": "c1094a3fd90eed77c4d5f72d44945b7f0528b692f1f7325a12221143270c4fda",
+      "file": "actions-artifact-12762418275.zip",
+      "run_id": 40565098572
+    },
+    {
+      "id": 12762393293,
+      "name": "linux-glibc-aarch64-unqualified-a825f0d80bd7892de0e307656d28070885a9d1ed",
+      "bytes": 3091070,
+      "sha256": "916cf12054de78b4493dd53647f9227e960c2f08885bc39a87170d74cffcba5a",
+      "file": "actions-artifact-12762393293.zip",
+      "run_id": 40565098572
+    },
+    {
+      "id": 12762817231,
+      "name": "macos-x86_64-unqualified-a825f0d80bd7892de0e307656d28070885a9d1ed",
+      "bytes": 2445131,
+      "sha256": "2116ecfcc573efcabb24de30eefadf3f6634eff1e69804d1bdf7a749f568b608",
+      "file": "actions-artifact-12762817231.zip",
+      "run_id": 40565098360
+    },
+    {
+      "id": 12762437267,
+      "name": "macos-arm64-unqualified-a825f0d80bd7892de0e307656d28070885a9d1ed",
+      "bytes": 2375085,
+      "sha256": "d818ab8516ef138478c330ddee2ad077cffc1e204982754683dae8130c99677a",
+      "file": "actions-artifact-12762437267.zip",
+      "run_id": 40565098360
+    },
+    {
+      "id": 12762912333,
+      "name": "linux-musl-aarch64-container-unqualified-a825f0d80bd7892de0e307656d28070885a9d1ed",
+      "bytes": 3128228,
+      "sha256": "5b7b5b48e01d217f5704c77261d2f31bff164e464fdd1e440af1cce124ad6a76",
+      "file": "actions-artifact-12762912333.zip",
+      "run_id": 40565098367
+    },
+    {
+      "id": 12762787368,
+      "name": "linux-musl-x86_64-source-review-a825f0d80bd7892de0e307656d28070885a9d1ed",
+      "bytes": 68441173,
+      "sha256": "4e3cf9da8c9ebe2ab0dd925d8ffe5ac00e64e919d992a83d4eb7385b5bd71ee3",
+      "file": "actions-artifact-12762787368.zip",
+      "run_id": 40565098367
+    },
+    {
+      "id": 12762722583,
+      "name": "linux-musl-aarch64-source-review-a825f0d80bd7892de0e307656d28070885a9d1ed",
+      "bytes": 68436956,
+      "sha256": "207d1c05044f965cbd2df96e1f48efd8d26906683bbb89332e6d00c45776e467",
+      "file": "actions-artifact-12762722583.zip",
+      "run_id": 40565098367
+    },
+    {
+      "id": 12762432575,
+      "name": "linux-musl-x86_64-container-unqualified-a825f0d80bd7892de0e307656d28070885a9d1ed",
+      "bytes": 3202633,
+      "sha256": "cbe4749613da55a9003eaeaf879435e6d40b11adfe885b59e6d4e8d0fc538542",
+      "file": "actions-artifact-12762432575.zip",
+      "run_id": 40565098367
+    }
+  ],
+  "foundation": [
+    {
+      "job_id": 122404168956,
+      "name": "Pure contracts (windows-latest, Python 3.12)",
+      "tests": 274,
+      "seconds": 29.859,
+      "skipped": 8,
+      "sha256": "1f42d1d2a9e5fcba155e8a2518d92a8335be77f5d53e5212eeb75983887b56ca",
+      "file": "actions-job-122404168956.log"
+    },
+    {
+      "job_id": 122404169232,
+      "name": "Pure contracts (macos-15, Python 3.14)",
+      "tests": 274,
+      "seconds": 14.352,
+      "skipped": 6,
+      "sha256": "26c3752dbde3fec3a6b73e98fd9c9e450db4f2cb71d1d91ebeec49c96890a2af",
+      "file": "actions-job-122404169232.log"
+    },
+    {
+      "job_id": 122404169234,
+      "name": "Pure contracts (macos-15, Python 3.12)",
+      "tests": 274,
+      "seconds": 15.393,
+      "skipped": 6,
+      "sha256": "602a8572c8dc4f4c376839a5178b54058ad097c8dbf8b2991fb41f485ba7d813",
+      "file": "actions-job-122404169234.log"
+    },
+    {
+      "job_id": 122404169406,
+      "name": "Pure contracts (ubuntu-24.04, Python 3.12)",
+      "tests": 274,
+      "seconds": 15.253,
+      "skipped": 6,
+      "sha256": "14c2bc1526489118e36727ece767ca82170b40814967fff32f5fb11a33ce4932",
+      "file": "actions-job-122404169406.log"
+    },
+    {
+      "job_id": 122404169439,
+      "name": "Pure contracts (windows-latest, Python 3.14)",
+      "tests": 274,
+      "seconds": 29.417,
+      "skipped": 8,
+      "sha256": "588373e708133395cbcc6b75549e77bfadcb7f98a34d16d25b2038dc2b3ea010",
+      "file": "actions-job-122404169439.log"
+    },
+    {
+      "job_id": 122404169494,
+      "name": "Pure contracts (ubuntu-24.04, Python 3.14)",
+      "tests": 274,
+      "seconds": 15.127,
+      "skipped": 6,
+      "sha256": "a3fd36dbf64e6c273d7fe0160d12ab26038edaad4f023c16ce295ab49f5e7082",
+      "file": "actions-job-122404169494.log"
+    }
+  ],
+  "linux_pairs": [
+    {
+      "artifact_id": "linux-glibc-x86_64",
+      "candidate_revision": "a825f0d80bd7892de0e307656d28070885a9d1ed",
+      "binary_actions_artifact_id": 12763905006,
+      "binary_actions_archive_sha256": "cc271966d911d01a4e7018e317b9e0e751a10b95bfa9f96584b72f40be58a978",
+      "source_actions_artifact_id": 12761129921,
+      "source_actions_archive_sha256": "436800f0b6f58b44e4d616beecc2d41520860484b732956f6487e4fbe12c148b",
+      "binary_run_id": 40565098269,
+      "source_run_id": 40565098269,
+      "binary_files": 480,
+      "notices": 478,
+      "source_files": 18228,
+      "sdk_files": 18102,
+      "executable_sha256": "43ce8d686720467c21be91cab4b8f3b246baae49c2cfe293714ebdf8a82f5716",
+      "provenance_sha256": "f1cd182f06cb1ff572d474c2fed023b9b4508b1c39d012260f96fbb3d1d46495",
+      "candidate_archive_sha256": "f6008a81a0b5f7a19949815b4cabe927e9ecc01a26f05b76abfe2a677b79ccd2",
+      "source_archive_sha256": "2007efab4a91db18f55ae778d891ea0fc53f404ee56da62c89a3692d133a18c3",
+      "native_pair_receipts_byte_identical": true,
+      "independent_pairing_matches_native": true,
+      "source_manifest_checked": true,
+      "source_provenance_matches_binary": true,
+      "encoded_modes_checked": true,
+      "native_modes_measured": true,
+      "pairing_receipt": "linux-glibc-x86_64/pairing.json",
+      "pairing_receipt_sha256": "8140a28cc90a74f127a9b3d62bb3fb4888cad5a1bc6b76509e8c084e2f504d8e"
+    },
+    {
+      "artifact_id": "linux-glibc-aarch64",
+      "candidate_revision": "a825f0d80bd7892de0e307656d28070885a9d1ed",
+      "binary_actions_artifact_id": 12762393293,
+      "binary_actions_archive_sha256": "916cf12054de78b4493dd53647f9227e960c2f08885bc39a87170d74cffcba5a",
+      "source_actions_artifact_id": 12762418275,
+      "source_actions_archive_sha256": "c1094a3fd90eed77c4d5f72d44945b7f0528b692f1f7325a12221143270c4fda",
+      "binary_run_id": 40565098572,
+      "source_run_id": 40565098572,
+      "binary_files": 573,
+      "notices": 571,
+      "source_files": 18228,
+      "sdk_files": 18102,
+      "executable_sha256": "933b6c63370bdd3e814627e2a9a06176416c8da017a21dcbc96d8137dbc17e22",
+      "provenance_sha256": "6bcd441c576bb570d6234fe5eb056402f6116cda5e43a345fc240667c8645a39",
+      "candidate_archive_sha256": "106b37d3fa9eaf492ee2e798c20739da64c1e1ec97db70a296b4066851b51a29",
+      "source_archive_sha256": "1fbe437dbc5804aa00338586d30737bcde066437d2e1ff6194f4574f2f64d7a6",
+      "native_pair_receipts_byte_identical": true,
+      "independent_pairing_matches_native": true,
+      "source_manifest_checked": true,
+      "source_provenance_matches_binary": true,
+      "encoded_modes_checked": true,
+      "native_modes_measured": true,
+      "pairing_receipt": "linux-glibc-aarch64/pairing.json",
+      "pairing_receipt_sha256": "2c244e685ae6fe3a57e51c0c404250b0ffefe263f67a6a675fb098c7fdc89001"
+    },
+    {
+      "artifact_id": "linux-musl-aarch64",
+      "candidate_revision": "a825f0d80bd7892de0e307656d28070885a9d1ed",
+      "binary_actions_artifact_id": 12762912333,
+      "binary_actions_archive_sha256": "5b7b5b48e01d217f5704c77261d2f31bff164e464fdd1e440af1cce124ad6a76",
+      "source_actions_artifact_id": 12762722583,
+      "source_actions_archive_sha256": "207d1c05044f965cbd2df96e1f48efd8d26906683bbb89332e6d00c45776e467",
+      "binary_run_id": 40565098367,
+      "source_run_id": 40565098367,
+      "binary_files": 450,
+      "notices": 448,
+      "source_files": 18228,
+      "sdk_files": 18102,
+      "executable_sha256": "2d7a4b6024eb000c33ecf8b14d1a32d0aac8dde65bed00de138604d081fd3ee4",
+      "provenance_sha256": "2bce92e5703ae16b863bb01734199bacf3a2e23767fbd32ee3304ba664f6baad",
+      "candidate_archive_sha256": "39b0d1bd159ea68a39b6c678175df766af89f22717939d5bd5a493ac08ac442c",
+      "source_archive_sha256": "b19daf4eeada7dc13104012dbf3e72860b82ccb3622389402c626113dd1eafa4",
+      "native_pair_receipts_byte_identical": true,
+      "independent_pairing_matches_native": true,
+      "source_manifest_checked": true,
+      "source_provenance_matches_binary": true,
+      "encoded_modes_checked": true,
+      "native_modes_measured": true,
+      "pairing_receipt": "linux-musl-aarch64/pairing.json",
+      "pairing_receipt_sha256": "2331c3d1085e343dea2c71d37d2373e9b33b07dc082290ebb5255ce9bf3b86fd"
+    },
+    {
+      "artifact_id": "linux-musl-x86_64",
+      "candidate_revision": "a825f0d80bd7892de0e307656d28070885a9d1ed",
+      "binary_actions_artifact_id": 12762432575,
+      "binary_actions_archive_sha256": "cbe4749613da55a9003eaeaf879435e6d40b11adfe885b59e6d4e8d0fc538542",
+      "source_actions_artifact_id": 12762787368,
+      "source_actions_archive_sha256": "4e3cf9da8c9ebe2ab0dd925d8ffe5ac00e64e919d992a83d4eb7385b5bd71ee3",
+      "binary_run_id": 40565098367,
+      "source_run_id": 40565098367,
+      "binary_files": 450,
+      "notices": 448,
+      "source_files": 18228,
+      "sdk_files": 18102,
+      "executable_sha256": "f4dfee4e052704b1a7efdb7b6a4c43583ccaa062aec800b76224dae24eb2b69b",
+      "provenance_sha256": "54ed1980bf2b3ed9c1889e6640a7b000aaee6d0fc686875423239ebe95be9c9c",
+      "candidate_archive_sha256": "186a055cf4341f470cfa9a4827edda503655a7a732de24400436f7394899d70d",
+      "source_archive_sha256": "bdf9d612521dc685e8d9d37192603320c41b613f174a8c0dbd141321a0e73e43",
+      "native_pair_receipts_byte_identical": true,
+      "independent_pairing_matches_native": true,
+      "source_manifest_checked": true,
+      "source_provenance_matches_binary": true,
+      "encoded_modes_checked": true,
+      "native_modes_measured": true,
+      "pairing_receipt": "linux-musl-x86_64/pairing.json",
+      "pairing_receipt_sha256": "dc42161c7b7000455add2d57d3dc4c2daed206dc0f5f836d6a74a709981e3fe3"
+    }
+  ],
+  "macos_bundles": [
+    {
+      "artifact_id": "macos-x86_64",
+      "artifact_sha256": "2116ecfcc573efcabb24de30eefadf3f6634eff1e69804d1bdf7a749f568b608",
+      "archive_sha256": "5032d49456e08aae7a754debe837454ac8c27e22b92173a5fa9d15365b09c188",
+      "engine_sha256": "d8ab197fbdfa9312050f4c4827f4bb612f7f4d1d021d4308a9850ee1a1104fff",
+      "provenance_sha256": "ab9b154d7439356b3d906476ee18fceaba6447a0bd2b4c9b32e12ab91755f9fc",
+      "files_verified": 233,
+      "notice_payloads_verified": 231
+    },
+    {
+      "artifact_id": "macos-arm64",
+      "artifact_sha256": "d818ab8516ef138478c330ddee2ad077cffc1e204982754683dae8130c99677a",
+      "archive_sha256": "510f3c8d9d4de4503b2d5e151e30ee09f7c9e7d7a1c96806c20fe535eeb71109",
+      "engine_sha256": "774115a1a9e4b2385d33fa55fe02de0d8728cb0984967d445528c6fe04f97dac",
+      "provenance_sha256": "8348efc27a9be535726dd3e6dcb261616e12340858f9ecbf9a4fb45d6e05cfe7",
+      "files_verified": 233,
+      "notice_payloads_verified": 231
+    }
+  ],
+  "capture_sha256": "d427bed46678403ebeca6487b6c28cf23525f13551cb4e9e481cea8372e6fb7c",
+  "verification_tools": {
+    "tools/runtime/verify-source-pairing.py": "38f862ac4b6eb9ce2c3bd154d52ca5c6e0f7662da444012f2dcc676581b312b8",
+    "tools/runtime/verify-public-sources.py": "f5a9675c0ddc3e2a760b31f6c7de10028deed3892d2e4d95153f6bc0e4ae10ff",
+    "tools/validation/check-distribution-integrity.py": "ae63ad61c7f1fdce8a5303538ac5a9c6b1d49248cc8f96410da1a6ac73c498a7"
+  },
+  "limitations": [
+    "Linux glibc built on native Ubuntu CPU; musl built in Alpine containers on matching CPU",
+    "macOS bundles remain unsigned; no source pairing or signing approval for macOS",
+    "Source files/manifests/provenance checked; source completeness and final distribution remain separate",
+    "CI artifacts are temporary review material, not permanent public source delivery",
+    "No catalog promotion or complete support-cell qualification"
+  ]
+}

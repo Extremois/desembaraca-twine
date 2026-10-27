@@ -84,10 +84,11 @@ def probe(source,output):
             for kind in ('control','corpus'):
                 shutil.copyfile(application/('network-'+kind+'.trace'),output/('application-'+pin['minor']+'.'+kind+'.trace'))
         rows.append(dict(minor=pin['minor'],archive_sha256=pin['sha256'],archive_bytes=archive.stat().st_size,facts=facts))
-    report=dict(kind='native-ubuntu1804-private-python-prerequisites',passed=True,qualified=False,
+    release=json.loads((source/'inputs.json').read_text()).get('guest_release','18.04')
+    report=dict(kind='native-ubuntu'+release.replace('.','')+'-private-python-prerequisites',passed=True,qualified=False,
         system_python_before=before,system_python_after=digest(system),interpreters=rows,
         network='No guest internet; archives transferred from host after pinned HTTPS acquisition',
-        scope='Private prerequisite toolchains only; no installed application, Pro eligibility or full cell qualification')
+        scope='Private prerequisite/application observations only; no distributed-candidate, maintenance eligibility or full cell qualification')
     (output/'private-python-report.json').write_text(json.dumps(report,indent=2)+'\n',encoding='utf-8')
 
 

@@ -6,6 +6,7 @@ import io
 import tarfile
 import unittest
 import copy
+from unittest.mock import patch
 from common import ROOT
 
 
@@ -107,6 +108,55 @@ class NativeBaselineTests(unittest.TestCase):
                 self.tool.validate_baseline(dict(guest,**{key:value}),dict(enabled=True,present=True))
         for kvm in ({'present':True,'enabled':False},{'present':False,'enabled':False}):
             with self.assertRaises(ValueError):self.tool.validate_baseline(guest,kvm)
+
+    def test_focal_baseline_requires_its_own_identity_kernel_libc_and_kvm(self):
+        guest=dict(identity=dict(ID='ubuntu',VERSION_ID='20.04'),arch='x86_64',
+                   kernel='5.4.0-216-generic',glibc='glibc 2.31')
+        kvm=dict(enabled=True,present=True)
+        self.tool.validate_baseline(guest,kvm,'20.04')
+        with self.assertRaises(ValueError):self.tool.validate_baseline(guest,kvm)
+        for key,value in [('kernel','4.15.0-213-generic'),('kernel','6.17.0-1022-azure'),
+                          ('glibc','glibc 2.27'),('arch','aarch64'),
+                          ('identity',dict(ID='ubuntu',VERSION_ID='18.04'))]:
+            with self.subTest(key=key,value=value),self.assertRaises(ValueError):
+                self.tool.validate_baseline(dict(guest,**{key:value}),kvm,'20.04')
+        with self.assertRaises(ValueError):
+            self.tool.validate_baseline(guest,dict(enabled=False,present=True),'20.04')
+        with self.assertRaises(ValueError):self.tool.validate_baseline(guest,kvm,'22.04')
+
+    def test_focal_image_pin_is_explicit_and_does_not_relax_bionic_budget(self):
+        import json
+        pin=json.loads((ROOT/'.github/native-images/ubuntu-20.04-amd64.json').read_bytes())
+        self.tool.validate_pin(pin,'20.04')
+        with self.assertRaises(ValueError):self.tool.validate_pin(pin)
+        for key,value in [('url',pin['url'].replace('release-20250516','release')),
+                          ('arch','aarch64'),('release','18.04'),('size',1024**3+1)]:
+            with self.subTest(key=key),self.assertRaises(ValueError):
+                self.tool.validate_pin(dict(pin,**{key:value}),'20.04')
+        with self.assertRaises(ValueError):self.tool.validate_pin(pin,'22.04')
+
+    def test_candidate_source_binding_requires_full_revision_and_positive_run(self):
+        self.tool.validate_candidate_source('a'*40,40565098269)
+        for revision,run_id in [('main',40565098269),('a'*40,0),('a'*40,True),
+                                ('a'*40,'40565098269'),(None,40565098269)]:
+            with self.subTest(revision=revision,run_id=run_id),self.assertRaises(ValueError):
+                self.tool.validate_candidate_source(revision,run_id)
+
+    def test_prepared_release_mismatch_fails_before_image_download_or_boot(self):
+        import json
+        with tempfile.TemporaryDirectory() as folder:
+            root=Path(folder);(root/'input').mkdir()
+            (root/'input/inputs.json').write_text(json.dumps(dict(abi='glibc',guest_release='20.04',
+                engine_sha256=self.tool.ENGINE_SHA,candidate_revision='a'*40,candidate_run_id=40565098269)))
+            with patch.dict(self.tool.os.environ,{'GITHUB_ACTIONS':'true'}), \
+                    patch.object(self.tool.sys,'platform','linux'), \
+                    patch.object(self.tool.platform,'machine',return_value='x86_64'), \
+                    patch.object(self.tool.os,'geteuid',return_value=0,create=True), \
+                    patch.object(self.tool.urllib.request,'urlopen') as download, \
+                    patch.object(self.tool.subprocess,'Popen') as boot:
+                with self.assertRaisesRegex(ValueError,'Prepared guest release'):
+                    self.tool.execute(root,'18.04')
+                download.assert_not_called();boot.assert_not_called()
 
     def test_image_pin_refuses_mutable_or_foreign_origins_and_excessive_downloads(self):
         pin=dict(url='https://cloud-images.ubuntu.com/releases/bionic/release-20230607/ubuntu-18.04-server-cloudimg-amd64.img',

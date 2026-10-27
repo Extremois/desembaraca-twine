@@ -69,7 +69,7 @@ def probe(source,output):
         if len(ldd.stdout)>65536 or b'not found' in ldd.stdout:raise ValueError('Guest dynamic dependency failure')
         (output/'ldd.txt').write_bytes(ldd.stdout)
         loader_sha=digest(loader.read_bytes());ldd_sha=digest(ldd.stdout)
-    report=dict(kind='ubuntu1804-native-kernel-engine-baseline',passed=True,qualified=False,
+    report=dict(kind='ubuntu'+identity.get('VERSION_ID','unknown').replace('.','')+'-native-kernel-engine-baseline',passed=True,qualified=False,
         identity=identity,arch=platform.machine(),kernel=platform.release(),glibc=os.confstr('CS_GNU_LIBC_VERSION'),
         python=platform.python_version(),python_role='Image system Python for engine probe only; not a supported application slot',
         abi=abi,elf=elf,engine_sha256=digest(binary),inputs_sha256=digest((source/'inputs.json').read_bytes()),

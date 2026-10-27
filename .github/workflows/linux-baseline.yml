@@ -27,12 +27,12 @@ jobs:
         include:
           - abi: glibc
             python_args: --python-prerequisites --python-application
-            candidate_run: 39434565632
-            candidate_name: linux-glibc-x86_64-unqualified-b13cd6f90db31163e62119bb83e2eb8db5ac8458
+            candidate_run: 40565098269
+            candidate_name: linux-glibc-x86_64-unqualified-a825f0d80bd7892de0e307656d28070885a9d1ed
           - abi: musl
             python_args: ''
-            candidate_run: 39434565540
-            candidate_name: linux-musl-x86_64-container-unqualified-b13cd6f90db31163e62119bb83e2eb8db5ac8458
+            candidate_run: 40565098367
+            candidate_name: linux-musl-x86_64-container-unqualified-a825f0d80bd7892de0e307656d28070885a9d1ed
     runs-on: ubuntu-24.04
     timeout-minutes: 15
     steps:
@@ -50,7 +50,7 @@ jobs:
           path: ${{ runner.temp }}/baseline-artifact
       - name: Prepare byte-bound engine and public geometry inputs
         shell: bash
-        run: python .github/scripts/check-native-baseline.py --artifact "$RUNNER_TEMP/baseline-artifact" --work "$RUNNER_TEMP/twine-native-baseline" --abi '${{ matrix.abi }}' ${{ matrix.python_args }}
+        run: python .github/scripts/check-native-baseline.py --artifact "$RUNNER_TEMP/baseline-artifact" --work "$RUNNER_TEMP/twine-native-baseline" --abi '${{ matrix.abi }}' --candidate-revision a825f0d80bd7892de0e307656d28070885a9d1ed --candidate-run-id '${{ matrix.candidate_run }}' ${{ matrix.python_args }}
       - name: Install guest test tooling only on this ephemeral runner
         shell: bash
         run: |
