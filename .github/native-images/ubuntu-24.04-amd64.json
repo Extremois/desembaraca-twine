@@ -1,0 +1,12 @@
+{
+  "url": "https://cloud-images.ubuntu.com/releases/noble/release-20261017/ubuntu-24.04-server-cloudimg-amd64.img",
+  "size": 621284352,
+  "sha256": "04e8f2461a16a44e78a370284471f29616cdd9baf1893df25807b71f985b6c94",
+  "checksum_manifest_url": "https://cloud-images.ubuntu.com/releases/noble/release-20261017/SHA256SUMS",
+  "checksum_manifest_sha256": "0449a33b78dddb301a3ce2b80398984bc3e1f7880e27b86a31e58bdcbd3d3816",
+  "package_manifest_url": "https://cloud-images.ubuntu.com/releases/noble/release-20261017/ubuntu-24.04-server-cloudimg-amd64.manifest",
+  "package_manifest_sha256": "78d7da6ab1556daa6c0f685bf4e0e3da36395f170e8fad411d7ba032f14d08c2",
+  "release": "24.04",
+  "arch": "x86_64",
+  "scope": "Historical image for private native-kernel tests; no support qualification"
+}

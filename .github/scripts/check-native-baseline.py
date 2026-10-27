@@ -26,6 +26,8 @@ IMAGE_PROFILES={
                  maximum_bytes=1024**3,kernel=r'5\.4\.0-[0-9]+-generic',glibc='glibc 2.31',disk_bytes=8*1024**3),
     '22.04':dict(url='https://cloud-images.ubuntu.com/releases/jammy/release-20261020/ubuntu-22.04-server-cloudimg-amd64.img',
                  maximum_bytes=1024**3,kernel=r'5\.15\.0-[0-9]+-generic',glibc='glibc 2.35',disk_bytes=8*1024**3),
+    '24.04':dict(url='https://cloud-images.ubuntu.com/releases/noble/release-20261017/ubuntu-24.04-server-cloudimg-amd64.img',
+                 maximum_bytes=1024**3,kernel=r'6\.8\.0-[0-9]+-generic',glibc='glibc 2.39',disk_bytes=8*1024**3),
     '26.04':dict(url='https://cloud-images.ubuntu.com/releases/resolute/release-20261016/ubuntu-26.04-server-cloudimg-amd64.img',
                  maximum_bytes=1024**3,kernel=r'7\.0\.0-[0-9]+-generic',glibc='glibc 2.43',disk_bytes=8*1024**3),
     '26.10':dict(url='https://cloud-images.ubuntu.com/releases/stonking/release-20261025/ubuntu-26.10-server-cloudimg-amd64.img',

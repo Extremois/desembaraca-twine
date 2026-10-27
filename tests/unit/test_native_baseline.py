@@ -234,6 +234,28 @@ class NativeBaselineTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             self.tool.validate_baseline(guest,dict(present=True,enabled=False),'26.10')
 
+    def test_noble_requires_its_guest_kernel_instead_of_hosted_runner_identity(self):
+        import json
+        guest=dict(identity=dict(ID='ubuntu',VERSION_ID='24.04'),arch='x86_64',
+                   kernel='6.8.0-147-generic',glibc='glibc 2.39')
+        kvm=dict(enabled=True,present=True)
+        self.tool.validate_baseline(guest,kvm,'24.04')
+        pin=json.loads((ROOT/'.github/native-images/ubuntu-24.04-amd64.json').read_bytes())
+        self.tool.validate_pin(pin,'24.04')
+        for key,value in [('kernel','6.11.0-1018-azure'),('kernel','5.15.0-198-generic'),
+                          ('glibc','glibc 2.35'),('arch','aarch64'),
+                          ('identity',dict(ID='ubuntu',VERSION_ID='22.04'))]:
+            with self.subTest(key=key),self.assertRaises(ValueError):
+                self.tool.validate_baseline(dict(guest,**{key:value}),kvm,'24.04')
+        for key,value in [('url',pin['url'].replace('release-20261017','release')),
+                          ('url',pin['url'].replace('amd64.img','arm64.img')),
+                          ('release','22.04'),('size',1024**3+1)]:
+            with self.subTest(pin_key=key),self.assertRaises(ValueError):
+                self.tool.validate_pin(dict(pin,**{key:value}),'24.04')
+        with self.assertRaises(ValueError):self.tool.validate_pin(pin,'22.04')
+        with self.assertRaises(ValueError):
+            self.tool.validate_baseline(guest,dict(present=True,enabled=False),'24.04')
+
     def test_guest_report_cannot_choose_a_path_on_the_runner(self):
         with tempfile.TemporaryDirectory() as folder:
             root=Path(folder)

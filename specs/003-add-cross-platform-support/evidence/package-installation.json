@@ -91,10 +91,10 @@
     "final_native_candidate": false
   },
   "native_ubuntu_additional_checks": {
-    "path": "specs/003-add-cross-platform-support/evidence/ubuntu2604-native-2026-10-27/summary.json",
-    "sha256": "303139a5efd2a82267fb0d7f7f2786aebd15302d9b5bd03b07c6308a78be6835",
-    "application_revision": "96f765bb19e30536d505fe875fa57b52622cb336",
-    "python_slots": 8,
+    "path": "specs/003-add-cross-platform-support/evidence/ubuntu2610-native-2026-10-27/summary.json",
+    "sha256": "ec110de34250b61543958c59ff0e823004683617ce4fc225cd9c7f21605c0588",
+    "application_revision": "1e0349e28381c68a572c42e0e1889d64fe8d8336",
+    "python_slots": 10,
     "formats": [
       "wheel"
     ],
@@ -103,6 +103,7 @@
       "ubuntu-22.04-stable-x86_64-distribution-default",
       "ubuntu-26.04-stable-x86_64-distribution-default",
       "ubuntu-20.04-stable-x86_64-distribution-default",
+      "ubuntu-26.10-stable-x86_64-distribution-default",
       "ubuntu-18.04-stable-x86_64-distribution-default"
     ],
     "acquisition": "controlled private-engine transport",
@@ -111,7 +112,7 @@
     "final_native_candidate": false
   },
   "previous_native_ubuntu_index": {
-    "path": "specs/003-add-cross-platform-support/evidence/ubuntu2604-native-2026-10-27/previous-package-installation.json",
-    "sha256": "3866595e133a42ca74f0c441924b4dc86a775b0c88c3b0b24a8aab2677bdb514"
+    "path": "specs/003-add-cross-platform-support/evidence/ubuntu2610-native-2026-10-27/previous-package-installation.json",
+    "sha256": "5b9c39c51c1e61e40e348e3e1c38d9178cd2fa68f575cc6670f4c48b4786a644"
   }
 }

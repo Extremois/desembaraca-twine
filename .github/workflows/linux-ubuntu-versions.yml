@@ -12,6 +12,7 @@ on:
       - '.github/scripts/probe-installed-recovery.py'
       - '.github/native-images/ubuntu-20.04-amd64.json'
       - '.github/native-images/ubuntu-22.04-amd64.json'
+      - '.github/native-images/ubuntu-24.04-amd64.json'
       - '.github/native-images/ubuntu-26.04-amd64.json'
       - '.github/native-images/ubuntu-26.10-amd64.json'
       - '.github/native-images/private-python-x64.json'
@@ -27,7 +28,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        release: ['20.04', '22.04', '26.04', '26.10']
+        release: ['20.04', '22.04', '24.04', '26.04', '26.10']
         abi: [glibc, musl]
         include:
           - abi: glibc
