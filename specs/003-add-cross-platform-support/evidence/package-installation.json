@@ -89,5 +89,27 @@
     "entrypoint_checks": 30,
     "revision": "d90b5671cba0477649e71a52b0d94704cce81c4e",
     "final_native_candidate": false
+  },
+  "native_ubuntu_additional_checks": {
+    "path": "specs/003-add-cross-platform-support/evidence/ubuntu2004-native-2026-10-27/summary.json",
+    "sha256": "14bb87d24c5a06658d50664c7d6dcbb319ca60b768ae0d74d218849e2b632d9d",
+    "application_revision": "1c556872f4b74af61038ff53acac382ab1eb368a",
+    "python_slots": 4,
+    "formats": [
+      "wheel"
+    ],
+    "installed_files_per_slot": 53,
+    "native_targets": [
+      "ubuntu-20.04-stable-x86_64-distribution-default",
+      "ubuntu-18.04-stable-x86_64-distribution-default"
+    ],
+    "acquisition": "controlled private-engine transport",
+    "scope": "Additional private native observations; excluded from older hosted/current-revision counters",
+    "qualified": false,
+    "final_native_candidate": false
+  },
+  "previous_native_ubuntu_index": {
+    "path": "specs/003-add-cross-platform-support/evidence/ubuntu2004-native-2026-10-27/previous-package-installation.json",
+    "sha256": "53ad60b2b11990f9f69c03291e8d34cd49d6e2f3f66a11529c524b3a8d3a01b5"
   }
 }

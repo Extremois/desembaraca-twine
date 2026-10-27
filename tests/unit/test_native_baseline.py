@@ -142,6 +142,29 @@ class NativeBaselineTests(unittest.TestCase):
             with self.subTest(revision=revision,run_id=run_id),self.assertRaises(ValueError):
                 self.tool.validate_candidate_source(revision,run_id)
 
+    def test_jammy_profile_does_not_inherit_focal_or_host_identity(self):
+        import json
+        guest=dict(identity=dict(ID='ubuntu',VERSION_ID='22.04'),arch='x86_64',
+                   kernel='5.15.0-198-generic',glibc='glibc 2.35')
+        kvm=dict(enabled=True,present=True)
+        self.tool.validate_baseline(guest,kvm,'22.04')
+        pin=json.loads((ROOT/'.github/native-images/ubuntu-22.04-amd64.json').read_bytes())
+        self.tool.validate_pin(pin,'22.04')
+        for release in ('18.04','20.04','24.04'):
+            with self.subTest(release=release),self.assertRaises(ValueError):
+                self.tool.validate_baseline(guest,kvm,release)
+        for key,value in [('kernel','5.4.0-216-generic'),('kernel','6.17.0-1022-azure'),
+                          ('glibc','glibc 2.31'),('arch','aarch64'),
+                          ('identity',dict(ID='ubuntu',VERSION_ID='20.04'))]:
+            with self.subTest(key=key),self.assertRaises(ValueError):
+                self.tool.validate_baseline(dict(guest,**{key:value}),kvm,'22.04')
+        for key,value in [('url',pin['url'].replace('release-20261020','release')),
+                          ('arch','aarch64'),('release','20.04'),('size',1024**3+1)]:
+            with self.subTest(pin_key=key),self.assertRaises(ValueError):
+                self.tool.validate_pin(dict(pin,**{key:value}),'22.04')
+        with self.assertRaises(ValueError):
+            self.tool.validate_baseline(guest,dict(present=True,enabled=False),'22.04')
+
     def test_prepared_release_mismatch_fails_before_image_download_or_boot(self):
         import json
         with tempfile.TemporaryDirectory() as folder:

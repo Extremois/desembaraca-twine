@@ -3,7 +3,7 @@
   "task": "T076",
   "task_complete": false,
   "qualified": false,
-  "captured_at": "2026-10-20T23:36:15.740992+00:00",
+  "captured_at": "2026-10-27T19:37:18.231553+00:00",
   "registry": {
     "path": "tools/runtime/support-targets.json",
     "sha256": "be3e8a77e3836d1125658c00a75fbf0e3584f1e26a166a053583336c29a5d295"
@@ -11,8 +11,8 @@
   "expected_targets": 69,
   "expected_python_slots": 138,
   "complete_targets": 0,
-  "targets_with_partial_native_observations": 5,
-  "python_slots_with_partial_native_observations": 10,
+  "targets_with_partial_native_observations": 6,
+  "python_slots_with_partial_native_observations": 12,
   "current_failed_repair_summary": {
     "path": "specs/003-add-cross-platform-support/evidence/installed-posix-processes-2026-10-20/runtime/summary.json",
     "sha256": "c3bf8b4a7094bf949bfcf100b5437982b934fad654869be9c2e4e9ccdc2a044d"
@@ -23,8 +23,8 @@
   },
   "limitations": [
     "No source/license/signature/catalog promotion",
-    "Current receipts use controlled acquisition and Python-only network guard",
-    "Earlier Ubuntu 18.04 syscall observations remain scoped to their recorded revision",
+    "Earlier POSIX runner receipts use Python-only network guards; native Ubuntu update includes syscall tracing",
+    "Every observation remains scoped to its own application revision, candidate and environment",
     "Hosted labels and private artifacts do not qualify whole support cells"
   ],
   "targets": [
@@ -240,17 +240,20 @@
           "qualified": false,
           "observation_state": "partial-native-observation",
           "evidence": {
-            "path": "specs/003-add-cross-platform-support/evidence/ubuntu1804-process-driver-2026-10-20/application-3.12.json",
-            "sha256": "86c4536766664c92bb1ae0598800ce12ae3e6bea8eab4163860127d4d669f704",
-            "summary": {
-              "path": "specs/003-add-cross-platform-support/evidence/ubuntu1804-process-driver-2026-10-20/summary.json",
-              "sha256": "aa31fc2b66ecca84d322fc43565316617253e3f64cfc086a607a324cabbd313f"
-            },
-            "application_revision": "eea100c37599517e09b6626d1edb82b599a1b19c",
+            "path": "specs/003-add-cross-platform-support/evidence/ubuntu2004-native-2026-10-27/summary.json",
+            "sha256": "14bb87d24c5a06658d50664c7d6dcbb319ca60b768ae0d74d218849e2b632d9d",
+            "application_revision": "1c556872f4b74af61038ff53acac382ab1eb368a",
+            "scope": "Native Ubuntu x64 KVM installed private wheel; primary and nested recovery/process suites",
             "package_modes": [
               "wheel"
             ],
-            "scope": "Installed private wheel in Ubuntu 18.04 KVM; full eight-scenario suite and nested eight-scenario installed driver",
+            "native_report": "specs/003-add-cross-platform-support/evidence/ubuntu2004-native-2026-10-27/ubuntu1804-glibc/raw/application/application-3.12.json.gz",
+            "native_report_sha256": "f4744d0b40a94d3b041c7ad4c94936c1e753608a03bf86b0b4b4eb0021d2b972",
+            "uncompressed_report_sha256": "99159efab04229b1327fc200fd5d61ad65ea997af3537918b85829c89a00c276",
+            "nested_review": {
+              "path": "specs/003-add-cross-platform-support/evidence/ubuntu2004-native-2026-10-27/nested-recovery.json",
+              "sha256": "4bd77f1edffafb32e88c1f6df2ece88bd6e399a5173976dc0a20a0f1abc72d9d"
+            },
             "recovery_scenario_executions": 16,
             "offline_reference_executions_after_recovery": 96,
             "dot_executions": 389,
@@ -258,10 +261,34 @@
             "native_network_syscalls": {},
             "pending": [
               "Final qualified distributed candidate",
-              "Required cell eligibility and full acceptance"
+              "Pro/ESM eligibility and complete cell acceptance"
             ]
           },
-          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending",
+          "earlier_evidence": [
+            {
+              "path": "specs/003-add-cross-platform-support/evidence/ubuntu1804-process-driver-2026-10-20/application-3.12.json",
+              "sha256": "86c4536766664c92bb1ae0598800ce12ae3e6bea8eab4163860127d4d669f704",
+              "summary": {
+                "path": "specs/003-add-cross-platform-support/evidence/ubuntu1804-process-driver-2026-10-20/summary.json",
+                "sha256": "aa31fc2b66ecca84d322fc43565316617253e3f64cfc086a607a324cabbd313f"
+              },
+              "application_revision": "eea100c37599517e09b6626d1edb82b599a1b19c",
+              "package_modes": [
+                "wheel"
+              ],
+              "scope": "Installed private wheel in Ubuntu 18.04 KVM; full eight-scenario suite and nested eight-scenario installed driver",
+              "recovery_scenario_executions": 16,
+              "offline_reference_executions_after_recovery": 96,
+              "dot_executions": 389,
+              "syscall_network_observation": true,
+              "native_network_syscalls": {},
+              "pending": [
+                "Final qualified distributed candidate",
+                "Required cell eligibility and full acceptance"
+              ]
+            }
+          ]
         },
         {
           "python_minor": "3.14",
@@ -269,17 +296,20 @@
           "qualified": false,
           "observation_state": "partial-native-observation",
           "evidence": {
-            "path": "specs/003-add-cross-platform-support/evidence/ubuntu1804-process-driver-2026-10-20/application-3.14.json",
-            "sha256": "05a48a045b370b5d2f72ef03638d48239f7670a9fad84447552c3cf211f64e9f",
-            "summary": {
-              "path": "specs/003-add-cross-platform-support/evidence/ubuntu1804-process-driver-2026-10-20/summary.json",
-              "sha256": "aa31fc2b66ecca84d322fc43565316617253e3f64cfc086a607a324cabbd313f"
-            },
-            "application_revision": "eea100c37599517e09b6626d1edb82b599a1b19c",
+            "path": "specs/003-add-cross-platform-support/evidence/ubuntu2004-native-2026-10-27/summary.json",
+            "sha256": "14bb87d24c5a06658d50664c7d6dcbb319ca60b768ae0d74d218849e2b632d9d",
+            "application_revision": "1c556872f4b74af61038ff53acac382ab1eb368a",
+            "scope": "Native Ubuntu x64 KVM installed private wheel; primary and nested recovery/process suites",
             "package_modes": [
               "wheel"
             ],
-            "scope": "Installed private wheel in Ubuntu 18.04 KVM; full eight-scenario suite and nested eight-scenario installed driver",
+            "native_report": "specs/003-add-cross-platform-support/evidence/ubuntu2004-native-2026-10-27/ubuntu1804-glibc/raw/application/application-3.14.json.gz",
+            "native_report_sha256": "37e54950589fa9e406e2f7f93b594699193df5221faec5076f6ef68f4263b953",
+            "uncompressed_report_sha256": "0a5b91783a75e0771aa59d1f96ae7b7e88cbfc2849232c9b90a22f9e6827a4ca",
+            "nested_review": {
+              "path": "specs/003-add-cross-platform-support/evidence/ubuntu2004-native-2026-10-27/nested-recovery.json",
+              "sha256": "4bd77f1edffafb32e88c1f6df2ece88bd6e399a5173976dc0a20a0f1abc72d9d"
+            },
             "recovery_scenario_executions": 16,
             "offline_reference_executions_after_recovery": 96,
             "dot_executions": 389,
@@ -287,10 +317,34 @@
             "native_network_syscalls": {},
             "pending": [
               "Final qualified distributed candidate",
-              "Required cell eligibility and full acceptance"
+              "Pro/ESM eligibility and complete cell acceptance"
             ]
           },
-          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending",
+          "earlier_evidence": [
+            {
+              "path": "specs/003-add-cross-platform-support/evidence/ubuntu1804-process-driver-2026-10-20/application-3.14.json",
+              "sha256": "05a48a045b370b5d2f72ef03638d48239f7670a9fad84447552c3cf211f64e9f",
+              "summary": {
+                "path": "specs/003-add-cross-platform-support/evidence/ubuntu1804-process-driver-2026-10-20/summary.json",
+                "sha256": "aa31fc2b66ecca84d322fc43565316617253e3f64cfc086a607a324cabbd313f"
+              },
+              "application_revision": "eea100c37599517e09b6626d1edb82b599a1b19c",
+              "package_modes": [
+                "wheel"
+              ],
+              "scope": "Installed private wheel in Ubuntu 18.04 KVM; full eight-scenario suite and nested eight-scenario installed driver",
+              "recovery_scenario_executions": 16,
+              "offline_reference_executions_after_recovery": 96,
+              "dot_executions": 389,
+              "syscall_network_observation": true,
+              "native_network_syscalls": {},
+              "pending": [
+                "Final qualified distributed candidate",
+                "Required cell eligibility and full acceptance"
+              ]
+            }
+          ]
         }
       ]
     },
@@ -326,16 +380,64 @@
           "python_minor": "3.12",
           "complete": false,
           "qualified": false,
-          "observation_state": "pending",
-          "evidence": null,
+          "observation_state": "partial-native-observation",
+          "evidence": {
+            "path": "specs/003-add-cross-platform-support/evidence/ubuntu2004-native-2026-10-27/summary.json",
+            "sha256": "14bb87d24c5a06658d50664c7d6dcbb319ca60b768ae0d74d218849e2b632d9d",
+            "application_revision": "1c556872f4b74af61038ff53acac382ab1eb368a",
+            "scope": "Native Ubuntu x64 KVM installed private wheel; primary and nested recovery/process suites",
+            "package_modes": [
+              "wheel"
+            ],
+            "native_report": "specs/003-add-cross-platform-support/evidence/ubuntu2004-native-2026-10-27/ubuntu2004-glibc/raw/application/application-3.12.json.gz",
+            "native_report_sha256": "65cc9d86bd629f1e3a054020e0641779a71e071e0a2fb066a42408447770cd3e",
+            "uncompressed_report_sha256": "5692fd010a2ae8b92b1a8225ab7d449b42c707d173afd594c9c3b20696dff709",
+            "nested_review": {
+              "path": "specs/003-add-cross-platform-support/evidence/ubuntu2004-native-2026-10-27/nested-recovery.json",
+              "sha256": "4bd77f1edffafb32e88c1f6df2ece88bd6e399a5173976dc0a20a0f1abc72d9d"
+            },
+            "recovery_scenario_executions": 16,
+            "offline_reference_executions_after_recovery": 96,
+            "dot_executions": 389,
+            "syscall_network_observation": true,
+            "native_network_syscalls": {},
+            "pending": [
+              "Final qualified distributed candidate",
+              "Pro/ESM eligibility and complete cell acceptance"
+            ]
+          },
           "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
         },
         {
           "python_minor": "3.14",
           "complete": false,
           "qualified": false,
-          "observation_state": "pending",
-          "evidence": null,
+          "observation_state": "partial-native-observation",
+          "evidence": {
+            "path": "specs/003-add-cross-platform-support/evidence/ubuntu2004-native-2026-10-27/summary.json",
+            "sha256": "14bb87d24c5a06658d50664c7d6dcbb319ca60b768ae0d74d218849e2b632d9d",
+            "application_revision": "1c556872f4b74af61038ff53acac382ab1eb368a",
+            "scope": "Native Ubuntu x64 KVM installed private wheel; primary and nested recovery/process suites",
+            "package_modes": [
+              "wheel"
+            ],
+            "native_report": "specs/003-add-cross-platform-support/evidence/ubuntu2004-native-2026-10-27/ubuntu2004-glibc/raw/application/application-3.14.json.gz",
+            "native_report_sha256": "89efe34382596d1a601d1886fe9779adf0f87b3f1361ae31e7917e5bf45d4966",
+            "uncompressed_report_sha256": "cc639d0ed1d35abc79df80dddd8443e7c89d785d7014687e8f3d1a12552aff59",
+            "nested_review": {
+              "path": "specs/003-add-cross-platform-support/evidence/ubuntu2004-native-2026-10-27/nested-recovery.json",
+              "sha256": "4bd77f1edffafb32e88c1f6df2ece88bd6e399a5173976dc0a20a0f1abc72d9d"
+            },
+            "recovery_scenario_executions": 16,
+            "offline_reference_executions_after_recovery": 96,
+            "dot_executions": 389,
+            "syscall_network_observation": true,
+            "native_network_syscalls": {},
+            "pending": [
+              "Final qualified distributed candidate",
+              "Pro/ESM eligibility and complete cell acceptance"
+            ]
+          },
           "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
         }
       ]
@@ -1937,5 +2039,17 @@
     "path": "specs/003-add-cross-platform-support/evidence/ubuntu1804-process-driver-2026-10-20/summary.json",
     "sha256": "aa31fc2b66ecca84d322fc43565316617253e3f64cfc086a607a324cabbd313f"
   },
-  "current_counts_scope": "128 scenarios / 768 references cover hosted Ubuntu 24.04 and macOS wheel/sdist only; KVM baseline recorded separately"
+  "current_counts_scope": "128 scenarios / 768 references cover hosted Ubuntu 24.04 and macOS wheel/sdist only; KVM baseline recorded separately",
+  "native_ubuntu_update": {
+    "path": "specs/003-add-cross-platform-support/evidence/ubuntu2004-native-2026-10-27/summary.json",
+    "sha256": "14bb87d24c5a06658d50664c7d6dcbb319ca60b768ae0d74d218849e2b632d9d"
+  },
+  "nested_native_ubuntu_update": {
+    "path": "specs/003-add-cross-platform-support/evidence/ubuntu2004-native-2026-10-27/nested-recovery.json",
+    "sha256": "4bd77f1edffafb32e88c1f6df2ece88bd6e399a5173976dc0a20a0f1abc72d9d"
+  },
+  "previous_native_ubuntu_index": {
+    "path": "specs/003-add-cross-platform-support/evidence/ubuntu2004-native-2026-10-27/previous-recovery.json",
+    "sha256": "a4e62d216d9ea7648ed3de0daac0cb0dfd6fc3a99d68db129db700a0ccac8559"
+  }
 }

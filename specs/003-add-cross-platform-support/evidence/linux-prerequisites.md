@@ -1,5 +1,20 @@
 # Pré-requisitos Python Linux: evidência parcial
 
+## Ubuntu 20.04 x64 nativo e regressão 18.04 — 2026-10-27
+
+O [ensaio KVM conferido](ubuntu2004-native-2026-10-27/README.md) executou
+CPython 3.12.15 e 3.14.8 privados, fixados pelos mesmos arquivos e hashes abaixo,
+em Ubuntu 20.04 x64 com kernel 5.4.0-216/glibc 2.31. Venvs com `--copies`, pip,
+SSL/módulos, wheel externo e três entrypoints passaram sem substituir o Python
+do SO; seu hash permaneceu igual antes/depois. Ubuntu 18.04 x64 foi repetido
+como regressão no kernel 4.15.0-212/glibc 2.27. Fontes instaladas, corpus,
+rede nativa e recuperação também foram conferidos. Guest sem internet; arquivos
+obtidos pelo host com pins, runtime privado com transporte controlado.
+Não comprova elegibilidade Pro/ESM, candidata final, ARM64 ou as demais células.
+T033 permanece aberta para a matriz completa.
+
+## Ensaio inicial e procedimento
+
 T033 continua aberta para a matriz inteira. O ensaio abaixo cobre somente o
 Ubuntu 26.04 x86_64 no WSL já existente, sem aprovação de célula nativa.
 
