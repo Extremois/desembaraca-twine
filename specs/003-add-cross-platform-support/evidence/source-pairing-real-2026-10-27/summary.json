@@ -1,0 +1,141 @@
+{
+  "kind": "historical-linux-source-pairing-local-review",
+  "reviewed_on": "2026-10-27",
+  "source_state": "working-tree",
+  "approved": false,
+  "qualified": false,
+  "task_complete": false,
+  "tasks": [
+    "T030",
+    "T066"
+  ],
+  "historical_revision": "47844106ff072cad005a8a1c795153c658b2bc89",
+  "tools": {
+    "tools/runtime/pack-candidate.py": "0867dda10855b0d82f7c61ea8b359bd6f9507c3b9d5a853a32301881fcb1dfd6",
+    "tools/runtime/verify-source-pairing.py": "38f862ac4b6eb9ce2c3bd154d52ca5c6e0f7662da444012f2dcc676581b312b8",
+    "tools/runtime/verify-public-sources.py": "f5a9675c0ddc3e2a760b31f6c7de10028deed3892d2e4d95153f6bc0e4ae10ff",
+    "tools/validation/check-distribution-integrity.py": "ae63ad61c7f1fdce8a5303538ac5a9c6b1d49248cc8f96410da1a6ac73c498a7"
+  },
+  "capture_sha256": "177ca7e666356268ec839df9fc11f0415f2f6cf59ad674a9e21ff0e3dd07d03b",
+  "pairs": [
+    {
+      "artifact_id": "linux-glibc-x86_64",
+      "historical_revision": "47844106ff072cad005a8a1c795153c658b2bc89",
+      "actions_artifact_id": 12255244128,
+      "actions_archive_sha256": "867d00adeb5bf43cd4df7144b6dcc8556643821ede3ae0cd351d7a234a70fd4b",
+      "historical_summary_sha256": "a61071c0df3144efdeca66e67a83b4290bcf3c89ebfebdf58a1953a6bd24585f",
+      "original_candidate_receipt_sha256": "d971a6700a2ccf35fa64dc062639f1ede2818abc82c9c9d0981b4a340615a591",
+      "repacked_candidate_receipt_sha256": "1b32798a59d398d731b4e35d3f2755939af8e1b9df22395e82a5f68bc3d41db2",
+      "candidate_zip_byte_identical": true,
+      "candidate_zip_sha256": "15d2d904d6ae03214d56f3b484d69751f96d176721435e437fe7a72dceb0574a",
+      "source_archive_sha256": "25e58c76a94135c80924500b170c0ad7ce0852e3d4911cdcd5b827cd86c0c93b",
+      "executable_sha256": "43ce8d686720467c21be91cab4b8f3b246baae49c2cfe293714ebdf8a82f5716",
+      "provenance_sha256": "312e0d57ee7ef8df03c44d31140b9cd8eb07241938dac487f227567075f7c621",
+      "binary_files_verified": 480,
+      "notice_payloads_verified": 478,
+      "source_files_verified": 18175,
+      "sdk_files": 18102,
+      "source_manifest_matches_bytes": true,
+      "source_provenance_matches_binary": true,
+      "mismatched_provenance_rejected": true,
+      "archive_verification": {
+        "candidate": true,
+        "sources": true
+      },
+      "source_modes_checked": false,
+      "pairing_receipt": "glibc-x86_64/pairing.json",
+      "pairing_receipt_sha256": "4f14c76b49f7898086a09dbb4cebfa7719e5095378e67fef28c8d6690c4cf2be"
+    },
+    {
+      "artifact_id": "linux-glibc-aarch64",
+      "historical_revision": "47844106ff072cad005a8a1c795153c658b2bc89",
+      "actions_artifact_id": 12255439001,
+      "actions_archive_sha256": "e7be89fedd97cb74fff38b509281f923c0707f8867985442acb99e0a3108a331",
+      "historical_summary_sha256": "c9a941cd9b9a70b4c32057be0d5e525d0809c78915b3744bf054e59f853eef64",
+      "original_candidate_receipt_sha256": "1464c318aa58d69a80841ccaf36cd9b7add42ac3e4fa3524848e564b8612afbf",
+      "repacked_candidate_receipt_sha256": "b8ee54ccbbd6604727e6a9813caf2f461544bd4ddc4f89813c320941630d890e",
+      "candidate_zip_byte_identical": true,
+      "candidate_zip_sha256": "47c4b4047b145ebc1b1576320245758cdd1d6116d5adf898e111d08101b63301",
+      "source_archive_sha256": "43ec78e07083d1b43850680b3bf96462dcec6a26e45a2b8843cfd2ef964e3cb0",
+      "executable_sha256": "933b6c63370bdd3e814627e2a9a06176416c8da017a21dcbc96d8137dbc17e22",
+      "provenance_sha256": "73cfbddcd7e2615d293af133e3ba6e5c88269fdcba8355c091e5c46bd3e2ac52",
+      "binary_files_verified": 544,
+      "notice_payloads_verified": 542,
+      "source_files_verified": 18175,
+      "sdk_files": 18102,
+      "source_manifest_matches_bytes": true,
+      "source_provenance_matches_binary": true,
+      "mismatched_provenance_rejected": true,
+      "archive_verification": {
+        "candidate": true,
+        "sources": true
+      },
+      "source_modes_checked": false,
+      "pairing_receipt": "glibc-aarch64/pairing.json",
+      "pairing_receipt_sha256": "93e6cf8cdc741484034c07f05181f25ca76dc3c9d091568b0a8e97b575d0c333"
+    },
+    {
+      "artifact_id": "linux-musl-x86_64",
+      "historical_revision": "47844106ff072cad005a8a1c795153c658b2bc89",
+      "actions_artifact_id": 12256494632,
+      "actions_archive_sha256": "84e155a680a392657daee7d7835fc8916c927c4026e2e2887f7e5d478d9e31b8",
+      "historical_summary_sha256": "95fd3f1d498e8f123706779287594e1c94220ff8583e0b7fe87a67b2333646cd",
+      "original_candidate_receipt_sha256": "165952cdda6ece02bab2810487ee5d4e3559d5ef1d8388ed7f51110903ee8921",
+      "repacked_candidate_receipt_sha256": "e5ad74d4869761c3a9fb9382a4d1dabdb2095178bd7f980ae5df6d72a22f9f3d",
+      "candidate_zip_byte_identical": true,
+      "candidate_zip_sha256": "7813ffa0d4ced072c3c9459a71759fa0988358ff8e8ce36ea19579d5f03d094f",
+      "source_archive_sha256": "f3dc5887d7971320c29fb32fdc09e89139e95497a1f83b357003befcf0c67baf",
+      "executable_sha256": "f4dfee4e052704b1a7efdb7b6a4c43583ccaa062aec800b76224dae24eb2b69b",
+      "provenance_sha256": "c59dfb3e4ea9a7ec26a3ceeeaa30eb3554432d1a47e123fb11ce59616089e9fd",
+      "binary_files_verified": 421,
+      "notice_payloads_verified": 419,
+      "source_files_verified": 18175,
+      "sdk_files": 18102,
+      "source_manifest_matches_bytes": true,
+      "source_provenance_matches_binary": true,
+      "mismatched_provenance_rejected": true,
+      "archive_verification": {
+        "candidate": true,
+        "sources": true
+      },
+      "source_modes_checked": false,
+      "pairing_receipt": "musl-x86_64/pairing.json",
+      "pairing_receipt_sha256": "874091e3c77c11579a045d641e988e68c1f55c41a2daa639f535642ad81a643a"
+    },
+    {
+      "artifact_id": "linux-musl-aarch64",
+      "historical_revision": "47844106ff072cad005a8a1c795153c658b2bc89",
+      "actions_artifact_id": 12256689100,
+      "actions_archive_sha256": "9a525f3c432e133f0b5afaaeb5d69f1c4480486e04556f1ad2943caafbf30bad",
+      "historical_summary_sha256": "562b87217209675897f506756af40de997af269c76ebd43acf1e92c570816751",
+      "original_candidate_receipt_sha256": "25e8bac3a16dba7962e403cf0348fc92de137ff0cb7ea2c9322b52b5484cf59a",
+      "repacked_candidate_receipt_sha256": "2f47e86becdde896a0e66a1e6b12bea3fc49e18717547fe5a8c6f1bf92b3c37f",
+      "candidate_zip_byte_identical": true,
+      "candidate_zip_sha256": "3427cfa463f1616a6984751a9a9772cf431961d4f22827dbb0485cd0b290a8c5",
+      "source_archive_sha256": "a1bd863febf96cfc453ed8dae6620281383dd0f129dd4310f3c69f2eafcf7d63",
+      "executable_sha256": "2d7a4b6024eb000c33ecf8b14d1a32d0aac8dde65bed00de138604d081fd3ee4",
+      "provenance_sha256": "60390e265122fd1b8f904d62b111c51d3180eff9489bb43a66967e7c96a37f6a",
+      "binary_files_verified": 421,
+      "notice_payloads_verified": 419,
+      "source_files_verified": 18175,
+      "sdk_files": 18102,
+      "source_manifest_matches_bytes": true,
+      "source_provenance_matches_binary": true,
+      "mismatched_provenance_rejected": true,
+      "archive_verification": {
+        "candidate": true,
+        "sources": true
+      },
+      "source_modes_checked": false,
+      "pairing_receipt": "musl-aarch64/pairing.json",
+      "pairing_receipt_sha256": "261e466b1f5aeab610332a85df1222ebbee7e3177268b745ff949ed6b6c3d753"
+    }
+  ],
+  "limitations": [
+    "Historical development packages only; not the latest or final candidates",
+    "No engine/compiler execution or native qualification in this review",
+    "POSIX modes checked from ZIP/inventory; locally repacked on Windows",
+    "Source manifest/bytes/provenance checked; no new source completeness or license approval",
+    "No public delivery URLs or release; active catalog remains unchanged"
+  ]
+}

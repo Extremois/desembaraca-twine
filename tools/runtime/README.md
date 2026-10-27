@@ -617,6 +617,20 @@ do percurso CLI nativo; container prova apenas userland. Ausência de runner,
 candidata assinada ou ambiente correto deixa a célula pendente. Não executados
 remotamente nesta sessão.
 
+## Pareamento técnico de binários e fontes
+
+Depois de executar `pack-candidate.py` e `pack-sources.py`, conferir os dois
+arquivos reais com `verify-source-pairing.py --candidate-receipt ...
+--sources-receipt ... --candidate-archive ... --sources-archive ...
+--application-revision COMMIT_COMPLETO --output NOVO_JSON`.
+Os três pipelines Linux executam esse passo para glibc/musl x64/ARM64 e guardam
+o recibo nos dois conjuntos de evidência. Hashes de executável/proveniência,
+hashes/tamanhos dos arquivos e revisão precisam ser válidos. Saída existente
+não é sobrescrita. Detalhes e limites em
+[SOURCE-PAIRING-SPECIFICATION.md](licenses/SOURCE-PAIRING-SPECIFICATION.md).
+O recibo comprova somente o vínculo técnico medido; entrega final, completude
+de fontes, auditoria e qualificação continuam com seus gates próprios.
+
 ## Promoção revisável
 
 `python tools/runtime/promote-support.py --help` descreve entradas. Fornecer registro,

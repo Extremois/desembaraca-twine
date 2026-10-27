@@ -73,6 +73,8 @@ def pack(root, inventory, provenance, output):
                     artifact_id=data['artifact_id'],platform=data['platform'],artifact_arch=data['artifact_arch'],abi=data['abi'],
                     archive='candidate.zip',archive_sha256=archive_sha,archive_bytes=temporary.stat().st_size,
                     inventory='inventory.json',inventory_sha256=hashlib.sha256(inventory_bytes).hexdigest(),
+                    executable_sha256=next(item['sha256'] for item in data['files']
+                                           if item['path']==data['executable_relative_path']),
                     provenance_sha256=data['provenance_sha256'],file_count=len(data['files']),
                     source_modes_checked=os.name!='nt',zip_modes='from-validated-inventory',compression='stored',
                     pending=['dependency/license audit','native inspection/ABI','signing/notarization if applicable',

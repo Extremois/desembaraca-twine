@@ -1,6 +1,7 @@
 """Verify cryptographic and contractual pairing between candidate binary and corresponding sources.
 
-Enforces LGPL 2.1 section 6(d) equivalent access and EPL-2.0 section 3.1 source offer binding.
+Records technical binding for the project's corresponding-source delivery review.
+Matching receipts and planned URLs alone do not prove source completeness or delivery.
 Never promotes or publishes candidates to the active runtime catalog.
 """
 import argparse
@@ -8,8 +9,31 @@ import hashlib
 import json
 from pathlib import Path
 import re
+from urllib.parse import urlsplit
 
 DIGEST = re.compile(r'^[0-9a-f]{64}$')
+
+
+def valid_digest(value):
+    return isinstance(value, str) and DIGEST.fullmatch(value) is not None
+
+
+def validate_delivery_urls(candidate_url, sources_url):
+    if candidate_url is None and sources_url is None:
+        return
+    parsed = []
+    for url in (candidate_url, sources_url):
+        if not isinstance(url, str) or any(char.isspace() or ord(char) < 32 for char in url):
+            raise ValueError('Both planned delivery URLs must be HTTPS URLs')
+        part = urlsplit(url)
+        if (part.scheme != 'https' or not part.hostname or not part.path.rsplit('/', 1)[-1]
+                or part.username is not None or part.password is not None or part.query or part.fragment):
+            raise ValueError('Delivery URLs require HTTPS without credentials, query or fragment')
+        parsed.append(part)
+    binary, sources = parsed
+    if (binary.hostname, binary.port, binary.path.rsplit('/', 1)[0]) != (
+            sources.hostname, sources.port, sources.path.rsplit('/', 1)[0]) or binary.path == sources.path:
+        raise ValueError('Binary and sources require distinct URLs at the same planned release location')
 
 
 def file_sha256(path, limit=256 * 1024**2):
@@ -35,28 +59,34 @@ def pair_records(candidate_data, sources_data, candidate_archive=None, sources_a
         raise ValueError("Invalid sources receipt: must have kind 'candidate-source-review-material'")
 
     artifact_id = candidate_data.get("artifact_id")
-    if not artifact_id or artifact_id != sources_data.get("artifact_id"):
+    if (not isinstance(artifact_id, str) or not re.fullmatch(r'[a-z0-9][a-z0-9_-]*', artifact_id)
+            or artifact_id != sources_data.get("artifact_id")):
         raise ValueError(f"Artifact ID mismatch: '{artifact_id}' vs '{sources_data.get('artifact_id')}'")
 
     candidate_exec = candidate_data.get("executable_sha256", "")
     sources_exec = sources_data.get("executable_sha256", "")
-    if not DIGEST.fullmatch(candidate_exec) or candidate_exec != sources_exec:
+    if not valid_digest(candidate_exec) or candidate_exec != sources_exec:
         raise ValueError(f"Executable SHA-256 mismatch or invalid: candidate={candidate_exec}, sources={sources_exec}")
 
     candidate_prov = candidate_data.get("provenance_sha256", "")
     sources_prov = sources_data.get("provenance_sha256", "")
-    if not DIGEST.fullmatch(candidate_prov) or candidate_prov != sources_prov:
+    if not valid_digest(candidate_prov) or candidate_prov != sources_prov:
         raise ValueError(f"Provenance SHA-256 mismatch or invalid: candidate={candidate_prov}, sources={sources_prov}")
 
     cand_sha = candidate_data.get("archive_sha256", "")
     cand_bytes = candidate_data.get("archive_bytes", 0)
-    if not DIGEST.fullmatch(cand_sha) or not isinstance(cand_bytes, int) or cand_bytes <= 0:
+    if not valid_digest(cand_sha) or type(cand_bytes) is not int or cand_bytes <= 0:
         raise ValueError("Invalid candidate archive hash or size in receipt")
 
     src_sha = sources_data.get("archive_sha256", "")
     src_bytes = sources_data.get("archive_bytes", 0)
-    if not DIGEST.fullmatch(src_sha) or not isinstance(src_bytes, int) or src_bytes <= 0:
+    if not valid_digest(src_sha) or type(src_bytes) is not int or src_bytes <= 0:
         raise ValueError("Invalid sources archive hash or size in receipt")
+
+    revision = application_revision if application_revision is not None else candidate_data.get('application_revision')
+    if revision is not None and (not isinstance(revision, str) or not re.fullmatch(r'[0-9a-f]{40}', revision)):
+        raise ValueError('Application revision must be a full Git commit hash')
+    validate_delivery_urls(candidate_url, sources_url)
 
     if candidate_archive is not None:
         observed_sha, observed_bytes = file_sha256(candidate_archive)
@@ -79,17 +109,19 @@ def pair_records(candidate_data, sources_data, candidate_archive=None, sources_a
     }
 
     distribution_status = "unpromoted_pending_authorized_distribution"
-    if candidate_url and sources_url:
-        distribution_status = "ready_for_release_authorization"
 
     pairing = {
         "schema_version": 1,
         "kind": "corresponding-source-delivery-pairing",
         "artifact_id": artifact_id,
-        "application_revision": application_revision or candidate_data.get("application_revision", "pending-revision-binding"),
+        "application_revision": revision,
         "executable_sha256": candidate_exec,
         "provenance_sha256": candidate_prov,
         "pairing_valid": True,
+        "archive_verification": {
+            "candidate": candidate_archive is not None,
+            "sources": sources_archive is not None
+        },
         "candidate": {
             "archive": candidate_data.get("archive", "candidate.zip"),
             "sha256": cand_sha,

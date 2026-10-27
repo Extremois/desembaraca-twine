@@ -55,6 +55,7 @@ class CandidateArchiveTests(unittest.TestCase):
             self.assertEqual(first['archive_sha256'],second['archive_sha256'])
             self.assertEqual(first['archive_sha256'],hashlib.sha256(archive.read_bytes()).hexdigest())
             self.assertFalse(first['qualified'])
+            self.assertEqual(first['executable_sha256'], hashlib.sha256(files['bin/dot']).hexdigest())
             self.assertNotIn('url',first)
             self.assertEqual((root/'first/inventory.json').read_bytes(),inventory.read_bytes())
             with zipfile.ZipFile(archive) as incoming:

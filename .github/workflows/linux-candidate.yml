@@ -72,6 +72,10 @@ jobs:
         run: |
           python tools/runtime/pack-sources.py --graphviz "$RUNNER_TEMP/twine-sdk/graphviz.tar.gz" --sdk "$RUNNER_TEMP/twine-sdk/zig.tar.xz" --provenance "$RUNNER_TEMP/twine-notices/provenance.json" --output "$RUNNER_TEMP/twine-sources"
           cp "$RUNNER_TEMP/twine-sources/sources.json" .tmp/native-linux/sources.json
+      - name: Verify binary and source archive pairing without approving delivery
+        run: |
+          python tools/runtime/verify-source-pairing.py --candidate-receipt "$RUNNER_TEMP/twine-package/candidate.json" --sources-receipt "$RUNNER_TEMP/twine-sources/sources.json" --candidate-archive "$RUNNER_TEMP/twine-package/candidate.zip" --sources-archive "$RUNNER_TEMP/twine-sources/sources.tar.gz" --application-revision "$GITHUB_SHA" --output .tmp/native-linux/source-pairing.json
+          cp .tmp/native-linux/source-pairing.json "$RUNNER_TEMP/twine-sources/source-pairing.json"
       - name: Rebuild using exported sources and recipes
         shell: bash
         run: |

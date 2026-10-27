@@ -76,10 +76,13 @@ O recibo gerado por `tools/runtime/verify-source-pairing.py` segue o schema abai
   "kind": "corresponding-source-delivery-pairing",
   "artifact_id": "linux-glibc-x86_64",
   "application_revision": "40-hex-digits",
-  "recipe_sha256": "64-hex-digits",
   "executable_sha256": "64-hex-digits",
   "provenance_sha256": "64-hex-digits",
   "pairing_valid": true,
+  "archive_verification": {
+    "candidate": true,
+    "sources": true
+  },
   "candidate": {
     "archive": "candidate.zip",
     "sha256": "64-hex-digits",
@@ -104,7 +107,7 @@ O recibo gerado por `tools/runtime/verify-source-pairing.py` segue o schema abai
     "status": "unpromoted_pending_authorized_distribution",
     "candidate_distribution_url": null,
     "sources_distribution_url": null,
-    "channel": "provisional"
+    "active_catalog_promoted": false
   }
 }
 ```
@@ -120,9 +123,38 @@ O recibo gerado por `tools/runtime/verify-source-pairing.py` segue o schema abai
    O arquivo `src/twine_edge_overlap/runtime-catalog.json` só pode incorporar
    artefatos POSIX (Linux/macOS) após autorização humana formal, existência de
    URLs HTTPS públicas imutáveis para ambos os arquivos (`candidate.zip` e
-   `sources.tar.gz`) e aprovação completa de todas as células alvo.
+   `sources.tar.gz`) e aprovação completa das células propostas. Outras células
+   permanecem pendentes, conforme a entrega independente prevista no plano.
 
 3. **Invariância de recibos passados**:
    Nenhuma revalidação ou empacotamento pode sobrescrever recibos históricos
    ou alterar hashes registrados de revisões anteriores. Cada nova revisão
    recebe seu próprio diretório de evidência datado.
+
+## 5. Verificação técnica e integração
+
+`pack-candidate.py` grava `executable_sha256` a partir da entrada executável do
+inventário já validado contra a proveniência e os bytes copiados. Recibos antigos
+que não contêm esse campo não devem ser alterados nem aceitos por inferência.
+
+Os pipelines `linux-candidate.yml`, `linux-arm64-candidate.yml` e
+`linux-musl-candidate.yml` executam `verify-source-pairing.py` depois dos dois
+empacotadores, com ambos os arquivos em disco e o commit completo da execução.
+Guardam o mesmo `source-pairing.json` junto à evidência binária e às fontes.
+Isso cobre as quatro variantes Linux quando os workflows forem executados;
+a integração não registra uma execução CI nem uma distribuição final.
+
+`pairing_valid` significa que as identidades declaradas coincidem.
+`archive_verification` registra separadamente se cada arquivo foi lido e seu
+hash/tamanho conferidos. Sem argumentos de arquivo, a análise é só de recibos.
+Mesmo com ambos os arquivos conferidos, a ferramenta não inspeciona a completude
+de fontes, notices, reconstrução/relink, elegibilidade ou qualificação nativa.
+Os campos `obligations` descrevem requisitos da revisão, não resultados desses
+ensaios. A revisão da aplicação pode ser `null` quando não informada; o CI sempre
+informa um hash completo de commit.
+
+URLs são opcionais e apenas planejadas. Se informadas, exigem um par HTTPS
+distinto no mesmo diretório de release, sem credenciais, query ou fragmento.
+Esse teste sintático não prova imutabilidade, existência ou acesso equivalente;
+o estado continua `unpromoted_pending_authorized_distribution` em todos os casos.
+Não há consulta de rede, publicação nem alteração do catálogo por esta ferramenta.

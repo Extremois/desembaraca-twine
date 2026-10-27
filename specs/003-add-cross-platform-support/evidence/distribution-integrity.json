@@ -378,7 +378,9 @@
     "schema_version": 1,
     "lgpl_2_1_section_6_d_route": "Equivalent access to copy corresponding source code from same designated place alongside binary distribution",
     "epl_2_0_section_3_1_route": "Complete Graphviz source archive accompanied by license notice and build recipe",
-    "status": "specification_and_tooling_completed",
+    "status": "packager_and_linux_ci_integration_locally_verified_pending_ci",
+    "integration_review": "specs/003-add-cross-platform-support/evidence/source-pairing-integration-2026-10-27/README.md",
+    "historical_real_pairing_review": "specs/003-add-cross-platform-support/evidence/source-pairing-real-2026-10-27/summary.json",
     "catalog_distribution_status": "unpromoted_pending_authorized_release"
   }
 }

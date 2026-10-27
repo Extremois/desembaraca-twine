@@ -101,6 +101,10 @@ jobs:
         run: |
           python tools/runtime/pack-sources.py --graphviz "$RUNNER_TEMP/twine-arm64-sdk/graphviz.tar.gz" --sdk "$RUNNER_TEMP/twine-arm64-sdk/zig.tar.xz" --provenance "$RUNNER_TEMP/twine-arm64-notices/provenance.json" --output "$RUNNER_TEMP/twine-arm64-sources"
           cp "$RUNNER_TEMP/twine-arm64-sources/sources.json" .tmp/native-linux-arm64/sources.json
+      - name: Verify ARM64 binary and source archive pairing without approving delivery
+        run: |
+          python tools/runtime/verify-source-pairing.py --candidate-receipt "$RUNNER_TEMP/twine-arm64-package/candidate.json" --sources-receipt "$RUNNER_TEMP/twine-arm64-sources/sources.json" --candidate-archive "$RUNNER_TEMP/twine-arm64-package/candidate.zip" --sources-archive "$RUNNER_TEMP/twine-arm64-sources/sources.tar.gz" --application-revision "$GITHUB_SHA" --output .tmp/native-linux-arm64/source-pairing.json
+          cp .tmp/native-linux-arm64/source-pairing.json "$RUNNER_TEMP/twine-arm64-sources/source-pairing.json"
       - name: Rebuild ARM64 using only exported sources and recipes
         shell: bash
         run: |
