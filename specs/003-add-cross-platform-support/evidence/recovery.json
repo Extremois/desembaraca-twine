@@ -3,7 +3,7 @@
   "task": "T076",
   "task_complete": false,
   "qualified": false,
-  "captured_at": "2026-10-27T21:26:24.775775+00:00",
+  "captured_at": "2026-10-27T22:07:15.168752+00:00",
   "registry": {
     "path": "tools/runtime/support-targets.json",
     "sha256": "be3e8a77e3836d1125658c00a75fbf0e3584f1e26a166a053583336c29a5d295"
@@ -11,8 +11,8 @@
   "expected_targets": 69,
   "expected_python_slots": 138,
   "complete_targets": 0,
-  "targets_with_partial_native_observations": 9,
-  "python_slots_with_partial_native_observations": 18,
+  "targets_with_partial_native_observations": 11,
+  "python_slots_with_partial_native_observations": 22,
   "current_failed_repair_summary": {
     "path": "specs/003-add-cross-platform-support/evidence/installed-posix-processes-2026-10-20/runtime/summary.json",
     "sha256": "c3bf8b4a7094bf949bfcf100b5437982b934fad654869be9c2e4e9ccdc2a044d"
@@ -240,19 +240,19 @@
           "qualified": false,
           "observation_state": "partial-native-observation",
           "evidence": {
-            "path": "specs/003-add-cross-platform-support/evidence/ubuntu2404-native-2026-10-27/summary.json",
-            "sha256": "3e45f819066c10a8f5a8f909a6f4fb48d9eb99662597d3f8054a8010c9890b72",
-            "application_revision": "4b5625d4b79720e58d50f0919eedb3b39d08e00c",
-            "scope": "Native Ubuntu x64 KVM installed private wheel; primary and nested recovery/process suites",
+            "path": "specs/003-add-cross-platform-support/evidence/debian-native-2026-10-27/summary.json",
+            "sha256": "b7343aca3c9f0e32ceab8270fa79d4419100db2317e541f0596014670205a0eb",
+            "application_revision": "55a789ea497c2fa74180cbb2e2dee3b81f1a1220",
+            "scope": "Native Debian/Ubuntu x64 KVM installed private wheel; primary and nested recovery/process suites",
             "package_modes": [
               "wheel"
             ],
-            "native_report": "specs/003-add-cross-platform-support/evidence/ubuntu2404-native-2026-10-27/ubuntu1804-glibc/raw/application/application-3.12.json.gz",
-            "native_report_sha256": "20038128ce8ff8cc198619d4aaa8455886e713c482777452f21364d3dc4f0e0e",
-            "uncompressed_report_sha256": "8d7cd735fd8ff1e125a0cd06aeab367dfc52edc0f095c172212f6adf0eb5c7b2",
+            "native_report": "specs/003-add-cross-platform-support/evidence/debian-native-2026-10-27/ubuntu1804-glibc/raw/application/application-3.12.json.gz",
+            "native_report_sha256": "a934cb00d5f90328dbdb2963ed48edca1692a375834ed0ec3fb5b752fb8c623b",
+            "uncompressed_report_sha256": "ee1ccf54de57db22988f7ec2fbf7a96dbe73c445998a338af9117ec8d3fb3e84",
             "nested_review": {
-              "path": "specs/003-add-cross-platform-support/evidence/ubuntu2404-native-2026-10-27/nested-recovery.json",
-              "sha256": "cb12d617d715bab9bd80eb3d7358f73a7b49d950df777d7c6878dd81face023b"
+              "path": "specs/003-add-cross-platform-support/evidence/debian-native-2026-10-27/nested-recovery.json",
+              "sha256": "c52c8d8b8262bba18795e3c53fbaa0f53b2ca96502cacad9c4653b9a1343765a"
             },
             "recovery_scenario_executions": 16,
             "offline_reference_executions_after_recovery": 96,
@@ -387,6 +387,31 @@
                 "Final qualified distributed candidate",
                 "Pro/ESM eligibility and complete cell acceptance"
               ]
+            },
+            {
+              "path": "specs/003-add-cross-platform-support/evidence/ubuntu2404-native-2026-10-27/summary.json",
+              "sha256": "3e45f819066c10a8f5a8f909a6f4fb48d9eb99662597d3f8054a8010c9890b72",
+              "application_revision": "4b5625d4b79720e58d50f0919eedb3b39d08e00c",
+              "scope": "Native Ubuntu x64 KVM installed private wheel; primary and nested recovery/process suites",
+              "package_modes": [
+                "wheel"
+              ],
+              "native_report": "specs/003-add-cross-platform-support/evidence/ubuntu2404-native-2026-10-27/ubuntu1804-glibc/raw/application/application-3.12.json.gz",
+              "native_report_sha256": "20038128ce8ff8cc198619d4aaa8455886e713c482777452f21364d3dc4f0e0e",
+              "uncompressed_report_sha256": "8d7cd735fd8ff1e125a0cd06aeab367dfc52edc0f095c172212f6adf0eb5c7b2",
+              "nested_review": {
+                "path": "specs/003-add-cross-platform-support/evidence/ubuntu2404-native-2026-10-27/nested-recovery.json",
+                "sha256": "cb12d617d715bab9bd80eb3d7358f73a7b49d950df777d7c6878dd81face023b"
+              },
+              "recovery_scenario_executions": 16,
+              "offline_reference_executions_after_recovery": 96,
+              "dot_executions": 389,
+              "syscall_network_observation": true,
+              "native_network_syscalls": {},
+              "pending": [
+                "Final qualified distributed candidate",
+                "Pro/ESM eligibility and complete cell acceptance"
+              ]
             }
           ]
         },
@@ -396,19 +421,19 @@
           "qualified": false,
           "observation_state": "partial-native-observation",
           "evidence": {
-            "path": "specs/003-add-cross-platform-support/evidence/ubuntu2404-native-2026-10-27/summary.json",
-            "sha256": "3e45f819066c10a8f5a8f909a6f4fb48d9eb99662597d3f8054a8010c9890b72",
-            "application_revision": "4b5625d4b79720e58d50f0919eedb3b39d08e00c",
-            "scope": "Native Ubuntu x64 KVM installed private wheel; primary and nested recovery/process suites",
+            "path": "specs/003-add-cross-platform-support/evidence/debian-native-2026-10-27/summary.json",
+            "sha256": "b7343aca3c9f0e32ceab8270fa79d4419100db2317e541f0596014670205a0eb",
+            "application_revision": "55a789ea497c2fa74180cbb2e2dee3b81f1a1220",
+            "scope": "Native Debian/Ubuntu x64 KVM installed private wheel; primary and nested recovery/process suites",
             "package_modes": [
               "wheel"
             ],
-            "native_report": "specs/003-add-cross-platform-support/evidence/ubuntu2404-native-2026-10-27/ubuntu1804-glibc/raw/application/application-3.14.json.gz",
-            "native_report_sha256": "306d878a01ae744c0da12301d96721b82fc276c9e681ff72fce9fe500d33452a",
-            "uncompressed_report_sha256": "b19d2657b5fc8d624ca0bd1d9154732c70e818178bf7fabc4f8c51e1ad71af6d",
+            "native_report": "specs/003-add-cross-platform-support/evidence/debian-native-2026-10-27/ubuntu1804-glibc/raw/application/application-3.14.json.gz",
+            "native_report_sha256": "09d71c2258cacb5ea14b158159ca552c5a615471cc5ed691514f5da61398fa71",
+            "uncompressed_report_sha256": "69d4f8696ebb25647704a431278236b60322728e75a9cb5d3765efe32dffa0c1",
             "nested_review": {
-              "path": "specs/003-add-cross-platform-support/evidence/ubuntu2404-native-2026-10-27/nested-recovery.json",
-              "sha256": "cb12d617d715bab9bd80eb3d7358f73a7b49d950df777d7c6878dd81face023b"
+              "path": "specs/003-add-cross-platform-support/evidence/debian-native-2026-10-27/nested-recovery.json",
+              "sha256": "c52c8d8b8262bba18795e3c53fbaa0f53b2ca96502cacad9c4653b9a1343765a"
             },
             "recovery_scenario_executions": 16,
             "offline_reference_executions_after_recovery": 96,
@@ -543,6 +568,31 @@
                 "Final qualified distributed candidate",
                 "Pro/ESM eligibility and complete cell acceptance"
               ]
+            },
+            {
+              "path": "specs/003-add-cross-platform-support/evidence/ubuntu2404-native-2026-10-27/summary.json",
+              "sha256": "3e45f819066c10a8f5a8f909a6f4fb48d9eb99662597d3f8054a8010c9890b72",
+              "application_revision": "4b5625d4b79720e58d50f0919eedb3b39d08e00c",
+              "scope": "Native Ubuntu x64 KVM installed private wheel; primary and nested recovery/process suites",
+              "package_modes": [
+                "wheel"
+              ],
+              "native_report": "specs/003-add-cross-platform-support/evidence/ubuntu2404-native-2026-10-27/ubuntu1804-glibc/raw/application/application-3.14.json.gz",
+              "native_report_sha256": "306d878a01ae744c0da12301d96721b82fc276c9e681ff72fce9fe500d33452a",
+              "uncompressed_report_sha256": "b19d2657b5fc8d624ca0bd1d9154732c70e818178bf7fabc4f8c51e1ad71af6d",
+              "nested_review": {
+                "path": "specs/003-add-cross-platform-support/evidence/ubuntu2404-native-2026-10-27/nested-recovery.json",
+                "sha256": "cb12d617d715bab9bd80eb3d7358f73a7b49d950df777d7c6878dd81face023b"
+              },
+              "recovery_scenario_executions": 16,
+              "offline_reference_executions_after_recovery": 96,
+              "dot_executions": 389,
+              "syscall_network_observation": true,
+              "native_network_syscalls": {},
+              "pending": [
+                "Final qualified distributed candidate",
+                "Pro/ESM eligibility and complete cell acceptance"
+              ]
             }
           ]
         }
@@ -582,19 +632,19 @@
           "qualified": false,
           "observation_state": "partial-native-observation",
           "evidence": {
-            "path": "specs/003-add-cross-platform-support/evidence/ubuntu2404-native-2026-10-27/summary.json",
-            "sha256": "3e45f819066c10a8f5a8f909a6f4fb48d9eb99662597d3f8054a8010c9890b72",
-            "application_revision": "4b5625d4b79720e58d50f0919eedb3b39d08e00c",
-            "scope": "Native Ubuntu x64 KVM installed private wheel; primary and nested recovery/process suites",
+            "path": "specs/003-add-cross-platform-support/evidence/debian-native-2026-10-27/summary.json",
+            "sha256": "b7343aca3c9f0e32ceab8270fa79d4419100db2317e541f0596014670205a0eb",
+            "application_revision": "55a789ea497c2fa74180cbb2e2dee3b81f1a1220",
+            "scope": "Native Debian/Ubuntu x64 KVM installed private wheel; primary and nested recovery/process suites",
             "package_modes": [
               "wheel"
             ],
-            "native_report": "specs/003-add-cross-platform-support/evidence/ubuntu2404-native-2026-10-27/ubuntu2004-glibc/raw/application/application-3.12.json.gz",
-            "native_report_sha256": "9ee1353d50e65ec8623ca5f486adbb645c590efe00114f5ddf70c5a98e1ee59d",
-            "uncompressed_report_sha256": "46d26a74f80b4409b8e8a99690799838e8a83015d52e6e6c2b19e270573d9510",
+            "native_report": "specs/003-add-cross-platform-support/evidence/debian-native-2026-10-27/ubuntu2004-glibc/raw/application/application-3.12.json.gz",
+            "native_report_sha256": "983746722282899ab8c5d0caf02f6fb9df2dd84ea4622bbd7cec8bdfd5b13bb7",
+            "uncompressed_report_sha256": "9015cfdf8c1ce9b074a6aab1642cfe958c93dd1acf255a64820a31302c42007e",
             "nested_review": {
-              "path": "specs/003-add-cross-platform-support/evidence/ubuntu2404-native-2026-10-27/nested-recovery.json",
-              "sha256": "cb12d617d715bab9bd80eb3d7358f73a7b49d950df777d7c6878dd81face023b"
+              "path": "specs/003-add-cross-platform-support/evidence/debian-native-2026-10-27/nested-recovery.json",
+              "sha256": "c52c8d8b8262bba18795e3c53fbaa0f53b2ca96502cacad9c4653b9a1343765a"
             },
             "recovery_scenario_executions": 16,
             "offline_reference_executions_after_recovery": 96,
@@ -707,6 +757,31 @@
                 "Final qualified distributed candidate",
                 "Pro/ESM eligibility and complete cell acceptance"
               ]
+            },
+            {
+              "path": "specs/003-add-cross-platform-support/evidence/ubuntu2404-native-2026-10-27/summary.json",
+              "sha256": "3e45f819066c10a8f5a8f909a6f4fb48d9eb99662597d3f8054a8010c9890b72",
+              "application_revision": "4b5625d4b79720e58d50f0919eedb3b39d08e00c",
+              "scope": "Native Ubuntu x64 KVM installed private wheel; primary and nested recovery/process suites",
+              "package_modes": [
+                "wheel"
+              ],
+              "native_report": "specs/003-add-cross-platform-support/evidence/ubuntu2404-native-2026-10-27/ubuntu2004-glibc/raw/application/application-3.12.json.gz",
+              "native_report_sha256": "9ee1353d50e65ec8623ca5f486adbb645c590efe00114f5ddf70c5a98e1ee59d",
+              "uncompressed_report_sha256": "46d26a74f80b4409b8e8a99690799838e8a83015d52e6e6c2b19e270573d9510",
+              "nested_review": {
+                "path": "specs/003-add-cross-platform-support/evidence/ubuntu2404-native-2026-10-27/nested-recovery.json",
+                "sha256": "cb12d617d715bab9bd80eb3d7358f73a7b49d950df777d7c6878dd81face023b"
+              },
+              "recovery_scenario_executions": 16,
+              "offline_reference_executions_after_recovery": 96,
+              "dot_executions": 389,
+              "syscall_network_observation": true,
+              "native_network_syscalls": {},
+              "pending": [
+                "Final qualified distributed candidate",
+                "Pro/ESM eligibility and complete cell acceptance"
+              ]
             }
           ]
         },
@@ -716,19 +791,19 @@
           "qualified": false,
           "observation_state": "partial-native-observation",
           "evidence": {
-            "path": "specs/003-add-cross-platform-support/evidence/ubuntu2404-native-2026-10-27/summary.json",
-            "sha256": "3e45f819066c10a8f5a8f909a6f4fb48d9eb99662597d3f8054a8010c9890b72",
-            "application_revision": "4b5625d4b79720e58d50f0919eedb3b39d08e00c",
-            "scope": "Native Ubuntu x64 KVM installed private wheel; primary and nested recovery/process suites",
+            "path": "specs/003-add-cross-platform-support/evidence/debian-native-2026-10-27/summary.json",
+            "sha256": "b7343aca3c9f0e32ceab8270fa79d4419100db2317e541f0596014670205a0eb",
+            "application_revision": "55a789ea497c2fa74180cbb2e2dee3b81f1a1220",
+            "scope": "Native Debian/Ubuntu x64 KVM installed private wheel; primary and nested recovery/process suites",
             "package_modes": [
               "wheel"
             ],
-            "native_report": "specs/003-add-cross-platform-support/evidence/ubuntu2404-native-2026-10-27/ubuntu2004-glibc/raw/application/application-3.14.json.gz",
-            "native_report_sha256": "5772f94a91da08322f8187a5c0fbbfbb9cbb2344a476d8b51b882c0e84336f61",
-            "uncompressed_report_sha256": "fa9d57f77648512525dd51748b39527b18eed19ea37f27239073af126e994315",
+            "native_report": "specs/003-add-cross-platform-support/evidence/debian-native-2026-10-27/ubuntu2004-glibc/raw/application/application-3.14.json.gz",
+            "native_report_sha256": "ef0dc6652cf71d202e25704d65de7a055fc880ef8f6a527fe489234865122e0a",
+            "uncompressed_report_sha256": "865f2a3f3a334fc7fc8cf8f6c66fe388b6b8de5a020665a60a2f1c0031bb8563",
             "nested_review": {
-              "path": "specs/003-add-cross-platform-support/evidence/ubuntu2404-native-2026-10-27/nested-recovery.json",
-              "sha256": "cb12d617d715bab9bd80eb3d7358f73a7b49d950df777d7c6878dd81face023b"
+              "path": "specs/003-add-cross-platform-support/evidence/debian-native-2026-10-27/nested-recovery.json",
+              "sha256": "c52c8d8b8262bba18795e3c53fbaa0f53b2ca96502cacad9c4653b9a1343765a"
             },
             "recovery_scenario_executions": 16,
             "offline_reference_executions_after_recovery": 96,
@@ -841,6 +916,31 @@
                 "Final qualified distributed candidate",
                 "Pro/ESM eligibility and complete cell acceptance"
               ]
+            },
+            {
+              "path": "specs/003-add-cross-platform-support/evidence/ubuntu2404-native-2026-10-27/summary.json",
+              "sha256": "3e45f819066c10a8f5a8f909a6f4fb48d9eb99662597d3f8054a8010c9890b72",
+              "application_revision": "4b5625d4b79720e58d50f0919eedb3b39d08e00c",
+              "scope": "Native Ubuntu x64 KVM installed private wheel; primary and nested recovery/process suites",
+              "package_modes": [
+                "wheel"
+              ],
+              "native_report": "specs/003-add-cross-platform-support/evidence/ubuntu2404-native-2026-10-27/ubuntu2004-glibc/raw/application/application-3.14.json.gz",
+              "native_report_sha256": "5772f94a91da08322f8187a5c0fbbfbb9cbb2344a476d8b51b882c0e84336f61",
+              "uncompressed_report_sha256": "fa9d57f77648512525dd51748b39527b18eed19ea37f27239073af126e994315",
+              "nested_review": {
+                "path": "specs/003-add-cross-platform-support/evidence/ubuntu2404-native-2026-10-27/nested-recovery.json",
+                "sha256": "cb12d617d715bab9bd80eb3d7358f73a7b49d950df777d7c6878dd81face023b"
+              },
+              "recovery_scenario_executions": 16,
+              "offline_reference_executions_after_recovery": 96,
+              "dot_executions": 389,
+              "syscall_network_observation": true,
+              "native_network_syscalls": {},
+              "pending": [
+                "Final qualified distributed candidate",
+                "Pro/ESM eligibility and complete cell acceptance"
+              ]
             }
           ]
         }
@@ -880,19 +980,19 @@
           "qualified": false,
           "observation_state": "partial-native-observation",
           "evidence": {
-            "path": "specs/003-add-cross-platform-support/evidence/ubuntu2404-native-2026-10-27/summary.json",
-            "sha256": "3e45f819066c10a8f5a8f909a6f4fb48d9eb99662597d3f8054a8010c9890b72",
-            "application_revision": "4b5625d4b79720e58d50f0919eedb3b39d08e00c",
-            "scope": "Native Ubuntu x64 KVM installed private wheel; primary and nested recovery/process suites",
+            "path": "specs/003-add-cross-platform-support/evidence/debian-native-2026-10-27/summary.json",
+            "sha256": "b7343aca3c9f0e32ceab8270fa79d4419100db2317e541f0596014670205a0eb",
+            "application_revision": "55a789ea497c2fa74180cbb2e2dee3b81f1a1220",
+            "scope": "Native Debian/Ubuntu x64 KVM installed private wheel; primary and nested recovery/process suites",
             "package_modes": [
               "wheel"
             ],
-            "native_report": "specs/003-add-cross-platform-support/evidence/ubuntu2404-native-2026-10-27/ubuntu2204-glibc/raw/application/application-3.12.json.gz",
-            "native_report_sha256": "77f1255757ef7f70b3d34edc6ec959be437e8209e399d3e0344895e6111574da",
-            "uncompressed_report_sha256": "10ce16ac44dd93975169bd5955f6826892c7be4b2152fa443b7187de5363a1ab",
+            "native_report": "specs/003-add-cross-platform-support/evidence/debian-native-2026-10-27/ubuntu2204-glibc/raw/application/application-3.12.json.gz",
+            "native_report_sha256": "ef35857b6bab612206ae9cfe49f740d7f5f952226df51587142efc056efce4d1",
+            "uncompressed_report_sha256": "d1d070b8117d1f3604a01e41ec4c8993f645c55b05dff88b13cf138bac4b8eb7",
             "nested_review": {
-              "path": "specs/003-add-cross-platform-support/evidence/ubuntu2404-native-2026-10-27/nested-recovery.json",
-              "sha256": "cb12d617d715bab9bd80eb3d7358f73a7b49d950df777d7c6878dd81face023b"
+              "path": "specs/003-add-cross-platform-support/evidence/debian-native-2026-10-27/nested-recovery.json",
+              "sha256": "c52c8d8b8262bba18795e3c53fbaa0f53b2ca96502cacad9c4653b9a1343765a"
             },
             "recovery_scenario_executions": 16,
             "offline_reference_executions_after_recovery": 96,
@@ -980,6 +1080,31 @@
                 "Final qualified distributed candidate",
                 "Full cell and Twine acceptance"
               ]
+            },
+            {
+              "path": "specs/003-add-cross-platform-support/evidence/ubuntu2404-native-2026-10-27/summary.json",
+              "sha256": "3e45f819066c10a8f5a8f909a6f4fb48d9eb99662597d3f8054a8010c9890b72",
+              "application_revision": "4b5625d4b79720e58d50f0919eedb3b39d08e00c",
+              "scope": "Native Ubuntu x64 KVM installed private wheel; primary and nested recovery/process suites",
+              "package_modes": [
+                "wheel"
+              ],
+              "native_report": "specs/003-add-cross-platform-support/evidence/ubuntu2404-native-2026-10-27/ubuntu2204-glibc/raw/application/application-3.12.json.gz",
+              "native_report_sha256": "77f1255757ef7f70b3d34edc6ec959be437e8209e399d3e0344895e6111574da",
+              "uncompressed_report_sha256": "10ce16ac44dd93975169bd5955f6826892c7be4b2152fa443b7187de5363a1ab",
+              "nested_review": {
+                "path": "specs/003-add-cross-platform-support/evidence/ubuntu2404-native-2026-10-27/nested-recovery.json",
+                "sha256": "cb12d617d715bab9bd80eb3d7358f73a7b49d950df777d7c6878dd81face023b"
+              },
+              "recovery_scenario_executions": 16,
+              "offline_reference_executions_after_recovery": 96,
+              "dot_executions": 389,
+              "syscall_network_observation": true,
+              "native_network_syscalls": {},
+              "pending": [
+                "Final qualified distributed candidate",
+                "Full cell and Twine acceptance"
+              ]
             }
           ]
         },
@@ -989,19 +1114,19 @@
           "qualified": false,
           "observation_state": "partial-native-observation",
           "evidence": {
-            "path": "specs/003-add-cross-platform-support/evidence/ubuntu2404-native-2026-10-27/summary.json",
-            "sha256": "3e45f819066c10a8f5a8f909a6f4fb48d9eb99662597d3f8054a8010c9890b72",
-            "application_revision": "4b5625d4b79720e58d50f0919eedb3b39d08e00c",
-            "scope": "Native Ubuntu x64 KVM installed private wheel; primary and nested recovery/process suites",
+            "path": "specs/003-add-cross-platform-support/evidence/debian-native-2026-10-27/summary.json",
+            "sha256": "b7343aca3c9f0e32ceab8270fa79d4419100db2317e541f0596014670205a0eb",
+            "application_revision": "55a789ea497c2fa74180cbb2e2dee3b81f1a1220",
+            "scope": "Native Debian/Ubuntu x64 KVM installed private wheel; primary and nested recovery/process suites",
             "package_modes": [
               "wheel"
             ],
-            "native_report": "specs/003-add-cross-platform-support/evidence/ubuntu2404-native-2026-10-27/ubuntu2204-glibc/raw/application/application-3.14.json.gz",
-            "native_report_sha256": "900669b67e4da6ea617255ea47cfef99e538ab7d00eeba8093c4bb0143c2ea03",
-            "uncompressed_report_sha256": "522a97bc6aa82d6a9f81464baa68371af693fbfbaf3bb2fa9bba48d38c7217de",
+            "native_report": "specs/003-add-cross-platform-support/evidence/debian-native-2026-10-27/ubuntu2204-glibc/raw/application/application-3.14.json.gz",
+            "native_report_sha256": "86700318ac740f6cdba1a91a6e0cd1b81b70f5a6c4964d6f73e9efba72f08814",
+            "uncompressed_report_sha256": "8e0c0db0c5b6c7ae4434e6b4b380522df5c780aef25ca004534f7146b7acb0e6",
             "nested_review": {
-              "path": "specs/003-add-cross-platform-support/evidence/ubuntu2404-native-2026-10-27/nested-recovery.json",
-              "sha256": "cb12d617d715bab9bd80eb3d7358f73a7b49d950df777d7c6878dd81face023b"
+              "path": "specs/003-add-cross-platform-support/evidence/debian-native-2026-10-27/nested-recovery.json",
+              "sha256": "c52c8d8b8262bba18795e3c53fbaa0f53b2ca96502cacad9c4653b9a1343765a"
             },
             "recovery_scenario_executions": 16,
             "offline_reference_executions_after_recovery": 96,
@@ -1089,6 +1214,31 @@
                 "Final qualified distributed candidate",
                 "Full cell and Twine acceptance"
               ]
+            },
+            {
+              "path": "specs/003-add-cross-platform-support/evidence/ubuntu2404-native-2026-10-27/summary.json",
+              "sha256": "3e45f819066c10a8f5a8f909a6f4fb48d9eb99662597d3f8054a8010c9890b72",
+              "application_revision": "4b5625d4b79720e58d50f0919eedb3b39d08e00c",
+              "scope": "Native Ubuntu x64 KVM installed private wheel; primary and nested recovery/process suites",
+              "package_modes": [
+                "wheel"
+              ],
+              "native_report": "specs/003-add-cross-platform-support/evidence/ubuntu2404-native-2026-10-27/ubuntu2204-glibc/raw/application/application-3.14.json.gz",
+              "native_report_sha256": "900669b67e4da6ea617255ea47cfef99e538ab7d00eeba8093c4bb0143c2ea03",
+              "uncompressed_report_sha256": "522a97bc6aa82d6a9f81464baa68371af693fbfbaf3bb2fa9bba48d38c7217de",
+              "nested_review": {
+                "path": "specs/003-add-cross-platform-support/evidence/ubuntu2404-native-2026-10-27/nested-recovery.json",
+                "sha256": "cb12d617d715bab9bd80eb3d7358f73a7b49d950df777d7c6878dd81face023b"
+              },
+              "recovery_scenario_executions": 16,
+              "offline_reference_executions_after_recovery": 96,
+              "dot_executions": 389,
+              "syscall_network_observation": true,
+              "native_network_syscalls": {},
+              "pending": [
+                "Final qualified distributed candidate",
+                "Full cell and Twine acceptance"
+              ]
             }
           ]
         }
@@ -1128,19 +1278,19 @@
           "qualified": false,
           "observation_state": "partial-native-observation",
           "evidence": {
-            "path": "specs/003-add-cross-platform-support/evidence/ubuntu2404-native-2026-10-27/summary.json",
-            "sha256": "3e45f819066c10a8f5a8f909a6f4fb48d9eb99662597d3f8054a8010c9890b72",
-            "application_revision": "4b5625d4b79720e58d50f0919eedb3b39d08e00c",
-            "scope": "Native Ubuntu x64 KVM installed private wheel; primary and nested recovery/process suites",
+            "path": "specs/003-add-cross-platform-support/evidence/debian-native-2026-10-27/summary.json",
+            "sha256": "b7343aca3c9f0e32ceab8270fa79d4419100db2317e541f0596014670205a0eb",
+            "application_revision": "55a789ea497c2fa74180cbb2e2dee3b81f1a1220",
+            "scope": "Native Debian/Ubuntu x64 KVM installed private wheel; primary and nested recovery/process suites",
             "package_modes": [
               "wheel"
             ],
-            "native_report": "specs/003-add-cross-platform-support/evidence/ubuntu2404-native-2026-10-27/ubuntu2404-glibc/raw/application/application-3.12.json.gz",
-            "native_report_sha256": "18393ca66a16ff84e0fbbede67ca1f46b20198bcc08c70eab04cc074afab27b6",
-            "uncompressed_report_sha256": "a89fe92dbb811a49850268beee4d4f8b303e7b9e8a9ceb801c0fe1efe437138f",
+            "native_report": "specs/003-add-cross-platform-support/evidence/debian-native-2026-10-27/ubuntu2404-glibc/raw/application/application-3.12.json.gz",
+            "native_report_sha256": "7741a41b957c43123f0faea44d850dc2e9ea4bcf07f6eba183a86c3502ff80e4",
+            "uncompressed_report_sha256": "e4c4a1e4575f66b420714d6efc56244e9faee3a86055379b79581f8972910373",
             "nested_review": {
-              "path": "specs/003-add-cross-platform-support/evidence/ubuntu2404-native-2026-10-27/nested-recovery.json",
-              "sha256": "cb12d617d715bab9bd80eb3d7358f73a7b49d950df777d7c6878dd81face023b"
+              "path": "specs/003-add-cross-platform-support/evidence/debian-native-2026-10-27/nested-recovery.json",
+              "sha256": "c52c8d8b8262bba18795e3c53fbaa0f53b2ca96502cacad9c4653b9a1343765a"
             },
             "recovery_scenario_executions": 16,
             "offline_reference_executions_after_recovery": 96,
@@ -1187,6 +1337,31 @@
                 "Final qualified distributed candidate",
                 "Canonical cell environment and full acceptance"
               ]
+            },
+            {
+              "path": "specs/003-add-cross-platform-support/evidence/ubuntu2404-native-2026-10-27/summary.json",
+              "sha256": "3e45f819066c10a8f5a8f909a6f4fb48d9eb99662597d3f8054a8010c9890b72",
+              "application_revision": "4b5625d4b79720e58d50f0919eedb3b39d08e00c",
+              "scope": "Native Ubuntu x64 KVM installed private wheel; primary and nested recovery/process suites",
+              "package_modes": [
+                "wheel"
+              ],
+              "native_report": "specs/003-add-cross-platform-support/evidence/ubuntu2404-native-2026-10-27/ubuntu2404-glibc/raw/application/application-3.12.json.gz",
+              "native_report_sha256": "18393ca66a16ff84e0fbbede67ca1f46b20198bcc08c70eab04cc074afab27b6",
+              "uncompressed_report_sha256": "a89fe92dbb811a49850268beee4d4f8b303e7b9e8a9ceb801c0fe1efe437138f",
+              "nested_review": {
+                "path": "specs/003-add-cross-platform-support/evidence/ubuntu2404-native-2026-10-27/nested-recovery.json",
+                "sha256": "cb12d617d715bab9bd80eb3d7358f73a7b49d950df777d7c6878dd81face023b"
+              },
+              "recovery_scenario_executions": 16,
+              "offline_reference_executions_after_recovery": 96,
+              "dot_executions": 389,
+              "syscall_network_observation": true,
+              "native_network_syscalls": {},
+              "pending": [
+                "Final qualified distributed candidate",
+                "Full cell and Twine acceptance"
+              ]
             }
           ]
         },
@@ -1196,19 +1371,19 @@
           "qualified": false,
           "observation_state": "partial-native-observation",
           "evidence": {
-            "path": "specs/003-add-cross-platform-support/evidence/ubuntu2404-native-2026-10-27/summary.json",
-            "sha256": "3e45f819066c10a8f5a8f909a6f4fb48d9eb99662597d3f8054a8010c9890b72",
-            "application_revision": "4b5625d4b79720e58d50f0919eedb3b39d08e00c",
-            "scope": "Native Ubuntu x64 KVM installed private wheel; primary and nested recovery/process suites",
+            "path": "specs/003-add-cross-platform-support/evidence/debian-native-2026-10-27/summary.json",
+            "sha256": "b7343aca3c9f0e32ceab8270fa79d4419100db2317e541f0596014670205a0eb",
+            "application_revision": "55a789ea497c2fa74180cbb2e2dee3b81f1a1220",
+            "scope": "Native Debian/Ubuntu x64 KVM installed private wheel; primary and nested recovery/process suites",
             "package_modes": [
               "wheel"
             ],
-            "native_report": "specs/003-add-cross-platform-support/evidence/ubuntu2404-native-2026-10-27/ubuntu2404-glibc/raw/application/application-3.14.json.gz",
-            "native_report_sha256": "190ecefc9774f1d5bc18df8fd7de0319b52fb85668996d2263c4bd165cdbe415",
-            "uncompressed_report_sha256": "b6f7a4fb0ef886f4e39e5f8a3f4457f858f1ec0442772b86c552fa383904674e",
+            "native_report": "specs/003-add-cross-platform-support/evidence/debian-native-2026-10-27/ubuntu2404-glibc/raw/application/application-3.14.json.gz",
+            "native_report_sha256": "696c28a12de6f093b183ad03095f72b2b41922a9916c1e30f17f7a6ad7ce6342",
+            "uncompressed_report_sha256": "00321fb96179a413ae3fef586d6f1ae9e19b0171db0822b0d0524e3a9ba5a571",
             "nested_review": {
-              "path": "specs/003-add-cross-platform-support/evidence/ubuntu2404-native-2026-10-27/nested-recovery.json",
-              "sha256": "cb12d617d715bab9bd80eb3d7358f73a7b49d950df777d7c6878dd81face023b"
+              "path": "specs/003-add-cross-platform-support/evidence/debian-native-2026-10-27/nested-recovery.json",
+              "sha256": "c52c8d8b8262bba18795e3c53fbaa0f53b2ca96502cacad9c4653b9a1343765a"
             },
             "recovery_scenario_executions": 16,
             "offline_reference_executions_after_recovery": 96,
@@ -1254,6 +1429,31 @@
               "pending": [
                 "Final qualified distributed candidate",
                 "Canonical cell environment and full acceptance"
+              ]
+            },
+            {
+              "path": "specs/003-add-cross-platform-support/evidence/ubuntu2404-native-2026-10-27/summary.json",
+              "sha256": "3e45f819066c10a8f5a8f909a6f4fb48d9eb99662597d3f8054a8010c9890b72",
+              "application_revision": "4b5625d4b79720e58d50f0919eedb3b39d08e00c",
+              "scope": "Native Ubuntu x64 KVM installed private wheel; primary and nested recovery/process suites",
+              "package_modes": [
+                "wheel"
+              ],
+              "native_report": "specs/003-add-cross-platform-support/evidence/ubuntu2404-native-2026-10-27/ubuntu2404-glibc/raw/application/application-3.14.json.gz",
+              "native_report_sha256": "190ecefc9774f1d5bc18df8fd7de0319b52fb85668996d2263c4bd165cdbe415",
+              "uncompressed_report_sha256": "b6f7a4fb0ef886f4e39e5f8a3f4457f858f1ec0442772b86c552fa383904674e",
+              "nested_review": {
+                "path": "specs/003-add-cross-platform-support/evidence/ubuntu2404-native-2026-10-27/nested-recovery.json",
+                "sha256": "cb12d617d715bab9bd80eb3d7358f73a7b49d950df777d7c6878dd81face023b"
+              },
+              "recovery_scenario_executions": 16,
+              "offline_reference_executions_after_recovery": 96,
+              "dot_executions": 389,
+              "syscall_network_observation": true,
+              "native_network_syscalls": {},
+              "pending": [
+                "Final qualified distributed candidate",
+                "Full cell and Twine acceptance"
               ]
             }
           ]
@@ -1360,19 +1560,19 @@
           "qualified": false,
           "observation_state": "partial-native-observation",
           "evidence": {
-            "path": "specs/003-add-cross-platform-support/evidence/ubuntu2404-native-2026-10-27/summary.json",
-            "sha256": "3e45f819066c10a8f5a8f909a6f4fb48d9eb99662597d3f8054a8010c9890b72",
-            "application_revision": "4b5625d4b79720e58d50f0919eedb3b39d08e00c",
-            "scope": "Native Ubuntu x64 KVM installed private wheel; primary and nested recovery/process suites",
+            "path": "specs/003-add-cross-platform-support/evidence/debian-native-2026-10-27/summary.json",
+            "sha256": "b7343aca3c9f0e32ceab8270fa79d4419100db2317e541f0596014670205a0eb",
+            "application_revision": "55a789ea497c2fa74180cbb2e2dee3b81f1a1220",
+            "scope": "Native Debian/Ubuntu x64 KVM installed private wheel; primary and nested recovery/process suites",
             "package_modes": [
               "wheel"
             ],
-            "native_report": "specs/003-add-cross-platform-support/evidence/ubuntu2404-native-2026-10-27/ubuntu2604-glibc/raw/application/application-3.12.json.gz",
-            "native_report_sha256": "1d0439bdde3a187a99219e30eb9aab4fa3397f047dc1662de2f7791bd4cc3aa9",
-            "uncompressed_report_sha256": "7f45a66a82486dfa76b9d782e121e2f0375de43150f29a14b23d5cea2d886489",
+            "native_report": "specs/003-add-cross-platform-support/evidence/debian-native-2026-10-27/ubuntu2604-glibc/raw/application/application-3.12.json.gz",
+            "native_report_sha256": "912696ed14ec87ec7f0e2d34ca366c9130a28c81a758c948ba16fba4175507b3",
+            "uncompressed_report_sha256": "6bc574b0801da79cb1468c28a3b6b941b88557aa7f8e1e6df93d7302222f0fa0",
             "nested_review": {
-              "path": "specs/003-add-cross-platform-support/evidence/ubuntu2404-native-2026-10-27/nested-recovery.json",
-              "sha256": "cb12d617d715bab9bd80eb3d7358f73a7b49d950df777d7c6878dd81face023b"
+              "path": "specs/003-add-cross-platform-support/evidence/debian-native-2026-10-27/nested-recovery.json",
+              "sha256": "c52c8d8b8262bba18795e3c53fbaa0f53b2ca96502cacad9c4653b9a1343765a"
             },
             "recovery_scenario_executions": 16,
             "offline_reference_executions_after_recovery": 96,
@@ -1435,6 +1635,31 @@
                 "Final qualified distributed candidate",
                 "Full cell and Twine acceptance"
               ]
+            },
+            {
+              "path": "specs/003-add-cross-platform-support/evidence/ubuntu2404-native-2026-10-27/summary.json",
+              "sha256": "3e45f819066c10a8f5a8f909a6f4fb48d9eb99662597d3f8054a8010c9890b72",
+              "application_revision": "4b5625d4b79720e58d50f0919eedb3b39d08e00c",
+              "scope": "Native Ubuntu x64 KVM installed private wheel; primary and nested recovery/process suites",
+              "package_modes": [
+                "wheel"
+              ],
+              "native_report": "specs/003-add-cross-platform-support/evidence/ubuntu2404-native-2026-10-27/ubuntu2604-glibc/raw/application/application-3.12.json.gz",
+              "native_report_sha256": "1d0439bdde3a187a99219e30eb9aab4fa3397f047dc1662de2f7791bd4cc3aa9",
+              "uncompressed_report_sha256": "7f45a66a82486dfa76b9d782e121e2f0375de43150f29a14b23d5cea2d886489",
+              "nested_review": {
+                "path": "specs/003-add-cross-platform-support/evidence/ubuntu2404-native-2026-10-27/nested-recovery.json",
+                "sha256": "cb12d617d715bab9bd80eb3d7358f73a7b49d950df777d7c6878dd81face023b"
+              },
+              "recovery_scenario_executions": 16,
+              "offline_reference_executions_after_recovery": 96,
+              "dot_executions": 389,
+              "syscall_network_observation": true,
+              "native_network_syscalls": {},
+              "pending": [
+                "Final qualified distributed candidate",
+                "Full cell and Twine acceptance"
+              ]
             }
           ]
         },
@@ -1444,19 +1669,19 @@
           "qualified": false,
           "observation_state": "partial-native-observation",
           "evidence": {
-            "path": "specs/003-add-cross-platform-support/evidence/ubuntu2404-native-2026-10-27/summary.json",
-            "sha256": "3e45f819066c10a8f5a8f909a6f4fb48d9eb99662597d3f8054a8010c9890b72",
-            "application_revision": "4b5625d4b79720e58d50f0919eedb3b39d08e00c",
-            "scope": "Native Ubuntu x64 KVM installed private wheel; primary and nested recovery/process suites",
+            "path": "specs/003-add-cross-platform-support/evidence/debian-native-2026-10-27/summary.json",
+            "sha256": "b7343aca3c9f0e32ceab8270fa79d4419100db2317e541f0596014670205a0eb",
+            "application_revision": "55a789ea497c2fa74180cbb2e2dee3b81f1a1220",
+            "scope": "Native Debian/Ubuntu x64 KVM installed private wheel; primary and nested recovery/process suites",
             "package_modes": [
               "wheel"
             ],
-            "native_report": "specs/003-add-cross-platform-support/evidence/ubuntu2404-native-2026-10-27/ubuntu2604-glibc/raw/application/application-3.14.json.gz",
-            "native_report_sha256": "3a247bf3c700224d8ee143e1a8b94d0f586c6184c2d551849219b87c8902bed8",
-            "uncompressed_report_sha256": "4bfc34b0f89eb26aeacd631bc8f7c223db76e34688c6b8c9782d5fa8863cc65b",
+            "native_report": "specs/003-add-cross-platform-support/evidence/debian-native-2026-10-27/ubuntu2604-glibc/raw/application/application-3.14.json.gz",
+            "native_report_sha256": "5a1d0175f4ea8e5a0b8eb427ff948abf0d762e28792516dec84be1f997e17e48",
+            "uncompressed_report_sha256": "d9ce1152af48d5b2ba2d37460e05fde3e93348638c6481779dbbda03fa2d1606",
             "nested_review": {
-              "path": "specs/003-add-cross-platform-support/evidence/ubuntu2404-native-2026-10-27/nested-recovery.json",
-              "sha256": "cb12d617d715bab9bd80eb3d7358f73a7b49d950df777d7c6878dd81face023b"
+              "path": "specs/003-add-cross-platform-support/evidence/debian-native-2026-10-27/nested-recovery.json",
+              "sha256": "c52c8d8b8262bba18795e3c53fbaa0f53b2ca96502cacad9c4653b9a1343765a"
             },
             "recovery_scenario_executions": 16,
             "offline_reference_executions_after_recovery": 96,
@@ -1519,6 +1744,31 @@
                 "Final qualified distributed candidate",
                 "Full cell and Twine acceptance"
               ]
+            },
+            {
+              "path": "specs/003-add-cross-platform-support/evidence/ubuntu2404-native-2026-10-27/summary.json",
+              "sha256": "3e45f819066c10a8f5a8f909a6f4fb48d9eb99662597d3f8054a8010c9890b72",
+              "application_revision": "4b5625d4b79720e58d50f0919eedb3b39d08e00c",
+              "scope": "Native Ubuntu x64 KVM installed private wheel; primary and nested recovery/process suites",
+              "package_modes": [
+                "wheel"
+              ],
+              "native_report": "specs/003-add-cross-platform-support/evidence/ubuntu2404-native-2026-10-27/ubuntu2604-glibc/raw/application/application-3.14.json.gz",
+              "native_report_sha256": "3a247bf3c700224d8ee143e1a8b94d0f586c6184c2d551849219b87c8902bed8",
+              "uncompressed_report_sha256": "4bfc34b0f89eb26aeacd631bc8f7c223db76e34688c6b8c9782d5fa8863cc65b",
+              "nested_review": {
+                "path": "specs/003-add-cross-platform-support/evidence/ubuntu2404-native-2026-10-27/nested-recovery.json",
+                "sha256": "cb12d617d715bab9bd80eb3d7358f73a7b49d950df777d7c6878dd81face023b"
+              },
+              "recovery_scenario_executions": 16,
+              "offline_reference_executions_after_recovery": 96,
+              "dot_executions": 389,
+              "syscall_network_observation": true,
+              "native_network_syscalls": {},
+              "pending": [
+                "Final qualified distributed candidate",
+                "Full cell and Twine acceptance"
+              ]
             }
           ]
         }
@@ -1558,19 +1808,19 @@
           "qualified": false,
           "observation_state": "partial-native-observation",
           "evidence": {
-            "path": "specs/003-add-cross-platform-support/evidence/ubuntu2404-native-2026-10-27/summary.json",
-            "sha256": "3e45f819066c10a8f5a8f909a6f4fb48d9eb99662597d3f8054a8010c9890b72",
-            "application_revision": "4b5625d4b79720e58d50f0919eedb3b39d08e00c",
-            "scope": "Native Ubuntu x64 KVM installed private wheel; primary and nested recovery/process suites",
+            "path": "specs/003-add-cross-platform-support/evidence/debian-native-2026-10-27/summary.json",
+            "sha256": "b7343aca3c9f0e32ceab8270fa79d4419100db2317e541f0596014670205a0eb",
+            "application_revision": "55a789ea497c2fa74180cbb2e2dee3b81f1a1220",
+            "scope": "Native Debian/Ubuntu x64 KVM installed private wheel; primary and nested recovery/process suites",
             "package_modes": [
               "wheel"
             ],
-            "native_report": "specs/003-add-cross-platform-support/evidence/ubuntu2404-native-2026-10-27/ubuntu2610-glibc/raw/application/application-3.12.json.gz",
-            "native_report_sha256": "0df33e4257a124f43bf6633f3049cfeb55b71c18cd43626ec88513ad4c7efd7f",
-            "uncompressed_report_sha256": "0d546ab8faec35bd4474655e3d8f235087ab8b6699b567b5a4a4018edb08ed9b",
+            "native_report": "specs/003-add-cross-platform-support/evidence/debian-native-2026-10-27/ubuntu2610-glibc/raw/application/application-3.12.json.gz",
+            "native_report_sha256": "e1e39201d7aba876076d0188f8fbfef6ab595a83f4e7874ad275a5132d64e239",
+            "uncompressed_report_sha256": "60ac523ab21d74a2e4abcbe9b49b426886734087de51ac6a9cc88b16e597225c",
             "nested_review": {
-              "path": "specs/003-add-cross-platform-support/evidence/ubuntu2404-native-2026-10-27/nested-recovery.json",
-              "sha256": "cb12d617d715bab9bd80eb3d7358f73a7b49d950df777d7c6878dd81face023b"
+              "path": "specs/003-add-cross-platform-support/evidence/debian-native-2026-10-27/nested-recovery.json",
+              "sha256": "c52c8d8b8262bba18795e3c53fbaa0f53b2ca96502cacad9c4653b9a1343765a"
             },
             "recovery_scenario_executions": 16,
             "offline_reference_executions_after_recovery": 96,
@@ -1608,6 +1858,31 @@
                 "Final qualified distributed candidate",
                 "Full cell and Twine acceptance"
               ]
+            },
+            {
+              "path": "specs/003-add-cross-platform-support/evidence/ubuntu2404-native-2026-10-27/summary.json",
+              "sha256": "3e45f819066c10a8f5a8f909a6f4fb48d9eb99662597d3f8054a8010c9890b72",
+              "application_revision": "4b5625d4b79720e58d50f0919eedb3b39d08e00c",
+              "scope": "Native Ubuntu x64 KVM installed private wheel; primary and nested recovery/process suites",
+              "package_modes": [
+                "wheel"
+              ],
+              "native_report": "specs/003-add-cross-platform-support/evidence/ubuntu2404-native-2026-10-27/ubuntu2610-glibc/raw/application/application-3.12.json.gz",
+              "native_report_sha256": "0df33e4257a124f43bf6633f3049cfeb55b71c18cd43626ec88513ad4c7efd7f",
+              "uncompressed_report_sha256": "0d546ab8faec35bd4474655e3d8f235087ab8b6699b567b5a4a4018edb08ed9b",
+              "nested_review": {
+                "path": "specs/003-add-cross-platform-support/evidence/ubuntu2404-native-2026-10-27/nested-recovery.json",
+                "sha256": "cb12d617d715bab9bd80eb3d7358f73a7b49d950df777d7c6878dd81face023b"
+              },
+              "recovery_scenario_executions": 16,
+              "offline_reference_executions_after_recovery": 96,
+              "dot_executions": 389,
+              "syscall_network_observation": true,
+              "native_network_syscalls": {},
+              "pending": [
+                "Final qualified distributed candidate",
+                "Full cell and Twine acceptance"
+              ]
             }
           ]
         },
@@ -1617,19 +1892,19 @@
           "qualified": false,
           "observation_state": "partial-native-observation",
           "evidence": {
-            "path": "specs/003-add-cross-platform-support/evidence/ubuntu2404-native-2026-10-27/summary.json",
-            "sha256": "3e45f819066c10a8f5a8f909a6f4fb48d9eb99662597d3f8054a8010c9890b72",
-            "application_revision": "4b5625d4b79720e58d50f0919eedb3b39d08e00c",
-            "scope": "Native Ubuntu x64 KVM installed private wheel; primary and nested recovery/process suites",
+            "path": "specs/003-add-cross-platform-support/evidence/debian-native-2026-10-27/summary.json",
+            "sha256": "b7343aca3c9f0e32ceab8270fa79d4419100db2317e541f0596014670205a0eb",
+            "application_revision": "55a789ea497c2fa74180cbb2e2dee3b81f1a1220",
+            "scope": "Native Debian/Ubuntu x64 KVM installed private wheel; primary and nested recovery/process suites",
             "package_modes": [
               "wheel"
             ],
-            "native_report": "specs/003-add-cross-platform-support/evidence/ubuntu2404-native-2026-10-27/ubuntu2610-glibc/raw/application/application-3.14.json.gz",
-            "native_report_sha256": "b592e17b472faec5c8bccd8961ca7f49c3afb6d2c633101bd443b34e83b5cfc4",
-            "uncompressed_report_sha256": "f21428f12fc435b0149e1db8002c6290bed52e32e1b5880b8af01285436a0e26",
+            "native_report": "specs/003-add-cross-platform-support/evidence/debian-native-2026-10-27/ubuntu2610-glibc/raw/application/application-3.14.json.gz",
+            "native_report_sha256": "49ff2dbb4e848a49a5137477635059c0d9df38e9192e2d41c0a73770ed3b23e5",
+            "uncompressed_report_sha256": "706ad18198c1e317c56d27cc155e3d2fbc9823d3ca41f5a6668e9a639af49000",
             "nested_review": {
-              "path": "specs/003-add-cross-platform-support/evidence/ubuntu2404-native-2026-10-27/nested-recovery.json",
-              "sha256": "cb12d617d715bab9bd80eb3d7358f73a7b49d950df777d7c6878dd81face023b"
+              "path": "specs/003-add-cross-platform-support/evidence/debian-native-2026-10-27/nested-recovery.json",
+              "sha256": "c52c8d8b8262bba18795e3c53fbaa0f53b2ca96502cacad9c4653b9a1343765a"
             },
             "recovery_scenario_executions": 16,
             "offline_reference_executions_after_recovery": 96,
@@ -1657,6 +1932,31 @@
               "nested_review": {
                 "path": "specs/003-add-cross-platform-support/evidence/ubuntu2610-native-2026-10-27/nested-recovery.json",
                 "sha256": "f6d268fdb98053f87d0ed0cc6633e25b2ea80ab629e45dfbbf8b6db9c931df57"
+              },
+              "recovery_scenario_executions": 16,
+              "offline_reference_executions_after_recovery": 96,
+              "dot_executions": 389,
+              "syscall_network_observation": true,
+              "native_network_syscalls": {},
+              "pending": [
+                "Final qualified distributed candidate",
+                "Full cell and Twine acceptance"
+              ]
+            },
+            {
+              "path": "specs/003-add-cross-platform-support/evidence/ubuntu2404-native-2026-10-27/summary.json",
+              "sha256": "3e45f819066c10a8f5a8f909a6f4fb48d9eb99662597d3f8054a8010c9890b72",
+              "application_revision": "4b5625d4b79720e58d50f0919eedb3b39d08e00c",
+              "scope": "Native Ubuntu x64 KVM installed private wheel; primary and nested recovery/process suites",
+              "package_modes": [
+                "wheel"
+              ],
+              "native_report": "specs/003-add-cross-platform-support/evidence/ubuntu2404-native-2026-10-27/ubuntu2610-glibc/raw/application/application-3.14.json.gz",
+              "native_report_sha256": "b592e17b472faec5c8bccd8961ca7f49c3afb6d2c633101bd443b34e83b5cfc4",
+              "uncompressed_report_sha256": "f21428f12fc435b0149e1db8002c6290bed52e32e1b5880b8af01285436a0e26",
+              "nested_review": {
+                "path": "specs/003-add-cross-platform-support/evidence/ubuntu2404-native-2026-10-27/nested-recovery.json",
+                "sha256": "cb12d617d715bab9bd80eb3d7358f73a7b49d950df777d7c6878dd81face023b"
               },
               "recovery_scenario_executions": 16,
               "offline_reference_executions_after_recovery": 96,
@@ -1704,16 +2004,64 @@
           "python_minor": "3.12",
           "complete": false,
           "qualified": false,
-          "observation_state": "pending",
-          "evidence": null,
+          "observation_state": "partial-native-observation",
+          "evidence": {
+            "path": "specs/003-add-cross-platform-support/evidence/debian-native-2026-10-27/summary.json",
+            "sha256": "b7343aca3c9f0e32ceab8270fa79d4419100db2317e541f0596014670205a0eb",
+            "application_revision": "55a789ea497c2fa74180cbb2e2dee3b81f1a1220",
+            "scope": "Native Debian/Ubuntu x64 KVM installed private wheel; primary and nested recovery/process suites",
+            "package_modes": [
+              "wheel"
+            ],
+            "native_report": "specs/003-add-cross-platform-support/evidence/debian-native-2026-10-27/debian12-glibc/raw/application/application-3.12.json.gz",
+            "native_report_sha256": "dea2cf55654278d82c89c9f27e547251c2f3b2d043b2df34bfc1d352bbc317aa",
+            "uncompressed_report_sha256": "6a4081f20ea0c550da92fd0eeac9e9b580dff0f5b1d72e94562cd2080f769061",
+            "nested_review": {
+              "path": "specs/003-add-cross-platform-support/evidence/debian-native-2026-10-27/nested-recovery.json",
+              "sha256": "c52c8d8b8262bba18795e3c53fbaa0f53b2ca96502cacad9c4653b9a1343765a"
+            },
+            "recovery_scenario_executions": 16,
+            "offline_reference_executions_after_recovery": 96,
+            "dot_executions": 389,
+            "syscall_network_observation": true,
+            "native_network_syscalls": {},
+            "pending": [
+              "Final qualified distributed candidate",
+              "Full cell and Twine acceptance"
+            ]
+          },
           "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
         },
         {
           "python_minor": "3.14",
           "complete": false,
           "qualified": false,
-          "observation_state": "pending",
-          "evidence": null,
+          "observation_state": "partial-native-observation",
+          "evidence": {
+            "path": "specs/003-add-cross-platform-support/evidence/debian-native-2026-10-27/summary.json",
+            "sha256": "b7343aca3c9f0e32ceab8270fa79d4419100db2317e541f0596014670205a0eb",
+            "application_revision": "55a789ea497c2fa74180cbb2e2dee3b81f1a1220",
+            "scope": "Native Debian/Ubuntu x64 KVM installed private wheel; primary and nested recovery/process suites",
+            "package_modes": [
+              "wheel"
+            ],
+            "native_report": "specs/003-add-cross-platform-support/evidence/debian-native-2026-10-27/debian12-glibc/raw/application/application-3.14.json.gz",
+            "native_report_sha256": "ffb802deeac21c7b56b2d02249d0d2c6e139e3345cca615324415af6844c59c6",
+            "uncompressed_report_sha256": "1cc7bb82f8bdc14140a596d62741568ecf66c506e30e18a15877ca667100ef4e",
+            "nested_review": {
+              "path": "specs/003-add-cross-platform-support/evidence/debian-native-2026-10-27/nested-recovery.json",
+              "sha256": "c52c8d8b8262bba18795e3c53fbaa0f53b2ca96502cacad9c4653b9a1343765a"
+            },
+            "recovery_scenario_executions": 16,
+            "offline_reference_executions_after_recovery": 96,
+            "dot_executions": 389,
+            "syscall_network_observation": true,
+            "native_network_syscalls": {},
+            "pending": [
+              "Final qualified distributed candidate",
+              "Full cell and Twine acceptance"
+            ]
+          },
           "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
         }
       ]
@@ -1750,16 +2098,64 @@
           "python_minor": "3.12",
           "complete": false,
           "qualified": false,
-          "observation_state": "pending",
-          "evidence": null,
+          "observation_state": "partial-native-observation",
+          "evidence": {
+            "path": "specs/003-add-cross-platform-support/evidence/debian-native-2026-10-27/summary.json",
+            "sha256": "b7343aca3c9f0e32ceab8270fa79d4419100db2317e541f0596014670205a0eb",
+            "application_revision": "55a789ea497c2fa74180cbb2e2dee3b81f1a1220",
+            "scope": "Native Debian/Ubuntu x64 KVM installed private wheel; primary and nested recovery/process suites",
+            "package_modes": [
+              "wheel"
+            ],
+            "native_report": "specs/003-add-cross-platform-support/evidence/debian-native-2026-10-27/debian13-glibc/raw/application/application-3.12.json.gz",
+            "native_report_sha256": "936836c3d412100f3461249be50d2fb1aaca999b25f177f658ce4dbd4b4509e6",
+            "uncompressed_report_sha256": "33f5d26d110d6a794ede2e8e69ad48916c79a3daec8d0b1a1deb39a916eda458",
+            "nested_review": {
+              "path": "specs/003-add-cross-platform-support/evidence/debian-native-2026-10-27/nested-recovery.json",
+              "sha256": "c52c8d8b8262bba18795e3c53fbaa0f53b2ca96502cacad9c4653b9a1343765a"
+            },
+            "recovery_scenario_executions": 16,
+            "offline_reference_executions_after_recovery": 96,
+            "dot_executions": 389,
+            "syscall_network_observation": true,
+            "native_network_syscalls": {},
+            "pending": [
+              "Final qualified distributed candidate",
+              "Full cell and Twine acceptance"
+            ]
+          },
           "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
         },
         {
           "python_minor": "3.14",
           "complete": false,
           "qualified": false,
-          "observation_state": "pending",
-          "evidence": null,
+          "observation_state": "partial-native-observation",
+          "evidence": {
+            "path": "specs/003-add-cross-platform-support/evidence/debian-native-2026-10-27/summary.json",
+            "sha256": "b7343aca3c9f0e32ceab8270fa79d4419100db2317e541f0596014670205a0eb",
+            "application_revision": "55a789ea497c2fa74180cbb2e2dee3b81f1a1220",
+            "scope": "Native Debian/Ubuntu x64 KVM installed private wheel; primary and nested recovery/process suites",
+            "package_modes": [
+              "wheel"
+            ],
+            "native_report": "specs/003-add-cross-platform-support/evidence/debian-native-2026-10-27/debian13-glibc/raw/application/application-3.14.json.gz",
+            "native_report_sha256": "5acca780f8826993df45f774e2e2c1b0d79373c4bd0029635fc1b406482ff331",
+            "uncompressed_report_sha256": "3372803ef483cb44b83ee95e146acda877ba10bf30490dae0c67209af130faa6",
+            "nested_review": {
+              "path": "specs/003-add-cross-platform-support/evidence/debian-native-2026-10-27/nested-recovery.json",
+              "sha256": "c52c8d8b8262bba18795e3c53fbaa0f53b2ca96502cacad9c4653b9a1343765a"
+            },
+            "recovery_scenario_executions": 16,
+            "offline_reference_executions_after_recovery": 96,
+            "dot_executions": 389,
+            "syscall_network_observation": true,
+            "native_network_syscalls": {},
+            "pending": [
+              "Final qualified distributed candidate",
+              "Full cell and Twine acceptance"
+            ]
+          },
           "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
         }
       ]
@@ -2965,5 +3361,17 @@
   "previous_native_ubuntu_index": {
     "path": "specs/003-add-cross-platform-support/evidence/ubuntu2404-native-2026-10-27/previous-recovery.json",
     "sha256": "b657bee62bdeff5744709fb1cb1635a5ce18883e3ee853e792dee572a1340223"
+  },
+  "native_debian_ubuntu_update": {
+    "path": "specs/003-add-cross-platform-support/evidence/debian-native-2026-10-27/summary.json",
+    "sha256": "b7343aca3c9f0e32ceab8270fa79d4419100db2317e541f0596014670205a0eb"
+  },
+  "nested_native_debian_ubuntu_update": {
+    "path": "specs/003-add-cross-platform-support/evidence/debian-native-2026-10-27/nested-recovery.json",
+    "sha256": "c52c8d8b8262bba18795e3c53fbaa0f53b2ca96502cacad9c4653b9a1343765a"
+  },
+  "previous_native_debian_ubuntu_index": {
+    "path": "specs/003-add-cross-platform-support/evidence/debian-native-2026-10-27/previous-recovery.json",
+    "sha256": "e9291ac41ea385037bd6515f01fa53ef4d446302673884e9efaf95a3151a0d39"
   }
 }

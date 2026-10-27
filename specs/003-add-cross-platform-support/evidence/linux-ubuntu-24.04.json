@@ -122,9 +122,9 @@
     "Source/license review, native network proof, Twine and remaining common/platform gates stay pending"
   ],
   "native_fixed_image_additional_checks": {
-    "path": "specs/003-add-cross-platform-support/evidence/ubuntu2404-native-2026-10-27/summary.json",
-    "sha256": "3e45f819066c10a8f5a8f909a6f4fb48d9eb99662597d3f8054a8010c9890b72",
-    "application_revision": "4b5625d4b79720e58d50f0919eedb3b39d08e00c",
+    "path": "specs/003-add-cross-platform-support/evidence/debian-native-2026-10-27/summary.json",
+    "sha256": "b7343aca3c9f0e32ceab8270fa79d4419100db2317e541f0596014670205a0eb",
+    "application_revision": "55a789ea497c2fa74180cbb2e2dee3b81f1a1220",
     "target_id": "ubuntu-24.04-stable-x86_64-distribution-default",
     "python_slots": 2,
     "python_versions": [
@@ -138,15 +138,15 @@
     ],
     "syscall_network_observation": true,
     "recovery_review": {
-      "path": "specs/003-add-cross-platform-support/evidence/ubuntu2404-native-2026-10-27/nested-recovery.json",
-      "sha256": "cb12d617d715bab9bd80eb3d7358f73a7b49d950df777d7c6878dd81face023b"
+      "path": "specs/003-add-cross-platform-support/evidence/debian-native-2026-10-27/nested-recovery.json",
+      "sha256": "c52c8d8b8262bba18795e3c53fbaa0f53b2ca96502cacad9c4653b9a1343765a"
     },
     "scope": "Additional pinned native KVM guest; kept separate from historical hosted runner wheel/sdist evidence",
     "qualified": false,
     "task_complete": false
   },
   "previous_native_fixed_image_index": {
-    "path": "specs/003-add-cross-platform-support/evidence/ubuntu2404-native-2026-10-27/previous-linux-ubuntu-24.04.json",
-    "sha256": "784744c15d7e808519f005e431f3340ff95d385fdec9a2d1a63f30719a9e653b"
+    "path": "specs/003-add-cross-platform-support/evidence/debian-native-2026-10-27/previous-linux-ubuntu-24.04.json",
+    "sha256": "872f44ff7fb25746e2f77e9e83c26846298ebf929acaf722e447b5e00ee82ded"
   }
 }

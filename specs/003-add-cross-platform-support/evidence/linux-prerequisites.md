@@ -1,5 +1,19 @@
 # Pré-requisitos Python Linux: evidência parcial
 
+## Debian 12/13 x64 nativos — 2026-10-27
+
+O [ensaio KVM conferido](debian-native-2026-10-27/README.md) executou CPython
+3.12.15/3.14.8 privados em Debian 12.15 (kernel 6.1.0-54/glibc 2.36) e 13.7
+(kernel 6.12.113+deb13/glibc 2.41). Venv/pip/SSL, wheel externo, três entrypoints,
+53 arquivos contra o commit, corpus, rastros e recuperação passaram; o Python
+do SO manteve seu hash. Python 3.11/3.13 da imagem controla somente o probe.
+Os arquivos dos interpretadores são obtidos pelo host e fixados pelos mesmos
+pins; o guest permanece sem internet. Strace/libunwind privados, sem scripts
+de pacote ou instalação global, viabilizam a observação nesses guests.
+LTS de Debian 12 e suporte regular de 13 são registrados separadamente do
+aceite dos pacotes/arquiteturas. ARM64, candidata final remota/sdist e Twine
+permanecem pendentes; T033/T038 não são concluídas por esse ensaio.
+
 ## Ubuntu 24.04 x64 com imagem fixada — 2026-10-27
 
 O [ensaio KVM conferido](ubuntu2404-native-2026-10-27/README.md) executou

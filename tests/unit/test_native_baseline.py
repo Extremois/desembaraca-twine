@@ -291,6 +291,41 @@ class NativeBaselineTests(unittest.TestCase):
             bad=copy.deepcopy(report);bad['native_network'][field]=value
             with self.assertRaises(ValueError):self.tool.validate_private_tracer(bad,receipt)
 
+    def test_fedora_requires_own_rpm_kernel_and_enforcing_selinux(self):
+        import json
+        for release,libc in [('43','2.42'),('44','2.43')]:
+            selector='fedora-'+release
+            packages=[dict(name='kernel-core',version='6.17.1',release='300.fc'+release,arch='x86_64'),
+                      dict(name='glibc',version=libc,release='1.fc'+release,arch='x86_64'),
+                      dict(name='fedora-release-common',version=release,release='1',arch='noarch')]
+            guest=dict(identity=dict(ID='fedora',VERSION_ID=release),arch='x86_64',
+                       kernel='6.17.1-300.fc'+release+'.x86_64',glibc='glibc '+libc,
+                       distribution_packages=packages,security=dict(selinux='enforcing'))
+            kvm=dict(enabled=True,present=True)
+            self.tool.validate_baseline(guest,kvm,selector)
+            pin=json.loads((ROOT/('.github/native-images/'+selector+'-amd64.json')).read_bytes())
+            self.tool.validate_pin(pin,selector)
+            for key,value in [('identity',dict(ID='rhel',VERSION_ID=release)),('kernel','6.8.0-147-generic'),
+                              ('distribution_packages',packages[:2]),('arch','aarch64'),
+                              ('security',dict(selinux='permissive')),('security',dict(selinux='disabled'))]:
+                with self.subTest(release=release,key=key),self.assertRaises(ValueError):
+                    self.tool.validate_baseline(dict(guest,**{key:value}),kvm,selector)
+            changed=copy.deepcopy(packages);changed[0]['version']='6.17.2'
+            with self.assertRaises(ValueError):self.tool.validate_baseline(dict(guest,distribution_packages=changed),kvm,selector)
+            for key,value in [('url',pin['url'].replace('Generic','UEFI-UKI')),('distribution','rhel'),
+                              ('release','45'),('sha256','a'*128),('size',1024**3+1)]:
+                with self.subTest(release=release,pin=key),self.assertRaises(ValueError):
+                    self.tool.validate_pin(dict(pin,**{key:value}),selector)
+
+    def test_fedora_rpm_facts_reject_duplicate_missing_or_malformed_records(self):
+        spec=importlib.util.spec_from_file_location('guest_rpm',ROOT/'.github/scripts/probe-guest-baseline.py')
+        probe=importlib.util.module_from_spec(spec);spec.loader.exec_module(probe)
+        rows=b'kernel-core\t6.17.1\t300.fc43\tx86_64\nglibc\t2.42\t1.fc43\tx86_64\nfedora-release-common\t43\t1\tnoarch\n'
+        self.assertEqual(3,len(probe.parse_fedora_packages(rows)))
+        for raw in (rows+rows,rows.splitlines()[0],rows.replace(b'glibc',b'unknown'),
+                    rows.replace(b'x86_64',b'../escape'),b'x'*65537):
+            with self.assertRaises(ValueError):probe.parse_fedora_packages(raw)
+
     def test_guest_report_cannot_choose_a_path_on_the_runner(self):
         with tempfile.TemporaryDirectory() as folder:
             root=Path(folder)

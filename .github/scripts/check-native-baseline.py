@@ -21,6 +21,12 @@ ROOT=Path(__file__).resolve().parents[2]
 IMAGE_URL='https://cloud-images.ubuntu.com/releases/bionic/release-20230607/ubuntu-18.04-server-cloudimg-amd64.img'
 CANDIDATE_REVISION='b13cd6f90db31163e62119bb83e2eb8db5ac8458'
 IMAGE_PROFILES={
+    'fedora-43':dict(url='https://dl.fedoraproject.org/pub/fedora/linux/releases/43/Cloud/x86_64/images/Fedora-Cloud-Base-Generic-43-1.6.x86_64.qcow2',
+                 distribution='fedora',version='43',maximum_bytes=1024**3,
+                 kernel=r'[0-9]+\.[0-9]+\.[0-9]+-[0-9]+\.fc43\.x86_64',glibc='glibc 2.42',disk_bytes=8*1024**3),
+    'fedora-44':dict(url='https://dl.fedoraproject.org/pub/fedora/linux/releases/44/Cloud/x86_64/images/Fedora-Cloud-Base-Generic-44-1.7.x86_64.qcow2',
+                 distribution='fedora',version='44',maximum_bytes=1024**3,
+                 kernel=r'[0-9]+\.[0-9]+\.[0-9]+-[0-9]+\.fc44\.x86_64',glibc='glibc 2.43',disk_bytes=8*1024**3),
     'debian-12':dict(url='https://laotzu.ftp.acc.umu.se/images/cloud/bookworm/20261026-2643/debian-12-generic-amd64-20261026-2643.qcow2',
                  distribution='debian',version='12',image_hash='sha512',maximum_bytes=1024**3,
                  kernel=r'6\.1\.0-[0-9]+-amd64',glibc='glibc 2.36',disk_bytes=8*1024**3),
@@ -77,6 +83,17 @@ def validate_baseline(guest,kvm,release='18.04'):
             or guest.get('glibc')!=profile['glibc']
             or (profile.get('distribution')=='debian' and not re.fullmatch(profile['version']+r'\.[0-9]+',guest.get('distribution_patch','')))):
         raise ValueError('Baseline requires accelerated '+profile.get('distribution','ubuntu')+' '+release+' x64 with its pinned kernel/libc family')
+    if profile.get('distribution')=='fedora':
+        rows=guest.get('distribution_packages',[])
+        packages={row['name']:row for row in rows}
+        if len(rows)!=3 or set(packages)!={'kernel-core','glibc','fedora-release-common'}:
+            raise ValueError('Incomplete Fedora RPM identity')
+        kernel=packages['kernel-core'];libc=packages['glibc'];system=packages['fedora-release-common']
+        if (kernel['version']+'-'+kernel['release']+'.'+kernel['arch']!=guest['kernel']
+                or libc['arch']!='x86_64' or 'glibc '+libc['version']!=profile['glibc']
+                or system['version']!=profile['version'] or system['arch']!='noarch'
+                or guest.get('security',{}).get('selinux')!='enforcing'):
+            raise ValueError('Fedora requires matching installed kernel/libc/release and enforcing SELinux')
 
 
 def guest_output_path(folder,case,reported):
@@ -284,7 +301,7 @@ def execute(work,release='18.04'):
     candidate_run_id=inputs.get('candidate_run_id',expected['run_id'])
     validate_candidate_source(candidate_revision,candidate_run_id)
     if inputs['engine_sha256']!=expected['sha256']:raise ValueError('Prepared ABI/engine pin changed')
-    pin_name=(release if profile.get('distribution')=='debian' else 'ubuntu-'+release)+'-amd64.json'
+    pin_name=(release if profile.get('distribution','ubuntu')!='ubuntu' else 'ubuntu-'+release)+'-amd64.json'
     pin=json.loads((ROOT/'.github/native-images'/pin_name).read_bytes());validate_pin(pin,release)
     algorithm=profile.get('image_hash','sha256')
     image=work/'base.img';hasher=hashlib.new(algorithm);received=0
@@ -424,7 +441,7 @@ if __name__=='__main__':
         if args.python_application:
             if not args.python_prerequisites:parser.error('--python-application requires --python-prerequisites')
             prepare_application(args.artifact,args.work)
-            if baseline_profile(args.release).get('distribution')=='debian':
+            if baseline_profile(args.release).get('distribution') in ('debian','fedora'):
                 spec=importlib.util.spec_from_file_location('private_tracer',ROOT/'.github/scripts/private-tracer.py')
                 tracer=importlib.util.module_from_spec(spec);spec.loader.exec_module(tracer);tracer.prepare(args.work)
     else:parser.error('--artifact or --execute is required')

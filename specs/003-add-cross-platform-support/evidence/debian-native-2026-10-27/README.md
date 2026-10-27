@@ -1,4 +1,4 @@
-# Debian 12/13 x64 — preparo do ensaio privado nativo
+# Debian 12/13 x64 — ensaio privado nativo conferido
 
 T033/T038/T076/T078, 2026-10-27. Novo workflow `linux-debian.yml` usa quatro
 guests Debian 12/13 × glibc/musl, independentes da regressão Ubuntu. Os motores
@@ -34,7 +34,7 @@ externo usam venvs privadas, sem substituir Python do SO. Download máximo de
 23 contratos focados e preparo real dos quatro bundles/13 DOTs passaram.
 Regressão portátil final: 287 testes em cada Python local, nove skips por
 execução. Três YAMLs/nove passos Bash e sintaxe Python 3.6 dos probes passaram;
-CI ainda pendente nesta preparação.
+CI conferido nos resultados abaixo.
 
 A [primeira tentativa](attempt-1.json), checkpoint `3847fad`, foi recusada
 antes do boot dos quatro guests: `cloud.debian.org` redireciona os arquivos
@@ -50,5 +50,63 @@ está em LTS até 30/06/2028, incluindo amd64/arm64, com limitações por pacote
 [Debian 13](https://www.debian.org/releases/trixie/) tem suporte regular até
 09/08/2028 e LTS até 30/06/2030. Isso não atesta atualização integral desta
 imagem nem substitui o aceite dos pacotes/arquiteturas da matriz. Patch real
-será medido no guest; ARM64, candidata final/remota, sdist e Twine permanecem
+medido no guest nos resultados abaixo; ARM64, candidata final/remota, sdist e Twine permanecem
 pendentes. T038 continua aberta.
+
+## Resultados conferidos
+
+Checkpoint `55a789ea497c2fa74180cbb2e2dee3b81f1a1220`, quatro workflows aprovados:
+[Debian](https://github.com/Extremois/desembaraca-twine/actions/runs/40591021352),
+[Ubuntu 20.04–26.10](https://github.com/Extremois/desembaraca-twine/actions/runs/40591021318),
+[regressão 18.04](https://github.com/Extremois/desembaraca-twine/actions/runs/40591021418)
+e [fundação](https://github.com/Extremois/desembaraca-twine/actions/runs/40591021574).
+O [resumo](summary.json) conserva dezesseis artefatos conferidos e seis logs,
+com 418 arquivos originais dos guests comprimidos e hashes preservados.
+
+| Guest x64, KVM ativo | Patch observado | Kernel observado | glibc do SO | Motores |
+| --- | --- | --- | --- | --- |
+| Debian 12 | 12.15 | 6.1.0-54-amd64 | 2.36 | glibc e musl |
+| Debian 13 | 13.7 | 6.12.113+deb13-amd64 | 2.41 | glibc e musl |
+
+Os seis Ubuntu x64 foram repetidos: 18.04/20.04/22.04/24.04/26.04/26.10,
+com ambos os motores. Cada guest passou 13 layouts com inputs/outputs e
+geometria reconferidos. Os motores mantêm seus hashes anteriores.
+
+Nos oito guests glibc, CPython 3.12.15 e 3.14.8 privados instalaram o wheel em
+venvs externas e executaram três entrypoints. Os 53 arquivos foram comparados
+aos bytes do commit por `git show`; o hash do Python do SO permaneceu igual.
+Python 3.11/3.13 da imagem Debian controla somente o probe e não conta como
+slot da aplicação.
+
+Por slot glibc: seis referências zeradas, 389 execuções `dot` observadas pelo
+strace e zero syscalls de rede no corpus. Os controles positivos socket/connect
+em processo filho foram detectados. Em Debian, os quatro arquivos do tracer
+foram reconferidos contra os bytes extraídos dos dois pacotes oficiais fixados;
+o recibo de origem, hashes de arquivos e versão 6.1 coincidem com o observado
+no guest. O loader usa diretório privado somente para o tracer, preservando o
+ambiente da aplicação. [capture.py](capture.py) registra essas verificações;
+sua repetição offline requer os dois `.deb` identificados no pin na pasta
+`.tmp`, além dos ZIPs/logs apontados no recibo de downloads.
+
+A [revisão de recuperação](nested-recovery.json) confere 16 execuções de
+cenários e 96 referências offline por slot: oito cenários externos, quatro
+reparos falhos e quatro cenários de processos aninhados. Total: **256 execuções
+de cenários e 1.536 execuções de referências offline** nos dezesseis slots.
+Só Debian representa quatro slots, 64 cenários e 384 referências offline;
+o restante é regressão Ubuntu. Seletores/handles, locks, órfãos e aquisição
+única entre dois concorrentes passaram nas verificações registradas.
+
+Fundação: seis jobs com 287 testes cada, oito skips Windows/seis Linux/macOS;
+Windows limpo segue skipped. O novo índice T038 conserva quatro alvos/oito
+slots esperados, com dois alvos x64/quatro slots observados e zero completos.
+Recuperação passa a onze células/22 slots com observações parciais e zero
+células completas. T036/T037 mantêm seus alvos e evidências anteriores;
+quatro snapshots dos índices de Ubuntu, instalação e recuperação ficam
+preservados neste diretório. A nova observação conjunta de instalação é
+registrada separadamente das contagens históricas e cobre somente wheel.
+
+Recibos finais locais. Aquisição do runtime é privada/controlada; candidatas
+finais remotas, sdist, revisão Twine, ARM64 e cobertura integral de pacotes/LTS
+continuam gates próprios. Musl mede o motor estático nesses kernels, sem
+qualificar Alpine ou slots Python musl. Nenhum catálogo, release ou suporte
+foi promovido. T033/T038/T076/T078 e a feature permanecem parciais.

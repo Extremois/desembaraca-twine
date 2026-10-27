@@ -3,15 +3,15 @@
   "task": "T037",
   "task_complete": false,
   "qualified": false,
-  "captured_at": "2026-10-27T21:26:24.775775+00:00",
+  "captured_at": "2026-10-27T22:07:15.168752+00:00",
   "registry": {
     "path": "tools/runtime/support-targets.json",
     "sha256": "be3e8a77e3836d1125658c00a75fbf0e3584f1e26a166a053583336c29a5d295"
   },
-  "application_revision": "4b5625d4b79720e58d50f0919eedb3b39d08e00c",
+  "application_revision": "55a789ea497c2fa74180cbb2e2dee3b81f1a1220",
   "evidence": {
-    "path": "specs/003-add-cross-platform-support/evidence/ubuntu2404-native-2026-10-27/summary.json",
-    "sha256": "3e45f819066c10a8f5a8f909a6f4fb48d9eb99662597d3f8054a8010c9890b72"
+    "path": "specs/003-add-cross-platform-support/evidence/debian-native-2026-10-27/summary.json",
+    "sha256": "b7343aca3c9f0e32ceab8270fa79d4419100db2317e541f0596014670205a0eb"
   },
   "expected_targets": 10,
   "expected_python_slots": 20,
@@ -32,8 +32,8 @@
           "qualified": false,
           "observation_state": "partial-native-observation",
           "evidence": {
-            "path": "specs/003-add-cross-platform-support/evidence/ubuntu2404-native-2026-10-27/summary.json",
-            "sha256": "3e45f819066c10a8f5a8f909a6f4fb48d9eb99662597d3f8054a8010c9890b72"
+            "path": "specs/003-add-cross-platform-support/evidence/debian-native-2026-10-27/summary.json",
+            "sha256": "b7343aca3c9f0e32ceab8270fa79d4419100db2317e541f0596014670205a0eb"
           },
           "observed_python": "3.12.15"
         },
@@ -43,8 +43,8 @@
           "qualified": false,
           "observation_state": "partial-native-observation",
           "evidence": {
-            "path": "specs/003-add-cross-platform-support/evidence/ubuntu2404-native-2026-10-27/summary.json",
-            "sha256": "3e45f819066c10a8f5a8f909a6f4fb48d9eb99662597d3f8054a8010c9890b72"
+            "path": "specs/003-add-cross-platform-support/evidence/debian-native-2026-10-27/summary.json",
+            "sha256": "b7343aca3c9f0e32ceab8270fa79d4419100db2317e541f0596014670205a0eb"
           },
           "observed_python": "3.14.8"
         }
@@ -90,8 +90,8 @@
           "qualified": false,
           "observation_state": "partial-native-observation",
           "evidence": {
-            "path": "specs/003-add-cross-platform-support/evidence/ubuntu2404-native-2026-10-27/summary.json",
-            "sha256": "3e45f819066c10a8f5a8f909a6f4fb48d9eb99662597d3f8054a8010c9890b72"
+            "path": "specs/003-add-cross-platform-support/evidence/debian-native-2026-10-27/summary.json",
+            "sha256": "b7343aca3c9f0e32ceab8270fa79d4419100db2317e541f0596014670205a0eb"
           },
           "observed_python": "3.12.15"
         },
@@ -101,8 +101,8 @@
           "qualified": false,
           "observation_state": "partial-native-observation",
           "evidence": {
-            "path": "specs/003-add-cross-platform-support/evidence/ubuntu2404-native-2026-10-27/summary.json",
-            "sha256": "3e45f819066c10a8f5a8f909a6f4fb48d9eb99662597d3f8054a8010c9890b72"
+            "path": "specs/003-add-cross-platform-support/evidence/debian-native-2026-10-27/summary.json",
+            "sha256": "b7343aca3c9f0e32ceab8270fa79d4419100db2317e541f0596014670205a0eb"
           },
           "observed_python": "3.14.8"
         }
@@ -148,8 +148,8 @@
           "qualified": false,
           "observation_state": "partial-native-observation",
           "evidence": {
-            "path": "specs/003-add-cross-platform-support/evidence/ubuntu2404-native-2026-10-27/summary.json",
-            "sha256": "3e45f819066c10a8f5a8f909a6f4fb48d9eb99662597d3f8054a8010c9890b72"
+            "path": "specs/003-add-cross-platform-support/evidence/debian-native-2026-10-27/summary.json",
+            "sha256": "b7343aca3c9f0e32ceab8270fa79d4419100db2317e541f0596014670205a0eb"
           },
           "observed_python": "3.12.15"
         },
@@ -159,8 +159,8 @@
           "qualified": false,
           "observation_state": "partial-native-observation",
           "evidence": {
-            "path": "specs/003-add-cross-platform-support/evidence/ubuntu2404-native-2026-10-27/summary.json",
-            "sha256": "3e45f819066c10a8f5a8f909a6f4fb48d9eb99662597d3f8054a8010c9890b72"
+            "path": "specs/003-add-cross-platform-support/evidence/debian-native-2026-10-27/summary.json",
+            "sha256": "b7343aca3c9f0e32ceab8270fa79d4419100db2317e541f0596014670205a0eb"
           },
           "observed_python": "3.14.8"
         }
@@ -206,8 +206,8 @@
           "qualified": false,
           "observation_state": "partial-native-observation",
           "evidence": {
-            "path": "specs/003-add-cross-platform-support/evidence/ubuntu2404-native-2026-10-27/summary.json",
-            "sha256": "3e45f819066c10a8f5a8f909a6f4fb48d9eb99662597d3f8054a8010c9890b72"
+            "path": "specs/003-add-cross-platform-support/evidence/debian-native-2026-10-27/summary.json",
+            "sha256": "b7343aca3c9f0e32ceab8270fa79d4419100db2317e541f0596014670205a0eb"
           },
           "observed_python": "3.12.15"
         },
@@ -217,8 +217,8 @@
           "qualified": false,
           "observation_state": "partial-native-observation",
           "evidence": {
-            "path": "specs/003-add-cross-platform-support/evidence/ubuntu2404-native-2026-10-27/summary.json",
-            "sha256": "3e45f819066c10a8f5a8f909a6f4fb48d9eb99662597d3f8054a8010c9890b72"
+            "path": "specs/003-add-cross-platform-support/evidence/debian-native-2026-10-27/summary.json",
+            "sha256": "b7343aca3c9f0e32ceab8270fa79d4419100db2317e541f0596014670205a0eb"
           },
           "observed_python": "3.14.8"
         }
@@ -264,8 +264,8 @@
           "qualified": false,
           "observation_state": "partial-native-observation",
           "evidence": {
-            "path": "specs/003-add-cross-platform-support/evidence/ubuntu2404-native-2026-10-27/summary.json",
-            "sha256": "3e45f819066c10a8f5a8f909a6f4fb48d9eb99662597d3f8054a8010c9890b72"
+            "path": "specs/003-add-cross-platform-support/evidence/debian-native-2026-10-27/summary.json",
+            "sha256": "b7343aca3c9f0e32ceab8270fa79d4419100db2317e541f0596014670205a0eb"
           },
           "observed_python": "3.12.15"
         },
@@ -275,8 +275,8 @@
           "qualified": false,
           "observation_state": "partial-native-observation",
           "evidence": {
-            "path": "specs/003-add-cross-platform-support/evidence/ubuntu2404-native-2026-10-27/summary.json",
-            "sha256": "3e45f819066c10a8f5a8f909a6f4fb48d9eb99662597d3f8054a8010c9890b72"
+            "path": "specs/003-add-cross-platform-support/evidence/debian-native-2026-10-27/summary.json",
+            "sha256": "b7343aca3c9f0e32ceab8270fa79d4419100db2317e541f0596014670205a0eb"
           },
           "observed_python": "3.14.8"
         }
@@ -312,12 +312,12 @@
   ],
   "limitations": [
     "Private development wheel and controlled runtime acquisition; no final remote candidate or sdist acceptance",
-    "Ubuntu historical images; no Pro/ESM eligibility assertion",
-    "Musl engine kernel observation on Ubuntu; no native Alpine qualification",
+    "Pinned dated Debian/Ubuntu images; maintenance recorded separately, no package security/LTS or Pro eligibility acceptance",
+    "Musl engine kernel observation on Debian/Ubuntu; no native Alpine qualification",
     "No local VM, Twine review, ARM64 qualification, catalog or support promotion"
   ],
   "previous_index": {
-    "path": "specs/003-add-cross-platform-support/evidence/ubuntu2404-native-2026-10-27/previous-linux-ubuntu-other.json",
-    "sha256": "2254163c6e047c1aa2423a42fea4087ce9d5472f80a805b62bc33e1154c1d2cf"
+    "path": "specs/003-add-cross-platform-support/evidence/debian-native-2026-10-27/previous-linux-ubuntu-other.json",
+    "sha256": "722ee7b427b6f6765349c46344eef731dbd27c21324ca9a6a8c392581caba024"
   }
 }
