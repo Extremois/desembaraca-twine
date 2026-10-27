@@ -50,6 +50,11 @@ mkdir "$work/source-review"
 cp "$work/sources/sources.tar.gz" "$work/sources/sources.json" "$work/source-review/"
 cp "$work/sources/sources.json" "$work/evidence/sources.json"
 chmod 644 "$work/source-review/sources.tar.gz" "$work/source-review/sources.json" "$work/evidence/sources.json"
+# These private package/source directories belong to this container's user.
+# Verify here, then expose only the review receipt alongside existing evidence.
+python /workspace/tools/runtime/verify-source-pairing.py --candidate-receipt "$work/package/candidate.json" --sources-receipt "$work/sources/sources.json" --candidate-archive "$work/package/candidate.zip" --sources-archive "$work/sources/sources.tar.gz" --application-revision "${GITHUB_SHA:?}" --output "$work/evidence/source-pairing.json"
+cp "$work/evidence/source-pairing.json" "$work/source-review/source-pairing.json"
+chmod 644 "$work/evidence/source-pairing.json" "$work/source-review/source-pairing.json"
 # Rebuild using the exported recipe/modules and complete SDK source tree, outside
 # the checkout, with a newly authenticated compiler SDK and a fresh cache.
 mkdir "$work/source-replay"

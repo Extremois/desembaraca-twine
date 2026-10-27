@@ -62,12 +62,7 @@ jobs:
           mkdir "$RUNNER_TEMP/twine-musl"
           docker pull --platform "linux/$OCI_ARCH" "$BUILD_IMAGE"
           docker image inspect "$BUILD_IMAGE" > "$RUNNER_TEMP/twine-musl/build-image.json"
-          docker run --rm --platform "linux/$OCI_ARCH" -e TWINE_BUILD_CONTAINER_IMAGE="$BUILD_IMAGE" -e ImageOS -e ImageVersion -e RUNNER_ARCH -v "$GITHUB_WORKSPACE:/workspace:ro" -v "$RUNNER_TEMP/twine-musl:/work" --workdir /workspace "$BUILD_IMAGE" sh tools/runtime/build-musl-ci.sh "$TARGET_ARCH" /work
-      - name: Verify musl binary and source archive pairing without approving delivery
-        shell: bash
-        run: |
-          python tools/runtime/verify-source-pairing.py --candidate-receipt "$RUNNER_TEMP/twine-musl/package/candidate.json" --sources-receipt "$RUNNER_TEMP/twine-musl/sources/sources.json" --candidate-archive "$RUNNER_TEMP/twine-musl/package/candidate.zip" --sources-archive "$RUNNER_TEMP/twine-musl/sources/sources.tar.gz" --application-revision "$GITHUB_SHA" --output "$RUNNER_TEMP/twine-musl/evidence/source-pairing.json"
-          cp "$RUNNER_TEMP/twine-musl/evidence/source-pairing.json" "$RUNNER_TEMP/twine-musl/source-review/source-pairing.json"
+          docker run --rm --platform "linux/$OCI_ARCH" -e TWINE_BUILD_CONTAINER_IMAGE="$BUILD_IMAGE" -e GITHUB_SHA -e ImageOS -e ImageVersion -e RUNNER_ARCH -v "$GITHUB_WORKSPACE:/workspace:ro" -v "$RUNNER_TEMP/twine-musl:/work" --workdir /workspace "$BUILD_IMAGE" sh tools/runtime/build-musl-ci.sh "$TARGET_ARCH" /work
       - name: Test same engine in pinned Alpine userland Python 3.14
         shell: bash
         env:
