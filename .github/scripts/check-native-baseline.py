@@ -21,10 +21,10 @@ ROOT=Path(__file__).resolve().parents[2]
 IMAGE_URL='https://cloud-images.ubuntu.com/releases/bionic/release-20230607/ubuntu-18.04-server-cloudimg-amd64.img'
 CANDIDATE_REVISION='b13cd6f90db31163e62119bb83e2eb8db5ac8458'
 IMAGE_PROFILES={
-    'debian-12':dict(url='https://cloud.debian.org/images/cloud/bookworm/20261026-2643/debian-12-generic-amd64-20261026-2643.qcow2',
+    'debian-12':dict(url='https://laotzu.ftp.acc.umu.se/images/cloud/bookworm/20261026-2643/debian-12-generic-amd64-20261026-2643.qcow2',
                  distribution='debian',version='12',image_hash='sha512',maximum_bytes=1024**3,
                  kernel=r'6\.1\.0-[0-9]+-amd64',glibc='glibc 2.36',disk_bytes=8*1024**3),
-    'debian-13':dict(url='https://cloud.debian.org/images/cloud/trixie/20261026-2643/debian-13-generic-amd64-20261026-2643.qcow2',
+    'debian-13':dict(url='https://chuangtzu.ftp.acc.umu.se/images/cloud/trixie/20261026-2643/debian-13-generic-amd64-20261026-2643.qcow2',
                  distribution='debian',version='13',image_hash='sha512',maximum_bytes=1024**3,
                  kernel=r'6\.12\.[0-9]+\+deb13-amd64',glibc='glibc 2.41',disk_bytes=8*1024**3),
     '18.04':dict(url=IMAGE_URL,maximum_bytes=512*1024**2,kernel=r'4\.15\.0-[0-9]+-generic',glibc='glibc 2.27'),

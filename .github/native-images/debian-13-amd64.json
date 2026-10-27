@@ -1,5 +1,5 @@
 {
-  "url": "https://cloud.debian.org/images/cloud/trixie/20261026-2643/debian-13-generic-amd64-20261026-2643.qcow2",
+  "url": "https://chuangtzu.ftp.acc.umu.se/images/cloud/trixie/20261026-2643/debian-13-generic-amd64-20261026-2643.qcow2",
   "size": 438894592,
   "sha512": "5bd891c6e62d01639f52a5587b72a4607421e445732214be787dba6043cf9797a6ff90bed982aada6a6c7e619f1f956d961c4fad76757171abd607920aac098a",
   "distribution": "debian",
@@ -9,5 +9,6 @@
   "checksum_manifest_sha256": "f9e3b6d25a73706755c83d34edf9ad52e990b543169d695a8fd95037b3f6155f",
   "package_manifest_url": "https://cloud.debian.org/images/cloud/trixie/20261026-2643/debian-13-generic-amd64-20261026-2643.json",
   "package_manifest_sha256": "53d4966f917a68aa71dfd5c546099620cce4b11751fd7565d0cfc72a521ec382",
-  "scope": "Dated official image for private native-kernel tests; no support qualification"
+  "scope": "Dated official image for private native-kernel tests; no support qualification",
+  "origin_url": "https://cloud.debian.org/images/cloud/trixie/20261026-2643/debian-13-generic-amd64-20261026-2643.qcow2"
 }

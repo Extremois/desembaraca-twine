@@ -36,6 +36,15 @@ Regressão portátil final: 287 testes em cada Python local, nove skips por
 execução. Três YAMLs/nove passos Bash e sintaxe Python 3.6 dos probes passaram;
 CI ainda pendente nesta preparação.
 
+A [primeira tentativa](attempt-1.json), checkpoint `3847fad`, foi recusada
+antes do boot dos quatro guests: `cloud.debian.org` redireciona os arquivos
+grandes. Os destinos diretos laotzu/chuangtzu em `ftp.acc.umu.se` foram
+conferidos por leitura de um byte e SHA512SUMS idêntico ao manifesto oficial.
+Os pins passam a esses destinos exatos, mantendo `origin_url`, tamanho e
+SHA-512; a recusa de redirecionamentos continua obrigatória. Logs preservados
+em gzip. Uma resposta HEAD sem conferir seu destino foi insuficiente na
+preparação inicial; a conferência inclui agora o destino real de GET.
+
 Manutenção consultada em 27/10/2026: [Debian 12](https://www.debian.org/releases/bookworm/)
 está em LTS até 30/06/2028, incluindo amd64/arm64, com limitações por pacote;
 [Debian 13](https://www.debian.org/releases/trixie/) tem suporte regular até

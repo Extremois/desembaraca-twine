@@ -272,6 +272,7 @@ class NativeBaselineTests(unittest.TestCase):
                 with self.subTest(release=release,key=key),self.assertRaises(ValueError):
                     self.tool.validate_baseline(dict(guest,**{key:value}),kvm,selector)
             for key,value in [('url',pin['url'].replace('20261026-2643/','latest/')),
+                              ('url',pin['origin_url']),
                               ('distribution','ubuntu'),('release','24.04'),('sha512','a'*64),
                               ('size',1024**3+1)]:
                 with self.subTest(release=release,pin=key),self.assertRaises(ValueError):
