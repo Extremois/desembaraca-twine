@@ -212,6 +212,28 @@ class NativeBaselineTests(unittest.TestCase):
                           ('size',1024**3),('sha256','not-a-hash')]:
             with self.assertRaises(ValueError):self.tool.validate_pin(dict(pin,**{key:value}))
 
+    def test_stonking_cannot_inherit_resolute_or_another_cpu_image(self):
+        import json
+        guest=dict(identity=dict(ID='ubuntu',VERSION_ID='26.10'),arch='x86_64',
+                   kernel='7.3.0-9-generic',glibc='glibc 2.44')
+        kvm=dict(enabled=True,present=True)
+        self.tool.validate_baseline(guest,kvm,'26.10')
+        pin=json.loads((ROOT/'.github/native-images/ubuntu-26.10-amd64.json').read_bytes())
+        self.tool.validate_pin(pin,'26.10')
+        for key,value in [('kernel','7.0.0-38-generic'),('kernel','6.17.0-1022-azure'),
+                          ('glibc','glibc 2.43'),('arch','aarch64'),
+                          ('identity',dict(ID='ubuntu',VERSION_ID='26.04'))]:
+            with self.subTest(key=key),self.assertRaises(ValueError):
+                self.tool.validate_baseline(dict(guest,**{key:value}),kvm,'26.10')
+        for key,value in [('url',pin['url'].replace('release-20261025','release')),
+                          ('url',pin['url'].replace('amd64.img','amd64v3.img')),
+                          ('release','26.04'),('size',1024**3+1)]:
+            with self.subTest(pin_key=key),self.assertRaises(ValueError):
+                self.tool.validate_pin(dict(pin,**{key:value}),'26.10')
+        with self.assertRaises(ValueError):self.tool.validate_pin(pin,'26.04')
+        with self.assertRaises(ValueError):
+            self.tool.validate_baseline(guest,dict(present=True,enabled=False),'26.10')
+
     def test_guest_report_cannot_choose_a_path_on_the_runner(self):
         with tempfile.TemporaryDirectory() as folder:
             root=Path(folder)

@@ -91,16 +91,17 @@
     "final_native_candidate": false
   },
   "native_ubuntu_additional_checks": {
-    "path": "specs/003-add-cross-platform-support/evidence/ubuntu2204-native-2026-10-27/summary.json",
-    "sha256": "a2cf581eff0c08625cc12b9d07398cb14c9f6ade0329dd45605c3abdcb6f54cc",
-    "application_revision": "3e7a27e599050776fdacde7f480238e79d22d772",
-    "python_slots": 6,
+    "path": "specs/003-add-cross-platform-support/evidence/ubuntu2604-native-2026-10-27/summary.json",
+    "sha256": "303139a5efd2a82267fb0d7f7f2786aebd15302d9b5bd03b07c6308a78be6835",
+    "application_revision": "96f765bb19e30536d505fe875fa57b52622cb336",
+    "python_slots": 8,
     "formats": [
       "wheel"
     ],
     "installed_files_per_slot": 53,
     "native_targets": [
       "ubuntu-22.04-stable-x86_64-distribution-default",
+      "ubuntu-26.04-stable-x86_64-distribution-default",
       "ubuntu-20.04-stable-x86_64-distribution-default",
       "ubuntu-18.04-stable-x86_64-distribution-default"
     ],
@@ -110,7 +111,7 @@
     "final_native_candidate": false
   },
   "previous_native_ubuntu_index": {
-    "path": "specs/003-add-cross-platform-support/evidence/ubuntu2204-native-2026-10-27/previous-package-installation.json",
-    "sha256": "dfd2ea4526ef2b52e5f51cafbd75d5bd4f72d8110a3d2f68e851830128d16360"
+    "path": "specs/003-add-cross-platform-support/evidence/ubuntu2604-native-2026-10-27/previous-package-installation.json",
+    "sha256": "3866595e133a42ca74f0c441924b4dc86a775b0c88c3b0b24a8aab2677bdb514"
   }
 }

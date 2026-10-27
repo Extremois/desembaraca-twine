@@ -1,0 +1,2119 @@
+{
+  "kind": "verified-native-ubuntu1804-2004-2204-2604-private-runtime-review",
+  "revision": "96f765bb19e30536d505fe875fa57b52622cb336",
+  "qualified": false,
+  "approved": false,
+  "task_complete": false,
+  "tasks": [
+    "T033",
+    "T037",
+    "T076",
+    "T078"
+  ],
+  "runs": [
+    {
+      "id": 40576914797,
+      "name": "Ubuntu versions native kernel and installed application",
+      "revision": "96f765bb19e30536d505fe875fa57b52622cb336",
+      "url": "https://github.com/Extremois/desembaraca-twine/actions/runs/40576914797",
+      "status": "completed",
+      "conclusion": "success",
+      "jobs": [
+        {
+          "id": 122445687860,
+          "name": "ubuntu-x64 (26.04, glibc)",
+          "status": "completed",
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Set up job",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/download-artifact@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Prepare reviewed engine, public corpus and isolated Python inputs",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Install guest test tooling only on this ephemeral runner",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Boot pinned Ubuntu 26.04 using KVM and test offline",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Retain measurements without guest disks, keys or credentials",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Complete job",
+              "status": "completed",
+              "conclusion": "success"
+            }
+          ]
+        },
+        {
+          "id": 122445688206,
+          "name": "ubuntu-x64 (22.04, glibc)",
+          "status": "completed",
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Set up job",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/download-artifact@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Prepare reviewed engine, public corpus and isolated Python inputs",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Install guest test tooling only on this ephemeral runner",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Boot pinned Ubuntu 22.04 using KVM and test offline",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Retain measurements without guest disks, keys or credentials",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Complete job",
+              "status": "completed",
+              "conclusion": "success"
+            }
+          ]
+        },
+        {
+          "id": 122445688244,
+          "name": "ubuntu-x64 (20.04, glibc)",
+          "status": "completed",
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Set up job",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/download-artifact@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Prepare reviewed engine, public corpus and isolated Python inputs",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Install guest test tooling only on this ephemeral runner",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Boot pinned Ubuntu 20.04 using KVM and test offline",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Retain measurements without guest disks, keys or credentials",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Complete job",
+              "status": "completed",
+              "conclusion": "success"
+            }
+          ]
+        },
+        {
+          "id": 122445688251,
+          "name": "ubuntu-x64 (20.04, musl)",
+          "status": "completed",
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Set up job",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/download-artifact@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Prepare reviewed engine, public corpus and isolated Python inputs",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Install guest test tooling only on this ephemeral runner",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Boot pinned Ubuntu 20.04 using KVM and test offline",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Retain measurements without guest disks, keys or credentials",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Complete job",
+              "status": "completed",
+              "conclusion": "success"
+            }
+          ]
+        },
+        {
+          "id": 122445688378,
+          "name": "ubuntu-x64 (26.04, musl)",
+          "status": "completed",
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Set up job",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/download-artifact@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Prepare reviewed engine, public corpus and isolated Python inputs",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Install guest test tooling only on this ephemeral runner",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Boot pinned Ubuntu 26.04 using KVM and test offline",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Retain measurements without guest disks, keys or credentials",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Complete job",
+              "status": "completed",
+              "conclusion": "success"
+            }
+          ]
+        },
+        {
+          "id": 122445688436,
+          "name": "ubuntu-x64 (22.04, musl)",
+          "status": "completed",
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Set up job",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/download-artifact@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Prepare reviewed engine, public corpus and isolated Python inputs",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Install guest test tooling only on this ephemeral runner",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Boot pinned Ubuntu 22.04 using KVM and test offline",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Retain measurements without guest disks, keys or credentials",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Complete job",
+              "status": "completed",
+              "conclusion": "success"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 40576914754,
+      "name": "Ubuntu 18.04 native kernel engine baseline",
+      "revision": "96f765bb19e30536d505fe875fa57b52622cb336",
+      "url": "https://github.com/Extremois/desembaraca-twine/actions/runs/40576914754",
+      "status": "completed",
+      "conclusion": "success",
+      "jobs": [
+        {
+          "id": 122445687609,
+          "name": "ubuntu1804-x64 (musl, 40565098367, linux-musl-x86_64-container-unqualified-a825f0d80bd7892de0e307...",
+          "status": "completed",
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Set up job",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/download-artifact@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Prepare byte-bound engine and public geometry inputs",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Install guest test tooling only on this ephemeral runner",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Boot pinned Ubuntu 18.04 using KVM and test the unchanged engine",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Retain baseline measurements without disks or SSH credentials",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Complete job",
+              "status": "completed",
+              "conclusion": "success"
+            }
+          ]
+        },
+        {
+          "id": 122445688303,
+          "name": "ubuntu1804-x64 (glibc, --python-prerequisites --python-application, 40565098269, linux-glibc-x86_...",
+          "status": "completed",
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Set up job",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/download-artifact@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Prepare byte-bound engine and public geometry inputs",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Install guest test tooling only on this ephemeral runner",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Boot pinned Ubuntu 18.04 using KVM and test the unchanged engine",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Retain baseline measurements without disks or SSH credentials",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Complete job",
+              "status": "completed",
+              "conclusion": "success"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 40576914804,
+      "name": "Cross-platform foundation",
+      "revision": "96f765bb19e30536d505fe875fa57b52622cb336",
+      "url": "https://github.com/Extremois/desembaraca-twine/actions/runs/40576914804",
+      "status": "completed",
+      "conclusion": "success",
+      "jobs": [
+        {
+          "id": 122445687941,
+          "name": "Pure contracts (ubuntu-24.04, Python 3.14)",
+          "status": "completed",
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Set up job",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Identify runner (not native support qualification)",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Standard-library foundation tests, without managed native engine",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Complete job",
+              "status": "completed",
+              "conclusion": "success"
+            }
+          ]
+        },
+        {
+          "id": 122445688106,
+          "name": "Pure contracts (windows-latest, Python 3.14)",
+          "status": "completed",
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Set up job",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Identify runner (not native support qualification)",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Standard-library foundation tests, without managed native engine",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Complete job",
+              "status": "completed",
+              "conclusion": "success"
+            }
+          ]
+        },
+        {
+          "id": 122445688261,
+          "name": "Pure contracts (windows-latest, Python 3.12)",
+          "status": "completed",
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Set up job",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Identify runner (not native support qualification)",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Standard-library foundation tests, without managed native engine",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Complete job",
+              "status": "completed",
+              "conclusion": "success"
+            }
+          ]
+        },
+        {
+          "id": 122445688312,
+          "name": "Pure contracts (macos-15, Python 3.12)",
+          "status": "completed",
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Set up job",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Identify runner (not native support qualification)",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Standard-library foundation tests, without managed native engine",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Complete job",
+              "status": "completed",
+              "conclusion": "success"
+            }
+          ]
+        },
+        {
+          "id": 122445688316,
+          "name": "Pure contracts (macos-15, Python 3.14)",
+          "status": "completed",
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Set up job",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Identify runner (not native support qualification)",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Standard-library foundation tests, without managed native engine",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Complete job",
+              "status": "completed",
+              "conclusion": "success"
+            }
+          ]
+        },
+        {
+          "id": 122445688368,
+          "name": "Pure contracts (ubuntu-24.04, Python 3.12)",
+          "status": "completed",
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Set up job",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Identify runner (not native support qualification)",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Standard-library foundation tests, without managed native engine",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Complete job",
+              "status": "completed",
+              "conclusion": "success"
+            }
+          ]
+        },
+        {
+          "id": 122445689794,
+          "name": "windows-acceptance",
+          "status": "completed",
+          "conclusion": "skipped",
+          "steps": []
+        }
+      ]
+    }
+  ],
+  "foundation": [
+    {
+      "id": 122445687941,
+      "name": "Pure contracts (ubuntu-24.04, Python 3.14)",
+      "tests": 280,
+      "skipped": 6,
+      "sha256": "ca7d1dc5cb9a7ad0445e7a7589dac9ecce2fe697a9202667521b8c0f03d230a8",
+      "file": "resolute-foundation-job-122445687941.log"
+    },
+    {
+      "id": 122445688106,
+      "name": "Pure contracts (windows-latest, Python 3.14)",
+      "tests": 280,
+      "skipped": 8,
+      "sha256": "7e1a21b037eef0337ed017868e13cf2c1cb5676b1ddeac42b1ce256b6e0d35d4",
+      "file": "resolute-foundation-job-122445688106.log"
+    },
+    {
+      "id": 122445688261,
+      "name": "Pure contracts (windows-latest, Python 3.12)",
+      "tests": 280,
+      "skipped": 8,
+      "sha256": "c3470c54b322f505b8071c28c9e86ddec32bd6110335972bd0e6b1b9f1a22b91",
+      "file": "resolute-foundation-job-122445688261.log"
+    },
+    {
+      "id": 122445688312,
+      "name": "Pure contracts (macos-15, Python 3.12)",
+      "tests": 280,
+      "skipped": 6,
+      "sha256": "853bdab4a5238bc68c4a0250a754b397c11b8fba0afa053759315c16602bbd2b",
+      "file": "resolute-foundation-job-122445688312.log"
+    },
+    {
+      "id": 122445688316,
+      "name": "Pure contracts (macos-15, Python 3.14)",
+      "tests": 280,
+      "skipped": 6,
+      "sha256": "8c60db241f3f67a0aa40021d2f3dbf7bbfcda5b96d6312c169f7e7a4c40c649f",
+      "file": "resolute-foundation-job-122445688316.log"
+    },
+    {
+      "id": 122445688368,
+      "name": "Pure contracts (ubuntu-24.04, Python 3.12)",
+      "tests": 280,
+      "skipped": 6,
+      "sha256": "dda65300ef2086b10c1929e0f320fd5cb0592ec47d0e745460a7ac336ed53f0b",
+      "file": "resolute-foundation-job-122445688368.log"
+    }
+  ],
+  "guests": [
+    {
+      "release": "26.04",
+      "abi": "musl",
+      "run_id": 40576914797,
+      "actions_artifact_id": 12768635171,
+      "actions_archive_sha256": "3465475dab1e128ae9c0131923db6ed6061abd1fa6f750d7c7c1d2f21a80beaa",
+      "native_summary_sha256": "7ebba477c18b54e296eb04b5de9611d0674dc123f8f13a727f9d5e4fb8fa9238",
+      "kernel": "7.0.0-38-generic",
+      "glibc": "glibc 2.43",
+      "arch": "x86_64",
+      "kvm": {
+        "enabled": true,
+        "present": true
+      },
+      "engine_sha256": "f4dfee4e052704b1a7efdb7b6a4c43583ccaa062aec800b76224dae24eb2b69b",
+      "candidate_revision": "a825f0d80bd7892de0e307656d28070885a9d1ed",
+      "image_pin": {
+        "url": "https://cloud-images.ubuntu.com/releases/resolute/release-20261016/ubuntu-26.04-server-cloudimg-amd64.img",
+        "size": 859090944,
+        "sha256": "5645d0318ad21f643ebb1ac4567514620e9893380b07b0201fda163baa5b7eb5",
+        "checksum_manifest_url": "https://cloud-images.ubuntu.com/releases/resolute/release-20261016/SHA256SUMS",
+        "checksum_manifest_sha256": "489dd5ab1206aba5cb21769e8095e911feb01a313aec448e4bdc291f918b6549",
+        "package_manifest_url": "https://cloud-images.ubuntu.com/releases/resolute/release-20261016/ubuntu-26.04-server-cloudimg-amd64.manifest",
+        "package_manifest_sha256": "d52adb4ae5a731dcbed5ebe664757d248f6c0994dc6230c88891f1763a818083",
+        "release": "26.04",
+        "arch": "x86_64",
+        "scope": "Historical image for private native-kernel tests; no support qualification"
+      },
+      "cases": 13,
+      "geometry_decoded": true,
+      "system_python_unchanged": null,
+      "python_slots": [],
+      "preserved_files": [
+        {
+          "file": "ubuntu2604-musl/raw/candidate.json.gz",
+          "uncompressed_sha256": "e60de0f61bb8bc31eedc7250d427d64492114730924711568700e9eb1bbd509a"
+        },
+        {
+          "file": "ubuntu2604-musl/raw/guest/border_only.json.gz",
+          "uncompressed_sha256": "1eea0fc0bd90ab230248b274d385a91c88067c813f702527639efad35aa60850"
+        },
+        {
+          "file": "ubuntu2604-musl/raw/guest/clean.json.gz",
+          "uncompressed_sha256": "7a3bdb8a5693fdd5a2a3c86d7bf32c43000c23a8470540ebfdc56e5785a6eb61"
+        },
+        {
+          "file": "ubuntu2604-musl/raw/guest/coincident.json.gz",
+          "uncompressed_sha256": "5e0ee8f776d419bce61a9ef6bb6dca73866497a347f4ef3b52bed5f96e12bd04"
+        },
+        {
+          "file": "ubuntu2604-musl/raw/guest/connected_overlap.json.gz",
+          "uncompressed_sha256": "d30afcda91fa423e11958945cbd7324bea5dc1ef40e23fb9f7d5d06e18d9fb07"
+        },
+        {
+          "file": "ubuntu2604-musl/raw/guest/crossing.json.gz",
+          "uncompressed_sha256": "284ecd02a8c8b5cabd1bc09352bfd64cfd71aa34eaec4e764925e70ea2b9c6c7"
+        },
+        {
+          "file": "ubuntu2604-musl/raw/guest/cycle.json.gz",
+          "uncompressed_sha256": "2f1e24cf016fb935e170999e67246b99557f19f7b3e633c83fad4f030eaf5d8f"
+        },
+        {
+          "file": "ubuntu2604-musl/raw/guest/empty.json.gz",
+          "uncompressed_sha256": "c599e92f4b1b099fd97fde1f3a07dae747a365a17037f880a333f786f6cf2d27"
+        },
+        {
+          "file": "ubuntu2604-musl/raw/guest/guest.json.gz",
+          "uncompressed_sha256": "dd2179caf9542dc4375062f843d8e200981c5b77895ddac5a193be6404c9a7c9"
+        },
+        {
+          "file": "ubuntu2604-musl/raw/guest/isolated_overlap.json.gz",
+          "uncompressed_sha256": "e0969b0682d5aa7645769edd3aab25cd2100ee85a3d57f46482ef8296eb70beb"
+        },
+        {
+          "file": "ubuntu2604-musl/raw/guest/parallel_occurrences.json.gz",
+          "uncompressed_sha256": "345be09eb92400e407864362825da08e4c37613689a2e685ed16fed8121b36df"
+        },
+        {
+          "file": "ubuntu2604-musl/raw/guest/reciprocal.json.gz",
+          "uncompressed_sha256": "5619900998072691afd222022786f6145fa98e50cf1da7b7aae8de0b8644d835"
+        },
+        {
+          "file": "ubuntu2604-musl/raw/guest/self_loop.json.gz",
+          "uncompressed_sha256": "059eef51012c99eea5f8ff6918586b9b42d581ea871d246ccfaa963ab3ffd562"
+        },
+        {
+          "file": "ubuntu2604-musl/raw/guest/through_connected.json.gz",
+          "uncompressed_sha256": "5e0ee8f776d419bce61a9ef6bb6dca73866497a347f4ef3b52bed5f96e12bd04"
+        },
+        {
+          "file": "ubuntu2604-musl/raw/guest/through_isolated.json.gz",
+          "uncompressed_sha256": "8ba7f17057625b767efc6c251e977059d2e7e8a002b3ea2a951699025ece3dfb"
+        },
+        {
+          "file": "ubuntu2604-musl/raw/inventory.json.gz",
+          "uncompressed_sha256": "50ea548c3acfb054fc63c6264ca78fdb05d1d5628b77666789827f9de6e16b82"
+        },
+        {
+          "file": "ubuntu2604-musl/raw/provenance.json.gz",
+          "uncompressed_sha256": "54ed1980bf2b3ed9c1889e6640a7b000aaee6d0fc686875423239ebe95be9c9c"
+        },
+        {
+          "file": "ubuntu2604-musl/raw/qemu.log.gz",
+          "uncompressed_sha256": "debf34a94a17453553a38334c8d3933b95bdd5a05f2aa3311b7924cf4ecd1391"
+        },
+        {
+          "file": "ubuntu2604-musl/raw/qmp-kvm.json.gz",
+          "uncompressed_sha256": "11ea5a70b9ea4a315991cc7f0c58c8f9f78449e51b54287810d861c386312ffc"
+        },
+        {
+          "file": "ubuntu2604-musl/raw/serial.log.gz",
+          "uncompressed_sha256": "14786aa38094326dd679680f9c62698af9e6c87098e8de9f20ef4e9879eefc8f"
+        },
+        {
+          "file": "ubuntu2604-musl/raw/summary.json.gz",
+          "uncompressed_sha256": "7ebba477c18b54e296eb04b5de9611d0674dc123f8f13a727f9d5e4fb8fa9238"
+        }
+      ]
+    },
+    {
+      "release": "22.04",
+      "abi": "musl",
+      "run_id": 40576914797,
+      "actions_artifact_id": 12768215913,
+      "actions_archive_sha256": "39c6f688b19f72da037389a39e1198a347b7eb046015c03569032a6f6ac43e73",
+      "native_summary_sha256": "82fb7d17da14ecd1923a499e8bc7bb38dd184846926ff82036d779600f34f0c7",
+      "kernel": "5.15.0-198-generic",
+      "glibc": "glibc 2.35",
+      "arch": "x86_64",
+      "kvm": {
+        "enabled": true,
+        "present": true
+      },
+      "engine_sha256": "f4dfee4e052704b1a7efdb7b6a4c43583ccaa062aec800b76224dae24eb2b69b",
+      "candidate_revision": "a825f0d80bd7892de0e307656d28070885a9d1ed",
+      "image_pin": {
+        "url": "https://cloud-images.ubuntu.com/releases/jammy/release-20261020/ubuntu-22.04-server-cloudimg-amd64.img",
+        "size": 730529792,
+        "sha256": "2099e63da0b822ef8e05e3d596c1b402eaaae658fc08ab919cb8495bfcdc488b",
+        "checksum_manifest_url": "https://cloud-images.ubuntu.com/releases/jammy/release-20261020/SHA256SUMS",
+        "checksum_manifest_sha256": "4f52010946a2c9f33fbabde465bb0f93da1e0d0c5cebb09fa0ce751964036df4",
+        "package_manifest_url": "https://cloud-images.ubuntu.com/releases/jammy/release-20261020/ubuntu-22.04-server-cloudimg-amd64.manifest",
+        "package_manifest_sha256": "e931df1d4d6bba23f8edd213a9c8117efb19282a9be6d97221643c71fd158cea",
+        "release": "22.04",
+        "arch": "x86_64",
+        "scope": "Historical image for private native-kernel tests; no support qualification"
+      },
+      "cases": 13,
+      "geometry_decoded": true,
+      "system_python_unchanged": null,
+      "python_slots": [],
+      "preserved_files": [
+        {
+          "file": "ubuntu2204-musl/raw/candidate.json.gz",
+          "uncompressed_sha256": "e60de0f61bb8bc31eedc7250d427d64492114730924711568700e9eb1bbd509a"
+        },
+        {
+          "file": "ubuntu2204-musl/raw/guest/border_only.json.gz",
+          "uncompressed_sha256": "1eea0fc0bd90ab230248b274d385a91c88067c813f702527639efad35aa60850"
+        },
+        {
+          "file": "ubuntu2204-musl/raw/guest/clean.json.gz",
+          "uncompressed_sha256": "7a3bdb8a5693fdd5a2a3c86d7bf32c43000c23a8470540ebfdc56e5785a6eb61"
+        },
+        {
+          "file": "ubuntu2204-musl/raw/guest/coincident.json.gz",
+          "uncompressed_sha256": "5e0ee8f776d419bce61a9ef6bb6dca73866497a347f4ef3b52bed5f96e12bd04"
+        },
+        {
+          "file": "ubuntu2204-musl/raw/guest/connected_overlap.json.gz",
+          "uncompressed_sha256": "d30afcda91fa423e11958945cbd7324bea5dc1ef40e23fb9f7d5d06e18d9fb07"
+        },
+        {
+          "file": "ubuntu2204-musl/raw/guest/crossing.json.gz",
+          "uncompressed_sha256": "284ecd02a8c8b5cabd1bc09352bfd64cfd71aa34eaec4e764925e70ea2b9c6c7"
+        },
+        {
+          "file": "ubuntu2204-musl/raw/guest/cycle.json.gz",
+          "uncompressed_sha256": "2f1e24cf016fb935e170999e67246b99557f19f7b3e633c83fad4f030eaf5d8f"
+        },
+        {
+          "file": "ubuntu2204-musl/raw/guest/empty.json.gz",
+          "uncompressed_sha256": "c599e92f4b1b099fd97fde1f3a07dae747a365a17037f880a333f786f6cf2d27"
+        },
+        {
+          "file": "ubuntu2204-musl/raw/guest/guest.json.gz",
+          "uncompressed_sha256": "40861a1d3cccab2e4aed086cc7938378a09d3f1909bddb310e3885dff300e727"
+        },
+        {
+          "file": "ubuntu2204-musl/raw/guest/isolated_overlap.json.gz",
+          "uncompressed_sha256": "e0969b0682d5aa7645769edd3aab25cd2100ee85a3d57f46482ef8296eb70beb"
+        },
+        {
+          "file": "ubuntu2204-musl/raw/guest/parallel_occurrences.json.gz",
+          "uncompressed_sha256": "345be09eb92400e407864362825da08e4c37613689a2e685ed16fed8121b36df"
+        },
+        {
+          "file": "ubuntu2204-musl/raw/guest/reciprocal.json.gz",
+          "uncompressed_sha256": "5619900998072691afd222022786f6145fa98e50cf1da7b7aae8de0b8644d835"
+        },
+        {
+          "file": "ubuntu2204-musl/raw/guest/self_loop.json.gz",
+          "uncompressed_sha256": "059eef51012c99eea5f8ff6918586b9b42d581ea871d246ccfaa963ab3ffd562"
+        },
+        {
+          "file": "ubuntu2204-musl/raw/guest/through_connected.json.gz",
+          "uncompressed_sha256": "5e0ee8f776d419bce61a9ef6bb6dca73866497a347f4ef3b52bed5f96e12bd04"
+        },
+        {
+          "file": "ubuntu2204-musl/raw/guest/through_isolated.json.gz",
+          "uncompressed_sha256": "8ba7f17057625b767efc6c251e977059d2e7e8a002b3ea2a951699025ece3dfb"
+        },
+        {
+          "file": "ubuntu2204-musl/raw/inventory.json.gz",
+          "uncompressed_sha256": "50ea548c3acfb054fc63c6264ca78fdb05d1d5628b77666789827f9de6e16b82"
+        },
+        {
+          "file": "ubuntu2204-musl/raw/provenance.json.gz",
+          "uncompressed_sha256": "54ed1980bf2b3ed9c1889e6640a7b000aaee6d0fc686875423239ebe95be9c9c"
+        },
+        {
+          "file": "ubuntu2204-musl/raw/qemu.log.gz",
+          "uncompressed_sha256": "a4dec51a332e8d9d769d7a42683b4735821c6a6496ccf2b848ff0bc799d0e7ff"
+        },
+        {
+          "file": "ubuntu2204-musl/raw/qmp-kvm.json.gz",
+          "uncompressed_sha256": "11ea5a70b9ea4a315991cc7f0c58c8f9f78449e51b54287810d861c386312ffc"
+        },
+        {
+          "file": "ubuntu2204-musl/raw/serial.log.gz",
+          "uncompressed_sha256": "bdde6fe02b7ab13c33efb19f85116af939601e4e931fb0d96510486bd7ec6739"
+        },
+        {
+          "file": "ubuntu2204-musl/raw/summary.json.gz",
+          "uncompressed_sha256": "82fb7d17da14ecd1923a499e8bc7bb38dd184846926ff82036d779600f34f0c7"
+        }
+      ]
+    },
+    {
+      "release": "22.04",
+      "abi": "glibc",
+      "run_id": 40576914797,
+      "actions_artifact_id": 12768161965,
+      "actions_archive_sha256": "e1d9bbfa1732281c2b0a4afc8ddef4cf1a3243609311f00c415e096d02311001",
+      "native_summary_sha256": "26da32d07df259376d7b9196af457ce79318bead8511804252b89e8bd1e9be82",
+      "kernel": "5.15.0-198-generic",
+      "glibc": "glibc 2.35",
+      "arch": "x86_64",
+      "kvm": {
+        "enabled": true,
+        "present": true
+      },
+      "engine_sha256": "43ce8d686720467c21be91cab4b8f3b246baae49c2cfe293714ebdf8a82f5716",
+      "candidate_revision": "a825f0d80bd7892de0e307656d28070885a9d1ed",
+      "image_pin": {
+        "url": "https://cloud-images.ubuntu.com/releases/jammy/release-20261020/ubuntu-22.04-server-cloudimg-amd64.img",
+        "size": 730529792,
+        "sha256": "2099e63da0b822ef8e05e3d596c1b402eaaae658fc08ab919cb8495bfcdc488b",
+        "checksum_manifest_url": "https://cloud-images.ubuntu.com/releases/jammy/release-20261020/SHA256SUMS",
+        "checksum_manifest_sha256": "4f52010946a2c9f33fbabde465bb0f93da1e0d0c5cebb09fa0ce751964036df4",
+        "package_manifest_url": "https://cloud-images.ubuntu.com/releases/jammy/release-20261020/ubuntu-22.04-server-cloudimg-amd64.manifest",
+        "package_manifest_sha256": "e931df1d4d6bba23f8edd213a9c8117efb19282a9be6d97221643c71fd158cea",
+        "release": "22.04",
+        "arch": "x86_64",
+        "scope": "Historical image for private native-kernel tests; no support qualification"
+      },
+      "cases": 13,
+      "geometry_decoded": true,
+      "system_python_unchanged": true,
+      "python_slots": [
+        {
+          "python": "3.12.15",
+          "minor": "3.12",
+          "cases": 13,
+          "known_zero_references": 6,
+          "recovery_scenarios": 8,
+          "offline_reference_runs": 48,
+          "dot_executions": 389,
+          "native_network_syscalls": {},
+          "installed_files_verified": 53,
+          "report_sha256": "7758ed1c97231eab87e008320e0132a7215a408bf0c1f1b9852a7741e6459c9d",
+          "wheel_sha256": "3875bbfa2eb1f81f6402716386d38c9581f6fd4f72daac9fc9cecf226824dae4"
+        },
+        {
+          "python": "3.14.8",
+          "minor": "3.14",
+          "cases": 13,
+          "known_zero_references": 6,
+          "recovery_scenarios": 8,
+          "offline_reference_runs": 48,
+          "dot_executions": 389,
+          "native_network_syscalls": {},
+          "installed_files_verified": 53,
+          "report_sha256": "324e8868826b786878a86a651c9f7d488f5b061c3d4082b2194b35460efbc566",
+          "wheel_sha256": "3875bbfa2eb1f81f6402716386d38c9581f6fd4f72daac9fc9cecf226824dae4"
+        }
+      ],
+      "preserved_files": [
+        {
+          "file": "ubuntu2204-glibc/raw/application/application-3.12.control.trace.gz",
+          "uncompressed_sha256": "eed032c344c9c6ad0b74df0518c5ee719fc35370eb8da6b63950523b4780b318"
+        },
+        {
+          "file": "ubuntu2204-glibc/raw/application/application-3.12.corpus.trace.gz",
+          "uncompressed_sha256": "9cf79b3b4369d16a275b7b4862b080cd232a31d5f829c78dc9e034f9f4554922"
+        },
+        {
+          "file": "ubuntu2204-glibc/raw/application/application-3.12.json.gz",
+          "uncompressed_sha256": "7758ed1c97231eab87e008320e0132a7215a408bf0c1f1b9852a7741e6459c9d"
+        },
+        {
+          "file": "ubuntu2204-glibc/raw/application/application-3.14.control.trace.gz",
+          "uncompressed_sha256": "6e59590470e1118436d3945c627cfc968419fe5ee525b6c97fbcf99d2f87f332"
+        },
+        {
+          "file": "ubuntu2204-glibc/raw/application/application-3.14.corpus.trace.gz",
+          "uncompressed_sha256": "2bc6d3634b07f747dd4242dacf643249c69297e33f50dfc2a7d649b22072761a"
+        },
+        {
+          "file": "ubuntu2204-glibc/raw/application/application-3.14.json.gz",
+          "uncompressed_sha256": "324e8868826b786878a86a651c9f7d488f5b061c3d4082b2194b35460efbc566"
+        },
+        {
+          "file": "ubuntu2204-glibc/raw/application-wheel.json.gz",
+          "uncompressed_sha256": "c3b96d09d9fdd31dece04f3e942a2b45e34a415b2d1b5a096d347d3e0dff325f"
+        },
+        {
+          "file": "ubuntu2204-glibc/raw/candidate.json.gz",
+          "uncompressed_sha256": "c8082229092e00cd23724017f328e31f9627766eccef1e463e7e24219957fc81"
+        },
+        {
+          "file": "ubuntu2204-glibc/raw/guest/border_only.json.gz",
+          "uncompressed_sha256": "1eea0fc0bd90ab230248b274d385a91c88067c813f702527639efad35aa60850"
+        },
+        {
+          "file": "ubuntu2204-glibc/raw/guest/clean.json.gz",
+          "uncompressed_sha256": "7a3bdb8a5693fdd5a2a3c86d7bf32c43000c23a8470540ebfdc56e5785a6eb61"
+        },
+        {
+          "file": "ubuntu2204-glibc/raw/guest/coincident.json.gz",
+          "uncompressed_sha256": "5e0ee8f776d419bce61a9ef6bb6dca73866497a347f4ef3b52bed5f96e12bd04"
+        },
+        {
+          "file": "ubuntu2204-glibc/raw/guest/connected_overlap.json.gz",
+          "uncompressed_sha256": "d30afcda91fa423e11958945cbd7324bea5dc1ef40e23fb9f7d5d06e18d9fb07"
+        },
+        {
+          "file": "ubuntu2204-glibc/raw/guest/crossing.json.gz",
+          "uncompressed_sha256": "284ecd02a8c8b5cabd1bc09352bfd64cfd71aa34eaec4e764925e70ea2b9c6c7"
+        },
+        {
+          "file": "ubuntu2204-glibc/raw/guest/cycle.json.gz",
+          "uncompressed_sha256": "2f1e24cf016fb935e170999e67246b99557f19f7b3e633c83fad4f030eaf5d8f"
+        },
+        {
+          "file": "ubuntu2204-glibc/raw/guest/empty.json.gz",
+          "uncompressed_sha256": "c599e92f4b1b099fd97fde1f3a07dae747a365a17037f880a333f786f6cf2d27"
+        },
+        {
+          "file": "ubuntu2204-glibc/raw/guest/guest.json.gz",
+          "uncompressed_sha256": "1a2f639a01290372b7ff3fe81280dcd14feaf688fb71e14ff046269f312c4ed8"
+        },
+        {
+          "file": "ubuntu2204-glibc/raw/guest/isolated_overlap.json.gz",
+          "uncompressed_sha256": "e0969b0682d5aa7645769edd3aab25cd2100ee85a3d57f46482ef8296eb70beb"
+        },
+        {
+          "file": "ubuntu2204-glibc/raw/guest/ldd.txt.gz",
+          "uncompressed_sha256": "f2c5f65da57ca833c103ee0fc48a8c8b5faa909df4bde8388bc763a24eb960c4"
+        },
+        {
+          "file": "ubuntu2204-glibc/raw/guest/parallel_occurrences.json.gz",
+          "uncompressed_sha256": "345be09eb92400e407864362825da08e4c37613689a2e685ed16fed8121b36df"
+        },
+        {
+          "file": "ubuntu2204-glibc/raw/guest/reciprocal.json.gz",
+          "uncompressed_sha256": "5619900998072691afd222022786f6145fa98e50cf1da7b7aae8de0b8644d835"
+        },
+        {
+          "file": "ubuntu2204-glibc/raw/guest/self_loop.json.gz",
+          "uncompressed_sha256": "059eef51012c99eea5f8ff6918586b9b42d581ea871d246ccfaa963ab3ffd562"
+        },
+        {
+          "file": "ubuntu2204-glibc/raw/guest/through_connected.json.gz",
+          "uncompressed_sha256": "5e0ee8f776d419bce61a9ef6bb6dca73866497a347f4ef3b52bed5f96e12bd04"
+        },
+        {
+          "file": "ubuntu2204-glibc/raw/guest/through_isolated.json.gz",
+          "uncompressed_sha256": "8ba7f17057625b767efc6c251e977059d2e7e8a002b3ea2a951699025ece3dfb"
+        },
+        {
+          "file": "ubuntu2204-glibc/raw/inventory.json.gz",
+          "uncompressed_sha256": "4a737fb736a546d95ea7feb977d4ad93b64abfed70ee12d68cff9f545749b914"
+        },
+        {
+          "file": "ubuntu2204-glibc/raw/private-python-pins.json.gz",
+          "uncompressed_sha256": "02f97d887e2f970ad5c2472c215710a043a0c3d9d1f661f17c33aaa3bd60a81c"
+        },
+        {
+          "file": "ubuntu2204-glibc/raw/private-python-report.json.gz",
+          "uncompressed_sha256": "6b9d7aeeadb90ff7378c78f4840a5fb87669d9585a47cbce7f96efc79c91e76e"
+        },
+        {
+          "file": "ubuntu2204-glibc/raw/provenance.json.gz",
+          "uncompressed_sha256": "f1cd182f06cb1ff572d474c2fed023b9b4508b1c39d012260f96fbb3d1d46495"
+        },
+        {
+          "file": "ubuntu2204-glibc/raw/qemu.log.gz",
+          "uncompressed_sha256": "346eac1bdadff276bbb23e99fd2bc0a22249d1ddd2667c682772328fc5babb95"
+        },
+        {
+          "file": "ubuntu2204-glibc/raw/qmp-kvm.json.gz",
+          "uncompressed_sha256": "11ea5a70b9ea4a315991cc7f0c58c8f9f78449e51b54287810d861c386312ffc"
+        },
+        {
+          "file": "ubuntu2204-glibc/raw/serial.log.gz",
+          "uncompressed_sha256": "8b47f99cb9eec3fba8cbafd9021aea6ca8e90c2d3313c17e2173756ba1b66aae"
+        },
+        {
+          "file": "ubuntu2204-glibc/raw/summary.json.gz",
+          "uncompressed_sha256": "26da32d07df259376d7b9196af457ce79318bead8511804252b89e8bd1e9be82"
+        }
+      ]
+    },
+    {
+      "release": "26.04",
+      "abi": "glibc",
+      "run_id": 40576914797,
+      "actions_artifact_id": 12768087272,
+      "actions_archive_sha256": "e55f097ce4f0793cd6cef1864a39033fc3052e49c289e6a7912d32a3d35a0d28",
+      "native_summary_sha256": "f7fc7ff552806eb51d4e0535887548aee98d4de6b46e6bd6f4cc4816bcd756dd",
+      "kernel": "7.0.0-38-generic",
+      "glibc": "glibc 2.43",
+      "arch": "x86_64",
+      "kvm": {
+        "enabled": true,
+        "present": true
+      },
+      "engine_sha256": "43ce8d686720467c21be91cab4b8f3b246baae49c2cfe293714ebdf8a82f5716",
+      "candidate_revision": "a825f0d80bd7892de0e307656d28070885a9d1ed",
+      "image_pin": {
+        "url": "https://cloud-images.ubuntu.com/releases/resolute/release-20261016/ubuntu-26.04-server-cloudimg-amd64.img",
+        "size": 859090944,
+        "sha256": "5645d0318ad21f643ebb1ac4567514620e9893380b07b0201fda163baa5b7eb5",
+        "checksum_manifest_url": "https://cloud-images.ubuntu.com/releases/resolute/release-20261016/SHA256SUMS",
+        "checksum_manifest_sha256": "489dd5ab1206aba5cb21769e8095e911feb01a313aec448e4bdc291f918b6549",
+        "package_manifest_url": "https://cloud-images.ubuntu.com/releases/resolute/release-20261016/ubuntu-26.04-server-cloudimg-amd64.manifest",
+        "package_manifest_sha256": "d52adb4ae5a731dcbed5ebe664757d248f6c0994dc6230c88891f1763a818083",
+        "release": "26.04",
+        "arch": "x86_64",
+        "scope": "Historical image for private native-kernel tests; no support qualification"
+      },
+      "cases": 13,
+      "geometry_decoded": true,
+      "system_python_unchanged": true,
+      "python_slots": [
+        {
+          "python": "3.12.15",
+          "minor": "3.12",
+          "cases": 13,
+          "known_zero_references": 6,
+          "recovery_scenarios": 8,
+          "offline_reference_runs": 48,
+          "dot_executions": 389,
+          "native_network_syscalls": {},
+          "installed_files_verified": 53,
+          "report_sha256": "7f800e7042a648774499879e3fc8d40f3f032e19ad7d1c5b981a8a2f01b5fa5b",
+          "wheel_sha256": "e0da017eba99af76bcb1ec88b5e0fd3ef78c6e51c9ec9ef951f395884c25e2b2"
+        },
+        {
+          "python": "3.14.8",
+          "minor": "3.14",
+          "cases": 13,
+          "known_zero_references": 6,
+          "recovery_scenarios": 8,
+          "offline_reference_runs": 48,
+          "dot_executions": 389,
+          "native_network_syscalls": {},
+          "installed_files_verified": 53,
+          "report_sha256": "98d2483e430b275bcb220a7795b0401a1e314a94daf8da16010a341cd1f95695",
+          "wheel_sha256": "e0da017eba99af76bcb1ec88b5e0fd3ef78c6e51c9ec9ef951f395884c25e2b2"
+        }
+      ],
+      "preserved_files": [
+        {
+          "file": "ubuntu2604-glibc/raw/application/application-3.12.control.trace.gz",
+          "uncompressed_sha256": "be8a81dd5dd184689f0727821805ac6c778425c95ec3b686da45ef1528c3b3c4"
+        },
+        {
+          "file": "ubuntu2604-glibc/raw/application/application-3.12.corpus.trace.gz",
+          "uncompressed_sha256": "bf81a67f149a747a31400ce5401b57f0cef650d5988b9bbf4805d6c28dd6a868"
+        },
+        {
+          "file": "ubuntu2604-glibc/raw/application/application-3.12.json.gz",
+          "uncompressed_sha256": "7f800e7042a648774499879e3fc8d40f3f032e19ad7d1c5b981a8a2f01b5fa5b"
+        },
+        {
+          "file": "ubuntu2604-glibc/raw/application/application-3.14.control.trace.gz",
+          "uncompressed_sha256": "f64cf1baea0a788e078cdfcbf35c53686c9315a33c77b5989c4e97c97affd9c1"
+        },
+        {
+          "file": "ubuntu2604-glibc/raw/application/application-3.14.corpus.trace.gz",
+          "uncompressed_sha256": "6a27a01bad0ff17d5f638d897a882727b6bb8feeda6f2e6691152a8da39e6968"
+        },
+        {
+          "file": "ubuntu2604-glibc/raw/application/application-3.14.json.gz",
+          "uncompressed_sha256": "98d2483e430b275bcb220a7795b0401a1e314a94daf8da16010a341cd1f95695"
+        },
+        {
+          "file": "ubuntu2604-glibc/raw/application-wheel.json.gz",
+          "uncompressed_sha256": "b49c80d6da3908af8f9b072592ddbefbe5d0895a15376bcad477eb045f111da7"
+        },
+        {
+          "file": "ubuntu2604-glibc/raw/candidate.json.gz",
+          "uncompressed_sha256": "c8082229092e00cd23724017f328e31f9627766eccef1e463e7e24219957fc81"
+        },
+        {
+          "file": "ubuntu2604-glibc/raw/guest/border_only.json.gz",
+          "uncompressed_sha256": "1eea0fc0bd90ab230248b274d385a91c88067c813f702527639efad35aa60850"
+        },
+        {
+          "file": "ubuntu2604-glibc/raw/guest/clean.json.gz",
+          "uncompressed_sha256": "7a3bdb8a5693fdd5a2a3c86d7bf32c43000c23a8470540ebfdc56e5785a6eb61"
+        },
+        {
+          "file": "ubuntu2604-glibc/raw/guest/coincident.json.gz",
+          "uncompressed_sha256": "5e0ee8f776d419bce61a9ef6bb6dca73866497a347f4ef3b52bed5f96e12bd04"
+        },
+        {
+          "file": "ubuntu2604-glibc/raw/guest/connected_overlap.json.gz",
+          "uncompressed_sha256": "d30afcda91fa423e11958945cbd7324bea5dc1ef40e23fb9f7d5d06e18d9fb07"
+        },
+        {
+          "file": "ubuntu2604-glibc/raw/guest/crossing.json.gz",
+          "uncompressed_sha256": "284ecd02a8c8b5cabd1bc09352bfd64cfd71aa34eaec4e764925e70ea2b9c6c7"
+        },
+        {
+          "file": "ubuntu2604-glibc/raw/guest/cycle.json.gz",
+          "uncompressed_sha256": "2f1e24cf016fb935e170999e67246b99557f19f7b3e633c83fad4f030eaf5d8f"
+        },
+        {
+          "file": "ubuntu2604-glibc/raw/guest/empty.json.gz",
+          "uncompressed_sha256": "c599e92f4b1b099fd97fde1f3a07dae747a365a17037f880a333f786f6cf2d27"
+        },
+        {
+          "file": "ubuntu2604-glibc/raw/guest/guest.json.gz",
+          "uncompressed_sha256": "7ccf9fde4f1718327d07ed4b89e6a61a3e7f25338bee2b33b1212348991d7ce1"
+        },
+        {
+          "file": "ubuntu2604-glibc/raw/guest/isolated_overlap.json.gz",
+          "uncompressed_sha256": "e0969b0682d5aa7645769edd3aab25cd2100ee85a3d57f46482ef8296eb70beb"
+        },
+        {
+          "file": "ubuntu2604-glibc/raw/guest/ldd.txt.gz",
+          "uncompressed_sha256": "6228bf2cd022b377a5e7f9737b6b06a3a6683873eae940095aa577d4fd374e58"
+        },
+        {
+          "file": "ubuntu2604-glibc/raw/guest/parallel_occurrences.json.gz",
+          "uncompressed_sha256": "345be09eb92400e407864362825da08e4c37613689a2e685ed16fed8121b36df"
+        },
+        {
+          "file": "ubuntu2604-glibc/raw/guest/reciprocal.json.gz",
+          "uncompressed_sha256": "5619900998072691afd222022786f6145fa98e50cf1da7b7aae8de0b8644d835"
+        },
+        {
+          "file": "ubuntu2604-glibc/raw/guest/self_loop.json.gz",
+          "uncompressed_sha256": "059eef51012c99eea5f8ff6918586b9b42d581ea871d246ccfaa963ab3ffd562"
+        },
+        {
+          "file": "ubuntu2604-glibc/raw/guest/through_connected.json.gz",
+          "uncompressed_sha256": "5e0ee8f776d419bce61a9ef6bb6dca73866497a347f4ef3b52bed5f96e12bd04"
+        },
+        {
+          "file": "ubuntu2604-glibc/raw/guest/through_isolated.json.gz",
+          "uncompressed_sha256": "8ba7f17057625b767efc6c251e977059d2e7e8a002b3ea2a951699025ece3dfb"
+        },
+        {
+          "file": "ubuntu2604-glibc/raw/inventory.json.gz",
+          "uncompressed_sha256": "4a737fb736a546d95ea7feb977d4ad93b64abfed70ee12d68cff9f545749b914"
+        },
+        {
+          "file": "ubuntu2604-glibc/raw/private-python-pins.json.gz",
+          "uncompressed_sha256": "02f97d887e2f970ad5c2472c215710a043a0c3d9d1f661f17c33aaa3bd60a81c"
+        },
+        {
+          "file": "ubuntu2604-glibc/raw/private-python-report.json.gz",
+          "uncompressed_sha256": "d7f171ba90468fa0e37d3f537c9c7fa03a99534fc4ca120051865fd5f687963d"
+        },
+        {
+          "file": "ubuntu2604-glibc/raw/provenance.json.gz",
+          "uncompressed_sha256": "f1cd182f06cb1ff572d474c2fed023b9b4508b1c39d012260f96fbb3d1d46495"
+        },
+        {
+          "file": "ubuntu2604-glibc/raw/qemu.log.gz",
+          "uncompressed_sha256": "a4dec51a332e8d9d769d7a42683b4735821c6a6496ccf2b848ff0bc799d0e7ff"
+        },
+        {
+          "file": "ubuntu2604-glibc/raw/qmp-kvm.json.gz",
+          "uncompressed_sha256": "11ea5a70b9ea4a315991cc7f0c58c8f9f78449e51b54287810d861c386312ffc"
+        },
+        {
+          "file": "ubuntu2604-glibc/raw/serial.log.gz",
+          "uncompressed_sha256": "7f7660b148170daa7c55a19ad92e318e4121baabaa07263b878c090fc5daff4f"
+        },
+        {
+          "file": "ubuntu2604-glibc/raw/summary.json.gz",
+          "uncompressed_sha256": "f7fc7ff552806eb51d4e0535887548aee98d4de6b46e6bd6f4cc4816bcd756dd"
+        }
+      ]
+    },
+    {
+      "release": "20.04",
+      "abi": "glibc",
+      "run_id": 40576914797,
+      "actions_artifact_id": 12767378938,
+      "actions_archive_sha256": "8eb9088135121a8e9dc617885c2375728c382f146ecc79ba7afdf6d0f008f3f5",
+      "native_summary_sha256": "b9f9407d1466abbc3de31689a93dea0730762dfbbb0cca52a3630dd6d8fc7f1f",
+      "kernel": "5.4.0-216-generic",
+      "glibc": "glibc 2.31",
+      "arch": "x86_64",
+      "kvm": {
+        "enabled": true,
+        "present": true
+      },
+      "engine_sha256": "43ce8d686720467c21be91cab4b8f3b246baae49c2cfe293714ebdf8a82f5716",
+      "candidate_revision": "a825f0d80bd7892de0e307656d28070885a9d1ed",
+      "image_pin": {
+        "url": "https://cloud-images.ubuntu.com/releases/focal/release-20250516/ubuntu-20.04-server-cloudimg-amd64.img",
+        "size": 647783424,
+        "sha256": "3d5a77f8f6a240cd3478c24cc4d0a11a823236b03868d79a432906c394b835a9",
+        "checksum_manifest_url": "https://cloud-images.ubuntu.com/releases/focal/release-20250516/SHA256SUMS",
+        "checksum_manifest_sha256": "85b662b5a7dab3aa7336f2bd6e4e8fb7dc4f07c1f8817db9f7e9d72dca4fc4a4",
+        "package_manifest_url": "https://cloud-images.ubuntu.com/releases/focal/release-20250516/ubuntu-20.04-server-cloudimg-amd64.manifest",
+        "package_manifest_sha256": "d08b3218695da3fcc06c5683fc9faa2d57bdbca3f0e8407a02d1d9cb10df6b31",
+        "release": "20.04",
+        "arch": "x86_64",
+        "scope": "Historical image for private native-kernel tests; no ESM entitlement or support qualification"
+      },
+      "cases": 13,
+      "geometry_decoded": true,
+      "system_python_unchanged": true,
+      "python_slots": [
+        {
+          "python": "3.12.15",
+          "minor": "3.12",
+          "cases": 13,
+          "known_zero_references": 6,
+          "recovery_scenarios": 8,
+          "offline_reference_runs": 48,
+          "dot_executions": 389,
+          "native_network_syscalls": {},
+          "installed_files_verified": 53,
+          "report_sha256": "55db1d82264a1cfc6cff6b7c5076dace48b5eacdc565fc0d86d73549ee91c584",
+          "wheel_sha256": "d74e43d741d42208a61a44a991af73b0dd7416e7cb3eb0f4a92d4a5bc761555d"
+        },
+        {
+          "python": "3.14.8",
+          "minor": "3.14",
+          "cases": 13,
+          "known_zero_references": 6,
+          "recovery_scenarios": 8,
+          "offline_reference_runs": 48,
+          "dot_executions": 389,
+          "native_network_syscalls": {},
+          "installed_files_verified": 53,
+          "report_sha256": "8f1cfaf82fe8318d6c017b748fd63f4f413aea1a8fc13082d7345387941029e3",
+          "wheel_sha256": "d74e43d741d42208a61a44a991af73b0dd7416e7cb3eb0f4a92d4a5bc761555d"
+        }
+      ],
+      "preserved_files": [
+        {
+          "file": "ubuntu2004-glibc/raw/application/application-3.12.control.trace.gz",
+          "uncompressed_sha256": "d653497599226a04711c7f38f0271520643ca34a96230daab620e594d7745c3e"
+        },
+        {
+          "file": "ubuntu2004-glibc/raw/application/application-3.12.corpus.trace.gz",
+          "uncompressed_sha256": "5f9f4f68726a7d34cabbb6943e3fa989744f5ad563367d72bc92b597c0efacd2"
+        },
+        {
+          "file": "ubuntu2004-glibc/raw/application/application-3.12.json.gz",
+          "uncompressed_sha256": "55db1d82264a1cfc6cff6b7c5076dace48b5eacdc565fc0d86d73549ee91c584"
+        },
+        {
+          "file": "ubuntu2004-glibc/raw/application/application-3.14.control.trace.gz",
+          "uncompressed_sha256": "99d57c9f46fa5c70233e2ea1563249b6d923d278739a70a2876e77b056ffa9d1"
+        },
+        {
+          "file": "ubuntu2004-glibc/raw/application/application-3.14.corpus.trace.gz",
+          "uncompressed_sha256": "eb2d559dc34b7e5d40fc7eb3b9d622f63cbe5b2fea17e58dfcd3c15f1ac2f2bf"
+        },
+        {
+          "file": "ubuntu2004-glibc/raw/application/application-3.14.json.gz",
+          "uncompressed_sha256": "8f1cfaf82fe8318d6c017b748fd63f4f413aea1a8fc13082d7345387941029e3"
+        },
+        {
+          "file": "ubuntu2004-glibc/raw/application-wheel.json.gz",
+          "uncompressed_sha256": "03445a0143ac5471afd70f7e9bb97604566ab0c37b341963d7f254a2e8856db1"
+        },
+        {
+          "file": "ubuntu2004-glibc/raw/candidate.json.gz",
+          "uncompressed_sha256": "c8082229092e00cd23724017f328e31f9627766eccef1e463e7e24219957fc81"
+        },
+        {
+          "file": "ubuntu2004-glibc/raw/guest/border_only.json.gz",
+          "uncompressed_sha256": "1eea0fc0bd90ab230248b274d385a91c88067c813f702527639efad35aa60850"
+        },
+        {
+          "file": "ubuntu2004-glibc/raw/guest/clean.json.gz",
+          "uncompressed_sha256": "7a3bdb8a5693fdd5a2a3c86d7bf32c43000c23a8470540ebfdc56e5785a6eb61"
+        },
+        {
+          "file": "ubuntu2004-glibc/raw/guest/coincident.json.gz",
+          "uncompressed_sha256": "5e0ee8f776d419bce61a9ef6bb6dca73866497a347f4ef3b52bed5f96e12bd04"
+        },
+        {
+          "file": "ubuntu2004-glibc/raw/guest/connected_overlap.json.gz",
+          "uncompressed_sha256": "d30afcda91fa423e11958945cbd7324bea5dc1ef40e23fb9f7d5d06e18d9fb07"
+        },
+        {
+          "file": "ubuntu2004-glibc/raw/guest/crossing.json.gz",
+          "uncompressed_sha256": "284ecd02a8c8b5cabd1bc09352bfd64cfd71aa34eaec4e764925e70ea2b9c6c7"
+        },
+        {
+          "file": "ubuntu2004-glibc/raw/guest/cycle.json.gz",
+          "uncompressed_sha256": "2f1e24cf016fb935e170999e67246b99557f19f7b3e633c83fad4f030eaf5d8f"
+        },
+        {
+          "file": "ubuntu2004-glibc/raw/guest/empty.json.gz",
+          "uncompressed_sha256": "c599e92f4b1b099fd97fde1f3a07dae747a365a17037f880a333f786f6cf2d27"
+        },
+        {
+          "file": "ubuntu2004-glibc/raw/guest/guest.json.gz",
+          "uncompressed_sha256": "7a630e6f952076a1a02e5a338b300d7f8c458cdbecf4f95712b4ea78cb650320"
+        },
+        {
+          "file": "ubuntu2004-glibc/raw/guest/isolated_overlap.json.gz",
+          "uncompressed_sha256": "e0969b0682d5aa7645769edd3aab25cd2100ee85a3d57f46482ef8296eb70beb"
+        },
+        {
+          "file": "ubuntu2004-glibc/raw/guest/ldd.txt.gz",
+          "uncompressed_sha256": "6429ca1f08f7d8d97ceaacc0db10fa09d6254f6746fda9a1dbcdc798127b0258"
+        },
+        {
+          "file": "ubuntu2004-glibc/raw/guest/parallel_occurrences.json.gz",
+          "uncompressed_sha256": "345be09eb92400e407864362825da08e4c37613689a2e685ed16fed8121b36df"
+        },
+        {
+          "file": "ubuntu2004-glibc/raw/guest/reciprocal.json.gz",
+          "uncompressed_sha256": "5619900998072691afd222022786f6145fa98e50cf1da7b7aae8de0b8644d835"
+        },
+        {
+          "file": "ubuntu2004-glibc/raw/guest/self_loop.json.gz",
+          "uncompressed_sha256": "059eef51012c99eea5f8ff6918586b9b42d581ea871d246ccfaa963ab3ffd562"
+        },
+        {
+          "file": "ubuntu2004-glibc/raw/guest/through_connected.json.gz",
+          "uncompressed_sha256": "5e0ee8f776d419bce61a9ef6bb6dca73866497a347f4ef3b52bed5f96e12bd04"
+        },
+        {
+          "file": "ubuntu2004-glibc/raw/guest/through_isolated.json.gz",
+          "uncompressed_sha256": "8ba7f17057625b767efc6c251e977059d2e7e8a002b3ea2a951699025ece3dfb"
+        },
+        {
+          "file": "ubuntu2004-glibc/raw/inventory.json.gz",
+          "uncompressed_sha256": "4a737fb736a546d95ea7feb977d4ad93b64abfed70ee12d68cff9f545749b914"
+        },
+        {
+          "file": "ubuntu2004-glibc/raw/private-python-pins.json.gz",
+          "uncompressed_sha256": "02f97d887e2f970ad5c2472c215710a043a0c3d9d1f661f17c33aaa3bd60a81c"
+        },
+        {
+          "file": "ubuntu2004-glibc/raw/provenance.json.gz",
+          "uncompressed_sha256": "f1cd182f06cb1ff572d474c2fed023b9b4508b1c39d012260f96fbb3d1d46495"
+        },
+        {
+          "file": "ubuntu2004-glibc/raw/private-python-report.json.gz",
+          "uncompressed_sha256": "14a13a6bfdbc7571a3c7b096b6d8fa5061580d619bf09566b40d07c8b4657ffd"
+        },
+        {
+          "file": "ubuntu2004-glibc/raw/qemu.log.gz",
+          "uncompressed_sha256": "e0bb1449f84c72bfc84a3e6a9d68e48bff5d23bfc7f81278e280de19b0b9ff8d"
+        },
+        {
+          "file": "ubuntu2004-glibc/raw/qmp-kvm.json.gz",
+          "uncompressed_sha256": "11ea5a70b9ea4a315991cc7f0c58c8f9f78449e51b54287810d861c386312ffc"
+        },
+        {
+          "file": "ubuntu2004-glibc/raw/serial.log.gz",
+          "uncompressed_sha256": "9f119517d7efc4e4f603150800cde73561a1d744c375762d2daf15f29d544032"
+        },
+        {
+          "file": "ubuntu2004-glibc/raw/summary.json.gz",
+          "uncompressed_sha256": "b9f9407d1466abbc3de31689a93dea0730762dfbbb0cca52a3630dd6d8fc7f1f"
+        }
+      ]
+    },
+    {
+      "release": "20.04",
+      "abi": "musl",
+      "run_id": 40576914797,
+      "actions_artifact_id": 12767029942,
+      "actions_archive_sha256": "00fc7dc31fb177b24a130cf53b59d6cd218b9d7f0baab3a6bbea6569972f2069",
+      "native_summary_sha256": "74167ca49a641c4974a52c3a65189ff05048a591af2cee2118f2891da48c29a1",
+      "kernel": "5.4.0-216-generic",
+      "glibc": "glibc 2.31",
+      "arch": "x86_64",
+      "kvm": {
+        "enabled": true,
+        "present": true
+      },
+      "engine_sha256": "f4dfee4e052704b1a7efdb7b6a4c43583ccaa062aec800b76224dae24eb2b69b",
+      "candidate_revision": "a825f0d80bd7892de0e307656d28070885a9d1ed",
+      "image_pin": {
+        "url": "https://cloud-images.ubuntu.com/releases/focal/release-20250516/ubuntu-20.04-server-cloudimg-amd64.img",
+        "size": 647783424,
+        "sha256": "3d5a77f8f6a240cd3478c24cc4d0a11a823236b03868d79a432906c394b835a9",
+        "checksum_manifest_url": "https://cloud-images.ubuntu.com/releases/focal/release-20250516/SHA256SUMS",
+        "checksum_manifest_sha256": "85b662b5a7dab3aa7336f2bd6e4e8fb7dc4f07c1f8817db9f7e9d72dca4fc4a4",
+        "package_manifest_url": "https://cloud-images.ubuntu.com/releases/focal/release-20250516/ubuntu-20.04-server-cloudimg-amd64.manifest",
+        "package_manifest_sha256": "d08b3218695da3fcc06c5683fc9faa2d57bdbca3f0e8407a02d1d9cb10df6b31",
+        "release": "20.04",
+        "arch": "x86_64",
+        "scope": "Historical image for private native-kernel tests; no ESM entitlement or support qualification"
+      },
+      "cases": 13,
+      "geometry_decoded": true,
+      "system_python_unchanged": null,
+      "python_slots": [],
+      "preserved_files": [
+        {
+          "file": "ubuntu2004-musl/raw/guest/border_only.json.gz",
+          "uncompressed_sha256": "1eea0fc0bd90ab230248b274d385a91c88067c813f702527639efad35aa60850"
+        },
+        {
+          "file": "ubuntu2004-musl/raw/guest/clean.json.gz",
+          "uncompressed_sha256": "7a3bdb8a5693fdd5a2a3c86d7bf32c43000c23a8470540ebfdc56e5785a6eb61"
+        },
+        {
+          "file": "ubuntu2004-musl/raw/candidate.json.gz",
+          "uncompressed_sha256": "e60de0f61bb8bc31eedc7250d427d64492114730924711568700e9eb1bbd509a"
+        },
+        {
+          "file": "ubuntu2004-musl/raw/guest/coincident.json.gz",
+          "uncompressed_sha256": "5e0ee8f776d419bce61a9ef6bb6dca73866497a347f4ef3b52bed5f96e12bd04"
+        },
+        {
+          "file": "ubuntu2004-musl/raw/guest/connected_overlap.json.gz",
+          "uncompressed_sha256": "d30afcda91fa423e11958945cbd7324bea5dc1ef40e23fb9f7d5d06e18d9fb07"
+        },
+        {
+          "file": "ubuntu2004-musl/raw/guest/crossing.json.gz",
+          "uncompressed_sha256": "284ecd02a8c8b5cabd1bc09352bfd64cfd71aa34eaec4e764925e70ea2b9c6c7"
+        },
+        {
+          "file": "ubuntu2004-musl/raw/guest/cycle.json.gz",
+          "uncompressed_sha256": "2f1e24cf016fb935e170999e67246b99557f19f7b3e633c83fad4f030eaf5d8f"
+        },
+        {
+          "file": "ubuntu2004-musl/raw/guest/empty.json.gz",
+          "uncompressed_sha256": "c599e92f4b1b099fd97fde1f3a07dae747a365a17037f880a333f786f6cf2d27"
+        },
+        {
+          "file": "ubuntu2004-musl/raw/guest/guest.json.gz",
+          "uncompressed_sha256": "8d73237d9d59cfe30d88c4bf2d965cfb7ef88324d0ba30502767e02e10617f45"
+        },
+        {
+          "file": "ubuntu2004-musl/raw/guest/isolated_overlap.json.gz",
+          "uncompressed_sha256": "e0969b0682d5aa7645769edd3aab25cd2100ee85a3d57f46482ef8296eb70beb"
+        },
+        {
+          "file": "ubuntu2004-musl/raw/guest/parallel_occurrences.json.gz",
+          "uncompressed_sha256": "345be09eb92400e407864362825da08e4c37613689a2e685ed16fed8121b36df"
+        },
+        {
+          "file": "ubuntu2004-musl/raw/guest/reciprocal.json.gz",
+          "uncompressed_sha256": "5619900998072691afd222022786f6145fa98e50cf1da7b7aae8de0b8644d835"
+        },
+        {
+          "file": "ubuntu2004-musl/raw/guest/self_loop.json.gz",
+          "uncompressed_sha256": "059eef51012c99eea5f8ff6918586b9b42d581ea871d246ccfaa963ab3ffd562"
+        },
+        {
+          "file": "ubuntu2004-musl/raw/guest/through_connected.json.gz",
+          "uncompressed_sha256": "5e0ee8f776d419bce61a9ef6bb6dca73866497a347f4ef3b52bed5f96e12bd04"
+        },
+        {
+          "file": "ubuntu2004-musl/raw/guest/through_isolated.json.gz",
+          "uncompressed_sha256": "8ba7f17057625b767efc6c251e977059d2e7e8a002b3ea2a951699025ece3dfb"
+        },
+        {
+          "file": "ubuntu2004-musl/raw/inventory.json.gz",
+          "uncompressed_sha256": "50ea548c3acfb054fc63c6264ca78fdb05d1d5628b77666789827f9de6e16b82"
+        },
+        {
+          "file": "ubuntu2004-musl/raw/qemu.log.gz",
+          "uncompressed_sha256": "beca2b3944443f819ea421167c081c12cc33a08f1feb3fe2d7d3c804ddc268a7"
+        },
+        {
+          "file": "ubuntu2004-musl/raw/provenance.json.gz",
+          "uncompressed_sha256": "54ed1980bf2b3ed9c1889e6640a7b000aaee6d0fc686875423239ebe95be9c9c"
+        },
+        {
+          "file": "ubuntu2004-musl/raw/qmp-kvm.json.gz",
+          "uncompressed_sha256": "11ea5a70b9ea4a315991cc7f0c58c8f9f78449e51b54287810d861c386312ffc"
+        },
+        {
+          "file": "ubuntu2004-musl/raw/serial.log.gz",
+          "uncompressed_sha256": "ec442462fef98c348d6fc26536c92218e1cac6c84430a6a5b215a520e35288db"
+        },
+        {
+          "file": "ubuntu2004-musl/raw/summary.json.gz",
+          "uncompressed_sha256": "74167ca49a641c4974a52c3a65189ff05048a591af2cee2118f2891da48c29a1"
+        }
+      ]
+    },
+    {
+      "release": "18.04",
+      "abi": "glibc",
+      "run_id": 40576914754,
+      "actions_artifact_id": 12768486013,
+      "actions_archive_sha256": "f9163b78017685e34bf1d1112c8b13d7ae8bf4fdedb1a27aaac2740926f99177",
+      "native_summary_sha256": "b9a9d197591f7171b4b27d633d1c70e85319456a9767c764bd93afc6f4ddfd06",
+      "kernel": "4.15.0-212-generic",
+      "glibc": "glibc 2.27",
+      "arch": "x86_64",
+      "kvm": {
+        "enabled": true,
+        "present": true
+      },
+      "engine_sha256": "43ce8d686720467c21be91cab4b8f3b246baae49c2cfe293714ebdf8a82f5716",
+      "candidate_revision": "a825f0d80bd7892de0e307656d28070885a9d1ed",
+      "image_pin": {
+        "url": "https://cloud-images.ubuntu.com/releases/bionic/release-20230607/ubuntu-18.04-server-cloudimg-amd64.img",
+        "size": 405667840,
+        "sha256": "8dd2e6b5e5aad20c3f836123b300cba9861249408cbb07c359145a65d6bab6b6",
+        "checksum_manifest_url": "https://cloud-images.ubuntu.com/releases/bionic/release-20230607/SHA256SUMS",
+        "checksum_manifest_sha256": "74aba2ff5163772fe09e10b50e2da28f357d15d77b97e033ef8a26afd09dc161",
+        "release": "18.04",
+        "arch": "x86_64",
+        "scope": "Historical baseline only; security maintenance and complete cell acceptance are not approved"
+      },
+      "cases": 13,
+      "geometry_decoded": true,
+      "system_python_unchanged": true,
+      "python_slots": [
+        {
+          "python": "3.12.15",
+          "minor": "3.12",
+          "cases": 13,
+          "known_zero_references": 6,
+          "recovery_scenarios": 8,
+          "offline_reference_runs": 48,
+          "dot_executions": 389,
+          "native_network_syscalls": {},
+          "installed_files_verified": 53,
+          "report_sha256": "cdb0b5e7ea1cca93a9f702030774b6a2bcb6be28f15faf4c3db126d097835537",
+          "wheel_sha256": "8203ee679c969e56f2dc0cf56d3215ff9023f72a12f28ea682b1dd03c0dc7136"
+        },
+        {
+          "python": "3.14.8",
+          "minor": "3.14",
+          "cases": 13,
+          "known_zero_references": 6,
+          "recovery_scenarios": 8,
+          "offline_reference_runs": 48,
+          "dot_executions": 389,
+          "native_network_syscalls": {},
+          "installed_files_verified": 53,
+          "report_sha256": "687a481bb0e8a814622262b4dc9e6ce5ade90e413bcabf3b931933be923e411b",
+          "wheel_sha256": "8203ee679c969e56f2dc0cf56d3215ff9023f72a12f28ea682b1dd03c0dc7136"
+        }
+      ],
+      "preserved_files": [
+        {
+          "file": "ubuntu1804-glibc/raw/application/application-3.12.corpus.trace.gz",
+          "uncompressed_sha256": "4b5737395dc64ad135b9fa5069109fd06310088eb1a41f1d07d3b3abad69c6ab"
+        },
+        {
+          "file": "ubuntu1804-glibc/raw/application/application-3.12.control.trace.gz",
+          "uncompressed_sha256": "e8ddafff4c99068ddd2c0c1462d6be83a38e23da61a49bde1301c60012c6b70b"
+        },
+        {
+          "file": "ubuntu1804-glibc/raw/application/application-3.12.json.gz",
+          "uncompressed_sha256": "cdb0b5e7ea1cca93a9f702030774b6a2bcb6be28f15faf4c3db126d097835537"
+        },
+        {
+          "file": "ubuntu1804-glibc/raw/application/application-3.14.control.trace.gz",
+          "uncompressed_sha256": "31f64ca221f7559201a1b66c42ad8f89d68788e68d818b120d5953ef8f926d91"
+        },
+        {
+          "file": "ubuntu1804-glibc/raw/application/application-3.14.corpus.trace.gz",
+          "uncompressed_sha256": "0f0c206cc89ab295f246a11f710ca9a6017e6b560dfa0215fd841ea24a9b6af1"
+        },
+        {
+          "file": "ubuntu1804-glibc/raw/application/application-3.14.json.gz",
+          "uncompressed_sha256": "687a481bb0e8a814622262b4dc9e6ce5ade90e413bcabf3b931933be923e411b"
+        },
+        {
+          "file": "ubuntu1804-glibc/raw/application-wheel.json.gz",
+          "uncompressed_sha256": "70ba24bd2e796d89bdea73510af5abb03c947c0f80c2a56a8224cdbbb8ad3d58"
+        },
+        {
+          "file": "ubuntu1804-glibc/raw/candidate.json.gz",
+          "uncompressed_sha256": "c8082229092e00cd23724017f328e31f9627766eccef1e463e7e24219957fc81"
+        },
+        {
+          "file": "ubuntu1804-glibc/raw/guest/border_only.json.gz",
+          "uncompressed_sha256": "1eea0fc0bd90ab230248b274d385a91c88067c813f702527639efad35aa60850"
+        },
+        {
+          "file": "ubuntu1804-glibc/raw/guest/clean.json.gz",
+          "uncompressed_sha256": "7a3bdb8a5693fdd5a2a3c86d7bf32c43000c23a8470540ebfdc56e5785a6eb61"
+        },
+        {
+          "file": "ubuntu1804-glibc/raw/guest/coincident.json.gz",
+          "uncompressed_sha256": "5e0ee8f776d419bce61a9ef6bb6dca73866497a347f4ef3b52bed5f96e12bd04"
+        },
+        {
+          "file": "ubuntu1804-glibc/raw/guest/connected_overlap.json.gz",
+          "uncompressed_sha256": "d30afcda91fa423e11958945cbd7324bea5dc1ef40e23fb9f7d5d06e18d9fb07"
+        },
+        {
+          "file": "ubuntu1804-glibc/raw/guest/crossing.json.gz",
+          "uncompressed_sha256": "284ecd02a8c8b5cabd1bc09352bfd64cfd71aa34eaec4e764925e70ea2b9c6c7"
+        },
+        {
+          "file": "ubuntu1804-glibc/raw/guest/cycle.json.gz",
+          "uncompressed_sha256": "2f1e24cf016fb935e170999e67246b99557f19f7b3e633c83fad4f030eaf5d8f"
+        },
+        {
+          "file": "ubuntu1804-glibc/raw/guest/empty.json.gz",
+          "uncompressed_sha256": "c599e92f4b1b099fd97fde1f3a07dae747a365a17037f880a333f786f6cf2d27"
+        },
+        {
+          "file": "ubuntu1804-glibc/raw/guest/guest.json.gz",
+          "uncompressed_sha256": "3b6ad19497caf3ed8191615372035d8b25d761191d3b161e73f2fb9993f7433d"
+        },
+        {
+          "file": "ubuntu1804-glibc/raw/guest/isolated_overlap.json.gz",
+          "uncompressed_sha256": "e0969b0682d5aa7645769edd3aab25cd2100ee85a3d57f46482ef8296eb70beb"
+        },
+        {
+          "file": "ubuntu1804-glibc/raw/guest/ldd.txt.gz",
+          "uncompressed_sha256": "9b50a1dd4bf0b79b12a58d0f465ff5b38e01ddc48ba5038b9072d726dda60ebc"
+        },
+        {
+          "file": "ubuntu1804-glibc/raw/guest/parallel_occurrences.json.gz",
+          "uncompressed_sha256": "345be09eb92400e407864362825da08e4c37613689a2e685ed16fed8121b36df"
+        },
+        {
+          "file": "ubuntu1804-glibc/raw/guest/reciprocal.json.gz",
+          "uncompressed_sha256": "5619900998072691afd222022786f6145fa98e50cf1da7b7aae8de0b8644d835"
+        },
+        {
+          "file": "ubuntu1804-glibc/raw/guest/self_loop.json.gz",
+          "uncompressed_sha256": "059eef51012c99eea5f8ff6918586b9b42d581ea871d246ccfaa963ab3ffd562"
+        },
+        {
+          "file": "ubuntu1804-glibc/raw/guest/through_isolated.json.gz",
+          "uncompressed_sha256": "8ba7f17057625b767efc6c251e977059d2e7e8a002b3ea2a951699025ece3dfb"
+        },
+        {
+          "file": "ubuntu1804-glibc/raw/inventory.json.gz",
+          "uncompressed_sha256": "4a737fb736a546d95ea7feb977d4ad93b64abfed70ee12d68cff9f545749b914"
+        },
+        {
+          "file": "ubuntu1804-glibc/raw/guest/through_connected.json.gz",
+          "uncompressed_sha256": "5e0ee8f776d419bce61a9ef6bb6dca73866497a347f4ef3b52bed5f96e12bd04"
+        },
+        {
+          "file": "ubuntu1804-glibc/raw/private-python-pins.json.gz",
+          "uncompressed_sha256": "02f97d887e2f970ad5c2472c215710a043a0c3d9d1f661f17c33aaa3bd60a81c"
+        },
+        {
+          "file": "ubuntu1804-glibc/raw/private-python-report.json.gz",
+          "uncompressed_sha256": "77c4a61ce25101dda90a86e1c4e514950f090b183aae8a829c0de6164ce97cbe"
+        },
+        {
+          "file": "ubuntu1804-glibc/raw/provenance.json.gz",
+          "uncompressed_sha256": "f1cd182f06cb1ff572d474c2fed023b9b4508b1c39d012260f96fbb3d1d46495"
+        },
+        {
+          "file": "ubuntu1804-glibc/raw/qemu.log.gz",
+          "uncompressed_sha256": "9ce16acaae71d2190dbee0bdb40b470b00f46a9c3379f3d50c06e422d2346817"
+        },
+        {
+          "file": "ubuntu1804-glibc/raw/qmp-kvm.json.gz",
+          "uncompressed_sha256": "11ea5a70b9ea4a315991cc7f0c58c8f9f78449e51b54287810d861c386312ffc"
+        },
+        {
+          "file": "ubuntu1804-glibc/raw/serial.log.gz",
+          "uncompressed_sha256": "6d505afeaad313fc8b77dcae71ea7bceffc2fa1cf364eeccc1fec540ba0f761b"
+        },
+        {
+          "file": "ubuntu1804-glibc/raw/summary.json.gz",
+          "uncompressed_sha256": "b9a9d197591f7171b4b27d633d1c70e85319456a9767c764bd93afc6f4ddfd06"
+        }
+      ]
+    },
+    {
+      "release": "18.04",
+      "abi": "musl",
+      "run_id": 40576914754,
+      "actions_artifact_id": 12768045999,
+      "actions_archive_sha256": "92dee786e975a00a07d17231ac80b20cc24680b052c0bed1797654dd898e3e5d",
+      "native_summary_sha256": "2c6f21e3182b12c6888944d3e6e94a09b17f360e20e7414cc352aeb89bb05b7e",
+      "kernel": "4.15.0-212-generic",
+      "glibc": "glibc 2.27",
+      "arch": "x86_64",
+      "kvm": {
+        "enabled": true,
+        "present": true
+      },
+      "engine_sha256": "f4dfee4e052704b1a7efdb7b6a4c43583ccaa062aec800b76224dae24eb2b69b",
+      "candidate_revision": "a825f0d80bd7892de0e307656d28070885a9d1ed",
+      "image_pin": {
+        "url": "https://cloud-images.ubuntu.com/releases/bionic/release-20230607/ubuntu-18.04-server-cloudimg-amd64.img",
+        "size": 405667840,
+        "sha256": "8dd2e6b5e5aad20c3f836123b300cba9861249408cbb07c359145a65d6bab6b6",
+        "checksum_manifest_url": "https://cloud-images.ubuntu.com/releases/bionic/release-20230607/SHA256SUMS",
+        "checksum_manifest_sha256": "74aba2ff5163772fe09e10b50e2da28f357d15d77b97e033ef8a26afd09dc161",
+        "release": "18.04",
+        "arch": "x86_64",
+        "scope": "Historical baseline only; security maintenance and complete cell acceptance are not approved"
+      },
+      "cases": 13,
+      "geometry_decoded": true,
+      "system_python_unchanged": null,
+      "python_slots": [],
+      "preserved_files": [
+        {
+          "file": "ubuntu1804-musl/raw/candidate.json.gz",
+          "uncompressed_sha256": "e60de0f61bb8bc31eedc7250d427d64492114730924711568700e9eb1bbd509a"
+        },
+        {
+          "file": "ubuntu1804-musl/raw/guest/border_only.json.gz",
+          "uncompressed_sha256": "1eea0fc0bd90ab230248b274d385a91c88067c813f702527639efad35aa60850"
+        },
+        {
+          "file": "ubuntu1804-musl/raw/guest/clean.json.gz",
+          "uncompressed_sha256": "7a3bdb8a5693fdd5a2a3c86d7bf32c43000c23a8470540ebfdc56e5785a6eb61"
+        },
+        {
+          "file": "ubuntu1804-musl/raw/guest/coincident.json.gz",
+          "uncompressed_sha256": "5e0ee8f776d419bce61a9ef6bb6dca73866497a347f4ef3b52bed5f96e12bd04"
+        },
+        {
+          "file": "ubuntu1804-musl/raw/guest/connected_overlap.json.gz",
+          "uncompressed_sha256": "d30afcda91fa423e11958945cbd7324bea5dc1ef40e23fb9f7d5d06e18d9fb07"
+        },
+        {
+          "file": "ubuntu1804-musl/raw/guest/crossing.json.gz",
+          "uncompressed_sha256": "284ecd02a8c8b5cabd1bc09352bfd64cfd71aa34eaec4e764925e70ea2b9c6c7"
+        },
+        {
+          "file": "ubuntu1804-musl/raw/guest/cycle.json.gz",
+          "uncompressed_sha256": "2f1e24cf016fb935e170999e67246b99557f19f7b3e633c83fad4f030eaf5d8f"
+        },
+        {
+          "file": "ubuntu1804-musl/raw/guest/empty.json.gz",
+          "uncompressed_sha256": "c599e92f4b1b099fd97fde1f3a07dae747a365a17037f880a333f786f6cf2d27"
+        },
+        {
+          "file": "ubuntu1804-musl/raw/guest/guest.json.gz",
+          "uncompressed_sha256": "d6d6bc3bc070599cd4d0a24e5f9e6cc9f5feb7eeb6593aa88f50b08090a95a32"
+        },
+        {
+          "file": "ubuntu1804-musl/raw/guest/isolated_overlap.json.gz",
+          "uncompressed_sha256": "e0969b0682d5aa7645769edd3aab25cd2100ee85a3d57f46482ef8296eb70beb"
+        },
+        {
+          "file": "ubuntu1804-musl/raw/guest/parallel_occurrences.json.gz",
+          "uncompressed_sha256": "345be09eb92400e407864362825da08e4c37613689a2e685ed16fed8121b36df"
+        },
+        {
+          "file": "ubuntu1804-musl/raw/guest/reciprocal.json.gz",
+          "uncompressed_sha256": "5619900998072691afd222022786f6145fa98e50cf1da7b7aae8de0b8644d835"
+        },
+        {
+          "file": "ubuntu1804-musl/raw/guest/self_loop.json.gz",
+          "uncompressed_sha256": "059eef51012c99eea5f8ff6918586b9b42d581ea871d246ccfaa963ab3ffd562"
+        },
+        {
+          "file": "ubuntu1804-musl/raw/guest/through_connected.json.gz",
+          "uncompressed_sha256": "5e0ee8f776d419bce61a9ef6bb6dca73866497a347f4ef3b52bed5f96e12bd04"
+        },
+        {
+          "file": "ubuntu1804-musl/raw/guest/through_isolated.json.gz",
+          "uncompressed_sha256": "8ba7f17057625b767efc6c251e977059d2e7e8a002b3ea2a951699025ece3dfb"
+        },
+        {
+          "file": "ubuntu1804-musl/raw/inventory.json.gz",
+          "uncompressed_sha256": "50ea548c3acfb054fc63c6264ca78fdb05d1d5628b77666789827f9de6e16b82"
+        },
+        {
+          "file": "ubuntu1804-musl/raw/provenance.json.gz",
+          "uncompressed_sha256": "54ed1980bf2b3ed9c1889e6640a7b000aaee6d0fc686875423239ebe95be9c9c"
+        },
+        {
+          "file": "ubuntu1804-musl/raw/qemu.log.gz",
+          "uncompressed_sha256": "11afc4af9679943d2c6e01984d3ea17c357e1e599d9f67bf61950636454e56f5"
+        },
+        {
+          "file": "ubuntu1804-musl/raw/qmp-kvm.json.gz",
+          "uncompressed_sha256": "11ea5a70b9ea4a315991cc7f0c58c8f9f78449e51b54287810d861c386312ffc"
+        },
+        {
+          "file": "ubuntu1804-musl/raw/serial.log.gz",
+          "uncompressed_sha256": "2da0f6324ea9f3056e89fd8208aae35b06e36a15deca2eb170d89f2031992f32"
+        },
+        {
+          "file": "ubuntu1804-musl/raw/summary.json.gz",
+          "uncompressed_sha256": "2c6f21e3182b12c6888944d3e6e94a09b17f360e20e7414cc352aeb89bb05b7e"
+        }
+      ]
+    }
+  ],
+  "capture_sha256": "360179e8bf658faaa9c433ab105b363ad6d36f30e07d866d26c9f178fd3f2b0b",
+  "limitations": [
+    "Private development wheel and controlled runtime acquisition; no final remote candidate or sdist acceptance",
+    "Ubuntu historical images; no Pro/ESM eligibility assertion",
+    "Musl engine kernel observation on Ubuntu; no native Alpine qualification",
+    "No local VM, Twine review, ARM64 qualification, catalog or support promotion"
+  ]
+}

@@ -1,5 +1,17 @@
 # Pré-requisitos Python Linux: evidência parcial
 
+## Ubuntu 26.04 x64 nativo — 2026-10-27
+
+O [ensaio KVM conferido](ubuntu2604-native-2026-10-27/README.md) executou
+CPython 3.12.15 e 3.14.8 privados no kernel 7.0.0-38/glibc 2.43. Venv/pip/SSL,
+wheel externo, três entrypoints, 53 arquivos contra o commit, corpus, rede e
+recuperação passaram; o hash do Python do SO permaneceu igual. O Python
+fornecido pela imagem é somente controlador do probe, distinto dos dois slots
+da aplicação. 18.04/20.04/22.04 foram repetidos como regressão. Arquivos fixados
+obtidos pelo host, guest sem internet e transporte privado controlado; nenhuma
+VM local ou instalação global. T033 permanece aberta para ARM64, 26.10 e demais
+famílias/versões da matriz.
+
 ## Ubuntu 22.04 x64 nativo — 2026-10-27
 
 O [ensaio nativo conferido](ubuntu2204-native-2026-10-27/README.md) cobre

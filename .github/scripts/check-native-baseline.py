@@ -28,6 +28,8 @@ IMAGE_PROFILES={
                  maximum_bytes=1024**3,kernel=r'5\.15\.0-[0-9]+-generic',glibc='glibc 2.35',disk_bytes=8*1024**3),
     '26.04':dict(url='https://cloud-images.ubuntu.com/releases/resolute/release-20261016/ubuntu-26.04-server-cloudimg-amd64.img',
                  maximum_bytes=1024**3,kernel=r'7\.0\.0-[0-9]+-generic',glibc='glibc 2.43',disk_bytes=8*1024**3),
+    '26.10':dict(url='https://cloud-images.ubuntu.com/releases/stonking/release-20261025/ubuntu-26.10-server-cloudimg-amd64.img',
+                 maximum_bytes=1024**3,kernel=r'7\.3\.0-[0-9]+-generic',glibc='glibc 2.44',disk_bytes=8*1024**3),
 }
 ENGINE_SHA='43ce8d686720467c21be91cab4b8f3b246baae49c2cfe293714ebdf8a82f5716'
 ENGINES={
