@@ -69,7 +69,13 @@ def probe(source,output):
         if len(ldd.stdout)>65536 or b'not found' in ldd.stdout:raise ValueError('Guest dynamic dependency failure')
         (output/'ldd.txt').write_bytes(ldd.stdout)
         loader_sha=digest(loader.read_bytes());ldd_sha=digest(ldd.stdout)
-    report=dict(kind='ubuntu'+identity.get('VERSION_ID','unknown').replace('.','')+'-native-kernel-engine-baseline',passed=True,qualified=False,
+    patch=None
+    if identity.get('ID')=='debian':
+        with Path('/etc/debian_version').open('rb') as stream:raw_patch=stream.read(257)
+        if len(raw_patch)>256:raise ValueError('Distribution patch exceeds bound')
+        patch=raw_patch.decode('ascii').strip()
+    report=dict(kind=identity.get('ID','unknown')+identity.get('VERSION_ID','unknown').replace('.','')+'-native-kernel-engine-baseline',passed=True,qualified=False,
+        distribution_patch=patch,
         identity=identity,arch=platform.machine(),kernel=platform.release(),glibc=os.confstr('CS_GNU_LIBC_VERSION'),
         python=platform.python_version(),python_role='Image system Python for engine probe only; not a supported application slot',
         abi=abi,elf=elf,engine_sha256=digest(binary),inputs_sha256=digest((source/'inputs.json').read_bytes()),
@@ -77,7 +83,7 @@ def probe(source,output):
         relocated_unicode_path=True,global_graphviz_absent=True,cases=rows,
         scope=('Native guest kernel, glibc and real engine only; no application/Python-slot, Pro eligibility, Twine or support qualification'
                if abi=='glibc' else
-               'Static musl engine on guest kernel; reported glibc describes Ubuntu only, not an engine dependency; no native Alpine acceptance'))
+               'Static musl engine on guest kernel; reported glibc describes the guest only, not an engine dependency; no native Alpine acceptance'))
     (output/'guest.json').write_text(json.dumps(report,indent=2)+'\n',encoding='utf-8')
 
 

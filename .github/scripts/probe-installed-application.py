@@ -11,6 +11,23 @@ import subprocess
 import sys
 
 
+def tracer_command(source):
+    receipt=source/'tracer.json'
+    if not receipt.exists():return [str(Path('/usr/bin/strace').resolve(strict=True))],None
+    pin=json.loads(receipt.read_bytes())
+    folder=source/'private-tracer'
+    expected={'strace','libunwind-ptrace.so.0','libunwind-x86_64.so.8','libunwind.so.8'}
+    rows=pin.get('files',[])
+    if (len(rows)!=4 or {row.get('name') for row in rows}!=expected or folder.is_symlink()
+            or not folder.resolve().is_relative_to(source.resolve())):
+        raise ValueError('Unexpected private tracer file set/root')
+    for row in rows:
+        path=folder/row['name']
+        if path.is_symlink() or hashlib.sha256(path.read_bytes()).hexdigest()!=row['sha256']:
+            raise ValueError('Private tracer file changed')
+    return ['/lib64/ld-linux-x86-64.so.2','--library-path',str(folder),str(folder/'strace')],pin
+
+
 def probe(source,output):
     output.mkdir(exist_ok=False)
     pin=json.loads((source/'application/wheel.json').read_bytes())
@@ -53,13 +70,13 @@ def probe(source,output):
     from twine_edge_overlap.engines.process import run_bounded
     spec=importlib.util.spec_from_file_location('network_observer',driver/'tools/runtime/observe-linux-network.py')
     observer=importlib.util.module_from_spec(spec);spec.loader.exec_module(observer)
-    tracer=Path('/usr/bin/strace').resolve(strict=True)
-    version=run([tracer,'-V']).stdout.decode('utf-8').splitlines()[0]
+    tracer,private_tracer=tracer_command(source)
+    version=run([*tracer,'-V']).stdout.decode('utf-8').splitlines()[0]
     if 'strace' not in version.lower() or len(version)>256:
         raise ValueError('Unrecognized tracer version output: '+repr(version))
     # 4.21 predates --kill-on-exit. The owned ephemeral guest is terminated by
     # the host's finally block, including after any failed observation.
-    arguments=[str(tracer),'-f','-qq','-s','256','-e','trace=%network,execve','--']
+    arguments=[*tracer,'-f','-qq','-s','256','-e','trace=%network,execve','--']
     child='import socket; s=socket.socket(); s.settimeout(1); s.connect_ex(("127.0.0.1",9)); s.close()'
     control='import subprocess,sys; subprocess.run([sys.executable,"-I","-c",'+repr(child)+'],check=True)'
     control_result=run_bounded([*arguments,sys.executable,'-I','-c',control],cwd=output,env=env,timeout=15,max_output=1024**2)
@@ -81,7 +98,8 @@ def probe(source,output):
     report.update(wheel_sha256=pin['sha256'],wheel_source_revision=pin['source_revision'],
         installed_package_verified=True,installed_files_verified=len(pin['files']),entrypoints_verified=True,
         application_outside_checkout=True,global_graphviz_and_git_absent=True,
-        native_network=dict(passed=True,tracer_sha256=hashlib.sha256(tracer.read_bytes()).hexdigest(),version=version,
+        native_network=dict(passed=True,tracer_sha256=hashlib.sha256(Path(tracer[-1]).read_bytes()).hexdigest(),version=version,
+            private_tracer=private_tracer,
             filter='trace=%network,execve',follow_children=True,kill_on_exit=False,
             cleanup='Owned ephemeral guest terminated by host finally; no local VM or system tracer installation',
             control=dict(network_syscalls=detected['network_syscalls'],child_executions=len(detected['successful_executables']),

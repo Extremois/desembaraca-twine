@@ -1,5 +1,17 @@
 # Pré-requisitos Python Linux: evidência parcial
 
+## Ubuntu 24.04 x64 com imagem fixada — 2026-10-27
+
+O [ensaio KVM conferido](ubuntu2404-native-2026-10-27/README.md) executou
+CPython 3.12.15 e 3.14.8 privados no kernel 6.8.0-147/glibc 2.39 da imagem
+datada de 17/10/2026. Venv/pip/SSL, wheel externo, três entrypoints,
+53 arquivos contra o commit, corpus, rastros e recuperação passaram; o Python
+do SO manteve seu hash. Os outros cinco Ubuntu x64 foram repetidos.
+Arquivos fixados obtidos pelo host, guest sem internet e transporte privado
+controlado, sem VM local. Evidências históricas dos runners x64/ARM64 e
+wheel/sdist mantêm sua revisão/escopo; o ensaio novo acrescenta somente wheel
+no guest x64 fixado. T033 permanece aberta para as demais células.
+
 ## Ubuntu 26.10 x64 nativo — 2026-10-27
 
 O [ensaio KVM conferido](ubuntu2610-native-2026-10-27/README.md) executou

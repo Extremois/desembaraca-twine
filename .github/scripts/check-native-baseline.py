@@ -1,4 +1,4 @@
-"""Prepare and run pinned Ubuntu engine baselines on GitHub's x64 KVM runner."""
+"""Prepare and run pinned Linux engine baselines on GitHub's x64 KVM runner."""
 import argparse
 import hashlib
 import io
@@ -21,6 +21,12 @@ ROOT=Path(__file__).resolve().parents[2]
 IMAGE_URL='https://cloud-images.ubuntu.com/releases/bionic/release-20230607/ubuntu-18.04-server-cloudimg-amd64.img'
 CANDIDATE_REVISION='b13cd6f90db31163e62119bb83e2eb8db5ac8458'
 IMAGE_PROFILES={
+    'debian-12':dict(url='https://cloud.debian.org/images/cloud/bookworm/20261026-2643/debian-12-generic-amd64-20261026-2643.qcow2',
+                 distribution='debian',version='12',image_hash='sha512',maximum_bytes=1024**3,
+                 kernel=r'6\.1\.0-[0-9]+-amd64',glibc='glibc 2.36',disk_bytes=8*1024**3),
+    'debian-13':dict(url='https://cloud.debian.org/images/cloud/trixie/20261026-2643/debian-13-generic-amd64-20261026-2643.qcow2',
+                 distribution='debian',version='13',image_hash='sha512',maximum_bytes=1024**3,
+                 kernel=r'6\.12\.[0-9]+\+deb13-amd64',glibc='glibc 2.41',disk_bytes=8*1024**3),
     '18.04':dict(url=IMAGE_URL,maximum_bytes=512*1024**2,kernel=r'4\.15\.0-[0-9]+-generic',glibc='glibc 2.27'),
     '20.04':dict(url='https://cloud-images.ubuntu.com/releases/focal/release-20250516/ubuntu-20.04-server-cloudimg-amd64.img',
                  maximum_bytes=1024**3,kernel=r'5\.4\.0-[0-9]+-generic',glibc='glibc 2.31',disk_bytes=8*1024**3),
@@ -54,19 +60,23 @@ def validate_candidate_source(revision,run_id):
 
 def validate_pin(pin,release='18.04'):
     profile=baseline_profile(release)
+    algorithm=profile.get('image_hash','sha256')
     if (pin.get('url')!=profile['url'] or type(pin.get('size')) is not int or not 0<pin['size']<=profile['maximum_bytes']
-            or pin.get('release',release)!=release or pin.get('arch','x86_64')!='x86_64'
-            or not re.fullmatch(r'[0-9a-f]{64}',pin.get('sha256',''))):
+            or pin.get('release',release)!=profile.get('version',release) or pin.get('arch','x86_64')!='x86_64'
+            or pin.get('distribution','ubuntu')!=profile.get('distribution','ubuntu')
+            or not re.fullmatch(r'[0-9a-f]{'+str(hashlib.new(algorithm).digest_size*2)+'}',pin.get(algorithm,''))):
         raise ValueError('Invalid immutable baseline image pin')
 
 
 def validate_baseline(guest,kvm,release='18.04'):
     profile=baseline_profile(release)
     if (kvm.get('enabled') is not True or kvm.get('present') is not True
-            or guest.get('identity',{}).get('ID')!='ubuntu' or guest['identity'].get('VERSION_ID')!=release
+            or guest.get('identity',{}).get('ID')!=profile.get('distribution','ubuntu')
+            or guest['identity'].get('VERSION_ID')!=profile.get('version',release)
             or guest.get('arch')!='x86_64' or not re.fullmatch(profile['kernel'],guest.get('kernel',''))
-            or guest.get('glibc')!=profile['glibc']):
-        raise ValueError('Baseline requires accelerated Ubuntu '+release+' x64 with its pinned kernel/libc family')
+            or guest.get('glibc')!=profile['glibc']
+            or (profile.get('distribution')=='debian' and not re.fullmatch(profile['version']+r'\.[0-9]+',guest.get('distribution_patch','')))):
+        raise ValueError('Baseline requires accelerated '+profile.get('distribution','ubuntu')+' '+release+' x64 with its pinned kernel/libc family')
 
 
 def guest_output_path(folder,case,reported):
@@ -133,6 +143,14 @@ def validate_application_report(report,patch,wheel_sha,engine_sha,cases):
         if (len(before)!=3 or len(after)!=3 or any(a>b for a,b in zip(after,before))
                 or (item['known_resolvable'] and after!=[0,0,0])):
             raise ValueError('Corpus regressed or known reference did not finish clean')
+
+
+def validate_private_tracer(report,receipt):
+    observed=report.get('native_network',{})
+    tracer=next(row for row in receipt['files'] if row['name']=='strace')
+    if (observed.get('private_tracer')!=receipt or observed.get('tracer_sha256')!=tracer['sha256']
+            or observed.get('version')!='strace -- version '+receipt['version']):
+        raise ValueError('Private tracer provenance or observed version differs')
 
 
 def validate_network_observation(control,corpus):
@@ -266,8 +284,10 @@ def execute(work,release='18.04'):
     candidate_run_id=inputs.get('candidate_run_id',expected['run_id'])
     validate_candidate_source(candidate_revision,candidate_run_id)
     if inputs['engine_sha256']!=expected['sha256']:raise ValueError('Prepared ABI/engine pin changed')
-    pin=json.loads((ROOT/'.github/native-images'/('ubuntu-'+release+'-amd64.json')).read_bytes());validate_pin(pin,release)
-    image=work/'base.img';hasher=hashlib.sha256();received=0
+    pin_name=(release if profile.get('distribution')=='debian' else 'ubuntu-'+release)+'-amd64.json'
+    pin=json.loads((ROOT/'.github/native-images'/pin_name).read_bytes());validate_pin(pin,release)
+    algorithm=profile.get('image_hash','sha256')
+    image=work/'base.img';hasher=hashlib.new(algorithm);received=0
     with urllib.request.urlopen(pin['url'],timeout=30) as incoming,image.open('xb') as output:
         if incoming.geturl()!=pin['url']:raise ValueError('Image origin redirected')
         while True:
@@ -276,7 +296,7 @@ def execute(work,release='18.04'):
             received+=len(chunk)
             if received>pin['size']:raise ValueError('Excessive baseline image')
             hasher.update(chunk);output.write(chunk)
-    if received!=pin['size'] or hasher.hexdigest()!=pin['sha256']:raise ValueError('Baseline image changed')
+    if received!=pin['size'] or hasher.hexdigest()!=pin[algorithm]:raise ValueError('Baseline image changed')
     def run(argv,**kwargs):return subprocess.run(argv,check=True,timeout=60,**kwargs)
     info=json.loads(run(['qemu-img','info','--output=json',str(image)],capture_output=True).stdout)
     if info['format']!='qcow2' or info.get('backing-filename') or info['virtual-size']>16*1024**3:raise ValueError('Unexpected image storage')
@@ -339,6 +359,8 @@ def execute(work,release='18.04'):
                         report=json.loads(bounded(application/name))
                         validate_application_report(report,pin_python['patch'],wheel_pin['sha256'],expected['sha256'],cases)
                         validate_recovery_report(report.get('recovery',{}))
+                        if (work/'input/tracer.json').exists():
+                            validate_private_tracer(report,json.loads(bounded(work/'input/tracer.json')))
                         spec=importlib.util.spec_from_file_location('network_observer',ROOT/'tools/runtime/observe-linux-network.py')
                         observer=importlib.util.module_from_spec(spec);spec.loader.exec_module(observer)
                         traces={}
@@ -367,7 +389,7 @@ def execute(work,release='18.04'):
                 raw=bounded(guest_output_path(evidence/'guest',item['case'],result['output']),8*1024**2)
                 if digest(raw)!=result['output_sha256'] or result['dot_sha256']!=item['dot_sha256']:raise ValueError('Guest result changed')
                 decode_layout(raw,parse((ROOT/'tests/fixtures'/item['fixture']).read_bytes()))
-            result=dict(kind='native-ubuntu'+release.replace('.','')+'-'+abi+'-engine-baseline',passed=True,approved=False,qualified=False,abi=abi,
+            result=dict(kind='native-'+profile.get('distribution','ubuntu')+profile.get('version',release).replace('.','')+'-'+abi+'-engine-baseline',passed=True,approved=False,qualified=False,abi=abi,
                 revision=os.environ.get('GITHUB_SHA'),candidate_revision=candidate_revision,
                 candidate_run_id=candidate_run_id,artifact_id=expected['artifact_id'],engine_sha256=expected['sha256'],image_pin=pin,kvm=kvm,
                 guest_kernel=guest['kernel'],guest_glibc=guest['glibc'],guest_arch=guest['arch'],
@@ -377,7 +399,7 @@ def execute(work,release='18.04'):
                 environment_kind='native',execution='same-architecture hardware-accelerated guest; no TCG fallback',
                 scope=('Private engine/kernel/Python/application observations only; controlled acquisition; distributed candidate, maintenance eligibility, full cell and Twine pending'
                        if abi=='glibc' else
-                       'Static musl engine on Ubuntu '+release+' kernel only; guest is not native Alpine; Alpine cell qualification remains pending'))
+                       'Static musl engine on '+profile.get('distribution','ubuntu')+' '+release+' kernel only; guest is not native Alpine; Alpine cell qualification remains pending'))
             (evidence/'summary.json').write_text(json.dumps(result,indent=2)+'\n',encoding='utf-8')
         finally:
             process.terminate()
@@ -402,4 +424,7 @@ if __name__=='__main__':
         if args.python_application:
             if not args.python_prerequisites:parser.error('--python-application requires --python-prerequisites')
             prepare_application(args.artifact,args.work)
+            if baseline_profile(args.release).get('distribution')=='debian':
+                spec=importlib.util.spec_from_file_location('private_tracer',ROOT/'.github/scripts/private-tracer.py')
+                tracer=importlib.util.module_from_spec(spec);spec.loader.exec_module(tracer);tracer.prepare(args.work)
     else:parser.error('--artifact or --execute is required')

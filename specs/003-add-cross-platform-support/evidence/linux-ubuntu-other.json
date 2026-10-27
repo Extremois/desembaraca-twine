@@ -3,15 +3,15 @@
   "task": "T037",
   "task_complete": false,
   "qualified": false,
-  "captured_at": "2026-10-27T21:06:38.743848+00:00",
+  "captured_at": "2026-10-27T21:26:24.775775+00:00",
   "registry": {
     "path": "tools/runtime/support-targets.json",
     "sha256": "be3e8a77e3836d1125658c00a75fbf0e3584f1e26a166a053583336c29a5d295"
   },
-  "application_revision": "1e0349e28381c68a572c42e0e1889d64fe8d8336",
+  "application_revision": "4b5625d4b79720e58d50f0919eedb3b39d08e00c",
   "evidence": {
-    "path": "specs/003-add-cross-platform-support/evidence/ubuntu2610-native-2026-10-27/summary.json",
-    "sha256": "ec110de34250b61543958c59ff0e823004683617ce4fc225cd9c7f21605c0588"
+    "path": "specs/003-add-cross-platform-support/evidence/ubuntu2404-native-2026-10-27/summary.json",
+    "sha256": "3e45f819066c10a8f5a8f909a6f4fb48d9eb99662597d3f8054a8010c9890b72"
   },
   "expected_targets": 10,
   "expected_python_slots": 20,
@@ -32,8 +32,8 @@
           "qualified": false,
           "observation_state": "partial-native-observation",
           "evidence": {
-            "path": "specs/003-add-cross-platform-support/evidence/ubuntu2610-native-2026-10-27/summary.json",
-            "sha256": "ec110de34250b61543958c59ff0e823004683617ce4fc225cd9c7f21605c0588"
+            "path": "specs/003-add-cross-platform-support/evidence/ubuntu2404-native-2026-10-27/summary.json",
+            "sha256": "3e45f819066c10a8f5a8f909a6f4fb48d9eb99662597d3f8054a8010c9890b72"
           },
           "observed_python": "3.12.15"
         },
@@ -43,8 +43,8 @@
           "qualified": false,
           "observation_state": "partial-native-observation",
           "evidence": {
-            "path": "specs/003-add-cross-platform-support/evidence/ubuntu2610-native-2026-10-27/summary.json",
-            "sha256": "ec110de34250b61543958c59ff0e823004683617ce4fc225cd9c7f21605c0588"
+            "path": "specs/003-add-cross-platform-support/evidence/ubuntu2404-native-2026-10-27/summary.json",
+            "sha256": "3e45f819066c10a8f5a8f909a6f4fb48d9eb99662597d3f8054a8010c9890b72"
           },
           "observed_python": "3.14.8"
         }
@@ -90,8 +90,8 @@
           "qualified": false,
           "observation_state": "partial-native-observation",
           "evidence": {
-            "path": "specs/003-add-cross-platform-support/evidence/ubuntu2610-native-2026-10-27/summary.json",
-            "sha256": "ec110de34250b61543958c59ff0e823004683617ce4fc225cd9c7f21605c0588"
+            "path": "specs/003-add-cross-platform-support/evidence/ubuntu2404-native-2026-10-27/summary.json",
+            "sha256": "3e45f819066c10a8f5a8f909a6f4fb48d9eb99662597d3f8054a8010c9890b72"
           },
           "observed_python": "3.12.15"
         },
@@ -101,8 +101,8 @@
           "qualified": false,
           "observation_state": "partial-native-observation",
           "evidence": {
-            "path": "specs/003-add-cross-platform-support/evidence/ubuntu2610-native-2026-10-27/summary.json",
-            "sha256": "ec110de34250b61543958c59ff0e823004683617ce4fc225cd9c7f21605c0588"
+            "path": "specs/003-add-cross-platform-support/evidence/ubuntu2404-native-2026-10-27/summary.json",
+            "sha256": "3e45f819066c10a8f5a8f909a6f4fb48d9eb99662597d3f8054a8010c9890b72"
           },
           "observed_python": "3.14.8"
         }
@@ -148,8 +148,8 @@
           "qualified": false,
           "observation_state": "partial-native-observation",
           "evidence": {
-            "path": "specs/003-add-cross-platform-support/evidence/ubuntu2610-native-2026-10-27/summary.json",
-            "sha256": "ec110de34250b61543958c59ff0e823004683617ce4fc225cd9c7f21605c0588"
+            "path": "specs/003-add-cross-platform-support/evidence/ubuntu2404-native-2026-10-27/summary.json",
+            "sha256": "3e45f819066c10a8f5a8f909a6f4fb48d9eb99662597d3f8054a8010c9890b72"
           },
           "observed_python": "3.12.15"
         },
@@ -159,8 +159,8 @@
           "qualified": false,
           "observation_state": "partial-native-observation",
           "evidence": {
-            "path": "specs/003-add-cross-platform-support/evidence/ubuntu2610-native-2026-10-27/summary.json",
-            "sha256": "ec110de34250b61543958c59ff0e823004683617ce4fc225cd9c7f21605c0588"
+            "path": "specs/003-add-cross-platform-support/evidence/ubuntu2404-native-2026-10-27/summary.json",
+            "sha256": "3e45f819066c10a8f5a8f909a6f4fb48d9eb99662597d3f8054a8010c9890b72"
           },
           "observed_python": "3.14.8"
         }
@@ -206,8 +206,8 @@
           "qualified": false,
           "observation_state": "partial-native-observation",
           "evidence": {
-            "path": "specs/003-add-cross-platform-support/evidence/ubuntu2610-native-2026-10-27/summary.json",
-            "sha256": "ec110de34250b61543958c59ff0e823004683617ce4fc225cd9c7f21605c0588"
+            "path": "specs/003-add-cross-platform-support/evidence/ubuntu2404-native-2026-10-27/summary.json",
+            "sha256": "3e45f819066c10a8f5a8f909a6f4fb48d9eb99662597d3f8054a8010c9890b72"
           },
           "observed_python": "3.12.15"
         },
@@ -217,8 +217,8 @@
           "qualified": false,
           "observation_state": "partial-native-observation",
           "evidence": {
-            "path": "specs/003-add-cross-platform-support/evidence/ubuntu2610-native-2026-10-27/summary.json",
-            "sha256": "ec110de34250b61543958c59ff0e823004683617ce4fc225cd9c7f21605c0588"
+            "path": "specs/003-add-cross-platform-support/evidence/ubuntu2404-native-2026-10-27/summary.json",
+            "sha256": "3e45f819066c10a8f5a8f909a6f4fb48d9eb99662597d3f8054a8010c9890b72"
           },
           "observed_python": "3.14.8"
         }
@@ -264,8 +264,8 @@
           "qualified": false,
           "observation_state": "partial-native-observation",
           "evidence": {
-            "path": "specs/003-add-cross-platform-support/evidence/ubuntu2610-native-2026-10-27/summary.json",
-            "sha256": "ec110de34250b61543958c59ff0e823004683617ce4fc225cd9c7f21605c0588"
+            "path": "specs/003-add-cross-platform-support/evidence/ubuntu2404-native-2026-10-27/summary.json",
+            "sha256": "3e45f819066c10a8f5a8f909a6f4fb48d9eb99662597d3f8054a8010c9890b72"
           },
           "observed_python": "3.12.15"
         },
@@ -275,8 +275,8 @@
           "qualified": false,
           "observation_state": "partial-native-observation",
           "evidence": {
-            "path": "specs/003-add-cross-platform-support/evidence/ubuntu2610-native-2026-10-27/summary.json",
-            "sha256": "ec110de34250b61543958c59ff0e823004683617ce4fc225cd9c7f21605c0588"
+            "path": "specs/003-add-cross-platform-support/evidence/ubuntu2404-native-2026-10-27/summary.json",
+            "sha256": "3e45f819066c10a8f5a8f909a6f4fb48d9eb99662597d3f8054a8010c9890b72"
           },
           "observed_python": "3.14.8"
         }
@@ -317,7 +317,7 @@
     "No local VM, Twine review, ARM64 qualification, catalog or support promotion"
   ],
   "previous_index": {
-    "path": "specs/003-add-cross-platform-support/evidence/ubuntu2610-native-2026-10-27/previous-linux-ubuntu-other.json",
-    "sha256": "2f07147a315d9fe23bd23bea9db37ac7567e7e7626ef9b3fbb09063b36e5c4e5"
+    "path": "specs/003-add-cross-platform-support/evidence/ubuntu2404-native-2026-10-27/previous-linux-ubuntu-other.json",
+    "sha256": "2254163c6e047c1aa2423a42fea4087ce9d5472f80a805b62bc33e1154c1d2cf"
   }
 }

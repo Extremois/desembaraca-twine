@@ -256,6 +256,40 @@ class NativeBaselineTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             self.tool.validate_baseline(guest,dict(present=True,enabled=False),'24.04')
 
+    def test_debian_profiles_require_their_own_identity_and_published_sha512(self):
+        import json
+        for release,kernel,libc in [('12','6.1.0-54-amd64','glibc 2.36'),
+                                    ('13','6.12.113+deb13-amd64','glibc 2.41')]:
+            selector='debian-'+release
+            guest=dict(identity=dict(ID='debian',VERSION_ID=release),arch='x86_64',kernel=kernel,glibc=libc,
+                       distribution_patch=release+'.7')
+            kvm=dict(enabled=True,present=True)
+            self.tool.validate_baseline(guest,kvm,selector)
+            pin=json.loads((ROOT/('.github/native-images/'+selector+'-amd64.json')).read_bytes())
+            self.tool.validate_pin(pin,selector)
+            for key,value in [('identity',dict(ID='ubuntu',VERSION_ID=release)),
+                              ('kernel','6.8.0-147-generic'),('glibc','glibc 2.39'),('arch','aarch64')]:
+                with self.subTest(release=release,key=key),self.assertRaises(ValueError):
+                    self.tool.validate_baseline(dict(guest,**{key:value}),kvm,selector)
+            for key,value in [('url',pin['url'].replace('20261026-2643/','latest/')),
+                              ('distribution','ubuntu'),('release','24.04'),('sha512','a'*64),
+                              ('size',1024**3+1)]:
+                with self.subTest(release=release,pin=key),self.assertRaises(ValueError):
+                    self.tool.validate_pin(dict(pin,**{key:value}),selector)
+            bad=dict(pin);del bad['sha512'];bad['sha256']='a'*64
+            with self.assertRaises(ValueError):self.tool.validate_pin(bad,selector)
+            with self.assertRaises(ValueError):self.tool.validate_baseline(guest,dict(enabled=False,present=True),selector)
+            with self.assertRaises(ValueError):self.tool.validate_baseline(dict(guest,distribution_patch='unknown'),kvm,selector)
+
+    def test_private_tracer_receipt_must_match_prepared_bytes_and_observed_version(self):
+        import copy
+        receipt=dict(version='6.1',files=[dict(name='strace',sha256='a'*64)])
+        report=dict(native_network=dict(private_tracer=copy.deepcopy(receipt),tracer_sha256='a'*64,version='strace -- version 6.1'))
+        self.tool.validate_private_tracer(report,receipt)
+        for field,value in [('private_tracer',None),('tracer_sha256','b'*64),('version','strace -- version 6.2')]:
+            bad=copy.deepcopy(report);bad['native_network'][field]=value
+            with self.assertRaises(ValueError):self.tool.validate_private_tracer(bad,receipt)
+
     def test_guest_report_cannot_choose_a_path_on_the_runner(self):
         with tempfile.TemporaryDirectory() as folder:
             root=Path(folder)

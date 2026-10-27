@@ -120,5 +120,33 @@
     "Private fixtures are not final remotely distributed candidates or active POSIX catalog entries",
     "Hosted runner metadata is not complete immutable qualifying image/eligibility evidence",
     "Source/license review, native network proof, Twine and remaining common/platform gates stay pending"
-  ]
+  ],
+  "native_fixed_image_additional_checks": {
+    "path": "specs/003-add-cross-platform-support/evidence/ubuntu2404-native-2026-10-27/summary.json",
+    "sha256": "3e45f819066c10a8f5a8f909a6f4fb48d9eb99662597d3f8054a8010c9890b72",
+    "application_revision": "4b5625d4b79720e58d50f0919eedb3b39d08e00c",
+    "target_id": "ubuntu-24.04-stable-x86_64-distribution-default",
+    "python_slots": 2,
+    "python_versions": [
+      "3.12.15",
+      "3.14.8"
+    ],
+    "kernel": "6.8.0-147-generic",
+    "glibc": "glibc 2.39",
+    "formats": [
+      "wheel"
+    ],
+    "syscall_network_observation": true,
+    "recovery_review": {
+      "path": "specs/003-add-cross-platform-support/evidence/ubuntu2404-native-2026-10-27/nested-recovery.json",
+      "sha256": "cb12d617d715bab9bd80eb3d7358f73a7b49d950df777d7c6878dd81face023b"
+    },
+    "scope": "Additional pinned native KVM guest; kept separate from historical hosted runner wheel/sdist evidence",
+    "qualified": false,
+    "task_complete": false
+  },
+  "previous_native_fixed_image_index": {
+    "path": "specs/003-add-cross-platform-support/evidence/ubuntu2404-native-2026-10-27/previous-linux-ubuntu-24.04.json",
+    "sha256": "784744c15d7e808519f005e431f3340ff95d385fdec9a2d1a63f30719a9e653b"
+  }
 }
