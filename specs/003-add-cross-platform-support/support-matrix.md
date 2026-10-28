@@ -3,7 +3,7 @@
 **Política de validação atualizada por instrução do usuário (2026-10-27):** validar exclusivamente pelo GitHub Actions, diretamente nos runners hospedados e em contêineres quando necessários. Não exigir teste nativo, hardware dedicado, runner próprio, kernel específico ou VM; não criar nem iniciar VMs, inclusive dentro do CI. Esta decisão substitui exigências anteriores desses ambientes e suas pendências históricas. Conservar hashes, integridade, instalação, corpus, recuperação e o ambiente efetivamente exercitado nos logs; não inventar cobertura. Resultados de VMs anteriores são somente histórico e não são gates de aceite.
 
 
-**Referência de manutenção**: 2026-10-17. Esta tabela é escopo de qualificação, não anúncio de suporte entregue. Todas as células Linux/macOS começam **pendentes**. Cada versão listada expande para cada arquitetura/variante indicada; cada célula contém dois slots de ensaio, CPython 3.12 e 3.14 nativos. Registrar o patch do SO/Python, imagem, hash e data nos ensaios. Os interpretadores não criam identidades independentes de célula.
+**Referência de manutenção**: 2026-10-17. Esta tabela é escopo de qualificação, não anúncio de suporte entregue. Todas as células Linux/macOS começam **pendentes**. Cada versão listada expande para cada arquitetura/variante indicada; cada célula contém dois slots de ensaio, CPython 3.12 e 3.14 no GitHub Actions. Registrar o patch do SO/Python, imagem, hash e data nos ensaios. Os interpretadores não criam identidades independentes de célula.
 
 ## Alvos nomeados
 

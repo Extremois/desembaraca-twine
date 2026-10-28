@@ -15,7 +15,7 @@ Manter Graphviz 16.1.0 e o ZIP original Windows. Construir seis variantes POSIX:
 
 ## Technical Context
 
-**Language/Version**: CPython 3.12 e 3.14 nativos, registrando patch por ensaio; metadados `>=3.12` não ampliam o suporte.
+**Language/Version**: CPython 3.12 e 3.14 no GitHub Actions, registrando patch por ensaio; metadados `>=3.12` não ampliam o suporte.
 
 **Primary Dependencies**: biblioteca padrão Python; Graphviz 16.1.0 privado; pytest no desenvolvimento. Compilador/CMake e assinatura somente na produção dos bundles, nunca no uso normal.
 
@@ -122,14 +122,14 @@ A revisão resolve A1 por agregação de dois ensaios Python por alvo e U1 por r
 
 ### Ambientes
 
-Usar runners hospedados x64/ARM64, máquinas existentes e CI. Não criar VM no sistema atual. Contêineres em hosts nativos demonstram userland/ABI, mas não substituem teste do SO/kernel/permissões nem revisão visual. Cada célula requer CPython 3.12 e 3.14 nativos, origem e patch registrados. Falta de pacote Python padrão não permite excluir uma distribuição: qualificar instalação do interpretador no espaço do usuário; manter alvo pendente até isso ocorrer.
+Usar runners hospedados x64/ARM64, máquinas existentes e CI. Não criar VM no sistema atual. Contêineres nos runners do GitHub Actions podem validar userland/ABI e os demais testes automatizados, sem exigir VM ou kernel exclusivo. Cada célula requer CPython 3.12 e 3.14 no GitHub Actions, origem e patch registrados. Falta de pacote Python padrão não permite excluir uma distribuição: qualificar instalação do interpretador no espaço do usuário; manter alvo pendente até isso ocorrer.
 
 ### Gates de entrega
 
 - Artefato: build rastreável, licenças/fontes/notices, hashes/tamanhos/modos, dependências fechadas, relocação e execução normal; assinatura macOS aplicável.
 - Célula: instalação remota e wheel/sdist fora do checkout; caminhos com acentos/espaços; preparação/reparo; seis referências offline sem tentativa de rede; corpus sem regressão; bytes preservados; colisão, falha, interrupção, crash e concorrência; seis saídas reabertas no Twine; ambos os interpretadores.
 - Classificação: impedir promoção com um slot ausente, Python duplicado ou evidências de revisões/artefatos/snapshots distintos; testar snapshot igual, pacote/canal/kernel alterado, gerenciador ausente, coleta instável/excedida e retorno ao melhor esforço compatível. Não confundir fingerprint com auditoria de integridade do SO.
-- Release: somente artefatos reais e qualificados no catálogo, matriz coerente e links de evidência. Publicação não é executada nesta etapa. Skips/emulação não promovem células.
+- Release: somente artefatos reais e qualificados no catálogo, matriz coerente e links de evidência. Publicação não é executada nesta etapa. Skips não aprovam testes que não foram executados.
 - Encerramento: FR-001–018 e SC-001–010 em toda a matriz da data de referência. Mudanças posteriores de manutenção são registradas/revisadas, sem apagar silenciosamente compromissos.
 
 ## Complexity Tracking

@@ -44,7 +44,7 @@ Atualizar qualquer pacote, até sem relação com Graphviz, ou reiniciar com ker
 
 Evidência ligada a commit/artefato/ambiente deve demonstrar:
 
-1. Dois slots CPython 3.12 e 3.14 nativos com evidência da mesma célula/revisão/artefato, instaláveis conforme instruções sem substituir o Python do SO; pacote remoto, wheel e sdist, fora do checkout, comando e alternativa sem PATH.
+1. Dois slots CPython 3.12 e 3.14 no GitHub Actions com evidência da mesma célula/revisão/artefato, instaláveis conforme instruções sem substituir o Python do SO; pacote remoto, wheel e sdist, fora do checkout, comando e alternativa sem PATH.
 2. Primeira execução sem Graphviz global, preparação automática e explícita; seis referências com três métricas finais zero, corpus restante sem aumento de nenhuma métrica.
 3. Original e arquivos existentes preservados byte a byte; conteúdo/IDs/metadados/direção/multiplicidade da cópia preservados; colisão/cancelamento/falha nunca publicam parcialmente.
 4. Rede bloqueada após preparo: seis referências processadas, sem tentativa de conexão; notices disponíveis offline.
@@ -52,12 +52,12 @@ Evidência ligada a commit/artefato/ambiente deve demonstrar:
 6. Seis saídas realmente reabertas no Twine; registrar versão, ambiente e inspeção de dados/layout. Captura ou teste de parser sozinho não equivale à revisão visual.
 7. Mensagens de causa/impacto/recuperação e README PT/EN correspondem ao ambiente. Mac distribuído funciona com segurança normal e assinatura/notarização qualificada.
 
-Cada evidência registra o que executou, falhou, foi simulado ou não estava disponível. Contêiner nativo pode provar userland; kernel hospedeiro, emulação e mocks não são evidência completa do alvo. Skips não contam como aprovação. Pode-se reutilizar resultados de teste puro entre células, mas não substituir evidência específica de instalação/execução/arquitetura/arquivo por inferência.
+Cada evidência registra o que executou, falhou, foi simulado ou não estava disponível. Jobs e contêineres executados pelo GitHub Actions constituem o ambiente de validação; não é exigido kernel dedicado ou execução em hardware separado. Skips não contam como aprovação. Pode-se reutilizar resultados de teste puro entre células, mas não substituir evidência específica de instalação/execução/arquitetura/arquivo por inferência.
 
 ## Publicação e encerramento
 
 Somente células com todos os gates passam a oficialmente validadas. Células pendentes com artefato tecnicamente compatível podem executar com aviso de melhor esforço; ausência de componente compatível impede execução. A release lista validadas e pendentes, sem anunciar “todo Linux”.
 
-Publicação externa, credenciais e criação de infraestrutura não são executadas pelo planejamento. A implementação prepara resultados revisáveis e mantém gates indisponíveis como pendentes. Não criar VM no sistema atual; usar ambientes existentes/CI nativo conforme disponibilidade.
+Publicação externa, credenciais e criação de infraestrutura não são executadas pelo planejamento. A implementação prepara resultados revisáveis e mantém gates indisponíveis como pendentes. Não criar VM no sistema atual; usar runners hospedados do GitHub Actions conforme disponibilidade.
 
 Entrega parcial é permitida. Concluir a feature requer FR-001–018 e SC-001–010 em toda a matriz acordada, incluindo versões antigas elegíveis, duas arquiteturas quando publicadas, ambos os interpretadores e regressão Windows. EOL ou dificuldade posterior não autoriza apagar silenciosamente uma obrigação; registrar alteração da condição e revisar escopo explicitamente.
