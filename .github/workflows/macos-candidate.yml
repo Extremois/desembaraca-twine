@@ -98,6 +98,18 @@ jobs:
           path: |
             ${{ runner.temp }}/twine-macos-sources/
             .tmp/native-macos/source-pairing.json
+      - name: Rebuild Graphviz from exported macOS sources and recipes
+        shell: bash
+        run: |
+          set -o pipefail
+          mkdir "$RUNNER_TEMP/twine-macos-source-replay"
+          tar -xzf "$RUNNER_TEMP/twine-macos-sources/sources.tar.gz" -C "$RUNNER_TEMP/twine-macos-source-replay"
+          cd "$RUNNER_TEMP/twine-macos-source-replay"
+          python tools/runtime/prepare-macos-ci.py --work "$RUNNER_TEMP/twine-macos-replay-sdk" --arch '${{ matrix.arch }}'
+          python tools/runtime/build-common.py --artifact-id '${{ matrix.artifact }}' --source-archive graphviz.tar.gz --sdk-record "$RUNNER_TEMP/twine-macos-replay-sdk/sdk-record.json" --output "$RUNNER_TEMP/twine-macos-replay-build" --execute 2>&1 | tee "$GITHUB_WORKSPACE/.tmp/native-macos/source-rebuild.log"
+          cd "$GITHUB_WORKSPACE"
+          "${{ steps.python312.outputs.python-path }}" tools/runtime/smoke-corpus.py --build-output "$RUNNER_TEMP/twine-macos-replay-build" --environment-kind native --report .tmp/native-macos/rebuilt-corpus-312.json
+          "${{ steps.python314.outputs.python-path }}" tools/runtime/smoke-corpus.py --build-output "$RUNNER_TEMP/twine-macos-replay-build" --environment-kind native --report .tmp/native-macos/rebuilt-corpus-314.json
       - name: Real runtime first use, final probe and offline cache on both Pythons
         run: |
           "${{ steps.python312.outputs.python-path }}" tests/integration/test_macos_runtime.py --package "$RUNNER_TEMP/twine-macos-package" --provenance "$RUNNER_TEMP/twine-macos-notices/provenance.json" --report .tmp/native-macos/runtime-312.json
@@ -118,4 +130,5 @@ jobs:
             ${{ runner.temp }}/twine-macos-notices/provenance.json
             ${{ runner.temp }}/twine-macos-notices/review.json
             ${{ runner.temp }}/twine-macos-sources/sources.json
+            ${{ runner.temp }}/twine-macos-replay-build/provenance.json
             ${{ runner.temp }}/twine-macos-package/

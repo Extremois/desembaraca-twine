@@ -1,0 +1,28 @@
+{
+  "kind": "twine-visual-review-pending-with-real-ci-outputs",
+  "task": "T063",
+  "task_complete": false,
+  "qualified": false,
+  "application_revision": "07688e264e6c9915790c2728beb24552a23f6388",
+  "visual_review_complete": false,
+  "reviewer": null,
+  "twine_version": null,
+  "exported_output_count": 168,
+  "distinct_output_count": 6,
+  "summary": {
+    "path": "specs/003-add-cross-platform-support/evidence/abi-recovery-ci-canonical/summary.json",
+    "sha256": "17969174aba882633781cec60e40b31bf76daee18cab179bc7a3befd33202d1a"
+  },
+  "archive": {
+    "path": "specs/003-add-cross-platform-support/evidence/abi-review-all.zip",
+    "sha256": "68eca3641b0d2491cf50fbc64a9f08fe5629b32e0caa7eef994de80ce4937a47"
+  },
+  "evidence_scope": "Seven ABIs, 14 Python slots and 28 package installations; output bytes verified against actual CI corpus receipts",
+  "pending": [
+    "Real Twine reopening/review and version/reviewer/environment record"
+  ],
+  "non_claims": [
+    "No automatic visual signoff",
+    "No license/distribution/support approval"
+  ]
+}

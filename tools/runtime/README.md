@@ -157,6 +157,13 @@ partir desse pacote em uma pasta nova. As entradas e comandos estão em
 [REBUILD-SOURCES.md](REBUILD-SOURCES.md). O artifact de fontes dura sete dias;
 não substitui a oferta permanente nem a revisão completa de licenças.
 
+Para macOS Intel/ARM, o mesmo coletor recebe `--graphviz`, `--provenance` e
+`--output`, sem `--sdk`. Exporta Graphviz, receitas e proveniência; não copia o
+SDK Apple. O pipeline confere os hashes do par binário/fontes e reconstrói
+Graphviz usando as receitas exportadas e um SDK instalado no runner, com corpus
+nos dois Pythons. Isso não aprova a completude das fontes de terceiros, suas
+licenças, assinatura ou entrega pública. Não há alegação de rebuild byte a byte.
+
 `source-lock.json` fixa os bytes reais do arquivo-fonte Graphviz 16.1.0,
 revisão Git e licença. Obtenha esse arquivo da URL registrada e confira o hash.
 As seis receitas não instalam compiladores nem dependências automaticamente.

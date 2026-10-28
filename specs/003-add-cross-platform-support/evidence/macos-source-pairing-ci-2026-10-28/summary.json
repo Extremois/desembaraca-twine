@@ -1,0 +1,53 @@
+{
+  "kind": "macos-source-review-pairing-not-approved-audit",
+  "application_revision": "131a66ef81cdb3fcd029f83a953afea9d0e303c9",
+  "workflow_url": "https://github.com/Extremois/desembaraca-twine/actions/runs/40714512879",
+  "approved": false,
+  "qualified": false,
+  "task_complete": false,
+  "task": "T052",
+  "reports": [
+    {
+      "artifact_id": "macos-x86_64",
+      "binary_actions_artifact_id": 12827378218,
+      "sources_actions_artifact_id": 12827378117,
+      "binary_actions_zip_sha256": "c2c3457ee6c21d814d6a3b9534d8bbee3148241aa60f542cf6eba54e9699c0d9",
+      "sources_actions_zip_sha256": "2c61a9626e4fe11affcae671e9b97055f7ec4475209685e02a97564b144c65c4",
+      "executable_sha256": "d8ab197fbdfa9312050f4c4827f4bb612f7f4d1d021d4308a9850ee1a1104fff",
+      "candidate_archive_sha256": "d74869180a3cdb538717652e4f4f8ca36d150ec0a4469f05ee9fbbbbef86cf44",
+      "sources_archive_sha256": "aca1119cee6c9fc759b804b2b45f7211843e6d3558c71f682f10a5c778139c81",
+      "provenance_sha256": "24f4cedf5ba3e45fc40dc89aa1a536092c168a95fc50ef8ddfa26ef68e8aa1af",
+      "source_files": 127,
+      "source_file_hashes_verified": true,
+      "graphviz_source_archive_verified": true,
+      "recipe_hash_verified": true,
+      "apple_sdk_files_exported": 0,
+      "pairing_verified_on_both_archives": true,
+      "evidence_directory": "macos-x86_64"
+    },
+    {
+      "artifact_id": "macos-arm64",
+      "binary_actions_artifact_id": 12828182133,
+      "sources_actions_artifact_id": 12827629068,
+      "binary_actions_zip_sha256": "6057ed0109430008d8f38bedc46a88c3c01cfd46774ddd412bf6e2652d9da323",
+      "sources_actions_zip_sha256": "9a2ccd406444f0107168d5fbf0387e99a59769b24faebc5c2cc359549c4cb235",
+      "executable_sha256": "774115a1a9e4b2385d33fa55fe02de0d8728cb0984967d445528c6fe04f97dac",
+      "candidate_archive_sha256": "73551477c1fefcb6dae6ffccb3b45e968d9a7dd32333aeb69c88ecf5e4b8ec36",
+      "sources_archive_sha256": "204400dd42181415545f3e5909495a4d472170018459bdc26cd24267d59a1349",
+      "provenance_sha256": "dbb278b69c6f1601e1aa15a45600dfeae08b279174405893360356a1758fc036",
+      "source_files": 127,
+      "source_file_hashes_verified": true,
+      "graphviz_source_archive_verified": true,
+      "recipe_hash_verified": true,
+      "apple_sdk_files_exported": 0,
+      "pairing_verified_on_both_archives": true,
+      "evidence_directory": "macos-arm64"
+    }
+  ],
+  "limitations": [
+    "Graphviz sources and maintainer recipes only; Apple SDK is not redistributed",
+    "Per-file license and SDK/runtime contribution applicability still pending",
+    "Source completeness, rebuild and immutable public delivery remain separate",
+    "Local read-only archive/hash inspection; all runtime tests executed in Actions"
+  ]
+}

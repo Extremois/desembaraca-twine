@@ -1,0 +1,30 @@
+{
+  "kind": "windows-abi-installed-execution-visual-review-pending",
+  "task": "T065",
+  "task_complete": false,
+  "qualified": false,
+  "application_revision": "07688e264e6c9915790c2728beb24552a23f6388",
+  "workflow": "https://github.com/Extremois/desembaraca-twine/actions/runs/40691742025",
+  "python_minors": [
+    "3.12",
+    "3.14"
+  ],
+  "installation_modes": [
+    "wheel",
+    "sdist"
+  ],
+  "installations": 4,
+  "corpus_executions": 52,
+  "known_zero_reference_executions": 24,
+  "repair_scenarios": 16,
+  "process_recovery_scenarios": 16,
+  "installed_files_verified_per_mode": 53,
+  "recovery_evidence": {
+    "path": "specs/003-add-cross-platform-support/evidence/abi-recovery-ci-canonical/summary.json",
+    "sha256": "17969174aba882633781cec60e40b31bf76daee18cab179bc7a3befd33202d1a"
+  },
+  "visual_review_complete": false,
+  "twine_version": null,
+  "reviewer": null,
+  "limitation": "ABI execution on the actual recorded hosted Windows OS; no Windows 11 certification"
+}

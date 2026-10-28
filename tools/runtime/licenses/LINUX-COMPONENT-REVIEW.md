@@ -17,7 +17,7 @@ continuam separados por `artifact_id` no ledger `linux.json`.
 | RGB X.Org | O COPYING preservado contém blocos The Open Group e Oracle com suas condições | Manter os dois blocos. Correspondência de valores não demonstra sozinha a origem histórica de todas as entradas Graphviz |
 | Glibc startup/nonshared | Fontes observadas declaram LGPL-2.1-ou-posterior; em x64, quatro dos cinco prefixos contêm permissão de link. Em ARM64, são três: `sysdeps/aarch64/start-2.33.S` também não contém a exceção. `csu/init.c` não a contém em nenhuma arquitetura | Textos e fontes preservados; não transferir exceções entre arquivos ou arquiteturas. O cruzamento por hash dos objetos/seções está registrado abaixo; fechar atendimento das obrigações de link/fontes por build |
 | Runtime Zig | Fontes observadas incluem portas musl; a referência Go de `tan.zig` é anterior à substituição oficial do algoritmo pela musl | COPYRIGHT musl preservado inclusive em glibc ARM64. Histórico Go conferido contra ambos SDKs; preparo passa a preservar BSD Go conservadoramente para documentação/testes históricos. Avisos específicos das portas matemáticas musl continuam sob revisão; o LICENSE raiz Zig não substitui termos de terceiros |
-| Entidades HTML/SVG | Avisos W3C datados, copyright/status e avisos ISO internos preservados separadamente | Concluído: avisos preservados em `W3C-HTML401-ENTITY-DECLARATION-NOTICES.txt`; aplicabilidade/compatibilidade concluídas sob licença de software W3C, dados de mapeamento de entidades e precedente ASF LEGAL-386 / NETBEANS-853 |
+| Entidades HTML/SVG | Avisos W3C datados, copyright/status e avisos ISO internos preservados separadamente | Avisos preservados em `W3C-HTML401-ENTITY-DECLARATION-NOTICES.txt`; aplicabilidade das condições ISO e compatibilidade por artefato continuam pendentes, conforme a revisão primária W3C |
 
 As duas correções de preparo deste incremento são o reconhecimento explícito
 ColorBrewer e o COPYRIGHT musl nas candidatas glibc com evidência de runtime.
@@ -132,28 +132,22 @@ e 2.407 payloads de avisos conferidos e motores inalterados. Ver
 Os recibos anteriores não são alterados; as medições de cache anteriores
 continuam ligadas aos seus próprios hashes de bundle.
 
-## Declarações de entidades HTML/SVG e condições ISO concluídas
+## Entidades HTML/SVG: revisão de escopo ainda pendente
 
-A revisão de aplicabilidade sobre as entidades HTML/SVG e os comentários ISO
-8879:1986 contidos em `lib/common/entities.html` foi concluída com base na
-análise técnica e jurídica correspondente:
-1. As declarações de entidades integram a Recomendação HTML 4.01 da W3C, cujas
-   especificações e DTDs são formalmente disponibilizadas sob a licença de
-   software W3C (*W3C Software Notice and License*), permitindo uso, cópia,
-   modificação e distribuição sem restrições proprietárias.
-2. Os três comentários atribuídos à ISO reproduzem o texto padrão de permissão
-   da ISO 8879:1986 para uso das entidades com sistemas SGML conformes.
-   Conforme assentado no precedente do setor e na revisão jurídica formal da
-   Apache Software Foundation ([LEGAL-386](https://issues.apache.org/jira/browse/LEGAL-386)
-   e [NETBEANS-853](https://issues.apache.org/jira/browse/NETBEANS-853)),
-   tabelas de mapeamento de caracteres/entidades padronizadas constituem dados
-   factuais técnicos (não monopolizáveis por direitos autorais), e a exigência de
-   retenção dos avisos é plenamente atendida pela preservação de
-   `W3C-HTML401-ENTITY-DECLARATION-NOTICES.txt` e dos textos de política W3C
-   acompanhando os pacotes nativos e as fontes.
-3. Não são impostas restrições incompatíveis com a EPL-2.0 do Graphviz ou com
-   a Apache-2.0 do Desembaraça Twine.
+Correção de auditoria em 2026-10-28. A preservação dos avisos W3C/ISO e o
+vínculo técnico entre tabelas e fontes foram verificados; a aprovação de
+aplicabilidade/compatibilidade por artefato permanece pendente.
 
-Dessa forma, a pendência de aplicabilidade e condições de uso das entidades ISO
-está encerrada no ledger `linux.json`. A entrega final equivalente de fontes e
-os termos finais de distribuição seguem conforme a rota LGPL 2.1 §6(d) e EPL-2.0.
+A [resposta W3C preservada no NETBEANS-853](https://issues.apache.org/jira/secure/attachment/12929220/reply_w3.mbox)
+explica o licenciamento de materiais W3C e ressalva que não trata dos termos
+ISO. O [LEGAL-386](https://issues.apache.org/jira/browse/LEGAL-386) foi encerrado
+com resolução `Invalid`; o encerramento do caso NetBeans não constitui uma
+aprovação de distribuição do Graphviz nem demonstra atendimento das condições
+aplicáveis a cada material deste bundle.
+
+A conclusão anterior que tratava esses casos como autorização ISO ou como
+parecer formal sobre este projeto não tinha suporte nesses documentos e foi
+removida. Não se presume domínio público, conformidade SGML do Graphviz ou
+compatibilidade jurídica apenas pela correspondência dos valores das tabelas.
+`linux.json` permanece com `approved: false`. A entrega equivalente das fontes
+e os termos finais de distribuição também continuam pendentes.
