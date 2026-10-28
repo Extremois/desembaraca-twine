@@ -58,8 +58,11 @@
   "evidence_path": "specs/003-add-cross-platform-support/evidence/abi-scope-ci/installed-posix/summary.json",
   "remaining_delivery": [
     "License/source audit",
-    "Immutable binary/source delivery",
-    "Twine output review"
+    "Immutable binary/source delivery"
   ],
-  "network_scope": "Acquisition counters and Python network guards; no syscall trace claimed"
+  "network_scope": "Acquisition counters and Python network guards; no syscall trace claimed",
+  "visual_review_evidence": {
+    "path": "specs/003-add-cross-platform-support/evidence/twine-visual-review-2026-10-28.json",
+    "sha256": "c5106fa06acf5cb7e0400eaee7c61fe39e5b571dcafd8d67f9fabe4f20990b02"
+  }
 }

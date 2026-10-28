@@ -384,5 +384,41 @@
     "integration_review": "specs/003-add-cross-platform-support/evidence/source-pairing-integration-2026-10-27/README.md",
     "historical_real_pairing_review": "specs/003-add-cross-platform-support/evidence/source-pairing-real-2026-10-27/summary.json",
     "catalog_distribution_status": "unpromoted_pending_authorized_release"
+  },
+  "current_candidate_draft_verification": {
+    "kind": "partial-distribution-integrity-evidence-index",
+    "task": "T066",
+    "task_complete": false,
+    "qualified": false,
+    "validation_policy": "github-actions-only-no-vm",
+    "application_revision": "f5e1ad22aea915e9d42e7da1f76de86ffbd23a4f",
+    "candidate_drafts": {
+      "path": "specs/003-add-cross-platform-support/evidence/distribution-candidate-drafts-2026-10-28/summary.json",
+      "sha256": "b58e25b5907bc5a9cee20bb1d7a7dda4baff93844b07afa49d6341215e28c826"
+    },
+    "candidate_count": 6,
+    "binary_files_verified": 2419,
+    "offline_notice_payloads_with_origin_hashes": 2407,
+    "installed_package_and_cache_evidence": {
+      "path": "specs/003-add-cross-platform-support/evidence/abi-recovery-ci-canonical/summary.json",
+      "sha256": "17969174aba882633781cec60e40b31bf76daee18cab179bc7a3befd33202d1a"
+    },
+    "visual_review_evidence": {
+      "path": "specs/003-add-cross-platform-support/evidence/twine-visual-review-2026-10-28.json",
+      "sha256": "c5106fa06acf5cb7e0400eaee7c61fe39e5b571dcafd8d67f9fabe4f20990b02"
+    },
+    "verification_scope": "Candidate archive byte/mode/inventory and notice-origin checks locally; runtime, package and cache checks only in GitHub Actions",
+    "source_archive_scope": "Binary/source pair verified in Actions; full source archive bytes were not downloaded again for this index",
+    "license_compatibility_approved": false,
+    "active_catalog_changed": false,
+    "remaining": [
+      "Per-artifact license/source compatibility audit",
+      "Immutable binary and corresponding-source delivery",
+      "Final manifests and final wheel/sdist/cache acceptance after catalog preparation"
+    ],
+    "non_claims": [
+      "Notice presence does not establish license compatibility",
+      "Candidate evidence does not qualify an active release"
+    ]
   }
 }

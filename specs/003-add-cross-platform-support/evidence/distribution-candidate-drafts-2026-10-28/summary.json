@@ -1,0 +1,73 @@
+{
+  "kind": "distribution-draft-preparation-not-qualification",
+  "application_revision": "f5e1ad22aea915e9d42e7da1f76de86ffbd23a4f",
+  "approved": false,
+  "qualified": false,
+  "active_catalog_changed": false,
+  "catalog_sha256": "525580c22ac27e58cfbf74ca6877e25f09a696bf07813ae4a1bdad059d72b762",
+  "artifacts": [
+    {
+      "artifact_id": "linux-glibc-aarch64",
+      "draft": "linux-glibc-aarch64/manifest-draft.json",
+      "draft_sha256": "caf53f0ccf01f4c56163bdefa76d244c0e1646de15eb0eae9e039d803a073394",
+      "binary_sha256": "14ca15b7f161b999c28a2ce397b172401b6d2aadd42d61180b4ae03d76e598bd",
+      "sources_sha256": "1e949cc71c67ca38409627e215eb2974f054f317e3f524ff15ea360abfe37f63",
+      "files_verified": 573,
+      "notice_payloads_verified": 571,
+      "approved": false
+    },
+    {
+      "artifact_id": "linux-glibc-x86_64",
+      "draft": "linux-glibc-x86_64/manifest-draft.json",
+      "draft_sha256": "d058c52a1f08508559c337dc7c7477f3ab82e57eb8c3edc726c12e2ef0a520c8",
+      "binary_sha256": "95e5b93879ef69c84117effe67419e5f48d05c68259ab0575dd13aef673969f0",
+      "sources_sha256": "d372ae6ae7afcbf6b6f60d297721e983f95188c6b3e5b86ee53ce76ac536c527",
+      "files_verified": 480,
+      "notice_payloads_verified": 478,
+      "approved": false
+    },
+    {
+      "artifact_id": "linux-musl-aarch64",
+      "draft": "linux-musl-aarch64/manifest-draft.json",
+      "draft_sha256": "7177c480a5c3f8a41351a1d518d90e78ace140886acc23f10c56d2c4c40cc307",
+      "binary_sha256": "30ac24565c860be3cbe10a6170ff9b2854079fe46098602cf45d9a2b36fcf953",
+      "sources_sha256": "47fbeeb3a893b2c1f1df25676395e464c8a43ff3ff6bc593fc18a6e20de72d70",
+      "files_verified": 450,
+      "notice_payloads_verified": 448,
+      "approved": false
+    },
+    {
+      "artifact_id": "linux-musl-x86_64",
+      "draft": "linux-musl-x86_64/manifest-draft.json",
+      "draft_sha256": "6956de7c9ca3a6039af4a499ae2d9dab6188b048281f091fb0acae7e4a14804f",
+      "binary_sha256": "9bfc98f8fa2fad64a9289eb111b2f657e2e2778ab5d3b13b3cb1c5df4c1196f9",
+      "sources_sha256": "69aba6bd139a7139ec3508a86920dd185d5224a956b8b22983038042fa62e652",
+      "files_verified": 450,
+      "notice_payloads_verified": 448,
+      "approved": false
+    },
+    {
+      "artifact_id": "macos-arm64",
+      "draft": "macos-arm64/manifest-draft.json",
+      "draft_sha256": "aa053552ce9e0a0a4e5da650970953a310ff8ce7b30e12afde7b4b5f2f878edf",
+      "binary_sha256": "07c84ccbea9c50e0f6ed355345e9a08e8afb9775c437dd6fd94a374dc3e13230",
+      "sources_sha256": "a300226fa65f641f7f20f13051a057ee3fed4c5f79c7e36537021ca9b23a3b7a",
+      "files_verified": 233,
+      "notice_payloads_verified": 231,
+      "approved": false
+    },
+    {
+      "artifact_id": "macos-x86_64",
+      "draft": "macos-x86_64/manifest-draft.json",
+      "draft_sha256": "7b387a69170f829b1610def113faee1d83d5daf97a2e62538e36ef37cbb1638b",
+      "binary_sha256": "f59c2127c54d0394445d118d21f81a815404687b63b4339fc1048aa4e4a99827",
+      "sources_sha256": "36c66c359bed71d3aedfd298f5b4de5f6410d3c147a2dbd768f6928408a76d3a",
+      "files_verified": 233,
+      "notice_payloads_verified": 231,
+      "approved": false
+    }
+  ],
+  "sources_archive_bytes_rechecked_in_actions": true,
+  "license_compatibility_approved": false,
+  "verification": "Read-only archive, inventory, mode and notice-origin inspection; no local runtime tests"
+}

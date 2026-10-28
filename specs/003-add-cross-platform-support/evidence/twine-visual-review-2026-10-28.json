@@ -1,0 +1,81 @@
+{
+  "kind": "user-confirmed-visual-review",
+  "recorded_at": "2026-10-28T19:08:20.946499+00:00",
+  "reviewer": "user",
+  "review_method": "User reported actual reopening and visual review in Twine",
+  "confirmation_source": "user-message",
+  "confirmation_text": "Twine: Twine 2.12.1; Ambiente: Windows 11 e Firefox; Resultado: 6/6 OK",
+  "twine_version": "2.12.1",
+  "environment": {
+    "os": "Windows 11",
+    "browser": "Firefox",
+    "browser_version": null
+  },
+  "application_revision": "07688e264e6c9915790c2728beb24552a23f6388",
+  "archive": {
+    "path": "specs/003-add-cross-platform-support/evidence/abi-review-all.zip",
+    "sha256": "68eca3641b0d2491cf50fbc64a9f08fe5629b32e0caa7eef994de80ce4937a47"
+  },
+  "source_summary": {
+    "path": "specs/003-add-cross-platform-support/evidence/abi-recovery-ci-canonical/summary.json",
+    "sha256": "17969174aba882633781cec60e40b31bf76daee18cab179bc7a3befd33202d1a"
+  },
+  "passed": true,
+  "visual_review_complete": true,
+  "qualified": false,
+  "reviewed_outputs": [
+    {
+      "case": "crossing",
+      "sha256": "aa821f1611a98d479811f652197070728904bd2afe31c8e6fca64ed9fbec8e8b",
+      "reopened": true,
+      "result": "OK",
+      "applies_to_installations": 28
+    },
+    {
+      "case": "coincident",
+      "sha256": "8644eeb3404043bec66b149c0ed3f2f4bea0600914a944e75c5f6464b78c1ed6",
+      "reopened": true,
+      "result": "OK",
+      "applies_to_installations": 28
+    },
+    {
+      "case": "isolated_overlap",
+      "sha256": "bef1e0132bce9b72f1317cdbb43d3c2a54e604632459cbda2c5af7d52c17a03a",
+      "reopened": true,
+      "result": "OK",
+      "applies_to_installations": 28
+    },
+    {
+      "case": "connected_overlap",
+      "sha256": "137e849cfdf04ef3db7ed9057a7142ebecc403ee78952f307138ff5ecca72618",
+      "reopened": true,
+      "result": "OK",
+      "applies_to_installations": 28
+    },
+    {
+      "case": "through_isolated",
+      "sha256": "f2460867ce13305139836fc5737093e3e513fae53c4bee8fe0742fe5fc98c341",
+      "reopened": true,
+      "result": "OK",
+      "applies_to_installations": 28
+    },
+    {
+      "case": "through_connected",
+      "sha256": "8c13ace7ce2f65beff622e529456029fda6c7e1f624a5046886a7065f60a2f3f",
+      "reopened": true,
+      "result": "OK",
+      "applies_to_installations": 28
+    }
+  ],
+  "applies_to": {
+    "abi_targets": 7,
+    "python_slots": 14,
+    "package_installations": 28,
+    "identical_output_occurrences": 168
+  },
+  "limitations": [
+    "Visual approval of the recorded output hashes only",
+    "No license, release or support promotion",
+    "Windows 11 is the reported visual-review environment; automated runtime OS remains as recorded in Actions"
+  ]
+}

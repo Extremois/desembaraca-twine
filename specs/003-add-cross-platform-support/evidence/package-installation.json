@@ -143,5 +143,11 @@
   "previous_native_debian_ubuntu_index": {
     "path": "specs/003-add-cross-platform-support/evidence/debian-native-2026-10-27/previous-package-installation.json",
     "sha256": "cbe163db3bbd4abe7dad4f4d0d8cbf44ed32115032330f5121731b74a9933d26"
+  },
+  "current_abi_remote_installation": {
+    "path": "specs/003-add-cross-platform-support/evidence/abi-remote-install-ci-2026-10-28/summary.json",
+    "sha256": "34a2b6bab8716eca8f682cb3f79a54d0b095b3f5b2d5d9149aa097e2d1a6271e",
+    "slots": 14,
+    "qualified": false
   }
 }

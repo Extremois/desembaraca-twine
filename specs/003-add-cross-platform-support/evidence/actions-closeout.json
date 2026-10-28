@@ -1,8 +1,8 @@
 {
   "kind": "implementation-closeout-checkpoint",
   "validation_policy": "github-actions-only-no-vm",
-  "tasks_complete": 74,
-  "tasks_pending": 10,
+  "tasks_complete": 76,
+  "tasks_pending": 8,
   "task_count": 84,
   "completed_recipe_tasks": [
     "T025",
@@ -23,8 +23,8 @@
   "remaining_decisions": [],
   "remaining_delivery": [
     "Approved artifact license/source audits",
-    "Immutable binary/source delivery",
-    "Remaining ABI CI acceptance and output review"
+    "Immutable qualified binary/source delivery",
+    "Final-package ABI acceptance, installation and quickstart after catalog preparation"
   ],
   "feature_complete": false,
   "post_validation_local_reconciliation": [
@@ -32,7 +32,9 @@
     "T056",
     "T033",
     "T044",
-    "T076"
+    "T076",
+    "T063",
+    "T065"
   ],
   "qualification_scope": "abi",
   "required_abi_targets": 7,
@@ -49,7 +51,7 @@
     "T045",
     "T051"
   ],
-  "tasks_executed": 65,
+  "tasks_executed": 67,
   "tasks_retired_by_scope": 9,
   "abi_execution_evidence": {
     "posix": {
@@ -65,5 +67,27 @@
   "abi_recovery_evidence": {
     "path": "specs/003-add-cross-platform-support/evidence/abi-recovery-ci-canonical/summary.json",
     "sha256": "17969174aba882633781cec60e40b31bf76daee18cab179bc7a3befd33202d1a"
-  }
+  },
+  "latest_source_review_revision": "fed01cc58e7a51625ce8b6da43b526dbc55c80a0",
+  "macos_source_rebuild_evidence": {
+    "path": "specs/003-add-cross-platform-support/evidence/macos-source-rebuild-ci-2026-10-28/summary.json",
+    "sha256": "f00cce4a84132e9bfe0aee170ae9a416680e2856c4038524e4a1c2b4187fbe7d"
+  },
+  "twine_visual_review_evidence": {
+    "path": "specs/003-add-cross-platform-support/evidence/twine-visual-review-2026-10-28.json",
+    "sha256": "c5106fa06acf5cb7e0400eaee7c61fe39e5b571dcafd8d67f9fabe4f20990b02"
+  },
+  "distribution_candidate_drafts": {
+    "path": "specs/003-add-cross-platform-support/evidence/distribution-candidate-drafts-2026-10-28/summary.json",
+    "sha256": "b58e25b5907bc5a9cee20bb1d7a7dda4baff93844b07afa49d6341215e28c826"
+  },
+  "distribution_integrity_evidence": {
+    "path": "specs/003-add-cross-platform-support/evidence/distribution-integrity.json",
+    "sha256": "b5d4538793ad5249bf461f3a06e2970be24c6538d1b300081ac626336237bb64"
+  },
+  "current_remote_installation_evidence": {
+    "path": "specs/003-add-cross-platform-support/evidence/abi-remote-install-ci-2026-10-28/summary.json",
+    "sha256": "34a2b6bab8716eca8f682cb3f79a54d0b095b3f5b2d5d9149aa097e2d1a6271e"
+  },
+  "latest_candidate_review_revision": "f5e1ad22aea915e9d42e7da1f76de86ffbd23a4f"
 }

@@ -1,0 +1,1495 @@
+{
+  "kind": "unpromoted-distribution-review-draft",
+  "approved": false,
+  "qualified": false,
+  "artifact_id": "macos-x86_64",
+  "abi_target_id": "abi-darwin-darwin-x86_64",
+  "application_revision": "f5e1ad22aea915e9d42e7da1f76de86ffbd23a4f",
+  "source_workflow": "https://github.com/Extremois/desembaraca-twine/actions/runs/40722351661",
+  "actions_artifact_id": 12832111608,
+  "actions_zip_sha256": "8551ef1ae9440ef38e5991d0c3d5cd8bbfa060c7daa5ab7df5b2049faf21041f",
+  "native_inventory_sha256": "fc8d375d3a250c05723ad8975b99e54060879e251989ac3621c8941c04def9f7",
+  "provenance_sha256": "e5498cbdb348dd68a4ed7498c1d1048066803fa9b9dbffe5eb2bdbe38621399a",
+  "binary_asset_filename": "graphviz-16.1.0-macos-x86_64-f59c2127c54d0394445d118d21f81a815404687b63b4339fc1048aa4e4a99827.zip",
+  "corresponding_sources": {
+    "url": null,
+    "sha256": "36c66c359bed71d3aedfd298f5b4de5f6410d3c147a2dbd768f6928408a76d3a",
+    "bytes": 41073190,
+    "filename": "graphviz-16.1.0-macos-x86_64-sources-36c66c359bed71d3aedfd298f5b4de5f6410d3c147a2dbd768f6928408a76d3a.tar.gz"
+  },
+  "runtime_manifest_candidate": {
+    "schema_version": 2,
+    "engine": "graphviz",
+    "version": "16.1.0",
+    "platform": "darwin",
+    "artifact_arch": "x86_64",
+    "abi": "darwin",
+    "build_variant": "macos-x86_64",
+    "url": null,
+    "allowed_redirect_hosts": [],
+    "archive_sha256": "f59c2127c54d0394445d118d21f81a815404687b63b4339fc1048aa4e4a99827",
+    "archive_bytes_limit": 2039395,
+    "expanded_bytes_limit": 2008887,
+    "entry_limit": 233,
+    "executable_relative_path": "bin/dot",
+    "generated_files": [],
+    "files": [
+      {
+        "path": "bin/dot",
+        "size": 1388288,
+        "mode": 493,
+        "sha256": "d8ab197fbdfa9312050f4c4827f4bb612f7f4d1d021d4308a9850ee1a1104fff"
+      },
+      {
+        "path": "third-party-notices/APSL-1.1-COPYING.txt",
+        "size": 19930,
+        "mode": 420,
+        "sha256": "359a21ed59e82096455398ea10c5bc8c3ff28e7acf7935b77751d70e3630fc95"
+      },
+      {
+        "path": "third-party-notices/APSL-2.0-COPYING.txt",
+        "size": 19829,
+        "mode": 420,
+        "sha256": "e5881019d8766c1e88a5fe1dbca4ba40c78011d41fcb18f6e9f50df60182685b"
+      },
+      {
+        "path": "third-party-notices/Bison-lib__cgraph__grammar.c.txt",
+        "size": 1532,
+        "mode": 420,
+        "sha256": "b979bc0e49fa1efed0fad3af4ecc582b471da7662626cebfd0d5f998b1119f72"
+      },
+      {
+        "path": "third-party-notices/Bison-lib__cgraph__grammar.h.txt",
+        "size": 1527,
+        "mode": 420,
+        "sha256": "ecd76b7233bacbeeafca33a46b80f4120864e3de861e7d0a7d7c6fcce3d664dd"
+      },
+      {
+        "path": "third-party-notices/Bison-lib__common__htmlparse.c.txt",
+        "size": 1532,
+        "mode": 420,
+        "sha256": "b979bc0e49fa1efed0fad3af4ecc582b471da7662626cebfd0d5f998b1119f72"
+      },
+      {
+        "path": "third-party-notices/Bison-lib__common__htmlparse.h.txt",
+        "size": 1527,
+        "mode": 420,
+        "sha256": "ecd76b7233bacbeeafca33a46b80f4120864e3de861e7d0a7d7c6fcce3d664dd"
+      },
+      {
+        "path": "third-party-notices/ColorBrewer.txt",
+        "size": 2130,
+        "mode": 420,
+        "sha256": "09598cbb53b21f3cab841d5be8ceee6ef9bc0387f3b60330da94e9c98f4ada19"
+      },
+      {
+        "path": "third-party-notices/Flex-Apple-35-COPYING.txt",
+        "size": 1855,
+        "mode": 420,
+        "sha256": "97fd685958d93be7f8dab939bb8161dbd6afb0718c63bfc337c24321aea44273"
+      },
+      {
+        "path": "third-party-notices/GPL-3.0-COPYING.txt",
+        "size": 35149,
+        "mode": 420,
+        "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+      },
+      {
+        "path": "third-party-notices/Graphviz-AUTHORS.txt",
+        "size": 694,
+        "mode": 420,
+        "sha256": "182eaf397edc803d0e44a25708ba70ecafc143c0f610ea7048c6b9687a939ff0"
+      },
+      {
+        "path": "third-party-notices/Graphviz-COPYING.txt",
+        "size": 14198,
+        "mode": 420,
+        "sha256": "0becf16567beb77fa252b7664631dd177c8f9a1889e48995b45379c7130e5303"
+      },
+      {
+        "path": "third-party-notices/Graphviz-lib__rbtree__LICENSE.txt",
+        "size": 1048,
+        "mode": 420,
+        "sha256": "fcb423209a3a3909f41e629a4973eab3995ceb93136dd72485fb12ad3de29dfc"
+      },
+      {
+        "path": "third-party-notices/LLVM-license-reference-COPYING.txt",
+        "size": 15141,
+        "mode": 420,
+        "sha256": "8d85c1057d742e597985c7d4e6320b015a9139385cff4cbae06ffc0ebe89afee"
+      },
+      {
+        "path": "third-party-notices/NOTICE-ORIGINS.json",
+        "size": 148328,
+        "mode": 420,
+        "sha256": "a2e8f289e0bfac22dbc4286f8f7cddf5b6fa2c2d49b9653a6bc2173322c90f58"
+      },
+      {
+        "path": "third-party-notices/SDK-header-0007956af54f3688f2e22df4.txt",
+        "size": 1323,
+        "mode": 420,
+        "sha256": "1ca5aa536b04f6ea67cce540c02d43e86b9f39d5944eea41205e0b13979d99cf"
+      },
+      {
+        "path": "third-party-notices/SDK-header-0034e32e82d089f8eebfbcde.txt",
+        "size": 1325,
+        "mode": 420,
+        "sha256": "69ddfafa862a42539b198481671197c3b77e234f361395f7783571ecc1da7f15"
+      },
+      {
+        "path": "third-party-notices/SDK-header-006126cedb9f90af1e427902.txt",
+        "size": 1391,
+        "mode": 420,
+        "sha256": "652aae93eae75061dd919056f7455a10fe3605805862c2caa4ffd7841c2aaa53"
+      },
+      {
+        "path": "third-party-notices/SDK-header-006c1e03a91bcb99c264aa2f.txt",
+        "size": 1325,
+        "mode": 420,
+        "sha256": "69ddfafa862a42539b198481671197c3b77e234f361395f7783571ecc1da7f15"
+      },
+      {
+        "path": "third-party-notices/SDK-header-01e702b5a26cf201b9616734.txt",
+        "size": 372,
+        "mode": 420,
+        "sha256": "d90e4486cbe230e2a69b2208b3cfa00d2f37dde34fecba5641a1e765f0ec53ad"
+      },
+      {
+        "path": "third-party-notices/SDK-header-032aeb8a8655e5fb25e88b09.txt",
+        "size": 1325,
+        "mode": 420,
+        "sha256": "69ddfafa862a42539b198481671197c3b77e234f361395f7783571ecc1da7f15"
+      },
+      {
+        "path": "third-party-notices/SDK-header-03bfc12afa560e217f03af58.txt",
+        "size": 1326,
+        "mode": 420,
+        "sha256": "64dc590c8eaaf4ec9ef5b66c7aa5e6448f22e8db30d23d2f474c712ed0ff2915"
+      },
+      {
+        "path": "third-party-notices/SDK-header-0405f8ee935bc5de024135a3.txt",
+        "size": 1325,
+        "mode": 420,
+        "sha256": "69ddfafa862a42539b198481671197c3b77e234f361395f7783571ecc1da7f15"
+      },
+      {
+        "path": "third-party-notices/SDK-header-04580e58ae6e35bb9e261427.txt",
+        "size": 1321,
+        "mode": 420,
+        "sha256": "7315649c09fff5075326031926b33fa6d6c7c1b85b6ac087d7572218e8e18ce2"
+      },
+      {
+        "path": "third-party-notices/SDK-header-08a96c44c4ddbbd3259bef3e.txt",
+        "size": 1325,
+        "mode": 420,
+        "sha256": "69ddfafa862a42539b198481671197c3b77e234f361395f7783571ecc1da7f15"
+      },
+      {
+        "path": "third-party-notices/SDK-header-08d854eb89a7cf940c0f23ec.txt",
+        "size": 1325,
+        "mode": 420,
+        "sha256": "69ddfafa862a42539b198481671197c3b77e234f361395f7783571ecc1da7f15"
+      },
+      {
+        "path": "third-party-notices/SDK-header-0ab085f82be0fa4611d7ea93.txt",
+        "size": 1325,
+        "mode": 420,
+        "sha256": "69ddfafa862a42539b198481671197c3b77e234f361395f7783571ecc1da7f15"
+      },
+      {
+        "path": "third-party-notices/SDK-header-0e0afa328c37cb5ac4380d6c.txt",
+        "size": 1321,
+        "mode": 420,
+        "sha256": "7315649c09fff5075326031926b33fa6d6c7c1b85b6ac087d7572218e8e18ce2"
+      },
+      {
+        "path": "third-party-notices/SDK-header-109d605d73439bf87da8c9c3.txt",
+        "size": 1325,
+        "mode": 420,
+        "sha256": "4a7b739c9f9816d8872b0a680315154568754b84d30bdc8950f0c21e21da8b70"
+      },
+      {
+        "path": "third-party-notices/SDK-header-12046e3c88c52e9b7c448e3d.txt",
+        "size": 222,
+        "mode": 420,
+        "sha256": "827c9c49529b10fea56b0e030269acd4b21ce327491f085a25c8572f0aebd1d3"
+      },
+      {
+        "path": "third-party-notices/SDK-header-12be10fcea310e66355eabaa.txt",
+        "size": 2390,
+        "mode": 420,
+        "sha256": "40f795398f2e8296e5aa74c9252ba0f8aa9090af02feefa1314155d29e43fdc4"
+      },
+      {
+        "path": "third-party-notices/SDK-header-134f1226d6f27fc6e2ca23b6.txt",
+        "size": 3267,
+        "mode": 420,
+        "sha256": "296e847a0d8048379146f623aae786868b2494937c041d4d2aa2bfd2491ca203"
+      },
+      {
+        "path": "third-party-notices/SDK-header-1526764b57ace3f488dae93f.txt",
+        "size": 2548,
+        "mode": 420,
+        "sha256": "40ad7ba8276b3d797b3c56dc864f75eb795ac2a3fd294ec5e162bf57272637c2"
+      },
+      {
+        "path": "third-party-notices/SDK-header-158f6ef3af780022ff9f18f1.txt",
+        "size": 1320,
+        "mode": 420,
+        "sha256": "5990bc037faa98727711c4c7caa0b732f7e2f35da0268e489d53c5937cc609b3"
+      },
+      {
+        "path": "third-party-notices/SDK-header-18546e31851e3d9266dc5e97.txt",
+        "size": 919,
+        "mode": 420,
+        "sha256": "c2ff1a50d2487d96c1322ba69691e1addb352e676872fe342b08546888bb538c"
+      },
+      {
+        "path": "third-party-notices/SDK-header-18c76649ac4bf86780d97b69.txt",
+        "size": 1123,
+        "mode": 420,
+        "sha256": "cd224b84efda4e1e80932e1148858870199e7882f696b896d663501e302f6611"
+      },
+      {
+        "path": "third-party-notices/SDK-header-1979f81f3709afcd363d036f.txt",
+        "size": 372,
+        "mode": 420,
+        "sha256": "5754c957355450437a3f49af4b4ff624ace44a28722dda812a0533f2fd0ae618"
+      },
+      {
+        "path": "third-party-notices/SDK-header-1a807909b340ba596434ca71.txt",
+        "size": 977,
+        "mode": 420,
+        "sha256": "f8270978cfb642739401df51479b55ee553f1bfebb6abfebb4613f108165e10d"
+      },
+      {
+        "path": "third-party-notices/SDK-header-1b65645f8bfdc38180f99d6a.txt",
+        "size": 1325,
+        "mode": 420,
+        "sha256": "4a7b739c9f9816d8872b0a680315154568754b84d30bdc8950f0c21e21da8b70"
+      },
+      {
+        "path": "third-party-notices/SDK-header-1b9e7463f2f6ad7bf69bce16.txt",
+        "size": 70,
+        "mode": 420,
+        "sha256": "9f105e74e8387de0a678ea21df6f8c6c4139d94dcb21416e704469adb665c36d"
+      },
+      {
+        "path": "third-party-notices/SDK-header-1d161f4ef0192cc728f45249.txt",
+        "size": 1325,
+        "mode": 420,
+        "sha256": "69ddfafa862a42539b198481671197c3b77e234f361395f7783571ecc1da7f15"
+      },
+      {
+        "path": "third-party-notices/SDK-header-1dfee1a84a5573453e881f80.txt",
+        "size": 1325,
+        "mode": 420,
+        "sha256": "69ddfafa862a42539b198481671197c3b77e234f361395f7783571ecc1da7f15"
+      },
+      {
+        "path": "third-party-notices/SDK-header-1e09718f55bf14002db7c15d.txt",
+        "size": 970,
+        "mode": 420,
+        "sha256": "8113e8560a6e63f1cbc86ce8ef380392dfa918375c694a1a47b4db8e593edab4"
+      },
+      {
+        "path": "third-party-notices/SDK-header-20d113de92b4fa2c0e1e188a.txt",
+        "size": 2780,
+        "mode": 420,
+        "sha256": "2177c074dabaa2db91c0ca4d6238caf51bead500b6dcbfd3248349c496f70a64"
+      },
+      {
+        "path": "third-party-notices/SDK-header-219993c7648aed73c0f9fe45.txt",
+        "size": 1325,
+        "mode": 420,
+        "sha256": "69ddfafa862a42539b198481671197c3b77e234f361395f7783571ecc1da7f15"
+      },
+      {
+        "path": "third-party-notices/SDK-header-224066438e5bc20443f7c31e.txt",
+        "size": 1325,
+        "mode": 420,
+        "sha256": "69ddfafa862a42539b198481671197c3b77e234f361395f7783571ecc1da7f15"
+      },
+      {
+        "path": "third-party-notices/SDK-header-24abc915628ab1661963ba02.txt",
+        "size": 1325,
+        "mode": 420,
+        "sha256": "69ddfafa862a42539b198481671197c3b77e234f361395f7783571ecc1da7f15"
+      },
+      {
+        "path": "third-party-notices/SDK-header-2664fb7eccf08f97e0f67b6a.txt",
+        "size": 1219,
+        "mode": 420,
+        "sha256": "3c3a163b7c260c7e479d5d3584ce7db6a872da647810141192d4ab619db8fa83"
+      },
+      {
+        "path": "third-party-notices/SDK-header-2868d7685d8d501ef72ffd92.txt",
+        "size": 973,
+        "mode": 420,
+        "sha256": "90c78f5531f3b124803028ad23017579012752e08f7d47f28b6ddc635e69180e"
+      },
+      {
+        "path": "third-party-notices/SDK-header-2998f7f720cb6a398ecc8da3.txt",
+        "size": 1331,
+        "mode": 420,
+        "sha256": "c6d794f83beb62dff4e12386494fae962927d67fbb34d79e7cba3cad963c3316"
+      },
+      {
+        "path": "third-party-notices/SDK-header-2a4b04cf839dc6b8d24071a7.txt",
+        "size": 1937,
+        "mode": 420,
+        "sha256": "45c1cf1dd44b609a5d0c3b513fa3601f175eaac96edf81b4f8e22d7fa46252b9"
+      },
+      {
+        "path": "third-party-notices/SDK-header-2be3bba26596dba6b83b3a87.txt",
+        "size": 1326,
+        "mode": 420,
+        "sha256": "c84bb87517d88b9d6deb5509f574a8e6e3bbef28b0a4fbeb788bba58517f8dd0"
+      },
+      {
+        "path": "third-party-notices/SDK-header-2ce8c2ac50698b9d94f9b4c9.txt",
+        "size": 372,
+        "mode": 420,
+        "sha256": "e422064af9560b26465ed99c1e6e46f5a00d7e0bdd892d5b0ac845968a77b338"
+      },
+      {
+        "path": "third-party-notices/SDK-header-2cea10690622621440a3cb8d.txt",
+        "size": 1325,
+        "mode": 420,
+        "sha256": "69ddfafa862a42539b198481671197c3b77e234f361395f7783571ecc1da7f15"
+      },
+      {
+        "path": "third-party-notices/SDK-header-2d6553a299d8423685054e4a.txt",
+        "size": 1325,
+        "mode": 420,
+        "sha256": "69ddfafa862a42539b198481671197c3b77e234f361395f7783571ecc1da7f15"
+      },
+      {
+        "path": "third-party-notices/SDK-header-2d990211e32f697038d777e2.txt",
+        "size": 975,
+        "mode": 420,
+        "sha256": "42fee5f23677ec6b42f6f5e75be762a3261441dd97bed1e513890819306564c8"
+      },
+      {
+        "path": "third-party-notices/SDK-header-2ed51319d34f90035859c9ae.txt",
+        "size": 1325,
+        "mode": 420,
+        "sha256": "69ddfafa862a42539b198481671197c3b77e234f361395f7783571ecc1da7f15"
+      },
+      {
+        "path": "third-party-notices/SDK-header-32074670f155c4d77c615540.txt",
+        "size": 967,
+        "mode": 420,
+        "sha256": "df2f5d9446a46404bd3bf5c4cb321b11082f485d2e527e64d0f69bc7edfc0f44"
+      },
+      {
+        "path": "third-party-notices/SDK-header-32f89c74481ce696e89903b6.txt",
+        "size": 977,
+        "mode": 420,
+        "sha256": "19a87586051289e5ce6c0c9275c76d22f228dcfec3ce5de615a6199829e166be"
+      },
+      {
+        "path": "third-party-notices/SDK-header-34f0812e484859a9c0bc84db.txt",
+        "size": 373,
+        "mode": 420,
+        "sha256": "c187113158e65259c99f706181adf0678112bb58fbbcd688fe8d2b581755b1f7"
+      },
+      {
+        "path": "third-party-notices/SDK-header-363726fd039d741f92e71fdc.txt",
+        "size": 1325,
+        "mode": 420,
+        "sha256": "4a7b739c9f9816d8872b0a680315154568754b84d30bdc8950f0c21e21da8b70"
+      },
+      {
+        "path": "third-party-notices/SDK-header-38627b2087f13c10e2a3ff61.txt",
+        "size": 1331,
+        "mode": 420,
+        "sha256": "bd4c34de0ded9a1f1a362b9f39a8276f106f9e3fbd72e010b8afe4f83550b9fa"
+      },
+      {
+        "path": "third-party-notices/SDK-header-39a96a9a0c07463108fcad89.txt",
+        "size": 969,
+        "mode": 420,
+        "sha256": "385a49d08a399b48318c9704ef53eaec8e5a648cd7ac9f51800d8109c262566f"
+      },
+      {
+        "path": "third-party-notices/SDK-header-3a4ed49bd325fa7fcfa6017a.txt",
+        "size": 1326,
+        "mode": 420,
+        "sha256": "120f58e47384392824e3e23a3c22fd80fb90ebaf5070196286c794b31f9b5be8"
+      },
+      {
+        "path": "third-party-notices/SDK-header-3ad40e3700e7eb960fa7f942.txt",
+        "size": 3586,
+        "mode": 420,
+        "sha256": "a09e180ead2b2f1c8b25af9a35b970cb62d6ebd86c93c9e307db9bb5cac643cb"
+      },
+      {
+        "path": "third-party-notices/SDK-header-3c2f567a1bc52fb2de9b66b6.txt",
+        "size": 967,
+        "mode": 420,
+        "sha256": "df2f5d9446a46404bd3bf5c4cb321b11082f485d2e527e64d0f69bc7edfc0f44"
+      },
+      {
+        "path": "third-party-notices/SDK-header-3f8cdbf1780ec26607e04ac6.txt",
+        "size": 2920,
+        "mode": 420,
+        "sha256": "45719c527a244c548ffc2610e4ffa5e81d539013d2cc485e497be47ebcfbf8b3"
+      },
+      {
+        "path": "third-party-notices/SDK-header-41bb8a227d138eabdba55ff6.txt",
+        "size": 2584,
+        "mode": 420,
+        "sha256": "91e0441c0702387d792d6abc289bdf437cd9b8fcc47b322ea5992b62c8e6717b"
+      },
+      {
+        "path": "third-party-notices/SDK-header-428d21b43cc5fffae11b9250.txt",
+        "size": 3156,
+        "mode": 420,
+        "sha256": "e46b06cbb4216acf6a0afadaed3e168052229caac258df2437d6bd3e2d89eb6b"
+      },
+      {
+        "path": "third-party-notices/SDK-header-44b15ed17397d882eb5ed87d.txt",
+        "size": 1325,
+        "mode": 420,
+        "sha256": "69ddfafa862a42539b198481671197c3b77e234f361395f7783571ecc1da7f15"
+      },
+      {
+        "path": "third-party-notices/SDK-header-44c862a93062de464876ed7d.txt",
+        "size": 372,
+        "mode": 420,
+        "sha256": "b595a97ed09833b689e3f363e6dc485c1383ebeb8f501ad0669fefdf267d1e33"
+      },
+      {
+        "path": "third-party-notices/SDK-header-4677de728db29e459c927ccc.txt",
+        "size": 1326,
+        "mode": 420,
+        "sha256": "64dc590c8eaaf4ec9ef5b66c7aa5e6448f22e8db30d23d2f474c712ed0ff2915"
+      },
+      {
+        "path": "third-party-notices/SDK-header-471c752c2a1ac7805c459c2f.txt",
+        "size": 982,
+        "mode": 420,
+        "sha256": "4abc93ff8725ad6dbba770e38f3f29259543f282020233dee1d4ad4b4863c065"
+      },
+      {
+        "path": "third-party-notices/SDK-header-477889e1bae6d5436ca4b79d.txt",
+        "size": 1325,
+        "mode": 420,
+        "sha256": "69ddfafa862a42539b198481671197c3b77e234f361395f7783571ecc1da7f15"
+      },
+      {
+        "path": "third-party-notices/SDK-header-49ff20bedc0d7452356cccb3.txt",
+        "size": 1366,
+        "mode": 420,
+        "sha256": "5c7389fb145c92103bd91a86aa9a62b7d25efb24a7aeee22e4a6f3499acf9d33"
+      },
+      {
+        "path": "third-party-notices/SDK-header-4ab097190b40128d3315998b.txt",
+        "size": 1325,
+        "mode": 420,
+        "sha256": "69ddfafa862a42539b198481671197c3b77e234f361395f7783571ecc1da7f15"
+      },
+      {
+        "path": "third-party-notices/SDK-header-4b4aaf3c3d495db9a9a3b31e.txt",
+        "size": 979,
+        "mode": 420,
+        "sha256": "d625103a21d8c4197b2b173e88dc378d13d1e850d002d2f57aaf3c7bd74e78fc"
+      },
+      {
+        "path": "third-party-notices/SDK-header-4c2aeb31cd6f997e346ab0b7.txt",
+        "size": 1325,
+        "mode": 420,
+        "sha256": "4a7b739c9f9816d8872b0a680315154568754b84d30bdc8950f0c21e21da8b70"
+      },
+      {
+        "path": "third-party-notices/SDK-header-4cbba5ac4f47f72f6feda9ca.txt",
+        "size": 3273,
+        "mode": 420,
+        "sha256": "6e31dde39d45650fc0fee889a50dbd6b275a2305d7f240060688fc92ebc6772a"
+      },
+      {
+        "path": "third-party-notices/SDK-header-4e333a65145c38ceb912e720.txt",
+        "size": 1321,
+        "mode": 420,
+        "sha256": "4d4cbef2a5ce3b22d5e4ec5d188da7675c347f4a7dfe46064bd1f7ef0aef6e65"
+      },
+      {
+        "path": "third-party-notices/SDK-header-4fc361dcd1aa8c587afc5285.txt",
+        "size": 1368,
+        "mode": 420,
+        "sha256": "d81c65ddf54837560051c5ae871b1578ce9fbb0573687d286984b7112c63d1b0"
+      },
+      {
+        "path": "third-party-notices/SDK-header-5070f6f8dc192eb8c3b0f319.txt",
+        "size": 1326,
+        "mode": 420,
+        "sha256": "3d464ceaaf21260c666df933633aa497001b363408c7748cf74edadf925e71dd"
+      },
+      {
+        "path": "third-party-notices/SDK-header-508162a7a02b6e93686daaba.txt",
+        "size": 3267,
+        "mode": 420,
+        "sha256": "296e847a0d8048379146f623aae786868b2494937c041d4d2aa2bfd2491ca203"
+      },
+      {
+        "path": "third-party-notices/SDK-header-540fbb57f9a6765120123bae.txt",
+        "size": 3263,
+        "mode": 420,
+        "sha256": "6334aef1cd4cca2093cb7aaef6a7a9015eeed5dc8eea33538ec7af8ca7f82cce"
+      },
+      {
+        "path": "third-party-notices/SDK-header-55a1bf3bea1bc6b13dac3649.txt",
+        "size": 2513,
+        "mode": 420,
+        "sha256": "6e2c414473ea9dc3d5c5f91a35bbcd117edff9206807d69a107c58b77f6dc799"
+      },
+      {
+        "path": "third-party-notices/SDK-header-561fe63bc3c75fc18915ecc5.txt",
+        "size": 1116,
+        "mode": 420,
+        "sha256": "3d0e3ecb9c879d31585b49631e699a3cadc9ff5d38004654afaeeb59152cffe9"
+      },
+      {
+        "path": "third-party-notices/SDK-header-57b8b53018a55f1d6a29f156.txt",
+        "size": 1325,
+        "mode": 420,
+        "sha256": "69ddfafa862a42539b198481671197c3b77e234f361395f7783571ecc1da7f15"
+      },
+      {
+        "path": "third-party-notices/SDK-header-58d128007fc45c5cddc7746a.txt",
+        "size": 1320,
+        "mode": 420,
+        "sha256": "133b8d5f5e4c6cbcfc88b8fe20b2bf50796ff534fe5824edd9c8e08cb058d822"
+      },
+      {
+        "path": "third-party-notices/SDK-header-598c9e4bd70377c9cd3b48a4.txt",
+        "size": 1336,
+        "mode": 420,
+        "sha256": "d1720a60472b35c6a3f7aefd0a49ca56b8b1a839f0d21065e916bddcc1856b47"
+      },
+      {
+        "path": "third-party-notices/SDK-header-59da43e436fef3bc04117a54.txt",
+        "size": 3271,
+        "mode": 420,
+        "sha256": "153a04a5ae579fc3b91149f4c7d4e5b334ef9d334811ec6e7025ef924c41f6ed"
+      },
+      {
+        "path": "third-party-notices/SDK-header-5b78df1ac25081508f6e02cf.txt",
+        "size": 1320,
+        "mode": 420,
+        "sha256": "5990bc037faa98727711c4c7caa0b732f7e2f35da0268e489d53c5937cc609b3"
+      },
+      {
+        "path": "third-party-notices/SDK-header-5ce083df0e4fe54da0bbcc14.txt",
+        "size": 1325,
+        "mode": 420,
+        "sha256": "69ddfafa862a42539b198481671197c3b77e234f361395f7783571ecc1da7f15"
+      },
+      {
+        "path": "third-party-notices/SDK-header-5e984f9f644cf4357925bbfa.txt",
+        "size": 1320,
+        "mode": 420,
+        "sha256": "5990bc037faa98727711c4c7caa0b732f7e2f35da0268e489d53c5937cc609b3"
+      },
+      {
+        "path": "third-party-notices/SDK-header-5f310fed1b3c28eef6c3df6c.txt",
+        "size": 370,
+        "mode": 420,
+        "sha256": "adcb355d09cc4b49be216bcd74ae4116f26975901975e22820f5d859921c8a6f"
+      },
+      {
+        "path": "third-party-notices/SDK-header-60b1634b1e1ef09b14d06a76.txt",
+        "size": 1388,
+        "mode": 420,
+        "sha256": "d4541770ffc3cc5f4f38082e0cb93cdfe629d22366ddae4576e820df41480ca8"
+      },
+      {
+        "path": "third-party-notices/SDK-header-62589161837eccd9f0825162.txt",
+        "size": 1325,
+        "mode": 420,
+        "sha256": "69ddfafa862a42539b198481671197c3b77e234f361395f7783571ecc1da7f15"
+      },
+      {
+        "path": "third-party-notices/SDK-header-636a284d359280b90d2e9b13.txt",
+        "size": 1320,
+        "mode": 420,
+        "sha256": "5990bc037faa98727711c4c7caa0b732f7e2f35da0268e489d53c5937cc609b3"
+      },
+      {
+        "path": "third-party-notices/SDK-header-6390f6de17780a5caf4b6595.txt",
+        "size": 1321,
+        "mode": 420,
+        "sha256": "7315649c09fff5075326031926b33fa6d6c7c1b85b6ac087d7572218e8e18ce2"
+      },
+      {
+        "path": "third-party-notices/SDK-header-6468389f15469bc02965aa8a.txt",
+        "size": 1325,
+        "mode": 420,
+        "sha256": "69ddfafa862a42539b198481671197c3b77e234f361395f7783571ecc1da7f15"
+      },
+      {
+        "path": "third-party-notices/SDK-header-655987725eacd8982d50acc4.txt",
+        "size": 504,
+        "mode": 420,
+        "sha256": "e0da127a73aeec439eda8e78f90180ccd950b574dc51921b11a8220792105973"
+      },
+      {
+        "path": "third-party-notices/SDK-header-6ae316a503d6c0a22aca10bd.txt",
+        "size": 1325,
+        "mode": 420,
+        "sha256": "69ddfafa862a42539b198481671197c3b77e234f361395f7783571ecc1da7f15"
+      },
+      {
+        "path": "third-party-notices/SDK-header-6c3824b608a0d34e4ea72e5c.txt",
+        "size": 975,
+        "mode": 420,
+        "sha256": "b069fc1277de21ec1dfa731bffffe832a2aad9cef635115ca5f456da3a1fb8da"
+      },
+      {
+        "path": "third-party-notices/SDK-header-6c68320ecebf18f0654e993e.txt",
+        "size": 1325,
+        "mode": 420,
+        "sha256": "69ddfafa862a42539b198481671197c3b77e234f361395f7783571ecc1da7f15"
+      },
+      {
+        "path": "third-party-notices/SDK-header-6eb86e5a1f600672ddbd3a01.txt",
+        "size": 373,
+        "mode": 420,
+        "sha256": "1dde451e831ce68164036a3b56fb72460ba58b3577876cb513f201ac1dfe19ea"
+      },
+      {
+        "path": "third-party-notices/SDK-header-6f4b76619d1e7d0ea7f849a6.txt",
+        "size": 1453,
+        "mode": 420,
+        "sha256": "362e1c0e5b3d8989368983423ad054dfe7272440f9a6a3e25a498bd3241eb822"
+      },
+      {
+        "path": "third-party-notices/SDK-header-70e0eaaf496b72913cdcc18d.txt",
+        "size": 3012,
+        "mode": 420,
+        "sha256": "4a07727b1bf38c71decd13670a23631b46070d88c256d8456044e9966c8f3896"
+      },
+      {
+        "path": "third-party-notices/SDK-header-7263cf9856add583a271d242.txt",
+        "size": 1325,
+        "mode": 420,
+        "sha256": "eb69987639fc7d31ae4b2901f77fc16bcc38418ad83dbc2c43f5d422e04e5b52"
+      },
+      {
+        "path": "third-party-notices/SDK-header-737ff00fb0d62ebd8d050cef.txt",
+        "size": 1335,
+        "mode": 420,
+        "sha256": "8e615b9881021bec4d84b313fb7537e66d05c060bedf9121d9a4df6d357f3ad7"
+      },
+      {
+        "path": "third-party-notices/SDK-header-75019fabbfcb7845394efd6f.txt",
+        "size": 1325,
+        "mode": 420,
+        "sha256": "69ddfafa862a42539b198481671197c3b77e234f361395f7783571ecc1da7f15"
+      },
+      {
+        "path": "third-party-notices/SDK-header-76f5319e02595f33cd3e40d0.txt",
+        "size": 2250,
+        "mode": 420,
+        "sha256": "9e9da644bfa3177aa5658d22a52edc14e80b193718246c97093a0f9ace84e7af"
+      },
+      {
+        "path": "third-party-notices/SDK-header-79e4b1f37e443868151a832f.txt",
+        "size": 1325,
+        "mode": 420,
+        "sha256": "69ddfafa862a42539b198481671197c3b77e234f361395f7783571ecc1da7f15"
+      },
+      {
+        "path": "third-party-notices/SDK-header-7a23cd98b79d8ceafd9ab617.txt",
+        "size": 1325,
+        "mode": 420,
+        "sha256": "3300b486cffb77579ce860944ac9df806ec924d2df49d290377e4ed86e6232b8"
+      },
+      {
+        "path": "third-party-notices/SDK-header-7b41083f339a5a38419d602c.txt",
+        "size": 1325,
+        "mode": 420,
+        "sha256": "69ddfafa862a42539b198481671197c3b77e234f361395f7783571ecc1da7f15"
+      },
+      {
+        "path": "third-party-notices/SDK-header-7ccedcdf1f617c4a0642570e.txt",
+        "size": 1320,
+        "mode": 420,
+        "sha256": "6ee18ae1877139f66853ee85fa5860de71abbe8ce6003629239f985e6a9a3805"
+      },
+      {
+        "path": "third-party-notices/SDK-header-7d2c9654af9757901b9d402b.txt",
+        "size": 3281,
+        "mode": 420,
+        "sha256": "9df4a005b50282c224db69b8a8921d939accabcfeb3b4d4b43bdf0b58f337fb7"
+      },
+      {
+        "path": "third-party-notices/SDK-header-7d3f81717ee855ac8a063832.txt",
+        "size": 1325,
+        "mode": 420,
+        "sha256": "69ddfafa862a42539b198481671197c3b77e234f361395f7783571ecc1da7f15"
+      },
+      {
+        "path": "third-party-notices/SDK-header-7dcb10fd21ddf376bb4802e3.txt",
+        "size": 1325,
+        "mode": 420,
+        "sha256": "69ddfafa862a42539b198481671197c3b77e234f361395f7783571ecc1da7f15"
+      },
+      {
+        "path": "third-party-notices/SDK-header-80548847b1636824f655e9bc.txt",
+        "size": 973,
+        "mode": 420,
+        "sha256": "ce27d9ff25a86dc31dff1ff06d97a72d86915ca5e86542309eb066619a33020a"
+      },
+      {
+        "path": "third-party-notices/SDK-header-81c1e9255987107b5ce95083.txt",
+        "size": 1326,
+        "mode": 420,
+        "sha256": "69b48d7cbf1baf42c244fbd190e923e4767adee044a9b991821b02e4e2576168"
+      },
+      {
+        "path": "third-party-notices/SDK-header-81ebe551ec07bf48f8e28944.txt",
+        "size": 2457,
+        "mode": 420,
+        "sha256": "e5e278e6ec3d5c91211f183bce2e1e0e87140394ad3cd4a343412e0c63186ec0"
+      },
+      {
+        "path": "third-party-notices/SDK-header-82e430add7f776404b6af43d.txt",
+        "size": 370,
+        "mode": 420,
+        "sha256": "ed26adcef0b553b44030433d6892bb489b12cc28b7e39423421caf87a0134bed"
+      },
+      {
+        "path": "third-party-notices/SDK-header-83a7f70cf4e052285b4be6c2.txt",
+        "size": 1325,
+        "mode": 420,
+        "sha256": "69ddfafa862a42539b198481671197c3b77e234f361395f7783571ecc1da7f15"
+      },
+      {
+        "path": "third-party-notices/SDK-header-84b0a79b3786cf84c123794d.txt",
+        "size": 3581,
+        "mode": 420,
+        "sha256": "995996c0687e6408d6104a97f6ec69365197bad38bc4e0b892d7bace8b353375"
+      },
+      {
+        "path": "third-party-notices/SDK-header-84b1727402338161172287e5.txt",
+        "size": 372,
+        "mode": 420,
+        "sha256": "6015b181e142f418229b0ec6bfbac1b96bf12ae8e802b43c8aecc425d370c90c"
+      },
+      {
+        "path": "third-party-notices/SDK-header-84cc410474123a12e02d5b9d.txt",
+        "size": 1325,
+        "mode": 420,
+        "sha256": "69ddfafa862a42539b198481671197c3b77e234f361395f7783571ecc1da7f15"
+      },
+      {
+        "path": "third-party-notices/SDK-header-84f894373a4fec35a522928f.txt",
+        "size": 1001,
+        "mode": 420,
+        "sha256": "e6a6a6214d723e5b6c04af658fc28339893a5dc2d82d0091bdeeb59c25d7da2a"
+      },
+      {
+        "path": "third-party-notices/SDK-header-867408fe6bac4fec5e9befcc.txt",
+        "size": 4588,
+        "mode": 420,
+        "sha256": "021da6cb7d05082ad03801b87630fbefb3d5e25ae6a083e74dd738571bba7b03"
+      },
+      {
+        "path": "third-party-notices/SDK-header-8738e3d7a65a0fbc937b5235.txt",
+        "size": 1391,
+        "mode": 420,
+        "sha256": "56e14145d9529d14bd30f7948177007d2c7efabc7fff28953110240a73368c35"
+      },
+      {
+        "path": "third-party-notices/SDK-header-87793ce013e7a19d25faaba6.txt",
+        "size": 1325,
+        "mode": 420,
+        "sha256": "69ddfafa862a42539b198481671197c3b77e234f361395f7783571ecc1da7f15"
+      },
+      {
+        "path": "third-party-notices/SDK-header-882a467e394356afd50b4dd8.txt",
+        "size": 1325,
+        "mode": 420,
+        "sha256": "69ddfafa862a42539b198481671197c3b77e234f361395f7783571ecc1da7f15"
+      },
+      {
+        "path": "third-party-notices/SDK-header-885f93501d1d9449677ba75d.txt",
+        "size": 979,
+        "mode": 420,
+        "sha256": "d625103a21d8c4197b2b173e88dc378d13d1e850d002d2f57aaf3c7bd74e78fc"
+      },
+      {
+        "path": "third-party-notices/SDK-header-890b944eba21028941a95440.txt",
+        "size": 1325,
+        "mode": 420,
+        "sha256": "69ddfafa862a42539b198481671197c3b77e234f361395f7783571ecc1da7f15"
+      },
+      {
+        "path": "third-party-notices/SDK-header-8a7d4baae2747a3383239aac.txt",
+        "size": 979,
+        "mode": 420,
+        "sha256": "cc582855bea4ca3182175800849c592392bf0b0f66e7247c8c874049b26f7090"
+      },
+      {
+        "path": "third-party-notices/SDK-header-8cc06742742ba76da645eec2.txt",
+        "size": 3285,
+        "mode": 420,
+        "sha256": "2bb7ec009c4b10cf755acaca23830310f9c89d64ab1c0d5283ce5ebcc81d66eb"
+      },
+      {
+        "path": "third-party-notices/SDK-header-8d196b8917872e40a4f52a38.txt",
+        "size": 980,
+        "mode": 420,
+        "sha256": "5bd9b65413176c8cc731c072aedd3bdfc02c90e16b8e7166b1edc66ea95e5023"
+      },
+      {
+        "path": "third-party-notices/SDK-header-8d54525eb0886df2e70ffcf4.txt",
+        "size": 1320,
+        "mode": 420,
+        "sha256": "5990bc037faa98727711c4c7caa0b732f7e2f35da0268e489d53c5937cc609b3"
+      },
+      {
+        "path": "third-party-notices/SDK-header-8e3ffe3f447157ea7e291245.txt",
+        "size": 372,
+        "mode": 420,
+        "sha256": "8998ce0e1626fdc5b04f6744ffc2eb65caea027ca78b5941d9df9a97ba4bebba"
+      },
+      {
+        "path": "third-party-notices/SDK-header-91a9519314e9f449d18f8002.txt",
+        "size": 372,
+        "mode": 420,
+        "sha256": "8b548ce9c0772f64352e0a72e894ec00ce269b9e0b9f607bbca6b1b7568147df"
+      },
+      {
+        "path": "third-party-notices/SDK-header-91f384f463403572c9add413.txt",
+        "size": 3263,
+        "mode": 420,
+        "sha256": "b58bb884053d884e807246b58c12652e452ea4ded1aa4229e38ca8580b5ae549"
+      },
+      {
+        "path": "third-party-notices/SDK-header-935cc68806a2c787d3d6af3e.txt",
+        "size": 2464,
+        "mode": 420,
+        "sha256": "27a3c7cd4ac18db52351ef078f1ecff7b3681bfdd6f1567780ff35af7f015487"
+      },
+      {
+        "path": "third-party-notices/SDK-header-94443db0e92972a993fec11e.txt",
+        "size": 504,
+        "mode": 420,
+        "sha256": "44886d090522af81bbbf9e6245f69625fc84430086bb2d1bdc8a41ce1310db3b"
+      },
+      {
+        "path": "third-party-notices/SDK-header-9592b6834c52798b051ba283.txt",
+        "size": 2840,
+        "mode": 420,
+        "sha256": "5bef364a6b0bcbd510683844cf80a25a37bc628885dbc1a1ae324dd6221172f6"
+      },
+      {
+        "path": "third-party-notices/SDK-header-96ff23d4276f23e2f8e26652.txt",
+        "size": 1959,
+        "mode": 420,
+        "sha256": "db3206761973d830bf6d2cf05bd814b7cf070201f40484fd9d3e516c32ad6b3a"
+      },
+      {
+        "path": "third-party-notices/SDK-header-97fd3fc99a148b4fa70d23d7.txt",
+        "size": 1325,
+        "mode": 420,
+        "sha256": "69ddfafa862a42539b198481671197c3b77e234f361395f7783571ecc1da7f15"
+      },
+      {
+        "path": "third-party-notices/SDK-header-9b388d04c9fa7e33e103df4b.txt",
+        "size": 504,
+        "mode": 420,
+        "sha256": "b4c43cc9688b5c307b367004710ff8bc11731d15d4761d74824b7e163d8d3db8"
+      },
+      {
+        "path": "third-party-notices/SDK-header-9bb45bbf689c7d2887d2533e.txt",
+        "size": 3564,
+        "mode": 420,
+        "sha256": "8b4ee237e17c32428963dd73f9d0c4628e6b7af855470a3ba83b0f67eaa83b1e"
+      },
+      {
+        "path": "third-party-notices/SDK-header-9bec7091ee4f5a2e9574a920.txt",
+        "size": 977,
+        "mode": 420,
+        "sha256": "e367da87e19e066d566c70ee8a30787a513aeb905b8047bc51f07d9996421cd0"
+      },
+      {
+        "path": "third-party-notices/SDK-header-9c288984f11cc34f6bca291c.txt",
+        "size": 1336,
+        "mode": 420,
+        "sha256": "530e156d73aabc04351a1eb0ffa97986c2afe4020fff44e9f1953d9e3eb942a6"
+      },
+      {
+        "path": "third-party-notices/SDK-header-9f7fb56482ac38f962e10ccf.txt",
+        "size": 1325,
+        "mode": 420,
+        "sha256": "69ddfafa862a42539b198481671197c3b77e234f361395f7783571ecc1da7f15"
+      },
+      {
+        "path": "third-party-notices/SDK-header-a07c8bae2cf2d3bb4e640c59.txt",
+        "size": 1325,
+        "mode": 420,
+        "sha256": "69ddfafa862a42539b198481671197c3b77e234f361395f7783571ecc1da7f15"
+      },
+      {
+        "path": "third-party-notices/SDK-header-a52064bb44f6671dd11b87e0.txt",
+        "size": 3597,
+        "mode": 420,
+        "sha256": "e76f8bcc2c00095b370f6b1d4efae6457d61699b9176f8d87266e51b4bb29c48"
+      },
+      {
+        "path": "third-party-notices/SDK-header-a6555fd2e68175778289b16a.txt",
+        "size": 4579,
+        "mode": 420,
+        "sha256": "25fb2df3e2f22c7c39400385f3171a6b040551efb452df03b097a4140bb21976"
+      },
+      {
+        "path": "third-party-notices/SDK-header-a6859eaaf445765109ee287f.txt",
+        "size": 373,
+        "mode": 420,
+        "sha256": "4efb5f80669b7c385442e87625b2edd0b5cea825b268181b645b92971c91b811"
+      },
+      {
+        "path": "third-party-notices/SDK-header-a6d32241d59a09b8c9f8a5f1.txt",
+        "size": 1325,
+        "mode": 420,
+        "sha256": "69ddfafa862a42539b198481671197c3b77e234f361395f7783571ecc1da7f15"
+      },
+      {
+        "path": "third-party-notices/SDK-header-a90a14984521dd24bd752d2d.txt",
+        "size": 1320,
+        "mode": 420,
+        "sha256": "133b8d5f5e4c6cbcfc88b8fe20b2bf50796ff534fe5824edd9c8e08cb058d822"
+      },
+      {
+        "path": "third-party-notices/SDK-header-a9797af56fc1472f302ffa23.txt",
+        "size": 931,
+        "mode": 420,
+        "sha256": "14e86585aa276d314cd7435c1f49fbfc6cf4a292ad5d23c8c5db69c7b4753d0e"
+      },
+      {
+        "path": "third-party-notices/SDK-header-aa877892a5046a8c3a4eab4a.txt",
+        "size": 1325,
+        "mode": 420,
+        "sha256": "4a7b739c9f9816d8872b0a680315154568754b84d30bdc8950f0c21e21da8b70"
+      },
+      {
+        "path": "third-party-notices/SDK-header-ab2fbf5194e9e4aacc886755.txt",
+        "size": 982,
+        "mode": 420,
+        "sha256": "5ddf554248ff8a75d547ca2964ca1d6bfb9cb11f34abcddc9eadf6e26e99e750"
+      },
+      {
+        "path": "third-party-notices/SDK-header-ab347cf153976d4db66f5152.txt",
+        "size": 372,
+        "mode": 420,
+        "sha256": "945de68c47db6ae086ca724e56955f58a2fcd24996ff855729844e4da2b69eb9"
+      },
+      {
+        "path": "third-party-notices/SDK-header-ab772b7006b67742220e0398.txt",
+        "size": 1325,
+        "mode": 420,
+        "sha256": "69ddfafa862a42539b198481671197c3b77e234f361395f7783571ecc1da7f15"
+      },
+      {
+        "path": "third-party-notices/SDK-header-b040f27f37038e24b11fe5d2.txt",
+        "size": 1959,
+        "mode": 420,
+        "sha256": "db3206761973d830bf6d2cf05bd814b7cf070201f40484fd9d3e516c32ad6b3a"
+      },
+      {
+        "path": "third-party-notices/SDK-header-b25d4edbc2f4bf33ba9c21fc.txt",
+        "size": 2542,
+        "mode": 420,
+        "sha256": "b71c4190ef494fd6b7d8a26b7d563f0e376be1278688dbdda8953cda05c397ab"
+      },
+      {
+        "path": "third-party-notices/SDK-header-b50899a30b4da72bd368e2ae.txt",
+        "size": 2844,
+        "mode": 420,
+        "sha256": "772b43a6fa9a66410dc936593fdac02c825f606f0cad8606b19b21980b18ee73"
+      },
+      {
+        "path": "third-party-notices/SDK-header-b5396b1bccba6d4c361e064b.txt",
+        "size": 372,
+        "mode": 420,
+        "sha256": "51649fa4a0f431eebab1437ed612fb019ec2e7787e56eed82221eefd46a3703b"
+      },
+      {
+        "path": "third-party-notices/SDK-header-b8cca965f0ad9378e053e7f8.txt",
+        "size": 1325,
+        "mode": 420,
+        "sha256": "69ddfafa862a42539b198481671197c3b77e234f361395f7783571ecc1da7f15"
+      },
+      {
+        "path": "third-party-notices/SDK-header-bb8eacd141299efd7499ef15.txt",
+        "size": 1320,
+        "mode": 420,
+        "sha256": "133b8d5f5e4c6cbcfc88b8fe20b2bf50796ff534fe5824edd9c8e08cb058d822"
+      },
+      {
+        "path": "third-party-notices/SDK-header-bddd986df5f75284648a8280.txt",
+        "size": 3403,
+        "mode": 420,
+        "sha256": "5b610d12e236f387135d0e6e2a84534407945be3a39995f2a8643fda2a7c57ef"
+      },
+      {
+        "path": "third-party-notices/SDK-header-be357d21e44c7c894f284257.txt",
+        "size": 1325,
+        "mode": 420,
+        "sha256": "69ddfafa862a42539b198481671197c3b77e234f361395f7783571ecc1da7f15"
+      },
+      {
+        "path": "third-party-notices/SDK-header-c0eaf10e7373c8f5d47f4ed0.txt",
+        "size": 1326,
+        "mode": 420,
+        "sha256": "120f58e47384392824e3e23a3c22fd80fb90ebaf5070196286c794b31f9b5be8"
+      },
+      {
+        "path": "third-party-notices/SDK-header-c1afd559d26f51d9d8ad4fa4.txt",
+        "size": 2966,
+        "mode": 420,
+        "sha256": "2d74ebdaa674cbcadf971171e9589c0fae9e096084769fd22f6b7719a4537080"
+      },
+      {
+        "path": "third-party-notices/SDK-header-c355fa158f047789d8ddefe9.txt",
+        "size": 2862,
+        "mode": 420,
+        "sha256": "8bc33760cc0251b9bbd42330c0402e6f58c4c6f2c2611fa0a14a5370ececf06b"
+      },
+      {
+        "path": "third-party-notices/SDK-header-c414d249ee85ab9dedd30f76.txt",
+        "size": 1321,
+        "mode": 420,
+        "sha256": "ce1e3542d21850f07cd1d13e378b3e65bc85e2bda01293f263d59824af403a25"
+      },
+      {
+        "path": "third-party-notices/SDK-header-c425834eb984f19f8046c1e6.txt",
+        "size": 3208,
+        "mode": 420,
+        "sha256": "fdab528e95c92498a382c32113d5a658ee2f47dc203a0388a9d9524d99679d61"
+      },
+      {
+        "path": "third-party-notices/SDK-header-c494c75b4dce577d9667b40b.txt",
+        "size": 967,
+        "mode": 420,
+        "sha256": "df2f5d9446a46404bd3bf5c4cb321b11082f485d2e527e64d0f69bc7edfc0f44"
+      },
+      {
+        "path": "third-party-notices/SDK-header-c50fa1947a24db1ff6bbe5a3.txt",
+        "size": 1678,
+        "mode": 420,
+        "sha256": "8677205b2aa5cabafe51a9c0ac38b436af3a96fe7c7357b129e1d899f13bef22"
+      },
+      {
+        "path": "third-party-notices/SDK-header-c63a8b902bcc26a7c4eb9c99.txt",
+        "size": 3162,
+        "mode": 420,
+        "sha256": "c9dbf8bb3e0fb6e70025b0fd4f977b40a1bb9cc14ed3b73d8facf3f1282731de"
+      },
+      {
+        "path": "third-party-notices/SDK-header-c824ab4a159e2787bf5867a2.txt",
+        "size": 3239,
+        "mode": 420,
+        "sha256": "710a982bd446d7b58020bf9397d3149b26a5dcaa4416876c125fb640fb071161"
+      },
+      {
+        "path": "third-party-notices/SDK-header-c9e07c215f767360429a03ca.txt",
+        "size": 1362,
+        "mode": 420,
+        "sha256": "14ed415b6f4e4cd50b2639d012592e552fad628d6ce80d1115235e1b2ea8ee7d"
+      },
+      {
+        "path": "third-party-notices/SDK-header-cb68a1d471292ccfb27fc302.txt",
+        "size": 1320,
+        "mode": 420,
+        "sha256": "5990bc037faa98727711c4c7caa0b732f7e2f35da0268e489d53c5937cc609b3"
+      },
+      {
+        "path": "third-party-notices/SDK-header-cc4e0e35c898d237de1efda5.txt",
+        "size": 2862,
+        "mode": 420,
+        "sha256": "8bc33760cc0251b9bbd42330c0402e6f58c4c6f2c2611fa0a14a5370ececf06b"
+      },
+      {
+        "path": "third-party-notices/SDK-header-d02f1563a357432a1cbbad7b.txt",
+        "size": 1326,
+        "mode": 420,
+        "sha256": "64dc590c8eaaf4ec9ef5b66c7aa5e6448f22e8db30d23d2f474c712ed0ff2915"
+      },
+      {
+        "path": "third-party-notices/SDK-header-d23b8d47585029323d1948fa.txt",
+        "size": 1325,
+        "mode": 420,
+        "sha256": "69ddfafa862a42539b198481671197c3b77e234f361395f7783571ecc1da7f15"
+      },
+      {
+        "path": "third-party-notices/SDK-header-d34f02589fc1c57417f26869.txt",
+        "size": 1325,
+        "mode": 420,
+        "sha256": "69ddfafa862a42539b198481671197c3b77e234f361395f7783571ecc1da7f15"
+      },
+      {
+        "path": "third-party-notices/SDK-header-d37faa79b7812c4293eb62ee.txt",
+        "size": 2400,
+        "mode": 420,
+        "sha256": "33cd9305b3bce09b9382840e38ca1360523f51bf215df4dd966eb22563ce6e0e"
+      },
+      {
+        "path": "third-party-notices/SDK-header-d3868dea3f325861d75b9ec8.txt",
+        "size": 1325,
+        "mode": 420,
+        "sha256": "69ddfafa862a42539b198481671197c3b77e234f361395f7783571ecc1da7f15"
+      },
+      {
+        "path": "third-party-notices/SDK-header-d4beec375df82fc0e2189412.txt",
+        "size": 1978,
+        "mode": 420,
+        "sha256": "c37b78ec41a8dc318295e88303ab32207cc8b98ddfa3f1e981b3fb808037d5a6"
+      },
+      {
+        "path": "third-party-notices/SDK-header-d8564d29ec6f8ae98de366dc.txt",
+        "size": 2858,
+        "mode": 420,
+        "sha256": "90d1c0638ceede09f3ad1b79f44f5a0f5a1ab8895c3703c14e882d8b2031e700"
+      },
+      {
+        "path": "third-party-notices/SDK-header-d8612372dabdbc34f7f7e29a.txt",
+        "size": 1326,
+        "mode": 420,
+        "sha256": "64dc590c8eaaf4ec9ef5b66c7aa5e6448f22e8db30d23d2f474c712ed0ff2915"
+      },
+      {
+        "path": "third-party-notices/SDK-header-db3b320adf615fdfa56cb3d0.txt",
+        "size": 2544,
+        "mode": 420,
+        "sha256": "f4ffb65c00bbda7c375dd11cd8ed25a6b395d5299a90f2f683628b0ca7d5ecaa"
+      },
+      {
+        "path": "third-party-notices/SDK-header-db6f95a24f0ab227080f05e9.txt",
+        "size": 2531,
+        "mode": 420,
+        "sha256": "61341feb8657718c5aba5638f0c03496ae158de261813af5b0077e22ead5d8a0"
+      },
+      {
+        "path": "third-party-notices/SDK-header-db97928ad87fc6089d419de1.txt",
+        "size": 1325,
+        "mode": 420,
+        "sha256": "69ddfafa862a42539b198481671197c3b77e234f361395f7783571ecc1da7f15"
+      },
+      {
+        "path": "third-party-notices/SDK-header-dbab71694af8b5a5616f331b.txt",
+        "size": 1320,
+        "mode": 420,
+        "sha256": "5990bc037faa98727711c4c7caa0b732f7e2f35da0268e489d53c5937cc609b3"
+      },
+      {
+        "path": "third-party-notices/SDK-header-dee5bbebea882b7bec52149a.txt",
+        "size": 1325,
+        "mode": 420,
+        "sha256": "69ddfafa862a42539b198481671197c3b77e234f361395f7783571ecc1da7f15"
+      },
+      {
+        "path": "third-party-notices/SDK-header-dfd91f9b746a82fb8f415221.txt",
+        "size": 1325,
+        "mode": 420,
+        "sha256": "69ddfafa862a42539b198481671197c3b77e234f361395f7783571ecc1da7f15"
+      },
+      {
+        "path": "third-party-notices/SDK-header-e029e12725002816d03ac787.txt",
+        "size": 372,
+        "mode": 420,
+        "sha256": "a517fd65b43e273f5a8058114a09ed1571404207f694828be663fdde7eb5c25f"
+      },
+      {
+        "path": "third-party-notices/SDK-header-e1dbdae9d4cd0887ebbcda01.txt",
+        "size": 1321,
+        "mode": 420,
+        "sha256": "7315649c09fff5075326031926b33fa6d6c7c1b85b6ac087d7572218e8e18ce2"
+      },
+      {
+        "path": "third-party-notices/SDK-header-e44063a421324132dbea6a57.txt",
+        "size": 370,
+        "mode": 420,
+        "sha256": "6ba160fe160e2d0f4b1d9e18dba676a82d068477c4e3c713683375e2e27ff98e"
+      },
+      {
+        "path": "third-party-notices/SDK-header-e73060d07a9c3258f47aa160.txt",
+        "size": 1066,
+        "mode": 420,
+        "sha256": "d1d5beba9d595e39e952f93ef00ada88b2d2ab7a2cef983bfb11c3f159a90a5f"
+      },
+      {
+        "path": "third-party-notices/SDK-header-e83be1159f9450734e086876.txt",
+        "size": 1323,
+        "mode": 420,
+        "sha256": "1ca5aa536b04f6ea67cce540c02d43e86b9f39d5944eea41205e0b13979d99cf"
+      },
+      {
+        "path": "third-party-notices/SDK-header-e8cecbdfadd05cca28c42a51.txt",
+        "size": 1873,
+        "mode": 420,
+        "sha256": "0c02eed2c8e9051372fd02ea5d9feac6edf2c589e771a9e2a45cd76203a8ff40"
+      },
+      {
+        "path": "third-party-notices/SDK-header-e9a8f771f8906746c4c40a74.txt",
+        "size": 1325,
+        "mode": 420,
+        "sha256": "69ddfafa862a42539b198481671197c3b77e234f361395f7783571ecc1da7f15"
+      },
+      {
+        "path": "third-party-notices/SDK-header-e9d739adf6454e6372c162a8.txt",
+        "size": 2954,
+        "mode": 420,
+        "sha256": "8921c12a63153c0ea9fd42e0499d2e1f380241dc3a187f22fc1905208d5fc56c"
+      },
+      {
+        "path": "third-party-notices/SDK-header-ea3512383f1e750b70114e06.txt",
+        "size": 969,
+        "mode": 420,
+        "sha256": "fe069d0d0e201f94ecf04b789a95d01fe0295c340517ab50c30d11d912b91bac"
+      },
+      {
+        "path": "third-party-notices/SDK-header-ea7f3bde01548ce75e5d6c4e.txt",
+        "size": 1325,
+        "mode": 420,
+        "sha256": "69ddfafa862a42539b198481671197c3b77e234f361395f7783571ecc1da7f15"
+      },
+      {
+        "path": "third-party-notices/SDK-header-ea81cb6010d1a3e2a4eb016b.txt",
+        "size": 4579,
+        "mode": 420,
+        "sha256": "25fb2df3e2f22c7c39400385f3171a6b040551efb452df03b097a4140bb21976"
+      },
+      {
+        "path": "third-party-notices/SDK-header-eb8282b4925c98c8f708c784.txt",
+        "size": 2854,
+        "mode": 420,
+        "sha256": "708efb21e8c706d31c183225a6e55b819d64bd4fc9a9d12d614beecaa272b715"
+      },
+      {
+        "path": "third-party-notices/SDK-header-ec4a643daffd2b41e7dbd761.txt",
+        "size": 372,
+        "mode": 420,
+        "sha256": "48c8236343fafbfc67792dc3c7ac85af049bc64a772adcd88b266b905d4b52dc"
+      },
+      {
+        "path": "third-party-notices/SDK-header-ec545a4f441ae0dcacd0ab8c.txt",
+        "size": 1391,
+        "mode": 420,
+        "sha256": "56e14145d9529d14bd30f7948177007d2c7efabc7fff28953110240a73368c35"
+      },
+      {
+        "path": "third-party-notices/SDK-header-ed9d825d1e2e4b7b139bf55e.txt",
+        "size": 1336,
+        "mode": 420,
+        "sha256": "da80d8b75b7258378857a5e293b65f6329f4086ea68298f0ef8f595c0971a2d6"
+      },
+      {
+        "path": "third-party-notices/SDK-header-eea79286e672cb93a8fd0dfb.txt",
+        "size": 504,
+        "mode": 420,
+        "sha256": "d836ead13fa0c2712f504f4ec30129528644807b7cd725987de154a003ff51c5"
+      },
+      {
+        "path": "third-party-notices/SDK-header-eebf10a734f7041302d45755.txt",
+        "size": 980,
+        "mode": 420,
+        "sha256": "c376767e75918612970e0f19c860579468f7c82202946baff5fe901506fcdca8"
+      },
+      {
+        "path": "third-party-notices/SDK-header-f0142a36772d9dff2b6bafe4.txt",
+        "size": 1325,
+        "mode": 420,
+        "sha256": "69ddfafa862a42539b198481671197c3b77e234f361395f7783571ecc1da7f15"
+      },
+      {
+        "path": "third-party-notices/SDK-header-f0832a1409201a00d869a257.txt",
+        "size": 1325,
+        "mode": 420,
+        "sha256": "69ddfafa862a42539b198481671197c3b77e234f361395f7783571ecc1da7f15"
+      },
+      {
+        "path": "third-party-notices/SDK-header-f3de78351ae8eb6abac868a1.txt",
+        "size": 931,
+        "mode": 420,
+        "sha256": "b354d3a77d6ed6237d97562a4a9b4e5b70b7cafcd0c2c98eaed81ce1591c7c5b"
+      },
+      {
+        "path": "third-party-notices/SDK-header-f514bdac0f0b6764ae8af5d4.txt",
+        "size": 1321,
+        "mode": 420,
+        "sha256": "5fe42b8879032d5e17a77d709a62127f7acfaf402ac1b4c1a243429fd57d3676"
+      },
+      {
+        "path": "third-party-notices/SDK-header-f63db149a7bafc41da58c230.txt",
+        "size": 372,
+        "mode": 420,
+        "sha256": "713ec82c8194a15383c5bad779fd8baca97f7eae52db544db760b011c17936f8"
+      },
+      {
+        "path": "third-party-notices/SDK-header-f70be20fbc5e21251f513df5.txt",
+        "size": 1325,
+        "mode": 420,
+        "sha256": "4a7b739c9f9816d8872b0a680315154568754b84d30bdc8950f0c21e21da8b70"
+      },
+      {
+        "path": "third-party-notices/SDK-header-f7b42d7427fa4716b07ebe56.txt",
+        "size": 974,
+        "mode": 420,
+        "sha256": "4ad62bf4c758ea20addd3db4d7adceada767fc4959c35e128bb6ca9b2e9f4579"
+      },
+      {
+        "path": "third-party-notices/SDK-header-f851502d26d0b308ce1d7130.txt",
+        "size": 1320,
+        "mode": 420,
+        "sha256": "133b8d5f5e4c6cbcfc88b8fe20b2bf50796ff534fe5824edd9c8e08cb058d822"
+      },
+      {
+        "path": "third-party-notices/SDK-header-f87ecabe4118dca2ec25c088.txt",
+        "size": 1325,
+        "mode": 420,
+        "sha256": "69ddfafa862a42539b198481671197c3b77e234f361395f7783571ecc1da7f15"
+      },
+      {
+        "path": "third-party-notices/SDK-header-f8af5f25318e59ac0c131634.txt",
+        "size": 1325,
+        "mode": 420,
+        "sha256": "69ddfafa862a42539b198481671197c3b77e234f361395f7783571ecc1da7f15"
+      },
+      {
+        "path": "third-party-notices/SDK-header-f8e08e01d5411dd0a30d3b5f.txt",
+        "size": 1321,
+        "mode": 420,
+        "sha256": "5fe42b8879032d5e17a77d709a62127f7acfaf402ac1b4c1a243429fd57d3676"
+      },
+      {
+        "path": "third-party-notices/SDK-header-fa123e8c055199d324fdd987.txt",
+        "size": 3576,
+        "mode": 420,
+        "sha256": "d44a24bb083baabc45a8a6c3af4ed73d61aa9dfd5d48fbb104f853c00a4b2765"
+      },
+      {
+        "path": "third-party-notices/SDK-header-fb454591fd033048a3fc85e8.txt",
+        "size": 1326,
+        "mode": 420,
+        "sha256": "64dc590c8eaaf4ec9ef5b66c7aa5e6448f22e8db30d23d2f474c712ed0ff2915"
+      },
+      {
+        "path": "third-party-notices/SDK-header-fb6da5d0c3b5b673d8a81b88.txt",
+        "size": 1325,
+        "mode": 420,
+        "sha256": "69ddfafa862a42539b198481671197c3b77e234f361395f7783571ecc1da7f15"
+      },
+      {
+        "path": "third-party-notices/SDK-header-fbd7c259d2bbd6c833fabefc.txt",
+        "size": 3581,
+        "mode": 420,
+        "sha256": "508b52ca5d84f75b24d3abcdac8b0e32f83f01c801295bf0b7a3075416904951"
+      },
+      {
+        "path": "third-party-notices/SDK-header-fbfc9af6423980fd9ae37cf0.txt",
+        "size": 2863,
+        "mode": 420,
+        "sha256": "8af69ddc7e203f00014b2db65d91254b3eb74a507be6a992bd8132011364c684"
+      },
+      {
+        "path": "third-party-notices/SDK-header-fc8b002f73cb776958ad1b0d.txt",
+        "size": 1202,
+        "mode": 420,
+        "sha256": "7dfa0ebb3837498d769a9a96b2778d5176f9f6b6ff5c3ab87fdd193d2a7d4758"
+      },
+      {
+        "path": "third-party-notices/SDK-header-fdbcebf663f5fbb0aad029e6.txt",
+        "size": 1325,
+        "mode": 420,
+        "sha256": "69ddfafa862a42539b198481671197c3b77e234f361395f7783571ecc1da7f15"
+      },
+      {
+        "path": "third-party-notices/SDK-header-ff2b70cab91c5d58a6e20639.txt",
+        "size": 3361,
+        "mode": 420,
+        "sha256": "56919a7400a922c625c86de6117536db3f3a45577977478f9136c7516d8e634b"
+      },
+      {
+        "path": "third-party-notices/SDK-header-ff601f3e67a308756d88d587.txt",
+        "size": 1325,
+        "mode": 420,
+        "sha256": "69ddfafa862a42539b198481671197c3b77e234f361395f7783571ecc1da7f15"
+      },
+      {
+        "path": "third-party-notices/SDK-header-ffbb193f94fc0c3f3d8c9a0d.txt",
+        "size": 1320,
+        "mode": 420,
+        "sha256": "5990bc037faa98727711c4c7caa0b732f7e2f35da0268e489d53c5937cc609b3"
+      },
+      {
+        "path": "third-party-notices/SOURCE-REFERENCES.txt",
+        "size": 1300,
+        "mode": 420,
+        "sha256": "d6f341de14f8641d55181a19be3819ca369caa1ec345bff48abe15dc643e9397"
+      }
+    ],
+    "notices": [
+      {
+        "package_source": "third_party/graphviz-16.1.0/graphviz.txt",
+        "destination": "third-party-notices/GRAPHVIZ-PACKAGED-LICENSE.txt",
+        "sha256": "0becf16567beb77fa252b7664631dd177c8f9a1889e48995b45379c7130e5303"
+      }
+    ],
+    "source_references": [
+      "https://gitlab.com/graphviz/graphviz/-/archive/16.1.0/graphviz-16.1.0.tar.gz"
+    ],
+    "minimum_os": "15.0"
+  },
+  "blocking_gates": [
+    "Approved per-artifact license/source audit",
+    "Actual immutable binary and source URLs with equivalent access",
+    "Add the actual corresponding-source URL to manifest source_references",
+    "Final packaged-runtime ABI acceptance before catalog admission"
+  ],
+  "validations": {
+    "exact_archive_inventory": true,
+    "encoded_posix_modes": true,
+    "offline_notice_origins": true,
+    "canonical_graphviz_license": true,
+    "source_pairing_verified_in_actions": true,
+    "outputs_match_user_twine_review": true
+  },
+  "visual_review_binding": {
+    "user_review_path": "specs/003-add-cross-platform-support/evidence/twine-visual-review-2026-10-28.json",
+    "user_review_sha256": "c5106fa06acf5cb7e0400eaee7c61fe39e5b571dcafd8d67f9fabe4f20990b02",
+    "matching_current_ci_reports": [
+      {
+        "report": "desembaraca-twine/desembaraca-twine/.tmp/native-macos/corpus-312.json",
+        "python": "3.12.10",
+        "raw_sha256": "82df13fc80e6c601ea4b5f3312b879de09975894525b4730ee5466fe35bd3eec"
+      },
+      {
+        "report": "desembaraca-twine/desembaraca-twine/.tmp/native-macos/corpus-314.json",
+        "python": "3.14.7",
+        "raw_sha256": "26ffb109c65bfbfd7043f8091280c7efe668774e1952b441dcdd2ef99b97d025"
+      },
+      {
+        "report": "desembaraca-twine/desembaraca-twine/.tmp/native-macos/runtime-312.json",
+        "python": "3.12.10",
+        "raw_sha256": "62df192d068ee2f6473dc828a6c04d7de467ba70c330728c969f6cc4d960f118"
+      },
+      {
+        "report": "desembaraca-twine/desembaraca-twine/.tmp/native-macos/runtime-314.json",
+        "python": "3.14.7",
+        "raw_sha256": "3a6c09d9c218dc792b7cce73e6bb9ac6b87b4401f7ccb57c4451bbd966a3c703"
+      }
+    ]
+  },
+  "macos_signing_required": false,
+  "limitations": [
+    "Incomplete draft: null URLs and empty redirect hosts deliberately prevent runtime use",
+    "Byte/origin verification is not license approval",
+    "No native binary executed during preparation",
+    "Statically linked musl keeps the conservative ABI policy minimum, not a measured host-libc dependency"
+  ]
+}

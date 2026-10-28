@@ -1,5 +1,9 @@
 # Revisão visual no Twine
 
+**Concluída pelo usuário:** Twine 2.12.1, Windows 11 e Firefox, resultado
+`6/6 OK`. [Aceite e hashes revisados](evidence/twine-visual-review-2026-10-28.json).
+O roteiro abaixo registra o procedimento usado.
+
 Esta revisão fecha a parte visual de T063/T065. Os testes de execução continuam
 exclusivos do GitHub Actions. Você só precisa do Twine para abrir as saídas prontas.
 

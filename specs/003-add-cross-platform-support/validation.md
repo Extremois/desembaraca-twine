@@ -1,3 +1,9 @@
+## Aceite visual confirmado pelo usuário — 2026-10-28
+
+T063 e T065 concluídas: Twine 2.12.1, Windows 11 e Firefox, resultado `6/6 OK`. O [recibo](evidence/twine-visual-review-2026-10-28.json) vincula o aceite aos seis hashes que correspondem aos 168 resultados das 28 instalações. As evidências originais do Actions permanecem inalteradas.
+
+Progresso: **67 tarefas executadas, 9 retiradas do escopo e 8 pendentes** (76/84 encerradas). Este aceite visual não aprova licenças, publicação ou suporte.
+
 ## Progresso ABI no Actions — 2026-10-28
 
 T033, T044 e T056 concluídas com recibos reais. macOS Intel/ARM64 e musl

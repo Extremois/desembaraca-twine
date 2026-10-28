@@ -1,7 +1,7 @@
 {
-  "kind": "windows-abi-installed-execution-visual-review-pending",
+  "kind": "windows-abi-installed-and-user-visual-acceptance",
   "task": "T065",
-  "task_complete": false,
+  "task_complete": true,
   "qualified": false,
   "application_revision": "07688e264e6c9915790c2728beb24552a23f6388",
   "workflow": "https://github.com/Extremois/desembaraca-twine/actions/runs/40691742025",
@@ -23,8 +23,17 @@
     "path": "specs/003-add-cross-platform-support/evidence/abi-recovery-ci-canonical/summary.json",
     "sha256": "17969174aba882633781cec60e40b31bf76daee18cab179bc7a3befd33202d1a"
   },
-  "visual_review_complete": false,
-  "twine_version": null,
-  "reviewer": null,
-  "limitation": "ABI execution on the actual recorded hosted Windows OS; no Windows 11 certification"
+  "visual_review_complete": true,
+  "twine_version": "2.12.1",
+  "reviewer": "user",
+  "limitation": "ABI execution on the actual recorded hosted Windows OS; no Windows 11 certification",
+  "visual_environment": {
+    "os": "Windows 11",
+    "browser": "Firefox",
+    "browser_version": null
+  },
+  "visual_review_evidence": {
+    "path": "specs/003-add-cross-platform-support/evidence/twine-visual-review-2026-10-28.json",
+    "sha256": "c5106fa06acf5cb7e0400eaee7c61fe39e5b571dcafd8d67f9fabe4f20990b02"
+  }
 }
