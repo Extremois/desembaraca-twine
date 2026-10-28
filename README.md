@@ -390,11 +390,11 @@ represent qualified platforms. Python package installation is available; a
 Linux/macOS engine for normal use is not yet distributed.
 
 The managed engine and preservation, layout, offline, and recovery tests are implemented.
-Local validation uses Windows 11 with CPython 3.12 and 3.14, including first use
-with a real download, six offline references, and recovery. At the maintainer's
-request, clean Windows acceptance is deferred; work continues on the current system
-without creating a VM. Reopening newly generated outputs in Twine remains pending.
-See the [validation record](specs/002-manage-layout-runtime/validation.md).
+Current validation runs exclusively in GitHub Actions across seven ABI targets
+with CPython 3.12 and 3.14. No local tests or VMs are required. The six reference
+outputs were accepted in Twine 2.12.1 on Windows 11 and Firefox; their hashes remain
+bound to the candidate CI reports. Final package acceptance and distribution
+remain pending. See the [current validation record](specs/003-add-cross-platform-support/validation.md).
 Geometry follows Twine 2.12.1. Graphviz supplies positions; the project recalculates arcs.
 ELK.js/Node were used only for engine comparisons.
 
@@ -410,3 +410,6 @@ ELK.js/Node were used only for engine comparisons.
 Original code uses [Apache-2.0](LICENSE), with project notices in [NOTICE](NOTICE).
 Wheel/sdist include the manifest and notices. The application retrieves engine binaries
 directly from the supplier; those components retain their own licenses.
+
+This product includes software developed by the University of California,
+Berkeley and its contributors.
