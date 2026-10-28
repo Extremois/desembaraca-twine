@@ -1382,5 +1382,27 @@
       "path": "specs/003-add-cross-platform-support/evidence/license-review-2026-10-28/README.md",
       "sha256": "25c305d9cce25b3ae25e846e6e8600f599ed4d467b89930edfaee239a7b36a7a"
     }
+  },
+  "current_math_reference_grant_review": {
+    "approved": false,
+    "qualified": false,
+    "evidence": {
+      "path": "specs/003-add-cross-platform-support/evidence/license-review-2026-10-28/runtime-reference-findings.json",
+      "sha256": "3f0239c9c664dcba71f0542129f554c49d697780a8b4f65448503d8fc4cb168b"
+    }
+  },
+  "current_release_candidate_review": {
+    "approved": false,
+    "qualified": false,
+    "evidence": {
+      "path": "specs/003-add-cross-platform-support/evidence/release-candidate-review-2026-10-28/summary.json",
+      "sha256": "59e0302b12f81a7d6fae55d14a443f0787f7755fcc87f6f800b9287010c87b52"
+    },
+    "application_revision": "6279d6ff715abbd4fc8d5fdf778d8a27a4f3ddfb",
+    "audit_drafts": 6,
+    "linux_static_link_inputs_mapped": 262,
+    "local_payloads_verified": 12,
+    "published": false,
+    "source_kit_notice_update_pending": true
   }
 }

@@ -1,0 +1,670 @@
+{
+  "kind": "macos-non-apsl-header-term-findings-not-full-bundle-approval",
+  "reviewer": "Codex implementation review",
+  "approved": false,
+  "qualified": false,
+  "task_complete": false,
+  "candidate_revision": "6279d6ff715abbd4fc8d5fdf778d8a27a4f3ddfb",
+  "review_revision": "60707b3984cb9a2b45f9d78166e4e72371900ec6",
+  "agreement_identifier": "EA1879",
+  "agreement_date_literal": "06/10/2024",
+  "sdk_agreement_sections": [
+    "2.2 A(ii)",
+    "2.4",
+    "2.5",
+    "2.6",
+    "2.7"
+  ],
+  "conclusion": "Recorded agreement permits developing macOS software and distributing macOS applications/libraries without a separate agreement, subject to its terms. This is the route for SDK compile inputs; it does not license redistribution of proprietary SDK headers or libraries. Explicit open-source terms continue separately.",
+  "llvm_reference_notice_sha256": "8d85c1057d742e597985c7d4e6320b015a9139385cff4cbae06ffc0ebe89afee",
+  "berkeley_acknowledgment_verified_in": [
+    "README.md",
+    "NOTICE"
+  ],
+  "artifacts": [
+    {
+      "artifact_id": "macos-arm64",
+      "provenance_sha256": "82e9de3597e61c0f551396352d9a6e56a3cc76227541128d889c4bfacad2422b",
+      "source_tree_sha256": "23b430378377d48cf9c2c8c95d87ac0638eef76caaa637b496d87f7ce512ab4c",
+      "source_provider_url": "https://developer.apple.com/download/all/?q=Xcode%2016.4",
+      "source_identity_kind": "Recorded SDK source/header/stub tree digest, not a downloadable archive digest",
+      "counts": {
+        "bsd-four-condition-block": 7,
+        "copyright-prefix-only-sdk-input": 5,
+        "llvm-explicit-declaration": 24
+      },
+      "headers": [
+        {
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/_locale.h",
+          "source_sha256": "54b21dd976827f49d5678d21faae67dd21e9bc7eb375c4c7c3a1761c749a2995",
+          "notice_path": "third-party-notices/SDK-header-96ff23d4276f23e2f8e26652.txt",
+          "prefix_sha256": "db3206761973d830bf6d2cf05bd814b7cf070201f40484fd9d3e516c32ad6b3a",
+          "group": "bsd-four-condition-block",
+          "status": "reviewed-block-with-acknowledgment-and-no-endorsement-condition",
+          "scope": "Terms of the observed prefix; Apple preambles also considered under the recorded SDK agreement, without assigning the whole file BSD"
+        },
+        {
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/arm/_limits.h",
+          "source_sha256": "b64325f6b5aba08a361b7b8e537df3d8d193538c1d6329a4c4a7e72f5aa63478",
+          "notice_path": "third-party-notices/SDK-header-4e3d33c6cb2ce48cb7cdcb1d.txt",
+          "prefix_sha256": "7cfb05c26824364b2495319813e075b960c5e9254f59daf42af9a87f89546179",
+          "group": "copyright-prefix-only-sdk-input",
+          "status": "reviewed-sdk-application-development-route-no-header-source-redistribution",
+          "scope": "Terms of the observed prefix; Apple preambles also considered under the recorded SDK agreement, without assigning the whole file BSD"
+        },
+        {
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/arm/_types.h",
+          "source_sha256": "4f0bde85f9a41cc7d30fff22ebd7e8f4eb206a55a926eda012a2e7481e3524fa",
+          "notice_path": "third-party-notices/SDK-header-dbb7bf3462b164dbe3636c24.txt",
+          "prefix_sha256": "62c60ce04f0140c31fb3d4dad1f32fb72f59537c2280d452844f46b58c214415",
+          "group": "copyright-prefix-only-sdk-input",
+          "status": "reviewed-sdk-application-development-route-no-header-source-redistribution",
+          "scope": "Terms of the observed prefix; Apple preambles also considered under the recorded SDK agreement, without assigning the whole file BSD"
+        },
+        {
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/arm/endian.h",
+          "source_sha256": "60bd5d1363d89d52e5cfc95b83a35d392a8315835f9d60089d4e05b8f4d1cc68",
+          "notice_path": "third-party-notices/SDK-header-aa7e22e491e42c5078fdfcbf.txt",
+          "prefix_sha256": "a09a12a04fb0bf1c84c01c05fb060ced7b2ddedefbbcb45c57a198637b901fd0",
+          "group": "bsd-four-condition-block",
+          "status": "reviewed-block-with-acknowledgment-and-no-endorsement-condition",
+          "scope": "Terms of the observed prefix; Apple preambles also considered under the recorded SDK agreement, without assigning the whole file BSD"
+        },
+        {
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/arm/limits.h",
+          "source_sha256": "59fea4e9435607efb7bef02a226e05202b236e8434518bb130fc9aa0932ebdb8",
+          "notice_path": "third-party-notices/SDK-header-530c5410d8d8d70df6ec8007.txt",
+          "prefix_sha256": "90b83e40000f76e4c16ebb71585c843363201d3023eb812baa7b6371c6981184",
+          "group": "bsd-four-condition-block",
+          "status": "reviewed-block-with-acknowledgment-and-no-endorsement-condition",
+          "scope": "Terms of the observed prefix; Apple preambles also considered under the recorded SDK agreement, without assigning the whole file BSD"
+        },
+        {
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/arm/signal.h",
+          "source_sha256": "de0bc923b92bd88f3bd8bcd38b20f8123277732d7d3309cb2a5bdc60bb4dd8c6",
+          "notice_path": "third-party-notices/SDK-header-c430381d0685828dec758361.txt",
+          "prefix_sha256": "714734881f51050dd368fa9082c213eda04a2c4d1f99140a261068df74cf0ef2",
+          "group": "copyright-prefix-only-sdk-input",
+          "status": "reviewed-sdk-application-development-route-no-header-source-redistribution",
+          "scope": "Terms of the observed prefix; Apple preambles also considered under the recorded SDK agreement, without assigning the whole file BSD"
+        },
+        {
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/arm/types.h",
+          "source_sha256": "b9eccd5a3feb3a62e22e42936656c8822e7e3e8708d759b1512deee05f682f0d",
+          "notice_path": "third-party-notices/SDK-header-0fadcdec513fe0f09a193b12.txt",
+          "prefix_sha256": "c71fbe9e9a31945739d5eff4b5ecedcb77f7578fc20bd96d0a47425bb0acf866",
+          "group": "bsd-four-condition-block",
+          "status": "reviewed-block-with-acknowledgment-and-no-endorsement-condition",
+          "scope": "Terms of the observed prefix; Apple preambles also considered under the recorded SDK agreement, without assigning the whole file BSD"
+        },
+        {
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/assert.h",
+          "source_sha256": "ce61ce31a18d5e82f70bd637441629ddb0b48c31871bb280ea6457fe7eff2d32",
+          "notice_path": "third-party-notices/SDK-header-76f5319e02595f33cd3e40d0.txt",
+          "prefix_sha256": "9e9da644bfa3177aa5658d22a52edc14e80b193718246c97093a0f9ace84e7af",
+          "group": "bsd-four-condition-block",
+          "status": "reviewed-block-with-acknowledgment-and-no-endorsement-condition",
+          "scope": "Terms of the observed prefix; Apple preambles also considered under the recorded SDK agreement, without assigning the whole file BSD"
+        },
+        {
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/locale.h",
+          "source_sha256": "c6b8754c14162db64dd94f6d4f489cb1fa8c4b7504311a83081103dc3b903218",
+          "notice_path": "third-party-notices/SDK-header-b040f27f37038e24b11fe5d2.txt",
+          "prefix_sha256": "db3206761973d830bf6d2cf05bd814b7cf070201f40484fd9d3e516c32ad6b3a",
+          "group": "bsd-four-condition-block",
+          "status": "reviewed-block-with-acknowledgment-and-no-endorsement-condition",
+          "scope": "Terms of the observed prefix; Apple preambles also considered under the recorded SDK agreement, without assigning the whole file BSD"
+        },
+        {
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/machine/limits.h",
+          "source_sha256": "50345f1ab843fca787a38c552a84177e678d79dab86e714434f94f2546839357",
+          "notice_path": "third-party-notices/SDK-header-12046e3c88c52e9b7c448e3d.txt",
+          "prefix_sha256": "827c9c49529b10fea56b0e030269acd4b21ce327491f085a25c8572f0aebd1d3",
+          "group": "copyright-prefix-only-sdk-input",
+          "status": "reviewed-sdk-application-development-route-no-header-source-redistribution",
+          "scope": "Terms of the observed prefix; Apple preambles also considered under the recorded SDK agreement, without assigning the whole file BSD"
+        },
+        {
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/runetype.h",
+          "source_sha256": "77e4c54bae90d051e567de33c1a56f97e8e3c61fb28f5e7e96e1f859ba50c72a",
+          "notice_path": "third-party-notices/SDK-header-d4beec375df82fc0e2189412.txt",
+          "prefix_sha256": "c37b78ec41a8dc318295e88303ab32207cc8b98ddfa3f1e981b3fb808037d5a6",
+          "group": "bsd-four-condition-block",
+          "status": "reviewed-block-with-acknowledgment-and-no-endorsement-condition",
+          "scope": "Terms of the observed prefix; Apple preambles also considered under the recorded SDK agreement, without assigning the whole file BSD"
+        },
+        {
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/stdint.h",
+          "source_sha256": "9d070aad02d9f2ba1f2248d093b4194b62cf8d363778c737d1110f4736e5ed3c",
+          "notice_path": "third-party-notices/SDK-header-1b9e7463f2f6ad7bf69bce16.txt",
+          "prefix_sha256": "9f105e74e8387de0a678ea21df6f8c6c4139d94dcb21416e704469adb665c36d",
+          "group": "copyright-prefix-only-sdk-input",
+          "status": "reviewed-sdk-application-development-route-no-header-source-redistribution",
+          "scope": "Terms of the observed prefix; Apple preambles also considered under the recorded SDK agreement, without assigning the whole file BSD"
+        },
+        {
+          "path": "Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/17/include/__stdarg___gnuc_va_list.h",
+          "source_sha256": "feca975bfdfb254d17458a8e3d51f8ad6d9bdc9fd6287727f0f8b2fb81fcb0b0",
+          "notice_path": "third-party-notices/SDK-header-91a9519314e9f449d18f8002.txt",
+          "prefix_sha256": "8b548ce9c0772f64352e0a72e894ec00ce269b9e0b9f607bbca6b1b7568147df",
+          "group": "llvm-explicit-declaration",
+          "status": "reviewed-compiled-header-route-with-preserved-reference",
+          "scope": "Terms of the observed prefix; Apple preambles also considered under the recorded SDK agreement, without assigning the whole file BSD"
+        },
+        {
+          "path": "Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/17/include/__stdarg___va_copy.h",
+          "source_sha256": "f0a8d3c963338173f2d57b2cbc209dde38c90536107b15eb0cf78166d4caee1f",
+          "notice_path": "third-party-notices/SDK-header-ab347cf153976d4db66f5152.txt",
+          "prefix_sha256": "945de68c47db6ae086ca724e56955f58a2fcd24996ff855729844e4da2b69eb9",
+          "group": "llvm-explicit-declaration",
+          "status": "reviewed-compiled-header-route-with-preserved-reference",
+          "scope": "Terms of the observed prefix; Apple preambles also considered under the recorded SDK agreement, without assigning the whole file BSD"
+        },
+        {
+          "path": "Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/17/include/__stdarg_header_macro.h",
+          "source_sha256": "7b3fbcc442af2508f36bb2dc98d9ad2b8a1f5c0f5333394fb2159c8bd5ecd5b8",
+          "notice_path": "third-party-notices/SDK-header-b5396b1bccba6d4c361e064b.txt",
+          "prefix_sha256": "51649fa4a0f431eebab1437ed612fb019ec2e7787e56eed82221eefd46a3703b",
+          "group": "llvm-explicit-declaration",
+          "status": "reviewed-compiled-header-route-with-preserved-reference",
+          "scope": "Terms of the observed prefix; Apple preambles also considered under the recorded SDK agreement, without assigning the whole file BSD"
+        },
+        {
+          "path": "Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/17/include/__stdarg_va_arg.h",
+          "source_sha256": "db0cca3b7768cf07807553fb88ea74e00cba4503e08a5f5504989fb3cc3e4cf1",
+          "notice_path": "third-party-notices/SDK-header-44c862a93062de464876ed7d.txt",
+          "prefix_sha256": "b595a97ed09833b689e3f363e6dc485c1383ebeb8f501ad0669fefdf267d1e33",
+          "group": "llvm-explicit-declaration",
+          "status": "reviewed-compiled-header-route-with-preserved-reference",
+          "scope": "Terms of the observed prefix; Apple preambles also considered under the recorded SDK agreement, without assigning the whole file BSD"
+        },
+        {
+          "path": "Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/17/include/__stdarg_va_copy.h",
+          "source_sha256": "bb195f56cb08d4cee6a60bd9f62f34466e8ac4f89f6fed043b044cb2f7ead010",
+          "notice_path": "third-party-notices/SDK-header-e029e12725002816d03ac787.txt",
+          "prefix_sha256": "a517fd65b43e273f5a8058114a09ed1571404207f694828be663fdde7eb5c25f",
+          "group": "llvm-explicit-declaration",
+          "status": "reviewed-compiled-header-route-with-preserved-reference",
+          "scope": "Terms of the observed prefix; Apple preambles also considered under the recorded SDK agreement, without assigning the whole file BSD"
+        },
+        {
+          "path": "Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/17/include/__stdarg_va_list.h",
+          "source_sha256": "81c3055f7033e26e7f53705653bc9d69b5202f25c2692e03b3a4f77ff44a7d76",
+          "notice_path": "third-party-notices/SDK-header-1979f81f3709afcd363d036f.txt",
+          "prefix_sha256": "5754c957355450437a3f49af4b4ff624ace44a28722dda812a0533f2fd0ae618",
+          "group": "llvm-explicit-declaration",
+          "status": "reviewed-compiled-header-route-with-preserved-reference",
+          "scope": "Terms of the observed prefix; Apple preambles also considered under the recorded SDK agreement, without assigning the whole file BSD"
+        },
+        {
+          "path": "Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/17/include/__stddef_header_macro.h",
+          "source_sha256": "4cf46e8fbb809df048eecbbd63686fa741da27afa8db4245bd1f61c1fb1611dc",
+          "notice_path": "third-party-notices/SDK-header-01e702b5a26cf201b9616734.txt",
+          "prefix_sha256": "d90e4486cbe230e2a69b2208b3cfa00d2f37dde34fecba5641a1e765f0ec53ad",
+          "group": "llvm-explicit-declaration",
+          "status": "reviewed-compiled-header-route-with-preserved-reference",
+          "scope": "Terms of the observed prefix; Apple preambles also considered under the recorded SDK agreement, without assigning the whole file BSD"
+        },
+        {
+          "path": "Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/17/include/__stddef_max_align_t.h",
+          "source_sha256": "3c1e4de47f4f06b35e2c5890d670052e84f716760505ff51b022fc8b21a9400f",
+          "notice_path": "third-party-notices/SDK-header-8e3ffe3f447157ea7e291245.txt",
+          "prefix_sha256": "8998ce0e1626fdc5b04f6744ffc2eb65caea027ca78b5941d9df9a97ba4bebba",
+          "group": "llvm-explicit-declaration",
+          "status": "reviewed-compiled-header-route-with-preserved-reference",
+          "scope": "Terms of the observed prefix; Apple preambles also considered under the recorded SDK agreement, without assigning the whole file BSD"
+        },
+        {
+          "path": "Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/17/include/__stddef_null.h",
+          "source_sha256": "b1d71b08563ab3d2c22a1e4f8ddf4d9a1111c89e9404b859a45c307e8ebc6c69",
+          "notice_path": "third-party-notices/SDK-header-2ce8c2ac50698b9d94f9b4c9.txt",
+          "prefix_sha256": "e422064af9560b26465ed99c1e6e46f5a00d7e0bdd892d5b0ac845968a77b338",
+          "group": "llvm-explicit-declaration",
+          "status": "reviewed-compiled-header-route-with-preserved-reference",
+          "scope": "Terms of the observed prefix; Apple preambles also considered under the recorded SDK agreement, without assigning the whole file BSD"
+        },
+        {
+          "path": "Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/17/include/__stddef_offsetof.h",
+          "source_sha256": "e5f0f4ff8ff5fc6a1cc8b535f5065f1728eadd2bf1e1401f021f803ec7b4222f",
+          "notice_path": "third-party-notices/SDK-header-655987725eacd8982d50acc4.txt",
+          "prefix_sha256": "e0da127a73aeec439eda8e78f90180ccd950b574dc51921b11a8220792105973",
+          "group": "llvm-explicit-declaration",
+          "status": "reviewed-compiled-header-route-with-preserved-reference",
+          "scope": "Terms of the observed prefix; Apple preambles also considered under the recorded SDK agreement, without assigning the whole file BSD"
+        },
+        {
+          "path": "Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/17/include/__stddef_ptrdiff_t.h",
+          "source_sha256": "b4178a57f3711b7013cba747a72a2f178c29fa9364e77d75b2159754072ced43",
+          "notice_path": "third-party-notices/SDK-header-eea79286e672cb93a8fd0dfb.txt",
+          "prefix_sha256": "d836ead13fa0c2712f504f4ec30129528644807b7cd725987de154a003ff51c5",
+          "group": "llvm-explicit-declaration",
+          "status": "reviewed-compiled-header-route-with-preserved-reference",
+          "scope": "Terms of the observed prefix; Apple preambles also considered under the recorded SDK agreement, without assigning the whole file BSD"
+        },
+        {
+          "path": "Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/17/include/__stddef_rsize_t.h",
+          "source_sha256": "132339d4f07e852bf2d879bc91c4ccdfcf08c581c7c97f6f3794510e0bdda7bd",
+          "notice_path": "third-party-notices/SDK-header-9b388d04c9fa7e33e103df4b.txt",
+          "prefix_sha256": "b4c43cc9688b5c307b367004710ff8bc11731d15d4761d74824b7e163d8d3db8",
+          "group": "llvm-explicit-declaration",
+          "status": "reviewed-compiled-header-route-with-preserved-reference",
+          "scope": "Terms of the observed prefix; Apple preambles also considered under the recorded SDK agreement, without assigning the whole file BSD"
+        },
+        {
+          "path": "Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/17/include/__stddef_size_t.h",
+          "source_sha256": "d86ddc0238da09b385846ebef814ffc50a44e40cf85d4e3793f485952b7e73ad",
+          "notice_path": "third-party-notices/SDK-header-94443db0e92972a993fec11e.txt",
+          "prefix_sha256": "44886d090522af81bbbf9e6245f69625fc84430086bb2d1bdc8a41ce1310db3b",
+          "group": "llvm-explicit-declaration",
+          "status": "reviewed-compiled-header-route-with-preserved-reference",
+          "scope": "Terms of the observed prefix; Apple preambles also considered under the recorded SDK agreement, without assigning the whole file BSD"
+        },
+        {
+          "path": "Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/17/include/__stddef_wchar_t.h",
+          "source_sha256": "1900d4998aef3698b06399ed686db0c21e26509b08638a25734fb97ae89b1001",
+          "notice_path": "third-party-notices/SDK-header-f63db149a7bafc41da58c230.txt",
+          "prefix_sha256": "713ec82c8194a15383c5bad779fd8baca97f7eae52db544db760b011c17936f8",
+          "group": "llvm-explicit-declaration",
+          "status": "reviewed-compiled-header-route-with-preserved-reference",
+          "scope": "Terms of the observed prefix; Apple preambles also considered under the recorded SDK agreement, without assigning the whole file BSD"
+        },
+        {
+          "path": "Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/17/include/float.h",
+          "source_sha256": "8ecb63a07f580d3a6764c7b83015ac57c93ad5359236307d922a246e093ae562",
+          "notice_path": "third-party-notices/SDK-header-84b1727402338161172287e5.txt",
+          "prefix_sha256": "6015b181e142f418229b0ec6bfbac1b96bf12ae8e802b43c8aecc425d370c90c",
+          "group": "llvm-explicit-declaration",
+          "status": "reviewed-compiled-header-route-with-preserved-reference",
+          "scope": "Terms of the observed prefix; Apple preambles also considered under the recorded SDK agreement, without assigning the whole file BSD"
+        },
+        {
+          "path": "Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/17/include/inttypes.h",
+          "source_sha256": "eb8a7b2e17d57e9321043282bf0267fedd2ca58aadb11b04929ddbf8100fc3bc",
+          "notice_path": "third-party-notices/SDK-header-e44063a421324132dbea6a57.txt",
+          "prefix_sha256": "6ba160fe160e2d0f4b1d9e18dba676a82d068477c4e3c713683375e2e27ff98e",
+          "group": "llvm-explicit-declaration",
+          "status": "reviewed-compiled-header-route-with-preserved-reference",
+          "scope": "Terms of the observed prefix; Apple preambles also considered under the recorded SDK agreement, without assigning the whole file BSD"
+        },
+        {
+          "path": "Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/17/include/limits.h",
+          "source_sha256": "a7ef4c2d6cf10dc257685a7053c3e5762d497094a6a00c52d1ffb7f256d1d0fb",
+          "notice_path": "third-party-notices/SDK-header-82e430add7f776404b6af43d.txt",
+          "prefix_sha256": "ed26adcef0b553b44030433d6892bb489b12cc28b7e39423421caf87a0134bed",
+          "group": "llvm-explicit-declaration",
+          "status": "reviewed-compiled-header-route-with-preserved-reference",
+          "scope": "Terms of the observed prefix; Apple preambles also considered under the recorded SDK agreement, without assigning the whole file BSD"
+        },
+        {
+          "path": "Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/17/include/ptrcheck.h",
+          "source_sha256": "ac60d1e96ac17d789d1879b968d391dfbfa222f12213ba95f14592453eebe338",
+          "notice_path": "third-party-notices/SDK-header-6eb86e5a1f600672ddbd3a01.txt",
+          "prefix_sha256": "1dde451e831ce68164036a3b56fb72460ba58b3577876cb513f201ac1dfe19ea",
+          "group": "llvm-explicit-declaration",
+          "status": "reviewed-compiled-header-route-with-preserved-reference",
+          "scope": "Terms of the observed prefix; Apple preambles also considered under the recorded SDK agreement, without assigning the whole file BSD"
+        },
+        {
+          "path": "Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/17/include/stdalign.h",
+          "source_sha256": "889808f7d7c3cb9fd6b3fdc01ee21ed3771dbf478f2942a028d9686d9c61f662",
+          "notice_path": "third-party-notices/SDK-header-a6859eaaf445765109ee287f.txt",
+          "prefix_sha256": "4efb5f80669b7c385442e87625b2edd0b5cea825b268181b645b92971c91b811",
+          "group": "llvm-explicit-declaration",
+          "status": "reviewed-compiled-header-route-with-preserved-reference",
+          "scope": "Terms of the observed prefix; Apple preambles also considered under the recorded SDK agreement, without assigning the whole file BSD"
+        },
+        {
+          "path": "Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/17/include/stdarg.h",
+          "source_sha256": "ce6e43d79dc89b50208ecf259b1ffd519f5a78cd3a2c7fcaac6386f376b89fef",
+          "notice_path": "third-party-notices/SDK-header-ea3512383f1e750b70114e06.txt",
+          "prefix_sha256": "fe069d0d0e201f94ecf04b789a95d01fe0295c340517ab50c30d11d912b91bac",
+          "group": "llvm-explicit-declaration",
+          "status": "reviewed-compiled-header-route-with-preserved-reference",
+          "scope": "Terms of the observed prefix; Apple preambles also considered under the recorded SDK agreement, without assigning the whole file BSD"
+        },
+        {
+          "path": "Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/17/include/stdatomic.h",
+          "source_sha256": "728b690f127fc85faa32b9031e3a0019da92f77db92ca91b749571e45617a9ea",
+          "notice_path": "third-party-notices/SDK-header-34f0812e484859a9c0bc84db.txt",
+          "prefix_sha256": "c187113158e65259c99f706181adf0678112bb58fbbcd688fe8d2b581755b1f7",
+          "group": "llvm-explicit-declaration",
+          "status": "reviewed-compiled-header-route-with-preserved-reference",
+          "scope": "Terms of the observed prefix; Apple preambles also considered under the recorded SDK agreement, without assigning the whole file BSD"
+        },
+        {
+          "path": "Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/17/include/stdbool.h",
+          "source_sha256": "48655faf4ebd4ca0af26a1ee8e3e16f8dc68385c9cd550ffb3629320681305b3",
+          "notice_path": "third-party-notices/SDK-header-ec4a643daffd2b41e7dbd761.txt",
+          "prefix_sha256": "48c8236343fafbfc67792dc3c7ac85af049bc64a772adcd88b266b905d4b52dc",
+          "group": "llvm-explicit-declaration",
+          "status": "reviewed-compiled-header-route-with-preserved-reference",
+          "scope": "Terms of the observed prefix; Apple preambles also considered under the recorded SDK agreement, without assigning the whole file BSD"
+        },
+        {
+          "path": "Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/17/include/stddef.h",
+          "source_sha256": "e8d92dad1b380f2f2130fd7aa446bcb4fc923f7062a41c7c35beb4913093a8f5",
+          "notice_path": "third-party-notices/SDK-header-39a96a9a0c07463108fcad89.txt",
+          "prefix_sha256": "385a49d08a399b48318c9704ef53eaec8e5a648cd7ac9f51800d8109c262566f",
+          "group": "llvm-explicit-declaration",
+          "status": "reviewed-compiled-header-route-with-preserved-reference",
+          "scope": "Terms of the observed prefix; Apple preambles also considered under the recorded SDK agreement, without assigning the whole file BSD"
+        },
+        {
+          "path": "Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/17/include/stdint.h",
+          "source_sha256": "655616d8fcb2c92b38c039019685c658c2346b3dd0021aed4ea057b43f621247",
+          "notice_path": "third-party-notices/SDK-header-5f310fed1b3c28eef6c3df6c.txt",
+          "prefix_sha256": "adcb355d09cc4b49be216bcd74ae4116f26975901975e22820f5d859921c8a6f",
+          "group": "llvm-explicit-declaration",
+          "status": "reviewed-compiled-header-route-with-preserved-reference",
+          "scope": "Terms of the observed prefix; Apple preambles also considered under the recorded SDK agreement, without assigning the whole file BSD"
+        }
+      ],
+      "no_sdk_libraries_in_runtime_inventory": true,
+      "license_rtf_sha256": "ffffc7530aaddce6636da743e61e8888d4f941f294c3dab5d2bd7fdb368e4f55"
+    },
+    {
+      "artifact_id": "macos-x86_64",
+      "provenance_sha256": "c59fd5be471c02b8b7223e8483f844bd140dd8d71e38174e332bcec6d16054b9",
+      "source_tree_sha256": "23b430378377d48cf9c2c8c95d87ac0638eef76caaa637b496d87f7ce512ab4c",
+      "source_provider_url": "https://developer.apple.com/download/all/?q=Xcode%2016.4",
+      "source_identity_kind": "Recorded SDK source/header/stub tree digest, not a downloadable archive digest",
+      "counts": {
+        "bsd-four-condition-block": 5,
+        "copyright-prefix-only-sdk-input": 2,
+        "llvm-explicit-declaration": 24
+      },
+      "headers": [
+        {
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/_locale.h",
+          "source_sha256": "54b21dd976827f49d5678d21faae67dd21e9bc7eb375c4c7c3a1761c749a2995",
+          "notice_path": "third-party-notices/SDK-header-96ff23d4276f23e2f8e26652.txt",
+          "prefix_sha256": "db3206761973d830bf6d2cf05bd814b7cf070201f40484fd9d3e516c32ad6b3a",
+          "group": "bsd-four-condition-block",
+          "status": "reviewed-block-with-acknowledgment-and-no-endorsement-condition",
+          "scope": "Terms of the observed prefix; Apple preambles also considered under the recorded SDK agreement, without assigning the whole file BSD"
+        },
+        {
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/assert.h",
+          "source_sha256": "ce61ce31a18d5e82f70bd637441629ddb0b48c31871bb280ea6457fe7eff2d32",
+          "notice_path": "third-party-notices/SDK-header-76f5319e02595f33cd3e40d0.txt",
+          "prefix_sha256": "9e9da644bfa3177aa5658d22a52edc14e80b193718246c97093a0f9ace84e7af",
+          "group": "bsd-four-condition-block",
+          "status": "reviewed-block-with-acknowledgment-and-no-endorsement-condition",
+          "scope": "Terms of the observed prefix; Apple preambles also considered under the recorded SDK agreement, without assigning the whole file BSD"
+        },
+        {
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/i386/limits.h",
+          "source_sha256": "5f217d3264db40123bd92898ba7d1874c301b7b183d6c3b8c2d84e71bc82f89c",
+          "notice_path": "third-party-notices/SDK-header-e8cecbdfadd05cca28c42a51.txt",
+          "prefix_sha256": "0c02eed2c8e9051372fd02ea5d9feac6edf2c589e771a9e2a45cd76203a8ff40",
+          "group": "bsd-four-condition-block",
+          "status": "reviewed-block-with-acknowledgment-and-no-endorsement-condition",
+          "scope": "Terms of the observed prefix; Apple preambles also considered under the recorded SDK agreement, without assigning the whole file BSD"
+        },
+        {
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/locale.h",
+          "source_sha256": "c6b8754c14162db64dd94f6d4f489cb1fa8c4b7504311a83081103dc3b903218",
+          "notice_path": "third-party-notices/SDK-header-b040f27f37038e24b11fe5d2.txt",
+          "prefix_sha256": "db3206761973d830bf6d2cf05bd814b7cf070201f40484fd9d3e516c32ad6b3a",
+          "group": "bsd-four-condition-block",
+          "status": "reviewed-block-with-acknowledgment-and-no-endorsement-condition",
+          "scope": "Terms of the observed prefix; Apple preambles also considered under the recorded SDK agreement, without assigning the whole file BSD"
+        },
+        {
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/machine/limits.h",
+          "source_sha256": "50345f1ab843fca787a38c552a84177e678d79dab86e714434f94f2546839357",
+          "notice_path": "third-party-notices/SDK-header-12046e3c88c52e9b7c448e3d.txt",
+          "prefix_sha256": "827c9c49529b10fea56b0e030269acd4b21ce327491f085a25c8572f0aebd1d3",
+          "group": "copyright-prefix-only-sdk-input",
+          "status": "reviewed-sdk-application-development-route-no-header-source-redistribution",
+          "scope": "Terms of the observed prefix; Apple preambles also considered under the recorded SDK agreement, without assigning the whole file BSD"
+        },
+        {
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/runetype.h",
+          "source_sha256": "77e4c54bae90d051e567de33c1a56f97e8e3c61fb28f5e7e96e1f859ba50c72a",
+          "notice_path": "third-party-notices/SDK-header-d4beec375df82fc0e2189412.txt",
+          "prefix_sha256": "c37b78ec41a8dc318295e88303ab32207cc8b98ddfa3f1e981b3fb808037d5a6",
+          "group": "bsd-four-condition-block",
+          "status": "reviewed-block-with-acknowledgment-and-no-endorsement-condition",
+          "scope": "Terms of the observed prefix; Apple preambles also considered under the recorded SDK agreement, without assigning the whole file BSD"
+        },
+        {
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/stdint.h",
+          "source_sha256": "9d070aad02d9f2ba1f2248d093b4194b62cf8d363778c737d1110f4736e5ed3c",
+          "notice_path": "third-party-notices/SDK-header-1b9e7463f2f6ad7bf69bce16.txt",
+          "prefix_sha256": "9f105e74e8387de0a678ea21df6f8c6c4139d94dcb21416e704469adb665c36d",
+          "group": "copyright-prefix-only-sdk-input",
+          "status": "reviewed-sdk-application-development-route-no-header-source-redistribution",
+          "scope": "Terms of the observed prefix; Apple preambles also considered under the recorded SDK agreement, without assigning the whole file BSD"
+        },
+        {
+          "path": "Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/17/include/__stdarg___gnuc_va_list.h",
+          "source_sha256": "feca975bfdfb254d17458a8e3d51f8ad6d9bdc9fd6287727f0f8b2fb81fcb0b0",
+          "notice_path": "third-party-notices/SDK-header-91a9519314e9f449d18f8002.txt",
+          "prefix_sha256": "8b548ce9c0772f64352e0a72e894ec00ce269b9e0b9f607bbca6b1b7568147df",
+          "group": "llvm-explicit-declaration",
+          "status": "reviewed-compiled-header-route-with-preserved-reference",
+          "scope": "Terms of the observed prefix; Apple preambles also considered under the recorded SDK agreement, without assigning the whole file BSD"
+        },
+        {
+          "path": "Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/17/include/__stdarg___va_copy.h",
+          "source_sha256": "f0a8d3c963338173f2d57b2cbc209dde38c90536107b15eb0cf78166d4caee1f",
+          "notice_path": "third-party-notices/SDK-header-ab347cf153976d4db66f5152.txt",
+          "prefix_sha256": "945de68c47db6ae086ca724e56955f58a2fcd24996ff855729844e4da2b69eb9",
+          "group": "llvm-explicit-declaration",
+          "status": "reviewed-compiled-header-route-with-preserved-reference",
+          "scope": "Terms of the observed prefix; Apple preambles also considered under the recorded SDK agreement, without assigning the whole file BSD"
+        },
+        {
+          "path": "Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/17/include/__stdarg_header_macro.h",
+          "source_sha256": "7b3fbcc442af2508f36bb2dc98d9ad2b8a1f5c0f5333394fb2159c8bd5ecd5b8",
+          "notice_path": "third-party-notices/SDK-header-b5396b1bccba6d4c361e064b.txt",
+          "prefix_sha256": "51649fa4a0f431eebab1437ed612fb019ec2e7787e56eed82221eefd46a3703b",
+          "group": "llvm-explicit-declaration",
+          "status": "reviewed-compiled-header-route-with-preserved-reference",
+          "scope": "Terms of the observed prefix; Apple preambles also considered under the recorded SDK agreement, without assigning the whole file BSD"
+        },
+        {
+          "path": "Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/17/include/__stdarg_va_arg.h",
+          "source_sha256": "db0cca3b7768cf07807553fb88ea74e00cba4503e08a5f5504989fb3cc3e4cf1",
+          "notice_path": "third-party-notices/SDK-header-44c862a93062de464876ed7d.txt",
+          "prefix_sha256": "b595a97ed09833b689e3f363e6dc485c1383ebeb8f501ad0669fefdf267d1e33",
+          "group": "llvm-explicit-declaration",
+          "status": "reviewed-compiled-header-route-with-preserved-reference",
+          "scope": "Terms of the observed prefix; Apple preambles also considered under the recorded SDK agreement, without assigning the whole file BSD"
+        },
+        {
+          "path": "Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/17/include/__stdarg_va_copy.h",
+          "source_sha256": "bb195f56cb08d4cee6a60bd9f62f34466e8ac4f89f6fed043b044cb2f7ead010",
+          "notice_path": "third-party-notices/SDK-header-e029e12725002816d03ac787.txt",
+          "prefix_sha256": "a517fd65b43e273f5a8058114a09ed1571404207f694828be663fdde7eb5c25f",
+          "group": "llvm-explicit-declaration",
+          "status": "reviewed-compiled-header-route-with-preserved-reference",
+          "scope": "Terms of the observed prefix; Apple preambles also considered under the recorded SDK agreement, without assigning the whole file BSD"
+        },
+        {
+          "path": "Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/17/include/__stdarg_va_list.h",
+          "source_sha256": "81c3055f7033e26e7f53705653bc9d69b5202f25c2692e03b3a4f77ff44a7d76",
+          "notice_path": "third-party-notices/SDK-header-1979f81f3709afcd363d036f.txt",
+          "prefix_sha256": "5754c957355450437a3f49af4b4ff624ace44a28722dda812a0533f2fd0ae618",
+          "group": "llvm-explicit-declaration",
+          "status": "reviewed-compiled-header-route-with-preserved-reference",
+          "scope": "Terms of the observed prefix; Apple preambles also considered under the recorded SDK agreement, without assigning the whole file BSD"
+        },
+        {
+          "path": "Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/17/include/__stddef_header_macro.h",
+          "source_sha256": "4cf46e8fbb809df048eecbbd63686fa741da27afa8db4245bd1f61c1fb1611dc",
+          "notice_path": "third-party-notices/SDK-header-01e702b5a26cf201b9616734.txt",
+          "prefix_sha256": "d90e4486cbe230e2a69b2208b3cfa00d2f37dde34fecba5641a1e765f0ec53ad",
+          "group": "llvm-explicit-declaration",
+          "status": "reviewed-compiled-header-route-with-preserved-reference",
+          "scope": "Terms of the observed prefix; Apple preambles also considered under the recorded SDK agreement, without assigning the whole file BSD"
+        },
+        {
+          "path": "Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/17/include/__stddef_max_align_t.h",
+          "source_sha256": "3c1e4de47f4f06b35e2c5890d670052e84f716760505ff51b022fc8b21a9400f",
+          "notice_path": "third-party-notices/SDK-header-8e3ffe3f447157ea7e291245.txt",
+          "prefix_sha256": "8998ce0e1626fdc5b04f6744ffc2eb65caea027ca78b5941d9df9a97ba4bebba",
+          "group": "llvm-explicit-declaration",
+          "status": "reviewed-compiled-header-route-with-preserved-reference",
+          "scope": "Terms of the observed prefix; Apple preambles also considered under the recorded SDK agreement, without assigning the whole file BSD"
+        },
+        {
+          "path": "Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/17/include/__stddef_null.h",
+          "source_sha256": "b1d71b08563ab3d2c22a1e4f8ddf4d9a1111c89e9404b859a45c307e8ebc6c69",
+          "notice_path": "third-party-notices/SDK-header-2ce8c2ac50698b9d94f9b4c9.txt",
+          "prefix_sha256": "e422064af9560b26465ed99c1e6e46f5a00d7e0bdd892d5b0ac845968a77b338",
+          "group": "llvm-explicit-declaration",
+          "status": "reviewed-compiled-header-route-with-preserved-reference",
+          "scope": "Terms of the observed prefix; Apple preambles also considered under the recorded SDK agreement, without assigning the whole file BSD"
+        },
+        {
+          "path": "Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/17/include/__stddef_offsetof.h",
+          "source_sha256": "e5f0f4ff8ff5fc6a1cc8b535f5065f1728eadd2bf1e1401f021f803ec7b4222f",
+          "notice_path": "third-party-notices/SDK-header-655987725eacd8982d50acc4.txt",
+          "prefix_sha256": "e0da127a73aeec439eda8e78f90180ccd950b574dc51921b11a8220792105973",
+          "group": "llvm-explicit-declaration",
+          "status": "reviewed-compiled-header-route-with-preserved-reference",
+          "scope": "Terms of the observed prefix; Apple preambles also considered under the recorded SDK agreement, without assigning the whole file BSD"
+        },
+        {
+          "path": "Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/17/include/__stddef_ptrdiff_t.h",
+          "source_sha256": "b4178a57f3711b7013cba747a72a2f178c29fa9364e77d75b2159754072ced43",
+          "notice_path": "third-party-notices/SDK-header-eea79286e672cb93a8fd0dfb.txt",
+          "prefix_sha256": "d836ead13fa0c2712f504f4ec30129528644807b7cd725987de154a003ff51c5",
+          "group": "llvm-explicit-declaration",
+          "status": "reviewed-compiled-header-route-with-preserved-reference",
+          "scope": "Terms of the observed prefix; Apple preambles also considered under the recorded SDK agreement, without assigning the whole file BSD"
+        },
+        {
+          "path": "Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/17/include/__stddef_rsize_t.h",
+          "source_sha256": "132339d4f07e852bf2d879bc91c4ccdfcf08c581c7c97f6f3794510e0bdda7bd",
+          "notice_path": "third-party-notices/SDK-header-9b388d04c9fa7e33e103df4b.txt",
+          "prefix_sha256": "b4c43cc9688b5c307b367004710ff8bc11731d15d4761d74824b7e163d8d3db8",
+          "group": "llvm-explicit-declaration",
+          "status": "reviewed-compiled-header-route-with-preserved-reference",
+          "scope": "Terms of the observed prefix; Apple preambles also considered under the recorded SDK agreement, without assigning the whole file BSD"
+        },
+        {
+          "path": "Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/17/include/__stddef_size_t.h",
+          "source_sha256": "d86ddc0238da09b385846ebef814ffc50a44e40cf85d4e3793f485952b7e73ad",
+          "notice_path": "third-party-notices/SDK-header-94443db0e92972a993fec11e.txt",
+          "prefix_sha256": "44886d090522af81bbbf9e6245f69625fc84430086bb2d1bdc8a41ce1310db3b",
+          "group": "llvm-explicit-declaration",
+          "status": "reviewed-compiled-header-route-with-preserved-reference",
+          "scope": "Terms of the observed prefix; Apple preambles also considered under the recorded SDK agreement, without assigning the whole file BSD"
+        },
+        {
+          "path": "Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/17/include/__stddef_wchar_t.h",
+          "source_sha256": "1900d4998aef3698b06399ed686db0c21e26509b08638a25734fb97ae89b1001",
+          "notice_path": "third-party-notices/SDK-header-f63db149a7bafc41da58c230.txt",
+          "prefix_sha256": "713ec82c8194a15383c5bad779fd8baca97f7eae52db544db760b011c17936f8",
+          "group": "llvm-explicit-declaration",
+          "status": "reviewed-compiled-header-route-with-preserved-reference",
+          "scope": "Terms of the observed prefix; Apple preambles also considered under the recorded SDK agreement, without assigning the whole file BSD"
+        },
+        {
+          "path": "Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/17/include/float.h",
+          "source_sha256": "8ecb63a07f580d3a6764c7b83015ac57c93ad5359236307d922a246e093ae562",
+          "notice_path": "third-party-notices/SDK-header-84b1727402338161172287e5.txt",
+          "prefix_sha256": "6015b181e142f418229b0ec6bfbac1b96bf12ae8e802b43c8aecc425d370c90c",
+          "group": "llvm-explicit-declaration",
+          "status": "reviewed-compiled-header-route-with-preserved-reference",
+          "scope": "Terms of the observed prefix; Apple preambles also considered under the recorded SDK agreement, without assigning the whole file BSD"
+        },
+        {
+          "path": "Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/17/include/inttypes.h",
+          "source_sha256": "eb8a7b2e17d57e9321043282bf0267fedd2ca58aadb11b04929ddbf8100fc3bc",
+          "notice_path": "third-party-notices/SDK-header-e44063a421324132dbea6a57.txt",
+          "prefix_sha256": "6ba160fe160e2d0f4b1d9e18dba676a82d068477c4e3c713683375e2e27ff98e",
+          "group": "llvm-explicit-declaration",
+          "status": "reviewed-compiled-header-route-with-preserved-reference",
+          "scope": "Terms of the observed prefix; Apple preambles also considered under the recorded SDK agreement, without assigning the whole file BSD"
+        },
+        {
+          "path": "Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/17/include/limits.h",
+          "source_sha256": "a7ef4c2d6cf10dc257685a7053c3e5762d497094a6a00c52d1ffb7f256d1d0fb",
+          "notice_path": "third-party-notices/SDK-header-82e430add7f776404b6af43d.txt",
+          "prefix_sha256": "ed26adcef0b553b44030433d6892bb489b12cc28b7e39423421caf87a0134bed",
+          "group": "llvm-explicit-declaration",
+          "status": "reviewed-compiled-header-route-with-preserved-reference",
+          "scope": "Terms of the observed prefix; Apple preambles also considered under the recorded SDK agreement, without assigning the whole file BSD"
+        },
+        {
+          "path": "Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/17/include/ptrcheck.h",
+          "source_sha256": "ac60d1e96ac17d789d1879b968d391dfbfa222f12213ba95f14592453eebe338",
+          "notice_path": "third-party-notices/SDK-header-6eb86e5a1f600672ddbd3a01.txt",
+          "prefix_sha256": "1dde451e831ce68164036a3b56fb72460ba58b3577876cb513f201ac1dfe19ea",
+          "group": "llvm-explicit-declaration",
+          "status": "reviewed-compiled-header-route-with-preserved-reference",
+          "scope": "Terms of the observed prefix; Apple preambles also considered under the recorded SDK agreement, without assigning the whole file BSD"
+        },
+        {
+          "path": "Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/17/include/stdalign.h",
+          "source_sha256": "889808f7d7c3cb9fd6b3fdc01ee21ed3771dbf478f2942a028d9686d9c61f662",
+          "notice_path": "third-party-notices/SDK-header-a6859eaaf445765109ee287f.txt",
+          "prefix_sha256": "4efb5f80669b7c385442e87625b2edd0b5cea825b268181b645b92971c91b811",
+          "group": "llvm-explicit-declaration",
+          "status": "reviewed-compiled-header-route-with-preserved-reference",
+          "scope": "Terms of the observed prefix; Apple preambles also considered under the recorded SDK agreement, without assigning the whole file BSD"
+        },
+        {
+          "path": "Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/17/include/stdarg.h",
+          "source_sha256": "ce6e43d79dc89b50208ecf259b1ffd519f5a78cd3a2c7fcaac6386f376b89fef",
+          "notice_path": "third-party-notices/SDK-header-ea3512383f1e750b70114e06.txt",
+          "prefix_sha256": "fe069d0d0e201f94ecf04b789a95d01fe0295c340517ab50c30d11d912b91bac",
+          "group": "llvm-explicit-declaration",
+          "status": "reviewed-compiled-header-route-with-preserved-reference",
+          "scope": "Terms of the observed prefix; Apple preambles also considered under the recorded SDK agreement, without assigning the whole file BSD"
+        },
+        {
+          "path": "Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/17/include/stdatomic.h",
+          "source_sha256": "728b690f127fc85faa32b9031e3a0019da92f77db92ca91b749571e45617a9ea",
+          "notice_path": "third-party-notices/SDK-header-34f0812e484859a9c0bc84db.txt",
+          "prefix_sha256": "c187113158e65259c99f706181adf0678112bb58fbbcd688fe8d2b581755b1f7",
+          "group": "llvm-explicit-declaration",
+          "status": "reviewed-compiled-header-route-with-preserved-reference",
+          "scope": "Terms of the observed prefix; Apple preambles also considered under the recorded SDK agreement, without assigning the whole file BSD"
+        },
+        {
+          "path": "Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/17/include/stdbool.h",
+          "source_sha256": "48655faf4ebd4ca0af26a1ee8e3e16f8dc68385c9cd550ffb3629320681305b3",
+          "notice_path": "third-party-notices/SDK-header-ec4a643daffd2b41e7dbd761.txt",
+          "prefix_sha256": "48c8236343fafbfc67792dc3c7ac85af049bc64a772adcd88b266b905d4b52dc",
+          "group": "llvm-explicit-declaration",
+          "status": "reviewed-compiled-header-route-with-preserved-reference",
+          "scope": "Terms of the observed prefix; Apple preambles also considered under the recorded SDK agreement, without assigning the whole file BSD"
+        },
+        {
+          "path": "Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/17/include/stddef.h",
+          "source_sha256": "e8d92dad1b380f2f2130fd7aa446bcb4fc923f7062a41c7c35beb4913093a8f5",
+          "notice_path": "third-party-notices/SDK-header-39a96a9a0c07463108fcad89.txt",
+          "prefix_sha256": "385a49d08a399b48318c9704ef53eaec8e5a648cd7ac9f51800d8109c262566f",
+          "group": "llvm-explicit-declaration",
+          "status": "reviewed-compiled-header-route-with-preserved-reference",
+          "scope": "Terms of the observed prefix; Apple preambles also considered under the recorded SDK agreement, without assigning the whole file BSD"
+        },
+        {
+          "path": "Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/17/include/stdint.h",
+          "source_sha256": "655616d8fcb2c92b38c039019685c658c2346b3dd0021aed4ea057b43f621247",
+          "notice_path": "third-party-notices/SDK-header-5f310fed1b3c28eef6c3df6c.txt",
+          "prefix_sha256": "adcb355d09cc4b49be216bcd74ae4116f26975901975e22820f5d859921c8a6f",
+          "group": "llvm-explicit-declaration",
+          "status": "reviewed-compiled-header-route-with-preserved-reference",
+          "scope": "Terms of the observed prefix; Apple preambles also considered under the recorded SDK agreement, without assigning the whole file BSD"
+        }
+      ],
+      "no_sdk_libraries_in_runtime_inventory": true,
+      "license_rtf_sha256": "ffffc7530aaddce6636da743e61e8888d4f941f294c3dab5d2bd7fdb368e4f55"
+    }
+  ],
+  "remaining": [
+    "W3C/ISO applicability conclusion and other full-bundle component/source findings",
+    "Permanent corresponding-source delivery and final package acceptance"
+  ],
+  "limitations": [
+    "Lexical header counts do not establish absence of protected contributions",
+    "No automatic acceptance of the Xcode agreement, compiler-source requirement or general SDK redistribution grant",
+    "Five copyright-prefix-only files were inspected by hash on each runner; their complete source code was not copied"
+  ]
+}

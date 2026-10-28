@@ -1,0 +1,171 @@
+{
+  "kind": "musl-reference-grant-review-not-full-runtime-audit",
+  "reviewer": "Codex implementation review",
+  "approved": false,
+  "qualified": false,
+  "task_complete": false,
+  "source_lock": {
+    "path": "tools/runtime/licenses/data-references/musl-math/sources.json",
+    "sha256": "abc7647d2efbd17a31e232eb028040605ffe88fe35232a93efbfb9b9be6543b0"
+  },
+  "historical_archive": {
+    "url": "https://musl.libc.org/releases/musl-1.1.18.tar.gz",
+    "size": 936274,
+    "sha256": "d017ee5d01aec0c522a1330fdff06b1e428cb409e1db819cc4935d5da4a5a118",
+    "version": "1.1.18"
+  },
+  "copyright_source_sha256": "70ca142d257e2690a1f8eda8a296e64a6d1b16d8aee6784f8ddcf67f3163635d",
+  "reference_count": 42,
+  "no_comment_reference_count": 15,
+  "no_comment_references": [
+    {
+      "path": "src/math/ceilf.c",
+      "source_sha256": "691d3a8e183ebe5f09a68120766877872e10f9267fe6e2bba0341b93d2863cc8",
+      "bytes": 434
+    },
+    {
+      "path": "src/math/ceil.c",
+      "source_sha256": "f616b50efc61eb35f946308b222f5f83ca707b4efaf7ea175969a5b62d2d6637",
+      "bytes": 654
+    },
+    {
+      "path": "src/math/floorf.c",
+      "source_sha256": "55a62f12a4bcd151ca3a82e9ec98b1744c15017f1b6cdea56b33220ffdb166f3",
+      "bytes": 433
+    },
+    {
+      "path": "src/math/floor.c",
+      "source_sha256": "b9ccb9363719a84be218d60c56717f4fb0234e170c305e36ce21c30e1f42f8e1",
+      "bytes": 653
+    },
+    {
+      "path": "src/math/fma.c",
+      "source_sha256": "f15e2db8c727f6cb3886dbc8817bebfcd7afff155b284be409fb961e0b985894",
+      "bytes": 3734
+    },
+    {
+      "path": "src/math/fmod.c",
+      "source_sha256": "33fb61093e04783081b9e8f8a8a303456b2f919c215cd0c378c1ed0acf41934c",
+      "bytes": 1270
+    },
+    {
+      "path": "src/math/fmodf.c",
+      "source_sha256": "eecc1cf499f143181880a33a95f1614be323aca704815a7b57d4969a7cacc2d4",
+      "bytes": 1106
+    },
+    {
+      "path": "src/math/fmodl.c",
+      "source_sha256": "2e0331976ad4414bae10293befdb06a36b89cb8a7fcd66522cdb48c8485b97cb",
+      "bytes": 1908
+    },
+    {
+      "path": "src/math/roundf.c",
+      "source_sha256": "3f8cc14771a866a06184a3d9d654f63de9a077316a4905aae19884cc9b292d2e",
+      "bytes": 589
+    },
+    {
+      "path": "src/math/round.c",
+      "source_sha256": "2349e599e99052603794087193725d28180b5d3466d43d6e6e1b254627bf37ae",
+      "bytes": 597
+    },
+    {
+      "path": "src/math/truncf.c",
+      "source_sha256": "dd67c4d71894da6c93bc41ec6a141de45124d3d3f4d012bc95aac4fc792abccb",
+      "bytes": 294
+    },
+    {
+      "path": "src/math/trunc.c",
+      "source_sha256": "2f2941542db65a5c3a8a6fa952b978a5ff757f8b14ffdaef8ad28e0cafead644",
+      "bytes": 303
+    },
+    {
+      "path": "src/math/ilogbl.c",
+      "source_sha256": "1d2ac88f9b2316e6cf5e73878800c5b96c26de6813e8f528c4c60cceb98fa3ea",
+      "bytes": 1004
+    },
+    {
+      "path": "src/math/ilogbf.c",
+      "source_sha256": "d872a912229d178401482fc6b7cc7c3397a838b43d30f61bfdad8f8d03f63f4d",
+      "bytes": 438
+    },
+    {
+      "path": "src/math/ilogb.c",
+      "source_sha256": "c9875bc2118b90b16f2a8f3770a61dad59e2e5e076e744d4c054191ba00611be",
+      "bytes": 445
+    }
+  ],
+  "default_grant_finding": "The whole-library MIT grant and explicit default-file explanation provide a documented redistribution route for these pinned musl references without individual copyright comments; not a public-domain finding.",
+  "cumulative_notice_finding": "Keep the individual Sun and FreeBSD redistribution notices alongside musl, Zig MIT and historical Go terms. A root MIT text does not replace these separate notices.",
+  "historical_reference_notices": {
+    "Go-BSD-3-Clause-LICENSE.txt": "2d36597f7117c38b006835ae7f537487207d8ec407aa9d9980794b2030cbc067",
+    "Musl-math-1.1.18-COPYRIGHT.txt": "70ca142d257e2690a1f8eda8a296e64a6d1b16d8aee6784f8ddcf67f3163635d",
+    "Musl-math-__cos.c.txt": "27047e42e3a4b71c63b76080ffe0717310b91d38ef4d15c940bbadc1eb8ff420",
+    "Musl-math-__cosdf.c.txt": "2c5ca50ddd8ea3d2e5d6a02e212842567aae377abd6ed57e0d0e8888c9fb94ae",
+    "Musl-math-__rem_pio2.c.txt": "0bd9382fac6f493f9dc5f4eaa4c2012cc04951048f045aea7121e5540b08d871",
+    "Musl-math-__rem_pio2_large.c.txt": "82c5481a6eed4acef10144da0860ed303595437a9f054254ece6bc1584b0c89d",
+    "Musl-math-__rem_pio2f.c.txt": "d35098402c1cc702758ebd75de69e834e6f24efe2c38ff419d7fbb9eb476bec8",
+    "Musl-math-__sin.c.txt": "e651c1164fa50852a81332d2a3962dd0de64c64735f47b2f0e846f94f1da8d38",
+    "Musl-math-__sindf.c.txt": "701b472045d066eaeab43d5a94c692d87aecf5401ecab9064dfbf93a6a1a0c2e",
+    "Musl-math-__tan.c.txt": "daeafcdba6eed4bac3fb9ab78e2e410f7bd5a8a9c733558645ec392725eb0b6b",
+    "Musl-math-__tandf.c.txt": "cd8d03dca6657c0e15589067270f1d0760deb456d630c76b53929e8d3f151d23",
+    "Musl-math-exp.c.txt": "89e56efd8d8a30105cf1909dce819219491039c66061bcccc1484fda190df98b",
+    "Musl-math-exp2.c.txt": "71573f56d305793a05e14421952989613865ae90f607eec353f4337936093729",
+    "Musl-math-exp2f.c.txt": "386848f8d2b17be6710e4aed874406dd2a59978e42043af5b08906a70b1c124c",
+    "Musl-math-expf.c.txt": "8b9631512fe1312a7a7483c4ef576186dfa191154ae0780c6c30a2ae7e47b8a1",
+    "Musl-math-fmaf.c.txt": "ceba0b483522a5c09b22ae51b1833f2fabcf183c6e26077189f39f6a29c92ad5",
+    "Musl-math-fmal.c.txt": "541bf7c1610ec70e4c233de014d6e4cf739a56f16a53bae1703eaa8854f742c9",
+    "Musl-math-log.c.txt": "94da31fdbc97679e778714103f7f232cefe52633253ff58ba3b6cf3cc501ed81",
+    "Musl-math-log10.c.txt": "a10b1a81999d6e187cc65a869b53fcc2168bbd62b4b8ffb7b932726ddb2a5081",
+    "Musl-math-log10f.c.txt": "38a62e94ec64429d40e70621dcd7177d1d87c90acbc87dc1b197cbba1de18536",
+    "Musl-math-log2.c.txt": "447611d164938ed31b2ab7db1a0f3a884126444c37c58d3ab184ddfe88e67108",
+    "Musl-math-log2f.c.txt": "a1df834bda4484057cc771bc06d8421c3b1b4fc545f4e7504d02550f12e358ac",
+    "Musl-math-logf.c.txt": "411464ab5cc8c73d1d7463c0aeeeb2921ed5444128b3def0890c1f12cdd99b83",
+    "Musl-math-sin.c.txt": "bc263f1827be6be870e26a0b8a131bd7d5beb363778097a02fcdd4bf0a3fe62c",
+    "Musl-math-sinf.c.txt": "b6a2605352aea5dd02e594be2282448e0f9b2b26e3ef9c17120d608068fa6c48",
+    "Musl-math-sqrt.c.txt": "36d667f7673b000eaf5193a15fcb680ba3f472fab4a6f69f87e6882def183147",
+    "Musl-math-sqrtf.c.txt": "cc909c1ec953d6b4dfc31a604ebb8916200d00ac00821c7659d25d0c88b276f8",
+    "Musl-math-tan.c.txt": "b48f815fbb4269c92e8c70d45c6f961b3de4ceecc277a35501bff6b10bf92f69",
+    "Musl-math-tanf.c.txt": "32af7958518d0c3d2854d114f793823817fe691aae1ee15100367632b6644e1d",
+    "SDK-LICENSE.txt": "5c537d6853e005298a285d508cff9ac7192cea23576c840d485b2b586a7ff177",
+    "SDK-lib__libc__musl__COPYRIGHT.txt": "f9bc4423732350eb0b3f7ed7e91d530298476f8fec0c6c427a1c04ade22655af"
+  },
+  "artifacts": [
+    {
+      "artifact_id": "linux-glibc-aarch64",
+      "binary_sha256": "569a4155814c55a0d8aea330379cbe86bd4e92e796d02073f542be51e23e6d40",
+      "provenance_sha256": "e85943f5a5473553ffb4742909243c23b0f7f0a21ad55c8a8a43eb78a9a92c9c",
+      "notice_receipt": {
+        "path": "specs/003-add-cross-platform-support/evidence/license-review-2026-10-28/linux-glibc-aarch64/notice-payloads.json.gz",
+        "sha256": "3f38f8b4ced1d2a618bc0b3e66e71d0274c6aba75317fbeec6ec8193eed715a9"
+      },
+      "required_reference_notices_verified": true
+    },
+    {
+      "artifact_id": "linux-musl-aarch64",
+      "binary_sha256": "8e05d31c1f3a552c920400e8d1871847e5cfc7a0c4418fa8ab68bd2f6609d997",
+      "provenance_sha256": "b192d4d5b948b52c85e1cf3b238b99d6ef3efb2a90a1bfe20824dde427bbe390",
+      "notice_receipt": {
+        "path": "specs/003-add-cross-platform-support/evidence/license-review-2026-10-28/linux-musl-aarch64/notice-payloads.json.gz",
+        "sha256": "ce8db190202f3046549c98e816c9548e6b0e829d5435c7cee3988862f645ab9f"
+      },
+      "required_reference_notices_verified": true
+    },
+    {
+      "artifact_id": "linux-musl-x86_64",
+      "binary_sha256": "f506547381a5135f0961cec8b8155898d576ba4d8acfab9643e8bbe72f224974",
+      "provenance_sha256": "efb514520f52e2ce2b6e49b5f7ca9673f8ca20ae0b1c25d29d84bcf5a7bda170",
+      "notice_receipt": {
+        "path": "specs/003-add-cross-platform-support/evidence/license-review-2026-10-28/linux-musl-x86_64/notice-payloads.json.gz",
+        "sha256": "25bf4ba1ac692b4a4bd39ef3599c49d05a19b1aab965d19b6b1cca2897d8b3ce"
+      },
+      "required_reference_notices_verified": true
+    }
+  ],
+  "scope": "Terms of the pinned reference distribution and candidate notice preservation; exact translation ancestry and complete retained-input coverage are separate questions.",
+  "remaining": [
+    "Complete per-artifact runtime source/retained-input coverage",
+    "ISO/W3C conditions",
+    "Apple header contribution/source obligations",
+    "Permanent corresponding-source delivery and final acceptance"
+  ]
+}

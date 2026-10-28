@@ -1,0 +1,145 @@
+{
+  "kind": "macos-selected-header-source-delivery-verified-in-actions",
+  "application_revision": "721b90f3ab44e16b0e88f2d35118ef6fe5cc820c",
+  "run_id": 40776418040,
+  "workflow_url": "https://github.com/Extremois/desembaraca-twine/actions/runs/40776418040",
+  "passed": true,
+  "approved": false,
+  "qualified": false,
+  "task_complete": false,
+  "artifacts": [
+    {
+      "artifact_id": "macos-x86_64",
+      "actions_artifact_id": 12855482111,
+      "actions_zip_sha256": "02e57b60d83bfbac72adb91e7c0cbb722cf56268836eeb14ea9d24c78072759c",
+      "executable_sha256": "b1bcd8fb3ea37bbe51ea4e4b8611cfcdb4c01856bffb21c08e317d0c4ed32b88",
+      "archive_sha256": "aaed97431113e700bd4f27fa4a65c2e2d7af041a050b8b53346f56781c26cb21",
+      "files_verified": 550,
+      "graphviz_sources_verified": 322,
+      "notice_payloads": 548,
+      "notice_files_including_origin_index": 549,
+      "review_sha256": "d221a871421d02449f62ba5f983617d565e918d83302ee94f7ee12fd09a4eda2",
+      "current_outputs_match_user_review": true,
+      "corpus_reports": [
+        {
+          "path": "specs/003-add-cross-platform-support/evidence/macos-header-source-delivery-ci-2026-10-28/macos-x86_64/corpus-312.json.gz",
+          "raw_sha256": "346b18ddb30a4d7f43db1e557d01674785f116cd26fca60ae94480f821c0fe69",
+          "python": "3.12.10"
+        },
+        {
+          "path": "specs/003-add-cross-platform-support/evidence/macos-header-source-delivery-ci-2026-10-28/macos-x86_64/corpus-314.json.gz",
+          "raw_sha256": "a5213ce14266ad0a1f2221c5d486078842961c42b06f471ccadc342c7528e7aa",
+          "python": "3.14.7"
+        },
+        {
+          "path": "specs/003-add-cross-platform-support/evidence/macos-header-source-delivery-ci-2026-10-28/macos-x86_64/runtime-312.json.gz",
+          "raw_sha256": "4ec8aab5466cda40c034d3c0f5514539c69a518b738c2e99a3a9988c67bea2fc",
+          "python": "3.12.10"
+        },
+        {
+          "path": "specs/003-add-cross-platform-support/evidence/macos-header-source-delivery-ci-2026-10-28/macos-x86_64/runtime-314.json.gz",
+          "raw_sha256": "621e18c8bd8db689148a0316672e1884559dff6eb2599d1a1a7174bbc96ae062",
+          "python": "3.14.7"
+        }
+      ],
+      "engine_unchanged_from_initial_draft": false,
+      "engine_unchanged_from_named_input_build": true,
+      "source_delivery": {
+        "artifact_id": "macos-x86_64",
+        "binary_actions_artifact_id": 12855482111,
+        "sources_actions_artifact_id": 12854133606,
+        "binary_actions_zip_sha256": "02e57b60d83bfbac72adb91e7c0cbb722cf56268836eeb14ea9d24c78072759c",
+        "sources_actions_zip_sha256": "df6bdf40b38d4d461b6a9e1affbe956551d795c2aca55a486299526011022984",
+        "executable_sha256": "b1bcd8fb3ea37bbe51ea4e4b8611cfcdb4c01856bffb21c08e317d0c4ed32b88",
+        "candidate_archive_sha256": "aaed97431113e700bd4f27fa4a65c2e2d7af041a050b8b53346f56781c26cb21",
+        "sources_archive_sha256": "d972baf654795e52d32d36770cfc411f0b4abff40551276913f6948e3c095544",
+        "provenance_sha256": "9530f496927d1c6aa2700696e9e2c6648435cf2175926dc78d57679ce494c45d",
+        "source_files": 131,
+        "source_file_hashes_verified": true,
+        "graphviz_source_archive_verified": true,
+        "recipe_hash_verified": true,
+        "apple_sdk_archive_files_exported": 0,
+        "selected_sdk_header_files": 2,
+        "pairing_verified_on_both_archives": true,
+        "evidence_directory": "macos-x86_64"
+      },
+      "header_sources_match_bound_review": true
+    },
+    {
+      "artifact_id": "macos-arm64",
+      "actions_artifact_id": 12855930296,
+      "actions_zip_sha256": "3e83e496d52db3c5884a89f8afee0dd9dc7f0ec46f30f008a2f9f6c355bcfc9a",
+      "executable_sha256": "803a5622cc994d27947aad56498c6f975ce174827f7495a52745f695aa8ce9eb",
+      "archive_sha256": "4bff4c76213e9f5837280eb2908f73d664a1094607f1c1ecb8595d1ccb86a70b",
+      "files_verified": 550,
+      "graphviz_sources_verified": 322,
+      "notice_payloads": 548,
+      "notice_files_including_origin_index": 549,
+      "review_sha256": "d2915a09dd90aff6f0b1ed19a0c53cf6618ea6b56c416afbd8ac5e9848cee00a",
+      "current_outputs_match_user_review": true,
+      "corpus_reports": [
+        {
+          "path": "specs/003-add-cross-platform-support/evidence/macos-header-source-delivery-ci-2026-10-28/macos-arm64/corpus-312.json.gz",
+          "raw_sha256": "4be2885404eb21a1b08bfa087b4d4e27133fc774531841fd812081d43a058f4a",
+          "python": "3.12.10"
+        },
+        {
+          "path": "specs/003-add-cross-platform-support/evidence/macos-header-source-delivery-ci-2026-10-28/macos-arm64/corpus-314.json.gz",
+          "raw_sha256": "75e4d6b66ef4b4e78212b6f2b38d42fd7477ba11cbc539b98b36b4dcbc61231e",
+          "python": "3.14.7"
+        },
+        {
+          "path": "specs/003-add-cross-platform-support/evidence/macos-header-source-delivery-ci-2026-10-28/macos-arm64/runtime-312.json.gz",
+          "raw_sha256": "b98f56dc9fa9986fc84274525ed79a58ac6e27c6acec6086241d52dee046d665",
+          "python": "3.12.10"
+        },
+        {
+          "path": "specs/003-add-cross-platform-support/evidence/macos-header-source-delivery-ci-2026-10-28/macos-arm64/runtime-314.json.gz",
+          "raw_sha256": "76ae9003fa587d5de039c09679a1b7ff9cbdaba290bf5e1b76008739bb83e118",
+          "python": "3.14.7"
+        }
+      ],
+      "engine_unchanged_from_initial_draft": false,
+      "engine_unchanged_from_named_input_build": true,
+      "source_delivery": {
+        "artifact_id": "macos-arm64",
+        "binary_actions_artifact_id": 12855930296,
+        "sources_actions_artifact_id": 12854773630,
+        "binary_actions_zip_sha256": "3e83e496d52db3c5884a89f8afee0dd9dc7f0ec46f30f008a2f9f6c355bcfc9a",
+        "sources_actions_zip_sha256": "2392a16ca11a2312ae67b9804febec1a5d196d6f956cd72a176e7c082dd539f3",
+        "executable_sha256": "803a5622cc994d27947aad56498c6f975ce174827f7495a52745f695aa8ce9eb",
+        "candidate_archive_sha256": "4bff4c76213e9f5837280eb2908f73d664a1094607f1c1ecb8595d1ccb86a70b",
+        "sources_archive_sha256": "bd07b7e8b0a2d7b8528cf6a4955a3986fb61e289b848fd24bd1c01ea7b5cc8c5",
+        "provenance_sha256": "cb2704331630e925fca36de1ec44672e4700a90d659679a7c2a0c9d2374ceaf1",
+        "source_files": 131,
+        "source_file_hashes_verified": true,
+        "graphviz_source_archive_verified": true,
+        "recipe_hash_verified": true,
+        "apple_sdk_archive_files_exported": 0,
+        "selected_sdk_header_files": 2,
+        "pairing_verified_on_both_archives": true,
+        "evidence_directory": "macos-arm64"
+      },
+      "header_sources_match_bound_review": true
+    }
+  ],
+  "active_catalog_changed": false,
+  "named_linker_inputs_required": true,
+  "limitations": [
+    "Notice preservation and origin hashes do not decide license applicability",
+    "Source archive pairing/rebuild performed in Actions; no native tests run locally",
+    "Published delivery and final package qualification remain pending"
+  ],
+  "source_delivery_receipt": {
+    "path": "specs/003-add-cross-platform-support/evidence/macos-header-source-delivery-ci-2026-10-28/source-delivery.json",
+    "sha256": "6a453092c17eba670022d135b627d1ef703af8c1f26df2493df922bd8471d106"
+  },
+  "foundation": {
+    "path": "specs/003-add-cross-platform-support/evidence/macos-header-source-delivery-ci-2026-10-28/foundation.json",
+    "sha256": "a47d993e39c5959832e678f40e4de34bdac112142d895d8949f1730db013b2ab"
+  },
+  "workflows": {
+    "path": "specs/003-add-cross-platform-support/evidence/macos-header-source-delivery-ci-2026-10-28/workflows.json",
+    "sha256": "67805025fae6474de69acf2fad4f761004545997901b7bcdcbf73fa806402be0"
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "application_revision": "6279d6ff715abbd4fc8d5fdf778d8a27a4f3ddfb",
+  "passed": true,
+  "runs": [
+    {
+      "id": 40781012839,
+      "name": "Cross-platform foundation",
+      "url": "https://github.com/Extremois/desembaraca-twine/actions/runs/40781012839",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 40781012917,
+      "name": "Linux ARM64 Graphviz candidate",
+      "url": "https://github.com/Extremois/desembaraca-twine/actions/runs/40781012917",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 40781012803,
+      "name": "Linux Graphviz candidate",
+      "url": "https://github.com/Extremois/desembaraca-twine/actions/runs/40781012803",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 40781012838,
+      "name": "macOS Graphviz candidates",
+      "url": "https://github.com/Extremois/desembaraca-twine/actions/runs/40781012838",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 40781012843,
+      "name": "Alpine musl Graphviz candidates",
+      "url": "https://github.com/Extremois/desembaraca-twine/actions/runs/40781012843",
+      "status": "completed",
+      "conclusion": "success"
+    }
+  ]
+}

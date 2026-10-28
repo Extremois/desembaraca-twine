@@ -1,0 +1,206 @@
+{
+  "kind": "complete-apple-header-inputs-for-applicability-review-not-approval",
+  "application_revision": "ae786485b720dfe63fd21d177dc69a988b15205f",
+  "run_id": 40770628204,
+  "workflow_url": "https://github.com/Extremois/desembaraca-twine/actions/runs/40770628204",
+  "passed": true,
+  "approved": false,
+  "qualified": false,
+  "task_complete": false,
+  "artifacts": [
+    {
+      "artifact_id": "macos-x86_64",
+      "actions_artifact_id": 12851554643,
+      "actions_zip_sha256": "76f9ff6210a174a35909910809e04f62f21b11e7966919f8351aac39a3efae89",
+      "executable_sha256": "b1bcd8fb3ea37bbe51ea4e4b8611cfcdb4c01856bffb21c08e317d0c4ed32b88",
+      "archive_sha256": "be763e790528933525fce7be5b8c6a65c792c6a916be791549bb78b24a0e88ea",
+      "files_verified": 550,
+      "graphviz_sources_verified": 322,
+      "notice_payloads": 548,
+      "notice_files_including_origin_index": 549,
+      "review_sha256": "bb7f7c9143840de20f1e82300d8e7757a86b30f415d1f08e1d482f2e9adabab1",
+      "current_outputs_match_user_review": true,
+      "corpus_reports": [
+        {
+          "path": "specs/003-add-cross-platform-support/evidence/apple-sdk-header-source-review-2026-10-28/macos-x86_64/corpus-312.json.gz",
+          "raw_sha256": "346b18ddb30a4d7f43db1e557d01674785f116cd26fca60ae94480f821c0fe69",
+          "python": "3.12.10"
+        },
+        {
+          "path": "specs/003-add-cross-platform-support/evidence/apple-sdk-header-source-review-2026-10-28/macos-x86_64/corpus-314.json.gz",
+          "raw_sha256": "a5213ce14266ad0a1f2221c5d486078842961c42b06f471ccadc342c7528e7aa",
+          "python": "3.14.7"
+        },
+        {
+          "path": "specs/003-add-cross-platform-support/evidence/apple-sdk-header-source-review-2026-10-28/macos-x86_64/runtime-312.json.gz",
+          "raw_sha256": "5f9f5040fa8ea6fef4c5a9d5089bdb588004c3510e5e69edd16298f9dea8f29a",
+          "python": "3.12.10"
+        },
+        {
+          "path": "specs/003-add-cross-platform-support/evidence/apple-sdk-header-source-review-2026-10-28/macos-x86_64/runtime-314.json.gz",
+          "raw_sha256": "15c44224e0942e1e11967da0129e1aaa055112190df7e27537175d688e4b7f08",
+          "python": "3.14.7"
+        }
+      ],
+      "sdk_header_sources": [
+        {
+          "file": {
+            "path": "specs/003-add-cross-platform-support/evidence/apple-sdk-header-source-review-2026-10-28/macos-x86_64/float.h",
+            "sha256": "4346c126d6f51ea8b63ea394f609f2474b26fdb9257c65cf3d2b43aaef36cd3e"
+          },
+          "bytes": 4498,
+          "origin": {
+            "kind": "recorded-xcode-header-source",
+            "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/float.h",
+            "source_sha256": "4346c126d6f51ea8b63ea394f609f2474b26fdb9257c65cf3d2b43aaef36cd3e",
+            "offset": 0,
+            "length": 4498,
+            "qualification": "Complete unmodified input for review; applicability pending"
+          }
+        },
+        {
+          "file": {
+            "path": "specs/003-add-cross-platform-support/evidence/apple-sdk-header-source-review-2026-10-28/macos-x86_64/math.h",
+            "sha256": "00606d7b27eb5db0a3b93c575a7084f432d1e783cfca2eedcdc234c01cb15134"
+          },
+          "bytes": 34155,
+          "origin": {
+            "kind": "recorded-xcode-header-source",
+            "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/math.h",
+            "source_sha256": "00606d7b27eb5db0a3b93c575a7084f432d1e783cfca2eedcdc234c01cb15134",
+            "offset": 0,
+            "length": 34155,
+            "qualification": "Complete unmodified input for review; applicability pending"
+          }
+        },
+        {
+          "file": {
+            "path": "specs/003-add-cross-platform-support/evidence/apple-sdk-header-source-review-2026-10-28/macos-x86_64/APSL-1.1-COPYING.txt",
+            "sha256": "359a21ed59e82096455398ea10c5bc8c3ff28e7acf7935b77751d70e3630fc95"
+          },
+          "bytes": 19930,
+          "origin": {
+            "kind": "pinned-canonical-license-text",
+            "source_url": "https://raw.githubusercontent.com/apple-oss-distributions/IOSerialFamily/ed4bc21ffe5d80594cc3771ac6527ea62d50dc45/APPLE_LICENSE",
+            "source_sha256": "359a21ed59e82096455398ea10c5bc8c3ff28e7acf7935b77751d70e3630fc95"
+          }
+        }
+      ],
+      "engine_unchanged_from_initial_draft": false,
+      "engine_unchanged_from_named_input_build": true,
+      "headers_match_dossier_source_inputs": true
+    },
+    {
+      "artifact_id": "macos-arm64",
+      "actions_artifact_id": 12852343093,
+      "actions_zip_sha256": "23aece1217440c5e6448ce891a4efbde023bcc6800e93a4ed340f7c506081d8c",
+      "executable_sha256": "803a5622cc994d27947aad56498c6f975ce174827f7495a52745f695aa8ce9eb",
+      "archive_sha256": "533eb5cb08957c1d70554505d2b684ac63f1f68993b9ddd10add95718780c5fe",
+      "files_verified": 550,
+      "graphviz_sources_verified": 322,
+      "notice_payloads": 548,
+      "notice_files_including_origin_index": 549,
+      "review_sha256": "ba659abd8728b13f13327d5704c8d8a297814a72ab2719a906921f82e4aacae3",
+      "current_outputs_match_user_review": true,
+      "corpus_reports": [
+        {
+          "path": "specs/003-add-cross-platform-support/evidence/apple-sdk-header-source-review-2026-10-28/macos-arm64/corpus-312.json.gz",
+          "raw_sha256": "4be2885404eb21a1b08bfa087b4d4e27133fc774531841fd812081d43a058f4a",
+          "python": "3.12.10"
+        },
+        {
+          "path": "specs/003-add-cross-platform-support/evidence/apple-sdk-header-source-review-2026-10-28/macos-arm64/corpus-314.json.gz",
+          "raw_sha256": "75e4d6b66ef4b4e78212b6f2b38d42fd7477ba11cbc539b98b36b4dcbc61231e",
+          "python": "3.14.7"
+        },
+        {
+          "path": "specs/003-add-cross-platform-support/evidence/apple-sdk-header-source-review-2026-10-28/macos-arm64/runtime-312.json.gz",
+          "raw_sha256": "88cd91c2ff195b90cc0161f9be63ca920ccd15107bae94a0286e1507eaaf32a7",
+          "python": "3.12.10"
+        },
+        {
+          "path": "specs/003-add-cross-platform-support/evidence/apple-sdk-header-source-review-2026-10-28/macos-arm64/runtime-314.json.gz",
+          "raw_sha256": "768b84e8bdf96691c4b37322601e8d01619c1fd89a66e3c6a24a25c9bd53dcf3",
+          "python": "3.14.7"
+        }
+      ],
+      "sdk_header_sources": [
+        {
+          "file": {
+            "path": "specs/003-add-cross-platform-support/evidence/apple-sdk-header-source-review-2026-10-28/macos-arm64/float.h",
+            "sha256": "4346c126d6f51ea8b63ea394f609f2474b26fdb9257c65cf3d2b43aaef36cd3e"
+          },
+          "bytes": 4498,
+          "origin": {
+            "kind": "recorded-xcode-header-source",
+            "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/float.h",
+            "source_sha256": "4346c126d6f51ea8b63ea394f609f2474b26fdb9257c65cf3d2b43aaef36cd3e",
+            "offset": 0,
+            "length": 4498,
+            "qualification": "Complete unmodified input for review; applicability pending"
+          }
+        },
+        {
+          "file": {
+            "path": "specs/003-add-cross-platform-support/evidence/apple-sdk-header-source-review-2026-10-28/macos-arm64/math.h",
+            "sha256": "00606d7b27eb5db0a3b93c575a7084f432d1e783cfca2eedcdc234c01cb15134"
+          },
+          "bytes": 34155,
+          "origin": {
+            "kind": "recorded-xcode-header-source",
+            "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/math.h",
+            "source_sha256": "00606d7b27eb5db0a3b93c575a7084f432d1e783cfca2eedcdc234c01cb15134",
+            "offset": 0,
+            "length": 34155,
+            "qualification": "Complete unmodified input for review; applicability pending"
+          }
+        },
+        {
+          "file": {
+            "path": "specs/003-add-cross-platform-support/evidence/apple-sdk-header-source-review-2026-10-28/macos-arm64/APSL-1.1-COPYING.txt",
+            "sha256": "359a21ed59e82096455398ea10c5bc8c3ff28e7acf7935b77751d70e3630fc95"
+          },
+          "bytes": 19930,
+          "origin": {
+            "kind": "pinned-canonical-license-text",
+            "source_url": "https://raw.githubusercontent.com/apple-oss-distributions/IOSerialFamily/ed4bc21ffe5d80594cc3771ac6527ea62d50dc45/APPLE_LICENSE",
+            "source_sha256": "359a21ed59e82096455398ea10c5bc8c3ff28e7acf7935b77751d70e3630fc95"
+          }
+        }
+      ],
+      "engine_unchanged_from_initial_draft": false,
+      "engine_unchanged_from_named_input_build": true,
+      "headers_match_dossier_source_inputs": true
+    }
+  ],
+  "active_catalog_changed": false,
+  "named_linker_inputs_required": true,
+  "limitations": [
+    "Notice preservation and origin hashes do not decide license applicability",
+    "Source archive pairing/rebuild performed in Actions; no native tests run locally",
+    "Published delivery and final package qualification remain pending"
+  ],
+  "observations": {
+    "math_header_contains_inline_implementations": true,
+    "examples": [
+      "__inline_isfinitef",
+      "__inline_signbitd",
+      "__sincos"
+    ],
+    "float_header_documents_clang_macro_override": true,
+    "binary_retention_not_established_by_header_presence": true,
+    "review_files_are_not_permanent_source_delivery": true
+  },
+  "foundation_evidence": {
+    "path": "specs/003-add-cross-platform-support/evidence/apple-sdk-header-source-review-2026-10-28/foundation.json",
+    "sha256": "64ce19714da6be0db485b246644965da580936694a7c8d4dda357f93f2e26666"
+  },
+  "runtime_reference_review": {
+    "path": "specs/003-add-cross-platform-support/evidence/license-review-2026-10-28/runtime-reference-findings.json",
+    "sha256": "3f0239c9c664dcba71f0542129f554c49d697780a8b4f65448503d8fc4cb168b"
+  },
+  "workflow_rollup_evidence": {
+    "path": "specs/003-add-cross-platform-support/evidence/apple-sdk-header-source-review-2026-10-28/workflows.json",
+    "sha256": "0c403ec74a7990adc3dc68e95d346602c40b608c441c2cd1995001cc85ae6bb5"
+  }
+}

@@ -194,7 +194,7 @@ def pack(graphviz, sdk, provenance, output, header_review=None):
     local = [('tools/runtime/' + path.relative_to(HERE).as_posix(), bounded(path)) for path in paths]
     # build-common imports host detection and bounded process execution. Preserve
     # their exact source dependencies so the exported recipe works independently.
-    for name in ('LICENSE', 'src/twine_edge_overlap/__init__.py',
+    for name in ('LICENSE', 'NOTICE', 'src/twine_edge_overlap/__init__.py',
                  'src/twine_edge_overlap/runtime_platform.py',
                  'src/twine_edge_overlap/runtime.py',
                  'src/twine_edge_overlap/runtime_catalog.py',

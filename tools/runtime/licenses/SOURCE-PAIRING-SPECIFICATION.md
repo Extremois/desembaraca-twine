@@ -56,7 +56,8 @@ existir exatamente um par vinculador imutável composto por:
    - Contém o tarball oficial fixado do Graphviz (`graphviz.tar.gz`), a árvore
      completa `lib/` e `LICENSE` do SDK Zig fixado nos alvos Linux, todas as receitas/scripts
      de build em `tools/runtime/`, dependências internas do projeto,
-     `candidate-provenance.json` e `manifest.json`.
+     `candidate-provenance.json` e `manifest.json`. `LICENSE` e `NOTICE` do
+     aplicativo acompanham os scripts e módulos Python reutilizados no kit.
    - Identificado por `archive_sha256`, `archive_bytes`, `executable_sha256`,
      `provenance_sha256` e `manifest_sha256`.
 

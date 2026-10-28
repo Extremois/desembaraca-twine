@@ -1,0 +1,75 @@
+{
+  "application_revision": "ae786485b720dfe63fd21d177dc69a988b15205f",
+  "run_id": 40770628293,
+  "workflow_url": "https://github.com/Extremois/desembaraca-twine/actions/runs/40770628293",
+  "passed": true,
+  "qualified": false,
+  "jobs": [
+    {
+      "job_id": 123106512548,
+      "name": "Pure contracts (ubuntu-24.04, Python 3.14)",
+      "tests": 307,
+      "conclusion": "success",
+      "raw_log_sha256": "e787bf6cfb68280c8006cf41c984629e1a50a58407006fe3ee9ca7d5e8f71188",
+      "log": {
+        "path": "specs/003-add-cross-platform-support/evidence/apple-sdk-header-source-review-2026-10-28/foundation-123106512548.log.gz",
+        "sha256": "c62931b8eb0a0ac0c7481989e6e8215f50fcf2f0918a6d7c68268caa5735c7aa"
+      }
+    },
+    {
+      "job_id": 123106512852,
+      "name": "Pure contracts (macos-15, Python 3.12)",
+      "tests": 307,
+      "conclusion": "success",
+      "raw_log_sha256": "bfb97900daebb7e6bc2e7a979d20d692cf99b1573441281de460db0b01cb06df",
+      "log": {
+        "path": "specs/003-add-cross-platform-support/evidence/apple-sdk-header-source-review-2026-10-28/foundation-123106512852.log.gz",
+        "sha256": "6db35dc967259f3a63eebaf995a652dcda8854354e59ad8c68b10cc5ffd3280b"
+      }
+    },
+    {
+      "job_id": 123106512878,
+      "name": "Pure contracts (macos-15, Python 3.14)",
+      "tests": 307,
+      "conclusion": "success",
+      "raw_log_sha256": "3a2cf494df1ec2bdedf61306b480cc25ab1e083d67874b366e07101b1eb46662",
+      "log": {
+        "path": "specs/003-add-cross-platform-support/evidence/apple-sdk-header-source-review-2026-10-28/foundation-123106512878.log.gz",
+        "sha256": "42f52d312614e6408275fe1f6202e61a6f74d79e98256fea3ecf796646851cac"
+      }
+    },
+    {
+      "job_id": 123106513015,
+      "name": "Pure contracts (windows-latest, Python 3.12)",
+      "tests": 307,
+      "conclusion": "success",
+      "raw_log_sha256": "1bc62b3b1419d37ac667207316546a5fef42035984fde439fba84762d1d44f37",
+      "log": {
+        "path": "specs/003-add-cross-platform-support/evidence/apple-sdk-header-source-review-2026-10-28/foundation-123106513015.log.gz",
+        "sha256": "eca6f49b888b1ba98ccc808858a052066aec5a590e067ed56e441682d2356b27"
+      }
+    },
+    {
+      "job_id": 123106513063,
+      "name": "Pure contracts (windows-latest, Python 3.14)",
+      "tests": 307,
+      "conclusion": "success",
+      "raw_log_sha256": "322c349d4db1366ab12b0e77c0a1a278da5039a63bfaf076de81adbac23d5d49",
+      "log": {
+        "path": "specs/003-add-cross-platform-support/evidence/apple-sdk-header-source-review-2026-10-28/foundation-123106513063.log.gz",
+        "sha256": "e318cb7d7d0c12df97142118ef79d2cd7216843668aa905021f45f6833afb502"
+      }
+    },
+    {
+      "job_id": 123106513140,
+      "name": "Pure contracts (ubuntu-24.04, Python 3.12)",
+      "tests": 307,
+      "conclusion": "success",
+      "raw_log_sha256": "98d92bc621f0ebd604b33e7395516cc790b76117a52d7bd1d238e1088963de1e",
+      "log": {
+        "path": "specs/003-add-cross-platform-support/evidence/apple-sdk-header-source-review-2026-10-28/foundation-123106513140.log.gz",
+        "sha256": "4d8588f3d84e24b5d6777f9e293e726d77766201002356c746604b20bcdc6856"
+      }
+    }
+  ]
+}

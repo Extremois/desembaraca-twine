@@ -83,6 +83,7 @@ class SourcePackageTests(unittest.TestCase):
                     self.assertEqual(report['sdk_files'],0)
                     with tarfile.open(root/'output/sources.tar.gz') as archive:
                         manifest=json.load(archive.extractfile('manifest.json'))
+                        self.assertEqual(archive.extractfile('NOTICE').read(),(self.module.HERE.parents[1]/'NOTICE').read_bytes())
                         self.assertFalse(any(name.startswith('sdk/') for name in archive.getnames()))
                         self.assertIsNone(manifest['sdk_archive_sha256'])
                         self.assertEqual(archive.extractfile('candidate-provenance.json').read(),provenance.read_bytes())
@@ -199,6 +200,7 @@ class SourcePackageTests(unittest.TestCase):
                 report = self.module.pack(graphviz, sdk, provenance, root / 'output')
                 with tarfile.open(root / 'output/sources.tar.gz') as archive:
                     names = archive.getnames()
+                    self.assertEqual(archive.extractfile('NOTICE').read(),(self.module.HERE.parents[1]/'NOTICE').read_bytes())
                     self.assertIn('sdk/lib/libc/glibc/csu/init.c', names)
                     self.assertNotIn('sdk/zig', names)
                     manifest = json.load(archive.extractfile('manifest.json'))

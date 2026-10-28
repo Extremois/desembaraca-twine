@@ -1,3 +1,39 @@
+## Termos do SDK macOS e reconhecimento Berkeley — 2026-10-28
+
+A revisão `60707b3` coletou o acordo instalado EA1879 do Xcode 16.4 nos dois runners, com RTF idêntico por hash. A [revisão dos 67 headers restantes](evidence/macos-sdk-terms-review-2026-10-28/README.md) identifica declarações LLVM, blocos BSD e a rota de inputs do SDK, preservando seus limites. Não foi criado requisito de obter fontes do Apple Clang ou redistribuir headers proprietários. O reconhecimento Berkeley foi incorporado a README/NOTICE e [validado em 20 instalações externas de wheel/sdist](evidence/berkeley-notice-packages-ci-2026-10-28/README.md). Os quatro workflows passaram; os seis jobs de fundação executaram 307 testes cada.
+
+Foi identificada e corrigida a omissão do NOTICE do aplicativo nos kits de fontes. Os tarballs históricos `6279d6f` continuam identificados como pendentes dessa atualização, com publicação bloqueada no plano. A auditoria integral, a condição W3C/ISO e os gates de entrega/aceite final continuam abertos. Progresso permanece 76/84; sem nova revisão visual necessária.
+
+## Manifestos, auditorias propostas e arquivos de entrega atuais — 2026-10-28
+
+Os seis [manifestos e rascunhos de auditoria](evidence/release-candidate-review-2026-10-28/README.md) estão vinculados à revisão `6279d6f`, aprovada pelos cinco workflows. Foram conferidos 3.053 arquivos/3.041 payloads de avisos. Nos quatro Linux, todos os 262 inputs estáticos têm um grupo proposto e avisos vinculados por hash, sem confundir essa cobertura mecânica com aprovação de compatibilidade.
+
+Os 12 arquivos reais para entrega foram preparados localmente e conferidos contra os hashes/tamanhos do CI, totalizando 391.746.756 bytes. Não houve teste local, novo build, publicação ou promoção. Os rascunhos conservam `approved: false`, `qualified: false` e URLs finais vazias; a auditoria de escopo/termos ainda precisa de conclusão. Nenhum requisito de obter fontes do Apple Clang foi introduzido. O catálogo ativo conserva o hash original e o progresso permanece 76/84.
+
+## Cobertura dos headers observados com APSL — 2026-10-28
+
+A revisão `6279d6f` amplia a exportação para todos os headers observados que declaram APSL 1.1 ou 2.0: 186 no Intel e 181 no ARM64, com ambos os textos integrais. Os tarballs de 316/311 arquivos foram conferidos integralmente e os headers vinculados às observações e hashes anteriores. Os dois builds/reconstruções/runtime macOS e seis jobs de fundação passaram; cada job de fundação executou 307 testes. [Evidências e limites](evidence/macos-apsl-source-delivery-ci-2026-10-28/README.md).
+
+Motores e seis saídas preservam os hashes já aceitos, sem nova revisão visual. A cobertura das fontes com declaração APSL está registrada; auditoria integral, condições W3C/ISO, entrega permanente e validação final continuam abertas. Progresso permanece 76/84; não houve promoção nem publicação.
+
+## Headers selecionados incluídos nas fontes correspondentes — 2026-10-28
+
+A revisão `721b90f` passou nos cinco workflows do Actions. Os dois tarballs macOS agora entregam `float.h`, `math.h`, a licença APSL 1.1 e o recibo vinculado ao build; os 131 arquivos por arquitetura foram conferidos integralmente. Os seis jobs de fundação passaram com 307 testes cada. Motores e seis saídas mantêm os hashes anteriores, sem nova revisão visual necessária. [Recibos e limites](evidence/macos-header-source-delivery-ci-2026-10-28/README.md).
+
+O exportador rejeita falta ou alteração dessas fontes quando declaradas na proveniência. A cobertura integral de contribuições do SDK, as condições W3C/ISO, a auditoria final e a entrega permanente continuam separadas. Progresso: 76/84 encerradas; não houve promoção nem publicação.
+
+## Fontes dos headers Apple e referências matemáticas — 2026-10-28
+
+A revisão `ae78648` acrescentou a coleta limitada e conferida de `float.h`/`math.h`, com APSL 1.1 integral, aos artefatos de revisão do Actions. Os dois builds/reconstruções/runtime passaram e os seis jobs de fundação executaram 307 testes cada. Os motores e as seis saídas preservam os hashes de `f63b43e`. As [fontes completas e os recibos](evidence/apple-sdk-header-source-review-2026-10-28/README.md) confirmam implementações inline em `math.h`, sem presumir retenção nem dispensa de obrigações.
+
+A [revisão das referências musl](evidence/license-review-2026-10-28/RUNTIME-REFERENCE-FINDINGS.md) também documenta o grant raiz para 15 referências sem comentários individuais, preservando cumulativamente os termos Sun/FreeBSD e demais avisos nas três candidatas pertinentes. Trata-se de escopo das referências, não de aprovação de todo o runtime. T030/T052/T066 continuam abertas e o progresso permanece 76/84.
+
+## NOTICE validado em wheel/sdist pelo Actions — 2026-10-28
+
+A revisão `993bc6f` passou em dez combinações de plataforma/Python, com 20 instalações externas de wheel/sdist. Os recibos conferem LICENSE/NOTICE, os 53 arquivos do aplicativo e três entrypoints com PATH restrito. O aviso atualizado, incluindo o reconhecimento ColorBrewer, está preservado nos pacotes. Os seis jobs de fundação passaram com 306 testes cada. [Evidências e limites](evidence/project-notice-ci-2026-10-28/README.md).
+
+O ensaio é dos pacotes atuais; T030/T052/T066/T078 e os demais gates finais continuam abertos. A revisão textual de componentes não foi convertida em aprovação integral de artefatos. Progresso permanece 76/84.
+
 ## Revisão parcial dos componentes e NOTICE — 2026-10-28
 
 Foram registradas [conclusões textuais para sete grupos](evidence/license-review-2026-10-28/COMPONENT-FINDINGS.md), vinculadas aos seis candidatos `f63b43e` por 42 conjuntos de hashes/notices. Bison, Flex, Randomkit, Rbtree e ColorBrewer têm rotas identificadas com suas condições de preservação. As referências X.Org e a rota EPL mantêm as ressalvas de origem/entrega. A auditoria integral e T030/T052/T066 continuam abertas.

@@ -1,0 +1,30 @@
+{
+  "application_revision": "60707b3984cb9a2b45f9d78166e4e72371900ec6",
+  "passed": true,
+  "runs": [
+    {
+      "id": 40784211220,
+      "name": "macOS SDK license review material",
+      "url": "https://github.com/Extremois/desembaraca-twine/actions/runs/40784211220",
+      "conclusion": "success"
+    },
+    {
+      "id": 40784210941,
+      "name": "Cross-platform foundation",
+      "url": "https://github.com/Extremois/desembaraca-twine/actions/runs/40784210941",
+      "conclusion": "success"
+    },
+    {
+      "id": 40784211210,
+      "name": "Documented remote installation",
+      "url": "https://github.com/Extremois/desembaraca-twine/actions/runs/40784211210",
+      "conclusion": "success"
+    },
+    {
+      "id": 40784211150,
+      "name": "Current wheel and sdist installation",
+      "url": "https://github.com/Extremois/desembaraca-twine/actions/runs/40784211150",
+      "conclusion": "success"
+    }
+  ]
+}

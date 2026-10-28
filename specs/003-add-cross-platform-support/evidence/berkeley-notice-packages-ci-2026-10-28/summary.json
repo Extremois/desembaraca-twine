@@ -1,0 +1,212 @@
+{
+  "kind": "project-notice-wheel-sdist-checks-not-final-engine-qualification",
+  "application_revision": "60707b3984cb9a2b45f9d78166e4e72371900ec6",
+  "run_id": 40784211150,
+  "workflow_url": "https://github.com/Extremois/desembaraca-twine/actions/runs/40784211150",
+  "passed": true,
+  "qualified": false,
+  "task_complete": false,
+  "project_notice_packaging_verified": true,
+  "notice_canonical_lf_sha256": "a074389085c80eb9f5a2ef02a57cc55e494e3ffc12e3a633a8a3c36c5f02d659",
+  "checkout_line_ending_scope": "Only exact LF or CRLF versions of the tracked license/notice text accepted",
+  "python_slots": 10,
+  "installations": 20,
+  "installed_files_per_format": 53,
+  "records": [
+    {
+      "artifact_id": 12859315191,
+      "artifact_name": "packages-windows-latest-3.12-60707b3984cb9a2b45f9d78166e4e72371900ec6",
+      "system": "Windows",
+      "arch": "AMD64",
+      "python": "3.12.10",
+      "receipt": {
+        "path": "specs/003-add-cross-platform-support/evidence/berkeley-notice-packages-ci-2026-10-28/12859315191.json.gz",
+        "sha256": "b53f27fc989044764a3cd31f0dbd03e86edcf88945764533ed8fdbaa1dd5989c"
+      },
+      "raw_receipt_sha256": "68b6cde2966a0297ba28cd4d9f037b3da0e17a550e50c4ef80fa76a1c476cf0c",
+      "formats": [
+        "wheel",
+        "sdist"
+      ],
+      "notice_hashes": [
+        "a1ae52a79ed5756374b0539ba48e27c62d97450feb4a6dc5a0b7264142d757ff"
+      ]
+    },
+    {
+      "artifact_id": 12859180139,
+      "artifact_name": "packages-ubuntu-24.04-arm-3.14-60707b3984cb9a2b45f9d78166e4e72371900ec6",
+      "system": "Linux",
+      "arch": "aarch64",
+      "python": "3.14.9",
+      "receipt": {
+        "path": "specs/003-add-cross-platform-support/evidence/berkeley-notice-packages-ci-2026-10-28/12859180139.json.gz",
+        "sha256": "547bf63d800b215ab50a562fa98627d4addfca20da92fdf18d834e8b62cffd5b"
+      },
+      "raw_receipt_sha256": "49f9f646d4d8c7540d6a356ad42b604a66fedb59efbc84fc3a3e0cbd6eb055c4",
+      "formats": [
+        "wheel",
+        "sdist"
+      ],
+      "notice_hashes": [
+        "a074389085c80eb9f5a2ef02a57cc55e494e3ffc12e3a633a8a3c36c5f02d659"
+      ]
+    },
+    {
+      "artifact_id": 12859005491,
+      "artifact_name": "packages-ubuntu-24.04-arm-3.12-60707b3984cb9a2b45f9d78166e4e72371900ec6",
+      "system": "Linux",
+      "arch": "aarch64",
+      "python": "3.12.15",
+      "receipt": {
+        "path": "specs/003-add-cross-platform-support/evidence/berkeley-notice-packages-ci-2026-10-28/12859005491.json.gz",
+        "sha256": "5497291f96daf4285f1582820818370e3631741362ec9726fd512322eabbd48f"
+      },
+      "raw_receipt_sha256": "eb5060408788934ae5e48ec9f04fd0847bc22e9202285a3084e151955199cd10",
+      "formats": [
+        "wheel",
+        "sdist"
+      ],
+      "notice_hashes": [
+        "a074389085c80eb9f5a2ef02a57cc55e494e3ffc12e3a633a8a3c36c5f02d659"
+      ]
+    },
+    {
+      "artifact_id": 12858815958,
+      "artifact_name": "packages-ubuntu-24.04-3.14-60707b3984cb9a2b45f9d78166e4e72371900ec6",
+      "system": "Linux",
+      "arch": "x86_64",
+      "python": "3.14.9",
+      "receipt": {
+        "path": "specs/003-add-cross-platform-support/evidence/berkeley-notice-packages-ci-2026-10-28/12858815958.json.gz",
+        "sha256": "f5962e37b669e554a7167f1d70c29d7f78f956207a1fd38c9f1b34b639af9a5d"
+      },
+      "raw_receipt_sha256": "8a7a46bf0b8b6bec1d23e57dfa9afad6b114226c7d93fa2b5edc85a9eb07700f",
+      "formats": [
+        "wheel",
+        "sdist"
+      ],
+      "notice_hashes": [
+        "a074389085c80eb9f5a2ef02a57cc55e494e3ffc12e3a633a8a3c36c5f02d659"
+      ]
+    },
+    {
+      "artifact_id": 12858741286,
+      "artifact_name": "packages-macos-15-3.14-60707b3984cb9a2b45f9d78166e4e72371900ec6",
+      "system": "Darwin",
+      "arch": "arm64",
+      "python": "3.14.7",
+      "receipt": {
+        "path": "specs/003-add-cross-platform-support/evidence/berkeley-notice-packages-ci-2026-10-28/12858741286.json.gz",
+        "sha256": "72ae764c7f3789f88bc03e49cb31694f8fbbcee2ad4fa3f655a789c038687164"
+      },
+      "raw_receipt_sha256": "46fccbb011cac274373ff1e0dc8ae1ec862768cf349f8a135478d02a90391929",
+      "formats": [
+        "wheel",
+        "sdist"
+      ],
+      "notice_hashes": [
+        "a074389085c80eb9f5a2ef02a57cc55e494e3ffc12e3a633a8a3c36c5f02d659"
+      ]
+    },
+    {
+      "artifact_id": 12858118031,
+      "artifact_name": "packages-macos-15-intel-3.14-60707b3984cb9a2b45f9d78166e4e72371900ec6",
+      "system": "Darwin",
+      "arch": "x86_64",
+      "python": "3.14.7",
+      "receipt": {
+        "path": "specs/003-add-cross-platform-support/evidence/berkeley-notice-packages-ci-2026-10-28/12858118031.json.gz",
+        "sha256": "4777f20d0bae5e3f6104a14641bd6adbad562e63f25f6948773d4757afa44b53"
+      },
+      "raw_receipt_sha256": "5165ef60fc009ac38029c0a25b2331d2f6a8cf595f3351d5589f9a533877673f",
+      "formats": [
+        "wheel",
+        "sdist"
+      ],
+      "notice_hashes": [
+        "a074389085c80eb9f5a2ef02a57cc55e494e3ffc12e3a633a8a3c36c5f02d659"
+      ]
+    },
+    {
+      "artifact_id": 12858063336,
+      "artifact_name": "packages-macos-15-3.12-60707b3984cb9a2b45f9d78166e4e72371900ec6",
+      "system": "Darwin",
+      "arch": "arm64",
+      "python": "3.12.10",
+      "receipt": {
+        "path": "specs/003-add-cross-platform-support/evidence/berkeley-notice-packages-ci-2026-10-28/12858063336.json.gz",
+        "sha256": "376e7291cbfbc968700fee179889e76795a1ae2757d2b520aa3838825a8bac77"
+      },
+      "raw_receipt_sha256": "680ccfb352e0f126fd86374c4a9b68bcfba8b0cff1a0065a42a91495ed0a7da9",
+      "formats": [
+        "wheel",
+        "sdist"
+      ],
+      "notice_hashes": [
+        "a074389085c80eb9f5a2ef02a57cc55e494e3ffc12e3a633a8a3c36c5f02d659"
+      ]
+    },
+    {
+      "artifact_id": 12858018550,
+      "artifact_name": "packages-windows-latest-3.14-60707b3984cb9a2b45f9d78166e4e72371900ec6",
+      "system": "Windows",
+      "arch": "AMD64",
+      "python": "3.14.9",
+      "receipt": {
+        "path": "specs/003-add-cross-platform-support/evidence/berkeley-notice-packages-ci-2026-10-28/12858018550.json.gz",
+        "sha256": "5310a5301f1a45354ddc43642dc4f3869b2caa340e548d38fa699616cb220fef"
+      },
+      "raw_receipt_sha256": "13313fb1509252310494a5ea7e2a56e2fce8aaef0172582130a28e065d03aaeb",
+      "formats": [
+        "wheel",
+        "sdist"
+      ],
+      "notice_hashes": [
+        "a1ae52a79ed5756374b0539ba48e27c62d97450feb4a6dc5a0b7264142d757ff"
+      ]
+    },
+    {
+      "artifact_id": 12857983527,
+      "artifact_name": "packages-ubuntu-24.04-3.12-60707b3984cb9a2b45f9d78166e4e72371900ec6",
+      "system": "Linux",
+      "arch": "x86_64",
+      "python": "3.12.15",
+      "receipt": {
+        "path": "specs/003-add-cross-platform-support/evidence/berkeley-notice-packages-ci-2026-10-28/12857983527.json.gz",
+        "sha256": "f8ae0143ebe47d869f860739199ebfdbe871c9742b88f700d7d18549160515b7"
+      },
+      "raw_receipt_sha256": "5aad715fdf1b28dca504acdfcb3c90783a0a70c6ac0478fc67d4195edda1922b",
+      "formats": [
+        "wheel",
+        "sdist"
+      ],
+      "notice_hashes": [
+        "a074389085c80eb9f5a2ef02a57cc55e494e3ffc12e3a633a8a3c36c5f02d659"
+      ]
+    },
+    {
+      "artifact_id": 12857908878,
+      "artifact_name": "packages-macos-15-intel-3.12-60707b3984cb9a2b45f9d78166e4e72371900ec6",
+      "system": "Darwin",
+      "arch": "x86_64",
+      "python": "3.12.10",
+      "receipt": {
+        "path": "specs/003-add-cross-platform-support/evidence/berkeley-notice-packages-ci-2026-10-28/12857908878.json.gz",
+        "sha256": "735469da25dfb1da8f7e17124f3ed59fd40ce8359e60d2bf56395ffba879c748"
+      },
+      "raw_receipt_sha256": "9b728550088c080003ae74d54b46e9833e22626ca6ca998357fd404a7f8ce214",
+      "formats": [
+        "wheel",
+        "sdist"
+      ],
+      "notice_hashes": [
+        "a074389085c80eb9f5a2ef02a57cc55e494e3ffc12e3a633a8a3c36c5f02d659"
+      ]
+    }
+  ],
+  "limitations": [
+    "No private engine acquired or qualified by this package/help workflow",
+    "POSIX license/source audits and permanent delivery remain open",
+    "These are current development packages, not final released candidates"
+  ]
+}
