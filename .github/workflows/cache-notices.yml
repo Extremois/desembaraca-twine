@@ -28,20 +28,20 @@ jobs:
         include:
           - runner: ubuntu-24.04
             artifact_id: linux-glibc-x86_64
-            candidate_run: 39434565632
-            candidate_name: linux-glibc-x86_64-unqualified-b13cd6f90db31163e62119bb83e2eb8db5ac8458
+            candidate_run: 40565098269
+            candidate_name: linux-glibc-x86_64-unqualified-a825f0d80bd7892de0e307656d28070885a9d1ed
           - runner: ubuntu-24.04-arm
             artifact_id: linux-glibc-aarch64
-            candidate_run: 39422077992
-            candidate_name: linux-glibc-aarch64-unqualified-29ce91235c57a22c66f9c9078c39d89e47b23bce
+            candidate_run: 40565098572
+            candidate_name: linux-glibc-aarch64-unqualified-a825f0d80bd7892de0e307656d28070885a9d1ed
           - runner: macos-15
             artifact_id: macos-arm64
-            candidate_run: 39413103106
-            candidate_name: macos-arm64-unqualified-b1f608e4cab8f2eb2142ba41484abc3a4e855be6
+            candidate_run: 40565098360
+            candidate_name: macos-arm64-unqualified-a825f0d80bd7892de0e307656d28070885a9d1ed
           - runner: macos-15-intel
             artifact_id: macos-x86_64
-            candidate_run: 39413103106
-            candidate_name: macos-x86_64-unqualified-b1f608e4cab8f2eb2142ba41484abc3a4e855be6
+            candidate_run: 40565098360
+            candidate_name: macos-x86_64-unqualified-a825f0d80bd7892de0e307656d28070885a9d1ed
     runs-on: ${{ matrix.runner }}
     timeout-minutes: 10
     env:

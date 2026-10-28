@@ -91,15 +91,18 @@ print(json.dumps(dict(direct_url=json.loads(d.read_text('direct_url.json')),
             raise ValueError('Missing packaged metadata: '+name)
     if not any('/third_party/' in name for name in installed['files']):
         raise ValueError('Missing packaged notices')
+    def pinned_bytes(name):
+        return subprocess.check_output(['git','show',REVISION+':'+name],cwd=checkout,timeout=15)
+    paths=subprocess.check_output(['git','ls-tree','-r','--name-only',REVISION,'--','src/twine_edge_overlap'],cwd=checkout,timeout=15).decode('utf-8').splitlines()
     expected = {
-        path.relative_to(checkout/'src').as_posix(): source_digest(path)
-        for path in (checkout/'src/twine_edge_overlap').rglob('*')
-        if path.is_file() and '__pycache__' not in path.parts
-        and (path.suffix in ('.py', '.json') or 'third_party' in path.parts)}
+        name.removeprefix('src/'): hashlib.sha256(pinned_bytes(name)).hexdigest()
+        for name in paths
+        if '__pycache__' not in name
+        and (Path(name).suffix in ('.py', '.json') or '/third_party/' in name)}
     if installed['files'] != expected:
-        raise ValueError('Remote package source/data/notices differ from current checkout')
+        raise ValueError('Remote package source/data/notices differ from documented pinned revision')
     if installed['licenses'] != {
-            name: source_digest(checkout/name)
+            name: hashlib.sha256(pinned_bytes(name)).hexdigest()
             for name in ('LICENSE', 'NOTICE')}:
         raise ValueError('Remote package license/notice differs from current checkout')
     if any(home.rglob('ready.json')) or any(home.rglob('active.json')):

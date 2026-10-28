@@ -43,8 +43,8 @@ jobs:
       - uses: actions/download-artifact@v4
         with:
           github-token: ${{ github.token }}
-          run-id: 39434565540
-          name: linux-musl-${{ matrix.arch }}-container-unqualified-b13cd6f90db31163e62119bb83e2eb8db5ac8458
+          run-id: 40565098367
+          name: linux-musl-${{ matrix.arch }}-container-unqualified-a825f0d80bd7892de0e307656d28070885a9d1ed
           path: ${{ runner.temp }}/musl-engine
       - name: Select immutable Alpine userland and matching CPU
         id: image
