@@ -150,7 +150,14 @@ def validate_engine_result(report, fixture, cases, system):
                     'healthy_generation_reused', 'final_destination_probe', 'probe_before_ready', 'external_unicode_paths'))
                 or row.get('executable_mode') != 0o755 or row.get('generation_mode') != 0o700):
             raise ValueError('Private installed-engine preparation/offline invariant failed')
-    rows = report.get('cases', [])
+    validate_corpus_result(report.get('cases',[]),cases)
+    if system == 'darwin' and (report.get('security_before') is None
+            or report['security_before'] != report.get('security_after')
+            or observations['explicit'].get('native_inspection', {}).get('security_settings_unchanged') is not True):
+        raise ValueError('macOS protection observations changed or are missing')
+
+
+def validate_corpus_result(rows,cases):
     expected = {item['case']: item for item in cases}
     actual = {item['case']: item for item in rows}
     if len(actual) != len(rows) or set(actual) != set(expected):
@@ -162,10 +169,6 @@ def validate_engine_result(report, fixture, cases, system):
             raise ValueError('Private installed-engine geometry regressed')
         if expected[name]['known_resolvable'] and row['after'] != [0, 0, 0]:
             raise ValueError('Known reference was not solved by installed engine')
-    if system == 'darwin' and (report.get('security_before') is None
-            or report['security_before'] != report.get('security_after')
-            or observations['explicit'].get('native_inspection', {}).get('security_settings_unchanged') is not True):
-        raise ValueError('macOS protection observations changed or are missing')
 
 
 def validate_recovery_result(rows, cases):
@@ -225,7 +228,7 @@ def validate_cache_notice_result(report, fixture, expected):
         raise ValueError('Installed cache notices differ from inventory or offline invariants')
 
 
-def validate_windows_cache_notice_result(report, manifest, manifest_sha):
+def validate_windows_cache_notice_result(report, manifest, manifest_sha,cases):
     expected={row['destination']:row['sha256'] for row in manifest['notices']}
     executable=next(row for row in manifest['files'] if row['path']==manifest['executable_relative_path'])
     if (report.get('passed') is not True or report.get('qualified') is not False or report.get('system')!='Windows'
@@ -235,6 +238,32 @@ def validate_windows_cache_notice_result(report, manifest, manifest_sha):
             or report.get('offline_acquisition_calls')!=0 or report.get('modes_checked') is not False
             or any(report.get(key) is not True for key in ('same_generation','corruption_rejected','restored_snapshot_matches'))):
         raise ValueError('Windows notice cache differs from pinned manifest or offline invariants')
+    validate_corpus_result(report.get('cases',[]),cases)
+    recovery=report.get('recovery',{})
+    scenarios=recovery.get('scenarios',{})
+    failures={'download','disk_full','execution_denied','corrupt_archive'}
+    processes={'during_download','before_select','after_select','concurrent_first_use'}
+    if set(scenarios)!=failures|processes:
+        raise ValueError('Windows recovery scenarios are incomplete')
+    validate_process_recovery(dict(recovery,scenarios={key:scenarios[key] for key in processes}),cases)
+    expected={case['case'] for case in cases if case['known_resolvable']}
+    for name in failures:
+        row=scenarios[name];references=row.get('cases',[])
+        if (any(row.get(key) is not True for key in ('passed','old_handle_usable','selection_preserved','retry_succeeded'))
+                or row.get('offline_references')!=len(expected) or len(references)!=len(expected)
+                or {r['case'] for r in references}!=expected or any(r.get('after')!=[0,0,0] for r in references)):
+            raise ValueError('Windows failed repair did not preserve offline processing')
+
+
+def validate_review_export(review,rows,cases):
+    expected={case['file']:case['case'] for case in cases if case['known_resolvable']}
+    hashes={row['case']:row['output_sha256'] for row in rows}
+    if {p.name for p in review.iterdir()}!=set(expected):
+        raise ValueError('Twine review export is incomplete or contains unexpected files')
+    for filename,case in expected.items():
+        if (review/filename).is_symlink() or digest((review/filename).read_bytes())!=hashes[case]:
+            raise ValueError('Twine review export differs from verified corpus output')
+    return {filename:hashes[case] for filename,case in expected.items()}
 
 
 def stage_engine_driver(work):
@@ -330,12 +359,18 @@ def collect(wheel, sdist, wheelhouse, *, engine_artifact=None, engine_id=None, e
             review_files={}
             if engine_check=='windows-notices':
                 report_path=work/('windows-cache-notices-'+mode+'.json')
-                run([python,'-I',driver/'.github/scripts/probe-windows-cache-notices.py',
-                    '--driver',driver,'--report',report_path],timeout=300)
+                command=[python,'-I',driver/'.github/scripts/probe-windows-cache-notices.py',
+                    '--driver',driver,'--report',report_path]
+                if review_directory is not None:
+                    review=review_directory/mode;review.mkdir(parents=True,exist_ok=False)
+                    command.extend(['--review-directory',review])
+                run(command,timeout=600)
                 if report_path.stat().st_size>1024**2:raise ValueError('Windows cache notice receipt exceeds bound')
                 notice_report=json.loads(report_path.read_bytes())
                 manifest_raw=(ROOT/'src/twine_edge_overlap/runtime-manifest.json').read_bytes()
-                validate_windows_cache_notice_result(notice_report,json.loads(manifest_raw),digest(manifest_raw))
+                cases=json.loads((ROOT/'tests/fixtures/cases.json').read_bytes())
+                validate_windows_cache_notice_result(notice_report,json.loads(manifest_raw),digest(manifest_raw),cases)
+                if review_directory is not None:review_files=validate_review_export(review,notice_report['cases'],cases)
             elif fixture is not None:
                 if engine_check=='notices':
                     report_path=work/('cache-notices-'+mode+'.json')
@@ -371,14 +406,7 @@ def collect(wheel, sdist, wheelhouse, *, engine_artifact=None, engine_id=None, e
                     validate_recovery_result(runtime_report['observations']['explicit'].get('recovery'), cases)
                     validate_process_recovery(runtime_report['observations']['explicit'].get('process_recovery'), cases)
                     if review_directory is not None:
-                        expected={case['file']:case['case'] for case in cases if case['known_resolvable']}
-                        hashes={row['case']:row['output_sha256'] for row in runtime_report['cases']}
-                        if {p.name for p in review.iterdir()}!=set(expected):
-                            raise ValueError('Twine review export is incomplete or contains unexpected files')
-                        for filename,case in expected.items():
-                            if (review/filename).is_symlink() or digest((review/filename).read_bytes())!=hashes[case]:
-                                raise ValueError('Twine review export differs from verified corpus output')
-                            review_files[filename]=hashes[case]
+                        review_files=validate_review_export(review,runtime_report['cases'],cases)
             records.append(dict(mode=mode, archive_sha256=digest(package.read_bytes()),
                 package_files_verified=len(inventory['files']), licenses_verified=inventory['licenses'],
                 installed_file_hashes=facts['files'], entrypoints_verified=3,
@@ -426,7 +454,7 @@ if __name__ == '__main__':
     if args.report.exists():
         parser.error('Preserve existing reports; choose a new file')
     if args.review_directory is not None:
-        if args.engine_artifact is None or args.engine_check!='runtime':
+        if not (args.engine_check=='windows-notices' or args.engine_artifact is not None and args.engine_check=='runtime'):
             parser.error('Review exports require real private-engine runtime checks')
         if args.review_directory.exists() or args.review_directory.is_symlink():
             parser.error('Preserve existing review outputs; choose a new directory')

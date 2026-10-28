@@ -46,11 +46,26 @@ class BuiltPackagesTests(unittest.TestCase):
             source_acquisition='pinned-upstream-https',initial_download_operations=1,
             offline_acquisition_calls=0,same_generation=True,corruption_rejected=True,
             restored_snapshot_matches=True,modes_checked=False)
-        validate(report,manifest,'d'*64)
+        cases=[dict(case='known',known_resolvable=True)]
+        reference=dict(case='known',before=[1,0,0],after=[0,0,0])
+        repair=dict(passed=True,old_handle_usable=True,selection_preserved=True,retry_succeeded=True,
+                    offline_references=1,cases=[reference])
+        process=dict(passed=True,old_handle_usable=True,offline_references=1,cases=[reference],
+                     exitcode=77,lock_reacquired=True,orphan_untouched=True)
+        scenarios={name:copy.deepcopy(repair) for name in ('download','disk_full','execution_denied','corrupt_archive')}
+        for stage in ('during_download','before_select','after_select'):
+            scenarios[stage]=dict(copy.deepcopy(process),selection='new' if stage=='after_select' else 'previous')
+        scenarios['concurrent_first_use']=dict(passed=True,old_handle_usable=True,offline_references=1,
+            cases=[reference],workers=2,workers_ready=2,acquisition_calls=1,same_generation=True,start_barrier=True)
+        report.update(cases=[reference],recovery=dict(passed=True,real_engine=True,scenarios=scenarios))
+        validate(report,manifest,'d'*64,cases)
         for key,value in [('manifest_sha256','e'*64),('after',{}),('offline_acquisition_calls',1),
-                ('source_acquisition','fixture'),('corruption_rejected',False),('system','Linux')]:
+                ('source_acquisition','fixture'),('corruption_rejected',False),('system','Linux'),
+                ('cases',[]),('recovery',{})]:
             changed=copy.deepcopy(report);changed[key]=value
-            with self.subTest(key=key),self.assertRaises(ValueError):validate(changed,manifest,'d'*64)
+            with self.subTest(key=key),self.assertRaises(ValueError):validate(changed,manifest,'d'*64,cases)
+        changed=copy.deepcopy(report);changed['recovery']['scenarios']['disk_full']['selection_preserved']=False
+        with self.assertRaises(ValueError):validate(changed,manifest,'d'*64,cases)
 
     def test_cache_notice_result_requires_exact_before_after_bytes_and_offline_reuse(self):
         validate=tool().validate_cache_notice_result

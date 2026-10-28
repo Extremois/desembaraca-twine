@@ -1,4 +1,4 @@
-"""Real installed-engine recovery on disposable POSIX hosts; acquisition/errors are controlled."""
+"""Real installed-engine recovery in disposable CI caches; acquisition/errors are controlled."""
 import argparse
 import errno
 import hashlib
@@ -38,7 +38,7 @@ def worker(args):
         args.result.write_text(handle.generation_id,encoding='ascii')
 
 
-def exercise(args,bundle,*,process_only=False):
+def exercise(args,bundle,*,process_only=False,artifact=None):
     from runtime_support import ControlledTransport,blocked_network
     from twine_edge_overlap.runtime import RuntimeManager,load_manifest
     from twine_edge_overlap.errors import DependencyError
@@ -52,14 +52,16 @@ def exercise(args,bundle,*,process_only=False):
     scenarios={}
     with tempfile.TemporaryDirectory(prefix='native-private-recovery-') as folder,blocked_network():
         root=Path(folder);archive=root/'candidate.zip';archive.write_bytes(bundle.payload)
-        data=dict(load_manifest().data)
-        data.update(schema_version=2,platform=bundle.platform_name,artifact_arch=bundle.record['native_arch'],
-            abi=bundle.record['recipe']['abi'],build_variant='private-recovery-only',
-            minimum_libc='0',minimum_kernel='0',minimum_os='15',files=bundle.inventory['files'],
-            executable_relative_path='bin/dot',generated_files=[],url='https://runtime.invalid/artifact.zip',
-            allowed_redirect_hosts=['runtime.invalid'],archive_sha256=digest(bundle.payload))
-        data['notices']=[dict(data['notices'][0],destination='third-party-notices/private-recovery-application.txt')]
-        data.pop('plugin_relative_path',None)
+        data=dict((artifact or load_manifest()).data)
+        if artifact is None:
+            data.update(schema_version=2,platform=bundle.platform_name,artifact_arch=bundle.record['native_arch'],
+                abi=bundle.record['recipe']['abi'],build_variant='private-recovery-only',
+                minimum_libc='0',minimum_kernel='0',minimum_os='15',files=bundle.inventory['files'],
+                executable_relative_path='bin/dot',generated_files=[])
+            data['notices']=[dict(data['notices'][0],destination='third-party-notices/private-recovery-application.txt')]
+            data.pop('plugin_relative_path',None)
+        data.update(url='https://runtime.invalid/artifact.zip',allowed_redirect_hosts=['runtime.invalid'],
+                    archive_sha256=digest(bundle.payload))
         manifest=root/'private-manifest.json';manifest.write_text(json.dumps(data),encoding='utf-8')
         artifact=load_manifest(manifest)
         def manager(cache,**kwargs):return RuntimeManager(artifact=artifact,cache_root=cache,opener=ControlledTransport(bundle.payload),**kwargs)
@@ -91,6 +93,7 @@ def exercise(args,bundle,*,process_only=False):
             elif name=='corrupt_archive':current.opener=ControlledTransport(b'not-the-pinned-archive')
             elif name=='execution_denied':
                 def denied_runner(argv,**kwargs):
+                    if os.name=='nt':raise PermissionError(errno.EACCES,'injected Windows execution denial')
                     Path(argv[0]).chmod(0o644)
                     return run_bounded(argv,**kwargs)
                 current.runner=denied_runner
@@ -111,7 +114,8 @@ def exercise(args,bundle,*,process_only=False):
             if replacement.generation_id==old.generation_id:raise AssertionError('Repair retry did not publish a new generation')
             scenarios[name]=dict(passed=True,offline_references=len(rows),cases=rows,old_handle_usable=usable,
                 selection_preserved=True,retry_succeeded=True,
-                failure_kind='Real executable permission denial' if name=='execution_denied' else 'Explicit controlled error/bytes injection')
+                failure_kind=('Injected Windows execution denial' if os.name=='nt' else 'Real executable permission denial')
+                    if name=='execution_denied' else 'Explicit controlled error/bytes injection')
         for stage in ('during_download','before_select','after_select'):
             work=root/stage;work.mkdir();cache=work/'cache';current=manager(cache);old=current.ensure()
             active=(current.root/'active.json').read_bytes()
