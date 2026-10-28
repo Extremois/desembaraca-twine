@@ -4,6 +4,7 @@ on:
   push:
     branches: [feat/003-add-cross-platform-support]
     paths:
+      - '.gitattributes'
       - '.github/workflows/cache-notices.yml'
       - '.github/scripts/probe-cache-notices.py'
       - 'tools/validation/check-built-packages.py'

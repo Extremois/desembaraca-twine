@@ -4,6 +4,7 @@ on:
   push:
     branches: [feat/003-add-cross-platform-support]
     paths:
+      - '.gitattributes'
       - '.github/workflows/cache-notices-more.yml'
       - '.github/scripts/run-musl-cache-notices.py'
       - '.github/scripts/probe-windows-cache-notices.py'

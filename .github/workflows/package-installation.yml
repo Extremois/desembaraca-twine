@@ -4,6 +4,7 @@ on:
   push:
     branches: [feat/003-add-cross-platform-support]
     paths:
+      - '.gitattributes'
       - '.github/workflows/package-installation.yml'
       - 'tools/validation/check-built-packages.py'
       - 'tests/unit/test_built_packages.py'

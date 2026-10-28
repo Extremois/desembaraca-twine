@@ -1,3 +1,6 @@
+*.py text eol=lf
+tests/fixtures/** -text
+
 # Preserve the exact bytes pinned by runtime-manifest.json on every checkout.
 # Vendor notices also retain their original whitespace.
 src/twine_edge_overlap/third_party/graphviz-16.1.0/* -text -whitespace

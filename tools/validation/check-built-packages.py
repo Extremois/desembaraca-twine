@@ -279,6 +279,9 @@ def stage_engine_driver(work):
         shutil.copyfile(ROOT / name, target)
     shutil.copytree(ROOT / 'tests/fixtures', driver / 'tests/fixtures',
         ignore=shutil.ignore_patterns('__pycache__', '*.pyc'))
+    for case in json.loads((driver/'tests/fixtures/cases.json').read_bytes()):
+        if digest((driver/'tests/fixtures'/case['file']).read_bytes())!=case['sha256']:
+            raise ValueError('Corpus checkout differs from pinned fixture bytes')
     if (driver / 'src').exists():
         raise ValueError('Engine test driver must not expose the application checkout')
     return driver
