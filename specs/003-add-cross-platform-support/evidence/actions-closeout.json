@@ -1,0 +1,33 @@
+{
+  "kind": "implementation-closeout-checkpoint",
+  "validation_policy": "github-actions-only-no-vm",
+  "tasks_complete": 60,
+  "tasks_pending": 24,
+  "task_count": 84,
+  "completed_recipe_tasks": [
+    "T025",
+    "T027"
+  ],
+  "recipe_evidence": {
+    "path": "specs/003-add-cross-platform-support/evidence/source-pairing-ci-2026-10-27/summary.json",
+    "sha256": "2ab20c3dc86d6db9ca07222d1b241a7752931fd420c8821505a74211f16b7702"
+  },
+  "changes": [
+    "Preserve Actions provenance within container execution",
+    "Run macOS integration contracts in foundation CI"
+  ],
+  "preflight": {
+    "repository_apple_secrets_configured": false,
+    "distribution_releases_present": false
+  },
+  "remaining_decisions": [
+    "Keep 69 individual support cells or validate by ABI/architecture/Python"
+  ],
+  "remaining_delivery": [
+    "Approved per-artifact license audit",
+    "Apple signing/notarization credentials and execution",
+    "Immutable binary/source distribution",
+    "Remaining CI coverage and acceptance"
+  ],
+  "feature_complete": false
+}

@@ -9,6 +9,19 @@ from unit.test_runtime_build_tools import tool
 
 
 class QualificationToolTests(unittest.TestCase):
+    def test_actions_context_preserves_ci_classification_inside_container(self):
+        collector=tool('qualify-target')
+        env=dict(GITHUB_ACTIONS='true',GITHUB_REPOSITORY='owner/repo',GITHUB_RUN_ID='123',
+                 GITHUB_SHA='a'*40,GITHUB_JOB='collect',GITHUB_RUN_ATTEMPT='2',SECRET_TOKEN='never-record')
+        kind,context=collector.execution_context('github-actions',env,'host-kernel',True)
+        self.assertEqual(kind,'github-actions')
+        self.assertEqual(context['execution_kind'],'container')
+        self.assertEqual(context['run_url'],'https://github.com/owner/repo/actions/runs/123')
+        self.assertNotIn('SECRET_TOKEN',context)
+        self.assertEqual(collector.execution_context('native',{},'host-kernel',True),('container',None))
+        for change in (dict(GITHUB_ACTIONS='false'),dict(GITHUB_RUN_ID='../other'),dict(GITHUB_REPOSITORY='https://other')):
+            with self.assertRaises(ValueError):collector.execution_context('github-actions',dict(env,**change),'kernel',False)
+
     def test_invalid_first_input_is_rejected_before_acquisition_without_network(self):
         worker=tool('qualification-worker')
         from twine_edge_overlap.cli import main

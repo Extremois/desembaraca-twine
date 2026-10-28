@@ -27,7 +27,8 @@ def main():
                 'integration.test_runtime_concurrency.', 'contract.test_cli_linux.',
                 'contract.test_cli_macos.', 'contract.test_runtime_diagnostics.',
                 'contract.test_cross_platform_results.', 'integration.test_cross_platform_publish.',
-                'integration.test_runtime_recovery.', 'integration.test_runtime_crash.')
+                'integration.test_runtime_recovery.', 'integration.test_runtime_crash.',
+                'integration.test_macos_runtime.')
     selected = unittest.TestSuite(test for test in leaves(suite) if test.id().startswith(prefixes))
     if not selected.countTestCases():
         raise RuntimeError('No foundation tests discovered')

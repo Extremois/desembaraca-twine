@@ -77,6 +77,19 @@ def interpreter(path,minor):
     return value
 
 
+def execution_context(requested,env,kernel,in_container):
+    observed='wsl' if 'microsoft' in kernel.lower() else ('container' if in_container else 'runner')
+    if requested!='github-actions':
+        return (observed if observed!='runner' else requested),None
+    repository=env.get('GITHUB_REPOSITORY','');run_id=env.get('GITHUB_RUN_ID','')
+    if (env.get('GITHUB_ACTIONS')!='true' or not re.fullmatch(r'[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+',repository)
+            or not re.fullmatch(r'[1-9][0-9]*',run_id) or not re.fullmatch(r'[0-9a-f]{40}',env.get('GITHUB_SHA',''))):
+        raise ValueError('GitHub Actions evidence requires a recorded workflow run')
+    return 'github-actions',dict(repository=repository,run_id=run_id,run_sha=env['GITHUB_SHA'],
+        run_url='https://github.com/'+repository+'/actions/runs/'+run_id,
+        job=env.get('GITHUB_JOB',''),run_attempt=env.get('GITHUB_RUN_ATTEMPT','1'),execution_kind=observed)
+
+
 def collect(args):
     registry=read_json(args.registry)
     targets=[target for target in registry['targets'] if target['id']==args.target]
@@ -96,9 +109,7 @@ def collect(args):
     # Both interpreters must already exist before any rolling snapshot is captured.
     from twine_edge_overlap.runtime_platform import normalize_arch
     if any(normalize_arch(item['arch'])!=target['arch'] for item in facts.values()):raise ValueError('Interpreter architecture differs from cell')
-    kind=args.environment_kind
-    if 'microsoft' in platform.release().lower():kind='wsl'
-    elif Path('/.dockerenv').exists():kind='container'
+    kind,ci_context=execution_context(args.environment_kind,os.environ,platform.release(),Path('/.dockerenv').exists())
     base=tempfile.gettempdir()
     if os.name=='nt' and not base.startswith('\\\\?\\'):base='\\\\?\\'+base
     with tempfile.TemporaryDirectory(prefix='twine qualify '+chr(0xe7)+' ',dir=base) as folder:
@@ -125,7 +136,7 @@ def collect(args):
                      variant_required=variant_needed,
                      package_sha256=args.package_sha256,package_mode='wheel' if package.suffix=='.whl' else 'sdist',
                      python_minor=args.python_minor,python_origin=args.python_origin,interpreters=facts,
-                     image_id=args.image_id,image_digest=args.image_digest,environment_kind=kind,
+                     image_id=args.image_id,image_digest=args.image_digest,environment_kind=kind,github_actions=ci_context,
                      fixture_root=str(ROOT/'tests/fixtures'),work=str(work),
                      retain_review=bool(getattr(args,'review_output',None)))
         request_path=work/'request.json'

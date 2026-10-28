@@ -135,8 +135,8 @@ def collect(request):
     if attempts:raise ValueError('Offline Python network attempt observed')
     from twine_edge_overlap.runtime_catalog import GATES
     checks=dict(first_run=True,preservation=True)
-    # Offline needs native syscall tracing; installation needs wheel+sdist+remote.
-    # Twine, audited licenses and native failure/crash trials need separate evidence.
+    # These remaining checks are collected by the GitHub Actions workflows.
+    # Installation still needs wheel+sdist+remote; incomplete checks stay explicit.
     captured=datetime.now(timezone.utc).isoformat()
     record=dict(id=target['id']+'-'+request['python_minor']+'-'+captured.replace(':',''),target_id=target['id'],
                 python_minor=request['python_minor'],python_patch=platform.python_version(),python_origin=request['python_origin'],
@@ -147,6 +147,7 @@ def collect(request):
                 distribution_id=target['distribution_id'],channel=target['channel'],cpu_variant=target['cpu_variant'],
                 architecture=host.arch,kernel=host.kernel_version,cpu=platform.processor() or host.arch,
                 image_id=request['image_id'],image_digest=request['image_digest'],captured_at=captured,environment_kind=request['environment_kind'],
+                github_actions=request.get('github_actions'),
                 snapshot_id=snapshot.snapshot_id if snapshot.known else None,checks=checks,passed=True,
                 pending_checks=sorted(GATES-set(checks)),
                 observations=dict(cache_matches_platform=handle.root.resolve().is_relative_to(cache_directory(host).resolve()),
@@ -158,7 +159,7 @@ def collect(request):
                 corpus=corpus,network=dict(observation='python-only',attempts=0),
                 log_text=output.getvalue()+'\n'+errors.getvalue(),
                 installation={request['package_mode']:True,'outside_checkout':True},
-                pending_reason='Native network trace, remaining installation modes, failures/crash/concurrency, license audit and actual Twine review required.')
+                pending_reason='GitHub Actions network observation, remaining installation modes, failures/crash/concurrency, license audit and Twine review remain separate checks.')
     if target['version']=='rolling':
         if not snapshot.known:raise ValueError('Rolling identity unknown; no truncated reference is accepted')
         record['environment_snapshot']=EnvironmentSnapshot.from_probe(snapshot,captured_at=captured,image_digest=request['image_digest']).data
