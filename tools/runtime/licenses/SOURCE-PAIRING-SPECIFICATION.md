@@ -32,10 +32,12 @@ declarações de direitos autorais e licenças acessíveis offline no pacote.
 
 ### 1.3 Apache-2.0 e componentes de terceiros
 
-O Desembaraça Twine é distribuído sob Apache-2.0. Nenhum componente com licença
-incompatível ou restrição proprietária é integrado. Materiais de terceiros
-(ColorBrewer Apache-2.0, musl MIT, Go BSD-3-Clause, W3C/ISO 8879:1986) preservam
-seus respectivos avisos intactos em `SOURCE-REFERENCES.txt` e no índice offline.
+O Desembaraça Twine é distribuído sob Apache-2.0. A entrada de um componente
+no catálogo exige revisão de compatibilidade e obrigações por artefato.
+ColorBrewer, musl, Go e materiais W3C/ISO mantêm seus termos individuais;
+não se atribui uma licença homogênea a arquivos com permissões distintas.
+Avisos e fontes exigidos devem ser conferidos nos materiais efetivamente
+distribuídos. Pareamento de hashes não concede aprovação de licença.
 
 ## 2. Invariantes do par vinculador de entrega
 
@@ -52,11 +54,17 @@ existir exatamente um par vinculador imutável composto por:
 2. **Arquivo de fontes correspondentes (`sources.tar.gz`)**:
    - Tarball comprimido USTAR empacotado por `tools/runtime/pack-sources.py`.
    - Contém o tarball oficial fixado do Graphviz (`graphviz.tar.gz`), a árvore
-     completa `lib/` e `LICENSE` do SDK Zig fixado, todas as receitas/scripts
+     completa `lib/` e `LICENSE` do SDK Zig fixado nos alvos Linux, todas as receitas/scripts
      de build em `tools/runtime/`, dependências internas do projeto,
      `candidate-provenance.json` e `manifest.json`.
    - Identificado por `archive_sha256`, `archive_bytes`, `executable_sha256`,
      `provenance_sha256` e `manifest_sha256`.
+
+   O material de revisão macOS contém Graphviz, receitas e proveniência,
+   sem redistribuir o SDK Apple. Seu `sdk_files` é zero; aplicação dos termos
+   de headers/runtime do SDK e completude das fontes correspondentes continuam
+   pendentes de auditoria própria. Reconstrução no Actions é evidência técnica
+   separada, sem afirmar identidade binária, licença ou oferta pública aprovada.
 
 3. **Invariantes criptográficos compartilhados**:
    - `artifact_id`: id idêntico em ambos os registros.

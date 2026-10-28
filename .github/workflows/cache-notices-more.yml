@@ -7,6 +7,7 @@ on:
       - '.gitattributes'
       - '.github/workflows/cache-notices-more.yml'
       - '.github/scripts/run-musl-cache-notices.py'
+      - 'tools/validation/check-installation-docs.py'
       - '.github/scripts/probe-windows-cache-notices.py'
       - '.github/scripts/probe-cache-notices.py'
       - 'tools/validation/check-built-packages.py'
@@ -82,6 +83,7 @@ jobs:
           path: |
             ${{ runner.temp }}/musl-notices/slot/cache-notices.json
             ${{ runner.temp }}/musl-notices/slot/installed-runtime.json
+            ${{ runner.temp }}/musl-notices/slot/remote-installation.json
             ${{ runner.temp }}/musl-notices/slot/runtime-review/
             ${{ runner.temp }}/musl-notices/image.json
   windows:

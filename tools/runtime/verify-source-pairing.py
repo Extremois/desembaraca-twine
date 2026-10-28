@@ -102,10 +102,10 @@ def pair_records(candidate_data, sources_data, candidate_archive=None, sources_a
     obligations = {
         "lgpl_2_1_section_6_d": ("Acesso equivalente para download das fontes correspondentes no mesmo endpoint de distribuição binária"
                                  if is_glibc else "Não aplicável diretamente (ambiente sem retenção glibc)"),
-        "lgpl_2_1_section_6_a": ("Fontes completas da biblioteca e do programa exportadas permitindo relink modificado comprovado"
-                                 if is_glibc else "Reconstrução funcional e independência de compilação comprovadas"),
-        "epl_2_0_section_3_1": "Fontes completas do Graphviz acompanhadas de declaração expressa de licença e avisos preservados",
-        "offline_notices": "Avisos SOURCE-REFERENCES.txt e textos integrais offline incorporados em ambos os arquivos"
+        "lgpl_2_1_section_6_a": ("Verificar fontes completas e relink modificado em evidências separadas"
+                                 if is_glibc else "Verificar reconstrução funcional em evidência separada"),
+        "epl_2_0_section_3_1": "Verificar completude das fontes Graphviz, declaração de licença e avisos",
+        "offline_notices": "Verificar SOURCE-REFERENCES.txt e textos integrais offline nos materiais distribuídos"
     }
 
     distribution_status = "unpromoted_pending_authorized_distribution"

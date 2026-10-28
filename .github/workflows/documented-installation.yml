@@ -5,6 +5,7 @@ on:
     paths:
       - '.github/workflows/documented-installation.yml'
       - 'tools/validation/check-installation-docs.py'
+      - 'tools/runtime/verify-public-sources.py'
       - 'README.md'
       - 'specs/003-add-cross-platform-support/quickstart.md'
   workflow_dispatch:
@@ -26,7 +27,6 @@ jobs:
       - uses: actions/checkout@v4
         with:
           persist-credentials: false
-          fetch-depth: 0
       - uses: actions/setup-python@v5
         with:
           python-version: ${{ matrix.python }}

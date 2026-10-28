@@ -61,6 +61,8 @@ def collect(artifact,work,arch,minor,image):
         report['github_actions']=dict(repository=repository,run_id=run_id,revision=revision,
             run_url='https://github.com/'+repository+'/actions/runs/'+run_id)
         report_path.write_text(json.dumps(report,indent=2)+'\n',encoding='utf-8')
+    run([python,ROOT/'tools/validation/check-installation-docs.py','--work',work/'remote-installation',
+         '--report',work/'remote-installation.json'])
 
 
 if __name__=='__main__':

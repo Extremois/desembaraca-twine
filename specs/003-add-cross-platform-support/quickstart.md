@@ -9,18 +9,23 @@
 
 ## Pré-requisitos e registro
 
-O [procedimento parcial Linux](evidence/linux-prerequisites.md) registra duas
-instalações privadas reais de CPython e seus limites no WSL existente. Repetir
-e qualificar os pré-requisitos em cada célula antes dos ensaios abaixo.
+O [procedimento Linux](evidence/linux-prerequisites.md) registra os quatro alvos
+ABI glibc/musl em x64/ARM64. Os ensaios usam CPython 3.12 e 3.14 no GitHub Actions,
+em venvs externas, sem substituir o Python do SO. Registrar imagem/digest,
+SO/kernel/CPU observados, versão/origem do Python, revisão e artefato.
+Os dois slots precisam satisfazer a mesma ABI e seus mínimos; não precisam
+compartilhar kernel ou imagem. As 69 declarações de distribuição e os snapshots
+rolling não exigem execuções individuais. Resultados antigos em WSL/VMs são histórico.
 
-Escolher uma célula da [matriz](support-matrix.md), identificada sem Python na chave; registrar imagem/digest, SO/kernel/CPU, arquitetura nativa, patch/origem do Python e commit. Executar seus dois slots separadamente com CPython 3.12 e 3.14 no GitHub Actions, em venvs distintas, mantendo mesma revisão/artefato e baseline do ambiente. Em rolling, instalar os dois interpretadores antes de capturar inventário e exigir o mesmo snapshot_id para ambos. Um slot completo não aprova a célula. Instalação do interpretador/venv/pip é pré-requisito documentado por alvo; não substituir Python do SO. Em sistemas antigos, a disponibilidade desse interpretador ainda precisa ser qualificada, sem excluir o alvo por dificuldade.
+Para a etapa visual, siga [REVIEW-TWINE.md](REVIEW-TWINE.md). Ela usa as seis
+saídas prontas do Actions e mantém a revisão no Twine separada dos testes de ABI.
 
 Ter diretórios de usuário com escrita/execução, acesso HTTPS para instalação/preparo, espaço livre suficiente para download/expansão/gerações (manter orientação conservadora de 2 GiB inicialmente) e Twine para revisão. Não instalar Graphviz global. Build dos componentes é responsabilidade do projeto, não do usuário. Usar conta sem privilégios administrativos; macOS sob proteções normais.
 
 ## 1. Instalar a candidata, sem checkout obrigatório
 
 A URL imutável abaixo e no README contém a revisão pública
-`d90b5671cba0477649e71a52b0d94704cce81c4e`, com comando `desembaraca-twine`
+`fed01cc58e7a51625ce8b6da43b526dbc55c80a0`, com comando `desembaraca-twine`
 e código da spec 003. Permite instalar e consultar help em Linux/macOS/Windows,
 mas o catálogo continua somente Windows: não permite concluir a aceitação POSIX.
 A branch `feat/003-add-cross-platform-support` não é URL imutável nem release.
@@ -29,7 +34,7 @@ Em shell POSIX, usar `python3.12` ou `python3.14` conforme o ensaio:
 
 ```sh
 python3.12 -m venv "$HOME/.venvs/desembaraca-twine"
-"$HOME/.venvs/desembaraca-twine/bin/python" -m pip install "https://github.com/Extremois/desembaraca-twine/archive/d90b5671cba0477649e71a52b0d94704cce81c4e.zip"
+"$HOME/.venvs/desembaraca-twine/bin/python" -m pip install "https://github.com/Extremois/desembaraca-twine/archive/fed01cc58e7a51625ce8b6da43b526dbc55c80a0.zip"
 "$HOME/.venvs/desembaraca-twine/bin/desembaraca-twine" --help
 "$HOME/.venvs/desembaraca-twine/bin/python" -m twine_edge_overlap --help
 ```
@@ -57,7 +62,7 @@ Em PowerShell, usar o Python nativo selecionado e chamar diretamente a venv, sem
 
 ```powershell
 python -m venv "$HOME\.venvs\desembaraca-twine"
-& "$HOME\.venvs\desembaraca-twine\Scripts\python.exe" -m pip install "https://github.com/Extremois/desembaraca-twine/archive/d90b5671cba0477649e71a52b0d94704cce81c4e.zip"
+& "$HOME\.venvs\desembaraca-twine\Scripts\python.exe" -m pip install "https://github.com/Extremois/desembaraca-twine/archive/fed01cc58e7a51625ce8b6da43b526dbc55c80a0.zip"
 & "$HOME\.venvs\desembaraca-twine\Scripts\desembaraca-twine.exe" --help
 ```
 

@@ -5,6 +5,7 @@ Run on an ephemeral CI runner; no engine acquisition or global installation.
 """
 import argparse
 import hashlib
+import importlib.util
 import json
 import os
 from pathlib import Path
@@ -12,18 +13,26 @@ import platform
 import subprocess
 import sys
 import venv
+import urllib.parse
+import urllib.request
+import zipfile
 
-REVISION = 'd90b5671cba0477649e71a52b0d94704cce81c4e'
+REVISION = 'fed01cc58e7a51625ce8b6da43b526dbc55c80a0'
 URL = 'https://github.com/Extremois/desembaraca-twine/archive/' + REVISION + '.zip'
 
 
-def source_digest(path):
-    raw = path.read_bytes()
-    # Git may check text out with CRLF on Windows; GitHub archives store LF.
-    # Runtime JSON and third-party notices retain their pinned binary bytes.
-    if path.suffix == '.py' or path.name in ('LICENSE', 'NOTICE'):
-        raw = raw.replace(b'\r\n', b'\n')
-    return hashlib.sha256(raw).hexdigest()
+def source_facts(path,revision):
+    spec=importlib.util.spec_from_file_location('public_source_inventory',Path(__file__).resolve().parents[1]/'runtime/verify-public-sources.py')
+    verifier=importlib.util.module_from_spec(spec);spec.loader.exec_module(verifier)
+    with zipfile.ZipFile(path) as archive:
+        files=verifier.project_inventory(archive,'desembaraca-twine-'+revision)
+        def identity(name):
+            item=files[name]
+            with archive.open(item) as stream:return verifier.stream_identity(stream,item.file_size)['sha256']
+        expected={name.removeprefix('src/'):identity(name) for name in files
+                  if name.startswith('src/twine_edge_overlap/') and '__pycache__' not in name
+                  and (Path(name).suffix in ('.py','.json') or '/third_party/' in name)}
+        return expected,{name:identity(name) for name in ('LICENSE','NOTICE')}
 
 
 def collect(work):
@@ -35,6 +44,18 @@ def collect(work):
     if work.is_relative_to(checkout):
         raise ValueError('Use a new work directory outside the checkout')
     work.mkdir(parents=True, exist_ok=False)
+    source=work/'documented-source.zip'
+    with urllib.request.urlopen(URL,timeout=30) as response,source.open('xb') as stream:
+        origin=urllib.parse.urlsplit(response.geturl())
+        if response.status!=200 or origin.scheme!='https' or origin.hostname not in ('github.com','codeload.github.com'):
+            raise ValueError('Unexpected remote source origin')
+        total=0
+        while chunk:=response.read(65536):
+            total+=len(chunk)
+            if total>128*1024**2:raise ValueError('Remote source archive exceeds bound')
+            stream.write(chunk)
+    with source.open('rb') as stream:archive_sha256=hashlib.file_digest(stream,'sha256').hexdigest()
+    expected,expected_licenses=source_facts(source,REVISION)
     home = work / 'profile'
     home.mkdir()
     environment = dict(os.environ)
@@ -80,7 +101,7 @@ print(json.dumps(dict(direct_url=json.loads(d.read_text('direct_url.json')),
     package_path=str(pathlib.Path(twine_edge_overlap.__file__).resolve()),files=files,licenses=licenses,
     git_available=shutil.which('git') is not None,graphviz_available=shutil.which('dot') is not None)))'''])
     installed = json.loads(raw)
-    if installed['direct_url']['url'] != URL or not installed['direct_url']['archive_info'].get('hashes', {}).get('sha256'):
+    if installed['direct_url']['url'] != URL or installed['direct_url']['archive_info'].get('hashes', {}).get('sha256')!=archive_sha256:
         raise ValueError('Remote source identity not recorded')
     if not Path(installed.pop('package_path')).resolve().is_relative_to(root.resolve()):
         raise ValueError('Imported package outside fresh venv')
@@ -91,26 +112,16 @@ print(json.dumps(dict(direct_url=json.loads(d.read_text('direct_url.json')),
             raise ValueError('Missing packaged metadata: '+name)
     if not any('/third_party/' in name for name in installed['files']):
         raise ValueError('Missing packaged notices')
-    def pinned_bytes(name):
-        return subprocess.check_output(['git','show',REVISION+':'+name],cwd=checkout,timeout=15)
-    paths=subprocess.check_output(['git','ls-tree','-r','--name-only',REVISION,'--','src/twine_edge_overlap'],cwd=checkout,timeout=15).decode('utf-8').splitlines()
-    expected = {
-        name.removeprefix('src/'): hashlib.sha256(pinned_bytes(name)).hexdigest()
-        for name in paths
-        if '__pycache__' not in name
-        and (Path(name).suffix in ('.py', '.json') or '/third_party/' in name)}
     if installed['files'] != expected:
         raise ValueError('Remote package source/data/notices differ from documented pinned revision')
-    if installed['licenses'] != {
-            name: hashlib.sha256(pinned_bytes(name)).hexdigest()
-            for name in ('LICENSE', 'NOTICE')}:
+    if installed['licenses'] != expected_licenses:
         raise ValueError('Remote package license/notice differs from current checkout')
     if any(home.rglob('ready.json')) or any(home.rglob('active.json')):
         raise ValueError('Help unexpectedly prepared an engine')
     return dict(kind='documented-remote-install-and-help-smoke',passed=True,qualified=False,
         revision=REVISION,url=URL,python=platform.python_version(),os=platform.system(),
         arch=platform.machine(),outside_checkout=True,path_contains_only_venv=True,
-        engine_prepared=False,installed=installed,commands=commands,
+        engine_prepared=False,archive_sha256=archive_sha256,installed=installed,commands=commands,
         limitations=['Installation/help only; distributed catalog still Windows-only',
                     'No POSIX native-engine preparation, cell acceptance or support promotion'])
 

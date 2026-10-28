@@ -1,0 +1,47 @@
+{
+  "application_revision": "fed01cc58e7a51625ce8b6da43b526dbc55c80a0",
+  "jobs": [
+    {
+      "name": "Pure contracts (ubuntu-24.04, Python 3.14)",
+      "test_count": 304,
+      "conclusion": "success",
+      "report": "122922397084.log.gz",
+      "raw_sha256": "e0d3dd93cdf6d0cf0f3e1eeee81d3165909d8dc969674f74569b05dacd68ffb0"
+    },
+    {
+      "name": "Pure contracts (ubuntu-24.04, Python 3.12)",
+      "test_count": 304,
+      "conclusion": "success",
+      "report": "122922397617.log.gz",
+      "raw_sha256": "7cb4cd3745bf25d7953104cce12510128a37fe936cca0113d0d34aac337dbb8f"
+    },
+    {
+      "name": "Pure contracts (windows-latest, Python 3.14)",
+      "test_count": 304,
+      "conclusion": "success",
+      "report": "122922397714.log.gz",
+      "raw_sha256": "4eb9bbbbd639f96ed4a6ff9a066656c19b9e15cd7b72caeff49e38b87bc3d00f"
+    },
+    {
+      "name": "Pure contracts (windows-latest, Python 3.12)",
+      "test_count": 304,
+      "conclusion": "success",
+      "report": "122922397806.log.gz",
+      "raw_sha256": "66e2156e35bbff3f086e892f4c717e956153fc3ccdf6c6436b498fac88f21bdd"
+    },
+    {
+      "name": "Pure contracts (macos-15, Python 3.12)",
+      "test_count": 304,
+      "conclusion": "success",
+      "report": "122922397911.log.gz",
+      "raw_sha256": "d37fd558c1074862f72aae2086d06d50294a910794a1e95e7a30a8cf2bf69c33"
+    },
+    {
+      "name": "Pure contracts (macos-15, Python 3.14)",
+      "test_count": 304,
+      "conclusion": "success",
+      "report": "122922398680.log.gz",
+      "raw_sha256": "b0f04949c53e7bef6b815eb67fbb5e3b65a19093d3890776b4e8121fc37f0028"
+    }
+  ]
+}

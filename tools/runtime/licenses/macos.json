@@ -169,5 +169,50 @@
     "gatekeeper_enforcement": "Normal execution without disabling Gatekeeper, SIP or quarantine; no Developer ID or spctl assessment requirement for acceptance",
     "script_reference": "tools/runtime/sign-macos.sh",
     "status": "optional-outside-mandatory-scope"
+  },
+  "current_source_material_review": {
+    "approved": false,
+    "qualified": false,
+    "application_revision": "fed01cc58e7a51625ce8b6da43b526dbc55c80a0",
+    "evidence": {
+      "path": "specs/003-add-cross-platform-support/evidence/macos-source-rebuild-ci-2026-10-28/summary.json",
+      "sha256": "f00cce4a84132e9bfe0aee170ae9a416680e2856c4038524e4a1c2b4187fbe7d"
+    },
+    "artifacts": [
+      {
+        "artifact_id": "macos-x86_64",
+        "executable_sha256": "d8ab197fbdfa9312050f4c4827f4bb612f7f4d1d021d4308a9850ee1a1104fff",
+        "candidate_archive_sha256": "5076ecbe0ffda13bbe4238ba38898057107f7fffa8c5fbb4dc16ee0ce0b9e216",
+        "sources_archive_sha256": "95d9fd34d0f36d241817a7eabface0bed0311ad6001191f23a2d2d0890f76a54",
+        "source_files": 127,
+        "file_hashes_verified": true,
+        "rebuild_verified": true,
+        "python_minors": [
+          "3.12",
+          "3.14"
+        ],
+        "apple_sdk_files_exported": 0
+      },
+      {
+        "artifact_id": "macos-arm64",
+        "executable_sha256": "774115a1a9e4b2385d33fa55fe02de0d8728cb0984967d445528c6fe04f97dac",
+        "candidate_archive_sha256": "f894e86e3d849b91e490893552efd546b213827276247066a731eb9626975f8b",
+        "sources_archive_sha256": "36928004e0f9c422cc68a62ab16bc214b248a1df6d275a5bc4e577c748846196",
+        "source_files": 127,
+        "file_hashes_verified": true,
+        "rebuild_verified": true,
+        "python_minors": [
+          "3.12",
+          "3.14"
+        ],
+        "apple_sdk_files_exported": 0
+      }
+    ],
+    "remaining": [
+      "Per-file license applicability",
+      "SDK/header/runtime contribution review",
+      "Complete corresponding-source delivery",
+      "Immutable distribution"
+    ]
   }
 }
