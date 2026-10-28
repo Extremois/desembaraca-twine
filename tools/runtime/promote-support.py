@@ -55,6 +55,8 @@ def validate_record(item,target,root):
         raise ValueError('Gate results must be explicit booleans')
     audit_only=item.get('evidence_scope')=='artifact-license-audit'
     abi_scope=target.get('qualification_scope')=='abi'
+    if abi_scope and not audit_only and item.get('environment_kind')!='github-actions':
+        raise ValueError('ABI execution evidence must come from GitHub Actions')
     if audit_only and (item.get('python_minor') is not None or item['checks']!={'licenses':True}):
         raise ValueError('Shared artifact audit may grant only the license gate')
     if (item.get('environment_kind') not in ('github-actions','native') or item.get('passed') is not True

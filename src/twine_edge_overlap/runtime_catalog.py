@@ -230,6 +230,9 @@ def support_status(target, evidence):
                 return 'em_qualificacao'
             for reference in (*target.get('evidence_ids', []), *slot.get('evidence_ids', [])):
                 item = evidence.get(reference)
+                if (target.get('qualification_scope')=='abi' and isinstance(item,dict)
+                        and item.get('python_minor') is not None and item.get('environment_kind')!='github-actions'):
+                    return 'em_qualificacao'
                 if (not isinstance(item, dict) or item.get('target_id') != target['id']
                         or item.get('application_revision') != revision or item.get('artifact_id') != artifact
                         or item.get('snapshot_id') != target.get('snapshot_id')

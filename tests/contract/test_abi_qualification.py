@@ -64,3 +64,5 @@ class ABIQualificationTests(unittest.TestCase):
             self.assertEqual(next(row for row in proposal['targets'] if row['id']==target['id'])['status'],'validada')
             bad=copy.deepcopy(records);bad[1]['abi']='musl'
             with self.assertRaises(ValueError):tool('promote-support').propose(registry,target['id'],bad,root)
+            bad=copy.deepcopy(records);bad[1]['environment_kind']='native'
+            with self.assertRaises(ValueError):tool('promote-support').propose(registry,target['id'],bad,root)

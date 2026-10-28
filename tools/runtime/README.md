@@ -540,10 +540,10 @@ revisão; a disponibilidade do COPYING upstream não encerra essa auditoria.
 Em ELF, inspeciona todos os objetos inventariados, arquitetura, NEEDED, RPATH e
 símbolos GLIBC. A lista de bibliotecas do sistema é explícita. Em Darwin, a receita
 base só admite um Mach-O thin da arquitetura esperada e bibliotecas de sistema
-aprovadas; objetos adicionais são recusados. Exige verificação codesign e evidência
-revisada `notarization_verified: true`. Assinatura/notarização, deployment target,
-CPU/kernel mínimos e proteções normais ainda precisam de evidências do pipeline
-macOS. O relatório de inspeção não aprova uma célula de suporte.
+aprovadas; objetos adicionais são recusados. Assinatura Developer ID e notarização
+são opcionais: não se exige `notarization_verified`, codesign ou credenciais Apple
+para o aceite. Deployment target e execução normal continuam verificados, sem
+alterar proteções do sistema. A inspeção isolada não aprova um alvo ABI.
 
 ## Corpus e relocação de desenvolvimento
 
@@ -561,7 +561,9 @@ kernel/CPU mínimos apenas desse resultado.
 O relatório não cobre instalação, cache normal, Twine, assinatura, auditoria nem
 aceitação completa. `environment_kind=wsl`, container ou emulação não vira prova
 nativa de outra célula. As qualificações Python 3.12/3.14 e os gates comuns ficam
-separados em `support-targets.json`; todos os 69 alvos continuam pendentes.
+separados em `abi-targets.json`: sete alvos e 14 slots obrigatórios no GitHub
+Actions. `support-targets.json` conserva 69 declarações de compatibilidade sem
+exigir ensaio individual por distribuição. Contêineres no Actions são permitidos.
 
 ## Aceitação de um pacote instalado
 
