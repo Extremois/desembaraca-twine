@@ -158,10 +158,10 @@ def prepare(build, evidence, source_archive, map_path, output):
     review = dict(kind='macos-draft-notice-review', approved=False, qualified=False,
         artifact_id=record['artifact_id'], executable_sha256=record['executable_sha256'],
         parent_provenance_sha256=builder.digest(build / 'provenance.json'), source_evidence_sha256=builder.digest(evidence),
-        notices=inventory, headers=headers, generated_inputs_verified=len(generated),
+        notices=inventory, headers=headers, generated_inputs_verified=len(generated),macos_signing_required=False,
         pending=['Per-file applicability and any additional required texts', 'Generated data provenance/notices',
                  'Unnamed linker-map slots and SDK contribution review', 'Complete corresponding-source offer',
-                 'Approved audit, signing/notarization and installed native acceptance'])
+                 'Approved audit and installed ABI acceptance in GitHub Actions'])
     (output / 'review.json').write_text(json.dumps(review, indent=2) + '\n', encoding='utf-8')
     record.update(output=str(output), qualification='draft macOS notices only; no approved audit or support',
         notice_preparation=dict(approved=False, review_sha256=builder.digest(output / 'review.json')))

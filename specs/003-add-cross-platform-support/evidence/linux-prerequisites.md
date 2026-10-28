@@ -1,3 +1,22 @@
+## Validação ABI no GitHub Actions — 2026-10-28
+
+T033 e T044 concluídas no escopo aprovado: glibc e musl, x64 e ARM64, com
+CPython 3.12/3.14, venv/pip e instalação wheel/sdist fora do checkout. Em glibc,
+`actions/setup-python` prepara os interpretadores privados no runner; em musl,
+imagens Python/Alpine fixadas por digest fornecem cada minor. O ensaio musl roda
+como UID 1001 e não substitui o Python do sistema. Git e Graphviz globais ficam
+fora do PATH da aplicação; instalação sem índice e três entrypoints verificados.
+Não há requisito de VM, runner próprio ou kernel específico.
+
+Recibos com hashes dos 53 arquivos instalados por formato:
+[glibc/macOS](abi-scope-ci/installed-posix/summary.json) e
+[musl](abi-scope-ci/musl/summary.json). Os quatro slots musl passaram oito
+instalações, 104 execuções do corpus, 48 referências zeradas, 32 cenários de
+reparo e 32 de recuperação de processo/concorrência. A aquisição do binário é
+controlada; o bloqueio offline mede chamadas Python, sem alegar rastreio de
+syscalls ou certificação individual de distribuição. Licenças, entrega pública
+e revisão Twine continuam separadas. As seções seguintes são histórico.
+
 # Pré-requisitos Python Linux: evidência parcial
 
 ## Debian 12/13 x64 nativos — 2026-10-27

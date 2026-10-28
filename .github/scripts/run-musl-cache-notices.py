@@ -49,9 +49,11 @@ def collect(artifact,work,arch,minor,image):
     run([python,'-m','pip','download','--only-binary=:all:','--no-deps','--dest',work/'wheels','setuptools','wheel','packaging'])
     for check,name in (('notices','cache-notices.json'),('runtime','installed-runtime.json')):
         report_path=work/name
-        run([python,ROOT/'tools/validation/check-built-packages.py','--dist-dir',work/'dist',
+        command=[python,ROOT/'tools/validation/check-built-packages.py','--dist-dir',work/'dist',
             '--wheelhouse',work/'wheels','--engine-artifact',artifact,'--engine-id','linux-musl-'+arch,
-            '--engine-check',check,'--report',report_path])
+            '--engine-check',check,'--report',report_path]
+        if check=='runtime':command.extend(['--review-directory',work/'runtime-review'])
+        run(command)
         report=json.loads(report_path.read_bytes())
         report['execution_environment']=dict(environment,environment_kind='github-actions',execution_kind='container',image=image,
             kernel=platform.release(),native_cpu=True,

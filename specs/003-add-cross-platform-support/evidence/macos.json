@@ -1,314 +1,65 @@
 {
-  "kind": "partial-installed-private-engine-platform-evidence",
+  "kind": "github-actions-macos-abi-execution-task-acceptance",
   "task": "T056",
-  "task_complete": false,
+  "task_complete": true,
   "qualified": false,
-  "application_revision": "d90b5671cba0477649e71a52b0d94704cce81c4e",
-  "target_ids": [
-    "macos-15-stable-x86_64-distribution-default",
-    "macos-15-stable-aarch64-distribution-default"
-  ],
-  "python_minors": [
-    "3.12",
-    "3.14"
-  ],
-  "evidence": {
-    "path": "specs/003-add-cross-platform-support/evidence/installed-private-engines-2026-10-20/runtime/summary.json",
-    "sha256": "9bed474295304dc6697f41b1c289f934fc9e5e6e7ab0a8bc3704caccd886d6c7"
-  },
-  "foundation": {
-    "path": "specs/003-add-cross-platform-support/evidence/installed-private-engines-2026-10-20/foundation.json",
-    "sha256": "429c3b2d00458d542e6a80aea6967b3a9b9a63990ef47166e8df6a9ae24640a5"
-  },
+  "application_revision": "13fc2a8d48f89a0fd85f4312a38f822b3796e314",
+  "run_url": "https://github.com/Extremois/desembaraca-twine/actions/runs/40686184930",
   "reports": [
     {
-      "runner": "macos-15",
-      "python": "3.12.10",
+      "actions_artifact_id": 12815546157,
+      "name": "installed-engine-macos-15-3.12-13fc2a8d48f89a0fd85f4312a38f822b3796e314",
+      "report": "12815546157.json.gz",
+      "raw_sha256": "5de9eb96421a09bf1b75fdd175c855abd1c9d39daaecc647b2c4d9aafcab0b52",
+      "archive_sha256": "2ac61dfd1b4aca9158c72ee47fa22e932f413c8445792beecfa5862826b7f205",
+      "system": "Darwin",
       "arch": "arm64",
-      "artifact_id": "macos-arm64",
-      "engine_sha256": "774115a1a9e4b2385d33fa55fe02de0d8728cb0984967d445528c6fe04f97dac",
-      "candidate_archive_sha256": "4acb09b433658a3b64e71b68d5b13a240bf8577436a602dd26896a9a8d180b83",
-      "provenance_sha256": "af21e0ea2fc69a00148c650eb952abeeb9141a241b687f05ab0f8ef3f0879bda",
-      "file": "macos-15-3.12.json",
-      "sha256": "d8e42739c3a0bf91d0b6a2c45684899ec36af21f32f29d06992f3d97d8b8188c",
-      "actions_artifact_id": 12305991880,
-      "actions_archive_sha256": "041aa17f5747fcdb9351b119c1123449e76e5706a48d95f0b2fe0af2fc42c3a5",
-      "modes": [
-        "wheel",
-        "sdist"
-      ],
-      "explicit_corpus_cases_per_format": 13,
-      "known_zero_references_per_format": 6,
-      "protections": [
-        {
-          "mode": "wheel",
-          "before": {
-            "gatekeeper": {
-              "returncode": 0,
-              "output": "assessments enabled"
-            },
-            "sip": {
-              "returncode": 0,
-              "output": "System Integrity Protection status: disabled."
-            }
-          },
-          "after": {
-            "gatekeeper": {
-              "returncode": 0,
-              "output": "assessments enabled"
-            },
-            "sip": {
-              "returncode": 0,
-              "output": "System Integrity Protection status: disabled."
-            }
-          }
-        },
-        {
-          "mode": "sdist",
-          "before": {
-            "gatekeeper": {
-              "returncode": 0,
-              "output": "assessments enabled"
-            },
-            "sip": {
-              "returncode": 0,
-              "output": "System Integrity Protection status: disabled."
-            }
-          },
-          "after": {
-            "gatekeeper": {
-              "returncode": 0,
-              "output": "assessments enabled"
-            },
-            "sip": {
-              "returncode": 0,
-              "output": "System Integrity Protection status: disabled."
-            }
-          }
-        }
-      ],
-      "passed": true
+      "python": "3.12.10"
     },
     {
-      "runner": "macos-15",
-      "python": "3.14.7",
+      "actions_artifact_id": 12814868370,
+      "name": "installed-engine-macos-15-intel-3.12-13fc2a8d48f89a0fd85f4312a38f822b3796e314",
+      "report": "12814868370.json.gz",
+      "raw_sha256": "f4148c4b2970031ecf6258ee027cbb607e52f4a39698281d48af9ac991fba63a",
+      "archive_sha256": "dfbb7f16337859ab4e052b3b469f1de23f6bfa7a14a832cdae78f4192e985cc2",
+      "system": "Darwin",
+      "arch": "x86_64",
+      "python": "3.12.10"
+    },
+    {
+      "actions_artifact_id": 12814837427,
+      "name": "installed-engine-macos-15-3.14-13fc2a8d48f89a0fd85f4312a38f822b3796e314",
+      "report": "12814837427.json.gz",
+      "raw_sha256": "f7a9773e4c2bac5db2d4b22edb0499a5c77059b1f80e9bedcf3f54614fa53ca0",
+      "archive_sha256": "fec4e2de6fd661a5eaca82784181269205f1c477c33f6f051407dfdcfd5a66e4",
+      "system": "Darwin",
       "arch": "arm64",
-      "artifact_id": "macos-arm64",
-      "engine_sha256": "774115a1a9e4b2385d33fa55fe02de0d8728cb0984967d445528c6fe04f97dac",
-      "candidate_archive_sha256": "4acb09b433658a3b64e71b68d5b13a240bf8577436a602dd26896a9a8d180b83",
-      "provenance_sha256": "af21e0ea2fc69a00148c650eb952abeeb9141a241b687f05ab0f8ef3f0879bda",
-      "file": "macos-15-3.14.json",
-      "sha256": "114938285fe23432c744df5a2e0b6aa3d70bef8258b6a01d2c0404d1f8e79f18",
-      "actions_artifact_id": 12305791729,
-      "actions_archive_sha256": "0e971d1c5294aa7b3ea0dce71d1d181496c8787f587e1e40bf4f4e95f9aaf335",
-      "modes": [
-        "wheel",
-        "sdist"
-      ],
-      "explicit_corpus_cases_per_format": 13,
-      "known_zero_references_per_format": 6,
-      "protections": [
-        {
-          "mode": "wheel",
-          "before": {
-            "gatekeeper": {
-              "returncode": 0,
-              "output": "assessments enabled"
-            },
-            "sip": {
-              "returncode": 0,
-              "output": "System Integrity Protection status: disabled."
-            }
-          },
-          "after": {
-            "gatekeeper": {
-              "returncode": 0,
-              "output": "assessments enabled"
-            },
-            "sip": {
-              "returncode": 0,
-              "output": "System Integrity Protection status: disabled."
-            }
-          }
-        },
-        {
-          "mode": "sdist",
-          "before": {
-            "gatekeeper": {
-              "returncode": 0,
-              "output": "assessments enabled"
-            },
-            "sip": {
-              "returncode": 0,
-              "output": "System Integrity Protection status: disabled."
-            }
-          },
-          "after": {
-            "gatekeeper": {
-              "returncode": 0,
-              "output": "assessments enabled"
-            },
-            "sip": {
-              "returncode": 0,
-              "output": "System Integrity Protection status: disabled."
-            }
-          }
-        }
-      ],
-      "passed": true
+      "python": "3.14.7"
     },
     {
-      "runner": "macos-15-intel",
-      "python": "3.12.10",
+      "actions_artifact_id": 12814569685,
+      "name": "installed-engine-macos-15-intel-3.14-13fc2a8d48f89a0fd85f4312a38f822b3796e314",
+      "report": "12814569685.json.gz",
+      "raw_sha256": "20b161027967416b8e0518ef34d04948859dfc9ecd8e76148f6a7e39bdf1c0b3",
+      "archive_sha256": "a3b08ac8624b72febc03a6995efad1a63b69831896ff78e6cf6df718f67a33a2",
+      "system": "Darwin",
       "arch": "x86_64",
-      "artifact_id": "macos-x86_64",
-      "engine_sha256": "d8ab197fbdfa9312050f4c4827f4bb612f7f4d1d021d4308a9850ee1a1104fff",
-      "candidate_archive_sha256": "ec0e27e30a2948ef79937cf720c6d31f4cb0e831d9c4fb799f84409fab114272",
-      "provenance_sha256": "0f3103a1dc15e334a5a6d73b2ac999e9bdeee513dac9c0f9eff14ddc86232a24",
-      "file": "macos-15-intel-3.12.json",
-      "sha256": "31e019a1bac685ccddba46897cb8b08a49cdb94ad8a1c264dd1dee3752a3c783",
-      "actions_artifact_id": 12305262299,
-      "actions_archive_sha256": "541dc2ae464825b2a3a53a9c749e65db6622d42d295b5d94cc437e00459a73aa",
-      "modes": [
-        "wheel",
-        "sdist"
-      ],
-      "explicit_corpus_cases_per_format": 13,
-      "known_zero_references_per_format": 6,
-      "protections": [
-        {
-          "mode": "wheel",
-          "before": {
-            "gatekeeper": {
-              "returncode": 0,
-              "output": "assessments enabled"
-            },
-            "sip": {
-              "returncode": 0,
-              "output": "System Integrity Protection status: disabled."
-            }
-          },
-          "after": {
-            "gatekeeper": {
-              "returncode": 0,
-              "output": "assessments enabled"
-            },
-            "sip": {
-              "returncode": 0,
-              "output": "System Integrity Protection status: disabled."
-            }
-          }
-        },
-        {
-          "mode": "sdist",
-          "before": {
-            "gatekeeper": {
-              "returncode": 0,
-              "output": "assessments enabled"
-            },
-            "sip": {
-              "returncode": 0,
-              "output": "System Integrity Protection status: disabled."
-            }
-          },
-          "after": {
-            "gatekeeper": {
-              "returncode": 0,
-              "output": "assessments enabled"
-            },
-            "sip": {
-              "returncode": 0,
-              "output": "System Integrity Protection status: disabled."
-            }
-          }
-        }
-      ],
-      "passed": true
-    },
-    {
-      "runner": "macos-15-intel",
-      "python": "3.14.7",
-      "arch": "x86_64",
-      "artifact_id": "macos-x86_64",
-      "engine_sha256": "d8ab197fbdfa9312050f4c4827f4bb612f7f4d1d021d4308a9850ee1a1104fff",
-      "candidate_archive_sha256": "ec0e27e30a2948ef79937cf720c6d31f4cb0e831d9c4fb799f84409fab114272",
-      "provenance_sha256": "0f3103a1dc15e334a5a6d73b2ac999e9bdeee513dac9c0f9eff14ddc86232a24",
-      "file": "macos-15-intel-3.14.json",
-      "sha256": "1ffbe74e00550145f4950a909660f9bd4341685a75b524a2658c777f0f56fc5e",
-      "actions_artifact_id": 12304939974,
-      "actions_archive_sha256": "6844839c5b90182121c03005fa14da20cb09d8978cadc478a96dfdf2092806d8",
-      "modes": [
-        "wheel",
-        "sdist"
-      ],
-      "explicit_corpus_cases_per_format": 13,
-      "known_zero_references_per_format": 6,
-      "protections": [
-        {
-          "mode": "wheel",
-          "before": {
-            "gatekeeper": {
-              "returncode": 0,
-              "output": "assessments enabled"
-            },
-            "sip": {
-              "returncode": 0,
-              "output": "System Integrity Protection status: disabled."
-            }
-          },
-          "after": {
-            "gatekeeper": {
-              "returncode": 0,
-              "output": "assessments enabled"
-            },
-            "sip": {
-              "returncode": 0,
-              "output": "System Integrity Protection status: disabled."
-            }
-          }
-        },
-        {
-          "mode": "sdist",
-          "before": {
-            "gatekeeper": {
-              "returncode": 0,
-              "output": "assessments enabled"
-            },
-            "sip": {
-              "returncode": 0,
-              "output": "System Integrity Protection status: disabled."
-            }
-          },
-          "after": {
-            "gatekeeper": {
-              "returncode": 0,
-              "output": "assessments enabled"
-            },
-            "sip": {
-              "returncode": 0,
-              "output": "System Integrity Protection status: disabled."
-            }
-          }
-        }
-      ],
-      "passed": true
+      "python": "3.14.7"
     }
   ],
-  "installed_formats": [
+  "installation_modes": [
     "wheel",
     "sdist"
   ],
   "installations": 8,
-  "explicit_corpus_executions": 104,
-  "known_zero_references": 48,
-  "acquisition": "Controlled private bundle transfer; production RuntimeManager and real engine execution",
-  "application_import": "Installed distributions in external isolated venvs; staged test driver has no src tree",
-  "network": "Python-only guard; not native syscall proof for these installed slots",
-  "limitations": [
-    "Private fixtures are not final remotely distributed candidates or active POSIX catalog entries",
-    "Hosted runner metadata is not complete immutable qualifying image/eligibility evidence",
-    "Source/license review, native network proof, Twine and remaining common/platform gates stay pending",
-    "Developer ID/notarization and quarantined distribution acceptance remain pending",
-    "Gatekeeper enabled; hosted-runner SIP was already disabled before tests and remained unchanged"
-  ]
+  "corpus_executions": 104,
+  "known_zero_reference_executions": 48,
+  "macos_signing_required": false,
+  "evidence_path": "specs/003-add-cross-platform-support/evidence/abi-scope-ci/installed-posix/summary.json",
+  "remaining_delivery": [
+    "License/source audit",
+    "Immutable binary/source delivery",
+    "Twine output review"
+  ],
+  "network_scope": "Acquisition counters and Python network guards; no syscall trace claimed"
 }

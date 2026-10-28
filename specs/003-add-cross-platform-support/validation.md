@@ -1,3 +1,17 @@
+## Progresso ABI no Actions — 2026-10-28
+
+T033, T044 e T056 concluídas com recibos reais. macOS Intel/ARM64 e musl
+x64/ARM64 passaram ambos os Pythons e oito instalações wheel/sdist por família,
+104 execuções do corpus e 48 referências zeradas por família. Musl também
+passou 32 cenários de reparo e 32 cenários de crash/concorrência. Os 53 arquivos
+instalados por formato foram conferidos contra a revisão de origem.
+
+São 64 tarefas executadas, nove retiradas do escopo pelo usuário e 11 pendentes.
+Os recibos ficam em [abi-scope-ci](evidence/abi-scope-ci/). Os resultados não
+promovem suporte nem aprovam licença, publicação ou revisão visual no Twine.
+Assinatura e notarização Apple permanecem opcionais. As seções seguintes
+preservam o histórico das decisões anteriores.
+
 # Evidência de implementação — feature 003
 
 **Checkpoint de encerramento via Actions:** receitas ARM64 T025/T027 reconciliadas com builds aprovados; 60/84 tarefas concluídas, 24 pendentes. Corrigida perda de contexto Actions em contêineres e incluída integração macOS na regressão. Preflight do repositório sem segredos Apple e sem releases; nenhuma assinatura, publicação ou conclusão integral presumida. [Estado revisável](evidence/actions-closeout.json).

@@ -30,6 +30,7 @@ class LinuxCandidateAcceptanceTests(InstalledCandidateAcceptance,unittest.TestCa
 class LinuxPrivateBundleIntegrationTests(unittest.TestCase):
     """Real native bytes; controlled transfer is never distribution qualification."""
     configuration=None
+    review_directory=None
     observations={}
     platform_name='linux'
 
@@ -194,6 +195,9 @@ class LinuxPrivateBundleIntegrationTests(unittest.TestCase):
                         self.assertEqual(story.read_bytes(),original)
                         self.assertTrue(all(a<=b for a,b in zip(result.after.values,result.before.values)))
                         if case['known_resolvable']:self.assertEqual(result.after.values,(0,0,0))
+                        if not automatic and case['known_resolvable'] and self.review_directory is not None:
+                            with (self.review_directory/case['file']).open('xb') as exported:
+                                exported.write(output)
                         cases.append(dict(case=case['case'],input_sha256=hashlib.sha256(original).hexdigest(),
                             output_sha256=hashlib.sha256(output).hexdigest(),before=result.before.values,after=result.after.values))
                 finally:os.chdir(previous)
@@ -217,10 +221,12 @@ if __name__=='__main__':
     import argparse
     parser=argparse.ArgumentParser()
     for name in ('package','provenance','report'):parser.add_argument('--'+name,type=Path,required=True)
+    parser.add_argument('--review-directory',type=Path)
     parser.add_argument('--environment-kind',choices=('native','container','wsl'),required=True)
     args=parser.parse_args()
     if args.report.exists():parser.error('Report must be new')
     LinuxPrivateBundleIntegrationTests.configuration=(args.package.resolve(),args.provenance.resolve())
+    LinuxPrivateBundleIntegrationTests.review_directory=args.review_directory
     suite=unittest.defaultTestLoader.loadTestsFromTestCase(LinuxPrivateBundleIntegrationTests)
     result=unittest.TextTestRunner(stream=sys.stdout,verbosity=1).run(suite)
     observations=LinuxPrivateBundleIntegrationTests.observations

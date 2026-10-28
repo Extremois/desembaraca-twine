@@ -77,8 +77,9 @@ def pack(root, inventory, provenance, output):
                                            if item['path']==data['executable_relative_path']),
                     provenance_sha256=data['provenance_sha256'],file_count=len(data['files']),
                     source_modes_checked=os.name!='nt',zip_modes='from-validated-inventory',compression='stored',
-                    pending=['dependency/license audit','native inspection/ABI','signing/notarization if applicable',
-                             'real immutable distribution URL and runtime manifest','native cell acceptance'])
+                    macos_signing_required=False,
+                    pending=['dependency/license audit','binary inspection/ABI',
+                             'real immutable distribution URL and runtime manifest','GitHub Actions ABI acceptance'])
         # No replace/copy fallback: an existing destination must remain untouched.
         os.link(temporary,output/'candidate.zip')
         with (output/'inventory.json').open('xb') as stream:stream.write(inventory_bytes)

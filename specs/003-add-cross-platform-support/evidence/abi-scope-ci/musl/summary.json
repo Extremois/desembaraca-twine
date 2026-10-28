@@ -1,0 +1,108 @@
+{
+  "application_revision": "911e7fe26929a958807eb55e3f406ef4114f68ca",
+  "run_url": "https://github.com/Extremois/desembaraca-twine/actions/runs/40686983027",
+  "qualification_scope": "abi",
+  "qualified": false,
+  "completed_tasks": [
+    "T033",
+    "T044"
+  ],
+  "reports": [
+    {
+      "actions_artifact_id": 12815935839,
+      "report": "12815935839.json.gz",
+      "raw_sha256": "79e1622e7dcac2b5db1c99e3a6a7c851b4c19bebe2e87d42f2caed2dba974c68",
+      "archive_sha256": "4da44e34506e979e8d4f1c86623405b6d815c78656addc4aac4d34e835992d05",
+      "image_sha256": "34b30c7379b47adc29578f392b78932968849632035f294eddfb1ecc9ad604e9",
+      "environment": {
+        "arch": "aarch64",
+        "python_minor": "3.12",
+        "distribution": "alpine",
+        "version": "3.22.4",
+        "uid": 1001,
+        "environment_kind": "github-actions",
+        "execution_kind": "container",
+        "image": "python@sha256:07b3a3b85d5b208f164a3276d5eb9c51e0ce61bbe4cb7ab4df0da50d5a78dc11",
+        "kernel": "7.0.0-1017-azure",
+        "native_cpu": true,
+        "limitation": "Musl ABI execution on a hosted kernel; not individual Alpine release certification"
+      },
+      "python": "3.12.13"
+    },
+    {
+      "actions_artifact_id": 12815172588,
+      "report": "12815172588.json.gz",
+      "raw_sha256": "4e1f92be5c2e16258f5726e72b8ad801598ea94965b9c862c225cdfe3552747d",
+      "archive_sha256": "38b8f02fd9f56f10b1a5f60f6dda03eab9e3e7087e60e6493abc8a41afde0bea",
+      "image_sha256": "4972fc661de50763455108d0b6dfec83214b1fbe51dd0f4ea7b1de3d0b451248",
+      "environment": {
+        "arch": "x86_64",
+        "python_minor": "3.12",
+        "distribution": "alpine",
+        "version": "3.22.4",
+        "uid": 1001,
+        "environment_kind": "github-actions",
+        "execution_kind": "container",
+        "image": "python@sha256:9381e50cc82f4279b949fcd2d2f5e57cf97b1da2399eb956502364ceea2f4e83",
+        "kernel": "6.17.0-1022-azure",
+        "native_cpu": true,
+        "limitation": "Musl ABI execution on a hosted kernel; not individual Alpine release certification"
+      },
+      "python": "3.12.13"
+    },
+    {
+      "actions_artifact_id": 12814574683,
+      "report": "12814574683.json.gz",
+      "raw_sha256": "5742f7f2a7708e052930b83578bcdec6cc113202a94a37654285975648e50bb1",
+      "archive_sha256": "f4854b5ac8fd38b43d7ad15584d8ea388c0a36f483554e072f0f5aba6fa931f6",
+      "image_sha256": "65a746d16ff745917596966d3836604d1db9f08b3c7b55a4ae80c5aada613910",
+      "environment": {
+        "arch": "x86_64",
+        "python_minor": "3.14",
+        "distribution": "alpine",
+        "version": "3.22.4",
+        "uid": 1001,
+        "environment_kind": "github-actions",
+        "execution_kind": "container",
+        "image": "python@sha256:1a5f0303fd8941565b5bbda3fac2345148a9fd8245d575c2971ccefcd77c78f6",
+        "kernel": "6.17.0-1022-azure",
+        "native_cpu": true,
+        "limitation": "Musl ABI execution on a hosted kernel; not individual Alpine release certification"
+      },
+      "python": "3.14.5"
+    },
+    {
+      "actions_artifact_id": 12814424929,
+      "report": "12814424929.json.gz",
+      "raw_sha256": "61718c996f2e8375f5fb4465457ce35d2df85113cae4ecc9d62801c8c0f1c581",
+      "archive_sha256": "c68237c7d641611a93414a189de8d57ea7d150eece8304bbb1c40c9ae03dd957",
+      "image_sha256": "8c3f1929f05097990338a8abed8eb5ea56d120370a89fc04716f55d2d003c4d0",
+      "environment": {
+        "arch": "aarch64",
+        "python_minor": "3.14",
+        "distribution": "alpine",
+        "version": "3.22.4",
+        "uid": 1001,
+        "environment_kind": "github-actions",
+        "execution_kind": "container",
+        "image": "python@sha256:27b691f87878a079100a3d8fafcd66b3c54d931598f307bcb54617c395f5b43c",
+        "kernel": "7.0.0-1017-azure",
+        "native_cpu": true,
+        "limitation": "Musl ABI execution on a hosted kernel; not individual Alpine release certification"
+      },
+      "python": "3.14.5"
+    }
+  ],
+  "installations": 8,
+  "corpus_executions": 104,
+  "known_zero_reference_executions": 48,
+  "installed_files_verified_per_mode": 53,
+  "repair_scenarios_per_installation": 4,
+  "process_recovery_scenarios_per_installation": 4,
+  "limitations": [
+    "Controlled acquisition transport",
+    "Python-only offline network guards",
+    "No per-distribution certification",
+    "No support promotion"
+  ]
+}

@@ -76,6 +76,7 @@ jobs:
           --wheelhouse "${{ runner.temp }}/package-wheelhouse"
           --engine-artifact "${{ runner.temp }}/private-engine-artifact"
           --engine-id "${{ matrix.artifact_id }}"
+          --review-directory "${{ runner.temp }}/installed-engine-review"
           --report "${{ runner.temp }}/installed-engine.json"
       - name: Preserve unqualified installed-engine evidence
         if: always()
@@ -83,4 +84,6 @@ jobs:
         with:
           name: installed-engine-${{ matrix.runner }}-${{ matrix.python }}-${{ github.sha }}
           retention-days: 7
-          path: ${{ runner.temp }}/installed-engine.json
+          path: |
+            ${{ runner.temp }}/installed-engine.json
+            ${{ runner.temp }}/installed-engine-review/

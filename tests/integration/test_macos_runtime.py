@@ -305,11 +305,13 @@ class MacOSSimulatedRuntimeIntegrationTests(unittest.TestCase):
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
     for name in ('package','provenance','report'):parser.add_argument('--'+name,type=Path,required=True)
+    parser.add_argument('--review-directory',type=Path)
     args=parser.parse_args()
     if sys.platform!='darwin':parser.error('Requires native macOS; another host cannot produce a passed receipt')
     if args.report.exists() or args.report.is_symlink():parser.error('Report must be new')
     driver=MacOSPrivateBundleIntegrationTests
     driver.configuration=(args.package.resolve(),args.provenance.resolve())
+    driver.review_directory=args.review_directory
     result=unittest.TextTestRunner(stream=sys.stdout,verbosity=1).run(unittest.defaultTestLoader.loadTestsFromTestCase(driver))
     observations=driver.observations
     passed=result.wasSuccessful() and result.testsRun==2 and not result.skipped and len(observations)==2

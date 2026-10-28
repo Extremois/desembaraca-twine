@@ -255,7 +255,7 @@ def stage_engine_driver(work):
     return driver
 
 
-def collect(wheel, sdist, wheelhouse, *, engine_artifact=None, engine_id=None, engine_check='runtime'):
+def collect(wheel, sdist, wheelhouse, *, engine_artifact=None, engine_id=None, engine_check='runtime',review_directory=None):
     import venv
     if engine_check=='windows-notices' and (sys.platform!='win32' or engine_artifact is not None):
         raise ValueError('Windows notice checks require Windows and the packaged official manifest')
@@ -326,6 +326,7 @@ def collect(wheel, sdist, wheelhouse, *, engine_artifact=None, engine_id=None, e
                 raise ValueError('Help unexpectedly prepared an engine')
             runtime_report = None
             notice_report = None
+            review_files={}
             if engine_check=='windows-notices':
                 report_path=work/('windows-cache-notices-'+mode+'.json')
                 run([python,'-I',driver/'.github/scripts/probe-windows-cache-notices.py',
@@ -352,6 +353,10 @@ def collect(wheel, sdist, wheelhouse, *, engine_artifact=None, engine_id=None, e
                     command = [python, '-I', driver / 'tests/integration' / module,
                         '--package', engine_package, '--provenance', engine_package / 'provenance.json',
                         '--report', report_path]
+                    if review_directory is not None:
+                        review=review_directory/mode
+                        review.mkdir(parents=True,exist_ok=False)
+                        command.extend(['--review-directory',review])
                     if sys.platform == 'linux':
                         execution_kind=('container' if Path('/.dockerenv').is_file() else
                                         'wsl' if 'microsoft' in platform.release().lower() else 'native')
@@ -364,12 +369,21 @@ def collect(wheel, sdist, wheelhouse, *, engine_artifact=None, engine_id=None, e
                     validate_engine_result(runtime_report, fixture, cases, sys.platform)
                     validate_recovery_result(runtime_report['observations']['explicit'].get('recovery'), cases)
                     validate_process_recovery(runtime_report['observations']['explicit'].get('process_recovery'), cases)
+                    if review_directory is not None:
+                        expected={case['file']:case['case'] for case in cases if case['known_resolvable']}
+                        hashes={row['case']:row['output_sha256'] for row in runtime_report['cases']}
+                        if {p.name for p in review.iterdir()}!=set(expected):
+                            raise ValueError('Twine review export is incomplete or contains unexpected files')
+                        for filename,case in expected.items():
+                            if (review/filename).is_symlink() or digest((review/filename).read_bytes())!=hashes[case]:
+                                raise ValueError('Twine review export differs from verified corpus output')
+                            review_files[filename]=hashes[case]
             records.append(dict(mode=mode, archive_sha256=digest(package.read_bytes()),
                 package_files_verified=len(inventory['files']), licenses_verified=inventory['licenses'],
                 installed_file_hashes=facts['files'], entrypoints_verified=3,
                 import_from_venv=True, git_and_global_graphviz_absent=True,
                 outside_checkout=True, engine_prepared=fixture is not None or engine_check=='windows-notices',
-                private_engine=runtime_report, cache_notices=notice_report, commands=commands))
+                private_engine=runtime_report, cache_notices=notice_report, review_outputs=review_files,commands=commands))
     return dict(kind='current-wheel-sdist-offline-installation-not-support-qualification',
         passed=True, qualified=False, captured_at=datetime.now(timezone.utc).isoformat(),
         application_revision=os.environ.get('GITHUB_SHA'), source_state='current-source-content-addressed',
@@ -391,6 +405,7 @@ if __name__ == '__main__':
         parser.add_argument('--' + name, type=Path, required=True)
     parser.add_argument('--engine-artifact', type=Path)
     parser.add_argument('--engine-id')
+    parser.add_argument('--review-directory',type=Path)
     parser.add_argument('--engine-check',choices=('runtime','notices','windows-notices'),default='runtime')
     args = parser.parse_args()
     if args.dist_dir:
@@ -409,9 +424,15 @@ if __name__ == '__main__':
         parser.error('Notice cache check requires a private engine artifact')
     if args.report.exists():
         parser.error('Preserve existing reports; choose a new file')
+    if args.review_directory is not None:
+        if args.engine_artifact is None or args.engine_check!='runtime':
+            parser.error('Review exports require real private-engine runtime checks')
+        if args.review_directory.exists() or args.review_directory.is_symlink():
+            parser.error('Preserve existing review outputs; choose a new directory')
     result = collect(args.wheel.resolve(), args.sdist.resolve(), args.wheelhouse.resolve(),
         engine_artifact=args.engine_artifact.resolve() if args.engine_artifact else None,
-        engine_id=args.engine_id,engine_check=args.engine_check)
+        engine_id=args.engine_id,engine_check=args.engine_check,
+        review_directory=args.review_directory.resolve() if args.review_directory is not None else None)
     with args.report.open('x', encoding='utf-8') as stream:
         json.dump(result, stream, indent=2)
         stream.write('\n')

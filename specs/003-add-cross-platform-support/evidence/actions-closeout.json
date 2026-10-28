@@ -1,8 +1,8 @@
 {
   "kind": "implementation-closeout-checkpoint",
   "validation_policy": "github-actions-only-no-vm",
-  "tasks_complete": 70,
-  "tasks_pending": 14,
+  "tasks_complete": 73,
+  "tasks_pending": 11,
   "task_count": 84,
   "completed_recipe_tasks": [
     "T025",
@@ -28,7 +28,10 @@
   ],
   "feature_complete": false,
   "post_validation_local_reconciliation": [
-    "T036"
+    "T036",
+    "T056",
+    "T033",
+    "T044"
   ],
   "qualification_scope": "abi",
   "required_abi_targets": 7,
@@ -44,5 +47,17 @@
     "T043",
     "T045",
     "T051"
-  ]
+  ],
+  "tasks_executed": 64,
+  "tasks_retired_by_scope": 9,
+  "abi_execution_evidence": {
+    "posix": {
+      "path": "specs/003-add-cross-platform-support/evidence/abi-scope-ci/installed-posix/summary.json",
+      "sha256": "60c7b4c8b9978c8bcd291d816cc59dac727da2871a717c771f3939e52d3ec851"
+    },
+    "musl": {
+      "path": "specs/003-add-cross-platform-support/evidence/abi-scope-ci/musl/summary.json",
+      "sha256": "94e502d737d480ca0217e7a2842022dcbf6ec07f4dba4ed4c50fd79ac253d46e"
+    }
+  }
 }

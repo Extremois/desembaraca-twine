@@ -25,6 +25,9 @@ class ABIQualificationTests(unittest.TestCase):
         self.assertEqual(sum(len(row['python_qualifications']) for row in data['targets']),14)
         self.assertTrue(all(row['qualification_scope']=='abi' for row in data['targets']))
         self.assertFalse(data['macos_signing_required'])
+        audit=json.loads((ROOT/'tools/runtime/licenses/macos.json').read_bytes())
+        self.assertFalse(audit['signing_and_notarization_requirements']['required'])
+        self.assertFalse(audit['approved'])
         self.assertEqual(len(json.loads((ROOT/'tools/runtime/support-targets.json').read_bytes())['targets']),69)
 
     def test_matching_uses_abi_and_baseline_without_requiring_distro_or_kernel(self):

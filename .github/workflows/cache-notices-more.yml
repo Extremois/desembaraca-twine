@@ -81,6 +81,7 @@ jobs:
           path: |
             ${{ runner.temp }}/musl-notices/slot/cache-notices.json
             ${{ runner.temp }}/musl-notices/slot/installed-runtime.json
+            ${{ runner.temp }}/musl-notices/slot/runtime-review/
             ${{ runner.temp }}/musl-notices/image.json
   windows:
     name: Windows cache (Python ${{ matrix.python }})
