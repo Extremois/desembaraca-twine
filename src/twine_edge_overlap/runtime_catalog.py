@@ -64,6 +64,19 @@ def _at_least(actual, minimum):
         return False
 
 
+def abi_target_matches(target,host):
+    """Match an ABI baseline; never infer a tested distribution or kernel."""
+    if (target.get('qualification_scope')!='abi' or host.bits!=64 or host.translated
+            or target.get('os')!=host.os or target.get('arch')!=host.arch):
+        return False
+    if host.os=='linux':
+        return (target.get('abi') in ('glibc','musl') and target['abi']==host.libc_family
+                and _at_least(host.libc_version,target['minimum_libc']))
+    if host.os=='darwin':
+        return target.get('abi')=='darwin' and _at_least(host.os_version,target['minimum_os'])
+    return host.os=='windows' and target.get('abi')=='win32'
+
+
 def validate_descriptor(item):
     try:
         if (not isinstance(item['id'], str) or not item['id'] or item['os'] not in ('windows', 'linux', 'darwin')
@@ -243,6 +256,12 @@ def load_support_matrix(path=None):
         identities = [target['id'] for target in data['targets']]
         if len(set(identities)) != len(identities) or not isinstance(data.get('evidence', {}), dict):
             raise CatalogError('identidade/evidÃªncia duplicada ou invÃ¡lida')
+        if 'abi_targets' in data:
+            targets=data['abi_targets']
+            if (not isinstance(targets,list) or any(not isinstance(row,dict) or row.get('qualification_scope')!='abi' for row in targets)
+                    or len({row.get('id') for row in targets})!=len(targets)):
+                raise CatalogError('alvos ABI inválidos ou duplicados')
+            for target in targets:support_status(target,data.get('evidence',{}))
         return data
     except (OSError, KeyError, TypeError) as exc:
         raise CatalogError('matriz de suporte ausente ou invÃ¡lida') from exc
@@ -261,6 +280,14 @@ def classify_support(host, descriptor, matrix, *, snapshot=None, application_rev
         return SupportDecision('best_effort', reason='Esta revisÃ£o ainda nÃ£o tem qualificaÃ§Ã£o oficial publicada para o ambiente.')
     if host.translated or host.bits!=64 or host.python_implementation!='CPython' or tuple(host.python_version) not in ((3,12),(3,14)):
         return SupportDecision('best_effort',reason='Interpretador sem slot nativo oficialmente qualificado.')
+    if 'abi_targets' in matrix:
+        matches=[target for target in matrix['abi_targets'] if abi_target_matches(target,host)
+                 and target.get('application_revision')==application_revision and target.get('artifact_id')==descriptor['id']
+                 and (host.os!='linux' or target['abi']==descriptor.get('abi'))
+                 and support_status(target,matrix.get('evidence',{}))=='validada']
+        if len(matches)==1:
+            return SupportDecision('official',matches[0]['id'],'ABI validada no GitHub Actions; sem certificação individual de distribuição.')
+        return SupportDecision('best_effort',reason='ABI ainda sem qualificação completa nos dois Pythons.')
     distro = host.distribution_id if host.os == 'linux' else ('macos' if host.os == 'darwin' else 'windows')
     actual_version = host.distribution_version if host.os == 'linux' else host.os_version
     family=[target for target in matrix['targets'] if target['os']==host.os and target['arch']==host.arch

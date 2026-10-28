@@ -12,7 +12,7 @@ import tempfile
 
 ROOT=Path(__file__).resolve().parents[2]
 sys.path.insert(0,str(ROOT/'src'))
-from twine_edge_overlap.runtime_catalog import read_json
+from twine_edge_overlap.runtime_catalog import read_json,abi_target_matches
 from twine_edge_overlap.runtime_platform import detect_host
 
 
@@ -61,6 +61,7 @@ def export_review(work, record, destination):
 
 
 def host_matches(target,host):
+    if target.get('qualification_scope')=='abi':return abi_target_matches(target,host)
     distro=host.distribution_id if host.os=='linux' else ('macos' if host.os=='darwin' else 'windows')
     version=host.distribution_version if host.os=='linux' else host.os_version
     return (not host.translated and host.bits==64 and host.os==target['os'] and host.arch==target['arch']
@@ -157,7 +158,7 @@ def collect(args):
 
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--registry',type=Path,default=ROOT/'tools/runtime/support-targets.json')
+    parser.add_argument('--registry',type=Path,default=ROOT/'tools/runtime/abi-targets.json')
     for name in ('target','artifact-id','application-revision','package-sha256','python-origin','image-id','image-digest'):
         parser.add_argument('--'+name,required=True)
     for name in ('package','python-312','python-314'):

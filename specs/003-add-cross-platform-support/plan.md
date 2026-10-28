@@ -1,5 +1,7 @@
 ﻿# Implementation Plan: Uso em Linux e macOS
 
+**Escopo aprovado pelo usuário em 2026-10-28:** validação obrigatória por ABI, arquitetura e Python no GitHub Actions: 7 alvos/14 slots. Linux: glibc/musl × x64/ARM64 × Python 3.12/3.14; macOS: Intel/ARM64 × os dois Pythons; Windows x64 × os dois Pythons. As 69 células anteriores são declarações de compatibilidade, sem obrigação de ensaio individual e sem afirmação de validação por distribuição. Assinatura Developer ID e notarização macOS são opcionais e não bloqueiam aceite ou encerramento; não exigem credenciais Apple. Continuam obrigatórios integridade, licenças/fontes, funcionamento, instalação, corpus, offline e recuperação. Nenhuma proteção do sistema é desativada. Sem VMs e sem testes nativos adicionais. A política substitui os critérios anteriores conflitantes.
+
 **Política de validação atualizada por instrução do usuário (2026-10-27):** validar exclusivamente pelo GitHub Actions, diretamente nos runners hospedados e em contêineres quando necessários. Não exigir teste nativo, hardware dedicado, runner próprio, kernel específico ou VM; não criar nem iniciar VMs, inclusive dentro do CI. Esta decisão substitui exigências anteriores desses ambientes e suas pendências históricas. Conservar hashes, integridade, instalação, corpus, recuperação e o ambiente efetivamente exercitado nos logs; não inventar cobertura. Resultados de VMs anteriores são somente histórico e não são gates de aceite.
 
 
@@ -11,7 +13,7 @@
 
 Estender `desembaraca-twine` a Linux x64/ARM64 e macOS 15 Intel/Apple Silicon, mantendo preparação automática, processamento local/offline, integridade e regressão Windows. Separar compatibilidade do componente nativo de qualificação de cada distribuição/versão/arquitetura. A [matriz](support-matrix.md) fixa o recorte em 2026-10-17 e permite entrega incremental sem eliminar alvos restantes.
 
-Manter Graphviz 16.1.0 e o ZIP original Windows. Construir seis variantes POSIX: Linux glibc e musl, cada uma em x86_64/aarch64, e Darwin x86_64/arm64. Adaptar cache, locks, permissões e seleção de componentes; conservar algoritmo e contratos de I/O. Esses bundles POSIX ainda não são entregáveis qualificados do projeto: build, licenças, assinatura/notarização macOS e evidência do GitHub Actions são trabalho obrigatório futuro.
+Manter Graphviz 16.1.0 e o ZIP original Windows. Construir seis variantes POSIX: Linux glibc e musl, cada uma em x86_64/aarch64, e Darwin x86_64/arm64. Adaptar cache, locks, permissões e seleção de componentes; conservar algoritmo e contratos de I/O. Esses bundles POSIX ainda não são entregáveis qualificados do projeto: build, licenças e evidência do GitHub Actions são trabalho obrigatório futuro; assinatura/notarização macOS são opcionais.
 
 ## Technical Context
 
@@ -21,7 +23,7 @@ Manter Graphviz 16.1.0 e o ZIP original Windows. Construir seis variantes POSIX:
 
 **Storage**: arquivos locais, catálogo/inventários JSON empacotados, cache por usuário, gerações imutáveis e seletor atômico. Sem banco ou serviço remoto.
 
-**Modelo de suporte (A1)**: SupportTarget identifica ambiente/arquitetura/variante e snapshot rolling, sem Python na chave. Contém exatamente dois PythonQualification (3.12/3.14); estado oficial agregado depende dos dois e de gates comuns na mesma revisão/artefato. [Modelo normativo](data-model.md#supporttarget-pythonqualification-e-qualificationevidence).
+**Modelo histórico por distribuição (substituído pelo registro ABI em 2026-10-28)**: SupportTarget identifica ambiente/arquitetura/variante e snapshot rolling, sem Python na chave. Contém exatamente dois PythonQualification (3.12/3.14); estado oficial agregado depende dos dois e de gates comuns na mesma revisão/artefato. [Modelo normativo](data-model.md#supporttarget-pythonqualification-e-qualificationevidence).
 
 **Identidade rolling (U1)**: hash canônico local de distribuição/canal/arquitetura/kernel e inventário instalado, coletado via consultas somente de leitura pacman/rpm em dois resultados iguais. Prazo agregado 5 s/8 MiB/100.000 registros por leitura, dentro dos orçamentos existentes. Falha ou diferença retira reconhecimento oficial, permitindo melhor esforço se ABI compatível; nenhuma rede. [Contrato](contracts/support-policy.md#reconhecimento-de-rolling).
 
@@ -108,7 +110,7 @@ pyproject.toml
 
 ## Phase 0 — Pesquisa concluída
 
-[research.md](research.md) registra decisões, alternativas e fontes. [support-matrix.md](support-matrix.md) explicita séries elegíveis e condições gratuitas. Não há decisão de produto aguardando esclarecimento. Resultados ABI, disponibilidade de imagens ARM de certos derivados, obtenção dos interpretadores em sistemas antigos e credenciais macOS são gates de qualificação, não suporte presumido.
+[research.md](research.md) registra decisões, alternativas e fontes. [support-matrix.md](support-matrix.md) explicita séries elegíveis e condições gratuitas. Não há decisão de produto aguardando esclarecimento. Resultados ABI são gates de qualificação; imagens individuais de distribuições e credenciais Apple não são requisitos de aceite.
 
 A revisão resolve A1 por agregação de dois ensaios Python por alvo e U1 por reconhecimento exato `rolling-host-v1`, com algoritmo, fontes locais, limites, falhas e cenários negativos definidos. Essas são decisões técnicas do projeto; os manuais primários justificam somente os dados disponíveis nas consultas. Não se inventa referência de snapshot nem validação Linux/macOS nesta etapa.
 
@@ -117,7 +119,7 @@ A revisão resolve A1 por agregação de dois ensaios Python por alvo e U1 por r
 1. Registrar baseline Windows e preservar alterações anteriores de comando/README. Adaptar testes presos a msvcrt/caminhos Windows e adicionar contratos de host, catálogo, permissões POSIX, locks e publicação.
 2. Criar receitas Graphviz mínimas com dot, layout e json0; construir as seis variantes por pipelines independentes de artefato, cada um com fechamento de dependências, relocação e auditoria de licenças próprios. Uma variante pronta pode seguir para assinatura quando aplicável e inclusão no catálogo sem esperar builds de outras arquiteturas ou ABIs. A menor baseline glibc deve atender Ubuntu 18.04: medir símbolos/loader/CPU/kernel antes de fixá-los no catálogo. Se necessário, adicionar variante justificada sem retirar células.
 3. Generalizar o provedor conforme [managed-runtime.md](contracts/managed-runtime.md), preservando cache Windows. Implementar classificação oficial/pendente/melhor esforço separada da ABI, agregação SupportTarget/PythonQualification e coleta rolling em runtime_snapshot.py. Consultar inventário sem rede nem mudança global, com os limites definidos; identidade desconhecida não é incompatibilidade ABI. Não ativar URL/hash/fingerprint fictícios.
-4. Qualificar primeiro Ubuntu 24.04 nas duas arquiteturas, manter Windows, qualificar macOS e Alpine/musl, expandir às demais células. Cada célula pode avançar assim que seu próprio artefato estiver pronto; não há gate conjunto glibc/musl ou Intel/Apple Silicon. Ordem não elimina alvos difíceis nem altera as prioridades P1. Assinatura/notarização do artefato selecionado é dependência da respectiva liberação macOS.
+4. Qualificar os sete alvos ABI nos dois Pythons pelo GitHub Actions; não exigir execução individual das 69 declarações. Cada célula pode avançar assim que seu próprio artefato estiver pronto; não há gate conjunto glibc/musl ou Intel/Apple Silicon. Ordem não elimina alvos difíceis nem altera as prioridades P1. Assinatura/notarização é opcional e não bloqueia a liberação macOS.
 5. Executar [quickstart.md](quickstart.md), corpus, falhas, concorrência e reabertura Twine; atualizar README PT/EN e matriz com evidências. Liberar apenas células completas; feature permanece pendente até cobertura total.
 
 ### Ambientes
@@ -126,11 +128,11 @@ Usar runners hospedados x64/ARM64, máquinas existentes e CI. Não criar VM no s
 
 ### Gates de entrega
 
-- Artefato: build rastreável, licenças/fontes/notices, hashes/tamanhos/modos, dependências fechadas, relocação e execução normal; assinatura macOS aplicável.
+- Artefato: build rastreável, licenças/fontes/notices, hashes/tamanhos/modos, dependências fechadas, relocação e execução normal; assinatura macOS opcional.
 - Célula: instalação remota e wheel/sdist fora do checkout; caminhos com acentos/espaços; preparação/reparo; seis referências offline sem tentativa de rede; corpus sem regressão; bytes preservados; colisão, falha, interrupção, crash e concorrência; seis saídas reabertas no Twine; ambos os interpretadores.
 - Classificação: impedir promoção com um slot ausente, Python duplicado ou evidências de revisões/artefatos/snapshots distintos; testar snapshot igual, pacote/canal/kernel alterado, gerenciador ausente, coleta instável/excedida e retorno ao melhor esforço compatível. Não confundir fingerprint com auditoria de integridade do SO.
 - Release: somente artefatos reais e qualificados no catálogo, matriz coerente e links de evidência. Publicação não é executada nesta etapa. Skips não aprovam testes que não foram executados.
-- Encerramento: FR-001–018 e SC-001–010 em toda a matriz da data de referência. Mudanças posteriores de manutenção são registradas/revisadas, sem apagar silenciosamente compromissos.
+- Encerramento: FR-001–018 e SC-001–010 em todos os alvos ABI obrigatórios da data de referência. Mudanças posteriores de manutenção são registradas/revisadas, sem apagar silenciosamente compromissos.
 
 ## Complexity Tracking
 

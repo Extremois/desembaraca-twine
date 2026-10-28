@@ -42,7 +42,7 @@ def collect(request):
     from twine_edge_overlap.runtime_catalog import load_catalog,select_artifact,verified_manifest
     from twine_edge_overlap.runtime_platform import detect_host,cache_directory
     from twine_edge_overlap.runtime_snapshot import snapshot_for_host
-    from twine_edge_overlap.runtime_catalog import EnvironmentSnapshot
+    from twine_edge_overlap.runtime_catalog import EnvironmentSnapshot,abi_target_matches
     from twine_edge_overlap.application import run
     from twine_edge_overlap.formats.profile import parse,verify
     from twine_edge_overlap.cli import main as cli
@@ -55,12 +55,14 @@ def collect(request):
     target=request['target']
     distro=host.distribution_id if host.os=='linux' else ('macos' if host.os=='darwin' else 'windows')
     version=host.distribution_version if host.os=='linux' else host.os_version
-    if (host.os!=target['os'] or host.arch!=target['arch'] or distro!=target['distribution_id']
+    abi_scope=target.get('qualification_scope')=='abi'
+    if abi_scope and not abi_target_matches(target,host):raise ValueError('Installed worker ABI differs from requested target')
+    if not abi_scope and (host.os!=target['os'] or host.arch!=target['arch'] or distro!=target['distribution_id']
             or (target['version']!='rolling' and not (version==target['version'] or version.startswith(target['version']+'.')))
             or (target['version']!='rolling' and host.channel and host.channel!=target['channel'])
             or (host.cpu_variant and host.cpu_variant!=target['cpu_variant'])):
         raise ValueError('Installed worker environment differs from requested cell')
-    if request['variant_required'] and host.cpu_variant!=target['cpu_variant']:
+    if not abi_scope and request['variant_required'] and host.cpu_variant!=target['cpu_variant']:
         raise ValueError('Installed worker cannot identify the image variant')
     catalog=load_catalog()
     descriptor=select_artifact(catalog,host)
@@ -80,16 +82,8 @@ def collect(request):
         if cli(['--prepare-runtime'])!=0:raise ValueError('Explicit preparation failed')
     handle=ensure_runtime()
     security_assessed=False
-    if host.os=='darwin':
-        security_env=dict(os.environ,LC_ALL='C',LANG='C')
-        status=subprocess.run(['/usr/sbin/spctl','--status'],check=True,capture_output=True,env=security_env,timeout=10)
-        if b'assessments enabled' not in status.stdout+status.stderr:raise ValueError('Normal macOS assessments are not enabled')
-        signature=subprocess.run(['/usr/bin/codesign','-dvv',str(handle.executable)],check=True,capture_output=True,env=security_env,timeout=10)
-        if b'Authority=Developer ID Application:' not in signature.stderr or b'Timestamp=' not in signature.stderr or b'runtime' not in signature.stderr:
-            raise ValueError('Developer ID, timestamp and hardened runtime are required')
-        subprocess.run(['/usr/bin/codesign','--verify','--deep','--strict',str(handle.executable)],check=True,capture_output=True,env=security_env,timeout=30)
-        subprocess.run(['/usr/sbin/spctl','--assess','--type','execute',str(handle.executable)],check=True,capture_output=True,env=security_env,timeout=30)
-        security_assessed=True
+    # Developer ID/notarization are optional. Normal execution above must work;
+    # never change Gatekeeper, quarantine or system policies to make it pass.
     attempts=[]
     def denied(*a,**k):
         attempts.append('python-network-call')
@@ -102,7 +96,7 @@ def collect(request):
             stack.enter_context(patch(name,side_effect=denied))
         with redirect_stdout(output),redirect_stderr(errors):
             if cli(['--prepare-runtime'])!=0:raise ValueError('Offline cached preparation failed')
-        snapshot=snapshot_for_host(host)
+        snapshot=None if abi_scope else snapshot_for_host(host)
         if target['version']=='rolling' and (not snapshot.known or snapshot.metadata['channel']!=target['channel']
                 or (target.get('snapshot_id') is not None and snapshot.snapshot_id!=target['snapshot_id'])):
             raise ValueError('Rolling identity/channel differs from requested cell')
@@ -144,16 +138,17 @@ def collect(request):
                 source_state=request['source_state'],
                 recipe_revision=artifact.data.get('build_variant','legacy-upstream-16.1.0'),package_sha256=request['package_sha256'],
                 os=host.os,os_version=host.distribution_version if host.os=='linux' else host.os_version,
-                distribution_id=target['distribution_id'],channel=target['channel'],cpu_variant=target['cpu_variant'],
+                distribution_id=distro,channel=host.channel if abi_scope else target['channel'],cpu_variant=target['cpu_variant'],
+                abi=host.libc_family if host.os=='linux' else ('darwin' if host.os=='darwin' else 'win32'),libc_version=host.libc_version,
                 architecture=host.arch,kernel=host.kernel_version,cpu=platform.processor() or host.arch,
                 image_id=request['image_id'],image_digest=request['image_digest'],captured_at=captured,environment_kind=request['environment_kind'],
                 github_actions=request.get('github_actions'),
-                snapshot_id=snapshot.snapshot_id if snapshot.known else None,checks=checks,passed=True,
+                snapshot_id=snapshot.snapshot_id if snapshot is not None and snapshot.known else None,checks=checks,passed=True,
                 pending_checks=sorted(GATES-set(checks)),
                 observations=dict(cache_matches_platform=handle.root.resolve().is_relative_to(cache_directory(host).resolve()),
                                   invalid_input_refused_without_acquisition=invalid_trial['exit_code']==1,
                                   executable_mode=stat.S_IMODE(handle.executable.stat().st_mode),runtime_schema=artifact.data['schema_version'],
-                                  healthy_generation_reused=True,macos_security_assessed=security_assessed,
+                                  healthy_generation_reused=True,macos_security_assessed=security_assessed,macos_signing_required=False,
                                   paths_with_spaces_and_accents=' ' in str(work) and chr(0xe7) in str(work)),
                 commands=['external venv installation --no-index','console script --help','python -m twine_edge_overlap --help','CLI invalid first input without acquisition','CLI first valid file','CLI --prepare-runtime','public corpus using normal installed runtime'],
                 corpus=corpus,network=dict(observation='python-only',attempts=0),

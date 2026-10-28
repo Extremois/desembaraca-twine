@@ -22,7 +22,7 @@ def main():
                 yield from leaves(item)
             else:
                 yield item
-    prefixes = ('unit.', 'contract.test_runtime_catalog.', 'contract.test_support_policy.',
+    prefixes = ('unit.', 'contract.test_runtime_catalog.', 'contract.test_support_policy.', 'contract.test_abi_qualification.',
                 'contract.test_cli_runtime.', 'integration.test_runtime_budget.',
                 'integration.test_runtime_concurrency.', 'contract.test_cli_linux.',
                 'contract.test_cli_macos.', 'contract.test_runtime_diagnostics.',

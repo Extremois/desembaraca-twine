@@ -20,24 +20,23 @@ def render(registry,tasks_text):
     states=Counter(support_status(target,evidence) for target in targets)
     tasks={int(number):flag.upper()=='X' for flag,number in re.findall(r'^- \[([ Xx])\] T(\d+)',tasks_text,re.M)}
     rows=['# Ledger integral de suporte','',
-          'Gerado por `tools/runtime/report-support.py`; status derivado dos slots e evidências, sem alterar o registro.',
-          'Contagens de tarefas são rastreabilidade de trabalho, não aprovação de requisitos ou ambientes.',
-          '',f"{len(targets)} células; {sum(len(t['python_qualifications']) for t in targets)} slots Python; estados: {dict(states)}.",
-          '', '| Alvo | Estado agregado | Python 3.12 | Python 3.14 | Imagem nativa | Artefato qualificado | US1 AC1–3 |',
+          'Gerado por `tools/runtime/report-support.py`; status derivado dos slots e evidÃªncias, sem alterar o registro.',
+          'Contagens de tarefas sÃ£o rastreabilidade de trabalho, nÃ£o aprovaÃ§Ã£o de requisitos ou ambientes.',
+          '',f"{len(targets)} cÃ©lulas; {sum(len(t['python_qualifications']) for t in targets)} slots Python; estados: {dict(states)}.",
+          '', '| Alvo | Estado agregado | Python 3.12 | Python 3.14 | Ambiente Actions | Artefato qualificado | US1 AC1â€“3 |',
           '|---|---|---|---|---|---|---|']
     for target in targets:
         slots={slot['python_minor']:slot for slot in target['python_qualifications']}
         image=target.get('image_id') or 'pendente'
         artifact=target.get('artifact_id') or 'pendente'
-        acceptance='pendentes' if target['os']=='linux' and support_status(target,evidence)!='validada' else ('ver evidências' if target['os']=='linux' else 'não se aplica')
+        acceptance='pendentes' if target['os']=='linux' and support_status(target,evidence)!='validada' else ('ver evidÃªncias' if target['os']=='linux' else 'nÃ£o se aplica')
         rows.append(f"| `{target['id']}` | {support_status(target,evidence)} | {slots['3.12']['status']} | {slots['3.14']['status']} | {image} | {artifact} | {acceptance} |")
-    rows+=['','## Evidência parcial e limites','',
-           '- Windows: regressão nos dois Pythons e coletor em venv externa, com código não commitado; Windows limpo e Twine pendentes.',
-           '- Ubuntu 26.04 x86_64 WSL: fundação e corpus de biblioteca com build experimental GLIBC_2.38; não aprova uma célula nativa.',
-           '- Demais imagens/arquiteturas: não disponíveis nesta sessão; nenhum resultado herdado de outra distribuição/ABI.',
-           '- Linux US1 AC1 (instalação/primeiro uso), AC2 (offline) e AC3 (compatibilidade/aviso) ainda exigem ensaio da célula com ambos os Pythons.',
-           '- Logs/digests de imagem, rede nativa, falhas, licenças e seis reaberturas Twine precisam estar completos antes de promover.',
-           '', '## FR-001–018 e SC-001–010', '',
+    rows+=['', '## Evidências e limites', '',
+           '- Qualificação obrigatória por ABI/arquitetura/Python no GitHub Actions; as 69 distribuições/versões são declarações de compatibilidade.',
+           '- Assinatura Developer ID e notarização macOS são opcionais, sem credenciais Apple como gate.',
+           '- Estado derivado dos registros: resultados históricos não aprovam automaticamente uma ABI.',
+           '- Integridade, instalação, corpus, offline, recuperação, licenças e revisão Twine continuam obrigat?rios.',
+           '', '## FR-001?018 e SC-001?010', '',
            '| Requisito | Tarefas relacionadas | Tarefas verificadas | Gate de encerramento |',
            '|---|---|---|---|']
     mapping={}
@@ -62,13 +61,13 @@ def render(registry,tasks_text):
         if not ids.issubset(tasks):raise ValueError('Requirement maps to absent task')
         refs=', '.join(f'T{number:03}' for number in sorted(ids))
         checked=sum(tasks[number] for number in ids)
-        rows.append(f'| {key} | {refs} | {checked}/{len(ids)} | pendente: evidências específicas e matriz completa |')
+        rows.append(f'| {key} | {refs} | {checked}/{len(ids)} | pendente: evidÃªncias especÃ­ficas e sete alvos ABI completos |')
     return '\n'.join(rows)+'\n'
 
 
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--registry',type=Path,default=ROOT/'tools/runtime/support-targets.json')
+    parser.add_argument('--registry',type=Path,default=ROOT/'tools/runtime/abi-targets.json')
     parser.add_argument('--tasks',type=Path,default=ROOT/'specs/003-add-cross-platform-support/tasks.md')
     parser.add_argument('--output',type=Path,required=True)
     args=parser.parse_args()

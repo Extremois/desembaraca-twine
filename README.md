@@ -1,5 +1,7 @@
 # Desembaraça Twine
 
+**Escopo de validação:** GitHub Actions por ABI/arquitetura/Python (glibc/musl, x64/ARM64; macOS Intel/ARM64; Windows x64; Python 3.12/3.14). A lista de distribuições é uma declaração de compatibilidade, sem certificação individual. Assinatura Apple e notarização macOS são opcionais; sem configuração Apple, os componentes não têm atestado Developer ID/notarização. Não é necessário fornecer credenciais Apple para os testes. O catálogo POSIX só é ativado após os demais gates de integridade, licenças e entrega.
+
 [Português](#portugues) | [English](#english)
 
 <a id="portugues"></a>

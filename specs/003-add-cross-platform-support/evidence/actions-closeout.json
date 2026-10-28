@@ -1,8 +1,8 @@
 {
   "kind": "implementation-closeout-checkpoint",
   "validation_policy": "github-actions-only-no-vm",
-  "tasks_complete": 60,
-  "tasks_pending": 24,
+  "tasks_complete": 70,
+  "tasks_pending": 14,
   "task_count": 84,
   "completed_recipe_tasks": [
     "T025",
@@ -20,14 +20,29 @@
     "repository_apple_secrets_configured": false,
     "distribution_releases_present": false
   },
-  "remaining_decisions": [
-    "Keep 69 individual support cells or validate by ABI/architecture/Python"
-  ],
+  "remaining_decisions": [],
   "remaining_delivery": [
-    "Approved per-artifact license audit",
-    "Apple signing/notarization credentials and execution",
-    "Immutable binary/source distribution",
-    "Remaining CI coverage and acceptance"
+    "Approved artifact license/source audits",
+    "Immutable binary/source delivery",
+    "Remaining ABI CI acceptance and output review"
   ],
-  "feature_complete": false
+  "feature_complete": false,
+  "post_validation_local_reconciliation": [
+    "T036"
+  ],
+  "qualification_scope": "abi",
+  "required_abi_targets": 7,
+  "required_python_slots": 14,
+  "macos_signing_required": false,
+  "retired_by_scope_change": [
+    "T037",
+    "T038",
+    "T039",
+    "T040",
+    "T041",
+    "T042",
+    "T043",
+    "T045",
+    "T051"
+  ]
 }

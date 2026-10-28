@@ -24,7 +24,7 @@ on:
         required: true
         type: string
       artifact_id:
-        description: Signed and notarized descriptor ID in candidate
+        description: Reviewed artifact descriptor ID in candidate
         required: true
         type: string
       image_id:

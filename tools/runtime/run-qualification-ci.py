@@ -18,8 +18,8 @@ def main():
         raise ValueError('Downloaded wheel differs from requested immutable candidate')
     target=env.get('TWINE_TARGET')
     if not target:
-        registry=json.loads((HERE/'support-targets.json').read_text())
-        matches=[item for item in registry['targets'] if item['os']=='darwin' and item['arch']==env['TWINE_ARCH'] and item['version']=='15']
+        registry=json.loads((HERE/'abi-targets.json').read_text())
+        matches=[item for item in registry['targets'] if item['os']=='darwin' and item['arch']==env['TWINE_ARCH']]
         if len(matches)!=1:raise ValueError('Ambiguous macOS support target')
         target=matches[0]['id']
     Path('evidence').mkdir(exist_ok=True)

@@ -3,7 +3,7 @@ on:
   workflow_dispatch:
     inputs:
       target_id:
-        description: Exact ID from tools/runtime/support-targets.json
+        description: ABI target ID from tools/runtime/abi-targets.json
         required: true
         type: string
       runner_label:

@@ -1,5 +1,19 @@
 # Matriz proposta e política de versões
 
+## Qualificação obrigatória por ABI
+
+| Alvo | Arquitetura | Python obrigatório |
+| --- | --- | --- |
+| Linux glibc ≥ 2.27 | x64 e ARM64 | 3.12 e 3.14 |
+| Linux musl ≥ 1.2.0 | x64 e ARM64 | 3.12 e 3.14 |
+| macOS ≥ 15, ABI Darwin | Intel e ARM64 | 3.12 e 3.14 |
+| Windows, ABI Win32 | x64 | 3.12 e 3.14 |
+
+As 69 células listadas abaixo são somente declarações históricas de compatibilidade. Não são gates individuais de encerramento nem recebem aprovação automática. Assinatura Developer ID e notarização são opcionais. Binários macOS são distribuídos sem atestado Apple enquanto esse fluxo não for configurado; o projeto não altera Gatekeeper ou políticas de execução.
+
+
+**Escopo aprovado pelo usuário em 2026-10-28:** validação obrigatória por ABI, arquitetura e Python no GitHub Actions: 7 alvos/14 slots. Linux: glibc/musl × x64/ARM64 × Python 3.12/3.14; macOS: Intel/ARM64 × os dois Pythons; Windows x64 × os dois Pythons. As 69 células anteriores são declarações de compatibilidade, sem obrigação de ensaio individual e sem afirmação de validação por distribuição. Assinatura Developer ID e notarização macOS são opcionais e não bloqueiam aceite ou encerramento; não exigem credenciais Apple. Continuam obrigatórios integridade, licenças/fontes, funcionamento, instalação, corpus, offline e recuperação. Nenhuma proteção do sistema é desativada. Sem VMs e sem testes nativos adicionais. A política substitui os critérios anteriores conflitantes.
+
 **Política de validação atualizada por instrução do usuário (2026-10-27):** validar exclusivamente pelo GitHub Actions, diretamente nos runners hospedados e em contêineres quando necessários. Não exigir teste nativo, hardware dedicado, runner próprio, kernel específico ou VM; não criar nem iniciar VMs, inclusive dentro do CI. Esta decisão substitui exigências anteriores desses ambientes e suas pendências históricas. Conservar hashes, integridade, instalação, corpus, recuperação e o ambiente efetivamente exercitado nos logs; não inventar cobertura. Resultados de VMs anteriores são somente histórico e não são gates de aceite.
 
 
@@ -10,7 +24,7 @@
 | Distribuição/sistema | Versões elegíveis no recorte | Arquiteturas alvo | Condições e fonte oficial |
 |---|---|---|---|
 | Windows | 11 | x64 | Regressão do MVP; evidência local anterior não conclui aceitação em Windows limpo nem revisão visual. [Registro](../002-manage-layout-runtime/validation.md) |
-| macOS | 15 | Intel x64; Apple Silicon ARM64 | Execução nativa sem Rosetta; qualificar distribuição assinada/notarizada. [Apple](https://developer.apple.com/developer-id/) |
+| macOS | 15 | Intel x64; Apple Silicon ARM64 | Execução nativa sem Rosetta; qualificar distribuição com integridade verificada. [Apple](https://developer.apple.com/developer-id/) |
 | Ubuntu | 22.04, 24.04, 26.04, 26.10 | x64, ARM64 | Manutenção padrão. [Ciclo](https://ubuntu.com/about/release-cycle), [26.10](https://documentation.ubuntu.com/release-notes/26.10/) |
 | Ubuntu | 18.04, 20.04 | x64, ARM64 | ESM via Ubuntu Pro gratuito para usuários elegíveis; conta/adesão necessária. Não presumir direito gratuito de toda organização. [Pro](https://ubuntu.com/pro/docs/), [ciclo](https://ubuntu.com/about/release-cycle) |
 | Debian | 12, 13 | amd64, arm64 | 12 inclui LTS; não excluir manutenção somente de segurança. [Releases](https://www.debian.org/releases/index.en.html), [LTS](https://wiki.debian.org/LTS/) |

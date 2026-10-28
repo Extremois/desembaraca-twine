@@ -1,5 +1,7 @@
 # Guia de validação da implementação
 
+**Escopo aprovado pelo usuário em 2026-10-28:** validação obrigatória por ABI, arquitetura e Python no GitHub Actions: 7 alvos/14 slots. Linux: glibc/musl × x64/ARM64 × Python 3.12/3.14; macOS: Intel/ARM64 × os dois Pythons; Windows x64 × os dois Pythons. As 69 células anteriores são declarações de compatibilidade, sem obrigação de ensaio individual e sem afirmação de validação por distribuição. Assinatura Developer ID e notarização macOS são opcionais e não bloqueiam aceite ou encerramento; não exigem credenciais Apple. Continuam obrigatórios integridade, licenças/fontes, funcionamento, instalação, corpus, offline e recuperação. Nenhuma proteção do sistema é desativada. Sem VMs e sem testes nativos adicionais. A política substitui os critérios anteriores conflitantes.
+
 **Política de validação atualizada por instrução do usuário (2026-10-27):** validar exclusivamente pelo GitHub Actions, diretamente nos runners hospedados e em contêineres quando necessários. Não exigir teste nativo, hardware dedicado, runner próprio, kernel específico ou VM; não criar nem iniciar VMs, inclusive dentro do CI. Esta decisão substitui exigências anteriores desses ambientes e suas pendências históricas. Conservar hashes, integridade, instalação, corpus, recuperação e o ambiente efetivamente exercitado nos logs; não inventar cobertura. Resultados de VMs anteriores são somente histórico e não são gates de aceite.
 
 
@@ -142,7 +144,7 @@ Usar cenários isolados de teste para interromper preparo, bloquear download, pr
 
 Depois de reparo falho, bloquear rede e processar novamente com a geração saudável anterior. Concorrer dois preparos; concorrer reparo e processamento longo; matar escritor durante staging/promoção. Verificar lock limitado, seletor íntegro, handles antigos utilizáveis e ausência de remoção de recursos alheios.
 
-Provocar colisão de nome de saída, cancelamento e falha na publicação: originais/destinos existentes mantêm hashes; códigos 0/2/1/130 correspondem ao resultado real. Linux fora da matriz com ABI compatível deve funcionar com aviso de melhor esforço; componente incompatível deve ser rejeitado. Mac distribuído precisa passar assinatura/notarização e execução real sem remoção de quarentena ou desativação de Gatekeeper.
+Provocar colisão de nome de saída, cancelamento e falha na publicação: originais/destinos existentes mantêm hashes; códigos 0/2/1/130 correspondem ao resultado real. Linux fora da matriz com ABI compatível deve funcionar com aviso de melhor esforço; componente incompatível deve ser rejeitado. Mac distribuído precisa passar assinatura/notarização opcional e execução real sem remoção de quarentena ou desativação de Gatekeeper.
 
 ## 5. Critério de conclusão
 

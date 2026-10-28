@@ -10,7 +10,8 @@ import sys
 
 ROOT=Path(__file__).resolve().parents[2]
 sys.path.insert(0,str(ROOT/'src'))
-from twine_edge_overlap.runtime_catalog import GATES, COMMON_GATES, PYTHONS, CatalogError, read_json, support_status
+from twine_edge_overlap.runtime_catalog import GATES, COMMON_GATES, PYTHONS, CatalogError, read_json, support_status,abi_target_matches
+from twine_edge_overlap.runtime_platform import HostEnvironment
 from twine_edge_overlap.runtime_snapshot import META_KEYS, canonical_inventory, inventory_digest, fingerprint
 
 
@@ -53,12 +54,17 @@ def validate_record(item,target,root):
     if not isinstance(item.get('checks'),dict) or any(type(value) is not bool for value in item['checks'].values()):
         raise ValueError('Gate results must be explicit booleans')
     audit_only=item.get('evidence_scope')=='artifact-license-audit'
+    abi_scope=target.get('qualification_scope')=='abi'
     if audit_only and (item.get('python_minor') is not None or item['checks']!={'licenses':True}):
         raise ValueError('Shared artifact audit may grant only the license gate')
     if (item.get('environment_kind') not in ('github-actions','native') or item.get('passed') is not True
             or item.get('target_id')!=target['id'] or item.get('snapshot_id')!=target.get('snapshot_id')):
         raise ValueError('Evidence does not identify a supported CI environment for this cell')
-    if not audit_only and (item.get('os')!=target['os'] or item.get('architecture')!=target['arch']
+    if not audit_only and abi_scope:
+        host=HostEnvironment(os=item.get('os',''),arch=item.get('architecture',''),os_version=item.get('os_version',''),
+                             libc_family=item.get('abi',''),libc_version=item.get('libc_version',''))
+        if not abi_target_matches(target,host):raise ValueError('Execution ABI/baseline differs from target')
+    if not audit_only and not abi_scope and (item.get('os')!=target['os'] or item.get('architecture')!=target['arch']
             or item.get('distribution_id')!=target['distribution_id'] or item.get('cpu_variant')!=target['cpu_variant']):
         raise ValueError('Execution environment differs from target')
     required=('id','artifact_id','recipe_revision','captured_at')+(() if audit_only else ('image_id','kernel','cpu'))
@@ -69,7 +75,7 @@ def validate_record(item,target,root):
     if not audit_only and any(not re.fullmatch(r'[0-9a-f]{64}',item.get(key,'')) for key in ('package_sha256','image_digest')):
         raise ValueError('Package and environment image hashes required')
     actual=item.get('os_version','')
-    if not audit_only and ((target['version']!='rolling' and not (actual==target['version'] or actual.startswith(target['version']+'.'))) or item.get('channel')!=target['channel']):
+    if not audit_only and not abi_scope and ((target['version']!='rolling' and not (actual==target['version'] or actual.startswith(target['version']+'.'))) or item.get('channel')!=target['channel']):
         raise ValueError('Evidence version/channel differs from target')
     minor=item.get('python_minor')
     if minor is None and not set(item['checks']).issubset(COMMON_GATES):
@@ -151,7 +157,7 @@ def propose(registry,target_id,records,evidence_root):
     identities={(item['application_revision'],item['artifact_id'],item['artifact_sha256']) for item in records}
     if len(identities)!=1:raise ValueError('Evidence revisions/artifacts differ')
     execution_environments={(item['image_digest'],item['kernel']) for item in records if item.get('evidence_scope')!='artifact-license-audit'}
-    if len(execution_environments)!=1:raise ValueError('Native execution baseline differs between records')
+    if target.get('qualification_scope')!='abi' and len(execution_environments)!=1:raise ValueError('Execution baseline differs between records')
     revision,artifact,sha=identities.pop()
     ids=[item['id'] for item in records]
     if len(set(ids))!=len(ids):raise ValueError('Duplicate evidence ID')
@@ -181,7 +187,7 @@ def propose(registry,target_id,records,evidence_root):
         reviews=[item['twine'] for item in records if item.get('python_minor') in (None,minor) and item['checks'].get('twine')]
         if not any(all(row['sha256'] in outputs[row['case']] for row in review['outputs']) for review in reviews):
             raise ValueError('Twine review hashes do not identify the verified outputs of Python '+minor)
-    key=lambda item:tuple(item.get(name) for name in ('os','distribution_id','version','channel','arch','cpu_variant','snapshot_id'))
+    key=lambda item:tuple(item.get(name) for name in ('os','distribution_id','version','channel','arch','cpu_variant','snapshot_id','qualification_scope','abi'))
     if any(other['id']!=target_id and key(other)==key(target) for other in result['targets']):
         raise ValueError('Ambiguous duplicate cell identity')
     target.update(status='validada',pending_reason=None)
@@ -190,7 +196,7 @@ def propose(registry,target_id,records,evidence_root):
 
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--registry',type=Path,default=ROOT/'tools/runtime/support-targets.json')
+    parser.add_argument('--registry',type=Path,default=ROOT/'tools/runtime/abi-targets.json')
     parser.add_argument('--target',required=True)
     parser.add_argument('--evidence',type=Path,action='append',required=True)
     parser.add_argument('--evidence-root',type=Path,required=True)

@@ -3295,5 +3295,344 @@
       "pending_reason": "Native acceptance, two Python slots and Twine review not executed."
     }
   ],
-  "exclusions_source": "specs/003-add-cross-platform-support/support-matrix.md#exclusoes-verificaveis"
+  "exclusions_source": "specs/003-add-cross-platform-support/support-matrix.md#exclusoes-verificaveis",
+  "qualification_scope": "abi",
+  "macos_signing_required": false,
+  "abi_targets": [
+    {
+      "id": "abi-windows-win32-x86_64",
+      "reference_date": "2026-10-28",
+      "os": "windows",
+      "distribution_id": "abi",
+      "display_name": "windows win32",
+      "version": "abi",
+      "channel": "abi",
+      "arch": "x86_64",
+      "cpu_variant": "distribution-default",
+      "snapshot_id": null,
+      "availability": "published",
+      "required_python_minors": [
+        "3.12",
+        "3.14"
+      ],
+      "application_revision": null,
+      "artifact_id": null,
+      "maintenance_state": "abi-baseline",
+      "free_eligibility": "without-paid-subscription",
+      "maintenance_sources": [],
+      "status": "pendente",
+      "python_qualifications": [
+        {
+          "target_id": "abi-windows-win32-x86_64",
+          "python_minor": "3.12",
+          "status": "pendente",
+          "application_revision": null,
+          "artifact_id": null,
+          "evidence_ids": [],
+          "pending_reason": "ABI evidence pending"
+        },
+        {
+          "target_id": "abi-windows-win32-x86_64",
+          "python_minor": "3.14",
+          "status": "pendente",
+          "application_revision": null,
+          "artifact_id": null,
+          "evidence_ids": [],
+          "pending_reason": "ABI evidence pending"
+        }
+      ],
+      "evidence_ids": [],
+      "pending_reason": "GitHub Actions ABI validation and remaining artifact/delivery gates",
+      "abi": "win32",
+      "qualification_scope": "abi"
+    },
+    {
+      "id": "abi-darwin-darwin-x86_64",
+      "reference_date": "2026-10-28",
+      "os": "darwin",
+      "distribution_id": "abi",
+      "display_name": "darwin darwin",
+      "version": "abi",
+      "channel": "abi",
+      "arch": "x86_64",
+      "cpu_variant": "distribution-default",
+      "snapshot_id": null,
+      "availability": "published",
+      "required_python_minors": [
+        "3.12",
+        "3.14"
+      ],
+      "application_revision": null,
+      "artifact_id": null,
+      "maintenance_state": "abi-baseline",
+      "free_eligibility": "without-paid-subscription",
+      "maintenance_sources": [],
+      "status": "pendente",
+      "python_qualifications": [
+        {
+          "target_id": "abi-darwin-darwin-x86_64",
+          "python_minor": "3.12",
+          "status": "pendente",
+          "application_revision": null,
+          "artifact_id": null,
+          "evidence_ids": [],
+          "pending_reason": "ABI evidence pending"
+        },
+        {
+          "target_id": "abi-darwin-darwin-x86_64",
+          "python_minor": "3.14",
+          "status": "pendente",
+          "application_revision": null,
+          "artifact_id": null,
+          "evidence_ids": [],
+          "pending_reason": "ABI evidence pending"
+        }
+      ],
+      "evidence_ids": [],
+      "pending_reason": "GitHub Actions ABI validation and remaining artifact/delivery gates",
+      "abi": "darwin",
+      "qualification_scope": "abi",
+      "minimum_os": "15.0"
+    },
+    {
+      "id": "abi-darwin-darwin-aarch64",
+      "reference_date": "2026-10-28",
+      "os": "darwin",
+      "distribution_id": "abi",
+      "display_name": "darwin darwin",
+      "version": "abi",
+      "channel": "abi",
+      "arch": "aarch64",
+      "cpu_variant": "distribution-default",
+      "snapshot_id": null,
+      "availability": "published",
+      "required_python_minors": [
+        "3.12",
+        "3.14"
+      ],
+      "application_revision": null,
+      "artifact_id": null,
+      "maintenance_state": "abi-baseline",
+      "free_eligibility": "without-paid-subscription",
+      "maintenance_sources": [],
+      "status": "pendente",
+      "python_qualifications": [
+        {
+          "target_id": "abi-darwin-darwin-aarch64",
+          "python_minor": "3.12",
+          "status": "pendente",
+          "application_revision": null,
+          "artifact_id": null,
+          "evidence_ids": [],
+          "pending_reason": "ABI evidence pending"
+        },
+        {
+          "target_id": "abi-darwin-darwin-aarch64",
+          "python_minor": "3.14",
+          "status": "pendente",
+          "application_revision": null,
+          "artifact_id": null,
+          "evidence_ids": [],
+          "pending_reason": "ABI evidence pending"
+        }
+      ],
+      "evidence_ids": [],
+      "pending_reason": "GitHub Actions ABI validation and remaining artifact/delivery gates",
+      "abi": "darwin",
+      "qualification_scope": "abi",
+      "minimum_os": "15.0"
+    },
+    {
+      "id": "abi-linux-glibc-x86_64",
+      "reference_date": "2026-10-28",
+      "os": "linux",
+      "distribution_id": "abi",
+      "display_name": "linux glibc",
+      "version": "abi",
+      "channel": "abi",
+      "arch": "x86_64",
+      "cpu_variant": "distribution-default",
+      "snapshot_id": null,
+      "availability": "published",
+      "required_python_minors": [
+        "3.12",
+        "3.14"
+      ],
+      "application_revision": null,
+      "artifact_id": null,
+      "maintenance_state": "abi-baseline",
+      "free_eligibility": "without-paid-subscription",
+      "maintenance_sources": [],
+      "status": "pendente",
+      "python_qualifications": [
+        {
+          "target_id": "abi-linux-glibc-x86_64",
+          "python_minor": "3.12",
+          "status": "pendente",
+          "application_revision": null,
+          "artifact_id": null,
+          "evidence_ids": [],
+          "pending_reason": "ABI evidence pending"
+        },
+        {
+          "target_id": "abi-linux-glibc-x86_64",
+          "python_minor": "3.14",
+          "status": "pendente",
+          "application_revision": null,
+          "artifact_id": null,
+          "evidence_ids": [],
+          "pending_reason": "ABI evidence pending"
+        }
+      ],
+      "evidence_ids": [],
+      "pending_reason": "GitHub Actions ABI validation and remaining artifact/delivery gates",
+      "abi": "glibc",
+      "qualification_scope": "abi",
+      "minimum_libc": "2.27"
+    },
+    {
+      "id": "abi-linux-glibc-aarch64",
+      "reference_date": "2026-10-28",
+      "os": "linux",
+      "distribution_id": "abi",
+      "display_name": "linux glibc",
+      "version": "abi",
+      "channel": "abi",
+      "arch": "aarch64",
+      "cpu_variant": "distribution-default",
+      "snapshot_id": null,
+      "availability": "published",
+      "required_python_minors": [
+        "3.12",
+        "3.14"
+      ],
+      "application_revision": null,
+      "artifact_id": null,
+      "maintenance_state": "abi-baseline",
+      "free_eligibility": "without-paid-subscription",
+      "maintenance_sources": [],
+      "status": "pendente",
+      "python_qualifications": [
+        {
+          "target_id": "abi-linux-glibc-aarch64",
+          "python_minor": "3.12",
+          "status": "pendente",
+          "application_revision": null,
+          "artifact_id": null,
+          "evidence_ids": [],
+          "pending_reason": "ABI evidence pending"
+        },
+        {
+          "target_id": "abi-linux-glibc-aarch64",
+          "python_minor": "3.14",
+          "status": "pendente",
+          "application_revision": null,
+          "artifact_id": null,
+          "evidence_ids": [],
+          "pending_reason": "ABI evidence pending"
+        }
+      ],
+      "evidence_ids": [],
+      "pending_reason": "GitHub Actions ABI validation and remaining artifact/delivery gates",
+      "abi": "glibc",
+      "qualification_scope": "abi",
+      "minimum_libc": "2.27"
+    },
+    {
+      "id": "abi-linux-musl-x86_64",
+      "reference_date": "2026-10-28",
+      "os": "linux",
+      "distribution_id": "abi",
+      "display_name": "linux musl",
+      "version": "abi",
+      "channel": "abi",
+      "arch": "x86_64",
+      "cpu_variant": "distribution-default",
+      "snapshot_id": null,
+      "availability": "published",
+      "required_python_minors": [
+        "3.12",
+        "3.14"
+      ],
+      "application_revision": null,
+      "artifact_id": null,
+      "maintenance_state": "abi-baseline",
+      "free_eligibility": "without-paid-subscription",
+      "maintenance_sources": [],
+      "status": "pendente",
+      "python_qualifications": [
+        {
+          "target_id": "abi-linux-musl-x86_64",
+          "python_minor": "3.12",
+          "status": "pendente",
+          "application_revision": null,
+          "artifact_id": null,
+          "evidence_ids": [],
+          "pending_reason": "ABI evidence pending"
+        },
+        {
+          "target_id": "abi-linux-musl-x86_64",
+          "python_minor": "3.14",
+          "status": "pendente",
+          "application_revision": null,
+          "artifact_id": null,
+          "evidence_ids": [],
+          "pending_reason": "ABI evidence pending"
+        }
+      ],
+      "evidence_ids": [],
+      "pending_reason": "GitHub Actions ABI validation and remaining artifact/delivery gates",
+      "abi": "musl",
+      "qualification_scope": "abi",
+      "minimum_libc": "1.2.0"
+    },
+    {
+      "id": "abi-linux-musl-aarch64",
+      "reference_date": "2026-10-28",
+      "os": "linux",
+      "distribution_id": "abi",
+      "display_name": "linux musl",
+      "version": "abi",
+      "channel": "abi",
+      "arch": "aarch64",
+      "cpu_variant": "distribution-default",
+      "snapshot_id": null,
+      "availability": "published",
+      "required_python_minors": [
+        "3.12",
+        "3.14"
+      ],
+      "application_revision": null,
+      "artifact_id": null,
+      "maintenance_state": "abi-baseline",
+      "free_eligibility": "without-paid-subscription",
+      "maintenance_sources": [],
+      "status": "pendente",
+      "python_qualifications": [
+        {
+          "target_id": "abi-linux-musl-aarch64",
+          "python_minor": "3.12",
+          "status": "pendente",
+          "application_revision": null,
+          "artifact_id": null,
+          "evidence_ids": [],
+          "pending_reason": "ABI evidence pending"
+        },
+        {
+          "target_id": "abi-linux-musl-aarch64",
+          "python_minor": "3.14",
+          "status": "pendente",
+          "application_revision": null,
+          "artifact_id": null,
+          "evidence_ids": [],
+          "pending_reason": "ABI evidence pending"
+        }
+      ],
+      "evidence_ids": [],
+      "pending_reason": "GitHub Actions ABI validation and remaining artifact/delivery gates",
+      "abi": "musl",
+      "qualification_scope": "abi",
+      "minimum_libc": "1.2.0"
+    }
+  ]
 }
