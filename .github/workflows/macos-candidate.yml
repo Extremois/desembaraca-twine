@@ -77,11 +77,12 @@ jobs:
         run: |
           python tools/runtime/verify-artifact.py --root "$RUNNER_TEMP/twine-macos-notices/candidate" --provenance "$RUNNER_TEMP/twine-macos-notices/provenance.json" --write-inventory .tmp/native-macos/inventory.json
           python tools/runtime/pack-candidate.py --root "$RUNNER_TEMP/twine-macos-notices/candidate" --inventory .tmp/native-macos/inventory.json --provenance "$RUNNER_TEMP/twine-macos-notices/provenance.json" --output "$RUNNER_TEMP/twine-macos-package"
-      - name: Package Graphviz sources and recipes without copying the Apple SDK
+      - name: Package sources and bound APSL headers without collecting an Apple SDK archive
         run: >-
           python tools/runtime/pack-sources.py
           --graphviz "$RUNNER_TEMP/twine-macos-sdk/graphviz.tar.gz"
           --provenance "$RUNNER_TEMP/twine-macos-notices/provenance.json"
+          --header-review "$RUNNER_TEMP/twine-macos-notices/review.json"
           --output "$RUNNER_TEMP/twine-macos-sources"
       - name: Bind both archive hashes to the same macOS executable and provenance
         run: >-

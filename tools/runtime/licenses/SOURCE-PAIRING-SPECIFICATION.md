@@ -61,7 +61,12 @@ existir exatamente um par vinculador imutável composto por:
      `provenance_sha256` e `manifest_sha256`.
 
    O material de revisão macOS contém Graphviz, receitas e proveniência,
-   sem redistribuir o SDK Apple. Seu `sdk_files` é zero; aplicação dos termos
+   sem redistribuir um arquivo completo do SDK Apple. `sdk_files` conta os membros
+   extraídos do SDK Linux e permanece zero no macOS. Quando o preparo declara
+   dois headers selecionados, `--header-review` é obrigatório: o exportador inclui
+   `header-review/float.h`, `header-review/math.h`, APSL 1.1 integral e
+   `notice-review.json`, conferidos pelo recibo vinculado à proveniência.
+   `selected_sdk_header_files` registra esses dois inputs separadamente. Aplicação dos termos
    de headers/runtime do SDK e completude das fontes correspondentes continuam
    pendentes de auditoria própria. Reconstrução no Actions é evidência técnica
    separada, sem afirmar identidade binária, licença ou oferta pública aprovada.

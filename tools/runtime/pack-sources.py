@@ -74,7 +74,41 @@ def sdk_members(archive):
     return selected
 
 
-def pack(graphviz, sdk, provenance, output):
+def reviewed_header_sources(review_path, record):
+    """Copy only complete header sources bound by this candidate's notice review."""
+    review_path = Path(review_path)
+    raw = bounded(review_path, 8 * 1024**2)
+    if hashlib.sha256(raw).hexdigest() != record.get('notice_preparation', {}).get('review_sha256'):
+        raise ValueError('Header review differs from candidate provenance')
+    review = json.loads(raw)
+    if (not isinstance(review, dict) or review.get('artifact_id') != record['artifact_id']
+            or review.get('executable_sha256') != record['executable_sha256']):
+        raise ValueError('Header review belongs to a different candidate')
+    rows = review.get('sdk_header_source_review')
+    expected = {'header-review/float.h', 'header-review/math.h', 'header-review/APSL-1.1-COPYING.txt'}
+    if (not isinstance(rows, list) or len(rows) != len(expected)
+            or any(not isinstance(row, dict) or not isinstance(row.get('path'), str) for row in rows)
+            or {row['path'] for row in rows} != expected):
+        raise ValueError('Incomplete or unexpected selected SDK header sources')
+    license_lock = json.loads(bounded(HERE / 'licenses/material-source-lock.json', 65536))['apsl_1_1_copying']
+    materials = []
+    for row in rows:
+        data = bounded(review_path.parent / row['path'], 1024**2)
+        origin = row.get('origin')
+        if (type(row.get('size')) is not int or len(data) != row['size']
+                or hashlib.sha256(data).hexdigest() != row.get('sha256')
+                or not isinstance(origin, dict) or origin.get('source_sha256') != row['sha256']):
+            raise ValueError('Selected SDK header source changed')
+        if row['path'].endswith('.h'):
+            if origin.get('kind') != 'recorded-xcode-header-source':
+                raise ValueError('Complete observed SDK header source required')
+        elif row['sha256'] != license_lock['sha256'] or len(data) != license_lock['size']:
+            raise ValueError('Selected SDK header license differs from pinned APSL 1.1')
+        materials.append((row['path'], data))
+    return materials + [('notice-review.json', raw)]
+
+
+def pack(graphviz, sdk, provenance, output, header_review=None):
     graphviz, provenance, output = map(Path, (graphviz, provenance, output))
     sdk=Path(sdk) if sdk is not None else None
     if output.exists() or output.is_symlink():
@@ -84,6 +118,14 @@ def pack(graphviz, sdk, provenance, output):
     record = json.loads(provenance_bytes)
     artifact=record['artifact_id']
     macos=artifact in ('macos-x86_64','macos-arm64')
+    selected_headers = []
+    expected_headers = record.get('notice_preparation', {}).get('selected_sdk_header_files', 0)
+    if type(expected_headers) is not int or expected_headers not in (0, 2) or (expected_headers and header_review is None):
+        raise ValueError('Candidate requires its bound selected-header source review')
+    if header_review is not None:
+        if not macos:
+            raise ValueError('Selected Apple header sources require macOS provenance')
+        selected_headers = reviewed_header_sources(header_review, record)
     if not macos and artifact not in ('linux-glibc-x86_64','linux-glibc-aarch64','linux-musl-x86_64','linux-musl-aarch64'):
         raise ValueError('Unsupported source material artifact')
     arch='aarch64' if artifact.endswith(('-aarch64','-arm64')) else 'x86_64'
@@ -131,6 +173,8 @@ def pack(graphviz, sdk, provenance, output):
                  'src/twine_edge_overlap/engines/process.py'):
         local.append((name, bounded(HERE.parents[1] / name)))
     local += [('graphviz.tar.gz', bounded(graphviz)), ('candidate-provenance.json', provenance_bytes)]
+    local += selected_headers
+    header_count = sum(name.endswith('.h') for name, _ in selected_headers)
     rows, total = [], 0
 
     def add(archive, name, data):
@@ -164,7 +208,9 @@ def pack(graphviz, sdk, provenance, output):
                             artifact_id=record['artifact_id'], executable_sha256=record['executable_sha256'],
                             provenance_sha256=hashlib.sha256(provenance_bytes).hexdigest(),
                             graphviz_archive_sha256=SOURCE_LOCK['sha256'], sdk_archive_sha256=None if macos else sdk_lock['sha256'],
-                            sdk_scope=('Apple SDK excluded; recorded toolchain identity only; SDK/runtime contribution review remains pending'
+                            selected_sdk_header_files=header_count,
+                            sdk_scope=(('Apple SDK archive excluded; selected unmodified APSL 1.1 headers and review included; other SDK contributions remain under review'
+                                        if header_count else 'Apple SDK excluded; recorded toolchain identity only; SDK/runtime contribution review remains pending')
                                        if macos else 'Complete lib/ tree and root LICENSE; compiler executable excluded'),
                             files=rows.copy(), pending=['per-file applicability and complete source offer review',
                             'rebuild/relink execution from exported sources', 'immutable public source distribution']
@@ -178,7 +224,8 @@ def pack(graphviz, sdk, provenance, output):
             report = dict(kind=manifest['kind'], approved=False, artifact_id=record['artifact_id'],
                 executable_sha256=record['executable_sha256'], provenance_sha256=manifest['provenance_sha256'],
                 archive='sources.tar.gz', archive_sha256=digest(temporary), archive_bytes=temporary.stat().st_size,
-                sdk_files=len(members), file_count=len(rows), expanded_bytes=total, pending=manifest['pending'])
+                sdk_files=len(members), selected_sdk_header_files=header_count,
+                file_count=len(rows), expanded_bytes=total, pending=manifest['pending'])
             os.link(temporary, output / 'sources.tar.gz')
             with (output / 'sources.json').open('x', encoding='utf-8') as stream:
                 json.dump(report, stream, indent=2)
@@ -194,9 +241,10 @@ def main():
     for name in ('graphviz', 'provenance', 'output'):
         parser.add_argument('--' + name, required=True, type=Path)
     parser.add_argument('--sdk',type=Path,help='Pinned Linux SDK archive; omitted for macOS')
+    parser.add_argument('--header-review', type=Path, help='macOS notice review binding the selected header sources')
     args = parser.parse_args()
     try:
-        print(json.dumps(pack(args.graphviz, args.sdk, args.provenance, args.output), indent=2))
+        print(json.dumps(pack(args.graphviz, args.sdk, args.provenance, args.output, args.header_review), indent=2))
     except (OSError, ValueError, KeyError, TypeError, tarfile.TarError) as exc:
         parser.exit(1, 'Source collection failed (' + type(exc).__name__ + '); no source offer approved.\n')
 

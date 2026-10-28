@@ -67,7 +67,7 @@ class SourcePackageTests(unittest.TestCase):
                     with self.assertRaises(ValueError):self.module.pack(graphviz,sdk,provenance,root/'dynamic')
                     self.assertFalse((root/'dynamic').exists())
 
-    def test_macos_sources_bind_both_architectures_without_collecting_apple_sdk(self):
+    def test_macos_sources_bind_both_architectures_without_collecting_apple_sdk_archive(self):
         for artifact,arch in (('macos-x86_64','x86_64'),('macos-arm64','aarch64')):
             with self.subTest(artifact=artifact),tempfile.TemporaryDirectory() as directory:
                 root=Path(directory)
@@ -92,6 +92,45 @@ class SourcePackageTests(unittest.TestCase):
                     provenance.write_text(json.dumps(record),encoding='utf-8')
                     with self.assertRaises(ValueError):self.module.pack(graphviz,None,provenance,root/'wrong-arch')
                     self.assertFalse((root/'wrong-arch').exists())
+                    record['sdk']['facts']['target_arch'] = arch
+                    header_dir = root / 'header-review'
+                    header_dir.mkdir()
+                    license_bytes = (self.module.HERE / 'licenses/apsl-1.1-COPYING.txt').read_bytes()
+                    contents = {'float.h': b'/* APSL header source */\n#define FLT_REVIEW 1\n',
+                                'math.h': b'/* APSL header source */\n#define MATH_REVIEW 1\n',
+                                'APSL-1.1-COPYING.txt': license_bytes}
+                    rows = []
+                    for name, raw in contents.items():
+                        (header_dir / name).write_bytes(raw)
+                        sha = hashlib.sha256(raw).hexdigest()
+                        rows.append(dict(path='header-review/' + name, size=len(raw), sha256=sha,
+                            origin=dict(kind='recorded-xcode-header-source' if name.endswith('.h')
+                                        else 'pinned-canonical-license-text', source_sha256=sha)))
+                    review = root / 'review.json'
+                    review.write_bytes(json.dumps(dict(artifact_id=artifact, executable_sha256=record['executable_sha256'],
+                        sdk_header_source_review=rows)).encode())
+                    record['notice_preparation'] = dict(selected_sdk_header_files=2,
+                        review_sha256=self.module.digest(review))
+                    provenance.write_bytes(json.dumps(record).encode())
+                    with self.assertRaises(ValueError):
+                        self.module.pack(graphviz,None,provenance,root/'missing-review')
+                    self.assertFalse((root/'missing-review').exists())
+                    selected = self.module.pack(graphviz,None,provenance,root/'with-headers',header_review=review)
+                    self.assertEqual(selected['selected_sdk_header_files'],2)
+                    self.assertEqual(selected['sdk_files'],0)
+                    with tarfile.open(root/'with-headers/sources.tar.gz') as archive:
+                        for name, raw in contents.items():
+                            self.assertEqual(archive.extractfile('header-review/'+name).read(),raw)
+                        self.assertEqual(archive.extractfile('notice-review.json').read(),review.read_bytes())
+                    (header_dir/'math.h').write_bytes(b'changed')
+                    with self.assertRaises(ValueError):
+                        self.module.pack(graphviz,None,provenance,root/'changed-header',header_review=review)
+                    self.assertFalse((root/'changed-header').exists())
+                    (header_dir/'math.h').write_bytes(contents['math.h'])
+                    review.write_bytes(review.read_bytes()+b'\n')
+                    with self.assertRaises(ValueError):
+                        self.module.pack(graphviz,None,provenance,root/'changed-review',header_review=review)
+                    self.assertFalse((root/'changed-review').exists())
 
     def test_arm_source_export_selects_arm_sdk_and_rejects_mismatched_provenance(self):
         with tempfile.TemporaryDirectory() as directory:

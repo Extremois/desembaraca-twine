@@ -187,7 +187,9 @@ def prepare(build, evidence, source_archive, map_path, output):
     references = common.source_access_notice(record['source'], record['artifact_id']) + (
         'Xcode: ' + record['sdk']['facts']['xcode'].replace('\n', '; ') + '\n'
         'SDK tree SHA-256: ' + record['sdk']['facts']['sdk_tree_sha256'] + '\n'
-        'Header notices are leading comments, not a redistribution of the Apple SDK.\n'
+        'The runtime carries header notice prefixes; the paired sources include only the selected header files.\n'
+        'Unmodified selected header sources are included under APSL 1.1 in header-review/ of the paired source archive.\n'
+        'Use the runtime manifest source_references for the corresponding-source download locations.\n'
         'Referenced license texts and byte-bound NOTICE-ORIGINS.json are included offline.\n'
         'LLVM reference text does not identify the sources of the Apple compiler.\n'
         'Additional texts, applicability, generated data and corresponding-source offer remain under review.\n').encode()
@@ -234,7 +236,8 @@ def prepare(build, evidence, source_archive, map_path, output):
                  'Approved audit and installed ABI acceptance in GitHub Actions'])
     (output / 'review.json').write_text(json.dumps(review, indent=2) + '\n', encoding='utf-8')
     record.update(output=str(output), qualification='draft macOS notices only; no approved audit or support',
-        notice_preparation=dict(approved=False, review_sha256=builder.digest(output / 'review.json')))
+        notice_preparation=dict(approved=False, review_sha256=builder.digest(output / 'review.json'),
+                                selected_sdk_header_files=len(HEADER_REVIEW_SHA256)))
     (output / 'provenance.json').write_text(json.dumps(record, indent=2) + '\n', encoding='utf-8')
     return review
 
