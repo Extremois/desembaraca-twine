@@ -1,4 +1,5 @@
 import copy
+import ast
 import hashlib
 import importlib.util
 import io
@@ -19,6 +20,21 @@ def tool():
 
 
 class BuiltPackagesTests(unittest.TestCase):
+    def test_staged_driver_includes_local_import_dependencies_without_checkout(self):
+        with tempfile.TemporaryDirectory() as folder:
+            driver=tool().stage_engine_driver(Path(folder))
+            self.assertFalse((driver/'src').exists())
+            for module in (driver/'tests').rglob('*.py'):
+                for node in ast.walk(ast.parse(module.read_text(encoding='utf-8'))):
+                    if not isinstance(node,ast.ImportFrom) or not node.module:
+                        continue
+                    name=node.module.split('.')[0]+'.py'
+                    original=ROOT/'tests'/name
+                    if original.is_file():
+                        staged=driver/'tests'/name
+                        self.assertTrue(staged.is_file(),str(module)+' requires '+name)
+                        self.assertEqual(staged.read_bytes(),original.read_bytes())
+
     def test_windows_notice_receipt_requires_official_manifest_and_real_download(self):
         validate=tool().validate_windows_cache_notice_result
         manifest=dict(archive_sha256='a'*64,executable_relative_path='bin/dot.exe',

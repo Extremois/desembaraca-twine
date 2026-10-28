@@ -239,7 +239,7 @@ def validate_windows_cache_notice_result(report, manifest, manifest_sha):
 
 def stage_engine_driver(work):
     driver = work / 'test-driver'
-    files = ('tests/common.py', 'tests/runtime_support.py', 'tests/native_acceptance.py',
+    files = ('tests/common.py', 'tests/runtime_support.py', 'tests/native_acceptance.py', 'tests/posix_support.py',
         'tests/integration/__init__.py', 'tests/integration/test_linux_runtime.py',
         'tests/integration/test_macos_runtime.py', 'tools/runtime/verify-artifact.py',
         '.github/scripts/probe-installed-recovery.py', '.github/scripts/probe-cache-notices.py',
