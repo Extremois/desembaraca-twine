@@ -20,6 +20,11 @@ def load(name):
 common = load('prepare-draft-notices')
 link_audit = load('audit-macos-link')
 builder = common.builder
+HEADER_REVIEW_SHA256 = {
+    # Xcode 16.4 / macOS SDK 15.5 inputs recorded in the current review dossier.
+    'float.h': '4346c126d6f51ea8b63ea394f609f2474b26fdb9257c65cf3d2b43aaef36cd3e',
+    'math.h': '00606d7b27eb5db0a3b93c575a7084f432d1e783cfca2eedcdc234c01cb15134',
+}
 
 
 def data_reference_materials(source_archive, lock):
@@ -95,6 +100,29 @@ def header_notice(row, developer):
         qualification='Leading comment material only; applicability and complete text remain under review')
 
 
+def sdk_header_review_materials(dependencies, developer):
+    selected = {}
+    for row in dependencies:
+        path = Path(row['path'])
+        name = path.name
+        if (row['origin'] != 'external' or name not in HEADER_REVIEW_SHA256
+                or not path.as_posix().endswith('/usr/include/' + name)):
+            continue
+        prefix, origin = header_notice(row, developer)
+        raw = common.audit.bounded(path, 1024**2)
+        if (name in selected or row['sha256'] != HEADER_REVIEW_SHA256[name]
+                or hashlib.sha256(raw).hexdigest() != HEADER_REVIEW_SHA256[name]
+                or b'Apple Public Source License Version 1.1' not in prefix):
+            raise ValueError('SDK header differs from the pinned APSL source review')
+        selected[name] = (name, raw, dict(origin, kind='recorded-xcode-header-source',
+            length=len(raw), qualification='Complete unmodified input for review; applicability pending'))
+    if set(selected) != set(HEADER_REVIEW_SHA256):
+        raise ValueError('Missing pinned SDK header source for review')
+    license_raw, license_origin = common.license_material('apsl_1_1_copying')
+    return [selected[name] for name in sorted(selected)] + [
+        ('APSL-1.1-COPYING.txt', license_raw, license_origin)]
+
+
 def prepare(build, evidence, source_archive, map_path, output):
     build, evidence, source_archive, map_path, output = map(Path, (build, evidence, source_archive, map_path, output))
     if output.exists() or output.is_symlink():
@@ -107,6 +135,7 @@ def prepare(build, evidence, source_archive, map_path, output):
     if observed != link_audit.collect(build, map_path, source_archive):
         raise ValueError('Source observation differs from this native build')
     dependencies = list(observed['dependencies'].values())
+    header_sources = sdk_header_review_materials(dependencies, record['sdk']['facts']['developer_dir'])
     generated = {}
     for row in dependencies:
         if row['origin'] != 'generated':
@@ -170,6 +199,13 @@ def prepare(build, evidence, source_archive, map_path, output):
     if len(materials) > 5000 or sum(len(raw) for _, raw, _ in materials) > 16 * 1024**2:
         raise ValueError('Notice material exceeds budget')
     output.mkdir(mode=0o700, parents=True, exist_ok=False)
+    (output / 'header-review').mkdir()
+    header_source_records = []
+    for name, raw, origin in header_sources:
+        target = output / 'header-review' / name
+        target.write_bytes(raw)
+        header_source_records.append(dict(path=target.relative_to(output).as_posix(), size=len(raw),
+            sha256=hashlib.sha256(raw).hexdigest(), origin=origin))
     candidate = output / 'candidate'
     (candidate / 'bin').mkdir(parents=True)
     binary = candidate / 'bin/dot'
@@ -191,6 +227,7 @@ def prepare(build, evidence, source_archive, map_path, output):
         artifact_id=record['artifact_id'], executable_sha256=record['executable_sha256'],
         parent_provenance_sha256=builder.digest(build / 'provenance.json'), source_evidence_sha256=builder.digest(evidence),
         notices=inventory, headers=headers, graphviz_sources=source_rows,
+        sdk_header_source_review=header_source_records,
         generated_inputs_verified=len(generated),macos_signing_required=False,
         pending=['Per-file applicability and any additional required texts', 'Generated data provenance/notices',
                  'Unnamed linker-map slots and SDK contribution review', 'Complete corresponding-source offer',

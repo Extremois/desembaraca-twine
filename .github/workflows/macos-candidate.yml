@@ -131,6 +131,7 @@ jobs:
             ${{ runner.temp }}/twine-macos-build/provenance.json
             ${{ runner.temp }}/twine-macos-notices/provenance.json
             ${{ runner.temp }}/twine-macos-notices/review.json
+            ${{ runner.temp }}/twine-macos-notices/header-review/
             ${{ runner.temp }}/twine-macos-sources/sources.json
             ${{ runner.temp }}/twine-macos-replay-build/provenance.json
             ${{ runner.temp }}/twine-macos-package/

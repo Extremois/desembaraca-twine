@@ -3,6 +3,7 @@ import importlib.util
 from pathlib import Path
 import tempfile
 import unittest
+from unittest.mock import patch
 
 HERE = Path(__file__).resolve().parents[2] / 'tools/runtime'
 
@@ -15,6 +16,37 @@ def tool(name):
 
 
 class MacosNoticeTests(unittest.TestCase):
+    def test_sdk_source_review_exports_only_locked_headers_and_rejects_changes(self):
+        module = tool('prepare-macos-notices')
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            include = root / 'usr/include'
+            include.mkdir(parents=True)
+            rows, expected = [], {}
+            for name in ('float.h', 'math.h', 'private.h'):
+                raw = (b'/* Apple Public Source License Version 1.1 */\n'
+                       b'#define REVIEW_HEADER 1\n') + name.encode()
+                path = include / name
+                path.write_bytes(raw)
+                digest = hashlib.sha256(raw).hexdigest()
+                rows.append(dict(path=str(path), origin='external', size=len(raw), sha256=digest))
+                if name != 'private.h':
+                    expected[name] = digest
+            with patch.object(module, 'HEADER_REVIEW_SHA256', expected):
+                materials = module.sdk_header_review_materials(rows, root)
+                self.assertEqual({name for name, _, _ in materials},
+                                 {'float.h', 'math.h', 'APSL-1.1-COPYING.txt'})
+                for name, raw, origin in materials:
+                    self.assertEqual(hashlib.sha256(raw).hexdigest(), origin['source_sha256'])
+                with self.assertRaises(ValueError):
+                    module.sdk_header_review_materials(rows[1:], root)
+                with patch.object(module, 'HEADER_REVIEW_SHA256', {**expected, 'float.h': '0' * 64}):
+                    with self.assertRaises(ValueError):
+                        module.sdk_header_review_materials(rows, root)
+                (include / 'float.h').write_bytes(b'changed')
+                with self.assertRaises(ValueError):
+                    module.sdk_header_review_materials(rows, root)
+
     def test_data_references_keep_iso_conditions_and_reject_changed_archive(self):
         import tarfile
         import io
