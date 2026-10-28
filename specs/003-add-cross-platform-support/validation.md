@@ -1,3 +1,21 @@
+## Dossiê de decisão de licenças — 2026-10-28
+
+Conforme orientação do usuário, foi mantido o Graphviz atual e preparado o [dossiê de revisão](evidence/license-review-2026-10-28/README.md), com seis candidatos na mesma revisão `f63b43e`, 3.053 arquivos e 3.041 payloads de avisos conferidos. O índice preserva os hashes completos dos pares binário/fontes e aponta para 40 recibos gzip. Nos quatro Linux, somente o índice de origens do ZIP mudou; motores e demais payloads preservam os hashes anteriores. O trabalho reutilizou os builds aprovados e não executou novos testes ou builds.
+
+As decisões pendentes estão delimitadas: condições W3C/ISO, contribuições/obrigações dos headers Apple e fechamento do inventário por artefato. A entrega permanente equivalente das fontes e o aceite final continuam com seus gates. O dossiê permanece sem aprovação e não fecha T030/T052/T066 automaticamente; o progresso continua 76/84.
+
+## Objetos macOS rastreáveis sem LTO — 2026-10-28
+
+Na revisão `f63b43e`, as duas receitas usam `MinSizeRel` e o Actions exige zero entradas anônimas no mapa. Ambos os builds passaram: 181 objetos vinculados às dependências de fonte por arquitetura, zero inputs estáticos `.o`/`.a` do SDK observados e zero entradas anônimas, antes 181. Runtime, reconstrução por fontes e seis jobs de fundação (306 testes cada) passaram. Os motores mudaram, mas as seis saídas mantêm exatamente os hashes aprovados no Twine.
+
+Os [mapas e recibos](evidence/macos-named-link-inputs-ci-2026-10-28/README.md) também vinculam o símbolo vivo `_entities` ao objeto e ao header gerado, mantendo as condições ISO/W3C na auditoria. A rastreabilidade foi resolvida; compatibilidade, obrigações de headers e entrega permanente seguem pendentes. Progresso permanece 76/84 encerradas, sem promoção do catálogo.
+
+## Correção dos avisos macOS — 2026-10-28
+
+Na revisão `a192890`, o preparo macOS passou a reutilizar a coleta dos avisos por fonte Graphviz e a preservar referências de entidades/cores e o reconhecimento ColorBrewer. Os dois ZIPs foram conferidos: 550 arquivos e 548 payloads de avisos por arquitetura, com 322 fontes observadas. Motores e seis saídas revisadas no Twine mantêm seus hashes. Os testes de runtime, reconstrução por fontes e seis jobs de fundação (306 testes cada) passaram no GitHub Actions; nenhum teste foi executado localmente.
+
+Os [recibos e limites da revisão](evidence/macos-source-data-notices-ci-2026-10-28/README.md) preservam avisos, origens e relatórios. T052/T066 permanecem abertas: conservação dos textos não resolve aplicabilidade/compatibilidade, contribuições do SDK ou entrega permanente. Os rascunhos anteriores conservam seus hashes históricos e ainda não foram ativados.
+
 ## Aceite visual confirmado pelo usuário — 2026-10-28
 
 T063 e T065 concluídas: Twine 2.12.1, Windows 11 e Firefox, resultado `6/6 OK`. O [recibo](evidence/twine-visual-review-2026-10-28.json) vincula o aceite aos seis hashes que correspondem aos 168 resultados das 28 instalações. As evidências originais do Actions permanecem inalteradas.

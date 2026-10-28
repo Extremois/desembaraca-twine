@@ -214,5 +214,47 @@
       "Complete corresponding-source delivery",
       "Immutable distribution"
     ]
+  },
+  "current_source_notice_review": {
+    "approved": false,
+    "qualified": false,
+    "evidence": {
+      "path": "specs/003-add-cross-platform-support/evidence/macos-source-data-notices-ci-2026-10-28/summary.json",
+      "sha256": "192c0f058387d32b4e6e1ac5c014169032b9c75d2b7bf405d9dde4f9f17b3c7c"
+    },
+    "application_revision": "a192890556a437a772a5997e3908564df3c59777",
+    "remaining": [
+      "Per-file applicability, including W3C/ISO conditions",
+      "SDK/header/runtime contribution and unnamed linker-map slots",
+      "Corresponding-source sufficiency and equivalent immutable delivery",
+      "Approved audit and final distributed-package acceptance"
+    ]
+  },
+  "current_named_link_input_review": {
+    "approved": false,
+    "qualified": false,
+    "evidence": {
+      "path": "specs/003-add-cross-platform-support/evidence/macos-named-link-inputs-ci-2026-10-28/summary.json",
+      "sha256": "ff200db21f545dbdf44caf9f9a92bee24d6e837f0914c9d2872c2951da809eb0"
+    },
+    "application_revision": "f63b43e8842539336dc93f08cfa5711a94d0003f",
+    "unnamed_map_slots_remaining": 0,
+    "remaining": [
+      "Per-file applicability, including W3C/ISO conditions",
+      "SDK/header contribution applicability and source obligations",
+      "Corresponding-source sufficiency and equivalent immutable delivery",
+      "Approved audit and final distributed-package acceptance"
+    ]
+  },
+  "license_review_dossier": {
+    "approved": false,
+    "index": {
+      "path": "specs/003-add-cross-platform-support/evidence/license-review-2026-10-28/candidate-index.json",
+      "sha256": "20cdf1efc5bc050d409b05a857b4c715c9190083d70714a2e0b396ee8133a89c"
+    },
+    "review_questions": {
+      "path": "specs/003-add-cross-platform-support/evidence/license-review-2026-10-28/README.md",
+      "sha256": "25c305d9cce25b3ae25e846e6e8600f599ed4d467b89930edfaee239a7b36a7a"
+    }
   }
 }

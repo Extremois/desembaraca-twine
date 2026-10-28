@@ -1371,5 +1371,16 @@
     "separate_pending": [
       "Platform qualification/catalog and macOS signing have their own tasks"
     ]
+  },
+  "license_review_dossier": {
+    "approved": false,
+    "index": {
+      "path": "specs/003-add-cross-platform-support/evidence/license-review-2026-10-28/candidate-index.json",
+      "sha256": "20cdf1efc5bc050d409b05a857b4c715c9190083d70714a2e0b396ee8133a89c"
+    },
+    "review_questions": {
+      "path": "specs/003-add-cross-platform-support/evidence/license-review-2026-10-28/README.md",
+      "sha256": "25c305d9cce25b3ae25e846e6e8600f599ed4d467b89930edfaee239a7b36a7a"
+    }
   }
 }

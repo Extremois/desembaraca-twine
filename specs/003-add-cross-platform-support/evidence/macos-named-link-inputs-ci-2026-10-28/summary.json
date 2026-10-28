@@ -1,0 +1,145 @@
+{
+  "kind": "macos-named-link-input-audit-evidence-not-license-approval",
+  "application_revision": "f63b43e8842539336dc93f08cfa5711a94d0003f",
+  "run_id": 40764323087,
+  "workflow_url": "https://github.com/Extremois/desembaraca-twine/actions/runs/40764323087",
+  "passed": true,
+  "approved": false,
+  "qualified": false,
+  "task_complete": false,
+  "artifacts": [
+    {
+      "artifact_id": "macos-x86_64",
+      "actions_artifact_id": 12849457850,
+      "actions_zip_sha256": "ce7bfbc0e77fe49e5fe9fc47c58435f846a6a681650a33a1adad6705868c28f2",
+      "executable_sha256": "b1bcd8fb3ea37bbe51ea4e4b8611cfcdb4c01856bffb21c08e317d0c4ed32b88",
+      "engine_unchanged": false,
+      "archive_sha256": "8e3b1c65ebfe5f27f696afd584392737d50ca98fc5bd64a87aa8a57392c83d54",
+      "files_verified": 550,
+      "graphviz_sources_verified": 322,
+      "notice_payloads": 548,
+      "notice_files_including_origin_index": 549,
+      "review_sha256": "8eb517c33bd651211b02034d1fc570323f85956c53f04d13b47061b1fcaf4845",
+      "current_outputs_match_user_review": true,
+      "corpus_reports": [
+        {
+          "path": "specs/003-add-cross-platform-support/evidence/macos-named-link-inputs-ci-2026-10-28/macos-x86_64/corpus-312.json.gz",
+          "raw_sha256": "346b18ddb30a4d7f43db1e557d01674785f116cd26fca60ae94480f821c0fe69",
+          "python": "3.12.10"
+        },
+        {
+          "path": "specs/003-add-cross-platform-support/evidence/macos-named-link-inputs-ci-2026-10-28/macos-x86_64/corpus-314.json.gz",
+          "raw_sha256": "a5213ce14266ad0a1f2221c5d486078842961c42b06f471ccadc342c7528e7aa",
+          "python": "3.14.7"
+        },
+        {
+          "path": "specs/003-add-cross-platform-support/evidence/macos-named-link-inputs-ci-2026-10-28/macos-x86_64/runtime-312.json.gz",
+          "raw_sha256": "dd9d28519e845e2db3baa1b2e228094f466392a5ebf3840ff8c6349d6c9e2366",
+          "python": "3.12.10"
+        },
+        {
+          "path": "specs/003-add-cross-platform-support/evidence/macos-named-link-inputs-ci-2026-10-28/macos-x86_64/runtime-314.json.gz",
+          "raw_sha256": "b1f906473474da97dff2bb0b99aea87ad947effa54c0314243ac3d85f8beb4d8",
+          "python": "3.14.7"
+        }
+      ],
+      "link_input_observations": {
+        "unnamed_map_slots": 0,
+        "objects": 191,
+        "source_bound_build_objects": 181,
+        "sdk_static_object_or_archive_inputs": 0,
+        "sdk_stub_inputs": 9,
+        "map_sha256": "a6c99518ead6e98024b92fa12d024521db377fec79e4d8bebeb60d88b893bd91",
+        "raw_evidence_sha256": "417a1658038b8e670307f1cee7a45376539117f357d2e1ca6d7f378a4a1334d1"
+      },
+      "source_archive_sha256": "ba2980abe3dc655589f636ed9df49597c2f5ebe59b11914005a135742678e24a",
+      "source_pairing_verified_in_actions": true,
+      "entity_table_observation": {
+        "scope": "Live symbol reported by linker map; not a byte-level reconstruction of the table",
+        "symbol": "_entities",
+        "address": "0x1000D8060",
+        "bytes": 4032,
+        "owner_index": 26,
+        "owner_object_sha256": "26dcd45e84a9cb35407b39f5c62fdec44b1e6d9f3b625eb691538d229f02793a",
+        "owner_object_path": "lib/common/CMakeFiles/common_obj.dir/utils.c.o",
+        "generated_header_sha256": "3c4c841918e18424c51f58423e510b1537be15a1c6518ec25d88321a5fee2da1",
+        "reference": "Pinned generated header already reproduced in the Graphviz data review",
+        "license_compatibility_approved": false
+      }
+    },
+    {
+      "artifact_id": "macos-arm64",
+      "actions_artifact_id": 12849487720,
+      "actions_zip_sha256": "dd8528d2989ee0638927e4fca04e5d51e6a2863ce0028ec3bb1b2206b89524d1",
+      "executable_sha256": "803a5622cc994d27947aad56498c6f975ce174827f7495a52745f695aa8ce9eb",
+      "engine_unchanged": false,
+      "archive_sha256": "72ab1dd59e2d85554cc0997f08a1573714dfde90545480d34365dae89587d0b8",
+      "files_verified": 550,
+      "graphviz_sources_verified": 322,
+      "notice_payloads": 548,
+      "notice_files_including_origin_index": 549,
+      "review_sha256": "880b76bc6b7c7a3791c0bdb2d1c1fa406284b94d8f29f73aae4fd186c8bf6af0",
+      "current_outputs_match_user_review": true,
+      "corpus_reports": [
+        {
+          "path": "specs/003-add-cross-platform-support/evidence/macos-named-link-inputs-ci-2026-10-28/macos-arm64/corpus-312.json.gz",
+          "raw_sha256": "4be2885404eb21a1b08bfa087b4d4e27133fc774531841fd812081d43a058f4a",
+          "python": "3.12.10"
+        },
+        {
+          "path": "specs/003-add-cross-platform-support/evidence/macos-named-link-inputs-ci-2026-10-28/macos-arm64/corpus-314.json.gz",
+          "raw_sha256": "75e4d6b66ef4b4e78212b6f2b38d42fd7477ba11cbc539b98b36b4dcbc61231e",
+          "python": "3.14.7"
+        },
+        {
+          "path": "specs/003-add-cross-platform-support/evidence/macos-named-link-inputs-ci-2026-10-28/macos-arm64/runtime-312.json.gz",
+          "raw_sha256": "aa7f53e6e6c85cababaaf3f3dd8beb200d6e975c9f096db34941022e7423b217",
+          "python": "3.12.10"
+        },
+        {
+          "path": "specs/003-add-cross-platform-support/evidence/macos-named-link-inputs-ci-2026-10-28/macos-arm64/runtime-314.json.gz",
+          "raw_sha256": "e6d1341177a57bba71e753036197572791f97195ecfaf4769e8db664dc1314e2",
+          "python": "3.14.7"
+        }
+      ],
+      "link_input_observations": {
+        "unnamed_map_slots": 0,
+        "objects": 190,
+        "source_bound_build_objects": 181,
+        "sdk_static_object_or_archive_inputs": 0,
+        "sdk_stub_inputs": 8,
+        "map_sha256": "5ad8e72e444b8d8913d04563a8b97a81959c16b0649d0658e8c929bff66648f7",
+        "raw_evidence_sha256": "c949ad4b91bf73ed91cfbf0e143b702b93e20e88680368610e1dd9cc59d6bd4b"
+      },
+      "source_archive_sha256": "913d4974a564b03982683aa5242d9829bd1cf8d2afe1563b97b3ae8981cab062",
+      "source_pairing_verified_in_actions": true,
+      "entity_table_observation": {
+        "scope": "Live symbol reported by linker map; not a byte-level reconstruction of the table",
+        "symbol": "_entities",
+        "address": "0x1000C5078",
+        "bytes": 4032,
+        "owner_index": 26,
+        "owner_object_sha256": "c4438718084eb768bb8edde1fe120b4c79558a9c29bd7dd0adbdfc51c272129c",
+        "owner_object_path": "lib/common/CMakeFiles/common_obj.dir/utils.c.o",
+        "generated_header_sha256": "3c4c841918e18424c51f58423e510b1537be15a1c6518ec25d88321a5fee2da1",
+        "reference": "Pinned generated header already reproduced in the Graphviz data review",
+        "license_compatibility_approved": false
+      }
+    }
+  ],
+  "active_catalog_changed": false,
+  "named_linker_inputs_required": true,
+  "limitations": [
+    "Notice preservation and origin hashes do not decide license applicability",
+    "Source archive pairing/rebuild performed in Actions; no native tests run locally",
+    "Published delivery and final package qualification remain pending"
+  ],
+  "foundation_evidence": {
+    "path": "specs/003-add-cross-platform-support/evidence/macos-named-link-inputs-ci-2026-10-28/foundation.json",
+    "sha256": "095be7410a3c955d13c6b1bf570991450ad03f05d9b1aae2e139ccd390b85248"
+  },
+  "workflow_rollup_evidence": {
+    "path": "specs/003-add-cross-platform-support/evidence/macos-named-link-inputs-ci-2026-10-28/workflows.json",
+    "sha256": "22efdbcc8fd1bf2381d214517cdf3a9f488dd3924fec30aaae212c23b2be6204"
+  }
+}

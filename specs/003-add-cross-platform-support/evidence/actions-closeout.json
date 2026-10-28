@@ -83,11 +83,44 @@
   },
   "distribution_integrity_evidence": {
     "path": "specs/003-add-cross-platform-support/evidence/distribution-integrity.json",
-    "sha256": "b5d4538793ad5249bf461f3a06e2970be24c6538d1b300081ac626336237bb64"
+    "sha256": "9b8a644569dfbb43ac336838621840d0873e774a3e398044b2492e682f344ec7"
   },
   "current_remote_installation_evidence": {
     "path": "specs/003-add-cross-platform-support/evidence/abi-remote-install-ci-2026-10-28/summary.json",
     "sha256": "34a2b6bab8716eca8f682cb3f79a54d0b095b3f5b2d5d9149aa097e2d1a6271e"
   },
-  "latest_candidate_review_revision": "f5e1ad22aea915e9d42e7da1f76de86ffbd23a4f"
+  "latest_candidate_review_revision": "f5e1ad22aea915e9d42e7da1f76de86ffbd23a4f",
+  "current_macos_source_notice_evidence": {
+    "approved": false,
+    "qualified": false,
+    "evidence": {
+      "path": "specs/003-add-cross-platform-support/evidence/macos-source-data-notices-ci-2026-10-28/summary.json",
+      "sha256": "192c0f058387d32b4e6e1ac5c014169032b9c75d2b7bf405d9dde4f9f17b3c7c"
+    },
+    "application_revision": "a192890556a437a772a5997e3908564df3c59777"
+  },
+  "current_macos_named_link_input_evidence": {
+    "approved": false,
+    "qualified": false,
+    "evidence": {
+      "path": "specs/003-add-cross-platform-support/evidence/macos-named-link-inputs-ci-2026-10-28/summary.json",
+      "sha256": "ff200db21f545dbdf44caf9f9a92bee24d6e837f0914c9d2872c2951da809eb0"
+    },
+    "application_revision": "f63b43e8842539336dc93f08cfa5711a94d0003f"
+  },
+  "latest_workflow_evidence": {
+    "path": "specs/003-add-cross-platform-support/evidence/macos-named-link-inputs-ci-2026-10-28/workflows.json",
+    "sha256": "22efdbcc8fd1bf2381d214517cdf3a9f488dd3924fec30aaae212c23b2be6204"
+  },
+  "license_review_dossier": {
+    "approved": false,
+    "index": {
+      "path": "specs/003-add-cross-platform-support/evidence/license-review-2026-10-28/candidate-index.json",
+      "sha256": "20cdf1efc5bc050d409b05a857b4c715c9190083d70714a2e0b396ee8133a89c"
+    },
+    "review_questions": {
+      "path": "specs/003-add-cross-platform-support/evidence/license-review-2026-10-28/README.md",
+      "sha256": "25c305d9cce25b3ae25e846e6e8600f599ed4d467b89930edfaee239a7b36a7a"
+    }
+  }
 }
