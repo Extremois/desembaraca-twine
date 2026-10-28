@@ -15,6 +15,37 @@ def tool(name):
 
 
 class MacosNoticeTests(unittest.TestCase):
+    def test_data_references_keep_iso_conditions_and_reject_changed_archive(self):
+        import tarfile
+        import io
+        module = tool('prepare-macos-notices')
+        data = module.load('audit-graphviz-data')
+        entities = data.reference_material('html401-entities.html')
+        with tempfile.TemporaryDirectory() as directory:
+            archive = Path(directory) / 'source.tar.gz'
+            inputs = {'entities.html': entities, 'svgcolor_names': b'# SVG origin\n',
+                      'color_names': b'# RGB origin\n'}
+            with tarfile.open(archive, 'w:gz') as output:
+                for name, raw in inputs.items():
+                    item = tarfile.TarInfo('graphviz-16.1.0/lib/common/' + name)
+                    item.size = len(raw)
+                    output.addfile(item, io.BytesIO(raw))
+            lock = dict(sha256=hashlib.sha256(archive.read_bytes()).hexdigest())
+            materials = module.data_reference_materials(archive, lock)
+            by_name = {name: (raw, origin) for name, raw, origin in materials}
+            raw, origin = by_name['W3C-HTML401-ENTITY-DECLARATION-NOTICES.txt']
+            self.assertIn(b'conforming SGML systems', raw)
+            self.assertEqual(origin['declaration_notices'], 3)
+            for name, raw in inputs.items():
+                stored, origin = by_name['Graphviz-data-' + name + '.txt']
+                self.assertEqual(stored, raw)
+                self.assertEqual(origin['source_sha256'], hashlib.sha256(raw).hexdigest())
+            self.assertIn('W3C-software-1998.txt', by_name)
+            self.assertIn('Xorg-rgb-1.1.0-COPYING.txt', by_name)
+            archive.write_bytes(b'changed')
+            with self.assertRaises(ValueError):
+                module.data_reference_materials(archive, lock)
+
     def test_canonical_texts_follow_observed_notices_without_claiming_approval(self):
         module = tool('prepare-macos-notices')
         materials = [('apple.txt', b'Apple Public Source License\n * Version 2.0', {}),

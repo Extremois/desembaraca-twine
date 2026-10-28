@@ -22,6 +22,33 @@ link_audit = load('audit-macos-link')
 builder = common.builder
 
 
+def data_reference_materials(source_archive, lock):
+    """Preserve upstream data notices without asserting generated-table equivalence."""
+    if builder.digest(source_archive) != lock['sha256']:
+        raise ValueError('Graphviz archive differs from pinned source')
+    data_audit = load('audit-graphviz-data')
+    materials, _ = data_audit.w3c_reference_materials()
+    names = {'lib/common/entities.html', 'lib/common/svgcolor_names', 'lib/common/color_names'}
+    sources = common.archive_files(source_archive, 'graphviz-16.1.0', names)
+    for name, raw in sorted(sources.items()):
+        sha = hashlib.sha256(raw).hexdigest()
+        if name.endswith('entities.html'):
+            materials.append(data_audit.entity_declaration_notice(raw, sha))
+        # Keep raw inputs as text review material, alongside their notices.
+        materials.append(('Graphviz-data-' + Path(name).name + '.txt', raw,
+            dict(kind='pinned-graphviz-data-reference', path=name, archive_sha256=lock['sha256'],
+                 source_sha256=sha, scope='Conservative source reference; generated-table equivalence and applicability pending')))
+    raw = data_audit.reference_material('xorg-rgb-1.1.0-COPYING')
+    reference = json.loads(common.audit.bounded(data_audit.REFERENCES / 'sources.json', 65536))[
+        'references']['xorg-rgb-1.1.0-COPYING']
+    materials.append(('Xorg-rgb-1.1.0-COPYING.txt', raw,
+        dict(kind='pinned-reference-license-material', source_sha256=hashlib.sha256(raw).hexdigest(),
+             source_url=reference['url'], archive_sha256=reference['archive_sha256'],
+             archive_member=reference['archive_member'],
+             scope='Reference material; historical copying and applicability pending')))
+    return materials
+
+
 def canonical_references(materials):
     # These are references to explicit declarations, not a license classifier.
     rules = (
@@ -93,13 +120,18 @@ def prepare(build, evidence, source_archive, map_path, output):
         generated[path.relative_to(build / 'build').as_posix()] = (raw, row)
     graphviz_names = {'COPYING', 'AUTHORS', 'lib/rbtree/LICENSE', 'lib/common/brewer_colors'}
     files = common.archive_files(source_archive, 'graphviz-16.1.0', graphviz_names)
-    materials = []
+    source_rows, materials = common.graphviz_source_materials(dependencies, source_archive, record['source'])
+    materials.extend(data_reference_materials(source_archive, record['source']))
     for name in sorted(graphviz_names):
         raw = files[name]
         filename = 'ColorBrewer.txt' if name.endswith('brewer_colors') else 'Graphviz-' + name.replace('/', '__') + '.txt'
         materials.append((filename, common.color_notice(raw) if name.endswith('brewer_colors') else raw,
             dict(kind='pinned-graphviz-source', path=name, source_sha256=hashlib.sha256(raw).hexdigest(),
                  archive_sha256=record['source']['sha256'])))
+    color_path = 'lib/common/brewer_colors'
+    materials.append(('ColorBrewer-ACKNOWLEDGMENT.txt', common.color_acknowledgment(files[color_path]),
+        dict(kind='maintainer-colorbrewer-acknowledgment', path=color_path,
+             archive_sha256=record['source']['sha256'], source_sha256=hashlib.sha256(files[color_path]).hexdigest())))
     for name in ('lib/cgraph/grammar.c', 'lib/cgraph/grammar.h', 'lib/common/htmlparse.c', 'lib/common/htmlparse.h'):
         raw, row = generated[name]
         prefix = common.bison_notice(raw)
@@ -158,7 +190,8 @@ def prepare(build, evidence, source_archive, map_path, output):
     review = dict(kind='macos-draft-notice-review', approved=False, qualified=False,
         artifact_id=record['artifact_id'], executable_sha256=record['executable_sha256'],
         parent_provenance_sha256=builder.digest(build / 'provenance.json'), source_evidence_sha256=builder.digest(evidence),
-        notices=inventory, headers=headers, generated_inputs_verified=len(generated),macos_signing_required=False,
+        notices=inventory, headers=headers, graphviz_sources=source_rows,
+        generated_inputs_verified=len(generated),macos_signing_required=False,
         pending=['Per-file applicability and any additional required texts', 'Generated data provenance/notices',
                  'Unnamed linker-map slots and SDK contribution review', 'Complete corresponding-source offer',
                  'Approved audit and installed ABI acceptance in GitHub Actions'])
