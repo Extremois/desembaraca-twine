@@ -353,7 +353,9 @@ def collect(wheel, sdist, wheelhouse, *, engine_artifact=None, engine_id=None, e
                         '--package', engine_package, '--provenance', engine_package / 'provenance.json',
                         '--report', report_path]
                     if sys.platform == 'linux':
-                        command.extend(['--environment-kind', 'wsl' if 'microsoft' in platform.release().lower() else 'native'])
+                        execution_kind=('container' if Path('/.dockerenv').is_file() else
+                                        'wsl' if 'microsoft' in platform.release().lower() else 'native')
+                        command.extend(['--environment-kind',execution_kind])
                     run(command, timeout=300)
                     if report_path.stat().st_size > 1024**2:
                         raise ValueError('Private engine report exceeds bound')

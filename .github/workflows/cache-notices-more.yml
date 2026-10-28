@@ -61,7 +61,7 @@ jobs:
           with open(os.environ['GITHUB_OUTPUT'],'a') as stream:
               stream.write('reference='+pin['reference']+'\noci_arch='+pin['oci_arch']+'\n')
           PY
-      - name: Measure real musl cache as non-root user
+      - name: Exercise musl corpus, recovery and cache as non-root user
         shell: bash
         env:
           IMAGE: ${{ steps.image.outputs.reference }}
@@ -72,7 +72,7 @@ jobs:
           mkdir "$RUNNER_TEMP/musl-notices"
           docker pull --platform "linux/$OCI_ARCH" "$IMAGE"
           docker image inspect "$IMAGE" > "$RUNNER_TEMP/musl-notices/image.json"
-          docker run --rm --platform "linux/$OCI_ARCH" --user "$(id -u):$(id -g)" -e GITHUB_SHA -e PYTHONUTF8=1 -e HOME=/work/home -v "$GITHUB_WORKSPACE:/workspace:ro" -v "$RUNNER_TEMP/musl-engine:/artifact:ro" -v "$RUNNER_TEMP/musl-notices:/work" --workdir /workspace "$IMAGE" sh -ec 'mkdir /work/home; python .github/scripts/run-musl-cache-notices.py --artifact /artifact --work /work/slot --arch "$1" --minor "$2" --image "$3"' sh "$TARGET_ARCH" "$TARGET_PYTHON" "$IMAGE"
+          docker run --rm --platform "linux/$OCI_ARCH" --user "$(id -u):$(id -g)" -e GITHUB_SHA -e GITHUB_ACTIONS -e GITHUB_REPOSITORY -e GITHUB_RUN_ID -e PYTHONUTF8=1 -e HOME=/work/home -v "$GITHUB_WORKSPACE:/workspace:ro" -v "$RUNNER_TEMP/musl-engine:/artifact:ro" -v "$RUNNER_TEMP/musl-notices:/work" --workdir /workspace "$IMAGE" sh -ec 'mkdir /work/home; python .github/scripts/run-musl-cache-notices.py --artifact /artifact --work /work/slot --arch "$1" --minor "$2" --image "$3"' sh "$TARGET_ARCH" "$TARGET_PYTHON" "$IMAGE"
       - uses: actions/upload-artifact@v4
         if: always()
         with:
@@ -80,6 +80,7 @@ jobs:
           retention-days: 7
           path: |
             ${{ runner.temp }}/musl-notices/slot/cache-notices.json
+            ${{ runner.temp }}/musl-notices/slot/installed-runtime.json
             ${{ runner.temp }}/musl-notices/image.json
   windows:
     name: Windows cache (Python ${{ matrix.python }})

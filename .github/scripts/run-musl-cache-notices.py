@@ -1,4 +1,4 @@
-"""Build development packages and measure cache notices in a pinned, non-root Alpine userland."""
+"""Exercise installed packages, corpus, recovery and notices in pinned musl CI."""
 import argparse
 import json
 import os
@@ -21,6 +21,12 @@ def validate_environment(lock,image,arch,minor,facts):
 
 
 def collect(artifact,work,arch,minor,image):
+    repository=os.environ.get('GITHUB_REPOSITORY','')
+    run_id=os.environ.get('GITHUB_RUN_ID','')
+    revision=os.environ.get('GITHUB_SHA','')
+    if (os.environ.get('GITHUB_ACTIONS')!='true' or not re.fullmatch(r'[\w.-]+/[\w.-]+',repository)
+            or not run_id.isdigit() or int(run_id)<=0 or not re.fullmatch(r'[0-9a-f]{40}',revision)):
+        raise ValueError('Musl ABI receipts require an identified GitHub Actions execution')
     facts={}
     for line in Path('/etc/os-release').read_text().splitlines():
         key,sep,value=line.partition('=')
@@ -41,15 +47,18 @@ def collect(artifact,work,arch,minor,image):
     run([python,'-m','pip','install','--disable-pip-version-check','build'])
     run([python,'-m','build','--outdir',work/'dist',project])
     run([python,'-m','pip','download','--only-binary=:all:','--no-deps','--dest',work/'wheels','setuptools','wheel','packaging'])
-    report_path=work/'cache-notices.json'
-    run([python,ROOT/'tools/validation/check-built-packages.py','--dist-dir',work/'dist',
-        '--wheelhouse',work/'wheels','--engine-artifact',artifact,'--engine-id','linux-musl-'+arch,
-        '--engine-check','notices','--report',report_path])
-    report=json.loads(report_path.read_bytes())
-    report['execution_environment']=dict(environment,environment_kind='container',image=image,
-        kernel=platform.release(),native_cpu=True,
-        limitation='Alpine userland on Ubuntu hosted kernel; no native Alpine cell qualification')
-    report_path.write_text(json.dumps(report,indent=2)+'\n',encoding='utf-8')
+    for check,name in (('notices','cache-notices.json'),('runtime','installed-runtime.json')):
+        report_path=work/name
+        run([python,ROOT/'tools/validation/check-built-packages.py','--dist-dir',work/'dist',
+            '--wheelhouse',work/'wheels','--engine-artifact',artifact,'--engine-id','linux-musl-'+arch,
+            '--engine-check',check,'--report',report_path])
+        report=json.loads(report_path.read_bytes())
+        report['execution_environment']=dict(environment,environment_kind='github-actions',execution_kind='container',image=image,
+            kernel=platform.release(),native_cpu=True,
+            limitation='Musl ABI execution on a hosted kernel; not individual Alpine release certification')
+        report['github_actions']=dict(repository=repository,run_id=run_id,revision=revision,
+            run_url='https://github.com/'+repository+'/actions/runs/'+run_id)
+        report_path.write_text(json.dumps(report,indent=2)+'\n',encoding='utf-8')
 
 
 if __name__=='__main__':
