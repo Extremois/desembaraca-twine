@@ -65,6 +65,8 @@ jobs:
           /usr/bin/file "$RUNNER_TEMP/twine-macos-build/candidate/bin/dot" > .tmp/native-macos/file.txt
       - name: Bind linker-map objects and compiler inputs for source review
         run: python tools/runtime/audit-macos-link.py --build-output "$RUNNER_TEMP/twine-macos-build" --map "$RUNNER_TEMP/twine-macos-sdk/link-map.txt" --source-archive "$RUNNER_TEMP/twine-macos-sdk/graphviz.tar.gz" --report .tmp/native-macos/link-source-evidence.json
+      - name: Require named linker inputs for the macOS audit
+        run: python -c "import json; from pathlib import Path; report=json.loads(Path('.tmp/native-macos/link-source-evidence.json').read_bytes()); assert report['summary']['unnamed_map_slots']==0, 'Unresolved linker inputs prevent the source audit'"
       - name: Prepare byte-bound draft notices for this macOS build
         run: python tools/runtime/prepare-macos-notices.py --build "$RUNNER_TEMP/twine-macos-build" --evidence .tmp/native-macos/link-source-evidence.json --source-archive "$RUNNER_TEMP/twine-macos-sdk/graphviz.tar.gz" --map-path "$RUNNER_TEMP/twine-macos-sdk/link-map.txt" --output "$RUNNER_TEMP/twine-macos-notices"
       - name: Public corpus and Unicode relocation on Python 3.12

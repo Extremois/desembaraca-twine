@@ -6,6 +6,7 @@
   "abi": "darwin",
   "source_lock": "source-lock.json",
   "cmake": {
+    "CMAKE_BUILD_TYPE": "MinSizeRel",
     "BUILD_SHARED_LIBS": "OFF",
     "ENABLE_LTDL": "OFF",
     "WITH_EXPAT": "OFF",
