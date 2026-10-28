@@ -75,6 +75,29 @@ jobs:
         run: |
           python tools/runtime/verify-artifact.py --root "$RUNNER_TEMP/twine-macos-notices/candidate" --provenance "$RUNNER_TEMP/twine-macos-notices/provenance.json" --write-inventory .tmp/native-macos/inventory.json
           python tools/runtime/pack-candidate.py --root "$RUNNER_TEMP/twine-macos-notices/candidate" --inventory .tmp/native-macos/inventory.json --provenance "$RUNNER_TEMP/twine-macos-notices/provenance.json" --output "$RUNNER_TEMP/twine-macos-package"
+      - name: Package Graphviz sources and recipes without copying the Apple SDK
+        run: >-
+          python tools/runtime/pack-sources.py
+          --graphviz "$RUNNER_TEMP/twine-macos-sdk/graphviz.tar.gz"
+          --provenance "$RUNNER_TEMP/twine-macos-notices/provenance.json"
+          --output "$RUNNER_TEMP/twine-macos-sources"
+      - name: Bind both archive hashes to the same macOS executable and provenance
+        run: >-
+          python tools/runtime/verify-source-pairing.py
+          --candidate-receipt "$RUNNER_TEMP/twine-macos-package/candidate.json"
+          --sources-receipt "$RUNNER_TEMP/twine-macos-sources/sources.json"
+          --candidate-archive "$RUNNER_TEMP/twine-macos-package/candidate.zip"
+          --sources-archive "$RUNNER_TEMP/twine-macos-sources/sources.tar.gz"
+          --application-revision "$GITHUB_SHA"
+          --output .tmp/native-macos/source-pairing.json
+      - name: Retain unapproved macOS source review material separately
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ matrix.artifact }}-sources-unqualified-${{ github.sha }}
+          retention-days: 7
+          path: |
+            ${{ runner.temp }}/twine-macos-sources/
+            .tmp/native-macos/source-pairing.json
       - name: Real runtime first use, final probe and offline cache on both Pythons
         run: |
           "${{ steps.python312.outputs.python-path }}" tests/integration/test_macos_runtime.py --package "$RUNNER_TEMP/twine-macos-package" --provenance "$RUNNER_TEMP/twine-macos-notices/provenance.json" --report .tmp/native-macos/runtime-312.json
@@ -94,4 +117,5 @@ jobs:
             ${{ runner.temp }}/twine-macos-build/provenance.json
             ${{ runner.temp }}/twine-macos-notices/provenance.json
             ${{ runner.temp }}/twine-macos-notices/review.json
+            ${{ runner.temp }}/twine-macos-sources/sources.json
             ${{ runner.temp }}/twine-macos-package/

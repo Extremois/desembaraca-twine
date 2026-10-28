@@ -4,6 +4,7 @@ This is not an approved corresponding-source offer or a public release.
 The SDK compiler executable, caches and checkout secrets are never collected.
 """
 import argparse
+from contextlib import nullcontext
 import gzip
 import hashlib
 import importlib.util
@@ -74,19 +75,29 @@ def sdk_members(archive):
 
 
 def pack(graphviz, sdk, provenance, output):
-    graphviz, sdk, provenance, output = map(Path, (graphviz, sdk, provenance, output))
+    graphviz, provenance, output = map(Path, (graphviz, provenance, output))
+    sdk=Path(sdk) if sdk is not None else None
     if output.exists() or output.is_symlink():
         raise FileExistsError('Source output already exists')
     pinned(graphviz, SOURCE_LOCK)
     provenance_bytes = bounded(provenance, 8 * 1024**2)
     record = json.loads(provenance_bytes)
     artifact=record['artifact_id']
-    if artifact not in ('linux-glibc-x86_64','linux-glibc-aarch64','linux-musl-x86_64','linux-musl-aarch64'):
+    macos=artifact in ('macos-x86_64','macos-arm64')
+    if not macos and artifact not in ('linux-glibc-x86_64','linux-glibc-aarch64','linux-musl-x86_64','linux-musl-aarch64'):
         raise ValueError('Unsupported source material artifact')
-    arch='aarch64' if artifact.endswith('-aarch64') else 'x86_64'
+    arch='aarch64' if artifact.endswith(('-aarch64','-arm64')) else 'x86_64'
     musl=artifact.startswith('linux-musl-')
-    sdk_lock=SDK_LOCK if arch=='x86_64' else SDK_LOCK_ARM64
-    if (arch=='aarch64' or musl) and (record.get('native_os'),record.get('native_arch'))!=('linux',arch):
+    sdk_lock=None if macos else SDK_LOCK if arch=='x86_64' else SDK_LOCK_ARM64
+    if macos:
+        facts=record.get('sdk',{}).get('facts',{})
+        if (sdk is not None or (record.get('native_os'),record.get('native_arch'))!=('darwin',arch)
+                or (facts.get('provider'),facts.get('target_os'),facts.get('target_arch'),facts.get('deployment_target'))
+                    !=('Apple Xcode','darwin',arch,'15.0')):
+            raise ValueError('macOS sources require matching provenance and must not collect an Apple SDK archive')
+    elif sdk is None:
+        raise ValueError('Linux sources require the pinned SDK archive')
+    if not macos and (arch=='aarch64' or musl) and (record.get('native_os'),record.get('native_arch'))!=('linux',arch):
         raise ValueError('Source material requires matching native provenance')
     if musl:
         facts=record.get('sdk',{}).get('facts',{})
@@ -96,11 +107,11 @@ def pack(graphviz, sdk, provenance, output):
                 or any(measured.get(key) is not True for key in
                        ('no_interpreter','no_dynamic_section','no_needed_libraries','no_glibc_symbols'))):
             raise ValueError('musl source material requires matching static target evidence')
-    pinned(sdk, sdk_lock)
+    if not macos:pinned(sdk, sdk_lock)
     recipe = HERE / (artifact+'.json')
     if (record.get('completed') is not True
             or record['source']['sha256'] != SOURCE_LOCK['sha256']
-            or record['sdk']['facts']['archive']['sha256'] != sdk_lock['sha256']
+            or not macos and record['sdk']['facts']['archive']['sha256'] != sdk_lock['sha256']
             or record['recipe_sha256'] != digest(recipe)):
         raise ValueError('Source material does not match candidate provenance')
     # Enumerate only maintainer recipes, scripts, notices and reference data.
@@ -132,8 +143,8 @@ def pack(graphviz, sdk, provenance, output):
         archive.addfile(entry, io.BytesIO(data))
         rows.append(dict(path=name, size=len(data), sha256=hashlib.sha256(data).hexdigest()))
 
-    with tarfile.open(sdk, 'r:xz') as incoming:
-        members = sdk_members(incoming)
+    with (nullcontext() if macos else tarfile.open(sdk,'r:xz')) as incoming:
+        members = [] if macos else sdk_members(incoming)
         output.mkdir(mode=0o700, parents=True, exist_ok=False)
         temporary = None
         try:
@@ -152,16 +163,18 @@ def pack(graphviz, sdk, provenance, output):
                         manifest = dict(kind='candidate-source-review-material', approved=False,
                             artifact_id=record['artifact_id'], executable_sha256=record['executable_sha256'],
                             provenance_sha256=hashlib.sha256(provenance_bytes).hexdigest(),
-                            graphviz_archive_sha256=SOURCE_LOCK['sha256'], sdk_archive_sha256=sdk_lock['sha256'],
-                            sdk_scope='Complete lib/ tree and root LICENSE; compiler executable excluded',
+                            graphviz_archive_sha256=SOURCE_LOCK['sha256'], sdk_archive_sha256=None if macos else sdk_lock['sha256'],
+                            sdk_scope=('Apple SDK excluded; recorded toolchain identity only; SDK/runtime contribution review remains pending'
+                                       if macos else 'Complete lib/ tree and root LICENSE; compiler executable excluded'),
                             files=rows.copy(), pending=['per-file applicability and complete source offer review',
-                            'rebuild/relink execution from exported sources', 'immutable public source distribution'])
+                            'rebuild/relink execution from exported sources', 'immutable public source distribution']
+                            +(['Apple SDK/header/runtime contribution and corresponding-source applicability review'] if macos else []))
                         add(archive, 'manifest.json', (json.dumps(manifest, indent=2) + '\n').encode())
                 stream.flush()
                 os.fsync(stream.fileno())
             # Recheck archives after reading; never certify changed input bytes.
             pinned(graphviz, SOURCE_LOCK)
-            pinned(sdk, sdk_lock)
+            if not macos:pinned(sdk, sdk_lock)
             report = dict(kind=manifest['kind'], approved=False, artifact_id=record['artifact_id'],
                 executable_sha256=record['executable_sha256'], provenance_sha256=manifest['provenance_sha256'],
                 archive='sources.tar.gz', archive_sha256=digest(temporary), archive_bytes=temporary.stat().st_size,
@@ -178,8 +191,9 @@ def pack(graphviz, sdk, provenance, output):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    for name in ('graphviz', 'sdk', 'provenance', 'output'):
+    for name in ('graphviz', 'provenance', 'output'):
         parser.add_argument('--' + name, required=True, type=Path)
+    parser.add_argument('--sdk',type=Path,help='Pinned Linux SDK archive; omitted for macOS')
     args = parser.parse_args()
     try:
         print(json.dumps(pack(args.graphviz, args.sdk, args.provenance, args.output), indent=2))

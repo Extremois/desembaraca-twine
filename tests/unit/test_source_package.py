@@ -67,6 +67,32 @@ class SourcePackageTests(unittest.TestCase):
                     with self.assertRaises(ValueError):self.module.pack(graphviz,sdk,provenance,root/'dynamic')
                     self.assertFalse((root/'dynamic').exists())
 
+    def test_macos_sources_bind_both_architectures_without_collecting_apple_sdk(self):
+        for artifact,arch in (('macos-x86_64','x86_64'),('macos-arm64','aarch64')):
+            with self.subTest(artifact=artifact),tempfile.TemporaryDirectory() as directory:
+                root=Path(directory)
+                graphviz,sdk,provenance,source,_=self.fixture(root)
+                record=json.loads(provenance.read_bytes())
+                record.update(artifact_id=artifact,native_os='darwin',native_arch=arch,
+                    recipe_sha256=self.module.digest(self.module.HERE/(artifact+'.json')),
+                    sdk=dict(facts=dict(provider='Apple Xcode',target_os='darwin',target_arch=arch,deployment_target='15.0')))
+                provenance.write_text(json.dumps(record),encoding='utf-8')
+                with patch.object(self.module,'SOURCE_LOCK',source):
+                    report=self.module.pack(graphviz,None,provenance,root/'output')
+                    self.assertFalse(report['approved'])
+                    self.assertEqual(report['sdk_files'],0)
+                    with tarfile.open(root/'output/sources.tar.gz') as archive:
+                        manifest=json.load(archive.extractfile('manifest.json'))
+                        self.assertFalse(any(name.startswith('sdk/') for name in archive.getnames()))
+                        self.assertIsNone(manifest['sdk_archive_sha256'])
+                        self.assertEqual(archive.extractfile('candidate-provenance.json').read(),provenance.read_bytes())
+                        self.assertEqual(archive.extractfile('graphviz.tar.gz').read(),graphviz.read_bytes())
+                    with self.assertRaises(ValueError):self.module.pack(graphviz,sdk,provenance,root/'sdk-forbidden')
+                    record['sdk']['facts']['target_arch']='wrong'
+                    provenance.write_text(json.dumps(record),encoding='utf-8')
+                    with self.assertRaises(ValueError):self.module.pack(graphviz,None,provenance,root/'wrong-arch')
+                    self.assertFalse((root/'wrong-arch').exists())
+
     def test_arm_source_export_selects_arm_sdk_and_rejects_mismatched_provenance(self):
         with tempfile.TemporaryDirectory() as directory:
             root=Path(directory)
