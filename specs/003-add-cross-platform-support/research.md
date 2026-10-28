@@ -1,5 +1,8 @@
 # Pesquisa e decisões técnicas
 
+**Política de validação atualizada por instrução do usuário (2026-10-27):** validar exclusivamente pelo GitHub Actions, diretamente nos runners hospedados e em contêineres quando necessários. Não exigir teste nativo, hardware dedicado, runner próprio, kernel específico ou VM; não criar nem iniciar VMs, inclusive dentro do CI. Esta decisão substitui exigências anteriores desses ambientes e suas pendências históricas. Conservar hashes, integridade, instalação, corpus, recuperação e o ambiente efetivamente exercitado nos logs; não inventar cobertura. Resultados de VMs anteriores são somente histórico e não são gates de aceite.
+
+
 **Data**: 2026-10-17. Pesquisa de planejamento, sem novos binários incorporados e sem testes Linux/macOS executados. Fatos de manutenção e decisões de engenharia são separados abaixo.
 
 ## 1. Matriz por distribuição, não por nome de família
@@ -48,7 +51,7 @@
 
 **Rationale**: ambientes [externally managed](https://packaging.python.org/en/latest/specifications/externally-managed-environments/) tornam pip global/--user inadequado como instrução universal. Venv evita modificar o Python do SO. Compilar o motor na instalação prejudicaria simplicidade e não será exigido.
 
-**Alternatives considered**: pip global com sudo/--break-system-packages (alterações globais); somente checkout (contraria instalação remota); empacotar toda a matriz nativa no wheel (download excessivo). CI pode usar [runners nativos](https://docs.github.com/en/actions/reference/runners/github-hosted-runners), mas imagens e rótulos devem ser confirmados na execução. Contêiner userland, emulação e testes mockados ficam registrados como evidência parcial; não substituem SO/arquitetura reais nem revisão Twine.
+**Alternatives considered**: pip global com sudo/--break-system-packages (alterações globais); somente checkout (contraria instalação remota); empacotar toda a matriz nativa no wheel (download excessivo). CI pode usar [runners hospedados](https://docs.github.com/en/actions/reference/runners/github-hosted-runners), mas imagens e rótulos devem ser confirmados na execução. Contêiner userland, emulação e testes mockados ficam registrados como evidência parcial; não substituem SO/arquitetura reais nem revisão Twine.
 
 ## 7. Unidade de suporte e agregação Python — A1
 

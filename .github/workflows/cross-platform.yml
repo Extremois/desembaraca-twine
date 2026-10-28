@@ -31,19 +31,3 @@ jobs:
         run: python -c "import os, platform, sys; print(platform.platform(), platform.machine(), sys.version); print('image', os.environ.get('ImageOS'), os.environ.get('ImageVersion'), 'runner_arch', os.environ.get('RUNNER_ARCH'))"
       - name: Standard-library foundation tests, without managed native engine
         run: python tests/run_foundation.py
-  windows-acceptance:
-    if: github.event_name == 'workflow_dispatch' && vars.TWINE_WINDOWS11_RUNNER == 'enabled'
-    runs-on: [self-hosted, Windows, X64, twine-windows11]
-    timeout-minutes: 30
-    strategy:
-      fail-fast: false
-      matrix:
-        python: ['3.12', '3.14']
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          persist-credentials: false
-      - uses: actions/setup-python@v5
-        with:
-          python-version: ${{ matrix.python }}
-      - run: python -m unittest discover -s tests -v

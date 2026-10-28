@@ -1,9 +1,9 @@
-name: macOS evidence (manual, independent native architectures)
+name: macOS evidence (manual, GitHub hosted architectures)
 on:
   workflow_dispatch:
     inputs:
       architecture:
-        description: Run only an existing configured native architecture
+        description: GitHub hosted runner architecture
         required: true
         type: choice
         options: [x86_64, aarch64]
@@ -28,7 +28,7 @@ on:
         required: true
         type: string
       image_id:
-        description: Reference native macOS 15 environment ID
+        description: Recorded GitHub Actions macOS runner ID
         required: true
         type: string
       image_digest:
@@ -47,7 +47,7 @@ jobs:
     uses: ./.github/workflows/qualify-cell.yml
     with:
       runner_os: macOS
-      runner_label: ${{ inputs.architecture == 'x86_64' && 'twine-macos15-intel' || 'twine-macos15-arm64' }}
+      runner_label: ${{ inputs.architecture == 'x86_64' && 'macos-15-intel' || 'macos-15' }}
       arch: ${{ inputs.architecture }}
       python_minor: ${{ matrix.python }}
       application_revision: ${{ inputs.application_revision }}

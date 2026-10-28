@@ -1,4 +1,4 @@
-name: Linux cell evidence (manual, existing native runner)
+name: Linux cell evidence (manual, GitHub hosted runner)
 on:
   workflow_dispatch:
     inputs:
@@ -7,7 +7,7 @@ on:
         required: true
         type: string
       runner_label:
-        description: Existing native runner for this exact OS/kernel/architecture
+        description: GitHub hosted runner label for the recorded OS/architecture
         required: true
         type: string
       application_revision:

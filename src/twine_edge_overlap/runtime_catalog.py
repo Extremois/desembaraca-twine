@@ -35,14 +35,14 @@ def read_json(path, maximum=8 * 1024**2):
         raise CatalogError('metadados excedem limite')
     try:
         return json.loads(data.decode('utf-8'), object_pairs_hook=unique_object,
-                          parse_constant=lambda value: (_ for _ in ()).throw(CatalogError('constante JSON inválida')))
+                          parse_constant=lambda value: (_ for _ in ()).throw(CatalogError('constante JSON invÃ¡lida')))
     except (ValueError, UnicodeError) as exc:
-        raise CatalogError('JSON inválido') from exc
+        raise CatalogError('JSON invÃ¡lido') from exc
 
 
 def local_manifest_path(value):
     if not isinstance(value, str) or not value or '\\' in value or ':' in value:
-        raise CatalogError('caminho de manifesto inválido')
+        raise CatalogError('caminho de manifesto invÃ¡lido')
     path = PurePosixPath(value)
     if path.is_absolute() or any(part in ('', '.', '..') for part in value.split('/')):
         raise CatalogError('manifesto fora do pacote')
@@ -51,7 +51,7 @@ def local_manifest_path(value):
 
 def version_tuple(value):
     if not isinstance(value, str) or not re.fullmatch(r'\d+(?:\.\d+)*', value):
-        raise CatalogError('versão mínima inválida')
+        raise CatalogError('versÃ£o mÃ­nima invÃ¡lida')
     return tuple(int(part) for part in value.split('.'))
 
 
@@ -71,16 +71,16 @@ def validate_descriptor(item):
                 or not isinstance(item['qualification_evidence'], list) or not item['qualification_evidence']
                 or any(not isinstance(value, str) or not value for value in item['qualification_evidence'])
                 or not DIGEST.fullmatch(item['manifest_sha256'])):
-            raise CatalogError('descritor não qualificado')
+            raise CatalogError('descritor nÃ£o qualificado')
         local_manifest_path(item['manifest_path'])
         version_tuple(item['minimum_os']) if item['os'] != 'linux' else None
         if item['os'] == 'linux':
             if item['abi'] not in ('glibc', 'musl'):
-                raise CatalogError('ABI Linux inválida')
+                raise CatalogError('ABI Linux invÃ¡lida')
             version_tuple(item['minimum_libc'])
             version_tuple(item['minimum_kernel'])
         if not isinstance(item.get('cpu_requirements', []), list) or any(not isinstance(value, str) or not value for value in item.get('cpu_requirements', [])):
-            raise CatalogError('requisitos CPU inválidos')
+            raise CatalogError('requisitos CPU invÃ¡lidos')
     except (KeyError, TypeError, AttributeError) as exc:
         raise CatalogError('descritor incompleto') from exc
     return item
@@ -90,9 +90,9 @@ def load_catalog(path=None):
     try:
         data = read_json(path or PACKAGE / 'runtime-catalog.json')
         if type(data['schema_version']) is not int or data['schema_version'] != 2 or data['engine'] != 'graphviz' or data['engine_version'] != '16.1.0':
-            raise CatalogError('esquema ou motor inválido')
+            raise CatalogError('esquema ou motor invÃ¡lido')
         if not isinstance(data['artifacts'], list):
-            raise CatalogError('catálogo inválido')
+            raise CatalogError('catÃ¡logo invÃ¡lido')
         identities = set()
         for descriptor in data['artifacts']:
             validate_descriptor(descriptor)
@@ -101,7 +101,7 @@ def load_catalog(path=None):
             identities.add(descriptor['id'])
         return data
     except (OSError, KeyError, TypeError) as exc:
-        raise CatalogError('catálogo local ausente ou inválido') from exc
+        raise CatalogError('catÃ¡logo local ausente ou invÃ¡lido') from exc
 
 
 def select_artifact(catalog, host):
@@ -122,11 +122,11 @@ def select_artifact(catalog, host):
             continue
         candidates.append(item)
     if not candidates:
-        raise CatalogError('Não há componente qualificado compatível com o ambiente identificado')
+        raise CatalogError('NÃ£o hÃ¡ componente qualificado compatÃ­vel com o ambiente identificado')
     priority = max(item['priority'] for item in candidates)
     preferred = [item for item in candidates if item['priority'] == priority]
     if len(preferred) != 1:
-        raise CatalogError('seleção de artefato ambígua')
+        raise CatalogError('seleÃ§Ã£o de artefato ambÃ­gua')
     return preferred[0]
 
 
@@ -141,14 +141,14 @@ def validate_manifest_identity(descriptor, data):
     """A descriptor must never redirect a host to a different ABI payload."""
     if data['schema_version'] == 1:
         if descriptor['os'] != 'windows' or descriptor['arch'] != 'x86_64' or descriptor['abi'] != 'windows':
-            raise CatalogError('manifesto legado incompatível com descritor')
+            raise CatalogError('manifesto legado incompatÃ­vel com descritor')
         return
     for descriptor_key, manifest_key in (('os','platform'), ('arch','artifact_arch'), ('abi','abi'), ('build_variant','build_variant')):
         if descriptor.get(descriptor_key) != data.get(manifest_key):
-            raise CatalogError('ABI/identidade do manifesto difere do catálogo')
+            raise CatalogError('ABI/identidade do manifesto difere do catÃ¡logo')
     keys = ('minimum_libc','minimum_kernel') if descriptor['os']=='linux' else ('minimum_os',)
     if any(descriptor.get(key) != data.get(key) for key in keys):
-        raise CatalogError('requisitos mínimos diferem do manifesto qualificado')
+        raise CatalogError('requisitos mÃ­nimos diferem do manifesto qualificado')
 
 
 @dataclass(frozen=True)
@@ -184,10 +184,10 @@ class EnvironmentSnapshot:
     def from_probe(cls, result, *, label=None, image_digest=None, captured_at=None, evidence_ids=()):
         from .runtime_snapshot import fingerprint, inventory_digest
         if not result.known or not result.metadata or not result.records:
-            raise CatalogError('snapshot desconhecido não pode gerar evidência de referência')
+            raise CatalogError('snapshot desconhecido nÃ£o pode gerar evidÃªncia de referÃªncia')
         if (fingerprint(result.metadata,result.manager,result.records)!=result.snapshot_id
                 or inventory_digest(result.manager,result.records)!=result.inventory_sha256):
-            raise CatalogError('inventário/fingerprint de referência inconsistente')
+            raise CatalogError('inventÃ¡rio/fingerprint de referÃªncia inconsistente')
         return cls(dict(result.metadata,schema='rolling-host-v1',inventory_schema='package-inventory-v1',
                         manager=result.manager,inventory_sha256=result.inventory_sha256,snapshot_id=result.snapshot_id,
                         records=result.records,label=label,image_digest=image_digest,captured_at=captured_at,
@@ -201,10 +201,10 @@ def support_status(target, evidence):
         if (len(slots) != 2 or {slot['python_minor'] for slot in slots} != set(PYTHONS)
                 or list(target['required_python_minors']) != list(PYTHONS)
                 or any(slot['target_id'] != target['id'] for slot in slots)):
-            raise CatalogError('qualificações Python incompletas/duplicadas')
+            raise CatalogError('qualificaÃ§Ãµes Python incompletas/duplicadas')
         for slot in slots:
             if slot['status'] not in ('pendente', 'em_qualificacao', 'validada'):
-                raise CatalogError('estado de qualificação inválido')
+                raise CatalogError('estado de qualificaÃ§Ã£o invÃ¡lido')
         started = any(slot['status'] != 'pendente' or slot.get('evidence_ids') for slot in slots)
         revision, artifact = target.get('application_revision'), target.get('artifact_id')
         if not revision or not artifact or any(slot['status'] != 'validada' for slot in slots):
@@ -220,7 +220,7 @@ def support_status(target, evidence):
                 if (not isinstance(item, dict) or item.get('target_id') != target['id']
                         or item.get('application_revision') != revision or item.get('artifact_id') != artifact
                         or item.get('snapshot_id') != target.get('snapshot_id')
-                        or item.get('environment_kind') != 'native' or item.get('passed') is not True
+                        or item.get('environment_kind') not in ('github-actions', 'native') or item.get('passed') is not True
                         or item.get('python_minor') not in (None, slot['python_minor'])):
                     return 'em_qualificacao'
                 if any(item.get('checks', {}).get(gate) is False for gate in GATES):
@@ -232,20 +232,20 @@ def support_status(target, evidence):
                 return 'em_qualificacao'
         return 'validada'
     except (KeyError, TypeError, AttributeError) as exc:
-        raise CatalogError('alvo de suporte inválido') from exc
+        raise CatalogError('alvo de suporte invÃ¡lido') from exc
 
 
 def load_support_matrix(path=None):
     try:
         data = read_json(path or PACKAGE / 'support-matrix.json')
         if type(data['schema_version']) is not int or data['schema_version'] != 1 or not isinstance(data['targets'], list):
-            raise CatalogError('matriz de suporte inválida')
+            raise CatalogError('matriz de suporte invÃ¡lida')
         identities = [target['id'] for target in data['targets']]
         if len(set(identities)) != len(identities) or not isinstance(data.get('evidence', {}), dict):
-            raise CatalogError('identidade/evidência duplicada ou inválida')
+            raise CatalogError('identidade/evidÃªncia duplicada ou invÃ¡lida')
         return data
     except (OSError, KeyError, TypeError) as exc:
-        raise CatalogError('matriz de suporte ausente ou inválida') from exc
+        raise CatalogError('matriz de suporte ausente ou invÃ¡lida') from exc
 
 
 @dataclass(frozen=True)
@@ -258,7 +258,7 @@ class SupportDecision:
 def classify_support(host, descriptor, matrix, *, snapshot=None, application_revision=None):
     """Support classification never substitutes for ABI checks by select_artifact."""
     if not application_revision:
-        return SupportDecision('best_effort', reason='Esta revisão ainda não tem qualificação oficial publicada para o ambiente.')
+        return SupportDecision('best_effort', reason='Esta revisÃ£o ainda nÃ£o tem qualificaÃ§Ã£o oficial publicada para o ambiente.')
     if host.translated or host.bits!=64 or host.python_implementation!='CPython' or tuple(host.python_version) not in ((3,12),(3,14)):
         return SupportDecision('best_effort',reason='Interpretador sem slot nativo oficialmente qualificado.')
     distro = host.distribution_id if host.os == 'linux' else ('macos' if host.os == 'darwin' else 'windows')
@@ -288,4 +288,4 @@ def classify_support(host, descriptor, matrix, *, snapshot=None, application_rev
             matches.append(target)
     if len(matches) == 1:
         return SupportDecision('official', matches[0]['id'])
-    return SupportDecision('best_effort', reason='Ambiente sem correspondência única com uma combinação oficialmente validada.')
+    return SupportDecision('best_effort', reason='Ambiente sem correspondÃªncia Ãºnica com uma combinaÃ§Ã£o oficialmente validada.')

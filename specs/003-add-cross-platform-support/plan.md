@@ -1,5 +1,8 @@
 ﻿# Implementation Plan: Uso em Linux e macOS
 
+**Política de validação atualizada por instrução do usuário (2026-10-27):** validar exclusivamente pelo GitHub Actions, diretamente nos runners hospedados e em contêineres quando necessários. Não exigir teste nativo, hardware dedicado, runner próprio, kernel específico ou VM; não criar nem iniciar VMs, inclusive dentro do CI. Esta decisão substitui exigências anteriores desses ambientes e suas pendências históricas. Conservar hashes, integridade, instalação, corpus, recuperação e o ambiente efetivamente exercitado nos logs; não inventar cobertura. Resultados de VMs anteriores são somente histórico e não são gates de aceite.
+
+
 **Feature**: `003-add-cross-platform-support` | **Data**: 2026-10-17 | **Spec**: [spec.md](spec.md)
 
 **Branch Git atual**: `feat/002-manage-layout-runtime`. O identificador da feature não representa uma branch criada. Este planejamento não altera branches nem publica releases.
@@ -8,7 +11,7 @@
 
 Estender `desembaraca-twine` a Linux x64/ARM64 e macOS 15 Intel/Apple Silicon, mantendo preparação automática, processamento local/offline, integridade e regressão Windows. Separar compatibilidade do componente nativo de qualificação de cada distribuição/versão/arquitetura. A [matriz](support-matrix.md) fixa o recorte em 2026-10-17 e permite entrega incremental sem eliminar alvos restantes.
 
-Manter Graphviz 16.1.0 e o ZIP original Windows. Construir seis variantes POSIX: Linux glibc e musl, cada uma em x86_64/aarch64, e Darwin x86_64/arm64. Adaptar cache, locks, permissões e seleção de componentes; conservar algoritmo e contratos de I/O. Esses bundles POSIX ainda não são entregáveis qualificados do projeto: build, licenças, assinatura/notarização macOS e evidência nativa são trabalho obrigatório futuro.
+Manter Graphviz 16.1.0 e o ZIP original Windows. Construir seis variantes POSIX: Linux glibc e musl, cada uma em x86_64/aarch64, e Darwin x86_64/arm64. Adaptar cache, locks, permissões e seleção de componentes; conservar algoritmo e contratos de I/O. Esses bundles POSIX ainda não são entregáveis qualificados do projeto: build, licenças, assinatura/notarização macOS e evidência do GitHub Actions são trabalho obrigatório futuro.
 
 ## Technical Context
 
@@ -22,7 +25,7 @@ Manter Graphviz 16.1.0 e o ZIP original Windows. Construir seis variantes POSIX:
 
 **Identidade rolling (U1)**: hash canônico local de distribuição/canal/arquitetura/kernel e inventário instalado, coletado via consultas somente de leitura pacman/rpm em dois resultados iguais. Prazo agregado 5 s/8 MiB/100.000 registros por leitura, dentro dos orçamentos existentes. Falha ou diferença retira reconhecimento oficial, permitindo melhor esforço se ABI compatível; nenhuma rede. [Contrato](contracts/support-policy.md#reconhecimento-de-rolling).
 
-**Testing**: testes unitários/contratuais existentes, integração multiprocesso e falhas reais, corpus, preservação de bytes, wheel/sdist fora do checkout, ensaios nativos por célula e reabertura Twine.
+**Testing**: testes unitários/contratuais existentes, integração multiprocesso e falhas reais, corpus, preservação de bytes, wheel/sdist fora do checkout, ensaios no GitHub Actions por célula e reabertura Twine.
 
 **Target Platform**: [support-matrix.md](support-matrix.md): Windows 11 x64 como regressão; macOS 15 Intel/Apple Silicon; versões Linux elegíveis das distribuições nomeadas, x64/ARM64 quando publicadas. Derivadas não herdam suporte oficial.
 
@@ -119,7 +122,7 @@ A revisão resolve A1 por agregação de dois ensaios Python por alvo e U1 por r
 
 ### Ambientes
 
-Usar runners nativos x64/ARM64, máquinas existentes e CI. Não criar VM no sistema atual. Contêineres em hosts nativos demonstram userland/ABI, mas não substituem teste do SO/kernel/permissões nem revisão visual. Cada célula requer CPython 3.12 e 3.14 nativos, origem e patch registrados. Falta de pacote Python padrão não permite excluir uma distribuição: qualificar instalação do interpretador no espaço do usuário; manter alvo pendente até isso ocorrer.
+Usar runners hospedados x64/ARM64, máquinas existentes e CI. Não criar VM no sistema atual. Contêineres em hosts nativos demonstram userland/ABI, mas não substituem teste do SO/kernel/permissões nem revisão visual. Cada célula requer CPython 3.12 e 3.14 nativos, origem e patch registrados. Falta de pacote Python padrão não permite excluir uma distribuição: qualificar instalação do interpretador no espaço do usuário; manter alvo pendente até isso ocorrer.
 
 ### Gates de entrega
 

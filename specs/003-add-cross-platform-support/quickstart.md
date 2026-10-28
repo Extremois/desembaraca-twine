@@ -1,5 +1,8 @@
 # Guia de validação da implementação
 
+**Política de validação atualizada por instrução do usuário (2026-10-27):** validar exclusivamente pelo GitHub Actions, diretamente nos runners hospedados e em contêineres quando necessários. Não exigir teste nativo, hardware dedicado, runner próprio, kernel específico ou VM; não criar nem iniciar VMs, inclusive dentro do CI. Esta decisão substitui exigências anteriores desses ambientes e suas pendências históricas. Conservar hashes, integridade, instalação, corpus, recuperação e o ambiente efetivamente exercitado nos logs; não inventar cobertura. Resultados de VMs anteriores são somente histórico e não são gates de aceite.
+
+
 **Estado**: implementação parcial. Seleção de plataforma, cache POSIX, contratos e ferramentas de qualificação estão implementados; o catálogo distribuído ainda contém somente o motor Windows. Os percursos Linux/macOS de aceitação exigem uma candidata com bundle nativo qualificado e permanecem pendentes. Este guia não afirma execução desses ensaios nem publica componentes. Não criar VM no computador atual.
 
 ## Pré-requisitos e registro
@@ -160,6 +163,6 @@ Em Arch/Arch ARM/Manjaro/Tumbleweed, a consulta inicial de referência pode ser 
 
 Registrar inventário canônico/snapshot_id reais do ambiente de teste e duas coletas iguais; rótulo/data/imagem são metadados. Com rede bloqueada e referência empacotada validada, o mesmo estado deve ser reconhecido oficialmente. Em clone de ensaio ou fixture controlada, alterar um pacote/canal/kernel: deve retirar correspondência e permitir processamento com aviso se ABI compatível, sem baixar novo motor por causa do aviso.
 
-Exercitar gerenciador ausente, Branch Manjaro ausente/duplicado, coleta instável, timeout agregado 5 s, saída agregada acima de 8 MiB e mais de 100.000 registros por leitura; nunca aceitar inventário truncado. Resultado esperado: identidade desconhecida, diagnóstico de melhor esforço e nenhuma tentativa de conexão. ABI incompatível continua sendo erro. Medir o custo dentro dos orçamentos existentes. Não modificar pacotes do computador pessoal; fixtures simuladas não aprovam snapshots reais nem encerram ensaios nativos pendentes.
+Exercitar gerenciador ausente, Branch Manjaro ausente/duplicado, coleta instável, timeout agregado 5 s, saída agregada acima de 8 MiB e mais de 100.000 registros por leitura; nunca aceitar inventário truncado. Resultado esperado: identidade desconhecida, diagnóstico de melhor esforço e nenhuma tentativa de conexão. ABI incompatível continua sendo erro. Medir o custo dentro dos orçamentos existentes. Não modificar pacotes do computador pessoal; fixtures simuladas não aprovam snapshots reais nem encerram ensaios no GitHub Actions pendentes.
 
 Somente promover células com todos os gates, ambos os Pythons e links de evidência. Publicar parcialmente exige listar o restante pendente. Encerrar a feature exige a matriz completa; este guia e o planejamento, sozinhos, não demonstram suporte entregue.

@@ -108,6 +108,17 @@ class QualificationToolTests(unittest.TestCase):
         for item in records:item['source_state']='committed'
         return records
 
+    def test_actions_evidence_does_not_require_native_execution(self):
+        promotion=tool('promote-support')
+        registry=json.loads((ROOT/'tools/runtime/support-targets.json').read_text(encoding='utf-8'))
+        with tempfile.TemporaryDirectory() as folder:
+            root=Path(folder);records=self.records(registry['targets'][0],root)
+            for record in records:
+                record['environment_kind']='github-actions'
+                record['network']['observation']='github-actions-log'
+            proposal=promotion.propose(registry,registry['targets'][0]['id'],records,root)
+            self.assertEqual(proposal['targets'][0]['status'],'validada')
+
     def test_complete_synthetic_cell_proposal_preserves_other_pending_targets(self):
         promotion=tool('promote-support')
         registry=json.loads((ROOT/'tools/runtime/support-targets.json').read_text(encoding='utf-8'))

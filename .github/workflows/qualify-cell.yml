@@ -1,4 +1,4 @@
-name: Collect one configured native cell
+name: Collect one GitHub Actions cell
 on:
   workflow_call:
     inputs:
@@ -43,7 +43,7 @@ permissions:
   actions: read
 jobs:
   collect:
-    runs-on: [self-hosted, '${{ inputs.runner_os }}', '${{ inputs.runner_label }}']
+    runs-on: ${{ inputs.runner_label }}
     timeout-minutes: 45
     steps:
       - uses: actions/checkout@v4

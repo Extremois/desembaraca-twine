@@ -82,7 +82,7 @@ def smoke(build, environment_kind):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--build-output', type=Path, required=True)
-    parser.add_argument('--environment-kind', choices=('native', 'wsl', 'container', 'emulated'), required=True)
+    parser.add_argument('--environment-kind', choices=('github-actions','native', 'wsl', 'container', 'emulated'), required=True)
     parser.add_argument('--report', type=Path, required=True)
     args = parser.parse_args()
     report = smoke(args.build_output, args.environment_kind)

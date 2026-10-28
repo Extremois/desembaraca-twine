@@ -1,5 +1,8 @@
 # Modelo de dados e estados
 
+**Política de validação atualizada por instrução do usuário (2026-10-27):** validar exclusivamente pelo GitHub Actions, diretamente nos runners hospedados e em contêineres quando necessários. Não exigir teste nativo, hardware dedicado, runner próprio, kernel específico ou VM; não criar nem iniciar VMs, inclusive dentro do CI. Esta decisão substitui exigências anteriores desses ambientes e suas pendências históricas. Conservar hashes, integridade, instalação, corpus, recuperação e o ambiente efetivamente exercitado nos logs; não inventar cobertura. Resultados de VMs anteriores são somente histórico e não são gates de aceite.
+
+
 Modelo proposto, não schema já implementado. Sem banco: metadados confiáveis empacotados e registros locais de runtime. Histórias continuam no modelo vigente da feature [001](../001-reduce-edge-overlap/spec.md).
 
 ## HostEnvironment

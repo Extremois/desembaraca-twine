@@ -138,7 +138,7 @@ if __name__ == '__main__':
     parser.add_argument('--build-output', type=Path, required=True)
     parser.add_argument('--report', type=Path, required=True)
     parser.add_argument('--corpus-report', type=Path, required=True)
-    parser.add_argument('--environment-kind', choices=('native', 'wsl', 'container', 'emulated'), required=True)
+    parser.add_argument('--environment-kind', choices=('github-actions','native', 'wsl', 'container', 'emulated'), required=True)
     parser.add_argument('--private-package',type=Path,help='Exercise production runtime manager using this private package and controlled transfer fixture')
     args = parser.parse_args()
     observe(args.build_output,args.report,args.corpus_report,args.environment_kind,args.private_package)

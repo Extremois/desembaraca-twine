@@ -29,7 +29,7 @@ def main():
              '--python-minor',env['TWINE_PYTHON_MINOR'],'--python-origin','actions/setup-python (exact patch recorded)',
              '--source-state','committed',
              '--image-id',env['TWINE_IMAGE_ID'],'--image-digest',env['TWINE_IMAGE_DIGEST'],
-             '--environment-kind','native','--output','evidence/result.json',
+             '--environment-kind','github-actions','--output','evidence/result.json',
              '--review-output','evidence/twine-review']
     subprocess.run(command,check=True,shell=False)
 

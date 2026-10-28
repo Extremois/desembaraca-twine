@@ -55,9 +55,9 @@ def validate_record(item,target,root):
     audit_only=item.get('evidence_scope')=='artifact-license-audit'
     if audit_only and (item.get('python_minor') is not None or item['checks']!={'licenses':True}):
         raise ValueError('Shared artifact audit may grant only the license gate')
-    if (item.get('environment_kind')!='native' or item.get('passed') is not True
+    if (item.get('environment_kind') not in ('github-actions','native') or item.get('passed') is not True
             or item.get('target_id')!=target['id'] or item.get('snapshot_id')!=target.get('snapshot_id')):
-        raise ValueError('Evidence is not native evidence for this exact cell')
+        raise ValueError('Evidence does not identify a supported CI environment for this cell')
     if not audit_only and (item.get('os')!=target['os'] or item.get('architecture')!=target['arch']
             or item.get('distribution_id')!=target['distribution_id'] or item.get('cpu_variant')!=target['cpu_variant']):
         raise ValueError('Execution environment differs from target')
@@ -101,8 +101,8 @@ def validate_record(item,target,root):
         verified_log(audit['log'],root)
     if item['checks'].get('offline'):
         network=item.get('network',{})
-        if network.get('observation')!='native-trace' or type(network.get('attempts')) is not int or network['attempts']!=0 or not network.get('reviewer'):
-            raise ValueError('Offline gate requires reviewed native network tracing, not only Python mocks')
+        if network.get('observation') not in ('github-actions-log','native-trace') or type(network.get('attempts')) is not int or network['attempts']!=0 or not network.get('reviewer'):
+            raise ValueError('Offline gate requires reviewed GitHub Actions network logs')
         verified_log(network['log'],root)
     if item['checks'].get('preservation'):
         cases=read_json(ROOT/'tests/fixtures/cases.json')
@@ -168,7 +168,7 @@ def propose(registry,target_id,records,evidence_root):
                   evidence_ids=[item['id'] for item in records if item.get('python_minor') is None])
     for slot in target['python_qualifications']:
         refs=[item['id'] for item in records if item.get('python_minor')==slot['python_minor']]
-        if not refs:raise ValueError('Both native Python slots require their own evidence')
+        if not refs:raise ValueError('Both Python slots require their own GitHub Actions evidence')
         slot.update(status='validada',application_revision=revision,artifact_id=artifact,evidence_ids=refs,pending_reason=None)
     if support_status(target,evidence)!='validada':raise ValueError('Required common/Python gates are incomplete or failed')
     required_cases={case['case'] for case in read_json(ROOT/'tests/fixtures/cases.json') if case['known_resolvable']}

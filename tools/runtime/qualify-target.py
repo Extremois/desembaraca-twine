@@ -154,7 +154,7 @@ def main():
     parser.add_argument('--wheelhouse',type=Path)
     parser.add_argument('--python-minor',choices=('3.12','3.14'),required=True)
     parser.add_argument('--source-state',choices=('committed','dirty','unverified'),default='unverified')
-    parser.add_argument('--environment-kind',choices=('native','wsl','container','emulated','simulated'),required=True)
+    parser.add_argument('--environment-kind',choices=('github-actions','native','wsl','container','emulated','simulated'),required=True)
     parser.add_argument('--output',type=Path,required=True)
     parser.add_argument('--review-output',type=Path,help='New directory for six public Twine outputs; visual review stays pending')
     args=parser.parse_args()

@@ -1,12 +1,15 @@
 # Contrato de qualificação e entrega incremental
 
+**Política de validação atualizada por instrução do usuário (2026-10-27):** validar exclusivamente pelo GitHub Actions, diretamente nos runners hospedados e em contêineres quando necessários. Não exigir teste nativo, hardware dedicado, runner próprio, kernel específico ou VM; não criar nem iniciar VMs, inclusive dentro do CI. Esta decisão substitui exigências anteriores desses ambientes e suas pendências históricas. Conservar hashes, integridade, instalação, corpus, recuperação e o ambiente efetivamente exercitado nos logs; não inventar cobertura. Resultados de VMs anteriores são somente histórico e não são gates de aceite.
+
+
 A [matriz](../support-matrix.md) é o registro do escopo, com data, fontes de manutenção e condições gratuitas. A célula de suporte é por distribuição/SO, versão/canal/snapshot, arquitetura e variante CPU; contém duas qualificações Python, não duas células independentes. Um artefato glibc compartilhado não valida distribuições automaticamente.
 
 ## Agregação das qualificações Python
 
-Cada SupportTarget tem exatamente dois slots PythonQualification, para 3.12 e 3.14. Aprovar um slot não aprova o outro nem o alvo agregado. O alvo só é `validada` quando ambos os slots e gates comuns têm evidência nativa completa da mesma célula, revisão da aplicação e artefato; em rolling, também do mesmo snapshot_id. Registrar patch/origem do interpretador em cada evidência, sem impor igualdade de patch entre séries diferentes. Não basta executar a mesma versão Python duas vezes ou misturar registros de snapshots distintos.
+Cada SupportTarget tem exatamente dois slots PythonQualification, para 3.12 e 3.14. Aprovar um slot não aprova o outro nem o alvo agregado. O alvo só é `validada` quando ambos os slots e gates comuns têm evidência completa do GitHub Actions da mesma célula, revisão da aplicação e artefato; em rolling, também do mesmo snapshot_id. Registrar patch/origem do interpretador em cada evidência, sem impor igualdade de patch entre séries diferentes. Não basta executar a mesma versão Python duas vezes ou misturar registros de snapshots distintos.
 
-Slots faltantes, inválidos ou simulados impedem promoção oficial daquela célula. Não bloqueiam a qualificação ou proposta de outra célula completa, conforme a independência entre artefatos de I1. Duplicatas de `(target_id, python_minor)` na mesma revisão são erro de dados; status agregado é calculado, não editado para contornar gates.
+Slots faltantes ou inválidos impedem promoção oficial daquela célula. Não bloqueiam a qualificação ou proposta de outra célula completa, conforme a independência entre artefatos de I1. Duplicatas de `(target_id, python_minor)` na mesma revisão são erro de dados; status agregado é calculado, não editado para contornar gates.
 
 ## Reconhecimento de rolling
 
