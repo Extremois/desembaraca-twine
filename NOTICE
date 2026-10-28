@@ -3,7 +3,12 @@ Copyright 2026 Francisco Bezerra
 
 Licensed under the Apache License, Version 2.0. See LICENSE.
 
-Graphviz and Python are external prerequisites and are not included in this
-project's source distribution. ELK.js and Node.js were used only for experiments.
-No Twine source code or third-party layout-engine binaries are bundled here.
-See docs/third-party.md for the dependency inventory and source references.
+Python is an external prerequisite. The application prepares a separate Graphviz
+runtime in a private cache. Graphviz and its dependencies retain their own
+licenses; their notices and source references accompany each runtime artifact.
+No Twine source code or third-party layout-engine binaries are included in the
+application's wheel or source distribution. ELK.js and Node.js were used only
+for experiments. See docs/third-party.md for the dependency inventory and source
+references.
+
+This product includes color specifications and designs developed by Cynthia Brewer (http://colorbrewer.org/).

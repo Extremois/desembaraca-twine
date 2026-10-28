@@ -1,3 +1,9 @@
+## Revisão parcial dos componentes e NOTICE — 2026-10-28
+
+Foram registradas [conclusões textuais para sete grupos](evidence/license-review-2026-10-28/COMPONENT-FINDINGS.md), vinculadas aos seis candidatos `f63b43e` por 42 conjuntos de hashes/notices. Bison, Flex, Randomkit, Rbtree e ColorBrewer têm rotas identificadas com suas condições de preservação. As referências X.Org e a rota EPL mantêm as ressalvas de origem/entrega. A auditoria integral e T030/T052/T066 continuam abertas.
+
+O NOTICE do aplicativo foi atualizado para descrever o cache gerenciado e incluir o reconhecimento ColorBrewer já preservado nos seis bundles. A alteração dos metadados de licença deve ser validada nos pacotes pelo Actions; os recibos anteriores não foram substituídos.
+
 ## Dossiê de decisão de licenças — 2026-10-28
 
 Conforme orientação do usuário, foi mantido o Graphviz atual e preparado o [dossiê de revisão](evidence/license-review-2026-10-28/README.md), com seis candidatos na mesma revisão `f63b43e`, 3.053 arquivos e 3.041 payloads de avisos conferidos. O índice preserva os hashes completos dos pares binário/fontes e aponta para 40 recibos gzip. Nos quatro Linux, somente o índice de origens do ZIP mudou; motores e demais payloads preservam os hashes anteriores. O trabalho reutilizou os builds aprovados e não executou novos testes ou builds.
