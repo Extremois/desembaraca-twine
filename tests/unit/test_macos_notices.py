@@ -16,26 +16,31 @@ def tool(name):
 
 
 class MacosNoticeTests(unittest.TestCase):
-    def test_sdk_source_review_exports_only_locked_headers_and_rejects_changes(self):
+    def test_sdk_source_review_exports_observed_apsl_headers_and_rejects_changes(self):
         module = tool('prepare-macos-notices')
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
             include = root / 'usr/include'
             include.mkdir(parents=True)
             rows, expected = [], {}
-            for name in ('float.h', 'math.h', 'private.h'):
-                raw = (b'/* Apple Public Source License Version 1.1 */\n'
-                       b'#define REVIEW_HEADER 1\n') + name.encode()
+            for name in ('float.h', 'math.h', 'i386/_limits.h', 'sys/types.h', 'private.h'):
+                version = '2.0' if name.startswith('sys/') else '1.1'
+                raw = (('/* Apple Public Source License Version ' + version + ' */\n').encode()
+                       + b'#define REVIEW_HEADER 1\n') + name.encode()
+                if name == 'private.h':
+                    raw = b'/* unrelated header */\n'
                 path = include / name
+                path.parent.mkdir(parents=True, exist_ok=True)
                 path.write_bytes(raw)
                 digest = hashlib.sha256(raw).hexdigest()
                 rows.append(dict(path=str(path), origin='external', size=len(raw), sha256=digest))
-                if name != 'private.h':
+                if name in ('float.h', 'math.h'):
                     expected[name] = digest
             with patch.object(module, 'HEADER_REVIEW_SHA256', expected):
                 materials = module.sdk_header_review_materials(rows, root)
                 self.assertEqual({name for name, _, _ in materials},
-                                 {'float.h', 'math.h', 'APSL-1.1-COPYING.txt'})
+                                 {'usr/include/float.h', 'usr/include/math.h', 'usr/include/i386/_limits.h',
+                                  'usr/include/sys/types.h', 'APSL-1.1-COPYING.txt', 'APSL-2.0-COPYING.txt'})
                 for name, raw, origin in materials:
                     self.assertEqual(hashlib.sha256(raw).hexdigest(), origin['source_sha256'])
                 with self.assertRaises(ValueError):

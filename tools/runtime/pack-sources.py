@@ -86,14 +86,35 @@ def reviewed_header_sources(review_path, record):
         raise ValueError('Header review belongs to a different candidate')
     rows = review.get('sdk_header_source_review')
     expected = {'header-review/float.h', 'header-review/math.h', 'header-review/APSL-1.1-COPYING.txt'}
+    observed = {}
+    license_names = {'header-review/APSL-1.1-COPYING.txt': 'apsl_1_1_copying'}
+    scope = review.get('sdk_header_source_scope')
+    if scope is not None:
+        if scope != 'observed-apsl-headers-v1' or not isinstance(review.get('headers'), list):
+            raise ValueError('Unknown selected SDK source scope')
+        observed = {row['path']: row for row in review['headers']
+                    if row.get('source_license') in ('APSL-1.1', 'APSL-2.0')}
+        if not observed:
+            raise ValueError('Observed APSL header sources missing')
+        license_names = {'header-review/' + name + '-COPYING.txt': key
+                         for name, key in (('APSL-1.1', 'apsl_1_1_copying'), ('APSL-2.0', 'apsl_2_copying'))
+                         if any(row['source_license'] == name for row in observed.values())}
+        expected = {'header-review/' + name for name in observed} | set(license_names)
+        if len(observed) != record['notice_preparation']['selected_sdk_header_files']:
+            raise ValueError('Selected SDK header count differs from provenance')
     if (not isinstance(rows, list) or len(rows) != len(expected)
             or any(not isinstance(row, dict) or not isinstance(row.get('path'), str) for row in rows)
             or {row['path'] for row in rows} != expected):
         raise ValueError('Incomplete or unexpected selected SDK header sources')
-    license_lock = json.loads(bounded(HERE / 'licenses/material-source-lock.json', 65536))['apsl_1_1_copying']
+    license_locks = json.loads(bounded(HERE / 'licenses/material-source-lock.json', 65536))
     materials = []
     for row in rows:
-        data = bounded(review_path.parent / row['path'], 1024**2)
+        relative = PurePosixPath(row['path'])
+        path = review_path.parent / row['path']
+        if (relative.is_absolute() or '..' in relative.parts or '\\' in row['path'] or ':' in row['path']
+                or not path.resolve().is_relative_to(review_path.parent.resolve())):
+            raise ValueError('Unsafe selected SDK source path')
+        data = bounded(path, 1024**2)
         origin = row.get('origin')
         if (type(row.get('size')) is not int or len(data) != row['size']
                 or hashlib.sha256(data).hexdigest() != row.get('sha256')
@@ -102,8 +123,16 @@ def reviewed_header_sources(review_path, record):
         if row['path'].endswith('.h'):
             if origin.get('kind') != 'recorded-xcode-header-source':
                 raise ValueError('Complete observed SDK header source required')
-        elif row['sha256'] != license_lock['sha256'] or len(data) != license_lock['size']:
-            raise ValueError('Selected SDK header license differs from pinned APSL 1.1')
+            if scope is not None:
+                header = observed.get(origin.get('path'))
+                if (header is None or row['path'] != 'header-review/' + origin['path']
+                        or header['source_sha256'] != row['sha256']
+                        or header['source_license'] != origin.get('source_license')):
+                    raise ValueError('Selected SDK source differs from observed header')
+        else:
+            license_lock = license_locks[license_names[row['path']]]
+            if row['sha256'] != license_lock['sha256'] or len(data) != license_lock['size']:
+                raise ValueError('Selected SDK header license differs from pinned APSL text')
         materials.append((row['path'], data))
     return materials + [('notice-review.json', raw)]
 
@@ -120,12 +149,14 @@ def pack(graphviz, sdk, provenance, output, header_review=None):
     macos=artifact in ('macos-x86_64','macos-arm64')
     selected_headers = []
     expected_headers = record.get('notice_preparation', {}).get('selected_sdk_header_files', 0)
-    if type(expected_headers) is not int or expected_headers not in (0, 2) or (expected_headers and header_review is None):
+    if type(expected_headers) is not int or not 0 <= expected_headers <= 5000 or (expected_headers and header_review is None):
         raise ValueError('Candidate requires its bound selected-header source review')
     if header_review is not None:
         if not macos:
             raise ValueError('Selected Apple header sources require macOS provenance')
         selected_headers = reviewed_header_sources(header_review, record)
+        if sum(name.endswith('.h') for name, _ in selected_headers) != expected_headers:
+            raise ValueError('Selected SDK header count differs from provenance')
     if not macos and artifact not in ('linux-glibc-x86_64','linux-glibc-aarch64','linux-musl-x86_64','linux-musl-aarch64'):
         raise ValueError('Unsupported source material artifact')
     arch='aarch64' if artifact.endswith(('-aarch64','-arm64')) else 'x86_64'
@@ -209,7 +240,7 @@ def pack(graphviz, sdk, provenance, output, header_review=None):
                             provenance_sha256=hashlib.sha256(provenance_bytes).hexdigest(),
                             graphviz_archive_sha256=SOURCE_LOCK['sha256'], sdk_archive_sha256=None if macos else sdk_lock['sha256'],
                             selected_sdk_header_files=header_count,
-                            sdk_scope=(('Apple SDK archive excluded; selected unmodified APSL 1.1 headers and review included; other SDK contributions remain under review'
+                            sdk_scope=(('Apple SDK archive excluded; selected unmodified APSL headers, applicable license texts and review included; other SDK contributions remain under review'
                                         if header_count else 'Apple SDK excluded; recorded toolchain identity only; SDK/runtime contribution review remains pending')
                                        if macos else 'Complete lib/ tree and root LICENSE; compiler executable excluded'),
                             files=rows.copy(), pending=['per-file applicability and complete source offer review',

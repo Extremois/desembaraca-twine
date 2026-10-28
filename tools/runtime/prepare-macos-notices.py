@@ -100,27 +100,47 @@ def header_notice(row, developer):
         qualification='Leading comment material only; applicability and complete text remain under review')
 
 
+def header_source_license(prefix):
+    if b'Apple Public Source License' in prefix:
+        for version in ('1.1', '2.0'):
+            if ('Version ' + version).encode() in prefix:
+                return 'APSL-' + version
+    return None
+
+
 def sdk_header_review_materials(dependencies, developer):
     selected = {}
+    pinned = set()
+    licenses = set()
     for row in dependencies:
         path = Path(row['path'])
         name = path.name
-        if (row['origin'] != 'external' or name not in HEADER_REVIEW_SHA256
-                or not path.as_posix().endswith('/usr/include/' + name)):
+        if row['origin'] != 'external':
             continue
         prefix, origin = header_notice(row, developer)
+        license_name = header_source_license(prefix)
+        if license_name is None:
+            continue
         raw = common.audit.bounded(path, 1024**2)
-        if (name in selected or row['sha256'] != HEADER_REVIEW_SHA256[name]
-                or hashlib.sha256(raw).hexdigest() != HEADER_REVIEW_SHA256[name]
-                or b'Apple Public Source License Version 1.1' not in prefix):
+        if name in HEADER_REVIEW_SHA256 and path.as_posix().endswith('/usr/include/' + name):
+            if row['sha256'] != HEADER_REVIEW_SHA256[name] or license_name != 'APSL-1.1':
+                raise ValueError('SDK header differs from the pinned APSL source review')
+            pinned.add(name)
+        if (origin['path'] in selected or not path.name.endswith('.h')
+                or hashlib.sha256(raw).hexdigest() != row['sha256']):
             raise ValueError('SDK header differs from the pinned APSL source review')
-        selected[name] = (name, raw, dict(origin, kind='recorded-xcode-header-source',
+        licenses.add(license_name)
+        selected[origin['path']] = (origin['path'], raw, dict(origin, kind='recorded-xcode-header-source',
+            source_license=license_name,
             length=len(raw), qualification='Complete unmodified input for review; applicability pending'))
-    if set(selected) != set(HEADER_REVIEW_SHA256):
+    if pinned != set(HEADER_REVIEW_SHA256):
         raise ValueError('Missing pinned SDK header source for review')
-    license_raw, license_origin = common.license_material('apsl_1_1_copying')
-    return [selected[name] for name in sorted(selected)] + [
-        ('APSL-1.1-COPYING.txt', license_raw, license_origin)]
+    materials = [selected[name] for name in sorted(selected)]
+    for name in sorted(licenses):
+        key = 'apsl_1_1_copying' if name == 'APSL-1.1' else 'apsl_2_copying'
+        raw, origin = common.license_material(key)
+        materials.append((name + '-COPYING.txt', raw, origin))
+    return materials
 
 
 def prepare(build, evidence, source_archive, map_path, output):
@@ -180,6 +200,7 @@ def prepare(build, evidence, source_archive, map_path, output):
     for row in sorted((row for row in dependencies if row['origin'] == 'external'), key=lambda row: row['path']):
         prefix, origin = header_notice(row, developer)
         headers.append(dict(**origin, prefix_sha256=hashlib.sha256(prefix).hexdigest(),
+                            source_license=header_source_license(prefix),
                             status='prefix-preserved-review-pending' if prefix else 'no-leading-comment-review-pending'))
         if prefix:
             filename = 'SDK-header-' + hashlib.sha256(origin['path'].encode()).hexdigest()[:24] + '.txt'
@@ -188,7 +209,7 @@ def prepare(build, evidence, source_archive, map_path, output):
         'Xcode: ' + record['sdk']['facts']['xcode'].replace('\n', '; ') + '\n'
         'SDK tree SHA-256: ' + record['sdk']['facts']['sdk_tree_sha256'] + '\n'
         'The runtime carries header notice prefixes; the paired sources include only the selected header files.\n'
-        'Unmodified selected header sources are included under APSL 1.1 in header-review/ of the paired source archive.\n'
+        'Observed headers declaring APSL 1.1 or 2.0 are included unmodified with those license texts in header-review/ of the paired source archive.\n'
         'Use the runtime manifest source_references for the corresponding-source download locations.\n'
         'Referenced license texts and byte-bound NOTICE-ORIGINS.json are included offline.\n'
         'LLVM reference text does not identify the sources of the Apple compiler.\n'
@@ -205,6 +226,7 @@ def prepare(build, evidence, source_archive, map_path, output):
     header_source_records = []
     for name, raw, origin in header_sources:
         target = output / 'header-review' / name
+        target.parent.mkdir(parents=True, exist_ok=True)
         target.write_bytes(raw)
         header_source_records.append(dict(path=target.relative_to(output).as_posix(), size=len(raw),
             sha256=hashlib.sha256(raw).hexdigest(), origin=origin))
@@ -230,6 +252,7 @@ def prepare(build, evidence, source_archive, map_path, output):
         parent_provenance_sha256=builder.digest(build / 'provenance.json'), source_evidence_sha256=builder.digest(evidence),
         notices=inventory, headers=headers, graphviz_sources=source_rows,
         sdk_header_source_review=header_source_records,
+        sdk_header_source_scope='observed-apsl-headers-v1',
         generated_inputs_verified=len(generated),macos_signing_required=False,
         pending=['Per-file applicability and any additional required texts', 'Generated data provenance/notices',
                  'Unnamed linker-map slots and SDK contribution review', 'Complete corresponding-source offer',
@@ -237,7 +260,7 @@ def prepare(build, evidence, source_archive, map_path, output):
     (output / 'review.json').write_text(json.dumps(review, indent=2) + '\n', encoding='utf-8')
     record.update(output=str(output), qualification='draft macOS notices only; no approved audit or support',
         notice_preparation=dict(approved=False, review_sha256=builder.digest(output / 'review.json'),
-                                selected_sdk_header_files=len(HEADER_REVIEW_SHA256)))
+                                selected_sdk_header_files=sum(name.endswith('.h') for name, _, _ in header_sources)))
     (output / 'provenance.json').write_text(json.dumps(record, indent=2) + '\n', encoding='utf-8')
     return review
 

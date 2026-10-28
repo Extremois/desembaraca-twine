@@ -122,6 +122,45 @@ class SourcePackageTests(unittest.TestCase):
                         for name, raw in contents.items():
                             self.assertEqual(archive.extractfile('header-review/'+name).read(),raw)
                         self.assertEqual(archive.extractfile('notice-review.json').read(),review.read_bytes())
+                    # The current producer includes every observed APSL header,
+                    # preserving subdirectories and both license versions.
+                    extended = dict(contents)
+                    extended['i386/_limits.h'] = b'/* APSL 1.1 */\n#define LIMIT_REVIEW 1\n'
+                    extended['sys/types.h'] = b'/* APSL 2.0 */\n#define TYPES_REVIEW 1\n'
+                    extended['APSL-2.0-COPYING.txt'] = (self.module.HERE/'licenses/apsl-2.0-COPYING.txt').read_bytes()
+                    current_rows, headers = [], []
+                    for name, raw in extended.items():
+                        path = header_dir/name
+                        path.parent.mkdir(parents=True,exist_ok=True)
+                        path.write_bytes(raw)
+                        sha = hashlib.sha256(raw).hexdigest()
+                        origin = dict(kind='pinned-canonical-license-text',source_sha256=sha)
+                        if name.endswith('.h'):
+                            version = 'APSL-2.0' if name == 'sys/types.h' else 'APSL-1.1'
+                            origin.update(kind='recorded-xcode-header-source',path=name,source_license=version)
+                            headers.append(dict(path=name,source_sha256=sha,source_license=version))
+                        current_rows.append(dict(path='header-review/'+name,size=len(raw),sha256=sha,origin=origin))
+                    current = dict(artifact_id=artifact,executable_sha256=record['executable_sha256'],headers=headers,
+                                   sdk_header_source_scope='observed-apsl-headers-v1',sdk_header_source_review=current_rows)
+                    review.write_bytes(json.dumps(current).encode())
+                    record['notice_preparation'].update(selected_sdk_header_files=4,review_sha256=self.module.digest(review))
+                    provenance.write_bytes(json.dumps(record).encode())
+                    selected = self.module.pack(graphviz,None,provenance,root/'all-observed',header_review=review)
+                    self.assertEqual(selected['selected_sdk_header_files'],4)
+                    with tarfile.open(root/'all-observed/sources.tar.gz') as archive:
+                        for name,raw in extended.items():
+                            self.assertEqual(archive.extractfile('header-review/'+name).read(),raw)
+                    current['sdk_header_source_review'] = current_rows[:-1]
+                    review.write_bytes(json.dumps(current).encode())
+                    record['notice_preparation']['review_sha256'] = self.module.digest(review)
+                    provenance.write_bytes(json.dumps(record).encode())
+                    with self.assertRaises(ValueError):
+                        self.module.pack(graphviz,None,provenance,root/'omitted-license',header_review=review)
+                    self.assertFalse((root/'omitted-license').exists())
+                    current['sdk_header_source_review'] = current_rows
+                    review.write_bytes(json.dumps(current).encode())
+                    record['notice_preparation']['review_sha256'] = self.module.digest(review)
+                    provenance.write_bytes(json.dumps(record).encode())
                     (header_dir/'math.h').write_bytes(b'changed')
                     with self.assertRaises(ValueError):
                         self.module.pack(graphviz,None,provenance,root/'changed-header',header_review=review)
