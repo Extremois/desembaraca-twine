@@ -307,8 +307,9 @@ def collect(wheel, sdist, wheelhouse, *, engine_artifact=None, engine_id=None, e
                 commands.append(dict(returncode=result.returncode,
                     stdout_sha256=digest(result.stdout), stderr_sha256=digest(result.stderr)))
                 if result.returncode:
-                    message = result.stderr.decode('utf-8', errors='replace')[-4000:].replace(str(work), '<work>')
-                    raise RuntimeError('Isolated package command failed: ' + message)
+                    message = (result.stdout[-6000:]+b'\n'+result.stderr[-4000:]).decode('utf-8',errors='replace')
+                    message=message.replace(str(work),'<work>')
+                    raise RuntimeError('Isolated package command failed (exit '+str(result.returncode)+'): '+message)
                 return result.stdout
             if mode == 'sdist':
                 run([python, '-I', '-m', 'pip', 'install', '--no-index', '--no-deps',
