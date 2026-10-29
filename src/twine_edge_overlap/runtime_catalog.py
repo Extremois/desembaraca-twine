@@ -129,6 +129,10 @@ def select_artifact(catalog, host):
             kernel = host.kernel_version.split('-', 1)[0]
             if item['abi'] != host.libc_family or not _at_least(host.libc_version, item['minimum_libc']) or not _at_least(kernel, item['minimum_kernel']):
                 continue
+        elif host.os == 'windows' and host.os_version == 'server':
+            if (item['minimum_os'] != '11' or not re.fullmatch(r'[0-9]{1,8}', host.build_id or '')
+                    or int(host.build_id) < 22000):
+                continue
         elif not _at_least(host.os_version, item['minimum_os']):
             continue
         if not set(item.get('cpu_requirements', [])).issubset(host.cpu_features):

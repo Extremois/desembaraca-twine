@@ -32,6 +32,15 @@ class CatalogTests(unittest.TestCase):
         raw = (ROOT / 'src/twine_edge_overlap/runtime-manifest.json').read_bytes()
         self.assertEqual(descriptor['manifest_sha256'], hashlib.sha256(raw).hexdigest())
 
+    def test_windows_server_requires_a_known_compatible_build_without_becoming_client_11(self):
+        catalog=load_catalog()
+        host=HostEnvironment(os='windows',os_version='server',arch='x86_64',build_id='26100')
+        self.assertEqual(select_artifact(catalog,host)['manifest_path'],'runtime-manifest.json')
+        self.assertEqual(host.os_version,'server')
+        for build in (None,'','20348','unknown','26100-extra'):
+            with self.subTest(build=build),self.assertRaises(CatalogError):
+                select_artifact(catalog,HostEnvironment(os='windows',os_version='server',arch='x86_64',build_id=build))
+
     def test_wrong_abi_unknown_minimum_and_ties_never_guess(self):
         catalog = load_catalog()
         with self.assertRaises(CatalogError):

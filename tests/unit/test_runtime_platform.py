@@ -12,6 +12,16 @@ from twine_edge_overlap.runtime_platform import (
 
 
 class PlatformTests(unittest.TestCase):
+    def test_windows_server_keeps_product_identity_and_measured_build(self):
+        from types import SimpleNamespace
+        from twine_edge_overlap import runtime_platform as platform_module
+        version=SimpleNamespace(build=26100,product_type=3)
+        with patch.object(platform_module.sys,'platform','win32'), \
+             patch.object(platform_module.sys,'getwindowsversion',return_value=version,create=True), \
+             patch.object(platform_module,'_windows_architecture',return_value=('x86_64',False)):
+            host=platform_module.detect_host()
+        self.assertEqual((host.os,host.os_version,host.build_id),('windows','server','26100'))
+
     def test_alma_image_variant_comes_from_bounded_release_package_query(self):
         from twine_edge_overlap.runtime_platform import _alma_cpu_variant
         from twine_edge_overlap.engines.process import ProcessResult

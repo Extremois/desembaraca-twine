@@ -152,6 +152,7 @@ def detect_host():
     if system == 'windows':
         version = sys.getwindowsversion()
         facts['os_version'] = ('11' if version.build >= 22000 else '10') if version.product_type == 1 else 'server'
+        facts['build_id'] = str(version.build)
         facts['arch'], facts['translated'] = _windows_architecture()
     elif system == 'darwin':
         facts['os_version'] = platform.mac_ver()[0]
