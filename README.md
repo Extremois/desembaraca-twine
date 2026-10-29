@@ -74,7 +74,7 @@ Com Python e pip disponíveis, execute de qualquer pasta:
 
 ```powershell
 python -m venv "$HOME\.venvs\desembaraca-twine"
-& "$HOME\.venvs\desembaraca-twine\Scripts\python.exe" -m pip install "https://github.com/Extremois/desembaraca-twine/archive/53fb2aba47d78b5cb4a6679cafaaef5fc5e52c29.zip"
+& "$HOME\.venvs\desembaraca-twine\Scripts\python.exe" -m pip install "https://github.com/Extremois/desembaraca-twine/archive/93f2699296bdc660f7bb8f57684c3a9501e3f216.zip"
 ```
 
 A URL fixa uma revisão de desenvolvimento já enviada ao repositório. Git e
@@ -108,7 +108,7 @@ instale sem alterar o Python do sistema ou exigir Git/Graphviz:
 
 ```sh
 python3.12 -m venv "$HOME/.venvs/desembaraca-twine"
-"$HOME/.venvs/desembaraca-twine/bin/python" -m pip install "https://github.com/Extremois/desembaraca-twine/archive/53fb2aba47d78b5cb4a6679cafaaef5fc5e52c29.zip"
+"$HOME/.venvs/desembaraca-twine/bin/python" -m pip install "https://github.com/Extremois/desembaraca-twine/archive/93f2699296bdc660f7bb8f57684c3a9501e3f216.zip"
 "$HOME/.venvs/desembaraca-twine/bin/desembaraca-twine" --help
 "$HOME/.venvs/desembaraca-twine/bin/python" -m twine_edge_overlap --help
 ```
@@ -274,7 +274,7 @@ With Python and pip available, run from any directory:
 
 ```powershell
 python -m venv "$HOME\.venvs\desembaraca-twine"
-& "$HOME\.venvs\desembaraca-twine\Scripts\python.exe" -m pip install "https://github.com/Extremois/desembaraca-twine/archive/53fb2aba47d78b5cb4a6679cafaaef5fc5e52c29.zip"
+& "$HOME\.venvs\desembaraca-twine\Scripts\python.exe" -m pip install "https://github.com/Extremois/desembaraca-twine/archive/93f2699296bdc660f7bb8f57684c3a9501e3f216.zip"
 ```
 
 The URL pins a development revision already pushed to the repository. Git and
@@ -308,7 +308,7 @@ including venv/pip, install without changing system Python or requiring Git/Grap
 
 ```sh
 python3.12 -m venv "$HOME/.venvs/desembaraca-twine"
-"$HOME/.venvs/desembaraca-twine/bin/python" -m pip install "https://github.com/Extremois/desembaraca-twine/archive/53fb2aba47d78b5cb4a6679cafaaef5fc5e52c29.zip"
+"$HOME/.venvs/desembaraca-twine/bin/python" -m pip install "https://github.com/Extremois/desembaraca-twine/archive/93f2699296bdc660f7bb8f57684c3a9501e3f216.zip"
 "$HOME/.venvs/desembaraca-twine/bin/desembaraca-twine" --help
 "$HOME/.venvs/desembaraca-twine/bin/python" -m twine_edge_overlap --help
 ```

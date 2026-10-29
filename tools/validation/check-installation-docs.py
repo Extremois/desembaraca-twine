@@ -17,7 +17,7 @@ import urllib.parse
 import urllib.request
 import zipfile
 
-REVISION = '53fb2aba47d78b5cb4a6679cafaaef5fc5e52c29'
+REVISION = '93f2699296bdc660f7bb8f57684c3a9501e3f216'
 URL = 'https://github.com/Extremois/desembaraca-twine/archive/' + REVISION + '.zip'
 
 
