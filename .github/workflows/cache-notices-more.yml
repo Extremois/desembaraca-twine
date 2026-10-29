@@ -14,6 +14,8 @@ on:
       - 'tests/unit/test_built_packages.py'
       - 'tests/unit/test_musl_cache_environment.py'
       - 'src/**'
+      - 'tools/validation/check-reviewed-bundle.py'
+      - 'specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/audits/**'
 permissions:
   contents: read
   actions: read
@@ -45,9 +47,16 @@ jobs:
       - uses: actions/download-artifact@v4
         with:
           github-token: ${{ github.token }}
-          run-id: 40565098367
-          name: linux-musl-${{ matrix.arch }}-container-unqualified-a825f0d80bd7892de0e307656d28070885a9d1ed
+          run-id: 40801175499
+          name: linux-musl-${{ matrix.arch }}-container-unqualified-46d111de81038d6ae0e7e7772813693c5b0a2345
           path: ${{ runner.temp }}/musl-engine
+      - name: Inspect the reviewed static musl bundle on the matching native CPU
+        run: >-
+          python tools/validation/check-reviewed-bundle.py
+          --artifact "${{ runner.temp }}/musl-engine"
+          --artifact-id "linux-musl-${{ matrix.arch }}"
+          --audit "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/audits/linux-musl-${{ matrix.arch }}.json"
+          --report "${{ runner.temp }}/musl-audit-inspection.json"
       - name: Select immutable Alpine userland and matching CPU
         id: image
         shell: bash
@@ -84,6 +93,7 @@ jobs:
             ${{ runner.temp }}/musl-notices/slot/cache-notices.json
             ${{ runner.temp }}/musl-notices/slot/installed-runtime.json
             ${{ runner.temp }}/musl-notices/slot/remote-installation.json
+            ${{ runner.temp }}/musl-audit-inspection.json
             ${{ runner.temp }}/musl-notices/slot/runtime-review/
             ${{ runner.temp }}/musl-notices/image.json
   windows:

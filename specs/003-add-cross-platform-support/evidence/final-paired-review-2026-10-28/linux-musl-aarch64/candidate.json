@@ -1,0 +1,26 @@
+{
+  "kind": "local-candidate-archive",
+  "qualified": false,
+  "artifact_id": "linux-musl-aarch64",
+  "platform": "linux",
+  "artifact_arch": "aarch64",
+  "abi": "musl",
+  "archive": "candidate.zip",
+  "archive_sha256": "b342050b5f6a9ff861e4528bca1710298366938491db2b8c3cad0ba16b680df9",
+  "archive_bytes": 7982638,
+  "inventory": "inventory.json",
+  "inventory_sha256": "f1b7b968328fe87eab0a43da1c53d90cf18d572ee6075deacecfc07e7c964975",
+  "executable_sha256": "af9554390af4a000d11cf272cf86eb6cb6e060a91193cd62eedeeaf97fc16abf",
+  "provenance_sha256": "087f82a19df1454cf782f13b7d72673e62db069bded33533630c533a2df12e72",
+  "file_count": 447,
+  "source_modes_checked": true,
+  "zip_modes": "from-validated-inventory",
+  "compression": "stored",
+  "macos_signing_required": false,
+  "pending": [
+    "dependency/license audit",
+    "binary inspection/ABI",
+    "real immutable distribution URL and runtime manifest",
+    "GitHub Actions ABI acceptance"
+  ]
+}

@@ -29,20 +29,20 @@ jobs:
         include:
           - runner: ubuntu-24.04
             artifact_id: linux-glibc-x86_64
-            candidate_run: 40565098269
-            candidate_name: linux-glibc-x86_64-unqualified-a825f0d80bd7892de0e307656d28070885a9d1ed
+            candidate_run: 40801175547
+            candidate_name: linux-glibc-x86_64-unqualified-46d111de81038d6ae0e7e7772813693c5b0a2345
           - runner: ubuntu-24.04-arm
             artifact_id: linux-glibc-aarch64
-            candidate_run: 40565098572
-            candidate_name: linux-glibc-aarch64-unqualified-a825f0d80bd7892de0e307656d28070885a9d1ed
+            candidate_run: 40801175634
+            candidate_name: linux-glibc-aarch64-unqualified-46d111de81038d6ae0e7e7772813693c5b0a2345
           - runner: macos-15
             artifact_id: macos-arm64
-            candidate_run: 40565098360
-            candidate_name: macos-arm64-unqualified-a825f0d80bd7892de0e307656d28070885a9d1ed
+            candidate_run: 40801175532
+            candidate_name: macos-arm64-unqualified-46d111de81038d6ae0e7e7772813693c5b0a2345
           - runner: macos-15-intel
             artifact_id: macos-x86_64
-            candidate_run: 40565098360
-            candidate_name: macos-x86_64-unqualified-a825f0d80bd7892de0e307656d28070885a9d1ed
+            candidate_run: 40801175532
+            candidate_name: macos-x86_64-unqualified-46d111de81038d6ae0e7e7772813693c5b0a2345
     runs-on: ${{ matrix.runner }}
     timeout-minutes: 10
     env:
