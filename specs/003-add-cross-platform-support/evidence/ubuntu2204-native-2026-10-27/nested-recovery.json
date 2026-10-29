@@ -1,0 +1,90 @@
+{
+  "kind": "verified-native-ubuntu-nested-recovery-review",
+  "qualified": false,
+  "approved": false,
+  "revision": "3e7a27e599050776fdacde7f480238e79d22d772",
+  "native_summary_sha256": "a2cf581eff0c08625cc12b9d07398cb14c9f6ade0329dd45605c3abdcb6f54cc",
+  "verifier_sha256": "b0eb11a810bfcf0fc30dea1af5d9d49c65dd39dc9854ef6ca41dc2bf7517bc88",
+  "reports": [
+    {
+      "release": "22.04",
+      "python": "3.12.15",
+      "minor": "3.12",
+      "report": "ubuntu2204-glibc/raw/application/application-3.12.json.gz",
+      "report_sha256": "40004bd3e2a55125fff67bad4664af3541662dd08acf155ba0dc31ebe31ce2e5",
+      "compressed_report_sha256": "eebf5758ef8fc7533fcc8b6534335332522dc9382e6d72b2c5ccefd709a14eab",
+      "primary_scenarios": 8,
+      "nested_failed_repairs": 4,
+      "nested_process_scenarios": 4,
+      "scenario_executions": 16,
+      "offline_reference_executions": 96
+    },
+    {
+      "release": "22.04",
+      "python": "3.14.8",
+      "minor": "3.14",
+      "report": "ubuntu2204-glibc/raw/application/application-3.14.json.gz",
+      "report_sha256": "0d3d842b6a9e47c5da6d64c11cf8a7b374a11dd20494899121fae2f654fa4980",
+      "compressed_report_sha256": "6ab0036c6325512a456c2ebfa617d362afad0f62839ce722d73f2aed037ab8b1",
+      "primary_scenarios": 8,
+      "nested_failed_repairs": 4,
+      "nested_process_scenarios": 4,
+      "scenario_executions": 16,
+      "offline_reference_executions": 96
+    },
+    {
+      "release": "20.04",
+      "python": "3.12.15",
+      "minor": "3.12",
+      "report": "ubuntu2004-glibc/raw/application/application-3.12.json.gz",
+      "report_sha256": "30f92f1be2d024166905022ab6bce7077a58c4417798b18b17683ac3a1209b7c",
+      "compressed_report_sha256": "c561be451089c453fc40689ef153368228ef2671c08846fcc91afeee88be6c0b",
+      "primary_scenarios": 8,
+      "nested_failed_repairs": 4,
+      "nested_process_scenarios": 4,
+      "scenario_executions": 16,
+      "offline_reference_executions": 96
+    },
+    {
+      "release": "20.04",
+      "python": "3.14.8",
+      "minor": "3.14",
+      "report": "ubuntu2004-glibc/raw/application/application-3.14.json.gz",
+      "report_sha256": "0156e47ed4dfaf7e001d7a62f33ed3052c03ed5f3c26c3b5ba98a78070e6a50a",
+      "compressed_report_sha256": "ffbcedfeabe99f7ec17225f881520f1cb17ccaca478774d89f1e66d6320259aa",
+      "primary_scenarios": 8,
+      "nested_failed_repairs": 4,
+      "nested_process_scenarios": 4,
+      "scenario_executions": 16,
+      "offline_reference_executions": 96
+    },
+    {
+      "release": "18.04",
+      "python": "3.12.15",
+      "minor": "3.12",
+      "report": "ubuntu1804-glibc/raw/application/application-3.12.json.gz",
+      "report_sha256": "1d82eb93ff611437ca7b7c7e1ba3101834d473efe526580b3d035c8b7b8587e2",
+      "compressed_report_sha256": "ff63e32a28417d4e2a6f71d26941627c30454b1967a6289ad2e165c18f0cdbe7",
+      "primary_scenarios": 8,
+      "nested_failed_repairs": 4,
+      "nested_process_scenarios": 4,
+      "scenario_executions": 16,
+      "offline_reference_executions": 96
+    },
+    {
+      "release": "18.04",
+      "python": "3.14.8",
+      "minor": "3.14",
+      "report": "ubuntu1804-glibc/raw/application/application-3.14.json.gz",
+      "report_sha256": "0fdad7787568c3ba08e3af50aa3ac1ccf96ccc080fbcbf8be811c5ee049bf964",
+      "compressed_report_sha256": "952e07cccfd6d93a7d4d2a44e20a51357b2c5161f19ee2a0bdd369618f1a8c1c",
+      "primary_scenarios": 8,
+      "nested_failed_repairs": 4,
+      "nested_process_scenarios": 4,
+      "scenario_executions": 16,
+      "offline_reference_executions": 96
+    }
+  ],
+  "scenario_executions": 96,
+  "offline_reference_executions": 576
+}

@@ -1,0 +1,73 @@
+{
+  "application_revision": "721b90f3ab44e16b0e88f2d35118ef6fe5cc820c",
+  "run_id": 40776418074,
+  "passed": true,
+  "jobs": [
+    {
+      "job_id": 123126799065,
+      "name": "Pure contracts (windows-latest, Python 3.14)",
+      "tests": 307,
+      "conclusion": "success",
+      "raw_log_sha256": "d1386bbd07a084a8a94f759d67aae3c40505313c2479cba63ef0514003d99734",
+      "log": {
+        "path": "specs/003-add-cross-platform-support/evidence/macos-header-source-delivery-ci-2026-10-28/foundation-123126799065.log.gz",
+        "sha256": "74fe83b3ea66c4aca76aa97916c72965562256ba133bf7bbf2e52aa0ec3ac636"
+      }
+    },
+    {
+      "job_id": 123126799480,
+      "name": "Pure contracts (macos-15, Python 3.12)",
+      "tests": 307,
+      "conclusion": "success",
+      "raw_log_sha256": "30056ac6d5f18932a5cc8809c923f87f57b8804dad1839f5dd7638c4cecd89d4",
+      "log": {
+        "path": "specs/003-add-cross-platform-support/evidence/macos-header-source-delivery-ci-2026-10-28/foundation-123126799480.log.gz",
+        "sha256": "d09071e21bb94dd94dc61489956d65fd93dec434d307d84acf262c7d0af72ed2"
+      }
+    },
+    {
+      "job_id": 123126799491,
+      "name": "Pure contracts (ubuntu-24.04, Python 3.12)",
+      "tests": 307,
+      "conclusion": "success",
+      "raw_log_sha256": "c27b1b201ed43beea5e644cb60f6fd0c1d110114df1fd21b9931770ebffb0b5e",
+      "log": {
+        "path": "specs/003-add-cross-platform-support/evidence/macos-header-source-delivery-ci-2026-10-28/foundation-123126799491.log.gz",
+        "sha256": "2d2aae338e828a6d48ea10a5159a07a677d756dc1b1052a75a53468cb332fdd3"
+      }
+    },
+    {
+      "job_id": 123126799569,
+      "name": "Pure contracts (windows-latest, Python 3.12)",
+      "tests": 307,
+      "conclusion": "success",
+      "raw_log_sha256": "2b9e6f4eaccd071e36a8bc56736bc873f7b036ded23a4dab9bad20e48484370f",
+      "log": {
+        "path": "specs/003-add-cross-platform-support/evidence/macos-header-source-delivery-ci-2026-10-28/foundation-123126799569.log.gz",
+        "sha256": "795628c2286eb239f3de6c0609ab32e9a50362061b5c56da1431bfe8e1743ad6"
+      }
+    },
+    {
+      "job_id": 123126799594,
+      "name": "Pure contracts (macos-15, Python 3.14)",
+      "tests": 307,
+      "conclusion": "success",
+      "raw_log_sha256": "1cbbc3764dbf4aaf44ec55df42159a1bbee4068805db0c1475353d8d25e73854",
+      "log": {
+        "path": "specs/003-add-cross-platform-support/evidence/macos-header-source-delivery-ci-2026-10-28/foundation-123126799594.log.gz",
+        "sha256": "03c02eae95fbf0246778e789214820b8ebb72877a237dee0b95da5306c96a827"
+      }
+    },
+    {
+      "job_id": 123126799672,
+      "name": "Pure contracts (ubuntu-24.04, Python 3.14)",
+      "tests": 307,
+      "conclusion": "success",
+      "raw_log_sha256": "bed9dffb9a5759db31c809ba2b3c8bf3e0f60731f211628a42dc423dc40cafe9",
+      "log": {
+        "path": "specs/003-add-cross-platform-support/evidence/macos-header-source-delivery-ci-2026-10-28/foundation-123126799672.log.gz",
+        "sha256": "24fc96f1cf25eb021b3d550157e5cf35b4312f648e66ccb75fa1618ca1a04283"
+      }
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "kind": "native-network-observation-first-attempt",
+  "passed": false,
+  "qualified": false,
+  "revision": "7fefb594cf920d6561449a0e5f13782cd1e16dde",
+  "run_id": 39479961878,
+  "job_id": 118825634883,
+  "failure": "strace 4.21 rejects --version; failure happened before any tracing/control or application corpus",
+  "correction": "Use documented short -V flag; retain bounded stderr diagnostics for failed guest commands",
+  "raw_log_sha256": "8dae6b99ca9afb9b9c2b0f50f03fc26534b6b94eefd4a8423ea9a24191aad733",
+  "raw_log_gzip": "first-attempt.log.gz",
+  "foundation_run": 39479961852,
+  "foundation_tests_per_job": 235,
+  "foundation_jobs_passed": 6
+}

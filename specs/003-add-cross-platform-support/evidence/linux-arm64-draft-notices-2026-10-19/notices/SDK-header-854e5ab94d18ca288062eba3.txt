@@ -1,0 +1,1 @@
+/* Architecture-specific adjustments to siginfo_t.  */

@@ -1,0 +1,960 @@
+{
+  "kind": "alpine-sixteen-slot-userland-compatibility",
+  "passed": true,
+  "approved": false,
+  "qualified": false,
+  "environment_kind": "container",
+  "revision": "b13cd6f90db31163e62119bb83e2eb8db5ac8458",
+  "workflow_run": 39434565540,
+  "workflow_runs": [
+    {
+      "id": 39434565484,
+      "name": "Linux ARM64 Graphviz candidate",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/Extremois/desembaraca-twine/actions/runs/39434565484",
+      "head_sha": "b13cd6f90db31163e62119bb83e2eb8db5ac8458"
+    },
+    {
+      "id": 39434565412,
+      "name": "macOS Graphviz candidates",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/Extremois/desembaraca-twine/actions/runs/39434565412",
+      "head_sha": "b13cd6f90db31163e62119bb83e2eb8db5ac8458"
+    },
+    {
+      "id": 39434565632,
+      "name": "Linux Graphviz candidate",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/Extremois/desembaraca-twine/actions/runs/39434565632",
+      "head_sha": "b13cd6f90db31163e62119bb83e2eb8db5ac8458"
+    },
+    {
+      "id": 39434565680,
+      "name": "Cross-platform foundation",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/Extremois/desembaraca-twine/actions/runs/39434565680",
+      "head_sha": "b13cd6f90db31163e62119bb83e2eb8db5ac8458"
+    },
+    {
+      "id": 39434565540,
+      "name": "Alpine musl Graphviz candidates",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/Extremois/desembaraca-twine/actions/runs/39434565540",
+      "head_sha": "b13cd6f90db31163e62119bb83e2eb8db5ac8458"
+    }
+  ],
+  "jobs": [
+    {
+      "id": 118668057014,
+      "name": "alpine-build (ubuntu-24.04, x86_64)",
+      "status": "completed",
+      "conclusion": "success",
+      "runner_name": "GitHub Actions 1000000793",
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/setup-python@v5",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Select pinned Alpine images for matching native CPU",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Build and test static musl in pinned Alpine userland Python 3.12",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Test same engine in pinned Alpine userland Python 3.14",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Retain unqualified container build and measurements",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Retain source material separately (not a published source offer)",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Run actions/setup-python@v5",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success"
+        }
+      ]
+    },
+    {
+      "id": 118668057617,
+      "name": "alpine-build (ubuntu-24.04-arm, aarch64)",
+      "status": "completed",
+      "conclusion": "success",
+      "runner_name": "GitHub Actions 1000000801",
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/setup-python@v5",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Select pinned Alpine images for matching native CPU",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Build and test static musl in pinned Alpine userland Python 3.12",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Test same engine in pinned Alpine userland Python 3.14",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Retain unqualified container build and measurements",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Retain source material separately (not a published source offer)",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Run actions/setup-python@v5",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success"
+        }
+      ]
+    },
+    {
+      "id": 118671064089,
+      "name": "Alpine userland 3.22 (x86_64, both Pythons)",
+      "status": "completed",
+      "conclusion": "success",
+      "runner_name": "GitHub Actions 1000000805",
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/setup-python@v5",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/download-artifact@v4",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Select immutable userland images for this release and CPU",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Check venv, private runtime, corpus and network on both Pythons",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Retain userland compatibility evidence (not native Alpine qualification)",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Run actions/setup-python@v5",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success"
+        }
+      ]
+    },
+    {
+      "id": 118671064138,
+      "name": "Alpine userland 3.21 (aarch64, both Pythons)",
+      "status": "completed",
+      "conclusion": "success",
+      "runner_name": "GitHub Actions 1000000807",
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/setup-python@v5",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/download-artifact@v4",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Select immutable userland images for this release and CPU",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Check venv, private runtime, corpus and network on both Pythons",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Retain userland compatibility evidence (not native Alpine qualification)",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Run actions/setup-python@v5",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success"
+        }
+      ]
+    },
+    {
+      "id": 118671064160,
+      "name": "Alpine userland 3.22 (aarch64, both Pythons)",
+      "status": "completed",
+      "conclusion": "success",
+      "runner_name": "GitHub Actions 1000000811",
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/setup-python@v5",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/download-artifact@v4",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Select immutable userland images for this release and CPU",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Check venv, private runtime, corpus and network on both Pythons",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Retain userland compatibility evidence (not native Alpine qualification)",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Run actions/setup-python@v5",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success"
+        }
+      ]
+    },
+    {
+      "id": 118671064189,
+      "name": "Alpine userland 3.21 (x86_64, both Pythons)",
+      "status": "completed",
+      "conclusion": "success",
+      "runner_name": "GitHub Actions 1000000808",
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/setup-python@v5",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/download-artifact@v4",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Select immutable userland images for this release and CPU",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Check venv, private runtime, corpus and network on both Pythons",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Retain userland compatibility evidence (not native Alpine qualification)",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Run actions/setup-python@v5",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success"
+        }
+      ]
+    },
+    {
+      "id": 118671064225,
+      "name": "Alpine userland 3.23 (aarch64, both Pythons)",
+      "status": "completed",
+      "conclusion": "success",
+      "runner_name": "GitHub Actions 1000000806",
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/setup-python@v5",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/download-artifact@v4",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Select immutable userland images for this release and CPU",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Check venv, private runtime, corpus and network on both Pythons",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Retain userland compatibility evidence (not native Alpine qualification)",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Run actions/setup-python@v5",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success"
+        }
+      ]
+    },
+    {
+      "id": 118671064394,
+      "name": "Alpine userland 3.24 (aarch64, both Pythons)",
+      "status": "completed",
+      "conclusion": "success",
+      "runner_name": "GitHub Actions 1000000812",
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/setup-python@v5",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/download-artifact@v4",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Select immutable userland images for this release and CPU",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Check venv, private runtime, corpus and network on both Pythons",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Retain userland compatibility evidence (not native Alpine qualification)",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Run actions/setup-python@v5",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success"
+        }
+      ]
+    },
+    {
+      "id": 118671064525,
+      "name": "Alpine userland 3.24 (x86_64, both Pythons)",
+      "status": "completed",
+      "conclusion": "success",
+      "runner_name": "GitHub Actions 1000000809",
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/setup-python@v5",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/download-artifact@v4",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Select immutable userland images for this release and CPU",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Check venv, private runtime, corpus and network on both Pythons",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Retain userland compatibility evidence (not native Alpine qualification)",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Run actions/setup-python@v5",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success"
+        }
+      ]
+    },
+    {
+      "id": 118671064588,
+      "name": "Alpine userland 3.23 (x86_64, both Pythons)",
+      "status": "completed",
+      "conclusion": "success",
+      "runner_name": "GitHub Actions 1000000810",
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/setup-python@v5",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/download-artifact@v4",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Select immutable userland images for this release and CPU",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Check venv, private runtime, corpus and network on both Pythons",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Retain userland compatibility evidence (not native Alpine qualification)",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Run actions/setup-python@v5",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success"
+        }
+      ]
+    }
+  ],
+  "build_inputs": {
+    "x86_64": {
+      "artifact_download_id": 12270041540,
+      "candidate_sha256": "50b51b2c2042a745c0d962398103ed4229fe857e2033f36b3a10a38631d13bea",
+      "provenance_sha256": "d10936711a270294eb0b5a185400ccf8edb21087500a8c6df43c0229629ad795",
+      "engine_sha256": "f4dfee4e052704b1a7efdb7b6a4c43583ccaa062aec800b76224dae24eb2b69b",
+      "archive_sha256": "8acad241b2eb6d8cbcdd9701955c019b204364f144c0800b9d75eef85fdbe3fd",
+      "inventory_sha256": "bcb54d20aad46272b8db7aed161f8c3a9a9e9b9007fe5dc7cf624ec2e3099a54",
+      "static_elf_measured": true,
+      "all_bytes_and_modes_checked": true
+    },
+    "aarch64": {
+      "artifact_download_id": 12269054095,
+      "candidate_sha256": "560f656e0cc0cfdcbfe17c78fc6cd6049888a810b6d367aaeadf0c07a69f61eb",
+      "provenance_sha256": "039da570218790fcd0921b215846feb02040b6f8e25061b69fbbdef154e5b677",
+      "engine_sha256": "2d7a4b6024eb000c33ecf8b14d1a32d0aac8dde65bed00de138604d081fd3ee4",
+      "archive_sha256": "cb13a7f5aa608491f0dc8bd82d425149cbcf62b0f6a721381f40d94756f1d4e6",
+      "inventory_sha256": "50638914217ba2c83f4e6d685171ae8284695f1e8bb69fde0977372af869bf70",
+      "static_elf_measured": true,
+      "all_bytes_and_modes_checked": true
+    }
+  },
+  "receipts": [
+    {
+      "path": "3.21/x86_64/summary.json",
+      "sha256": "6257dbf44a1c84c67bf771504fa12dbeb41d382caef38f5a5d0e82f43ea947d1"
+    },
+    {
+      "path": "3.21/aarch64/summary.json",
+      "sha256": "07d0c6601606c4dc11b1f90e84a7615b57b66f9ae133722404575b81f771d3e8"
+    },
+    {
+      "path": "3.22/x86_64/summary.json",
+      "sha256": "59af73e86f163241ef4390c507e4ac526c29da18547bacc23bfbf5ee65a8f172"
+    },
+    {
+      "path": "3.22/aarch64/summary.json",
+      "sha256": "62447ab3c787e4820fab4c3a00ff3c602cf11b775c6bdc52fba20748d2b7b2b5"
+    },
+    {
+      "path": "3.23/x86_64/summary.json",
+      "sha256": "a99f3b518f7bc76fb9e7179f8dbb3c9baea4113dfbe251abbe06619fa11b38d4"
+    },
+    {
+      "path": "3.23/aarch64/summary.json",
+      "sha256": "02fe0a557f2325201d5bb9a75c0fdf05c10f23b0ae5e7fd65de769e0b1f15ee9"
+    },
+    {
+      "path": "3.24/x86_64/summary.json",
+      "sha256": "6a2cb0353d6ffce494738c1dd4f7aa253c421dde23448b0ab6cf75902e648967"
+    },
+    {
+      "path": "3.24/aarch64/summary.json",
+      "sha256": "f5e93c3d147d60cc1677ed7ffc2522ca9441903ad5cec3cab7e6562e0c467f16"
+    }
+  ],
+  "slots": [
+    {
+      "alpine": "3.21",
+      "patch": "3.21.5",
+      "arch": "x86_64",
+      "python": "3.12.12",
+      "image": "python@sha256:a5473623dca35f686018ccd624373a9bb77105b06a392d57d361cfb91b633cbe",
+      "kernel": "6.17.0-1022-azure",
+      "engine_sha256": "f4dfee4e052704b1a7efdb7b6a4c43583ccaa062aec800b76224dae24eb2b69b",
+      "environment": "python-3.12/environment.json",
+      "environment_sha256": "1940af00a02188fca4f177eedafd2495df9d97c6354f6a7d5aaa21185b550d69",
+      "network_sha256": "de1079f4c01440ede979617cf9b374f59f85844e1d7300a5b9eb1d7af5fd1b87",
+      "corpus_sha256": "ce19801ecac3a46d4c5f92733c009a2d6a3b0b87bb2a7ea3c96e50608da62fc5",
+      "venv_and_pip_verified": true,
+      "network_syscalls": {}
+    },
+    {
+      "alpine": "3.21",
+      "patch": "3.21.5",
+      "arch": "x86_64",
+      "python": "3.14.1",
+      "image": "python@sha256:9170efeb852533cd1d5a139bdf5d30212d11c3dd060226470c99e4e315f08fdc",
+      "kernel": "6.17.0-1022-azure",
+      "engine_sha256": "f4dfee4e052704b1a7efdb7b6a4c43583ccaa062aec800b76224dae24eb2b69b",
+      "environment": "python-3.14/environment.json",
+      "environment_sha256": "c9f9318be24ca0f7045886123e70cab2543e663594f7878b82a53fd5f542270f",
+      "network_sha256": "d5a85898e84b3e70b2613c890b2721e41b6b1e365ca0beb115d876cdef3f51c9",
+      "corpus_sha256": "d5b103ee38b58d12ceae2e9392a02faf6e873f4ef2dbaff821fb76987da988c2",
+      "venv_and_pip_verified": true,
+      "network_syscalls": {}
+    },
+    {
+      "alpine": "3.21",
+      "patch": "3.21.5",
+      "arch": "aarch64",
+      "python": "3.12.12",
+      "image": "python@sha256:e56beea98042b6aa17c37c4254820ae22ccbb5165d75ee645f48dd1e93fbd94a",
+      "kernel": "7.0.0-1017-azure",
+      "engine_sha256": "2d7a4b6024eb000c33ecf8b14d1a32d0aac8dde65bed00de138604d081fd3ee4",
+      "environment": "python-3.12/environment.json",
+      "environment_sha256": "12121cc758896bb90b94b1bda031e98513704e879ed4fdb0977ac9fe54fa6046",
+      "network_sha256": "65fd07496aaf6685eb2c3d8ef40e8252276140db44696403054736a828be3f66",
+      "corpus_sha256": "50aed32a47751613c8539bf7e4e11eea5e5074b6c806e294cf5317e4601c6f33",
+      "venv_and_pip_verified": true,
+      "network_syscalls": {}
+    },
+    {
+      "alpine": "3.21",
+      "patch": "3.21.5",
+      "arch": "aarch64",
+      "python": "3.14.1",
+      "image": "python@sha256:bc1764fbc3cefab00d4eea0be7e279a1491a38f668b6010cdff1e088264301a6",
+      "kernel": "7.0.0-1017-azure",
+      "engine_sha256": "2d7a4b6024eb000c33ecf8b14d1a32d0aac8dde65bed00de138604d081fd3ee4",
+      "environment": "python-3.14/environment.json",
+      "environment_sha256": "24357e30b25cd890368c271909a288709487c19c549380262e69754472f527a5",
+      "network_sha256": "0044415b78cf315cc11ce22d06aad341814885174345fbff39be651abc77c928",
+      "corpus_sha256": "09240e61c2b5abe0d7b8fcdff5f45aebf13d18c03da2fb5c11ebefe61701f0dd",
+      "venv_and_pip_verified": true,
+      "network_syscalls": {}
+    },
+    {
+      "alpine": "3.22",
+      "patch": "3.22.4",
+      "arch": "x86_64",
+      "python": "3.12.13",
+      "image": "python@sha256:9381e50cc82f4279b949fcd2d2f5e57cf97b1da2399eb956502364ceea2f4e83",
+      "kernel": "6.17.0-1022-azure",
+      "engine_sha256": "f4dfee4e052704b1a7efdb7b6a4c43583ccaa062aec800b76224dae24eb2b69b",
+      "environment": "python-3.12/environment.json",
+      "environment_sha256": "ef313313b15484d10e79aec2dad78377297e93451686fc817ddb85bd7dada0e3",
+      "network_sha256": "0d4cabc478f90310d42b3638c0db394d676f64e8ea12068e84596f6f30b51cfc",
+      "corpus_sha256": "6853a0bf43ff4b3cdf0829989ee2168d04ade8a91d61827a8d42fc44b608d8c4",
+      "venv_and_pip_verified": true,
+      "network_syscalls": {}
+    },
+    {
+      "alpine": "3.22",
+      "patch": "3.22.4",
+      "arch": "x86_64",
+      "python": "3.14.5",
+      "image": "python@sha256:1a5f0303fd8941565b5bbda3fac2345148a9fd8245d575c2971ccefcd77c78f6",
+      "kernel": "6.17.0-1022-azure",
+      "engine_sha256": "f4dfee4e052704b1a7efdb7b6a4c43583ccaa062aec800b76224dae24eb2b69b",
+      "environment": "python-3.14/environment.json",
+      "environment_sha256": "e8d31e7d3c3d0ebeb5e212e320e2f5d6ecb17dc837de30e2acbe6a3a514dab09",
+      "network_sha256": "fa30812eccb38006068c383234aa29f49bca402ffd6a102fc260f75ab9d7af71",
+      "corpus_sha256": "051b47c1cd3ca660efbb94b589c8e4ab388710ed53cb8daaab9f8e04ef1cfe1e",
+      "venv_and_pip_verified": true,
+      "network_syscalls": {}
+    },
+    {
+      "alpine": "3.22",
+      "patch": "3.22.4",
+      "arch": "aarch64",
+      "python": "3.12.13",
+      "image": "python@sha256:07b3a3b85d5b208f164a3276d5eb9c51e0ce61bbe4cb7ab4df0da50d5a78dc11",
+      "kernel": "7.0.0-1017-azure",
+      "engine_sha256": "2d7a4b6024eb000c33ecf8b14d1a32d0aac8dde65bed00de138604d081fd3ee4",
+      "environment": "python-3.12/environment.json",
+      "environment_sha256": "81e7bb027e555b041c7346d38d4be05e851adb06c4fedf10aab8c106dcefb1ab",
+      "network_sha256": "27b8145d1781842cd46298bb615a742a96e5c1711f62c84218d0a265346b92c9",
+      "corpus_sha256": "19629d53fd56d6f8f735a3a84c687ce2d951418ed884679f6bec6ad8648a3e1a",
+      "venv_and_pip_verified": true,
+      "network_syscalls": {}
+    },
+    {
+      "alpine": "3.22",
+      "patch": "3.22.4",
+      "arch": "aarch64",
+      "python": "3.14.5",
+      "image": "python@sha256:27b691f87878a079100a3d8fafcd66b3c54d931598f307bcb54617c395f5b43c",
+      "kernel": "7.0.0-1017-azure",
+      "engine_sha256": "2d7a4b6024eb000c33ecf8b14d1a32d0aac8dde65bed00de138604d081fd3ee4",
+      "environment": "python-3.14/environment.json",
+      "environment_sha256": "1103c31f1060fe190e414df6bcea1cb144d5913c3a08b3964e63544b88dd8e34",
+      "network_sha256": "d1305ef9e0080f7782805c1ed25c80005e89f6b8099d762c71c6d669562cb8d4",
+      "corpus_sha256": "09feb26c09a8bf3351f595dc24dc19bb412d6f8bb82a5b447d01e9da32dff0df",
+      "venv_and_pip_verified": true,
+      "network_syscalls": {}
+    },
+    {
+      "alpine": "3.23",
+      "patch": "3.23.6",
+      "arch": "x86_64",
+      "python": "3.12.15",
+      "image": "python@sha256:9ce5a4e59b833c002e1c4196c60ec0b38977e3235d626298ba7ffe2e64f5a30c",
+      "kernel": "7.0.0-1017-azure",
+      "engine_sha256": "f4dfee4e052704b1a7efdb7b6a4c43583ccaa062aec800b76224dae24eb2b69b",
+      "environment": "python-3.12/environment.json",
+      "environment_sha256": "2fe6b32bcaa1c714e21f27d8dde613d1761c748f248aed496b082c194a665676",
+      "network_sha256": "ad204836733abd3493157814504374cc73a88b1b436ba5c926a9f7eb98aece43",
+      "corpus_sha256": "06d9a3c60c3ef24f856c43d37696c268ee20fef5e585057dd594330e875b9383",
+      "venv_and_pip_verified": true,
+      "network_syscalls": {}
+    },
+    {
+      "alpine": "3.23",
+      "patch": "3.23.6",
+      "arch": "x86_64",
+      "python": "3.14.8",
+      "image": "python@sha256:d86b293687bb79e27b860a0addd04deb1644da9ac356de78612c9484dc13e733",
+      "kernel": "7.0.0-1017-azure",
+      "engine_sha256": "f4dfee4e052704b1a7efdb7b6a4c43583ccaa062aec800b76224dae24eb2b69b",
+      "environment": "python-3.14/environment.json",
+      "environment_sha256": "1643ed4187fc3ead3bd52166b1874d7c8a5ff0beb115db097360db7d4ac06add",
+      "network_sha256": "da7264114ed6e39571daafa2abf8c9c2fb2ca07a3ab92b920dc2db06e08e1a50",
+      "corpus_sha256": "72e889a8e5186b5c106ed63ee27d6e1647c5efad68570b208d61a366f9a4198c",
+      "venv_and_pip_verified": true,
+      "network_syscalls": {}
+    },
+    {
+      "alpine": "3.23",
+      "patch": "3.23.6",
+      "arch": "aarch64",
+      "python": "3.12.15",
+      "image": "python@sha256:9e4a42e568282635c266f8e1e0ddf86e9747d97cfc604d4f62d312e232699ec8",
+      "kernel": "7.0.0-1017-azure",
+      "engine_sha256": "2d7a4b6024eb000c33ecf8b14d1a32d0aac8dde65bed00de138604d081fd3ee4",
+      "environment": "python-3.12/environment.json",
+      "environment_sha256": "a6dc34bdbb2be3a1cca44b89d5889b53023ef6bf5e150619e3fb86c5f1ca4160",
+      "network_sha256": "00c11127e92532998c3c25a7499c07fcd0f5fbd0159c7ce9acc89d2ac31f60c1",
+      "corpus_sha256": "3bfd2a990ed05c307a20f8b9875045cfc9c1bde69704f7073f78ab4dd4a4305b",
+      "venv_and_pip_verified": true,
+      "network_syscalls": {}
+    },
+    {
+      "alpine": "3.23",
+      "patch": "3.23.6",
+      "arch": "aarch64",
+      "python": "3.14.8",
+      "image": "python@sha256:fe368aeff9df1995b57f0aa9bbced949a2a98fb3e6dfd92568e5f6acea6220f7",
+      "kernel": "7.0.0-1017-azure",
+      "engine_sha256": "2d7a4b6024eb000c33ecf8b14d1a32d0aac8dde65bed00de138604d081fd3ee4",
+      "environment": "python-3.14/environment.json",
+      "environment_sha256": "d488fedeca1051c0e7178708340a5d61520b378cd642ae5b7eee0d115834a330",
+      "network_sha256": "ec4038aa101a013a5eb13f2deebd5e907f913238bf7c72963a59119aa7b86f5c",
+      "corpus_sha256": "66188dc5ba5370268e64136f1efb65f2fd25da90d22cd96c81dfb568f27c7d02",
+      "venv_and_pip_verified": true,
+      "network_syscalls": {}
+    },
+    {
+      "alpine": "3.24",
+      "patch": "3.24.2",
+      "arch": "x86_64",
+      "python": "3.12.15",
+      "image": "python@sha256:2055081c860db8c842b663415b795b026e7e5cc63b59c5193fcc9997713ea5b8",
+      "kernel": "6.17.0-1022-azure",
+      "engine_sha256": "f4dfee4e052704b1a7efdb7b6a4c43583ccaa062aec800b76224dae24eb2b69b",
+      "environment": "python-3.12/environment.json",
+      "environment_sha256": "075d709f85b38eb28cfbff5041b2fce64785c10fd0f90858c0481c99f0a7274e",
+      "network_sha256": "2de552cdb0d20566a49f19e4b1526832a0a0269fa3eff3798431b46b558098d0",
+      "corpus_sha256": "06d9a3c60c3ef24f856c43d37696c268ee20fef5e585057dd594330e875b9383",
+      "venv_and_pip_verified": true,
+      "network_syscalls": {}
+    },
+    {
+      "alpine": "3.24",
+      "patch": "3.24.2",
+      "arch": "x86_64",
+      "python": "3.14.8",
+      "image": "python@sha256:7f2ec713f0436c59df2362d973b6a05af9e87ba78f0e94f5245c302984a7a1fd",
+      "kernel": "6.17.0-1022-azure",
+      "engine_sha256": "f4dfee4e052704b1a7efdb7b6a4c43583ccaa062aec800b76224dae24eb2b69b",
+      "environment": "python-3.14/environment.json",
+      "environment_sha256": "74dd1dab9dcc4d86a3c815cf542637e0eb0ed9b408eb9a4a963e1afca1b89122",
+      "network_sha256": "63965bdfc8f37c307efba3656623d4bb36f1c776d71f76a0174084d044d4c32e",
+      "corpus_sha256": "72e889a8e5186b5c106ed63ee27d6e1647c5efad68570b208d61a366f9a4198c",
+      "venv_and_pip_verified": true,
+      "network_syscalls": {}
+    },
+    {
+      "alpine": "3.24",
+      "patch": "3.24.2",
+      "arch": "aarch64",
+      "python": "3.12.15",
+      "image": "python@sha256:a4ccdf11e73bd3f74e07f95e63f1b003467bb16cb77e942ddf45476c2cb8467c",
+      "kernel": "6.17.0-1022-azure",
+      "engine_sha256": "2d7a4b6024eb000c33ecf8b14d1a32d0aac8dde65bed00de138604d081fd3ee4",
+      "environment": "python-3.12/environment.json",
+      "environment_sha256": "cf2a9fa1aee8a925c5f4a0357a69722de07cef5aa7e29ca0c120569d06d9c4c6",
+      "network_sha256": "8a36ef871ee6a449dfbab60d49ff5a900eef846d2f0d05665dff2681700d5ab8",
+      "corpus_sha256": "3bfd2a990ed05c307a20f8b9875045cfc9c1bde69704f7073f78ab4dd4a4305b",
+      "venv_and_pip_verified": true,
+      "network_syscalls": {}
+    },
+    {
+      "alpine": "3.24",
+      "patch": "3.24.2",
+      "arch": "aarch64",
+      "python": "3.14.8",
+      "image": "python@sha256:aae362254cea6b75fe812f0b428f10b3b361a090fe5655fb1d03937f6d38cda9",
+      "kernel": "6.17.0-1022-azure",
+      "engine_sha256": "2d7a4b6024eb000c33ecf8b14d1a32d0aac8dde65bed00de138604d081fd3ee4",
+      "environment": "python-3.14/environment.json",
+      "environment_sha256": "b3ce581aca897ed84e8e637e1c442d8ba32b295d4478555f5e0a76c10c3b87ce",
+      "network_sha256": "f19c4b5bff5a0290573c7d10c910a9d3bbd76d682dd9b173797bc97f7e2ce76b",
+      "corpus_sha256": "66188dc5ba5370268e64136f1efb65f2fd25da90d22cd96c81dfb568f27c7d02",
+      "venv_and_pip_verified": true,
+      "network_syscalls": {}
+    }
+  ],
+  "complete_tasks": 54,
+  "total_tasks": 84,
+  "scope": "Four Alpine userlands, matching CPUs and two CPythons; real venv/pip and private runtime; controlled acquisition",
+  "pending": [
+    "Native Alpine kernel/environment qualification",
+    "Per-artifact license applicability and permanent source offer",
+    "Distributed installed candidate, full recovery and Twine visual acceptance",
+    "Other Linux distributions and signed macOS acceptance"
+  ]
+}

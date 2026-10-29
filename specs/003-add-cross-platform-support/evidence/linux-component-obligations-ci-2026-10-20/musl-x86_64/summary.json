@@ -1,0 +1,186 @@
+{
+  "kind": "linux-native-source-notice-package-receipt",
+  "approved": false,
+  "qualified": false,
+  "revision": "47844106ff072cad005a8a1c795153c658b2bc89",
+  "run_id": 39404335702,
+  "actions_artifact_id": 12256494632,
+  "url": "https://github.com/Extremois/desembaraca-twine/actions/runs/39404335702",
+  "artifact_id": "linux-musl-x86_64",
+  "actions_archive_sha256": "84e155a680a392657daee7d7835fc8916c927c4026e2e2887f7e5d478d9e31b8",
+  "executable_sha256": "f4dfee4e052704b1a7efdb7b6a4c43583ccaa062aec800b76224dae24eb2b69b",
+  "candidate_archive_sha256": "7813ffa0d4ced072c3c9459a71759fa0988358ff8e8ce36ea19579d5f03d094f",
+  "candidate_archive_bytes": 7910378,
+  "candidate_file_count": 421,
+  "w3c_policy_materials": 6,
+  "iso_declaration_notices": 3,
+  "colorbrewer_acknowledgment_verified": true,
+  "musl_notice_verified": true,
+  "notices": 420,
+  "graphviz_sources": 322,
+  "source_prefixes": 303,
+  "additional_source_references": 2,
+  "sdk_headers": 58,
+  "sdk_header_prefixes": 23,
+  "offline_origin_payloads": 419,
+  "observations": [
+    {
+      "python": "3.12.13",
+      "kind": "network",
+      "passed": true,
+      "environment_kind": "container",
+      "dot_executions": 8,
+      "network_syscalls": {}
+    },
+    {
+      "python": "3.12.13",
+      "kind": "runtime-network",
+      "passed": true,
+      "environment_kind": "container",
+      "dot_executions": 49,
+      "network_syscalls": {}
+    },
+    {
+      "python": "3.14.5",
+      "kind": "network",
+      "passed": true,
+      "environment_kind": "container",
+      "dot_executions": 8,
+      "network_syscalls": {}
+    },
+    {
+      "python": "3.14.5",
+      "kind": "runtime-network",
+      "passed": true,
+      "environment_kind": "container",
+      "dot_executions": 49,
+      "network_syscalls": {}
+    }
+  ],
+  "retained_files": {
+    "network-312.json": {
+      "sha256": "9648415171a3de99ac57abde6eef16d044ed0535e8f66a388835957c5e590914",
+      "bytes": 1355
+    },
+    "network-312.control.trace.gz": {
+      "sha256": "c058671e91323d4095e22eb580643e98c2e8ff0bf81f34f864bbbc91cd2fe107",
+      "bytes": 489
+    },
+    "network-312.corpus.trace.gz": {
+      "sha256": "dca9ef603d5a0f7e224d7ae6759b444549173b4c1c60c871a27b8fa6dd3236b9",
+      "bytes": 589
+    },
+    "runtime-network-312.json": {
+      "sha256": "50c9c1ff24016f88867e5167084b32605cbcdf391fc3d0587de3883d9edc2304",
+      "bytes": 1356
+    },
+    "runtime-network-312.control.trace.gz": {
+      "sha256": "f9998d1a981be67009d127b96402fd7edf59d74f9ac4cdf779222532ca77979e",
+      "bytes": 485
+    },
+    "runtime-network-312.corpus.trace.gz": {
+      "sha256": "02d284a856fc2af5bb200663dd66ff3210387f7b7ad588ec09406d4ca2c4da90",
+      "bytes": 1737
+    },
+    "network-314.json": {
+      "sha256": "145834d1da6d8b50e590b4f2365e9140fb3ffb6327f533766c55101074ff4aed",
+      "bytes": 1354
+    },
+    "network-314.control.trace.gz": {
+      "sha256": "64df82a1408f85850375d28ac72abec15ea0819c5fed309e8befe27ae4beeecb",
+      "bytes": 483
+    },
+    "network-314.corpus.trace.gz": {
+      "sha256": "d8420847c119c7d1e8bc21acb31774c77dc1cce5824984b2558f85e78700b4be",
+      "bytes": 582
+    },
+    "runtime-network-314.json": {
+      "sha256": "be03b25f5c10d6f846e4f901513eb209e8da33174e24f12bbe8b328627aed1fa",
+      "bytes": 1355
+    },
+    "runtime-network-314.control.trace.gz": {
+      "sha256": "44d11050a63ba87b8c38452471dcdef30b7f4e93f1f235392a457353857c3aee",
+      "bytes": 483
+    },
+    "runtime-network-314.corpus.trace.gz": {
+      "sha256": "d1201794d8c81fd86f7cdf93ff06401b89340e737e344a0881ab189eab5ec8de",
+      "bytes": 1712
+    },
+    "review.json.gz": {
+      "sha256": "e54d51a8fb532026eef53c37b836ddfdbaeb824bb13f2bac6e6e0c8e52bf9fb0",
+      "bytes": 72558
+    },
+    "provenance.json.gz": {
+      "sha256": "b07bb2082e33e6050efae669fb75c7df443a4ce823e368e5ee2a6ae7777dbb93",
+      "bytes": 19614
+    },
+    "graphviz-source-evidence.json.gz": {
+      "sha256": "3ae964db0a8569c4578b6a5eb2e0c86e22018aee361917853a9c9e76b0deb23a",
+      "bytes": 56547
+    },
+    "NOTICE-ORIGINS.json.gz": {
+      "sha256": "accfef38004382b33a5d0991249f7905de036e10e54ca2fb343b70e3eb0845f5",
+      "bytes": 42615
+    },
+    "inventory.json": {
+      "sha256": "ee4133f7504de1f7029f4aeed2b067f9896346b194d86e46bb9a6b1d5ccf02cb",
+      "bytes": 91122
+    },
+    "candidate.json": {
+      "sha256": "165952cdda6ece02bab2810487ee5d4e3559d5ef1d8388ed7f51110903ee8921",
+      "bytes": 864
+    },
+    "notice-payloads.json.gz": {
+      "sha256": "bfead4d528aa60bff3c4488c6449885e62a3e00bb387f246a8b2017a4b6a1d74",
+      "bytes": 174115
+    },
+    "source-rebuild-rebuilt-network-312.json": {
+      "sha256": "22853663299ee5f3794624d33e2826fad0aeb23924252f2ec5e942cdd5435830",
+      "bytes": 1355
+    },
+    "source-rebuild-rebuilt-network-312.control.trace.gz": {
+      "sha256": "32426cc275a18ddc8d901b392bc3c1e3030fb5fbe47ec1ac424d357e57099f46",
+      "bytes": 490
+    },
+    "source-rebuild-rebuilt-network-312.corpus.trace.gz": {
+      "sha256": "6058454e5229da174347a6c198181dbc33a0315f0cc8eb34364b9f0bf646f894",
+      "bytes": 595
+    },
+    "source-rebuild-rebuilt-network-314.json": {
+      "sha256": "c3211cfeb00e205be9ad0ab9c872dc3070ba059d52e86af6d5411783c1353cf6",
+      "bytes": 1354
+    },
+    "source-rebuild-rebuilt-network-314.control.trace.gz": {
+      "sha256": "3a32df224e34c1bc9d2ff85667b9f69200bb3516f41ce46a79c0337efca4f1cd",
+      "bytes": 488
+    },
+    "source-rebuild-rebuilt-network-314.corpus.trace.gz": {
+      "sha256": "9e9697b7a7101be9369cfa49924b792b4a0c496fb1b974181ba979f56a84b75b",
+      "bytes": 591
+    }
+  },
+  "limitations": [
+    "Draft notices are not an approved license applicability audit or permanent source offer",
+    "CI candidates do not qualify the entire Linux distribution/version/kernel matrix",
+    "Runtime binary stays only in ignored local Actions archive, not tracked evidence"
+  ],
+  "executable_unchanged_from_prior_build": true,
+  "source_rebuild_observations": [
+    {
+      "python": "3.12.13",
+      "passed": true,
+      "cases": 13,
+      "engine_sha256": "7d935f1d47925158da7aed95a74a83975e854157d62d7021855b9d31d6dcb79a",
+      "network_syscalls": {},
+      "byte_identical_to_original": false
+    },
+    {
+      "python": "3.14.5",
+      "passed": true,
+      "cases": 13,
+      "engine_sha256": "7d935f1d47925158da7aed95a74a83975e854157d62d7021855b9d31d6dcb79a",
+      "network_syscalls": {},
+      "byte_identical_to_original": false
+    }
+  ]
+}

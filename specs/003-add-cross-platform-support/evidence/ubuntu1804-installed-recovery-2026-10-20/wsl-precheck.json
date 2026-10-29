@@ -1,0 +1,111 @@
+{
+  "kind": "wsl-source-recovery-precheck-not-installed-or-native-qualification",
+  "passed": true,
+  "qualified": false,
+  "approved": false,
+  "captured_at": "2026-10-20T19:48:00.951518+00:00",
+  "interpreters": [
+    {
+      "python": "3.12.15",
+      "environment_kind": "wsl",
+      "report_sha256": "204c1dd0ac57d31f6318e53d63b62ddb2e26dcde0a837de2dc4e94c838a5ecc6",
+      "engine_sha256": "43ce8d686720467c21be91cab4b8f3b246baae49c2cfe293714ebdf8a82f5716",
+      "scenarios": [
+        {
+          "name": "download",
+          "offline_references": 6,
+          "passed": true
+        },
+        {
+          "name": "disk_full",
+          "offline_references": 6,
+          "passed": true
+        },
+        {
+          "name": "execution_denied",
+          "offline_references": 6,
+          "passed": true
+        },
+        {
+          "name": "corrupt_archive",
+          "offline_references": 6,
+          "passed": true
+        },
+        {
+          "name": "during_download",
+          "offline_references": 6,
+          "passed": true
+        },
+        {
+          "name": "before_select",
+          "offline_references": 6,
+          "passed": true
+        },
+        {
+          "name": "after_select",
+          "offline_references": 6,
+          "passed": true
+        },
+        {
+          "name": "concurrent_first_use",
+          "offline_references": 6,
+          "passed": true
+        }
+      ]
+    },
+    {
+      "python": "3.14.8",
+      "environment_kind": "wsl",
+      "report_sha256": "e609f85723c3214f44d3408043b27a8d6ba78c98e21b3def35bb5fd964944847",
+      "engine_sha256": "43ce8d686720467c21be91cab4b8f3b246baae49c2cfe293714ebdf8a82f5716",
+      "scenarios": [
+        {
+          "name": "download",
+          "offline_references": 6,
+          "passed": true
+        },
+        {
+          "name": "disk_full",
+          "offline_references": 6,
+          "passed": true
+        },
+        {
+          "name": "execution_denied",
+          "offline_references": 6,
+          "passed": true
+        },
+        {
+          "name": "corrupt_archive",
+          "offline_references": 6,
+          "passed": true
+        },
+        {
+          "name": "during_download",
+          "offline_references": 6,
+          "passed": true
+        },
+        {
+          "name": "before_select",
+          "offline_references": 6,
+          "passed": true
+        },
+        {
+          "name": "after_select",
+          "offline_references": 6,
+          "passed": true
+        },
+        {
+          "name": "concurrent_first_use",
+          "offline_references": 6,
+          "passed": true
+        }
+      ]
+    }
+  ],
+  "local_foundation_tests_per_python": 236,
+  "limitations": [
+    "Existing WSL only, source checkout available to helper bootstrap; not installed development wheel/native Ubuntu 18.04 proof",
+    "Transfer, disk-full and archive errors controlled; execution permission, process exits and OS locks real in private temporary directories",
+    "No new local VM, system Python replacement or global installation"
+  ]
+}

@@ -1,0 +1,286 @@
+{
+  "kind": "modified-glibc-relink-evidence-summary",
+  "revision": "bead45d8dafaa9f085bce8ff0aca7175dc3d462f",
+  "lgpl_section_6_mechanism": "LGPL-2.1-section-6a-and-6d-source-and-object-relink",
+  "approved": false,
+  "qualified": false,
+  "workflows": {
+    "linux-glibc-x86_64": {
+      "run_id": 39707588053,
+      "url": "https://github.com/Extremois/desembaraca-twine/actions/runs/39707588053",
+      "artifact_id": 12396056020,
+      "verification": {
+        "kind": "modified-glibc-relink-verification",
+        "passed": true,
+        "approved": false,
+        "qualified": false,
+        "artifact_id": "linux-glibc-x86_64",
+        "arch": "x86_64",
+        "lgpl_section_6_mechanism": "LGPL-2.1-section-6a-and-6d-source-and-object-relink",
+        "parent_source_build_provenance_sha256": "1af947d403442f1668db333cd48e61902b62c40bb260d306509cd6b7485d1ff8",
+        "baseline_executable_sha256": "e712acb3f95800ba373096c21611e299b819daf67ae9b0981cb59ed6b9cb8ff6",
+        "modified_executable_sha256": "e4aac65b8657d424501321c609f8292634e9d0dc19da9902364427236e6f79e3",
+        "pinned_sdk_audit_rejected_modified_build": true,
+        "graphviz_build_inputs_count": 59,
+        "graphviz_build_inputs_unchanged": true,
+        "graphviz_allocated_sections_count": 620,
+        "graphviz_allocated_sections_unchanged": true,
+        "other_allocated_sdk_inputs": [],
+        "modified_sources": [
+          {
+            "path": "lib/libc/glibc/csu/elf-init-2.33.c",
+            "baseline_sha256": "2d9b3d9b6af5d2ad6bf8a881e3c34f0bd7478f9709b62dfe9d48a749a5768519",
+            "modified_sha256": "c204fac210048c14440e08b446d5f6f0e330d7f79d0ea0e97510be4735ef0072",
+            "leading_comment_sha256": "754e3120bb12bda04a831d1e08b544b152930bf7275577b3fc995d337cbbaee3"
+          },
+          {
+            "path": "lib/libc/glibc/csu/init.c",
+            "baseline_sha256": "a06cd917584e309bf39f6f7a6158519e60a35e6ff8b3e96df8308d170c908f33",
+            "modified_sha256": "2527fe198c4360cec54ab871e38cc23425e6e480828e0155c41ce82de919967d",
+            "leading_comment_sha256": "1860d3b2f1c52f3d56f965cec59098343a4d270ab7f1543502825a699a7b70c5"
+          },
+          {
+            "path": "lib/libc/glibc/io/fstat-2.32.c",
+            "baseline_sha256": "a835e5cfb407c00c15aead0247d713a536d651d1fef1236b4a87aaf7a27eec68",
+            "modified_sha256": "b84e145f1883ed3f5317e8dc4e6d9982047122d4a6c3589ebe72404c3f127e74",
+            "leading_comment_sha256": "eb44f02340cb9e3c7d07a5a6e6be063298d2f40d6264c118f9d5628f55673d4c"
+          },
+          {
+            "path": "lib/libc/glibc/sysdeps/x86_64/start-2.33.S",
+            "baseline_sha256": "d3daf6434b838a91785c5ac771a7f01d08cc9234274ca5a13282e530dd22a058",
+            "modified_sha256": "df986226ce857d77c6a2f3005ea30835016dd7e113fb09d2e006363597b9cd4c",
+            "leading_comment_sha256": "d3e9ecbc293723e00a641e08ca21f0c2edb30dd115858f53ba3acfd7be3e8c6e"
+          }
+        ],
+        "retained_glibc_objects": [
+          {
+            "input": "crt1.o",
+            "member": null,
+            "baseline_input_sha256": "7cde2f7551a3a96a89f72a342f9f395e7cbbbec1eebaacab54267b984abbfa06",
+            "modified_input_sha256": "27d11431c61e99e4bae48ec4a49f1ed703441a3ff5fa39a2a28b5d48366d3e13",
+            "baseline_object_sha256": "7cde2f7551a3a96a89f72a342f9f395e7cbbbec1eebaacab54267b984abbfa06",
+            "modified_object_sha256": "27d11431c61e99e4bae48ec4a49f1ed703441a3ff5fa39a2a28b5d48366d3e13",
+            "baseline_allocated_bytes": 124,
+            "modified_allocated_bytes": 128,
+            "baseline_executable_bytes": 44,
+            "modified_executable_bytes": 44,
+            "baseline_input_sections": [
+              ".eh_frame+0x0",
+              ".note.ABI-tag",
+              ".text"
+            ],
+            "modified_input_sections": [
+              ".eh_frame+0x0",
+              ".note.ABI-tag",
+              ".rodata",
+              ".text"
+            ],
+            "compilation_units": [
+              "lib/libc/glibc/sysdeps/x86_64/start-2.33.S",
+              "lib/libc/glibc/csu/init.c"
+            ]
+          },
+          {
+            "input": "libc_nonshared.a",
+            "member": "elf-init-2.33.o",
+            "baseline_input_sha256": "317723009ef410cdce635f644490db35aa892a5abdf329a796f930faf0185468",
+            "modified_input_sha256": "b456522920e5167a303713a7dda8a9035cdab7cd56e28677c67bb2a5a27192d9",
+            "baseline_object_sha256": "c1a8b254d0fde4157e32fd6e0ce091899399c302708102d9a8ee97678cd874d2",
+            "modified_object_sha256": "07e1446ae13b2dfdca30225fb598bbc8079295c80b03a5ef081734631b662035",
+            "baseline_allocated_bytes": 118,
+            "modified_allocated_bytes": 118,
+            "baseline_executable_bytes": 118,
+            "modified_executable_bytes": 118,
+            "baseline_input_sections": [
+              ".text"
+            ],
+            "modified_input_sections": [
+              ".text"
+            ],
+            "compilation_units": [
+              "lib/libc/glibc/csu/elf-init-2.33.c"
+            ]
+          },
+          {
+            "input": "libc_nonshared.a",
+            "member": "fstat-2.32.o",
+            "baseline_input_sha256": "317723009ef410cdce635f644490db35aa892a5abdf329a796f930faf0185468",
+            "modified_input_sha256": "b456522920e5167a303713a7dda8a9035cdab7cd56e28677c67bb2a5a27192d9",
+            "baseline_object_sha256": "bf94bfda9ccae5e2dee34b1ae70a0b9b047c2be7fbe8911d97c02f287ab14c3b",
+            "modified_object_sha256": "6b67061118ae05e0a1364ef06f57ecfaad689843e6b2d6e03928e252c3a6275f",
+            "baseline_allocated_bytes": 20,
+            "modified_allocated_bytes": 21,
+            "baseline_executable_bytes": 20,
+            "modified_executable_bytes": 21,
+            "baseline_input_sections": [
+              ".text"
+            ],
+            "modified_input_sections": [
+              ".text"
+            ],
+            "compilation_units": [
+              "lib/libc/glibc/io/fstat-2.32.c"
+            ]
+          }
+        ],
+        "functional_and_offline_verification": {
+          "corpus_passed": true,
+          "corpus_cases": 13,
+          "reference_cases": 6,
+          "unicode_relocation_passed": true,
+          "dot_executions": 8,
+          "network_syscalls": {},
+          "child_network_control_detected": true,
+          "syscall_trace_sha256": "a2be1d51791b68ed9256fb8da68531ebfdf6400fef5dfeda25e718a1d2f5f5da",
+          "corpus_report_sha256": "5b2b5eba13d7edcb17252127b00e951d81fe4a5cda35b056e3c588aafbd666e8"
+        },
+        "limitations": [
+          "Technical proof of modified glibc startup/nonshared rebuild and object relink only; not legal advice or catalog admission",
+          "Final distribution still requires binding the corresponding-source package/offer to the distributed artifact",
+          "Remaining third-party component license compatibility reviews remain separate gates"
+        ]
+      }
+    },
+    "linux-glibc-aarch64": {
+      "run_id": 39707588112,
+      "url": "https://github.com/Extremois/desembaraca-twine/actions/runs/39707588112",
+      "artifact_id": 12396220847,
+      "verification": {
+        "kind": "modified-glibc-relink-verification",
+        "passed": true,
+        "approved": false,
+        "qualified": false,
+        "artifact_id": "linux-glibc-aarch64",
+        "arch": "aarch64",
+        "lgpl_section_6_mechanism": "LGPL-2.1-section-6a-and-6d-source-and-object-relink",
+        "parent_source_build_provenance_sha256": "d258a6037776c4773d5927a7c0024c24fa130e97050dfc2b1123b78e2d0841a0",
+        "baseline_executable_sha256": "e5cca07b6a9a80b7ba9d58910baf25be550a62dbbb54e498f5f3da83103967bb",
+        "modified_executable_sha256": "ebe741399ba3b7ce1b084e9288169cc983dd6e56574e37df898c43a90e5b7a2f",
+        "pinned_sdk_audit_rejected_modified_build": true,
+        "graphviz_build_inputs_count": 59,
+        "graphviz_build_inputs_unchanged": true,
+        "graphviz_allocated_sections_count": 603,
+        "graphviz_allocated_sections_unchanged": true,
+        "other_allocated_sdk_inputs": [
+          "libcompiler_rt.a"
+        ],
+        "modified_sources": [
+          {
+            "path": "lib/libc/glibc/csu/elf-init-2.33.c",
+            "baseline_sha256": "2d9b3d9b6af5d2ad6bf8a881e3c34f0bd7478f9709b62dfe9d48a749a5768519",
+            "modified_sha256": "c204fac210048c14440e08b446d5f6f0e330d7f79d0ea0e97510be4735ef0072",
+            "leading_comment_sha256": "754e3120bb12bda04a831d1e08b544b152930bf7275577b3fc995d337cbbaee3"
+          },
+          {
+            "path": "lib/libc/glibc/csu/init.c",
+            "baseline_sha256": "a06cd917584e309bf39f6f7a6158519e60a35e6ff8b3e96df8308d170c908f33",
+            "modified_sha256": "2527fe198c4360cec54ab871e38cc23425e6e480828e0155c41ce82de919967d",
+            "leading_comment_sha256": "1860d3b2f1c52f3d56f965cec59098343a4d270ab7f1543502825a699a7b70c5"
+          },
+          {
+            "path": "lib/libc/glibc/io/fstat-2.32.c",
+            "baseline_sha256": "a835e5cfb407c00c15aead0247d713a536d651d1fef1236b4a87aaf7a27eec68",
+            "modified_sha256": "b84e145f1883ed3f5317e8dc4e6d9982047122d4a6c3589ebe72404c3f127e74",
+            "leading_comment_sha256": "eb44f02340cb9e3c7d07a5a6e6be063298d2f40d6264c118f9d5628f55673d4c"
+          },
+          {
+            "path": "lib/libc/glibc/sysdeps/aarch64/start-2.33.S",
+            "baseline_sha256": "32a1e8179cba14fdaa319e494a303f54dffbbc66c8637088fc40679bf289bbef",
+            "modified_sha256": "93f0493e19af7cab8bf75b81b4f9df1f4a1c92b05b80c161e33afa33466f15b8",
+            "leading_comment_sha256": "988ad823784d577b2e2b1ad20947f05996ac9160813764d0d4211dd6c648787f"
+          }
+        ],
+        "retained_glibc_objects": [
+          {
+            "input": "crt1.o",
+            "member": null,
+            "baseline_input_sha256": "60c6bc6d888b344cb74997c6fa533a088d06b63c401ce0d691bd8c50fd773e86",
+            "modified_input_sha256": "fc087b94584866bb6b9cf4294e87308c4a81fab1c1314ebbe3e742ce612209dc",
+            "baseline_object_sha256": "60c6bc6d888b344cb74997c6fa533a088d06b63c401ce0d691bd8c50fd773e86",
+            "modified_object_sha256": "fc087b94584866bb6b9cf4294e87308c4a81fab1c1314ebbe3e742ce612209dc",
+            "baseline_allocated_bytes": 88,
+            "modified_allocated_bytes": 96,
+            "baseline_executable_bytes": 56,
+            "modified_executable_bytes": 60,
+            "baseline_input_sections": [
+              ".note.ABI-tag",
+              ".text"
+            ],
+            "modified_input_sections": [
+              ".note.ABI-tag",
+              ".rodata",
+              ".text"
+            ],
+            "compilation_units": [
+              "lib/libc/glibc/sysdeps/aarch64/start-2.33.S",
+              "lib/libc/glibc/csu/init.c"
+            ]
+          },
+          {
+            "input": "libc_nonshared.a",
+            "member": "elf-init-2.33.o",
+            "baseline_input_sha256": "e686c78e1cb13a62d234d4de93a00294f14826e0cc1f6b1dcedba11e55ab42d0",
+            "modified_input_sha256": "71acb801d39b28f1e3d3ec23302d0cb3bff1b0b6be76392f2208fa0ffec9bc46",
+            "baseline_object_sha256": "f813a3d30f66fa0e6993931e109010d5faf3ae0d4ea0c36ec4349af83c19d0a4",
+            "modified_object_sha256": "d07e734ee52771eb85f3e73e7ccad25a65b60444ea5bdf56afb38e7d21891fd6",
+            "baseline_allocated_bytes": 120,
+            "modified_allocated_bytes": 136,
+            "baseline_executable_bytes": 120,
+            "modified_executable_bytes": 136,
+            "baseline_input_sections": [
+              ".text"
+            ],
+            "modified_input_sections": [
+              ".text"
+            ],
+            "compilation_units": [
+              "lib/libc/glibc/csu/elf-init-2.33.c"
+            ]
+          },
+          {
+            "input": "libc_nonshared.a",
+            "member": "fstat-2.32.o",
+            "baseline_input_sha256": "e686c78e1cb13a62d234d4de93a00294f14826e0cc1f6b1dcedba11e55ab42d0",
+            "modified_input_sha256": "71acb801d39b28f1e3d3ec23302d0cb3bff1b0b6be76392f2208fa0ffec9bc46",
+            "baseline_object_sha256": "9e3271c48c4e61c19bbda0c559d008fe4ba08d8577a998743cbe862a06a73c31",
+            "modified_object_sha256": "475db6e00664f7b3a3e8e92cc03f6a920798994bfeaf84248ca6f3765e4e2e8d",
+            "baseline_allocated_bytes": 16,
+            "modified_allocated_bytes": 20,
+            "baseline_executable_bytes": 16,
+            "modified_executable_bytes": 20,
+            "baseline_input_sections": [
+              ".text"
+            ],
+            "modified_input_sections": [
+              ".text"
+            ],
+            "compilation_units": [
+              "lib/libc/glibc/io/fstat-2.32.c"
+            ]
+          }
+        ],
+        "functional_and_offline_verification": {
+          "corpus_passed": true,
+          "corpus_cases": 13,
+          "reference_cases": 6,
+          "unicode_relocation_passed": true,
+          "dot_executions": 8,
+          "network_syscalls": {},
+          "child_network_control_detected": true,
+          "syscall_trace_sha256": "8d51043a55c577424d0aefefb6d82f252916db7bf60f78d5962ed334e753b8d5",
+          "corpus_report_sha256": "88ff7dc09d22cc0d46d90eb42f83bfffe2e94105dbd44b1ef5936f08e16d0f3e"
+        },
+        "limitations": [
+          "Technical proof of modified glibc startup/nonshared rebuild and object relink only; not legal advice or catalog admission",
+          "Final distribution still requires binding the corresponding-source package/offer to the distributed artifact",
+          "Remaining third-party component license compatibility reviews remain separate gates"
+        ]
+      }
+    }
+  },
+  "limitations": [
+    "Proves the technical relinkability and byte-level separation required by LGPL 2.1 \u00a76(a) and \u00a76(d) for glibc startup/nonshared without modifying Graphviz build objects or requiring third-party library sources",
+    "Does not constitute legal advice, final distribution licensing approval, or support qualification",
+    "Final corresponding-source delivery packaging and ISO entity terms remain separate pending items"
+  ]
+}

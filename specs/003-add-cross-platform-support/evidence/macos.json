@@ -1,0 +1,68 @@
+{
+  "kind": "github-actions-macos-abi-execution-task-acceptance",
+  "task": "T056",
+  "task_complete": true,
+  "qualified": false,
+  "application_revision": "13fc2a8d48f89a0fd85f4312a38f822b3796e314",
+  "run_url": "https://github.com/Extremois/desembaraca-twine/actions/runs/40686184930",
+  "reports": [
+    {
+      "actions_artifact_id": 12815546157,
+      "name": "installed-engine-macos-15-3.12-13fc2a8d48f89a0fd85f4312a38f822b3796e314",
+      "report": "12815546157.json.gz",
+      "raw_sha256": "5de9eb96421a09bf1b75fdd175c855abd1c9d39daaecc647b2c4d9aafcab0b52",
+      "archive_sha256": "2ac61dfd1b4aca9158c72ee47fa22e932f413c8445792beecfa5862826b7f205",
+      "system": "Darwin",
+      "arch": "arm64",
+      "python": "3.12.10"
+    },
+    {
+      "actions_artifact_id": 12814868370,
+      "name": "installed-engine-macos-15-intel-3.12-13fc2a8d48f89a0fd85f4312a38f822b3796e314",
+      "report": "12814868370.json.gz",
+      "raw_sha256": "f4148c4b2970031ecf6258ee027cbb607e52f4a39698281d48af9ac991fba63a",
+      "archive_sha256": "dfbb7f16337859ab4e052b3b469f1de23f6bfa7a14a832cdae78f4192e985cc2",
+      "system": "Darwin",
+      "arch": "x86_64",
+      "python": "3.12.10"
+    },
+    {
+      "actions_artifact_id": 12814837427,
+      "name": "installed-engine-macos-15-3.14-13fc2a8d48f89a0fd85f4312a38f822b3796e314",
+      "report": "12814837427.json.gz",
+      "raw_sha256": "f7a9773e4c2bac5db2d4b22edb0499a5c77059b1f80e9bedcf3f54614fa53ca0",
+      "archive_sha256": "fec4e2de6fd661a5eaca82784181269205f1c477c33f6f051407dfdcfd5a66e4",
+      "system": "Darwin",
+      "arch": "arm64",
+      "python": "3.14.7"
+    },
+    {
+      "actions_artifact_id": 12814569685,
+      "name": "installed-engine-macos-15-intel-3.14-13fc2a8d48f89a0fd85f4312a38f822b3796e314",
+      "report": "12814569685.json.gz",
+      "raw_sha256": "20b161027967416b8e0518ef34d04948859dfc9ecd8e76148f6a7e39bdf1c0b3",
+      "archive_sha256": "a3b08ac8624b72febc03a6995efad1a63b69831896ff78e6cf6df718f67a33a2",
+      "system": "Darwin",
+      "arch": "x86_64",
+      "python": "3.14.7"
+    }
+  ],
+  "installation_modes": [
+    "wheel",
+    "sdist"
+  ],
+  "installations": 8,
+  "corpus_executions": 104,
+  "known_zero_reference_executions": 48,
+  "macos_signing_required": false,
+  "evidence_path": "specs/003-add-cross-platform-support/evidence/abi-scope-ci/installed-posix/summary.json",
+  "remaining_delivery": [
+    "License/source audit",
+    "Immutable binary/source delivery"
+  ],
+  "network_scope": "Acquisition counters and Python network guards; no syscall trace claimed",
+  "visual_review_evidence": {
+    "path": "specs/003-add-cross-platform-support/evidence/twine-visual-review-2026-10-28.json",
+    "sha256": "c5106fa06acf5cb7e0400eaee7c61fe39e5b571dcafd8d67f9fabe4f20990b02"
+  }
+}

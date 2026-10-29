@@ -1,0 +1,142 @@
+name: Linux Graphviz candidate
+on:
+  push:
+    branches: [feat/003-add-cross-platform-support]
+    paths:
+      - '.github/workflows/linux-candidate.yml'
+      - 'tools/runtime/**'
+      - '!tools/runtime/abi-targets.json'
+      - '!tools/runtime/licenses/linux.json'
+      - '!tools/runtime/licenses/macos.json'
+      - 'src/**/*.py'
+      - 'tests/fixtures/**'
+      - 'tests/integration/test_linux_runtime.py'
+      - 'tests/runtime_support.py'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: linux-candidate-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  build-and-corpus:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    env:
+      PYTHONUTF8: '1'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        id: python312
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-python@v5
+        id: python314
+        with:
+          python-version: '3.14'
+      - name: Ensure syscall tracer on ephemeral runner
+        shell: bash
+        run: |
+          if ! command -v strace >/dev/null; then
+            sudo apt-get update -qq
+            sudo apt-get install --yes --no-install-recommends strace
+          fi
+          strace --version
+          strace --kill-on-exit -qq true
+      - name: Prepare pinned private SDK and source
+        run: python tools/runtime/prepare-linux-ci.py --work "$RUNNER_TEMP/twine-sdk"
+      - name: Build experimental native x64 glibc candidate
+        shell: bash
+        run: |
+          mkdir -p .tmp/native-linux
+          python tools/runtime/build-common.py --artifact-id linux-glibc-x86_64 --source-archive "$RUNNER_TEMP/twine-sdk/graphviz.tar.gz" --sdk-record "$RUNNER_TEMP/twine-sdk/sdk-record.json" --output "$RUNNER_TEMP/twine-build" --execute 2>&1 | tee .tmp/native-linux/build.log
+      - name: Capture actual linker inputs and extracted archive members
+        run: python tools/runtime/relink-zig.py --source-output "$RUNNER_TEMP/twine-build" --output "$RUNNER_TEMP/twine-linked" --zig "$RUNNER_TEMP/twine-sdk/sdk/zig-x86_64-linux-0.15.2/zig"
+      - name: Bind compiled Graphviz sources to the pinned archive
+        run: python tools/runtime/audit-graphviz-sources.py --source-build "$RUNNER_TEMP/twine-build" --linked-build "$RUNNER_TEMP/twine-linked" --source-archive "$RUNNER_TEMP/twine-sdk/graphviz.tar.gz" --report .tmp/native-linux/graphviz-source-evidence.json
+      - name: Prepare byte-bound draft notices (audit approval remains pending)
+        run: |
+          python tools/runtime/audit-glibc-objects.py --linked-build "$RUNNER_TEMP/twine-linked" --sdk-root "$RUNNER_TEMP/twine-sdk/sdk/zig-x86_64-linux-0.15.2" --sdk-archive "$RUNNER_TEMP/twine-sdk/zig.tar.xz" --report .tmp/native-linux/glibc-object-evidence.json
+          python tools/runtime/audit-graphviz-data.py --source-build "$RUNNER_TEMP/twine-build" --linked-build "$RUNNER_TEMP/twine-linked" --source-archive "$RUNNER_TEMP/twine-sdk/graphviz.tar.gz" --compiler-evidence .tmp/native-linux/graphviz-source-evidence.json --report .tmp/native-linux/graphviz-data-evidence.json
+          python tools/runtime/prepare-draft-notices.py --linked-build "$RUNNER_TEMP/twine-linked" --source-build "$RUNNER_TEMP/twine-build" --evidence .tmp/native-linux/graphviz-source-evidence.json --graphviz-archive "$RUNNER_TEMP/twine-sdk/graphviz.tar.gz" --sdk-archive "$RUNNER_TEMP/twine-sdk/zig.tar.xz" --sdk-root "$RUNNER_TEMP/twine-sdk/sdk/zig-x86_64-linux-0.15.2" --data-evidence .tmp/native-linux/graphviz-data-evidence.json --glibc-object-evidence .tmp/native-linux/glibc-object-evidence.json --output "$RUNNER_TEMP/twine-notices"
+      - name: Inventory and package the experimental candidate
+        run: |
+          python tools/runtime/verify-artifact.py --root "$RUNNER_TEMP/twine-notices/candidate" --provenance "$RUNNER_TEMP/twine-notices/provenance.json" --write-inventory .tmp/native-linux/inventory.json --minimum-libc 2.27
+          python tools/runtime/pack-candidate.py --root "$RUNNER_TEMP/twine-notices/candidate" --inventory .tmp/native-linux/inventory.json --provenance "$RUNNER_TEMP/twine-notices/provenance.json" --output "$RUNNER_TEMP/twine-package"
+      - name: Corpus and Unicode relocation on Python 3.12
+        run: '"${{ steps.python312.outputs.python-path }}" tools/runtime/observe-linux-network.py --build-output "$RUNNER_TEMP/twine-notices" --environment-kind native --report .tmp/native-linux/network-312.json --corpus-report .tmp/native-linux/corpus-312.json'
+      - name: Real runtime preparation and offline cache on both Pythons
+        run: |
+          "${{ steps.python312.outputs.python-path }}" tools/runtime/observe-linux-network.py --build-output "$RUNNER_TEMP/twine-notices" --private-package "$RUNNER_TEMP/twine-package" --environment-kind native --report .tmp/native-linux/runtime-network-312.json --corpus-report .tmp/native-linux/runtime-corpus-312.json
+          "${{ steps.python314.outputs.python-path }}" tools/runtime/observe-linux-network.py --build-output "$RUNNER_TEMP/twine-notices" --private-package "$RUNNER_TEMP/twine-package" --environment-kind native --report .tmp/native-linux/runtime-network-314.json --corpus-report .tmp/native-linux/runtime-corpus-314.json
+      - name: Collect source material separately from the runtime
+        run: |
+          python tools/runtime/pack-sources.py --graphviz "$RUNNER_TEMP/twine-sdk/graphviz.tar.gz" --sdk "$RUNNER_TEMP/twine-sdk/zig.tar.xz" --provenance "$RUNNER_TEMP/twine-notices/provenance.json" --output "$RUNNER_TEMP/twine-sources"
+          cp "$RUNNER_TEMP/twine-sources/sources.json" .tmp/native-linux/sources.json
+      - name: Verify binary and source archive pairing without approving delivery
+        run: |
+          python tools/runtime/verify-source-pairing.py --candidate-receipt "$RUNNER_TEMP/twine-package/candidate.json" --sources-receipt "$RUNNER_TEMP/twine-sources/sources.json" --candidate-archive "$RUNNER_TEMP/twine-package/candidate.zip" --sources-archive "$RUNNER_TEMP/twine-sources/sources.tar.gz" --application-revision "$GITHUB_SHA" --output .tmp/native-linux/source-pairing.json
+          cp .tmp/native-linux/source-pairing.json "$RUNNER_TEMP/twine-sources/source-pairing.json"
+      - name: Rebuild using exported sources and recipes
+        shell: bash
+        run: |
+          set -o pipefail
+          mkdir "$RUNNER_TEMP/twine-source-replay"
+          tar -xzf "$RUNNER_TEMP/twine-sources/sources.tar.gz" -C "$RUNNER_TEMP/twine-source-replay"
+          cd "$RUNNER_TEMP/twine-source-replay"
+          python tools/runtime/prepare-linux-ci.py --work "$RUNNER_TEMP/twine-replay-sdk"
+          cp -a sdk/lib/. "$RUNNER_TEMP/twine-replay-sdk/sdk/zig-x86_64-linux-0.15.2/lib/"
+          python tools/runtime/build-common.py --artifact-id linux-glibc-x86_64 --source-archive graphviz.tar.gz --sdk-record "$RUNNER_TEMP/twine-replay-sdk/sdk-record.json" --output "$RUNNER_TEMP/twine-replay-build" --execute 2>&1 | tee "$GITHUB_WORKSPACE/.tmp/native-linux/source-rebuild.log"
+          cd "$GITHUB_WORKSPACE"
+          python tools/runtime/observe-linux-network.py --build-output "$RUNNER_TEMP/twine-replay-build" --environment-kind native --report .tmp/native-linux/rebuilt-network.json --corpus-report .tmp/native-linux/rebuilt-corpus.json
+      - name: Verify controlled modified-glibc relink from exported sources
+        shell: bash
+        run: |
+          set -o pipefail
+          cd "$RUNNER_TEMP/twine-source-replay"
+          python tools/runtime/relink-zig.py --source-output "$RUNNER_TEMP/twine-replay-build" --output "$RUNNER_TEMP/twine-replay-linked" --zig "$RUNNER_TEMP/twine-replay-sdk/sdk/zig-x86_64-linux-0.15.2/zig"
+          python tools/runtime/audit-glibc-objects.py --linked-build "$RUNNER_TEMP/twine-replay-linked" --sdk-root "$RUNNER_TEMP/twine-replay-sdk/sdk/zig-x86_64-linux-0.15.2" --sdk-archive "$RUNNER_TEMP/twine-replay-sdk/zig.tar.xz" --report "$RUNNER_TEMP/twine-replay-linked/glibc-object-sources.json"
+          python tools/runtime/verify-modified-glibc-relink.py --modify-sdk --sdk-root "$RUNNER_TEMP/twine-replay-sdk/sdk/zig-x86_64-linux-0.15.2" --cache-dir "$RUNNER_TEMP/twine-replay-sdk/cache" --edit-receipt "$GITHUB_WORKSPACE/.tmp/native-linux/modified-glibc-edits.json"
+          python tools/runtime/relink-zig.py --source-output "$RUNNER_TEMP/twine-replay-build" --output "$RUNNER_TEMP/twine-modified-glibc-linked" --zig "$RUNNER_TEMP/twine-replay-sdk/sdk/zig-x86_64-linux-0.15.2/zig"
+          cd "$GITHUB_WORKSPACE"
+          python tools/runtime/observe-linux-network.py --build-output "$RUNNER_TEMP/twine-modified-glibc-linked" --environment-kind native --report .tmp/native-linux/modified-glibc-network.json --corpus-report .tmp/native-linux/modified-glibc-corpus.json
+          python "$RUNNER_TEMP/twine-source-replay/tools/runtime/verify-modified-glibc-relink.py" --verify --baseline-linked "$RUNNER_TEMP/twine-replay-linked" --modified-linked "$RUNNER_TEMP/twine-modified-glibc-linked" --modified-sdk-root "$RUNNER_TEMP/twine-replay-sdk/sdk/zig-x86_64-linux-0.15.2" --sdk-archive "$RUNNER_TEMP/twine-replay-sdk/zig.tar.xz" --edit-receipt .tmp/native-linux/modified-glibc-edits.json --syscall-report .tmp/native-linux/modified-glibc-network.json --corpus-report .tmp/native-linux/modified-glibc-corpus.json --modified-observations-out .tmp/native-linux/modified-glibc-object-sources.json --report .tmp/native-linux/modified-glibc-relink.json
+      - name: Corpus and Unicode relocation on Python 3.14
+        run: '"${{ steps.python314.outputs.python-path }}" tools/runtime/observe-linux-network.py --build-output "$RUNNER_TEMP/twine-notices" --environment-kind native --report .tmp/native-linux/network-314.json --corpus-report .tmp/native-linux/corpus-314.json'
+      - name: Retain candidate and measurements for audit (not a qualified release)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: linux-glibc-x86_64-unqualified-${{ github.sha }}
+          retention-days: 7
+          include-hidden-files: true
+          path: |
+            .tmp/native-linux/
+            ${{ runner.temp }}/twine-sdk/sdk-record.json
+            ${{ runner.temp }}/twine-build/provenance.json
+            ${{ runner.temp }}/twine-linked/provenance.json
+            ${{ runner.temp }}/twine-linked/compiler-verbose.txt
+            ${{ runner.temp }}/twine-linked/lld-output.txt
+            ${{ runner.temp }}/twine-linked/allocated-sections.json
+            ${{ runner.temp }}/twine-linked/build/cmd/dot/CMakeFiles/dot.dir/link-map.txt
+            ${{ runner.temp }}/twine-notices/provenance.json
+            ${{ runner.temp }}/twine-notices/review.json
+            ${{ runner.temp }}/twine-notices/candidate/third-party-notices/
+            ${{ runner.temp }}/twine-package/
+            ${{ runner.temp }}/twine-replay-build/provenance.json
+            ${{ runner.temp }}/twine-replay-linked/provenance.json
+            ${{ runner.temp }}/twine-replay-linked/allocated-sections.json
+            ${{ runner.temp }}/twine-replay-linked/glibc-object-sources.json
+            ${{ runner.temp }}/twine-modified-glibc-linked/provenance.json
+            ${{ runner.temp }}/twine-modified-glibc-linked/allocated-sections.json
+            ${{ runner.temp }}/twine-modified-glibc-linked/compiler-verbose.txt
+            ${{ runner.temp }}/twine-modified-glibc-linked/lld-output.txt
+      - name: Retain source review material (not a published source offer)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: linux-glibc-x86_64-source-review-${{ github.sha }}
+          retention-days: 7
+          path: ${{ runner.temp }}/twine-sources/

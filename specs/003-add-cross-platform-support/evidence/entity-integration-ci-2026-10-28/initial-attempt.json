@@ -1,0 +1,20 @@
+{
+  "application_revision": "e681a14a1e3ea3b864c84ab46d3bf5ca8a66c328",
+  "foundation_run_id": 40800826632,
+  "result": "one new export/replay contract failed on Windows/macOS; Linux passed",
+  "cause": "Containment compared a resolved temporary file path with an unresolved directory alias",
+  "correction_revision": "46d111de81038d6ae0e7e7772813693c5b0a2345",
+  "correction": "Resolve both paths before checking containment",
+  "logs": [
+    {
+      "job_id": 123208265460,
+      "path": "initial-failure-123208265460.log.gz",
+      "raw_sha256": "5398c4a61b3710dfba8bbf1710cf4d583fa8ed0dfeea6ae7dae7ddcffb9cbc50"
+    },
+    {
+      "job_id": 123208265548,
+      "path": "initial-failure-123208265548.log.gz",
+      "raw_sha256": "7050375a07958de9b79dbc83d05f0315662e0a67c6efe04608efe178125b4498"
+    }
+  ]
+}

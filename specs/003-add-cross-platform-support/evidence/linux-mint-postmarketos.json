@@ -1,0 +1,364 @@
+{
+  "kind": "mint-postmarketos-evidence-index",
+  "task": "T045",
+  "task_complete": false,
+  "qualified": false,
+  "captured_at": "2026-10-27T23:30:00+00:00",
+  "registry": {
+    "path": "tools/runtime/support-targets.json",
+    "sha256": "be3e8a77e3836d1125658c00a75fbf0e3584f1e26a166a053583336c29a5d295"
+  },
+  "application_revision": "7b30c80a7a1b980860e0fa9e6b16a14d8245c28e",
+  "expected_targets": 11,
+  "expected_python_slots": 22,
+  "complete_targets": 0,
+  "targets_with_partial_native_observations": 0,
+  "python_slots_with_partial_native_observations": 0,
+  "targets": [
+    {
+      "target_id": "linuxmint-21-stable-x86_64-distribution-default",
+      "distribution": "linuxmint",
+      "display_name": "Linux Mint",
+      "version": "21",
+      "arch": "x86_64",
+      "upstream_base": "Ubuntu 22.04 LTS",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "observed_python": null
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "observed_python": null
+        }
+      ],
+      "pending_reason": "Mint minor native candidate execution, two Python slots, Twine review and remaining common gates"
+    },
+    {
+      "target_id": "linuxmint-21.1-stable-x86_64-distribution-default",
+      "distribution": "linuxmint",
+      "display_name": "Linux Mint",
+      "version": "21.1",
+      "arch": "x86_64",
+      "upstream_base": "Ubuntu 22.04 LTS",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "observed_python": null
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "observed_python": null
+        }
+      ],
+      "pending_reason": "Mint minor native candidate execution, two Python slots, Twine review and remaining common gates"
+    },
+    {
+      "target_id": "linuxmint-21.2-stable-x86_64-distribution-default",
+      "distribution": "linuxmint",
+      "display_name": "Linux Mint",
+      "version": "21.2",
+      "arch": "x86_64",
+      "upstream_base": "Ubuntu 22.04 LTS",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "observed_python": null
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "observed_python": null
+        }
+      ],
+      "pending_reason": "Mint minor native candidate execution, two Python slots, Twine review and remaining common gates"
+    },
+    {
+      "target_id": "linuxmint-21.3-stable-x86_64-distribution-default",
+      "distribution": "linuxmint",
+      "display_name": "Linux Mint",
+      "version": "21.3",
+      "arch": "x86_64",
+      "upstream_base": "Ubuntu 22.04 LTS",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "observed_python": null
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "observed_python": null
+        }
+      ],
+      "pending_reason": "Mint minor native candidate execution, two Python slots, Twine review and remaining common gates"
+    },
+    {
+      "target_id": "linuxmint-22-stable-x86_64-distribution-default",
+      "distribution": "linuxmint",
+      "display_name": "Linux Mint",
+      "version": "22",
+      "arch": "x86_64",
+      "upstream_base": "Ubuntu 24.04 LTS",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "observed_python": null
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "observed_python": null
+        }
+      ],
+      "pending_reason": "Mint minor native candidate execution, two Python slots, Twine review and remaining common gates"
+    },
+    {
+      "target_id": "linuxmint-22.1-stable-x86_64-distribution-default",
+      "distribution": "linuxmint",
+      "display_name": "Linux Mint",
+      "version": "22.1",
+      "arch": "x86_64",
+      "upstream_base": "Ubuntu 24.04 LTS",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "observed_python": null
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "observed_python": null
+        }
+      ],
+      "pending_reason": "Mint minor native candidate execution, two Python slots, Twine review and remaining common gates"
+    },
+    {
+      "target_id": "linuxmint-22.2-stable-x86_64-distribution-default",
+      "distribution": "linuxmint",
+      "display_name": "Linux Mint",
+      "version": "22.2",
+      "arch": "x86_64",
+      "upstream_base": "Ubuntu 24.04 LTS",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "observed_python": null
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "observed_python": null
+        }
+      ],
+      "pending_reason": "Mint minor native candidate execution, two Python slots, Twine review and remaining common gates"
+    },
+    {
+      "target_id": "linuxmint-22.3-stable-x86_64-distribution-default",
+      "distribution": "linuxmint",
+      "display_name": "Linux Mint",
+      "version": "22.3",
+      "arch": "x86_64",
+      "upstream_base": "Ubuntu 24.04 LTS",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "observed_python": null
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "observed_python": null
+        }
+      ],
+      "pending_reason": "Mint minor native candidate execution, two Python slots, Twine review and remaining common gates"
+    },
+    {
+      "target_id": "linuxmint-lmde-7-stable-x86_64-distribution-default",
+      "distribution": "linuxmint",
+      "display_name": "LMDE",
+      "version": "lmde-7",
+      "arch": "x86_64",
+      "upstream_base": "Debian 13 (Trixie)",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "observed_python": null
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "observed_python": null
+        }
+      ],
+      "pending_reason": "LMDE native candidate execution, two Python slots, Twine review and remaining common gates"
+    },
+    {
+      "target_id": "postmarketos-26.06-stable-x86_64-distribution-default",
+      "distribution": "postmarketos",
+      "display_name": "postmarketOS",
+      "version": "26.06",
+      "arch": "x86_64",
+      "image_variant": "Generic x86_64 EFI",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "observed_python": null
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "observed_python": null
+        }
+      ],
+      "pending_reason": "Generic EFI image execution, two Python slots, Twine review and remaining common gates"
+    },
+    {
+      "target_id": "postmarketos-26.06-stable-aarch64-distribution-default",
+      "distribution": "postmarketos",
+      "display_name": "postmarketOS",
+      "version": "26.06",
+      "arch": "aarch64",
+      "image_variant": "Published concrete ARM device image without mobile GUI/driver promises",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "observed_python": null
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "observed_python": null
+        }
+      ],
+      "pending_reason": "Concrete ARM device image identification, two Python slots, Twine review and remaining common gates"
+    }
+  ],
+  "limitations": [
+    "Linux Mint tracks individual minors without collapsing into Ubuntu baseline",
+    "Mint ARM64 is not published by upstream; postmarketOS ARM64 is conditioned on a concrete device target image without assuming mobile UI features",
+    "No local VM, Twine review, final distributed candidate or catalog promotion"
+  ],
+  "release_scope": {
+    "reference_date": "2026-10-17",
+    "distributions": [
+      "linuxmint",
+      "postmarketos"
+    ],
+    "versions": [
+      "21",
+      "21.1",
+      "21.2",
+      "21.3",
+      "22",
+      "22.1",
+      "22.2",
+      "22.3",
+      "lmde-7",
+      "26.06"
+    ],
+    "maintenance_acceptance": false,
+    "source": "tools/runtime/support-targets.json"
+  }
+}

@@ -1,0 +1,25 @@
+/*************************************************************************
+ * Copyright (c) 2011 AT&T Intellectual Property 
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v2.0
+ * which accompanies this distribution, and is available at
+ * https://www.eclipse.org/org/documents/epl-2.0/EPL-2.0.html
+ *
+ * Contributors: Details at https://graphviz.org
+ *************************************************************************/
+
+
+/*
+ * Rank the nodes of a directed graph, subject to user-defined
+ * sets of nodes to be kept on the same, min, or max rank.
+ * The temporary acyclic fast graph is constructed and ranked
+ * by a network-simplex technique.  Then ranks are propagated
+ * to non-leader nodes and temporary edges are deleted.
+ * Leaf nodes and top-level clusters are left collapsed, though.
+ * Assigns global minrank and maxrank of graph and all clusters.
+ *
+ * TODO: safety code.  must not be in two clusters at same level.
+ *  must not be in same/min/max/rank and a cluster at the same time.
+ *  watch out for interactions between leaves and clusters.
+ */
+

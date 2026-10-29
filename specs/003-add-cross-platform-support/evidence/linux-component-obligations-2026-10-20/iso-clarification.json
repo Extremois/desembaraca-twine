@@ -1,0 +1,11 @@
+{
+  "kind": "public-w3c-reply-scope-review",
+  "approved": false,
+  "qualified": false,
+  "url": "https://issues.apache.org/jira/secure/attachment/12929220/reply_w3.mbox",
+  "attachment_sha256": "d1ca3ffec494024be03559945ce67f932e57b2c65d93c94463515ff70193b908",
+  "context": "https://issues.apache.org/jira/browse/LEGAL-386",
+  "observation": "The W3C reply describes its Software License and absence of W3C claims incompatible with Apache, while expressly declining to speak for ISO terms.",
+  "conclusion": "Not an ISO authorization or approval of Graphviz distribution; conformity/applicability issue remains open.",
+  "full_message_or_contact_details_retained": false
+}

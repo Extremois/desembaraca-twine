@@ -1,0 +1,417 @@
+{
+  "kind": "w3c-generated-data-policy-reference-review",
+  "approved": false,
+  "qualified": false,
+  "task": "T030",
+  "task_complete": false,
+  "source_state": "working-tree",
+  "materials": [
+    {
+      "path": "notices/W3C-document-1999.txt",
+      "size": 4409,
+      "sha256": "0ec2e4fa914035efe4d1d6d325724389ac42718633b6686b68fb36144eb9abd3",
+      "origin": {
+        "kind": "pinned-w3c-reference-text",
+        "approved": false,
+        "source_url": "https://www.w3.org/Consortium/Legal/copyright-documents-19990405",
+        "resolved_url": "https://www.w3.org/Consortium/Legal/copyright-documents-19990405",
+        "source_sha256": "bfc01b4569ee865dac7dc6653a6df012605e8a9212fa5c55bcda68f53b8936fc",
+        "stored_sha256": "043d53e91c5d18aba9b87302a11e3dd2ba03ad84d91a161a2d2ad66ddcdbfc6a",
+        "raw_offset": 0,
+        "raw_length": 4714,
+        "encoding": "iso-8859-1",
+        "scope": "Full policy text; no retroactive license assignment"
+      }
+    },
+    {
+      "path": "notices/W3C-document-2002.txt",
+      "size": 10234,
+      "sha256": "9fd45ab4f8f426ca595a4dc602d75d28c32a9d871e462e2cecc5ffc4315ebe5a",
+      "origin": {
+        "kind": "pinned-w3c-reference-text",
+        "approved": false,
+        "source_url": "https://www.w3.org/Consortium/Legal/2002/copyright-documents-20021231",
+        "resolved_url": "https://www.w3.org/copyright/document-license-2002/",
+        "source_sha256": "beedccab0ddee27d20caf239a77f449d0631ca81ab21246958a934d9bbdf7eec",
+        "stored_sha256": "301e41ac45652d3d3bd75f9a46504c235a8c744a150f643b07fbd6e54ef16816",
+        "raw_offset": 0,
+        "raw_length": 27919,
+        "encoding": "utf-8",
+        "scope": "Full policy text; no retroactive license assignment"
+      }
+    },
+    {
+      "path": "notices/W3C-document-2023.txt",
+      "size": 9882,
+      "sha256": "6442d12bab83459f7eede7d59b1eb0d6cb92ca828e2c0d425252a62cc554f885",
+      "origin": {
+        "kind": "pinned-w3c-reference-text",
+        "approved": false,
+        "source_url": "https://www.w3.org/copyright/document-license-2023/",
+        "resolved_url": "https://www.w3.org/copyright/document-license-2023/",
+        "source_sha256": "888bd32d1e7b386edd688a588b70873d794563bd8ae9cdeb09089ea50d0da29d",
+        "stored_sha256": "66b0b5234e2135a7895e931128059a7c58284e05a6e8bdeb4a0a6bd69d283f99",
+        "raw_offset": 0,
+        "raw_length": 27473,
+        "encoding": "utf-8",
+        "scope": "Full policy text; no retroactive license assignment"
+      }
+    },
+    {
+      "path": "notices/W3C-html401-index.txt",
+      "size": 2541,
+      "sha256": "e0bb883644d33af986680a50c902982436dc5c68673536026e81d9d18ce239d2",
+      "origin": {
+        "kind": "pinned-w3c-reference-text",
+        "approved": false,
+        "source_url": "https://www.w3.org/TR/1999/REC-html401-19991224/",
+        "resolved_url": "https://www.w3.org/TR/1999/REC-html401-19991224/",
+        "source_sha256": "1a9393902a9a1926c3aa34add33304b49e09a96439451f7957dd72b69d51c9e9",
+        "stored_sha256": "9c836ec8465393559ed41dfa75c85ba84b59ab42ab8c1edfddfb7441c93fe7e1",
+        "raw_offset": 0,
+        "raw_length": 3322,
+        "encoding": "iso-8859-1",
+        "scope": "Publication header"
+      }
+    },
+    {
+      "path": "notices/W3C-software-1998.txt",
+      "size": 3837,
+      "sha256": "485bf29137b52b7c2f5f52e5f1700e7903099dc3940a6bc1345e6bf348a2b222",
+      "origin": {
+        "kind": "pinned-w3c-reference-text",
+        "approved": false,
+        "source_url": "https://www.w3.org/Consortium/Legal/copyright-software-19980720",
+        "resolved_url": "https://www.w3.org/Consortium/Legal/copyright-software-19980720",
+        "source_sha256": "d4eedcb04dc16687b6d56b49ed06e1b55f599b8bd8e518af9773d1b7d2cf5c76",
+        "stored_sha256": "e3a1f66d794588a89e7c32510add9b18a400d42b94498f42e43d1c90d405ea16",
+        "raw_offset": 0,
+        "raw_length": 4261,
+        "encoding": "iso-8859-1",
+        "scope": "Full policy text; no retroactive license assignment"
+      }
+    },
+    {
+      "path": "notices/W3C-svg11-index.txt",
+      "size": 2853,
+      "sha256": "6643c6badb5ef27afda77aa2a602c03962adba4936b269cb91d3b4ff99c5633f",
+      "origin": {
+        "kind": "pinned-w3c-reference-text",
+        "approved": false,
+        "source_url": "https://www.w3.org/TR/2011/REC-SVG11-20110816/",
+        "resolved_url": "https://www.w3.org/TR/2011/REC-SVG11-20110816/",
+        "source_sha256": "c558313b7129c2c6b75aacd282cc28a6c3e2f61d36b7fdd8cb02452330e1f1a9",
+        "stored_sha256": "876587f0d986b298e31724b9e45f63547eda0784cf76d80d793f253fae6c00c3",
+        "raw_offset": 0,
+        "raw_length": 4540,
+        "encoding": "utf-8",
+        "scope": "Publication header"
+      }
+    },
+    {
+      "path": "notices/W3C-HTML401-ENTITY-DECLARATION-NOTICES.txt",
+      "size": 1141,
+      "sha256": "09396520ce62679f30f66706bbf143c4dbb9120a6f0e52cb8143a9fbbc08e5c5",
+      "origin": {
+        "kind": "bound-entity-declaration-notices",
+        "approved": false,
+        "path": "lib/common/entities.html",
+        "archive_sha256": "1e028b2b3e84e946c1d3e8c47590f8f0741bba1041fe6eff36eee87e598ea249",
+        "source_sha256": "d90554950424a27e062eedaf43683132886dfe31570d5b0c5a2cb97ced46ba2a",
+        "reference_url": "https://www.w3.org/TR/1999/REC-html401-19991224/sgml/entities.html",
+        "reference_sha256": "604f28d1a1ef222bef5fefab8e2935cddac019cb96aad6bd11d184d57f6d553e",
+        "declaration_notices": 3,
+        "scope": "ISO attribution and conditions preserved; no claim about conformity, applicability or compatibility"
+      }
+    }
+  ],
+  "policy_routing": {
+    "html401": {
+      "index": "html401-index",
+      "policy_references": [
+        "document-1999",
+        "software-1998"
+      ],
+      "scope": "Explicit dated links in the HTML 4.01 recommendation; applicability to Graphviz transformations remains under review"
+    },
+    "svg11": {
+      "index": "svg11-index",
+      "observed_policy_url": "https://www.w3.org/Consortium/Legal/copyright-documents",
+      "observed_resolved_url": "https://www.w3.org/copyright/document-license-2023/",
+      "policy_references": [
+        "document-2002",
+        "document-2023"
+      ],
+      "scope": "Historical and current policy references preserved separately; no automatic retroactive license assignment"
+    }
+  },
+  "artifact_bindings": [
+    {
+      "artifact_id": "linux-glibc-x86_64",
+      "executable_sha256": "43ce8d686720467c21be91cab4b8f3b246baae49c2cfe293714ebdf8a82f5716",
+      "data_evidence_sha256": "bdb6bf7a5e22fcb581c2f8a348f8359f44f48574d230b2dc69b1c62cea95ac98",
+      "native_package_receipt": "specs/003-add-cross-platform-support/evidence/linux-source-notice-packages-2026-10-19/glibc-x86_64/summary.json",
+      "data_inputs": [
+        {
+          "path": "lib/common/make_colortbl.py",
+          "size": 2987,
+          "sha256": "c60ea34aa8c615d94527a6030ecd7e13121d47ebef9d30e101b5afeaf6f349ec"
+        },
+        {
+          "path": "lib/common/entities.py",
+          "size": 1608,
+          "sha256": "dd4f74ea85a0ab1edf842aec4e19503bd1e0dd8ba8ce66ed408fd66c9239fd00"
+        },
+        {
+          "path": "lib/common/brewer_colors",
+          "size": 45047,
+          "sha256": "a069692c03e8bcd402fbd88b2e664a7cc0f39870c05cc1d751413f8302a7d34e"
+        },
+        {
+          "path": "lib/common/svgcolor_names",
+          "size": 4577,
+          "sha256": "b1804a9fd48e36c4f57a9a1afa15e684cebe1735a460ea9deebc1d673e38d7a5"
+        },
+        {
+          "path": "lib/common/color_names",
+          "size": 16431,
+          "sha256": "a9838adf434637f93191d223e6dd23e74d19880d4c28e9013407e9f8c004a4c6"
+        },
+        {
+          "path": "lib/common/entities.html",
+          "size": 42092,
+          "sha256": "d90554950424a27e062eedaf43683132886dfe31570d5b0c5a2cb97ced46ba2a"
+        }
+      ],
+      "generated_outputs": [
+        {
+          "path": "lib/common/common/colortbl.h",
+          "sha256": "7cd53d4b8667696af35a23911a93875797511d5a70c1b46987c7e80d0563d6f3",
+          "size": 102902,
+          "generator": "make_colortbl.py",
+          "reproduced": true
+        },
+        {
+          "path": "lib/common/common/entities.h",
+          "sha256": "3c4c841918e18424c51f58423e510b1537be15a1c6518ec25d88321a5fee2da1",
+          "size": 4751,
+          "generator": "entities.py",
+          "reproduced": true
+        }
+      ],
+      "existing_runtime_archive_updated": false,
+      "scope": "Existing generated-data evidence matches the W3C reference chapters; new policy materials remain local",
+      "entity_declaration_notices_match_reference": 3
+    },
+    {
+      "artifact_id": "linux-glibc-aarch64",
+      "executable_sha256": "933b6c63370bdd3e814627e2a9a06176416c8da017a21dcbc96d8137dbc17e22",
+      "data_evidence_sha256": "ea8e75a46e28d093e588b2ac3e1172b81e9c23df1ec45ce448f17c2c0e6cc18e",
+      "native_package_receipt": "specs/003-add-cross-platform-support/evidence/linux-source-notice-packages-2026-10-19/glibc-aarch64/summary.json",
+      "data_inputs": [
+        {
+          "path": "lib/common/make_colortbl.py",
+          "size": 2987,
+          "sha256": "c60ea34aa8c615d94527a6030ecd7e13121d47ebef9d30e101b5afeaf6f349ec"
+        },
+        {
+          "path": "lib/common/entities.py",
+          "size": 1608,
+          "sha256": "dd4f74ea85a0ab1edf842aec4e19503bd1e0dd8ba8ce66ed408fd66c9239fd00"
+        },
+        {
+          "path": "lib/common/brewer_colors",
+          "size": 45047,
+          "sha256": "a069692c03e8bcd402fbd88b2e664a7cc0f39870c05cc1d751413f8302a7d34e"
+        },
+        {
+          "path": "lib/common/svgcolor_names",
+          "size": 4577,
+          "sha256": "b1804a9fd48e36c4f57a9a1afa15e684cebe1735a460ea9deebc1d673e38d7a5"
+        },
+        {
+          "path": "lib/common/color_names",
+          "size": 16431,
+          "sha256": "a9838adf434637f93191d223e6dd23e74d19880d4c28e9013407e9f8c004a4c6"
+        },
+        {
+          "path": "lib/common/entities.html",
+          "size": 42092,
+          "sha256": "d90554950424a27e062eedaf43683132886dfe31570d5b0c5a2cb97ced46ba2a"
+        }
+      ],
+      "generated_outputs": [
+        {
+          "path": "lib/common/common/colortbl.h",
+          "sha256": "7cd53d4b8667696af35a23911a93875797511d5a70c1b46987c7e80d0563d6f3",
+          "size": 102902,
+          "generator": "make_colortbl.py",
+          "reproduced": true
+        },
+        {
+          "path": "lib/common/common/entities.h",
+          "sha256": "3c4c841918e18424c51f58423e510b1537be15a1c6518ec25d88321a5fee2da1",
+          "size": 4751,
+          "generator": "entities.py",
+          "reproduced": true
+        }
+      ],
+      "existing_runtime_archive_updated": false,
+      "scope": "Existing generated-data evidence matches the W3C reference chapters; new policy materials remain local",
+      "entity_declaration_notices_match_reference": 3
+    },
+    {
+      "artifact_id": "linux-musl-x86_64",
+      "executable_sha256": "f4dfee4e052704b1a7efdb7b6a4c43583ccaa062aec800b76224dae24eb2b69b",
+      "data_evidence_sha256": "461bcbcc509f0748ea84cd768383f41b79aa1b642facd4e08535da181105094c",
+      "native_package_receipt": "specs/003-add-cross-platform-support/evidence/linux-source-notice-packages-2026-10-19/musl-x86_64/summary.json",
+      "data_inputs": [
+        {
+          "path": "lib/common/make_colortbl.py",
+          "size": 2987,
+          "sha256": "c60ea34aa8c615d94527a6030ecd7e13121d47ebef9d30e101b5afeaf6f349ec"
+        },
+        {
+          "path": "lib/common/entities.py",
+          "size": 1608,
+          "sha256": "dd4f74ea85a0ab1edf842aec4e19503bd1e0dd8ba8ce66ed408fd66c9239fd00"
+        },
+        {
+          "path": "lib/common/brewer_colors",
+          "size": 45047,
+          "sha256": "a069692c03e8bcd402fbd88b2e664a7cc0f39870c05cc1d751413f8302a7d34e"
+        },
+        {
+          "path": "lib/common/svgcolor_names",
+          "size": 4577,
+          "sha256": "b1804a9fd48e36c4f57a9a1afa15e684cebe1735a460ea9deebc1d673e38d7a5"
+        },
+        {
+          "path": "lib/common/color_names",
+          "size": 16431,
+          "sha256": "a9838adf434637f93191d223e6dd23e74d19880d4c28e9013407e9f8c004a4c6"
+        },
+        {
+          "path": "lib/common/entities.html",
+          "size": 42092,
+          "sha256": "d90554950424a27e062eedaf43683132886dfe31570d5b0c5a2cb97ced46ba2a"
+        }
+      ],
+      "generated_outputs": [
+        {
+          "path": "lib/common/common/colortbl.h",
+          "sha256": "7cd53d4b8667696af35a23911a93875797511d5a70c1b46987c7e80d0563d6f3",
+          "size": 102902,
+          "generator": "make_colortbl.py",
+          "reproduced": true
+        },
+        {
+          "path": "lib/common/common/entities.h",
+          "sha256": "3c4c841918e18424c51f58423e510b1537be15a1c6518ec25d88321a5fee2da1",
+          "size": 4751,
+          "generator": "entities.py",
+          "reproduced": true
+        }
+      ],
+      "existing_runtime_archive_updated": false,
+      "scope": "Existing generated-data evidence matches the W3C reference chapters; new policy materials remain local",
+      "entity_declaration_notices_match_reference": 3
+    },
+    {
+      "artifact_id": "linux-musl-aarch64",
+      "executable_sha256": "2d7a4b6024eb000c33ecf8b14d1a32d0aac8dde65bed00de138604d081fd3ee4",
+      "data_evidence_sha256": "3084cc40ac78b4c2d0c66ba9ac811433d9eedf82d2b35b90d4b36e6b66dc6fb3",
+      "native_package_receipt": "specs/003-add-cross-platform-support/evidence/linux-source-notice-packages-2026-10-19/musl-aarch64/summary.json",
+      "data_inputs": [
+        {
+          "path": "lib/common/make_colortbl.py",
+          "size": 2987,
+          "sha256": "c60ea34aa8c615d94527a6030ecd7e13121d47ebef9d30e101b5afeaf6f349ec"
+        },
+        {
+          "path": "lib/common/entities.py",
+          "size": 1608,
+          "sha256": "dd4f74ea85a0ab1edf842aec4e19503bd1e0dd8ba8ce66ed408fd66c9239fd00"
+        },
+        {
+          "path": "lib/common/brewer_colors",
+          "size": 45047,
+          "sha256": "a069692c03e8bcd402fbd88b2e664a7cc0f39870c05cc1d751413f8302a7d34e"
+        },
+        {
+          "path": "lib/common/svgcolor_names",
+          "size": 4577,
+          "sha256": "b1804a9fd48e36c4f57a9a1afa15e684cebe1735a460ea9deebc1d673e38d7a5"
+        },
+        {
+          "path": "lib/common/color_names",
+          "size": 16431,
+          "sha256": "a9838adf434637f93191d223e6dd23e74d19880d4c28e9013407e9f8c004a4c6"
+        },
+        {
+          "path": "lib/common/entities.html",
+          "size": 42092,
+          "sha256": "d90554950424a27e062eedaf43683132886dfe31570d5b0c5a2cb97ced46ba2a"
+        }
+      ],
+      "generated_outputs": [
+        {
+          "path": "lib/common/common/colortbl.h",
+          "sha256": "7cd53d4b8667696af35a23911a93875797511d5a70c1b46987c7e80d0563d6f3",
+          "size": 102902,
+          "generator": "make_colortbl.py",
+          "reproduced": true
+        },
+        {
+          "path": "lib/common/common/entities.h",
+          "sha256": "3c4c841918e18424c51f58423e510b1537be15a1c6518ec25d88321a5fee2da1",
+          "size": 4751,
+          "generator": "entities.py",
+          "reproduced": true
+        }
+      ],
+      "existing_runtime_archive_updated": false,
+      "scope": "Existing generated-data evidence matches the W3C reference chapters; new policy materials remain local",
+      "entity_declaration_notices_match_reference": 3
+    }
+  ],
+  "tool_sha256": "f606b07b531e53964a165af6e02f64c039605cd30775a1eade7256a1833a5f00",
+  "notice_preparer_sha256": "b88801b2a9084ee41a581acd26c6eee8ae079c4e0ee69dcd13cec83c61e9fb3c",
+  "policy_lock": "tools/runtime/licenses/data-references/w3c/sources.json",
+  "policy_lock_sha256": "ab9ff8fe1b61f63f665f6f11509a1c862ff06015b30d52906e9bddf385241088",
+  "finding": "Comparison chapters lacked full policy reference texts and publication copyright/status headers; source exports now retain pinned raw references and the preparer emits readable review materials; three ISO declaration notices also matched inside all four candidates original entity input and were absent from the general W3C notice references",
+  "review_results": {
+    "html401_dated_policy_links_confirmed": true,
+    "svg_generic_policy_link_confirmed": true,
+    "historical_and_current_svg_policies_separate": true,
+    "license_applicability_approved": false,
+    "iso_notice_conditions_preserved": true,
+    "sgml_conformity_or_license_compatibility_approved": false
+  },
+  "limitations": [
+    "Reference correspondence is not proof of historical copying or automatic license applicability",
+    "No fresh native package containing these seven materials yet; old ZIPs remain unchanged",
+    "Document-use and software/DTD terms remain distinct; no automatic current-license fallback",
+    "Remaining component applicability, source retention and full distribution audit are pending"
+  ],
+  "initial_material_collection_tool_sha256": "b4298afcaf442e0bdb5f4848c5d05c3c0649e33be70e908dbe47454deb02331e",
+  "tests_sha256": "83b96bce1fd0895cce85e26058cc5d4b605b61da3d69e1bb7a8669a1ebe7434f",
+  "tests": [
+    {
+      "python": "3.12",
+      "suite": "tests/run_foundation.py",
+      "tests": 216,
+      "skipped": 8,
+      "seconds": 27.189,
+      "passed": true
+    },
+    {
+      "python": "3.14",
+      "suite": "tests/run_foundation.py",
+      "tests": 216,
+      "skipped": 8,
+      "seconds": 27.392,
+      "passed": true
+    }
+  ]
+}

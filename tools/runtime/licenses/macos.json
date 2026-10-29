@@ -1,0 +1,365 @@
+{
+  "kind": "macos-license-audit-ledger-not-approved-audit",
+  "schema_version": 1,
+  "approved": false,
+  "graphviz_source_lock": {
+    "url": "https://gitlab.com/graphviz/graphviz/-/archive/16.1.0/graphviz-16.1.0.tar.gz",
+    "sha256": "1e028b2b3e84e946c1d3e8c47590f8f0741bba1041fe6eff36eee87e598ea249",
+    "declared_project_license": "EPL-2.0",
+    "copying_sha256": "0becf16567beb77fa252b7664631dd177c8f9a1889e48995b45379c7130e5303"
+  },
+  "artifacts": [
+    {
+      "artifact_id": "macos-x86_64",
+      "status": "pending-source-notice-and-license-review",
+      "approved": false,
+      "executable_sha256": "d8ab197fbdfa9312050f4c4827f4bb612f7f4d1d021d4308a9850ee1a1104fff",
+      "provenance_sha256": "d3cf3b752ceb4db272c9cf6f50afd6589bdfdb8dc403ed662a4220bbf6b30e36",
+      "build_evidence": "specs/003-add-cross-platform-support/evidence/macos-native-build-2026-10-19/macos-x86_64/provenance.json",
+      "build_summary": "specs/003-add-cross-platform-support/evidence/macos-native-build-2026-10-19/summary.json",
+      "system_library_observations": [
+        "/usr/lib/libSystem.B.dylib",
+        "/usr/lib/libc++.1.dylib"
+      ],
+      "notice_scope": "Initial build contains Graphviz COPYING only; not complete third-party notices",
+      "source_link_evidence": "specs/003-add-cross-platform-support/evidence/macos-link-source-2026-10-19/macos-x86_64/summary.json",
+      "signature_evidence": null,
+      "notarization_evidence": null,
+      "source_link_observations": [
+        {
+          "executable_sha256": "d8ab197fbdfa9312050f4c4827f4bb612f7f4d1d021d4308a9850ee1a1104fff",
+          "provenance_sha256": "96c85e7cee6dd71245fe5a2f46afec005a62f701ab56d437b0bf17374940a768",
+          "evidence": "specs/003-add-cross-platform-support/evidence/macos-link-source-2026-10-19/macos-x86_64/summary.json",
+          "approved": false,
+          "source_evidence_sha256": "400e9062eba1987f73ef30f07c31950a5639ce81cf4ef1f701bf126c6758e5e8",
+          "summary": {
+            "objects": 372,
+            "verified_graphviz_sources": 322,
+            "unnamed_map_slots": 181,
+            "generated_inputs": 9,
+            "external_inputs": 217
+          }
+        }
+      ],
+      "source_link_provenance_sha256": "96c85e7cee6dd71245fe5a2f46afec005a62f701ab56d437b0bf17374940a768",
+      "draft_notice_packages": [
+        {
+          "approved": false,
+          "qualified": false,
+          "evidence": "specs/003-add-cross-platform-support/evidence/macos-draft-notices-2026-10-19/macos-x86_64/summary.json",
+          "executable_sha256": "d8ab197fbdfa9312050f4c4827f4bb612f7f4d1d021d4308a9850ee1a1104fff",
+          "provenance_sha256": "6d7d9e0622f22d35a7bdb729418f9e194c02191224195f8995e7cb7ea87a2cae",
+          "notice_count": 227,
+          "sdk_headers_verified": 217,
+          "sdk_prefixes_preserved": 217,
+          "candidate_archive_sha256": "f6540ca05f7a4f93e069434ef8cc43dd0c28eacfef939253312d79cbbc8166ba"
+        },
+        {
+          "approved": false,
+          "qualified": false,
+          "evidence": "specs/003-add-cross-platform-support/evidence/macos-offline-notices-2026-10-19/macos-x86_64/summary.json",
+          "executable_sha256": "d8ab197fbdfa9312050f4c4827f4bb612f7f4d1d021d4308a9850ee1a1104fff",
+          "provenance_sha256": "4d004b38271af98435c35290bc50f61519d7d5a47e44d41658fe625fcd97c0aa",
+          "notice_count": 232,
+          "offline_index_payloads": 231,
+          "canonical_reference_counts": {
+            "APSL-1.1-COPYING.txt": 3,
+            "APSL-2.0-COPYING.txt": 183,
+            "LLVM-license-reference-COPYING.txt": 24,
+            "GPL-3.0-COPYING.txt": 4
+          },
+          "candidate_archive_sha256": "0700ee097328d183f6882ce13e6f20700da264fb12c3351fdb529ab273500b6b"
+        }
+      ]
+    },
+    {
+      "artifact_id": "macos-arm64",
+      "status": "pending-source-notice-and-license-review",
+      "approved": false,
+      "executable_sha256": "774115a1a9e4b2385d33fa55fe02de0d8728cb0984967d445528c6fe04f97dac",
+      "provenance_sha256": "32351de93e59b4a3a19951fb5180fea4e6b7904fcb39f1c6f0f814c1e9f9f5d6",
+      "build_evidence": "specs/003-add-cross-platform-support/evidence/macos-native-build-2026-10-19/macos-arm64/provenance.json",
+      "build_summary": "specs/003-add-cross-platform-support/evidence/macos-native-build-2026-10-19/summary.json",
+      "system_library_observations": [
+        "/usr/lib/libSystem.B.dylib",
+        "/usr/lib/libc++.1.dylib"
+      ],
+      "notice_scope": "Initial build contains Graphviz COPYING only; not complete third-party notices",
+      "source_link_evidence": "specs/003-add-cross-platform-support/evidence/macos-link-source-2026-10-19/macos-arm64/summary.json",
+      "signature_evidence": null,
+      "notarization_evidence": null,
+      "source_link_observations": [
+        {
+          "executable_sha256": "774115a1a9e4b2385d33fa55fe02de0d8728cb0984967d445528c6fe04f97dac",
+          "provenance_sha256": "c3d2179990d38f6b83327268a8d661aed69e99cf51524c9ea645010c1b7527fc",
+          "evidence": "specs/003-add-cross-platform-support/evidence/macos-link-source-2026-10-19/macos-arm64/summary.json",
+          "approved": false,
+          "source_evidence_sha256": "4f2bc6cc8ac1283b32a003f7d7a81236f1ed7c9e41d12131e99d70f68a519e0c",
+          "summary": {
+            "objects": 371,
+            "verified_graphviz_sources": 322,
+            "unnamed_map_slots": 181,
+            "generated_inputs": 9,
+            "external_inputs": 217
+          }
+        }
+      ],
+      "source_link_provenance_sha256": "c3d2179990d38f6b83327268a8d661aed69e99cf51524c9ea645010c1b7527fc",
+      "draft_notice_packages": [
+        {
+          "approved": false,
+          "qualified": false,
+          "evidence": "specs/003-add-cross-platform-support/evidence/macos-draft-notices-2026-10-19/macos-arm64/summary.json",
+          "executable_sha256": "774115a1a9e4b2385d33fa55fe02de0d8728cb0984967d445528c6fe04f97dac",
+          "provenance_sha256": "03f0b324022584e22091a4ae0c6414a48edcbacc488d55a0586bdc429e1e0406",
+          "notice_count": 227,
+          "sdk_headers_verified": 217,
+          "sdk_prefixes_preserved": 217,
+          "candidate_archive_sha256": "3adc1e18283508ea737cd815cbdb5b75d9c6b7901f3c1a22664ed540bcfb1988"
+        },
+        {
+          "approved": false,
+          "qualified": false,
+          "evidence": "specs/003-add-cross-platform-support/evidence/macos-offline-notices-2026-10-19/macos-arm64/summary.json",
+          "executable_sha256": "774115a1a9e4b2385d33fa55fe02de0d8728cb0984967d445528c6fe04f97dac",
+          "provenance_sha256": "a48b9d93d305865c0282131b5fbe2f191afe17bad39312eac4b20c4537fe1e7a",
+          "notice_count": 232,
+          "offline_index_payloads": 231,
+          "canonical_reference_counts": {
+            "APSL-1.1-COPYING.txt": 2,
+            "APSL-2.0-COPYING.txt": 179,
+            "LLVM-license-reference-COPYING.txt": 24,
+            "GPL-3.0-COPYING.txt": 4
+          },
+          "candidate_archive_sha256": "b62dc72155c83103a4ba6a329a84f6e71233a5b9254920ce34d2da7779f02c03"
+        }
+      ]
+    }
+  ],
+  "generator_notice_material": {
+    "flex_apple_35": {
+      "url": "https://raw.githubusercontent.com/apple-oss-distributions/flex/8548f53e24244c0a411dea128a21686b61d29df4/COPYING",
+      "source_tag": "flex-35",
+      "source_commit": "8548f53e24244c0a411dea128a21686b61d29df4",
+      "sha256": "97fd685958d93be7f8dab939bb8161dbd6afb0718c63bfc337c24321aea44273",
+      "size": 1855,
+      "file": "flex-2.6.4-COPYING.txt",
+      "purpose": "Apple flex-35 notice verified byte-identical to upstream material; not proof of scanner skeleton correspondence or complete macOS license audit"
+    }
+  },
+  "pending": [
+    "Bind linker-observed objects, compiler inputs and generated source bytes per artifact",
+    "Review SDK/compiler runtime contributions and each applicable per-file license/exception",
+    "Prepare full per-build notices and corresponding-source material/immutable offer",
+    "Approved artifact audit and GitHub Actions ABI distributed acceptance"
+  ],
+  "qualification": "Exact current pairs technically reviewed; public source delivery and catalog acceptance remain pending",
+  "signing_and_notarization_requirements": {
+    "required": false,
+    "identity_type": "Developer ID Application",
+    "runtime_hardened": true,
+    "toolchain_commands": [
+      "codesign --force --timestamp --options runtime --sign <identity>",
+      "codesign --verify --deep --strict",
+      "ditto -c -k --keepParent",
+      "xcrun notarytool submit <archive> --keychain-profile <profile> --wait",
+      "xcrun notarytool log <id> --keychain-profile <profile>",
+      "spctl --assess --type execute <executable>"
+    ],
+    "gatekeeper_enforcement": "Normal execution without disabling Gatekeeper, SIP or quarantine; no Developer ID or spctl assessment requirement for acceptance",
+    "script_reference": "tools/runtime/sign-macos.sh",
+    "status": "optional-outside-mandatory-scope"
+  },
+  "current_source_material_review": {
+    "approved": false,
+    "qualified": false,
+    "application_revision": "fed01cc58e7a51625ce8b6da43b526dbc55c80a0",
+    "evidence": {
+      "path": "specs/003-add-cross-platform-support/evidence/macos-source-rebuild-ci-2026-10-28/summary.json",
+      "sha256": "f00cce4a84132e9bfe0aee170ae9a416680e2856c4038524e4a1c2b4187fbe7d"
+    },
+    "artifacts": [
+      {
+        "artifact_id": "macos-x86_64",
+        "executable_sha256": "d8ab197fbdfa9312050f4c4827f4bb612f7f4d1d021d4308a9850ee1a1104fff",
+        "candidate_archive_sha256": "5076ecbe0ffda13bbe4238ba38898057107f7fffa8c5fbb4dc16ee0ce0b9e216",
+        "sources_archive_sha256": "95d9fd34d0f36d241817a7eabface0bed0311ad6001191f23a2d2d0890f76a54",
+        "source_files": 127,
+        "file_hashes_verified": true,
+        "rebuild_verified": true,
+        "python_minors": [
+          "3.12",
+          "3.14"
+        ],
+        "apple_sdk_files_exported": 0
+      },
+      {
+        "artifact_id": "macos-arm64",
+        "executable_sha256": "774115a1a9e4b2385d33fa55fe02de0d8728cb0984967d445528c6fe04f97dac",
+        "candidate_archive_sha256": "f894e86e3d849b91e490893552efd546b213827276247066a731eb9626975f8b",
+        "sources_archive_sha256": "36928004e0f9c422cc68a62ab16bc214b248a1df6d275a5bc4e577c748846196",
+        "source_files": 127,
+        "file_hashes_verified": true,
+        "rebuild_verified": true,
+        "python_minors": [
+          "3.12",
+          "3.14"
+        ],
+        "apple_sdk_files_exported": 0
+      }
+    ],
+    "remaining": [
+      "Per-file license applicability",
+      "SDK/header/runtime contribution review",
+      "Complete corresponding-source delivery",
+      "Immutable distribution"
+    ]
+  },
+  "current_source_notice_review": {
+    "approved": false,
+    "qualified": false,
+    "evidence": {
+      "path": "specs/003-add-cross-platform-support/evidence/macos-source-data-notices-ci-2026-10-28/summary.json",
+      "sha256": "192c0f058387d32b4e6e1ac5c014169032b9c75d2b7bf405d9dde4f9f17b3c7c"
+    },
+    "application_revision": "a192890556a437a772a5997e3908564df3c59777",
+    "remaining": [
+      "Per-file applicability, including W3C/ISO conditions",
+      "SDK/header/runtime contribution and unnamed linker-map slots",
+      "Corresponding-source sufficiency and equivalent immutable delivery",
+      "Approved audit and final distributed-package acceptance"
+    ]
+  },
+  "current_named_link_input_review": {
+    "approved": false,
+    "qualified": false,
+    "evidence": {
+      "path": "specs/003-add-cross-platform-support/evidence/macos-named-link-inputs-ci-2026-10-28/summary.json",
+      "sha256": "ff200db21f545dbdf44caf9f9a92bee24d6e837f0914c9d2872c2951da809eb0"
+    },
+    "application_revision": "f63b43e8842539336dc93f08cfa5711a94d0003f",
+    "unnamed_map_slots_remaining": 0,
+    "remaining": [
+      "Per-file applicability, including W3C/ISO conditions",
+      "SDK/header contribution applicability and source obligations",
+      "Corresponding-source sufficiency and equivalent immutable delivery",
+      "Approved audit and final distributed-package acceptance"
+    ]
+  },
+  "license_review_dossier": {
+    "approved": false,
+    "index": {
+      "path": "specs/003-add-cross-platform-support/evidence/license-review-2026-10-28/candidate-index.json",
+      "sha256": "20cdf1efc5bc050d409b05a857b4c715c9190083d70714a2e0b396ee8133a89c"
+    },
+    "review_questions": {
+      "path": "specs/003-add-cross-platform-support/evidence/license-review-2026-10-28/README.md",
+      "sha256": "25c305d9cce25b3ae25e846e6e8600f599ed4d467b89930edfaee239a7b36a7a"
+    }
+  },
+  "current_full_header_source_review": {
+    "approved": false,
+    "qualified": false,
+    "evidence": {
+      "path": "specs/003-add-cross-platform-support/evidence/apple-sdk-header-source-review-2026-10-28/summary.json",
+      "sha256": "c741531b49ecd3fc6d22b330582bd3645b9529c9b1d72d948ece3c6ff5d47ec5"
+    }
+  },
+  "current_selected_header_source_delivery": {
+    "approved": false,
+    "qualified": false,
+    "evidence": {
+      "path": "specs/003-add-cross-platform-support/evidence/macos-header-source-delivery-ci-2026-10-28/summary.json",
+      "sha256": "607293918e38a8e96512112cc1481b3e96b2b96e2d5792b5d0b7115aa5675aae"
+    },
+    "application_revision": "721b90f3ab44e16b0e88f2d35118ef6fe5cc820c",
+    "selected_headers_per_architecture": 2,
+    "full_sdk_archive_included": false
+  },
+  "current_all_observed_apsl_source_delivery": {
+    "approved": false,
+    "qualified": false,
+    "evidence": {
+      "path": "specs/003-add-cross-platform-support/evidence/macos-apsl-source-delivery-ci-2026-10-28/summary.json",
+      "sha256": "a6ef69dff95fcfb380e6bad819bb7918dbb7ec4be272d5c026cc0fc556897733"
+    },
+    "application_revision": "6279d6ff715abbd4fc8d5fdf778d8a27a4f3ddfb",
+    "observed_apsl_source_coverage_complete": true,
+    "full_sdk_archive_included": false
+  },
+  "current_release_candidate_review": {
+    "approved": false,
+    "qualified": false,
+    "evidence": {
+      "path": "specs/003-add-cross-platform-support/evidence/release-candidate-review-2026-10-28/summary.json",
+      "sha256": "59e0302b12f81a7d6fae55d14a443f0787f7755fcc87f6f800b9287010c87b52"
+    },
+    "application_revision": "6279d6ff715abbd4fc8d5fdf778d8a27a4f3ddfb",
+    "audit_drafts": 6,
+    "linux_static_link_inputs_mapped": 262,
+    "local_payloads_verified": 12,
+    "published": false,
+    "source_kit_notice_update_pending": true
+  },
+  "current_macos_sdk_header_terms": {
+    "approved": false,
+    "qualified": false,
+    "evidence": {
+      "path": "specs/003-add-cross-platform-support/evidence/macos-sdk-terms-review-2026-10-28/header-findings.json",
+      "sha256": "eca4a021732300412b5b5ddda5d8225b2aeeae05fb5023172e3cac3911cf19d3"
+    },
+    "reviewed_headers": 67,
+    "collection_evidence": {
+      "path": "specs/003-add-cross-platform-support/evidence/macos-sdk-terms-review-2026-10-28/summary.json",
+      "sha256": "595ceb68d7a99de10fbefd52a996cae4080543f2a1a39d9cf34a5a1a455bfd39"
+    }
+  },
+  "current_paired_technical_audits": {
+    "approved": true,
+    "qualified": false,
+    "reviewer": "Codex technical implementation review",
+    "summary": {
+      "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/summary.json",
+      "sha256": "148638e76e9fef3799d1e57774a716931affdbd459d14f6ef04fa756cd80a93d"
+    },
+    "artifacts": [
+      {
+        "artifact_id": "macos-arm64",
+        "audit": {
+          "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/audits/macos-arm64.json",
+          "sha256": "a4e6a052f21101509623cf4bb7e5dcc82cc8d97e04ecef610305b864944a506f"
+        },
+        "candidate_sha256": "3defe05ab35e63a73ec69faf44ecf382b63e9c0b7d46d19c7081ec0a7399a831",
+        "sources_sha256": "4beb91d4f42565ef94b0945ca464277661c57e1e1ad0a10efbb087a56d13d575"
+      },
+      {
+        "artifact_id": "macos-x86_64",
+        "audit": {
+          "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/audits/macos-x86_64.json",
+          "sha256": "d76b6cc27d9944772b73df35296605f1e017d49fb175700dc64f98fef4c36f2d"
+        },
+        "candidate_sha256": "aa9ea80350aa63b269b9228da9b7e5b2812d7ef6ac3fa3c3a6205e9d1a7ad897",
+        "sources_sha256": "96f093e56aab8f476fa7a792e0d7202bdeab2c3487853c4a86d8eab207078142"
+      }
+    ],
+    "public_paired_delivery": true,
+    "remaining": [],
+    "scope": "Only these exact pairs; historical ledger entries are not retrospectively approved",
+    "publication": {
+      "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/publication.json",
+      "sha256": "33bb6194eaac623b9ae488397b2a5b920b5112460f38b681b24b88328c620b3a"
+    },
+    "public_downloads": {
+      "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/public-download-verification.json",
+      "sha256": "f1478c6919511e37447c99c13bf44fe5080ea7637a2a038cab4186c70ebf2010"
+    },
+    "final_qualification": {
+      "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/qualification/summary.json",
+      "sha256": "607d07a5d5ab823187ce2f86a3fa8140ad146828b16ca4c195ef25f01d481bbf"
+    },
+    "final_installed_catalog_acceptance": {
+      "path": "specs/003-add-cross-platform-support/evidence/package-installation.json",
+      "sha256": "8251fd489e83c7ecf9bd4a6c99d860aa54847046877ee81c59a4115e65787d47"
+    }
+  }
+}

@@ -1,0 +1,62 @@
+name: Linux cell evidence (manual, GitHub hosted runner)
+on:
+  workflow_dispatch:
+    inputs:
+      target_id:
+        description: ABI target ID from tools/runtime/abi-targets.json
+        required: true
+        type: string
+      runner_label:
+        description: GitHub hosted runner label for the recorded OS/architecture
+        required: true
+        type: string
+      application_revision:
+        description: Pinned application commit present in candidate
+        required: true
+        type: string
+      candidate_run_id:
+        description: Existing candidate build workflow run
+        required: true
+        type: string
+      candidate_name:
+        description: Immutable artifact name containing exactly one wheel
+        required: true
+        type: string
+      package_sha256:
+        description: SHA-256 of the exact wheel
+        required: true
+        type: string
+      artifact_id:
+        description: Exact qualified engine descriptor ID inside candidate
+        required: true
+        type: string
+      image_id:
+        description: Reference image or environment ID
+        required: true
+        type: string
+      image_digest:
+        description: SHA-256 of the recorded reference environment
+        required: true
+        type: string
+permissions:
+  contents: read
+  actions: read
+jobs:
+  cell:
+    strategy:
+      fail-fast: false
+      matrix:
+        python: ['3.12', '3.14']
+    uses: ./.github/workflows/qualify-cell.yml
+    with:
+      runner_os: Linux
+      runner_label: ${{ inputs.runner_label }}
+      target_id: ${{ inputs.target_id }}
+      python_minor: ${{ matrix.python }}
+      application_revision: ${{ inputs.application_revision }}
+      candidate_run_id: ${{ inputs.candidate_run_id }}
+      candidate_name: ${{ inputs.candidate_name }}
+      package_sha256: ${{ inputs.package_sha256 }}
+      artifact_id: ${{ inputs.artifact_id }}
+      image_id: ${{ inputs.image_id }}
+      image_digest: ${{ inputs.image_digest }}

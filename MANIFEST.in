@@ -1,5 +1,7 @@
 include LICENSE NOTICE README.md
 include src/twine_edge_overlap/runtime-manifest.json
+include src/twine_edge_overlap/runtime-catalog.json src/twine_edge_overlap/support-matrix.json
+recursive-include src/twine_edge_overlap/runtime_assets *.json
 recursive-include src/twine_edge_overlap/third_party/graphviz-16.1.0 *
 global-exclude *.py[cod] *.dll *.exe
 prune .tmp

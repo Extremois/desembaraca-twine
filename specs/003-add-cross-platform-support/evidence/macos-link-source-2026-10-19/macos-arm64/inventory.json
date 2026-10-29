@@ -1,0 +1,26 @@
+{
+  "kind": "local-candidate-inventory",
+  "schema_version": 1,
+  "qualification": "inventory-only-not-qualified",
+  "artifact_id": "macos-arm64",
+  "platform": "darwin",
+  "artifact_arch": "aarch64",
+  "abi": "darwin",
+  "provenance_sha256": "c3d2179990d38f6b83327268a8d661aed69e99cf51524c9ea645010c1b7527fc",
+  "executable_relative_path": "bin/dot",
+  "files": [
+    {
+      "path": "bin/dot",
+      "size": 1241504,
+      "mode": 493,
+      "sha256": "774115a1a9e4b2385d33fa55fe02de0d8728cb0984967d445528c6fe04f97dac"
+    },
+    {
+      "path": "third-party-notices/Graphviz-COPYING.txt",
+      "size": 14198,
+      "mode": 420,
+      "sha256": "0becf16567beb77fa252b7664631dd177c8f9a1889e48995b45379c7130e5303"
+    }
+  ],
+  "notices": []
+}

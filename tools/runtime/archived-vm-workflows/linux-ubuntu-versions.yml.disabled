@@ -1,0 +1,80 @@
+name: Ubuntu versions native kernel and installed application
+on:
+  workflow_dispatch:
+  push:
+    branches: [feat/003-add-cross-platform-support]
+    paths:
+      - '.github/workflows/linux-ubuntu-versions.yml'
+      - '.github/scripts/check-native-baseline.py'
+      - '.github/scripts/probe-guest-baseline.py'
+      - '.github/scripts/probe-private-python.py'
+      - '.github/scripts/probe-installed-application.py'
+      - '.github/scripts/probe-installed-recovery.py'
+      - '.github/native-images/ubuntu-20.04-amd64.json'
+      - '.github/native-images/ubuntu-22.04-amd64.json'
+      - '.github/native-images/ubuntu-24.04-amd64.json'
+      - '.github/native-images/ubuntu-26.04-amd64.json'
+      - '.github/native-images/ubuntu-26.10-amd64.json'
+      - '.github/native-images/private-python-x64.json'
+      - 'tests/unit/test_native_baseline.py'
+permissions:
+  contents: read
+  actions: read
+concurrency:
+  group: native-ubuntu-versions-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  ubuntu-x64:
+    strategy:
+      fail-fast: false
+      matrix:
+        release: ['20.04', '22.04', '24.04', '26.04', '26.10']
+        abi: [glibc, musl]
+        include:
+          - abi: glibc
+            python_args: --python-prerequisites --python-application
+            candidate_run: 40565098269
+            candidate_name: linux-glibc-x86_64-unqualified-a825f0d80bd7892de0e307656d28070885a9d1ed
+          - abi: musl
+            python_args: ''
+            candidate_run: 40565098367
+            candidate_name: linux-musl-x86_64-container-unqualified-a825f0d80bd7892de0e307656d28070885a9d1ed
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/download-artifact@v4
+        with:
+          github-token: ${{ github.token }}
+          run-id: ${{ matrix.candidate_run }}
+          name: ${{ matrix.candidate_name }}
+          path: ${{ runner.temp }}/baseline-artifact
+      - name: Prepare reviewed engine, public corpus and isolated Python inputs
+        shell: bash
+        run: python .github/scripts/check-native-baseline.py --artifact "$RUNNER_TEMP/baseline-artifact" --work "$RUNNER_TEMP/twine-native-ubuntu" --release '${{ matrix.release }}' --abi '${{ matrix.abi }}' --candidate-revision a825f0d80bd7892de0e307656d28070885a9d1ed --candidate-run-id '${{ matrix.candidate_run }}' ${{ matrix.python_args }}
+      - name: Install guest test tooling only on this ephemeral runner
+        shell: bash
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends qemu-system-x86 qemu-utils cloud-image-utils
+      - name: Boot pinned Ubuntu ${{ matrix.release }} using KVM and test offline
+        shell: bash
+        run: sudo --preserve-env=GITHUB_ACTIONS,GITHUB_SHA python3 .github/scripts/check-native-baseline.py --execute --release '${{ matrix.release }}' --work "$RUNNER_TEMP/twine-native-ubuntu"
+      - name: Retain measurements without guest disks, keys or credentials
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ubuntu${{ matrix.release }}-x64-${{ matrix.abi }}-native-private-${{ github.sha }}
+          retention-days: 7
+          path: |
+            ${{ runner.temp }}/twine-native-ubuntu/evidence/*.json
+            ${{ runner.temp }}/twine-native-ubuntu/evidence/*.log
+            ${{ runner.temp }}/twine-native-ubuntu/evidence/guest/*.json
+            ${{ runner.temp }}/twine-native-ubuntu/evidence/guest/*.txt
+            ${{ runner.temp }}/twine-native-ubuntu/evidence/application/*.json
+            ${{ runner.temp }}/twine-native-ubuntu/evidence/application/*.trace

@@ -1,0 +1,579 @@
+{
+  "kind": "proposed-component-audit-not-approved",
+  "approved": false,
+  "qualified": false,
+  "reviewer": "Codex implementation review; incomplete artifact audit",
+  "application_revision": "6279d6ff715abbd4fc8d5fdf778d8a27a4f3ddfb",
+  "artifact_id": "linux-musl-aarch64",
+  "provenance_sha256": "d9812ae001a19159fc0a6c804885849afd05b49dce234849d7f37f7531b05c0e",
+  "components": [
+    {
+      "name": "Graphviz program and separately preserved third-party terms",
+      "license_expression": "EPL-2.0 AND LicenseRef-Graphviz-Third-Party-Terms",
+      "source_url": "https://gitlab.com/graphviz/graphviz/-/archive/16.1.0/graphviz-16.1.0.tar.gz",
+      "source_sha256": "1e028b2b3e84e946c1d3e8c47590f8f0741bba1041fe6eff36eee87e598ea249",
+      "notice_path": "third-party-notices/Graphviz-COPYING.txt",
+      "notice_sha256": "0becf16567beb77fa252b7664631dd177c8f9a1889e48995b45379c7130e5303",
+      "link_input_sha256": [
+        "04ba3747053fd4e52e61eac6d5bc44a7313e3c6fd24cb68ef8c223aa6d851f26",
+        "0c5e4ec2bd95d9927fe5d141323e8abd133b2463e69cbf0ff83044fd3079a47f",
+        "0d483a5d1bfa58b7b0b1b3fba0c34e8f3b9166ae1723184c50d84c1b8c7eb486",
+        "1432607b39d73cc977d77611371472b77669b9d51b208483e8a4931b88ae5f26",
+        "226cf73f624a3ea3a4103c381968f634964f41ab1eeb1e6b27f6adfe628c5b50",
+        "2f4e198f3e4f81f89230a456ea2acdac64b5bea5f6c4c7a24c454a8bfa692f1c",
+        "32ccf44707243ec54c36407d1316fca9080554aafc2bf64b5e09144ad006179c",
+        "336a124f30d250404b6787f987c6046136edae0f8cf22c6bd84dd8a854343aca",
+        "349f48cc7f31c6744564ca0f05e672a19a4a9fda5c7cb7dc6a1cf22093934e8e",
+        "363c52a0a1c70ba3fcac57b3a543c9c34b95068e00ef81e20737dc4304e04873",
+        "3767d988f17e27337cc714c444dd1adf0acab84e0ac4e51cba8590a0b144386b",
+        "37816096f4305da7cd499a6a1777923f9a5893e6e7ca6e45ed481f2414e710d9",
+        "37e794b08720ac374a1428a6e194dbe252387ef1dc44a11974a9af4fb7017a10",
+        "3d57836f986f4fbe7c71d3fc217e82a569df2530175b5f55d43ce061d15c4bbe",
+        "4563d9bd12d2ba5ce89af2f0aaab955e466624da91b57ab348f5c4473d7b1c66",
+        "476efac99c57835509f932c20a2bf533a05667b848fd2f6fca7a63d492de9b78",
+        "49bb4de996b14d4e9dae3c4dbe5961c30a0ceac814fa3b0da339e354706b805b",
+        "4ac3824de33c246bcd630f6a871fdcadc59a4105949c53a86fb10ac499dcf148",
+        "56a4af8371216445356de14213e0e76d7d990c8ef1a199ae0b90328c94ccb7bc",
+        "63d8d1d97bf65fddb97c110fed15f7e223d55a2decddbe4e984a2546b1320bf0",
+        "66b68b1e0ea68a772b0745ac22a8be56de631f61ed97fb6607365947c5edc51f",
+        "6fb45b9da66f3a63ed13c2477e0fb38bc99112cc2969d79eaa3b589e4c0da933",
+        "753e99ac13a929bd5f93a9cfa0727f57dacccfa243099b21a6e0e9a4e4ac303b",
+        "7d4d8add4aedca73bc306da16e67ce85e28f6bb4c6a9f429a223373a5b3110fe",
+        "80644a2587e713fe05423fb2bfc5fbfdab33dc2c5678eac0623a694446c17273",
+        "835247938a552a4a6d79f3f23ecbe0c5dd166b988fc2e1621f1085d74c585951",
+        "899f446688892df342a560eb5a20f5157531e9049f7762479c89d49e73ccb873",
+        "8a04efbd05f419d90a29cd4c7024f1c13c9c54b34d410e0f25bb178c43d7b4b5",
+        "8c752501ba7cca4c106a799e8eaae128d10cd3db56e0021f358404eeb3bb5fe1",
+        "90b43a105be301d20ec2afa06134b25c1d59a7cc0ffa69c598a3683c415556d3",
+        "9321362bb3319ebb24ab2bedbc7cac496e78cd5f6eb9714c6dd4bb3c085633bf",
+        "9887445b7ef23831675c047aff8925f37cabd7ed1a24d52caf3eccc61ec5b5fb",
+        "9fb6095f8ebc18ddeae7bdf047e230bb722f1e65bdb1d24ba3b3a3a51a29166f",
+        "9ff6c396a2c6790723cb632cc3275daba131c82d5f95a3d964484a33f3618cce",
+        "a637af2ecd973ecc111bd16df03a92cacd94754eac3147e538b409cc3dc3ce83",
+        "a7ba833b8275d5a44b9c17a9a76e48fe21d922199b768cfacfb33bd4b73e43f8",
+        "a7cc586b3dd757829e6a2a29a8571a63554a14ff58a6d24e921489e350d41b66",
+        "a816fe1a64db653d66c1dd991408b6b1ea3cd36a980e04f716c6616b2cb9916a",
+        "a98a551d36e7f66b01254252786e2a8f0e2802c8d06fe2ce77a7a7e7a38371ce",
+        "ace8169437603e4ecd1d5566ac90beac0e96df40de231876374b0b14a81bfc84",
+        "ae0b1cbba1ebeee34e096563830d2c9e5e658da0fab4814f1e930a74049dd3c0",
+        "b533f57fffa5b3db020942b8d038bf6c784aa0f1f542a8221da1a3e71211a5a8",
+        "b55f1d23eb45eb400a68a04fd399a4bfb494cd2b71084e76c6ed28736470712a",
+        "b72e113c4088637351242e685648bf9d272ab58057e5d10555717480d3df9c12",
+        "b8afeb2c266518d6b2e5b14cc376ee23ed4460daabf1780e6442ac269bde3ea8",
+        "c0cbdc5b87af320135c0b9225ed5e058c60049c15f50e16543a5cf7742d51f08",
+        "c614e63f989a72a7c299b6b4dcd243e95c62ff8a0f83a503e857c59eecbcd065",
+        "d030cd256c6ce0e17cc543e22452b589dc380c217ce4349591e282a6c689953d",
+        "d6b2cbf392f13faf09b185e74fdc45770a68e2460f728094922d14c3536afc54",
+        "d77c9963aaf1e7843584150c68df5444f8d21dcf4bef0613f5717e64f9f5d569",
+        "d95ce9e474d02a3c2fd082869907538d6c4007dda5031cd8a8a898d71401e402",
+        "e2c472ea4018820620a552bbb0f4c67bd7736ffe4bbec00937c817a914f97598",
+        "e30ee07ddd23ae88b80dcc157f156e276d4367be537fb8512dc22654bc54353e",
+        "eb3b74265090b03cc01e2708cfbb478e87dcafcf3b249b213f3dd9f38735c6c4",
+        "ed3faff5df0afb69fed37cddead39ac09ae8b23250516902bc76b24837b51b9d",
+        "eef0994540a3f8bcd5703856dd257e34706898b62f571d3e8c3c25ad47a5d59e",
+        "f5c7644e443cf5d43f7a4771a7ddea57df3f9fbfcc9b2e95f8ef8fbcf7ebca9f",
+        "f975557df231ed19796175e982f46c35dfed8f5aa3ab22da5499dfc1c5878a49",
+        "f9ca7e1ce4001498484122f3e7370fd62a9bf0da19cdbe4080d1f76f38401b4f"
+      ],
+      "review_status": "proposed-incomplete"
+    },
+    {
+      "name": "LLVM libunwind",
+      "license_expression": "Apache-2.0 WITH LLVM-exception AND LicenseRef-LLVM-Per-File-Notices",
+      "source_url": "https://ziglang.org/download/0.15.2/zig-aarch64-linux-0.15.2.tar.xz",
+      "source_sha256": "958ed7d1e00d0ea76590d27666efbf7a932281b3d7ba0c6b01b0ff26498f667f",
+      "notice_path": "third-party-notices/SDK-lib__libunwind__LICENSE.TXT.txt",
+      "notice_sha256": "b5efebcaca80879234098e52d1725e6d9eb8fb96a19fce625d39184b705f7b6d",
+      "link_input_sha256": [
+        "c36e52231f017cffd61f1d692c2e204c2dbfe1115fc597bcf1a4848e496d9d80"
+      ],
+      "review_status": "proposed-incomplete"
+    },
+    {
+      "name": "LLVM libc++",
+      "license_expression": "Apache-2.0 WITH LLVM-exception AND LicenseRef-LLVM-Per-File-Notices",
+      "source_url": "https://ziglang.org/download/0.15.2/zig-aarch64-linux-0.15.2.tar.xz",
+      "source_sha256": "958ed7d1e00d0ea76590d27666efbf7a932281b3d7ba0c6b01b0ff26498f667f",
+      "notice_path": "third-party-notices/SDK-lib__libcxx__LICENSE.TXT.txt",
+      "notice_sha256": "539dd7aed86e8a4f12cbdd0e6c50c189c7d74847e4fecc64ce2c6ee3a01da38b",
+      "link_input_sha256": [
+        "bb9b29785b099f50deb61a3e7f17beae20b3cafa54209c9632e0788daed5d0de"
+      ],
+      "review_status": "proposed-incomplete"
+    },
+    {
+      "name": "musl libc.a",
+      "license_expression": "MIT AND LicenseRef-musl-Per-File-Notices",
+      "source_url": "https://ziglang.org/download/0.15.2/zig-aarch64-linux-0.15.2.tar.xz",
+      "source_sha256": "958ed7d1e00d0ea76590d27666efbf7a932281b3d7ba0c6b01b0ff26498f667f",
+      "notice_path": "third-party-notices/SDK-lib__libc__musl__COPYRIGHT.txt",
+      "notice_sha256": "f9bc4423732350eb0b3f7ed7e91d530298476f8fec0c6c427a1c04ade22655af",
+      "link_input_sha256": [
+        "f3e3c2f1eaf496d62947df1c16d35e72627318cfa3750eef255ba953c49372b5"
+      ],
+      "review_status": "proposed-incomplete"
+    },
+    {
+      "name": "Zig C runtime",
+      "license_expression": "MIT",
+      "source_url": "https://ziglang.org/download/0.15.2/zig-aarch64-linux-0.15.2.tar.xz",
+      "source_sha256": "958ed7d1e00d0ea76590d27666efbf7a932281b3d7ba0c6b01b0ff26498f667f",
+      "notice_path": "third-party-notices/SDK-LICENSE.txt",
+      "notice_sha256": "5c537d6853e005298a285d508cff9ac7192cea23576c840d485b2b586a7ff177",
+      "link_input_sha256": [
+        "4f7e41b63349a9783b254d546f8803fa22d1f4deccde5899395a56ec060fc306"
+      ],
+      "review_status": "proposed-incomplete"
+    },
+    {
+      "name": "musl crt1.o",
+      "license_expression": "MIT AND LicenseRef-musl-Per-File-Notices",
+      "source_url": "https://ziglang.org/download/0.15.2/zig-aarch64-linux-0.15.2.tar.xz",
+      "source_sha256": "958ed7d1e00d0ea76590d27666efbf7a932281b3d7ba0c6b01b0ff26498f667f",
+      "notice_path": "third-party-notices/SDK-lib__libc__musl__COPYRIGHT.txt",
+      "notice_sha256": "f9bc4423732350eb0b3f7ed7e91d530298476f8fec0c6c427a1c04ade22655af",
+      "link_input_sha256": [
+        "7656042916327ab550719c742179a00d9f29170fa61c49f917ce05cd26949fa8"
+      ],
+      "review_status": "proposed-incomplete"
+    },
+    {
+      "name": "Zig compiler runtime and preserved port notices",
+      "license_expression": "MIT AND LicenseRef-Runtime-Port-Notices",
+      "source_url": "https://ziglang.org/download/0.15.2/zig-aarch64-linux-0.15.2.tar.xz",
+      "source_sha256": "958ed7d1e00d0ea76590d27666efbf7a932281b3d7ba0c6b01b0ff26498f667f",
+      "notice_path": "third-party-notices/SDK-LICENSE.txt",
+      "notice_sha256": "5c537d6853e005298a285d508cff9ac7192cea23576c840d485b2b586a7ff177",
+      "link_input_sha256": [
+        "562489fc4d20e5e76540d632288af520dd739fbbbdceb3a44d70c104d2f628b9"
+      ],
+      "review_status": "proposed-incomplete"
+    },
+    {
+      "name": "LLVM libc++abi",
+      "license_expression": "Apache-2.0 WITH LLVM-exception AND LicenseRef-LLVM-Per-File-Notices",
+      "source_url": "https://ziglang.org/download/0.15.2/zig-aarch64-linux-0.15.2.tar.xz",
+      "source_sha256": "958ed7d1e00d0ea76590d27666efbf7a932281b3d7ba0c6b01b0ff26498f667f",
+      "notice_path": "third-party-notices/SDK-lib__libcxxabi__LICENSE.TXT.txt",
+      "notice_sha256": "e2b35be49f7284a45b7baca8fc7b3ab7440e7902392b2528a457816b5bb2a15c",
+      "link_input_sha256": [
+        "e13d9a613e232f5ecf53b8a8722143cfd99c97aa69c9466f31402740e578e040"
+      ],
+      "review_status": "proposed-incomplete"
+    }
+  ],
+  "source_references": [
+    "https://gitlab.com/graphviz/graphviz/-/archive/16.1.0/graphviz-16.1.0.tar.gz",
+    "https://ziglang.org/download/0.15.2/zig-aarch64-linux-0.15.2.tar.xz"
+  ],
+  "source_pair": {
+    "candidate_sha256": "e12632dbb7035d4bb6fbba8dcf99cc68ef41f2601f3448030d396e682f2159d9",
+    "sources_sha256": "b24703663e33c98d75b71c223de7bb1286fcc63b1b5aa2626d41b05af736e1cc"
+  },
+  "static_link_input_mapping": [
+    {
+      "path": "cmd/dot/CMakeFiles/dot.dir/dot.c.o",
+      "sha256": "b8afeb2c266518d6b2e5b14cc376ee23ed4460daabf1780e6442ac269bde3ea8",
+      "scope": "build",
+      "proposed_component": "Graphviz program and separately preserved third-party terms"
+    },
+    {
+      "path": "cmd/dot/CMakeFiles/dot.dir/dot_builtins.cpp.o",
+      "sha256": "476efac99c57835509f932c20a2bf533a05667b848fd2f6fca7a63d492de9b78",
+      "scope": "build",
+      "proposed_component": "Graphviz program and separately preserved third-party terms"
+    },
+    {
+      "path": "lib/cdt/libcdt.a",
+      "sha256": "3767d988f17e27337cc714c444dd1adf0acab84e0ac4e51cba8590a0b144386b",
+      "scope": "build",
+      "proposed_component": "Graphviz program and separately preserved third-party terms"
+    },
+    {
+      "path": "lib/cgraph/libcgraph.a",
+      "sha256": "d030cd256c6ce0e17cc543e22452b589dc380c217ce4349591e282a6c689953d",
+      "scope": "build",
+      "proposed_component": "Graphviz program and separately preserved third-party terms"
+    },
+    {
+      "path": "lib/circogen/libcircogen.a",
+      "sha256": "d77c9963aaf1e7843584150c68df5444f8d21dcf4bef0613f5717e64f9f5d569",
+      "scope": "build",
+      "proposed_component": "Graphviz program and separately preserved third-party terms"
+    },
+    {
+      "path": "lib/common/CMakeFiles/common_obj.dir/args.c.o",
+      "sha256": "3d57836f986f4fbe7c71d3fc217e82a569df2530175b5f55d43ce061d15c4bbe",
+      "scope": "build",
+      "proposed_component": "Graphviz program and separately preserved third-party terms"
+    },
+    {
+      "path": "lib/common/CMakeFiles/common_obj.dir/arrows.c.o",
+      "sha256": "a637af2ecd973ecc111bd16df03a92cacd94754eac3147e538b409cc3dc3ce83",
+      "scope": "build",
+      "proposed_component": "Graphviz program and separately preserved third-party terms"
+    },
+    {
+      "path": "lib/common/CMakeFiles/common_obj.dir/colxlate.c.o",
+      "sha256": "56a4af8371216445356de14213e0e76d7d990c8ef1a199ae0b90328c94ccb7bc",
+      "scope": "build",
+      "proposed_component": "Graphviz program and separately preserved third-party terms"
+    },
+    {
+      "path": "lib/common/CMakeFiles/common_obj.dir/ellipse.c.o",
+      "sha256": "e30ee07ddd23ae88b80dcc157f156e276d4367be537fb8512dc22654bc54353e",
+      "scope": "build",
+      "proposed_component": "Graphviz program and separately preserved third-party terms"
+    },
+    {
+      "path": "lib/common/CMakeFiles/common_obj.dir/emit.c.o",
+      "sha256": "a816fe1a64db653d66c1dd991408b6b1ea3cd36a980e04f716c6616b2cb9916a",
+      "scope": "build",
+      "proposed_component": "Graphviz program and separately preserved third-party terms"
+    },
+    {
+      "path": "lib/common/CMakeFiles/common_obj.dir/geom.c.o",
+      "sha256": "d95ce9e474d02a3c2fd082869907538d6c4007dda5031cd8a8a898d71401e402",
+      "scope": "build",
+      "proposed_component": "Graphviz program and separately preserved third-party terms"
+    },
+    {
+      "path": "lib/common/CMakeFiles/common_obj.dir/globals.c.o",
+      "sha256": "ed3faff5df0afb69fed37cddead39ac09ae8b23250516902bc76b24837b51b9d",
+      "scope": "build",
+      "proposed_component": "Graphviz program and separately preserved third-party terms"
+    },
+    {
+      "path": "lib/common/CMakeFiles/common_obj.dir/htmllex.c.o",
+      "sha256": "349f48cc7f31c6744564ca0f05e672a19a4a9fda5c7cb7dc6a1cf22093934e8e",
+      "scope": "build",
+      "proposed_component": "Graphviz program and separately preserved third-party terms"
+    },
+    {
+      "path": "lib/common/CMakeFiles/common_obj.dir/htmlparse.c.o",
+      "sha256": "04ba3747053fd4e52e61eac6d5bc44a7313e3c6fd24cb68ef8c223aa6d851f26",
+      "scope": "build",
+      "proposed_component": "Graphviz program and separately preserved third-party terms"
+    },
+    {
+      "path": "lib/common/CMakeFiles/common_obj.dir/htmltable.c.o",
+      "sha256": "b533f57fffa5b3db020942b8d038bf6c784aa0f1f542a8221da1a3e71211a5a8",
+      "scope": "build",
+      "proposed_component": "Graphviz program and separately preserved third-party terms"
+    },
+    {
+      "path": "lib/common/CMakeFiles/common_obj.dir/input.c.o",
+      "sha256": "49bb4de996b14d4e9dae3c4dbe5961c30a0ceac814fa3b0da339e354706b805b",
+      "scope": "build",
+      "proposed_component": "Graphviz program and separately preserved third-party terms"
+    },
+    {
+      "path": "lib/common/CMakeFiles/common_obj.dir/labels.c.o",
+      "sha256": "2f4e198f3e4f81f89230a456ea2acdac64b5bea5f6c4c7a24c454a8bfa692f1c",
+      "scope": "build",
+      "proposed_component": "Graphviz program and separately preserved third-party terms"
+    },
+    {
+      "path": "lib/common/CMakeFiles/common_obj.dir/ns.c.o",
+      "sha256": "63d8d1d97bf65fddb97c110fed15f7e223d55a2decddbe4e984a2546b1320bf0",
+      "scope": "build",
+      "proposed_component": "Graphviz program and separately preserved third-party terms"
+    },
+    {
+      "path": "lib/common/CMakeFiles/common_obj.dir/output.c.o",
+      "sha256": "f9ca7e1ce4001498484122f3e7370fd62a9bf0da19cdbe4080d1f76f38401b4f",
+      "scope": "build",
+      "proposed_component": "Graphviz program and separately preserved third-party terms"
+    },
+    {
+      "path": "lib/common/CMakeFiles/common_obj.dir/pointset.c.o",
+      "sha256": "b72e113c4088637351242e685648bf9d272ab58057e5d10555717480d3df9c12",
+      "scope": "build",
+      "proposed_component": "Graphviz program and separately preserved third-party terms"
+    },
+    {
+      "path": "lib/common/CMakeFiles/common_obj.dir/postproc.c.o",
+      "sha256": "e2c472ea4018820620a552bbb0f4c67bd7736ffe4bbec00937c817a914f97598",
+      "scope": "build",
+      "proposed_component": "Graphviz program and separately preserved third-party terms"
+    },
+    {
+      "path": "lib/common/CMakeFiles/common_obj.dir/psusershape.c.o",
+      "sha256": "90b43a105be301d20ec2afa06134b25c1d59a7cc0ffa69c598a3683c415556d3",
+      "scope": "build",
+      "proposed_component": "Graphviz program and separately preserved third-party terms"
+    },
+    {
+      "path": "lib/common/CMakeFiles/common_obj.dir/routespl.c.o",
+      "sha256": "226cf73f624a3ea3a4103c381968f634964f41ab1eeb1e6b27f6adfe628c5b50",
+      "scope": "build",
+      "proposed_component": "Graphviz program and separately preserved third-party terms"
+    },
+    {
+      "path": "lib/common/CMakeFiles/common_obj.dir/shapes.c.o",
+      "sha256": "7d4d8add4aedca73bc306da16e67ce85e28f6bb4c6a9f429a223373a5b3110fe",
+      "scope": "build",
+      "proposed_component": "Graphviz program and separately preserved third-party terms"
+    },
+    {
+      "path": "lib/common/CMakeFiles/common_obj.dir/splines.c.o",
+      "sha256": "b55f1d23eb45eb400a68a04fd399a4bfb494cd2b71084e76c6ed28736470712a",
+      "scope": "build",
+      "proposed_component": "Graphviz program and separately preserved third-party terms"
+    },
+    {
+      "path": "lib/common/CMakeFiles/common_obj.dir/taper.c.o",
+      "sha256": "9887445b7ef23831675c047aff8925f37cabd7ed1a24d52caf3eccc61ec5b5fb",
+      "scope": "build",
+      "proposed_component": "Graphviz program and separately preserved third-party terms"
+    },
+    {
+      "path": "lib/common/CMakeFiles/common_obj.dir/textspan.c.o",
+      "sha256": "8c752501ba7cca4c106a799e8eaae128d10cd3db56e0021f358404eeb3bb5fe1",
+      "scope": "build",
+      "proposed_component": "Graphviz program and separately preserved third-party terms"
+    },
+    {
+      "path": "lib/common/CMakeFiles/common_obj.dir/textspan_lut.c.o",
+      "sha256": "899f446688892df342a560eb5a20f5157531e9049f7762479c89d49e73ccb873",
+      "scope": "build",
+      "proposed_component": "Graphviz program and separately preserved third-party terms"
+    },
+    {
+      "path": "lib/common/CMakeFiles/common_obj.dir/timing.c.o",
+      "sha256": "d6b2cbf392f13faf09b185e74fdc45770a68e2460f728094922d14c3536afc54",
+      "scope": "build",
+      "proposed_component": "Graphviz program and separately preserved third-party terms"
+    },
+    {
+      "path": "lib/common/CMakeFiles/common_obj.dir/utils.c.o",
+      "sha256": "c614e63f989a72a7c299b6b4dcd243e95c62ff8a0f83a503e857c59eecbcd065",
+      "scope": "build",
+      "proposed_component": "Graphviz program and separately preserved third-party terms"
+    },
+    {
+      "path": "lib/common/libcommon.a",
+      "sha256": "f5c7644e443cf5d43f7a4771a7ddea57df3f9fbfcc9b2e95f8ef8fbcf7ebca9f",
+      "scope": "build",
+      "proposed_component": "Graphviz program and separately preserved third-party terms"
+    },
+    {
+      "path": "lib/dotgen/libdotgen.a",
+      "sha256": "80644a2587e713fe05423fb2bfc5fbfdab33dc2c5678eac0623a694446c17273",
+      "scope": "build",
+      "proposed_component": "Graphviz program and separately preserved third-party terms"
+    },
+    {
+      "path": "lib/fdpgen/libfdpgen.a",
+      "sha256": "ae0b1cbba1ebeee34e096563830d2c9e5e658da0fab4814f1e930a74049dd3c0",
+      "scope": "build",
+      "proposed_component": "Graphviz program and separately preserved third-party terms"
+    },
+    {
+      "path": "lib/gvc/libgvc.a",
+      "sha256": "8a04efbd05f419d90a29cd4c7024f1c13c9c54b34d410e0f25bb178c43d7b4b5",
+      "scope": "build",
+      "proposed_component": "Graphviz program and separately preserved third-party terms"
+    },
+    {
+      "path": "lib/label/liblabel.a",
+      "sha256": "9321362bb3319ebb24ab2bedbc7cac496e78cd5f6eb9714c6dd4bb3c085633bf",
+      "scope": "build",
+      "proposed_component": "Graphviz program and separately preserved third-party terms"
+    },
+    {
+      "path": "lib/neatogen/libneatogen.a",
+      "sha256": "eef0994540a3f8bcd5703856dd257e34706898b62f571d3e8c3c25ad47a5d59e",
+      "scope": "build",
+      "proposed_component": "Graphviz program and separately preserved third-party terms"
+    },
+    {
+      "path": "lib/ortho/CMakeFiles/ortho_obj.dir/fPQ.c.o",
+      "sha256": "c0cbdc5b87af320135c0b9225ed5e058c60049c15f50e16543a5cf7742d51f08",
+      "scope": "build",
+      "proposed_component": "Graphviz program and separately preserved third-party terms"
+    },
+    {
+      "path": "lib/ortho/CMakeFiles/ortho_obj.dir/maze.c.o",
+      "sha256": "4563d9bd12d2ba5ce89af2f0aaab955e466624da91b57ab348f5c4473d7b1c66",
+      "scope": "build",
+      "proposed_component": "Graphviz program and separately preserved third-party terms"
+    },
+    {
+      "path": "lib/ortho/CMakeFiles/ortho_obj.dir/ortho.c.o",
+      "sha256": "eb3b74265090b03cc01e2708cfbb478e87dcafcf3b249b213f3dd9f38735c6c4",
+      "scope": "build",
+      "proposed_component": "Graphviz program and separately preserved third-party terms"
+    },
+    {
+      "path": "lib/ortho/CMakeFiles/ortho_obj.dir/partition.c.o",
+      "sha256": "0d483a5d1bfa58b7b0b1b3fba0c34e8f3b9166ae1723184c50d84c1b8c7eb486",
+      "scope": "build",
+      "proposed_component": "Graphviz program and separately preserved third-party terms"
+    },
+    {
+      "path": "lib/ortho/CMakeFiles/ortho_obj.dir/rawgraph.c.o",
+      "sha256": "32ccf44707243ec54c36407d1316fca9080554aafc2bf64b5e09144ad006179c",
+      "scope": "build",
+      "proposed_component": "Graphviz program and separately preserved third-party terms"
+    },
+    {
+      "path": "lib/ortho/CMakeFiles/ortho_obj.dir/sgraph.c.o",
+      "sha256": "a7cc586b3dd757829e6a2a29a8571a63554a14ff58a6d24e921489e350d41b66",
+      "scope": "build",
+      "proposed_component": "Graphviz program and separately preserved third-party terms"
+    },
+    {
+      "path": "lib/ortho/CMakeFiles/ortho_obj.dir/trapezoid.c.o",
+      "sha256": "4ac3824de33c246bcd630f6a871fdcadc59a4105949c53a86fb10ac499dcf148",
+      "scope": "build",
+      "proposed_component": "Graphviz program and separately preserved third-party terms"
+    },
+    {
+      "path": "lib/ortho/libortho.a",
+      "sha256": "336a124f30d250404b6787f987c6046136edae0f8cf22c6bd84dd8a854343aca",
+      "scope": "build",
+      "proposed_component": "Graphviz program and separately preserved third-party terms"
+    },
+    {
+      "path": "lib/osage/libosage.a",
+      "sha256": "ace8169437603e4ecd1d5566ac90beac0e96df40de231876374b0b14a81bfc84",
+      "scope": "build",
+      "proposed_component": "Graphviz program and separately preserved third-party terms"
+    },
+    {
+      "path": "lib/pack/CMakeFiles/pack_obj.dir/ccomps.c.o",
+      "sha256": "37816096f4305da7cd499a6a1777923f9a5893e6e7ca6e45ed481f2414e710d9",
+      "scope": "build",
+      "proposed_component": "Graphviz program and separately preserved third-party terms"
+    },
+    {
+      "path": "lib/pack/CMakeFiles/pack_obj.dir/pack.c.o",
+      "sha256": "9fb6095f8ebc18ddeae7bdf047e230bb722f1e65bdb1d24ba3b3a3a51a29166f",
+      "scope": "build",
+      "proposed_component": "Graphviz program and separately preserved third-party terms"
+    },
+    {
+      "path": "lib/pack/libpack.a",
+      "sha256": "6fb45b9da66f3a63ed13c2477e0fb38bc99112cc2969d79eaa3b589e4c0da933",
+      "scope": "build",
+      "proposed_component": "Graphviz program and separately preserved third-party terms"
+    },
+    {
+      "path": "lib/patchwork/libpatchwork.a",
+      "sha256": "363c52a0a1c70ba3fcac57b3a543c9c34b95068e00ef81e20737dc4304e04873",
+      "scope": "build",
+      "proposed_component": "Graphviz program and separately preserved third-party terms"
+    },
+    {
+      "path": "lib/pathplan/libpathplan.a",
+      "sha256": "a98a551d36e7f66b01254252786e2a8f0e2802c8d06fe2ce77a7a7e7a38371ce",
+      "scope": "build",
+      "proposed_component": "Graphviz program and separately preserved third-party terms"
+    },
+    {
+      "path": "lib/rbtree/librbtree.a",
+      "sha256": "0c5e4ec2bd95d9927fe5d141323e8abd133b2463e69cbf0ff83044fd3079a47f",
+      "scope": "build",
+      "proposed_component": "Graphviz program and separately preserved third-party terms"
+    },
+    {
+      "path": "lib/sparse/libsparse.a",
+      "sha256": "835247938a552a4a6d79f3f23ecbe0c5dd166b988fc2e1621f1085d74c585951",
+      "scope": "build",
+      "proposed_component": "Graphviz program and separately preserved third-party terms"
+    },
+    {
+      "path": "lib/twopigen/libtwopigen.a",
+      "sha256": "a7ba833b8275d5a44b9c17a9a76e48fe21d922199b768cfacfb33bd4b73e43f8",
+      "scope": "build",
+      "proposed_component": "Graphviz program and separately preserved third-party terms"
+    },
+    {
+      "path": "lib/util/libutil.a",
+      "sha256": "37e794b08720ac374a1428a6e194dbe252387ef1dc44a11974a9af4fb7017a10",
+      "scope": "build",
+      "proposed_component": "Graphviz program and separately preserved third-party terms"
+    },
+    {
+      "path": "lib/xdot/libxdot.a",
+      "sha256": "753e99ac13a929bd5f93a9cfa0727f57dacccfa243099b21a6e0e9a4e4ac303b",
+      "scope": "build",
+      "proposed_component": "Graphviz program and separately preserved third-party terms"
+    },
+    {
+      "path": "plugin/core/libgvplugin_core.a",
+      "sha256": "f975557df231ed19796175e982f46c35dfed8f5aa3ab22da5499dfc1c5878a49",
+      "scope": "build",
+      "proposed_component": "Graphviz program and separately preserved third-party terms"
+    },
+    {
+      "path": "plugin/dot_layout/libgvplugin_dot_layout.a",
+      "sha256": "9ff6c396a2c6790723cb632cc3275daba131c82d5f95a3d964484a33f3618cce",
+      "scope": "build",
+      "proposed_component": "Graphviz program and separately preserved third-party terms"
+    },
+    {
+      "path": "plugin/neato_layout/libgvplugin_neato_layout.a",
+      "sha256": "66b68b1e0ea68a772b0745ac22a8be56de631f61ed97fb6607365947c5edc51f",
+      "scope": "build",
+      "proposed_component": "Graphviz program and separately preserved third-party terms"
+    },
+    {
+      "path": "plugin/vt/libgvplugin_vt.a",
+      "sha256": "1432607b39d73cc977d77611371472b77669b9d51b208483e8a4931b88ae5f26",
+      "scope": "build",
+      "proposed_component": "Graphviz program and separately preserved third-party terms"
+    },
+    {
+      "path": "/work/sdk/cache/o/54e75fad272df9955f6e3b3aa2a51b82/libunwind.a",
+      "sha256": "c36e52231f017cffd61f1d692c2e204c2dbfe1115fc597bcf1a4848e496d9d80",
+      "scope": "sdk",
+      "proposed_component": "LLVM libunwind"
+    },
+    {
+      "path": "/work/sdk/cache/o/62f488430b258f5513b9963037b07d70/libc++.a",
+      "sha256": "bb9b29785b099f50deb61a3e7f17beae20b3cafa54209c9632e0788daed5d0de",
+      "scope": "sdk",
+      "proposed_component": "LLVM libc++"
+    },
+    {
+      "path": "/work/sdk/cache/o/67f609686281fc5262de6dd7cecb1699/libc.a",
+      "sha256": "f3e3c2f1eaf496d62947df1c16d35e72627318cfa3750eef255ba953c49372b5",
+      "scope": "sdk",
+      "proposed_component": "musl libc.a"
+    },
+    {
+      "path": "/work/sdk/cache/o/865058b7555d057aadc96f86274819a7/libzigc.a",
+      "sha256": "4f7e41b63349a9783b254d546f8803fa22d1f4deccde5899395a56ec060fc306",
+      "scope": "sdk",
+      "proposed_component": "Zig C runtime"
+    },
+    {
+      "path": "/work/sdk/cache/o/ad7039f65ecedd81608a064b24ff9a24/crt1.o",
+      "sha256": "7656042916327ab550719c742179a00d9f29170fa61c49f917ce05cd26949fa8",
+      "scope": "sdk",
+      "proposed_component": "musl crt1.o"
+    },
+    {
+      "path": "/work/sdk/cache/o/e609faf41b008feeb686b063d828a281/libcompiler_rt.a",
+      "sha256": "562489fc4d20e5e76540d632288af520dd739fbbbdceb3a44d70c104d2f628b9",
+      "scope": "sdk",
+      "proposed_component": "Zig compiler runtime and preserved port notices"
+    },
+    {
+      "path": "/work/sdk/cache/o/e71407f56d4a3d936f65df33f87c2fb7/libc++abi.a",
+      "sha256": "e13d9a613e232f5ecf53b8a8722143cfd99c97aa69c9466f31402740e578e040",
+      "scope": "sdk",
+      "proposed_component": "LLVM libc++abi"
+    }
+  ],
+  "static_link_input_mapping_complete": true,
+  "notice_inventory_sha256": "8f09f4499af775140d4a055faa743caa3f6884023bac9bde361e5045fb2de32b",
+  "outstanding": [
+    "W3C/ISO use-condition applicability: standards interoperability is a possible basis, not a conformance certificate",
+    "Complete per-file terms and source-coverage conclusion; mapping alone is not approval",
+    "Equivalent permanent binary/source delivery and final-package acceptance"
+  ],
+  "reference_scope": "LicenseRef names are local descriptions requiring the accompanying file notices; not SPDX license-list identifiers. Components group linkage inputs conservatively, not per-symbol attribution."
+}

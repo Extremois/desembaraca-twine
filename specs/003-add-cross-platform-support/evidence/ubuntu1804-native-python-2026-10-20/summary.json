@@ -1,0 +1,57 @@
+{
+  "kind": "native-ubuntu1804-private-python-prerequisites-completion",
+  "passed": true,
+  "qualified": false,
+  "approved": false,
+  "revision": "cc0cc7675b386c43506c6f9f1b48df73ce60abad",
+  "workflow_run": 39473344773,
+  "foundation_run": 39473344641,
+  "target": "ubuntu-18.04-x86_64",
+  "kernel": "4.15.0-212-generic",
+  "glibc": "2.27",
+  "environment_kind": "native",
+  "interpreters": [
+    {
+      "python": "3.12.15",
+      "implementation": "CPython",
+      "arch": "x86_64",
+      "bits": 64,
+      "pip": "25.0.1",
+      "ensurepip": "25.0.1",
+      "ssl": "OpenSSL 3.5.9 29 Sep 2026",
+      "venv_active": true,
+      "gil_disabled": false,
+      "ssl_context": true
+    },
+    {
+      "python": "3.14.8",
+      "implementation": "CPython",
+      "arch": "x86_64",
+      "bits": 64,
+      "pip": "26.2.1",
+      "ensurepip": "26.2.1",
+      "ssl": "OpenSSL 3.5.9 29 Sep 2026",
+      "venv_active": true,
+      "gil_disabled": false,
+      "ssl_context": true
+    }
+  ],
+  "system_python_unchanged": true,
+  "reports": [
+    "glibc/verification.json",
+    "musl/verification.json",
+    "foundation.json"
+  ],
+  "task_status": {
+    "T033": "partial: private prerequisites proven on Ubuntu 18.04 x64; all other mandatory cells remain pending",
+    "T037": "partial: prerequisites and engine baseline only; installed application, Pro eligibility and other Ubuntu cells remain pending"
+  },
+  "tasks_complete": 56,
+  "tasks_total": 84,
+  "limitations": [
+    "Guest system Python 3.6 runs engine/orchestration probes only; not a supported application slot",
+    "The 13 engine geometries per ABI were redecoded after artifact download, not executed as an installed application in the private venvs",
+    "No native Alpine qualification, remote final package installation, Twine review, signing/notarization or support promotion",
+    "No local VM or system interpreter installation"
+  ]
+}

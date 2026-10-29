@@ -1,0 +1,127 @@
+{
+  "kind": "macos-native-private-runtime-integration-review",
+  "approved": false,
+  "qualified": false,
+  "revision": "b1f608e4cab8f2eb2142ba41484abc3a4e855be6",
+  "run_id": 39413103106,
+  "url": "https://github.com/Extremois/desembaraca-twine/actions/runs/39413103106",
+  "conclusion": "success",
+  "bindings": [
+    {
+      "artifact_id": "macos-x86_64",
+      "summary": "macos-x86_64/summary.json",
+      "sha256": "8e52492cdaa07ab1e90c2a5686268c3804f236761f42d3ae6f49291bc326156f"
+    },
+    {
+      "artifact_id": "macos-arm64",
+      "summary": "macos-arm64/summary.json",
+      "sha256": "bcb5a33498b859a8049118214d638cf008cea72a53cf6e23b4f359c2b0b69e7f"
+    }
+  ],
+  "slots": [
+    {
+      "artifact_id": "macos-x86_64",
+      "python": "3.12.10",
+      "engine_sha256": "d8ab197fbdfa9312050f4c4827f4bb612f7f4d1d021d4308a9850ee1a1104fff",
+      "cases": 13,
+      "security_before": {
+        "gatekeeper": {
+          "returncode": 0,
+          "output": "assessments enabled"
+        },
+        "sip": {
+          "returncode": 0,
+          "output": "System Integrity Protection status: disabled."
+        }
+      },
+      "quarantined_executable": false,
+      "passed": true,
+      "qualified": false
+    },
+    {
+      "artifact_id": "macos-x86_64",
+      "python": "3.14.7",
+      "engine_sha256": "d8ab197fbdfa9312050f4c4827f4bb612f7f4d1d021d4308a9850ee1a1104fff",
+      "cases": 13,
+      "security_before": {
+        "gatekeeper": {
+          "returncode": 0,
+          "output": "assessments enabled"
+        },
+        "sip": {
+          "returncode": 0,
+          "output": "System Integrity Protection status: disabled."
+        }
+      },
+      "quarantined_executable": false,
+      "passed": true,
+      "qualified": false
+    },
+    {
+      "artifact_id": "macos-arm64",
+      "python": "3.12.10",
+      "engine_sha256": "774115a1a9e4b2385d33fa55fe02de0d8728cb0984967d445528c6fe04f97dac",
+      "cases": 13,
+      "security_before": {
+        "gatekeeper": {
+          "returncode": 0,
+          "output": "assessments enabled"
+        },
+        "sip": {
+          "returncode": 0,
+          "output": "System Integrity Protection status: disabled."
+        }
+      },
+      "quarantined_executable": false,
+      "passed": true,
+      "qualified": false
+    },
+    {
+      "artifact_id": "macos-arm64",
+      "python": "3.14.7",
+      "engine_sha256": "774115a1a9e4b2385d33fa55fe02de0d8728cb0984967d445528c6fe04f97dac",
+      "cases": 13,
+      "security_before": {
+        "gatekeeper": {
+          "returncode": 0,
+          "output": "assessments enabled"
+        },
+        "sip": {
+          "returncode": 0,
+          "output": "System Integrity Protection status: disabled."
+        }
+      },
+      "quarantined_executable": false,
+      "passed": true,
+      "qualified": false
+    }
+  ],
+  "foundation": "foundation.json",
+  "foundation_sha256": "74508b98c3e4503d3fac548630eefc8c9490c948ec7e420cbbb6111cb11c9246",
+  "initial_driver_failure": "initial-failure-binding.json",
+  "initial_driver_failure_sha256": "7d0669162b9db729f22967672491fadc62730c3029c01a9026b6225c3887f274",
+  "task": "T048",
+  "task_complete": false,
+  "gates_completed": [
+    "real engine and production manager with byte-bound ZIP/inventory/provenance",
+    "automatic and explicit first preparation, final-location probe before ready",
+    "Library/Caches, external Unicode paths, executable 0755 and generation 0700",
+    "thirteen corpus cases including six known layouts, semantic/source preservation",
+    "healthy cache reuse without acquisition; Python network guard",
+    "thin native Mach-O, OS dylibs only, no RPATH; unchanged observed security settings"
+  ],
+  "pending": [
+    "Signed/notarized distributed-candidate acceptance under normal protections",
+    "Native network observation, visual Twine review and full per-cell qualification"
+  ],
+  "security_limitation": "Gatekeeper enabled; hosted runners report SIP disabled before and after. No security setting or quarantine was changed by the test.",
+  "linux_shared_driver_regression": {
+    "revision": "32fa3836c28c9dbc24837315a09eb47fea16b1f3",
+    "glibc_x64_run": 39412829515,
+    "glibc_arm64_run": 39412829582,
+    "musl_run": 39412829192,
+    "conclusion": "success",
+    "scope": "Shared driver unchanged by the subsequent macOS-only xattr correction"
+  },
+  "no_release_or_catalog_admission": true
+}

@@ -1,0 +1,62 @@
+{
+  "kind": "partial-package-installation-evidence-index",
+  "task": "T078",
+  "task_complete": false,
+  "qualified": false,
+  "captured_at": "2026-10-20T22:40:36.047570+00:00",
+  "application_revision": "23c06630f761368d63d23db6690b570298035577",
+  "current_installed_formats": [
+    "wheel",
+    "sdist"
+  ],
+  "hosted_installations_verified": 20,
+  "hosted_combinations_verified": 10,
+  "current_package_checks": {
+    "path": "specs/003-add-cross-platform-support/evidence/current-packages-2026-10-20/ci-current/summary.json",
+    "sha256": "c639b472ee392a1d78738038bc42ab93fdc100e570583938dabd389a1f9a7683"
+  },
+  "foundation_checks": {
+    "path": "specs/003-add-cross-platform-support/evidence/current-packages-2026-10-20/foundation.json",
+    "sha256": "ae35f78da2786ea779272eb7ecd2e6f548223b9d5379050be55933b3f91ae67f"
+  },
+  "registry": {
+    "path": "tools/runtime/support-targets.json",
+    "sha256": "be3e8a77e3836d1125658c00a75fbf0e3584f1e26a166a053583336c29a5d295"
+  },
+  "expected_support_targets": 69,
+  "expected_python_slots": 138,
+  "host_scope": [
+    "Ubuntu x64 and ARM64",
+    "macOS 15 ARM64 and Intel",
+    "Windows hosted runner"
+  ],
+  "checks": [
+    "53 package files match source and both installed formats per combination",
+    "Project LICENSE and NOTICE preserved",
+    "Three entrypoints per format",
+    "Import from a fresh external venv",
+    "Restricted PATH without Git or global Graphviz",
+    "Offline installation with staged build tools",
+    "pip records expected input archive SHA-256",
+    "No engine prepared by help"
+  ],
+  "remaining": [
+    "Final immutable remotely installed candidates, not just current development builds",
+    "Required native images/eligibility and both Python slots for every registered support cell",
+    "Private engine mode/manifests/notices and final bundle approvals; no POSIX catalog entry has been activated"
+  ],
+  "local_foundation": {
+    "tests_per_python": 244,
+    "skipped_per_python": 8,
+    "python_minors": [
+      "3.12",
+      "3.14"
+    ],
+    "note": "Five prior glibc-review tests remain local and were not part of this CI-only checkpoint"
+  },
+  "limitations": [
+    "Package installation/help does not qualify native engine execution or any support cell",
+    "Windows hosted runner is not a clean Windows 11 acceptance environment",
+    "No source/legal/signature approval or full-spec completion inferred"
+  ]
+}

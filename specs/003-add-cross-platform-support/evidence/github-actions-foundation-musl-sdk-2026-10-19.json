@@ -1,0 +1,103 @@
+{
+  "kind": "github-hosted-foundation-regression-not-native-bundle-qualification",
+  "captured_at": "2026-10-20T01:03:17.975356+00:00",
+  "run_id": 39349837791,
+  "url": "https://github.com/Extremois/desembaraca-twine/actions/runs/39349837791",
+  "application_revision": "dcdfcce35bbde2d11c65c579a7ed3c15a4ecbe27",
+  "branch": "feat/003-add-cross-platform-support",
+  "event": "push",
+  "conclusion": "success",
+  "jobs": [
+    {
+      "job_id": 118391170274,
+      "name": "Pure contracts (windows-latest, Python 3.12)",
+      "url": "https://github.com/Extremois/desembaraca-twine/actions/runs/39349837791/job/118391170274",
+      "conclusion": "success",
+      "tests": 207,
+      "seconds": 21.378,
+      "skipped": 8,
+      "image_os": "win25-vs2026",
+      "image_version": "20261007.264.1",
+      "runner_arch": "X64",
+      "raw_log_sha256": "ebe36aac993ec5ffc4ca988b4c71456e8ad10f29c4351c5c3ba4166cc0f721f3"
+    },
+    {
+      "job_id": 118391170450,
+      "name": "Pure contracts (macos-15, Python 3.12)",
+      "url": "https://github.com/Extremois/desembaraca-twine/actions/runs/39349837791/job/118391170450",
+      "conclusion": "success",
+      "tests": 207,
+      "seconds": 15.572,
+      "skipped": 6,
+      "image_os": "macos15",
+      "image_version": "20260907.0337.1",
+      "runner_arch": "ARM64",
+      "raw_log_sha256": "27344328b41b0f0fb29c8f0de74dc3071164df7f6261fa1017d9dd2853e468e3"
+    },
+    {
+      "job_id": 118391170513,
+      "name": "Pure contracts (ubuntu-24.04, Python 3.14)",
+      "url": "https://github.com/Extremois/desembaraca-twine/actions/runs/39349837791/job/118391170513",
+      "conclusion": "success",
+      "tests": 207,
+      "seconds": 14.449,
+      "skipped": 6,
+      "image_os": "ubuntu24",
+      "image_version": "20261012.334.1",
+      "runner_arch": "X64",
+      "raw_log_sha256": "b13779b6f4c6b36809ee3dc70a16c31596a6257375afafaf4d0d4c7d365c3a86"
+    },
+    {
+      "job_id": 118391170523,
+      "name": "Pure contracts (macos-15, Python 3.14)",
+      "url": "https://github.com/Extremois/desembaraca-twine/actions/runs/39349837791/job/118391170523",
+      "conclusion": "success",
+      "tests": 207,
+      "seconds": 13.873,
+      "skipped": 6,
+      "image_os": "macos15",
+      "image_version": "20260907.0337.1",
+      "runner_arch": "ARM64",
+      "raw_log_sha256": "c38f4ca194dc7ca5e24fab3bfb2d67c94a871ee15adf1fc1b8b74b3a7227c083"
+    },
+    {
+      "job_id": 118391170540,
+      "name": "Pure contracts (ubuntu-24.04, Python 3.12)",
+      "url": "https://github.com/Extremois/desembaraca-twine/actions/runs/39349837791/job/118391170540",
+      "conclusion": "success",
+      "tests": 207,
+      "seconds": 13.238,
+      "skipped": 6,
+      "image_os": "ubuntu24",
+      "image_version": "20261012.334.1",
+      "runner_arch": "X64",
+      "raw_log_sha256": "c1d358482eecb20690379f393bbecc59eda63f780e161712bb95ed7c3580f770"
+    },
+    {
+      "job_id": 118391170680,
+      "name": "Pure contracts (windows-latest, Python 3.14)",
+      "url": "https://github.com/Extremois/desembaraca-twine/actions/runs/39349837791/job/118391170680",
+      "conclusion": "success",
+      "tests": 207,
+      "seconds": 20.056,
+      "skipped": 8,
+      "image_os": "win25-vs2026",
+      "image_version": "20261007.264.1",
+      "runner_arch": "X64",
+      "raw_log_sha256": "03391146a47044e1bd5a6ccdc07bc685c5ea32c2db4f094b53d9fd5f7052bee6"
+    }
+  ],
+  "qualified": false,
+  "approved": false,
+  "skipped_jobs": [
+    {
+      "name": "windows-acceptance",
+      "conclusion": "skipped"
+    }
+  ],
+  "limitations": [
+    "Foundation/controlled fixtures only; no qualified POSIX Graphviz bundle or installed-candidate native acceptance",
+    "Runner image labels/versions are metadata, not canonical support-target environment digests",
+    "No Windows 11 clean acceptance, Twine visual review, signing/notarization or support promotion"
+  ]
+}

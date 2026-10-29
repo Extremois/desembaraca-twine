@@ -1,0 +1,64 @@
+{
+  "cmake": {
+    "path": "/Users/runner/work/_temp/twine-macos-sdk/cmake-native",
+    "sha256": "664cda491fab04958aa5d312b0b7d03f5816434c8fc108034a932a15ffc58d03"
+  },
+  "c_compiler": {
+    "path": "/Applications/Xcode_16.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang",
+    "sha256": "4c458256bcdf913774de1bb4a37768244d3b41f32ad55afb2dfec3432f46f4fe"
+  },
+  "cxx_compiler": {
+    "path": "/Applications/Xcode_16.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++",
+    "sha256": "4c458256bcdf913774de1bb4a37768244d3b41f32ad55afb2dfec3432f46f4fe"
+  },
+  "facts": {
+    "provider": "Apple Xcode",
+    "xcode": "Xcode 16.4\nBuild version 16F6",
+    "developer_dir": "/Applications/Xcode_16.4.app/Contents/Developer",
+    "sdk_path": "/Applications/Xcode_16.4.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk",
+    "sdk_version": "15.5",
+    "sdk_settings_sha256": "58a133735f0a55a624a1703067059f6e78925e51725ec6e1f966072e142c9c42",
+    "compiler_version": "Apple clang version 17.0.0 (clang-1700.0.13.5)\nTarget: arm64-apple-darwin24.6.0\nThread model: posix\nInstalledDir: /Applications/Xcode_16.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin",
+    "host_tools": {
+      "cmake": {
+        "path": "/opt/homebrew/bin/cmake",
+        "sha256": "1964d6a722d2784e85f99f87e8135020278aedf6b4ef6f3ab42dee650dd5b817",
+        "version": "cmake version 4.4.3"
+      },
+      "bison": {
+        "path": "/opt/homebrew/opt/bison/bin/bison",
+        "sha256": "8dbfa8c9c83f28827593c338b3822eb85549bafb74c4ed3a0b1c65d92a9bfd1a",
+        "version": "bison (GNU Bison) 3.8.2"
+      },
+      "flex": {
+        "path": "/usr/bin/flex",
+        "sha256": "7f30f076d0e9c38f772a76449fca9da8cf97f6a3d43b94c90a00e4f9ce7ad39e",
+        "version": "flex 2.6.4 Apple(flex-35)"
+      },
+      "make": {
+        "path": "/usr/bin/make",
+        "sha256": "7f30f076d0e9c38f772a76449fca9da8cf97f6a3d43b94c90a00e4f9ce7ad39e",
+        "version": "GNU Make 3.81"
+      },
+      "python": {
+        "path": "/Library/Frameworks/Python.framework/Versions/3.14/bin/python",
+        "sha256": "81c87d90892fe12428ee3b78a675c57c62d6c479236fb359ad5b2d7f07c38b2c"
+      },
+      "otool": {
+        "path": "/usr/bin/otool",
+        "sha256": "7f30f076d0e9c38f772a76449fca9da8cf97f6a3d43b94c90a00e4f9ce7ad39e"
+      }
+    },
+    "target_os": "darwin",
+    "target_arch": "aarch64",
+    "deployment_target": "15.0",
+    "environment_kind": "native",
+    "kernel": "24.6.0",
+    "macos": "15.7.9",
+    "image_os": "macos15",
+    "image_version": "20260907.0337.1",
+    "runner_arch": "ARM64",
+    "limitations": "SDKSettings/tool hashes identify this run; full SDK tree and dependency/license audit still pending"
+  },
+  "environment_digest": "788825c50e9ebf8c66e615d6adce7c9b83158375b19ddabe36aad7706cf43313"
+}

@@ -1,0 +1,182 @@
+{
+  "kind": "linux-native-source-notice-package-receipt",
+  "approved": false,
+  "qualified": false,
+  "revision": "7d0476f3943e679ff1e151bf656f9992084209ba",
+  "run_id": 39355967300,
+  "actions_artifact_id": 12235142784,
+  "url": "https://github.com/Extremois/desembaraca-twine/actions/runs/39355967300",
+  "artifact_id": "linux-musl-aarch64",
+  "actions_archive_sha256": "4b27b1fb85e1888d93b07cc68616676adc608bb23d1563e17256467744879f5a",
+  "executable_sha256": "2d7a4b6024eb000c33ecf8b14d1a32d0aac8dde65bed00de138604d081fd3ee4",
+  "candidate_archive_sha256": "91b2ff65a5601e775688e8c92d79ff55a1b7185dd8cb967cfc04d63bd0f7aecd",
+  "candidate_archive_bytes": 7876362,
+  "candidate_file_count": 413,
+  "notices": 412,
+  "graphviz_sources": 322,
+  "source_prefixes": 303,
+  "additional_source_references": 2,
+  "sdk_headers": 58,
+  "sdk_header_prefixes": 22,
+  "offline_origin_payloads": 411,
+  "observations": [
+    {
+      "python": "3.12.13",
+      "kind": "network",
+      "passed": true,
+      "environment_kind": "container",
+      "dot_executions": 8,
+      "network_syscalls": {}
+    },
+    {
+      "python": "3.12.13",
+      "kind": "runtime-network",
+      "passed": true,
+      "environment_kind": "container",
+      "dot_executions": 49,
+      "network_syscalls": {}
+    },
+    {
+      "python": "3.14.5",
+      "kind": "network",
+      "passed": true,
+      "environment_kind": "container",
+      "dot_executions": 8,
+      "network_syscalls": {}
+    },
+    {
+      "python": "3.14.5",
+      "kind": "runtime-network",
+      "passed": true,
+      "environment_kind": "container",
+      "dot_executions": 49,
+      "network_syscalls": {}
+    }
+  ],
+  "retained_files": {
+    "network-312.json": {
+      "sha256": "b0add982fa05c60a2bbea0a4225aeefbabe121a1ad58cc62a4388860b5c3d90d",
+      "bytes": 1355
+    },
+    "network-312.control.trace.gz": {
+      "sha256": "3bf996a783a740e878e3ee44e194f3e97961d9dd154ade535f50d0e1a1f83bcd",
+      "bytes": 484
+    },
+    "network-312.corpus.trace.gz": {
+      "sha256": "ecf8c23cc8e004aebc155c1f29c70a7e7210cd403ea1aa52c33525b33d58493f",
+      "bytes": 589
+    },
+    "runtime-network-312.json": {
+      "sha256": "cac90dbbbba34dbeba1e4fda2b23adaaf8210c373e11164dd2db5aaa23179878",
+      "bytes": 1356
+    },
+    "runtime-network-312.control.trace.gz": {
+      "sha256": "1444ddfc24e8c0a42fdff0a1520495f474fb519c6e46b6d8e3fcf8c0b62d2365",
+      "bytes": 482
+    },
+    "runtime-network-312.corpus.trace.gz": {
+      "sha256": "a2b8d13fe7d5e95d28117527ab491952727591c11e8c1c4237c6891f815f625a",
+      "bytes": 1753
+    },
+    "network-314.json": {
+      "sha256": "adadc16c19bd29d75cfcb8c072e5641a70af80165e5df03a2394fbfc950569e5",
+      "bytes": 1354
+    },
+    "network-314.control.trace.gz": {
+      "sha256": "663909a4e38476cc5eab700cdc96b2e528dc2c5ecf7726a563743165a5b5cc9b",
+      "bytes": 485
+    },
+    "network-314.corpus.trace.gz": {
+      "sha256": "7b6a5a897527e7640622d934fc05a904b01d75c91c60abddf2cadd5e7b463ab7",
+      "bytes": 587
+    },
+    "runtime-network-314.json": {
+      "sha256": "9f349438ba8ac91bf391d28ac18b35576bf6cb0518638cd31f60e21cb44b6691",
+      "bytes": 1355
+    },
+    "runtime-network-314.control.trace.gz": {
+      "sha256": "c17d5421aadc1b5af513780f3aebb782aea80ea3e342a170d1b2a3d8a2f66228",
+      "bytes": 481
+    },
+    "runtime-network-314.corpus.trace.gz": {
+      "sha256": "f552f409499df04aad7908ad8b31d7b92367a5fa2708101df240f0abb8d54728",
+      "bytes": 1728
+    },
+    "review.json.gz": {
+      "sha256": "b4e4a36b39844fe125751d4273f690ec491f514f5cb2a521c368a9f29074178c",
+      "bytes": 70406
+    },
+    "provenance.json.gz": {
+      "sha256": "535dde9b001359cc7a74d5f611b3a3d718470c238fe774220d90c1865de0ed64",
+      "bytes": 19458
+    },
+    "graphviz-source-evidence.json.gz": {
+      "sha256": "57a625a5b785fbe2bd99400fc3d0a2eac71c3804923b22b6f8b0bb25bcc47bc8",
+      "bytes": 56554
+    },
+    "NOTICE-ORIGINS.json.gz": {
+      "sha256": "ffe927bf425f69b876bf62c4a70c6e55927d26313a6b1cca800d815dafb9a842",
+      "bytes": 40943
+    },
+    "inventory.json": {
+      "sha256": "080897db61a9286800f30f0f9b4b66b40b6242a244280ad840bd2283e972ae98",
+      "bytes": 89567
+    },
+    "candidate.json": {
+      "sha256": "67a8683be20183f5e102ddfa61e06da63b76c45c36b618cc52de1487397ff2ce",
+      "bytes": 866
+    },
+    "notice-payloads.json.gz": {
+      "sha256": "b0f9dd4ab4940840914c361fdfd6ae763d9d9a6b58c49d57e92010bf2300f92a",
+      "bytes": 159101
+    },
+    "source-rebuild-rebuilt-network-312.json": {
+      "sha256": "cbbbd090418bbaed9d1676fa7f977f329987006850631a05adc142deff3425c4",
+      "bytes": 1355
+    },
+    "source-rebuild-rebuilt-network-312.control.trace.gz": {
+      "sha256": "7cd683fa752247bd92ebb4a4e2d3a2181ff2a358c32663482ee24a3fd431b165",
+      "bytes": 483
+    },
+    "source-rebuild-rebuilt-network-312.corpus.trace.gz": {
+      "sha256": "ac58d75c4ed8acfc2c1e5656ac93d40defb19cb94b7c6932d1867a31f8650c8f",
+      "bytes": 599
+    },
+    "source-rebuild-rebuilt-network-314.json": {
+      "sha256": "202c7fc4b306960f07dfc2ea1e418404bd0b7b34d29a3a456f7a988bad69f737",
+      "bytes": 1354
+    },
+    "source-rebuild-rebuilt-network-314.control.trace.gz": {
+      "sha256": "7319bfce5bc09b0ba8e109e880ad10aee868663218d318a5dd14648b0f8bd464",
+      "bytes": 481
+    },
+    "source-rebuild-rebuilt-network-314.corpus.trace.gz": {
+      "sha256": "7e1fdc446054cd93708ce20143e672904b15e4da59f784e8fc4f0ae7f6a4e7f9",
+      "bytes": 586
+    }
+  },
+  "limitations": [
+    "Draft notices are not an approved license applicability audit or permanent source offer",
+    "CI candidates do not qualify the entire Linux distribution/version/kernel matrix",
+    "Runtime binary stays only in ignored local Actions archive, not tracked evidence"
+  ],
+  "executable_unchanged_from_prior_build": true,
+  "source_rebuild_observations": [
+    {
+      "python": "3.12.13",
+      "passed": true,
+      "cases": 13,
+      "engine_sha256": "0b0fcd6bcf785eddeaa1033133e670492eb2716e83461a1d83e6ad6c93f05f11",
+      "network_syscalls": {},
+      "byte_identical_to_original": false
+    },
+    {
+      "python": "3.14.5",
+      "passed": true,
+      "cases": 13,
+      "engine_sha256": "0b0fcd6bcf785eddeaa1033133e670492eb2716e83461a1d83e6ad6c93f05f11",
+      "network_syscalls": {},
+      "byte_identical_to_original": false
+    }
+  ]
+}

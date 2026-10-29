@@ -1,0 +1,7 @@
+//! Ported from musl, which is MIT licensed:
+//! https://git.musl-libc.org/cgit/musl/tree/COPYRIGHT
+//!
+//! https://git.musl-libc.org/cgit/musl/tree/src/math/fmal.c
+//! https://git.musl-libc.org/cgit/musl/tree/src/math/fmaf.c
+//! https://git.musl-libc.org/cgit/musl/tree/src/math/fma.c
+

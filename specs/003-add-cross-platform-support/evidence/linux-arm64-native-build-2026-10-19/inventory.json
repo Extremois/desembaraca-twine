@@ -1,0 +1,27 @@
+{
+  "kind": "local-candidate-inventory",
+  "schema_version": 1,
+  "qualification": "inventory-only-not-qualified",
+  "artifact_id": "linux-glibc-aarch64",
+  "platform": "linux",
+  "artifact_arch": "aarch64",
+  "abi": "glibc",
+  "provenance_sha256": "646c06d1aba84e476bdea2cd4ff10d6b8044dbf441ed7228f78994b1819ea9d9",
+  "executable_relative_path": "bin/dot",
+  "files": [
+    {
+      "path": "bin/dot",
+      "size": 6801616,
+      "mode": 493,
+      "sha256": "933b6c63370bdd3e814627e2a9a06176416c8da017a21dcbc96d8137dbc17e22"
+    },
+    {
+      "path": "third-party-notices/Graphviz-COPYING.txt",
+      "size": 14198,
+      "mode": 420,
+      "sha256": "0becf16567beb77fa252b7664631dd177c8f9a1889e48995b45379c7130e5303"
+    }
+  ],
+  "notices": [],
+  "minimum_libc": "2.27"
+}

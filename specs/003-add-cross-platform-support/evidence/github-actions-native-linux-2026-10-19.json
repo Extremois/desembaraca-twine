@@ -1,0 +1,98 @@
+{
+  "kind": "github-actions-native-linux-build-and-corpus",
+  "qualified": false,
+  "approved": false,
+  "run_url": "https://github.com/Extremois/desembaraca-twine/actions/runs/39240832314",
+  "commit": "94792d820e191a351d0fd9673fc3b25ee465e316",
+  "artifact_zip_sha256": "b8fdc15ba474fe1161325fab7831a69ee3e13efba75255fd50466371308b08b1",
+  "executable_sha256": "43ce8d686720467c21be91cab4b8f3b246baae49c2cfe293714ebdf8a82f5716",
+  "executable_size": 6037288,
+  "artifact_retention_days": 7,
+  "runner": {
+    "image_os": "ubuntu24",
+    "image_version": "20261012.334.1",
+    "arch": "X64",
+    "kernel": "6.17.0-1022-azure"
+  },
+  "target": "x86_64-linux.4.15-gnu.2.27",
+  "source": {
+    "schema_version": 1,
+    "engine": "graphviz",
+    "version": "16.1.0",
+    "url": "https://gitlab.com/graphviz/graphviz/-/archive/16.1.0/graphviz-16.1.0.tar.gz",
+    "sha256": "1e028b2b3e84e946c1d3e8c47590f8f0741bba1041fe6eff36eee87e598ea249",
+    "size": 41189481,
+    "git_revision": "e41c710710be080ad37af1b51c6e2f8beffa9ee5",
+    "license": "EPL-2.0",
+    "license_path": "COPYING",
+    "license_sha256": "0becf16567beb77fa252b7664631dd177c8f9a1889e48995b45379c7130e5303",
+    "qualification": "source-only; no POSIX binary qualified"
+  },
+  "recipe_sha256": "ce509aa37846e078bca9765abae6bc425a6bbd6a75eabff806ff5999c4b48f44",
+  "provenance_sha256": "1dbc8ad457067a3c7fa001606dccf05cdb6ef7bc2b908fe45f410e3080a5e321",
+  "sdk_environment_digest": "7376fcc61e432773611402ab729afb46e42ac2c7957a41cfc6faba85708cec3a",
+  "link_inputs": 73,
+  "archive_extraction_rows": 147,
+  "compiler_reference_byte_identical": true,
+  "graphviz_sources": {
+    "sha256": "70b490201d8bbcb200a798ae6cffaca09422eb987824996f0d3489820bc7388e",
+    "objects": 181,
+    "verified_graphviz_source_files": 322,
+    "generated_files": 9,
+    "external_files": 162
+  },
+  "corpus": [
+    {
+      "file": "github-actions-native-linux-corpus-312-2026-10-19.json",
+      "sha256": "d363b59c23f699bdefb49135edbcf40a81d63fea885dcb19eb18b7ff7bf19897",
+      "python": "3.12.15",
+      "cases": 13,
+      "highest_glibc_symbol": "2.14",
+      "needed": [
+        "libm.so.6",
+        "libpthread.so.0",
+        "libc.so.6",
+        "ld-linux-x86-64.so.2"
+      ]
+    },
+    {
+      "file": "github-actions-native-linux-corpus-314-2026-10-19.json",
+      "sha256": "923a505bf4d3db9a99f8c565d3e2bac08b95fa596eac0ca2561b3e40cc98b4b7",
+      "python": "3.14.8",
+      "cases": 13,
+      "highest_glibc_symbol": "2.14",
+      "needed": [
+        "libm.so.6",
+        "libpthread.so.0",
+        "libc.so.6",
+        "ld-linux-x86-64.so.2"
+      ]
+    }
+  ],
+  "pending": [
+    "dependency/source/license review and complete notices",
+    "oldest OS/kernel/CPU execution",
+    "native offline network observation",
+    "remote wheel/sdist installation and runtime acquisition",
+    "recovery/concurrency cell acceptance",
+    "Twine visual review",
+    "catalog admission and remaining target matrix"
+  ],
+  "retained_evidence": [
+    {
+      "file": "github-actions-native-linux-provenance-2026-10-19.json",
+      "sha256": "1dbc8ad457067a3c7fa001606dccf05cdb6ef7bc2b908fe45f410e3080a5e321",
+      "uncompressed_sha256": "1dbc8ad457067a3c7fa001606dccf05cdb6ef7bc2b908fe45f410e3080a5e321"
+    },
+    {
+      "file": "github-actions-native-linux-sdk-2026-10-19.json",
+      "sha256": "e15facb5e8251bbe78cb1293ac33a2a03c9c2d0e72b00bd419134c11d8ef4095",
+      "uncompressed_sha256": "e15facb5e8251bbe78cb1293ac33a2a03c9c2d0e72b00bd419134c11d8ef4095"
+    },
+    {
+      "file": "github-actions-native-linux-sources-2026-10-19.json.gz",
+      "sha256": "8d462e8f3afefa92cc9397d73cfca9bb98ac96ad4fe86e24a9e2ded55157c1ab",
+      "uncompressed_sha256": "70b490201d8bbcb200a798ae6cffaca09422eb987824996f0d3489820bc7388e"
+    }
+  ]
+}

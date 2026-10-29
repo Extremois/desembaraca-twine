@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "kind": "corresponding-source-delivery-pairing",
+  "artifact_id": "linux-musl-x86_64",
+  "application_revision": "47844106ff072cad005a8a1c795153c658b2bc89",
+  "executable_sha256": "f4dfee4e052704b1a7efdb7b6a4c43583ccaa062aec800b76224dae24eb2b69b",
+  "provenance_sha256": "c59dfb3e4ea9a7ec26a3ceeeaa30eb3554432d1a47e123fb11ce59616089e9fd",
+  "pairing_valid": true,
+  "archive_verification": {
+    "candidate": true,
+    "sources": true
+  },
+  "candidate": {
+    "archive": "candidate.zip",
+    "sha256": "7813ffa0d4ced072c3c9459a71759fa0988358ff8e8ce36ea19579d5f03d094f",
+    "bytes": 7910378,
+    "inventory_sha256": "ee4133f7504de1f7029f4aeed2b067f9896346b194d86e46bb9a6b1d5ccf02cb",
+    "file_count": 421
+  },
+  "sources": {
+    "archive": "sources.tar.gz",
+    "sha256": "f3dc5887d7971320c29fb32fdc09e89139e95497a1f83b357003befcf0c67baf",
+    "bytes": 68392710,
+    "file_count": 18175,
+    "sdk_files": 18102
+  },
+  "obligations": {
+    "lgpl_2_1_section_6_d": "N\u00e3o aplic\u00e1vel diretamente (ambiente sem reten\u00e7\u00e3o glibc)",
+    "lgpl_2_1_section_6_a": "Reconstru\u00e7\u00e3o funcional e independ\u00eancia de compila\u00e7\u00e3o comprovadas",
+    "epl_2_0_section_3_1": "Fontes completas do Graphviz acompanhadas de declara\u00e7\u00e3o expressa de licen\u00e7a e avisos preservados",
+    "offline_notices": "Avisos SOURCE-REFERENCES.txt e textos integrais offline incorporados em ambos os arquivos"
+  },
+  "delivery_binding": {
+    "status": "unpromoted_pending_authorized_distribution",
+    "candidate_distribution_url": null,
+    "sources_distribution_url": null,
+    "active_catalog_promoted": false
+  }
+}

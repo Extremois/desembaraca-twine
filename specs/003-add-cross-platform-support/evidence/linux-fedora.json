@@ -1,0 +1,219 @@
+{
+  "kind": "partial-native-private-fedora-evidence-index",
+  "task": "T039",
+  "task_complete": false,
+  "qualified": false,
+  "captured_at": "2026-10-27T22:34:24.340758+00:00",
+  "registry": {
+    "path": "tools/runtime/support-targets.json",
+    "sha256": "be3e8a77e3836d1125658c00a75fbf0e3584f1e26a166a053583336c29a5d295"
+  },
+  "application_revision": "7b30c80a7a1b980860e0fa9e6b16a14d8245c28e",
+  "evidence": {
+    "path": "specs/003-add-cross-platform-support/evidence/fedora-native-2026-10-27/summary.json",
+    "sha256": "97527f029df1ba333ada037872badd3b37d76a24552cf02b10e9ed2cafe1120e"
+  },
+  "expected_targets": 4,
+  "expected_python_slots": 8,
+  "complete_targets": 0,
+  "targets_with_partial_native_observations": 2,
+  "python_slots_with_partial_native_observations": 4,
+  "targets": [
+    {
+      "target_id": "fedora-43-stable-x86_64-distribution-default",
+      "version": "43",
+      "arch": "x86_64",
+      "image_build": "43-1.6",
+      "kernel": "6.17.1-300.fc43.x86_64",
+      "glibc": "glibc 2.42",
+      "observed_security": {
+        "selinux": "enforcing",
+        "process_context": "unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023"
+      },
+      "observed_rpms": [
+        {
+          "name": "kernel-core",
+          "version": "6.17.1",
+          "release": "300.fc43",
+          "arch": "x86_64"
+        },
+        {
+          "name": "glibc",
+          "version": "2.42",
+          "release": "4.fc43",
+          "arch": "x86_64"
+        },
+        {
+          "name": "fedora-release-common",
+          "version": "43",
+          "release": "25",
+          "arch": "noarch"
+        }
+      ],
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "partial-native-observation",
+          "evidence": {
+            "path": "specs/003-add-cross-platform-support/evidence/fedora-native-2026-10-27/summary.json",
+            "sha256": "97527f029df1ba333ada037872badd3b37d76a24552cf02b10e9ed2cafe1120e"
+          },
+          "observed_python": "3.12.15"
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "partial-native-observation",
+          "evidence": {
+            "path": "specs/003-add-cross-platform-support/evidence/fedora-native-2026-10-27/summary.json",
+            "sha256": "97527f029df1ba333ada037872badd3b37d76a24552cf02b10e9ed2cafe1120e"
+          },
+          "observed_python": "3.14.8"
+        }
+      ],
+      "pending_reason": "Final distributed candidate, remote/sdist modalities, maintenance acceptance, Twine and remaining common gates"
+    },
+    {
+      "target_id": "fedora-43-stable-aarch64-distribution-default",
+      "version": "43",
+      "arch": "aarch64",
+      "image_build": null,
+      "kernel": null,
+      "glibc": null,
+      "observed_security": null,
+      "observed_rpms": null,
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "observed_python": null
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "observed_python": null
+        }
+      ],
+      "pending_reason": "Final distributed candidate, remote/sdist modalities, maintenance acceptance, Twine and remaining common gates"
+    },
+    {
+      "target_id": "fedora-44-stable-x86_64-distribution-default",
+      "version": "44",
+      "arch": "x86_64",
+      "image_build": "44-1.7",
+      "kernel": "6.19.10-300.fc44.x86_64",
+      "glibc": "glibc 2.43",
+      "observed_security": {
+        "selinux": "enforcing",
+        "process_context": "unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023"
+      },
+      "observed_rpms": [
+        {
+          "name": "kernel-core",
+          "version": "6.19.10",
+          "release": "300.fc44",
+          "arch": "x86_64"
+        },
+        {
+          "name": "glibc",
+          "version": "2.43",
+          "release": "2.fc44",
+          "arch": "x86_64"
+        },
+        {
+          "name": "fedora-release-common",
+          "version": "44",
+          "release": "17",
+          "arch": "noarch"
+        }
+      ],
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "partial-native-observation",
+          "evidence": {
+            "path": "specs/003-add-cross-platform-support/evidence/fedora-native-2026-10-27/summary.json",
+            "sha256": "97527f029df1ba333ada037872badd3b37d76a24552cf02b10e9ed2cafe1120e"
+          },
+          "observed_python": "3.12.15"
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "partial-native-observation",
+          "evidence": {
+            "path": "specs/003-add-cross-platform-support/evidence/fedora-native-2026-10-27/summary.json",
+            "sha256": "97527f029df1ba333ada037872badd3b37d76a24552cf02b10e9ed2cafe1120e"
+          },
+          "observed_python": "3.14.8"
+        }
+      ],
+      "pending_reason": "Final distributed candidate, remote/sdist modalities, maintenance acceptance, Twine and remaining common gates"
+    },
+    {
+      "target_id": "fedora-44-stable-aarch64-distribution-default",
+      "version": "44",
+      "arch": "aarch64",
+      "image_build": null,
+      "kernel": null,
+      "glibc": null,
+      "observed_security": null,
+      "observed_rpms": null,
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "observed_python": null
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "observed_python": null
+        }
+      ],
+      "pending_reason": "Final distributed candidate, remote/sdist modalities, maintenance acceptance, Twine and remaining common gates"
+    }
+  ],
+  "limitations": [
+    "Private development wheel and controlled runtime acquisition; no final remote candidate or sdist acceptance",
+    "Pinned Fedora image builds and dated Debian/Ubuntu images; no package security/maintenance, LTS or Pro eligibility acceptance",
+    "Musl engine kernel observation on Fedora/Debian/Ubuntu; no native Alpine qualification",
+    "No local VM, Twine review, ARM64 qualification, catalog or support promotion"
+  ],
+  "release_scope": {
+    "reference_date": "2026-10-17",
+    "versions": [
+      "43",
+      "44"
+    ],
+    "fedora45_qualified": false,
+    "maintenance_acceptance": false,
+    "source": "tools/runtime/support-targets.json"
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "application_revision": "60707b3984cb9a2b45f9d78166e4e72371900ec6",
+  "run_id": 40784210941,
+  "passed": true,
+  "jobs": [
+    {
+      "job_id": 123153230077,
+      "name": "Pure contracts (ubuntu-24.04, Python 3.14)",
+      "tests": 307,
+      "conclusion": "success",
+      "raw_log_sha256": "22f88795ab26d40bc04552d1d7c77e8a8ffcfea135af5da85fb1523ec1052e7c",
+      "log": {
+        "path": "specs/003-add-cross-platform-support/evidence/macos-sdk-terms-review-2026-10-28/foundation-123153230077.log.gz",
+        "sha256": "214e64b35ee02fff38b25d74be57cdb52e215cdc74ee927326547bb41e6d2c3f"
+      }
+    },
+    {
+      "job_id": 123153230232,
+      "name": "Pure contracts (macos-15, Python 3.14)",
+      "tests": 307,
+      "conclusion": "success",
+      "raw_log_sha256": "5d05f3b0cf83c9056786d5320fa13801eadd5f56e5e22d961b206005b36d3d50",
+      "log": {
+        "path": "specs/003-add-cross-platform-support/evidence/macos-sdk-terms-review-2026-10-28/foundation-123153230232.log.gz",
+        "sha256": "2ae1a62aa94839913b37b34fafa8db3542b12a389c89d396934093bbcc7e9663"
+      }
+    },
+    {
+      "job_id": 123153230392,
+      "name": "Pure contracts (macos-15, Python 3.12)",
+      "tests": 307,
+      "conclusion": "success",
+      "raw_log_sha256": "c14067942686642f5787da928dbf510c45abdabf9eecfd124fec49aca8b7e332",
+      "log": {
+        "path": "specs/003-add-cross-platform-support/evidence/macos-sdk-terms-review-2026-10-28/foundation-123153230392.log.gz",
+        "sha256": "0790608efd0a95a025252032bc802fbd8b89fb6910a0390b8fbaccba0d994672"
+      }
+    },
+    {
+      "job_id": 123153230406,
+      "name": "Pure contracts (windows-latest, Python 3.12)",
+      "tests": 307,
+      "conclusion": "success",
+      "raw_log_sha256": "e64d1e67f2f884302f2d2f79be748d24c28457175bf04d5aeef747a56c3ff49c",
+      "log": {
+        "path": "specs/003-add-cross-platform-support/evidence/macos-sdk-terms-review-2026-10-28/foundation-123153230406.log.gz",
+        "sha256": "6eb6e822f8b1a300d15932b9cadc60740e7e116a363c2b051c73a1c07df1f9be"
+      }
+    },
+    {
+      "job_id": 123153230424,
+      "name": "Pure contracts (ubuntu-24.04, Python 3.12)",
+      "tests": 307,
+      "conclusion": "success",
+      "raw_log_sha256": "38e4cacd6f411e1a76b9a4245b563fb8724cbbaedff51f99bebeb871ce796760",
+      "log": {
+        "path": "specs/003-add-cross-platform-support/evidence/macos-sdk-terms-review-2026-10-28/foundation-123153230424.log.gz",
+        "sha256": "4c65d0992a4e4b1a36b14275c94af4549e40aed6a9a7634d492b323d56bc269f"
+      }
+    },
+    {
+      "job_id": 123153230472,
+      "name": "Pure contracts (windows-latest, Python 3.14)",
+      "tests": 307,
+      "conclusion": "success",
+      "raw_log_sha256": "2af6dac94679d42eefb7f57b03e988842b19ef1a4b6f0399fa92df053f5c2f54",
+      "log": {
+        "path": "specs/003-add-cross-platform-support/evidence/macos-sdk-terms-review-2026-10-28/foundation-123153230472.log.gz",
+        "sha256": "82c85dc49e80ac67624996f4e64ec8fc7759664820fcacb7a92889787152940e"
+      }
+    }
+  ]
+}

@@ -1,0 +1,1389 @@
+{
+  "kind": "component-text-findings-not-approved-artifact-audit",
+  "application_revision": "f63b43e8842539336dc93f08cfa5711a94d0003f",
+  "reviewer": "Codex implementation review",
+  "approved": false,
+  "qualified": false,
+  "task_complete": false,
+  "scope": "Textual redistribution routes and preserved notice bytes for seven component groups; not complete source/linkage or legal clearance of any artifact",
+  "project_notice": {
+    "path": "NOTICE",
+    "final_package_verification_pending": true,
+    "required_acknowledgment_verified": true,
+    "scope": "Required acknowledgment text checked against all six candidate notices; final package CI binds the complete NOTICE bytes for each checkout"
+  },
+  "components": [
+    {
+      "id": "bison-parsers",
+      "status": "reviewed-with-conditions",
+      "terms": "GPL notice with Bison 2.2 larger-work exception",
+      "conclusion": "The preserved exception permits a larger work under its own terms when it is not a parser generator using the skeleton. The candidate is the Graphviz dot executable, not Bison.",
+      "obligations": [
+        "Keep the exception together with each generated-parser notice",
+        "Do not remove the exception or extend it to unrelated GPL code"
+      ],
+      "reference": "https://spdx.org/licenses/Bison-exception-2.2.html",
+      "artifacts": [
+        {
+          "artifact_id": "linux-glibc-aarch64",
+          "binary_sha256": "569a4155814c55a0d8aea330379cbe86bd4e92e796d02073f542be51e23e6d40",
+          "provenance_sha256": "e85943f5a5473553ffb4742909243c23b0f7f0a21ad55c8a8a43eb78a9a92c9c",
+          "notice_payload_receipt": {
+            "path": "specs/003-add-cross-platform-support/evidence/license-review-2026-10-28/linux-glibc-aarch64/notice-payloads.json.gz",
+            "sha256": "3f38f8b4ced1d2a618bc0b3e66e71d0274c6aba75317fbeec6ec8193eed715a9"
+          },
+          "materials": [
+            {
+              "name": "Bison-lib__cgraph__grammar.c.txt",
+              "sha256": "b979bc0e49fa1efed0fad3af4ecc582b471da7662626cebfd0d5f998b1119f72",
+              "origin": {
+                "kind": "generated-file-prefix",
+                "length": 1532,
+                "offset": 0,
+                "path": "lib/cgraph/grammar.c",
+                "source_sha256": "1be4aec237962a1ba819b72b35328c5a9d581c6eab5f838ae12cf951fd56c843"
+              }
+            },
+            {
+              "name": "Bison-lib__cgraph__grammar.h.txt",
+              "sha256": "ecd76b7233bacbeeafca33a46b80f4120864e3de861e7d0a7d7c6fcce3d664dd",
+              "origin": {
+                "kind": "generated-file-prefix",
+                "length": 1527,
+                "offset": 0,
+                "path": "lib/cgraph/grammar.h",
+                "source_sha256": "b2c7f79817a03d75533add7278f7e3b866c1a1cf76fb76d5dab459a9d190cf25"
+              }
+            },
+            {
+              "name": "Bison-lib__common__htmlparse.c.txt",
+              "sha256": "b979bc0e49fa1efed0fad3af4ecc582b471da7662626cebfd0d5f998b1119f72",
+              "origin": {
+                "kind": "generated-file-prefix",
+                "length": 1532,
+                "offset": 0,
+                "path": "lib/common/htmlparse.c",
+                "source_sha256": "b8a4a010d7838a4e36b3cf0f9895b98040f0e00f1ccc16bd4c93bbca89bb0a4b"
+              }
+            },
+            {
+              "name": "Bison-lib__common__htmlparse.h.txt",
+              "sha256": "ecd76b7233bacbeeafca33a46b80f4120864e3de861e7d0a7d7c6fcce3d664dd",
+              "origin": {
+                "kind": "generated-file-prefix",
+                "length": 1527,
+                "offset": 0,
+                "path": "lib/common/htmlparse.h",
+                "source_sha256": "dea85f98f087cef556880bae9517d6e09a850cb0d0a8d956dd22c9653aa73976"
+              }
+            }
+          ]
+        },
+        {
+          "artifact_id": "linux-glibc-x86_64",
+          "binary_sha256": "a87e49e95c55572f8fcf8b15fa7e6f438e7d413b05ea0ff4d9db85ea8004e6ec",
+          "provenance_sha256": "a8b4dcadf18b73bc0da2b5bf86d9d7a7d98f0200472b6f4eebec563b948ec005",
+          "notice_payload_receipt": {
+            "path": "specs/003-add-cross-platform-support/evidence/license-review-2026-10-28/linux-glibc-x86_64/notice-payloads.json.gz",
+            "sha256": "4aa1afd67a30ae506da815319d3890337d0fce57dfbc94ece43ece7a53522426"
+          },
+          "materials": [
+            {
+              "name": "Bison-lib__cgraph__grammar.c.txt",
+              "sha256": "b979bc0e49fa1efed0fad3af4ecc582b471da7662626cebfd0d5f998b1119f72",
+              "origin": {
+                "kind": "generated-file-prefix",
+                "length": 1532,
+                "offset": 0,
+                "path": "lib/cgraph/grammar.c",
+                "source_sha256": "750feb13c96de4324d12bf2e1e308dbcbf3680d118e4eb3996ffb265260c13db"
+              }
+            },
+            {
+              "name": "Bison-lib__cgraph__grammar.h.txt",
+              "sha256": "ecd76b7233bacbeeafca33a46b80f4120864e3de861e7d0a7d7c6fcce3d664dd",
+              "origin": {
+                "kind": "generated-file-prefix",
+                "length": 1527,
+                "offset": 0,
+                "path": "lib/cgraph/grammar.h",
+                "source_sha256": "b052bc273e9e49a448192f8312ced9b94ee8fd217985c680edad2a0f5f1f41bf"
+              }
+            },
+            {
+              "name": "Bison-lib__common__htmlparse.c.txt",
+              "sha256": "b979bc0e49fa1efed0fad3af4ecc582b471da7662626cebfd0d5f998b1119f72",
+              "origin": {
+                "kind": "generated-file-prefix",
+                "length": 1532,
+                "offset": 0,
+                "path": "lib/common/htmlparse.c",
+                "source_sha256": "e6b06b715b6b494b9d6b2f8708e3af579ea6dd37cf3e284ca9bb3c04453dc4ed"
+              }
+            },
+            {
+              "name": "Bison-lib__common__htmlparse.h.txt",
+              "sha256": "ecd76b7233bacbeeafca33a46b80f4120864e3de861e7d0a7d7c6fcce3d664dd",
+              "origin": {
+                "kind": "generated-file-prefix",
+                "length": 1527,
+                "offset": 0,
+                "path": "lib/common/htmlparse.h",
+                "source_sha256": "a7201603962f0b2cf158b5c73b37c27f5f1fb5f82189fb7e43017822f829936c"
+              }
+            }
+          ]
+        },
+        {
+          "artifact_id": "linux-musl-aarch64",
+          "binary_sha256": "8e05d31c1f3a552c920400e8d1871847e5cfc7a0c4418fa8ab68bd2f6609d997",
+          "provenance_sha256": "b192d4d5b948b52c85e1cf3b238b99d6ef3efb2a90a1bfe20824dde427bbe390",
+          "notice_payload_receipt": {
+            "path": "specs/003-add-cross-platform-support/evidence/license-review-2026-10-28/linux-musl-aarch64/notice-payloads.json.gz",
+            "sha256": "ce8db190202f3046549c98e816c9548e6b0e829d5435c7cee3988862f645ab9f"
+          },
+          "materials": [
+            {
+              "name": "Bison-lib__cgraph__grammar.c.txt",
+              "sha256": "b979bc0e49fa1efed0fad3af4ecc582b471da7662626cebfd0d5f998b1119f72",
+              "origin": {
+                "kind": "generated-file-prefix",
+                "length": 1532,
+                "offset": 0,
+                "path": "lib/cgraph/grammar.c",
+                "source_sha256": "0e2dea901f76c52a14ef02e68d0e146dd7d1f76d7dc604242d80bccab26ad012"
+              }
+            },
+            {
+              "name": "Bison-lib__cgraph__grammar.h.txt",
+              "sha256": "ecd76b7233bacbeeafca33a46b80f4120864e3de861e7d0a7d7c6fcce3d664dd",
+              "origin": {
+                "kind": "generated-file-prefix",
+                "length": 1527,
+                "offset": 0,
+                "path": "lib/cgraph/grammar.h",
+                "source_sha256": "d9e1647ab618b0f73fc6bb3e728ef07f46d7783ef3fd895ab2ddaa2986f308a7"
+              }
+            },
+            {
+              "name": "Bison-lib__common__htmlparse.c.txt",
+              "sha256": "b979bc0e49fa1efed0fad3af4ecc582b471da7662626cebfd0d5f998b1119f72",
+              "origin": {
+                "kind": "generated-file-prefix",
+                "length": 1532,
+                "offset": 0,
+                "path": "lib/common/htmlparse.c",
+                "source_sha256": "655bd34e9a535869ea04bc8e91d38c6257bda00540be2d9eb5647f6456036860"
+              }
+            },
+            {
+              "name": "Bison-lib__common__htmlparse.h.txt",
+              "sha256": "ecd76b7233bacbeeafca33a46b80f4120864e3de861e7d0a7d7c6fcce3d664dd",
+              "origin": {
+                "kind": "generated-file-prefix",
+                "length": 1527,
+                "offset": 0,
+                "path": "lib/common/htmlparse.h",
+                "source_sha256": "9ec7b00470286f452c0db2f52b8220b61c7c5d86e99942a389ddbb4495f10dd5"
+              }
+            }
+          ]
+        },
+        {
+          "artifact_id": "linux-musl-x86_64",
+          "binary_sha256": "f506547381a5135f0961cec8b8155898d576ba4d8acfab9643e8bbe72f224974",
+          "provenance_sha256": "efb514520f52e2ce2b6e49b5f7ca9673f8ca20ae0b1c25d29d84bcf5a7bda170",
+          "notice_payload_receipt": {
+            "path": "specs/003-add-cross-platform-support/evidence/license-review-2026-10-28/linux-musl-x86_64/notice-payloads.json.gz",
+            "sha256": "25bf4ba1ac692b4a4bd39ef3599c49d05a19b1aab965d19b6b1cca2897d8b3ce"
+          },
+          "materials": [
+            {
+              "name": "Bison-lib__cgraph__grammar.c.txt",
+              "sha256": "b979bc0e49fa1efed0fad3af4ecc582b471da7662626cebfd0d5f998b1119f72",
+              "origin": {
+                "kind": "generated-file-prefix",
+                "length": 1532,
+                "offset": 0,
+                "path": "lib/cgraph/grammar.c",
+                "source_sha256": "0e2dea901f76c52a14ef02e68d0e146dd7d1f76d7dc604242d80bccab26ad012"
+              }
+            },
+            {
+              "name": "Bison-lib__cgraph__grammar.h.txt",
+              "sha256": "ecd76b7233bacbeeafca33a46b80f4120864e3de861e7d0a7d7c6fcce3d664dd",
+              "origin": {
+                "kind": "generated-file-prefix",
+                "length": 1527,
+                "offset": 0,
+                "path": "lib/cgraph/grammar.h",
+                "source_sha256": "d9e1647ab618b0f73fc6bb3e728ef07f46d7783ef3fd895ab2ddaa2986f308a7"
+              }
+            },
+            {
+              "name": "Bison-lib__common__htmlparse.c.txt",
+              "sha256": "b979bc0e49fa1efed0fad3af4ecc582b471da7662626cebfd0d5f998b1119f72",
+              "origin": {
+                "kind": "generated-file-prefix",
+                "length": 1532,
+                "offset": 0,
+                "path": "lib/common/htmlparse.c",
+                "source_sha256": "655bd34e9a535869ea04bc8e91d38c6257bda00540be2d9eb5647f6456036860"
+              }
+            },
+            {
+              "name": "Bison-lib__common__htmlparse.h.txt",
+              "sha256": "ecd76b7233bacbeeafca33a46b80f4120864e3de861e7d0a7d7c6fcce3d664dd",
+              "origin": {
+                "kind": "generated-file-prefix",
+                "length": 1527,
+                "offset": 0,
+                "path": "lib/common/htmlparse.h",
+                "source_sha256": "9ec7b00470286f452c0db2f52b8220b61c7c5d86e99942a389ddbb4495f10dd5"
+              }
+            }
+          ]
+        },
+        {
+          "artifact_id": "macos-arm64",
+          "binary_sha256": "72ab1dd59e2d85554cc0997f08a1573714dfde90545480d34365dae89587d0b8",
+          "provenance_sha256": "d88346d6c5a2c8d38592fd656ce10daeb38104fa8d32bb465a09806934a33735",
+          "notice_payload_receipt": {
+            "path": "specs/003-add-cross-platform-support/evidence/macos-named-link-inputs-ci-2026-10-28/macos-arm64/notice-payloads.json.gz",
+            "sha256": "eda331471ac45891de302d19e802b37b8ef0d8647703cb4b6e9bada23871e7ba"
+          },
+          "materials": [
+            {
+              "name": "Bison-lib__cgraph__grammar.c.txt",
+              "sha256": "b979bc0e49fa1efed0fad3af4ecc582b471da7662626cebfd0d5f998b1119f72",
+              "origin": {
+                "kind": "generated-parser-prefix",
+                "length": 1532,
+                "offset": 0,
+                "path": "lib/cgraph/grammar.c",
+                "source_sha256": "b967030c4a5d53d21f9901df8147e5dba152138391b937bb060c2c2f5d495ad6"
+              }
+            },
+            {
+              "name": "Bison-lib__cgraph__grammar.h.txt",
+              "sha256": "ecd76b7233bacbeeafca33a46b80f4120864e3de861e7d0a7d7c6fcce3d664dd",
+              "origin": {
+                "kind": "generated-parser-prefix",
+                "length": 1527,
+                "offset": 0,
+                "path": "lib/cgraph/grammar.h",
+                "source_sha256": "b8b5590815ed422c7a9084d356bb61946c9cbcf528101e2f43b0bd106d77ea94"
+              }
+            },
+            {
+              "name": "Bison-lib__common__htmlparse.c.txt",
+              "sha256": "b979bc0e49fa1efed0fad3af4ecc582b471da7662626cebfd0d5f998b1119f72",
+              "origin": {
+                "kind": "generated-parser-prefix",
+                "length": 1532,
+                "offset": 0,
+                "path": "lib/common/htmlparse.c",
+                "source_sha256": "7fc12d95f1c6ee59576a143d4d6c76e9b35e0c56c287533414d39c855b43e4ea"
+              }
+            },
+            {
+              "name": "Bison-lib__common__htmlparse.h.txt",
+              "sha256": "ecd76b7233bacbeeafca33a46b80f4120864e3de861e7d0a7d7c6fcce3d664dd",
+              "origin": {
+                "kind": "generated-parser-prefix",
+                "length": 1527,
+                "offset": 0,
+                "path": "lib/common/htmlparse.h",
+                "source_sha256": "8b2e0119bf024ef065e0132e9ad72383443b9c95b48897f129e5c54b6e9c49f1"
+              }
+            }
+          ]
+        },
+        {
+          "artifact_id": "macos-x86_64",
+          "binary_sha256": "8e3b1c65ebfe5f27f696afd584392737d50ca98fc5bd64a87aa8a57392c83d54",
+          "provenance_sha256": "d8ff5c2d1cea25dd6ddb7ddbf942a7f830b8d656e068f90e2fea1f2fbae775ba",
+          "notice_payload_receipt": {
+            "path": "specs/003-add-cross-platform-support/evidence/macos-named-link-inputs-ci-2026-10-28/macos-x86_64/notice-payloads.json.gz",
+            "sha256": "9d3051e96c78f17ab8460dc1d1005d35d8bd564016cfb726f0a5f8d0b6f69c3b"
+          },
+          "materials": [
+            {
+              "name": "Bison-lib__cgraph__grammar.c.txt",
+              "sha256": "b979bc0e49fa1efed0fad3af4ecc582b471da7662626cebfd0d5f998b1119f72",
+              "origin": {
+                "kind": "generated-parser-prefix",
+                "length": 1532,
+                "offset": 0,
+                "path": "lib/cgraph/grammar.c",
+                "source_sha256": "b967030c4a5d53d21f9901df8147e5dba152138391b937bb060c2c2f5d495ad6"
+              }
+            },
+            {
+              "name": "Bison-lib__cgraph__grammar.h.txt",
+              "sha256": "ecd76b7233bacbeeafca33a46b80f4120864e3de861e7d0a7d7c6fcce3d664dd",
+              "origin": {
+                "kind": "generated-parser-prefix",
+                "length": 1527,
+                "offset": 0,
+                "path": "lib/cgraph/grammar.h",
+                "source_sha256": "b8b5590815ed422c7a9084d356bb61946c9cbcf528101e2f43b0bd106d77ea94"
+              }
+            },
+            {
+              "name": "Bison-lib__common__htmlparse.c.txt",
+              "sha256": "b979bc0e49fa1efed0fad3af4ecc582b471da7662626cebfd0d5f998b1119f72",
+              "origin": {
+                "kind": "generated-parser-prefix",
+                "length": 1532,
+                "offset": 0,
+                "path": "lib/common/htmlparse.c",
+                "source_sha256": "7fc12d95f1c6ee59576a143d4d6c76e9b35e0c56c287533414d39c855b43e4ea"
+              }
+            },
+            {
+              "name": "Bison-lib__common__htmlparse.h.txt",
+              "sha256": "ecd76b7233bacbeeafca33a46b80f4120864e3de861e7d0a7d7c6fcce3d664dd",
+              "origin": {
+                "kind": "generated-parser-prefix",
+                "length": 1527,
+                "offset": 0,
+                "path": "lib/common/htmlparse.h",
+                "source_sha256": "8b2e0119bf024ef065e0132e9ad72383443b9c95b48897f129e5c54b6e9c49f1"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "flex-scanner",
+      "status": "reviewed-with-conditions",
+      "terms": "Flex 2.6.4 generated-scanner permission; generator COPYING preserved conservatively",
+      "conclusion": "The preserved COPYING explicitly allows unrestricted use of generated scanners; the generator terms do not by themselves impose GPL on the generated Graphviz scanner.",
+      "obligations": [
+        "Preserve the COPYING already bundled",
+        "Review copied input code under its own terms; scanner permission does not replace Graphviz notices"
+      ],
+      "reference": "https://raw.githubusercontent.com/westes/flex/v2.6.4/COPYING",
+      "artifacts": [
+        {
+          "artifact_id": "linux-glibc-aarch64",
+          "binary_sha256": "569a4155814c55a0d8aea330379cbe86bd4e92e796d02073f542be51e23e6d40",
+          "provenance_sha256": "e85943f5a5473553ffb4742909243c23b0f7f0a21ad55c8a8a43eb78a9a92c9c",
+          "notice_payload_receipt": {
+            "path": "specs/003-add-cross-platform-support/evidence/license-review-2026-10-28/linux-glibc-aarch64/notice-payloads.json.gz",
+            "sha256": "3f38f8b4ced1d2a618bc0b3e66e71d0274c6aba75317fbeec6ec8193eed715a9"
+          },
+          "materials": [
+            {
+              "name": "Flex-2.6.4-COPYING.txt",
+              "sha256": "97fd685958d93be7f8dab939bb8161dbd6afb0718c63bfc337c24321aea44273",
+              "origin": {
+                "generated_path": "lib/cgraph/scan.c",
+                "generated_sha256": "2366b4c9e32dac238956570be9c31ae3e150dc1d7c44838f66935d17aca31fd1",
+                "generator_sha256": "b0b03937b2b0ed6c8992dbee72c1978c4b545c14c8444b5256fb87d67a30f676",
+                "generator_version": "2.6.4",
+                "kind": "pinned-generator-license-material",
+                "qualification": "Recorded generator/scanner versions agree; preserves upstream generated-scanner exception, no bundle approval",
+                "source_sha256": "97fd685958d93be7f8dab939bb8161dbd6afb0718c63bfc337c24321aea44273",
+                "source_url": "https://raw.githubusercontent.com/westes/flex/v2.6.4/COPYING"
+              }
+            }
+          ]
+        },
+        {
+          "artifact_id": "linux-glibc-x86_64",
+          "binary_sha256": "a87e49e95c55572f8fcf8b15fa7e6f438e7d413b05ea0ff4d9db85ea8004e6ec",
+          "provenance_sha256": "a8b4dcadf18b73bc0da2b5bf86d9d7a7d98f0200472b6f4eebec563b948ec005",
+          "notice_payload_receipt": {
+            "path": "specs/003-add-cross-platform-support/evidence/license-review-2026-10-28/linux-glibc-x86_64/notice-payloads.json.gz",
+            "sha256": "4aa1afd67a30ae506da815319d3890337d0fce57dfbc94ece43ece7a53522426"
+          },
+          "materials": [
+            {
+              "name": "Flex-2.6.4-COPYING.txt",
+              "sha256": "97fd685958d93be7f8dab939bb8161dbd6afb0718c63bfc337c24321aea44273",
+              "origin": {
+                "generated_path": "lib/cgraph/scan.c",
+                "generated_sha256": "1975262c8d142dd7b51184db9b9b75d828d841da97c62e31a9dc220ed8d1694c",
+                "generator_sha256": "6b70611fd650c8216b5c8c1a54a69ed470cd82c63ec0dc095dd4d9782bc3efbb",
+                "generator_version": "2.6.4",
+                "kind": "pinned-generator-license-material",
+                "qualification": "Recorded generator/scanner versions agree; preserves upstream generated-scanner exception, no bundle approval",
+                "source_sha256": "97fd685958d93be7f8dab939bb8161dbd6afb0718c63bfc337c24321aea44273",
+                "source_url": "https://raw.githubusercontent.com/westes/flex/v2.6.4/COPYING"
+              }
+            }
+          ]
+        },
+        {
+          "artifact_id": "linux-musl-aarch64",
+          "binary_sha256": "8e05d31c1f3a552c920400e8d1871847e5cfc7a0c4418fa8ab68bd2f6609d997",
+          "provenance_sha256": "b192d4d5b948b52c85e1cf3b238b99d6ef3efb2a90a1bfe20824dde427bbe390",
+          "notice_payload_receipt": {
+            "path": "specs/003-add-cross-platform-support/evidence/license-review-2026-10-28/linux-musl-aarch64/notice-payloads.json.gz",
+            "sha256": "ce8db190202f3046549c98e816c9548e6b0e829d5435c7cee3988862f645ab9f"
+          },
+          "materials": [
+            {
+              "name": "Flex-2.6.4-COPYING.txt",
+              "sha256": "97fd685958d93be7f8dab939bb8161dbd6afb0718c63bfc337c24321aea44273",
+              "origin": {
+                "generated_path": "lib/cgraph/scan.c",
+                "generated_sha256": "400e1e2e375803662033b16c0ace51792d0e420e6744a9b45c7894ae7f198737",
+                "generator_sha256": "8acae2d7fa7e0e1a363d99fa2a19ae2e43b6b0213df15204ce793f45be678414",
+                "generator_version": "2.6.4",
+                "kind": "pinned-generator-license-material",
+                "qualification": "Recorded generator/scanner versions agree; preserves upstream generated-scanner exception, no bundle approval",
+                "source_sha256": "97fd685958d93be7f8dab939bb8161dbd6afb0718c63bfc337c24321aea44273",
+                "source_url": "https://raw.githubusercontent.com/westes/flex/v2.6.4/COPYING"
+              }
+            }
+          ]
+        },
+        {
+          "artifact_id": "linux-musl-x86_64",
+          "binary_sha256": "f506547381a5135f0961cec8b8155898d576ba4d8acfab9643e8bbe72f224974",
+          "provenance_sha256": "efb514520f52e2ce2b6e49b5f7ca9673f8ca20ae0b1c25d29d84bcf5a7bda170",
+          "notice_payload_receipt": {
+            "path": "specs/003-add-cross-platform-support/evidence/license-review-2026-10-28/linux-musl-x86_64/notice-payloads.json.gz",
+            "sha256": "25bf4ba1ac692b4a4bd39ef3599c49d05a19b1aab965d19b6b1cca2897d8b3ce"
+          },
+          "materials": [
+            {
+              "name": "Flex-2.6.4-COPYING.txt",
+              "sha256": "97fd685958d93be7f8dab939bb8161dbd6afb0718c63bfc337c24321aea44273",
+              "origin": {
+                "generated_path": "lib/cgraph/scan.c",
+                "generated_sha256": "400e1e2e375803662033b16c0ace51792d0e420e6744a9b45c7894ae7f198737",
+                "generator_sha256": "72ab0d721c90ba4fc1317f6e533ad158eb0a959e7a4ee97876860a84b5961773",
+                "generator_version": "2.6.4",
+                "kind": "pinned-generator-license-material",
+                "qualification": "Recorded generator/scanner versions agree; preserves upstream generated-scanner exception, no bundle approval",
+                "source_sha256": "97fd685958d93be7f8dab939bb8161dbd6afb0718c63bfc337c24321aea44273",
+                "source_url": "https://raw.githubusercontent.com/westes/flex/v2.6.4/COPYING"
+              }
+            }
+          ]
+        },
+        {
+          "artifact_id": "macos-arm64",
+          "binary_sha256": "72ab1dd59e2d85554cc0997f08a1573714dfde90545480d34365dae89587d0b8",
+          "provenance_sha256": "d88346d6c5a2c8d38592fd656ce10daeb38104fa8d32bb465a09806934a33735",
+          "notice_payload_receipt": {
+            "path": "specs/003-add-cross-platform-support/evidence/macos-named-link-inputs-ci-2026-10-28/macos-arm64/notice-payloads.json.gz",
+            "sha256": "eda331471ac45891de302d19e802b37b8ef0d8647703cb4b6e9bada23871e7ba"
+          },
+          "materials": [
+            {
+              "name": "Flex-Apple-35-COPYING.txt",
+              "sha256": "97fd685958d93be7f8dab939bb8161dbd6afb0718c63bfc337c24321aea44273",
+              "origin": {
+                "generated_path": "lib/cgraph/scan.c",
+                "generated_sha256": "cb9a8d6f06b96621d69e7804b8529c94d488f1b4d8f83aa111520d26d9bcc2d7",
+                "generator_sha256": "ab177c6ac8bf8319e01a401af47390322d935d520b6ae833873eef232d44f577",
+                "generator_version": "2.6.4",
+                "kind": "pinned-generator-license-material",
+                "qualification": "Recorded generator/scanner versions agree; preserves upstream generated-scanner exception, no bundle approval",
+                "recorded_generator_version": "flex 2.6.4 Apple(flex-35)",
+                "source_sha256": "97fd685958d93be7f8dab939bb8161dbd6afb0718c63bfc337c24321aea44273",
+                "source_url": "https://raw.githubusercontent.com/apple-oss-distributions/flex/8548f53e24244c0a411dea128a21686b61d29df4/COPYING"
+              }
+            }
+          ]
+        },
+        {
+          "artifact_id": "macos-x86_64",
+          "binary_sha256": "8e3b1c65ebfe5f27f696afd584392737d50ca98fc5bd64a87aa8a57392c83d54",
+          "provenance_sha256": "d8ff5c2d1cea25dd6ddb7ddbf942a7f830b8d656e068f90e2fea1f2fbae775ba",
+          "notice_payload_receipt": {
+            "path": "specs/003-add-cross-platform-support/evidence/macos-named-link-inputs-ci-2026-10-28/macos-x86_64/notice-payloads.json.gz",
+            "sha256": "9d3051e96c78f17ab8460dc1d1005d35d8bd564016cfb726f0a5f8d0b6f69c3b"
+          },
+          "materials": [
+            {
+              "name": "Flex-Apple-35-COPYING.txt",
+              "sha256": "97fd685958d93be7f8dab939bb8161dbd6afb0718c63bfc337c24321aea44273",
+              "origin": {
+                "generated_path": "lib/cgraph/scan.c",
+                "generated_sha256": "cb9a8d6f06b96621d69e7804b8529c94d488f1b4d8f83aa111520d26d9bcc2d7",
+                "generator_sha256": "ab177c6ac8bf8319e01a401af47390322d935d520b6ae833873eef232d44f577",
+                "generator_version": "2.6.4",
+                "kind": "pinned-generator-license-material",
+                "qualification": "Recorded generator/scanner versions agree; preserves upstream generated-scanner exception, no bundle approval",
+                "recorded_generator_version": "flex 2.6.4 Apple(flex-35)",
+                "source_sha256": "97fd685958d93be7f8dab939bb8161dbd6afb0718c63bfc337c24321aea44273",
+                "source_url": "https://raw.githubusercontent.com/apple-oss-distributions/flex/8548f53e24244c0a411dea128a21686b61d29df4/COPYING"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "randomkit",
+      "status": "reviewed-with-conditions",
+      "terms": "Three-condition redistribution block plus additional permissive grant in C; header has its own permissive grant",
+      "conclusion": "The inspected grants permit source and binary redistribution while retaining their respective notices. Both C blocks and the separate header notice remain material to the review.",
+      "obligations": [
+        "Retain copyright, permissions and disclaimers from both files",
+        "Retain the contributor non-endorsement condition",
+        "Do not label the entire C file using only the header license"
+      ],
+      "reference": "https://gitlab.com/graphviz/graphviz/-/raw/16.1.0/lib/neatogen/randomkit.c",
+      "artifacts": [
+        {
+          "artifact_id": "linux-glibc-aarch64",
+          "binary_sha256": "569a4155814c55a0d8aea330379cbe86bd4e92e796d02073f542be51e23e6d40",
+          "provenance_sha256": "e85943f5a5473553ffb4742909243c23b0f7f0a21ad55c8a8a43eb78a9a92c9c",
+          "notice_payload_receipt": {
+            "path": "specs/003-add-cross-platform-support/evidence/license-review-2026-10-28/linux-glibc-aarch64/notice-payloads.json.gz",
+            "sha256": "3f38f8b4ced1d2a618bc0b3e66e71d0274c6aba75317fbeec6ec8193eed715a9"
+          },
+          "materials": [
+            {
+              "name": "Graphviz-source-b6afe8f5164139f7344e1867.txt",
+              "sha256": "63690f47ffd8bd800fe4a87fd7c2c3e641d35a95c3d982e50053474689e30e9f",
+              "origin": {
+                "archive_sha256": "1e028b2b3e84e946c1d3e8c47590f8f0741bba1041fe6eff36eee87e598ea249",
+                "kind": "pinned-graphviz-source-prefix",
+                "length": 3133,
+                "offset": 0,
+                "path": "lib/neatogen/randomkit.c",
+                "source_sha256": "f92ca7f67b6f1a972fc5b95581772b1df8482608fbbb40e1d0cbe6e616ee1dc3"
+              }
+            },
+            {
+              "name": "Graphviz-source-e844aebace95f3f7f5a57d88.txt",
+              "sha256": "8b74dca7174b0e3115587e8e2e0f1b20501ab57e474b88d75f1ffc8e39bfaee7",
+              "origin": {
+                "archive_sha256": "1e028b2b3e84e946c1d3e8c47590f8f0741bba1041fe6eff36eee87e598ea249",
+                "kind": "pinned-graphviz-source-prefix",
+                "length": 1909,
+                "offset": 0,
+                "path": "lib/neatogen/randomkit.h",
+                "source_sha256": "2e014ee4903ab1c6270a5f27c678ddcb357ebd0c49635f9a7ebcdb2edb661d4e"
+              }
+            }
+          ]
+        },
+        {
+          "artifact_id": "linux-glibc-x86_64",
+          "binary_sha256": "a87e49e95c55572f8fcf8b15fa7e6f438e7d413b05ea0ff4d9db85ea8004e6ec",
+          "provenance_sha256": "a8b4dcadf18b73bc0da2b5bf86d9d7a7d98f0200472b6f4eebec563b948ec005",
+          "notice_payload_receipt": {
+            "path": "specs/003-add-cross-platform-support/evidence/license-review-2026-10-28/linux-glibc-x86_64/notice-payloads.json.gz",
+            "sha256": "4aa1afd67a30ae506da815319d3890337d0fce57dfbc94ece43ece7a53522426"
+          },
+          "materials": [
+            {
+              "name": "Graphviz-source-b6afe8f5164139f7344e1867.txt",
+              "sha256": "63690f47ffd8bd800fe4a87fd7c2c3e641d35a95c3d982e50053474689e30e9f",
+              "origin": {
+                "archive_sha256": "1e028b2b3e84e946c1d3e8c47590f8f0741bba1041fe6eff36eee87e598ea249",
+                "kind": "pinned-graphviz-source-prefix",
+                "length": 3133,
+                "offset": 0,
+                "path": "lib/neatogen/randomkit.c",
+                "source_sha256": "f92ca7f67b6f1a972fc5b95581772b1df8482608fbbb40e1d0cbe6e616ee1dc3"
+              }
+            },
+            {
+              "name": "Graphviz-source-e844aebace95f3f7f5a57d88.txt",
+              "sha256": "8b74dca7174b0e3115587e8e2e0f1b20501ab57e474b88d75f1ffc8e39bfaee7",
+              "origin": {
+                "archive_sha256": "1e028b2b3e84e946c1d3e8c47590f8f0741bba1041fe6eff36eee87e598ea249",
+                "kind": "pinned-graphviz-source-prefix",
+                "length": 1909,
+                "offset": 0,
+                "path": "lib/neatogen/randomkit.h",
+                "source_sha256": "2e014ee4903ab1c6270a5f27c678ddcb357ebd0c49635f9a7ebcdb2edb661d4e"
+              }
+            }
+          ]
+        },
+        {
+          "artifact_id": "linux-musl-aarch64",
+          "binary_sha256": "8e05d31c1f3a552c920400e8d1871847e5cfc7a0c4418fa8ab68bd2f6609d997",
+          "provenance_sha256": "b192d4d5b948b52c85e1cf3b238b99d6ef3efb2a90a1bfe20824dde427bbe390",
+          "notice_payload_receipt": {
+            "path": "specs/003-add-cross-platform-support/evidence/license-review-2026-10-28/linux-musl-aarch64/notice-payloads.json.gz",
+            "sha256": "ce8db190202f3046549c98e816c9548e6b0e829d5435c7cee3988862f645ab9f"
+          },
+          "materials": [
+            {
+              "name": "Graphviz-source-b6afe8f5164139f7344e1867.txt",
+              "sha256": "63690f47ffd8bd800fe4a87fd7c2c3e641d35a95c3d982e50053474689e30e9f",
+              "origin": {
+                "archive_sha256": "1e028b2b3e84e946c1d3e8c47590f8f0741bba1041fe6eff36eee87e598ea249",
+                "kind": "pinned-graphviz-source-prefix",
+                "length": 3133,
+                "offset": 0,
+                "path": "lib/neatogen/randomkit.c",
+                "source_sha256": "f92ca7f67b6f1a972fc5b95581772b1df8482608fbbb40e1d0cbe6e616ee1dc3"
+              }
+            },
+            {
+              "name": "Graphviz-source-e844aebace95f3f7f5a57d88.txt",
+              "sha256": "8b74dca7174b0e3115587e8e2e0f1b20501ab57e474b88d75f1ffc8e39bfaee7",
+              "origin": {
+                "archive_sha256": "1e028b2b3e84e946c1d3e8c47590f8f0741bba1041fe6eff36eee87e598ea249",
+                "kind": "pinned-graphviz-source-prefix",
+                "length": 1909,
+                "offset": 0,
+                "path": "lib/neatogen/randomkit.h",
+                "source_sha256": "2e014ee4903ab1c6270a5f27c678ddcb357ebd0c49635f9a7ebcdb2edb661d4e"
+              }
+            }
+          ]
+        },
+        {
+          "artifact_id": "linux-musl-x86_64",
+          "binary_sha256": "f506547381a5135f0961cec8b8155898d576ba4d8acfab9643e8bbe72f224974",
+          "provenance_sha256": "efb514520f52e2ce2b6e49b5f7ca9673f8ca20ae0b1c25d29d84bcf5a7bda170",
+          "notice_payload_receipt": {
+            "path": "specs/003-add-cross-platform-support/evidence/license-review-2026-10-28/linux-musl-x86_64/notice-payloads.json.gz",
+            "sha256": "25bf4ba1ac692b4a4bd39ef3599c49d05a19b1aab965d19b6b1cca2897d8b3ce"
+          },
+          "materials": [
+            {
+              "name": "Graphviz-source-b6afe8f5164139f7344e1867.txt",
+              "sha256": "63690f47ffd8bd800fe4a87fd7c2c3e641d35a95c3d982e50053474689e30e9f",
+              "origin": {
+                "archive_sha256": "1e028b2b3e84e946c1d3e8c47590f8f0741bba1041fe6eff36eee87e598ea249",
+                "kind": "pinned-graphviz-source-prefix",
+                "length": 3133,
+                "offset": 0,
+                "path": "lib/neatogen/randomkit.c",
+                "source_sha256": "f92ca7f67b6f1a972fc5b95581772b1df8482608fbbb40e1d0cbe6e616ee1dc3"
+              }
+            },
+            {
+              "name": "Graphviz-source-e844aebace95f3f7f5a57d88.txt",
+              "sha256": "8b74dca7174b0e3115587e8e2e0f1b20501ab57e474b88d75f1ffc8e39bfaee7",
+              "origin": {
+                "archive_sha256": "1e028b2b3e84e946c1d3e8c47590f8f0741bba1041fe6eff36eee87e598ea249",
+                "kind": "pinned-graphviz-source-prefix",
+                "length": 1909,
+                "offset": 0,
+                "path": "lib/neatogen/randomkit.h",
+                "source_sha256": "2e014ee4903ab1c6270a5f27c678ddcb357ebd0c49635f9a7ebcdb2edb661d4e"
+              }
+            }
+          ]
+        },
+        {
+          "artifact_id": "macos-arm64",
+          "binary_sha256": "72ab1dd59e2d85554cc0997f08a1573714dfde90545480d34365dae89587d0b8",
+          "provenance_sha256": "d88346d6c5a2c8d38592fd656ce10daeb38104fa8d32bb465a09806934a33735",
+          "notice_payload_receipt": {
+            "path": "specs/003-add-cross-platform-support/evidence/macos-named-link-inputs-ci-2026-10-28/macos-arm64/notice-payloads.json.gz",
+            "sha256": "eda331471ac45891de302d19e802b37b8ef0d8647703cb4b6e9bada23871e7ba"
+          },
+          "materials": [
+            {
+              "name": "Graphviz-source-b6afe8f5164139f7344e1867.txt",
+              "sha256": "63690f47ffd8bd800fe4a87fd7c2c3e641d35a95c3d982e50053474689e30e9f",
+              "origin": {
+                "archive_sha256": "1e028b2b3e84e946c1d3e8c47590f8f0741bba1041fe6eff36eee87e598ea249",
+                "kind": "pinned-graphviz-source-prefix",
+                "length": 3133,
+                "offset": 0,
+                "path": "lib/neatogen/randomkit.c",
+                "source_sha256": "f92ca7f67b6f1a972fc5b95581772b1df8482608fbbb40e1d0cbe6e616ee1dc3"
+              }
+            },
+            {
+              "name": "Graphviz-source-e844aebace95f3f7f5a57d88.txt",
+              "sha256": "8b74dca7174b0e3115587e8e2e0f1b20501ab57e474b88d75f1ffc8e39bfaee7",
+              "origin": {
+                "archive_sha256": "1e028b2b3e84e946c1d3e8c47590f8f0741bba1041fe6eff36eee87e598ea249",
+                "kind": "pinned-graphviz-source-prefix",
+                "length": 1909,
+                "offset": 0,
+                "path": "lib/neatogen/randomkit.h",
+                "source_sha256": "2e014ee4903ab1c6270a5f27c678ddcb357ebd0c49635f9a7ebcdb2edb661d4e"
+              }
+            }
+          ]
+        },
+        {
+          "artifact_id": "macos-x86_64",
+          "binary_sha256": "8e3b1c65ebfe5f27f696afd584392737d50ca98fc5bd64a87aa8a57392c83d54",
+          "provenance_sha256": "d8ff5c2d1cea25dd6ddb7ddbf942a7f830b8d656e068f90e2fea1f2fbae775ba",
+          "notice_payload_receipt": {
+            "path": "specs/003-add-cross-platform-support/evidence/macos-named-link-inputs-ci-2026-10-28/macos-x86_64/notice-payloads.json.gz",
+            "sha256": "9d3051e96c78f17ab8460dc1d1005d35d8bd564016cfb726f0a5f8d0b6f69c3b"
+          },
+          "materials": [
+            {
+              "name": "Graphviz-source-b6afe8f5164139f7344e1867.txt",
+              "sha256": "63690f47ffd8bd800fe4a87fd7c2c3e641d35a95c3d982e50053474689e30e9f",
+              "origin": {
+                "archive_sha256": "1e028b2b3e84e946c1d3e8c47590f8f0741bba1041fe6eff36eee87e598ea249",
+                "kind": "pinned-graphviz-source-prefix",
+                "length": 3133,
+                "offset": 0,
+                "path": "lib/neatogen/randomkit.c",
+                "source_sha256": "f92ca7f67b6f1a972fc5b95581772b1df8482608fbbb40e1d0cbe6e616ee1dc3"
+              }
+            },
+            {
+              "name": "Graphviz-source-e844aebace95f3f7f5a57d88.txt",
+              "sha256": "8b74dca7174b0e3115587e8e2e0f1b20501ab57e474b88d75f1ffc8e39bfaee7",
+              "origin": {
+                "archive_sha256": "1e028b2b3e84e946c1d3e8c47590f8f0741bba1041fe6eff36eee87e598ea249",
+                "kind": "pinned-graphviz-source-prefix",
+                "length": 1909,
+                "offset": 0,
+                "path": "lib/neatogen/randomkit.h",
+                "source_sha256": "2e014ee4903ab1c6270a5f27c678ddcb357ebd0c49635f9a7ebcdb2edb661d4e"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "rbtree",
+      "status": "reviewed-with-conditions",
+      "terms": "Upstream permissive source/binary redistribution with non-endorsement condition",
+      "conclusion": "The actual LICENSE permits source and binary redistribution subject to its non-endorsement condition; no generic BSD identifier is inferred.",
+      "obligations": [
+        "Retain the bundled upstream LICENSE and source notices",
+        "Do not use contributor names to endorse the product"
+      ],
+      "reference": "https://gitlab.com/graphviz/graphviz/-/raw/16.1.0/lib/rbtree/LICENSE",
+      "artifacts": [
+        {
+          "artifact_id": "linux-glibc-aarch64",
+          "binary_sha256": "569a4155814c55a0d8aea330379cbe86bd4e92e796d02073f542be51e23e6d40",
+          "provenance_sha256": "e85943f5a5473553ffb4742909243c23b0f7f0a21ad55c8a8a43eb78a9a92c9c",
+          "notice_payload_receipt": {
+            "path": "specs/003-add-cross-platform-support/evidence/license-review-2026-10-28/linux-glibc-aarch64/notice-payloads.json.gz",
+            "sha256": "3f38f8b4ced1d2a618bc0b3e66e71d0274c6aba75317fbeec6ec8193eed715a9"
+          },
+          "materials": [
+            {
+              "name": "Graphviz-lib__rbtree__LICENSE.txt",
+              "sha256": "fcb423209a3a3909f41e629a4973eab3995ceb93136dd72485fb12ad3de29dfc",
+              "origin": {
+                "archive_sha256": "1e028b2b3e84e946c1d3e8c47590f8f0741bba1041fe6eff36eee87e598ea249",
+                "kind": "graphviz-source-archive",
+                "path": "lib/rbtree/LICENSE",
+                "source_sha256": "fcb423209a3a3909f41e629a4973eab3995ceb93136dd72485fb12ad3de29dfc"
+              }
+            }
+          ]
+        },
+        {
+          "artifact_id": "linux-glibc-x86_64",
+          "binary_sha256": "a87e49e95c55572f8fcf8b15fa7e6f438e7d413b05ea0ff4d9db85ea8004e6ec",
+          "provenance_sha256": "a8b4dcadf18b73bc0da2b5bf86d9d7a7d98f0200472b6f4eebec563b948ec005",
+          "notice_payload_receipt": {
+            "path": "specs/003-add-cross-platform-support/evidence/license-review-2026-10-28/linux-glibc-x86_64/notice-payloads.json.gz",
+            "sha256": "4aa1afd67a30ae506da815319d3890337d0fce57dfbc94ece43ece7a53522426"
+          },
+          "materials": [
+            {
+              "name": "Graphviz-lib__rbtree__LICENSE.txt",
+              "sha256": "fcb423209a3a3909f41e629a4973eab3995ceb93136dd72485fb12ad3de29dfc",
+              "origin": {
+                "archive_sha256": "1e028b2b3e84e946c1d3e8c47590f8f0741bba1041fe6eff36eee87e598ea249",
+                "kind": "graphviz-source-archive",
+                "path": "lib/rbtree/LICENSE",
+                "source_sha256": "fcb423209a3a3909f41e629a4973eab3995ceb93136dd72485fb12ad3de29dfc"
+              }
+            }
+          ]
+        },
+        {
+          "artifact_id": "linux-musl-aarch64",
+          "binary_sha256": "8e05d31c1f3a552c920400e8d1871847e5cfc7a0c4418fa8ab68bd2f6609d997",
+          "provenance_sha256": "b192d4d5b948b52c85e1cf3b238b99d6ef3efb2a90a1bfe20824dde427bbe390",
+          "notice_payload_receipt": {
+            "path": "specs/003-add-cross-platform-support/evidence/license-review-2026-10-28/linux-musl-aarch64/notice-payloads.json.gz",
+            "sha256": "ce8db190202f3046549c98e816c9548e6b0e829d5435c7cee3988862f645ab9f"
+          },
+          "materials": [
+            {
+              "name": "Graphviz-lib__rbtree__LICENSE.txt",
+              "sha256": "fcb423209a3a3909f41e629a4973eab3995ceb93136dd72485fb12ad3de29dfc",
+              "origin": {
+                "archive_sha256": "1e028b2b3e84e946c1d3e8c47590f8f0741bba1041fe6eff36eee87e598ea249",
+                "kind": "graphviz-source-archive",
+                "path": "lib/rbtree/LICENSE",
+                "source_sha256": "fcb423209a3a3909f41e629a4973eab3995ceb93136dd72485fb12ad3de29dfc"
+              }
+            }
+          ]
+        },
+        {
+          "artifact_id": "linux-musl-x86_64",
+          "binary_sha256": "f506547381a5135f0961cec8b8155898d576ba4d8acfab9643e8bbe72f224974",
+          "provenance_sha256": "efb514520f52e2ce2b6e49b5f7ca9673f8ca20ae0b1c25d29d84bcf5a7bda170",
+          "notice_payload_receipt": {
+            "path": "specs/003-add-cross-platform-support/evidence/license-review-2026-10-28/linux-musl-x86_64/notice-payloads.json.gz",
+            "sha256": "25bf4ba1ac692b4a4bd39ef3599c49d05a19b1aab965d19b6b1cca2897d8b3ce"
+          },
+          "materials": [
+            {
+              "name": "Graphviz-lib__rbtree__LICENSE.txt",
+              "sha256": "fcb423209a3a3909f41e629a4973eab3995ceb93136dd72485fb12ad3de29dfc",
+              "origin": {
+                "archive_sha256": "1e028b2b3e84e946c1d3e8c47590f8f0741bba1041fe6eff36eee87e598ea249",
+                "kind": "graphviz-source-archive",
+                "path": "lib/rbtree/LICENSE",
+                "source_sha256": "fcb423209a3a3909f41e629a4973eab3995ceb93136dd72485fb12ad3de29dfc"
+              }
+            }
+          ]
+        },
+        {
+          "artifact_id": "macos-arm64",
+          "binary_sha256": "72ab1dd59e2d85554cc0997f08a1573714dfde90545480d34365dae89587d0b8",
+          "provenance_sha256": "d88346d6c5a2c8d38592fd656ce10daeb38104fa8d32bb465a09806934a33735",
+          "notice_payload_receipt": {
+            "path": "specs/003-add-cross-platform-support/evidence/macos-named-link-inputs-ci-2026-10-28/macos-arm64/notice-payloads.json.gz",
+            "sha256": "eda331471ac45891de302d19e802b37b8ef0d8647703cb4b6e9bada23871e7ba"
+          },
+          "materials": [
+            {
+              "name": "Graphviz-lib__rbtree__LICENSE.txt",
+              "sha256": "fcb423209a3a3909f41e629a4973eab3995ceb93136dd72485fb12ad3de29dfc",
+              "origin": {
+                "archive_sha256": "1e028b2b3e84e946c1d3e8c47590f8f0741bba1041fe6eff36eee87e598ea249",
+                "kind": "pinned-graphviz-source",
+                "path": "lib/rbtree/LICENSE",
+                "source_sha256": "fcb423209a3a3909f41e629a4973eab3995ceb93136dd72485fb12ad3de29dfc"
+              }
+            }
+          ]
+        },
+        {
+          "artifact_id": "macos-x86_64",
+          "binary_sha256": "8e3b1c65ebfe5f27f696afd584392737d50ca98fc5bd64a87aa8a57392c83d54",
+          "provenance_sha256": "d8ff5c2d1cea25dd6ddb7ddbf942a7f830b8d656e068f90e2fea1f2fbae775ba",
+          "notice_payload_receipt": {
+            "path": "specs/003-add-cross-platform-support/evidence/macos-named-link-inputs-ci-2026-10-28/macos-x86_64/notice-payloads.json.gz",
+            "sha256": "9d3051e96c78f17ab8460dc1d1005d35d8bd564016cfb726f0a5f8d0b6f69c3b"
+          },
+          "materials": [
+            {
+              "name": "Graphviz-lib__rbtree__LICENSE.txt",
+              "sha256": "fcb423209a3a3909f41e629a4973eab3995ceb93136dd72485fb12ad3de29dfc",
+              "origin": {
+                "archive_sha256": "1e028b2b3e84e946c1d3e8c47590f8f0741bba1041fe6eff36eee87e598ea249",
+                "kind": "pinned-graphviz-source",
+                "path": "lib/rbtree/LICENSE",
+                "source_sha256": "fcb423209a3a3909f41e629a4973eab3995ceb93136dd72485fb12ad3de29dfc"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "colorbrewer",
+      "status": "reviewed-with-conditions",
+      "terms": "ColorBrewer 1.1 Apache-style terms, including acknowledgment and name restrictions",
+      "conclusion": "The inspected redistribution route preserves the license and required acknowledgment in every candidate. The project NOTICE now also carries the exact acknowledgment for end-user distribution.",
+      "obligations": [
+        "Retain copyright, conditions and disclaimer in sources",
+        "Keep the exact acknowledgment in end-user documentation or the usual third-party acknowledgment location",
+        "Respect product-name and endorsement restrictions",
+        "Verify the updated project NOTICE in the final wheel/sdist"
+      ],
+      "reference": "https://gitlab.com/graphviz/graphviz/-/raw/16.1.0/lib/common/brewer_colors",
+      "artifacts": [
+        {
+          "artifact_id": "linux-glibc-aarch64",
+          "binary_sha256": "569a4155814c55a0d8aea330379cbe86bd4e92e796d02073f542be51e23e6d40",
+          "provenance_sha256": "e85943f5a5473553ffb4742909243c23b0f7f0a21ad55c8a8a43eb78a9a92c9c",
+          "notice_payload_receipt": {
+            "path": "specs/003-add-cross-platform-support/evidence/license-review-2026-10-28/linux-glibc-aarch64/notice-payloads.json.gz",
+            "sha256": "3f38f8b4ced1d2a618bc0b3e66e71d0274c6aba75317fbeec6ec8193eed715a9"
+          },
+          "materials": [
+            {
+              "name": "ColorBrewer.txt",
+              "sha256": "09598cbb53b21f3cab841d5be8ceee6ef9bc0387f3b60330da94e9c98f4ada19",
+              "origin": {
+                "archive_sha256": "1e028b2b3e84e946c1d3e8c47590f8f0741bba1041fe6eff36eee87e598ea249",
+                "kind": "graphviz-source-archive",
+                "path": "lib/common/brewer_colors",
+                "source_sha256": "a069692c03e8bcd402fbd88b2e664a7cc0f39870c05cc1d751413f8302a7d34e"
+              }
+            },
+            {
+              "name": "ColorBrewer-ACKNOWLEDGMENT.txt",
+              "sha256": "ec3e91956fc8e8f0b64c33671358ccecf9790280f00a891493707cb9dccd2cb1",
+              "origin": {
+                "archive_sha256": "1e028b2b3e84e946c1d3e8c47590f8f0741bba1041fe6eff36eee87e598ea249",
+                "kind": "source-required-acknowledgment",
+                "path": "lib/common/brewer_colors",
+                "source_sha256": "a069692c03e8bcd402fbd88b2e664a7cc0f39870c05cc1d751413f8302a7d34e"
+              }
+            }
+          ]
+        },
+        {
+          "artifact_id": "linux-glibc-x86_64",
+          "binary_sha256": "a87e49e95c55572f8fcf8b15fa7e6f438e7d413b05ea0ff4d9db85ea8004e6ec",
+          "provenance_sha256": "a8b4dcadf18b73bc0da2b5bf86d9d7a7d98f0200472b6f4eebec563b948ec005",
+          "notice_payload_receipt": {
+            "path": "specs/003-add-cross-platform-support/evidence/license-review-2026-10-28/linux-glibc-x86_64/notice-payloads.json.gz",
+            "sha256": "4aa1afd67a30ae506da815319d3890337d0fce57dfbc94ece43ece7a53522426"
+          },
+          "materials": [
+            {
+              "name": "ColorBrewer.txt",
+              "sha256": "09598cbb53b21f3cab841d5be8ceee6ef9bc0387f3b60330da94e9c98f4ada19",
+              "origin": {
+                "archive_sha256": "1e028b2b3e84e946c1d3e8c47590f8f0741bba1041fe6eff36eee87e598ea249",
+                "kind": "graphviz-source-archive",
+                "path": "lib/common/brewer_colors",
+                "source_sha256": "a069692c03e8bcd402fbd88b2e664a7cc0f39870c05cc1d751413f8302a7d34e"
+              }
+            },
+            {
+              "name": "ColorBrewer-ACKNOWLEDGMENT.txt",
+              "sha256": "ec3e91956fc8e8f0b64c33671358ccecf9790280f00a891493707cb9dccd2cb1",
+              "origin": {
+                "archive_sha256": "1e028b2b3e84e946c1d3e8c47590f8f0741bba1041fe6eff36eee87e598ea249",
+                "kind": "source-required-acknowledgment",
+                "path": "lib/common/brewer_colors",
+                "source_sha256": "a069692c03e8bcd402fbd88b2e664a7cc0f39870c05cc1d751413f8302a7d34e"
+              }
+            }
+          ]
+        },
+        {
+          "artifact_id": "linux-musl-aarch64",
+          "binary_sha256": "8e05d31c1f3a552c920400e8d1871847e5cfc7a0c4418fa8ab68bd2f6609d997",
+          "provenance_sha256": "b192d4d5b948b52c85e1cf3b238b99d6ef3efb2a90a1bfe20824dde427bbe390",
+          "notice_payload_receipt": {
+            "path": "specs/003-add-cross-platform-support/evidence/license-review-2026-10-28/linux-musl-aarch64/notice-payloads.json.gz",
+            "sha256": "ce8db190202f3046549c98e816c9548e6b0e829d5435c7cee3988862f645ab9f"
+          },
+          "materials": [
+            {
+              "name": "ColorBrewer.txt",
+              "sha256": "09598cbb53b21f3cab841d5be8ceee6ef9bc0387f3b60330da94e9c98f4ada19",
+              "origin": {
+                "archive_sha256": "1e028b2b3e84e946c1d3e8c47590f8f0741bba1041fe6eff36eee87e598ea249",
+                "kind": "graphviz-source-archive",
+                "path": "lib/common/brewer_colors",
+                "source_sha256": "a069692c03e8bcd402fbd88b2e664a7cc0f39870c05cc1d751413f8302a7d34e"
+              }
+            },
+            {
+              "name": "ColorBrewer-ACKNOWLEDGMENT.txt",
+              "sha256": "ec3e91956fc8e8f0b64c33671358ccecf9790280f00a891493707cb9dccd2cb1",
+              "origin": {
+                "archive_sha256": "1e028b2b3e84e946c1d3e8c47590f8f0741bba1041fe6eff36eee87e598ea249",
+                "kind": "source-required-acknowledgment",
+                "path": "lib/common/brewer_colors",
+                "source_sha256": "a069692c03e8bcd402fbd88b2e664a7cc0f39870c05cc1d751413f8302a7d34e"
+              }
+            }
+          ]
+        },
+        {
+          "artifact_id": "linux-musl-x86_64",
+          "binary_sha256": "f506547381a5135f0961cec8b8155898d576ba4d8acfab9643e8bbe72f224974",
+          "provenance_sha256": "efb514520f52e2ce2b6e49b5f7ca9673f8ca20ae0b1c25d29d84bcf5a7bda170",
+          "notice_payload_receipt": {
+            "path": "specs/003-add-cross-platform-support/evidence/license-review-2026-10-28/linux-musl-x86_64/notice-payloads.json.gz",
+            "sha256": "25bf4ba1ac692b4a4bd39ef3599c49d05a19b1aab965d19b6b1cca2897d8b3ce"
+          },
+          "materials": [
+            {
+              "name": "ColorBrewer.txt",
+              "sha256": "09598cbb53b21f3cab841d5be8ceee6ef9bc0387f3b60330da94e9c98f4ada19",
+              "origin": {
+                "archive_sha256": "1e028b2b3e84e946c1d3e8c47590f8f0741bba1041fe6eff36eee87e598ea249",
+                "kind": "graphviz-source-archive",
+                "path": "lib/common/brewer_colors",
+                "source_sha256": "a069692c03e8bcd402fbd88b2e664a7cc0f39870c05cc1d751413f8302a7d34e"
+              }
+            },
+            {
+              "name": "ColorBrewer-ACKNOWLEDGMENT.txt",
+              "sha256": "ec3e91956fc8e8f0b64c33671358ccecf9790280f00a891493707cb9dccd2cb1",
+              "origin": {
+                "archive_sha256": "1e028b2b3e84e946c1d3e8c47590f8f0741bba1041fe6eff36eee87e598ea249",
+                "kind": "source-required-acknowledgment",
+                "path": "lib/common/brewer_colors",
+                "source_sha256": "a069692c03e8bcd402fbd88b2e664a7cc0f39870c05cc1d751413f8302a7d34e"
+              }
+            }
+          ]
+        },
+        {
+          "artifact_id": "macos-arm64",
+          "binary_sha256": "72ab1dd59e2d85554cc0997f08a1573714dfde90545480d34365dae89587d0b8",
+          "provenance_sha256": "d88346d6c5a2c8d38592fd656ce10daeb38104fa8d32bb465a09806934a33735",
+          "notice_payload_receipt": {
+            "path": "specs/003-add-cross-platform-support/evidence/macos-named-link-inputs-ci-2026-10-28/macos-arm64/notice-payloads.json.gz",
+            "sha256": "eda331471ac45891de302d19e802b37b8ef0d8647703cb4b6e9bada23871e7ba"
+          },
+          "materials": [
+            {
+              "name": "ColorBrewer.txt",
+              "sha256": "09598cbb53b21f3cab841d5be8ceee6ef9bc0387f3b60330da94e9c98f4ada19",
+              "origin": {
+                "archive_sha256": "1e028b2b3e84e946c1d3e8c47590f8f0741bba1041fe6eff36eee87e598ea249",
+                "kind": "pinned-graphviz-source",
+                "path": "lib/common/brewer_colors",
+                "source_sha256": "a069692c03e8bcd402fbd88b2e664a7cc0f39870c05cc1d751413f8302a7d34e"
+              }
+            },
+            {
+              "name": "ColorBrewer-ACKNOWLEDGMENT.txt",
+              "sha256": "ec3e91956fc8e8f0b64c33671358ccecf9790280f00a891493707cb9dccd2cb1",
+              "origin": {
+                "archive_sha256": "1e028b2b3e84e946c1d3e8c47590f8f0741bba1041fe6eff36eee87e598ea249",
+                "kind": "maintainer-colorbrewer-acknowledgment",
+                "path": "lib/common/brewer_colors",
+                "source_sha256": "a069692c03e8bcd402fbd88b2e664a7cc0f39870c05cc1d751413f8302a7d34e"
+              }
+            }
+          ]
+        },
+        {
+          "artifact_id": "macos-x86_64",
+          "binary_sha256": "8e3b1c65ebfe5f27f696afd584392737d50ca98fc5bd64a87aa8a57392c83d54",
+          "provenance_sha256": "d8ff5c2d1cea25dd6ddb7ddbf942a7f830b8d656e068f90e2fea1f2fbae775ba",
+          "notice_payload_receipt": {
+            "path": "specs/003-add-cross-platform-support/evidence/macos-named-link-inputs-ci-2026-10-28/macos-x86_64/notice-payloads.json.gz",
+            "sha256": "9d3051e96c78f17ab8460dc1d1005d35d8bd564016cfb726f0a5f8d0b6f69c3b"
+          },
+          "materials": [
+            {
+              "name": "ColorBrewer.txt",
+              "sha256": "09598cbb53b21f3cab841d5be8ceee6ef9bc0387f3b60330da94e9c98f4ada19",
+              "origin": {
+                "archive_sha256": "1e028b2b3e84e946c1d3e8c47590f8f0741bba1041fe6eff36eee87e598ea249",
+                "kind": "pinned-graphviz-source",
+                "path": "lib/common/brewer_colors",
+                "source_sha256": "a069692c03e8bcd402fbd88b2e664a7cc0f39870c05cc1d751413f8302a7d34e"
+              }
+            },
+            {
+              "name": "ColorBrewer-ACKNOWLEDGMENT.txt",
+              "sha256": "ec3e91956fc8e8f0b64c33671358ccecf9790280f00a891493707cb9dccd2cb1",
+              "origin": {
+                "archive_sha256": "1e028b2b3e84e946c1d3e8c47590f8f0741bba1041fe6eff36eee87e598ea249",
+                "kind": "maintainer-colorbrewer-acknowledgment",
+                "path": "lib/common/brewer_colors",
+                "source_sha256": "a069692c03e8bcd402fbd88b2e664a7cc0f39870c05cc1d751413f8302a7d34e"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "xorg-color-reference",
+      "status": "reference-terms-reviewed-origin-open",
+      "terms": "Separate Open Group and Oracle grants/disclaimers",
+      "conclusion": "Both inspected grants permit reuse with their respective notice conditions. The notice is retained conservatively; historical provenance of every Graphviz color entry is not thereby established.",
+      "obligations": [
+        "Retain both copyright/permission/disclaimer blocks",
+        "Keep the Open Group non-endorsement restriction",
+        "Keep source-origin scope distinct from value correspondence"
+      ],
+      "reference": "https://xorg.freedesktop.org/archive/individual/app/rgb-1.1.0.tar.xz",
+      "artifacts": [
+        {
+          "artifact_id": "linux-glibc-aarch64",
+          "binary_sha256": "569a4155814c55a0d8aea330379cbe86bd4e92e796d02073f542be51e23e6d40",
+          "provenance_sha256": "e85943f5a5473553ffb4742909243c23b0f7f0a21ad55c8a8a43eb78a9a92c9c",
+          "notice_payload_receipt": {
+            "path": "specs/003-add-cross-platform-support/evidence/license-review-2026-10-28/linux-glibc-aarch64/notice-payloads.json.gz",
+            "sha256": "3f38f8b4ced1d2a618bc0b3e66e71d0274c6aba75317fbeec6ec8193eed715a9"
+          },
+          "materials": [
+            {
+              "name": "Xorg-rgb-1.1.0-COPYING.txt",
+              "sha256": "1d08eb3384f5dedc7735bcfae1aa58cb64643ca9389edce3312b1c3cefbfdaa7",
+              "origin": {
+                "archive_member": "rgb-1.1.0/COPYING",
+                "archive_sha256": "fc03d7f56e5b2a617668167f8927948cce54f93097e7ccd9f056077f479ed37b",
+                "kind": "pinned-reference-license-material",
+                "qualification": "Reference material; applicability remains under review",
+                "source_sha256": "1d08eb3384f5dedc7735bcfae1aa58cb64643ca9389edce3312b1c3cefbfdaa7",
+                "source_url": "https://xorg.freedesktop.org/archive/individual/app/rgb-1.1.0.tar.xz"
+              }
+            }
+          ]
+        },
+        {
+          "artifact_id": "linux-glibc-x86_64",
+          "binary_sha256": "a87e49e95c55572f8fcf8b15fa7e6f438e7d413b05ea0ff4d9db85ea8004e6ec",
+          "provenance_sha256": "a8b4dcadf18b73bc0da2b5bf86d9d7a7d98f0200472b6f4eebec563b948ec005",
+          "notice_payload_receipt": {
+            "path": "specs/003-add-cross-platform-support/evidence/license-review-2026-10-28/linux-glibc-x86_64/notice-payloads.json.gz",
+            "sha256": "4aa1afd67a30ae506da815319d3890337d0fce57dfbc94ece43ece7a53522426"
+          },
+          "materials": [
+            {
+              "name": "Xorg-rgb-1.1.0-COPYING.txt",
+              "sha256": "1d08eb3384f5dedc7735bcfae1aa58cb64643ca9389edce3312b1c3cefbfdaa7",
+              "origin": {
+                "archive_member": "rgb-1.1.0/COPYING",
+                "archive_sha256": "fc03d7f56e5b2a617668167f8927948cce54f93097e7ccd9f056077f479ed37b",
+                "kind": "pinned-reference-license-material",
+                "qualification": "Reference material; applicability remains under review",
+                "source_sha256": "1d08eb3384f5dedc7735bcfae1aa58cb64643ca9389edce3312b1c3cefbfdaa7",
+                "source_url": "https://xorg.freedesktop.org/archive/individual/app/rgb-1.1.0.tar.xz"
+              }
+            }
+          ]
+        },
+        {
+          "artifact_id": "linux-musl-aarch64",
+          "binary_sha256": "8e05d31c1f3a552c920400e8d1871847e5cfc7a0c4418fa8ab68bd2f6609d997",
+          "provenance_sha256": "b192d4d5b948b52c85e1cf3b238b99d6ef3efb2a90a1bfe20824dde427bbe390",
+          "notice_payload_receipt": {
+            "path": "specs/003-add-cross-platform-support/evidence/license-review-2026-10-28/linux-musl-aarch64/notice-payloads.json.gz",
+            "sha256": "ce8db190202f3046549c98e816c9548e6b0e829d5435c7cee3988862f645ab9f"
+          },
+          "materials": [
+            {
+              "name": "Xorg-rgb-1.1.0-COPYING.txt",
+              "sha256": "1d08eb3384f5dedc7735bcfae1aa58cb64643ca9389edce3312b1c3cefbfdaa7",
+              "origin": {
+                "archive_member": "rgb-1.1.0/COPYING",
+                "archive_sha256": "fc03d7f56e5b2a617668167f8927948cce54f93097e7ccd9f056077f479ed37b",
+                "kind": "pinned-reference-license-material",
+                "qualification": "Reference material; applicability remains under review",
+                "source_sha256": "1d08eb3384f5dedc7735bcfae1aa58cb64643ca9389edce3312b1c3cefbfdaa7",
+                "source_url": "https://xorg.freedesktop.org/archive/individual/app/rgb-1.1.0.tar.xz"
+              }
+            }
+          ]
+        },
+        {
+          "artifact_id": "linux-musl-x86_64",
+          "binary_sha256": "f506547381a5135f0961cec8b8155898d576ba4d8acfab9643e8bbe72f224974",
+          "provenance_sha256": "efb514520f52e2ce2b6e49b5f7ca9673f8ca20ae0b1c25d29d84bcf5a7bda170",
+          "notice_payload_receipt": {
+            "path": "specs/003-add-cross-platform-support/evidence/license-review-2026-10-28/linux-musl-x86_64/notice-payloads.json.gz",
+            "sha256": "25bf4ba1ac692b4a4bd39ef3599c49d05a19b1aab965d19b6b1cca2897d8b3ce"
+          },
+          "materials": [
+            {
+              "name": "Xorg-rgb-1.1.0-COPYING.txt",
+              "sha256": "1d08eb3384f5dedc7735bcfae1aa58cb64643ca9389edce3312b1c3cefbfdaa7",
+              "origin": {
+                "archive_member": "rgb-1.1.0/COPYING",
+                "archive_sha256": "fc03d7f56e5b2a617668167f8927948cce54f93097e7ccd9f056077f479ed37b",
+                "kind": "pinned-reference-license-material",
+                "qualification": "Reference material; applicability remains under review",
+                "source_sha256": "1d08eb3384f5dedc7735bcfae1aa58cb64643ca9389edce3312b1c3cefbfdaa7",
+                "source_url": "https://xorg.freedesktop.org/archive/individual/app/rgb-1.1.0.tar.xz"
+              }
+            }
+          ]
+        },
+        {
+          "artifact_id": "macos-arm64",
+          "binary_sha256": "72ab1dd59e2d85554cc0997f08a1573714dfde90545480d34365dae89587d0b8",
+          "provenance_sha256": "d88346d6c5a2c8d38592fd656ce10daeb38104fa8d32bb465a09806934a33735",
+          "notice_payload_receipt": {
+            "path": "specs/003-add-cross-platform-support/evidence/macos-named-link-inputs-ci-2026-10-28/macos-arm64/notice-payloads.json.gz",
+            "sha256": "eda331471ac45891de302d19e802b37b8ef0d8647703cb4b6e9bada23871e7ba"
+          },
+          "materials": [
+            {
+              "name": "Xorg-rgb-1.1.0-COPYING.txt",
+              "sha256": "1d08eb3384f5dedc7735bcfae1aa58cb64643ca9389edce3312b1c3cefbfdaa7",
+              "origin": {
+                "archive_member": "rgb-1.1.0/COPYING",
+                "archive_sha256": "fc03d7f56e5b2a617668167f8927948cce54f93097e7ccd9f056077f479ed37b",
+                "kind": "pinned-reference-license-material",
+                "scope": "Reference material; historical copying and applicability pending",
+                "source_sha256": "1d08eb3384f5dedc7735bcfae1aa58cb64643ca9389edce3312b1c3cefbfdaa7",
+                "source_url": "https://xorg.freedesktop.org/archive/individual/app/rgb-1.1.0.tar.xz"
+              }
+            }
+          ]
+        },
+        {
+          "artifact_id": "macos-x86_64",
+          "binary_sha256": "8e3b1c65ebfe5f27f696afd584392737d50ca98fc5bd64a87aa8a57392c83d54",
+          "provenance_sha256": "d8ff5c2d1cea25dd6ddb7ddbf942a7f830b8d656e068f90e2fea1f2fbae775ba",
+          "notice_payload_receipt": {
+            "path": "specs/003-add-cross-platform-support/evidence/macos-named-link-inputs-ci-2026-10-28/macos-x86_64/notice-payloads.json.gz",
+            "sha256": "9d3051e96c78f17ab8460dc1d1005d35d8bd564016cfb726f0a5f8d0b6f69c3b"
+          },
+          "materials": [
+            {
+              "name": "Xorg-rgb-1.1.0-COPYING.txt",
+              "sha256": "1d08eb3384f5dedc7735bcfae1aa58cb64643ca9389edce3312b1c3cefbfdaa7",
+              "origin": {
+                "archive_member": "rgb-1.1.0/COPYING",
+                "archive_sha256": "fc03d7f56e5b2a617668167f8927948cce54f93097e7ccd9f056077f479ed37b",
+                "kind": "pinned-reference-license-material",
+                "scope": "Reference material; historical copying and applicability pending",
+                "source_sha256": "1d08eb3384f5dedc7735bcfae1aa58cb64643ca9389edce3312b1c3cefbfdaa7",
+                "source_url": "https://xorg.freedesktop.org/archive/individual/app/rgb-1.1.0.tar.xz"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "graphviz-source-route",
+      "status": "source-delivery-gate-open",
+      "terms": "EPL-2.0 with third-party components retaining their own terms",
+      "conclusion": "The Graphviz license and pinned source identification are preserved. Existing binary/source pairing is technical evidence; permanent source availability and other component applicability remain open.",
+      "obligations": [
+        "Preserve EPL and source statements",
+        "Provide the exact corresponding build sources and recipes through the final delivery route",
+        "Retain third-party terms and notices separately",
+        "Do not infer a secondary GPL license solely from Exhibit A"
+      ],
+      "reference": "https://graphviz.org/license/",
+      "artifacts": [
+        {
+          "artifact_id": "linux-glibc-aarch64",
+          "binary_sha256": "569a4155814c55a0d8aea330379cbe86bd4e92e796d02073f542be51e23e6d40",
+          "provenance_sha256": "e85943f5a5473553ffb4742909243c23b0f7f0a21ad55c8a8a43eb78a9a92c9c",
+          "notice_payload_receipt": {
+            "path": "specs/003-add-cross-platform-support/evidence/license-review-2026-10-28/linux-glibc-aarch64/notice-payloads.json.gz",
+            "sha256": "3f38f8b4ced1d2a618bc0b3e66e71d0274c6aba75317fbeec6ec8193eed715a9"
+          },
+          "materials": [
+            {
+              "name": "Graphviz-COPYING.txt",
+              "sha256": "0becf16567beb77fa252b7664631dd177c8f9a1889e48995b45379c7130e5303",
+              "origin": {
+                "archive_sha256": "1e028b2b3e84e946c1d3e8c47590f8f0741bba1041fe6eff36eee87e598ea249",
+                "kind": "graphviz-source-archive",
+                "path": "COPYING",
+                "source_sha256": "0becf16567beb77fa252b7664631dd177c8f9a1889e48995b45379c7130e5303"
+              }
+            }
+          ]
+        },
+        {
+          "artifact_id": "linux-glibc-x86_64",
+          "binary_sha256": "a87e49e95c55572f8fcf8b15fa7e6f438e7d413b05ea0ff4d9db85ea8004e6ec",
+          "provenance_sha256": "a8b4dcadf18b73bc0da2b5bf86d9d7a7d98f0200472b6f4eebec563b948ec005",
+          "notice_payload_receipt": {
+            "path": "specs/003-add-cross-platform-support/evidence/license-review-2026-10-28/linux-glibc-x86_64/notice-payloads.json.gz",
+            "sha256": "4aa1afd67a30ae506da815319d3890337d0fce57dfbc94ece43ece7a53522426"
+          },
+          "materials": [
+            {
+              "name": "Graphviz-COPYING.txt",
+              "sha256": "0becf16567beb77fa252b7664631dd177c8f9a1889e48995b45379c7130e5303",
+              "origin": {
+                "archive_sha256": "1e028b2b3e84e946c1d3e8c47590f8f0741bba1041fe6eff36eee87e598ea249",
+                "kind": "graphviz-source-archive",
+                "path": "COPYING",
+                "source_sha256": "0becf16567beb77fa252b7664631dd177c8f9a1889e48995b45379c7130e5303"
+              }
+            }
+          ]
+        },
+        {
+          "artifact_id": "linux-musl-aarch64",
+          "binary_sha256": "8e05d31c1f3a552c920400e8d1871847e5cfc7a0c4418fa8ab68bd2f6609d997",
+          "provenance_sha256": "b192d4d5b948b52c85e1cf3b238b99d6ef3efb2a90a1bfe20824dde427bbe390",
+          "notice_payload_receipt": {
+            "path": "specs/003-add-cross-platform-support/evidence/license-review-2026-10-28/linux-musl-aarch64/notice-payloads.json.gz",
+            "sha256": "ce8db190202f3046549c98e816c9548e6b0e829d5435c7cee3988862f645ab9f"
+          },
+          "materials": [
+            {
+              "name": "Graphviz-COPYING.txt",
+              "sha256": "0becf16567beb77fa252b7664631dd177c8f9a1889e48995b45379c7130e5303",
+              "origin": {
+                "archive_sha256": "1e028b2b3e84e946c1d3e8c47590f8f0741bba1041fe6eff36eee87e598ea249",
+                "kind": "graphviz-source-archive",
+                "path": "COPYING",
+                "source_sha256": "0becf16567beb77fa252b7664631dd177c8f9a1889e48995b45379c7130e5303"
+              }
+            }
+          ]
+        },
+        {
+          "artifact_id": "linux-musl-x86_64",
+          "binary_sha256": "f506547381a5135f0961cec8b8155898d576ba4d8acfab9643e8bbe72f224974",
+          "provenance_sha256": "efb514520f52e2ce2b6e49b5f7ca9673f8ca20ae0b1c25d29d84bcf5a7bda170",
+          "notice_payload_receipt": {
+            "path": "specs/003-add-cross-platform-support/evidence/license-review-2026-10-28/linux-musl-x86_64/notice-payloads.json.gz",
+            "sha256": "25bf4ba1ac692b4a4bd39ef3599c49d05a19b1aab965d19b6b1cca2897d8b3ce"
+          },
+          "materials": [
+            {
+              "name": "Graphviz-COPYING.txt",
+              "sha256": "0becf16567beb77fa252b7664631dd177c8f9a1889e48995b45379c7130e5303",
+              "origin": {
+                "archive_sha256": "1e028b2b3e84e946c1d3e8c47590f8f0741bba1041fe6eff36eee87e598ea249",
+                "kind": "graphviz-source-archive",
+                "path": "COPYING",
+                "source_sha256": "0becf16567beb77fa252b7664631dd177c8f9a1889e48995b45379c7130e5303"
+              }
+            }
+          ]
+        },
+        {
+          "artifact_id": "macos-arm64",
+          "binary_sha256": "72ab1dd59e2d85554cc0997f08a1573714dfde90545480d34365dae89587d0b8",
+          "provenance_sha256": "d88346d6c5a2c8d38592fd656ce10daeb38104fa8d32bb465a09806934a33735",
+          "notice_payload_receipt": {
+            "path": "specs/003-add-cross-platform-support/evidence/macos-named-link-inputs-ci-2026-10-28/macos-arm64/notice-payloads.json.gz",
+            "sha256": "eda331471ac45891de302d19e802b37b8ef0d8647703cb4b6e9bada23871e7ba"
+          },
+          "materials": [
+            {
+              "name": "Graphviz-COPYING.txt",
+              "sha256": "0becf16567beb77fa252b7664631dd177c8f9a1889e48995b45379c7130e5303",
+              "origin": {
+                "archive_sha256": "1e028b2b3e84e946c1d3e8c47590f8f0741bba1041fe6eff36eee87e598ea249",
+                "kind": "pinned-graphviz-source",
+                "path": "COPYING",
+                "source_sha256": "0becf16567beb77fa252b7664631dd177c8f9a1889e48995b45379c7130e5303"
+              }
+            }
+          ]
+        },
+        {
+          "artifact_id": "macos-x86_64",
+          "binary_sha256": "8e3b1c65ebfe5f27f696afd584392737d50ca98fc5bd64a87aa8a57392c83d54",
+          "provenance_sha256": "d8ff5c2d1cea25dd6ddb7ddbf942a7f830b8d656e068f90e2fea1f2fbae775ba",
+          "notice_payload_receipt": {
+            "path": "specs/003-add-cross-platform-support/evidence/macos-named-link-inputs-ci-2026-10-28/macos-x86_64/notice-payloads.json.gz",
+            "sha256": "9d3051e96c78f17ab8460dc1d1005d35d8bd564016cfb726f0a5f8d0b6f69c3b"
+          },
+          "materials": [
+            {
+              "name": "Graphviz-COPYING.txt",
+              "sha256": "0becf16567beb77fa252b7664631dd177c8f9a1889e48995b45379c7130e5303",
+              "origin": {
+                "archive_sha256": "1e028b2b3e84e946c1d3e8c47590f8f0741bba1041fe6eff36eee87e598ea249",
+                "kind": "pinned-graphviz-source",
+                "path": "COPYING",
+                "source_sha256": "0becf16567beb77fa252b7664631dd177c8f9a1889e48995b45379c7130e5303"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "remaining": [
+    "ISO/W3C applicability and conditions",
+    "Apple SDK/header contribution and source obligations",
+    "Runtime mathematical-port source/term applicability",
+    "Complete per-artifact static input and source coverage",
+    "Permanent equivalent source delivery and final package acceptance"
+  ]
+}

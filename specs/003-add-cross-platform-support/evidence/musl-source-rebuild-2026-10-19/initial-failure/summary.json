@@ -1,0 +1,32 @@
+{
+  "kind": "initial-musl-source-rebuild-failure",
+  "approved": false,
+  "qualified": false,
+  "revision": "afe6d953cb049a6c3cf2f88856ea943181f7c2b9",
+  "run_id": 39351822848,
+  "conclusion": "failure",
+  "url": "https://github.com/Extremois/desembaraca-twine/actions/runs/39351822848",
+  "cause": "Source export omitted Python modules imported by the static ELF verifier; compilation completed but final inspection could not import runtime",
+  "fix_revision": "6f225eb6c6ece00e912d67bff9b461e008be4aca",
+  "regression": "Isolated exported verify-artifact.py --help failed before fix and passed after including its runtime/catalog/snapshot/errors dependencies",
+  "retained_files": {
+    "x86_64-source-rebuild.log.gz": {
+      "sha256": "bc71ba28327b1b26d0084607f8fd3d8e671ee7bff0f3ad7258a80adc0882a3cb",
+      "bytes": 4517,
+      "original_sha256": "b67254ae4308c27d0265af0007956674dc284810053465b37d93a3bbf6e63383",
+      "original_bytes": 28032,
+      "artifact_id": 12233029873,
+      "job_id": 118397541575,
+      "conclusion": "failure"
+    },
+    "aarch64-source-rebuild.log.gz": {
+      "sha256": "dbed99f82f4b23022aa8df568449c51bb57064ed09f13fd92f20b68a815d3901",
+      "bytes": 4504,
+      "original_sha256": "8d2f6e403361ec6fab3883aa0d8eb871e5a04c0dd59437bed3b14575c9691f62",
+      "original_bytes": 28032,
+      "artifact_id": 12232749402,
+      "job_id": 118397541802,
+      "conclusion": "failure"
+    }
+  }
+}

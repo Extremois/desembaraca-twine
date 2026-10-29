@@ -1,0 +1,34 @@
+/// @file
+/// @brief type-generic dynamically expanding list
+/// @ingroup cgraph_utils
+///
+/// The code in this header is structured as a public API made up of macros that
+/// do as little as possible before handing off to internal functions.
+///
+/// If you are familiar with the concept of a dynamically expanding array like
+/// C++’s `std::vector`, the only things that will likely throw you off are:
+///   1. The genericity of `LIST` is implemented through a `union` that overlaps
+///      the `base` member of a `list_t_` (a generic list core) with a typed
+///      pointer. This design involves the public macros dealing in the
+///      `LIST(foo)` type while the private functions deal in `list_t_`s.
+///   2. The start of the list is not always index 0, in order to more
+///      efficiently implement a queue. See the diagram and discussion in
+///      `try_reserve` to better understand this.
+///
+/// Some general terminology you may see in function/macro names:
+///   base – the start of the underlying heap allocation backing a list
+///   dtor – destructor
+///   head – slot index of the start of a list
+///   item – a list element
+///   slot – an item-sized space in the list, offset recorded from base
+///
+/// Some unorthodox idioms you may see used in this file:
+///   • `(void)(foo == bar)` as a way to force the compiler to type-check that
+///     `foo` and `bar` have compatible types. This is the best we can do for
+///     pointer compatibility checks without `typeof`.
+///   • `(void)(sizeof(foo) == sizeof(bar) ? (void)0 : (void)(…,abort())` as an
+///     even weaker version of the above, for when we need to delay a check to
+///     runtime instead of compile-time. This is a very unreliable check for
+///     `foo` and `bar` being the same type, so should be avoided wherever
+///     possible.
+

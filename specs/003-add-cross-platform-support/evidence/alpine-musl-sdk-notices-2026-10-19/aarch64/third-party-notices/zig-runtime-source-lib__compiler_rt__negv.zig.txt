@@ -1,0 +1,3 @@
+//! negv - negate oVerflow
+//! * @panic, if result can not be represented
+//! - negvXi4_generic for unoptimized version

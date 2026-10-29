@@ -1,0 +1,64 @@
+{
+  "kind": "verified-native-ubuntu-nested-recovery-review",
+  "qualified": false,
+  "approved": false,
+  "revision": "1c556872f4b74af61038ff53acac382ab1eb368a",
+  "native_summary_sha256": "14bb87d24c5a06658d50664c7d6dcbb319ca60b768ae0d74d218849e2b632d9d",
+  "verifier_sha256": "5594c36a4e8b9c3a2d7d419d973c4470402682c18dea4c856ab83796fa4d7a57",
+  "reports": [
+    {
+      "release": "20.04",
+      "python": "3.12.15",
+      "minor": "3.12",
+      "report": "ubuntu2004-glibc/raw/application/application-3.12.json.gz",
+      "report_sha256": "5692fd010a2ae8b92b1a8225ab7d449b42c707d173afd594c9c3b20696dff709",
+      "compressed_report_sha256": "65cc9d86bd629f1e3a054020e0641779a71e071e0a2fb066a42408447770cd3e",
+      "primary_scenarios": 8,
+      "nested_failed_repairs": 4,
+      "nested_process_scenarios": 4,
+      "scenario_executions": 16,
+      "offline_reference_executions": 96
+    },
+    {
+      "release": "20.04",
+      "python": "3.14.8",
+      "minor": "3.14",
+      "report": "ubuntu2004-glibc/raw/application/application-3.14.json.gz",
+      "report_sha256": "cc639d0ed1d35abc79df80dddd8443e7c89d785d7014687e8f3d1a12552aff59",
+      "compressed_report_sha256": "89efe34382596d1a601d1886fe9779adf0f87b3f1361ae31e7917e5bf45d4966",
+      "primary_scenarios": 8,
+      "nested_failed_repairs": 4,
+      "nested_process_scenarios": 4,
+      "scenario_executions": 16,
+      "offline_reference_executions": 96
+    },
+    {
+      "release": "18.04",
+      "python": "3.12.15",
+      "minor": "3.12",
+      "report": "ubuntu1804-glibc/raw/application/application-3.12.json.gz",
+      "report_sha256": "99159efab04229b1327fc200fd5d61ad65ea997af3537918b85829c89a00c276",
+      "compressed_report_sha256": "f4744d0b40a94d3b041c7ad4c94936c1e753608a03bf86b0b4b4eb0021d2b972",
+      "primary_scenarios": 8,
+      "nested_failed_repairs": 4,
+      "nested_process_scenarios": 4,
+      "scenario_executions": 16,
+      "offline_reference_executions": 96
+    },
+    {
+      "release": "18.04",
+      "python": "3.14.8",
+      "minor": "3.14",
+      "report": "ubuntu1804-glibc/raw/application/application-3.14.json.gz",
+      "report_sha256": "0a5b91783a75e0771aa59d1f96ae7b7e88cbfc2849232c9b90a22f9e6827a4ca",
+      "compressed_report_sha256": "37e54950589fa9e406e2f7f93b594699193df5221faec5076f6ef68f4263b953",
+      "primary_scenarios": 8,
+      "nested_failed_repairs": 4,
+      "nested_process_scenarios": 4,
+      "scenario_executions": 16,
+      "offline_reference_executions": 96
+    }
+  ],
+  "scenario_executions": 64,
+  "offline_reference_executions": 384
+}

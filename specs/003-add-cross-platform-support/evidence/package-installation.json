@@ -1,0 +1,152 @@
+{
+  "kind": "final-installed-public-catalog-acceptance-index",
+  "task": "T078",
+  "task_complete": true,
+  "passed": true,
+  "qualified": true,
+  "application_revision": "53fb2aba47d78b5cb4a6679cafaaef5fc5e52c29",
+  "qualified_functional_revision": "c0078230a3bf1a2b934f1754e8b12664f100b4cc",
+  "abi_targets": 7,
+  "python_slots": 14,
+  "installations": 42,
+  "modes": [
+    "wheel",
+    "sdist",
+    "immutable-remote"
+  ],
+  "outside_checkout": true,
+  "git_and_global_graphviz_absent": true,
+  "records": [
+    {
+      "target_id": "abi-linux-glibc-aarch64",
+      "python": "3.14.9",
+      "evidence": {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/53fb2ab/12888816183/final-catalog.json.gz",
+        "sha256": "0349da7c34c70e50a4285c04fccaa70bf3962565b77df394c308c6c73f0bba0e"
+      },
+      "run_id": 40853746928
+    },
+    {
+      "target_id": "abi-linux-musl-aarch64",
+      "python": "3.14.5",
+      "evidence": {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/53fb2ab/12888526446/final-catalog.json.gz",
+        "sha256": "56b98d4f8151a092fc9d29d31056fb7ff72fb0617d3588375c0a2cce63cf5b0b"
+      },
+      "run_id": 40853746928
+    },
+    {
+      "target_id": "abi-darwin-darwin-aarch64",
+      "python": "3.12.10",
+      "evidence": {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/53fb2ab/12888522239/final-catalog.json.gz",
+        "sha256": "0624f02250c90814a513ef2f6ceb13971e2ed31f9099bc9c9ea0a4f9740f7b10"
+      },
+      "run_id": 40853746928
+    },
+    {
+      "target_id": "abi-windows-win32-x86_64",
+      "python": "3.14.9",
+      "evidence": {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/53fb2ab/12888467715/final-catalog.json.gz",
+        "sha256": "570a386dfda1248d8712da8f5c922c0fa7e3d87833aeb9f06ea4a6e16f54c102"
+      },
+      "run_id": 40853746928
+    },
+    {
+      "target_id": "abi-linux-glibc-x86_64",
+      "python": "3.12.15",
+      "evidence": {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/53fb2ab/12888342597/final-catalog.json.gz",
+        "sha256": "727746e4068718d81efb37b59687e6c945ee01a5bcce344891cc44ec889a88bb"
+      },
+      "run_id": 40853746928
+    },
+    {
+      "target_id": "abi-linux-musl-x86_64",
+      "python": "3.14.5",
+      "evidence": {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/53fb2ab/12888157965/final-catalog.json.gz",
+        "sha256": "bab5a758c77ae6dea50dfceb3c8bd1f81b67daf44ccda5b8c6ab7c737eb53037"
+      },
+      "run_id": 40853746928
+    },
+    {
+      "target_id": "abi-linux-glibc-aarch64",
+      "python": "3.12.15",
+      "evidence": {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/53fb2ab/12888098525/final-catalog.json.gz",
+        "sha256": "a549964df29bd3d47cd3454b3ee9c990c73ef3bd9f6115438f2866cbedcdee73"
+      },
+      "run_id": 40853746928
+    },
+    {
+      "target_id": "abi-darwin-darwin-x86_64",
+      "python": "3.12.10",
+      "evidence": {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/53fb2ab/12888068025/final-catalog.json.gz",
+        "sha256": "0c16c308d230308b943c7f961bff943e4e849facc4189f3e714f787cc0eb81d6"
+      },
+      "run_id": 40853746928
+    },
+    {
+      "target_id": "abi-darwin-darwin-x86_64",
+      "python": "3.14.7",
+      "evidence": {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/53fb2ab/12888047738/final-catalog.json.gz",
+        "sha256": "0ec21e39c0f30cb4c94f717b6ec2b7814a44aa7cc18cd777129178a999f68242"
+      },
+      "run_id": 40853746928
+    },
+    {
+      "target_id": "abi-linux-glibc-x86_64",
+      "python": "3.14.9",
+      "evidence": {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/53fb2ab/12888002995/final-catalog.json.gz",
+        "sha256": "6727dda7d3908f8085710937b40ac92f9e1fc802ce5e3dee7c7b512d1b95b722"
+      },
+      "run_id": 40853746928
+    },
+    {
+      "target_id": "abi-darwin-darwin-aarch64",
+      "python": "3.14.7",
+      "evidence": {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/53fb2ab/12887868293/final-catalog.json.gz",
+        "sha256": "1d0c0e054b10983c7a19dafa17f85977356d660064a271f41ed04dc414694727"
+      },
+      "run_id": 40853746928
+    },
+    {
+      "target_id": "abi-linux-musl-aarch64",
+      "python": "3.12.13",
+      "evidence": {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/53fb2ab/12887788137/final-catalog.json.gz",
+        "sha256": "b6c449721c2b94d72e6c0e80f115c2645b3ffdce316ea911a88e1c25877f5963"
+      },
+      "run_id": 40853746928
+    },
+    {
+      "target_id": "abi-windows-win32-x86_64",
+      "python": "3.12.10",
+      "evidence": {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/53fb2ab/12887464904/final-catalog.json.gz",
+        "sha256": "9d7a868c178ebb9e60a62a37c9f9afaac3b6587e02a680dddb08a58fedef0867"
+      },
+      "run_id": 40853746928
+    },
+    {
+      "target_id": "abi-linux-musl-x86_64",
+      "python": "3.12.13",
+      "evidence": {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/53fb2ab/12887384744/final-catalog.json.gz",
+        "sha256": "b2a7205f6cf9fa114b8302e140f6b8ccbfee54f711760a481e3e543c8a707fd3"
+      },
+      "run_id": 40853746928
+    }
+  ],
+  "scope": "Normal published catalog acquisition, automatic and explicit preparation, full corpus and offline healthy reuse in each of three external venvs; actual host identity retained.",
+  "qualification": {
+    "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/qualification/summary.json",
+    "sha256": "607d07a5d5ab823187ce2f86a3fa8140ad146828b16ca4c195ef25f01d481bbf"
+  }
+}

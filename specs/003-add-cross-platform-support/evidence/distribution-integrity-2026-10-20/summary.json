@@ -1,0 +1,103 @@
+{
+  "kind": "distribution-integrity-review-index",
+  "task": "T066",
+  "task_complete": false,
+  "qualified": false,
+  "license_compatibility_approved": false,
+  "passed": true,
+  "report": {
+    "path": "specs/003-add-cross-platform-support/evidence/distribution-integrity-2026-10-20/final-check.json",
+    "sha256": "bad3b2c0848021832f4a7491d5f8887de9b0f3afede0a24459597dea902e4ae5"
+  },
+  "collector": {
+    "path": "tools/validation/check-distribution-integrity.py",
+    "sha256": "ae63ad61c7f1fdce8a5303538ac5a9c6b1d49248cc8f96410da1a6ac73c498a7"
+  },
+  "preserved_collector": {
+    "path": "specs/003-add-cross-platform-support/evidence/distribution-integrity-2026-10-20/final-check-tool.py",
+    "sha256": "ae63ad61c7f1fdce8a5303538ac5a9c6b1d49248cc8f96410da1a6ac73c498a7"
+  },
+  "tests": {
+    "path": "tests/unit/test_distribution_integrity.py",
+    "sha256": "d73376e0a74e32c7818d9dbd59460523e60f5ffa7525b75134966c494086963e"
+  },
+  "git_head": "eea100c37599517e09b6626d1edb82b599a1b19c",
+  "collector_and_tests_uncommitted": true,
+  "bundles": 6,
+  "files_verified": 2419,
+  "notice_payloads_verified": 2407,
+  "package_files_verified": 53,
+  "existing_runtime_reports_bound": 8,
+  "inputs": [
+    {
+      "artifact_id": "linux-glibc-aarch64",
+      "actions_artifact_id": 12264920999,
+      "actions_artifact_sha256": "712a291a0422c0cdcbe8e6650bc49a3ad546d1eac2e538d9636ef1ef6f81499b",
+      "candidate_archive_sha256": "8c8b3e73397033b74404b68d9207bbfdc742dc1271f96ea2809ee2c92bc1eebe",
+      "inventory_sha256": "88c8fca3906daf407ee145e892cb4cea701833bd31b9840b7b947f8cc742d627",
+      "provenance_sha256": "64d805c82e496159d53ab035cf7d02729c8b699aa688981b45a669bfd53f28c6"
+    },
+    {
+      "artifact_id": "linux-glibc-x86_64",
+      "actions_artifact_id": 12269593927,
+      "actions_artifact_sha256": "08b4fd180f582e8f7acc4a13945988a49b0696cfd7f90c815f52efb1f5a599e9",
+      "candidate_archive_sha256": "f446b7718e94eafa9adc29953aa4f1f65e588d5ee10a80d973771c32e91d1e7f",
+      "inventory_sha256": "65ae1f4bf436d00d468dd3f9f01f74f7a8f1777c7a1acffd9fa040de6aea0ca2",
+      "provenance_sha256": "eb7f183d0259d923c610eb5a8c058c77a14397be6e9c95319e72e4e67ebc370f"
+    },
+    {
+      "artifact_id": "linux-musl-aarch64",
+      "actions_artifact_id": 12269054095,
+      "actions_artifact_sha256": "7decc754040cb1c97298af44011b0d78bab40b291bf5ac1cd6e195031c7a34d0",
+      "candidate_archive_sha256": "cb13a7f5aa608491f0dc8bd82d425149cbcf62b0f6a721381f40d94756f1d4e6",
+      "inventory_sha256": "50638914217ba2c83f4e6d685171ae8284695f1e8bb69fde0977372af869bf70",
+      "provenance_sha256": "039da570218790fcd0921b215846feb02040b6f8e25061b69fbbdef154e5b677"
+    },
+    {
+      "artifact_id": "linux-musl-x86_64",
+      "actions_artifact_id": 12270041540,
+      "actions_artifact_sha256": "1b8804f5ac5a1455c0bb4eab5284c5a381fe364a82232c12e5b74bdaafea9564",
+      "candidate_archive_sha256": "8acad241b2eb6d8cbcdd9701955c019b204364f144c0800b9d75eef85fdbe3fd",
+      "inventory_sha256": "bcb54d20aad46272b8db7aed161f8c3a9a9e9b9007fe5dc7cf624ec2e3099a54",
+      "provenance_sha256": "d10936711a270294eb0b5a185400ccf8edb21087500a8c6df43c0229629ad795"
+    },
+    {
+      "artifact_id": "macos-arm64",
+      "actions_artifact_id": 12259504521,
+      "actions_artifact_sha256": "1632c91e0368b18532dd473dd35ac3e7866ac5c735bba4865a6f72106d012697",
+      "candidate_archive_sha256": "4acb09b433658a3b64e71b68d5b13a240bf8577436a602dd26896a9a8d180b83",
+      "inventory_sha256": "3830c69a852937885cda8ec266de7d59380f646d35f6b7f7d3095faa585816ef",
+      "provenance_sha256": "af21e0ea2fc69a00148c650eb952abeeb9141a241b687f05ab0f8ef3f0879bda"
+    },
+    {
+      "artifact_id": "macos-x86_64",
+      "actions_artifact_id": 12259848528,
+      "actions_artifact_sha256": "9727457f3e9ac601044e945bddfe327b5e8be26a792c9f49a51cf3ee8211d580",
+      "candidate_archive_sha256": "ec0e27e30a2948ef79937cf720c6d31f4cb0e831d9c4fb799f84409fab114272",
+      "inventory_sha256": "b9d2c309fb08d4edfb2cf0a618286e6394ca9e2c6e554d1380d0b05eec73e9f3",
+      "provenance_sha256": "0f3103a1dc15e334a5a6d73b2ac999e9bdeee513dac9c0f9eff14ddc86232a24"
+    }
+  ],
+  "observed_tests": {
+    "python312_foundation": 253,
+    "python312_skipped": 8,
+    "python314_initial_foundation": 252,
+    "python314_skipped": 8,
+    "python314_final_focused": 4
+  },
+  "initial_report": {
+    "path": "specs/003-add-cross-platform-support/evidence/distribution-integrity-2026-10-20/initial-check.json",
+    "sha256": "3d30fe5ef91694622f4ab3e7aea5bcaf227de2ca3adf9befcd486e1f20994648"
+  },
+  "initial_collector": {
+    "path": "specs/003-add-cross-platform-support/evidence/distribution-integrity-2026-10-20/initial-check-tool.py",
+    "sha256": "4100d4632ae97046a1bdfe8d229cb029a0d86572789629f9b890d10526c3d871"
+  },
+  "remaining": [
+    "Byte/origin checks only; no per-component license compatibility approval",
+    "No source hosting/retention offer or native signature/notarization approval",
+    "Archive modes inspected offline; no new execution or filesystem mode measurement",
+    "Referenced manager offline tests do not independently capture every cached notice",
+    "Final bundles, Windows cache and complete support matrix remain pending"
+  ]
+}

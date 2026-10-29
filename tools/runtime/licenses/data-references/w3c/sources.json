@@ -1,0 +1,81 @@
+{
+  "kind": "w3c-reference-policy-material-not-approved-audit",
+  "approved": false,
+  "captured_date": "2026-10-20",
+  "references": {
+    "document-1999": {
+      "url": "https://www.w3.org/Consortium/Legal/copyright-documents-19990405",
+      "resolved_url": "https://www.w3.org/Consortium/Legal/copyright-documents-19990405",
+      "encoding": "iso-8859-1",
+      "file": "document-1999.html.gz",
+      "size": 4714,
+      "sha256": "bfc01b4569ee865dac7dc6653a6df012605e8a9212fa5c55bcda68f53b8936fc",
+      "stored_sha256": "043d53e91c5d18aba9b87302a11e3dd2ba03ad84d91a161a2d2ad66ddcdbfc6a"
+    },
+    "software-1998": {
+      "url": "https://www.w3.org/Consortium/Legal/copyright-software-19980720",
+      "resolved_url": "https://www.w3.org/Consortium/Legal/copyright-software-19980720",
+      "encoding": "iso-8859-1",
+      "file": "software-1998.html.gz",
+      "size": 4261,
+      "sha256": "d4eedcb04dc16687b6d56b49ed06e1b55f599b8bd8e518af9773d1b7d2cf5c76",
+      "stored_sha256": "e3a1f66d794588a89e7c32510add9b18a400d42b94498f42e43d1c90d405ea16"
+    },
+    "document-2002": {
+      "url": "https://www.w3.org/Consortium/Legal/2002/copyright-documents-20021231",
+      "resolved_url": "https://www.w3.org/copyright/document-license-2002/",
+      "encoding": "utf-8",
+      "file": "document-2002.html.gz",
+      "size": 27919,
+      "sha256": "beedccab0ddee27d20caf239a77f449d0631ca81ab21246958a934d9bbdf7eec",
+      "stored_sha256": "301e41ac45652d3d3bd75f9a46504c235a8c744a150f643b07fbd6e54ef16816"
+    },
+    "document-2023": {
+      "url": "https://www.w3.org/copyright/document-license-2023/",
+      "resolved_url": "https://www.w3.org/copyright/document-license-2023/",
+      "encoding": "utf-8",
+      "file": "document-2023.html.gz",
+      "size": 27473,
+      "sha256": "888bd32d1e7b386edd688a588b70873d794563bd8ae9cdeb09089ea50d0da29d",
+      "stored_sha256": "66b0b5234e2135a7895e931128059a7c58284e05a6e8bdeb4a0a6bd69d283f99"
+    },
+    "html401-index": {
+      "url": "https://www.w3.org/TR/1999/REC-html401-19991224/",
+      "resolved_url": "https://www.w3.org/TR/1999/REC-html401-19991224/",
+      "encoding": "iso-8859-1",
+      "file": "html401-index.html.gz",
+      "size": 54609,
+      "sha256": "1a9393902a9a1926c3aa34add33304b49e09a96439451f7957dd72b69d51c9e9",
+      "stored_sha256": "9c836ec8465393559ed41dfa75c85ba84b59ab42ab8c1edfddfb7441c93fe7e1"
+    },
+    "svg11-index": {
+      "url": "https://www.w3.org/TR/2011/REC-SVG11-20110816/",
+      "resolved_url": "https://www.w3.org/TR/2011/REC-SVG11-20110816/",
+      "encoding": "utf-8",
+      "file": "svg11-index.html.gz",
+      "size": 15481,
+      "sha256": "c558313b7129c2c6b75aacd282cc28a6c3e2f61d36b7fdd8cb02452330e1f1a9",
+      "stored_sha256": "876587f0d986b298e31724b9e45f63547eda0784cf76d80d793f253fae6c00c3"
+    }
+  },
+  "policy_routing": {
+    "html401": {
+      "index": "html401-index",
+      "policy_references": [
+        "document-1999",
+        "software-1998"
+      ],
+      "scope": "Explicit dated links in the HTML 4.01 recommendation; applicability to Graphviz transformations remains under review"
+    },
+    "svg11": {
+      "index": "svg11-index",
+      "observed_policy_url": "https://www.w3.org/Consortium/Legal/copyright-documents",
+      "observed_resolved_url": "https://www.w3.org/copyright/document-license-2023/",
+      "policy_references": [
+        "document-2002",
+        "document-2023"
+      ],
+      "scope": "Historical and current policy references preserved separately; no automatic retroactive license assignment"
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "artifact_zip_sha256": "7aab7c278e5b6a290fc608563b439ebe3d3c7d6a353e7e1f0b12d44458e912f4",
+  "receipt": {
+    "kind": "candidate-source-review-material",
+    "approved": false,
+    "artifact_id": "linux-musl-aarch64",
+    "executable_sha256": "2d7a4b6024eb000c33ecf8b14d1a32d0aac8dde65bed00de138604d081fd3ee4",
+    "provenance_sha256": "b9c84b165c0ccac2023d272fa1061a5d05747f8575e4a2791d05dc8f7e450926",
+    "archive": "sources.tar.gz",
+    "archive_sha256": "8b34159f85efca3179dfdad93c6ed06dc23674f29621bee2b7769951e57689de",
+    "archive_bytes": 68347856,
+    "sdk_files": 18102,
+    "file_count": 18164,
+    "expanded_bytes": 216314355,
+    "pending": [
+      "per-file applicability and complete source offer review",
+      "rebuild/relink execution from exported sources",
+      "immutable public source distribution"
+    ]
+  },
+  "verified_files": 18164,
+  "verified_sdk_files": 18102,
+  "approved": false
+}

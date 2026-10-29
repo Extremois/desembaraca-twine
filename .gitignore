@@ -11,6 +11,7 @@ htmlcov/
 build/
 dist/
 *.egg-info/
+tools/runtime/artifacts/
 
 # Local scratch files and editor state
 .tmp/
@@ -22,3 +23,5 @@ dist/
 Thumbs.db
 .env
 .env.*
+*.log
+codex-session*.md

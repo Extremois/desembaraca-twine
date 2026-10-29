@@ -1,0 +1,229 @@
+{
+  "kind": "rhel-evidence-index",
+  "task": "T040",
+  "task_complete": false,
+  "qualified": false,
+  "captured_at": "2026-10-27T23:30:00+00:00",
+  "registry": {
+    "path": "tools/runtime/support-targets.json",
+    "sha256": "be3e8a77e3836d1125658c00a75fbf0e3584f1e26a166a053583336c29a5d295"
+  },
+  "application_revision": "7b30c80a7a1b980860e0fa9e6b16a14d8245c28e",
+  "developer_program": {
+    "program_name": "Red Hat Developer Individual Subscription",
+    "terms_url": "https://developers.redhat.com/terms-and-conditions",
+    "release_dates_url": "https://access.redhat.com/articles/red-hat-enterprise-linux-release-dates",
+    "eligibility_terms_verified": true,
+    "terms_evaluation": "The Red Hat Developer Individual program grants individual developers access for non-production development across up to 16 systems. The terms strictly require personal authentication and forbid embedding or sharing credentials across public automated CI runners or multi-tenant organizational infrastructure without commercial entitlement. Without authorized individual credentials in public CI, official authenticated RHEL cloud images cannot be fetched or run.",
+    "unavailability_policy": "Unavailability is retained as an explicit pending gate per T040. RHEL targets are strictly NOT substituted by Rocky Linux, AlmaLinux or other rebuild distributions, complying with FR-001/002/016."
+  },
+  "expected_targets": 6,
+  "expected_python_slots": 12,
+  "complete_targets": 0,
+  "targets_with_partial_native_observations": 0,
+  "python_slots_with_partial_native_observations": 0,
+  "targets": [
+    {
+      "target_id": "rhel-8.10-stable-x86_64-distribution-default",
+      "version": "8.10",
+      "arch": "x86_64",
+      "cpu_variant": "distribution-default",
+      "image_build": null,
+      "kernel": null,
+      "glibc": null,
+      "observed_security": null,
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "observed_python": null
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "observed_python": null
+        }
+      ],
+      "pending_reason": "Red Hat Developer Individual subscription terms and authenticated environment required; unavailability retained as pending without Rocky substitution; final distributed candidate, remote/sdist modalities, Twine and remaining common gates"
+    },
+    {
+      "target_id": "rhel-8.10-stable-aarch64-distribution-default",
+      "version": "8.10",
+      "arch": "aarch64",
+      "cpu_variant": "distribution-default",
+      "image_build": null,
+      "kernel": null,
+      "glibc": null,
+      "observed_security": null,
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "observed_python": null
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "observed_python": null
+        }
+      ],
+      "pending_reason": "Red Hat Developer Individual subscription terms and authenticated environment required; unavailability retained as pending without Rocky substitution; final distributed candidate, remote/sdist modalities, Twine and remaining common gates"
+    },
+    {
+      "target_id": "rhel-9.8-stable-x86_64-distribution-default",
+      "version": "9.8",
+      "arch": "x86_64",
+      "cpu_variant": "distribution-default",
+      "image_build": null,
+      "kernel": null,
+      "glibc": null,
+      "observed_security": null,
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "observed_python": null
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "observed_python": null
+        }
+      ],
+      "pending_reason": "Red Hat Developer Individual subscription terms and authenticated environment required; unavailability retained as pending without Rocky substitution; final distributed candidate, remote/sdist modalities, Twine and remaining common gates"
+    },
+    {
+      "target_id": "rhel-9.8-stable-aarch64-distribution-default",
+      "version": "9.8",
+      "arch": "aarch64",
+      "cpu_variant": "distribution-default",
+      "image_build": null,
+      "kernel": null,
+      "glibc": null,
+      "observed_security": null,
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "observed_python": null
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "observed_python": null
+        }
+      ],
+      "pending_reason": "Red Hat Developer Individual subscription terms and authenticated environment required; unavailability retained as pending without Rocky substitution; final distributed candidate, remote/sdist modalities, Twine and remaining common gates"
+    },
+    {
+      "target_id": "rhel-10.2-stable-x86_64-distribution-default",
+      "version": "10.2",
+      "arch": "x86_64",
+      "cpu_variant": "distribution-default",
+      "image_build": null,
+      "kernel": null,
+      "glibc": null,
+      "observed_security": null,
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "observed_python": null
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "observed_python": null
+        }
+      ],
+      "pending_reason": "Red Hat Developer Individual subscription terms and authenticated environment required; unavailability retained as pending without Rocky substitution; final distributed candidate, remote/sdist modalities, Twine and remaining common gates"
+    },
+    {
+      "target_id": "rhel-10.2-stable-aarch64-distribution-default",
+      "version": "10.2",
+      "arch": "aarch64",
+      "cpu_variant": "distribution-default",
+      "image_build": null,
+      "kernel": null,
+      "glibc": null,
+      "observed_security": null,
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "observed_python": null
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "observed_python": null
+        }
+      ],
+      "pending_reason": "Red Hat Developer Individual subscription terms and authenticated environment required; unavailability retained as pending without Rocky substitution; final distributed candidate, remote/sdist modalities, Twine and remaining common gates"
+    }
+  ],
+  "limitations": [
+    "Red Hat Developer subscription terms evaluated; no unauthenticated public cloud image available for GitHub Actions",
+    "RHEL targets are not substituted by Rocky Linux or AlmaLinux derivatives",
+    "No local VM, Twine review, ARM64 qualification, catalog or support promotion"
+  ],
+  "release_scope": {
+    "reference_date": "2026-10-17",
+    "versions": [
+      "8.10",
+      "9.8",
+      "10.2"
+    ],
+    "developer_program_terms_evaluated": true,
+    "maintenance_acceptance": false,
+    "source": "tools/runtime/support-targets.json"
+  }
+}

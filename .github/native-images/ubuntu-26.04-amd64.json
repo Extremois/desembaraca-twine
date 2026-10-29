@@ -1,0 +1,12 @@
+{
+  "url": "https://cloud-images.ubuntu.com/releases/resolute/release-20261016/ubuntu-26.04-server-cloudimg-amd64.img",
+  "size": 859090944,
+  "sha256": "5645d0318ad21f643ebb1ac4567514620e9893380b07b0201fda163baa5b7eb5",
+  "checksum_manifest_url": "https://cloud-images.ubuntu.com/releases/resolute/release-20261016/SHA256SUMS",
+  "checksum_manifest_sha256": "489dd5ab1206aba5cb21769e8095e911feb01a313aec448e4bdc291f918b6549",
+  "package_manifest_url": "https://cloud-images.ubuntu.com/releases/resolute/release-20261016/ubuntu-26.04-server-cloudimg-amd64.manifest",
+  "package_manifest_sha256": "d52adb4ae5a731dcbed5ebe664757d248f6c0994dc6230c88891f1763a818083",
+  "release": "26.04",
+  "arch": "x86_64",
+  "scope": "Historical image for private native-kernel tests; no support qualification"
+}

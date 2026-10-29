@@ -1,0 +1,58 @@
+{
+  "artifact_id": "macos-arm64",
+  "run_id": 39531303568,
+  "actions_artifact_id": 12315371495,
+  "artifact_sha256": "6db168bd4aa463e3c3857e7eff1618d7313b276c1d513a9028cededd4402760a",
+  "engine_sha256": "774115a1a9e4b2385d33fa55fe02de0d8728cb0984967d445528c6fe04f97dac",
+  "engine_unchanged": true,
+  "archive_sha256": "37c27809562066aa4ec30be4fd419af20e1d0636796e56347f06dbca75f7040b",
+  "provenance_sha256": "2ae7be4291ed2facd349d20145641473da0a38c43d4037cee62dd16f8da9d3e3",
+  "files_verified": 233,
+  "notice_payloads_verified": 231,
+  "source_notice_matches_generator": true,
+  "glibc_section_6_notice": false,
+  "approved": false,
+  "qualified": false,
+  "retained_files": {
+    "candidate.json": {
+      "sha256": "b23ecb641d461196e8f6a6df02bb6d6d10a32334edfb26b9dd7ddbf90d53288e",
+      "bytes": 862
+    },
+    "inventory.json": {
+      "sha256": "a3c79768c0059e09db91c02433416ff6f9540ba95ab721c5d05c5616f400a97d",
+      "bytes": 49480
+    },
+    "provenance.json.gz": {
+      "sha256": "8bf1a15b9fb6ae3fa5a89c25cb3f11da59f651cd4a5122dbe6588ee2274b09e0",
+      "bytes": 2656
+    },
+    "SOURCE-REFERENCES.txt": {
+      "sha256": "dc645330b30f01973a237e5a729651af7b10148f6b6c590a704ecd7a5d1890f6",
+      "bytes": 1299
+    },
+    "NOTICE-ORIGINS.json.gz": {
+      "sha256": "f842181f5fae5b6f9c7aea51c61c2a04bea8b6f82440522c79443557e84165a9",
+      "bytes": 27717
+    },
+    "corpus-314.json": {
+      "sha256": "13c1d28782a7a64c71bb5380f11b584b73ad7e2dcb1d8d112f5d9a251681acad",
+      "bytes": 5346
+    },
+    "corpus-312.json": {
+      "sha256": "619cad17c1cdfa99d17137795e0018dadcf73e6b52586e5c4e97e12172747c2c",
+      "bytes": 5347
+    },
+    "runtime-312.json": {
+      "sha256": "3510b3becab67a5d2635785e7c0cfa6d29d363790516ef4c92f65299cba1f73e",
+      "bytes": 36249
+    },
+    "runtime-314.json": {
+      "sha256": "dcd59d3be0976437ece6067e444b9caf31de88fff70d1f0c462ca634b81853bd",
+      "bytes": 36248
+    },
+    "archive-check.json": {
+      "sha256": "79d544dbf86eb557d459109f489c0836def454e866311088e4a789798cd463a3",
+      "bytes": 156051
+    }
+  }
+}

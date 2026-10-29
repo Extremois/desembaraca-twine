@@ -1,0 +1,192 @@
+{
+  "kind": "native-linux-arm64-link-source-receipt",
+  "approved": false,
+  "qualified": false,
+  "revision": "5e689a956cb70657e9872609688072ef50e5793b",
+  "run_id": 39317852362,
+  "job_id": 118283879675,
+  "actions_artifact_id": 12219411515,
+  "url": "https://github.com/Extremois/desembaraca-twine/actions/runs/39317852362",
+  "artifact_sha256": "bd31597f85b4fb12bba75f355b2b2a5f13d31793b8e963b01688dce70ae604d9",
+  "artifact_id": "linux-glibc-aarch64",
+  "executable_sha256": "933b6c63370bdd3e814627e2a9a06176416c8da017a21dcbc96d8137dbc17e22",
+  "executable_size": 6801616,
+  "provenance_sha256": "1fb8531923b4abc4ddb0d0aa9b60e27f1f11871855e52bb86b0eb2bc4bfef6a9",
+  "target": "aarch64-linux.4.15-gnu.2.27",
+  "image_os": "ubuntu24-arm64",
+  "image_version": "20261012.149.1",
+  "kernel": "6.17.0-1022-azure",
+  "host_libc": "2.39",
+  "loader": "/lib/ld-linux-aarch64.so.1",
+  "needed": [
+    "libm.so.6",
+    "libpthread.so.0",
+    "libc.so.6"
+  ],
+  "candidate_archive_sha256": "60d6bb7de8df065765d23f1c172eb1a3a2722cbf1627ba1c89074e96ca96f703",
+  "candidate_archive_bytes": 6816082,
+  "candidate_file_count": 2,
+  "corpus": [
+    {
+      "python": "3.12.15",
+      "cases": 13,
+      "passed": true,
+      "highest_glibc_symbol": "2.17",
+      "network_syscalls": {},
+      "dot_executions": 8
+    },
+    {
+      "python": "3.14.8",
+      "cases": 13,
+      "passed": true,
+      "highest_glibc_symbol": "2.17",
+      "network_syscalls": {},
+      "dot_executions": 8
+    }
+  ],
+  "source_observations": {
+    "objects": 181,
+    "verified_graphviz_source_files": 322,
+    "generated_files": 9,
+    "external_files": 181
+  },
+  "link_input_count": 73,
+  "archive_extraction_rows": 148,
+  "byte_identical_to_compiler": true,
+  "byte_identical_to_parent": true,
+  "retained_files": {
+    "link.txt.gz": {
+      "sha256": "1bd951f0aec59418c8db729ed3d869464cdbb8dd14a1d3dd3db20f481139c3a3",
+      "bytes": 1064,
+      "original_sha256": "341e4dd17a0d6693df0aea83780b42aee681c7e535f7de08edb49cf0f19f0b3e",
+      "original_bytes": 7478
+    },
+    "link.d.gz": {
+      "sha256": "c4b7327835245b163810d8b7240e907417f28998aa4edd808c3ed9b7b61b66e6",
+      "bytes": 1176,
+      "original_sha256": "4ddd819b9944a6a1ee7c528e707e5a8e94b1fac20afa18cef8542e27395f6f33",
+      "original_bytes": 13216
+    },
+    "why-extract.tsv.gz": {
+      "sha256": "bea307f501d4063055cc9b3328ff5e2d3b71985fdcd6ef8206868491d8ccebc9",
+      "bytes": 2718,
+      "original_sha256": "327e4a48cea4aea41c95bddc41c3848d30e00cf8e851b21bc98c81b50402a0c7",
+      "original_bytes": 28460
+    },
+    "graphviz-source-evidence.json.gz": {
+      "sha256": "48fb3f977afe9e5ed94aba1884c988cff525bdd3b21e0d9f79cd7b4804730d89",
+      "bytes": 92318,
+      "original_sha256": "7117323856fc9cd634792d1e02fae57e1affc18d78e4404729ba0d27766cbe51",
+      "original_bytes": 3328584
+    },
+    "parent-provenance.json.gz": {
+      "sha256": "979c61c7aa1caefefb6bad82995a6fb85421c3ad75c3c32cb515f020ea0eaeaa",
+      "bytes": 2526,
+      "original_sha256": "646c06d1aba84e476bdea2cd4ff10d6b8044dbf441ed7228f78994b1819ea9d9",
+      "original_bytes": 7390
+    },
+    "compiler-verbose.txt.gz": {
+      "sha256": "8fb5cfbbf36603eaf303e420574c4ce43199db4c004d10e7e4d1cbf742a66b72",
+      "bytes": 979,
+      "original_sha256": "194e6ca4914818d2d78aa7941ef09152b11651a67fcd8076fbc8ad47298fc2a2",
+      "original_bytes": 4361
+    },
+    "lld-output.txt": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "original_bytes": 0
+    },
+    "network-312.corpus.trace.gz": {
+      "sha256": "0e3217cd63e9cf5ffd2967ad5ce6447c9083c8aa9eb4f7875c0d80c06fd7366b",
+      "bytes": 632,
+      "original_sha256": "96fe30bc86797c8ec494b19bc28a6097f9e93261f933a068647acd2d7abe0561",
+      "original_bytes": 3707
+    },
+    "network-312.control.trace.gz": {
+      "sha256": "acc0e68225d0ed1b2d928b7a822f26a932956af76ae49fac21c1d7182ed8b9d2",
+      "bytes": 512,
+      "original_sha256": "b7266d51bcba0bc1719fdce77c7481eb93fc767720e784d3dbdc35a7655174a8",
+      "original_bytes": 1025
+    },
+    "corpus-312.json": {
+      "sha256": "6a0a536ba575395ef3086056a90b376a96ea1e6e44ac4ce78e6c1c79d9eff313",
+      "bytes": 5560,
+      "original_sha256": "6a0a536ba575395ef3086056a90b376a96ea1e6e44ac4ce78e6c1c79d9eff313",
+      "original_bytes": 5560
+    },
+    "network-312.json": {
+      "sha256": "d7b1679dbb0e9b630cd9d154220a2e7a34e2a59b05091245883b97e3a04d2822",
+      "bytes": 1352,
+      "original_sha256": "d7b1679dbb0e9b630cd9d154220a2e7a34e2a59b05091245883b97e3a04d2822",
+      "original_bytes": 1352
+    },
+    "network-314.corpus.trace.gz": {
+      "sha256": "f26afe77997e5ff2e11a3f2c2d222367f00b9128afdd8b3a7c225040ac6c41b3",
+      "bytes": 646,
+      "original_sha256": "240c9674b040341760b9d83509380bd2d7e269fcea5d9f2e59843d55b3326409",
+      "original_bytes": 3705
+    },
+    "network-314.control.trace.gz": {
+      "sha256": "69c4bbe32c2c96d90b281fe6ead8c0febd424f8d7e5ea8f4a4e83bb98f3da26e",
+      "bytes": 511,
+      "original_sha256": "6d8449a7d052ffd67c955f85fab66013fbd0ae74874da0fc24da4c9c70c1a45a",
+      "original_bytes": 1021
+    },
+    "corpus-314.json": {
+      "sha256": "55c327c9aa2c6e0a0cdf681638b8d0f4a942c7bd2b66a0d91970b9f3511db947",
+      "bytes": 5559,
+      "original_sha256": "55c327c9aa2c6e0a0cdf681638b8d0f4a942c7bd2b66a0d91970b9f3511db947",
+      "original_bytes": 5559
+    },
+    "network-314.json": {
+      "sha256": "0a1322440628f1e7796fd12afd471002d89bbc7ff2da961bfee24feb1ca9aef6",
+      "bytes": 1351,
+      "original_sha256": "0a1322440628f1e7796fd12afd471002d89bbc7ff2da961bfee24feb1ca9aef6",
+      "original_bytes": 1351
+    },
+    "provenance.json": {
+      "sha256": "1fb8531923b4abc4ddb0d0aa9b60e27f1f11871855e52bb86b0eb2bc4bfef6a9",
+      "bytes": 78474,
+      "original_sha256": "1fb8531923b4abc4ddb0d0aa9b60e27f1f11871855e52bb86b0eb2bc4bfef6a9",
+      "original_bytes": 78474
+    },
+    "sdk-record.json": {
+      "sha256": "941ade9f4fe2352256ae91e475ba1c4d563a5ce300abe780f15057e14025606b",
+      "bytes": 3470,
+      "original_sha256": "941ade9f4fe2352256ae91e475ba1c4d563a5ce300abe780f15057e14025606b",
+      "original_bytes": 3470
+    },
+    "inventory.json": {
+      "sha256": "488c3162bd1af97ed1332a2853ec09c3272f2e6a55f2c3d79e26feaa9dd1c32e",
+      "bytes": 776,
+      "original_sha256": "488c3162bd1af97ed1332a2853ec09c3272f2e6a55f2c3d79e26feaa9dd1c32e",
+      "original_bytes": 776
+    },
+    "candidate.json": {
+      "sha256": "24317cd40ee5832d5cd1d865549dc66a7ef1dfd8b7dab99370be8ac54ef785e6",
+      "bytes": 866,
+      "original_sha256": "24317cd40ee5832d5cd1d865549dc66a7ef1dfd8b7dab99370be8ac54ef785e6",
+      "original_bytes": 866
+    },
+    "elf.txt": {
+      "sha256": "30f3baf7ca3738b8b4a60c3cdfbfb2d9370b27c453f9cce20be07523ffd9ee27",
+      "bytes": 6867,
+      "original_sha256": "30f3baf7ca3738b8b4a60c3cdfbfb2d9370b27c453f9cce20be07523ffd9ee27",
+      "original_bytes": 6867
+    },
+    "build.log.gz": {
+      "sha256": "bb49c7b0d89f284e6c1a52d191352305fce17165396420d6d00dc4a8a938944b",
+      "bytes": 6709,
+      "original_sha256": "0c40f5be6c0b5f97a962621fb8ba733430b388f4c1bd0da4a1cc724620e2a128",
+      "original_bytes": 35777
+    }
+  },
+  "pending": [
+    "SDK inputs/generated material/section retention and complete source/license review",
+    "Corresponding-source package and reconstruction",
+    "Oldest kernel/CPU/native distro execution",
+    "Installed-package acquisition/offline/recovery/Twine acceptance",
+    "Approved audit and catalog admission"
+  ]
+}

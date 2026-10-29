@@ -1,0 +1,26 @@
+{
+  "kind": "local-package-smoke-not-cell-qualification",
+  "environment_kind": "native",
+  "os": "Windows 11",
+  "architecture": "x86_64",
+  "python": "3.14.6",
+  "passed": true,
+  "wheel_sha256": "36f84d518ff12c5775d6cf23a57623a63059c96329c74659b56ded75b10ca70e",
+  "sdist_sha256": "da77136eaf4f7a6cd4ecf2d352093e3fed96b61fdc282dda1f8e6919235da679",
+  "checks": {
+    "wheel_and_sdist_contain_runtime_metadata": true,
+    "wheel_metadata_matches_source_bytes": true,
+    "existing_notice_files": 29,
+    "no_platform_binaries_in_wheel": true,
+    "wheel_installed_in_external_venv_without_index": true,
+    "console_help_from_outside_checkout": true,
+    "module_help_from_outside_checkout": true,
+    "prepare_with_existing_private_runtime": true
+  },
+  "limitations": [
+    "No remote installation or clean-machine acceptance.",
+    "sdist inventory verified; isolated installation used the wheel.",
+    "No Linux/macOS package qualification or Twine review.",
+    "Package files are local ignored build outputs; nothing published."
+  ]
+}

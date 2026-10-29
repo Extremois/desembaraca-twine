@@ -1,0 +1,509 @@
+import importlib.util
+import unittest
+import json
+from pathlib import Path
+import tempfile
+from common import ROOT
+
+
+def tool():
+    spec=importlib.util.spec_from_file_location('draft_notices',ROOT/'tools/runtime/prepare-draft-notices.py')
+    module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module)
+    return module
+
+
+class DraftNoticesTests(unittest.TestCase):
+    def test_source_access_notices_identify_rights_and_architecture_without_false_offer(self):
+        module=tool()
+        source=json.loads((module.HERE/'source-lock.json').read_bytes())
+        for artifact in ('linux-glibc-x86_64','linux-glibc-aarch64',
+                         'linux-musl-x86_64','linux-musl-aarch64','macos-x86_64','macos-arm64'):
+            with self.subTest(artifact=artifact):
+                sdk=module.source_sdk_pin(artifact) if artifact.startswith('linux-') else None
+                text=module.source_access_notice(source,artifact,sdk).decode()
+                self.assertIn('available under the Eclipse Public License 2.0',text)
+                self.assertIn(source['url'],text)
+                self.assertIn(source['sha256'],text)
+                self.assertIn('No three-year written source offer is made',text)
+                if sdk:
+                    self.assertIn(sdk['url'],text)
+                    self.assertIn(sdk['sha256'],text)
+                    self.assertEqual('aarch64' in sdk['url'],artifact.endswith('aarch64'))
+                if artifact.startswith('linux-glibc-'):
+                    self.assertIn('GNU C Library startup/nonshared code',text)
+                    self.assertIn('LGPL-2.1-COPYING.txt',text)
+                    self.assertIn('sections 6(a)/6(d)',text)
+                    self.assertIn('reverse engineering',text)
+                    self.assertIn('no completed section 6 source delivery/offer',text)
+                else:
+                    self.assertNotIn('GNU C Library',text)
+                    self.assertNotIn('LGPL-2.1-COPYING.txt',text)
+
+    def test_source_access_notices_reject_wrong_source_and_cross_architecture_sdk(self):
+        module=tool()
+        source=json.loads((module.HERE/'source-lock.json').read_bytes())
+        sdk=module.source_sdk_pin('linux-glibc-x86_64')
+        for changed in (dict(source,sha256='0'*64),dict(source,url='https://example.invalid/source')):
+            with self.assertRaisesRegex(ValueError,'pinned Graphviz'):
+                module.source_access_notice(changed,'linux-glibc-x86_64',sdk)
+        for artifact,wrong in (('linux-glibc-aarch64',sdk),('linux-glibc-x86_64',None),
+                               ('linux-musl-aarch64',dict(sdk,sha256='0'*64))):
+            with self.subTest(artifact=artifact),self.assertRaisesRegex(ValueError,'SDK'):
+                module.source_access_notice(source,artifact,wrong)
+        with self.assertRaisesRegex(ValueError,'Unsupported'):
+            module.source_access_notice(source,'windows-x86_64',sdk)
+
+    def test_runtime_math_references_preserve_individual_terms_and_reject_changed_sources(self):
+        import gzip,hashlib,shutil
+        from unittest.mock import patch
+        module=tool();original=module.HERE/'licenses/data-references/musl-math'
+        name='lib/compiler_rt/trig.zig'
+        source=b'// Ported from musl.\nfn fixture() void {}\n'
+        prefix=b'// Ported from musl.\n'
+        observed=dict(size=len(source),sha256=hashlib.sha256(source).hexdigest(),
+            leading_comment_bytes=len(prefix),leading_comment_sha256=hashlib.sha256(prefix).hexdigest())
+        with tempfile.TemporaryDirectory() as folder:
+            root=Path(folder);references=root/'licenses/data-references/musl-math'
+            shutil.copytree(original,references)
+            lock=json.loads((references/'sources.json').read_bytes())
+            lock['sources'][name].update(size=len(source),sha256=observed['sha256'])
+            (references/'sources.json').write_text(json.dumps(lock))
+            with patch.object(module,'HERE',root):
+                materials=module.runtime_math_materials({name:source},{name:observed})
+                self.assertEqual(len(materials),7)  # Six trig references plus the historical root terms.
+                text=b'\n'.join(row[1] for row in materials)
+                self.assertIn(b'Sun Microsystems',text)
+                self.assertIn(b'Permission to use, copy, modify, and distribute',text)
+                self.assertIn(b'provided that this notice',text)
+                self.assertEqual(module.runtime_math_materials({},{}),[])
+                changed=source.replace(b'fixture',b'changed')
+                with self.assertRaises(ValueError):
+                    module.runtime_math_materials({name:changed},{name:dict(observed,sha256=hashlib.sha256(changed).hexdigest())})
+                with self.assertRaises(ValueError):
+                    module.runtime_math_materials({'lib/compiler_rt/unknown.zig':source},
+                        {'lib/compiler_rt/unknown.zig':observed})
+                ref=lock['references'][lock['sources'][name]['references'][0]]
+                path=references/ref['file'];data=gzip.decompress(path.read_bytes())
+                path.write_bytes(gzip.compress(data+b'changed'))
+                with self.assertRaises(ValueError):module.runtime_math_materials({name:source},{name:observed})
+                path.write_bytes(gzip.compress(data))
+                ref['file']='../outside.gz';(references/'sources.json').write_text(json.dumps(lock))
+                with self.assertRaises(ValueError):module.runtime_math_materials({name:source},{name:observed})
+
+    def test_historical_go_terms_follow_only_byte_bound_reviewed_tangent_source(self):
+        import hashlib
+        from unittest.mock import patch
+        module=tool()
+        prefix=b'// Ported from musl.\n// https://golang.org/src/math/tan.go\n'
+        source=prefix+b'fn tangent() void {}\n'
+        name='lib/compiler_rt/tan.zig'
+        observed=dict(size=len(source),sha256=hashlib.sha256(source).hexdigest(),leading_comment_bytes=len(prefix),
+            leading_comment_sha256=hashlib.sha256(prefix).hexdigest())
+        with tempfile.TemporaryDirectory() as folder:
+            root=Path(folder);(root/'licenses').mkdir()
+            lock=json.loads((module.HERE/'licenses/material-source-lock.json').read_bytes())
+            lock['go_tangent_history']['source_sha256']=observed['sha256']
+            (root/'licenses/material-source-lock.json').write_text(json.dumps(lock))
+            filename=lock['go_1_17_license']['file']
+            (root/'licenses'/filename).write_bytes((module.HERE/'licenses'/filename).read_bytes())
+            with patch.object(module,'HERE',root):
+                rows=module.runtime_reference_materials({name:source},{name:observed})
+                self.assertEqual(len(rows),1)
+                self.assertEqual(rows[0][0],'Go-BSD-3-Clause-LICENSE.txt')
+                self.assertIn(b'Copyright (c) 2009 The Go Authors',rows[0][1])
+                self.assertIn(b'Neither the name of Google Inc.',rows[0][1])
+                self.assertEqual(rows[0][2]['related_source_sha256'],observed['sha256'])
+                self.assertEqual(module.runtime_reference_materials({},{}),[])
+                with self.assertRaises(ValueError):
+                    module.runtime_reference_materials({name:source+b'changed'},{name:observed})
+                changed=source.replace(b'tangent',b'changed')
+                with self.assertRaises(ValueError):
+                    module.runtime_reference_materials({name:changed},{name:dict(observed,sha256=hashlib.sha256(changed).hexdigest())})
+                # A link in an unrelated runtime source cannot borrow tangent's review.
+                with self.assertRaises(ValueError):
+                    module.runtime_reference_materials({'lib/compiler_rt/other.zig':source},
+                        {'lib/compiler_rt/other.zig':observed})
+
+    def test_x64_glibc_package_preserves_header_notices_and_offline_origins(self):
+        import hashlib
+        import io
+        import tarfile
+        from unittest.mock import patch
+        module=tool()
+        with tempfile.TemporaryDirectory() as folder:
+            root=Path(folder);linked=root/'linked';source=root/'source';sdk=root/'sdk'
+            (linked/'candidate/bin').mkdir(parents=True);source.mkdir();sdk.mkdir()
+            binary=linked/'candidate/bin/dot';binary.write_bytes(b'fixture binary, never executed')
+            (source/'provenance.json').write_text('{}')
+            generator=root/'flex';generator.write_bytes(b'fixture generator, never executed')
+            (sdk/'zig').write_bytes(b'fixture compiler, never executed')
+            header=b'/* Copyright fixture; preserve these terms. */\nint header;\n'
+            sdk_files={name:b'fixture SDK notice\n' for name in
+                ('LICENSE','lib/libcxx/LICENSE.TXT','lib/libcxxabi/LICENSE.TXT',
+                 'lib/libunwind/LICENSE.TXT','lib/libc/glibc/LICENSES')}
+            sdk_files.update({'lib/include/notice.h':header,'lib/include/empty.h':b'int no_prefix;\n'})
+            for name,data in sdk_files.items():
+                path=sdk/name;path.parent.mkdir(parents=True,exist_ok=True);path.write_bytes(data)
+            graphviz_files={name:b'fixture upstream notice\n' for name in ('COPYING','AUTHORS','lib/rbtree/LICENSE')}
+            graphviz_files.update({'lib/common/example.c':b'/* Copyright Graphviz fixture. */\nint example;\n// Copyright embedded fixture.\n',
+                                  'lib/common/empty.h':b'int no_source_prefix;\n'})
+            graphviz_files['lib/common/brewer_colors']=(b'# Apache-Style Software License for ColorBrewer\n'
+                b'# Copyright fixture\n# This product includes color specifications and designs developed\n'
+                b'# by Cynthia Brewer (http://colorbrewer.org/).\n'
+                b'# THIS SOFTWARE IS PROVIDED fixture\n/color 1 2 3\n')
+            def archive(path,prefix,files):
+                with tarfile.open(path,'w') as stream:
+                    for name,data in files.items():
+                        entry=tarfile.TarInfo(prefix+'/'+name);entry.size=len(data)
+                        stream.addfile(entry,io.BytesIO(data))
+            graphviz=root/'graphviz.tar';sdk_archive=root/'sdk.tar'
+            archive(graphviz,'graphviz-16.1.0',graphviz_files);archive(sdk_archive,'sdk',sdk_files)
+            lock=dict(url='https://example.invalid/graphviz.tar',sha256=module.builder.digest(graphviz),git_revision='a'*40)
+            tool_root=root/'tool';tool_root.mkdir()
+            (tool_root/'source-lock.json').write_text(json.dumps(lock))
+            (tool_root/'licenses').mkdir()
+            for name in ('material-source-lock.json','flex-2.6.4-COPYING.txt',
+                         'lgpl-2.1-COPYING.txt','gpl-3.0-COPYING.txt'):
+                (tool_root/'licenses'/name).write_bytes((module.HERE/'licenses'/name).read_bytes())
+            dependencies=[]
+            for name in ('lib/common/example.c','lib/common/empty.h'):
+                data=graphviz_files[name]
+                dependencies.append(dict(origin='source',path=name,size=len(data),
+                                         sha256=hashlib.sha256(data).hexdigest()))
+            bison=(b'/* A Bison parser, made by GNU Bison 3.8.2. */\n'
+                   b'/* Copyright fixture; GNU General Public License */\n'
+                   b'/* As a special exception, fixture permission; version 2.2 of Bison. */\nint parser;\n')
+            generated={name:bison for name in ('lib/cgraph/grammar.c','lib/cgraph/grammar.h',
+                                              'lib/common/htmlparse.c','lib/common/htmlparse.h')}
+            generated['lib/cgraph/scan.c']=(b'/* A lexical scanner generated by flex */\n'
+                b'#define YY_FLEX_MAJOR_VERSION 2\n#define YY_FLEX_MINOR_VERSION 6\n#define YY_FLEX_SUBMINOR_VERSION 4\n')
+            for name,data in generated.items():
+                path=source/'build'/name;path.parent.mkdir(parents=True,exist_ok=True);path.write_bytes(data)
+                dependencies.append(dict(origin='generated-build',path=name,sha256=module.builder.digest(path)))
+            for name in ('lib/include/notice.h','lib/include/empty.h'):
+                path=sdk/name
+                dependencies.append(dict(origin='external',path=str(path),sha256=module.builder.digest(path)))
+            record=dict(completed=True,artifact_id='linux-glibc-x86_64',source=lock,
+                executable_sha256=module.builder.digest(binary),
+                relink=dict(parent_provenance_sha256=module.builder.digest(source/'provenance.json')),
+                sdk=dict(facts=dict(archive_url='https://example.invalid/sdk.tar',
+                    archive_sha256=module.builder.digest(sdk_archive),zig_sha256=module.builder.digest(sdk/'zig'),
+                    host_tools=dict(flex=dict(version='flex 2.6.4',path=str(generator),sha256=module.builder.digest(generator))))))
+            (linked/'provenance.json').write_text(json.dumps(record))
+            evidence=root/'sources.json';evidence.write_text(json.dumps(dict(dependencies=dependencies,
+                provenance_sha256=module.builder.digest(linked/'provenance.json'),executable_sha256=record['executable_sha256'])))
+            # Canonical materials stay real and hash checked; only the tiny upstream archive lock is synthetic.
+            fixture_sdk=dict(url=record['sdk']['facts']['archive_url'],sha256=module.builder.digest(sdk_archive))
+            with patch.object(module,'HERE',tool_root),patch.object(module,'source_sdk_pin',return_value=fixture_sdk):
+                review=module.prepare(linked,source,evidence,graphviz,sdk_archive,sdk,root/'output')
+            self.assertEqual(review['sdk_headers_verified'],2)
+            self.assertEqual(review['graphviz_sources_verified'],2)
+            self.assertEqual(review['graphviz_source_prefixes_preserved'],1)
+            self.assertEqual(review['graphviz_additional_source_references'],1)
+            self.assertEqual(review['sdk_header_prefixes_preserved'],1)
+            self.assertEqual([row['prefix_bytes']>0 for row in review['sdk_headers']],[False,True])
+            candidate=root/'output/candidate'
+            index=json.loads((candidate/review['offline_origin_index']).read_text())
+            self.assertEqual(index['kind'],'linux-glibc-offline-notice-origins')
+            self.assertFalse(index['approved']);self.assertFalse(review['approved'])
+            self.assertEqual(len(index['notices']),len(review['notices'])-1)
+            for item in index['notices']:
+                data=(candidate/'third-party-notices'/item['path']).read_bytes()
+                self.assertEqual(hashlib.sha256(data).hexdigest(),item['sha256'])
+            notices={item['path'].split('/')[-1] for item in review['notices']}
+            self.assertIn('GPL-3.0-COPYING.txt',notices)
+            acknowledgment=candidate/'third-party-notices/ColorBrewer-ACKNOWLEDGMENT.txt'
+            self.assertIn(b'This product includes color specifications and designs developed by Cynthia Brewer',
+                          acknowledgment.read_bytes())
+            self.assertEqual(sum(name.startswith('SDK-header-') for name in notices),1)
+            self.assertEqual(sum(name.startswith('Graphviz-source-') for name in notices),2)
+            reference=next(candidate/'third-party-notices'/name for name in notices
+                           if name.startswith('Graphviz-source-reference-'))
+            self.assertEqual(reference.read_bytes(),graphviz_files['lib/common/example.c'])
+            self.assertEqual(module.builder.digest(candidate/'bin/dot'),record['executable_sha256'])
+
+    def test_graphviz_source_prefixes_require_pinned_unique_safe_source_records(self):
+        import hashlib
+        import io
+        import tarfile
+        module=tool()
+        with tempfile.TemporaryDirectory() as folder:
+            path=Path(folder)/'source.tar'
+            raw=b'/* Copyright fixture. */\nint source;\n'
+            with tarfile.open(path,'w') as stream:
+                item=tarfile.TarInfo('graphviz-16.1.0/lib/example.c');item.size=len(raw)
+                stream.addfile(item,io.BytesIO(raw))
+            lock=dict(sha256=module.builder.digest(path))
+            entry=dict(origin='source',path='lib/example.c',size=len(raw),sha256=hashlib.sha256(raw).hexdigest())
+            rows,materials=module.graphviz_source_materials([entry],path,lock)
+            self.assertEqual(rows[0]['prefix_bytes'],len(b'/* Copyright fixture. */\n'))
+            self.assertEqual(materials[0][1],b'/* Copyright fixture. */\n')
+            self.assertEqual(materials[0][2]['source_sha256'],entry['sha256'])
+            for changed in (dict(entry,path='../escape.c'),dict(entry,path='lib\\escape.c'),
+                            dict(entry,path='lib//example.c'),dict(entry,path='/lib/example.c'),
+                            dict(entry,sha256='a'*64),dict(entry,size=len(raw)+1)):
+                with self.subTest(entry=changed),self.assertRaises(ValueError):
+                    module.graphviz_source_materials([changed],path,lock)
+            for entries in ([],[entry,entry]):
+                with self.assertRaises(ValueError):module.graphviz_source_materials(entries,path,lock)
+            with self.assertRaises(ValueError):
+                module.graphviz_source_materials([entry],path,dict(sha256='b'*64))
+
+    def test_arm_musl_notices_require_static_report_and_matching_sdk_architecture(self):
+        module=tool()
+        with tempfile.TemporaryDirectory() as folder:
+            root=Path(folder)
+            report=b'There is no dynamic section in this file.\n'
+            (root/'static-elf-inspection.txt').write_bytes(report)
+            record=dict(completed=True,artifact_id='linux-musl-aarch64',native_os='linux',native_arch='aarch64',
+                recipe=dict(os='linux',arch='aarch64',abi='musl'),sdk=dict(facts=dict(target_os='linux',
+                target_arch='aarch64',target_libc_family='musl',static_linking=True)),
+                static_elf_inspection=dict(no_interpreter=True,no_dynamic_section=True,no_needed_libraries=True,
+                    no_glibc_symbols=True,report_sha256=module.builder.digest(root/'static-elf-inspection.txt')))
+            self.assertIn('lib/libc/musl/COPYRIGHT',module.sdk_notice_names(record,root))
+            record['sdk']['facts']['target_arch']='x86_64'
+            with self.assertRaises(ValueError):module.sdk_notice_names(record,root)
+
+    def test_arm_musl_object_sources_refuse_another_artifact_with_matching_hashes(self):
+        module=tool()
+        with tempfile.TemporaryDirectory() as folder:
+            root=Path(folder);(root/'provenance.json').write_bytes(b'ARM musl build')
+            record=dict(artifact_id='linux-musl-aarch64',executable_sha256='a'*64,
+                        sdk=dict(facts=dict(archive=dict(sha256='b'*64))))
+            data=dict(kind='musl-object-source-observations-not-license-approval',artifact_id=record['artifact_id'],
+                provenance_sha256=module.builder.digest(root/'provenance.json'),executable_sha256='a'*64,
+                sdk_archive_sha256='b'*64,sources=[dict(path='lib/libc/musl/src/example.c',sha256='c'*64)])
+            path=root/'musl.json';path.write_text(json.dumps(data))
+            self.assertEqual(len(module.musl_notice_sources(record,root,path)[0]),1)
+            data['artifact_id']='linux-musl-x86_64';path.write_text(json.dumps(data))
+            with self.assertRaises(ValueError):module.musl_notice_sources(record,root,path)
+
+    def test_arm_notice_selection_requires_matching_native_recipe(self):
+        module=tool()
+        record=dict(completed=True,artifact_id='linux-glibc-aarch64',native_os='linux',native_arch='aarch64',
+                    recipe=dict(os='linux',arch='aarch64',abi='glibc'))
+        self.assertIn('lib/libc/glibc/LICENSES',module.sdk_notice_names(record,ROOT))
+        self.assertIn('lib/libc/musl/COPYRIGHT',module.sdk_notice_names(record,ROOT,include_runtime_sources=True))
+        self.assertNotIn('lib/libc/musl/COPYRIGHT',module.sdk_notice_names(record,ROOT))
+        for bad in (dict(record,native_arch='x86_64'),dict(record,completed=False),
+                    dict(record,recipe=dict(os='linux',arch='aarch64',abi='musl'))):
+            with self.assertRaises(ValueError):module.sdk_notice_names(bad,ROOT)
+
+    def test_arm_sources_require_exact_artifact_even_when_other_hashes_match(self):
+        module=tool()
+        with tempfile.TemporaryDirectory() as folder:
+            root=Path(folder);(root/'provenance.json').write_bytes(b'ARM build')
+            record=dict(artifact_id='linux-glibc-aarch64',executable_sha256='a'*64,
+                        sdk=dict(facts=dict(archive=dict(sha256='b'*64))))
+            data=dict(kind='zig-startup-runtime-source-observations-not-approved',artifact_id=record['artifact_id'],
+                provenance_sha256=module.builder.digest(root/'provenance.json'),executable_sha256='a'*64,
+                sdk_archive_sha256='b'*64,sources=[dict(path='lib/compiler_rt/example.zig',sha256='c'*64)])
+            path=root/'runtime.json';path.write_text(json.dumps(data))
+            self.assertEqual(len(module.zig_runtime_notice_sources(record,root,path)[0]),1)
+            data['artifact_id']='linux-musl-x86_64';path.write_text(json.dumps(data))
+            with self.assertRaises(ValueError):module.zig_runtime_notice_sources(record,root,path)
+
+    def test_arm_notice_preparation_refuses_missing_sdk_or_data_evidence_before_output(self):
+        module=tool()
+        with tempfile.TemporaryDirectory() as folder:
+            root=Path(folder)
+            record=dict(completed=True,artifact_id='linux-glibc-aarch64',native_os='linux',native_arch='aarch64',
+                        recipe=dict(os='linux',arch='aarch64',abi='glibc'))
+            (root/'provenance.json').write_text(json.dumps(record))
+            evidence=root/'sources.json';evidence.write_text('{}')
+            output=root/'new'
+            with self.assertRaisesRegex(ValueError,'requires its own'):
+                module.prepare(root,root,evidence,root/'source.tar',root/'sdk.tar',root/'sdk',output)
+            self.assertFalse(output.exists())
+
+    def test_canonical_glibc_license_is_full_and_rejects_changed_material(self):
+        module=tool()
+        data,origin=module.license_material('lgpl_2_1_copying')
+        self.assertEqual(len(data),26419)
+        self.assertIn(b'GNU LESSER GENERAL PUBLIC LICENSE',data)
+        self.assertIn(b'END OF TERMS AND CONDITIONS',data)
+        self.assertIn(b'How to Apply These Terms',data)
+        with tempfile.TemporaryDirectory() as folder:
+            from unittest.mock import patch
+            root=Path(folder);(root/'licenses').mkdir()
+            lock=dict(lgpl_2_1_copying=dict(url=origin['source_url'],sha256=origin['source_sha256'],
+                                           file='copying.txt',size=len(data)))
+            (root/'licenses/material-source-lock.json').write_text(json.dumps(lock))
+            (root/'licenses/copying.txt').write_bytes(data[:-1])
+            with patch.object(module,'HERE',root),self.assertRaises(ValueError):
+                module.license_material('lgpl_2_1_copying')
+
+    def test_glibc_source_notices_require_matching_variant_build_and_sdk(self):
+        module=tool()
+        with tempfile.TemporaryDirectory() as folder:
+            root=Path(folder);(root/'provenance.json').write_text('synthetic glibc build')
+            record=dict(artifact_id='linux-glibc-x86_64',executable_sha256='a'*64,
+                        sdk=dict(facts=dict(archive=dict(sha256='b'*64))))
+            data=dict(kind='glibc-object-source-observations-not-license-approval',
+                provenance_sha256=module.builder.digest(root/'provenance.json'),executable_sha256='a'*64,
+                sdk_archive_sha256='b'*64,sources=[dict(path='lib/libc/glibc/csu/init.c',sha256='c'*64)])
+            evidence=root/'glibc.json'
+            def write():evidence.write_text(json.dumps(data))
+            write();sources,_=module.glibc_notice_sources(record,root,evidence)
+            self.assertEqual(list(sources),['lib/libc/glibc/csu/init.c'])
+            for key,value in (('sdk_archive_sha256','d'*64),('provenance_sha256','e'*64),('executable_sha256','f'*64)):
+                original=data[key];data[key]=value;write()
+                with self.assertRaises(ValueError):module.glibc_notice_sources(record,root,evidence)
+                data[key]=original
+            data['sources'][0]['path']='lib/libc/musl/start.c';write()
+            with self.assertRaises(ValueError):module.glibc_notice_sources(record,root,evidence)
+
+    def test_sdk_archive_identity_accepts_ci_and_legacy_records_without_conflicts(self):
+        module=tool()
+        expected=dict(url='https://example.invalid/sdk',sha256='a'*64)
+        self.assertEqual(module.sdk_archive_identity(dict(archive=expected)),expected)
+        self.assertEqual(module.sdk_archive_identity(dict(archive_url=expected['url'],archive_sha256='a'*64)),expected)
+        for facts in (dict(archive=expected,archive_sha256='b'*64),dict(archive=expected,archive_url='https://other.invalid/sdk'),
+                      dict(archive=dict(url='http://example.invalid/sdk',sha256='a'*64)),dict(archive={})):
+            with self.subTest(facts=facts),self.assertRaises(ValueError):module.sdk_archive_identity(facts)
+
+    def test_flex_scanner_requires_recorded_generator_and_matching_version_macros(self):
+        module=tool()
+        scanner=(b'/* A lexical scanner generated by flex */\n'
+                 b'#define YY_FLEX_MAJOR_VERSION 2\n#define YY_FLEX_MINOR_VERSION 6\n'
+                 b'#define YY_FLEX_SUBMINOR_VERSION 4\n')
+        generator=dict(version='flex 2.6.4',path='/usr/bin/flex',sha256='a'*64)
+        result=module.flex_scanner_notice(scanner,generator)
+        self.assertIn(b'not even bound by the above copyright',result[0])
+        self.assertEqual(result[1]['generator_version'],'2.6.4')
+        for data,tool_data in ((scanner.replace(b'VERSION 4',b'VERSION 3'),generator),
+                               (scanner,dict(generator,version='flex 2.6.3')),
+                               (scanner,dict(generator,sha256='bad')),(b'missing scanner macros',generator)):
+            with self.subTest(data=data,tool=tool_data),self.assertRaises(ValueError):module.flex_scanner_notice(data,tool_data)
+
+    def test_zig_runtime_evidence_is_bound_and_generated_files_are_not_sdk_sources(self):
+        module=tool()
+        with tempfile.TemporaryDirectory() as folder:
+            root=Path(folder);(root/'provenance.json').write_text('synthetic build')
+            record=dict(artifact_id='linux-musl-x86_64',executable_sha256='a'*64,sdk=dict(facts=dict(archive_sha256='b'*64)))
+            data=dict(kind='zig-startup-runtime-source-observations-not-approved',
+                provenance_sha256=module.builder.digest(root/'provenance.json'),executable_sha256='a'*64,
+                sdk_archive_sha256='b'*64,sources=[dict(path='lib/compiler_rt/example.zig',sha256='c'*64)],
+                generated_files=[dict(path='b/hash/builtin.zig',sha256='d'*64)])
+            evidence=root/'runtime.json'
+            def write():evidence.write_text(json.dumps(data))
+            write();sources,_=module.zig_runtime_notice_sources(record,root,evidence)
+            self.assertEqual(list(sources),['lib/compiler_rt/example.zig'])
+            data['sources'].append(dict(data['generated_files'][0]));write()
+            with self.assertRaises(ValueError):module.zig_runtime_notice_sources(record,root,evidence)
+            data['sources'].pop();data['sdk_archive_sha256']='e'*64;write()
+            with self.assertRaises(ValueError):module.zig_runtime_notice_sources(record,root,evidence)
+
+    def test_source_prefix_is_recomputed_and_refuses_forged_comment_receipts(self):
+        module=tool();data=b'// Copyright synthetic\nconst x = 1;\n'
+        prefix=b'// Copyright synthetic\n'
+        import hashlib
+        item=dict(sha256=hashlib.sha256(data).hexdigest(),size=len(data),
+            leading_comment_bytes=len(prefix),leading_comment_sha256=hashlib.sha256(prefix).hexdigest())
+        self.assertEqual(module.verified_source_prefix(data,item),prefix)
+        for changed in (dict(item,sha256='a'*64),dict(item,size=len(data)+1),
+                        dict(item,leading_comment_sha256='b'*64),dict(item,leading_comment_bytes=1)):
+            with self.subTest(item=changed),self.assertRaises(ValueError):module.verified_source_prefix(data,changed)
+
+    def test_musl_source_notices_require_exact_evidence_and_safe_unique_paths(self):
+        module=tool()
+        with tempfile.TemporaryDirectory() as folder:
+            root=Path(folder);(root/'provenance.json').write_text('synthetic build')
+            record=dict(artifact_id='linux-musl-x86_64',executable_sha256='a'*64,sdk=dict(facts=dict(archive_sha256='b'*64)))
+            data=dict(kind='musl-object-source-observations-not-license-approval',
+                provenance_sha256=module.builder.digest(root/'provenance.json'),executable_sha256='a'*64,
+                sdk_archive_sha256='b'*64,sources=[dict(path='lib/libc/musl/src/math/example.c',sha256='c'*64)])
+            evidence=root/'evidence.json'
+            def write():evidence.write_text(json.dumps(data))
+            write();sources,sha=module.musl_notice_sources(record,root,evidence)
+            self.assertEqual(list(sources),['lib/libc/musl/src/math/example.c'])
+            self.assertEqual(sha,module.builder.digest(evidence))
+            data['executable_sha256']='d'*64;write()
+            with self.assertRaises(ValueError):module.musl_notice_sources(record,root,evidence)
+            data['executable_sha256']='a'*64
+            for name in ('lib/libc/glibc/file.c','lib/libc/musl/../escape.c','lib/libc/musl//file.c'):
+                data['sources'][0]['path']=name;write()
+                with self.subTest(name=name),self.assertRaises(ValueError):module.musl_notice_sources(record,root,evidence)
+            data['sources'][0]['path']='lib/libc/musl/a.c'
+            data['sources'].append(dict(data['sources'][0]));write()
+            with self.assertRaises(ValueError):module.musl_notice_sources(record,root,evidence)
+
+    def test_libc_notices_follow_artifact_and_require_measured_static_musl(self):
+        module=tool()
+        with tempfile.TemporaryDirectory() as folder:
+            root=Path(folder)
+            glibc=module.sdk_notice_names(dict(completed=True,artifact_id='linux-glibc-x86_64'),root)
+            self.assertIn('lib/libc/glibc/LICENSES',glibc)
+            record=dict(completed=True,artifact_id='linux-musl-x86_64',sdk=dict(facts=dict(
+                target_os='linux',target_arch='x86_64',target_libc_family='musl',static_linking=True)))
+            with self.assertRaisesRegex(ValueError,'measured static'):
+                module.sdk_notice_names(record,root)
+            report=root/'static-elf-inspection.txt'
+            report.write_text('There is no dynamic section in this file.\n')
+            record['static_elf_inspection']=dict(report_sha256=module.builder.digest(report),
+                no_interpreter=True,no_dynamic_section=True,no_needed_libraries=True,no_glibc_symbols=True)
+            musl=module.sdk_notice_names(record,root)
+            self.assertIn('lib/libc/musl/COPYRIGHT',musl)
+            self.assertNotIn('lib/libc/glibc/LICENSES',musl)
+            self.assertEqual(musl-{'lib/libc/musl/COPYRIGHT'},glibc-{'lib/libc/glibc/LICENSES'})
+            record['sdk']['facts']['target_libc_family']='glibc'
+            with self.assertRaisesRegex(ValueError,'SDK target'):
+                module.sdk_notice_names(record,root)
+
+    def test_musl_static_report_tampering_and_dynamic_content_are_refused(self):
+        module=tool()
+        with tempfile.TemporaryDirectory() as folder:
+            root=Path(folder);report=root/'static-elf-inspection.txt'
+            report.write_text('There is no dynamic section in this file.\n')
+            record=dict(completed=True,artifact_id='linux-musl-x86_64',sdk=dict(facts=dict(
+                target_os='linux',target_arch='x86_64',target_libc_family='musl',static_linking=True)),
+                static_elf_inspection=dict(report_sha256=module.builder.digest(report),no_interpreter=True,
+                    no_dynamic_section=True,no_needed_libraries=True,no_glibc_symbols=True))
+            report.write_text('There is no dynamic section in this file.\nINTERP\n')
+            with self.assertRaisesRegex(ValueError,'Static ELF report changed'):
+                module.sdk_notice_names(record,root)
+            record['static_elf_inspection']['report_sha256']=module.builder.digest(report)
+            with self.assertRaises(ValueError):module.sdk_notice_names(record,root)
+            for artifact in ('linux-musl-aarch64','windows-x86_64'):
+                with self.subTest(artifact=artifact),self.assertRaises(ValueError):
+                    module.sdk_notice_names(dict(completed=True,artifact_id=artifact),root)
+
+    def test_changed_source_archive_is_refused_before_candidate_creation(self):
+        module=tool()
+        with tempfile.TemporaryDirectory() as folder:
+            root=Path(folder)
+            linked=root/'linked';source=root/'source'
+            (linked/'candidate/bin').mkdir(parents=True);source.mkdir()
+            binary=linked/'candidate/bin/dot';binary.write_bytes(b'synthetic binary, never executed')
+            (source/'provenance.json').write_text('{}')
+            lock=json.loads((module.HERE/'source-lock.json').read_text())
+            record=dict(completed=True,artifact_id='linux-glibc-x86_64',source=lock,
+                        executable_sha256=module.builder.digest(binary),sdk=dict(facts=dict(archive_sha256='a'*64)),
+                        relink=dict(parent_provenance_sha256=module.builder.digest(source/'provenance.json')))
+            (linked/'provenance.json').write_text(json.dumps(record))
+            evidence=root/'evidence.json'
+            evidence.write_text(json.dumps(dict(provenance_sha256=module.builder.digest(linked/'provenance.json'),
+                                                executable_sha256=record['executable_sha256'])))
+            archive=root/'changed.tar.gz';archive.write_bytes(b'not pinned source')
+            with self.assertRaisesRegex(ValueError,'Source archive'):
+                module.prepare(linked,source,evidence,archive,root/'absent-sdk.tar.xz',root/'sdk',root/'output')
+            self.assertFalse((root/'output').exists())
+            self.assertEqual(module.builder.digest(binary),record['executable_sha256'])
+
+    def test_color_notice_preserves_entire_comment_prefix_without_palette_data(self):
+        module=tool()
+        notice=b'# Apache-Style Software License for ColorBrewer\n# Copyright synthetic\n# THIS SOFTWARE IS PROVIDED synthetic\n\n'
+        self.assertEqual(module.color_notice(notice+b'/palette/1 1 2 3 255\n'),notice)
+        with self.assertRaises(ValueError):module.color_notice(b'# missing license\n/color 1 2 3\n')
+
+    def test_bison_notice_preserves_license_and_complete_exception(self):
+        module=tool()
+        prefix=(b'/* A Bison parser, made by GNU Bison 3.8.2. */\n'
+                b'/* Copyright synthetic; GNU General Public License */\n'
+                b'/* As a special exception, synthetic permission.\n version 2.2 of Bison. */')
+        self.assertEqual(module.bison_notice(prefix+b'\n/* generated implementation */\nint parser;'),prefix)
+        for bad in (b'not Bison',prefix.replace(b'As a special exception',b'exception absent'),prefix[:-2]):
+            with self.subTest(data=bad),self.assertRaises(ValueError):module.bison_notice(bad)
+
+
+if __name__=='__main__':unittest.main()

@@ -1,0 +1,13 @@
+{
+  "kind": "linux-private-bundle-runtime-integration",
+  "passed": false,
+  "qualified": false,
+  "environment_kind": "wsl",
+  "python": "3.14.4",
+  "arch": "x86_64",
+  "engine_sha256": "f4dfee4e052704b1a7efdb7b6a4c43583ccaa062aec800b76224dae24eb2b69b",
+  "provenance_sha256": "e5e61de74f74d2bfa194c6dfcdb7887e6e5b9a86dbba7052cdf3a751866d3085",
+  "observations": {},
+  "cases": [],
+  "scope": "Real native engine and production manager; controlled acquisition fixture, not distributed-candidate acceptance"
+}

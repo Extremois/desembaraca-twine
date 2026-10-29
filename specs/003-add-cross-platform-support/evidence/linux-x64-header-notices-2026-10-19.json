@@ -1,0 +1,60 @@
+{
+  "kind": "local-x64-glibc-header-notice-regression",
+  "approved": false,
+  "qualified": false,
+  "task": "T030",
+  "task_complete": false,
+  "source_state": "working-tree",
+  "base_revision": "364a909891c79bd7a0b43c1f80150972aa42fd3d",
+  "source_sha256": {
+    "tools/runtime/prepare-draft-notices.py": "9a31ee6d9da7bb36447f2a29ba7fa6f45fde0c4a9d2375d4e7c74d9a0b9e303c",
+    "tests/unit/test_draft_notices.py": "2fba46c4a996d36c25a7cc4d8549005c7825d8db6da5ab65bc25c53d8ec2df72"
+  },
+  "change": [
+    "Preserve SDK header comment prefixes and explicitly record empty prefixes for x64 glibc",
+    "Include canonical GPL-3 reference material alongside the separate Bison exception notices",
+    "Bind all other notice payloads to offline origins, sizes and SHA-256"
+  ],
+  "regression": {
+    "test": "test_x64_glibc_package_preserves_header_notices_and_offline_origins",
+    "before": "HEAD fails with missing sdk_header_prefixes_preserved; full synthetic package has no header prefixes or offline index",
+    "after": "Full synthetic package preserves nonempty prefix, records empty prefix, verifies every offline index payload hash and leaves executable unchanged",
+    "fixture": "Synthetic upstream archives and inert binary/compiler/generator; real hash-pinned canonical license texts",
+    "approved": false
+  },
+  "executions": [
+    {
+      "environment": "current Windows x86_64",
+      "python": "3.14",
+      "suite": "tests/run_foundation.py",
+      "tests": 209,
+      "skipped": 8,
+      "seconds": 29.198,
+      "passed": true
+    },
+    {
+      "environment": "current Windows x86_64",
+      "python": "3.12",
+      "suite": "tests/run_foundation.py",
+      "tests": 209,
+      "skipped": 8,
+      "seconds": 26.502,
+      "passed": true
+    }
+  ],
+  "existing_wsl_attempt": {
+    "passed": false,
+    "stage": "prepare-draft-notices.py",
+    "error": "Recorded Flex generator missing or changed",
+    "source_build": "desembaraca-graphviz-003-glibc227-r5",
+    "linked_build": "desembaraca-graphviz-003-lld-extractions",
+    "generated_candidate": false,
+    "explanation": "Existing historical build no longer matches the current Flex executable. Guard retained; no provenance or generator hash replaced."
+  },
+  "limitations": [
+    "No newly built native candidate or CI confirmation in this increment",
+    "Historical artifact notices and their receipts stay unchanged",
+    "Per-file license applicability, source offer and distribution qualification remain pending",
+    "No commit, push, publication or catalog promotion in this increment"
+  ]
+}

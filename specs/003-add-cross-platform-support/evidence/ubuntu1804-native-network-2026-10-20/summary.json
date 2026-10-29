@@ -1,0 +1,87 @@
+{
+  "kind": "verified-native-ubuntu1804-installed-wheel-native-network-observation",
+  "passed": true,
+  "qualified": false,
+  "approved": false,
+  "captured_at": "2026-10-20T19:11:53.554138+00:00",
+  "revision": "c8f881c6e9eeda959579bfba24ca22537bbcef78",
+  "workflow_run": 39480928288,
+  "workflow_url": "https://github.com/Extremois/desembaraca-twine/actions/runs/39480928288",
+  "artifact_id": 12290133320,
+  "artifact_sha256": "d6928e5546b7b1d5c4ac9253755165933cd995651737da45e29ffa84d20bda6f",
+  "native_summary_sha256": "e7e65c6552b3025463a407cc9e499364e5c891a0b5d8ded5c578a93c4e2e86aa",
+  "wheel_sha256": "2560124b59730dc60602e7b5b1a7b652bf2d8344f5320dc92d8d92218a9e680d",
+  "installed_source_files_verified_against_commit": 53,
+  "engine_sha256": "43ce8d686720467c21be91cab4b8f3b246baae49c2cfe293714ebdf8a82f5716",
+  "kernel": "4.15.0-212-generic",
+  "glibc": "glibc 2.27",
+  "arch": "x86_64",
+  "kvm": {
+    "enabled": true,
+    "present": true
+  },
+  "interpreters": [
+    {
+      "python": "3.12.15",
+      "report": "application-3.12.json",
+      "sha256": "48283e1859cef6acf5fc19580c50098f5760dc88a1145e25b950bb731297892f",
+      "cases": 13,
+      "known_zero_references": 6,
+      "native_network_syscalls": {},
+      "dot_executions": 49,
+      "control_network_syscalls": {
+        "socket": 1,
+        "connect": 1,
+        "getsockopt": 1
+      },
+      "control_trace_sha256": "524b7ccbf21e7ac41ef3cd1ab7c015387424c4fcec8365136f0748f997114b08",
+      "corpus_trace_sha256": "49b6cb5f948ae8632add7a77cc7a16ef29c6d2382bcdb02a61d854386643fd73"
+    },
+    {
+      "python": "3.14.8",
+      "report": "application-3.14.json",
+      "sha256": "57e766abc6f3aa9f1933f3248e9f66728a1f9e30ab14d8fa141a320fa6132bb3",
+      "cases": 13,
+      "known_zero_references": 6,
+      "native_network_syscalls": {},
+      "dot_executions": 49,
+      "control_network_syscalls": {
+        "socket": 1,
+        "connect": 1,
+        "getsockopt": 1
+      },
+      "control_trace_sha256": "23a6b4297f47396b45e8749c67ed626d3ac169e3ddc5beb39affb6ac2c7de819",
+      "corpus_trace_sha256": "44a60294a9c8ba96a733bc95f95f179347b419c217a6cb097efcef0165bc0869"
+    }
+  ],
+  "system_python_unchanged": true,
+  "tasks_complete": 56,
+  "tasks_total": 84,
+  "limitations": [
+    "Installed development wheel only; catalog remains Windows-only and acquisition is a controlled fixture",
+    "strace follows children and reports zero native network calls; controlled acquisition remains separate from final remote distribution acceptance",
+    "T037/T078 remain partial: Pro eligibility, remote final candidate, other cells, Twine and shared gates pending"
+  ],
+  "foundation_run": 39480928185,
+  "foundation_report_sha256": "dc2b7e0ec26340f0d1cdd46d01024fb52457ba30b948b1a4ba95a23dbb9978c0",
+  "tracer": {
+    "package": "strace 4.21-1ubuntu1",
+    "reported_version": "strace -- version UNKNOWN",
+    "sha256": "c2dca0e0db9d2295b5ca048a1fefa250aa632c84a6be50f6e5521c6161c1cffe",
+    "image_package_manifest": "image-packages.manifest",
+    "manifest_sha256": "4bf2fa3de47d12cf10f7817fa8a61cc133cd8f660bb25c1ba2da81f53ff62c9f",
+    "manifest_url": "https://cloud-images.ubuntu.com/releases/bionic/release-20230607/ubuntu-18.04-server-cloudimg-amd64.manifest",
+    "follow_children": true,
+    "kill_on_exit": false,
+    "cleanup": "Owned guest terminated by host finally"
+  },
+  "previous_failed_attempts": [
+    "first-attempt.json",
+    "second-attempt.json"
+  ],
+  "task_status": {
+    "T037": "partial: Ubuntu 18.04 x64 installed development wheel with private runtime and native tracing; Pro, final distribution and other cells pending",
+    "T078": "partial: installed wheel, not final remotely distributed candidate or complete matrix",
+    "T080": "partial: native network control/corpus and bounded observer only; complete package/resource/privacy audit pending"
+  }
+}

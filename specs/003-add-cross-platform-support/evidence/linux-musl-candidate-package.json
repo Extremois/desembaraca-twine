@@ -1,0 +1,124 @@
+{
+  "kind": "local-static-musl-candidate-package",
+  "approved": false,
+  "qualified": false,
+  "environment_kind": "wsl",
+  "captured_at": "2026-10-18T22:14:44.696928+00:00",
+  "artifact_id": "linux-musl-x86_64",
+  "archive_sha256": "dfcd0bf5641e28cb6986bbcefe41f77a348016345c824b9c388032dc908b3562",
+  "archive_bytes": 7355837,
+  "inventory_sha256": "f07f0b66e2a997384bcc9041e65c841fdf195747d3c54acf265caf094c02ea5f",
+  "provenance_sha256": "daba2f9a893a98f746a101cd3de7d07261b3af51e076690bdbb60891c5055a03",
+  "executable_sha256": "a58b2f30b70a0393ff0cec93d40e7b039015d1ad2bbdc8a9c60634334519942f",
+  "minimum_libc": null,
+  "native_linkage": "static-elf",
+  "file_count": 15,
+  "files": [
+    {
+      "path": "bin/dot",
+      "size": 7271288,
+      "mode": 493,
+      "sha256": "a58b2f30b70a0393ff0cec93d40e7b039015d1ad2bbdc8a9c60634334519942f"
+    },
+    {
+      "path": "third-party-notices/Bison-lib__cgraph__grammar.c.txt",
+      "size": 1532,
+      "mode": 420,
+      "sha256": "b979bc0e49fa1efed0fad3af4ecc582b471da7662626cebfd0d5f998b1119f72"
+    },
+    {
+      "path": "third-party-notices/Bison-lib__cgraph__grammar.h.txt",
+      "size": 1527,
+      "mode": 420,
+      "sha256": "ecd76b7233bacbeeafca33a46b80f4120864e3de861e7d0a7d7c6fcce3d664dd"
+    },
+    {
+      "path": "third-party-notices/Bison-lib__common__htmlparse.c.txt",
+      "size": 1532,
+      "mode": 420,
+      "sha256": "b979bc0e49fa1efed0fad3af4ecc582b471da7662626cebfd0d5f998b1119f72"
+    },
+    {
+      "path": "third-party-notices/Bison-lib__common__htmlparse.h.txt",
+      "size": 1527,
+      "mode": 420,
+      "sha256": "ecd76b7233bacbeeafca33a46b80f4120864e3de861e7d0a7d7c6fcce3d664dd"
+    },
+    {
+      "path": "third-party-notices/ColorBrewer.txt",
+      "size": 2130,
+      "mode": 420,
+      "sha256": "09598cbb53b21f3cab841d5be8ceee6ef9bc0387f3b60330da94e9c98f4ada19"
+    },
+    {
+      "path": "third-party-notices/Graphviz-AUTHORS.txt",
+      "size": 694,
+      "mode": 420,
+      "sha256": "182eaf397edc803d0e44a25708ba70ecafc143c0f610ea7048c6b9687a939ff0"
+    },
+    {
+      "path": "third-party-notices/Graphviz-COPYING.txt",
+      "size": 14198,
+      "mode": 420,
+      "sha256": "0becf16567beb77fa252b7664631dd177c8f9a1889e48995b45379c7130e5303"
+    },
+    {
+      "path": "third-party-notices/Graphviz-lib__rbtree__LICENSE.txt",
+      "size": 1048,
+      "mode": 420,
+      "sha256": "fcb423209a3a3909f41e629a4973eab3995ceb93136dd72485fb12ad3de29dfc"
+    },
+    {
+      "path": "third-party-notices/SDK-LICENSE.txt",
+      "size": 1080,
+      "mode": 420,
+      "sha256": "5c537d6853e005298a285d508cff9ac7192cea23576c840d485b2b586a7ff177"
+    },
+    {
+      "path": "third-party-notices/SDK-lib__libc__musl__COPYRIGHT.txt",
+      "size": 6204,
+      "mode": 420,
+      "sha256": "f9bc4423732350eb0b3f7ed7e91d530298476f8fec0c6c427a1c04ade22655af"
+    },
+    {
+      "path": "third-party-notices/SDK-lib__libcxx__LICENSE.TXT.txt",
+      "size": 16703,
+      "mode": 420,
+      "sha256": "539dd7aed86e8a4f12cbdd0e6c50c189c7d74847e4fecc64ce2c6ee3a01da38b"
+    },
+    {
+      "path": "third-party-notices/SDK-lib__libcxxabi__LICENSE.TXT.txt",
+      "size": 16706,
+      "mode": 420,
+      "sha256": "e2b35be49f7284a45b7baca8fc7b3ab7440e7902392b2528a457816b5bb2a15c"
+    },
+    {
+      "path": "third-party-notices/SDK-lib__libunwind__LICENSE.TXT.txt",
+      "size": 16706,
+      "mode": 420,
+      "sha256": "b5efebcaca80879234098e52d1725e6d9eb8fb96a19fce625d39184b705f7b6d"
+    },
+    {
+      "path": "third-party-notices/SOURCE-REFERENCES.txt",
+      "size": 442,
+      "mode": 420,
+      "sha256": "6f5ea5a2d1756065c777a99b910ac8f5d104e870b16891df3f68a21c7277c16e"
+    }
+  ],
+  "archive_repeat_byte_identical": true,
+  "zip_contents_and_modes_verified": true,
+  "audit_refusal": "Reviewed audit must bind the exact build provenance",
+  "local_review_copy": "tools/runtime/artifacts/linux-musl/linux-musl-x86_64-notice-draft",
+  "notice_evidence": "linux-musl-notice-draft.json",
+  "tools_sha256": {
+    "verify-artifact": "6897ad6e452e0d464cccd077e622594242acabce32eb48910327b1e89a31c3fa",
+    "pack-candidate": "f6b866a3c1a8a35687e65d05fb82b0a2143d2cc462d7030d19d756a1e83c8498"
+  },
+  "limitations": [
+    "Local inventory/ZIP only, not a runtime manifest or qualified host ABI baseline",
+    "Static measurements do not establish upstream musl version, minimum kernel/CPU or native Alpine acceptance",
+    "Reviewed license/source audit, ARM64/macOS variants and native cell acceptance still required",
+    "Unchanged executable: previous corpus evidence applies; no new corpus run or native network trace",
+    "No catalog change, immutable remote URL or publication"
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "url": "https://cloud-images.ubuntu.com/releases/stonking/release-20261025/ubuntu-26.10-server-cloudimg-amd64.img",
+  "size": 876878336,
+  "sha256": "46d1d848cd8bfc05a2e729f70b02e0b4b97502bf7839b8928186d3c643c13b33",
+  "checksum_manifest_url": "https://cloud-images.ubuntu.com/releases/stonking/release-20261025/SHA256SUMS",
+  "checksum_manifest_sha256": "1f089bbff8e545aee1a0b6dfbaae5df8540461491aaf7f6e96f38d1f63e98229",
+  "package_manifest_url": "https://cloud-images.ubuntu.com/releases/stonking/release-20261025/ubuntu-26.10-server-cloudimg-amd64.manifest",
+  "package_manifest_sha256": "dc628db95222947dffd12de062a3208efcbb2cde96302fcc3a3755d6463524d1",
+  "release": "26.10",
+  "arch": "x86_64",
+  "scope": "Historical image for private native-kernel tests; no support qualification"
+}

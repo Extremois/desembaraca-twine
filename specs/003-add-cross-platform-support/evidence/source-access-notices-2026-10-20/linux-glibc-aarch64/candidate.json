@@ -1,0 +1,25 @@
+{
+  "kind": "local-candidate-archive",
+  "qualified": false,
+  "artifact_id": "linux-glibc-aarch64",
+  "platform": "linux",
+  "artifact_arch": "aarch64",
+  "abi": "glibc",
+  "archive": "candidate.zip",
+  "archive_sha256": "937ae52a817c63682a49ccd8e4cce8bb84bb135241d7a55b438b851e4fee5088",
+  "archive_bytes": 7793739,
+  "inventory": "inventory.json",
+  "inventory_sha256": "f651c77f17eb74f41139ea83061cb20d5cae8351e8acf2435b23e263f65ee47c",
+  "provenance_sha256": "a19d7391e4d008a1a03a93a5da9427323bbb0412e6791c6a26730cd2bbcdda3c",
+  "file_count": 573,
+  "source_modes_checked": true,
+  "zip_modes": "from-validated-inventory",
+  "compression": "stored",
+  "pending": [
+    "dependency/license audit",
+    "native inspection/ABI",
+    "signing/notarization if applicable",
+    "real immutable distribution URL and runtime manifest",
+    "native cell acceptance"
+  ]
+}

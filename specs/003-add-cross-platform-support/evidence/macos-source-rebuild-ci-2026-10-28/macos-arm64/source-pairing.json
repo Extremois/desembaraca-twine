@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "kind": "corresponding-source-delivery-pairing",
+  "artifact_id": "macos-arm64",
+  "application_revision": "fed01cc58e7a51625ce8b6da43b526dbc55c80a0",
+  "executable_sha256": "774115a1a9e4b2385d33fa55fe02de0d8728cb0984967d445528c6fe04f97dac",
+  "provenance_sha256": "1f36549bb766ad369787d08b2a3536da6f70d4c9e34abac25a9ee6e6312eb882",
+  "pairing_valid": true,
+  "archive_verification": {
+    "candidate": true,
+    "sources": true
+  },
+  "candidate": {
+    "archive": "candidate.zip",
+    "sha256": "f894e86e3d849b91e490893552efd546b213827276247066a731eb9626975f8b",
+    "bytes": 1883041,
+    "inventory_sha256": "34f8a5b9f2d6abd8411259741678dec494a7cefb712bc83d787ffa7c470f7451",
+    "file_count": 233
+  },
+  "sources": {
+    "archive": "sources.tar.gz",
+    "sha256": "36928004e0f9c422cc68a62ab16bc214b248a1df6d275a5bc4e577c748846196",
+    "bytes": 41072712,
+    "file_count": 127,
+    "sdk_files": 0
+  },
+  "obligations": {
+    "lgpl_2_1_section_6_d": "Não aplicável diretamente (ambiente sem retenção glibc)",
+    "lgpl_2_1_section_6_a": "Reconstrução funcional e independência de compilação comprovadas",
+    "epl_2_0_section_3_1": "Fontes completas do Graphviz acompanhadas de declaração expressa de licença e avisos preservados",
+    "offline_notices": "Avisos SOURCE-REFERENCES.txt e textos integrais offline incorporados em ambos os arquivos"
+  },
+  "delivery_binding": {
+    "status": "unpromoted_pending_authorized_distribution",
+    "candidate_distribution_url": null,
+    "sources_distribution_url": null,
+    "active_catalog_promoted": false
+  }
+}

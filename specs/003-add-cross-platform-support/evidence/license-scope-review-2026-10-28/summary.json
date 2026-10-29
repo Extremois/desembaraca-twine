@@ -1,0 +1,23 @@
+{
+  "kind": "primary-source-scope-correction-not-license-approval",
+  "approved": false,
+  "qualified": false,
+  "tasks": [
+    "T030",
+    "T052",
+    "T066"
+  ],
+  "source_url": "https://issues.apache.org/jira/secure/attachment/12929220/reply_w3.mbox",
+  "source_sha256": "d1ca3ffec494024be03559945ce67f932e57b2c65d93c94463515ff70193b908",
+  "source_bytes": 10293,
+  "related_issue": "https://issues.apache.org/jira/browse/LEGAL-386",
+  "issue_resolution": "Invalid",
+  "correction": "W3C licensing statements do not resolve ISO terms or approve Graphviz artifact distribution",
+  "public_email_content_republished": false,
+  "review_document": "tools/runtime/licenses/LINUX-COMPONENT-REVIEW.md",
+  "remaining": [
+    "Artifact-specific license applicability",
+    "Corresponding-source completeness and delivery",
+    "Distribution terms"
+  ]
+}

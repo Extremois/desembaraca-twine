@@ -1,0 +1,147 @@
+{
+  "application_revision": "ae786485b720dfe63fd21d177dc69a988b15205f",
+  "passed": true,
+  "qualified": false,
+  "workflows": [
+    {
+      "id": 40770628293,
+      "name": "Cross-platform foundation",
+      "url": "https://github.com/Extremois/desembaraca-twine/actions/runs/40770628293",
+      "conclusion": "success",
+      "jobs": [
+        {
+          "id": 123106512548,
+          "name": "Pure contracts (ubuntu-24.04, Python 3.14)",
+          "conclusion": "success"
+        },
+        {
+          "id": 123106512852,
+          "name": "Pure contracts (macos-15, Python 3.12)",
+          "conclusion": "success"
+        },
+        {
+          "id": 123106512878,
+          "name": "Pure contracts (macos-15, Python 3.14)",
+          "conclusion": "success"
+        },
+        {
+          "id": 123106513015,
+          "name": "Pure contracts (windows-latest, Python 3.12)",
+          "conclusion": "success"
+        },
+        {
+          "id": 123106513063,
+          "name": "Pure contracts (windows-latest, Python 3.14)",
+          "conclusion": "success"
+        },
+        {
+          "id": 123106513140,
+          "name": "Pure contracts (ubuntu-24.04, Python 3.12)",
+          "conclusion": "success"
+        }
+      ]
+    },
+    {
+      "id": 40770628217,
+      "name": "Linux Graphviz candidate",
+      "url": "https://github.com/Extremois/desembaraca-twine/actions/runs/40770628217",
+      "conclusion": "success",
+      "jobs": [
+        {
+          "id": 123106512051,
+          "name": "build-and-corpus",
+          "conclusion": "success"
+        }
+      ]
+    },
+    {
+      "id": 40770628354,
+      "name": "Linux ARM64 Graphviz candidate",
+      "url": "https://github.com/Extremois/desembaraca-twine/actions/runs/40770628354",
+      "conclusion": "success",
+      "jobs": [
+        {
+          "id": 123106512905,
+          "name": "native-build",
+          "conclusion": "success"
+        }
+      ]
+    },
+    {
+      "id": 40770628204,
+      "name": "macOS Graphviz candidates",
+      "url": "https://github.com/Extremois/desembaraca-twine/actions/runs/40770628204",
+      "conclusion": "success",
+      "jobs": [
+        {
+          "id": 123106511884,
+          "name": "native-build (macos-15, aarch64, macos-arm64)",
+          "conclusion": "success"
+        },
+        {
+          "id": 123106512392,
+          "name": "native-build (macos-15-intel, x86_64, macos-x86_64)",
+          "conclusion": "success"
+        }
+      ]
+    },
+    {
+      "id": 40770628363,
+      "name": "Alpine musl Graphviz candidates",
+      "url": "https://github.com/Extremois/desembaraca-twine/actions/runs/40770628363",
+      "conclusion": "success",
+      "jobs": [
+        {
+          "id": 123106512772,
+          "name": "alpine-build (ubuntu-24.04-arm, aarch64)",
+          "conclusion": "success"
+        },
+        {
+          "id": 123106513185,
+          "name": "alpine-build (ubuntu-24.04, x86_64)",
+          "conclusion": "success"
+        },
+        {
+          "id": 123110033121,
+          "name": "Alpine userland 3.23 (x86_64, both Pythons)",
+          "conclusion": "success"
+        },
+        {
+          "id": 123110033177,
+          "name": "Alpine userland 3.21 (aarch64, both Pythons)",
+          "conclusion": "success"
+        },
+        {
+          "id": 123110033203,
+          "name": "Alpine userland 3.23 (aarch64, both Pythons)",
+          "conclusion": "success"
+        },
+        {
+          "id": 123110033211,
+          "name": "Alpine userland 3.22 (x86_64, both Pythons)",
+          "conclusion": "success"
+        },
+        {
+          "id": 123110033232,
+          "name": "Alpine userland 3.24 (x86_64, both Pythons)",
+          "conclusion": "success"
+        },
+        {
+          "id": 123110033284,
+          "name": "Alpine userland 3.21 (x86_64, both Pythons)",
+          "conclusion": "success"
+        },
+        {
+          "id": 123110033292,
+          "name": "Alpine userland 3.22 (aarch64, both Pythons)",
+          "conclusion": "success"
+        },
+        {
+          "id": 123110033304,
+          "name": "Alpine userland 3.24 (aarch64, both Pythons)",
+          "conclusion": "success"
+        }
+      ]
+    }
+  ]
+}

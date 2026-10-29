@@ -1,0 +1,76 @@
+{
+  "kind": "private-python-prerequisites-partial-not-cell-qualification",
+  "captured_at": "2026-10-18T12:27:46.347078+00:00",
+  "environment_kind": "wsl",
+  "distribution": "Ubuntu 26.04",
+  "arch": "x86_64",
+  "kernel": "6.18.33.1-microsoft-standard-WSL2",
+  "system_python_unchanged": true,
+  "system_python_sha256": "fa9796cd3a30878e11a2f40372f773d3fcd913fff35e5bee8dd9a036e22e93ab",
+  "private_install": true,
+  "interpreters": [
+    {
+      "python_minor": "3.12",
+      "python_patch": "3.12.15",
+      "origin": "Astral python-build-standalone 20261003 install_only_stripped, baseline x86_64 GNU libc",
+      "url": "https://github.com/astral-sh/python-build-standalone/releases/download/20261003/cpython-3.12.15%2B20261003-x86_64-unknown-linux-gnu-install_only_stripped.tar.gz",
+      "archive_sha256": "731af898886c5f821890dc901eca3c651cca8e51fa7308c159d12a1194aeac91",
+      "archive_bytes": 34285590,
+      "venv_and_pip_passed": true,
+      "facts": {
+        "python": "3.12.15",
+        "implementation": "CPython",
+        "arch": "x86_64",
+        "bits": 64,
+        "pip": "25.0.1",
+        "ensurepip": "25.0.1",
+        "ssl": "OpenSSL 3.5.9 29 Sep 2026",
+        "venv_active": true,
+        "gil_disabled": false,
+        "ssl_context": true
+      }
+    },
+    {
+      "python_minor": "3.14",
+      "python_patch": "3.14.8",
+      "origin": "Astral python-build-standalone 20261003 install_only_stripped, baseline x86_64 GNU libc",
+      "url": "https://github.com/astral-sh/python-build-standalone/releases/download/20261003/cpython-3.14.8%2B20261003-x86_64-unknown-linux-gnu-install_only_stripped.tar.gz",
+      "archive_sha256": "d9ec7a6935ade8b671a57ebaf111083d7314eab8dae5071d167054dadd2b97d6",
+      "archive_bytes": 36299485,
+      "venv_and_pip_passed": true,
+      "facts": {
+        "python": "3.14.8",
+        "implementation": "CPython",
+        "arch": "x86_64",
+        "bits": 64,
+        "pip": "26.2.1",
+        "ensurepip": "26.2.1",
+        "ssl": "OpenSSL 3.5.9 29 Sep 2026",
+        "venv_active": true,
+        "gil_disabled": false,
+        "ssl_context": true
+      }
+    }
+  ],
+  "limitations": [
+    "Existing WSL only, not native Ubuntu cell acceptance or other distributions.",
+    "Third-party CPython builds from pinned upstream release; no system Python replaced, no apt/sudo or global Graphviz.",
+    "Private prerequisite toolchains are not incorporated into project wheels or native bundles."
+  ],
+  "foundation_executions": [
+    {
+      "python": "3.12.15",
+      "tests": 126,
+      "skipped": 5,
+      "seconds": 33.171,
+      "passed": true
+    },
+    {
+      "python": "3.14.8",
+      "tests": 126,
+      "skipped": 5,
+      "seconds": 32.901,
+      "passed": true
+    }
+  ]
+}

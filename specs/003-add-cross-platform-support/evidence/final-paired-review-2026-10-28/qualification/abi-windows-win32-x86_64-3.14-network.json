@@ -1,0 +1,35 @@
+{
+  "reviewer": "Codex technical implementation review",
+  "source": {
+    "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/c007823/12888122090/final-catalog.json.gz",
+    "sha256": "2055ef2bce542a397209e63b4e198761d9a77df94672e347ccda425c2ff39c3a"
+  },
+  "attempts": 0,
+  "observation": "GitHub Actions worker Python socket/DNS guard while reusing healthy runtime; native engine has no acquisition role. Not a claim of a system-wide syscall trace.",
+  "formats": [
+    {
+      "mode": "wheel",
+      "network": {
+        "observation": "python-only",
+        "attempts": 0
+      },
+      "healthy_generation_reused": true
+    },
+    {
+      "mode": "sdist",
+      "network": {
+        "observation": "python-only",
+        "attempts": 0
+      },
+      "healthy_generation_reused": true
+    },
+    {
+      "mode": "remote",
+      "network": {
+        "observation": "python-only",
+        "attempts": 0
+      },
+      "healthy_generation_reused": true
+    }
+  ]
+}

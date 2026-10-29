@@ -1,0 +1,14 @@
+{
+  "url": "https://dl.fedoraproject.org/pub/fedora/linux/releases/43/Cloud/x86_64/images/Fedora-Cloud-Base-Generic-43-1.6.x86_64.qcow2",
+  "origin_url": "https://dl.fedoraproject.org/pub/fedora/linux/releases/43/Cloud/x86_64/images/Fedora-Cloud-Base-Generic-43-1.6.x86_64.qcow2",
+  "sha256": "846574c8a97cd2d8dc1f231062d73107cc85cbbbda56335e264a46e3a6c8ab2f",
+  "checksum_manifest_url": "https://dl.fedoraproject.org/pub/fedora/linux/releases/43/Cloud/x86_64/images/Fedora-Cloud-43-1.6-x86_64-CHECKSUM",
+  "checksum_manifest_sha256": "7a6e1b96c59979e46ab45d9fbf8aab38e0061d24dad892bf7028780490cc4393",
+  "size": 583335936,
+  "release": "43",
+  "distribution": "fedora",
+  "arch": "x86_64",
+  "image_build": "43-1.6",
+  "virtual_size": 5368709120,
+  "scope": "Fixed GA Generic image for private native-kernel tests; no support qualification"
+}

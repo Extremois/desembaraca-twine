@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "kind": "corresponding-source-delivery-pairing",
+  "artifact_id": "linux-musl-aarch64",
+  "application_revision": "6279d6ff715abbd4fc8d5fdf778d8a27a4f3ddfb",
+  "executable_sha256": "2d7a4b6024eb000c33ecf8b14d1a32d0aac8dde65bed00de138604d081fd3ee4",
+  "provenance_sha256": "d9812ae001a19159fc0a6c804885849afd05b49dce234849d7f37f7531b05c0e",
+  "pairing_valid": true,
+  "archive_verification": {
+    "candidate": true,
+    "sources": true
+  },
+  "candidate": {
+    "archive": "candidate.zip",
+    "sha256": "e12632dbb7035d4bb6fbba8dcf99cc68ef41f2601f3448030d396e682f2159d9",
+    "bytes": 7993254,
+    "inventory_sha256": "aff78b602162fb3fb25ca8069bb4402bf4f997a7fdd227754d66e17610981406",
+    "file_count": 450
+  },
+  "sources": {
+    "archive": "sources.tar.gz",
+    "sha256": "b24703663e33c98d75b71c223de7bb1286fcc63b1b5aa2626d41b05af736e1cc",
+    "bytes": 68499845,
+    "file_count": 18229,
+    "sdk_files": 18102
+  },
+  "obligations": {
+    "lgpl_2_1_section_6_d": "Não aplicável diretamente (ambiente sem retenção glibc)",
+    "lgpl_2_1_section_6_a": "Verificar reconstrução funcional em evidência separada",
+    "epl_2_0_section_3_1": "Verificar completude das fontes Graphviz, declaração de licença e avisos",
+    "offline_notices": "Verificar SOURCE-REFERENCES.txt e textos integrais offline nos materiais distribuídos"
+  },
+  "delivery_binding": {
+    "status": "unpromoted_pending_authorized_distribution",
+    "candidate_distribution_url": null,
+    "sources_distribution_url": null,
+    "active_catalog_promoted": false
+  }
+}

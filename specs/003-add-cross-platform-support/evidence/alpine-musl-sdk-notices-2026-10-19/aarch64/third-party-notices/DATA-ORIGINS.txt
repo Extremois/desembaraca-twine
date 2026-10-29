@@ -1,0 +1,15 @@
+Generated Graphviz data review material; not complete license approval.
+147 SVG color values match SVG 1.1 Second Edition (W3C Recommendation, 16 August 2011):
+https://www.w3.org/TR/2011/REC-SVG11-20110816/types.html#ColorKeywords
+252 entity values match HTML 4.01 (W3C Recommendation, 24 December 1999):
+https://www.w3.org/TR/1999/REC-html401-19991224/sgml/entities.html
+674 color values match X.Org rgb 1.1.0 after case/space alias normalization.
+Graphviz-specific differences: gray/grey = 192,192,192 (X.Org: 190,190,190);
+invis/none/transparent = 255,255,254 with alpha 0, absent in that reference.
+Graphviz source provenance for SVG data is preserved below:
+#
+# This data was obtained by cut&paste from a firefox rendering of:
+#	http://www.w3.org/TR/SVG/types.html#ColorKeywords
+# and then reformatting into "name red green blue alpha"
+#
+

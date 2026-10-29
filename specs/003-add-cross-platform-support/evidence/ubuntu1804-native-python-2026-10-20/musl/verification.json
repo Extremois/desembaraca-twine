@@ -1,0 +1,93 @@
+{
+  "kind": "native-musl-baseline-regression",
+  "captured_at": "2026-10-20T18:20:02.776299+00:00",
+  "passed": true,
+  "qualified": false,
+  "approved": false,
+  "revision": "cc0cc7675b386c43506c6f9f1b48df73ce60abad",
+  "workflow_run": 39473344773,
+  "workflow_url": "https://github.com/Extremois/desembaraca-twine/actions/runs/39473344773",
+  "artifact_download_id": 12286893955,
+  "artifact_download_sha256": "90500a1d26523df84a156e01bfce846f49f4bb3a5d11a76861ef1a4c7769f07a",
+  "abi": "musl",
+  "image_pin_sha256": "72e94bba290e463af5cc6b7f2dbabefca388d2dceb84410f38fd1c8565113fb2",
+  "engine_sha256": "f4dfee4e052704b1a7efdb7b6a4c43583ccaa062aec800b76224dae24eb2b69b",
+  "native_summary_sha256": "a5a100480162ba846460532eecd27098e9af165fc74c02368071ba352712d6b1",
+  "guest_report_sha256": "f7c4215eb6281dd0d0dcd88b40ffa32408209c725a1d1afe0cd8527c9a29df16",
+  "kvm": {
+    "enabled": true,
+    "present": true
+  },
+  "guest_kernel": "4.15.0-212-generic",
+  "guest_glibc": "glibc 2.27",
+  "arch": "x86_64",
+  "corpus": [
+    {
+      "case": "crossing",
+      "output_sha256": "284ecd02a8c8b5cabd1bc09352bfd64cfd71aa34eaec4e764925e70ea2b9c6c7",
+      "decoded_nodes": 4
+    },
+    {
+      "case": "coincident",
+      "output_sha256": "5e0ee8f776d419bce61a9ef6bb6dca73866497a347f4ef3b52bed5f96e12bd04",
+      "decoded_nodes": 4
+    },
+    {
+      "case": "clean",
+      "output_sha256": "7a3bdb8a5693fdd5a2a3c86d7bf32c43000c23a8470540ebfdc56e5785a6eb61",
+      "decoded_nodes": 2
+    },
+    {
+      "case": "isolated_overlap",
+      "output_sha256": "e0969b0682d5aa7645769edd3aab25cd2100ee85a3d57f46482ef8296eb70beb",
+      "decoded_nodes": 2
+    },
+    {
+      "case": "connected_overlap",
+      "output_sha256": "d30afcda91fa423e11958945cbd7324bea5dc1ef40e23fb9f7d5d06e18d9fb07",
+      "decoded_nodes": 3
+    },
+    {
+      "case": "through_isolated",
+      "output_sha256": "8ba7f17057625b767efc6c251e977059d2e7e8a002b3ea2a951699025ece3dfb",
+      "decoded_nodes": 3
+    },
+    {
+      "case": "through_connected",
+      "output_sha256": "5e0ee8f776d419bce61a9ef6bb6dca73866497a347f4ef3b52bed5f96e12bd04",
+      "decoded_nodes": 4
+    },
+    {
+      "case": "border_only",
+      "output_sha256": "1eea0fc0bd90ab230248b274d385a91c88067c813f702527639efad35aa60850",
+      "decoded_nodes": 3
+    },
+    {
+      "case": "cycle",
+      "output_sha256": "2f1e24cf016fb935e170999e67246b99557f19f7b3e633c83fad4f030eaf5d8f",
+      "decoded_nodes": 3
+    },
+    {
+      "case": "parallel_occurrences",
+      "output_sha256": "345be09eb92400e407864362825da08e4c37613689a2e685ed16fed8121b36df",
+      "decoded_nodes": 2
+    },
+    {
+      "case": "self_loop",
+      "output_sha256": "059eef51012c99eea5f8ff6918586b9b42d581ea871d246ccfaa963ab3ffd562",
+      "decoded_nodes": 1
+    },
+    {
+      "case": "reciprocal",
+      "output_sha256": "5619900998072691afd222022786f6145fa98e50cf1da7b7aae8de0b8644d835",
+      "decoded_nodes": 2
+    },
+    {
+      "case": "empty",
+      "output_sha256": "c599e92f4b1b099fd97fde1f3a07dae747a365a17037f880a333f786f6cf2d27",
+      "decoded_nodes": 0
+    }
+  ],
+  "private_python_report_sha256": null,
+  "scope": "T033/T037 partial: Ubuntu 18.04 x64 private prerequisites only; full installation, Pro eligibility, other cells and Twine remain pending"
+}

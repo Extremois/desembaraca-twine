@@ -1,0 +1,37 @@
+{
+  "kind": "native-ubuntu1804-musl-engine-baseline",
+  "passed": true,
+  "approved": false,
+  "qualified": false,
+  "abi": "musl",
+  "revision": "eea100c37599517e09b6626d1edb82b599a1b19c",
+  "candidate_revision": "b13cd6f90db31163e62119bb83e2eb8db5ac8458",
+  "candidate_run_id": 39434565540,
+  "artifact_id": "linux-musl-x86_64",
+  "engine_sha256": "f4dfee4e052704b1a7efdb7b6a4c43583ccaa062aec800b76224dae24eb2b69b",
+  "image_pin": {
+    "url": "https://cloud-images.ubuntu.com/releases/bionic/release-20230607/ubuntu-18.04-server-cloudimg-amd64.img",
+    "size": 405667840,
+    "sha256": "8dd2e6b5e5aad20c3f836123b300cba9861249408cbb07c359145a65d6bab6b6",
+    "checksum_manifest_url": "https://cloud-images.ubuntu.com/releases/bionic/release-20230607/SHA256SUMS",
+    "checksum_manifest_sha256": "74aba2ff5163772fe09e10b50e2da28f357d15d77b97e033ef8a26afd09dc161",
+    "release": "18.04",
+    "arch": "x86_64",
+    "scope": "Historical baseline only; security maintenance and complete cell acceptance are not approved"
+  },
+  "kvm": {
+    "enabled": true,
+    "present": true
+  },
+  "guest_kernel": "4.15.0-212-generic",
+  "guest_glibc": "glibc 2.27",
+  "guest_arch": "x86_64",
+  "guest_report_sha256": "bef08035a4004f75b050589f73638fc7aa7fac146adde7a20a33ce0766702d08",
+  "cases": 13,
+  "geometry_decoded": true,
+  "private_python_report_sha256": null,
+  "installed_application_reports": [],
+  "environment_kind": "native",
+  "execution": "same-architecture hardware-accelerated guest; no TCG fallback",
+  "scope": "Static musl engine on Linux 4.15 only; guest is Ubuntu, not native Alpine; Alpine cell qualification remains pending"
+}

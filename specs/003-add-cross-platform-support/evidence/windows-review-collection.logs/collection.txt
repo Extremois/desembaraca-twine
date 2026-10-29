@@ -1,0 +1,14 @@
+Processing <test-path>\twine_edge_overlap-0.1.0.dev0-py3-none-any.whl
+Installing collected packages: twine-edge-overlap
+Successfully installed twine-edge-overlap-0.1.0.dev0
+
+Estado: sucesso
+Layout melhorado sem aumentar nenhuma das três contagens
+Arquivo gerado: <test-path>\crossing.layout.twee
+Pares de arestas: 1 -> 0
+Pares de nós: 0 -> 0
+Pares aresta–nó: 0 -> 0
+Componentes de processamento prontos para uso sem internet.
+Componentes de processamento prontos para uso sem internet.
+
+Preparando componente de processamento; a obtenção do pacote requer internet.

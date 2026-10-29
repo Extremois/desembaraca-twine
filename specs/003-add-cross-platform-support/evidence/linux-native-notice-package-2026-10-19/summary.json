@@ -1,0 +1,194 @@
+{
+  "kind": "native-linux-draft-notice-candidate-package",
+  "approved": false,
+  "qualified": false,
+  "artifact_id": "linux-glibc-x86_64",
+  "environment_kind": "native",
+  "commit": "06c7b1c4ba09dddcd447c4c5158a20f797fb8c37",
+  "run_url": "https://github.com/Extremois/desembaraca-twine/actions/runs/39243501932",
+  "artifact_zip_sha256": "78cd2a748e0083df3c7d8e60422102f5349da5300756e1f111dcba10c5519c72",
+  "executable_sha256": "43ce8d686720467c21be91cab4b8f3b246baae49c2cfe293714ebdf8a82f5716",
+  "provenance_sha256": "8c004a78ea227f03d8cbbbdde159cf9f0064902a28cf7e91cca8745ad07db11b",
+  "archive_sha256": "6b1fca184ceba8f324d465437d0f5af0b96ca54871db8eaacfe31cf2a0c2c62c",
+  "archive_bytes": 6137313,
+  "inventory_sha256": "2d9aebd601075728a4c1f15560e53916f421901024b206c37c37e823a7cb4a69",
+  "notices": 15,
+  "sdk_headers_verified": 162,
+  "generated_files_verified": 9,
+  "flex_generator": {
+    "kind": "pinned-generator-license-material",
+    "source_url": "https://raw.githubusercontent.com/westes/flex/v2.6.4/COPYING",
+    "source_sha256": "97fd685958d93be7f8dab939bb8161dbd6afb0718c63bfc337c24321aea44273",
+    "generator_version": "2.6.4",
+    "generator_sha256": "6b70611fd650c8216b5c8c1a54a69ed470cd82c63ec0dc095dd4d9782bc3efbb",
+    "qualification": "Recorded generator/scanner versions agree; preserves upstream generated-scanner exception, no bundle approval",
+    "generated_path": "lib/cgraph/scan.c",
+    "generated_sha256": "1975262c8d142dd7b51184db9b9b75d828d841da97c62e31a9dc220ed8d1694c"
+  },
+  "archive_files_verified": 16,
+  "archive_modes_verified": true,
+  "archive_fixed_timestamps_verified": true,
+  "corpus": [
+    {
+      "python": "3.12.15",
+      "cases": 13,
+      "dot_executions": 8,
+      "network_syscalls": {}
+    },
+    {
+      "python": "3.14.8",
+      "cases": 13,
+      "dot_executions": 8,
+      "network_syscalls": {}
+    }
+  ],
+  "pending": [
+    "Per-file license applicability and complete source offer",
+    "W3C/X11 data provenance and notice applicability",
+    "Other canonical license texts as applicable",
+    "Final audited inventory and native baseline/cell qualification"
+  ],
+  "artifact_retention_days": 7,
+  "files": [
+    {
+      "file": "candidate.json",
+      "sha256": "e7d24187b878b46f5dd5dfa68b33ab743c1ae30335aff32f1c3f7e25e582c8dc",
+      "uncompressed_sha256": "e7d24187b878b46f5dd5dfa68b33ab743c1ae30335aff32f1c3f7e25e582c8dc"
+    },
+    {
+      "file": "inventory.json",
+      "sha256": "2d9aebd601075728a4c1f15560e53916f421901024b206c37c37e823a7cb4a69",
+      "uncompressed_sha256": "2d9aebd601075728a4c1f15560e53916f421901024b206c37c37e823a7cb4a69"
+    },
+    {
+      "file": "review.json",
+      "sha256": "06fef1632481aad44acaa8a53301fb494ba2a42f4fa74b0fd5bcb484698ebd7f",
+      "uncompressed_sha256": "06fef1632481aad44acaa8a53301fb494ba2a42f4fa74b0fd5bcb484698ebd7f"
+    },
+    {
+      "file": "provenance.json",
+      "sha256": "8c004a78ea227f03d8cbbbdde159cf9f0064902a28cf7e91cca8745ad07db11b",
+      "uncompressed_sha256": "8c004a78ea227f03d8cbbbdde159cf9f0064902a28cf7e91cca8745ad07db11b"
+    },
+    {
+      "file": "graphviz-source-evidence.json.gz",
+      "sha256": "abc60dfe68125dd9aeb2cbd618c54272e8a74cb8ceb50d590aa1f0a2242a3db4",
+      "uncompressed_sha256": "5e5c28bc1785c93af0e8daffbb3b5b388ad92b4344fda8aeef07071b6c5155b1"
+    },
+    {
+      "file": "network-312.json",
+      "sha256": "bf4f2c7f4a00cc621ba0cbdef8fa5ab54159139c02450d2562ee3468de3b35f4",
+      "uncompressed_sha256": "bf4f2c7f4a00cc621ba0cbdef8fa5ab54159139c02450d2562ee3468de3b35f4"
+    },
+    {
+      "file": "corpus-312.json",
+      "sha256": "d363b59c23f699bdefb49135edbcf40a81d63fea885dcb19eb18b7ff7bf19897",
+      "uncompressed_sha256": "d363b59c23f699bdefb49135edbcf40a81d63fea885dcb19eb18b7ff7bf19897"
+    },
+    {
+      "file": "network-312.control.trace.gz",
+      "sha256": "cd122ace314aef1d101edbba0e24af95ea05d3f4e31ff230d8ca925556be808d",
+      "uncompressed_sha256": "034aa1165fb649e0fc59710c637c0f71c46c4b795ce60a88fd5e2bfac96b6efc"
+    },
+    {
+      "file": "network-312.corpus.trace.gz",
+      "sha256": "7ad2d142459557a27d15fe831d138d8e7cf8021c53eb1004a2f414935f0dae89",
+      "uncompressed_sha256": "cd2b1676cf3fbff5b519d11ee87adc9d710d568934221a740a92fc34c3662e28"
+    },
+    {
+      "file": "network-314.json",
+      "sha256": "c4a7c2b79cfbdead63bbedd32757872c4523a0af4f8307777426b659ac1fa289",
+      "uncompressed_sha256": "c4a7c2b79cfbdead63bbedd32757872c4523a0af4f8307777426b659ac1fa289"
+    },
+    {
+      "file": "corpus-314.json",
+      "sha256": "923a505bf4d3db9a99f8c565d3e2bac08b95fa596eac0ca2561b3e40cc98b4b7",
+      "uncompressed_sha256": "923a505bf4d3db9a99f8c565d3e2bac08b95fa596eac0ca2561b3e40cc98b4b7"
+    },
+    {
+      "file": "network-314.control.trace.gz",
+      "sha256": "d50ae3cfa8e9b9871f75d11273b1b300906b120410fdc5dabcb672b58adf36ba",
+      "uncompressed_sha256": "8642e1d6451f9e3033406813a86a787f7b9c812720ec33a7871f54a43ac7263c"
+    },
+    {
+      "file": "network-314.corpus.trace.gz",
+      "sha256": "3ffb39652b0bc5e29de2e171f69697fa655356ea81c242aaeb14a530aea37c02",
+      "uncompressed_sha256": "805647c1ce04c8ddbdad5a0de9136a6d2e1880f59458dfaef47cd442cf0201a0"
+    },
+    {
+      "file": "notices/Bison-lib__cgraph__grammar.c.txt",
+      "sha256": "b979bc0e49fa1efed0fad3af4ecc582b471da7662626cebfd0d5f998b1119f72",
+      "uncompressed_sha256": "b979bc0e49fa1efed0fad3af4ecc582b471da7662626cebfd0d5f998b1119f72"
+    },
+    {
+      "file": "notices/Bison-lib__cgraph__grammar.h.txt",
+      "sha256": "ecd76b7233bacbeeafca33a46b80f4120864e3de861e7d0a7d7c6fcce3d664dd",
+      "uncompressed_sha256": "ecd76b7233bacbeeafca33a46b80f4120864e3de861e7d0a7d7c6fcce3d664dd"
+    },
+    {
+      "file": "notices/Bison-lib__common__htmlparse.c.txt",
+      "sha256": "b979bc0e49fa1efed0fad3af4ecc582b471da7662626cebfd0d5f998b1119f72",
+      "uncompressed_sha256": "b979bc0e49fa1efed0fad3af4ecc582b471da7662626cebfd0d5f998b1119f72"
+    },
+    {
+      "file": "notices/Bison-lib__common__htmlparse.h.txt",
+      "sha256": "ecd76b7233bacbeeafca33a46b80f4120864e3de861e7d0a7d7c6fcce3d664dd",
+      "uncompressed_sha256": "ecd76b7233bacbeeafca33a46b80f4120864e3de861e7d0a7d7c6fcce3d664dd"
+    },
+    {
+      "file": "notices/ColorBrewer.txt",
+      "sha256": "09598cbb53b21f3cab841d5be8ceee6ef9bc0387f3b60330da94e9c98f4ada19",
+      "uncompressed_sha256": "09598cbb53b21f3cab841d5be8ceee6ef9bc0387f3b60330da94e9c98f4ada19"
+    },
+    {
+      "file": "notices/Flex-2.6.4-COPYING.txt",
+      "sha256": "97fd685958d93be7f8dab939bb8161dbd6afb0718c63bfc337c24321aea44273",
+      "uncompressed_sha256": "97fd685958d93be7f8dab939bb8161dbd6afb0718c63bfc337c24321aea44273"
+    },
+    {
+      "file": "notices/Graphviz-AUTHORS.txt",
+      "sha256": "182eaf397edc803d0e44a25708ba70ecafc143c0f610ea7048c6b9687a939ff0",
+      "uncompressed_sha256": "182eaf397edc803d0e44a25708ba70ecafc143c0f610ea7048c6b9687a939ff0"
+    },
+    {
+      "file": "notices/Graphviz-COPYING.txt",
+      "sha256": "0becf16567beb77fa252b7664631dd177c8f9a1889e48995b45379c7130e5303",
+      "uncompressed_sha256": "0becf16567beb77fa252b7664631dd177c8f9a1889e48995b45379c7130e5303"
+    },
+    {
+      "file": "notices/Graphviz-lib__rbtree__LICENSE.txt",
+      "sha256": "fcb423209a3a3909f41e629a4973eab3995ceb93136dd72485fb12ad3de29dfc",
+      "uncompressed_sha256": "fcb423209a3a3909f41e629a4973eab3995ceb93136dd72485fb12ad3de29dfc"
+    },
+    {
+      "file": "notices/SDK-LICENSE.txt",
+      "sha256": "5c537d6853e005298a285d508cff9ac7192cea23576c840d485b2b586a7ff177",
+      "uncompressed_sha256": "5c537d6853e005298a285d508cff9ac7192cea23576c840d485b2b586a7ff177"
+    },
+    {
+      "file": "notices/SDK-lib__libc__glibc__LICENSES.txt",
+      "sha256": "b22a69aa3f80a5201818c66cb0df0f25f9fa13cf5861b0093a058dbd12d50dce",
+      "uncompressed_sha256": "b22a69aa3f80a5201818c66cb0df0f25f9fa13cf5861b0093a058dbd12d50dce"
+    },
+    {
+      "file": "notices/SDK-lib__libcxx__LICENSE.TXT.txt",
+      "sha256": "539dd7aed86e8a4f12cbdd0e6c50c189c7d74847e4fecc64ce2c6ee3a01da38b",
+      "uncompressed_sha256": "539dd7aed86e8a4f12cbdd0e6c50c189c7d74847e4fecc64ce2c6ee3a01da38b"
+    },
+    {
+      "file": "notices/SDK-lib__libcxxabi__LICENSE.TXT.txt",
+      "sha256": "e2b35be49f7284a45b7baca8fc7b3ab7440e7902392b2528a457816b5bb2a15c",
+      "uncompressed_sha256": "e2b35be49f7284a45b7baca8fc7b3ab7440e7902392b2528a457816b5bb2a15c"
+    },
+    {
+      "file": "notices/SDK-lib__libunwind__LICENSE.TXT.txt",
+      "sha256": "b5efebcaca80879234098e52d1725e6d9eb8fb96a19fce625d39184b705f7b6d",
+      "uncompressed_sha256": "b5efebcaca80879234098e52d1725e6d9eb8fb96a19fce625d39184b705f7b6d"
+    },
+    {
+      "file": "notices/SOURCE-REFERENCES.txt",
+      "sha256": "6f5ea5a2d1756065c777a99b910ac8f5d104e870b16891df3f68a21c7277c16e",
+      "uncompressed_sha256": "6f5ea5a2d1756065c777a99b910ac8f5d104e870b16891df3f68a21c7277c16e"
+    }
+  ]
+}

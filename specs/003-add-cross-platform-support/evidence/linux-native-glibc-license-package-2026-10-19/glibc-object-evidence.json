@@ -1,0 +1,219 @@
+{
+  "kind": "glibc-object-source-observations-not-license-approval",
+  "approved": false,
+  "qualified": false,
+  "source_to_binary_complete": false,
+  "artifact_id": "linux-glibc-x86_64",
+  "executable_sha256": "43ce8d686720467c21be91cab4b8f3b246baae49c2cfe293714ebdf8a82f5716",
+  "provenance_sha256": "6202b10c2db173ce7a8a0e4511ce655427b20f5735ca63aa5ec78c2c4d61d287",
+  "sdk_archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+  "inspector_sha256": "64c58e15274bbbb5153f31078e455e9e77ee5f51489e709bba5bb788ce9df2b0",
+  "tool_sha256": "69efd873c2eee641807bd8afa6a1334c85754ac8f34c87e9e99efb5ef6a467ef",
+  "input_observations": [
+    {
+      "name": "crt1.o",
+      "sha256": "b05e3c08b80759446a3b08f404401b56e773147d9320c3cfb8770e548361c5f8",
+      "size": 4368,
+      "kind": "direct-object",
+      "reported_extraction_rows": 0,
+      "absence_of_incorporated_code_proven": false
+    },
+    {
+      "name": "libc++.a",
+      "sha256": "101f212adc421dee18912a01ad5a0aa45dd1419932d7a335f342085753080e2d",
+      "size": 13914808,
+      "kind": "static-archive",
+      "reported_extraction_rows": 0,
+      "absence_of_incorporated_code_proven": false
+    },
+    {
+      "name": "libc++abi.a",
+      "sha256": "2b878cbd25564d85a2ee58da7f982613ad399c17ebd23523bc8edb9cee53cb43",
+      "size": 2035714,
+      "kind": "static-archive",
+      "reported_extraction_rows": 0,
+      "absence_of_incorporated_code_proven": false
+    },
+    {
+      "name": "libc.so.6",
+      "sha256": "0d33a4ecd58739ee6fe2da2594ce7a01e7f0f27801cb9b81b99e85cf4d82d4ba",
+      "size": 226744,
+      "kind": "link-time-shared-input-not-bundled",
+      "reported_extraction_rows": 0,
+      "absence_of_incorporated_code_proven": false
+    },
+    {
+      "name": "libc_nonshared.a",
+      "sha256": "c999fbff5f8c4c66bda1b4a24c4eed19e906751b9e106e81e4d570daf87a4bbe",
+      "size": 67412,
+      "kind": "static-archive",
+      "reported_extraction_rows": 2,
+      "absence_of_incorporated_code_proven": false
+    },
+    {
+      "name": "libcompiler_rt.a",
+      "sha256": "c5f536e7c1152a04a40d1566549f83a926db5a5410bce8deb758268a7d207434",
+      "size": 1676578,
+      "kind": "static-archive",
+      "reported_extraction_rows": 0,
+      "absence_of_incorporated_code_proven": false
+    },
+    {
+      "name": "libdl.so.2",
+      "sha256": "e03a269a8a0d7a3f6490d3e13e09554a88f94bc0c11056643b74cf1e3d03f944",
+      "size": 4488,
+      "kind": "link-time-shared-input-not-bundled",
+      "reported_extraction_rows": 0,
+      "absence_of_incorporated_code_proven": false
+    },
+    {
+      "name": "libld.so.2",
+      "sha256": "723b79a71a9507ca2eb6d61ceade1dab18b5827c6a523655a9e99960e2639404",
+      "size": 4720,
+      "kind": "link-time-shared-input-not-bundled",
+      "reported_extraction_rows": 0,
+      "absence_of_incorporated_code_proven": false
+    },
+    {
+      "name": "libm.so.6",
+      "sha256": "4b21e816670119eed3df71ceb153e55fc08b16c2b36f260cf01a02c54379f8ec",
+      "size": 97544,
+      "kind": "link-time-shared-input-not-bundled",
+      "reported_extraction_rows": 0,
+      "absence_of_incorporated_code_proven": false
+    },
+    {
+      "name": "libpthread.so.0",
+      "sha256": "ef7b40801109fa519593024c5201e504858d5892d69f5edc782c2625427aa880",
+      "size": 29968,
+      "kind": "link-time-shared-input-not-bundled",
+      "reported_extraction_rows": 0,
+      "absence_of_incorporated_code_proven": false
+    },
+    {
+      "name": "libresolv.so.2",
+      "sha256": "2b3ffc53521e407094a4af9b5961a8ddc8a07b031c9df275bb14e04a284f111b",
+      "size": 14288,
+      "kind": "link-time-shared-input-not-bundled",
+      "reported_extraction_rows": 0,
+      "absence_of_incorporated_code_proven": false
+    },
+    {
+      "name": "librt.so.1",
+      "sha256": "8ab07cb098c05c332dd5772a485fa894e6137f151f279893909240c871e81589",
+      "size": 8320,
+      "kind": "link-time-shared-input-not-bundled",
+      "reported_extraction_rows": 0,
+      "absence_of_incorporated_code_proven": false
+    },
+    {
+      "name": "libunwind.a",
+      "sha256": "8007ef8b30dc7e4d91fb2c74c3678a03a7a924aea274770887bd97f26de44d5d",
+      "size": 309340,
+      "kind": "static-archive",
+      "reported_extraction_rows": 0,
+      "absence_of_incorporated_code_proven": false
+    },
+    {
+      "name": "libutil.so.1",
+      "sha256": "cf6b565f9248f11cbbe66fb37244c2518073c2cb5151e396da583dad963a0c3b",
+      "size": 4256,
+      "kind": "link-time-shared-input-not-bundled",
+      "reported_extraction_rows": 0,
+      "absence_of_incorporated_code_proven": false
+    }
+  ],
+  "objects": [
+    {
+      "input": "crt1.o",
+      "input_sha256": "b05e3c08b80759446a3b08f404401b56e773147d9320c3cfb8770e548361c5f8",
+      "member": null,
+      "object_sha256": "b05e3c08b80759446a3b08f404401b56e773147d9320c3cfb8770e548361c5f8",
+      "dwarf_report_sha256": "96142e6c0b6c423362812ca91cbf2e283aebb909c281bd8131d3e4129b529dd6",
+      "sources": [
+        "lib/libc/glibc/sysdeps/x86_64/start-2.33.S",
+        "lib/libc/glibc/csu/init.c"
+      ]
+    },
+    {
+      "input": "libc_nonshared.a",
+      "input_sha256": "c999fbff5f8c4c66bda1b4a24c4eed19e906751b9e106e81e4d570daf87a4bbe",
+      "member": "elf-init-2.33.o",
+      "object_sha256": "33af0b86ccdb3b61aa50144e64ed35db7bfe0cb62ea1fb94cd06989a01819456",
+      "dwarf_report_sha256": "e010994251767089893ecca7b95a6750b48e5b234b8975e919cc3796ade63724",
+      "sources": [
+        "lib/libc/glibc/csu/elf-init-2.33.c"
+      ]
+    },
+    {
+      "input": "libc_nonshared.a",
+      "input_sha256": "c999fbff5f8c4c66bda1b4a24c4eed19e906751b9e106e81e4d570daf87a4bbe",
+      "member": "fstat-2.32.o",
+      "object_sha256": "95514f5166be8f3ec5f03f6eb7b6d3179c07eba1a683a8c596476168d1d9ad9a",
+      "dwarf_report_sha256": "d0aed225892e8e90f95d4624e2a645d7ca1cc2448c5617e91cd1a5480d3b0ea9",
+      "sources": [
+        "lib/libc/glibc/io/fstat-2.32.c"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "path": "lib/libc/glibc/csu/abi-note.S",
+      "size": 3083,
+      "sha256": "9abb7d71812ff5009197a67c57e3f8ae3138dd5be57c1a8e534e859c6e689ffc",
+      "role": "additional-startup-source-material-not-object-observation",
+      "leading_comment_bytes": 2539,
+      "leading_comment_sha256": "610d4102608ad923087a58e2b3a6e34ee45484330a6df096a33278d9e8668a05",
+      "leading_comments": "/* Special .init and .fini section support.\n   Copyright (C) 1997-2020 Free Software Foundation, Inc.\n   This file is part of the GNU C Library.\n\n   The GNU C Library is free software; you can redistribute it and/or\n   modify it under the terms of the GNU Lesser General Public\n   License as published by the Free Software Foundation; either\n   version 2.1 of the License, or (at your option) any later version.\n\n   In addition to the permissions in the GNU Lesser General Public\n   License, the Free Software Foundation gives you unlimited\n   permission to link the compiled version of this file with other\n   programs, and to distribute those programs without any restriction\n   coming from the use of this file.  (The Lesser General Public\n   License restrictions do apply in other respects; for example, they\n   cover modification of the file, and distribution when not linked\n   into another program.)\n\n   The GNU C Library is distributed in the hope that it will be useful,\n   but WITHOUT ANY WARRANTY; without even the implied warranty of\n   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU\n   Lesser General Public License for more details.\n\n   You should have received a copy of the GNU Lesser General Public\n   License along with the GNU C Library; if not, see\n   <https://www.gnu.org/licenses/>.  */\n\n/* Define an ELF note identifying the operating-system ABI that the\n   executable was created for.  The ELF note information identifies a\n   particular OS or coordinated development effort within which the\n   ELF header's e_machine value plus (for dynamically linked programs)\n   the PT_INTERP dynamic linker name and DT_NEEDED shared library\n   names fully identify the runtime environment required by an\n   executable.\n\n   The general format of ELF notes is as follows.\n   Offsets and lengths are bytes or (parenthetical references) to the\n   values in other fields.\n\noffset\tlength\tcontents\n0\t4\tlength of name\n4\t4\tlength of data\n8\t4\tnote type\n12\t(0)\tvendor name\n\t\t- null-terminated ASCII string, padded to 4-byte alignment\n12+(0)\t(4)\tnote data,\n\n   The GNU project and cooperating development efforts (including the\n   Linux community) use note type 1 and a vendor name string of \"GNU\"\n   for a note descriptor that indicates ABI requirements.  The note data\n   is four 32-bit words.  The first of these is an operating system\n   number (0=Linux, 1=Hurd, 2=Solaris, ...) and the remaining three\n   identify the earliest release of that OS that supports this ABI.\n   See abi-tags (top level) for details. */\n\n"
+    },
+    {
+      "path": "lib/libc/glibc/csu/elf-init-2.33.c",
+      "size": 3822,
+      "sha256": "2d9b3d9b6af5d2ad6bf8a881e3c34f0bd7478f9709b62dfe9d48a749a5768519",
+      "role": "observed-compilation-unit",
+      "leading_comment_bytes": 1773,
+      "leading_comment_sha256": "754e3120bb12bda04a831d1e08b544b152930bf7275577b3fc995d337cbbaee3",
+      "leading_comments": "/* Startup support for ELF initializers/finalizers in the main executable.\n   Copyright (C) 2002-2020 Free Software Foundation, Inc.\n   This file is part of the GNU C Library.\n\n   The GNU C Library is free software; you can redistribute it and/or\n   modify it under the terms of the GNU Lesser General Public\n   License as published by the Free Software Foundation; either\n   version 2.1 of the License, or (at your option) any later version.\n\n   In addition to the permissions in the GNU Lesser General Public\n   License, the Free Software Foundation gives you unlimited\n   permission to link the compiled version of this file with other\n   programs, and to distribute those programs without any restriction\n   coming from the use of this file. (The GNU Lesser General Public\n   License restrictions do apply in other respects; for example, they\n   cover modification of the file, and distribution when not linked\n   into another program.)\n\n   Note that people who make modified versions of this file are not\n   obligated to grant this special exception for their modified\n   versions; it is their choice whether to do so. The GNU Lesser\n   General Public License gives permission to release a modified\n   version without this exception; this exception also makes it\n   possible to release a modified version which carries forward this\n   exception.\n\n   The GNU C Library is distributed in the hope that it will be useful,\n   but WITHOUT ANY WARRANTY; without even the implied warranty of\n   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU\n   Lesser General Public License for more details.\n\n   You should have received a copy of the GNU Lesser General Public\n   License along with the GNU C Library; if not, see\n   <https://www.gnu.org/licenses/>.  */\n\n"
+    },
+    {
+      "path": "lib/libc/glibc/csu/init.c",
+      "size": 1103,
+      "sha256": "a06cd917584e309bf39f6f7a6158519e60a35e6ff8b3e96df8308d170c908f33",
+      "role": "observed-compilation-unit",
+      "leading_comment_bytes": 1067,
+      "leading_comment_sha256": "1860d3b2f1c52f3d56f965cec59098343a4d270ab7f1543502825a699a7b70c5",
+      "leading_comments": "/* Special startup support.\n   Copyright (C) 1997-2025 Free Software Foundation, Inc.\n   This file is part of the GNU C Library.\n\n   The GNU C Library is free software; you can redistribute it and/or\n   modify it under the terms of the GNU Lesser General Public\n   License as published by the Free Software Foundation; either\n   version 2.1 of the License, or (at your option) any later version.\n\n   The GNU C Library is distributed in the hope that it will be useful,\n   but WITHOUT ANY WARRANTY; without even the implied warranty of\n   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU\n   Lesser General Public License for more details.\n\n   You should have received a copy of the GNU Lesser General Public\n   License along with the GNU C Library; if not, see\n   <https://www.gnu.org/licenses/>.  */\n\n/* Vestigial libio version number.  Some code in libio checks whether\n   this symbol exists in the executable, but nothing looks at its\n   value anymore; the value it was historically set to has been\n   preserved out of an abundance of caution.  */\n"
+    },
+    {
+      "path": "lib/libc/glibc/io/fstat-2.32.c",
+      "size": 2410,
+      "sha256": "a835e5cfb407c00c15aead0247d713a536d651d1fef1236b4a87aaf7a27eec68",
+      "role": "observed-compilation-unit",
+      "leading_comment_bytes": 1698,
+      "leading_comment_sha256": "eb44f02340cb9e3c7d07a5a6e6be063298d2f40d6264c118f9d5628f55673d4c",
+      "leading_comments": "/* Copyright (C) 1996-2020 Free Software Foundation, Inc.\n   This file is part of the GNU C Library.\n\n   The GNU C Library is free software; you can redistribute it and/or\n   modify it under the terms of the GNU Lesser General Public\n   License as published by the Free Software Foundation; either\n   version 2.1 of the License, or (at your option) any later version.\n\n   In addition to the permissions in the GNU Lesser General Public\n   License, the Free Software Foundation gives you unlimited\n   permission to link the compiled version of this file with other\n   programs, and to distribute those programs without any restriction\n   coming from the use of this file. (The GNU Lesser General Public\n   License restrictions do apply in other respects; for example, they\n   cover modification of the file, and distribution when not linked\n   into another program.)\n\n   Note that people who make modified versions of this file are not\n   obligated to grant this special exception for their modified\n   versions; it is their choice whether to do so. The GNU Lesser\n   General Public License gives permission to release a modified\n   version without this exception; this exception also makes it\n   possible to release a modified version which carries forward this\n   exception.\n\n   The GNU C Library is distributed in the hope that it will be useful,\n   but WITHOUT ANY WARRANTY; without even the implied warranty of\n   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU\n   Lesser General Public License for more details.\n\n   You should have received a copy of the GNU Lesser General Public\n   License along with the GNU C Library; if not, see\n   <https://www.gnu.org/licenses/>.  */\n\n"
+    },
+    {
+      "path": "lib/libc/glibc/sysdeps/x86_64/start-2.33.S",
+      "size": 4672,
+      "sha256": "d3daf6434b838a91785c5ac771a7f01d08cc9234274ca5a13282e530dd22a058",
+      "role": "observed-compilation-unit",
+      "leading_comment_bytes": 2426,
+      "leading_comment_sha256": "d3e9ecbc293723e00a641e08ca21f0c2edb30dd115858f53ba3acfd7be3e8c6e",
+      "leading_comments": "/* Startup code compliant to the ELF x86-64 ABI.\n   Copyright (C) 2001-2020 Free Software Foundation, Inc.\n   This file is part of the GNU C Library.\n   Contributed by Andreas Jaeger <aj@suse.de>, 2001.\n\n   The GNU C Library is free software; you can redistribute it and/or\n   modify it under the terms of the GNU Lesser General Public\n   License as published by the Free Software Foundation; either\n   version 2.1 of the License, or (at your option) any later version.\n\n   In addition to the permissions in the GNU Lesser General Public\n   License, the Free Software Foundation gives you unlimited\n   permission to link the compiled version of this file with other\n   programs, and to distribute those programs without any restriction\n   coming from the use of this file. (The GNU Lesser General Public\n   License restrictions do apply in other respects; for example, they\n   cover modification of the file, and distribution when not linked\n   into another program.)\n\n   Note that people who make modified versions of this file are not\n   obligated to grant this special exception for their modified\n   versions; it is their choice whether to do so. The GNU Lesser\n   General Public License gives permission to release a modified\n   version without this exception; this exception also makes it\n   possible to release a modified version which carries forward this\n   exception.\n\n   The GNU C Library is distributed in the hope that it will be useful,\n   but WITHOUT ANY WARRANTY; without even the implied warranty of\n   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU\n   Lesser General Public License for more details.\n\n   You should have received a copy of the GNU Lesser General Public\n   License along with the GNU C Library; if not, see\n   <https://www.gnu.org/licenses/>.  */\n\n/* This is the canonical entry point, usually the first thing in the text\n   segment.  The SVR4/i386 ABI (pages 3-31, 3-32) says that when the entry\n   point runs, most registers' values are unspecified, except for:\n\n   %rdx\t\tContains a function pointer to be registered with `atexit'.\n\t\tThis is how the dynamic linker arranges to have DT_FINI\n\t\tfunctions called for shared libraries that have been loaded\n\t\tbefore this code runs.\n\n   %rsp\t\tThe stack contains the arguments and environment:\n\t\t0(%rsp)\t\t\t\targc\n\t\tLP_SIZE(%rsp)\t\t\targv[0]\n\t\t...\n\t\t(LP_SIZE*argc)(%rsp)\t\tNULL\n\t\t(LP_SIZE*(argc+1))(%rsp)\tenvp[0]\n\t\t...\n\t\t\t\t\t\tNULL\n*/\n\n"
+    }
+  ],
+  "summary": {
+    "objects": 3,
+    "observed_source_units": 4,
+    "sources_verified": 5,
+    "sources_with_leading_comments": 5,
+    "sdk_inputs": 14
+  },
+  "pending": [
+    "DWARF compilation units do not cover all transitive headers, assembly or retained sections",
+    "Zero extraction rows are observations, not proof that an input contributes no code",
+    "abi-note.S is additional pinned material, not an observed compilation-unit binding",
+    "Per-file applicability, complete source offer and reviewed audit remain pending"
+  ]
+}

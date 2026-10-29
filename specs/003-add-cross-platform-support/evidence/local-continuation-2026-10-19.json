@@ -1,0 +1,82 @@
+{
+  "kind": "local-qualification-and-documentation-continuation-not-native-acceptance",
+  "captured_at": "2026-10-19T10:03:44.946299+00:00",
+  "approved": false,
+  "qualified": false,
+  "application_revision": "9cb4f42638f2d2a33ed1bfe545a36bf48f4b562e",
+  "source_state": "dirty",
+  "tasks": [
+    "T023",
+    "T048",
+    "T079",
+    "T080"
+  ],
+  "task_status": "partial: native artifacts/packages and target-cell prerequisites absent",
+  "source_sha256": {
+    "tools/runtime/qualification-worker.py": "bff219d650944a7d026aafae8fabcf34617a41b43ca9494090c16e09dc72947a",
+    "tests/unit/test_qualification_tools.py": "f2a810cd14a175e0bbb85bb87e8a944ef7d24b1c1156178900b87da26ad66887",
+    "tests/native_acceptance.py": "a53bc07c52fa97a3f15cc979217b1a76f561faa20e1813a83c2d337636619b17",
+    "README.md": "2ac0edb4544eade11e7ca4cc8138edddaf463d42733c2a270e6093ee3fed84b6",
+    "specs/003-add-cross-platform-support/quickstart.md": "aa57ed4e2e25f7e441825e76a7bc2d2082a502285d0f568f2b8d3bbc4e7af06a"
+  },
+  "prior_security_audit": {
+    "path": "security-limits.json",
+    "sha256": "741e7962814d435b16b23c6b7f1e29ac102a967844a71000796f998e484d9e37",
+    "source_changes": {
+      "tools/runtime/qualification-worker.py": {
+        "previous": "e518cce677570a3b0b05255387e3559f1cc35a51b5435efbc93691ce184ebe4a",
+        "current": "bff219d650944a7d026aafae8fabcf34617a41b43ca9494090c16e09dc72947a"
+      },
+      "tests/unit/test_qualification_tools.py": {
+        "previous": "ad699d1412f7185f573fbaf0a2519179aee57476414f78aae1e2d08c2d18ed5a",
+        "current": "f2a810cd14a175e0bbb85bb87e8a944ef7d24b1c1156178900b87da26ad66887"
+      }
+    },
+    "unchanged_source_hashes_verified": 12
+  },
+  "remote_documentation": {
+    "url": "https://github.com/Extremois/desembaraca-twine/archive/3ad9b6632140149a65586d2a5519687c93b8b323.zip",
+    "commit": "3ad9b6632140149a65586d2a5519687c93b8b323",
+    "https_head_status": 200,
+    "content_type": "application/zip",
+    "archive_sha256": null,
+    "installation_executed": false,
+    "legacy_console": "twine-edge-overlap",
+    "project_metadata_sha256": "f5f4548ca6a12e33ea68508549a3bfc3bc3b97c5bef44f09ad375350020834f7",
+    "verification": "HTTPS HEAD with redirect; entrypoint inspected in exact local Git commit previously pushed"
+  },
+  "executions": [
+    {
+      "environment": "Windows 11 x86_64",
+      "python": "3.14.6",
+      "tests": 162,
+      "skipped": 7,
+      "seconds": 34.622,
+      "passed": true
+    },
+    {
+      "environment": "Windows 11 x86_64",
+      "python": "3.12.10",
+      "tests": 162,
+      "skipped": 7,
+      "seconds": 34.204,
+      "passed": true
+    },
+    {
+      "environment": "existing Ubuntu 26.04 x86_64 WSL",
+      "python": "3.14.8",
+      "tests": 162,
+      "skipped": 5,
+      "seconds": 104.798,
+      "passed": true
+    }
+  ],
+  "limitations": [
+    "Invalid-input interception is not a native offline trace or native candidate qualification",
+    "URL availability and Git metadata do not prove a new remote installation or POSIX qualification",
+    "No native Ubuntu 24.04 runner supplied; no provisioning, CI, VM, publication or support promotion",
+    "Bundle license/source review remains independently pending"
+  ],
+  "documentation_encoding_restored": true,
+  "documentation_followup": "Branch publication for hosted CI authorized afterwards; pinned MVP URL still excludes spec 003"
+}

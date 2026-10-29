@@ -1,0 +1,19 @@
+{
+  "kind": "candidate-source-review-material",
+  "approved": false,
+  "artifact_id": "linux-glibc-x86_64",
+  "executable_sha256": "e030d8dd07278e4eefe068c05f9985357f86db256f3a81ab9851e423f43d64f3",
+  "provenance_sha256": "f81d711eb649cfc8b3b4fde8b6664245a4aedf252e12627b4207d644ff1e4ced",
+  "archive": "sources.tar.gz",
+  "archive_sha256": "dfe53f2dc50f9c5837f4f86dc5af7f3151e450724e7cc65942bd98991c605059",
+  "archive_bytes": 68241403,
+  "sdk_files": 18102,
+  "selected_sdk_header_files": 0,
+  "file_count": 18241,
+  "expanded_bytes": 216485381,
+  "pending": [
+    "per-file applicability and complete source offer review",
+    "rebuild/relink execution from exported sources",
+    "immutable public source distribution"
+  ]
+}

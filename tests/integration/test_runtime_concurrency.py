@@ -1,4 +1,5 @@
 from pathlib import Path
+import os
 import json
 import subprocess
 import sys
@@ -7,7 +8,7 @@ import unittest
 import time
 from common import ROOT
 from runtime_support import synthetic_artifact,synthetic_runner,ControlledTransport,blocked_network
-from twine_edge_overlap.runtime import RuntimeManager
+from twine_edge_overlap.runtime import RuntimeManager,load_manifest
 from twine_edge_overlap.errors import DependencyError
 
 
@@ -23,6 +24,7 @@ def checkpoint(current):
     if current==stage: os._exit(77)
 class SlowTransport(ControlledTransport):
     def open(self,*args,**kwargs):
+        if stage=='during_download': os._exit(77)
         time.sleep(.3)
         return super().open(*args,**kwargs)
 manager=RuntimeManager(artifact=load_manifest(manifest),cache_root=cache,opener=SlowTransport(Path(archive).read_bytes()),runner=synthetic_runner,checkpoint=checkpoint)
@@ -32,6 +34,35 @@ Path(result).write_text(handle.generation_id)
 
 
 class ConcurrentRuntimeTests(unittest.TestCase):
+    @unittest.skipUnless(os.name=='nt','Windows byte-range locking')
+    def test_empty_windows_lock_contender_waits_without_writing_locked_byte(self):
+        import msvcrt
+        from twine_edge_overlap.runtime_platform import preparation_lock
+        contender = r'''
+import sys,time
+from pathlib import Path
+sys.path.insert(0,sys.argv[1])
+from twine_edge_overlap.runtime_platform import preparation_lock,LockBusyError
+try:
+    with preparation_lock(Path(sys.argv[2]),deadline=time.monotonic()+.2,check=lambda:None):
+        raise AssertionError('contender acquired owner lock')
+except LockBusyError:
+    pass
+'''
+        with tempfile.TemporaryDirectory() as folder:
+            path=Path(folder)/'prepare.lock'
+            with path.open('w+b',buffering=0) as owner:
+                msvcrt.locking(owner.fileno(),msvcrt.LK_NBLCK,1)
+                try:
+                    result=subprocess.run([sys.executable,'-c',contender,str(ROOT/'src'),str(path)],capture_output=True,timeout=5)
+                    self.assertEqual(result.returncode,0,result.stderr.decode(errors='replace'))
+                    self.assertEqual(path.stat().st_size,0)
+                finally:
+                    owner.seek(0)
+                    msvcrt.locking(owner.fileno(),msvcrt.LK_UNLCK,1)
+            with preparation_lock(path,deadline=time.monotonic()+1,check=lambda:None):
+                self.assertEqual(path.stat().st_size,0)
+
     def test_lock_wait_is_bounded_and_does_not_stop_owner(self):
         holder = r'''
 import sys,time
@@ -71,9 +102,11 @@ with manager.locked():
 
     def setup_paths(self,folder):
         root=Path(folder)
-        artifact,archive=synthetic_artifact()
+        # Controlled payload for the host's runtime schema, not native engine evidence.
+        artifact,archive=synthetic_artifact(sys.platform if sys.platform in ('linux','darwin') else None)
         manifest=root/'manifest.json'
-        manifest.write_text(json.dumps(artifact.data),encoding='utf-8')
+        manifest.write_text(json.dumps({key:value for key,value in artifact.data.items() if not key.startswith('_')}),encoding='utf-8')
+        artifact=load_manifest(manifest)
         zip_path=root/'archive.zip'
         zip_path.write_bytes(archive)
         return root,artifact,archive,manifest,zip_path

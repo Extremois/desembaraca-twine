@@ -1,0 +1,7 @@
+/// @file
+/// @brief internal implementation details of list.h
+/// @ingroup cgraph_utils
+///
+/// Everything in this header should be considered “private” in the sense that
+/// it should not be called except by macros in list.h.
+

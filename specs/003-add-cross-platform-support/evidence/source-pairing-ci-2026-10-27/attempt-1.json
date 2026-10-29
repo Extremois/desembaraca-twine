@@ -1,0 +1,28 @@
+{
+  "kind": "source-pairing-ci-failed-attempt",
+  "revision": "a1acb4764e8d6299ff5a7755fe7bdac0347c0e27",
+  "foundation_run": 40562968118,
+  "successful_runs": [
+    40562968118,
+    40562968301,
+    40562968307,
+    40562968394
+  ],
+  "failed_run": 40562968123,
+  "failed_jobs": [
+    {
+      "job_id": 122396626470,
+      "file": "failed-actions-job-122396626470.log.gz",
+      "uncompressed_sha256": "b972a874c2f948a72788c50b2d7fd13890ec8c8d183d61029b6d4c7b96ece6ec",
+      "error": "Permission denied reading private container package/candidate.json from host"
+    },
+    {
+      "job_id": 122396626967,
+      "file": "failed-actions-job-122396626967.log.gz",
+      "uncompressed_sha256": "d04cec2e85b0bf0ba0dba8cc53ba8f933f028f926d87b35792ef931a2793fedb",
+      "error": "Permission denied reading private container package/candidate.json from host"
+    }
+  ],
+  "fix": "Run musl source pairing inside its build container; export readable review receipts only",
+  "source_state": "working-tree-fix-pending-ci"
+}

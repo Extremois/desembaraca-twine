@@ -1,0 +1,31 @@
+{
+  "name": "G",
+  "directed": true,
+  "strict": false,
+  "bb": "0,0,150,100",
+  "nodesep": "0.7",
+  "rankdir": "TB",
+  "ranksep": "1",
+  "splines": "line",
+  "_subgraph_cnt": 0,
+  "objects": [
+    {
+      "_gvid": 0,
+      "name": "n0",
+      "fixedsize": "true",
+      "height": "1.3889",
+      "label": "",
+      "pos": "50,50",
+      "shape": "box",
+      "width": "1.3889"
+    }
+  ],
+  "edges": [
+    {
+      "_gvid": 0,
+      "tail": 0,
+      "head": 0,
+      "pos": "e,100.42,31.909 100.42,68.091 126.5,70.874 150,64.844 150,50 150,37.36 132.96,31.11 111.8,31.252"
+    }
+  ]
+}

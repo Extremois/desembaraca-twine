@@ -1,0 +1,34 @@
+name: Entity table alternative review
+on:
+  workflow_dispatch:
+  push:
+    branches: [feat/003-add-cross-platform-support]
+    paths:
+      - '.github/workflows/entity-alternative-review.yml'
+      - 'specs/003-add-cross-platform-support/evidence/entity-alternative-review-2026-10-28/**'
+      - 'tools/runtime/graphviz-source.py'
+      - 'tools/runtime/source-lock.json'
+      - 'tools/runtime/licenses/entity-replacement/**'
+permissions:
+  contents: read
+jobs:
+  compare:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Compare the original and proposed generators without building an engine
+        run: >-
+          python specs/003-add-cross-platform-support/evidence/entity-alternative-review-2026-10-28/evaluate.py
+          --output "$RUNNER_TEMP/entity-alternative-review"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: entity-alternative-review-${{ github.sha }}
+          path: ${{ runner.temp }}/entity-alternative-review/
+          if-no-files-found: error
+          retention-days: 30

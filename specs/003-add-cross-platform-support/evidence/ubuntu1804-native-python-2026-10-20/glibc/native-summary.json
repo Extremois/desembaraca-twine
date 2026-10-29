@@ -1,0 +1,36 @@
+{
+  "kind": "native-ubuntu1804-glibc-engine-baseline",
+  "passed": true,
+  "approved": false,
+  "qualified": false,
+  "abi": "glibc",
+  "revision": "cc0cc7675b386c43506c6f9f1b48df73ce60abad",
+  "candidate_revision": "b13cd6f90db31163e62119bb83e2eb8db5ac8458",
+  "candidate_run_id": 39434565632,
+  "artifact_id": "linux-glibc-x86_64",
+  "engine_sha256": "43ce8d686720467c21be91cab4b8f3b246baae49c2cfe293714ebdf8a82f5716",
+  "image_pin": {
+    "url": "https://cloud-images.ubuntu.com/releases/bionic/release-20230607/ubuntu-18.04-server-cloudimg-amd64.img",
+    "size": 405667840,
+    "sha256": "8dd2e6b5e5aad20c3f836123b300cba9861249408cbb07c359145a65d6bab6b6",
+    "checksum_manifest_url": "https://cloud-images.ubuntu.com/releases/bionic/release-20230607/SHA256SUMS",
+    "checksum_manifest_sha256": "74aba2ff5163772fe09e10b50e2da28f357d15d77b97e033ef8a26afd09dc161",
+    "release": "18.04",
+    "arch": "x86_64",
+    "scope": "Historical baseline only; security maintenance and complete cell acceptance are not approved"
+  },
+  "kvm": {
+    "enabled": true,
+    "present": true
+  },
+  "guest_kernel": "4.15.0-212-generic",
+  "guest_glibc": "glibc 2.27",
+  "guest_arch": "x86_64",
+  "guest_report_sha256": "1b8768b04d7acaba33f807ff815ac76af54c7ab3ff4ff0d3c81f2bc437c4635c",
+  "cases": 13,
+  "geometry_decoded": true,
+  "private_python_report_sha256": "6c599ed139cfbf5d6cbdf515a892327fcaa25f61258a7e3b2b4d14c3c80b7195",
+  "environment_kind": "native",
+  "execution": "same-architecture hardware-accelerated guest; no TCG fallback",
+  "scope": "Engine/kernel baseline only; CPython 3.12/3.14 application, Pro eligibility, full cell and Twine pending"
+}

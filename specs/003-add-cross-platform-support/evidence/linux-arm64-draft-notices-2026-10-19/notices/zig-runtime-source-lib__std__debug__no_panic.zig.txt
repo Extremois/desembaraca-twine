@@ -1,0 +1,5 @@
+//! This namespace can be used with `pub const panic = std.debug.no_panic;` in the root file.
+//! It emits as little code as possible, for testing purposes.
+//!
+//! For a functional alternative, see `std.debug.FullPanic`.
+

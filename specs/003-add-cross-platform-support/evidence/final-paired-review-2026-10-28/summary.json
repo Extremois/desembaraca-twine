@@ -1,0 +1,412 @@
+{
+  "kind": "paired-artifact-review-and-current-package-acceptance",
+  "passed": true,
+  "qualified": false,
+  "build_revision": "46d111de81038d6ae0e7e7772813693c5b0a2345",
+  "technical_review_revisions": [
+    "7660b848b165027f7f5a62f51793ca7d7eb480fc",
+    "6e73877efddc7dc9dac758ec96ba018035e7177b"
+  ],
+  "artifacts": 6,
+  "static_inputs_reviewed": 262,
+  "audits": [
+    {
+      "artifact_id": "linux-glibc-aarch64",
+      "approved": true,
+      "evidence": {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/audits/linux-glibc-aarch64.json",
+        "sha256": "af31d0b1cbca76f19b8b37d286ade0ed7961d133bbbea90cb1da1f1996f663b0"
+      }
+    },
+    {
+      "artifact_id": "linux-glibc-x86_64",
+      "approved": true,
+      "evidence": {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/audits/linux-glibc-x86_64.json",
+        "sha256": "1cef0458a994edca09389f248b7c911efb4c96170be53b685f20e544d3b4dced"
+      }
+    },
+    {
+      "artifact_id": "macos-arm64",
+      "approved": true,
+      "evidence": {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/audits/macos-arm64.json",
+        "sha256": "a4e6a052f21101509623cf4bb7e5dcc82cc8d97e04ecef610305b864944a506f"
+      }
+    },
+    {
+      "artifact_id": "macos-x86_64",
+      "approved": true,
+      "evidence": {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/audits/macos-x86_64.json",
+        "sha256": "d76b6cc27d9944772b73df35296605f1e017d49fb175700dc64f98fef4c36f2d"
+      }
+    },
+    {
+      "artifact_id": "linux-musl-aarch64",
+      "approved": true,
+      "evidence": {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/audits/linux-musl-aarch64.json",
+        "sha256": "b2bd2cb714dc7bbb9e0d283401129dadc4caea185e8c49548ad5b8c670227596"
+      }
+    },
+    {
+      "artifact_id": "linux-musl-x86_64",
+      "approved": true,
+      "evidence": {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/audits/linux-musl-x86_64.json",
+        "sha256": "946bb32da59ed3bafd03b31258cf2e0e6d4800c9a89deb163c58df046592dd4b"
+      }
+    }
+  ],
+  "native_audit_inspections": [
+    {
+      "artifact_id": "linux-musl-aarch64",
+      "artifact_name": "musl-cache-notices-aarch64-3.12-7660b848b165027f7f5a62f51793ca7d7eb480fc",
+      "evidence": {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/7660b84/12868046446/musl-audit-inspection.json.gz",
+        "sha256": "aaba3360f36223c41e4d92a08619eef7252b926542cddd40def6b69e1735ba9d"
+      }
+    },
+    {
+      "artifact_id": "linux-musl-aarch64",
+      "artifact_name": "musl-cache-notices-aarch64-3.14-7660b848b165027f7f5a62f51793ca7d7eb480fc",
+      "evidence": {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/7660b84/12867946737/musl-audit-inspection.json.gz",
+        "sha256": "aaba3360f36223c41e4d92a08619eef7252b926542cddd40def6b69e1735ba9d"
+      }
+    },
+    {
+      "artifact_id": "linux-musl-x86_64",
+      "artifact_name": "musl-cache-notices-x86_64-3.12-7660b848b165027f7f5a62f51793ca7d7eb480fc",
+      "evidence": {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/7660b84/12867922548/musl-audit-inspection.json.gz",
+        "sha256": "7612ff03e8e8b108303d45745aba7e5c97e4eb9bcddfece1268ccc29938a6710"
+      }
+    },
+    {
+      "artifact_id": "linux-musl-x86_64",
+      "artifact_name": "musl-cache-notices-x86_64-3.14-7660b848b165027f7f5a62f51793ca7d7eb480fc",
+      "evidence": {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/7660b84/12867059724/musl-audit-inspection.json.gz",
+        "sha256": "7612ff03e8e8b108303d45745aba7e5c97e4eb9bcddfece1268ccc29938a6710"
+      }
+    },
+    {
+      "artifact_id": "linux-glibc-aarch64",
+      "artifact_name": "installed-engine-ubuntu-24.04-arm-3.14-7660b848b165027f7f5a62f51793ca7d7eb480fc",
+      "evidence": {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/7660b84/12868380297/audit-inspection.json.gz",
+        "sha256": "a988585923e0fda82ad8d79e4dd7b94019d515ba7be612c4498e5323629ef519"
+      }
+    },
+    {
+      "artifact_id": "linux-glibc-x86_64",
+      "artifact_name": "installed-engine-ubuntu-24.04-3.14-7660b848b165027f7f5a62f51793ca7d7eb480fc",
+      "evidence": {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/7660b84/12868270856/audit-inspection.json.gz",
+        "sha256": "06a121fe95ac57bc6428ac6d8161f3e3a289d3dd4b7e0602cd57f3fed781fbc8"
+      }
+    },
+    {
+      "artifact_id": "macos-x86_64",
+      "artifact_name": "installed-engine-macos-15-intel-3.12-7660b848b165027f7f5a62f51793ca7d7eb480fc",
+      "evidence": {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/7660b84/12868096883/audit-inspection.json.gz",
+        "sha256": "d56acc54507af1c795799136a121fa0f49258a1ec76a629c2f25acb8293b1f61"
+      }
+    },
+    {
+      "artifact_id": "macos-arm64",
+      "artifact_name": "installed-engine-macos-15-3.14-7660b848b165027f7f5a62f51793ca7d7eb480fc",
+      "evidence": {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/7660b84/12867797625/audit-inspection.json.gz",
+        "sha256": "c403d62998bfc58065a1624e9a9d61a5b86e4c718354b66fbdf27037ba3c977d"
+      }
+    },
+    {
+      "artifact_id": "macos-arm64",
+      "artifact_name": "installed-engine-macos-15-3.12-7660b848b165027f7f5a62f51793ca7d7eb480fc",
+      "evidence": {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/7660b84/12867597389/audit-inspection.json.gz",
+        "sha256": "96fbd0f4306c3c5d2b85bd9c0b70b140d95b95c41665dcb9474497015b8690f2"
+      }
+    },
+    {
+      "artifact_id": "macos-x86_64",
+      "artifact_name": "installed-engine-macos-15-intel-3.14-7660b848b165027f7f5a62f51793ca7d7eb480fc",
+      "evidence": {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/7660b84/12867384920/audit-inspection.json.gz",
+        "sha256": "81e49496ac2f38f12e9dbd4767ec6e41c2d02d1223548be30e071ccc9ff3cd16"
+      }
+    },
+    {
+      "artifact_id": "linux-glibc-aarch64",
+      "artifact_name": "installed-engine-ubuntu-24.04-arm-3.12-7660b848b165027f7f5a62f51793ca7d7eb480fc",
+      "evidence": {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/7660b84/12867323256/audit-inspection.json.gz",
+        "sha256": "a988585923e0fda82ad8d79e4dd7b94019d515ba7be612c4498e5323629ef519"
+      }
+    },
+    {
+      "artifact_id": "linux-glibc-x86_64",
+      "artifact_name": "installed-engine-ubuntu-24.04-3.12-7660b848b165027f7f5a62f51793ca7d7eb480fc",
+      "evidence": {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/7660b84/12867299428/audit-inspection.json.gz",
+        "sha256": "06a121fe95ac57bc6428ac6d8161f3e3a289d3dd4b7e0602cd57f3fed781fbc8"
+      }
+    }
+  ],
+  "installed_runtime": [
+    {
+      "artifact_id": "linux-musl-aarch64",
+      "python": "3.12.13",
+      "formats": 2,
+      "evidence": {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/7660b84/12868046446/musl-notices/slot/installed-runtime.json.gz",
+        "sha256": "6e3e5f53f6991200c6370a5791e3979fa797d314e81bac01f677d3897f3011cc"
+      }
+    },
+    {
+      "artifact_id": "linux-musl-aarch64",
+      "python": "3.14.5",
+      "formats": 2,
+      "evidence": {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/7660b84/12867946737/musl-notices/slot/installed-runtime.json.gz",
+        "sha256": "891ef52d847e27e0aa25666e6b541867254966c35b683ff42674f3f4a0a5fae7"
+      }
+    },
+    {
+      "artifact_id": "linux-musl-x86_64",
+      "python": "3.12.13",
+      "formats": 2,
+      "evidence": {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/7660b84/12867922548/musl-notices/slot/installed-runtime.json.gz",
+        "sha256": "d0076298ee9d0e40ecd73ce0a4437b73a00822310f24e27002fd12580939a447"
+      }
+    },
+    {
+      "artifact_id": "linux-musl-x86_64",
+      "python": "3.14.5",
+      "formats": 2,
+      "evidence": {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/7660b84/12867059724/musl-notices/slot/installed-runtime.json.gz",
+        "sha256": "59ff992534b6d9b9242e0c8f4986f3b9d53a39646cc9a427db9c0e886cbeda8e"
+      }
+    },
+    {
+      "artifact_id": "linux-glibc-aarch64",
+      "python": "3.14.9",
+      "formats": 2,
+      "evidence": {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/7660b84/12868380297/installed-engine.json.gz",
+        "sha256": "bba0e30707a1bc03bdfa4e21258612d44b42dee272d8bc514c1e7551276d9c21"
+      }
+    },
+    {
+      "artifact_id": "linux-glibc-x86_64",
+      "python": "3.14.9",
+      "formats": 2,
+      "evidence": {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/7660b84/12868270856/installed-engine.json.gz",
+        "sha256": "87a4f97bd9fe6d167f33007a602866b0f84c4716b7961fe0359d5211fe52d933"
+      }
+    },
+    {
+      "artifact_id": "macos-x86_64",
+      "python": "3.12.10",
+      "formats": 2,
+      "evidence": {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/7660b84/12868096883/installed-engine.json.gz",
+        "sha256": "99a0de54134e070c68b03dcd867bb8932203a246fccd8ce2d2e6cd75e018a39d"
+      }
+    },
+    {
+      "artifact_id": "macos-arm64",
+      "python": "3.14.7",
+      "formats": 2,
+      "evidence": {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/7660b84/12867797625/installed-engine.json.gz",
+        "sha256": "56009d316d0eefc1562b0f97558357c7a3dfec885cef822fc25849f94cff051b"
+      }
+    },
+    {
+      "artifact_id": "macos-arm64",
+      "python": "3.12.10",
+      "formats": 2,
+      "evidence": {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/7660b84/12867597389/installed-engine.json.gz",
+        "sha256": "b0eb9991b36067e1da9eebe7a997f5ee73c7b7611f8a7255d0cfaf7ead8ac7d1"
+      }
+    },
+    {
+      "artifact_id": "macos-x86_64",
+      "python": "3.14.7",
+      "formats": 2,
+      "evidence": {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/7660b84/12867384920/installed-engine.json.gz",
+        "sha256": "67305f3a68d04e52ab803c7db74d874bc223264383c6f5df9c431f1b0202575e"
+      }
+    },
+    {
+      "artifact_id": "linux-glibc-aarch64",
+      "python": "3.12.15",
+      "formats": 2,
+      "evidence": {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/7660b84/12867323256/installed-engine.json.gz",
+        "sha256": "f6b7c3bb1a992f7247196cee35fbaa717ce63305cc4e76fa08695e230cd44b0a"
+      }
+    },
+    {
+      "artifact_id": "linux-glibc-x86_64",
+      "python": "3.12.15",
+      "formats": 2,
+      "evidence": {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/7660b84/12867299428/installed-engine.json.gz",
+        "sha256": "ea14bf3875a46e9573b9e2feade3bb6ef649d92e6e13d5abe5ccd3f39a49da7a"
+      }
+    }
+  ],
+  "cache_slots": [
+    {
+      "artifact_id": "linux-glibc-aarch64",
+      "python": "3.12.15",
+      "formats": 2,
+      "evidence": {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/fdd2725/12867896009/cache-notices.json.gz",
+        "sha256": "ed78a19ab60ac8395579e73179ec021dae41078b74235500f6d666263a8e85c9"
+      }
+    },
+    {
+      "artifact_id": "macos-x86_64",
+      "python": "3.14.7",
+      "formats": 2,
+      "evidence": {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/fdd2725/12867741001/cache-notices.json.gz",
+        "sha256": "2cdd41aa835b911e26a85680b062c5896cf558a4325c9e0a188a3ad6a28c9320"
+      }
+    },
+    {
+      "artifact_id": "linux-glibc-aarch64",
+      "python": "3.14.9",
+      "formats": 2,
+      "evidence": {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/fdd2725/12867696408/cache-notices.json.gz",
+        "sha256": "a3aae4e43a4207b44b372b1f85dc48e1ff0aebcc5bc245896b0a05ad2aab3a0e"
+      }
+    },
+    {
+      "artifact_id": "linux-glibc-x86_64",
+      "python": "3.14.9",
+      "formats": 2,
+      "evidence": {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/fdd2725/12867631802/cache-notices.json.gz",
+        "sha256": "a9f2248dca62a3d3fdb5baa714e5f47d33162f263662ade161337938cf302737"
+      }
+    },
+    {
+      "artifact_id": "macos-arm64",
+      "python": "3.12.10",
+      "formats": 2,
+      "evidence": {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/fdd2725/12867322150/cache-notices.json.gz",
+        "sha256": "2bc9e842c7062f6479640fbf19c35be608545cf163e74482c3cd53036b452fc6"
+      }
+    },
+    {
+      "artifact_id": "macos-x86_64",
+      "python": "3.12.10",
+      "formats": 2,
+      "evidence": {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/fdd2725/12867218625/cache-notices.json.gz",
+        "sha256": "7fc63c9acd2df872a3469e8ea5ae5e6fe683540bd8768b08e18422c071464021"
+      }
+    },
+    {
+      "artifact_id": "linux-glibc-x86_64",
+      "python": "3.12.15",
+      "formats": 2,
+      "evidence": {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/fdd2725/12866988765/cache-notices.json.gz",
+        "sha256": "32f3c6c9fc8dc979fd8aad7f3fe7bb6fe7c93a383ddf3ee350442d550792dacc"
+      }
+    },
+    {
+      "artifact_id": "macos-arm64",
+      "python": "3.14.7",
+      "formats": 2,
+      "evidence": {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/fdd2725/12866774413/cache-notices.json.gz",
+        "sha256": "5b1e7fb337ec8341937352b940820915f3c0f237e8ef2eea0f46075c1e873549"
+      }
+    },
+    {
+      "artifact_id": "windows-legacy",
+      "python": "3.12.10",
+      "formats": 2,
+      "evidence": {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/7660b84/12868460361/windows-cache-notices.json.gz",
+        "sha256": "963e40fca841913b8422ff2292ca56e42503bc4dfb0c99a7c206e794af3a29da"
+      }
+    },
+    {
+      "artifact_id": "linux-musl-aarch64",
+      "python": "3.12.13",
+      "formats": 2,
+      "evidence": {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/7660b84/12868046446/musl-notices/slot/cache-notices.json.gz",
+        "sha256": "f84f3bd81fa0c18499bd2aa3f5ed0e56840a3bed5b3ef146d50f5bd181af927d"
+      }
+    },
+    {
+      "artifact_id": "linux-musl-aarch64",
+      "python": "3.14.5",
+      "formats": 2,
+      "evidence": {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/7660b84/12867946737/musl-notices/slot/cache-notices.json.gz",
+        "sha256": "1f71018ca8c62056e235239cfed66f834d0fc4ca6626bde92472ae60c424e19f"
+      }
+    },
+    {
+      "artifact_id": "linux-musl-x86_64",
+      "python": "3.12.13",
+      "formats": 2,
+      "evidence": {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/7660b84/12867922548/musl-notices/slot/cache-notices.json.gz",
+        "sha256": "ad286eab4e8845c4f5850e068f0e604b2c2885ac9f5c93a923d5146ef9e06090"
+      }
+    },
+    {
+      "artifact_id": "windows-legacy",
+      "python": "3.14.9",
+      "formats": 2,
+      "evidence": {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/7660b84/12867319667/windows-cache-notices.json.gz",
+        "sha256": "8ea68a9bc114c9f155a83cb16420f2ecbe5759595e977b1cb98e7d4d34f28480"
+      }
+    },
+    {
+      "artifact_id": "linux-musl-x86_64",
+      "python": "3.14.5",
+      "formats": 2,
+      "evidence": {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/7660b84/12867059724/musl-notices/slot/cache-notices.json.gz",
+        "sha256": "6dd66d104455b033671607bfd4a92757daf622eb4ff5ea462327067a82f2291b"
+      }
+    }
+  ],
+  "foundation": {
+    "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/6e73877/summary.json",
+    "sha256": "ce308bd3cfa85cd67942fd42fc98148733aada532bf96f3848d0319f13522e23"
+  },
+  "publication_authorized": true,
+  "published": true,
+  "catalog_activated": true,
+  "final_remote_catalog_acceptance": false,
+  "application_package_content_unchanged_between_test_revisions": true,
+  "tasks_closed": 77,
+  "tasks_total": 84,
+  "remaining_gate": "Final remote catalog/package acceptance and support promotion",
+  "publication": "publication.json",
+  "public_downloads": "public-download-verification.json"
+}

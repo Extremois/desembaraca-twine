@@ -1,0 +1,475 @@
+{
+  "kind": "pinned-musl-math-notice-references",
+  "approved": false,
+  "archive": {
+    "url": "https://musl.libc.org/releases/musl-1.1.18.tar.gz",
+    "size": 936274,
+    "sha256": "d017ee5d01aec0c522a1330fdff06b1e428cb409e1db819cc4935d5da4a5a118",
+    "version": "1.1.18"
+  },
+  "sources": {
+    "lib/compiler_rt/ceil.zig": {
+      "sha256": "c0b94f955196844864638c527fa4a30dea10e6a3b66132fe61cab7830b5b3310",
+      "size": 5139,
+      "references": [
+        "src/math/ceilf.c",
+        "src/math/ceil.c"
+      ]
+    },
+    "lib/compiler_rt/exp.zig": {
+      "sha256": "cfdd306d366211e654ac9395092c8fa2f32773aef0609fbb877705f129ee502a",
+      "size": 11677,
+      "references": [
+        "src/math/expf.c",
+        "src/math/exp.c"
+      ]
+    },
+    "lib/compiler_rt/exp2.zig": {
+      "sha256": "97ec14c5f51690fcad9c8c2d82cee3a8ea1cdd682689a6340dd5438ea973dedc",
+      "size": 20924,
+      "references": [
+        "src/math/exp2f.c",
+        "src/math/exp2.c"
+      ]
+    },
+    "lib/compiler_rt/floor.zig": {
+      "sha256": "7aa25d35a1d93393fe55b49c9db7420dfaafcc60d8e63078d6ca846285e3678e",
+      "size": 6290,
+      "references": [
+        "src/math/floorf.c",
+        "src/math/floor.c"
+      ]
+    },
+    "lib/compiler_rt/fma.zig": {
+      "sha256": "f8d4321338ca607be9a80d6e11593f0f56bab4618c6efcbb27e1da824e700a39",
+      "size": 11575,
+      "references": [
+        "src/math/fmal.c",
+        "src/math/fmaf.c",
+        "src/math/fma.c"
+      ]
+    },
+    "lib/compiler_rt/fmod.zig": {
+      "sha256": "176aaad4202cc1938b8147b46dfb3475f878fe1c74b6bf2924b1772bb851a4a3",
+      "size": 12218,
+      "references": [
+        "src/math/fmod.c",
+        "src/math/fmodf.c",
+        "src/math/fmodl.c"
+      ]
+    },
+    "lib/compiler_rt/log.zig": {
+      "sha256": "57f6bdac99d1507aa7157da17ae935d8e65cf708d62ba463f1096ccdb955d1e5",
+      "size": 8304,
+      "references": [
+        "src/math/logf.c",
+        "src/math/log.c"
+      ]
+    },
+    "lib/compiler_rt/log10.zig": {
+      "sha256": "2df80603e051dd6d37dbbf9f35a2f827cec8930b5a6e3bb4de10954310203e17",
+      "size": 9499,
+      "references": [
+        "src/math/log10f.c",
+        "src/math/log10.c"
+      ]
+    },
+    "lib/compiler_rt/log2.zig": {
+      "sha256": "f340b3537f055c5eb0d5049706eb8a9da379ad0a75cde3ccd63e2d7611c6b83e",
+      "size": 8927,
+      "references": [
+        "src/math/log2f.c",
+        "src/math/log2.c"
+      ]
+    },
+    "lib/compiler_rt/rem_pio2.zig": {
+      "sha256": "908c7ee93fc246ce3405fa3a4303b8dbbc9a6c527f5e792fd59d6ab3cff79f27",
+      "size": 6045,
+      "references": [
+        "src/math/__rem_pio2.c"
+      ]
+    },
+    "lib/compiler_rt/rem_pio2_large.zig": {
+      "sha256": "30251d81ce0fd09130d359cd92f03ef2cbe1247ca6ead4a1b41b047745bdef0a",
+      "size": 20581,
+      "references": [
+        "src/math/__rem_pio2_large.c"
+      ]
+    },
+    "lib/compiler_rt/rem_pio2f.zig": {
+      "sha256": "a41741ff67bf8def1d237d62ef07bb0ec7d5198459958eb1420028052727a17a",
+      "size": 2247,
+      "references": [
+        "src/math/__rem_pio2f.c"
+      ]
+    },
+    "lib/compiler_rt/round.zig": {
+      "sha256": "81ba3ee7cf24f55010da8de1b2b19cc91971bf3ed36b56859020ef4a33be4b18",
+      "size": 5307,
+      "references": [
+        "src/math/roundf.c",
+        "src/math/round.c"
+      ]
+    },
+    "lib/compiler_rt/sin.zig": {
+      "sha256": "91eb3f8e29e6c82b2a704ab0b47438e2b51e16bd3e1be622ccf264f061f290d5",
+      "size": 6783,
+      "references": [
+        "src/math/sinf.c",
+        "src/math/sin.c"
+      ]
+    },
+    "lib/compiler_rt/sqrt.zig": {
+      "sha256": "a52efd687f04d273623ba1ea47d2fe5eb34b3df161c355808ffb07de07a4a0eb",
+      "size": 8445,
+      "references": [
+        "src/math/sqrt.c",
+        "src/math/sqrtf.c"
+      ]
+    },
+    "lib/compiler_rt/tan.zig": {
+      "sha256": "828484649e0a61f634bd1bea179255ec24ee9c77b1511a99ccad2b874e0e1a6c",
+      "size": 6175,
+      "references": [
+        "src/math/tanf.c",
+        "src/math/tan.c"
+      ]
+    },
+    "lib/compiler_rt/trig.zig": {
+      "sha256": "5375b04c419bf910fd4cfe1a667629eb2cf55b56e76c72ae8f9ab4c327092342",
+      "size": 11743,
+      "references": [
+        "src/math/__cos.c",
+        "src/math/__cosdf.c",
+        "src/math/__sin.c",
+        "src/math/__sindf.c",
+        "src/math/__tan.c",
+        "src/math/__tandf.c"
+      ]
+    },
+    "lib/compiler_rt/trunc.zig": {
+      "sha256": "dcd2d0715b5ce3df820f383e531ea06726ddf6b22e51f4ab950392e1ce46e30a",
+      "size": 4509,
+      "references": [
+        "src/math/truncf.c",
+        "src/math/trunc.c"
+      ]
+    },
+    "lib/std/math/ilogb.zig": {
+      "sha256": "a6b7569ae4ad22f6ac6324bb3c7074866e7cd93b15d7db8c42102b58fc8c99c9",
+      "size": 5519,
+      "references": [
+        "src/math/ilogbl.c",
+        "src/math/ilogbf.c",
+        "src/math/ilogb.c"
+      ]
+    }
+  },
+  "references": {
+    "src/math/ceilf.c": {
+      "file": "src__math__ceilf.c.gz",
+      "size": 434,
+      "sha256": "691d3a8e183ebe5f09a68120766877872e10f9267fe6e2bba0341b93d2863cc8",
+      "prefix_bytes": 0,
+      "prefix_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "src/math/ceil.c": {
+      "file": "src__math__ceil.c.gz",
+      "size": 654,
+      "sha256": "f616b50efc61eb35f946308b222f5f83ca707b4efaf7ea175969a5b62d2d6637",
+      "prefix_bytes": 0,
+      "prefix_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "src/math/expf.c": {
+      "file": "src__math__expf.c.gz",
+      "size": 2054,
+      "sha256": "5990e92426b8a17a91891377c1eccbee83eead58099251e193b09f438fe32f24",
+      "prefix_bytes": 517,
+      "prefix_sha256": "8b9631512fe1312a7a7483c4ef576186dfa191154ae0780c6c30a2ae7e47b8a1"
+    },
+    "src/math/exp.c": {
+      "file": "src__math__exp.c.gz",
+      "size": 4118,
+      "sha256": "ccc99069d190e30d3bff142208738a7bbb6372c6ecbae38680412b455dccb18d",
+      "prefix_bytes": 2401,
+      "prefix_sha256": "89e56efd8d8a30105cf1909dce819219491039c66061bcccc1484fda190df98b"
+    },
+    "src/math/exp2f.c": {
+      "file": "src__math__exp2f.c.gz",
+      "size": 4007,
+      "sha256": "6857ed9caa8f1e24c3542576d309033fe006c0a01a378084124f21c57043bf23",
+      "prefix_bytes": 1428,
+      "prefix_sha256": "386848f8d2b17be6710e4aed874406dd2a59978e42043af5b08906a70b1c124c"
+    },
+    "src/math/exp2.c": {
+      "file": "src__math__exp2.c.gz",
+      "size": 14069,
+      "sha256": "daf2471bd7a521808a33e99e128558b6ee8560579b5c3e355ce89d620026873e",
+      "prefix_bytes": 1427,
+      "prefix_sha256": "71573f56d305793a05e14421952989613865ae90f607eec353f4337936093729"
+    },
+    "src/math/floorf.c": {
+      "file": "src__math__floorf.c.gz",
+      "size": 433,
+      "sha256": "55a62f12a4bcd151ca3a82e9ec98b1744c15017f1b6cdea56b33220ffdb166f3",
+      "prefix_bytes": 0,
+      "prefix_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "src/math/floor.c": {
+      "file": "src__math__floor.c.gz",
+      "size": 653,
+      "sha256": "b9ccb9363719a84be218d60c56717f4fb0234e170c305e36ce21c30e1f42f8e1",
+      "prefix_bytes": 0,
+      "prefix_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "src/math/fmal.c": {
+      "file": "src__math__fmal.c.gz",
+      "size": 8236,
+      "sha256": "1c7587e59b9f249bd5e8dfabb154b602978fbb490348f92af5300ee8eadce518",
+      "prefix_bytes": 1433,
+      "prefix_sha256": "541bf7c1610ec70e4c233de014d6e4cf739a56f16a53bae1703eaa8854f742c9"
+    },
+    "src/math/fmaf.c": {
+      "file": "src__math__fmaf.c.gz",
+      "size": 3166,
+      "sha256": "bd7ab5b6971a395295ed8dec2e04f5620e3fe7151b8a3e0e8dcda50a9eaaae9e",
+      "prefix_bytes": 1432,
+      "prefix_sha256": "ceba0b483522a5c09b22ae51b1833f2fabcf183c6e26077189f39f6a29c92ad5"
+    },
+    "src/math/fma.c": {
+      "file": "src__math__fma.c.gz",
+      "size": 3734,
+      "sha256": "f15e2db8c727f6cb3886dbc8817bebfcd7afff155b284be409fb961e0b985894",
+      "prefix_bytes": 0,
+      "prefix_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "src/math/fmod.c": {
+      "file": "src__math__fmod.c.gz",
+      "size": 1270,
+      "sha256": "33fb61093e04783081b9e8f8a8a303456b2f919c215cd0c378c1ed0acf41934c",
+      "prefix_bytes": 0,
+      "prefix_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "src/math/fmodf.c": {
+      "file": "src__math__fmodf.c.gz",
+      "size": 1106,
+      "sha256": "eecc1cf499f143181880a33a95f1614be323aca704815a7b57d4969a7cacc2d4",
+      "prefix_bytes": 0,
+      "prefix_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "src/math/fmodl.c": {
+      "file": "src__math__fmodl.c.gz",
+      "size": 1908,
+      "sha256": "2e0331976ad4414bae10293befdb06a36b89cb8a7fcd66522cdb48c8485b97cb",
+      "prefix_bytes": 0,
+      "prefix_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "src/math/logf.c": {
+      "file": "src__math__logf.c.gz",
+      "size": 1740,
+      "sha256": "9d054cebcf07ad0aa0f63c397dd10d115cc6c76ac706c4425219dd796202db08",
+      "prefix_bytes": 517,
+      "prefix_sha256": "411464ab5cc8c73d1d7463c0aeeeb2921ed5444128b3def0890c1f12cdd99b83"
+    },
+    "src/math/log.c": {
+      "file": "src__math__log.c.gz",
+      "size": 4026,
+      "sha256": "017fe474291d5cbad5f2b57c53200ca645248dd7ea87e149ddfdf78ffd32af0d",
+      "prefix_bytes": 2550,
+      "prefix_sha256": "94da31fdbc97679e778714103f7f232cefe52633253ff58ba3b6cf3cc501ed81"
+    },
+    "src/math/log10f.c": {
+      "file": "src__math__log10f.c.gz",
+      "size": 1928,
+      "sha256": "b8de5c0f14be2c622eca1cb33e80e5b131576c7c229aeffb8ea9f1d61555f6b9",
+      "prefix_bytes": 471,
+      "prefix_sha256": "38a62e94ec64429d40e70621dcd7177d1d87c90acbc87dc1b197cbba1de18536"
+    },
+    "src/math/log10.c": {
+      "file": "src__math__log10.c.gz",
+      "size": 2968,
+      "sha256": "ef9b4b1f0918cf1fcb797f9fa4d4ffe177bfa27f668d74a41d613bfbcd83850a",
+      "prefix_bytes": 691,
+      "prefix_sha256": "a10b1a81999d6e187cc65a869b53fcc2168bbd62b4b8ffb7b932726ddb2a5081"
+    },
+    "src/math/log2f.c": {
+      "file": "src__math__log2f.c.gz",
+      "size": 1784,
+      "sha256": "3c5d7e37e0d2e9d83fe8cf0f224f4dea977a90f56ba926133686019e7c1ff00f",
+      "prefix_bytes": 469,
+      "prefix_sha256": "a1df834bda4484057cc771bc06d8421c3b1b4fc545f4e7504d02550f12e358ac"
+    },
+    "src/math/log2.c": {
+      "file": "src__math__log2.c.gz",
+      "size": 3981,
+      "sha256": "f80ab2145f156b8a986cd1303b9753d10631e75a03502a7067c4a38c4849484e",
+      "prefix_bytes": 678,
+      "prefix_sha256": "447611d164938ed31b2ab7db1a0f3a884126444c37c58d3ab184ddfe88e67108"
+    },
+    "src/math/__rem_pio2.c": {
+      "file": "src__math____rem_pio2.c.gz",
+      "size": 4474,
+      "sha256": "6fa942298b97bd9fe4bdb67d7c3156db8af9622c58de6fdd4c7108eedb672471",
+      "prefix_bytes": 589,
+      "prefix_sha256": "0bd9382fac6f493f9dc5f4eaa4c2012cc04951048f045aea7121e5540b08d871"
+    },
+    "src/math/__rem_pio2_large.c": {
+      "file": "src__math____rem_pio2_large.c.gz",
+      "size": 16408,
+      "sha256": "b97f19fb5951c83a0c10506fab35646caefde13bd03100ad2af55ef00af0b9fb",
+      "prefix_bytes": 4831,
+      "prefix_sha256": "82c5481a6eed4acef10144da0860ed303595437a9f054254ece6bc1584b0c89d"
+    },
+    "src/math/__rem_pio2f.c": {
+      "file": "src__math____rem_pio2f.c.gz",
+      "size": 2017,
+      "sha256": "edd423adda392c07b75f5962fc51f3a10ecada00f3ad98937ca6dc812cc0f707",
+      "prefix_bytes": 732,
+      "prefix_sha256": "d35098402c1cc702758ebd75de69e834e6f24efe2c38ff419d7fbb9eb476bec8"
+    },
+    "src/math/roundf.c": {
+      "file": "src__math__roundf.c.gz",
+      "size": 589,
+      "sha256": "3f8cc14771a866a06184a3d9d654f63de9a077316a4905aae19884cc9b292d2e",
+      "prefix_bytes": 0,
+      "prefix_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "src/math/round.c": {
+      "file": "src__math__round.c.gz",
+      "size": 597,
+      "sha256": "2349e599e99052603794087193725d28180b5d3466d43d6e6e1b254627bf37ae",
+      "prefix_bytes": 0,
+      "prefix_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "src/math/sinf.c": {
+      "file": "src__math__sinf.c.gz",
+      "size": 1970,
+      "sha256": "2583af55446f07da3225186c368a7aae5a0a0a0edab268967f4122b92e222b87",
+      "prefix_bytes": 549,
+      "prefix_sha256": "b6a2605352aea5dd02e594be2282448e0f9b2b26e3ef9c17120d608068fa6c48"
+    },
+    "src/math/sin.c": {
+      "file": "src__math__sin.c.gz",
+      "size": 2192,
+      "sha256": "24e53a9d85f196f66919cc19247be5480bb607ef38844b1a24bc47c4fe4974ef",
+      "prefix_bytes": 1488,
+      "prefix_sha256": "bc263f1827be6be870e26a0b8a131bd7d5beb363778097a02fcdd4bf0a3fe62c"
+    },
+    "src/math/sqrt.c": {
+      "file": "src__math__sqrt.c.gz",
+      "size": 5425,
+      "sha256": "0dc503c527ea84b234f5583e2ada5c6d21b32d55e6240fcf7c5eb684b8a57d0e",
+      "prefix_bytes": 3333,
+      "prefix_sha256": "36d667f7673b000eaf5193a15fcb680ba3f472fab4a6f69f87e6882def183147"
+    },
+    "src/math/sqrtf.c": {
+      "file": "src__math__sqrtf.c.gz",
+      "size": 1847,
+      "sha256": "2cf9efef0d03d2c9dd16095f92411088b534a31f499068d7032673dcc3c7abdb",
+      "prefix_bytes": 518,
+      "prefix_sha256": "cc909c1ec953d6b4dfc31a604ebb8916200d00ac00821c7659d25d0c88b276f8"
+    },
+    "src/math/tanf.c": {
+      "file": "src__math__tanf.c.gz",
+      "size": 1781,
+      "sha256": "38b39aaf03d33341e606b67b3743ee5fa436b7e8338af155994d4b794b366003",
+      "prefix_bytes": 549,
+      "prefix_sha256": "32af7958518d0c3d2854d114f793823817fe691aae1ee15100367632b6644e1d"
+    },
+    "src/math/tan.c": {
+      "file": "src__math__tan.c.gz",
+      "size": 1965,
+      "sha256": "422d411bac962a1077ae394d14e54313012a6faa3476c20b2a66d3fb3f7a923f",
+      "prefix_bytes": 1433,
+      "prefix_sha256": "b48f815fbb4269c92e8c70d45c6f961b3de4ceecc277a35501bff6b10bf92f69"
+    },
+    "src/math/__cos.c": {
+      "file": "src__math____cos.c.gz",
+      "size": 2884,
+      "sha256": "3f0f774aab60a18d7ef935ffdf121bcda17cbadabff14096c614da22e31a42c1",
+      "prefix_bytes": 2264,
+      "prefix_sha256": "27047e42e3a4b71c63b76080ffe0717310b91d38ef4d15c940bbadc1eb8ff420"
+    },
+    "src/math/__cosdf.c": {
+      "file": "src__math____cosdf.c.gz",
+      "size": 1102,
+      "sha256": "0ba872cc7e26b93bb9784d19fee84b263e1fa3543a76ec3c0893aea47453a2a7",
+      "prefix_bytes": 562,
+      "prefix_sha256": "2c5ca50ddd8ea3d2e5d6a02e212842567aae377abd6ed57e0d0e8888c9fb94ae"
+    },
+    "src/math/__sin.c": {
+      "file": "src__math____sin.c.gz",
+      "size": 2364,
+      "sha256": "f3a37ef9bcfb8a2f9c809d8c7f1aa2c17c8c3319ad7fb2fe7c0a6284ea8859d2",
+      "prefix_bytes": 1710,
+      "prefix_sha256": "e651c1164fa50852a81332d2a3962dd0de64c64735f47b2f0e846f94f1da8d38"
+    },
+    "src/math/__sindf.c": {
+      "file": "src__math____sindf.c.gz",
+      "size": 1101,
+      "sha256": "de7026bcd159b7d06a8cbcc162df722014f3b1a3cc4183116b6b7829eef1d118",
+      "prefix_bytes": 549,
+      "prefix_sha256": "701b472045d066eaeab43d5a94c692d87aecf5401ecab9064dfbf93a6a1a0c2e"
+    },
+    "src/math/__tan.c": {
+      "file": "src__math____tan.c.gz",
+      "size": 3963,
+      "sha256": "e18b65b69fced8dbb2d3ed1a3dc6daea0e9f857f2762f274380bd89a6f89d2c4",
+      "prefix_bytes": 1916,
+      "prefix_sha256": "daeafcdba6eed4bac3fb9ab78e2e410f7bd5a8a9c733558645ec392725eb0b6b"
+    },
+    "src/math/__tandf.c": {
+      "file": "src__math____tandf.c.gz",
+      "size": 1869,
+      "sha256": "60455f3cc0ac743f3eaf0017a3a4f0adbab37c0ee30d29397852d22904c40444",
+      "prefix_bytes": 484,
+      "prefix_sha256": "cd8d03dca6657c0e15589067270f1d0760deb456d630c76b53929e8d3f151d23"
+    },
+    "src/math/truncf.c": {
+      "file": "src__math__truncf.c.gz",
+      "size": 294,
+      "sha256": "dd67c4d71894da6c93bc41ec6a141de45124d3d3f4d012bc95aac4fc792abccb",
+      "prefix_bytes": 0,
+      "prefix_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "src/math/trunc.c": {
+      "file": "src__math__trunc.c.gz",
+      "size": 303,
+      "sha256": "2f2941542db65a5c3a8a6fa952b978a5ff757f8b14ffdaef8ad28e0cafead644",
+      "prefix_bytes": 0,
+      "prefix_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "src/math/ilogbl.c": {
+      "file": "src__math__ilogbl.c.gz",
+      "size": 1004,
+      "sha256": "1d2ac88f9b2316e6cf5e73878800c5b96c26de6813e8f528c4c60cceb98fa3ea",
+      "prefix_bytes": 0,
+      "prefix_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "src/math/ilogbf.c": {
+      "file": "src__math__ilogbf.c.gz",
+      "size": 438,
+      "sha256": "d872a912229d178401482fc6b7cc7c3397a838b43d30f61bfdad8f8d03f63f4d",
+      "prefix_bytes": 0,
+      "prefix_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "src/math/ilogb.c": {
+      "file": "src__math__ilogb.c.gz",
+      "size": 445,
+      "sha256": "c9875bc2118b90b16f2a8f3770a61dad59e2e5e076e744d4c054191ba00611be",
+      "prefix_bytes": 0,
+      "prefix_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  "copyright": {
+    "file": "COPYRIGHT.gz",
+    "size": 5927,
+    "sha256": "70ca142d257e2690a1f8eda8a296e64a6d1b16d8aee6784f8ddcf67f3163635d"
+  },
+  "scope": "Conservative historical notices for pinned Zig math ports; no byte-identical translation or retained-source closure claim",
+  "aliases": {
+    "ln.c": "log.c",
+    "lnf.c": "logf.c",
+    "__tand.c": "__tan.c"
+  }
+}

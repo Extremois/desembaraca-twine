@@ -1,0 +1,77 @@
+{
+  "kind": "local-inventory-pipeline-smoke-not-qualification",
+  "captured_at": "2026-10-18T11:58:09.158931+00:00",
+  "environment_kind": "wsl",
+  "inventory_sha256": "7ca8d9087fb66766dc8062fbc1c9e4b4dafeee48d0e49b332917513cf5440701",
+  "provenance_sha256": "fffbbdc949e4d4ad0acaca844be267f33e7a8aa831c1a3121c56a7acb5357aaf",
+  "executable_sha256": "1e9633e9b36e337a5832565a50554bf1b3271e7791deebef6efdae4e073a0a73",
+  "files": 2,
+  "inventory_created": true,
+  "needed": [
+    "libm.so.6",
+    "libc.so.6"
+  ],
+  "rpath": [],
+  "highest_glibc": "2.38",
+  "old_glibc_baseline_rejected": true,
+  "inspection_without_audit_rejected": true,
+  "inspection_completed": false,
+  "qualification": "pending",
+  "limitations": [
+    "Offline rebuild using existing SDK in existing WSL only; no native cell qualification.",
+    "No full dependency/license audit, no public URL/catalog entry, no Mac/ARM/musl execution.",
+    "Observed GLIBC symbols still exceed Ubuntu 18.04 baseline; no support promotion.",
+    "Windows skips include the two new POSIX inventory filesystem cases; they passed on WSL. Suite results observed in tool output."
+  ],
+  "pipeline_seconds": 31.472,
+  "download_commands_used": false,
+  "network_observation": "No download commands in the pipeline; native syscall network tracing was not performed.",
+  "logs": [
+    {
+      "path": "local-inventory-build.logs/build.txt",
+      "sha256": "916ce73eaa5a6b3fd9083cbb6b9690f62dfc1b8caca720cc758eaa5d63116955"
+    }
+  ],
+  "source_sha256": {
+    "tools/runtime/verify-artifact.py": "1e4bf7a6287f0bb735c7887e4a179f6dbf020c3be1fb766628561248b120a1de",
+    "tools/runtime/build-common.py": "aad01eab0f7ef87d884fcb945d2c11e1e5aee588a39a938bb79fef1ab79508a5",
+    "tests/unit/test_runtime_build_tools.py": "8078d6ea4564b0828c3aad3a609f2943f3bfa44110444358c08255f0bed990c8"
+  },
+  "recipes_sha256": {
+    "linux-glibc-aarch64.json": "463052e4ad857b3e989d09df28bbc1ffc40eb0024411d00bfcdefc82776b48b4",
+    "linux-glibc-x86_64.json": "ce509aa37846e078bca9765abae6bc425a6bbd6a75eabff806ff5999c4b48f44",
+    "linux-musl-aarch64.json": "f982aa482fe1b04d0da37f3564134333d09c456878e70fc8fb0db1a33d294685",
+    "linux-musl-x86_64.json": "51c19a68dd8c95eabad9d24bbbf8c8abf4ad154a936bd689c439bdcaaad9a692",
+    "macos-arm64.json": "c4b5367482caea4f90e4dd15b4234d9dcfe5ea6b09ba8f5f7bc908c6f212c2e3",
+    "macos-x86_64.json": "f6d92635ea605927091eb1a0717c97471b1c16c83cc0dbdd6184b22c5242e51a"
+  },
+  "executions": [
+    {
+      "os": "Windows 11 x86_64",
+      "python": "3.14.6",
+      "suite": "tests/run_foundation.py",
+      "tests": 118,
+      "skipped": 6,
+      "seconds": 18.53,
+      "passed": true
+    },
+    {
+      "os": "Windows 11 x86_64",
+      "python": "3.12.10",
+      "suite": "tests/run_foundation.py",
+      "tests": 118,
+      "skipped": 6,
+      "seconds": 18.127,
+      "passed": true
+    },
+    {
+      "os": "Ubuntu 26.04 x86_64 WSL",
+      "python": "3.14.4",
+      "suite": "tests/run_foundation.py",
+      "tests": 118,
+      "skipped": 5,
+      "seconds": 35.733,
+      "passed": true
+    }
+  ]
+}

@@ -1,0 +1,174 @@
+-- The C compiler identification is Clang 20.1.2
+-- The CXX compiler identification is Clang 20.1.2
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: <private-sdk>/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: <private-sdk>/cxx - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found BISON: /usr/bin/bison (found suitable version "3.8.2", minimum required is "3.0")
+-- Found FLEX: /usr/bin/flex (found version "2.6.4")
+-- skipping Ghostscript discovery because -DWITH_GHOSTSCRIPT=OFF
+-- Found PkgConfig: /usr/bin/pkg-config (found version "2.5.1")
+-- skipping GDK discovery because -DWITH_GDK=OFF
+-- Checking for module 'gdk-pixbuf-2.0'
+--   Package 'gdk-pixbuf-2.0' not found
+-- Checking for module 'lasi'
+--   Package 'lasi' not found
+-- skipping Poppler discovery because -DWITH_POPPLER=OFF
+-- skipping librsvg discovery because -DWITH_RSVG=OFF
+-- skipping libwebp discovery because -DWITH_WEBP=OFF
+-- skipping x11, xrender discovery because -DWITH_X=OFF
+-- Found Python3: /usr/bin/python3 (found version "3.14.4") found components: Interpreter
+fatal: not a git repository (or any of the parent directories): .git
+fatal: not a git repository (or any of the parent directories): .git
+fatal: not a git repository (or any of the parent directories): .git
+fatal: not a git repository (or any of the parent directories): .git
+fatal: not a git repository (or any of the parent directories): .git
+fatal: not a git repository (or any of the parent directories): .git
+Warning: build not started in a Git clone: setting version date to 0.
+-- Graphviz version: 16.1.0
+-- Looking for sys/inotify.h
+-- Looking for sys/inotify.h - found
+-- Looking for sys/ioctl.h
+-- Looking for sys/ioctl.h - found
+-- Looking for sys/mman.h
+-- Looking for sys/mman.h - found
+-- Looking for sys/select.h
+-- Looking for sys/select.h - found
+-- Looking for sys/time.h
+-- Looking for sys/time.h - found
+-- Looking for getopt.h
+-- Looking for getopt.h - found
+-- Looking for dl_iterate_phdr
+-- Looking for dl_iterate_phdr - found
+-- Looking for drand48
+-- Looking for drand48 - found
+-- Looking for inotify_init1
+-- Looking for inotify_init1 - found
+-- Looking for memrchr
+-- Looking for memrchr - found
+-- Pangocairo not found, so do not have pango_fc_font_lock_face
+-- Looking for setenv
+-- Looking for setenv - found
+-- Looking for setmode
+-- Looking for setmode - not found
+-- Looking for srand48
+-- Looking for srand48 - found
+-- Looking for strcasestr
+-- Looking for strcasestr - found
+-- Performing Test HAVE_C_WCAST_FUNCTION_TYPE
+-- Performing Test HAVE_C_WCAST_FUNCTION_TYPE - Success
+-- Performing Test HAVE_C_WFORMAT_OVERFLOW_2
+-- Performing Test HAVE_C_WFORMAT_OVERFLOW_2 - Failed
+-- Performing Test HAVE_C_WIMPLICIT_FALLTHROUGH
+-- Performing Test HAVE_C_WIMPLICIT_FALLTHROUGH - Success
+-- Performing Test HAVE_C_WMAYBE_UNINITIALIZED
+-- Performing Test HAVE_C_WMAYBE_UNINITIALIZED - Failed
+-- Performing Test HAVE_C_WMISSING_FIELD_INITIALIZERS
+-- Performing Test HAVE_C_WMISSING_FIELD_INITIALIZERS - Success
+-- Performing Test HAVE_C_WMISSING_PROTOTYPES
+-- Performing Test HAVE_C_WMISSING_PROTOTYPES - Success
+-- Performing Test HAVE_C_WSHADOW
+-- Performing Test HAVE_C_WSHADOW - Success
+-- Performing Test HAVE_C_WUNDEF
+-- Performing Test HAVE_C_WUNDEF - Success
+-- Performing Test HAVE_C_WUNUSED_BUT_SET_VARIABLE
+-- Performing Test HAVE_C_WUNUSED_BUT_SET_VARIABLE - Success
+-- Performing Test HAVE_C_WUNUSED_PARAMETER
+-- Performing Test HAVE_C_WUNUSED_PARAMETER - Success
+-- Performing Test HAVE_CXX_WMISSING_FIELD_INITIALIZERS
+-- Performing Test HAVE_CXX_WMISSING_FIELD_INITIALIZERS - Success
+-- Performing Test HAVE_CXX_WSHADOW
+-- Performing Test HAVE_CXX_WSHADOW - Success
+-- Performing Test HAVE_CXX_WSIGN_COMPARE
+-- Performing Test HAVE_CXX_WSIGN_COMPARE - Success
+-- Performing Test HAVE_CXX_WUNUSED_FUNCTION
+-- Performing Test HAVE_CXX_WUNUSED_FUNCTION - Success
+-- Performing Test HAVE_CXX_WUNUSED_LABEL
+-- Performing Test HAVE_CXX_WUNUSED_LABEL - Success
+-- Performing Test HAVE_CXX_WUNUSED_PARAMETER
+-- Performing Test HAVE_CXX_WUNUSED_PARAMETER - Success
+-- Performing Test HAVE_CXX_WUNUSED_VARIABLE
+-- Performing Test HAVE_CXX_WUNUSED_VARIABLE - Success
+-- The following OPTIONAL packages have been found:
+
+ * PkgConfig
+
+-- The following REQUIRED packages have been found:
+
+ * BISON (required version >= 3.0)
+ * FLEX
+ * Python3
+
+-- Configuring done (6.7s)
+CMake Error: The following variables are used in this project, but they are set to NOTFOUND.
+Please set them or make sure they are set and tested correctly in the CMake files:
+MATH_LIB
+    linked by target "prune" in directory <private-build>/source/graphviz-16.1.0/contrib/prune
+    linked by target "ast" in directory <private-build>/source/graphviz-16.1.0/lib/ast
+    linked by target "cdt" in directory <private-build>/source/graphviz-16.1.0/lib/cdt
+    linked by target "circogen" in directory <private-build>/source/graphviz-16.1.0/lib/circogen
+    linked by target "common" in directory <private-build>/source/graphviz-16.1.0/lib/common
+    linked by target "common_obj" in directory <private-build>/source/graphviz-16.1.0/lib/common
+    linked by target "dotgen" in directory <private-build>/source/graphviz-16.1.0/lib/dotgen
+    linked by target "edgepaintlib" in directory <private-build>/source/graphviz-16.1.0/lib/edgepaint
+    linked by target "expr" in directory <private-build>/source/graphviz-16.1.0/lib/expr
+    linked by target "fdpgen" in directory <private-build>/source/graphviz-16.1.0/lib/fdpgen
+    linked by target "gvpr" in directory <private-build>/source/graphviz-16.1.0/lib/gvpr
+    linked by target "label" in directory <private-build>/source/graphviz-16.1.0/lib/label
+    linked by target "neatogen" in directory <private-build>/source/graphviz-16.1.0/lib/neatogen
+    linked by target "ortho" in directory <private-build>/source/graphviz-16.1.0/lib/ortho
+    linked by target "ortho_obj" in directory <private-build>/source/graphviz-16.1.0/lib/ortho
+    linked by target "osage" in directory <private-build>/source/graphviz-16.1.0/lib/osage
+    linked by target "pack" in directory <private-build>/source/graphviz-16.1.0/lib/pack
+    linked by target "pack_obj" in directory <private-build>/source/graphviz-16.1.0/lib/pack
+    linked by target "patchwork" in directory <private-build>/source/graphviz-16.1.0/lib/patchwork
+    linked by target "pathplan" in directory <private-build>/source/graphviz-16.1.0/lib/pathplan
+    linked by target "sfio" in directory <private-build>/source/graphviz-16.1.0/lib/sfio
+    linked by target "rbtree" in directory <private-build>/source/graphviz-16.1.0/lib/rbtree
+    linked by target "sparse" in directory <private-build>/source/graphviz-16.1.0/lib/sparse
+    linked by target "twopigen" in directory <private-build>/source/graphviz-16.1.0/lib/twopigen
+    linked by target "util" in directory <private-build>/source/graphviz-16.1.0/lib/util
+    linked by target "xdot" in directory <private-build>/source/graphviz-16.1.0/lib/xdot
+    linked by target "cgraph" in directory <private-build>/source/graphviz-16.1.0/lib/cgraph
+    linked by target "gvc" in directory <private-build>/source/graphviz-16.1.0/lib/gvc
+    linked by target "gvplugin_core" in directory <private-build>/source/graphviz-16.1.0/plugin/core
+    linked by target "gvplugin_dot_layout" in directory <private-build>/source/graphviz-16.1.0/plugin/dot_layout
+    linked by target "gvplugin_neato_layout" in directory <private-build>/source/graphviz-16.1.0/plugin/neato_layout
+    linked by target "gvplugin_vt" in directory <private-build>/source/graphviz-16.1.0/plugin/vt
+    linked by target "dot" in directory <private-build>/source/graphviz-16.1.0/cmd/dot
+    linked by target "gvpr-bin" in directory <private-build>/source/graphviz-16.1.0/cmd/gvpr
+    linked by target "unflatten" in directory <private-build>/source/graphviz-16.1.0/cmd/tools
+    linked by target "dijkstra" in directory <private-build>/source/graphviz-16.1.0/cmd/tools
+    linked by target "gc_bin" in directory <private-build>/source/graphviz-16.1.0/cmd/tools
+    linked by target "bcomps" in directory <private-build>/source/graphviz-16.1.0/cmd/tools
+    linked by target "ccomps" in directory <private-build>/source/graphviz-16.1.0/cmd/tools
+    linked by target "tred" in directory <private-build>/source/graphviz-16.1.0/cmd/tools
+    linked by target "acyclic" in directory <private-build>/source/graphviz-16.1.0/cmd/tools
+    linked by target "sccmap" in directory <private-build>/source/graphviz-16.1.0/cmd/tools
+    linked by target "nop" in directory <private-build>/source/graphviz-16.1.0/cmd/tools
+    linked by target "mm2gv" in directory <private-build>/source/graphviz-16.1.0/cmd/tools
+    linked by target "gml2gv" in directory <private-build>/source/graphviz-16.1.0/cmd/tools
+    linked by target "gv2gml" in directory <private-build>/source/graphviz-16.1.0/cmd/tools
+    linked by target "gvcolor" in directory <private-build>/source/graphviz-16.1.0/cmd/tools
+    linked by target "gvgen" in directory <private-build>/source/graphviz-16.1.0/cmd/tools
+    linked by target "gvpack" in directory <private-build>/source/graphviz-16.1.0/cmd/tools
+
+-- Generating done (0.2s)
+CMake Warning:
+  Manually-specified variables were not used by the project:
+
+    CMAKE_DISABLE_FIND_PACKAGE_Fontconfig
+    CMAKE_DISABLE_FIND_PACKAGE_GLUT
+    CMAKE_DISABLE_FIND_PACKAGE_GS
+    CMAKE_DISABLE_FIND_PACKAGE_GTK2
+    CMAKE_DISABLE_FIND_PACKAGE_LTDL
+
+
+CMake Generate step failed.  Build files cannot be regenerated correctly.
+CalledProcessError: Command '['/usr/bin/cmake', '-S', '<private-build>/source/graphviz-16.1.0', '-B', '<private-build>/build', '-DCMAKE_BUILD_TYPE=Release', '-DCMAKE_C_COMPILER=<private-sdk>/cc', '-DCMAKE_CXX_COMPILER=<private-sdk>/cxx', '-DCMAKE_INSTALL_PREFIX=<private-build>/install', '-DBUILD_SHARED_LIBS=OFF', '-DENABLE_LTDL=OFF', '-DWITH_EXPAT=OFF', '-DWITH_ZLIB=OFF', '-DWITH_GVEDIT=OFF', '-DWITH_SMYRNA=OFF', '-DWITH_GDK=OFF', '-DWITH_GHOSTSCRIPT=OFF', '-DWITH_GTK=OFF', '-DWITH_POPPLER=OFF', '-DWITH_QUARTZ=OFF', '-DWITH_RSVG=OFF', '-DWITH_WEBP=OFF', '-DWITH_X=OFF', '-DENABLE_TCL=OFF', '-DENABLE_SWIG=OFF', '-Dwith_digcola=OFF', '-Dwith_ipsepcola=OFF', '-Dwith_sfdp=OFF', '-Dwith_cxx_api=OFF', '-Dwith_cxx_tests=OFF', '-DCMAKE_DISABLE_FIND_PACKAGE_ANN=ON', '-DCMAKE_DISABLE_FIND_PACKAGE_CAIRO=ON', '-DCMAKE_DISABLE_FIND_PACKAGE_GTS=ON', '-DCMAKE_DISABLE_FIND_PACKAGE_PANGOCAIRO=ON', '-DCMAKE_DISABLE_FIND_PACKAGE_Freetype=ON', '-DCMAKE_DISABLE_FIND_PACKAGE_GLUT=ON', '-DCMAKE_DISABLE_FIND_PACKAGE_GTK2=ON', '-DCMAKE_DISABLE_FIND_PACKAGE_Fontconfig=ON', '-DCMAKE_DISABLE_FIND_PACKAGE_GD=ON', '-DCMAKE_DISABLE_FIND_PACKAGE_GS=ON', '-DCMAKE_DISABLE_FIND_PACKAGE_LTDL=ON', '-DCMAKE_DISABLE_FIND_PACKAGE_AA=ON', '-DCMAKE_DISABLE_FIND_PACKAGE_DevIL=ON', '-DCMAKE_EXE_LINKER_FLAGS=-static-libstdc++ -static-libgcc', '-DCMAKE_C_FLAGS=-march=x86-64 -mtune=generic', '-DCMAKE_CXX_FLAGS=-march=x86-64 -mtune=generic', '-DENABLE_SHARP=OFF', '-DENABLE_D=OFF', '-DENABLE_GO=OFF', '-DENABLE_GUILE=OFF', '-DENABLE_JAVA=OFF', '-DENABLE_JAVASCRIPT=OFF', '-DENABLE_LUA=OFF', '-DENABLE_PERL=OFF', '-DENABLE_PHP=OFF', '-DENABLE_PYTHON=OFF', '-DENABLE_R=OFF', '-DENABLE_RUBY=OFF', '-DCMAKE_SKIP_RPATH=ON']' returned non-zero exit status 1.

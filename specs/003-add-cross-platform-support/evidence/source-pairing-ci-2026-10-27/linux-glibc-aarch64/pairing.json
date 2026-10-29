@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "kind": "corresponding-source-delivery-pairing",
+  "artifact_id": "linux-glibc-aarch64",
+  "application_revision": "a825f0d80bd7892de0e307656d28070885a9d1ed",
+  "executable_sha256": "933b6c63370bdd3e814627e2a9a06176416c8da017a21dcbc96d8137dbc17e22",
+  "provenance_sha256": "6bcd441c576bb570d6234fe5eb056402f6116cda5e43a345fc240667c8645a39",
+  "pairing_valid": true,
+  "archive_verification": {
+    "candidate": true,
+    "sources": true
+  },
+  "candidate": {
+    "archive": "candidate.zip",
+    "sha256": "106b37d3fa9eaf492ee2e798c20739da64c1e1ec97db70a296b4066851b51a29",
+    "bytes": 7793739,
+    "inventory_sha256": "6a3132b44fe89ad75a6958f9aa812c9f596e0d305ed75fc0db97a63d518e954f",
+    "file_count": 573
+  },
+  "sources": {
+    "archive": "sources.tar.gz",
+    "sha256": "1fbe437dbc5804aa00338586d30737bcde066437d2e1ff6194f4574f2f64d7a6",
+    "bytes": 68488762,
+    "file_count": 18228,
+    "sdk_files": 18102
+  },
+  "obligations": {
+    "lgpl_2_1_section_6_d": "Acesso equivalente para download das fontes correspondentes no mesmo endpoint de distribuição binária",
+    "lgpl_2_1_section_6_a": "Fontes completas da biblioteca e do programa exportadas permitindo relink modificado comprovado",
+    "epl_2_0_section_3_1": "Fontes completas do Graphviz acompanhadas de declaração expressa de licença e avisos preservados",
+    "offline_notices": "Avisos SOURCE-REFERENCES.txt e textos integrais offline incorporados em ambos os arquivos"
+  },
+  "delivery_binding": {
+    "status": "unpromoted_pending_authorized_distribution",
+    "candidate_distribution_url": null,
+    "sources_distribution_url": null,
+    "active_catalog_promoted": false
+  }
+}

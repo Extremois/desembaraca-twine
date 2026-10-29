@@ -1,0 +1,9 @@
+{
+  "revision": "fdd2725ca5404998ec477b35f044be562a06768b",
+  "run_id": 40804473176,
+  "job_id": 123219986887,
+  "cause": "Reviewed dynamic dependency list omitted measured libpthread and the x64 glibc loader",
+  "correction": "Use exact NEEDED names measured in passing corpus reports for the same executable hash",
+  "log": "initial-linux-inspection-failure.log.gz",
+  "raw_sha256": "25c1bd0377af05f32625be51d170fe3ff0823091e9fbfc91732a095fa6295176"
+}

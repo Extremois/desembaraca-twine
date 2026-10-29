@@ -1,0 +1,450 @@
+{
+  "kind": "linux-private-bundle-runtime-integration",
+  "passed": true,
+  "qualified": false,
+  "environment_kind": "container",
+  "python": "3.14.5",
+  "arch": "x86_64",
+  "engine_sha256": "f4dfee4e052704b1a7efdb7b6a4c43583ccaa062aec800b76224dae24eb2b69b",
+  "provenance_sha256": "fca4fa3832f16196029a81d1e5595ed824b84599b8e6e5698b17d79343b99a4e",
+  "observations": {
+    "automatic": {
+      "cases": [
+        {
+          "case": "crossing",
+          "input_sha256": "d7c694abfcf286588792ea3f537bebafbe45eb4a7774252782bda6dc8319b25b",
+          "output_sha256": "aa821f1611a98d479811f652197070728904bd2afe31c8e6fca64ed9fbec8e8b",
+          "before": [
+            1,
+            0,
+            0
+          ],
+          "after": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "acquisition_calls": 1,
+      "offline_acquisition_calls": 0,
+      "cache_xdg": true,
+      "executable_mode": 493,
+      "generation_mode": 448,
+      "final_destination_probe": true,
+      "probe_before_ready": true,
+      "healthy_generation_reused": true,
+      "external_unicode_paths": true,
+      "real_engine": true,
+      "fixture_transport": true
+    },
+    "explicit": {
+      "cases": [
+        {
+          "case": "crossing",
+          "input_sha256": "d7c694abfcf286588792ea3f537bebafbe45eb4a7774252782bda6dc8319b25b",
+          "output_sha256": "aa821f1611a98d479811f652197070728904bd2afe31c8e6fca64ed9fbec8e8b",
+          "before": [
+            1,
+            0,
+            0
+          ],
+          "after": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "case": "coincident",
+          "input_sha256": "f63665a740e024a5e361546627f324ce8ddb9b1792b55b16984a87eee6ac49ea",
+          "output_sha256": "8644eeb3404043bec66b149c0ed3f2f4bea0600914a944e75c5f6464b78c1ed6",
+          "before": [
+            1,
+            2,
+            0
+          ],
+          "after": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "case": "clean",
+          "input_sha256": "5e8d75b9a72cd1afcaeb7b3646cc5d0cec1f7368b2b6275f324eaa7c3f1299f6",
+          "output_sha256": "5e8d75b9a72cd1afcaeb7b3646cc5d0cec1f7368b2b6275f324eaa7c3f1299f6",
+          "before": [
+            0,
+            0,
+            0
+          ],
+          "after": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "case": "isolated_overlap",
+          "input_sha256": "6ce9fbd0eb53e57209879944c2ebdc2b66bc6ea26d68fb8a2bd9bd2104f99ef6",
+          "output_sha256": "bef1e0132bce9b72f1317cdbb43d3c2a54e604632459cbda2c5af7d52c17a03a",
+          "before": [
+            0,
+            1,
+            0
+          ],
+          "after": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "case": "connected_overlap",
+          "input_sha256": "adf06218e2172f4e0b7bd640bc3cb24cd10de327da92848f888943bf6edb50fb",
+          "output_sha256": "137e849cfdf04ef3db7ed9057a7142ebecc403ee78952f307138ff5ecca72618",
+          "before": [
+            1,
+            1,
+            1
+          ],
+          "after": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "case": "through_isolated",
+          "input_sha256": "e584fe80a571da6355922139925a930603454fc5e27a6a44037401e433f6cf36",
+          "output_sha256": "f2460867ce13305139836fc5737093e3e513fae53c4bee8fe0742fe5fc98c341",
+          "before": [
+            0,
+            0,
+            1
+          ],
+          "after": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "case": "through_connected",
+          "input_sha256": "481d38cd9ba76522c25530ea382e13ee73f2ff1000829e335c58dff96f4de6f8",
+          "output_sha256": "8c13ace7ce2f65beff622e529456029fda6c7e1f624a5046886a7065f60a2f3f",
+          "before": [
+            0,
+            0,
+            1
+          ],
+          "after": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "case": "border_only",
+          "input_sha256": "da0a8b50743446027bccf723f022a8081efe1fd135a118e504615b81ecf88701",
+          "output_sha256": "da0a8b50743446027bccf723f022a8081efe1fd135a118e504615b81ecf88701",
+          "before": [
+            0,
+            0,
+            0
+          ],
+          "after": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "case": "cycle",
+          "input_sha256": "a35feef5fdb5d2e5a41b99fe826fd9f0ebb861c50c6f148afc0597f87b6ea6c1",
+          "output_sha256": "a35feef5fdb5d2e5a41b99fe826fd9f0ebb861c50c6f148afc0597f87b6ea6c1",
+          "before": [
+            0,
+            0,
+            0
+          ],
+          "after": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "case": "parallel_occurrences",
+          "input_sha256": "cda380247a05431a6d4aaf3a70eb5488ec01770fe89f9562b95691d4823f8df0",
+          "output_sha256": "cda380247a05431a6d4aaf3a70eb5488ec01770fe89f9562b95691d4823f8df0",
+          "before": [
+            0,
+            0,
+            0
+          ],
+          "after": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "case": "self_loop",
+          "input_sha256": "7df0478afa2ca0e1e400454d2bbba7571a3f9de9d2d4417f5640e4cd3e94921e",
+          "output_sha256": "7df0478afa2ca0e1e400454d2bbba7571a3f9de9d2d4417f5640e4cd3e94921e",
+          "before": [
+            0,
+            0,
+            0
+          ],
+          "after": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "case": "reciprocal",
+          "input_sha256": "f2f16549e43ad54c3f09ba12cf7ebb677fb72a32d2c3a3ac6ba82c311e626979",
+          "output_sha256": "f2f16549e43ad54c3f09ba12cf7ebb677fb72a32d2c3a3ac6ba82c311e626979",
+          "before": [
+            1,
+            0,
+            0
+          ],
+          "after": [
+            1,
+            0,
+            0
+          ]
+        },
+        {
+          "case": "empty",
+          "input_sha256": "45e3a62ea1b3c31df65b0f7a7bac769ddf9aafc4006bc7cf379d19b2c289c23c",
+          "output_sha256": "45e3a62ea1b3c31df65b0f7a7bac769ddf9aafc4006bc7cf379d19b2c289c23c",
+          "before": [
+            0,
+            0,
+            0
+          ],
+          "after": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "acquisition_calls": 1,
+      "offline_acquisition_calls": 0,
+      "cache_xdg": true,
+      "executable_mode": 493,
+      "generation_mode": 448,
+      "final_destination_probe": true,
+      "probe_before_ready": true,
+      "healthy_generation_reused": true,
+      "external_unicode_paths": true,
+      "real_engine": true,
+      "fixture_transport": true
+    }
+  },
+  "cases": [
+    {
+      "case": "crossing",
+      "input_sha256": "d7c694abfcf286588792ea3f537bebafbe45eb4a7774252782bda6dc8319b25b",
+      "output_sha256": "aa821f1611a98d479811f652197070728904bd2afe31c8e6fca64ed9fbec8e8b",
+      "before": [
+        1,
+        0,
+        0
+      ],
+      "after": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "case": "coincident",
+      "input_sha256": "f63665a740e024a5e361546627f324ce8ddb9b1792b55b16984a87eee6ac49ea",
+      "output_sha256": "8644eeb3404043bec66b149c0ed3f2f4bea0600914a944e75c5f6464b78c1ed6",
+      "before": [
+        1,
+        2,
+        0
+      ],
+      "after": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "case": "clean",
+      "input_sha256": "5e8d75b9a72cd1afcaeb7b3646cc5d0cec1f7368b2b6275f324eaa7c3f1299f6",
+      "output_sha256": "5e8d75b9a72cd1afcaeb7b3646cc5d0cec1f7368b2b6275f324eaa7c3f1299f6",
+      "before": [
+        0,
+        0,
+        0
+      ],
+      "after": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "case": "isolated_overlap",
+      "input_sha256": "6ce9fbd0eb53e57209879944c2ebdc2b66bc6ea26d68fb8a2bd9bd2104f99ef6",
+      "output_sha256": "bef1e0132bce9b72f1317cdbb43d3c2a54e604632459cbda2c5af7d52c17a03a",
+      "before": [
+        0,
+        1,
+        0
+      ],
+      "after": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "case": "connected_overlap",
+      "input_sha256": "adf06218e2172f4e0b7bd640bc3cb24cd10de327da92848f888943bf6edb50fb",
+      "output_sha256": "137e849cfdf04ef3db7ed9057a7142ebecc403ee78952f307138ff5ecca72618",
+      "before": [
+        1,
+        1,
+        1
+      ],
+      "after": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "case": "through_isolated",
+      "input_sha256": "e584fe80a571da6355922139925a930603454fc5e27a6a44037401e433f6cf36",
+      "output_sha256": "f2460867ce13305139836fc5737093e3e513fae53c4bee8fe0742fe5fc98c341",
+      "before": [
+        0,
+        0,
+        1
+      ],
+      "after": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "case": "through_connected",
+      "input_sha256": "481d38cd9ba76522c25530ea382e13ee73f2ff1000829e335c58dff96f4de6f8",
+      "output_sha256": "8c13ace7ce2f65beff622e529456029fda6c7e1f624a5046886a7065f60a2f3f",
+      "before": [
+        0,
+        0,
+        1
+      ],
+      "after": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "case": "border_only",
+      "input_sha256": "da0a8b50743446027bccf723f022a8081efe1fd135a118e504615b81ecf88701",
+      "output_sha256": "da0a8b50743446027bccf723f022a8081efe1fd135a118e504615b81ecf88701",
+      "before": [
+        0,
+        0,
+        0
+      ],
+      "after": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "case": "cycle",
+      "input_sha256": "a35feef5fdb5d2e5a41b99fe826fd9f0ebb861c50c6f148afc0597f87b6ea6c1",
+      "output_sha256": "a35feef5fdb5d2e5a41b99fe826fd9f0ebb861c50c6f148afc0597f87b6ea6c1",
+      "before": [
+        0,
+        0,
+        0
+      ],
+      "after": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "case": "parallel_occurrences",
+      "input_sha256": "cda380247a05431a6d4aaf3a70eb5488ec01770fe89f9562b95691d4823f8df0",
+      "output_sha256": "cda380247a05431a6d4aaf3a70eb5488ec01770fe89f9562b95691d4823f8df0",
+      "before": [
+        0,
+        0,
+        0
+      ],
+      "after": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "case": "self_loop",
+      "input_sha256": "7df0478afa2ca0e1e400454d2bbba7571a3f9de9d2d4417f5640e4cd3e94921e",
+      "output_sha256": "7df0478afa2ca0e1e400454d2bbba7571a3f9de9d2d4417f5640e4cd3e94921e",
+      "before": [
+        0,
+        0,
+        0
+      ],
+      "after": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "case": "reciprocal",
+      "input_sha256": "f2f16549e43ad54c3f09ba12cf7ebb677fb72a32d2c3a3ac6ba82c311e626979",
+      "output_sha256": "f2f16549e43ad54c3f09ba12cf7ebb677fb72a32d2c3a3ac6ba82c311e626979",
+      "before": [
+        1,
+        0,
+        0
+      ],
+      "after": [
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "case": "empty",
+      "input_sha256": "45e3a62ea1b3c31df65b0f7a7bac769ddf9aafc4006bc7cf379d19b2c289c23c",
+      "output_sha256": "45e3a62ea1b3c31df65b0f7a7bac769ddf9aafc4006bc7cf379d19b2c289c23c",
+      "before": [
+        0,
+        0,
+        0
+      ],
+      "after": [
+        0,
+        0,
+        0
+      ]
+    }
+  ],
+  "scope": "Real native engine and production manager; controlled acquisition fixture, not distributed-candidate acceptance"
+}

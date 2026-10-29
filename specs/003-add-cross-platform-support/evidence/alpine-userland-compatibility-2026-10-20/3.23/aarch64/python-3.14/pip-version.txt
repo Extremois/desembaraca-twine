@@ -1,0 +1,1 @@
+pip 26.2.1 from /work/python-3.14/venv com espaços ação/lib/python3.14/site-packages/pip (python 3.14)

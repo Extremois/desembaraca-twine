@@ -12,7 +12,7 @@ python run.py --help
 python run.py --version
 ```
 
-Depois da instalação do pacote, o comando `twine-edge-overlap` aceita os mesmos argumentos. `--prepare-runtime` e `--repair-runtime` são mutuamente exclusivos entre si e com o caminho. As opções de ajuda e versão não preparam componentes nem acessam rede. Ausência de argumento/ação, múltiplos caminhos ou combinações inválidas falham com código 1 e orientação de ajuda.
+Depois da instalação do pacote, o comando `desembaraca-twine` aceita os mesmos argumentos. `--prepare-runtime` e `--repair-runtime` são mutuamente exclusivos entre si e com o caminho. As opções de ajuda e versão não preparam componentes nem acessam rede. Ausência de argumento/ação, múltiplos caminhos ou combinações inválidas falham com código 1 e orientação de ajuda.
 
 ## Uso normal
 

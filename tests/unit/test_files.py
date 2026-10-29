@@ -15,6 +15,6 @@ class FilesTests(unittest.TestCase):
             first=publish(source,snapshot(source),lambda b: self.assertEqual(b,fixture()))
             second=publish(source,snapshot(source),lambda b: self.assertEqual(b,fixture()))
             self.assertNotEqual(first,second)
-            self.assertEqual(first.parent,source.parent)
+            self.assertEqual(first.parent,source.parent.resolve())
             self.assertEqual(occupied.read_bytes(),b'KEEP')
             self.assertEqual(source.read_bytes(),fixture())

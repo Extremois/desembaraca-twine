@@ -1,0 +1,33 @@
+{
+  "kind": "linux-component-obligations-local-review",
+  "approved": false,
+  "qualified": false,
+  "task": "T030",
+  "task_complete": false,
+  "source_state": "working-tree",
+  "notice_preparer_sha256": "4c2a782db3090586b2997735be3947b2d38650984a54c0cccdc7663fd98d1caf",
+  "findings": [
+    {
+      "component": "ColorBrewer",
+      "change": "Explicit required acknowledgment generated from byte-bound source terms",
+      "source_sha256": "a069692c03e8bcd402fbd88b2e664a7cc0f39870c05cc1d751413f8302a7d34e",
+      "material": "ColorBrewer-ACKNOWLEDGMENT.txt",
+      "sha256": "ec3e91956fc8e8f0b64c33671358ccecf9790280f00a891493707cb9dccd2cb1"
+    },
+    {
+      "component": "Zig runtime musl ports in glibc ARM64",
+      "change": "Supplementary musl COPYRIGHT now selected when runtime-source evidence is supplied",
+      "sdk_archive_sha256": "958ed7d1e00d0ea76590d27666efbf7a932281b3d7ba0c6b01b0ff26498f667f",
+      "material": "musl-COPYRIGHT.txt",
+      "sha256": "f9bc4423732350eb0b3f7ed7e91d530298476f8fec0c6c427a1c04ade22655af"
+    }
+  ],
+  "review_document": "tools/runtime/licenses/LINUX-COMPONENT-REVIEW.md",
+  "review_document_sha256": "2431ad7d5e3853cdc55d4998bc889d31ba9bb47abe151019f1a5e720d24eee6a",
+  "regressions": "Both missing acknowledgment and absent glibc musl notice selection failed before implementation and pass afterward",
+  "limitations": [
+    "New native package confirmation pending CI",
+    "Go-related runtime provenance and other component applicability/source offer issues remain pending",
+    "No component compatibility approval inferred from mere presence of notices"
+  ]
+}

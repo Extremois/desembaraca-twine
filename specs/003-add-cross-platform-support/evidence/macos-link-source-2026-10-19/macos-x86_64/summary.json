@@ -1,0 +1,85 @@
+{
+  "kind": "native-macos-link-source-receipt",
+  "approved": false,
+  "qualified": false,
+  "revision": "ec91469411f9e3796debcd37b151903fd8740103",
+  "run_id": 39309593258,
+  "job_id": 118255428728,
+  "url": "https://github.com/Extremois/desembaraca-twine/actions/runs/39309593258",
+  "actions_artifact_id": 12214224852,
+  "actions_artifact_sha256": "c2c38361464b4eb005107564648104ff47607869404ab00d4ceb69b5df0e5c08",
+  "artifact_id": "macos-x86_64",
+  "executable_sha256": "d8ab197fbdfa9312050f4c4827f4bb612f7f4d1d021d4308a9850ee1a1104fff",
+  "provenance_sha256": "96c85e7cee6dd71245fe5a2f46afec005a62f701ab56d437b0bf17374940a768",
+  "source_evidence_sha256": "400e9062eba1987f73ef30f07c31950a5639ce81cf4ef1f701bf126c6758e5e8",
+  "summary": {
+    "objects": 372,
+    "verified_graphviz_sources": 322,
+    "unnamed_map_slots": 181,
+    "generated_inputs": 9,
+    "external_inputs": 217
+  },
+  "compiled_build_objects": 181,
+  "corpus": [
+    {
+      "python": "3.12.10",
+      "cases": 13,
+      "passed": true
+    },
+    {
+      "python": "3.14.7",
+      "cases": 13,
+      "passed": true
+    }
+  ],
+  "retained_files": {
+    "corpus-312.json": {
+      "sha256": "82df13fc80e6c601ea4b5f3312b879de09975894525b4730ee5466fe35bd3eec",
+      "bytes": 5348,
+      "original_sha256": "82df13fc80e6c601ea4b5f3312b879de09975894525b4730ee5466fe35bd3eec",
+      "original_bytes": 5348
+    },
+    "corpus-314.json": {
+      "sha256": "26ffb109c65bfbfd7043f8091280c7efe668774e1952b441dcdd2ef99b97d025",
+      "bytes": 5347,
+      "original_sha256": "26ffb109c65bfbfd7043f8091280c7efe668774e1952b441dcdd2ef99b97d025",
+      "original_bytes": 5347
+    },
+    "link-source-evidence.json.gz": {
+      "sha256": "2e185c4ed22ab51f9ec6bf276c1f3cc6aff545d143930dfa5ae8fed04c4619b1",
+      "bytes": 107381,
+      "original_sha256": "400e9062eba1987f73ef30f07c31950a5639ce81cf4ef1f701bf126c6758e5e8",
+      "original_bytes": 4209059
+    },
+    "link-map.txt.gz": {
+      "sha256": "015a16dbb652042b65bb2a56f70a0feea26193ee80ac058ca09b8e051f05fa30",
+      "bytes": 75380,
+      "original_sha256": "960651581df57dda381f74f58df1bdd4ea35beceb54ea4e74ecc2b574e0511f0",
+      "original_bytes": 421038
+    },
+    "provenance.json": {
+      "sha256": "96c85e7cee6dd71245fe5a2f46afec005a62f701ab56d437b0bf17374940a768",
+      "bytes": 7094,
+      "original_sha256": "96c85e7cee6dd71245fe5a2f46afec005a62f701ab56d437b0bf17374940a768",
+      "original_bytes": 7094
+    },
+    "inventory.json": {
+      "sha256": "d619e232bc5e55307f4b91fd867330a56db4aeb4299f374e7584a1905dff6fb9",
+      "bytes": 744,
+      "original_sha256": "d619e232bc5e55307f4b91fd867330a56db4aeb4299f374e7584a1905dff6fb9",
+      "original_bytes": 744
+    },
+    "candidate.json": {
+      "sha256": "44213b1fd3730b55ca42fdc8cd2e0e6c476012c058864a61c47800b0027e0e36",
+      "bytes": 860,
+      "original_sha256": "44213b1fd3730b55ca42fdc8cd2e0e6c476012c058864a61c47800b0027e0e36",
+      "original_bytes": 860
+    }
+  },
+  "pending": [
+    "Map membership and compiler declarations do not prove retained sections or complete source closure",
+    "Unnamed map slots remain unresolved; empty names do not prove absence of code",
+    "SDK objects, generated material and all per-file notices/licenses require review",
+    "No signing, notarization, release or support qualification"
+  ]
+}

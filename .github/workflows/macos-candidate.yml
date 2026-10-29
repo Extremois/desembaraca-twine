@@ -1,0 +1,141 @@
+name: macOS Graphviz candidates
+on:
+  push:
+    branches: [feat/003-add-cross-platform-support]
+    paths:
+      - '.github/workflows/macos-candidate.yml'
+      - 'tools/runtime/**'
+      - '!tools/runtime/abi-targets.json'
+      - '!tools/runtime/licenses/linux.json'
+      - '!tools/runtime/licenses/macos.json'
+      - 'src/**/*.py'
+      - 'tests/fixtures/**'
+      - 'tests/integration/test_macos_runtime.py'
+      - 'tests/integration/test_linux_runtime.py'
+      - 'tests/runtime_support.py'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: macos-candidate-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  native-build:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - runner: macos-15
+            arch: aarch64
+            artifact: macos-arm64
+          - runner: macos-15-intel
+            arch: x86_64
+            artifact: macos-x86_64
+    runs-on: ${{ matrix.runner }}
+    timeout-minutes: 25
+    env:
+      PYTHONUTF8: '1'
+      DEVELOPER_DIR: /Applications/Xcode_16.4.app/Contents/Developer
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        id: python312
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-python@v5
+        id: python314
+        with:
+          python-version: '3.14'
+      - name: Ensure Bison 3 on the ephemeral runner
+        run: |
+          if ! brew list --versions bison; then
+            HOMEBREW_NO_AUTO_UPDATE=1 brew install bison
+          fi
+      - name: Record explicit native Xcode SDK and pinned source
+        run: python tools/runtime/prepare-macos-ci.py --work "$RUNNER_TEMP/twine-macos-sdk" --arch '${{ matrix.arch }}'
+      - name: Build the native experimental candidate
+        shell: bash
+        run: |
+          set -o pipefail
+          mkdir -p .tmp/native-macos
+          python tools/runtime/build-common.py --artifact-id '${{ matrix.artifact }}' --source-archive "$RUNNER_TEMP/twine-macos-sdk/graphviz.tar.gz" --sdk-record "$RUNNER_TEMP/twine-macos-sdk/sdk-record.json" --output "$RUNNER_TEMP/twine-macos-build" --execute 2>&1 | tee .tmp/native-macos/build.log
+      - name: Record Mach-O dependencies and deployment commands
+        run: |
+          /usr/bin/otool -L "$RUNNER_TEMP/twine-macos-build/candidate/bin/dot" > .tmp/native-macos/otool-libraries.txt
+          /usr/bin/otool -l "$RUNNER_TEMP/twine-macos-build/candidate/bin/dot" > .tmp/native-macos/otool-load-commands.txt
+          /usr/bin/file "$RUNNER_TEMP/twine-macos-build/candidate/bin/dot" > .tmp/native-macos/file.txt
+      - name: Bind linker-map objects and compiler inputs for source review
+        run: python tools/runtime/audit-macos-link.py --build-output "$RUNNER_TEMP/twine-macos-build" --map "$RUNNER_TEMP/twine-macos-sdk/link-map.txt" --source-archive "$RUNNER_TEMP/twine-macos-sdk/graphviz.tar.gz" --report .tmp/native-macos/link-source-evidence.json
+      - name: Require named linker inputs for the macOS audit
+        run: python -c "import json; from pathlib import Path; report=json.loads(Path('.tmp/native-macos/link-source-evidence.json').read_bytes()); assert report['summary']['unnamed_map_slots']==0, 'Unresolved linker inputs prevent the source audit'"
+      - name: Prepare byte-bound draft notices for this macOS build
+        run: python tools/runtime/prepare-macos-notices.py --build "$RUNNER_TEMP/twine-macos-build" --evidence .tmp/native-macos/link-source-evidence.json --source-archive "$RUNNER_TEMP/twine-macos-sdk/graphviz.tar.gz" --map-path "$RUNNER_TEMP/twine-macos-sdk/link-map.txt" --output "$RUNNER_TEMP/twine-macos-notices"
+      - name: Public corpus and Unicode relocation on Python 3.12
+        run: '"${{ steps.python312.outputs.python-path }}" tools/runtime/smoke-corpus.py --build-output "$RUNNER_TEMP/twine-macos-notices" --environment-kind native --report .tmp/native-macos/corpus-312.json'
+      - name: Public corpus and Unicode relocation on Python 3.14
+        run: '"${{ steps.python314.outputs.python-path }}" tools/runtime/smoke-corpus.py --build-output "$RUNNER_TEMP/twine-macos-notices" --environment-kind native --report .tmp/native-macos/corpus-314.json'
+      - name: Inventory and package without approving audit or signature
+        run: |
+          python tools/runtime/verify-artifact.py --root "$RUNNER_TEMP/twine-macos-notices/candidate" --provenance "$RUNNER_TEMP/twine-macos-notices/provenance.json" --write-inventory .tmp/native-macos/inventory.json
+          python tools/runtime/pack-candidate.py --root "$RUNNER_TEMP/twine-macos-notices/candidate" --inventory .tmp/native-macos/inventory.json --provenance "$RUNNER_TEMP/twine-macos-notices/provenance.json" --output "$RUNNER_TEMP/twine-macos-package"
+      - name: Package sources and bound APSL headers without collecting an Apple SDK archive
+        run: >-
+          python tools/runtime/pack-sources.py
+          --graphviz "$RUNNER_TEMP/twine-macos-sdk/graphviz.tar.gz"
+          --provenance "$RUNNER_TEMP/twine-macos-notices/provenance.json"
+          --header-review "$RUNNER_TEMP/twine-macos-notices/review.json"
+          --output "$RUNNER_TEMP/twine-macos-sources"
+      - name: Bind both archive hashes to the same macOS executable and provenance
+        run: >-
+          python tools/runtime/verify-source-pairing.py
+          --candidate-receipt "$RUNNER_TEMP/twine-macos-package/candidate.json"
+          --sources-receipt "$RUNNER_TEMP/twine-macos-sources/sources.json"
+          --candidate-archive "$RUNNER_TEMP/twine-macos-package/candidate.zip"
+          --sources-archive "$RUNNER_TEMP/twine-macos-sources/sources.tar.gz"
+          --application-revision "$GITHUB_SHA"
+          --output .tmp/native-macos/source-pairing.json
+      - name: Retain unapproved macOS source review material separately
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ matrix.artifact }}-sources-unqualified-${{ github.sha }}
+          retention-days: 7
+          path: |
+            ${{ runner.temp }}/twine-macos-sources/
+            .tmp/native-macos/source-pairing.json
+      - name: Rebuild Graphviz from exported macOS sources and recipes
+        shell: bash
+        run: |
+          set -o pipefail
+          mkdir "$RUNNER_TEMP/twine-macos-source-replay"
+          tar -xzf "$RUNNER_TEMP/twine-macos-sources/sources.tar.gz" -C "$RUNNER_TEMP/twine-macos-source-replay"
+          cd "$RUNNER_TEMP/twine-macos-source-replay"
+          python tools/runtime/prepare-macos-ci.py --work "$RUNNER_TEMP/twine-macos-replay-sdk" --arch '${{ matrix.arch }}'
+          python tools/runtime/build-common.py --artifact-id '${{ matrix.artifact }}' --source-archive graphviz.tar.gz --sdk-record "$RUNNER_TEMP/twine-macos-replay-sdk/sdk-record.json" --output "$RUNNER_TEMP/twine-macos-replay-build" --execute 2>&1 | tee "$GITHUB_WORKSPACE/.tmp/native-macos/source-rebuild.log"
+          cd "$GITHUB_WORKSPACE"
+          "${{ steps.python312.outputs.python-path }}" tools/runtime/smoke-corpus.py --build-output "$RUNNER_TEMP/twine-macos-replay-build" --environment-kind native --report .tmp/native-macos/rebuilt-corpus-312.json
+          "${{ steps.python314.outputs.python-path }}" tools/runtime/smoke-corpus.py --build-output "$RUNNER_TEMP/twine-macos-replay-build" --environment-kind native --report .tmp/native-macos/rebuilt-corpus-314.json
+      - name: Real runtime first use, final probe and offline cache on both Pythons
+        run: |
+          "${{ steps.python312.outputs.python-path }}" tests/integration/test_macos_runtime.py --package "$RUNNER_TEMP/twine-macos-package" --provenance "$RUNNER_TEMP/twine-macos-notices/provenance.json" --report .tmp/native-macos/runtime-312.json
+          "${{ steps.python314.outputs.python-path }}" tests/integration/test_macos_runtime.py --package "$RUNNER_TEMP/twine-macos-package" --provenance "$RUNNER_TEMP/twine-macos-notices/provenance.json" --report .tmp/native-macos/runtime-314.json
+      - name: Retain unqualified native build for review
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ matrix.artifact }}-unqualified-${{ github.sha }}
+          retention-days: 7
+          include-hidden-files: true
+          path: |
+            .tmp/native-macos/
+            ${{ runner.temp }}/twine-macos-sdk/sdk-record.json
+            ${{ runner.temp }}/twine-macos-sdk/sdk-inventory.json
+            ${{ runner.temp }}/twine-macos-sdk/link-map.txt
+            ${{ runner.temp }}/twine-macos-build/provenance.json
+            ${{ runner.temp }}/twine-macos-notices/provenance.json
+            ${{ runner.temp }}/twine-macos-notices/review.json
+            ${{ runner.temp }}/twine-macos-notices/header-review/
+            ${{ runner.temp }}/twine-macos-sources/sources.json
+            ${{ runner.temp }}/twine-macos-replay-build/provenance.json
+            ${{ runner.temp }}/twine-macos-package/

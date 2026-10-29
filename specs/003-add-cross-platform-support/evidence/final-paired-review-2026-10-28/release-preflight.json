@@ -1,0 +1,11 @@
+{
+  "repository": "Extremois/desembaraca-twine",
+  "public": true,
+  "can_push": true,
+  "planned_tag": "graphviz-16.1.0-posix-46d111d",
+  "existing_matching_releases": [],
+  "published_by_this_task": false,
+  "target_build_revision": "46d111de81038d6ae0e7e7772813693c5b0a2345",
+  "asset_count": 12,
+  "authorization_to_publish": false
+}

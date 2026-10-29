@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "scope": "Pinned Alpine userland images; not native kernel/cell qualification",
+  "images": {
+    "3.12": {
+      "tag": "3.12-alpine3.22",
+      "index_digest": "sha256:a190708a2dec1bd18b1decb539f8e8f5407abaa9bf39cacda583f7f8c11db322",
+      "platforms": {
+        "x86_64": {
+          "reference": "python@sha256:9381e50cc82f4279b949fcd2d2f5e57cf97b1da2399eb956502364ceea2f4e83",
+          "manifest_digest": "sha256:9381e50cc82f4279b949fcd2d2f5e57cf97b1da2399eb956502364ceea2f4e83",
+          "oci_arch": "amd64"
+        },
+        "aarch64": {
+          "reference": "python@sha256:07b3a3b85d5b208f164a3276d5eb9c51e0ce61bbe4cb7ab4df0da50d5a78dc11",
+          "manifest_digest": "sha256:07b3a3b85d5b208f164a3276d5eb9c51e0ce61bbe4cb7ab4df0da50d5a78dc11",
+          "oci_arch": "arm64"
+        }
+      }
+    },
+    "3.14": {
+      "tag": "3.14-alpine3.22",
+      "index_digest": "sha256:6b91e66ab2a880ce9ca5a1b91c70f45963ff71ff68268df056336e1a657d5efd",
+      "platforms": {
+        "x86_64": {
+          "reference": "python@sha256:1a5f0303fd8941565b5bbda3fac2345148a9fd8245d575c2971ccefcd77c78f6",
+          "manifest_digest": "sha256:1a5f0303fd8941565b5bbda3fac2345148a9fd8245d575c2971ccefcd77c78f6",
+          "oci_arch": "amd64"
+        },
+        "aarch64": {
+          "reference": "python@sha256:27b691f87878a079100a3d8fafcd66b3c54d931598f307bcb54617c395f5b43c",
+          "manifest_digest": "sha256:27b691f87878a079100a3d8fafcd66b3c54d931598f307bcb54617c395f5b43c",
+          "oci_arch": "arm64"
+        }
+      }
+    }
+  }
+}

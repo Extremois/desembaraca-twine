@@ -1,0 +1,39 @@
+{
+  "kind": "public-source-recovery-verification",
+  "approved": false,
+  "qualified": false,
+  "artifact_id": "linux-glibc-aarch64",
+  "executable_sha256": "933b6c63370bdd3e814627e2a9a06176416c8da017a21dcbc96d8137dbc17e22",
+  "project_revision": "7d0476f3943e679ff1e151bf656f9992084209ba",
+  "source_package_sha256": "d9ce77741ed6fa460d3ec1f07db383d9732ac0b0bf2e6ee4162979b40d363620",
+  "source_files_recovered": 18162,
+  "project_files": 59,
+  "sdk_files": 18102,
+  "generated_metadata_files": [
+    "candidate-provenance.json",
+    "manifest.json"
+  ],
+  "public_sources": [
+    {
+      "url": "https://github.com/Extremois/desembaraca-twine/archive/7d0476f3943e679ff1e151bf656f9992084209ba.zip",
+      "size": 13267688,
+      "sha256": "c069987ed0ed6cd811c72aee1430a123b06e47d3659f0d2388ad2dd8fe14ade1"
+    },
+    {
+      "url": "https://gitlab.com/graphviz/graphviz/-/archive/16.1.0/graphviz-16.1.0.tar.gz",
+      "size": 41189481,
+      "sha256": "1e028b2b3e84e946c1d3e8c47590f8f0741bba1041fe6eff36eee87e598ea249"
+    },
+    {
+      "url": "https://ziglang.org/download/0.15.2/zig-aarch64-linux-0.15.2.tar.xz",
+      "size": 49471996,
+      "sha256": "958ed7d1e00d0ea76590d27666efbf7a932281b3d7ba0c6b01b0ff26498f667f"
+    }
+  ],
+  "limitations": [
+    "Byte recovery only; no new compiler execution or byte-identical rebuild claim",
+    "Generated candidate provenance and export index are review metadata, not upstream program sources",
+    "Public upstream availability is not a guarantee of future hosting or an approved corresponding-source offer",
+    "Per-file license applicability and distribution qualification remain separate gates"
+  ]
+}

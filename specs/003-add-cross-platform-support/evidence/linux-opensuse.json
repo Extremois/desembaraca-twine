@@ -1,0 +1,159 @@
+{
+  "kind": "opensuse-evidence-index",
+  "task": "T042",
+  "task_complete": false,
+  "qualified": false,
+  "captured_at": "2026-10-27T23:30:00+00:00",
+  "registry": {
+    "path": "tools/runtime/support-targets.json",
+    "sha256": "be3e8a77e3836d1125658c00a75fbf0e3584f1e26a166a053583336c29a5d295"
+  },
+  "application_revision": "7b30c80a7a1b980860e0fa9e6b16a14d8245c28e",
+  "expected_targets": 4,
+  "expected_python_slots": 8,
+  "complete_targets": 0,
+  "targets_with_partial_native_observations": 0,
+  "python_slots_with_partial_native_observations": 0,
+  "targets": [
+    {
+      "target_id": "opensuse-leap-16.0-stable-x86_64-distribution-default",
+      "distribution": "opensuse-leap",
+      "version": "16.0",
+      "arch": "x86_64",
+      "channel": "stable",
+      "cpu_variant": "distribution-default",
+      "cpu_requirement": "x86-64-v2",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "observed_python": null
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "observed_python": null
+        }
+      ],
+      "pending_reason": "Native openSUSE Leap execution, x86-64-v2 CPU validation, two Python slots, Twine review and remaining common gates"
+    },
+    {
+      "target_id": "opensuse-leap-16.0-stable-aarch64-distribution-default",
+      "distribution": "opensuse-leap",
+      "version": "16.0",
+      "arch": "aarch64",
+      "channel": "stable",
+      "cpu_variant": "distribution-default",
+      "cpu_requirement": "standard",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "observed_python": null
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "observed_python": null
+        }
+      ],
+      "pending_reason": "Native openSUSE Leap ARM64 execution, two Python slots, Twine review and remaining common gates"
+    },
+    {
+      "target_id": "opensuse-tumbleweed-rolling-tumbleweed-x86_64-distribution-default",
+      "distribution": "opensuse-tumbleweed",
+      "version": "rolling",
+      "channel": "tumbleweed",
+      "arch": "x86_64",
+      "cpu_variant": "distribution-default",
+      "snapshot_id": null,
+      "rolling_policy": "Requires real dated snapshot ID, package inventory digest and CPU verification; no promise for future unvalidated updates",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "observed_python": null
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "observed_python": null
+        }
+      ],
+      "pending_reason": "Dated snapshot capture and verification, two Python slots, Twine review and remaining common gates"
+    },
+    {
+      "target_id": "opensuse-tumbleweed-rolling-tumbleweed-aarch64-distribution-default",
+      "distribution": "opensuse-tumbleweed",
+      "version": "rolling",
+      "channel": "tumbleweed",
+      "arch": "aarch64",
+      "cpu_variant": "distribution-default",
+      "snapshot_id": null,
+      "rolling_policy": "Requires real dated snapshot ID, package inventory digest and CPU verification; no promise for future unvalidated updates",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "observed_python": null
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "observed_python": null
+        }
+      ],
+      "pending_reason": "Dated snapshot capture and verification, two Python slots, Twine review and remaining common gates"
+    }
+  ],
+  "limitations": [
+    "Leap 16.0 x86_64 requires x86-64-v2 microarchitecture; Leap 15.6 EOL and 16.1 unreleased excluded",
+    "Tumbleweed snapshots require explicit snapshot_id capture per architecture; no generic rolling endorsement",
+    "No local VM, Twine review, final distributed candidate or catalog promotion"
+  ],
+  "release_scope": {
+    "reference_date": "2026-10-17",
+    "distributions": [
+      "opensuse-leap",
+      "opensuse-tumbleweed"
+    ],
+    "versions": [
+      "16.0",
+      "rolling"
+    ],
+    "maintenance_acceptance": false,
+    "source": "tools/runtime/support-targets.json"
+  }
+}

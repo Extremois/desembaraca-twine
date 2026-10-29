@@ -1,0 +1,7 @@
+/// @file
+/// @brief Region-based memory allocator
+///
+/// The API below is for interacting with a basic bump-pointer allocator.¹
+///
+/// ¹ https://en.wikipedia.org/wiki/Region-based_memory_management
+

@@ -1,0 +1,313 @@
+{
+  "kind": "license-review-dossier-not-approved-artifact-audit",
+  "application_revision": "f63b43e8842539336dc93f08cfa5711a94d0003f",
+  "approved": false,
+  "qualified": false,
+  "reviewer": null,
+  "tasks": [
+    "T030",
+    "T052",
+    "T066"
+  ],
+  "artifacts": [
+    {
+      "artifact_id": "linux-glibc-aarch64",
+      "application_revision": "f63b43e8842539336dc93f08cfa5711a94d0003f",
+      "workflow_url": "https://github.com/Extremois/desembaraca-twine/actions/runs/40764323236",
+      "actions_artifact_id": 12848224799,
+      "actions_zip_sha256": "b5f4ab6242897a6d090f077678e6fda73b429f2666d907670ad18d19ed40fe98",
+      "binary_sha256": "569a4155814c55a0d8aea330379cbe86bd4e92e796d02073f542be51e23e6d40",
+      "sources_sha256": "5b771e2a50617b4ed5462f5ff87bc543ac4c8fc92220644eea7ba9c83bada23e",
+      "executable_sha256": "933b6c63370bdd3e814627e2a9a06176416c8da017a21dcbc96d8137dbc17e22",
+      "provenance_sha256": "e85943f5a5473553ffb4742909243c23b0f7f0a21ad55c8a8a43eb78a9a92c9c",
+      "binary_unchanged_from_previous_draft": false,
+      "file_count": 573,
+      "notice_files": 572,
+      "notice_payloads_excluding_index": 571,
+      "receipts": {
+        "candidate": {
+          "path": "specs/003-add-cross-platform-support/evidence/license-review-2026-10-28/linux-glibc-aarch64/candidate.json.gz",
+          "sha256": "fdb8b04dcd9facf26a74dd7305451e01a7a659063cc5d66395bdf32bafdd3bb8"
+        },
+        "inventory": {
+          "path": "specs/003-add-cross-platform-support/evidence/license-review-2026-10-28/linux-glibc-aarch64/inventory.json.gz",
+          "sha256": "1d240c351d7a44ddcf88a139820087a1ee306e947eecca08ea97c08dd9578df6"
+        },
+        "provenance": {
+          "path": "specs/003-add-cross-platform-support/evidence/license-review-2026-10-28/linux-glibc-aarch64/provenance.json.gz",
+          "sha256": "c4ab48a2fa8eef72c78f6ae9219a47c885672011c65966160126a22561fcec00"
+        },
+        "sources": {
+          "path": "specs/003-add-cross-platform-support/evidence/license-review-2026-10-28/linux-glibc-aarch64/sources.json.gz",
+          "sha256": "ea8326166d9617946658ed771731485512551e07d9eba4772f97fda53ba2e11e"
+        },
+        "source-pairing": {
+          "path": "specs/003-add-cross-platform-support/evidence/license-review-2026-10-28/linux-glibc-aarch64/source-pairing.json.gz",
+          "sha256": "1a87aa51e3371ca9ea3c17d2fdf9a7a920ae7ed2dee473f704c6e013c49c56bf"
+        },
+        "notice_payloads": {
+          "path": "specs/003-add-cross-platform-support/evidence/license-review-2026-10-28/linux-glibc-aarch64/notice-payloads.json.gz",
+          "sha256": "3f38f8b4ced1d2a618bc0b3e66e71d0274c6aba75317fbeec6ec8193eed715a9"
+        }
+      },
+      "approved": false,
+      "executable_unchanged_from_previous_draft": true,
+      "inventory_paths_changed_from_previous_draft": [
+        "third-party-notices/NOTICE-ORIGINS.json"
+      ]
+    },
+    {
+      "artifact_id": "linux-glibc-x86_64",
+      "application_revision": "f63b43e8842539336dc93f08cfa5711a94d0003f",
+      "workflow_url": "https://github.com/Extremois/desembaraca-twine/actions/runs/40764323043",
+      "actions_artifact_id": 12848803664,
+      "actions_zip_sha256": "5b4b036525d64eb58220d9d4baee67e744c6eedb6d2a89bce60fec950aea4d04",
+      "binary_sha256": "a87e49e95c55572f8fcf8b15fa7e6f438e7d413b05ea0ff4d9db85ea8004e6ec",
+      "sources_sha256": "1916a054951436774095e994275e2eac5a792a33f4e99455dc2240c4a94ddd9d",
+      "executable_sha256": "43ce8d686720467c21be91cab4b8f3b246baae49c2cfe293714ebdf8a82f5716",
+      "provenance_sha256": "a8b4dcadf18b73bc0da2b5bf86d9d7a7d98f0200472b6f4eebec563b948ec005",
+      "binary_unchanged_from_previous_draft": false,
+      "file_count": 480,
+      "notice_files": 479,
+      "notice_payloads_excluding_index": 478,
+      "receipts": {
+        "candidate": {
+          "path": "specs/003-add-cross-platform-support/evidence/license-review-2026-10-28/linux-glibc-x86_64/candidate.json.gz",
+          "sha256": "a3f35e995e03aa42b6bc66c11f9f299fce6dedff665cb4013a824761878f35ec"
+        },
+        "inventory": {
+          "path": "specs/003-add-cross-platform-support/evidence/license-review-2026-10-28/linux-glibc-x86_64/inventory.json.gz",
+          "sha256": "73974ee035139ee96c50abfb405cfab53a1073ba14d9f54d1e2daaafba4c4821"
+        },
+        "provenance": {
+          "path": "specs/003-add-cross-platform-support/evidence/license-review-2026-10-28/linux-glibc-x86_64/provenance.json.gz",
+          "sha256": "6f7430c424d226bde8bb0bc59ba079e666a26f1b542257d940e9980e11ac622f"
+        },
+        "sources": {
+          "path": "specs/003-add-cross-platform-support/evidence/license-review-2026-10-28/linux-glibc-x86_64/sources.json.gz",
+          "sha256": "ffe240530f5381772e17b3f42d7ec176cb401173b9eb97dc86e24f3b0d63935e"
+        },
+        "source-pairing": {
+          "path": "specs/003-add-cross-platform-support/evidence/license-review-2026-10-28/linux-glibc-x86_64/source-pairing.json.gz",
+          "sha256": "29f376908ecf66349b8d8b89d1789d266f39e399828cbdee072016bc9527cf0e"
+        },
+        "notice_payloads": {
+          "path": "specs/003-add-cross-platform-support/evidence/license-review-2026-10-28/linux-glibc-x86_64/notice-payloads.json.gz",
+          "sha256": "4aa1afd67a30ae506da815319d3890337d0fce57dfbc94ece43ece7a53522426"
+        }
+      },
+      "approved": false,
+      "executable_unchanged_from_previous_draft": true,
+      "inventory_paths_changed_from_previous_draft": [
+        "third-party-notices/NOTICE-ORIGINS.json"
+      ]
+    },
+    {
+      "artifact_id": "linux-musl-aarch64",
+      "application_revision": "f63b43e8842539336dc93f08cfa5711a94d0003f",
+      "workflow_url": "https://github.com/Extremois/desembaraca-twine/actions/runs/40764323119",
+      "actions_artifact_id": 12849742840,
+      "actions_zip_sha256": "7a3e65f6619efcb22a02b7d13aa77774d0f71abee949b1ae7a36c49e964260ce",
+      "binary_sha256": "8e05d31c1f3a552c920400e8d1871847e5cfc7a0c4418fa8ab68bd2f6609d997",
+      "sources_sha256": "d0e1c8587fe1299a6cb61a58958f7f2a1c97352196785509b2b1f0776ade3c8a",
+      "executable_sha256": "2d7a4b6024eb000c33ecf8b14d1a32d0aac8dde65bed00de138604d081fd3ee4",
+      "provenance_sha256": "b192d4d5b948b52c85e1cf3b238b99d6ef3efb2a90a1bfe20824dde427bbe390",
+      "binary_unchanged_from_previous_draft": false,
+      "file_count": 450,
+      "notice_files": 449,
+      "notice_payloads_excluding_index": 448,
+      "receipts": {
+        "candidate": {
+          "path": "specs/003-add-cross-platform-support/evidence/license-review-2026-10-28/linux-musl-aarch64/candidate.json.gz",
+          "sha256": "23a6969a020a4372f5f57a8639b87400c927adf531ce286701a5686b2c6898e6"
+        },
+        "inventory": {
+          "path": "specs/003-add-cross-platform-support/evidence/license-review-2026-10-28/linux-musl-aarch64/inventory.json.gz",
+          "sha256": "a9277cd785ff928621882ba27751052ac2a721bb48cc5933b87454a8f12d7ae3"
+        },
+        "provenance": {
+          "path": "specs/003-add-cross-platform-support/evidence/license-review-2026-10-28/linux-musl-aarch64/provenance.json.gz",
+          "sha256": "f366caa6344d363069ab375f751729b8c5cd5a2b2ce392d55bff85cc55b1fe2f"
+        },
+        "sources": {
+          "path": "specs/003-add-cross-platform-support/evidence/license-review-2026-10-28/linux-musl-aarch64/sources.json.gz",
+          "sha256": "8f58dcebef452aec1ced2b33d7c059cccb42274d95adb22f2b63301bc7cd680a"
+        },
+        "source-pairing": {
+          "path": "specs/003-add-cross-platform-support/evidence/license-review-2026-10-28/linux-musl-aarch64/source-pairing.json.gz",
+          "sha256": "ce201a5b2d6c59580b0e95e2b0bbee3f857c7b27a47f0598dddc243b6e87874c"
+        },
+        "notice_payloads": {
+          "path": "specs/003-add-cross-platform-support/evidence/license-review-2026-10-28/linux-musl-aarch64/notice-payloads.json.gz",
+          "sha256": "ce8db190202f3046549c98e816c9548e6b0e829d5435c7cee3988862f645ab9f"
+        }
+      },
+      "approved": false,
+      "executable_unchanged_from_previous_draft": true,
+      "inventory_paths_changed_from_previous_draft": [
+        "third-party-notices/NOTICE-ORIGINS.json"
+      ]
+    },
+    {
+      "artifact_id": "linux-musl-x86_64",
+      "application_revision": "f63b43e8842539336dc93f08cfa5711a94d0003f",
+      "workflow_url": "https://github.com/Extremois/desembaraca-twine/actions/runs/40764323119",
+      "actions_artifact_id": 12849752316,
+      "actions_zip_sha256": "4d0ab0b3c7f099688b2e433cbd93cce37437aaeba4f14377770766d2495cf562",
+      "binary_sha256": "f506547381a5135f0961cec8b8155898d576ba4d8acfab9643e8bbe72f224974",
+      "sources_sha256": "6cf574fe3ff926de46135f4669bf5830f4cfd7bb04394ceb188fda5d0a030163",
+      "executable_sha256": "f4dfee4e052704b1a7efdb7b6a4c43583ccaa062aec800b76224dae24eb2b69b",
+      "provenance_sha256": "efb514520f52e2ce2b6e49b5f7ca9673f8ca20ae0b1c25d29d84bcf5a7bda170",
+      "binary_unchanged_from_previous_draft": false,
+      "file_count": 450,
+      "notice_files": 449,
+      "notice_payloads_excluding_index": 448,
+      "receipts": {
+        "candidate": {
+          "path": "specs/003-add-cross-platform-support/evidence/license-review-2026-10-28/linux-musl-x86_64/candidate.json.gz",
+          "sha256": "e97bb4002a65adf462eb94dd364b4aa1f065bc43ac5e829ca17b65d0e2fcc396"
+        },
+        "inventory": {
+          "path": "specs/003-add-cross-platform-support/evidence/license-review-2026-10-28/linux-musl-x86_64/inventory.json.gz",
+          "sha256": "40c9fe4c465fe39f651d8a3e9a12757a4ee44fb867800027ccb4ef91eba4ad9e"
+        },
+        "provenance": {
+          "path": "specs/003-add-cross-platform-support/evidence/license-review-2026-10-28/linux-musl-x86_64/provenance.json.gz",
+          "sha256": "919be90fb9291191bf30d18462871be171c3e68b274492e89a22a33a4c6ac106"
+        },
+        "sources": {
+          "path": "specs/003-add-cross-platform-support/evidence/license-review-2026-10-28/linux-musl-x86_64/sources.json.gz",
+          "sha256": "4bbb347af21f3cfd253bd5bb9465212e216914b4e5e23fc9663f45f26579e19e"
+        },
+        "source-pairing": {
+          "path": "specs/003-add-cross-platform-support/evidence/license-review-2026-10-28/linux-musl-x86_64/source-pairing.json.gz",
+          "sha256": "20d182f28f6076a62bcca737bb4690d8c635a94a22418612fc8d6ab1b82562da"
+        },
+        "notice_payloads": {
+          "path": "specs/003-add-cross-platform-support/evidence/license-review-2026-10-28/linux-musl-x86_64/notice-payloads.json.gz",
+          "sha256": "25bf4ba1ac692b4a4bd39ef3599c49d05a19b1aab965d19b6b1cca2897d8b3ce"
+        }
+      },
+      "approved": false,
+      "executable_unchanged_from_previous_draft": true,
+      "inventory_paths_changed_from_previous_draft": [
+        "third-party-notices/NOTICE-ORIGINS.json"
+      ]
+    },
+    {
+      "artifact_id": "macos-arm64",
+      "application_revision": "f63b43e8842539336dc93f08cfa5711a94d0003f",
+      "workflow_url": "https://github.com/Extremois/desembaraca-twine/actions/runs/40764323087",
+      "actions_artifact_id": 12849487720,
+      "binary_sha256": "72ab1dd59e2d85554cc0997f08a1573714dfde90545480d34365dae89587d0b8",
+      "sources_sha256": "913d4974a564b03982683aa5242d9829bd1cf8d2afe1563b97b3ae8981cab062",
+      "executable_sha256": "803a5622cc994d27947aad56498c6f975ce174827f7495a52745f695aa8ce9eb",
+      "provenance_sha256": "d88346d6c5a2c8d38592fd656ce10daeb38104fa8d32bb465a09806934a33735",
+      "file_count": 550,
+      "notice_files": 549,
+      "notice_payloads_excluding_index": 548,
+      "receipts": {
+        "candidate": {
+          "path": "specs/003-add-cross-platform-support/evidence/macos-named-link-inputs-ci-2026-10-28/macos-arm64/candidate.json.gz",
+          "sha256": "fbe2850cfc155f4e0694f4cf29dc35cd650b3340b2902286984e8d77bd5b2dfa"
+        },
+        "inventory": {
+          "path": "specs/003-add-cross-platform-support/evidence/macos-named-link-inputs-ci-2026-10-28/macos-arm64/inventory.json.gz",
+          "sha256": "5d2bde8a45d0ed2555d3670c0d2a9d2e8eae332228109d8c2e83866afefff839"
+        },
+        "provenance": {
+          "path": "specs/003-add-cross-platform-support/evidence/macos-named-link-inputs-ci-2026-10-28/macos-arm64/provenance.json.gz",
+          "sha256": "cb99d3e92410ccf4363e3b50a9449cae7bc36f070a0a5d9b5c015673528882c2"
+        },
+        "sources": {
+          "path": "specs/003-add-cross-platform-support/evidence/macos-named-link-inputs-ci-2026-10-28/macos-arm64/sources.json.gz",
+          "sha256": "1aa1febd21d19bc6f3bb7e86cfbf37e77dc673815bd6bc360ea11044b3c63040"
+        },
+        "source-pairing": {
+          "path": "specs/003-add-cross-platform-support/evidence/macos-named-link-inputs-ci-2026-10-28/macos-arm64/source-pairing.json.gz",
+          "sha256": "bd4d77fe7455bcc14fc07996caaa731ef9af2d582ada6e36dbb63ec58ffbb3d9"
+        },
+        "notice-payloads": {
+          "path": "specs/003-add-cross-platform-support/evidence/macos-named-link-inputs-ci-2026-10-28/macos-arm64/notice-payloads.json.gz",
+          "sha256": "eda331471ac45891de302d19e802b37b8ef0d8647703cb4b6e9bada23871e7ba"
+        },
+        "review": {
+          "path": "specs/003-add-cross-platform-support/evidence/macos-named-link-inputs-ci-2026-10-28/macos-arm64/review.json.gz",
+          "sha256": "d3c28d544e893dd11b97db7d5dbce4b7920778838c8d56562e0eaff7391f479b"
+        },
+        "link-source-evidence": {
+          "path": "specs/003-add-cross-platform-support/evidence/macos-named-link-inputs-ci-2026-10-28/macos-arm64/link-source-evidence.json.gz",
+          "sha256": "a8ceac625dd0fd0d03b780a7a6c10853b06649120667a64a05fea4b53134d93b"
+        }
+      },
+      "approved": false
+    },
+    {
+      "artifact_id": "macos-x86_64",
+      "application_revision": "f63b43e8842539336dc93f08cfa5711a94d0003f",
+      "workflow_url": "https://github.com/Extremois/desembaraca-twine/actions/runs/40764323087",
+      "actions_artifact_id": 12849457850,
+      "binary_sha256": "8e3b1c65ebfe5f27f696afd584392737d50ca98fc5bd64a87aa8a57392c83d54",
+      "sources_sha256": "ba2980abe3dc655589f636ed9df49597c2f5ebe59b11914005a135742678e24a",
+      "executable_sha256": "b1bcd8fb3ea37bbe51ea4e4b8611cfcdb4c01856bffb21c08e317d0c4ed32b88",
+      "provenance_sha256": "d8ff5c2d1cea25dd6ddb7ddbf942a7f830b8d656e068f90e2fea1f2fbae775ba",
+      "file_count": 550,
+      "notice_files": 549,
+      "notice_payloads_excluding_index": 548,
+      "receipts": {
+        "candidate": {
+          "path": "specs/003-add-cross-platform-support/evidence/macos-named-link-inputs-ci-2026-10-28/macos-x86_64/candidate.json.gz",
+          "sha256": "41b4198255898010b2af5b3dc1e7949164a6dac5a251f3434a754712217c554c"
+        },
+        "inventory": {
+          "path": "specs/003-add-cross-platform-support/evidence/macos-named-link-inputs-ci-2026-10-28/macos-x86_64/inventory.json.gz",
+          "sha256": "23826156ec9127d679512fa253dcf490018231dacdd4a40ae22bb9a4f54b1dfc"
+        },
+        "provenance": {
+          "path": "specs/003-add-cross-platform-support/evidence/macos-named-link-inputs-ci-2026-10-28/macos-x86_64/provenance.json.gz",
+          "sha256": "0cc33c3782dad3091c37a0db26f4f4ba4841fa0701d67a6b131a3d445655e195"
+        },
+        "sources": {
+          "path": "specs/003-add-cross-platform-support/evidence/macos-named-link-inputs-ci-2026-10-28/macos-x86_64/sources.json.gz",
+          "sha256": "f79c182fd8f87e20af54c312f45e8fc04de690f2c17afa6824a2d356144352d1"
+        },
+        "source-pairing": {
+          "path": "specs/003-add-cross-platform-support/evidence/macos-named-link-inputs-ci-2026-10-28/macos-x86_64/source-pairing.json.gz",
+          "sha256": "531816b14e0a6f6a3a845ba8e7d88365e006d101c8ba5ce5002208fc74889477"
+        },
+        "notice-payloads": {
+          "path": "specs/003-add-cross-platform-support/evidence/macos-named-link-inputs-ci-2026-10-28/macos-x86_64/notice-payloads.json.gz",
+          "sha256": "9d3051e96c78f17ab8460dc1d1005d35d8bd564016cfb726f0a5f8d0b6f69c3b"
+        },
+        "review": {
+          "path": "specs/003-add-cross-platform-support/evidence/macos-named-link-inputs-ci-2026-10-28/macos-x86_64/review.json.gz",
+          "sha256": "475c59badc3e70f70857304a7dbc25538d836d95bb23907b921343526beb5109"
+        },
+        "link-source-evidence": {
+          "path": "specs/003-add-cross-platform-support/evidence/macos-named-link-inputs-ci-2026-10-28/macos-x86_64/link-source-evidence.json.gz",
+          "sha256": "57ed453bf3580818357f3ce76bb0c3f99a5036a9db86a723624452625dfdfa41"
+        }
+      },
+      "approved": false
+    }
+  ],
+  "task_complete": false,
+  "source_archive_scope": "Full binary/source pair checked in Actions; locally rechecked binary ZIPs and source receipts, without rerunning builds or tests",
+  "technical_evidence": {
+    "path": "specs/003-add-cross-platform-support/evidence/macos-named-link-inputs-ci-2026-10-28/summary.json",
+    "sha256": "ff200db21f545dbdf44caf9f9a92bee24d6e837f0914c9d2872c2951da809eb0"
+  },
+  "limitations": [
+    "No permanent binary/source URLs or publication",
+    "No inferred legal clearance from notices or matching bytes",
+    "Header, ISO/W3C and other component applicability still require a reasoned decision"
+  ],
+  "review_strategy": {
+    "selected_by": "user",
+    "strategy": "Preserve current Graphviz and review existing candidates without replacement builds"
+  },
+  "review_questions_document": {
+    "path": "specs/003-add-cross-platform-support/evidence/license-review-2026-10-28/README.md",
+    "sha256": "25c305d9cce25b3ae25e846e6e8600f599ed4d467b89930edfaee239a7b36a7a"
+  }
+}

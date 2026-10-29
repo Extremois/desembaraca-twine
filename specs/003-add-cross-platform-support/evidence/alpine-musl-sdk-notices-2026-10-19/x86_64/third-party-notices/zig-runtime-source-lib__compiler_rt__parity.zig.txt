@@ -1,0 +1,3 @@
+//! parity - if number of bits set is even => 0, else => 1
+//! - pariytXi2_generic for big and little endian
+

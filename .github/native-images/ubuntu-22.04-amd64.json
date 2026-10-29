@@ -1,0 +1,12 @@
+{
+  "url": "https://cloud-images.ubuntu.com/releases/jammy/release-20261020/ubuntu-22.04-server-cloudimg-amd64.img",
+  "size": 730529792,
+  "sha256": "2099e63da0b822ef8e05e3d596c1b402eaaae658fc08ab919cb8495bfcdc488b",
+  "checksum_manifest_url": "https://cloud-images.ubuntu.com/releases/jammy/release-20261020/SHA256SUMS",
+  "checksum_manifest_sha256": "4f52010946a2c9f33fbabde465bb0f93da1e0d0c5cebb09fa0ce751964036df4",
+  "package_manifest_url": "https://cloud-images.ubuntu.com/releases/jammy/release-20261020/ubuntu-22.04-server-cloudimg-amd64.manifest",
+  "package_manifest_sha256": "e931df1d4d6bba23f8edd213a9c8117efb19282a9be6d97221643c71fd158cea",
+  "release": "22.04",
+  "arch": "x86_64",
+  "scope": "Historical image for private native-kernel tests; no support qualification"
+}

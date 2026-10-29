@@ -1,0 +1,25 @@
+{
+  "kind": "local-candidate-archive",
+  "qualified": false,
+  "artifact_id": "linux-musl-aarch64",
+  "platform": "linux",
+  "artifact_arch": "aarch64",
+  "abi": "musl",
+  "archive": "candidate.zip",
+  "archive_sha256": "cb13a7f5aa608491f0dc8bd82d425149cbcf62b0f6a721381f40d94756f1d4e6",
+  "archive_bytes": 7992367,
+  "inventory": "inventory.json",
+  "inventory_sha256": "50638914217ba2c83f4e6d685171ae8284695f1e8bb69fde0977372af869bf70",
+  "provenance_sha256": "039da570218790fcd0921b215846feb02040b6f8e25061b69fbbdef154e5b677",
+  "file_count": 450,
+  "source_modes_checked": true,
+  "zip_modes": "from-validated-inventory",
+  "compression": "stored",
+  "pending": [
+    "dependency/license audit",
+    "native inspection/ABI",
+    "signing/notarization if applicable",
+    "real immutable distribution URL and runtime manifest",
+    "native cell acceptance"
+  ]
+}

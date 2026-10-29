@@ -1,0 +1,111 @@
+{
+  "kind": "zig-tangent-origin-and-terms-review",
+  "task": "T030",
+  "task_complete": false,
+  "approved": false,
+  "qualified": false,
+  "source_state": "working-tree",
+  "history_point_resolved": true,
+  "history": "upstream-history.json",
+  "history_sha256": "45f326dae877283776d052b6f646bc529a2b85471b31c0302d349babeba28849",
+  "notice_tool_sha256": "756b7a60b34af7ecf2fe77a7980e8f3f883834673180a1298eb0f3f6174c8b47",
+  "tests_sha256": "1037e8075d149c3d483c018356b1df03283d68215c0fc29d30e8744ddbede9d9",
+  "bindings": [
+    {
+      "artifact_id": "linux-glibc-x86_64",
+      "notice_index_sha256": "978a20c98180d84af453e0903b80493560e64e568db7788afe2a99211934f01f",
+      "parent_provenance_sha256": "bb6750dee9f80302234ce01a0fd87de15c458d3a5257b5daf627496cb4d3877a",
+      "observed_runtime_prefixes": 0,
+      "additional_materials": []
+    },
+    {
+      "artifact_id": "linux-glibc-aarch64",
+      "notice_index_sha256": "e00cd22b4cfc309dadc99af1673c9325ec9af83efb2adeea0255f15a6c8043e9",
+      "parent_provenance_sha256": "6263125844afeb6923a09897e1c969790052a407744e66d87ddabcae276aa633",
+      "observed_runtime_prefixes": 45,
+      "additional_materials": [
+        {
+          "path": "Go-BSD-3-Clause-LICENSE.txt",
+          "bytes": 1479,
+          "sha256": "2d36597f7117c38b006835ae7f537487207d8ec407aa9d9980794b2030cbc067",
+          "origin": {
+            "kind": "pinned-canonical-license-text",
+            "source_url": "https://raw.githubusercontent.com/golang/go/go1.17/LICENSE",
+            "source_sha256": "2d36597f7117c38b006835ae7f537487207d8ec407aa9d9980794b2030cbc067",
+            "related_source": "lib/compiler_rt/tan.zig",
+            "related_source_sha256": "828484649e0a61f634bd1bea179255ec24ee9c77b1511a99ccad2b874e0e1a6c",
+            "replacement_commit": "e24398361dacc4b995ec67043746561927f5f1d2",
+            "scope": "Conservative preservation for historical tangent documentation/tests; upstream replaced the Go algorithm with musl"
+          }
+        }
+      ]
+    },
+    {
+      "artifact_id": "linux-musl-x86_64",
+      "notice_index_sha256": "f44638eb3799fdf481c8afc7ac39c604ceb2edd1fe1117f36c2401d99c6f34d0",
+      "parent_provenance_sha256": "c5999eb4fd5378faddc03c70ca827da493af25740782a6e77f3c6f21bc8790bb",
+      "observed_runtime_prefixes": 49,
+      "additional_materials": [
+        {
+          "path": "Go-BSD-3-Clause-LICENSE.txt",
+          "bytes": 1479,
+          "sha256": "2d36597f7117c38b006835ae7f537487207d8ec407aa9d9980794b2030cbc067",
+          "origin": {
+            "kind": "pinned-canonical-license-text",
+            "source_url": "https://raw.githubusercontent.com/golang/go/go1.17/LICENSE",
+            "source_sha256": "2d36597f7117c38b006835ae7f537487207d8ec407aa9d9980794b2030cbc067",
+            "related_source": "lib/compiler_rt/tan.zig",
+            "related_source_sha256": "828484649e0a61f634bd1bea179255ec24ee9c77b1511a99ccad2b874e0e1a6c",
+            "replacement_commit": "e24398361dacc4b995ec67043746561927f5f1d2",
+            "scope": "Conservative preservation for historical tangent documentation/tests; upstream replaced the Go algorithm with musl"
+          }
+        }
+      ]
+    },
+    {
+      "artifact_id": "linux-musl-aarch64",
+      "notice_index_sha256": "6e09f3fe35636ae3e8bb72d08344456e9fa33279b043a2586a10989bdbd536e3",
+      "parent_provenance_sha256": "75fb2a04c10cc202105733bb997ead3d0c6a26540902449d1248823617914cec",
+      "observed_runtime_prefixes": 50,
+      "additional_materials": [
+        {
+          "path": "Go-BSD-3-Clause-LICENSE.txt",
+          "bytes": 1479,
+          "sha256": "2d36597f7117c38b006835ae7f537487207d8ec407aa9d9980794b2030cbc067",
+          "origin": {
+            "kind": "pinned-canonical-license-text",
+            "source_url": "https://raw.githubusercontent.com/golang/go/go1.17/LICENSE",
+            "source_sha256": "2d36597f7117c38b006835ae7f537487207d8ec407aa9d9980794b2030cbc067",
+            "related_source": "lib/compiler_rt/tan.zig",
+            "related_source_sha256": "828484649e0a61f634bd1bea179255ec24ee9c77b1511a99ccad2b874e0e1a6c",
+            "replacement_commit": "e24398361dacc4b995ec67043746561927f5f1d2",
+            "scope": "Conservative preservation for historical tangent documentation/tests; upstream replaced the Go algorithm with musl"
+          }
+        }
+      ]
+    }
+  ],
+  "tests": [
+    {
+      "python": "3.14.6",
+      "tests": 218,
+      "skipped": 8,
+      "seconds": 33.444,
+      "passed": true
+    },
+    {
+      "python": "Python 3.12.10",
+      "tests": 218,
+      "skipped": 8,
+      "seconds": 33.296,
+      "passed": true
+    }
+  ],
+  "pending": [
+    "Fresh native notice packaging confirmation",
+    "Per-file musl math notices and remaining component applicability",
+    "ISO conditions and final source retention/offer"
+  ],
+  "scope": "Go algorithm replacement verified; conservative BSD terms for remaining historical source material, not complete bundle approval",
+  "regression": "Self-consistent changed runtime bytes with unchanged notice prefix cannot reuse the reviewed tangent history pin"
+}

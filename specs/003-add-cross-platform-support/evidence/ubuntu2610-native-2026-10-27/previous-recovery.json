@@ -1,0 +1,2409 @@
+{
+  "kind": "partial-recovery-matrix-evidence-index",
+  "task": "T076",
+  "task_complete": false,
+  "qualified": false,
+  "captured_at": "2026-10-27T20:35:29.188502+00:00",
+  "registry": {
+    "path": "tools/runtime/support-targets.json",
+    "sha256": "be3e8a77e3836d1125658c00a75fbf0e3584f1e26a166a053583336c29a5d295"
+  },
+  "expected_targets": 69,
+  "expected_python_slots": 138,
+  "complete_targets": 0,
+  "targets_with_partial_native_observations": 8,
+  "python_slots_with_partial_native_observations": 16,
+  "current_failed_repair_summary": {
+    "path": "specs/003-add-cross-platform-support/evidence/installed-posix-processes-2026-10-20/runtime/summary.json",
+    "sha256": "c3bf8b4a7094bf949bfcf100b5437982b934fad654869be9c2e4e9ccdc2a044d"
+  },
+  "earlier_ubuntu1804_summary": {
+    "path": "specs/003-add-cross-platform-support/evidence/ubuntu1804-installed-recovery-2026-10-20/summary.json",
+    "sha256": "d631936e2b39a10849345866e9ebf7a52d2814a48b7da5389ff97fdf442c78ce"
+  },
+  "limitations": [
+    "No source/license/signature/catalog promotion",
+    "Earlier POSIX runner receipts use Python-only network guards; native Ubuntu update includes syscall tracing",
+    "Every observation remains scoped to its own application revision, candidate and environment",
+    "Hosted labels and private artifacts do not qualify whole support cells"
+  ],
+  "targets": [
+    {
+      "target_id": "windows-11-stable-x86_64-distribution-default",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        }
+      ]
+    },
+    {
+      "target_id": "macos-15-stable-x86_64-distribution-default",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "partial-native-observation",
+          "evidence": {
+            "path": "specs/003-add-cross-platform-support/evidence/installed-posix-processes-2026-10-20/runtime/macos-15-intel-3.12.json",
+            "sha256": "c9ea4997cc4ba6d04a5f6b8d30b77a736dfa1677d230332176e20a673409aad7",
+            "application_revision": "eea100c37599517e09b6626d1edb82b599a1b19c",
+            "scope": "Private installed wheel/sdist: four failed repairs, three real process exits and two-worker first use",
+            "package_modes": [
+              "wheel",
+              "sdist"
+            ],
+            "scenarios_per_format": 8,
+            "offline_references_per_format": 48,
+            "failed_repairs_per_format": 4,
+            "crashes_per_format": 3,
+            "concurrent_first_use_per_format": 1,
+            "syscall_network_observation": false,
+            "controlled_injections": [
+              "transfer",
+              "ENOSPC",
+              "corrupt archive",
+              "os._exit at production checkpoints"
+            ],
+            "real_operations": [
+              "Native engine",
+              "OS locks",
+              "chmod/exec permission denial",
+              "Two processes ready at start barrier",
+              "Previous handle reused",
+              "Orphan bytes/modes preserved"
+            ],
+            "pending": [
+              "Final qualified distributed candidate",
+              "Canonical cell environment and full acceptance"
+            ]
+          },
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "partial-native-observation",
+          "evidence": {
+            "path": "specs/003-add-cross-platform-support/evidence/installed-posix-processes-2026-10-20/runtime/macos-15-intel-3.14.json",
+            "sha256": "157a7f8afe781eb027be2e0fb6d15d337a5d6575b9a6168cc32fef888128c13b",
+            "application_revision": "eea100c37599517e09b6626d1edb82b599a1b19c",
+            "scope": "Private installed wheel/sdist: four failed repairs, three real process exits and two-worker first use",
+            "package_modes": [
+              "wheel",
+              "sdist"
+            ],
+            "scenarios_per_format": 8,
+            "offline_references_per_format": 48,
+            "failed_repairs_per_format": 4,
+            "crashes_per_format": 3,
+            "concurrent_first_use_per_format": 1,
+            "syscall_network_observation": false,
+            "controlled_injections": [
+              "transfer",
+              "ENOSPC",
+              "corrupt archive",
+              "os._exit at production checkpoints"
+            ],
+            "real_operations": [
+              "Native engine",
+              "OS locks",
+              "chmod/exec permission denial",
+              "Two processes ready at start barrier",
+              "Previous handle reused",
+              "Orphan bytes/modes preserved"
+            ],
+            "pending": [
+              "Final qualified distributed candidate",
+              "Canonical cell environment and full acceptance"
+            ]
+          },
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        }
+      ]
+    },
+    {
+      "target_id": "macos-15-stable-aarch64-distribution-default",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "partial-native-observation",
+          "evidence": {
+            "path": "specs/003-add-cross-platform-support/evidence/installed-posix-processes-2026-10-20/runtime/macos-15-3.12.json",
+            "sha256": "aa63715d9a190234d25c3819d26e1167a309fbfabfb30411029dd4031d763884",
+            "application_revision": "eea100c37599517e09b6626d1edb82b599a1b19c",
+            "scope": "Private installed wheel/sdist: four failed repairs, three real process exits and two-worker first use",
+            "package_modes": [
+              "wheel",
+              "sdist"
+            ],
+            "scenarios_per_format": 8,
+            "offline_references_per_format": 48,
+            "failed_repairs_per_format": 4,
+            "crashes_per_format": 3,
+            "concurrent_first_use_per_format": 1,
+            "syscall_network_observation": false,
+            "controlled_injections": [
+              "transfer",
+              "ENOSPC",
+              "corrupt archive",
+              "os._exit at production checkpoints"
+            ],
+            "real_operations": [
+              "Native engine",
+              "OS locks",
+              "chmod/exec permission denial",
+              "Two processes ready at start barrier",
+              "Previous handle reused",
+              "Orphan bytes/modes preserved"
+            ],
+            "pending": [
+              "Final qualified distributed candidate",
+              "Canonical cell environment and full acceptance"
+            ]
+          },
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "partial-native-observation",
+          "evidence": {
+            "path": "specs/003-add-cross-platform-support/evidence/installed-posix-processes-2026-10-20/runtime/macos-15-3.14.json",
+            "sha256": "780807314bacf4ce3e676cf8a30eaae8b47182c2a20329ff4c093ba3b4c5a97c",
+            "application_revision": "eea100c37599517e09b6626d1edb82b599a1b19c",
+            "scope": "Private installed wheel/sdist: four failed repairs, three real process exits and two-worker first use",
+            "package_modes": [
+              "wheel",
+              "sdist"
+            ],
+            "scenarios_per_format": 8,
+            "offline_references_per_format": 48,
+            "failed_repairs_per_format": 4,
+            "crashes_per_format": 3,
+            "concurrent_first_use_per_format": 1,
+            "syscall_network_observation": false,
+            "controlled_injections": [
+              "transfer",
+              "ENOSPC",
+              "corrupt archive",
+              "os._exit at production checkpoints"
+            ],
+            "real_operations": [
+              "Native engine",
+              "OS locks",
+              "chmod/exec permission denial",
+              "Two processes ready at start barrier",
+              "Previous handle reused",
+              "Orphan bytes/modes preserved"
+            ],
+            "pending": [
+              "Final qualified distributed candidate",
+              "Canonical cell environment and full acceptance"
+            ]
+          },
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        }
+      ]
+    },
+    {
+      "target_id": "ubuntu-18.04-stable-x86_64-distribution-default",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "partial-native-observation",
+          "evidence": {
+            "path": "specs/003-add-cross-platform-support/evidence/ubuntu2604-native-2026-10-27/summary.json",
+            "sha256": "303139a5efd2a82267fb0d7f7f2786aebd15302d9b5bd03b07c6308a78be6835",
+            "application_revision": "96f765bb19e30536d505fe875fa57b52622cb336",
+            "scope": "Native Ubuntu x64 KVM installed private wheel; primary and nested recovery/process suites",
+            "package_modes": [
+              "wheel"
+            ],
+            "native_report": "specs/003-add-cross-platform-support/evidence/ubuntu2604-native-2026-10-27/ubuntu1804-glibc/raw/application/application-3.12.json.gz",
+            "native_report_sha256": "5612a62963b257d51ff83cc114a7c37bc22a2ae00fe384d08075fcf6dc26d4c6",
+            "uncompressed_report_sha256": "cdb0b5e7ea1cca93a9f702030774b6a2bcb6be28f15faf4c3db126d097835537",
+            "nested_review": {
+              "path": "specs/003-add-cross-platform-support/evidence/ubuntu2604-native-2026-10-27/nested-recovery.json",
+              "sha256": "0e2192af76c8ee6adc7f364a54822e27b68a49bf30069583bea9c35f17b44857"
+            },
+            "recovery_scenario_executions": 16,
+            "offline_reference_executions_after_recovery": 96,
+            "dot_executions": 389,
+            "syscall_network_observation": true,
+            "native_network_syscalls": {},
+            "pending": [
+              "Final qualified distributed candidate",
+              "Pro/ESM eligibility and complete cell acceptance"
+            ]
+          },
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending",
+          "earlier_evidence": [
+            {
+              "path": "specs/003-add-cross-platform-support/evidence/ubuntu1804-process-driver-2026-10-20/application-3.12.json",
+              "sha256": "86c4536766664c92bb1ae0598800ce12ae3e6bea8eab4163860127d4d669f704",
+              "summary": {
+                "path": "specs/003-add-cross-platform-support/evidence/ubuntu1804-process-driver-2026-10-20/summary.json",
+                "sha256": "aa31fc2b66ecca84d322fc43565316617253e3f64cfc086a607a324cabbd313f"
+              },
+              "application_revision": "eea100c37599517e09b6626d1edb82b599a1b19c",
+              "package_modes": [
+                "wheel"
+              ],
+              "scope": "Installed private wheel in Ubuntu 18.04 KVM; full eight-scenario suite and nested eight-scenario installed driver",
+              "recovery_scenario_executions": 16,
+              "offline_reference_executions_after_recovery": 96,
+              "dot_executions": 389,
+              "syscall_network_observation": true,
+              "native_network_syscalls": {},
+              "pending": [
+                "Final qualified distributed candidate",
+                "Required cell eligibility and full acceptance"
+              ]
+            },
+            {
+              "path": "specs/003-add-cross-platform-support/evidence/ubuntu2004-native-2026-10-27/summary.json",
+              "sha256": "14bb87d24c5a06658d50664c7d6dcbb319ca60b768ae0d74d218849e2b632d9d",
+              "application_revision": "1c556872f4b74af61038ff53acac382ab1eb368a",
+              "scope": "Native Ubuntu x64 KVM installed private wheel; primary and nested recovery/process suites",
+              "package_modes": [
+                "wheel"
+              ],
+              "native_report": "specs/003-add-cross-platform-support/evidence/ubuntu2004-native-2026-10-27/ubuntu1804-glibc/raw/application/application-3.12.json.gz",
+              "native_report_sha256": "f4744d0b40a94d3b041c7ad4c94936c1e753608a03bf86b0b4b4eb0021d2b972",
+              "uncompressed_report_sha256": "99159efab04229b1327fc200fd5d61ad65ea997af3537918b85829c89a00c276",
+              "nested_review": {
+                "path": "specs/003-add-cross-platform-support/evidence/ubuntu2004-native-2026-10-27/nested-recovery.json",
+                "sha256": "4bd77f1edffafb32e88c1f6df2ece88bd6e399a5173976dc0a20a0f1abc72d9d"
+              },
+              "recovery_scenario_executions": 16,
+              "offline_reference_executions_after_recovery": 96,
+              "dot_executions": 389,
+              "syscall_network_observation": true,
+              "native_network_syscalls": {},
+              "pending": [
+                "Final qualified distributed candidate",
+                "Pro/ESM eligibility and complete cell acceptance"
+              ]
+            },
+            {
+              "path": "specs/003-add-cross-platform-support/evidence/ubuntu2204-native-2026-10-27/summary.json",
+              "sha256": "a2cf581eff0c08625cc12b9d07398cb14c9f6ade0329dd45605c3abdcb6f54cc",
+              "application_revision": "3e7a27e599050776fdacde7f480238e79d22d772",
+              "scope": "Native Ubuntu x64 KVM installed private wheel; primary and nested recovery/process suites",
+              "package_modes": [
+                "wheel"
+              ],
+              "native_report": "specs/003-add-cross-platform-support/evidence/ubuntu2204-native-2026-10-27/ubuntu1804-glibc/raw/application/application-3.12.json.gz",
+              "native_report_sha256": "ff63e32a28417d4e2a6f71d26941627c30454b1967a6289ad2e165c18f0cdbe7",
+              "uncompressed_report_sha256": "1d82eb93ff611437ca7b7c7e1ba3101834d473efe526580b3d035c8b7b8587e2",
+              "nested_review": {
+                "path": "specs/003-add-cross-platform-support/evidence/ubuntu2204-native-2026-10-27/nested-recovery.json",
+                "sha256": "a4cf23cc65a56fdd525305161f21676fb255d7cc12bc41a421f9bed4881c37ad"
+              },
+              "recovery_scenario_executions": 16,
+              "offline_reference_executions_after_recovery": 96,
+              "dot_executions": 389,
+              "syscall_network_observation": true,
+              "native_network_syscalls": {},
+              "pending": [
+                "Final qualified distributed candidate",
+                "Pro/ESM eligibility and complete cell acceptance"
+              ]
+            }
+          ]
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "partial-native-observation",
+          "evidence": {
+            "path": "specs/003-add-cross-platform-support/evidence/ubuntu2604-native-2026-10-27/summary.json",
+            "sha256": "303139a5efd2a82267fb0d7f7f2786aebd15302d9b5bd03b07c6308a78be6835",
+            "application_revision": "96f765bb19e30536d505fe875fa57b52622cb336",
+            "scope": "Native Ubuntu x64 KVM installed private wheel; primary and nested recovery/process suites",
+            "package_modes": [
+              "wheel"
+            ],
+            "native_report": "specs/003-add-cross-platform-support/evidence/ubuntu2604-native-2026-10-27/ubuntu1804-glibc/raw/application/application-3.14.json.gz",
+            "native_report_sha256": "6a1971707a2a69c72ddb54092781f155dba4f70c8f5f791f98a06819c1904eea",
+            "uncompressed_report_sha256": "687a481bb0e8a814622262b4dc9e6ce5ade90e413bcabf3b931933be923e411b",
+            "nested_review": {
+              "path": "specs/003-add-cross-platform-support/evidence/ubuntu2604-native-2026-10-27/nested-recovery.json",
+              "sha256": "0e2192af76c8ee6adc7f364a54822e27b68a49bf30069583bea9c35f17b44857"
+            },
+            "recovery_scenario_executions": 16,
+            "offline_reference_executions_after_recovery": 96,
+            "dot_executions": 389,
+            "syscall_network_observation": true,
+            "native_network_syscalls": {},
+            "pending": [
+              "Final qualified distributed candidate",
+              "Pro/ESM eligibility and complete cell acceptance"
+            ]
+          },
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending",
+          "earlier_evidence": [
+            {
+              "path": "specs/003-add-cross-platform-support/evidence/ubuntu1804-process-driver-2026-10-20/application-3.14.json",
+              "sha256": "05a48a045b370b5d2f72ef03638d48239f7670a9fad84447552c3cf211f64e9f",
+              "summary": {
+                "path": "specs/003-add-cross-platform-support/evidence/ubuntu1804-process-driver-2026-10-20/summary.json",
+                "sha256": "aa31fc2b66ecca84d322fc43565316617253e3f64cfc086a607a324cabbd313f"
+              },
+              "application_revision": "eea100c37599517e09b6626d1edb82b599a1b19c",
+              "package_modes": [
+                "wheel"
+              ],
+              "scope": "Installed private wheel in Ubuntu 18.04 KVM; full eight-scenario suite and nested eight-scenario installed driver",
+              "recovery_scenario_executions": 16,
+              "offline_reference_executions_after_recovery": 96,
+              "dot_executions": 389,
+              "syscall_network_observation": true,
+              "native_network_syscalls": {},
+              "pending": [
+                "Final qualified distributed candidate",
+                "Required cell eligibility and full acceptance"
+              ]
+            },
+            {
+              "path": "specs/003-add-cross-platform-support/evidence/ubuntu2004-native-2026-10-27/summary.json",
+              "sha256": "14bb87d24c5a06658d50664c7d6dcbb319ca60b768ae0d74d218849e2b632d9d",
+              "application_revision": "1c556872f4b74af61038ff53acac382ab1eb368a",
+              "scope": "Native Ubuntu x64 KVM installed private wheel; primary and nested recovery/process suites",
+              "package_modes": [
+                "wheel"
+              ],
+              "native_report": "specs/003-add-cross-platform-support/evidence/ubuntu2004-native-2026-10-27/ubuntu1804-glibc/raw/application/application-3.14.json.gz",
+              "native_report_sha256": "37e54950589fa9e406e2f7f93b594699193df5221faec5076f6ef68f4263b953",
+              "uncompressed_report_sha256": "0a5b91783a75e0771aa59d1f96ae7b7e88cbfc2849232c9b90a22f9e6827a4ca",
+              "nested_review": {
+                "path": "specs/003-add-cross-platform-support/evidence/ubuntu2004-native-2026-10-27/nested-recovery.json",
+                "sha256": "4bd77f1edffafb32e88c1f6df2ece88bd6e399a5173976dc0a20a0f1abc72d9d"
+              },
+              "recovery_scenario_executions": 16,
+              "offline_reference_executions_after_recovery": 96,
+              "dot_executions": 389,
+              "syscall_network_observation": true,
+              "native_network_syscalls": {},
+              "pending": [
+                "Final qualified distributed candidate",
+                "Pro/ESM eligibility and complete cell acceptance"
+              ]
+            },
+            {
+              "path": "specs/003-add-cross-platform-support/evidence/ubuntu2204-native-2026-10-27/summary.json",
+              "sha256": "a2cf581eff0c08625cc12b9d07398cb14c9f6ade0329dd45605c3abdcb6f54cc",
+              "application_revision": "3e7a27e599050776fdacde7f480238e79d22d772",
+              "scope": "Native Ubuntu x64 KVM installed private wheel; primary and nested recovery/process suites",
+              "package_modes": [
+                "wheel"
+              ],
+              "native_report": "specs/003-add-cross-platform-support/evidence/ubuntu2204-native-2026-10-27/ubuntu1804-glibc/raw/application/application-3.14.json.gz",
+              "native_report_sha256": "952e07cccfd6d93a7d4d2a44e20a51357b2c5161f19ee2a0bdd369618f1a8c1c",
+              "uncompressed_report_sha256": "0fdad7787568c3ba08e3af50aa3ac1ccf96ccc080fbcbf8be811c5ee049bf964",
+              "nested_review": {
+                "path": "specs/003-add-cross-platform-support/evidence/ubuntu2204-native-2026-10-27/nested-recovery.json",
+                "sha256": "a4cf23cc65a56fdd525305161f21676fb255d7cc12bc41a421f9bed4881c37ad"
+              },
+              "recovery_scenario_executions": 16,
+              "offline_reference_executions_after_recovery": 96,
+              "dot_executions": 389,
+              "syscall_network_observation": true,
+              "native_network_syscalls": {},
+              "pending": [
+                "Final qualified distributed candidate",
+                "Pro/ESM eligibility and complete cell acceptance"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "target_id": "ubuntu-18.04-stable-aarch64-distribution-default",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        }
+      ]
+    },
+    {
+      "target_id": "ubuntu-20.04-stable-x86_64-distribution-default",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "partial-native-observation",
+          "evidence": {
+            "path": "specs/003-add-cross-platform-support/evidence/ubuntu2604-native-2026-10-27/summary.json",
+            "sha256": "303139a5efd2a82267fb0d7f7f2786aebd15302d9b5bd03b07c6308a78be6835",
+            "application_revision": "96f765bb19e30536d505fe875fa57b52622cb336",
+            "scope": "Native Ubuntu x64 KVM installed private wheel; primary and nested recovery/process suites",
+            "package_modes": [
+              "wheel"
+            ],
+            "native_report": "specs/003-add-cross-platform-support/evidence/ubuntu2604-native-2026-10-27/ubuntu2004-glibc/raw/application/application-3.12.json.gz",
+            "native_report_sha256": "e875bf4e957e21d2a2e4939d3c6a0aa00c2213d395bc48db21df75bdb6bd7c53",
+            "uncompressed_report_sha256": "55db1d82264a1cfc6cff6b7c5076dace48b5eacdc565fc0d86d73549ee91c584",
+            "nested_review": {
+              "path": "specs/003-add-cross-platform-support/evidence/ubuntu2604-native-2026-10-27/nested-recovery.json",
+              "sha256": "0e2192af76c8ee6adc7f364a54822e27b68a49bf30069583bea9c35f17b44857"
+            },
+            "recovery_scenario_executions": 16,
+            "offline_reference_executions_after_recovery": 96,
+            "dot_executions": 389,
+            "syscall_network_observation": true,
+            "native_network_syscalls": {},
+            "pending": [
+              "Final qualified distributed candidate",
+              "Pro/ESM eligibility and complete cell acceptance"
+            ]
+          },
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending",
+          "earlier_evidence": [
+            {
+              "path": "specs/003-add-cross-platform-support/evidence/ubuntu2004-native-2026-10-27/summary.json",
+              "sha256": "14bb87d24c5a06658d50664c7d6dcbb319ca60b768ae0d74d218849e2b632d9d",
+              "application_revision": "1c556872f4b74af61038ff53acac382ab1eb368a",
+              "scope": "Native Ubuntu x64 KVM installed private wheel; primary and nested recovery/process suites",
+              "package_modes": [
+                "wheel"
+              ],
+              "native_report": "specs/003-add-cross-platform-support/evidence/ubuntu2004-native-2026-10-27/ubuntu2004-glibc/raw/application/application-3.12.json.gz",
+              "native_report_sha256": "65cc9d86bd629f1e3a054020e0641779a71e071e0a2fb066a42408447770cd3e",
+              "uncompressed_report_sha256": "5692fd010a2ae8b92b1a8225ab7d449b42c707d173afd594c9c3b20696dff709",
+              "nested_review": {
+                "path": "specs/003-add-cross-platform-support/evidence/ubuntu2004-native-2026-10-27/nested-recovery.json",
+                "sha256": "4bd77f1edffafb32e88c1f6df2ece88bd6e399a5173976dc0a20a0f1abc72d9d"
+              },
+              "recovery_scenario_executions": 16,
+              "offline_reference_executions_after_recovery": 96,
+              "dot_executions": 389,
+              "syscall_network_observation": true,
+              "native_network_syscalls": {},
+              "pending": [
+                "Final qualified distributed candidate",
+                "Pro/ESM eligibility and complete cell acceptance"
+              ]
+            },
+            {
+              "path": "specs/003-add-cross-platform-support/evidence/ubuntu2204-native-2026-10-27/summary.json",
+              "sha256": "a2cf581eff0c08625cc12b9d07398cb14c9f6ade0329dd45605c3abdcb6f54cc",
+              "application_revision": "3e7a27e599050776fdacde7f480238e79d22d772",
+              "scope": "Native Ubuntu x64 KVM installed private wheel; primary and nested recovery/process suites",
+              "package_modes": [
+                "wheel"
+              ],
+              "native_report": "specs/003-add-cross-platform-support/evidence/ubuntu2204-native-2026-10-27/ubuntu2004-glibc/raw/application/application-3.12.json.gz",
+              "native_report_sha256": "c561be451089c453fc40689ef153368228ef2671c08846fcc91afeee88be6c0b",
+              "uncompressed_report_sha256": "30f92f1be2d024166905022ab6bce7077a58c4417798b18b17683ac3a1209b7c",
+              "nested_review": {
+                "path": "specs/003-add-cross-platform-support/evidence/ubuntu2204-native-2026-10-27/nested-recovery.json",
+                "sha256": "a4cf23cc65a56fdd525305161f21676fb255d7cc12bc41a421f9bed4881c37ad"
+              },
+              "recovery_scenario_executions": 16,
+              "offline_reference_executions_after_recovery": 96,
+              "dot_executions": 389,
+              "syscall_network_observation": true,
+              "native_network_syscalls": {},
+              "pending": [
+                "Final qualified distributed candidate",
+                "Pro/ESM eligibility and complete cell acceptance"
+              ]
+            }
+          ]
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "partial-native-observation",
+          "evidence": {
+            "path": "specs/003-add-cross-platform-support/evidence/ubuntu2604-native-2026-10-27/summary.json",
+            "sha256": "303139a5efd2a82267fb0d7f7f2786aebd15302d9b5bd03b07c6308a78be6835",
+            "application_revision": "96f765bb19e30536d505fe875fa57b52622cb336",
+            "scope": "Native Ubuntu x64 KVM installed private wheel; primary and nested recovery/process suites",
+            "package_modes": [
+              "wheel"
+            ],
+            "native_report": "specs/003-add-cross-platform-support/evidence/ubuntu2604-native-2026-10-27/ubuntu2004-glibc/raw/application/application-3.14.json.gz",
+            "native_report_sha256": "5dab6f5bf59ddded20cc6472dd9eb1cf72e55150ec1b75cd0ccacdd87846026a",
+            "uncompressed_report_sha256": "8f1cfaf82fe8318d6c017b748fd63f4f413aea1a8fc13082d7345387941029e3",
+            "nested_review": {
+              "path": "specs/003-add-cross-platform-support/evidence/ubuntu2604-native-2026-10-27/nested-recovery.json",
+              "sha256": "0e2192af76c8ee6adc7f364a54822e27b68a49bf30069583bea9c35f17b44857"
+            },
+            "recovery_scenario_executions": 16,
+            "offline_reference_executions_after_recovery": 96,
+            "dot_executions": 389,
+            "syscall_network_observation": true,
+            "native_network_syscalls": {},
+            "pending": [
+              "Final qualified distributed candidate",
+              "Pro/ESM eligibility and complete cell acceptance"
+            ]
+          },
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending",
+          "earlier_evidence": [
+            {
+              "path": "specs/003-add-cross-platform-support/evidence/ubuntu2004-native-2026-10-27/summary.json",
+              "sha256": "14bb87d24c5a06658d50664c7d6dcbb319ca60b768ae0d74d218849e2b632d9d",
+              "application_revision": "1c556872f4b74af61038ff53acac382ab1eb368a",
+              "scope": "Native Ubuntu x64 KVM installed private wheel; primary and nested recovery/process suites",
+              "package_modes": [
+                "wheel"
+              ],
+              "native_report": "specs/003-add-cross-platform-support/evidence/ubuntu2004-native-2026-10-27/ubuntu2004-glibc/raw/application/application-3.14.json.gz",
+              "native_report_sha256": "89efe34382596d1a601d1886fe9779adf0f87b3f1361ae31e7917e5bf45d4966",
+              "uncompressed_report_sha256": "cc639d0ed1d35abc79df80dddd8443e7c89d785d7014687e8f3d1a12552aff59",
+              "nested_review": {
+                "path": "specs/003-add-cross-platform-support/evidence/ubuntu2004-native-2026-10-27/nested-recovery.json",
+                "sha256": "4bd77f1edffafb32e88c1f6df2ece88bd6e399a5173976dc0a20a0f1abc72d9d"
+              },
+              "recovery_scenario_executions": 16,
+              "offline_reference_executions_after_recovery": 96,
+              "dot_executions": 389,
+              "syscall_network_observation": true,
+              "native_network_syscalls": {},
+              "pending": [
+                "Final qualified distributed candidate",
+                "Pro/ESM eligibility and complete cell acceptance"
+              ]
+            },
+            {
+              "path": "specs/003-add-cross-platform-support/evidence/ubuntu2204-native-2026-10-27/summary.json",
+              "sha256": "a2cf581eff0c08625cc12b9d07398cb14c9f6ade0329dd45605c3abdcb6f54cc",
+              "application_revision": "3e7a27e599050776fdacde7f480238e79d22d772",
+              "scope": "Native Ubuntu x64 KVM installed private wheel; primary and nested recovery/process suites",
+              "package_modes": [
+                "wheel"
+              ],
+              "native_report": "specs/003-add-cross-platform-support/evidence/ubuntu2204-native-2026-10-27/ubuntu2004-glibc/raw/application/application-3.14.json.gz",
+              "native_report_sha256": "ffbcedfeabe99f7ec17225f881520f1cb17ccaca478774d89f1e66d6320259aa",
+              "uncompressed_report_sha256": "0156e47ed4dfaf7e001d7a62f33ed3052c03ed5f3c26c3b5ba98a78070e6a50a",
+              "nested_review": {
+                "path": "specs/003-add-cross-platform-support/evidence/ubuntu2204-native-2026-10-27/nested-recovery.json",
+                "sha256": "a4cf23cc65a56fdd525305161f21676fb255d7cc12bc41a421f9bed4881c37ad"
+              },
+              "recovery_scenario_executions": 16,
+              "offline_reference_executions_after_recovery": 96,
+              "dot_executions": 389,
+              "syscall_network_observation": true,
+              "native_network_syscalls": {},
+              "pending": [
+                "Final qualified distributed candidate",
+                "Pro/ESM eligibility and complete cell acceptance"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "target_id": "ubuntu-20.04-stable-aarch64-distribution-default",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        }
+      ]
+    },
+    {
+      "target_id": "ubuntu-22.04-stable-x86_64-distribution-default",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "partial-native-observation",
+          "evidence": {
+            "path": "specs/003-add-cross-platform-support/evidence/ubuntu2604-native-2026-10-27/summary.json",
+            "sha256": "303139a5efd2a82267fb0d7f7f2786aebd15302d9b5bd03b07c6308a78be6835",
+            "application_revision": "96f765bb19e30536d505fe875fa57b52622cb336",
+            "scope": "Native Ubuntu x64 KVM installed private wheel; primary and nested recovery/process suites",
+            "package_modes": [
+              "wheel"
+            ],
+            "native_report": "specs/003-add-cross-platform-support/evidence/ubuntu2604-native-2026-10-27/ubuntu2204-glibc/raw/application/application-3.12.json.gz",
+            "native_report_sha256": "a8f3004d6a35bb2b79474366e34e7f39a5b2877ee6610e5eb98d1c927b475f77",
+            "uncompressed_report_sha256": "7758ed1c97231eab87e008320e0132a7215a408bf0c1f1b9852a7741e6459c9d",
+            "nested_review": {
+              "path": "specs/003-add-cross-platform-support/evidence/ubuntu2604-native-2026-10-27/nested-recovery.json",
+              "sha256": "0e2192af76c8ee6adc7f364a54822e27b68a49bf30069583bea9c35f17b44857"
+            },
+            "recovery_scenario_executions": 16,
+            "offline_reference_executions_after_recovery": 96,
+            "dot_executions": 389,
+            "syscall_network_observation": true,
+            "native_network_syscalls": {},
+            "pending": [
+              "Final qualified distributed candidate",
+              "Full cell and Twine acceptance"
+            ]
+          },
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending",
+          "earlier_evidence": [
+            {
+              "path": "specs/003-add-cross-platform-support/evidence/ubuntu2204-native-2026-10-27/summary.json",
+              "sha256": "a2cf581eff0c08625cc12b9d07398cb14c9f6ade0329dd45605c3abdcb6f54cc",
+              "application_revision": "3e7a27e599050776fdacde7f480238e79d22d772",
+              "scope": "Native Ubuntu x64 KVM installed private wheel; primary and nested recovery/process suites",
+              "package_modes": [
+                "wheel"
+              ],
+              "native_report": "specs/003-add-cross-platform-support/evidence/ubuntu2204-native-2026-10-27/ubuntu2204-glibc/raw/application/application-3.12.json.gz",
+              "native_report_sha256": "eebf5758ef8fc7533fcc8b6534335332522dc9382e6d72b2c5ccefd709a14eab",
+              "uncompressed_report_sha256": "40004bd3e2a55125fff67bad4664af3541662dd08acf155ba0dc31ebe31ce2e5",
+              "nested_review": {
+                "path": "specs/003-add-cross-platform-support/evidence/ubuntu2204-native-2026-10-27/nested-recovery.json",
+                "sha256": "a4cf23cc65a56fdd525305161f21676fb255d7cc12bc41a421f9bed4881c37ad"
+              },
+              "recovery_scenario_executions": 16,
+              "offline_reference_executions_after_recovery": 96,
+              "dot_executions": 389,
+              "syscall_network_observation": true,
+              "native_network_syscalls": {},
+              "pending": [
+                "Final qualified distributed candidate",
+                "Pro/ESM eligibility and complete cell acceptance"
+              ]
+            }
+          ]
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "partial-native-observation",
+          "evidence": {
+            "path": "specs/003-add-cross-platform-support/evidence/ubuntu2604-native-2026-10-27/summary.json",
+            "sha256": "303139a5efd2a82267fb0d7f7f2786aebd15302d9b5bd03b07c6308a78be6835",
+            "application_revision": "96f765bb19e30536d505fe875fa57b52622cb336",
+            "scope": "Native Ubuntu x64 KVM installed private wheel; primary and nested recovery/process suites",
+            "package_modes": [
+              "wheel"
+            ],
+            "native_report": "specs/003-add-cross-platform-support/evidence/ubuntu2604-native-2026-10-27/ubuntu2204-glibc/raw/application/application-3.14.json.gz",
+            "native_report_sha256": "f7deb311de201534bc8856599e4a0d467d6fba542f1b0f7290be35fd3766c238",
+            "uncompressed_report_sha256": "324e8868826b786878a86a651c9f7d488f5b061c3d4082b2194b35460efbc566",
+            "nested_review": {
+              "path": "specs/003-add-cross-platform-support/evidence/ubuntu2604-native-2026-10-27/nested-recovery.json",
+              "sha256": "0e2192af76c8ee6adc7f364a54822e27b68a49bf30069583bea9c35f17b44857"
+            },
+            "recovery_scenario_executions": 16,
+            "offline_reference_executions_after_recovery": 96,
+            "dot_executions": 389,
+            "syscall_network_observation": true,
+            "native_network_syscalls": {},
+            "pending": [
+              "Final qualified distributed candidate",
+              "Full cell and Twine acceptance"
+            ]
+          },
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending",
+          "earlier_evidence": [
+            {
+              "path": "specs/003-add-cross-platform-support/evidence/ubuntu2204-native-2026-10-27/summary.json",
+              "sha256": "a2cf581eff0c08625cc12b9d07398cb14c9f6ade0329dd45605c3abdcb6f54cc",
+              "application_revision": "3e7a27e599050776fdacde7f480238e79d22d772",
+              "scope": "Native Ubuntu x64 KVM installed private wheel; primary and nested recovery/process suites",
+              "package_modes": [
+                "wheel"
+              ],
+              "native_report": "specs/003-add-cross-platform-support/evidence/ubuntu2204-native-2026-10-27/ubuntu2204-glibc/raw/application/application-3.14.json.gz",
+              "native_report_sha256": "6ab0036c6325512a456c2ebfa617d362afad0f62839ce722d73f2aed037ab8b1",
+              "uncompressed_report_sha256": "0d3d842b6a9e47c5da6d64c11cf8a7b374a11dd20494899121fae2f654fa4980",
+              "nested_review": {
+                "path": "specs/003-add-cross-platform-support/evidence/ubuntu2204-native-2026-10-27/nested-recovery.json",
+                "sha256": "a4cf23cc65a56fdd525305161f21676fb255d7cc12bc41a421f9bed4881c37ad"
+              },
+              "recovery_scenario_executions": 16,
+              "offline_reference_executions_after_recovery": 96,
+              "dot_executions": 389,
+              "syscall_network_observation": true,
+              "native_network_syscalls": {},
+              "pending": [
+                "Final qualified distributed candidate",
+                "Pro/ESM eligibility and complete cell acceptance"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "target_id": "ubuntu-22.04-stable-aarch64-distribution-default",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        }
+      ]
+    },
+    {
+      "target_id": "ubuntu-24.04-stable-x86_64-distribution-default",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "partial-native-observation",
+          "evidence": {
+            "path": "specs/003-add-cross-platform-support/evidence/installed-posix-processes-2026-10-20/runtime/ubuntu-24.04-3.12.json",
+            "sha256": "032bdde06b51b62ddc2e6e49946444c7a2fc3309f6e0820c8f4f20b2040dbe57",
+            "application_revision": "eea100c37599517e09b6626d1edb82b599a1b19c",
+            "scope": "Private installed wheel/sdist: four failed repairs, three real process exits and two-worker first use",
+            "package_modes": [
+              "wheel",
+              "sdist"
+            ],
+            "scenarios_per_format": 8,
+            "offline_references_per_format": 48,
+            "failed_repairs_per_format": 4,
+            "crashes_per_format": 3,
+            "concurrent_first_use_per_format": 1,
+            "syscall_network_observation": false,
+            "controlled_injections": [
+              "transfer",
+              "ENOSPC",
+              "corrupt archive",
+              "os._exit at production checkpoints"
+            ],
+            "real_operations": [
+              "Native engine",
+              "OS locks",
+              "chmod/exec permission denial",
+              "Two processes ready at start barrier",
+              "Previous handle reused",
+              "Orphan bytes/modes preserved"
+            ],
+            "pending": [
+              "Final qualified distributed candidate",
+              "Canonical cell environment and full acceptance"
+            ]
+          },
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "partial-native-observation",
+          "evidence": {
+            "path": "specs/003-add-cross-platform-support/evidence/installed-posix-processes-2026-10-20/runtime/ubuntu-24.04-3.14.json",
+            "sha256": "fb83e22e267b199aee6542b4013adf6d5f8e7d75ff6bbe0f7567f7cbc92611ec",
+            "application_revision": "eea100c37599517e09b6626d1edb82b599a1b19c",
+            "scope": "Private installed wheel/sdist: four failed repairs, three real process exits and two-worker first use",
+            "package_modes": [
+              "wheel",
+              "sdist"
+            ],
+            "scenarios_per_format": 8,
+            "offline_references_per_format": 48,
+            "failed_repairs_per_format": 4,
+            "crashes_per_format": 3,
+            "concurrent_first_use_per_format": 1,
+            "syscall_network_observation": false,
+            "controlled_injections": [
+              "transfer",
+              "ENOSPC",
+              "corrupt archive",
+              "os._exit at production checkpoints"
+            ],
+            "real_operations": [
+              "Native engine",
+              "OS locks",
+              "chmod/exec permission denial",
+              "Two processes ready at start barrier",
+              "Previous handle reused",
+              "Orphan bytes/modes preserved"
+            ],
+            "pending": [
+              "Final qualified distributed candidate",
+              "Canonical cell environment and full acceptance"
+            ]
+          },
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        }
+      ]
+    },
+    {
+      "target_id": "ubuntu-24.04-stable-aarch64-distribution-default",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "partial-native-observation",
+          "evidence": {
+            "path": "specs/003-add-cross-platform-support/evidence/installed-posix-processes-2026-10-20/runtime/ubuntu-24.04-arm-3.12.json",
+            "sha256": "0840bc9cbe0b17f8cc155907c9cb9717235eea88f1fa0b7009b95fbd4954e025",
+            "application_revision": "eea100c37599517e09b6626d1edb82b599a1b19c",
+            "scope": "Private installed wheel/sdist: four failed repairs, three real process exits and two-worker first use",
+            "package_modes": [
+              "wheel",
+              "sdist"
+            ],
+            "scenarios_per_format": 8,
+            "offline_references_per_format": 48,
+            "failed_repairs_per_format": 4,
+            "crashes_per_format": 3,
+            "concurrent_first_use_per_format": 1,
+            "syscall_network_observation": false,
+            "controlled_injections": [
+              "transfer",
+              "ENOSPC",
+              "corrupt archive",
+              "os._exit at production checkpoints"
+            ],
+            "real_operations": [
+              "Native engine",
+              "OS locks",
+              "chmod/exec permission denial",
+              "Two processes ready at start barrier",
+              "Previous handle reused",
+              "Orphan bytes/modes preserved"
+            ],
+            "pending": [
+              "Final qualified distributed candidate",
+              "Canonical cell environment and full acceptance"
+            ]
+          },
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "partial-native-observation",
+          "evidence": {
+            "path": "specs/003-add-cross-platform-support/evidence/installed-posix-processes-2026-10-20/runtime/ubuntu-24.04-arm-3.14.json",
+            "sha256": "aaf3ae3508185f253029b053a876056b934e1225c2597ff076829df9ec76a9fd",
+            "application_revision": "eea100c37599517e09b6626d1edb82b599a1b19c",
+            "scope": "Private installed wheel/sdist: four failed repairs, three real process exits and two-worker first use",
+            "package_modes": [
+              "wheel",
+              "sdist"
+            ],
+            "scenarios_per_format": 8,
+            "offline_references_per_format": 48,
+            "failed_repairs_per_format": 4,
+            "crashes_per_format": 3,
+            "concurrent_first_use_per_format": 1,
+            "syscall_network_observation": false,
+            "controlled_injections": [
+              "transfer",
+              "ENOSPC",
+              "corrupt archive",
+              "os._exit at production checkpoints"
+            ],
+            "real_operations": [
+              "Native engine",
+              "OS locks",
+              "chmod/exec permission denial",
+              "Two processes ready at start barrier",
+              "Previous handle reused",
+              "Orphan bytes/modes preserved"
+            ],
+            "pending": [
+              "Final qualified distributed candidate",
+              "Canonical cell environment and full acceptance"
+            ]
+          },
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        }
+      ]
+    },
+    {
+      "target_id": "ubuntu-26.04-stable-x86_64-distribution-default",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "partial-native-observation",
+          "evidence": {
+            "path": "specs/003-add-cross-platform-support/evidence/ubuntu2604-native-2026-10-27/summary.json",
+            "sha256": "303139a5efd2a82267fb0d7f7f2786aebd15302d9b5bd03b07c6308a78be6835",
+            "application_revision": "96f765bb19e30536d505fe875fa57b52622cb336",
+            "scope": "Native Ubuntu x64 KVM installed private wheel; primary and nested recovery/process suites",
+            "package_modes": [
+              "wheel"
+            ],
+            "native_report": "specs/003-add-cross-platform-support/evidence/ubuntu2604-native-2026-10-27/ubuntu2604-glibc/raw/application/application-3.12.json.gz",
+            "native_report_sha256": "1917ff32198ecaa02e9d5ada2303055f3d1646ebcf2225f7bccbdb79419e56dd",
+            "uncompressed_report_sha256": "7f800e7042a648774499879e3fc8d40f3f032e19ad7d1c5b981a8a2f01b5fa5b",
+            "nested_review": {
+              "path": "specs/003-add-cross-platform-support/evidence/ubuntu2604-native-2026-10-27/nested-recovery.json",
+              "sha256": "0e2192af76c8ee6adc7f364a54822e27b68a49bf30069583bea9c35f17b44857"
+            },
+            "recovery_scenario_executions": 16,
+            "offline_reference_executions_after_recovery": 96,
+            "dot_executions": 389,
+            "syscall_network_observation": true,
+            "native_network_syscalls": {},
+            "pending": [
+              "Final qualified distributed candidate",
+              "Full cell and Twine acceptance"
+            ]
+          },
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "partial-native-observation",
+          "evidence": {
+            "path": "specs/003-add-cross-platform-support/evidence/ubuntu2604-native-2026-10-27/summary.json",
+            "sha256": "303139a5efd2a82267fb0d7f7f2786aebd15302d9b5bd03b07c6308a78be6835",
+            "application_revision": "96f765bb19e30536d505fe875fa57b52622cb336",
+            "scope": "Native Ubuntu x64 KVM installed private wheel; primary and nested recovery/process suites",
+            "package_modes": [
+              "wheel"
+            ],
+            "native_report": "specs/003-add-cross-platform-support/evidence/ubuntu2604-native-2026-10-27/ubuntu2604-glibc/raw/application/application-3.14.json.gz",
+            "native_report_sha256": "3d7020323af643e09f30858e8e12ad7031bd47a08380f3b4f97686b24fefd47d",
+            "uncompressed_report_sha256": "98d2483e430b275bcb220a7795b0401a1e314a94daf8da16010a341cd1f95695",
+            "nested_review": {
+              "path": "specs/003-add-cross-platform-support/evidence/ubuntu2604-native-2026-10-27/nested-recovery.json",
+              "sha256": "0e2192af76c8ee6adc7f364a54822e27b68a49bf30069583bea9c35f17b44857"
+            },
+            "recovery_scenario_executions": 16,
+            "offline_reference_executions_after_recovery": 96,
+            "dot_executions": 389,
+            "syscall_network_observation": true,
+            "native_network_syscalls": {},
+            "pending": [
+              "Final qualified distributed candidate",
+              "Full cell and Twine acceptance"
+            ]
+          },
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        }
+      ]
+    },
+    {
+      "target_id": "ubuntu-26.04-stable-aarch64-distribution-default",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        }
+      ]
+    },
+    {
+      "target_id": "ubuntu-26.10-stable-x86_64-distribution-default",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        }
+      ]
+    },
+    {
+      "target_id": "ubuntu-26.10-stable-aarch64-distribution-default",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        }
+      ]
+    },
+    {
+      "target_id": "debian-12-stable-x86_64-distribution-default",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        }
+      ]
+    },
+    {
+      "target_id": "debian-12-stable-aarch64-distribution-default",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        }
+      ]
+    },
+    {
+      "target_id": "debian-13-stable-x86_64-distribution-default",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        }
+      ]
+    },
+    {
+      "target_id": "debian-13-stable-aarch64-distribution-default",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        }
+      ]
+    },
+    {
+      "target_id": "fedora-43-stable-x86_64-distribution-default",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        }
+      ]
+    },
+    {
+      "target_id": "fedora-43-stable-aarch64-distribution-default",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        }
+      ]
+    },
+    {
+      "target_id": "fedora-44-stable-x86_64-distribution-default",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        }
+      ]
+    },
+    {
+      "target_id": "fedora-44-stable-aarch64-distribution-default",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        }
+      ]
+    },
+    {
+      "target_id": "rhel-8.10-stable-x86_64-distribution-default",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        }
+      ]
+    },
+    {
+      "target_id": "rhel-8.10-stable-aarch64-distribution-default",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        }
+      ]
+    },
+    {
+      "target_id": "rhel-9.8-stable-x86_64-distribution-default",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        }
+      ]
+    },
+    {
+      "target_id": "rhel-9.8-stable-aarch64-distribution-default",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        }
+      ]
+    },
+    {
+      "target_id": "rhel-10.2-stable-x86_64-distribution-default",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        }
+      ]
+    },
+    {
+      "target_id": "rhel-10.2-stable-aarch64-distribution-default",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        }
+      ]
+    },
+    {
+      "target_id": "rocky-8.10-stable-x86_64-distribution-default",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        }
+      ]
+    },
+    {
+      "target_id": "rocky-8.10-stable-aarch64-distribution-default",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        }
+      ]
+    },
+    {
+      "target_id": "rocky-9.8-stable-x86_64-distribution-default",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        }
+      ]
+    },
+    {
+      "target_id": "rocky-9.8-stable-aarch64-distribution-default",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        }
+      ]
+    },
+    {
+      "target_id": "rocky-10.2-stable-x86_64-distribution-default",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        }
+      ]
+    },
+    {
+      "target_id": "rocky-10.2-stable-aarch64-distribution-default",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        }
+      ]
+    },
+    {
+      "target_id": "almalinux-8.10-stable-x86_64-distribution-default",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        }
+      ]
+    },
+    {
+      "target_id": "almalinux-8.10-stable-aarch64-distribution-default",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        }
+      ]
+    },
+    {
+      "target_id": "almalinux-9.8-stable-x86_64-distribution-default",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        }
+      ]
+    },
+    {
+      "target_id": "almalinux-9.8-stable-aarch64-distribution-default",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        }
+      ]
+    },
+    {
+      "target_id": "almalinux-10.2-stable-x86_64-distribution-default",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        }
+      ]
+    },
+    {
+      "target_id": "almalinux-10.2-stable-x86_64-x86-64-v2",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        }
+      ]
+    },
+    {
+      "target_id": "almalinux-10.2-stable-aarch64-distribution-default",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        }
+      ]
+    },
+    {
+      "target_id": "opensuse-leap-16.0-stable-x86_64-distribution-default",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        }
+      ]
+    },
+    {
+      "target_id": "opensuse-leap-16.0-stable-aarch64-distribution-default",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        }
+      ]
+    },
+    {
+      "target_id": "opensuse-tumbleweed-rolling-tumbleweed-x86_64-distribution-default",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        }
+      ]
+    },
+    {
+      "target_id": "opensuse-tumbleweed-rolling-tumbleweed-aarch64-distribution-default",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        }
+      ]
+    },
+    {
+      "target_id": "arch-rolling-rolling-x86_64-distribution-default",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        }
+      ]
+    },
+    {
+      "target_id": "archarm-rolling-rolling-aarch64-distribution-default",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        }
+      ]
+    },
+    {
+      "target_id": "manjaro-rolling-stable-x86_64-distribution-default",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        }
+      ]
+    },
+    {
+      "target_id": "manjaro-rolling-stable-aarch64-distribution-default",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        }
+      ]
+    },
+    {
+      "target_id": "alpine-3.21-stable-x86_64-distribution-default",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        }
+      ]
+    },
+    {
+      "target_id": "alpine-3.21-stable-aarch64-distribution-default",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        }
+      ]
+    },
+    {
+      "target_id": "alpine-3.22-stable-x86_64-distribution-default",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        }
+      ]
+    },
+    {
+      "target_id": "alpine-3.22-stable-aarch64-distribution-default",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        }
+      ]
+    },
+    {
+      "target_id": "alpine-3.23-stable-x86_64-distribution-default",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        }
+      ]
+    },
+    {
+      "target_id": "alpine-3.23-stable-aarch64-distribution-default",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        }
+      ]
+    },
+    {
+      "target_id": "alpine-3.24-stable-x86_64-distribution-default",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        }
+      ]
+    },
+    {
+      "target_id": "alpine-3.24-stable-aarch64-distribution-default",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        }
+      ]
+    },
+    {
+      "target_id": "postmarketos-26.06-stable-x86_64-distribution-default",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        }
+      ]
+    },
+    {
+      "target_id": "postmarketos-26.06-stable-aarch64-distribution-default",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        }
+      ]
+    },
+    {
+      "target_id": "linuxmint-21-stable-x86_64-distribution-default",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        }
+      ]
+    },
+    {
+      "target_id": "linuxmint-21.1-stable-x86_64-distribution-default",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        }
+      ]
+    },
+    {
+      "target_id": "linuxmint-21.2-stable-x86_64-distribution-default",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        }
+      ]
+    },
+    {
+      "target_id": "linuxmint-21.3-stable-x86_64-distribution-default",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        }
+      ]
+    },
+    {
+      "target_id": "linuxmint-22-stable-x86_64-distribution-default",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        }
+      ]
+    },
+    {
+      "target_id": "linuxmint-22.1-stable-x86_64-distribution-default",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        }
+      ]
+    },
+    {
+      "target_id": "linuxmint-22.2-stable-x86_64-distribution-default",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        }
+      ]
+    },
+    {
+      "target_id": "linuxmint-22.3-stable-x86_64-distribution-default",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        }
+      ]
+    },
+    {
+      "target_id": "linuxmint-lmde-7-stable-x86_64-distribution-default",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        }
+      ]
+    }
+  ],
+  "previous_index": {
+    "path": "specs/003-add-cross-platform-support/evidence/installed-posix-processes-2026-10-20/previous-recovery-index.json",
+    "sha256": "b23505f4d787ce02d85787704a0fc908e5597484ab9255bf6c9e22be8ef3c2cc"
+  },
+  "current_process_recovery_summary": {
+    "path": "specs/003-add-cross-platform-support/evidence/installed-posix-processes-2026-10-20/runtime/summary.json",
+    "sha256": "c3bf8b4a7094bf949bfcf100b5437982b934fad654869be9c2e4e9ccdc2a044d"
+  },
+  "current_scenarios": 128,
+  "current_offline_reference_executions": 768,
+  "current_installed_format_runs": 16,
+  "current_ubuntu1804_summary": {
+    "path": "specs/003-add-cross-platform-support/evidence/ubuntu1804-process-driver-2026-10-20/summary.json",
+    "sha256": "aa31fc2b66ecca84d322fc43565316617253e3f64cfc086a607a324cabbd313f"
+  },
+  "current_counts_scope": "128 scenarios / 768 references cover hosted Ubuntu 24.04 and macOS wheel/sdist only; KVM baseline recorded separately",
+  "native_ubuntu_update": {
+    "path": "specs/003-add-cross-platform-support/evidence/ubuntu2604-native-2026-10-27/summary.json",
+    "sha256": "303139a5efd2a82267fb0d7f7f2786aebd15302d9b5bd03b07c6308a78be6835"
+  },
+  "nested_native_ubuntu_update": {
+    "path": "specs/003-add-cross-platform-support/evidence/ubuntu2604-native-2026-10-27/nested-recovery.json",
+    "sha256": "0e2192af76c8ee6adc7f364a54822e27b68a49bf30069583bea9c35f17b44857"
+  },
+  "previous_native_ubuntu_index": {
+    "path": "specs/003-add-cross-platform-support/evidence/ubuntu2604-native-2026-10-27/previous-recovery.json",
+    "sha256": "ce434f2da3ecb6e25bcd908abfd5ebb0fd1208bc2debf2f9d1ac8cff6b9c37e0"
+  }
+}

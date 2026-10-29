@@ -1,0 +1,96 @@
+{
+  "application_revision": "13fc2a8d48f89a0fd85f4312a38f822b3796e314",
+  "run_url": "https://github.com/Extremois/desembaraca-twine/actions/runs/40686184930",
+  "qualified": false,
+  "reports": [
+    {
+      "actions_artifact_id": 12815546157,
+      "name": "installed-engine-macos-15-3.12-13fc2a8d48f89a0fd85f4312a38f822b3796e314",
+      "report": "12815546157.json.gz",
+      "raw_sha256": "5de9eb96421a09bf1b75fdd175c855abd1c9d39daaecc647b2c4d9aafcab0b52",
+      "archive_sha256": "2ac61dfd1b4aca9158c72ee47fa22e932f413c8445792beecfa5862826b7f205",
+      "system": "Darwin",
+      "arch": "arm64",
+      "python": "3.12.10"
+    },
+    {
+      "actions_artifact_id": 12815201627,
+      "name": "installed-engine-ubuntu-24.04-arm-3.12-13fc2a8d48f89a0fd85f4312a38f822b3796e314",
+      "report": "12815201627.json.gz",
+      "raw_sha256": "1d70a89ce2bfe7b374d0ef17966893fb094d8e972a545a2f039b07bc7a163aec",
+      "archive_sha256": "f3108baa2b171594f3a4dd41e426e21eff1d820f3eb1737b6f06f5a4d6e7580e",
+      "system": "Linux",
+      "arch": "aarch64",
+      "python": "3.12.15"
+    },
+    {
+      "actions_artifact_id": 12815027105,
+      "name": "installed-engine-ubuntu-24.04-3.14-13fc2a8d48f89a0fd85f4312a38f822b3796e314",
+      "report": "12815027105.json.gz",
+      "raw_sha256": "acbef417bcd0a65175cb97e30044755f1ff568520670551efb149fe725cc13b4",
+      "archive_sha256": "1783b07b7df72fe0a2ee6e5461845c000954181d9e288176385de0b5a66d7fc7",
+      "system": "Linux",
+      "arch": "x86_64",
+      "python": "3.14.9"
+    },
+    {
+      "actions_artifact_id": 12814912574,
+      "name": "installed-engine-ubuntu-24.04-3.12-13fc2a8d48f89a0fd85f4312a38f822b3796e314",
+      "report": "12814912574.json.gz",
+      "raw_sha256": "369b0c76082cc2aa86cc842f987c4470e6dd6dda1e3ef6e1643d324a84fd8282",
+      "archive_sha256": "66fd2e5a6a744184a56612bb0db300b79efa4f223fd7f80147135b9e0ed70d16",
+      "system": "Linux",
+      "arch": "x86_64",
+      "python": "3.12.15"
+    },
+    {
+      "actions_artifact_id": 12814868370,
+      "name": "installed-engine-macos-15-intel-3.12-13fc2a8d48f89a0fd85f4312a38f822b3796e314",
+      "report": "12814868370.json.gz",
+      "raw_sha256": "f4148c4b2970031ecf6258ee027cbb607e52f4a39698281d48af9ac991fba63a",
+      "archive_sha256": "dfbb7f16337859ab4e052b3b469f1de23f6bfa7a14a832cdae78f4192e985cc2",
+      "system": "Darwin",
+      "arch": "x86_64",
+      "python": "3.12.10"
+    },
+    {
+      "actions_artifact_id": 12814837427,
+      "name": "installed-engine-macos-15-3.14-13fc2a8d48f89a0fd85f4312a38f822b3796e314",
+      "report": "12814837427.json.gz",
+      "raw_sha256": "f7a9773e4c2bac5db2d4b22edb0499a5c77059b1f80e9bedcf3f54614fa53ca0",
+      "archive_sha256": "fec4e2de6fd661a5eaca82784181269205f1c477c33f6f051407dfdcfd5a66e4",
+      "system": "Darwin",
+      "arch": "arm64",
+      "python": "3.14.7"
+    },
+    {
+      "actions_artifact_id": 12814763678,
+      "name": "installed-engine-ubuntu-24.04-arm-3.14-13fc2a8d48f89a0fd85f4312a38f822b3796e314",
+      "report": "12814763678.json.gz",
+      "raw_sha256": "54decdfd97cdbf0fb80a20cdcbdf37c3470d32af28ae5511c8a750699f175567",
+      "archive_sha256": "25c9bad4347d9a74d1347178632ec8d9a020b5b7755519379424df781d2d1658",
+      "system": "Linux",
+      "arch": "aarch64",
+      "python": "3.14.9"
+    },
+    {
+      "actions_artifact_id": 12814569685,
+      "name": "installed-engine-macos-15-intel-3.14-13fc2a8d48f89a0fd85f4312a38f822b3796e314",
+      "report": "12814569685.json.gz",
+      "raw_sha256": "20b161027967416b8e0518ef34d04948859dfc9ecd8e76148f6a7e39bdf1c0b3",
+      "archive_sha256": "a3b08ac8624b72febc03a6995efad1a63b69831896ff78e6cf6df718f67a33a2",
+      "system": "Darwin",
+      "arch": "x86_64",
+      "python": "3.14.7"
+    }
+  ],
+  "installations": 16,
+  "corpus_executions": 208,
+  "known_zero_reference_executions": 96,
+  "installed_files_verified_per_mode": 53,
+  "limitations": [
+    "Controlled acquisition transport",
+    "Python-only network guards",
+    "No license or immutable public delivery acceptance"
+  ]
+}

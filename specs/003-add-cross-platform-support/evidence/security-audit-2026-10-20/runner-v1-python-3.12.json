@@ -1,0 +1,302 @@
+{
+  "kind": "application-security-contracts-not-native-support-qualification",
+  "passed": true,
+  "application_revision": "58f69b0bfc8675b2d6cd6bc23f318ec2349965b4",
+  "source_state": "working-tree-content-addressed",
+  "python": "3.12.10",
+  "implementation": "CPython",
+  "host": {
+    "system": "Windows",
+    "release": "11",
+    "machine": "AMD64"
+  },
+  "tests": 59,
+  "skipped": 4,
+  "seconds": 17.484,
+  "failed": 0,
+  "errors": 0,
+  "source_sha256": {
+    "src/twine_edge_overlap/__init__.py": "cee6e390d73f349b5b05bc4b2f9501f20e0ff761a7e27a60c95255115bc59b82",
+    "src/twine_edge_overlap/__main__.py": "482b8693e2fe6dbd732e3d7961e03827d3efa187bad11d29da188be580ebbeea",
+    "src/twine_edge_overlap/application.py": "e011ebe5ef1ab4a980238dd62b8ea1d950d4aac6172d9d2e5764a24bd226f3bd",
+    "src/twine_edge_overlap/cli.py": "8eabe90bc4f1b05dd33d46327b7c17bc9fa4eff5936f54360a9d71188a27c652",
+    "src/twine_edge_overlap/domain/__init__.py": "a756b6c72ddc6b46896c1901cddd723783adaef53e3b7d0d966e534df0ea26f3",
+    "src/twine_edge_overlap/domain/arcs.py": "72311c1e6938d33b8f1b03181323e5b32f484edbd5d2946b017a77644bdff28c",
+    "src/twine_edge_overlap/domain/geometry.py": "f88a67b9d9a4fff55edf4c709532619af0f87aebf5d0cd6bc6d60b0fb59cac48",
+    "src/twine_edge_overlap/domain/model.py": "0d82e3f3e0dd120df53f366ae1ddda129146f222f7ee3f01a7c06fbb18610a80",
+    "src/twine_edge_overlap/domain/result.py": "57697cfc3b7c629887200f9db54ccae63e19e4a1a109337639741038fbd4a546",
+    "src/twine_edge_overlap/domain/selection.py": "e6fc14964e95a40297057328574eee4bf548fc2f54a4bd250d0db6269293dc8f",
+    "src/twine_edge_overlap/engines/__init__.py": "60e046e374519cf1363b2d3546343673818d00c85278ad1c8c8c3651927719a3",
+    "src/twine_edge_overlap/engines/graphviz.py": "218dd40b9de3f78394286f96003a2f0aec3e7ef08955ce81479c1b319426a2a6",
+    "src/twine_edge_overlap/engines/process.py": "54219fb40a6c2f8a7db034f8454c9d31b77fd63ede38e09639ae7404fd7f7d81",
+    "src/twine_edge_overlap/errors.py": "4248a22e72943410bb1133206126ab096d143cbfd7b4b2314f994b847185c8cf",
+    "src/twine_edge_overlap/files.py": "301a50479ae75488263c4f966f1eb5299ddd5b65aad4280f52df0ccc55869186",
+    "src/twine_edge_overlap/formats/__init__.py": "54d6ee8fd9b5d60bf5227f761cbee4de07caf987e57c57657bc4454c96602f61",
+    "src/twine_edge_overlap/formats/profile.py": "14ca026f83b79ac01afb92d314ab6fa9cb6902c1ad11470e6cc57244398187e4",
+    "src/twine_edge_overlap/runtime.py": "f595f4980bf6d5c6183d6237a79f01bb432f55e95ad2a3513360538ae7948593",
+    "src/twine_edge_overlap/runtime_catalog.py": "b8242eafe9ac685a885cb9747d8e2354aa7153b8c3dee51614ae6a2628ffa21d",
+    "src/twine_edge_overlap/runtime_platform.py": "54e012b864639301f5b010e888bc6e1c48f146ef6f3ae44fcb6c37f585da8016",
+    "src/twine_edge_overlap/runtime_snapshot.py": "7ac51812ecf2bd9ef38031324425a40104eec9ad3c582a2292eb2d972f4f8c9e",
+    "tests/run_security_audit.py": "49cfedeeaa9123aec1b76ae8c2d7a79b31c68f4f3ca97073655deba264f31d29",
+    "tests/unit/test_security_limits.py": "90fc273806d799f6ff222c90274ca8efb52d129338d7c5b64eb3e5620a531fed",
+    "tests/unit/test_runtime_archives.py": "60d5d4b4ae77a90b785b2bbfb11f900b499ca5686da37b54c344a0f75b78f407",
+    "tests/unit/test_runtime_posix.py": "8f775089dcb4648103e6bd5e5579455e8f053c16d544d65c890b729ce0bccebd",
+    "tests/unit/test_runtime_snapshot.py": "b06ccd0d0d6bcd17f6ec195dc1fd1d0856a932390d346d004e209f46175154be",
+    "tests/unit/test_runtime_platform.py": "c5324faac2604353bfbb046a11e7dd065f26121d149b0bc0641b03919674cbde",
+    "tests/unit/test_runtime_repair.py": "94f95dbd3785c605df866bd1cf4d05e86cb996ee611043d63709253452c7d652",
+    "tests/integration/test_runtime_budget.py": "66e6426a177b1ff478503a58bde541faf5f2a7782069ac43e871d1138e519d9f",
+    "tests/integration/test_runtime_concurrency.py": "d2bc64d0c9a35cc9c8235bdbc55a08afc19303c2e6029647d320942fb4c0a556",
+    "tests/integration/test_runtime_recovery.py": "694491ad1dd6c845c8d74b92bddc0bc34cf9410de891221e3774b1b02c4b35ac",
+    "tests/integration/test_runtime_crash.py": "6edd21ec329f267892a57e1323252b8cf43dac7add72891f1c6082e767d02235",
+    "tests/contract/test_cross_platform_results.py": "49b18c74884b100f90a03678b55f5405d56f3170db565e071f5fe4e282fcbb3a"
+  },
+  "source_unchanged": true,
+  "parent_environment_and_cwd_restored": true,
+  "observations": [
+    {
+      "test": "unit.test_security_limits.SecurityLimitsTests.test_acquisition_request_and_probe_do_not_include_story_or_parent_secrets",
+      "outcome": "passed"
+    },
+    {
+      "test": "unit.test_security_limits.SecurityLimitsTests.test_dot_contains_only_generated_ids_dimensions_and_edges",
+      "outcome": "passed"
+    },
+    {
+      "test": "unit.test_security_limits.SecurityLimitsTests.test_expired_preparation_cannot_acquire_or_select_a_generation",
+      "outcome": "passed"
+    },
+    {
+      "test": "unit.test_security_limits.SecurityLimitsTests.test_identity_file_is_bounded_and_rolling_never_receives_parent_env",
+      "outcome": "passed"
+    },
+    {
+      "test": "unit.test_security_limits.SecurityLimitsTests.test_loader_and_graphviz_overrides_are_not_inherited_on_any_os",
+      "outcome": "passed"
+    },
+    {
+      "test": "unit.test_security_limits.SecurityLimitsTests.test_production_runner_enforces_combined_default_output_limit",
+      "outcome": "passed"
+    },
+    {
+      "test": "unit.test_security_limits.SecurityLimitsTests.test_production_runner_stops_a_real_child_at_deadline",
+      "outcome": "passed"
+    },
+    {
+      "test": "unit.test_runtime_archives.ArchiveSafetyTests.test_expanded_stream_bytes_cannot_exceed_the_pinned_file_size",
+      "outcome": "passed"
+    },
+    {
+      "test": "unit.test_runtime_archives.ArchiveSafetyTests.test_final_origin_is_checked_even_with_custom_transport",
+      "outcome": "passed"
+    },
+    {
+      "test": "unit.test_runtime_archives.ArchiveSafetyTests.test_five_https_redirects_are_allowed_but_sixth_is_rejected",
+      "outcome": "passed"
+    },
+    {
+      "test": "unit.test_runtime_archives.ArchiveSafetyTests.test_received_bytes_are_limited_despite_false_content_length",
+      "outcome": "passed"
+    },
+    {
+      "test": "unit.test_runtime_archives.ArchiveSafetyTests.test_redirect_rejects_downgrade_untrusted_host_and_credentials",
+      "outcome": "passed"
+    },
+    {
+      "test": "unit.test_runtime_archives.ArchiveSafetyTests.test_symlink_and_reparse_member_and_duplicate_case",
+      "outcome": "passed"
+    },
+    {
+      "test": "unit.test_runtime_archives.ArchiveSafetyTests.test_tls_and_http_failures_preserve_the_previous_generation",
+      "outcome": "passed"
+    },
+    {
+      "test": "unit.test_runtime_archives.ArchiveSafetyTests.test_truncated_zip_and_real_transfer_and_expansion_limits",
+      "outcome": "passed"
+    },
+    {
+      "test": "unit.test_runtime_archives.ArchiveSafetyTests.test_unsafe_member_names",
+      "outcome": "passed"
+    },
+    {
+      "test": "unit.test_runtime_posix.PosixRuntimeTests.test_missing_cache_base_is_created_privately_without_changing_parent",
+      "outcome": "skipped",
+      "reason": "POSIX cache creation and mode regression"
+    },
+    {
+      "test": "unit.test_runtime_posix.PosixRuntimeTests.test_modes_tamper_and_internal_symlink_do_not_run_or_escape",
+      "outcome": "skipped",
+      "reason": "POSIX permission and symlink behavior needs POSIX"
+    },
+    {
+      "test": "unit.test_runtime_posix.PosixRuntimeTests.test_posix_identity_includes_abi_build_and_manifest",
+      "outcome": "passed"
+    },
+    {
+      "test": "unit.test_runtime_posix.PosixRuntimeTests.test_private_directories_and_records_do_not_depend_on_umask",
+      "outcome": "skipped",
+      "reason": "POSIX umask and private control-file modes"
+    },
+    {
+      "test": "unit.test_runtime_posix.PosixRuntimeTests.test_schema_two_rejects_privileged_modes_or_nonexecutable_entry",
+      "outcome": "passed"
+    },
+    {
+      "test": "unit.test_runtime_snapshot.SnapshotTests.test_branch_is_data_and_never_assumes_default",
+      "outcome": "passed"
+    },
+    {
+      "test": "unit.test_runtime_snapshot.SnapshotTests.test_malformed_duplicate_and_excess_inventory_rejected",
+      "outcome": "passed"
+    },
+    {
+      "test": "unit.test_runtime_snapshot.SnapshotTests.test_order_independence_and_exact_versions",
+      "outcome": "passed"
+    },
+    {
+      "test": "unit.test_runtime_snapshot.SnapshotTests.test_query_timeout_never_exceeds_budget_after_float_rounding",
+      "outcome": "passed"
+    },
+    {
+      "test": "unit.test_runtime_snapshot.SnapshotTests.test_reference_snapshot_rechecks_identity_and_keeps_labels_out_of_hash",
+      "outcome": "passed"
+    },
+    {
+      "test": "unit.test_runtime_snapshot.SnapshotTests.test_rpm_epoch_normalizes_but_keeps_parallel_versions",
+      "outcome": "passed"
+    },
+    {
+      "test": "unit.test_runtime_snapshot.SnapshotTests.test_time_output_and_record_limits_fail_closed_to_unknown",
+      "outcome": "passed"
+    },
+    {
+      "test": "unit.test_runtime_snapshot.SnapshotTests.test_two_equal_reads_or_unknown_without_network",
+      "outcome": "passed"
+    },
+    {
+      "test": "unit.test_runtime_platform.PlatformTests.test_alma_image_variant_comes_from_bounded_release_package_query",
+      "outcome": "passed"
+    },
+    {
+      "test": "unit.test_runtime_platform.PlatformTests.test_arch_and_data_parser_do_not_execute_shell",
+      "outcome": "passed"
+    },
+    {
+      "test": "unit.test_runtime_platform.PlatformTests.test_cache_ignores_relative_xdg_and_preserves_windows",
+      "outcome": "passed"
+    },
+    {
+      "test": "unit.test_runtime_platform.PlatformTests.test_child_environment_does_not_inherit_loader_overrides",
+      "outcome": "passed"
+    },
+    {
+      "test": "unit.test_runtime_platform.PlatformTests.test_managed_links_rejected_but_trusted_base_can_be_alias",
+      "outcome": "skipped",
+      "reason": "POSIX symlink semantics; covered natively on POSIX"
+    },
+    {
+      "test": "unit.test_runtime_repair.RepairTests.test_cooperative_deadline_during_transfer_preserves_selection",
+      "outcome": "passed"
+    },
+    {
+      "test": "unit.test_runtime_repair.RepairTests.test_existing_junctions_in_cache_selector_and_tree_are_rejected",
+      "outcome": "passed"
+    },
+    {
+      "test": "unit.test_runtime_repair.RepairTests.test_failed_download_or_pointer_swap_preserves_healthy_runtime",
+      "outcome": "passed"
+    },
+    {
+      "test": "unit.test_runtime_repair.RepairTests.test_interruption_at_each_transition_preserves_expected_selection",
+      "outcome": "passed"
+    },
+    {
+      "test": "unit.test_runtime_repair.RepairTests.test_missing_extra_dll_and_false_ready_are_not_accepted",
+      "outcome": "passed"
+    },
+    {
+      "test": "unit.test_runtime_repair.RepairTests.test_permission_space_timeout_and_probe_failures_are_actionable",
+      "outcome": "passed"
+    },
+    {
+      "test": "unit.test_runtime_repair.RepairTests.test_probe_rejections_leave_previous_runtime_usable",
+      "outcome": "passed"
+    },
+    {
+      "test": "unit.test_runtime_repair.RepairTests.test_socket_and_probe_allowances_use_the_remaining_preparation_budget",
+      "outcome": "passed"
+    },
+    {
+      "test": "unit.test_runtime_repair.RepairTests.test_staging_and_pending_cleanup_do_not_follow_external_junctions",
+      "outcome": "passed"
+    },
+    {
+      "test": "unit.test_runtime_repair.RepairTests.test_successful_repair_preserves_previous_handle_and_changes_generation",
+      "outcome": "passed"
+    },
+    {
+      "test": "integration.test_runtime_budget.RuntimeBudgetTests.test_application_prepares_once_and_passes_the_resolved_handle",
+      "outcome": "passed"
+    },
+    {
+      "test": "integration.test_runtime_budget.RuntimeBudgetTests.test_preparation_failure_is_not_baseline_fallback_even_when_clean",
+      "outcome": "passed"
+    },
+    {
+      "test": "integration.test_runtime_budget.RuntimeBudgetTests.test_preparation_is_excluded_but_read_time_stays_consumed",
+      "outcome": "passed"
+    },
+    {
+      "test": "integration.test_runtime_budget.RuntimeBudgetTests.test_snapshot_classification_consumes_processing_allowance",
+      "outcome": "passed"
+    },
+    {
+      "test": "integration.test_runtime_concurrency.ConcurrentRuntimeTests.test_abrupt_exit_before_and_after_selection_is_offline_recoverable",
+      "outcome": "passed"
+    },
+    {
+      "test": "integration.test_runtime_concurrency.ConcurrentRuntimeTests.test_empty_windows_lock_contender_waits_without_writing_locked_byte",
+      "outcome": "passed"
+    },
+    {
+      "test": "integration.test_runtime_concurrency.ConcurrentRuntimeTests.test_lock_wait_is_bounded_and_does_not_stop_owner",
+      "outcome": "passed"
+    },
+    {
+      "test": "integration.test_runtime_concurrency.ConcurrentRuntimeTests.test_two_first_runs_select_same_generation",
+      "outcome": "passed"
+    },
+    {
+      "test": "integration.test_runtime_recovery.PosixRecoveryTests.test_execution_denied_preserves_previous_generation_and_reports_recovery",
+      "outcome": "passed"
+    },
+    {
+      "test": "integration.test_runtime_recovery.PosixRecoveryTests.test_failed_repair_then_offline_reuse_and_successful_retry",
+      "outcome": "passed"
+    },
+    {
+      "test": "integration.test_runtime_crash.RuntimeCrashTests.test_death_during_staging_releases_lock_and_keeps_orphan_untouched",
+      "outcome": "passed"
+    },
+    {
+      "test": "integration.test_runtime_crash.RuntimeCrashTests.test_healthy_reader_and_old_handle_continue_while_repair_holds_lock",
+      "outcome": "passed"
+    },
+    {
+      "test": "contract.test_cross_platform_results.CrossPlatformResultTests.test_byte_node_edge_and_header_limits_precede_acquisition",
+      "outcome": "passed"
+    },
+    {
+      "test": "contract.test_cross_platform_results.CrossPlatformResultTests.test_dependency_failure_and_interrupt_have_no_partial_success",
+      "outcome": "passed"
+    },
+    {
+      "test": "contract.test_cross_platform_results.CrossPlatformResultTests.test_warning_is_independent_of_processing_result_codes",
+      "outcome": "passed"
+    }
+  ],
+  "limitations": [
+    "Controlled runtime transports do not qualify a native engine or distribution",
+    "Skipped POSIX contracts require existing native CI evidence; no inheritance between platforms",
+    "Environment restoration does not by itself prove absence of all global filesystem writes"
+  ]
+}

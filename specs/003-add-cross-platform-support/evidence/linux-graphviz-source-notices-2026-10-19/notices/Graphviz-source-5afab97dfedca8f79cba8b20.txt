@@ -1,0 +1,3 @@
+/// \file
+/// \brief Device that renders using ANSI terminal colors
+
