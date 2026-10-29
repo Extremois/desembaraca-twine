@@ -15,7 +15,7 @@ class ReviewedBundleTests(unittest.TestCase):
         digest=lambda raw:hashlib.sha256(raw).hexdigest()
         with tempfile.TemporaryDirectory() as folder:
             root=Path(folder).resolve();artifact=root/'artifact';artifact.mkdir()
-            provenance=json.dumps(dict(completed=True,artifact_id='linux-glibc-x86_64')).encode()
+            provenance=json.dumps(dict(completed=True,artifact_id='linux-glibc-x86_64',executable_sha256='a'*64)).encode()
             inventory=json.dumps(dict(provenance_sha256=digest(provenance))).encode()
             archive=b'never executed'
             candidate=dict(artifact_id='linux-glibc-x86_64',qualified=False,
