@@ -125,13 +125,17 @@ No macOS 15, use CPython Intel no Mac Intel e arm64 no Apple Silicon; confira co
 [Python para macOS](https://www.python.org/downloads/macos/) são uma origem possível;
 a instalação da ferramenta usa apenas a venv. Reserve 2 GiB, escrita no perfil e
 na pasta da história, e filesystem que permita execução e publicação por hardlink.
-Instalar o pacote requer HTTPS ao GitHub e ao índice Python. Quando houver bundle
-qualificado, prepare com `--prepare-runtime` antes de ficar offline; cache saudável
+Instalar o pacote requer HTTPS ao GitHub e ao índice Python. Os bundles POSIX
+qualificados são obtidos do release público no GitHub, incluindo seus hosts de
+download autorizados. Prepare com `--prepare-runtime` antes de ficar offline; cache saudável
 não tenta rede. `--repair-runtime` requer rede e preserva a geração saudável em falha.
-No macOS, mantenha as proteções normais e use somente a distribuição assinada e
-notarizada quando disponível. Nenhum comando deste guia remove quarentena.
-As origens dos dois Pythons ainda precisam ser ensaiadas por célula da matriz.
-Há um [procedimento parcial de pré-requisitos Linux](specs/003-add-cross-platform-support/evidence/linux-prerequisites.md), ensaiado com instalações privadas dos dois Pythons no WSL; ele não aprova as células nativas.
+No macOS, mantenha as proteções normais. Assinatura Developer ID e notarização
+são opcionais; os bundles publicados não afirmam esses atestados. Nenhum comando
+deste guia remove quarentena ou desativa proteções.
+Os dois Pythons foram exercitados nos sete alvos ABI no GitHub Actions, com
+origem e patch nos [recibos de instalação](specs/003-add-cross-platform-support/evidence/package-installation.json).
+O [procedimento de pré-requisitos Linux](specs/003-add-cross-platform-support/evidence/linux-prerequisites.md)
+também preserva ensaios WSL históricos, que não concedem certificação de distribuição.
 Algumas versões da matriz dependem de elegibilidade gratuita, como Ubuntu Pro ou
 RHEL Developer; isso não é inferido por parentesco entre distribuições nem exige
 enviar credenciais à ferramenta. Consulte as condições na matriz.
@@ -139,11 +143,13 @@ enviar credenciais à ferramenta. Consulte as condições na matriz.
 Um ambiente sem validação pode funcionar em **melhor esforço**, com aviso em
 stderr, quando houver motor tecnicamente compatível. O aviso não muda os códigos
 de resultado. ABI/arquitetura incompatível ou motor ausente impede a execução.
-Em rolling, atualizar pacotes ou kernel pode retirar a correspondência oficial;
-não é preciso reverter atualizações para usar um componente ainda compatível.
+Em rolling, alterar pacotes, canal ou snapshot não retira, por si só, a qualificação
+por ABI. Permanecem as verificações de arquitetura, libc, kernel e demais mínimos
+do artefato; uma atualização não concede certificação individual de distribuição.
 
 Se a execução for negada, confira permissões e se o filesystem permite programas;
-no macOS, consulte as políticas normais e a distribuição assinada do projeto.
+no macOS, siga a recuperação indicada pelo erro e as políticas normais de execução,
+sem depender de uma distribuição assinada que não foi publicada.
 O erro não atribui automaticamente a causa a Gatekeeper ou `noexec`.
 Para filesystem sem hardlinks, use uma pasta que permita a publicação atômica.
 Falha/reparo preservam a geração anterior saudável e os arquivos de entrada.
@@ -319,13 +325,17 @@ On macOS 15, use Intel CPython on Intel and arm64 on Apple Silicon; check with
 [macOS Python installers](https://www.python.org/downloads/macos/) are one possible
 origin; the tool installs only in its venv. Allow 2 GiB, write access to the profile
 and story directory, and a filesystem allowing execution and hardlink publication.
-Package installation needs HTTPS to GitHub and the Python package index. Once a
-qualified bundle is available, use `--prepare-runtime` before going offline; a healthy
+Package installation needs HTTPS to GitHub and the Python package index. Qualified
+POSIX bundles are obtained from the public GitHub release, including its authorized
+download hosts. Use `--prepare-runtime` before going offline; a healthy
 cache attempts no network access. Repair needs network access and preserves the
-healthy generation on failure. On macOS, keep normal protections and use the signed,
-notarized distribution when available. No command here removes quarantine.
-Interpreter origins for both Python versions still need testing in each matrix cell.
-A [partial Linux prerequisites procedure](specs/003-add-cross-platform-support/evidence/linux-prerequisites.md) was tested with private installations of both Python versions in WSL; it does not qualify native cells.
+healthy generation on failure. On macOS, keep normal protections. Developer ID
+signing and notarization are optional; the published bundles do not claim those
+attestations. No command here removes quarantine or disables protections.
+Both Pythons were exercised across all seven ABI targets in GitHub Actions, with
+origin and patch recorded in the [installation receipts](specs/003-add-cross-platform-support/evidence/package-installation.json).
+The [Linux prerequisites procedure](specs/003-add-cross-platform-support/evidence/linux-prerequisites.md)
+also preserves historical WSL trials, which do not certify individual distributions.
 Some matrix versions depend on free eligibility, such as Ubuntu Pro or RHEL
 Developer. Distribution ancestry does not grant this eligibility, and the tool
 does not request those credentials. See the matrix for the applicable conditions.
@@ -333,11 +343,13 @@ does not request those credentials. See the matrix for the applicable conditions
 An unvalidated environment can run on a **best effort** basis, with a stderr warning,
 when a technically compatible engine exists. The warning does not change result
 codes. Incompatible ABI/architecture or a missing engine prevents execution.
-On rolling systems, package/kernel updates can remove an official match; reverting
-updates is not required to use an engine that remains technically compatible.
+On rolling systems, changing packages, channels, or snapshots does not by itself
+remove ABI qualification. Architecture, libc, kernel, and other artifact minimums
+still apply; an update does not grant individual distribution certification.
 
 If execution is denied, check permissions and whether the filesystem allows programs;
-on macOS, consult normal policies and the project's signed distribution. Diagnostics
+on macOS, follow the recovery indicated by the error and normal execution policies,
+without depending on an unpublished signed distribution. Diagnostics
 do not automatically blame Gatekeeper or `noexec`. If hardlinks are unavailable,
 use a folder supporting atomic publication. Failed preparation/repair preserves the
 previous healthy generation and input files. After correcting the condition, retry
