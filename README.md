@@ -1,6 +1,6 @@
 # Desembaraça Twine
 
-**Escopo de validação:** GitHub Actions por ABI/arquitetura/Python (glibc/musl, x64/ARM64; macOS Intel/ARM64; Windows x64; Python 3.12/3.14). A lista de distribuições é uma declaração de compatibilidade, sem certificação individual. Assinatura Apple e notarização macOS são opcionais; sem configuração Apple, os componentes não têm atestado Developer ID/notarização. Não é necessário fornecer credenciais Apple para os testes. O catálogo POSIX só é ativado após os demais gates de integridade, licenças e entrega.
+**Escopo de validação:** GitHub Actions por ABI/arquitetura/Python (glibc/musl, x64/ARM64; macOS Intel/ARM64; Windows x64; Python 3.12/3.14). A lista de distribuições é uma declaração de compatibilidade, sem certificação individual. Assinatura Apple e notarização macOS são opcionais; sem configuração Apple, os componentes não têm atestado Developer ID/notarização. Não é necessário fornecer credenciais Apple para os testes. Os seis runtimes POSIX e seus kits de fontes estão [publicados](https://github.com/Extremois/desembaraca-twine/releases/tag/graphviz-16.1.0-posix-46d111d), com integridade e licenças revisadas.
 
 [Português](#portugues) | [English](#english)
 
@@ -15,7 +15,7 @@ As mensagens da CLI estão em português.
 
 ### Instalação e primeiro uso
 
-A matriz oficial é **Windows 11 x64 com CPython 3.12 x64 ou 3.14 x64**.
+A matriz qualificada cobre **Linux glibc ≥ 2.27 e musl ≥ 1.2.0 em x64/ARM64, macOS ≥ 15 em Intel/ARM64 e Windows x64 (runtime Win32 legado), com CPython 3.12 ou 3.14 nativo**. A qualificação por ABI foi executada no GitHub Actions; o runner Windows Server não é apresentado como certificação de Windows 11 limpo. Os comandos abaixo mostram o uso no Windows; a instalação Linux/macOS aparece adiante.
 Instale uma dessas versões do [Python](https://www.python.org/downloads/windows/),
 baixe ou clone o projeto completo e abra o PowerShell na pasta do projeto:
 
@@ -74,7 +74,7 @@ Com Python e pip disponíveis, execute de qualquer pasta:
 
 ```powershell
 python -m venv "$HOME\.venvs\desembaraca-twine"
-& "$HOME\.venvs\desembaraca-twine\Scripts\python.exe" -m pip install "https://github.com/Extremois/desembaraca-twine/archive/fed01cc58e7a51625ce8b6da43b526dbc55c80a0.zip"
+& "$HOME\.venvs\desembaraca-twine\Scripts\python.exe" -m pip install "https://github.com/Extremois/desembaraca-twine/archive/53fb2aba47d78b5cb4a6679cafaaef5fc5e52c29.zip"
 ```
 
 A URL fixa uma revisão de desenvolvimento já enviada ao repositório. Git e
@@ -96,24 +96,19 @@ A chamada por módulo funciona nessa revisão sem adicionar `Scripts` ao PATH:
 ```
 
 As opções `--prepare-runtime` e `--repair-runtime` também estão disponíveis.
-Graphviz é obtido na primeira preparação e reutilizado offline depois. Essa revisão
-remoto contém o código da spec 003, mas seu catálogo continua somente Windows.
+Graphviz é obtido na primeira preparação e reutilizado offline depois. Essa revisão contém o catálogo completo com os sete artefatos e a matriz ABI qualificada.
 
 ### Resultado e limites
 
 #### Linux e macOS: estado da implementação
 
-O pacote Python já tem seleção de plataforma e cache POSIX. A revisão remota acima
-permite instalar e consultar a CLI nos dois sistemas, mas ainda não distribui um
-motor Linux/macOS qualificado. `--prepare-runtime`, reparo e processamento POSIX
-recusam a execução enquanto faltar esse componente no catálogo.
-
-Com CPython **3.12 ou 3.14 nativo**, incluindo venv/pip, uma candidata pode ser
-instalada sem alterar o Python do sistema ou exigir Git/Graphviz:
+O pacote seleciona o runtime pela ABI e arquitetura, verifica o download HTTPS e
+prepara um cache privado. Com CPython **3.12 ou 3.14 nativo**, incluindo venv/pip,
+instale sem alterar o Python do sistema ou exigir Git/Graphviz:
 
 ```sh
 python3.12 -m venv "$HOME/.venvs/desembaraca-twine"
-"$HOME/.venvs/desembaraca-twine/bin/python" -m pip install "https://github.com/Extremois/desembaraca-twine/archive/fed01cc58e7a51625ce8b6da43b526dbc55c80a0.zip"
+"$HOME/.venvs/desembaraca-twine/bin/python" -m pip install "https://github.com/Extremois/desembaraca-twine/archive/53fb2aba47d78b5cb4a6679cafaaef5fc5e52c29.zip"
 "$HOME/.venvs/desembaraca-twine/bin/desembaraca-twine" --help
 "$HOME/.venvs/desembaraca-twine/bin/python" -m twine_edge_overlap --help
 ```
@@ -178,20 +173,15 @@ o prazo. Veja o [contrato do formato](specs/001-reduce-edge-overlap/contracts/fo
 
 ### Estado e documentação
 
-O suporte a Linux e macOS está em implementação na [feature 003](specs/003-add-cross-platform-support/validation.md).
-A detecção de plataforma, o cache POSIX e os testes compartilhados já existem;
-o catálogo distribuído ainda contém apenas o motor Windows. Os builds glibc/musl
-e macOS passaram no CI, mas continuam experimentais. A
-[matriz proposta](specs/003-add-cross-platform-support/support-matrix.md)
-não representa plataformas já qualificadas. A instalação do pacote Python está
-disponível; o motor Linux/macOS para uso normal ainda não está distribuído.
+Os sete alvos ABI foram qualificados nos dois Pythons: 42 instalações externas
+(wheel, sdist e URL remota), corpus de 13 casos, preservação, reutilização offline,
+reparo, interrupção, crash e concorrência. A revisão visual do usuário em Twine
+2.12.1 permanece vinculada aos hashes idênticos das seis saídas finais.
+Os runtimes POSIX e fontes estão publicados em pares; o runtime Windows original
+continua vindo diretamente do upstream. Veja a [matriz ABI](specs/003-add-cross-platform-support/support-matrix.md)
+e os [recibos de qualificação](specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/qualification/summary.json).
+As 69 entradas de distribuições são declarações de compatibilidade.
 
-Motor gerenciado e testes de preservação, layout, offline e recuperação implementados.
-A validação local usa Windows 11 com CPython 3.12 e 3.14, incluindo primeiro uso
-com download real, seis referências offline e recuperação. Por decisão do mantenedor,
-a aceitação em Windows limpo está adiada; o trabalho prossegue no sistema atual,
-sem criar VM. A reabertura das novas saídas no Twine permanece pendente. Consulte
-as [evidências e limitações](specs/002-manage-layout-runtime/validation.md).
 O perfil geométrico segue Twine 2.12.1. Graphviz fornece posições; os arcos são
 recalculados pelo projeto. ELK.js/Node foram usados apenas na comparação de motores.
 
@@ -220,7 +210,7 @@ contents, and links. CLI messages and most supporting documentation are in Portu
 
 ### Installation and first use
 
-The official matrix is **Windows 11 x64 with CPython 3.12 x64 or 3.14 x64**.
+The qualified matrix covers **Linux glibc ≥ 2.27 and musl ≥ 1.2.0 on x64/ARM64, macOS ≥ 15 on Intel/ARM64, and Windows x64 (legacy Win32 runtime), with native CPython 3.12 or 3.14**. ABI qualification ran in GitHub Actions; the actual Windows Server runner is not represented as clean Windows 11 certification. The following commands show Windows usage; Linux/macOS installation is documented below.
 Install one of these [Python versions](https://www.python.org/downloads/windows/),
 download or clone the complete project, and open PowerShell in its root directory:
 
@@ -278,7 +268,7 @@ With Python and pip available, run from any directory:
 
 ```powershell
 python -m venv "$HOME\.venvs\desembaraca-twine"
-& "$HOME\.venvs\desembaraca-twine\Scripts\python.exe" -m pip install "https://github.com/Extremois/desembaraca-twine/archive/fed01cc58e7a51625ce8b6da43b526dbc55c80a0.zip"
+& "$HOME\.venvs\desembaraca-twine\Scripts\python.exe" -m pip install "https://github.com/Extremois/desembaraca-twine/archive/53fb2aba47d78b5cb4a6679cafaaef5fc5e52c29.zip"
 ```
 
 The URL pins a development revision already pushed to the repository. Git and
@@ -300,24 +290,19 @@ The module invocation works on that revision without adding `Scripts` to PATH:
 ```
 
 Both invocations accept `--prepare-runtime` and `--repair-runtime`. Graphviz is
-downloaded during initial preparation and reused offline afterwards. This remote
-revision includes spec 003 code, but its catalog still contains only Windows.
+downloaded during initial preparation and reused offline afterwards. This remote revision includes all seven runtime artifacts and the qualified ABI matrix.
 
 ### Results and limits
 
 #### Linux and macOS: implementation status
 
-The Python package includes platform selection and POSIX caching. The remote revision
-above allows installation and CLI help on both systems, but does not yet distribute
-a qualified Linux/macOS engine. POSIX preparation, repair, and processing are refused
-until that component is in the catalog.
-
-With **native CPython 3.12 or 3.14**, including venv/pip, install a candidate without
-replacing the system Python or requiring Git/Graphviz:
+The package selects the runtime by ABI and architecture, verifies its HTTPS
+download, and prepares a private cache. With native **CPython 3.12 or 3.14**,
+including venv/pip, install without changing system Python or requiring Git/Graphviz:
 
 ```sh
 python3.12 -m venv "$HOME/.venvs/desembaraca-twine"
-"$HOME/.venvs/desembaraca-twine/bin/python" -m pip install "https://github.com/Extremois/desembaraca-twine/archive/fed01cc58e7a51625ce8b6da43b526dbc55c80a0.zip"
+"$HOME/.venvs/desembaraca-twine/bin/python" -m pip install "https://github.com/Extremois/desembaraca-twine/archive/53fb2aba47d78b5cb4a6679cafaaef5fc5e52c29.zip"
 "$HOME/.venvs/desembaraca-twine/bin/desembaraca-twine" --help
 "$HOME/.venvs/desembaraca-twine/bin/python" -m twine_edge_overlap --help
 ```
@@ -381,20 +366,15 @@ cooperative; I/O can finish after the deadline. See the
 
 ### Status and documentation
 
-Linux and macOS support is being implemented in [feature 003](specs/003-add-cross-platform-support/validation.md).
-Platform detection, POSIX caching and shared tests are present; the distributed
-catalog still contains only the Windows engine. The glibc/musl and macOS builds
-passed CI but remain experimental.
-The [proposed matrix](specs/003-add-cross-platform-support/support-matrix.md) does not
-represent qualified platforms. Python package installation is available; a
-Linux/macOS engine for normal use is not yet distributed.
+All seven ABI targets were qualified on both Pythons: 42 external installations
+(wheel, sdist, and immutable remote URL), a 13-case corpus, preservation, offline
+reuse, repair, interruption, crash, and concurrency. The user's visual review in
+Twine 2.12.1 remains bound to the identical six final output hashes.
+POSIX runtimes and sources are published in pairs; the original Windows runtime
+is still obtained directly from upstream. See the [ABI matrix](specs/003-add-cross-platform-support/support-matrix.md)
+and [qualification receipts](specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/qualification/summary.json).
+The 69 distribution entries are compatibility declarations.
 
-The managed engine and preservation, layout, offline, and recovery tests are implemented.
-Current validation runs exclusively in GitHub Actions across seven ABI targets
-with CPython 3.12 and 3.14. No local tests or VMs are required. The six reference
-outputs were accepted in Twine 2.12.1 on Windows 11 and Firefox; their hashes remain
-bound to the candidate CI reports. Final package acceptance and distribution
-remain pending. See the [current validation record](specs/003-add-cross-platform-support/validation.md).
 Geometry follows Twine 2.12.1. Graphviz supplies positions; the project recalculates arcs.
 ELK.js/Node were used only for engine comparisons.
 

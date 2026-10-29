@@ -17,7 +17,7 @@ import urllib.parse
 import urllib.request
 import zipfile
 
-REVISION = 'fed01cc58e7a51625ce8b6da43b526dbc55c80a0'
+REVISION = '53fb2aba47d78b5cb4a6679cafaaef5fc5e52c29'
 URL = 'https://github.com/Extremois/desembaraca-twine/archive/' + REVISION + '.zip'
 
 
@@ -122,7 +122,7 @@ print(json.dumps(dict(direct_url=json.loads(d.read_text('direct_url.json')),
         revision=REVISION,url=URL,python=platform.python_version(),os=platform.system(),
         arch=platform.machine(),outside_checkout=True,path_contains_only_venv=True,
         engine_prepared=False,archive_sha256=archive_sha256,installed=installed,commands=commands,
-        limitations=['Installation/help only; distributed catalog still Windows-only',
+        limitations=['Installation/help only; full seven-artifact catalog acceptance is recorded separately',
                     'No POSIX native-engine preparation, cell acceptance or support promotion'])
 
 

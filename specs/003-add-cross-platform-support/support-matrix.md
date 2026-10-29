@@ -1,6 +1,9 @@
-# Matriz proposta e política de versões
+# Matriz ABI qualificada e declarações de compatibilidade
 
-## Qualificação obrigatória por ABI
+## Qualificação por ABI concluída
+
+Sete alvos e 14 slots aprovados com os dez gates e promoção por `promote-support.py`. [Evidências completas](evidence/final-paired-review-2026-10-28/qualification/summary.json). A revisão imutável de instalação é `53fb2aba47d78b5cb4a6679cafaaef5fc5e52c29`; o catálogo identifica a revisão funcional qualificada `c0078230a3bf1a2b934f1754e8b12664f100b4cc`. A promoção altera apenas metadados de suporte, preservando o código e os binários testados.
+
 
 | Alvo | Arquitetura | Python obrigatório |
 | --- | --- | --- |

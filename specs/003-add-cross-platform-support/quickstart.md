@@ -5,7 +5,7 @@
 **Política de validação atualizada por instrução do usuário (2026-10-27):** validar exclusivamente pelo GitHub Actions, diretamente nos runners hospedados e em contêineres quando necessários. Não exigir teste nativo, hardware dedicado, runner próprio, kernel específico ou VM; não criar nem iniciar VMs, inclusive dentro do CI. Esta decisão substitui exigências anteriores desses ambientes e suas pendências históricas. Conservar hashes, integridade, instalação, corpus, recuperação e o ambiente efetivamente exercitado nos logs; não inventar cobertura. Resultados de VMs anteriores são somente histórico e não são gates de aceite.
 
 
-**Estado**: implementação parcial. Seleção de plataforma, cache POSIX, contratos e ferramentas de qualificação estão implementados; o catálogo distribuído ainda contém somente o motor Windows. Os percursos Linux/macOS de aceitação exigem uma candidata com bundle nativo qualificado e permanecem pendentes. Este guia não afirma execução desses ensaios nem publica componentes. Não criar VM no computador atual.
+**Estado**: sete alvos ABI/14 slots qualificados; catálogo público completo, 42 instalações externas e fontes/notices revisados. Resultados em [qualification/summary.json](evidence/final-paired-review-2026-10-28/qualification/summary.json). Testes exclusivamente no GitHub Actions, sem VMs.
 
 ## Pré-requisitos e registro
 
@@ -25,16 +25,16 @@ Ter diretórios de usuário com escrita/execução, acesso HTTPS para instalaç�
 ## 1. Instalar a candidata, sem checkout obrigatório
 
 A URL imutável abaixo e no README contém a revisão pública
-`fed01cc58e7a51625ce8b6da43b526dbc55c80a0`, com comando `desembaraca-twine`
-e código da spec 003. Permite instalar e consultar help em Linux/macOS/Windows,
-mas o catálogo continua somente Windows: não permite concluir a aceitação POSIX.
+`53fb2aba47d78b5cb4a6679cafaaef5fc5e52c29`, com comando `desembaraca-twine`
+e o catálogo completo da spec 003. A preparação, o corpus e o reuso offline
+foram aceitos em Linux/macOS/Windows nas duas versões de Python.
 A branch `feat/003-add-cross-platform-support` não é URL imutável nem release.
 
 Em shell POSIX, usar `python3.12` ou `python3.14` conforme o ensaio:
 
 ```sh
 python3.12 -m venv "$HOME/.venvs/desembaraca-twine"
-"$HOME/.venvs/desembaraca-twine/bin/python" -m pip install "https://github.com/Extremois/desembaraca-twine/archive/fed01cc58e7a51625ce8b6da43b526dbc55c80a0.zip"
+"$HOME/.venvs/desembaraca-twine/bin/python" -m pip install "https://github.com/Extremois/desembaraca-twine/archive/53fb2aba47d78b5cb4a6679cafaaef5fc5e52c29.zip"
 "$HOME/.venvs/desembaraca-twine/bin/desembaraca-twine" --help
 "$HOME/.venvs/desembaraca-twine/bin/python" -m twine_edge_overlap --help
 ```
@@ -46,23 +46,15 @@ O workflow `documented-installation.yml` executa instalação e as três chamada
 help em venv externa, com PATH contendo somente a venv e sem runtime preparado.
 Esse é teste dos comandos documentados, não qualificação de célula ou motor.
 
-**Somente para uma futura candidata POSIX qualificada**: definir `CANDIDATE_URL`
-como URL real de commit/release que contenha os manifestos e artefatos qualificados,
-registrando commit/hash na evidência. Essa URL ainda não existe no catálogo atual.
-Não substituir o requisito de qualificação pela URL de desenvolvimento acima.
-Os percursos 2–5 dependem dessa candidata e dos demais gates. Com ela disponível:
-
-```sh
-"$HOME/.venvs/desembaraca-twine/bin/python" -m pip install "$CANDIDATE_URL"
-. "$HOME/.venvs/desembaraca-twine/bin/activate"
-desembaraca-twine --help
-```
+A revisão acima já contém os manifestos qualificados e usa os artefatos públicos.
+Os percursos 2–4 descrevem a preparação, o processamento e a recuperação cobertos
+pelos recibos finais. Falhas deliberadas usam apenas caches temporários do CI.
 
 Em PowerShell, usar o Python nativo selecionado e chamar diretamente a venv, sem mudar política de execução:
 
 ```powershell
 python -m venv "$HOME\.venvs\desembaraca-twine"
-& "$HOME\.venvs\desembaraca-twine\Scripts\python.exe" -m pip install "https://github.com/Extremois/desembaraca-twine/archive/fed01cc58e7a51625ce8b6da43b526dbc55c80a0.zip"
+& "$HOME\.venvs\desembaraca-twine\Scripts\python.exe" -m pip install "https://github.com/Extremois/desembaraca-twine/archive/53fb2aba47d78b5cb4a6679cafaaef5fc5e52c29.zip"
 & "$HOME\.venvs\desembaraca-twine\Scripts\desembaraca-twine.exe" --help
 ```
 
@@ -72,7 +64,7 @@ Esperado: instalação sem Git/checkout, compilação de Graphviz, sudo, `--brea
 "$HOME/.venvs/desembaraca-twine/bin/python" -m twine_edge_overlap --help
 ```
 
-Repetir instalação de wheel e sdist construídos do mesmo commit, em venvs novas **fora do checkout**. No checkout de desenvolvimento, com dependências de desenvolvimento disponíveis:
+Repetir instalação de wheel e sdist construídos do mesmo commit, em venvs novas **fora do checkout**. No GitHub Actions, com dependências de desenvolvimento disponíveis (não executar testes locais):
 
 ```sh
 python -m pip install '.[dev]' build
@@ -149,7 +141,7 @@ Usar cenários isolados de teste para interromper preparo, bloquear download, pr
 
 Depois de reparo falho, bloquear rede e processar novamente com a geração saudável anterior. Concorrer dois preparos; concorrer reparo e processamento longo; matar escritor durante staging/promoção. Verificar lock limitado, seletor íntegro, handles antigos utilizáveis e ausência de remoção de recursos alheios.
 
-Provocar colisão de nome de saída, cancelamento e falha na publicação: originais/destinos existentes mantêm hashes; códigos 0/2/1/130 correspondem ao resultado real. Linux fora da matriz com ABI compatível deve funcionar com aviso de melhor esforço; componente incompatível deve ser rejeitado. Mac distribuído precisa passar assinatura/notarização opcional e execução real sem remoção de quarentena ou desativação de Gatekeeper.
+Provocar colisão de nome de saída, cancelamento e falha na publicação: originais/destinos existentes mantêm hashes; códigos 0/2/1/130 correspondem ao resultado real. Linux com ABI qualificada recebe suporte por ABI, sem certificação individual de distribuição; ABI ainda não qualificada funciona em melhor esforço quando compatível; componente incompatível deve ser rejeitado. Mac distribuído passa execução real; assinatura/notarização são opcionais, sem remoção de quarentena ou desativação de Gatekeeper.
 
 ## 5. Critério de conclusão
 
@@ -168,7 +160,7 @@ Em Arch/Arch ARM/Manjaro/Tumbleweed, a consulta inicial de referência pode ser 
 /usr/bin/rpm --query --all --queryformat '%{NAME}\t%{EPOCHNUM}\t%{VERSION}\t%{RELEASE}\t%{ARCH}\n'
 ```
 
-Registrar inventário canônico/snapshot_id reais do ambiente de teste e duas coletas iguais; rótulo/data/imagem são metadados. Com rede bloqueada e referência empacotada validada, o mesmo estado deve ser reconhecido oficialmente. Em clone de ensaio ou fixture controlada, alterar um pacote/canal/kernel: deve retirar correspondência e permitir processamento com aviso se ABI compatível, sem baixar novo motor por causa do aviso.
+Os procedimentos de snapshots são ferramentas de diagnóstico históricas; o suporte atual é qualificado por ABI. Um inventário de distribuição não concede certificação individual. Registrar inventário canônico/snapshot_id reais apenas quando esse diagnóstico for exercitado; rótulo/data/imagem são metadados. Em clone de ensaio ou fixture controlada, alterar um pacote/canal/kernel: deve retirar correspondência e permitir processamento com aviso se ABI compatível, sem baixar novo motor por causa do aviso.
 
 Exercitar gerenciador ausente, Branch Manjaro ausente/duplicado, coleta instável, timeout agregado 5 s, saída agregada acima de 8 MiB e mais de 100.000 registros por leitura; nunca aceitar inventário truncado. Resultado esperado: identidade desconhecida, diagnóstico de melhor esforço e nenhuma tentativa de conexão. ABI incompatível continua sendo erro. Medir o custo dentro dos orçamentos existentes. Não modificar pacotes do computador pessoal; fixtures simuladas não aprovam snapshots reais nem encerram ensaios no GitHub Actions pendentes.
 
