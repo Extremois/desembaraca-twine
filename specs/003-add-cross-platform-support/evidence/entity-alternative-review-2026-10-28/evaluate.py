@@ -2,6 +2,7 @@
 import argparse
 import gzip
 import hashlib
+import importlib.util
 import json
 import os
 from pathlib import Path, PurePosixPath
@@ -149,6 +150,25 @@ def evaluate(output):
                     raise ValueError('Unsupported source-tree member')
                 tree.append(row)
         (output/'COPYING-Graphviz-EPL-2.0.txt').write_bytes(copying)
+        integration = source.get('entity_replacement')
+        if integration is not None:
+            spec = importlib.util.spec_from_file_location('integrated_entity_source', ROOT/'tools/runtime/graphviz-source.py')
+            integrated = importlib.util.module_from_spec(spec)
+            spec.loader.exec_module(integrated)
+            if integrated.replacements(source) != replacements:
+                raise ValueError('Integrated replacement bytes differ from reproduced proposal')
+            modified = output/'modified-graphviz.tar.gz'
+            modified.write_bytes(integrated.export(archive, source))
+            integrated.verify(modified, source)
+            with tarfile.open(modified) as exported:
+                for name, raw in replacements.items():
+                    if exported.extractfile(name).read() != raw:
+                        raise ValueError('Source export retains a legacy entity file')
+            # An exported source archive must remain usable without historical inputs.
+            with tempfile.TemporaryDirectory(dir=os.environ['RUNNER_TEMP']) as replay:
+                with tarfile.open(modified) as exported:
+                    exported.extractall(replay, filter='data')
+                integrated.apply(replay, source)
         report = dict(kind='entity-alternative-prototype-not-production-qualification', passed=True,
             approved=False, qualified=False, application_revision=os.environ['GITHUB_SHA'],
             source_lock_sha256=sha((ROOT/'tools/runtime/source-lock.json').read_bytes()),
@@ -161,7 +181,8 @@ def evaluate(output):
             proposed_source_tree_sha256=sha(json.dumps(sorted(tree, key=lambda r: r['path']),
                 sort_keys=True, separators=(',', ':')).encode()), source_tree_entries=len(tree),
             source_tree_identity_format='sorted path/mode/type/size/content-sha256 or symlink-target records; JSON sort_keys, compact separators',
-            production_changed=False, native_engine_executed=False,
+            production_changed=integration is not None, integrated_source_export_verified=integration is not None,
+            native_engine_executed=False,
             remaining=['Integrate and record the two source replacements',
                        'Export the modified source tree, excluding legacy ISO reference data',
                        'Update per-artifact notices/provenance and run ABI/package acceptance in Actions'])

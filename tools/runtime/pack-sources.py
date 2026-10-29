@@ -22,6 +22,9 @@ PREPARER = importlib.util.module_from_spec(SPEC)
 SPEC.loader.exec_module(PREPARER)
 SDK_LOCK = PREPARER.ZIG
 SDK_LOCK_ARM64 = PREPARER.ZIG_ARM64
+SPEC = importlib.util.spec_from_file_location('packed_graphviz_sources', HERE / 'graphviz-source.py')
+GRAPHVIZ = importlib.util.module_from_spec(SPEC)
+SPEC.loader.exec_module(GRAPHVIZ)
 MAX_EXPANDED = 512 * 1024**2
 MAX_FILE = 64 * 1024**2
 MAX_FILES = 30000
@@ -142,7 +145,7 @@ def pack(graphviz, sdk, provenance, output, header_review=None):
     sdk=Path(sdk) if sdk is not None else None
     if output.exists() or output.is_symlink():
         raise FileExistsError('Source output already exists')
-    pinned(graphviz, SOURCE_LOCK)
+    GRAPHVIZ.verify(graphviz, SOURCE_LOCK)
     provenance_bytes = bounded(provenance, 8 * 1024**2)
     record = json.loads(provenance_bytes)
     artifact=record['artifact_id']
@@ -191,6 +194,8 @@ def pack(graphviz, sdk, provenance, output, header_review=None):
     # Never walk the checkout, artifacts/, private SDK or compiler cache.
     paths = sorted([path for path in HERE.iterdir() if path.suffix in ('.py', '.json', '.sh', '.md')]
                    + [path for path in (HERE / 'licenses').rglob('*') if path.is_file()])
+    if 'entity_replacement' in SOURCE_LOCK:
+        paths = [path for path in paths if path.name not in ('html401-entities.html.gz', 'html401-index.html.gz')]
     local = [('tools/runtime/' + path.relative_to(HERE).as_posix(), bounded(path)) for path in paths]
     # build-common imports host detection and bounded process execution. Preserve
     # their exact source dependencies so the exported recipe works independently.
@@ -203,7 +208,8 @@ def pack(graphviz, sdk, provenance, output, header_review=None):
                  'src/twine_edge_overlap/engines/__init__.py',
                  'src/twine_edge_overlap/engines/process.py'):
         local.append((name, bounded(HERE.parents[1] / name)))
-    local += [('graphviz.tar.gz', bounded(graphviz)), ('candidate-provenance.json', provenance_bytes)]
+    modified_graphviz = GRAPHVIZ.export(graphviz, SOURCE_LOCK)
+    local += [('graphviz.tar.gz', modified_graphviz), ('candidate-provenance.json', provenance_bytes)]
     local += selected_headers
     header_count = sum(name.endswith('.h') for name, _ in selected_headers)
     rows, total = [], 0
@@ -238,7 +244,10 @@ def pack(graphviz, sdk, provenance, output, header_review=None):
                         manifest = dict(kind='candidate-source-review-material', approved=False,
                             artifact_id=record['artifact_id'], executable_sha256=record['executable_sha256'],
                             provenance_sha256=hashlib.sha256(provenance_bytes).hexdigest(),
-                            graphviz_archive_sha256=SOURCE_LOCK['sha256'], sdk_archive_sha256=None if macos else sdk_lock['sha256'],
+                            graphviz_archive_sha256=hashlib.sha256(modified_graphviz).hexdigest(),
+                            graphviz_upstream_archive_sha256=SOURCE_LOCK['sha256'],
+                            graphviz_source_tree_sha256=SOURCE_LOCK.get('entity_replacement', {}).get('source_tree_sha256'),
+                            sdk_archive_sha256=None if macos else sdk_lock['sha256'],
                             selected_sdk_header_files=header_count,
                             sdk_scope=(('Apple SDK archive excluded; selected unmodified APSL headers, applicable license texts and review included; other SDK contributions remain under review'
                                         if header_count else 'Apple SDK excluded; recorded toolchain identity only; SDK/runtime contribution review remains pending')
@@ -250,7 +259,7 @@ def pack(graphviz, sdk, provenance, output, header_review=None):
                 stream.flush()
                 os.fsync(stream.fileno())
             # Recheck archives after reading; never certify changed input bytes.
-            pinned(graphviz, SOURCE_LOCK)
+            GRAPHVIZ.verify(graphviz, SOURCE_LOCK)
             if not macos:pinned(sdk, sdk_lock)
             report = dict(kind=manifest['kind'], approved=False, artifact_id=record['artifact_id'],
                 executable_sha256=record['executable_sha256'], provenance_sha256=manifest['provenance_sha256'],

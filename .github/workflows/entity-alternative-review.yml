@@ -6,6 +6,9 @@ on:
     paths:
       - '.github/workflows/entity-alternative-review.yml'
       - 'specs/003-add-cross-platform-support/evidence/entity-alternative-review-2026-10-28/**'
+      - 'tools/runtime/graphviz-source.py'
+      - 'tools/runtime/source-lock.json'
+      - 'tools/runtime/licenses/entity-replacement/**'
 permissions:
   contents: read
 jobs:

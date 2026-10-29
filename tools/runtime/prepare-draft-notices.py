@@ -248,8 +248,7 @@ def append_header_notices(materials,external,sdk,facts):
 
 def graphviz_source_materials(dependencies,archive,lock):
     """Recheck observed upstream source bytes and preserve per-file comments."""
-    if builder.digest(archive)!=lock['sha256']:
-        raise ValueError('Graphviz archive differs from pinned source')
+    builder.source_inputs.verify(archive, lock)
     entries={}
     for item in dependencies:
         if item.get('origin')!='source':continue
@@ -264,7 +263,7 @@ def graphviz_source_materials(dependencies,archive,lock):
         if len(entries)>5000:raise ValueError('Too many Graphviz source records')
     if not entries or sum(item['size'] for item in entries.values())>64*1024**2:
         raise ValueError('Missing or excessive Graphviz source records')
-    sources=archive_files(archive,'graphviz-16.1.0',set(entries))
+    sources=archive_files(archive,'graphviz-16.1.0',set(entries),lock)
     rows=[];materials=[]
     for name,item in sorted(entries.items()):
         data=sources[name]
@@ -293,7 +292,7 @@ def graphviz_source_materials(dependencies,archive,lock):
     return rows,materials
 
 
-def archive_files(path,prefix,names):
+def archive_files(path,prefix,names,source_lock=None):
     found={};count=expanded=0
     with tarfile.open(path) as archive:
         for member in archive:
@@ -304,7 +303,10 @@ def archive_files(path,prefix,names):
             relative=PurePosixPath(*parts.parts[1:]).as_posix()
             if relative not in names:continue
             if relative in found or not member.isfile() or member.size>1024**2:raise ValueError('Invalid or excessive notice/header entry')
-            found[relative]=archive.extractfile(member).read(1024**2+1)
+            if source_lock is not None:
+                found[relative]=builder.source_inputs.member_bytes(archive,member,source_lock)
+            else:
+                found[relative]=archive.extractfile(member).read(1024**2+1)
     if set(found)!=set(names):raise ValueError('Required notice/header absent from archive')
     return found
 
@@ -365,6 +367,11 @@ def source_access_notice(source, artifact_id, sdk=None):
         'Obtain the original Graphviz source archive at:\n'+source['url']+'\n'
         'SHA-256: '+source['sha256']+'\n'
         'Source revision: '+source['git_revision']+'\n\n')
+    if 'entity_replacement' in source:
+        text+=('This build replaces lib/common/entities.html and entities.py.\n'
+            'The modified archive is graphviz.tar.gz in the accompanying source package.\n'
+            'Reviewed modified source tree SHA-256: '+source['entity_replacement']['source_tree_sha256']+'\n'
+            'Replacement inputs, licenses and byte hashes: tools/runtime/licenses/entity-replacement/.\n\n')
     if artifact_id.startswith('linux-'):
         expected=source_sdk_pin(artifact_id)
         if sdk != expected:
@@ -419,8 +426,9 @@ def prepare(linked_build,source_build,evidence,graphviz_archive,sdk_archive,sdk_
     binary=linked_build/'candidate/bin/dot'
     if builder.digest(binary)!=record['executable_sha256']:raise ValueError('Executable changed')
     lock=json.loads((HERE/'source-lock.json').read_text())
-    if record['source']!=lock or builder.digest(graphviz_archive)!=lock['sha256']:
+    if record['source']!=lock:
         raise ValueError('Source archive differs from recorded bytes')
+    builder.source_inputs.verify(graphviz_archive, lock)
     facts=dict(record['sdk']['facts'])
     sdk_identity=sdk_archive_identity(facts)
     facts.update(archive_url=sdk_identity['url'],archive_sha256=sdk_identity['sha256'])
@@ -497,10 +505,10 @@ def prepare(linked_build,source_build,evidence,graphviz_archive,sdk_archive,sdk_
         # attach somebody else's generated table/reference comparison to a build.
         if data_review!=data_audit.collect(source_build,linked_build,graphviz_archive,evidence):
             raise ValueError('Data evidence differs from this build and pinned references')
-        w3c_materials,w3c_routing=data_audit.w3c_reference_materials()
+        w3c_materials,w3c_routing=data_audit.w3c_reference_materials(include_legacy_entities='entity_replacement' not in lock)
         materials.extend(w3c_materials)
         entity_path='lib/common/entities.html'
-        entity_bytes=archive_files(graphviz_archive,'graphviz-16.1.0',{entity_path})[entity_path]
+        entity_bytes=archive_files(graphviz_archive,'graphviz-16.1.0',{entity_path},lock)[entity_path]
         entity_sources=[item for item in data_review['inputs'] if item['path']==entity_path]
         if len(entity_sources)!=1:raise ValueError('Entity input is missing from this build data evidence')
         entity_notice=data_audit.entity_declaration_notice(entity_bytes,entity_sources[0]['sha256'])
@@ -513,8 +521,8 @@ def prepare(linked_build,source_build,evidence,graphviz_archive,sdk_archive,sdk_
         origins=('Generated Graphviz data review material; not complete license approval.\n'
             '147 SVG color values match SVG 1.1 Second Edition (W3C Recommendation, 16 August 2011):\n'
             'https://www.w3.org/TR/2011/REC-SVG11-20110816/types.html#ColorKeywords\n'
-            '252 entity values match HTML 4.01 (W3C Recommendation, 24 December 1999):\n'
-            'https://www.w3.org/TR/1999/REC-html401-19991224/sgml/entities.html\n'
+            '252 entity values use the reviewed WHATWG/W3C replacement with legacy lang/rang adjustments.\n'
+            'Source inputs, licenses and hashes accompany the modified Graphviz sources.\n'
             '674 color values match X.Org rgb 1.1.0 after case/space alias normalization.\n'
             'Graphviz-specific differences: gray/grey = 192,192,192 (X.Org: 190,190,190);\n'
             'invis/none/transparent = 255,255,254 with alpha 0, absent in that reference.\n'

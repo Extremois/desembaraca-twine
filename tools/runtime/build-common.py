@@ -19,6 +19,9 @@ import tarfile
 
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parents[1]
+SOURCE_SPEC = importlib.util.spec_from_file_location('graphviz_source_inputs', HERE / 'graphviz-source.py')
+source_inputs = importlib.util.module_from_spec(SOURCE_SPEC)
+SOURCE_SPEC.loader.exec_module(source_inputs)
 sys.path.insert(0, str(ROOT / 'src'))
 from twine_edge_overlap.runtime_platform import detect_host
 from twine_edge_overlap.engines.process import ProcessLimitError, run_bounded
@@ -102,8 +105,7 @@ def capture_linkage(build, binary, *, link_directory=None):
 def plan(artifact_id, archive, output):
     recipe = json.loads((HERE / (artifact_id + '.json')).read_text(encoding='utf-8'))
     source = json.loads((HERE / 'source-lock.json').read_text(encoding='utf-8'))
-    if digest(archive) != source['sha256'] or Path(archive).stat().st_size != source['size']:
-        raise ValueError('Source archive does not match the pinned source lock')
+    source_inputs.verify(archive, source)
     with tarfile.open(archive) as incoming:
         if incoming.pax_headers.get('comment') != source['git_revision']:
             raise ValueError('Source revision differs from the pinned tag archive')
@@ -172,6 +174,7 @@ def execute(record, archive, sdk_path, *, cross_libc_experiment=False):
         if len(members) > 50_000 or sum(item.size for item in members) > 1024**3:
             raise ValueError('Source expansion exceeds maintainer budget')
         incoming.extractall(source_dir, filter='data')
+    source_inputs.apply(source_dir, record['source'])
     source_dir /= 'graphviz-16.1.0'
     build = output / 'build'
     install = output / 'install'

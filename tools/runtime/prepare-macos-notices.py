@@ -29,12 +29,11 @@ HEADER_REVIEW_SHA256 = {
 
 def data_reference_materials(source_archive, lock):
     """Preserve upstream data notices without asserting generated-table equivalence."""
-    if builder.digest(source_archive) != lock['sha256']:
-        raise ValueError('Graphviz archive differs from pinned source')
+    builder.source_inputs.verify(source_archive, lock)
     data_audit = load('audit-graphviz-data')
-    materials, _ = data_audit.w3c_reference_materials()
+    materials, _ = data_audit.w3c_reference_materials(include_legacy_entities='entity_replacement' not in lock)
     names = {'lib/common/entities.html', 'lib/common/svgcolor_names', 'lib/common/color_names'}
-    sources = common.archive_files(source_archive, 'graphviz-16.1.0', names)
+    sources = common.archive_files(source_archive, 'graphviz-16.1.0', names, lock)
     for name, raw in sorted(sources.items()):
         sha = hashlib.sha256(raw).hexdigest()
         if name.endswith('entities.html'):

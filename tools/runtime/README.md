@@ -324,11 +324,12 @@ em `licenses/material-source-lock.json` e entra no pacote sem alterações.
 Essa conferência resolve esse material do gerador; a aplicação das demais
 licenças e a completude das fontes continuam sob revisão.
 
-`audit-graphviz-data.py` confere os seis inputs originais das tabelas de cores
-e entidades contra o arquivo-fonte fixado. Executa os dois geradores upstream
+`audit-graphviz-data.py` confere os seis inputs das tabelas de cores
+e entidades contra as fontes fixadas, incluindo as duas substituições de entidades.
+Executa os dois geradores
 com tempo/saída limitados, em temporário isolado, e exige igualdade de bytes
 entre a reconstrução e os headers registrados na evidência de compilação.
-Também compara os valores com referências W3C SVG 1.1/HTML 4.01 e X.Org rgb
+Também compara os valores com referências W3C SVG 1.1, a tabela alternativa e X.Org rgb
 1.1.0, preservadas com hashes em `licenses/data-references/`, sem rede no CI.
 Registra as cinco diferenças conhecidas da tabela Graphviz em relação ao rgb
 do X.Org e recusa outras diferenças; aliases de caixa/espaços só são aceitos
@@ -336,13 +337,14 @@ quando os valores coincidem.
 
 O preparo de notices recebe esse relatório em `--data-evidence`, refaz a
 conferência e adiciona o COPYING do X.Org e `DATA-ORIGINS.txt`, preservando o
-comentário de origem SVG presente na fonte. A preparação também preserva seis
-referências W3C em texto offline: quatro políticas datadas e os cabeçalhos de
-copyright/status das publicações. Um sétimo material conserva os três avisos
-ISO encontrados nas declarações de entidades, conferidos contra o documento
-Graphviz e a referência W3C. Ver a [revisão dos termos e versões](licenses/data-references/w3c/REVIEW.md).
-A aplicabilidade e as condições permanecem sob revisão; os sete materiais
-foram confirmados nas quatro candidatas Linux da revisão `4784410`. A comparação prova
+comentário de origem SVG presente na fonte. As novas candidatas preservam as
+três referências W3C de SVG e `ENTITY-DATA-LICENSES.txt`, com os termos e as
+mudanças da [tabela alternativa](licenses/entity-replacement/README.md).
+`source-lock.json` fixa os hashes das duas substituições e da árvore modificada.
+Os pacotes de fontes levam o Graphviz modificado, os inputs e as licenças da
+alternativa; excluem a tabela antiga e seus snapshots HTML 4.01. O replay aceita
+essa árvore modificada sem atribuir aos bytes novos o hash do tarball upstream.
+A comparação prova
 correspondência dos valores e dos bytes gerados. Ela não prova a cadeia histórica de cópia nem
 conclui a aplicação das licenças; os indicadores de aprovação continuam falsos.
 

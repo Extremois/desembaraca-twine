@@ -145,7 +145,7 @@ def collect(output, map_path, archive):
             if member.isfile() and name in expected:
                 if member.size > 8 * 1024**2:
                     raise ValueError('Source member exceeds budget')
-                if hashlib.sha256(incoming.extractfile(member).read()).hexdigest() != expected[name]:
+                if hashlib.sha256(builder.source_inputs.member_bytes(incoming, member, record['source'])).hexdigest() != expected[name]:
                     raise ValueError('Compiled source differs from pinned archive')
                 verified.add(name)
     if not verified or verified != set(expected):

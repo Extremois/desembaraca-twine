@@ -130,11 +130,13 @@ def verify(source_package,receipt,project,graphviz,sdk,project_lock=None):
     sdk_lock=SDK_LOCKS[arch]
     for path,lock in ((project,selected_project_lock),(graphviz,GRAPHVIZ_LOCK),(sdk,sdk_lock)):PACKER.pinned(path,lock)
     files,manifest,provenance=source_inventory(source_package,record)
-    if (manifest['graphviz_archive_sha256']!=GRAPHVIZ_LOCK['sha256']
+    modified_graphviz=PACKER.GRAPHVIZ.export(graphviz,GRAPHVIZ_LOCK)
+    modified_identity=dict(size=len(modified_graphviz),sha256=hash_bytes(modified_graphviz))
+    if (manifest['graphviz_archive_sha256']!=modified_identity['sha256']
             or provenance['source']['sha256']!=GRAPHVIZ_LOCK['sha256']
             or manifest['sdk_archive_sha256']!=sdk_lock['sha256']
             or provenance['sdk']['facts']['archive']['sha256']!=sdk_lock['sha256']
-            or files.get('graphviz.tar.gz')!=dict(size=GRAPHVIZ_LOCK['size'],sha256=GRAPHVIZ_LOCK['sha256'])):
+            or files.get('graphviz.tar.gz')!=modified_identity):
         raise ValueError('Exported upstream source pins differ')
     sdk_files={name:row for name,row in files.items() if name.startswith('sdk/')}
     with tarfile.open(sdk,'r:*') as archive:

@@ -107,8 +107,9 @@ def collect(source_build, linked_build, archive):
     if builder.digest(linked_build/'candidate/bin/dot') != record['executable_sha256']:
         raise ValueError('Linked executable changed')
     source_lock = json.loads((HERE/'source-lock.json').read_text(encoding='utf-8'))
-    if parent['source'] != source_lock or record['source'] != source_lock or builder.digest(archive) != source_lock['sha256']:
+    if parent['source'] != source_lock or record['source'] != source_lock:
         raise ValueError('Source archive or provenance differs from source lock')
+    builder.source_inputs.verify(archive, source_lock)
     build = source_build/'build'
     source = source_build/'source/graphviz-16.1.0'
     linkage = record['linkage']
@@ -207,7 +208,7 @@ def collect(source_build, linked_build, archive):
                 continue
             if member.size > 8*1024**2:
                 raise ValueError('Source entry exceeds limit')
-            payload = incoming.extractfile(member).read(8*1024**2+1)
+            payload = builder.source_inputs.member_bytes(incoming, member, source_lock)
             sha = hashlib.sha256(payload).hexdigest()
             if relative in source_bytes:
                 if sha != source_bytes[relative]:

@@ -54,13 +54,15 @@ def policy_text(data,encoding,url):
     return '\n'.join(line for part in ''.join(parser.chunks).splitlines() if (line:=' '.join(part.split())))+'\n'
 
 
-def w3c_reference_materials():
+def w3c_reference_materials(*, include_legacy_entities=True):
     """Preserve dated policies and original publication headers, without approval."""
     lock=json.loads(audit.bounded(W3C_REFERENCES/'sources.json',65536))
     expected={'document-1999','software-1998','document-2002','document-2023','html401-index','svg11-index'}
     if set(lock['references'])!=expected:raise ValueError('Incomplete W3C policy reference set')
     raw_files={};materials=[]
     for name in sorted(expected):
+        if not include_legacy_entities and name in ('html401-index', 'document-1999', 'software-1998'):
+            continue
         item=lock['references'][name];filename=item['file'];path=Path(filename)
         if (path.name!=filename or '\\' in filename or ':' in filename
                 or not item['url'].startswith('https://www.w3.org/')):
@@ -89,12 +91,12 @@ def w3c_reference_materials():
             stored_sha256=item['stored_sha256'],raw_offset=0,raw_length=len(material),encoding=item['encoding'],
             scope='Publication header' if name.endswith('-index') else 'Full policy text; no retroactive license assignment')))
     routing=lock['policy_routing']
-    for name in routing['html401']['policy_references']:
+    for name in routing['html401']['policy_references'] if include_legacy_entities else ():
         if lock['references'][name]['url'].encode() not in raw_files['html401-index']:
             raise ValueError('Dated HTML policy link differs from publication')
     if routing['svg11']['observed_policy_url'].encode() not in raw_files['svg11-index']:
         raise ValueError('SVG generic policy link differs from publication')
-    return materials,routing
+    return materials,routing if include_legacy_entities else {'svg11': routing['svg11']}
 
 
 def reference_material(name):
@@ -161,6 +163,15 @@ def entity_declaration_notice(data,expected_sha256):
     """Retain the SGML declaration notices, including ISO's stated conditions."""
     if len(data)>1024**2 or hashlib.sha256(data).hexdigest()!=expected_sha256:
         raise ValueError('Entity document differs from bound source bytes')
+    source_lock=json.loads((HERE/'source-lock.json').read_text())
+    replacement=builder.source_inputs.replacements(source_lock).get('graphviz-16.1.0/lib/common/entities.html')
+    if replacement is not None and data == replacement:
+        notice = data.split(b'-->\n', 1)[0].removeprefix(b'<!--\n') + b'\n'
+        return ('ENTITY-DATA-LICENSES.txt', notice, dict(kind='reviewed-replacement-entity-notices',
+            approved=False, path='lib/common/entities.html', source_sha256=expected_sha256,
+            source_tree_sha256=source_lock['entity_replacement']['source_tree_sha256'],
+            declaration_notices=0, license_route='WHATWG BSD-3-Clause; W3C software/document 2002',
+            scope='Replacement data and compatibility changes; no whole-artifact approval'))
     reference=reference_material('html401-entities.html')
     def notices(raw):
         parser=Text();parser.feed(raw.decode('iso-8859-1'));parser.close()
@@ -210,15 +221,16 @@ def collect(source_build,linked_build,source_archive,compiler_evidence):
             or record['relink']['parent_provenance_sha256']!=builder.digest(source_build/'provenance.json')):
         raise ValueError('Data audit requires exact completed build and compiler evidence')
     lock=json.loads((HERE/'source-lock.json').read_text())
-    if record['source']!=lock or builder.digest(source_archive)!=lock['sha256']:
+    if record['source']!=lock:
         raise ValueError('Graphviz source archive changed')
+    builder.source_inputs.verify(source_archive, lock)
     names=('make_colortbl.py','entities.py','brewer_colors','svgcolor_names','color_names','entities.html')
     inputs={};source_dir=source_build/'source/graphviz-16.1.0/lib/common'
     with tarfile.open(source_archive) as archive:
         for name in names:
             member=archive.getmember('graphviz-16.1.0/lib/common/'+name)
             if not member.isfile() or member.size>1024**2:raise ValueError('Invalid pinned data source')
-            raw=archive.extractfile(member).read(1024**2+1)
+            raw=builder.source_inputs.member_bytes(archive, member, lock)
             if raw!=audit.bounded(source_dir/name,1024**2):raise ValueError('Generator or data differs from pinned archive')
             inputs[name]=raw
     svg=graphviz_colors(inputs['svgcolor_names'])
@@ -226,7 +238,9 @@ def collect(source_build,linked_build,source_archive,compiler_evidence):
     if len(svg)!=147 or {k.removeprefix('/svg/'):v for k,v in svg.items()}!={k:(*v,255) for k,v in expected_svg.items()}:
         raise ValueError('SVG reference values differ')
     actual_entities=entities(inputs['entities.html'])
-    if len(actual_entities)!=252 or actual_entities!=entities(reference_material('html401-entities.html')):
+    reference_entities=(builder.source_inputs.replacements(lock)['graphviz-16.1.0/lib/common/entities.html']
+                        if 'entity_replacement' in lock else reference_material('html401-entities.html'))
+    if len(actual_entities)!=252 or actual_entities!=entities(reference_entities):
         raise ValueError('HTML entity values differ')
     xorg=compare_xorg(graphviz_colors(inputs['color_names']),xorg_colors(reference_material('xorg-rgb-1.1.0-rgb.txt')))
     generated={item['path']:item for item in evidence['dependencies'].values() if item['origin']=='generated-build'}
