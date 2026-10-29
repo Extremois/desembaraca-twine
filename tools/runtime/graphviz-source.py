@@ -19,7 +19,7 @@ def replacements(lock):
     result = {}
     for name, row in lock.get('entity_replacement', {}).get('files', {}).items():
         path = HERE / row['file']
-        if not path.resolve().is_relative_to(HERE) or path.is_symlink():
+        if not path.resolve().is_relative_to(HERE.resolve()) or path.is_symlink():
             raise ValueError('Unsafe replacement source path')
         with path.open('rb') as stream:
             raw = stream.read(1024**2 + 1)
@@ -54,7 +54,7 @@ def tree_identity(path, lock):
             name = member.name
             relative = PurePosixPath(name)
             total += member.size
-            if (name in seen or relative.is_absolute() or '..' in relative.parts
+            if (name in seen or not relative.parts or relative.is_absolute() or '..' in relative.parts
                     or '\\' in name or ':' in name or relative.parts[0] != PREFIX[:-1]
                     or len(seen) >= 50000 or total > 1024**3 or member.size < 0):
                 raise ValueError('Unsafe or excessive Graphviz source tree')
