@@ -1,0 +1,70 @@
+{
+  "tag": "graphviz-16.1.0-posix-46d111d",
+  "published": false,
+  "authorized": false,
+  "local_directory": ".tmp/publish-posix-46d111d",
+  "asset_count": 12,
+  "total_bytes": 390122923,
+  "files": [
+    {
+      "name": "graphviz-16.1.0-linux-glibc-aarch64-e4f8f852a3278edb8fb91b74330641c79693a13c367e9762fd119916b3c2f542.zip",
+      "size": 7783115,
+      "sha256": "e4f8f852a3278edb8fb91b74330641c79693a13c367e9762fd119916b3c2f542"
+    },
+    {
+      "name": "graphviz-16.1.0-linux-glibc-aarch64-d434a52573f3d29e6819300a33d4ede9ef8f4415a7e39befec68e5d0c9fbaadd-sources.tar.gz",
+      "size": 68241416,
+      "sha256": "d434a52573f3d29e6819300a33d4ede9ef8f4415a7e39befec68e5d0c9fbaadd"
+    },
+    {
+      "name": "graphviz-16.1.0-linux-glibc-x86_64-1403a2beae5a0bc7b616f68c772c954a6f66a4c44665619306ceac658f6a9871.zip",
+      "size": 6873120,
+      "sha256": "1403a2beae5a0bc7b616f68c772c954a6f66a4c44665619306ceac658f6a9871"
+    },
+    {
+      "name": "graphviz-16.1.0-linux-glibc-x86_64-dfe53f2dc50f9c5837f4f86dc5af7f3151e450724e7cc65942bd98991c605059-sources.tar.gz",
+      "size": 68241403,
+      "sha256": "dfe53f2dc50f9c5837f4f86dc5af7f3151e450724e7cc65942bd98991c605059"
+    },
+    {
+      "name": "graphviz-16.1.0-macos-arm64-3defe05ab35e63a73ec69faf44ecf382b63e9c0b7d46d19c7081ec0a7399a831.zip",
+      "size": 2084990,
+      "sha256": "3defe05ab35e63a73ec69faf44ecf382b63e9c0b7d46d19c7081ec0a7399a831"
+    },
+    {
+      "name": "graphviz-16.1.0-macos-arm64-4beb91d4f42565ef94b0945ca464277661c57e1e1ad0a10efbb087a56d13d575-sources.tar.gz",
+      "size": 41142579,
+      "sha256": "4beb91d4f42565ef94b0945ca464277661c57e1e1ad0a10efbb087a56d13d575"
+    },
+    {
+      "name": "graphviz-16.1.0-macos-x86_64-aa9ea80350aa63b269b9228da9b7e5b2812d7ef6ac3fa3c3a6205e9d1a7ad897.zip",
+      "size": 2156224,
+      "sha256": "aa9ea80350aa63b269b9228da9b7e5b2812d7ef6ac3fa3c3a6205e9d1a7ad897"
+    },
+    {
+      "name": "graphviz-16.1.0-macos-x86_64-96f093e56aab8f476fa7a792e0d7202bdeab2c3487853c4a86d8eab207078142-sources.tar.gz",
+      "size": 41146019,
+      "sha256": "96f093e56aab8f476fa7a792e0d7202bdeab2c3487853c4a86d8eab207078142"
+    },
+    {
+      "name": "graphviz-16.1.0-linux-musl-aarch64-b342050b5f6a9ff861e4528bca1710298366938491db2b8c3cad0ba16b680df9.zip",
+      "size": 7982638,
+      "sha256": "b342050b5f6a9ff861e4528bca1710298366938491db2b8c3cad0ba16b680df9"
+    },
+    {
+      "name": "graphviz-16.1.0-linux-musl-aarch64-4a937f3371fab412c91a2cf9bc1d74100b1690053914c195d846368a8c4f9027-sources.tar.gz",
+      "size": 68248359,
+      "sha256": "4a937f3371fab412c91a2cf9bc1d74100b1690053914c195d846368a8c4f9027"
+    },
+    {
+      "name": "graphviz-16.1.0-linux-musl-x86_64-519ce6fa092c9e3bc5d0502cee3e5c86ac21e32e3c799df650249834da0224e1.zip",
+      "size": 7974503,
+      "sha256": "519ce6fa092c9e3bc5d0502cee3e5c86ac21e32e3c799df650249834da0224e1"
+    },
+    {
+      "name": "graphviz-16.1.0-linux-musl-x86_64-f196f2e30a38a7414bcbc6ea00c56e609b71abd65b1d11b026883d1ed35fc859-sources.tar.gz",
+      "size": 68248557,
+      "sha256": "f196f2e30a38a7414bcbc6ea00c56e609b71abd65b1d11b026883d1ed35fc859"
+    }
+  ]
+}

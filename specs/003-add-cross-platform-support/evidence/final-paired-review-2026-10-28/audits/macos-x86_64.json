@@ -227,7 +227,7 @@
   "static_link_input_mapping": [],
   "static_link_input_mapping_complete": false,
   "decision_document": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/audits/DECISIONS.md",
-  "decision_sha256": "07de449f221c2f9b71848b5699053bd0c1f5456c71018fa74d23a474671efce9",
+  "decision_sha256": "39e1e693c96f21d4fe5ff0f3c6be16168a14a68e92d3eaef1a0700615e5e02e9",
   "system_libraries": [
     "/usr/lib/libSystem.B.dylib",
     "/usr/lib/libc++.1.dylib"

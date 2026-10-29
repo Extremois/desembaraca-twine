@@ -43,6 +43,10 @@ Cada input `.a`/`.o` observado pertence a exatamente um grupo identificado no
 registro da arquitetura. Os grupos Graphviz contêm também os componentes acima;
 isso não é atribuição de todos os símbolos a uma licença única.
 
+As dependências dinâmicas glibc medidas são libc, libm e libpthread; x64 também
+declara `ld-linux-x86-64.so.2`. As listas de cada auditoria vêm dos relatórios
+do próprio executável e não autorizam bibliotecas privadas ou nomes adicionais.
+
 glibc startup/nonshared segue a [LGPL 2.1, seções 0, 4 e 6(a)/(d)](https://raw.githubusercontent.com/bminor/glibc/master/COPYING.LESSERv2).
 Não se estende a exceção de um arquivo a outro. Entregam-se fontes completas da
 biblioteca, Graphviz, dados e receitas para modificação/relink; os dois relinks

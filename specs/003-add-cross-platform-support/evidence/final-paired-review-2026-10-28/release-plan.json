@@ -12,7 +12,7 @@
     {
       "artifact_id": "linux-glibc-aarch64",
       "audit_path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/audits/linux-glibc-aarch64.json",
-      "audit_sha256": "f564ddb6ee68608ea92db0ab0055ad5eb5695ecdf89b484ff09efdee9d357577",
+      "audit_sha256": "af31d0b1cbca76f19b8b37d286ade0ed7961d133bbbea90cb1da1f1996f663b0",
       "manifest_proposal": "linux-glibc-aarch64/manifest-proposal.json",
       "manifest_sha256": "358be1865d757208d7dac906616351dc733861f19a2b2062a292a02bd8b6c479",
       "binary": {
@@ -39,7 +39,7 @@
     {
       "artifact_id": "linux-glibc-x86_64",
       "audit_path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/audits/linux-glibc-x86_64.json",
-      "audit_sha256": "1249dc0c61e7db7245002c1250acdae13c8318b3ecaed90d9000e4189571a410",
+      "audit_sha256": "1cef0458a994edca09389f248b7c911efb4c96170be53b685f20e544d3b4dced",
       "manifest_proposal": "linux-glibc-x86_64/manifest-proposal.json",
       "manifest_sha256": "67b55fdac3461ed8db43093943bd42f3986f4d6b6d5427ddac30c9be1b0e6a83",
       "binary": {
@@ -66,7 +66,7 @@
     {
       "artifact_id": "macos-arm64",
       "audit_path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/audits/macos-arm64.json",
-      "audit_sha256": "277cb4ccb16860e21a8e6e7bb53676304c15883cf9d2a99c2c094a56cb403066",
+      "audit_sha256": "a4e6a052f21101509623cf4bb7e5dcc82cc8d97e04ecef610305b864944a506f",
       "manifest_proposal": "macos-arm64/manifest-proposal.json",
       "manifest_sha256": "a46ef5f8434a60b64e71e0038bd8001eb8bb654b091926379c038465b6983f6a",
       "binary": {
@@ -93,7 +93,7 @@
     {
       "artifact_id": "macos-x86_64",
       "audit_path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/audits/macos-x86_64.json",
-      "audit_sha256": "8e330478397fd27a1f984afa28befe256f38c19e6888d95db8bc19b6f69f544c",
+      "audit_sha256": "d76b6cc27d9944772b73df35296605f1e017d49fb175700dc64f98fef4c36f2d",
       "manifest_proposal": "macos-x86_64/manifest-proposal.json",
       "manifest_sha256": "8ff91bf13a04a3e6a6fabf54d2de28d5f5c779b4ebe1e69951f147dca321a892",
       "binary": {
@@ -120,7 +120,7 @@
     {
       "artifact_id": "linux-musl-aarch64",
       "audit_path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/audits/linux-musl-aarch64.json",
-      "audit_sha256": "8c69a7d4a345ec5e41df0985e3bf42462c0af74fa0b3813f55db2d4f5a070088",
+      "audit_sha256": "b2bd2cb714dc7bbb9e0d283401129dadc4caea185e8c49548ad5b8c670227596",
       "manifest_proposal": "linux-musl-aarch64/manifest-proposal.json",
       "manifest_sha256": "9a2e4a2e5234efdcf507b25429d5f02e77a29d21142cd63056b6a8f583420605",
       "binary": {
@@ -147,7 +147,7 @@
     {
       "artifact_id": "linux-musl-x86_64",
       "audit_path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/audits/linux-musl-x86_64.json",
-      "audit_sha256": "a8013b3eb5ddb775a7ffa4a18e007e6aa722c2233c9ffb7a304f2f1c1d4d9026",
+      "audit_sha256": "946bb32da59ed3bafd03b31258cf2e0e6d4800c9a89deb163c58df046592dd4b",
       "manifest_proposal": "linux-musl-x86_64/manifest-proposal.json",
       "manifest_sha256": "6737c43e1d245fa7b50609be3c3cbbc66012fb533e125e044bc94f93f252854d",
       "binary": {
