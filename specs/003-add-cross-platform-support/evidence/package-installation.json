@@ -1,153 +1,152 @@
 {
-  "kind": "partial-package-installation-evidence-index",
+  "kind": "final-installed-public-catalog-acceptance-index",
   "task": "T078",
-  "task_complete": false,
-  "qualified": false,
-  "captured_at": "2026-10-20T22:56:36.819152+00:00",
-  "application_revision": "d90b5671cba0477649e71a52b0d94704cce81c4e",
-  "current_installed_formats": [
+  "task_complete": true,
+  "passed": true,
+  "qualified": true,
+  "application_revision": "53fb2aba47d78b5cb4a6679cafaaef5fc5e52c29",
+  "qualified_functional_revision": "c0078230a3bf1a2b934f1754e8b12664f100b4cc",
+  "abi_targets": 7,
+  "python_slots": 14,
+  "installations": 42,
+  "modes": [
     "wheel",
-    "sdist"
+    "sdist",
+    "immutable-remote"
   ],
-  "hosted_installations_verified": 20,
-  "hosted_combinations_verified": 10,
-  "current_package_checks": {
-    "path": "specs/003-add-cross-platform-support/evidence/installed-private-engines-2026-10-20/packages/summary.json",
-    "sha256": "e000983b2a0c21a556c71091dfa801c8796f92efa6566ab0b845a4b91c97cddf"
-  },
-  "foundation_checks": {
-    "path": "specs/003-add-cross-platform-support/evidence/installed-private-engines-2026-10-20/foundation.json",
-    "sha256": "429c3b2d00458d542e6a80aea6967b3a9b9a63990ef47166e8df6a9ae24640a5"
-  },
-  "registry": {
-    "path": "tools/runtime/support-targets.json",
-    "sha256": "be3e8a77e3836d1125658c00a75fbf0e3584f1e26a166a053583336c29a5d295"
-  },
-  "expected_support_targets": 69,
-  "expected_python_slots": 138,
-  "host_scope": [
-    "Ubuntu x64 and ARM64",
-    "macOS 15 ARM64 and Intel",
-    "Windows hosted runner"
-  ],
-  "checks": [
-    "53 package files match source and both installed formats per combination",
-    "Project LICENSE and NOTICE preserved",
-    "Three entrypoints per format",
-    "Import from a fresh external venv",
-    "Restricted PATH without Git or global Graphviz",
-    "Offline installation with staged build tools",
-    "pip records expected input archive SHA-256",
-    "No engine prepared by help",
-    "Optional real private engines: automatic/explicit preparation, final-destination probe, modes, 13 offline cases and semantic/original preservation per installed format"
-  ],
-  "remaining": [
-    "Final immutable remotely installed candidates, not just current development builds",
-    "Required native images/eligibility and both Python slots for every registered support cell",
-    "Private engine mode/manifests/notices and final bundle approvals; no POSIX catalog entry has been activated"
-  ],
-  "local_foundation": {
-    "tests_per_python": 247,
-    "skipped_per_python": 8,
-    "python_minors": [
-      "3.12",
-      "3.14"
-    ],
-    "note": "Five prior glibc-review tests remain local and were not part of this CI-only checkpoint"
-  },
-  "limitations": [
-    "Package installation/help does not qualify native engine execution or any support cell",
-    "Windows hosted runner is not a clean Windows 11 acceptance environment",
-    "No source/legal/signature approval or full-spec completion inferred"
-  ],
-  "installed_private_engine_checks": {
-    "path": "specs/003-add-cross-platform-support/evidence/installed-private-engines-2026-10-20/runtime/summary.json",
-    "sha256": "9bed474295304dc6697f41b1c289f934fc9e5e6e7ab0a8bc3704caccd886d6c7"
-  },
-  "private_engine_installations_verified": 16,
-  "private_engine_explicit_corpus_executions": 208,
-  "private_engine_known_zero_references": 96,
-  "total_verified_installs_current_revision": 46,
-  "previous_index": {
-    "path": "specs/003-add-cross-platform-support/evidence/installed-private-engines-2026-10-20/previous-package-installation.json",
-    "sha256": "48a55157fe3240fe2b1ab33ca587cc035f92d8900ef92a4665d6104b364493e5"
-  },
-  "platform_partial_indexes": [
+  "outside_checkout": true,
+  "git_and_global_graphviz_absent": true,
+  "records": [
     {
-      "path": "specs/003-add-cross-platform-support/evidence/linux-ubuntu-24.04.json",
-      "sha256": "784744c15d7e808519f005e431f3340ff95d385fdec9a2d1a63f30719a9e653b"
+      "target_id": "abi-linux-glibc-aarch64",
+      "python": "3.14.9",
+      "evidence": {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/53fb2ab/12888816183/final-catalog.json.gz",
+        "sha256": "0349da7c34c70e50a4285c04fccaa70bf3962565b77df394c308c6c73f0bba0e"
+      },
+      "run_id": 40853746928
     },
     {
-      "path": "specs/003-add-cross-platform-support/evidence/macos.json",
-      "sha256": "6f04681d4a9ea9695371cb75c52c16859f7f2acaf1c482816ec8b0923feca4bb"
+      "target_id": "abi-linux-musl-aarch64",
+      "python": "3.14.5",
+      "evidence": {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/53fb2ab/12888526446/final-catalog.json.gz",
+        "sha256": "56b98d4f8151a092fc9d29d31056fb7ff72fb0617d3588375c0a2cce63cf5b0b"
+      },
+      "run_id": 40853746928
+    },
+    {
+      "target_id": "abi-darwin-darwin-aarch64",
+      "python": "3.12.10",
+      "evidence": {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/53fb2ab/12888522239/final-catalog.json.gz",
+        "sha256": "0624f02250c90814a513ef2f6ceb13971e2ed31f9099bc9c9ea0a4f9740f7b10"
+      },
+      "run_id": 40853746928
+    },
+    {
+      "target_id": "abi-windows-win32-x86_64",
+      "python": "3.14.9",
+      "evidence": {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/53fb2ab/12888467715/final-catalog.json.gz",
+        "sha256": "570a386dfda1248d8712da8f5c922c0fa7e3d87833aeb9f06ea4a6e16f54c102"
+      },
+      "run_id": 40853746928
+    },
+    {
+      "target_id": "abi-linux-glibc-x86_64",
+      "python": "3.12.15",
+      "evidence": {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/53fb2ab/12888342597/final-catalog.json.gz",
+        "sha256": "727746e4068718d81efb37b59687e6c945ee01a5bcce344891cc44ec889a88bb"
+      },
+      "run_id": 40853746928
+    },
+    {
+      "target_id": "abi-linux-musl-x86_64",
+      "python": "3.14.5",
+      "evidence": {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/53fb2ab/12888157965/final-catalog.json.gz",
+        "sha256": "bab5a758c77ae6dea50dfceb3c8bd1f81b67daf44ccda5b8c6ab7c737eb53037"
+      },
+      "run_id": 40853746928
+    },
+    {
+      "target_id": "abi-linux-glibc-aarch64",
+      "python": "3.12.15",
+      "evidence": {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/53fb2ab/12888098525/final-catalog.json.gz",
+        "sha256": "a549964df29bd3d47cd3454b3ee9c990c73ef3bd9f6115438f2866cbedcdee73"
+      },
+      "run_id": 40853746928
+    },
+    {
+      "target_id": "abi-darwin-darwin-x86_64",
+      "python": "3.12.10",
+      "evidence": {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/53fb2ab/12888068025/final-catalog.json.gz",
+        "sha256": "0c16c308d230308b943c7f961bff943e4e849facc4189f3e714f787cc0eb81d6"
+      },
+      "run_id": 40853746928
+    },
+    {
+      "target_id": "abi-darwin-darwin-x86_64",
+      "python": "3.14.7",
+      "evidence": {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/53fb2ab/12888047738/final-catalog.json.gz",
+        "sha256": "0ec21e39c0f30cb4c94f717b6ec2b7814a44aa7cc18cd777129178a999f68242"
+      },
+      "run_id": 40853746928
+    },
+    {
+      "target_id": "abi-linux-glibc-x86_64",
+      "python": "3.14.9",
+      "evidence": {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/53fb2ab/12888002995/final-catalog.json.gz",
+        "sha256": "6727dda7d3908f8085710937b40ac92f9e1fc802ce5e3dee7c7b512d1b95b722"
+      },
+      "run_id": 40853746928
+    },
+    {
+      "target_id": "abi-darwin-darwin-aarch64",
+      "python": "3.14.7",
+      "evidence": {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/53fb2ab/12887868293/final-catalog.json.gz",
+        "sha256": "1d0c0e054b10983c7a19dafa17f85977356d660064a271f41ed04dc414694727"
+      },
+      "run_id": 40853746928
+    },
+    {
+      "target_id": "abi-linux-musl-aarch64",
+      "python": "3.12.13",
+      "evidence": {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/53fb2ab/12887788137/final-catalog.json.gz",
+        "sha256": "b6c449721c2b94d72e6c0e80f115c2645b3ffdce316ea911a88e1c25877f5963"
+      },
+      "run_id": 40853746928
+    },
+    {
+      "target_id": "abi-windows-win32-x86_64",
+      "python": "3.12.10",
+      "evidence": {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/53fb2ab/12887464904/final-catalog.json.gz",
+        "sha256": "9d7a868c178ebb9e60a62a37c9f9afaac3b6587e02a680dddb08a58fedef0867"
+      },
+      "run_id": 40853746928
+    },
+    {
+      "target_id": "abi-linux-musl-x86_64",
+      "python": "3.12.13",
+      "evidence": {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/53fb2ab/12887384744/final-catalog.json.gz",
+        "sha256": "b2a7205f6cf9fa114b8302e140f6b8ccbfee54f711760a481e3e543c8a707fd3"
+      },
+      "run_id": 40853746928
     }
   ],
-  "current_remote_installation_checks": {
-    "path": "specs/003-add-cross-platform-support/evidence/documented-installation-2026-10-20/summary.json",
-    "sha256": "19ca95c9408085890075c2de9e61ad9cdab92eaff37af47e2c91741e894b2323",
-    "installations": 10,
-    "entrypoint_checks": 30,
-    "revision": "d90b5671cba0477649e71a52b0d94704cce81c4e",
-    "final_native_candidate": false
-  },
-  "native_ubuntu_additional_checks": {
-    "path": "specs/003-add-cross-platform-support/evidence/ubuntu2404-native-2026-10-27/summary.json",
-    "sha256": "3e45f819066c10a8f5a8f909a6f4fb48d9eb99662597d3f8054a8010c9890b72",
-    "application_revision": "4b5625d4b79720e58d50f0919eedb3b39d08e00c",
-    "python_slots": 12,
-    "formats": [
-      "wheel"
-    ],
-    "installed_files_per_slot": 53,
-    "native_targets": [
-      "ubuntu-26.10-stable-x86_64-distribution-default",
-      "ubuntu-26.04-stable-x86_64-distribution-default",
-      "ubuntu-22.04-stable-x86_64-distribution-default",
-      "ubuntu-24.04-stable-x86_64-distribution-default",
-      "ubuntu-20.04-stable-x86_64-distribution-default",
-      "ubuntu-18.04-stable-x86_64-distribution-default"
-    ],
-    "acquisition": "controlled private-engine transport",
-    "scope": "Additional private native observations; excluded from older hosted/current-revision counters",
-    "qualified": false,
-    "final_native_candidate": false
-  },
-  "previous_native_ubuntu_index": {
-    "path": "specs/003-add-cross-platform-support/evidence/ubuntu2404-native-2026-10-27/previous-package-installation.json",
-    "sha256": "f5637b34814fcf96ba2b402f4d4939d88b91e92d12646741ad103d0b3c9f76cc"
-  },
-  "native_debian_ubuntu_additional_checks": {
-    "path": "specs/003-add-cross-platform-support/evidence/debian-native-2026-10-27/summary.json",
-    "sha256": "b7343aca3c9f0e32ceab8270fa79d4419100db2317e541f0596014670205a0eb",
-    "application_revision": "55a789ea497c2fa74180cbb2e2dee3b81f1a1220",
-    "python_slots": 16,
-    "formats": [
-      "wheel"
-    ],
-    "installed_files_per_slot": 53,
-    "native_targets": [
-      "debian-12-stable-x86_64-distribution-default",
-      "debian-13-stable-x86_64-distribution-default",
-      "ubuntu-24.04-stable-x86_64-distribution-default",
-      "ubuntu-26.04-stable-x86_64-distribution-default",
-      "ubuntu-22.04-stable-x86_64-distribution-default",
-      "ubuntu-26.10-stable-x86_64-distribution-default",
-      "ubuntu-20.04-stable-x86_64-distribution-default",
-      "ubuntu-18.04-stable-x86_64-distribution-default"
-    ],
-    "acquisition": "controlled private-engine transport",
-    "scope": "Additional private native observations; excluded from older hosted/current-revision counters",
-    "qualified": false,
-    "final_native_candidate": false
-  },
-  "previous_native_debian_ubuntu_index": {
-    "path": "specs/003-add-cross-platform-support/evidence/debian-native-2026-10-27/previous-package-installation.json",
-    "sha256": "cbe163db3bbd4abe7dad4f4d0d8cbf44ed32115032330f5121731b74a9933d26"
-  },
-  "current_abi_remote_installation": {
-    "path": "specs/003-add-cross-platform-support/evidence/abi-remote-install-ci-2026-10-28/summary.json",
-    "sha256": "34a2b6bab8716eca8f682cb3f79a54d0b095b3f5b2d5d9149aa097e2d1a6271e",
-    "slots": 14,
-    "qualified": false
+  "scope": "Normal published catalog acquisition, automatic and explicit preparation, full corpus and offline healthy reuse in each of three external venvs; actual host identity retained.",
+  "qualification": {
+    "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/qualification/summary.json",
+    "sha256": "607d07a5d5ab823187ce2f86a3fa8140ad146828b16ca4c195ef25f01d481bbf"
   }
 }

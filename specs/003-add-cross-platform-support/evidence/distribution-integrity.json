@@ -1,518 +1,285 @@
 {
-  "kind": "partial-distribution-integrity-evidence-index",
+  "kind": "final-distribution-integrity",
   "task": "T066",
-  "task_complete": false,
+  "task_complete": true,
   "passed": true,
-  "qualified": false,
-  "license_compatibility_approved": false,
-  "captured_at": "2026-10-21T01:17:54.325745+00:00",
-  "archive_checks": {
-    "path": "specs/003-add-cross-platform-support/evidence/distribution-integrity-2026-10-20/final-check.json",
-    "sha256": "bad3b2c0848021832f4a7491d5f8887de9b0f3afede0a24459597dea902e4ae5"
+  "qualified": true,
+  "application_license": "Apache-2.0; separate EPL/LGPL/other upstream terms remain in the artifact notices",
+  "package_revision": "53fb2aba47d78b5cb4a6679cafaaef5fc5e52c29",
+  "license_compatibility_approved": true,
+  "scope": "Exact published POSIX pairs reviewed in scoped technical audits; Windows unchanged upstream acquisition with notices/source references, not a redistributed Windows bundle.",
+  "reviewed_pairs": {
+    "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/summary.json",
+    "sha256": "148638e76e9fef3799d1e57774a716931affdbd459d14f6ef04fa756cd80a93d"
   },
-  "archive_check_index": {
-    "path": "specs/003-add-cross-platform-support/evidence/distribution-integrity-2026-10-20/summary.json",
-    "sha256": "01f63cbed24a5b8b1cdaae3ba27cf9ae20a14e0759715832d3184436a199d5d2"
+  "qualification": {
+    "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/qualification/summary.json",
+    "sha256": "607d07a5d5ab823187ce2f86a3fa8140ad146828b16ca4c195ef25f01d481bbf"
   },
-  "archive_bundles": 6,
-  "archive_files_verified": 2419,
-  "archive_notice_payloads_verified": 2407,
-  "package_files_verified": 53,
-  "cache_checks": [
+  "public_delivery": {
+    "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/publication.json",
+    "sha256": "33bb6194eaac623b9ae488397b2a5b920b5112460f38b681b24b88328c620b3a"
+  },
+  "unauthenticated_public_hashes": {
+    "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/public-download-verification.json",
+    "sha256": "f1478c6919511e37447c99c13bf44fe5080ea7637a2a038cab4186c70ebf2010"
+  },
+  "slots": [
     {
-      "path": "specs/003-add-cross-platform-support/evidence/cache-notices-more-2026-10-20/posix/summary.json",
-      "sha256": "ee81b62ddb1313b54a16b0eb59dd28f3059f4c4233c3bf655fef0f0a4a37a16c"
-    },
-    {
-      "path": "specs/003-add-cross-platform-support/evidence/cache-notices-more-2026-10-20/additional/summary.json",
-      "sha256": "77db66de3aa1cdc8d4041fec5faed410412d701dda92d43c81b9eb77901c250b"
-    }
-  ],
-  "cache_notice_files_per_snapshot_total": 9792,
-  "cache_corruption_checks": 28,
-  "cache_restored_snapshots": 28,
-  "cache_slots": [
-    {
-      "artifact_id": "linux-glibc-x86_64",
-      "python": "3.12.15",
-      "arch": "x86_64",
-      "report": {
-        "path": "specs/003-add-cross-platform-support/evidence/cache-notices-more-2026-10-20/posix/ubuntu-24.04-3.12.json",
-        "sha256": "2a95a0735e8922a4d366a5339325c0a622a5cc1a9e877c8c1cfdf93e8fe459b2"
-      },
-      "notice_files_per_format": 480,
-      "installed_modes": [
+      "target_id": "abi-linux-glibc-aarch64",
+      "python": "3.14.9",
+      "installed_package_files": 59,
+      "modes": [
         "wheel",
-        "sdist"
+        "sdist",
+        "remote"
       ],
-      "environment": {
-        "environment_kind": "hosted-native",
-        "runner": "ubuntu-24.04"
+      "evidence": {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/53fb2ab/12888816183/final-catalog.json.gz",
+        "sha256": "0349da7c34c70e50a4285c04fccaa70bf3962565b77df394c308c6c73f0bba0e"
       }
     },
     {
-      "artifact_id": "linux-glibc-x86_64",
-      "python": "3.14.8",
-      "arch": "x86_64",
-      "report": {
-        "path": "specs/003-add-cross-platform-support/evidence/cache-notices-more-2026-10-20/posix/ubuntu-24.04-3.14.json",
-        "sha256": "ec6c1f221ae0f66c40f0c6cd593f27a724d2f229cd7021b327b5b90efb696c09"
-      },
-      "notice_files_per_format": 480,
-      "installed_modes": [
-        "wheel",
-        "sdist"
-      ],
-      "environment": {
-        "environment_kind": "hosted-native",
-        "runner": "ubuntu-24.04"
-      }
-    },
-    {
-      "artifact_id": "linux-glibc-aarch64",
-      "python": "3.12.15",
-      "arch": "aarch64",
-      "report": {
-        "path": "specs/003-add-cross-platform-support/evidence/cache-notices-more-2026-10-20/posix/ubuntu-24.04-arm-3.12.json",
-        "sha256": "aec8b90d2d1c7b7f56d288a6e3dc604f3aa199d50564b5cf0242568901a05707"
-      },
-      "notice_files_per_format": 573,
-      "installed_modes": [
-        "wheel",
-        "sdist"
-      ],
-      "environment": {
-        "environment_kind": "hosted-native",
-        "runner": "ubuntu-24.04-arm"
-      }
-    },
-    {
-      "artifact_id": "linux-glibc-aarch64",
-      "python": "3.14.8",
-      "arch": "aarch64",
-      "report": {
-        "path": "specs/003-add-cross-platform-support/evidence/cache-notices-more-2026-10-20/posix/ubuntu-24.04-arm-3.14.json",
-        "sha256": "875ef0074ee5023d76d1afe087ee6c0577a7ad3986dc1c7dec608d6f518b3b7d"
-      },
-      "notice_files_per_format": 573,
-      "installed_modes": [
-        "wheel",
-        "sdist"
-      ],
-      "environment": {
-        "environment_kind": "hosted-native",
-        "runner": "ubuntu-24.04-arm"
-      }
-    },
-    {
-      "artifact_id": "macos-arm64",
-      "python": "3.12.10",
-      "arch": "arm64",
-      "report": {
-        "path": "specs/003-add-cross-platform-support/evidence/cache-notices-more-2026-10-20/posix/macos-15-3.12.json",
-        "sha256": "09a53d9c72739894020811dff7635a64c17b142bb26d1362f2df8cca571efb76"
-      },
-      "notice_files_per_format": 233,
-      "installed_modes": [
-        "wheel",
-        "sdist"
-      ],
-      "environment": {
-        "environment_kind": "hosted-native",
-        "runner": "macos-15"
-      }
-    },
-    {
-      "artifact_id": "macos-arm64",
-      "python": "3.14.7",
-      "arch": "arm64",
-      "report": {
-        "path": "specs/003-add-cross-platform-support/evidence/cache-notices-more-2026-10-20/posix/macos-15-3.14.json",
-        "sha256": "a25bd0be1cfb52fc81d93a922716614568951333fa3a5e40d07d466de1170d8d"
-      },
-      "notice_files_per_format": 233,
-      "installed_modes": [
-        "wheel",
-        "sdist"
-      ],
-      "environment": {
-        "environment_kind": "hosted-native",
-        "runner": "macos-15"
-      }
-    },
-    {
-      "artifact_id": "macos-x86_64",
-      "python": "3.12.10",
-      "arch": "x86_64",
-      "report": {
-        "path": "specs/003-add-cross-platform-support/evidence/cache-notices-more-2026-10-20/posix/macos-15-intel-3.12.json",
-        "sha256": "31d5799e2df1e27789a350fb56324f90791e4d70a0ac903a040956410a332f50"
-      },
-      "notice_files_per_format": 233,
-      "installed_modes": [
-        "wheel",
-        "sdist"
-      ],
-      "environment": {
-        "environment_kind": "hosted-native",
-        "runner": "macos-15-intel"
-      }
-    },
-    {
-      "artifact_id": "macos-x86_64",
-      "python": "3.14.7",
-      "arch": "x86_64",
-      "report": {
-        "path": "specs/003-add-cross-platform-support/evidence/cache-notices-more-2026-10-20/posix/macos-15-intel-3.14.json",
-        "sha256": "737d2a6f4d9774ff892e9113ea5688e1ba6b944e6bb2b8c5e929a30868fa503c"
-      },
-      "notice_files_per_format": 233,
-      "installed_modes": [
-        "wheel",
-        "sdist"
-      ],
-      "environment": {
-        "environment_kind": "hosted-native",
-        "runner": "macos-15-intel"
-      }
-    },
-    {
-      "artifact_id": "linux-musl-x86_64",
-      "python": "3.12.13",
-      "arch": "x86_64",
-      "report": {
-        "path": "specs/003-add-cross-platform-support/evidence/cache-notices-more-2026-10-20/additional/musl-cache-notices-x86_64-3.12.json",
-        "sha256": "123f1b22361f92a8b83c5693ec7017b27d23326d826e9bf9f71f7b5a2724e9ca"
-      },
-      "notice_files_per_format": 450,
-      "installed_modes": [
-        "wheel",
-        "sdist"
-      ],
-      "environment": {
-        "arch": "x86_64",
-        "python_minor": "3.12",
-        "distribution": "alpine",
-        "version": "3.22.4",
-        "uid": 1001,
-        "environment_kind": "container",
-        "image": "python@sha256:9381e50cc82f4279b949fcd2d2f5e57cf97b1da2399eb956502364ceea2f4e83",
-        "kernel": "7.0.0-1017-azure",
-        "native_cpu": true,
-        "limitation": "Alpine userland on Ubuntu hosted kernel; no native Alpine cell qualification"
-      }
-    },
-    {
-      "artifact_id": "linux-musl-x86_64",
+      "target_id": "abi-linux-musl-aarch64",
       "python": "3.14.5",
-      "arch": "x86_64",
-      "report": {
-        "path": "specs/003-add-cross-platform-support/evidence/cache-notices-more-2026-10-20/additional/musl-cache-notices-x86_64-3.14.json",
-        "sha256": "94a49db41e2b17d3efcd1723f4c677d397a7d7a77e3b14f4d8881298ac8abab8"
-      },
-      "notice_files_per_format": 450,
-      "installed_modes": [
+      "installed_package_files": 59,
+      "modes": [
         "wheel",
-        "sdist"
+        "sdist",
+        "remote"
       ],
-      "environment": {
-        "arch": "x86_64",
-        "python_minor": "3.14",
-        "distribution": "alpine",
-        "version": "3.22.4",
-        "uid": 1001,
-        "environment_kind": "container",
-        "image": "python@sha256:1a5f0303fd8941565b5bbda3fac2345148a9fd8245d575c2971ccefcd77c78f6",
-        "kernel": "6.17.0-1022-azure",
-        "native_cpu": true,
-        "limitation": "Alpine userland on Ubuntu hosted kernel; no native Alpine cell qualification"
+      "evidence": {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/53fb2ab/12888526446/final-catalog.json.gz",
+        "sha256": "56b98d4f8151a092fc9d29d31056fb7ff72fb0617d3588375c0a2cce63cf5b0b"
       }
     },
     {
-      "artifact_id": "linux-musl-aarch64",
-      "python": "3.12.13",
-      "arch": "aarch64",
-      "report": {
-        "path": "specs/003-add-cross-platform-support/evidence/cache-notices-more-2026-10-20/additional/musl-cache-notices-aarch64-3.12.json",
-        "sha256": "4f48c6c4b76a1e852f8b1ce19a55dd52052404e69587db6140e2ee01ec794ddc"
-      },
-      "notice_files_per_format": 450,
-      "installed_modes": [
-        "wheel",
-        "sdist"
-      ],
-      "environment": {
-        "arch": "aarch64",
-        "python_minor": "3.12",
-        "distribution": "alpine",
-        "version": "3.22.4",
-        "uid": 1001,
-        "environment_kind": "container",
-        "image": "python@sha256:07b3a3b85d5b208f164a3276d5eb9c51e0ce61bbe4cb7ab4df0da50d5a78dc11",
-        "kernel": "7.0.0-1017-azure",
-        "native_cpu": true,
-        "limitation": "Alpine userland on Ubuntu hosted kernel; no native Alpine cell qualification"
-      }
-    },
-    {
-      "artifact_id": "linux-musl-aarch64",
-      "python": "3.14.5",
-      "arch": "aarch64",
-      "report": {
-        "path": "specs/003-add-cross-platform-support/evidence/cache-notices-more-2026-10-20/additional/musl-cache-notices-aarch64-3.14.json",
-        "sha256": "b6d3986bbadd175932d4aa5ffd6dbd8dd50a779647d370ff358d3627f5195763"
-      },
-      "notice_files_per_format": 450,
-      "installed_modes": [
-        "wheel",
-        "sdist"
-      ],
-      "environment": {
-        "arch": "aarch64",
-        "python_minor": "3.14",
-        "distribution": "alpine",
-        "version": "3.22.4",
-        "uid": 1001,
-        "environment_kind": "container",
-        "image": "python@sha256:27b691f87878a079100a3d8fafcd66b3c54d931598f307bcb54617c395f5b43c",
-        "kernel": "7.0.0-1017-azure",
-        "native_cpu": true,
-        "limitation": "Alpine userland on Ubuntu hosted kernel; no native Alpine cell qualification"
-      }
-    },
-    {
-      "artifact_id": "graphviz-16.1.0-windows-legacy",
+      "target_id": "abi-darwin-darwin-aarch64",
       "python": "3.12.10",
-      "arch": "AMD64",
-      "report": {
-        "path": "specs/003-add-cross-platform-support/evidence/cache-notices-more-2026-10-20/additional/windows-cache-notices-3.12.json",
-        "sha256": "434fcc9693cc93931940f68df07744f728e8bf4da4a257134af000c2ed3d63fa"
-      },
-      "notice_files_per_format": 29,
-      "installed_modes": [
+      "installed_package_files": 59,
+      "modes": [
         "wheel",
-        "sdist"
+        "sdist",
+        "remote"
       ],
-      "environment": {
-        "environment_kind": "hosted-windows",
-        "limitation": "Not a clean Windows 11 acceptance environment"
+      "evidence": {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/53fb2ab/12888522239/final-catalog.json.gz",
+        "sha256": "0624f02250c90814a513ef2f6ceb13971e2ed31f9099bc9c9ea0a4f9740f7b10"
       }
     },
     {
-      "artifact_id": "graphviz-16.1.0-windows-legacy",
-      "python": "3.14.8",
-      "arch": "AMD64",
-      "report": {
-        "path": "specs/003-add-cross-platform-support/evidence/cache-notices-more-2026-10-20/additional/windows-cache-notices-3.14.json",
-        "sha256": "a278abfde701807cf7131a8719982231810a33599d971fc9f4ee40c3fb032805"
-      },
-      "notice_files_per_format": 29,
-      "installed_modes": [
+      "target_id": "abi-windows-win32-x86_64",
+      "python": "3.14.9",
+      "installed_package_files": 59,
+      "modes": [
         "wheel",
-        "sdist"
+        "sdist",
+        "remote"
       ],
-      "environment": {
-        "environment_kind": "hosted-windows",
-        "limitation": "Not a clean Windows 11 acceptance environment"
+      "evidence": {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/53fb2ab/12888467715/final-catalog.json.gz",
+        "sha256": "570a386dfda1248d8712da8f5c922c0fa7e3d87833aeb9f06ea4a6e16f54c102"
+      }
+    },
+    {
+      "target_id": "abi-linux-glibc-x86_64",
+      "python": "3.12.15",
+      "installed_package_files": 59,
+      "modes": [
+        "wheel",
+        "sdist",
+        "remote"
+      ],
+      "evidence": {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/53fb2ab/12888342597/final-catalog.json.gz",
+        "sha256": "727746e4068718d81efb37b59687e6c945ee01a5bcce344891cc44ec889a88bb"
+      }
+    },
+    {
+      "target_id": "abi-linux-musl-x86_64",
+      "python": "3.14.5",
+      "installed_package_files": 59,
+      "modes": [
+        "wheel",
+        "sdist",
+        "remote"
+      ],
+      "evidence": {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/53fb2ab/12888157965/final-catalog.json.gz",
+        "sha256": "bab5a758c77ae6dea50dfceb3c8bd1f81b67daf44ccda5b8c6ab7c737eb53037"
+      }
+    },
+    {
+      "target_id": "abi-linux-glibc-aarch64",
+      "python": "3.12.15",
+      "installed_package_files": 59,
+      "modes": [
+        "wheel",
+        "sdist",
+        "remote"
+      ],
+      "evidence": {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/53fb2ab/12888098525/final-catalog.json.gz",
+        "sha256": "a549964df29bd3d47cd3454b3ee9c990c73ef3bd9f6115438f2866cbedcdee73"
+      }
+    },
+    {
+      "target_id": "abi-darwin-darwin-x86_64",
+      "python": "3.12.10",
+      "installed_package_files": 59,
+      "modes": [
+        "wheel",
+        "sdist",
+        "remote"
+      ],
+      "evidence": {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/53fb2ab/12888068025/final-catalog.json.gz",
+        "sha256": "0c16c308d230308b943c7f961bff943e4e849facc4189f3e714f787cc0eb81d6"
+      }
+    },
+    {
+      "target_id": "abi-darwin-darwin-x86_64",
+      "python": "3.14.7",
+      "installed_package_files": 59,
+      "modes": [
+        "wheel",
+        "sdist",
+        "remote"
+      ],
+      "evidence": {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/53fb2ab/12888047738/final-catalog.json.gz",
+        "sha256": "0ec21e39c0f30cb4c94f717b6ec2b7814a44aa7cc18cd777129178a999f68242"
+      }
+    },
+    {
+      "target_id": "abi-linux-glibc-x86_64",
+      "python": "3.14.9",
+      "installed_package_files": 59,
+      "modes": [
+        "wheel",
+        "sdist",
+        "remote"
+      ],
+      "evidence": {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/53fb2ab/12888002995/final-catalog.json.gz",
+        "sha256": "6727dda7d3908f8085710937b40ac92f9e1fc802ce5e3dee7c7b512d1b95b722"
+      }
+    },
+    {
+      "target_id": "abi-darwin-darwin-aarch64",
+      "python": "3.14.7",
+      "installed_package_files": 59,
+      "modes": [
+        "wheel",
+        "sdist",
+        "remote"
+      ],
+      "evidence": {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/53fb2ab/12887868293/final-catalog.json.gz",
+        "sha256": "1d0c0e054b10983c7a19dafa17f85977356d660064a271f41ed04dc414694727"
+      }
+    },
+    {
+      "target_id": "abi-linux-musl-aarch64",
+      "python": "3.12.13",
+      "installed_package_files": 59,
+      "modes": [
+        "wheel",
+        "sdist",
+        "remote"
+      ],
+      "evidence": {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/53fb2ab/12887788137/final-catalog.json.gz",
+        "sha256": "b6c449721c2b94d72e6c0e80f115c2645b3ffdce316ea911a88e1c25877f5963"
+      }
+    },
+    {
+      "target_id": "abi-windows-win32-x86_64",
+      "python": "3.12.10",
+      "installed_package_files": 59,
+      "modes": [
+        "wheel",
+        "sdist",
+        "remote"
+      ],
+      "evidence": {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/53fb2ab/12887464904/final-catalog.json.gz",
+        "sha256": "9d7a868c178ebb9e60a62a37c9f9afaac3b6587e02a680dddb08a58fedef0867"
+      }
+    },
+    {
+      "target_id": "abi-linux-musl-x86_64",
+      "python": "3.12.13",
+      "installed_package_files": 59,
+      "modes": [
+        "wheel",
+        "sdist",
+        "remote"
+      ],
+      "evidence": {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/53fb2ab/12887384744/final-catalog.json.gz",
+        "sha256": "b2a7205f6cf9fa114b8302e140f6b8ccbfee54f711760a481e3e543c8a707fd3"
       }
     }
   ],
-  "foundation": {
-    "path": "specs/003-add-cross-platform-support/evidence/cache-notices-more-2026-10-20/foundation.json",
-    "sha256": "ea518ffb95130542911faabee2277619e0e4248fab346f6bfa760ab3ac9d899f"
-  },
-  "package_regression": {
-    "path": "specs/003-add-cross-platform-support/evidence/cache-notices-more-2026-10-20/packages/summary.json",
-    "sha256": "45be242dfb0be22c41ef21702653e3c3bc83c808ae801b2a9ddb5c4151e0d861"
-  },
-  "runtime_regression": {
-    "path": "specs/003-add-cross-platform-support/evidence/cache-notices-more-2026-10-20/runtime-regression/summary.json",
-    "sha256": "a603ce7eea40c5f533585e91c857103075946a8f2a2499edb6bab9cb9f240f3d"
-  },
-  "pending": [
-    "Final corresponding-source delivery binding and complete source retention/offer",
-    "Final distributed bundles, macOS signing/notarization and complete cell acceptance"
-  ],
-  "limitations": [
-    "Private POSIX development bundles and currently packaged Windows manifest; no support promotion",
-    "Musl cache measured on native CPU in pinned Alpine container over Ubuntu kernel; no native Alpine acceptance",
-    "Hosted Windows cache measurement does not replace clean Windows 11 acceptance",
-    "Real engine probes; fixture acquisition on POSIX, official pinned HTTPS on Windows; Python-only offline network guard"
-  ],
-  "application_revision": "ec5ff25f838416aea8a7526367bb1820df04e9a2",
-  "previous_index": {
-    "path": "specs/003-add-cross-platform-support/evidence/cache-notices-more-2026-10-20/previous-distribution-index.json",
-    "sha256": "b4430a23e295c5c466b60b56109265d20574f9f8ae50655ce926dd8bca7fa5c8"
-  },
-  "measured_cache_variants": 7,
-  "cache_python_slots": 14,
-  "cache_installations": 28,
-  "remaining_cache_variants": [],
-  "windows_manifest": {
-    "path": "specs/003-add-cross-platform-support/evidence/cache-notices-more-2026-10-20/windows-manifest.json",
-    "sha256": "8aed45fdbd206069cf7e37df8b505a979acaa219bb3f013f2dd9c7f11e680f9d"
-  },
-  "source_access_notice_update": {
-    "path": "specs/003-add-cross-platform-support/evidence/source-access-notices-2026-10-20/summary.json",
-    "sha256": "755b0f96542883bdae87f03e27e19d7c46f0ef5461144be84e7ea1a640e489bb"
-  },
-  "cache_evidence_applies_to_new_source_notice_archives": false,
-  "source_access_notice_update_scope": "Six newer candidate ZIPs verified separately; previous archive/cache receipts keep their original hashes",
-  "component_license_applicability_review": {
-    "status": "completed",
-    "linux_ledger": "tools/runtime/licenses/linux.json",
-    "linux_review": "tools/runtime/licenses/LINUX-COMPONENT-REVIEW.md",
-    "source_delivery_review": "tools/runtime/licenses/SOURCE-DELIVERY-REVIEW.md",
-    "reviewed_components": [
-      "ColorBrewer (Apache-2.0)",
-      "musl libc/math (MIT)",
-      "glibc retained objects/startup (LGPL-2.1-or-later \u00a76(a)/\u00a76(d))",
-      "Go math/tan (BSD-3-Clause)",
-      "W3C HTML 4.01 / SVG entity declarations & ISO 8879:1986 comments (W3C Software Notice and License, ASF LEGAL-386 / NETBEANS-853)"
-    ]
-  },
-  "source_pairing_delivery": {
-    "specification": "tools/runtime/licenses/SOURCE-PAIRING-SPECIFICATION.md",
-    "verification_tool": "tools/runtime/verify-source-pairing.py",
-    "schema_kind": "corresponding-source-delivery-pairing",
-    "schema_version": 1,
-    "lgpl_2_1_section_6_d_route": "Equivalent access to copy corresponding source code from same designated place alongside binary distribution",
-    "epl_2_0_section_3_1_route": "Complete Graphviz source archive accompanied by license notice and build recipe",
-    "status": "linux_ci_pairing_verified_final_distribution_pending",
-    "ci_application_revision": "a825f0d80bd7892de0e307656d28070885a9d1ed",
-    "ci_review": "specs/003-add-cross-platform-support/evidence/source-pairing-ci-2026-10-27/summary.json",
-    "integration_review": "specs/003-add-cross-platform-support/evidence/source-pairing-integration-2026-10-27/README.md",
-    "historical_real_pairing_review": "specs/003-add-cross-platform-support/evidence/source-pairing-real-2026-10-27/summary.json",
-    "catalog_distribution_status": "unpromoted_pending_authorized_release"
-  },
-  "current_candidate_draft_verification": {
-    "kind": "partial-distribution-integrity-evidence-index",
-    "task": "T066",
-    "task_complete": false,
-    "qualified": false,
-    "validation_policy": "github-actions-only-no-vm",
-    "application_revision": "f5e1ad22aea915e9d42e7da1f76de86ffbd23a4f",
-    "candidate_drafts": {
-      "path": "specs/003-add-cross-platform-support/evidence/distribution-candidate-drafts-2026-10-28/summary.json",
-      "sha256": "b58e25b5907bc5a9cee20bb1d7a7dda4baff93844b07afa49d6341215e28c826"
+  "cache_notice_evidence": [
+    {
+      "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/c007823/12887697793/musl-notices/slot/cache-notices.json.gz",
+      "sha256": "8e9c8660a64766a1020d3b490c9e69d178e725cd08b1de2b99971d2d94d9cbf8"
     },
-    "candidate_count": 6,
-    "binary_files_verified": 2419,
-    "offline_notice_payloads_with_origin_hashes": 2407,
-    "installed_package_and_cache_evidence": {
-      "path": "specs/003-add-cross-platform-support/evidence/abi-recovery-ci-canonical/summary.json",
-      "sha256": "17969174aba882633781cec60e40b31bf76daee18cab179bc7a3befd33202d1a"
+    {
+      "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/c007823/12888395587/musl-notices/slot/cache-notices.json.gz",
+      "sha256": "5a81eff8055bb45d53e58aebc581b87a5dc22ab7c9f6cd9d7f78bb26e26c098d"
     },
-    "visual_review_evidence": {
-      "path": "specs/003-add-cross-platform-support/evidence/twine-visual-review-2026-10-28.json",
-      "sha256": "c5106fa06acf5cb7e0400eaee7c61fe39e5b571dcafd8d67f9fabe4f20990b02"
+    {
+      "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/c007823/12887697793/musl-notices/slot/cache-notices.json.gz",
+      "sha256": "8e9c8660a64766a1020d3b490c9e69d178e725cd08b1de2b99971d2d94d9cbf8"
     },
-    "verification_scope": "Candidate archive byte/mode/inventory and notice-origin checks locally; runtime, package and cache checks only in GitHub Actions",
-    "source_archive_scope": "Binary/source pair verified in Actions; full source archive bytes were not downloaded again for this index",
-    "license_compatibility_approved": false,
-    "active_catalog_changed": false,
-    "remaining": [
-      "Per-artifact license/source compatibility audit",
-      "Immutable binary and corresponding-source delivery",
-      "Final manifests and final wheel/sdist/cache acceptance after catalog preparation"
-    ],
-    "non_claims": [
-      "Notice presence does not establish license compatibility",
-      "Candidate evidence does not qualify an active release"
-    ]
-  },
-  "current_macos_source_notice_verification": {
-    "approved": false,
-    "qualified": false,
-    "evidence": {
-      "path": "specs/003-add-cross-platform-support/evidence/macos-source-data-notices-ci-2026-10-28/summary.json",
-      "sha256": "192c0f058387d32b4e6e1ac5c014169032b9c75d2b7bf405d9dde4f9f17b3c7c"
+    {
+      "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/c007823/12888395587/musl-notices/slot/cache-notices.json.gz",
+      "sha256": "5a81eff8055bb45d53e58aebc581b87a5dc22ab7c9f6cd9d7f78bb26e26c098d"
     },
-    "application_revision": "a192890556a437a772a5997e3908564df3c59777"
-  },
-  "current_macos_named_link_input_verification": {
-    "approved": false,
-    "qualified": false,
-    "evidence": {
-      "path": "specs/003-add-cross-platform-support/evidence/macos-named-link-inputs-ci-2026-10-28/summary.json",
-      "sha256": "ff200db21f545dbdf44caf9f9a92bee24d6e837f0914c9d2872c2951da809eb0"
+    {
+      "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/c007823/12887697793/musl-notices/slot/cache-notices.json.gz",
+      "sha256": "8e9c8660a64766a1020d3b490c9e69d178e725cd08b1de2b99971d2d94d9cbf8"
     },
-    "application_revision": "f63b43e8842539336dc93f08cfa5711a94d0003f"
-  },
-  "license_review_dossier": {
-    "approved": false,
-    "index": {
-      "path": "specs/003-add-cross-platform-support/evidence/license-review-2026-10-28/candidate-index.json",
-      "sha256": "20cdf1efc5bc050d409b05a857b4c715c9190083d70714a2e0b396ee8133a89c"
+    {
+      "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/c007823/12888395587/musl-notices/slot/cache-notices.json.gz",
+      "sha256": "5a81eff8055bb45d53e58aebc581b87a5dc22ab7c9f6cd9d7f78bb26e26c098d"
     },
-    "review_questions": {
-      "path": "specs/003-add-cross-platform-support/evidence/license-review-2026-10-28/README.md",
-      "sha256": "25c305d9cce25b3ae25e846e6e8600f599ed4d467b89930edfaee239a7b36a7a"
+    {
+      "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/c007823/12887697793/musl-notices/slot/cache-notices.json.gz",
+      "sha256": "8e9c8660a64766a1020d3b490c9e69d178e725cd08b1de2b99971d2d94d9cbf8"
+    },
+    {
+      "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/c007823/12888395587/musl-notices/slot/cache-notices.json.gz",
+      "sha256": "5a81eff8055bb45d53e58aebc581b87a5dc22ab7c9f6cd9d7f78bb26e26c098d"
+    },
+    {
+      "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/c007823/12887697793/musl-notices/slot/cache-notices.json.gz",
+      "sha256": "8e9c8660a64766a1020d3b490c9e69d178e725cd08b1de2b99971d2d94d9cbf8"
+    },
+    {
+      "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/c007823/12888395587/musl-notices/slot/cache-notices.json.gz",
+      "sha256": "5a81eff8055bb45d53e58aebc581b87a5dc22ab7c9f6cd9d7f78bb26e26c098d"
+    },
+    {
+      "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/c007823/12887697793/musl-notices/slot/cache-notices.json.gz",
+      "sha256": "8e9c8660a64766a1020d3b490c9e69d178e725cd08b1de2b99971d2d94d9cbf8"
+    },
+    {
+      "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/c007823/12888395587/musl-notices/slot/cache-notices.json.gz",
+      "sha256": "5a81eff8055bb45d53e58aebc581b87a5dc22ab7c9f6cd9d7f78bb26e26c098d"
+    },
+    {
+      "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/c007823/12887697793/musl-notices/slot/cache-notices.json.gz",
+      "sha256": "8e9c8660a64766a1020d3b490c9e69d178e725cd08b1de2b99971d2d94d9cbf8"
+    },
+    {
+      "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/c007823/12888395587/musl-notices/slot/cache-notices.json.gz",
+      "sha256": "5a81eff8055bb45d53e58aebc581b87a5dc22ab7c9f6cd9d7f78bb26e26c098d"
     }
-  },
-  "current_project_notice_package_evidence": {
-    "path": "specs/003-add-cross-platform-support/evidence/berkeley-notice-packages-ci-2026-10-28/summary.json",
-    "sha256": "cd6793745f9a178f5ab49e26694291d6b498335c01d357f8776430fb4875de97"
-  },
-  "current_component_text_review": {
-    "path": "specs/003-add-cross-platform-support/evidence/license-review-2026-10-28/component-findings.json",
-    "sha256": "91b1ca4c569ddcfb73fd924186645961746ae1efef8d75ac68e1d6eebb019ca9"
-  },
-  "current_apple_header_source_evidence": {
-    "path": "specs/003-add-cross-platform-support/evidence/apple-sdk-header-source-review-2026-10-28/summary.json",
-    "sha256": "c741531b49ecd3fc6d22b330582bd3645b9529c9b1d72d948ece3c6ff5d47ec5"
-  },
-  "current_runtime_reference_grant_evidence": {
-    "path": "specs/003-add-cross-platform-support/evidence/license-review-2026-10-28/runtime-reference-findings.json",
-    "sha256": "3f0239c9c664dcba71f0542129f554c49d697780a8b4f65448503d8fc4cb168b"
-  },
-  "current_selected_header_source_delivery": {
-    "approved": false,
-    "qualified": false,
-    "evidence": {
-      "path": "specs/003-add-cross-platform-support/evidence/macos-header-source-delivery-ci-2026-10-28/summary.json",
-      "sha256": "607293918e38a8e96512112cc1481b3e96b2b96e2d5792b5d0b7115aa5675aae"
-    },
-    "application_revision": "721b90f3ab44e16b0e88f2d35118ef6fe5cc820c",
-    "selected_headers_per_architecture": 2,
-    "full_sdk_archive_included": false
-  },
-  "current_all_observed_apsl_source_delivery": {
-    "approved": false,
-    "qualified": false,
-    "evidence": {
-      "path": "specs/003-add-cross-platform-support/evidence/macos-apsl-source-delivery-ci-2026-10-28/summary.json",
-      "sha256": "a6ef69dff95fcfb380e6bad819bb7918dbb7ec4be272d5c026cc0fc556897733"
-    },
-    "application_revision": "6279d6ff715abbd4fc8d5fdf778d8a27a4f3ddfb",
-    "observed_apsl_source_coverage_complete": true,
-    "full_sdk_archive_included": false
-  },
-  "current_release_candidate_review": {
-    "approved": false,
-    "qualified": false,
-    "evidence": {
-      "path": "specs/003-add-cross-platform-support/evidence/release-candidate-review-2026-10-28/summary.json",
-      "sha256": "59e0302b12f81a7d6fae55d14a443f0787f7755fcc87f6f800b9287010c87b52"
-    },
-    "application_revision": "6279d6ff715abbd4fc8d5fdf778d8a27a4f3ddfb",
-    "audit_drafts": 6,
-    "linux_static_link_inputs_mapped": 262,
-    "local_payloads_verified": 12,
-    "published": false,
-    "source_kit_notice_update_pending": true
-  },
-  "current_macos_sdk_header_terms": {
-    "approved": false,
-    "qualified": false,
-    "evidence": {
-      "path": "specs/003-add-cross-platform-support/evidence/macos-sdk-terms-review-2026-10-28/header-findings.json",
-      "sha256": "eca4a021732300412b5b5ddda5d8225b2aeeae05fb5023172e3cac3911cf19d3"
-    },
-    "reviewed_headers": 67,
-    "collection_evidence": {
-      "path": "specs/003-add-cross-platform-support/evidence/macos-sdk-terms-review-2026-10-28/summary.json",
-      "sha256": "595ceb68d7a99de10fbefd52a996cae4080543f2a1a39d9cf34a5a1a455bfd39"
-    }
-  }
+  ],
+  "negative_checks": "CI rejected omitted or changed inventories; real cache notice corruption was rejected and restored snapshots matched.",
+  "previous_checkpoint": "distribution-integrity-2026-10-20/summary.json; historical snapshots are not current qualification"
 }

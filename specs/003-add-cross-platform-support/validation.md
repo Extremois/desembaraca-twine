@@ -1,5 +1,8 @@
 ## Termos do SDK macOS e reconhecimento Berkeley — 2026-10-28
 
+**Estado final em 2026-10-29: 84/84 tarefas concluídas**, sete alvos ABI/14 slots qualificados, 42 instalações externas e 14 instalações documentadas aprovadas. [Encerramento e revisão constitucional](evidence/final-paired-review-2026-10-28/closeout.json). Publicação autorizada de seis pares runtime/fontes concluída e hashes públicos conferidos sem autenticação. As entradas datadas abaixo são histórico; suas pendências e contagens foram superadas por este registro final.
+
+
 A revisão `60707b3` coletou o acordo instalado EA1879 do Xcode 16.4 nos dois runners, com RTF idêntico por hash. A [revisão dos 67 headers restantes](evidence/macos-sdk-terms-review-2026-10-28/README.md) identifica declarações LLVM, blocos BSD e a rota de inputs do SDK, preservando seus limites. Não foi criado requisito de obter fontes do Apple Clang ou redistribuir headers proprietários. O reconhecimento Berkeley foi incorporado a README/NOTICE e [validado em 20 instalações externas de wheel/sdist](evidence/berkeley-notice-packages-ci-2026-10-28/README.md). Os quatro workflows passaram; os seis jobs de fundação executaram 307 testes cada.
 
 Foi identificada e corrigida a omissão do NOTICE do aplicativo nos kits de fontes. Os tarballs históricos `6279d6f` continuam identificados como pendentes dessa atualização, com publicação bloqueada no plano. A auditoria integral, a condição W3C/ISO e os gates de entrega/aceite final continuam abertos. Progresso permanece 76/84; sem nova revisão visual necessária.
@@ -2451,3 +2454,16 @@ Auditoria t?cnica conclu?da para os quatro pares Linux e para a parte de revis?o
 Revis?o constitucional: I ? Apache-2.0, termos pr?prios e fontes exatas preservados; a entrega p?blica equivalente continua gate. II ? reaproveitamento dos verificadores existentes e nenhuma depend?ncia nova. III ? nenhuma regra de I/O/otimiza??o mudou. IV ? corpus, bytes, recupera??o, cache e exclus?o de sobrescrita preservados nos ensaios. V ? evid?ncias por ABI/Python e tentativas reais retidas, sem promover mocks ou skips. VI ? Graphviz 16.1.0 mantido; substitui??o de dados e suas duas exce??es documentadas e reproduzidas.
 
 T030 marcada conclu?da. Total atual: 77/84. Permanecem T031/T052/T066/T078/T082/T083/T084: autoriza??o da entrega p?blica e aceite dos pacotes/cat?logo finais. Nenhum upload, publica??o ou promo??o foi feito. As anota??es anteriores de 76/84 descrevem checkpoints hist?ricos.
+
+## Revisão constitucional final e gates — 2026-10-29
+
+- **I**: Apache-2.0 application, complete separate notices and exact public corresponding sources; scoped artifact audits and upstream Windows acquisition.
+- **II**: Standard library and existing inventory/qualification/promotion helpers reused; no production dependency added.
+- **III**: Runtime selection/preparation isolated from graph domain and Graphviz process adapter; no algorithm redesign.
+- **IV**: Pinned hashes and real normal catalog selected; corpus preserves original and semantics, atomic generations/recovery and fault tests.
+- **V**: All fourteen ABI/Python slots, three installation formats and measured image/kernel/CPU; user visual acceptance bound to identical output hashes; no mock promoted.
+- **VI**: Graphviz 16.1.0 preserved, existing Windows manifest/cache unchanged; entity substitution reproduced with modern source grants; minimal shared Server-build selection fix.
+
+T031/T052: seis manifestos reais, URLs públicas e auditorias exatas. T066: fontes/notices e integridade de wheel/sdist/cache. T078: 42 instalações com corpus, entrada automática/prepare e offline. T082: `promote-support.py` executado para os sete alvos com recibos completos. T083: comandos documentados aceitos nas 14 combinações. T084: nenhum gate obrigatório restante no escopo aprovado.
+
+O catálogo identifica a revisão funcional qualificada `c007823`; os pacotes imutáveis `53fb2ab` acrescentam somente a promoção de metadados. A nova aceitação desses pacotes confirmou classificação oficial em todas as instalações. Os dez gates usam recibos constituintes com revisões reais preservadas; a revisão visual do usuário foi reaplicada somente após igualdade dos seis hashes. Nenhum teste local ou VM foi executado neste encerramento.

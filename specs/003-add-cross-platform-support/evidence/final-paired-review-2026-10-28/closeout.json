@@ -1,0 +1,57 @@
+{
+  "kind": "feature-003-final-closeout",
+  "complete": true,
+  "tasks_completed": 84,
+  "tasks_total": 84,
+  "publication": {
+    "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/publication.json",
+    "sha256": "33bb6194eaac623b9ae488397b2a5b920b5112460f38b681b24b88328c620b3a"
+  },
+  "qualification": {
+    "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/qualification/summary.json",
+    "sha256": "607d07a5d5ab823187ce2f86a3fa8140ad146828b16ca4c195ef25f01d481bbf"
+  },
+  "installation": {
+    "path": "specs/003-add-cross-platform-support/evidence/package-installation.json",
+    "sha256": "8251fd489e83c7ecf9bd4a6c99d860aa54847046877ee81c59a4115e65787d47"
+  },
+  "distribution": {
+    "path": "specs/003-add-cross-platform-support/evidence/distribution-integrity.json",
+    "sha256": "8c6a2e6669db1c84d310a0f38a6df7a43f50ee85961098328271d4381e780172"
+  },
+  "quickstart": {
+    "path": "specs/003-add-cross-platform-support/evidence/quickstart.json",
+    "sha256": "111d146d91bda12f7a224fe0e8e4c18dd80809d43de28825d56c87d908776e1a"
+  },
+  "promoted_catalog_acceptance": {
+    "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/53fb2ab/summary.json",
+    "sha256": "fb5935e6f542ded28c26dae57149f1d530e33dd2544fee3cfc7978b8205a10df"
+  },
+  "documented_installation_and_foundation": {
+    "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/a7f02fc/summary.json",
+    "sha256": "2c508a59fc46df622dcb0d2ec0d8b464cbb6980a99e1090f8c76d61ce08c3aae"
+  },
+  "foundation": {
+    "jobs": 6,
+    "tests_per_job": 314,
+    "execution": "GitHub Actions",
+    "skips": "Platform-specific/native opt-in tests stay explicit; fourteen real installed slots supply the actual native qualification."
+  },
+  "remaining_required_gates": [],
+  "compatibility_declarations": 69,
+  "constitutional_review": {
+    "I": "Apache-2.0 application, complete separate notices and exact public corresponding sources; scoped artifact audits and upstream Windows acquisition.",
+    "II": "Standard library and existing inventory/qualification/promotion helpers reused; no production dependency added.",
+    "III": "Runtime selection/preparation isolated from graph domain and Graphviz process adapter; no algorithm redesign.",
+    "IV": "Pinned hashes and real normal catalog selected; corpus preserves original and semantics, atomic generations/recovery and fault tests.",
+    "V": "All fourteen ABI/Python slots, three installation formats and measured image/kernel/CPU; user visual acceptance bound to identical output hashes; no mock promoted.",
+    "VI": "Graphviz 16.1.0 preserved, existing Windows manifest/cache unchanged; entity substitution reproduced with modern source grants; minimal shared Server-build selection fix."
+  },
+  "limitations": [
+    "Distribution entries are compatibility declarations, not individual distro certification.",
+    "Windows tests used the actual hosted Server; no claim of clean Windows 11 certification.",
+    "Apple Developer ID/notarization are optional and not asserted; system protections unchanged.",
+    "Offline worker guard observes Python network operations, not a system-wide syscall trace; exact native artifacts were separately inspected.",
+    "Controlled download/disk/permission fault injection is identified in the recovery evidence."
+  ]
+}

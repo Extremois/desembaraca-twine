@@ -1,5 +1,14 @@
 # Dependências e licenças
 
+Atualização de distribuição em 2026-10-29: este inventário do pacote Python é
+complementado pelas [auditorias dos seis pares POSIX](../specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/audits/DECISIONS.md)
+e pela [publicação conjunta de runtimes e fontes](https://github.com/Extremois/desembaraca-twine/releases/tag/graphviz-16.1.0-posix-46d111d).
+Os binários ficam nesses arquivos separados, fora do wheel/sdist; preservam
+EPL-2.0, LGPL e os demais termos e avisos de cada componente. O pacote autoral
+continua Apache-2.0, sem dependências Python de produção. O Windows mantém a
+obtenção direta do ZIP original upstream. A [integridade final](../specs/003-add-cross-platform-support/evidence/distribution-integrity.json)
+vincula os avisos offline, fontes exatas e recibos de instalação/cache.
+
 Inventário do fluxo por código-fonte e do runtime gerenciado, verificado em 2026-10-16.
 O código autoral usa Apache-2.0, escolhido explicitamente pelo mantenedor; texto em
 [LICENSE](../LICENSE) e aviso em [NOTICE](../NOTICE). Não há binários ou código de

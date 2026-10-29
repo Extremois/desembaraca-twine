@@ -1452,9 +1452,7 @@
       }
     ],
     "public_paired_delivery": true,
-    "remaining": [
-      "Final installed catalog acceptance"
-    ],
+    "remaining": [],
     "scope": "Only these exact pairs; historical ledger entries are not retrospectively approved",
     "publication": {
       "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/publication.json",
@@ -1463,6 +1461,14 @@
     "public_downloads": {
       "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/public-download-verification.json",
       "sha256": "f1478c6919511e37447c99c13bf44fe5080ea7637a2a038cab4186c70ebf2010"
+    },
+    "final_qualification": {
+      "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/qualification/summary.json",
+      "sha256": "607d07a5d5ab823187ce2f86a3fa8140ad146828b16ca4c195ef25f01d481bbf"
+    },
+    "final_installed_catalog_acceptance": {
+      "path": "specs/003-add-cross-platform-support/evidence/package-installation.json",
+      "sha256": "8251fd489e83c7ecf9bd4a6c99d860aa54847046877ee81c59a4115e65787d47"
     }
   }
 }

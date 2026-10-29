@@ -5,11 +5,11 @@
 **Política de validação atualizada por instrução do usuário (2026-10-27):** validar exclusivamente pelo GitHub Actions, diretamente nos runners hospedados e em contêineres quando necessários. Não exigir teste nativo, hardware dedicado, runner próprio, kernel específico ou VM; não criar nem iniciar VMs, inclusive dentro do CI. Esta decisão substitui exigências anteriores desses ambientes e suas pendências históricas. Conservar hashes, integridade, instalação, corpus, recuperação e o ambiente efetivamente exercitado nos logs; não inventar cobertura. Resultados de VMs anteriores são somente histórico e não são gates de aceite.
 
 
-**Feature Branch**: Não criada nesta etapa; nenhum hook de branch configurado. Branch Git atual: `feat/002-manage-layout-runtime`. Identificador independente: `003-add-cross-platform-support`.
+**Feature Branch**: `feat/003-add-cross-platform-support`.
 
 **Created**: 2026-10-17
 
-**Status**: Esclarecida e pronta para planejamento. Suporte Linux/macOS ainda não implementado nem validado.
+**Status**: Implementada, publicada e validada no escopo ABI aprovado: 7 alvos/14 slots, 84/84 tarefas. [Encerramento](evidence/final-paired-review-2026-10-28/closeout.json).
 
 **Input**: User description: "Vamos tornar o nosso projeto usavel em diferentes sistemas operacionais. Agora que temos funcionando um MVP no Windows o proximo passo é tornar usavel em Linux e MacOS."
 

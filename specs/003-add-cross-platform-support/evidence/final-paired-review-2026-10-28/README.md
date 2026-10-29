@@ -1,5 +1,8 @@
 **Atualiza??o ap?s autoriza??o:** a [pr?-release](https://github.com/Extremois/desembaraca-twine/releases/tag/graphviz-16.1.0-posix-46d111d) foi publicada com os 12 arquivos. Todos os downloads p?blicos, inclusive fontes, tiveram tamanho/SHA-256 conferidos sem autentica??o. Os seis manifestos foram integrados para o aceite final; a promo??o dos alvos aguarda esse resultado. [Recibo p?blico](public-download-verification.json).
 
+**Encerrado em 2026-10-29:** [84/84 tarefas e revisão constitucional](closeout.json), [sete alvos/14 slots promovidos](qualification/summary.json), [42 instalações finais](../package-installation.json), [14 comandos documentados](../quickstart.json). [Runtime e fontes publicados](https://github.com/Extremois/desembaraca-twine/releases/tag/graphviz-16.1.0-posix-46d111d), com [hashes públicos verificados](public-download-verification.json). As condições pendentes nas auditorias originais abaixo descrevem o instante da revisão; publicação e aceite foram cumpridos e estão vinculados no encerramento, sem reescrever os recibos originais.
+
+
 # Pares POSIX revisados e preparados para entrega
 
 **T030 concluída; 77/84 tasks.** A auditoria técnica dos quatro pares Linux
