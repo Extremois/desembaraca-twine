@@ -95,6 +95,37 @@ mudanças na política do PowerShell.
 
 ### Instalação remota, sem clonar o projeto
 
+Para instalar o comando no usuário sem criar ou ativar a venv manualmente, use
+CPython 3.12 ou 3.14 no PowerShell:
+
+```powershell
+Invoke-WebRequest "https://raw.githubusercontent.com/Extremois/desembaraca-twine/e5f15dd913371b87899e2633456b9e2901d18766/install.py" -OutFile "$env:TEMP\desembaraca-twine-install.py"
+python "$env:TEMP\desembaraca-twine-install.py"
+```
+
+Feche o aplicativo de terminal e abra-o novamente. O comando estará disponível:
+
+```powershell
+desembaraca-twine "C:\Grafos\minha história.twee"
+```
+
+O script fixa a revisão pública do pacote e instala apenas no usuário; você pode
+inspecionar o arquivo baixado antes de executá-lo. Para atualizar depois, baixe o
+instalador publicado da versão desejada e execute-o novamente.
+
+No Linux/macOS, com `curl` e o Python nativo selecionado:
+
+```sh
+curl -fL "https://raw.githubusercontent.com/Extremois/desembaraca-twine/e5f15dd913371b87899e2633456b9e2901d18766/install.py" -o "$HOME/desembaraca-twine-install.py"
+python3.12 "$HOME/desembaraca-twine-install.py"
+```
+
+Depois de abrir outro terminal bash/zsh, use
+`desembaraca-twine "/pasta/minha história.twee"`. Troque `python3.12` por
+`python3.14` conforme o interpretador escolhido.
+
+#### Alternativa: gerenciar a venv manualmente
+
 Com Python e pip disponíveis, execute de qualquer pasta:
 
 ```powershell
@@ -319,6 +350,37 @@ required for checkout execution. Calling the venv directly avoids activation and
 PowerShell policy changes.
 
 ### Remote installation without cloning the project
+
+To install the user command without manually creating or activating a venv,
+use CPython 3.12 or 3.14 in PowerShell:
+
+```powershell
+Invoke-WebRequest "https://raw.githubusercontent.com/Extremois/desembaraca-twine/e5f15dd913371b87899e2633456b9e2901d18766/install.py" -OutFile "$env:TEMP\desembaraca-twine-install.py"
+python "$env:TEMP\desembaraca-twine-install.py"
+```
+
+Close and reopen the terminal application. The command will be available:
+
+```powershell
+desembaraca-twine "C:\Graphs\my story.twee"
+```
+
+The script pins the public package revision and installs only for your user;
+you can inspect the downloaded file before running it. To update later, download
+the published installer for the desired version and run it again.
+
+On Linux/macOS, with `curl` and your selected native Python:
+
+```sh
+curl -fL "https://raw.githubusercontent.com/Extremois/desembaraca-twine/e5f15dd913371b87899e2633456b9e2901d18766/install.py" -o "$HOME/desembaraca-twine-install.py"
+python3.12 "$HOME/desembaraca-twine-install.py"
+```
+
+After opening another bash/zsh terminal, use
+`desembaraca-twine "/folder/my story.twee"`. Replace `python3.12` with
+`python3.14` for that interpreter.
+
+#### Alternative: manage the venv manually
 
 With Python and pip available, run from any directory:
 

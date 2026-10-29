@@ -25,7 +25,11 @@ def collect(wheel):
         with tempfile.TemporaryDirectory(prefix='twine install ação ') as temporary:
             work=Path(temporary);home=work/'perfil com espaços';home.mkdir()
             env=dict(os.environ,HOME=str(home),USERPROFILE=str(home),LOCALAPPDATA=str(home/'local'),
-                     PYTHONUTF8='1',PIP_NO_INDEX='1',PIP_DISABLE_PIP_VERSION_CHECK='1')
+                     PYTHONUTF8='1',PIP_NO_INDEX='1',PIP_DISABLE_PIP_VERSION_CHECK='1',PIP_TARGET=str(work/'escape'))
+            sentinel=b'# Existing user settings\nexport TWINE_INSTALL_SENTINEL=kept\n'
+            if not windows:
+                for name in ('.profile','.bashrc','.bash_profile','.zprofile','.zshrc'):
+                    (home/name).write_bytes(sentinel)
             # A standalone downloaded installer must not depend on the checkout.
             installer=work/'install.py';shutil.copy2(ROOT/'install.py',installer)
             binary=home/('local/Programs/DesembaracaTwine/bin/desembaraca-twine.exe' if windows else '.local/bin/desembaraca-twine')
@@ -33,7 +37,7 @@ def collect(wheel):
                 return subprocess.run([str(x) for x in command],cwd=home,env=environment,check=True,
                                       capture_output=True,timeout=180)
             for _ in range(2):run([sys.executable,installer,'--source',wheel])
-            assert binary.is_file()
+            assert binary.is_file() and not (work/'escape').exists()
             profiles={}
             if windows:
                 with winreg.OpenKey(winreg.HKEY_CURRENT_USER,'Environment') as key:
@@ -47,8 +51,8 @@ def collect(wheel):
                     '[Console]::OutputEncoding=[System.Text.UTF8Encoding]::new(); (Get-Command desembaraca-twine).Source; desembaraca-twine --help'],clean).stdout.decode('utf-8').strip()
                 assert Path(resolved.splitlines()[0]).samefile(binary)
             else:
-                for name in ('.profile','.bashrc','.zprofile','.zshrc'):
-                    profile=home/name;raw=profile.read_bytes();assert raw.count(b'# Desembaraca Twine')==1
+                for name in ('.profile','.bashrc','.bash_profile','.zprofile','.zshrc'):
+                    profile=home/name;raw=profile.read_bytes();assert raw.startswith(sentinel) and raw.count(b'# Desembaraca Twine')==1
                     profiles[name]=hashlib.sha256(raw).hexdigest()
                 clean=dict(env,PATH='/usr/bin:/bin')
                 run(['/bin/sh','-c','. "$HOME/.profile"; command -v desembaraca-twine; desembaraca-twine --help'],clean)
@@ -59,14 +63,16 @@ def collect(wheel):
                 [str(binary),'arquivo com ação & porcentagem % inexistente.twee'],cwd=home,env=env,capture_output=True,timeout=30)
             assert result.returncode==1 and 'Não foi possível ler o arquivo' in result.stderr.decode('utf-8')
             assert not list(home.rglob('ready.json'))
-            return dict(passed=True,revision=os.environ['GITHUB_SHA'],system=platform.system(),python=platform.python_version(),
+            return dict(passed=True,revision=os.environ['GITHUB_SHA'],system=platform.system(),arch=platform.machine(),python=platform.python_version(),
                         outside_checkout=True,standalone_installer=True,rerun_idempotent=True,activation_required=False,
                         private_launcher=True,argument_boundaries=True,existing_path_preserved=True,
-                        profile_hashes=profiles,runtime_prepared=False)
+                        profile_hashes=profiles,existing_profile_contents_preserved=True,pip_target_ignored=True,runtime_prepared=False)
     finally:
         if windows:
             with winreg.CreateKey(winreg.HKEY_CURRENT_USER,'Environment') as key:
-                if previous is None:winreg.DeleteValue(key,'Path')
+                if previous is None:
+                    try:winreg.DeleteValue(key,'Path')
+                    except FileNotFoundError:pass
                 else:winreg.SetValueEx(key,'Path',0,previous[1],previous[0])
 
 
