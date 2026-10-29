@@ -1,0 +1,20 @@
+{
+  "kind": "candidate-source-review-material",
+  "approved": false,
+  "artifact_id": "macos-arm64",
+  "executable_sha256": "803a5622cc994d27947aad56498c6f975ce174827f7495a52745f695aa8ce9eb",
+  "provenance_sha256": "82e9de3597e61c0f551396352d9a6e56a3cc76227541128d889c4bfacad2422b",
+  "archive": "sources.tar.gz",
+  "archive_sha256": "ceba8b50f6bb1a982afcf293c94849fa705cccc96c68f990e405040d270d9720",
+  "archive_bytes": 41394199,
+  "sdk_files": 0,
+  "selected_sdk_header_files": 181,
+  "file_count": 311,
+  "expanded_bytes": 44513197,
+  "pending": [
+    "per-file applicability and complete source offer review",
+    "rebuild/relink execution from exported sources",
+    "immutable public source distribution",
+    "Apple SDK/header/runtime contribution and corresponding-source applicability review"
+  ]
+}

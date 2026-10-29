@@ -1,0 +1,68 @@
+{
+  "kind": "T023-linux-runtime-integration-completion",
+  "task_complete": true,
+  "qualified": false,
+  "approved": false,
+  "revision": "860d06a4c5d03ca6ab071c047344443931debb1e",
+  "receipts": [
+    {
+      "path": "glibc-aarch64/summary.json",
+      "sha256": "225e3f3b2fbd7a5d20382cbcb5ff091e5476446c9bbfdc47c5b898bf1c3e86e6",
+      "artifact_id": "linux-glibc-aarch64",
+      "environment_kind": "native"
+    },
+    {
+      "path": "glibc-x86_64/summary.json",
+      "sha256": "2197143e576e9e13be69beef6ddfd7da4b6fa63b6cc1a18145a791cc8d5a274b",
+      "artifact_id": "linux-glibc-x86_64",
+      "environment_kind": "native"
+    },
+    {
+      "path": "musl-aarch64/summary.json",
+      "sha256": "5653a9ef6fec8f514d4a5bc54fe7bfba271510cb0d69e5ee6112d0021ab36bfd",
+      "artifact_id": "linux-musl-aarch64",
+      "environment_kind": "container"
+    },
+    {
+      "path": "musl-x86_64/summary.json",
+      "sha256": "f7153a78a52f47c9c39eea368633ac43265f1e4f0bc0f9eb92586bc2e532c66a",
+      "artifact_id": "linux-musl-x86_64",
+      "environment_kind": "container"
+    }
+  ],
+  "python_slots": 8,
+  "tests_per_slot": 2,
+  "explicit_corpus_cases_per_slot": 13,
+  "automatic_case_per_slot": 1,
+  "dot_executions_per_slot": 49,
+  "network_syscalls": {},
+  "retained_files": {
+    "wsl-before-fix.json": {
+      "sha256": "0b807c32adcfd6fd91d63084f5d80b202dc2a470c2f124930e7c98589187db4c",
+      "bytes": 510
+    },
+    "wsl-after-fix.json": {
+      "sha256": "8466365b869e8bc7fed9656b9083dbf146204e0e7164555b64773090564ea086",
+      "bytes": 11344
+    }
+  },
+  "source_sha256": {
+    "src/twine_edge_overlap/runtime.py": "f595f4980bf6d5c6183d6237a79f01bb432f55e95ad2a3513360538ae7948593",
+    "tests/unit/test_runtime_posix.py": "8f775089dcb4648103e6bd5e5579455e8f053c16d544d65c890b729ce0bccebd",
+    "tests/integration/test_linux_runtime.py": "405e5b724c9e00d2326a4a25eec28db877896a49b7c4c6abe0e2632816dc68ce",
+    "tools/runtime/observe-linux-network.py": "e2f7a95fd8dc6bc5b3c8e5e8928a0ae302472ffe4bdb4342d94f461738b22c32"
+  },
+  "regression": "../github-actions-foundation-linux-runtime-2026-10-19.json",
+  "bug_fix": {
+    "commit": "caf4c8d",
+    "problem": "First preparation failed when selected cache base or its parents did not exist",
+    "correction": "Create missing parent directories with 0700, validate newly created directories, preserve existing directory permissions",
+    "red_test": "unit.test_runtime_posix.PosixRuntimeTests.test_missing_cache_base_is_created_privately_without_changing_parent"
+  },
+  "limitations": [
+    "T023 test implementation and real-engine execution complete, not full Linux distribution acceptance",
+    "Acquisition transport is explicitly controlled; no public POSIX catalog or remote distribution qualified",
+    "musl CPU-native container results do not qualify native Alpine OS/kernel",
+    "Twine, license audit, actual installed-candidate acceptance and recovery matrix remain pending"
+  ]
+}

@@ -1,0 +1,156 @@
+{
+  "kind": "verified-native-ubuntu1804-engine-baseline-receipt",
+  "passed": true,
+  "approved": false,
+  "qualified": false,
+  "workflow_run": 39469194390,
+  "revision": "901a2729ea1399f88e7fd2d1d7f73466c0ef5c8c",
+  "candidate_revision": "b13cd6f90db31163e62119bb83e2eb8db5ac8458",
+  "artifact_download_id": 12286496525,
+  "download_sha256": "9c8ed3e1311cb193d13cdd166204373e26e06c257b6ddc87b5c7420616a2c30e",
+  "engine_sha256": "43ce8d686720467c21be91cab4b8f3b246baae49c2cfe293714ebdf8a82f5716",
+  "guest_kernel": "4.15.0-212-generic",
+  "guest_glibc": "glibc 2.27",
+  "guest_loader": "/lib/x86_64-linux-gnu/ld-2.27.so",
+  "guest_loader_sha256": "da5e0c515d6536d59ce5c100ac5359e7f5a5a354f60eeff369a378ba2c80fdcb",
+  "cpu": {
+    "model name": "AMD EPYC 7763 64-Core Processor",
+    "flags": "fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm rep_good nopl cpuid extd_apicid tsc_known_freq pni pclmulqdq ssse3 fma cx16 pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm cmp_legacy svm cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw invpcid_single vmmcall fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid rdseed adx smap clflushopt clwb sha_ni xsaveopt xsavec xgetbv1 xsaves clzero xsaveerptr arat npt nrip_save tsc_scale vmcb_clean flushbyasid pausefilter pfthreshold v_vmsave_vmload umip vaes vpclmulqdq rdpid"
+  },
+  "kvm": {
+    "enabled": true,
+    "present": true
+  },
+  "cases": [
+    {
+      "case": "crossing",
+      "dot_sha256": "2f6eb3f8b64d3b96030353b4d523350480c5e3ce7b687535e964d3470f65d526",
+      "output_sha256": "284ecd02a8c8b5cabd1bc09352bfd64cfd71aa34eaec4e764925e70ea2b9c6c7",
+      "decoded_nodes": 4
+    },
+    {
+      "case": "coincident",
+      "dot_sha256": "324df56bbab815f907e21071494646e3bd79ecc431c905e17edeec20399e9484",
+      "output_sha256": "5e0ee8f776d419bce61a9ef6bb6dca73866497a347f4ef3b52bed5f96e12bd04",
+      "decoded_nodes": 4
+    },
+    {
+      "case": "clean",
+      "dot_sha256": "175408dfa843f13a30b9dbd6c6710ece522ad59539b343b879a05e81c773a7de",
+      "output_sha256": "7a3bdb8a5693fdd5a2a3c86d7bf32c43000c23a8470540ebfdc56e5785a6eb61",
+      "decoded_nodes": 2
+    },
+    {
+      "case": "isolated_overlap",
+      "dot_sha256": "b053599ad91f7ffb8f3126941d276302fea6217f51f71c06f2224b826962ff5e",
+      "output_sha256": "e0969b0682d5aa7645769edd3aab25cd2100ee85a3d57f46482ef8296eb70beb",
+      "decoded_nodes": 2
+    },
+    {
+      "case": "connected_overlap",
+      "dot_sha256": "ee40c26f5d4e4ae5aee46cf16a25556aa17516831dc6a804a97d828c5ab1b6ec",
+      "output_sha256": "d30afcda91fa423e11958945cbd7324bea5dc1ef40e23fb9f7d5d06e18d9fb07",
+      "decoded_nodes": 3
+    },
+    {
+      "case": "through_isolated",
+      "dot_sha256": "ad05f92e06aff043d9bc4a329403fe330970fc25c4b8e1dddafe9d24c26c7c0b",
+      "output_sha256": "8ba7f17057625b767efc6c251e977059d2e7e8a002b3ea2a951699025ece3dfb",
+      "decoded_nodes": 3
+    },
+    {
+      "case": "through_connected",
+      "dot_sha256": "324df56bbab815f907e21071494646e3bd79ecc431c905e17edeec20399e9484",
+      "output_sha256": "5e0ee8f776d419bce61a9ef6bb6dca73866497a347f4ef3b52bed5f96e12bd04",
+      "decoded_nodes": 4
+    },
+    {
+      "case": "border_only",
+      "dot_sha256": "2c9eef11987d187c62d8bda6aebbf051f7ba90bb827c64767b53af7f6fb2d6d4",
+      "output_sha256": "1eea0fc0bd90ab230248b274d385a91c88067c813f702527639efad35aa60850",
+      "decoded_nodes": 3
+    },
+    {
+      "case": "cycle",
+      "dot_sha256": "d3be26df7ae91ba6f2b24439095b930618c544cd17d3a279e66a45da7b07b7e6",
+      "output_sha256": "2f1e24cf016fb935e170999e67246b99557f19f7b3e633c83fad4f030eaf5d8f",
+      "decoded_nodes": 3
+    },
+    {
+      "case": "parallel_occurrences",
+      "dot_sha256": "663436f533c6d567589278a6611c967a1c2e3f7c7af7be7cd5faf10c6bd64d9f",
+      "output_sha256": "345be09eb92400e407864362825da08e4c37613689a2e685ed16fed8121b36df",
+      "decoded_nodes": 2
+    },
+    {
+      "case": "self_loop",
+      "dot_sha256": "b494e6422d2d6c36e47f40370d390bef9a64b928359cc1dc3ee2cf6f8a634304",
+      "output_sha256": "059eef51012c99eea5f8ff6918586b9b42d581ea871d246ccfaa963ab3ffd562",
+      "decoded_nodes": 1
+    },
+    {
+      "case": "reciprocal",
+      "dot_sha256": "753c62a7d5f1ac1331a9473d762b4eb24acc3f97588e088b6e1bbdb3dc52ebec",
+      "output_sha256": "5619900998072691afd222022786f6145fa98e50cf1da7b7aae8de0b8644d835",
+      "decoded_nodes": 2
+    },
+    {
+      "case": "empty",
+      "dot_sha256": "1fe72c1adf5aa81ac384c8ea7b7df5bf07839b78955212284e429fc5ee489bac",
+      "output_sha256": "c599e92f4b1b099fd97fde1f3a07dae747a365a17037f880a333f786f6cf2d27",
+      "decoded_nodes": 0
+    }
+  ],
+  "guest_report_sha256": "3428b20cd2725d553d682db951561127b7fa30c593277e944bef5dcd925b8945",
+  "provenance_sha256": "eb7f183d0259d923c610eb5a8c058c77a14397be6e9c95319e72e4e67ebc370f",
+  "image_pin": {
+    "url": "https://cloud-images.ubuntu.com/releases/bionic/release-20230607/ubuntu-18.04-server-cloudimg-amd64.img",
+    "size": 405667840,
+    "sha256": "8dd2e6b5e5aad20c3f836123b300cba9861249408cbb07c359145a65d6bab6b6",
+    "checksum_manifest_url": "https://cloud-images.ubuntu.com/releases/bionic/release-20230607/SHA256SUMS",
+    "checksum_manifest_sha256": "74aba2ff5163772fe09e10b50e2da28f357d15d77b97e033ef8a26afd09dc161",
+    "release": "18.04",
+    "arch": "x86_64",
+    "scope": "Historical baseline only; security maintenance and complete cell acceptance are not approved"
+  },
+  "recipe_sha256": "ce509aa37846e078bca9765abae6bc425a6bbd6a75eabff806ff5999c4b48f44",
+  "elf": {
+    "reader": "existing WSL readelf; data inspection only",
+    "report_sha256": "892fa6076d7cd5d54ecd889d5f2f068c4c411de14ea4c74ff959ac41a4b9df96",
+    "highest_glibc_symbol": "2.14",
+    "needed": [
+      "ld-linux-x86-64.so.2",
+      "libc.so.6",
+      "libm.so.6",
+      "libpthread.so.0"
+    ],
+    "rpath_absent": true,
+    "runpath_absent": true,
+    "interpreter": "/lib64/ld-linux-x86-64.so.2"
+  },
+  "recipe_baseline_complete": true,
+  "T024_complete": true,
+  "limitations": [
+    "Same-architecture KVM guest baseline; no emulation fallback",
+    "System Python 3.6 only drives the engine probe; no CPython 3.12/3.14 application-slot acceptance",
+    "No Ubuntu Pro eligibility, license/catalog approval, Twine review or whole-cell qualification",
+    "Private Graphviz libraries/plugins are static; no private shared-library RPATH is required",
+    "Additional host-side guest output-path guard was exercised during independent reread; not part of the recorded CI revision"
+  ],
+  "foundation": {
+    "report": "foundation.json",
+    "sha256": "7064ec797c72fac4ce90a217583ee8e9b10757d8fddc9ad41d4ef91401aff35c",
+    "tests_per_job": 228,
+    "jobs": 6
+  },
+  "local_followup": {
+    "tests_per_python": 229,
+    "python_minors": [
+      "3.12",
+      "3.14"
+    ],
+    "skips_per_python": 8,
+    "guest_output_path_guard_verified_against_all_thirteen_downloaded_cases": true,
+    "native_reexecution_required": false
+  }
+}

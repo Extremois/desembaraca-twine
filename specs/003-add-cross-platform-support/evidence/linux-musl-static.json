@@ -1,0 +1,2810 @@
+{
+  "kind": "cpu-native-static-musl-cross-libc-experiment",
+  "qualified": false,
+  "approved": false,
+  "environment_kind": "wsl",
+  "captured_at": "2026-10-18T22:05:36.241146+00:00",
+  "artifact_id": "linux-musl-x86_64",
+  "executable_sha256": "a58b2f30b70a0393ff0cec93d40e7b039015d1ad2bbdc8a9c60634334519942f",
+  "executable_size": 7271288,
+  "provenance_sha256": "c4cf7cfedb0a08158a4954cd8f1263cb9b8b04571e44a6d6f36d2628b07798e6",
+  "source_provenance_sha256": "d1d206a523a5328f4faaf7ddc1287992a7ef47261c297dcbf8ea6ff3a19e00db",
+  "recipe_sha256": "792e9e7ffa8047afd30d3863f8e6d52450588798c2479c41b57c29cb44f4d18b",
+  "source": {
+    "schema_version": 1,
+    "engine": "graphviz",
+    "version": "16.1.0",
+    "url": "https://gitlab.com/graphviz/graphviz/-/archive/16.1.0/graphviz-16.1.0.tar.gz",
+    "sha256": "1e028b2b3e84e946c1d3e8c47590f8f0741bba1041fe6eff36eee87e598ea249",
+    "size": 41189481,
+    "git_revision": "e41c710710be080ad37af1b51c6e2f8beffa9ee5",
+    "license": "EPL-2.0",
+    "license_path": "COPYING",
+    "license_sha256": "0becf16567beb77fa252b7664631dd177c8f9a1889e48995b45379c7130e5303",
+    "qualification": "source-only; no POSIX binary qualified"
+  },
+  "sdk": {
+    "cmake": {
+      "path": "<private-sdk>/cmake-math",
+      "sha256": "89ab33aebe9d65e3cc40553beffcf7323dfe1cb8d2643ed271d896a974532add"
+    },
+    "c_compiler": {
+      "path": "<private-sdk>/cc-musl-kernel415",
+      "sha256": "37c5d3204077071d450bb0e27e30f6e342a3a951c7e8f859a539917c522dd9c0"
+    },
+    "cxx_compiler": {
+      "path": "<private-sdk>/cxx-musl-kernel415",
+      "sha256": "d0e356c685e4c3b0506badc72df558bd3f8e41943f4a42ff9b7c3b9236a6060e"
+    },
+    "environment_digest": "0de4aeef6ed441614025bef37ee5ffb0dee0710bbb4589300903438f0de90edc",
+    "facts": {
+      "provider": "Zig",
+      "version": "0.15.2",
+      "archive_url": "https://ziglang.org/download/0.15.2/zig-x86_64-linux-0.15.2.tar.xz",
+      "archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+      "zig_sha256": "2858dc89dbbfdd08cceda1b841e7fd0a793a1a67b49f150bc3d0d1de44ed7f51",
+      "target": "x86_64-linux.4.15-musl",
+      "environment_kind": "wsl",
+      "qualification": "private SDK cross-libc experiment; not native Alpine acceptance",
+      "tools": {
+        "cmake": {
+          "path": "<private-sdk>/cmake-math",
+          "sha256": "89ab33aebe9d65e3cc40553beffcf7323dfe1cb8d2643ed271d896a974532add"
+        },
+        "c_compiler": {
+          "path": "<private-sdk>/cc-musl-kernel415",
+          "sha256": "37c5d3204077071d450bb0e27e30f6e342a3a951c7e8f859a539917c522dd9c0"
+        },
+        "cxx_compiler": {
+          "path": "<private-sdk>/cxx-musl-kernel415",
+          "sha256": "d0e356c685e4c3b0506badc72df558bd3f8e41943f4a42ff9b7c3b9236a6060e"
+        },
+        "elf_inspector": {
+          "path": "/usr/bin/readelf",
+          "sha256": "c857339616bbbfa5eba32733e22365048903fbaf6ed2126b897dd138bcb741fc"
+        }
+      },
+      "cpu": "baseline",
+      "wrapper_translation": "GCC march=x86-64 and mtune=generic -> Zig mcpu=baseline; no other flags removed",
+      "math_library": "CMake MATH_LIB=m; resolved by Zig target linker, no host absolute libm",
+      "kernel_target": "4.15; compiler setting only, no minimum-kernel execution proof",
+      "target_os": "linux",
+      "target_arch": "x86_64",
+      "target_libc_family": "musl",
+      "static_linking": true,
+      "musl_version": null
+    },
+    "elf_inspector": {
+      "path": "/usr/bin/readelf",
+      "sha256": "c857339616bbbfa5eba32733e22365048903fbaf6ed2126b897dd138bcb741fc"
+    }
+  },
+  "host_libc_family": "glibc",
+  "host_libc_version": "2.43",
+  "target_libc_family": "musl",
+  "build_execution_kind": "cpu-native-cross-libc-experiment",
+  "host_kernel": "6.18.33.1-microsoft-standard-WSL2",
+  "static_elf_inspection": {
+    "report_sha256": "b07d5f0eb5e86646f081307ea6175019ea9b25b08dc684397d5b4e030b42976b",
+    "no_interpreter": true,
+    "no_dynamic_section": true,
+    "no_needed_libraries": true,
+    "no_glibc_symbols": true,
+    "qualification": "static build measurement only; no Alpine/kernel/CPU baseline qualification"
+  },
+  "relink": {
+    "parent_provenance_sha256": "d1d206a523a5328f4faaf7ddc1287992a7ef47261c297dcbf8ea6ff3a19e00db",
+    "parent_output": "<source-build>",
+    "compiler_reference_sha256": "a58b2f30b70a0393ff0cec93d40e7b039015d1ad2bbdc8a9c60634334519942f",
+    "byte_identical_to_compiler": true,
+    "zig_sha256": "2858dc89dbbfdd08cceda1b841e7fd0a793a1a67b49f150bc3d0d1de44ed7f51",
+    "byte_identical_to_source": true,
+    "compiler_verbose_sha256": "c651120673fd09c3d5801d65bc04428c1e12a1fc9ac4f5c5a835a6e0f4b737fa",
+    "tool_sha256": "7af8ea3f341ebf60ae3c911810db3040b11cbdbb548dddd802dbe446bbd21aea"
+  },
+  "linkage": {
+    "recorded": true,
+    "kind": "linker-read-inputs-not-member-proof",
+    "executable_sha256": "a58b2f30b70a0393ff0cec93d40e7b039015d1ad2bbdc8a9c60634334519942f",
+    "link_command_sha256": "869bf93d763b155cfbea5ad8be4d02453bee522dc95938a73593b6ca04256c61",
+    "dependency_file_sha256": "775d44cbced76f92675ffec136a6f970d67366fa073d865bf6977f58ce1d3291",
+    "inputs": [
+      {
+        "path": "cmd/dot/CMakeFiles/dot.dir/dot.c.o",
+        "scope": "build",
+        "size": 17272,
+        "sha256": "8ccb46106ed3803ec39aa1e8f36bc5d73a8a6f4a30eca9bd3ddbbf24c9886aba",
+        "references": 1
+      },
+      {
+        "path": "cmd/dot/CMakeFiles/dot.dir/dot_builtins.cpp.o",
+        "scope": "build",
+        "size": 3392,
+        "sha256": "5027ac81c6469594079773846ca5bf50cba67f9890156afad42eb3bb2661475c",
+        "references": 1
+      },
+      {
+        "path": "lib/cdt/libcdt.a",
+        "scope": "build",
+        "size": 124086,
+        "sha256": "3927b5909017f21a24a3b23fc233e0cdd4858bb63e5da6c08914f461fd582c0e",
+        "references": 1
+      },
+      {
+        "path": "lib/cgraph/libcgraph.a",
+        "scope": "build",
+        "size": 986678,
+        "sha256": "9d5538d091689d584fd8e0966b80a61f74b5b31cdbeb9736dd805f6021e08d6e",
+        "references": 1
+      },
+      {
+        "path": "lib/circogen/libcircogen.a",
+        "scope": "build",
+        "size": 459156,
+        "sha256": "080cbce278f38c3c23319625f67cfb48f8f2557d335b8f2ca4040ef622031fee",
+        "references": 1
+      },
+      {
+        "path": "lib/common/CMakeFiles/common_obj.dir/args.c.o",
+        "scope": "build",
+        "size": 40456,
+        "sha256": "50aad940ccde7597cc1d765a9a3c0b3bd9134b53dd228247ba2c7fa0e3ea3b73",
+        "references": 1
+      },
+      {
+        "path": "lib/common/CMakeFiles/common_obj.dir/arrows.c.o",
+        "scope": "build",
+        "size": 131016,
+        "sha256": "ed3dc079d4b38b97f810bbc6beede0f48f465625862d7075ead4c9b159e544f9",
+        "references": 1
+      },
+      {
+        "path": "lib/common/CMakeFiles/common_obj.dir/colxlate.c.o",
+        "scope": "build",
+        "size": 287912,
+        "sha256": "9cb4eda5d8ab39959e8570b3b6785ca6c772b3f2a1d718d50edea470a8654fe9",
+        "references": 1
+      },
+      {
+        "path": "lib/common/CMakeFiles/common_obj.dir/ellipse.c.o",
+        "scope": "build",
+        "size": 27456,
+        "sha256": "6570d470d5b5a47a939f175d642efc69f024bc97a1dc7ae10b94287d592635e0",
+        "references": 1
+      },
+      {
+        "path": "lib/common/CMakeFiles/common_obj.dir/emit.c.o",
+        "scope": "build",
+        "size": 507880,
+        "sha256": "dfc2ab6f21d2ef3e13bea533e8cc14edfe7ff9ddb98d19ef1311df30b6f3867e",
+        "references": 1
+      },
+      {
+        "path": "lib/common/CMakeFiles/common_obj.dir/geom.c.o",
+        "scope": "build",
+        "size": 13656,
+        "sha256": "aa5bd3d979a5fb7adddb9798b7e5571a9aa466b83e20d8474fad0d86eccb48c3",
+        "references": 1
+      },
+      {
+        "path": "lib/common/CMakeFiles/common_obj.dir/globals.c.o",
+        "scope": "build",
+        "size": 20400,
+        "sha256": "f112f562cb9d9ed114ae210f2361d5d457c2b1e7686d5bc476351a137f2a3941",
+        "references": 1
+      },
+      {
+        "path": "lib/common/CMakeFiles/common_obj.dir/htmllex.c.o",
+        "scope": "build",
+        "size": 40056,
+        "sha256": "9ecf5758f0785370fa7065358be3978930d8b15e677faa0ca9be5b5e70535b8a",
+        "references": 1
+      },
+      {
+        "path": "lib/common/CMakeFiles/common_obj.dir/htmlparse.c.o",
+        "scope": "build",
+        "size": 118048,
+        "sha256": "e137535d8144011a340722b17eced9b391a80563a8cbf095c5e991e620fe9c8c",
+        "references": 1
+      },
+      {
+        "path": "lib/common/CMakeFiles/common_obj.dir/htmltable.c.o",
+        "scope": "build",
+        "size": 190808,
+        "sha256": "3933b4ff26b54b9c69e5508db4324fda9bdf5872eb80f700ab94f1a310684a22",
+        "references": 1
+      },
+      {
+        "path": "lib/common/CMakeFiles/common_obj.dir/input.c.o",
+        "scope": "build",
+        "size": 140752,
+        "sha256": "a3f8676161542961462c3b4fbe918acac85e3f056d0f7c4bb4902f192f30d5b5",
+        "references": 1
+      },
+      {
+        "path": "lib/common/CMakeFiles/common_obj.dir/labels.c.o",
+        "scope": "build",
+        "size": 123856,
+        "sha256": "406346d8b000438881aa8c2934c2f89fb14c366b06f54d245c2b089e7c350cce",
+        "references": 1
+      },
+      {
+        "path": "lib/common/CMakeFiles/common_obj.dir/ns.c.o",
+        "scope": "build",
+        "size": 164488,
+        "sha256": "00b3eb3100f8eb2507bcef006a993cc8fb5b5eb82251dc2abce2214ceb65d3fd",
+        "references": 1
+      },
+      {
+        "path": "lib/common/CMakeFiles/common_obj.dir/output.c.o",
+        "scope": "build",
+        "size": 161048,
+        "sha256": "f1b857548e87475966033eb5237e7754e55536bdca74729c900586523000ab1d",
+        "references": 1
+      },
+      {
+        "path": "lib/common/CMakeFiles/common_obj.dir/pointset.c.o",
+        "scope": "build",
+        "size": 25336,
+        "sha256": "e246db434a7ea51dbaefb8bd9ce4b186345ec53d3fda0771e75c63246f892ad4",
+        "references": 1
+      },
+      {
+        "path": "lib/common/CMakeFiles/common_obj.dir/postproc.c.o",
+        "scope": "build",
+        "size": 105280,
+        "sha256": "dbcbd1718b3405b2b0d0d9cd79c7528f6e941c41f1adafaa2cab01c8c81a0c96",
+        "references": 1
+      },
+      {
+        "path": "lib/common/CMakeFiles/common_obj.dir/psusershape.c.o",
+        "scope": "build",
+        "size": 74776,
+        "sha256": "45124c96c2de44707615e7e8d7594f898415ddfe05f4b769c918db268d45293e",
+        "references": 1
+      },
+      {
+        "path": "lib/common/CMakeFiles/common_obj.dir/routespl.c.o",
+        "scope": "build",
+        "size": 132520,
+        "sha256": "ce229c8e9c6454a1f4adbcb0deb563e5787d2051181f11c145aa0bd28fee1d71",
+        "references": 1
+      },
+      {
+        "path": "lib/common/CMakeFiles/common_obj.dir/shapes.c.o",
+        "scope": "build",
+        "size": 322760,
+        "sha256": "22f605200b039d7b08862ed3d8c31e6fcc233a285e5254d5057c96c20f36b1f4",
+        "references": 1
+      },
+      {
+        "path": "lib/common/CMakeFiles/common_obj.dir/splines.c.o",
+        "scope": "build",
+        "size": 136944,
+        "sha256": "412ae2fed201e07faa7a30f65c4a5437b05f21b299be444764c3eb5db3dce3f7",
+        "references": 1
+      },
+      {
+        "path": "lib/common/CMakeFiles/common_obj.dir/taper.c.o",
+        "scope": "build",
+        "size": 31032,
+        "sha256": "813451d6d9d1b23bc8c3ba06d640399439bfd27b1e934d9420c208dc7a299856",
+        "references": 1
+      },
+      {
+        "path": "lib/common/CMakeFiles/common_obj.dir/textspan.c.o",
+        "scope": "build",
+        "size": 53768,
+        "sha256": "e5485c2e3a4f41ece5449a071bffada4b657f5efe228d02074c591d0cd7c2a1f",
+        "references": 1
+      },
+      {
+        "path": "lib/common/CMakeFiles/common_obj.dir/textspan_lut.c.o",
+        "scope": "build",
+        "size": 45368,
+        "sha256": "ddf49c270c03a162192105301932ea4a818be07a80f44de0e33876bfc2896187",
+        "references": 1
+      },
+      {
+        "path": "lib/common/CMakeFiles/common_obj.dir/timing.c.o",
+        "scope": "build",
+        "size": 3848,
+        "sha256": "044dcb6bfb0c9dbdf608117aaaf63716da2a8a12ad94e3d8d3937a2c5ec2675b",
+        "references": 1
+      },
+      {
+        "path": "lib/common/CMakeFiles/common_obj.dir/utils.c.o",
+        "scope": "build",
+        "size": 283104,
+        "sha256": "2ecd6b24ee1df7ab788e537e061401067991c11996621a1e3e49faac3cccc6e2",
+        "references": 1
+      },
+      {
+        "path": "lib/common/libcommon.a",
+        "scope": "build",
+        "size": 3188272,
+        "sha256": "02114b53c2a07d56cde60652b5bc0e7eff6bfa49a15e4643d0cd6ae424a8bf1f",
+        "references": 1
+      },
+      {
+        "path": "lib/dotgen/libdotgen.a",
+        "scope": "build",
+        "size": 1493708,
+        "sha256": "4796c954f423f93e453f9b59f54352217fd3674a1be3490ac56b970963642658",
+        "references": 1
+      },
+      {
+        "path": "lib/fdpgen/libfdpgen.a",
+        "scope": "build",
+        "size": 514854,
+        "sha256": "1d09f82db3ad82f84d37c27cca28ed2f6c9b1f517d243bc2837350a34685a6bf",
+        "references": 1
+      },
+      {
+        "path": "lib/gvc/libgvc.a",
+        "scope": "build",
+        "size": 890680,
+        "sha256": "dc8abf94f09a879109b84c6e617c6f85771b8ad27ad3bec7a2bada9c4f9acc87",
+        "references": 1
+      },
+      {
+        "path": "lib/label/liblabel.a",
+        "scope": "build",
+        "size": 113542,
+        "sha256": "9e79fca6c96b5257a533e633e124492d72addbd21a588d907303b6026ef5753d",
+        "references": 1
+      },
+      {
+        "path": "lib/neatogen/libneatogen.a",
+        "scope": "build",
+        "size": 1800552,
+        "sha256": "72c489c7fd71b1204bb6165f208b4f713a1ad3a4425fafd015be0e566b638028",
+        "references": 1
+      },
+      {
+        "path": "lib/ortho/CMakeFiles/ortho_obj.dir/fPQ.c.o",
+        "scope": "build",
+        "size": 16624,
+        "sha256": "f34ec2d3b2aec1e064fd28c5878b6a4fcc74b1c819567def2f4db1a2b174eca1",
+        "references": 1
+      },
+      {
+        "path": "lib/ortho/CMakeFiles/ortho_obj.dir/maze.c.o",
+        "scope": "build",
+        "size": 66648,
+        "sha256": "48f1ac18121bfa1e40acc4c048173283a17e3ea0d75b163318c86ae70c310b7f",
+        "references": 1
+      },
+      {
+        "path": "lib/ortho/CMakeFiles/ortho_obj.dir/ortho.c.o",
+        "scope": "build",
+        "size": 191552,
+        "sha256": "fc50298b7d64f617486d4762de2e4308189f8b56c04d0c41f5033eb303a8c15a",
+        "references": 1
+      },
+      {
+        "path": "lib/ortho/CMakeFiles/ortho_obj.dir/partition.c.o",
+        "scope": "build",
+        "size": 79952,
+        "sha256": "717e4d5589829ea3a5c26a501f4f94e252f824c114d69461c1cc474e5be09fff",
+        "references": 1
+      },
+      {
+        "path": "lib/ortho/CMakeFiles/ortho_obj.dir/rawgraph.c.o",
+        "scope": "build",
+        "size": 21664,
+        "sha256": "483f40689c1554f53c285258cf6bc448224c693d9fd9041b6fb0fb82205593f2",
+        "references": 1
+      },
+      {
+        "path": "lib/ortho/CMakeFiles/ortho_obj.dir/sgraph.c.o",
+        "scope": "build",
+        "size": 23344,
+        "sha256": "b1359031ae93d95b7cc2454ff25fb7f0e596453ca8f506f534e87b32671401c4",
+        "references": 1
+      },
+      {
+        "path": "lib/ortho/CMakeFiles/ortho_obj.dir/trapezoid.c.o",
+        "scope": "build",
+        "size": 103376,
+        "sha256": "7ba80bd1c7dd7f81080487d9d2a80c04f0f13c6b56a41430fe5d1470ff049647",
+        "references": 1
+      },
+      {
+        "path": "lib/ortho/libortho.a",
+        "scope": "build",
+        "size": 504052,
+        "sha256": "8bdcc61f9134a8ebbb9b4d268b1b78d15875bf7d1a952895f7747f63eb986bd2",
+        "references": 1
+      },
+      {
+        "path": "lib/osage/libosage.a",
+        "scope": "build",
+        "size": 78456,
+        "sha256": "a58f942e3fcec8dbb955e01db0a3e54951640c2ccce99ed1883ef137637c8ff0",
+        "references": 1
+      },
+      {
+        "path": "lib/pack/CMakeFiles/pack_obj.dir/ccomps.c.o",
+        "scope": "build",
+        "size": 108440,
+        "sha256": "c8e5aa2dc0c4df2679eaa7223673e8b9797976a63335d8f1ac078e6a71ec5d37",
+        "references": 1
+      },
+      {
+        "path": "lib/pack/CMakeFiles/pack_obj.dir/pack.c.o",
+        "scope": "build",
+        "size": 178376,
+        "sha256": "0e27cc2910fb21efaeed2e5eff61525794ed44ca6b5bb142c65ef4eb88d47ab3",
+        "references": 1
+      },
+      {
+        "path": "lib/pack/libpack.a",
+        "scope": "build",
+        "size": 287264,
+        "sha256": "4e736e9f0e5422ee4ed3d99348f2924603b8ea8a9fa41a04c2e15305135ae3f5",
+        "references": 1
+      },
+      {
+        "path": "lib/patchwork/libpatchwork.a",
+        "scope": "build",
+        "size": 141816,
+        "sha256": "391c940e3b6e093254cc2b45fcf71e992ca379162e2de4773d5c4b9c75715c00",
+        "references": 1
+      },
+      {
+        "path": "lib/pathplan/libpathplan.a",
+        "scope": "build",
+        "size": 221728,
+        "sha256": "98337bea0027ff1489d9d47f9715573c76942653ad714dc08efffd2d011bee30",
+        "references": 1
+      },
+      {
+        "path": "lib/rbtree/librbtree.a",
+        "scope": "build",
+        "size": 20060,
+        "sha256": "9ba532960667681e09c30863729fe16ad477274969c6256e54d34a91adf2b396",
+        "references": 1
+      },
+      {
+        "path": "lib/sparse/libsparse.a",
+        "scope": "build",
+        "size": 733792,
+        "sha256": "91a35f82912a8c00a657b94a4e4a4b495ec0fad596466b1c38ee9ab152150227",
+        "references": 1
+      },
+      {
+        "path": "lib/twopigen/libtwopigen.a",
+        "scope": "build",
+        "size": 132058,
+        "sha256": "72e69041cf26451a8b481fe5d160e524abd7ed7177de4f8427fde6d10e9541e9",
+        "references": 1
+      },
+      {
+        "path": "lib/util/libutil.a",
+        "scope": "build",
+        "size": 118052,
+        "sha256": "ed195d0580cb0f2f375f4028369c86603c90abc0b66270d27669348f376f354e",
+        "references": 1
+      },
+      {
+        "path": "lib/xdot/libxdot.a",
+        "scope": "build",
+        "size": 163420,
+        "sha256": "a4e5b0cc9c62b2b73847ecb454544aaa4025f23484a81ce63d429925ee0f003c",
+        "references": 1
+      },
+      {
+        "path": "plugin/core/libgvplugin_core.a",
+        "scope": "build",
+        "size": 971062,
+        "sha256": "232db65b39847a870718f12cea867a73e672f23e0bf5a94985a5c8fa0293798c",
+        "references": 1
+      },
+      {
+        "path": "plugin/dot_layout/libgvplugin_dot_layout.a",
+        "scope": "build",
+        "size": 15082,
+        "sha256": "26224e74379211e3a4ab7d567224dafbd5ce306cb55acf711fd1491a100fcf38",
+        "references": 1
+      },
+      {
+        "path": "plugin/neato_layout/libgvplugin_neato_layout.a",
+        "scope": "build",
+        "size": 19826,
+        "sha256": "ea72783cc0d222a72cbf60084eee592ed1d65bba2aea8333e7b14e7d76234572",
+        "references": 1
+      },
+      {
+        "path": "plugin/vt/libgvplugin_vt.a",
+        "scope": "build",
+        "size": 90528,
+        "sha256": "1aa561dc0766c6c38ba2ebae94835c981b39dc8f98a03da69fbd928b6d3d45a2",
+        "references": 1
+      },
+      {
+        "path": "<private-sdk>/cache/o/08a2639b46fa64535864c1ada8c0d8e6/libc++abi.a",
+        "scope": "sdk",
+        "size": 2008078,
+        "sha256": "2d29aa4da92be7dfb144de8fbac7de6209da2dc33bb87f4bef4ebcb923a680f7",
+        "references": 1
+      },
+      {
+        "path": "<private-sdk>/cache/o/578d17c2d4962c9d8821df1a5ffef7ab/libc.a",
+        "scope": "sdk",
+        "size": 8601322,
+        "sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+        "references": 1
+      },
+      {
+        "path": "<private-sdk>/cache/o/9e95249ff19d8357badae87d1b62c706/libunwind.a",
+        "scope": "sdk",
+        "size": 298898,
+        "sha256": "2bb7cb9d4b6403af17ac52dd6def32e6e47f94c2f040a58e95e9df72e9b4a839",
+        "references": 1
+      },
+      {
+        "path": "<private-sdk>/cache/o/ac9679572512c5513cb54f68e80d64a3/crt1.o",
+        "scope": "sdk",
+        "size": 3992,
+        "sha256": "9d368a3fc8fd67bbf70bbd37cfee47bb96c1bf8ca802ac74861cabb3812af7b6",
+        "references": 1
+      },
+      {
+        "path": "<private-sdk>/cache/o/bfc52f89c10b487b178076e8a9a2a50a/libzigc.a",
+        "scope": "sdk",
+        "size": 49314,
+        "sha256": "6d80c5e65a9dd862453d3b3046595620ee6fd5f2d2deb253bd21acd635a66b61",
+        "references": 1
+      },
+      {
+        "path": "<private-sdk>/cache/o/d2a14289a5e4659a5e02131c07ce703e/libcompiler_rt.a",
+        "scope": "sdk",
+        "size": 1674862,
+        "sha256": "596fb2eb5e84701ddd0079a3a5ad6065a9ca5916518f38ad522d8f1de559cc2a",
+        "references": 1
+      },
+      {
+        "path": "<private-sdk>/cache/o/dfcde3eeb74fd7b39d0f6ec7b96d21ee/libc++.a",
+        "scope": "sdk",
+        "size": 13718908,
+        "sha256": "79676011395f14ff8a9b83734f028ff16ae3e8cbd8a9ec8ea618f211b5bd5d3c",
+        "references": 1
+      }
+    ],
+    "archive_extractions": {
+      "recorded": true,
+      "kind": "archive-extraction-observations-not-section-retention-or-license-approval",
+      "report_sha256": "fc2d9ccc397513fa07b61a57b5f594244e8220e4270d8e42d35f18bf74f3877f",
+      "row_count": 324,
+      "rows": [
+        {
+          "reference": "<source-build>/build/lib/common/CMakeFiles/common_obj.dir/emit.c.o",
+          "archive_sha256": "3927b5909017f21a24a3b23fc233e0cdd4858bb63e5da6c08914f461fd582c0e",
+          "member": "dtclose.c.o",
+          "symbol": "dtclose"
+        },
+        {
+          "reference": "<source-build>/build/lib/common/CMakeFiles/common_obj.dir/pointset.c.o",
+          "archive_sha256": "3927b5909017f21a24a3b23fc233e0cdd4858bb63e5da6c08914f461fd582c0e",
+          "member": "dtflatten.c.o",
+          "symbol": "dtflatten"
+        },
+        {
+          "reference": "<source-build>/build/lib/cdt/libcdt.a(dtopen.c.o)",
+          "archive_sha256": "3927b5909017f21a24a3b23fc233e0cdd4858bb63e5da6c08914f461fd582c0e",
+          "member": "dtdisc.c.o",
+          "symbol": "dtdisc"
+        },
+        {
+          "reference": "<source-build>/build/lib/common/CMakeFiles/common_obj.dir/emit.c.o",
+          "archive_sha256": "3927b5909017f21a24a3b23fc233e0cdd4858bb63e5da6c08914f461fd582c0e",
+          "member": "dtopen.c.o",
+          "symbol": "dtopen"
+        },
+        {
+          "reference": "<source-build>/build/lib/cdt/libcdt.a(dtdisc.c.o)",
+          "archive_sha256": "3927b5909017f21a24a3b23fc233e0cdd4858bb63e5da6c08914f461fd582c0e",
+          "member": "dtrestore.c.o",
+          "symbol": "dtrestore"
+        },
+        {
+          "reference": "<source-build>/build/lib/common/CMakeFiles/common_obj.dir/pointset.c.o",
+          "archive_sha256": "3927b5909017f21a24a3b23fc233e0cdd4858bb63e5da6c08914f461fd582c0e",
+          "member": "dtsize.c.o",
+          "symbol": "dtsize"
+        },
+        {
+          "reference": "<source-build>/build/lib/cdt/libcdt.a(dtdisc.c.o)",
+          "archive_sha256": "3927b5909017f21a24a3b23fc233e0cdd4858bb63e5da6c08914f461fd582c0e",
+          "member": "dtstrhash.c.o",
+          "symbol": "dtstrhash"
+        },
+        {
+          "reference": "<source-build>/build/lib/common/CMakeFiles/common_obj.dir/emit.c.o",
+          "archive_sha256": "3927b5909017f21a24a3b23fc233e0cdd4858bb63e5da6c08914f461fd582c0e",
+          "member": "dttree.c.o",
+          "symbol": "Dtoset"
+        },
+        {
+          "reference": "<source-build>/build/lib/cdt/libcdt.a(dtclose.c.o)",
+          "archive_sha256": "3927b5909017f21a24a3b23fc233e0cdd4858bb63e5da6c08914f461fd582c0e",
+          "member": "dtview.c.o",
+          "symbol": "dtview"
+        },
+        {
+          "reference": "<source-build>/build/lib/common/CMakeFiles/common_obj.dir/input.c.o",
+          "archive_sha256": "9d5538d091689d584fd8e0966b80a61f74b5b31cdbeb9736dd805f6021e08d6e",
+          "member": "agerror.c.o",
+          "symbol": "agseterr"
+        },
+        {
+          "reference": "<source-build>/build/lib/cgraph/libcgraph.a(attr.c.o)",
+          "archive_sha256": "9d5538d091689d584fd8e0966b80a61f74b5b31cdbeb9736dd805f6021e08d6e",
+          "member": "apply.c.o",
+          "symbol": "agapply"
+        },
+        {
+          "reference": "<source-build>/build/lib/common/CMakeFiles/common_obj.dir/arrows.c.o",
+          "archive_sha256": "9d5538d091689d584fd8e0966b80a61f74b5b31cdbeb9736dd805f6021e08d6e",
+          "member": "attr.c.o",
+          "symbol": "agattr_text"
+        },
+        {
+          "reference": "<source-build>/build/lib/cgraph/libcgraph.a(edge.c.o)",
+          "archive_sha256": "3927b5909017f21a24a3b23fc233e0cdd4858bb63e5da6c08914f461fd582c0e",
+          "member": "dtextract.c.o",
+          "symbol": "dtextract"
+        },
+        {
+          "reference": "<source-build>/build/lib/common/CMakeFiles/common_obj.dir/emit.c.o",
+          "archive_sha256": "9d5538d091689d584fd8e0966b80a61f74b5b31cdbeb9736dd805f6021e08d6e",
+          "member": "edge.c.o",
+          "symbol": "agfstout"
+        },
+        {
+          "reference": "<source-build>/build/lib/pack/CMakeFiles/pack_obj.dir/ccomps.c.o",
+          "archive_sha256": "9d5538d091689d584fd8e0966b80a61f74b5b31cdbeb9736dd805f6021e08d6e",
+          "member": "graph.c.o",
+          "symbol": "agopen"
+        },
+        {
+          "reference": "<source-build>/build/lib/cgraph/libcgraph.a(edge.c.o)",
+          "archive_sha256": "9d5538d091689d584fd8e0966b80a61f74b5b31cdbeb9736dd805f6021e08d6e",
+          "member": "id.c.o",
+          "symbol": "agmapnametoid"
+        },
+        {
+          "reference": "<source-build>/build/lib/cgraph/libcgraph.a(id.c.o)",
+          "archive_sha256": "9d5538d091689d584fd8e0966b80a61f74b5b31cdbeb9736dd805f6021e08d6e",
+          "member": "imap.c.o",
+          "symbol": "aginternalmaplookup"
+        },
+        {
+          "reference": "<source-build>/build/lib/cgraph/libcgraph.a(graph.c.o)",
+          "archive_sha256": "9d5538d091689d584fd8e0966b80a61f74b5b31cdbeb9736dd805f6021e08d6e",
+          "member": "io.c.o",
+          "symbol": "AgIoDisc"
+        },
+        {
+          "reference": "<source-build>/build/lib/cgraph/libcgraph.a(node.c.o)",
+          "archive_sha256": "3927b5909017f21a24a3b23fc233e0cdd4858bb63e5da6c08914f461fd582c0e",
+          "member": "dtrenew.c.o",
+          "symbol": "dtrenew"
+        },
+        {
+          "reference": "<source-build>/build/lib/cgraph/libcgraph.a(edge.c.o)",
+          "archive_sha256": "9d5538d091689d584fd8e0966b80a61f74b5b31cdbeb9736dd805f6021e08d6e",
+          "member": "node.c.o",
+          "symbol": "node_set_find"
+        },
+        {
+          "reference": "<source-build>/build/lib/pack/CMakeFiles/pack_obj.dir/ccomps.c.o",
+          "archive_sha256": "9d5538d091689d584fd8e0966b80a61f74b5b31cdbeb9736dd805f6021e08d6e",
+          "member": "node_induce.c.o",
+          "symbol": "graphviz_node_induce"
+        },
+        {
+          "reference": "<source-build>/build/lib/common/CMakeFiles/common_obj.dir/utils.c.o",
+          "archive_sha256": "9d5538d091689d584fd8e0966b80a61f74b5b31cdbeb9736dd805f6021e08d6e",
+          "member": "obj.c.o",
+          "symbol": "agdelete"
+        },
+        {
+          "reference": "<source-build>/build/lib/common/CMakeFiles/common_obj.dir/output.c.o",
+          "archive_sha256": "9d5538d091689d584fd8e0966b80a61f74b5b31cdbeb9736dd805f6021e08d6e",
+          "member": "rec.c.o",
+          "symbol": "aggetrec"
+        },
+        {
+          "reference": "<source-build>/build/lib/cgraph/libcgraph.a(graph.c.o)",
+          "archive_sha256": "9d5538d091689d584fd8e0966b80a61f74b5b31cdbeb9736dd805f6021e08d6e",
+          "member": "refstr.c.o",
+          "symbol": "agstrclose"
+        },
+        {
+          "reference": "<source-build>/build/lib/cgraph/libcgraph.a(obj.c.o)",
+          "archive_sha256": "9d5538d091689d584fd8e0966b80a61f74b5b31cdbeb9736dd805f6021e08d6e",
+          "member": "subg.c.o",
+          "symbol": "agidsubg"
+        },
+        {
+          "reference": "<source-build>/build/lib/cgraph/libcgraph.a(attr.c.o)",
+          "archive_sha256": "9d5538d091689d584fd8e0966b80a61f74b5b31cdbeb9736dd805f6021e08d6e",
+          "member": "utils.c.o",
+          "symbol": "agdtopen"
+        },
+        {
+          "reference": "<source-build>/build/lib/common/CMakeFiles/common_obj.dir/output.c.o",
+          "archive_sha256": "9d5538d091689d584fd8e0966b80a61f74b5b31cdbeb9736dd805f6021e08d6e",
+          "member": "write.c.o",
+          "symbol": "agstrcanon"
+        },
+        {
+          "reference": "<source-build>/build/lib/common/CMakeFiles/common_obj.dir/input.c.o",
+          "archive_sha256": "9d5538d091689d584fd8e0966b80a61f74b5b31cdbeb9736dd805f6021e08d6e",
+          "member": "grammar.c.o",
+          "symbol": "agconcat"
+        },
+        {
+          "reference": "<source-build>/build/lib/cgraph/libcgraph.a(grammar.c.o)",
+          "archive_sha256": "9d5538d091689d584fd8e0966b80a61f74b5b31cdbeb9736dd805f6021e08d6e",
+          "member": "scan.c.o",
+          "symbol": "aaglex"
+        },
+        {
+          "reference": "<source-build>/build/cmd/dot/CMakeFiles/dot.dir/dot.c.o",
+          "archive_sha256": "dc8abf94f09a879109b84c6e617c6f85771b8ad27ad3bec7a2bada9c4f9acc87",
+          "member": "gvc.c.o",
+          "symbol": "gvContextPlugins"
+        },
+        {
+          "reference": "<source-build>/build/lib/gvc/libgvc.a(gvc.c.o)",
+          "archive_sha256": "dc8abf94f09a879109b84c6e617c6f85771b8ad27ad3bec7a2bada9c4f9acc87",
+          "member": "gvconfig.c.o",
+          "symbol": "gvconfig_plugin_install_from_library"
+        },
+        {
+          "reference": "<source-build>/build/lib/gvc/libgvc.a(gvc.c.o)",
+          "archive_sha256": "dc8abf94f09a879109b84c6e617c6f85771b8ad27ad3bec7a2bada9c4f9acc87",
+          "member": "gvcontext.c.o",
+          "symbol": "gvNEWcontext"
+        },
+        {
+          "reference": "<source-build>/build/lib/common/CMakeFiles/common_obj.dir/psusershape.c.o",
+          "archive_sha256": "dc8abf94f09a879109b84c6e617c6f85771b8ad27ad3bec7a2bada9c4f9acc87",
+          "member": "gvdevice.c.o",
+          "symbol": "gvwrite"
+        },
+        {
+          "reference": "<source-build>/build/lib/common/CMakeFiles/common_obj.dir/emit.c.o",
+          "archive_sha256": "dc8abf94f09a879109b84c6e617c6f85771b8ad27ad3bec7a2bada9c4f9acc87",
+          "member": "gvevent.c.o",
+          "symbol": "gvevent_key_binding"
+        },
+        {
+          "reference": "<source-build>/build/lib/common/CMakeFiles/common_obj.dir/input.c.o",
+          "archive_sha256": "dc8abf94f09a879109b84c6e617c6f85771b8ad27ad3bec7a2bada9c4f9acc87",
+          "member": "gvjobs.c.o",
+          "symbol": "gvjobs_output_filename"
+        },
+        {
+          "reference": "<source-build>/build/lib/common/CMakeFiles/common_obj.dir/input.c.o",
+          "archive_sha256": "dc8abf94f09a879109b84c6e617c6f85771b8ad27ad3bec7a2bada9c4f9acc87",
+          "member": "gvlayout.c.o",
+          "symbol": "gvlayout_select"
+        },
+        {
+          "reference": "<source-build>/build/lib/gvc/libgvc.a(gvconfig.c.o)",
+          "archive_sha256": "dc8abf94f09a879109b84c6e617c6f85771b8ad27ad3bec7a2bada9c4f9acc87",
+          "member": "gvplugin.c.o",
+          "symbol": "gvplugin_install"
+        },
+        {
+          "reference": "<source-build>/build/lib/gvc/libgvc.a(gvrender.c.o)",
+          "archive_sha256": "dc8abf94f09a879109b84c6e617c6f85771b8ad27ad3bec7a2bada9c4f9acc87",
+          "member": "gvloadimage.c.o",
+          "symbol": "gvloadimage"
+        },
+        {
+          "reference": "<source-build>/build/lib/common/CMakeFiles/common_obj.dir/emit.c.o",
+          "archive_sha256": "dc8abf94f09a879109b84c6e617c6f85771b8ad27ad3bec7a2bada9c4f9acc87",
+          "member": "gvrender.c.o",
+          "symbol": "gvrender_select"
+        },
+        {
+          "reference": "<source-build>/build/lib/gvc/libgvc.a(gvconfig.c.o)",
+          "archive_sha256": "dc8abf94f09a879109b84c6e617c6f85771b8ad27ad3bec7a2bada9c4f9acc87",
+          "member": "gvtextlayout.c.o",
+          "symbol": "gvtextlayout_select"
+        },
+        {
+          "reference": "<source-build>/build/lib/gvc/libgvc.a(gvrender.c.o)",
+          "archive_sha256": "dc8abf94f09a879109b84c6e617c6f85771b8ad27ad3bec7a2bada9c4f9acc87",
+          "member": "gvusershape.c.o",
+          "symbol": "gvusershape_find"
+        },
+        {
+          "reference": "<source-build>/build/plugin/core/libgvplugin_core.a(gvplugin_core.c.o)",
+          "archive_sha256": "232db65b39847a870718f12cea867a73e672f23e0bf5a94985a5c8fa0293798c",
+          "member": "gvloadimage_core.c.o",
+          "symbol": "gvloadimage_core_types"
+        },
+        {
+          "reference": "<source-build>/build/cmd/dot/CMakeFiles/dot.dir/dot_builtins.cpp.o",
+          "archive_sha256": "232db65b39847a870718f12cea867a73e672f23e0bf5a94985a5c8fa0293798c",
+          "member": "gvplugin_core.c.o",
+          "symbol": "gvplugin_core_LTX_library"
+        },
+        {
+          "reference": "<source-build>/build/plugin/core/libgvplugin_core.a(gvloadimage_core.c.o)",
+          "archive_sha256": "232db65b39847a870718f12cea867a73e672f23e0bf5a94985a5c8fa0293798c",
+          "member": "gvrender_core_dot.c.o",
+          "symbol": "core_loadimage_xdot"
+        },
+        {
+          "reference": "<source-build>/build/plugin/core/libgvplugin_core.a(gvplugin_core.c.o)",
+          "archive_sha256": "232db65b39847a870718f12cea867a73e672f23e0bf5a94985a5c8fa0293798c",
+          "member": "gvrender_core_json.c.o",
+          "symbol": "gvrender_json_types"
+        },
+        {
+          "reference": "<source-build>/build/plugin/core/libgvplugin_core.a(gvplugin_core.c.o)",
+          "archive_sha256": "232db65b39847a870718f12cea867a73e672f23e0bf5a94985a5c8fa0293798c",
+          "member": "gvrender_core_fig.c.o",
+          "symbol": "gvrender_fig_types"
+        },
+        {
+          "reference": "<source-build>/build/plugin/core/libgvplugin_core.a(gvplugin_core.c.o)",
+          "archive_sha256": "232db65b39847a870718f12cea867a73e672f23e0bf5a94985a5c8fa0293798c",
+          "member": "gvrender_core_map.c.o",
+          "symbol": "gvrender_map_types"
+        },
+        {
+          "reference": "<source-build>/build/plugin/core/libgvplugin_core.a(gvplugin_core.c.o)",
+          "archive_sha256": "232db65b39847a870718f12cea867a73e672f23e0bf5a94985a5c8fa0293798c",
+          "member": "gvrender_core_pic.c.o",
+          "symbol": "gvrender_pic_types"
+        },
+        {
+          "reference": "<source-build>/build/plugin/core/libgvplugin_core.a(gvplugin_core.c.o)",
+          "archive_sha256": "232db65b39847a870718f12cea867a73e672f23e0bf5a94985a5c8fa0293798c",
+          "member": "gvrender_core_pov.c.o",
+          "symbol": "gvrender_pov_types"
+        },
+        {
+          "reference": "<source-build>/build/plugin/core/libgvplugin_core.a(gvplugin_core.c.o)",
+          "archive_sha256": "232db65b39847a870718f12cea867a73e672f23e0bf5a94985a5c8fa0293798c",
+          "member": "gvrender_core_ps.c.o",
+          "symbol": "gvrender_ps_types"
+        },
+        {
+          "reference": "<source-build>/build/plugin/core/libgvplugin_core.a(gvplugin_core.c.o)",
+          "archive_sha256": "232db65b39847a870718f12cea867a73e672f23e0bf5a94985a5c8fa0293798c",
+          "member": "gvrender_core_svg.c.o",
+          "symbol": "gvrender_svg_types"
+        },
+        {
+          "reference": "<source-build>/build/plugin/core/libgvplugin_core.a(gvplugin_core.c.o)",
+          "archive_sha256": "232db65b39847a870718f12cea867a73e672f23e0bf5a94985a5c8fa0293798c",
+          "member": "gvrender_core_tk.c.o",
+          "symbol": "gvrender_tk_types"
+        },
+        {
+          "reference": "<source-build>/build/cmd/dot/CMakeFiles/dot.dir/dot_builtins.cpp.o",
+          "archive_sha256": "26224e74379211e3a4ab7d567224dafbd5ce306cb55acf711fd1491a100fcf38",
+          "member": "gvplugin_dot_layout.c.o",
+          "symbol": "gvplugin_dot_layout_LTX_library"
+        },
+        {
+          "reference": "<source-build>/build/plugin/dot_layout/libgvplugin_dot_layout.a(gvplugin_dot_layout.c.o)",
+          "archive_sha256": "26224e74379211e3a4ab7d567224dafbd5ce306cb55acf711fd1491a100fcf38",
+          "member": "gvlayout_dot_layout.c.o",
+          "symbol": "gvlayout_dot_layout"
+        },
+        {
+          "reference": "<source-build>/build/cmd/dot/CMakeFiles/dot.dir/dot_builtins.cpp.o",
+          "archive_sha256": "ea72783cc0d222a72cbf60084eee592ed1d65bba2aea8333e7b14e7d76234572",
+          "member": "gvplugin_neato_layout.c.o",
+          "symbol": "gvplugin_neato_layout_LTX_library"
+        },
+        {
+          "reference": "<source-build>/build/plugin/neato_layout/libgvplugin_neato_layout.a(gvplugin_neato_layout.c.o)",
+          "archive_sha256": "ea72783cc0d222a72cbf60084eee592ed1d65bba2aea8333e7b14e7d76234572",
+          "member": "gvlayout_neato_layout.c.o",
+          "symbol": "gvlayout_neato_types"
+        },
+        {
+          "reference": "<source-build>/build/cmd/dot/CMakeFiles/dot.dir/dot_builtins.cpp.o",
+          "archive_sha256": "1aa561dc0766c6c38ba2ebae94835c981b39dc8f98a03da69fbd928b6d3d45a2",
+          "member": "gvplugin_vt.c.o",
+          "symbol": "gvplugin_vt_LTX_library"
+        },
+        {
+          "reference": "<source-build>/build/lib/common/CMakeFiles/common_obj.dir/routespl.c.o",
+          "archive_sha256": "98337bea0027ff1489d9d47f9715573c76942653ad714dc08efffd2d011bee30",
+          "member": "route.c.o",
+          "symbol": "Proutespline"
+        },
+        {
+          "reference": "<source-build>/build/lib/common/CMakeFiles/common_obj.dir/routespl.c.o",
+          "archive_sha256": "98337bea0027ff1489d9d47f9715573c76942653ad714dc08efffd2d011bee30",
+          "member": "shortest.c.o",
+          "symbol": "Pshortestpath"
+        },
+        {
+          "reference": "<source-build>/build/lib/pathplan/libpathplan.a(route.c.o)",
+          "archive_sha256": "98337bea0027ff1489d9d47f9715573c76942653ad714dc08efffd2d011bee30",
+          "member": "solvers.c.o",
+          "symbol": "solve3"
+        },
+        {
+          "reference": "<source-build>/build/lib/pathplan/libpathplan.a(shortest.c.o)",
+          "archive_sha256": "98337bea0027ff1489d9d47f9715573c76942653ad714dc08efffd2d011bee30",
+          "member": "triang.c.o",
+          "symbol": "ccw"
+        },
+        {
+          "reference": "<source-build>/build/lib/common/CMakeFiles/common_obj.dir/emit.c.o",
+          "archive_sha256": "98337bea0027ff1489d9d47f9715573c76942653ad714dc08efffd2d011bee30",
+          "member": "util.c.o",
+          "symbol": "freePath"
+        },
+        {
+          "reference": "<source-build>/build/lib/common/CMakeFiles/common_obj.dir/emit.c.o",
+          "archive_sha256": "a4e5b0cc9c62b2b73847ecb454544aaa4025f23484a81ce63d429925ee0f003c",
+          "member": "xdot.c.o",
+          "symbol": "parseXDotF"
+        },
+        {
+          "reference": "<source-build>/build/lib/dotgen/libdotgen.a(cluster.c.o)",
+          "archive_sha256": "4796c954f423f93e453f9b59f54352217fd3674a1be3490ac56b970963642658",
+          "member": "class2.c.o",
+          "symbol": "class2"
+        },
+        {
+          "reference": "<source-build>/build/lib/dotgen/libdotgen.a(class1.c.o)",
+          "archive_sha256": "4796c954f423f93e453f9b59f54352217fd3674a1be3490ac56b970963642658",
+          "member": "cluster.c.o",
+          "symbol": "mark_clusters"
+        },
+        {
+          "reference": "<source-build>/build/lib/dotgen/libdotgen.a(dotinit.c.o)",
+          "archive_sha256": "4796c954f423f93e453f9b59f54352217fd3674a1be3490ac56b970963642658",
+          "member": "class1.c.o",
+          "symbol": "nonconstraint_edge"
+        },
+        {
+          "reference": "<source-build>/build/lib/dotgen/libdotgen.a(dotinit.c.o)",
+          "archive_sha256": "4796c954f423f93e453f9b59f54352217fd3674a1be3490ac56b970963642658",
+          "member": "aspect.c.o",
+          "symbol": "setAspect"
+        },
+        {
+          "reference": "<source-build>/build/lib/dotgen/libdotgen.a(dotinit.c.o)",
+          "archive_sha256": "4796c954f423f93e453f9b59f54352217fd3674a1be3490ac56b970963642658",
+          "member": "compound.c.o",
+          "symbol": "dot_compoundEdges"
+        },
+        {
+          "reference": "<source-build>/build/plugin/dot_layout/libgvplugin_dot_layout.a(gvlayout_dot_layout.c.o)",
+          "archive_sha256": "4796c954f423f93e453f9b59f54352217fd3674a1be3490ac56b970963642658",
+          "member": "dotinit.c.o",
+          "symbol": "dot_cleanup"
+        },
+        {
+          "reference": "<source-build>/build/lib/dotgen/libdotgen.a(dotinit.c.o)",
+          "archive_sha256": "4796c954f423f93e453f9b59f54352217fd3674a1be3490ac56b970963642658",
+          "member": "dotsplines.c.o",
+          "symbol": "dot_splines"
+        },
+        {
+          "reference": "<source-build>/build/lib/dotgen/libdotgen.a(class2.c.o)",
+          "archive_sha256": "4796c954f423f93e453f9b59f54352217fd3674a1be3490ac56b970963642658",
+          "member": "fastgr.c.o",
+          "symbol": "find_fast_edge"
+        },
+        {
+          "reference": "<source-build>/build/lib/dotgen/libdotgen.a(mincross.c.o)",
+          "archive_sha256": "4796c954f423f93e453f9b59f54352217fd3674a1be3490ac56b970963642658",
+          "member": "decomp.c.o",
+          "symbol": "decompose"
+        },
+        {
+          "reference": "<source-build>/build/lib/dotgen/libdotgen.a(dotinit.c.o)",
+          "archive_sha256": "4796c954f423f93e453f9b59f54352217fd3674a1be3490ac56b970963642658",
+          "member": "mincross.c.o",
+          "symbol": "dot_mincross"
+        },
+        {
+          "reference": "<source-build>/build/lib/dotgen/libdotgen.a(position.c.o)",
+          "archive_sha256": "4796c954f423f93e453f9b59f54352217fd3674a1be3490ac56b970963642658",
+          "member": "conc.c.o",
+          "symbol": "dot_concentrate"
+        },
+        {
+          "reference": "<source-build>/build/lib/dotgen/libdotgen.a(position.c.o)",
+          "archive_sha256": "4796c954f423f93e453f9b59f54352217fd3674a1be3490ac56b970963642658",
+          "member": "flat.c.o",
+          "symbol": "flat_edges"
+        },
+        {
+          "reference": "<source-build>/build/lib/dotgen/libdotgen.a(dotinit.c.o)",
+          "archive_sha256": "4796c954f423f93e453f9b59f54352217fd3674a1be3490ac56b970963642658",
+          "member": "position.c.o",
+          "symbol": "dot_position"
+        },
+        {
+          "reference": "<source-build>/build/lib/dotgen/libdotgen.a(rank.c.o)",
+          "archive_sha256": "4796c954f423f93e453f9b59f54352217fd3674a1be3490ac56b970963642658",
+          "member": "acyclic.c.o",
+          "symbol": "reverse_edge"
+        },
+        {
+          "reference": "<source-build>/build/lib/dotgen/libdotgen.a(conc.c.o)",
+          "archive_sha256": "4796c954f423f93e453f9b59f54352217fd3674a1be3490ac56b970963642658",
+          "member": "rank.c.o",
+          "symbol": "dot_scan_ranks"
+        },
+        {
+          "reference": "<source-build>/build/lib/dotgen/libdotgen.a(dotinit.c.o)",
+          "archive_sha256": "4796c954f423f93e453f9b59f54352217fd3674a1be3490ac56b970963642658",
+          "member": "sameport.c.o",
+          "symbol": "dot_sameports"
+        },
+        {
+          "reference": "<source-build>/build/lib/circogen/libcircogen.a(circular.c.o)",
+          "archive_sha256": "080cbce278f38c3c23319625f67cfb48f8f2557d335b8f2ca4040ef622031fee",
+          "member": "block.c.o",
+          "symbol": "initBlocklist"
+        },
+        {
+          "reference": "<source-build>/build/lib/circogen/libcircogen.a(circular.c.o)",
+          "archive_sha256": "080cbce278f38c3c23319625f67cfb48f8f2557d335b8f2ca4040ef622031fee",
+          "member": "blocktree.c.o",
+          "symbol": "createBlocktree"
+        },
+        {
+          "reference": "<source-build>/build/lib/circogen/libcircogen.a(circpos.c.o)",
+          "archive_sha256": "080cbce278f38c3c23319625f67cfb48f8f2557d335b8f2ca4040ef622031fee",
+          "member": "blockpath.c.o",
+          "symbol": "layout_block"
+        },
+        {
+          "reference": "<source-build>/build/lib/circogen/libcircogen.a(circular.c.o)",
+          "archive_sha256": "080cbce278f38c3c23319625f67cfb48f8f2557d335b8f2ca4040ef622031fee",
+          "member": "circpos.c.o",
+          "symbol": "circPos"
+        },
+        {
+          "reference": "<source-build>/build/lib/circogen/libcircogen.a(circularinit.c.o)",
+          "archive_sha256": "080cbce278f38c3c23319625f67cfb48f8f2557d335b8f2ca4040ef622031fee",
+          "member": "circular.c.o",
+          "symbol": "circularLayout"
+        },
+        {
+          "reference": "<source-build>/build/plugin/neato_layout/libgvplugin_neato_layout.a(gvlayout_neato_layout.c.o)",
+          "archive_sha256": "080cbce278f38c3c23319625f67cfb48f8f2557d335b8f2ca4040ef622031fee",
+          "member": "circularinit.c.o",
+          "symbol": "circo_layout"
+        },
+        {
+          "reference": "<source-build>/build/lib/circogen/libcircogen.a(blockpath.c.o)",
+          "archive_sha256": "080cbce278f38c3c23319625f67cfb48f8f2557d335b8f2ca4040ef622031fee",
+          "member": "edgelist.c.o",
+          "symbol": "init_edgelist"
+        },
+        {
+          "reference": "<source-build>/build/lib/circogen/libcircogen.a(blockpath.c.o)",
+          "archive_sha256": "080cbce278f38c3c23319625f67cfb48f8f2557d335b8f2ca4040ef622031fee",
+          "member": "nodelist.c.o",
+          "symbol": "appendNodelist"
+        },
+        {
+          "reference": "<source-build>/build/plugin/neato_layout/libgvplugin_neato_layout.a(gvlayout_neato_layout.c.o)",
+          "archive_sha256": "1d09f82db3ad82f84d37c27cca28ed2f6c9b1f517d243bc2837350a34685a6bf",
+          "member": "fdpinit.c.o",
+          "symbol": "fdp_cleanup"
+        },
+        {
+          "reference": "<source-build>/build/lib/pathplan/libpathplan.a(visibility.c.o)",
+          "archive_sha256": "98337bea0027ff1489d9d47f9715573c76942653ad714dc08efffd2d011bee30",
+          "member": "inpoly.c.o",
+          "symbol": "in_poly"
+        },
+        {
+          "reference": "<source-build>/build/lib/pathplan/libpathplan.a(cvt.c.o)",
+          "archive_sha256": "98337bea0027ff1489d9d47f9715573c76942653ad714dc08efffd2d011bee30",
+          "member": "visibility.c.o",
+          "symbol": "visibility"
+        },
+        {
+          "reference": "<source-build>/build/lib/pathplan/libpathplan.a(cvt.c.o)",
+          "archive_sha256": "98337bea0027ff1489d9d47f9715573c76942653ad714dc08efffd2d011bee30",
+          "member": "shortestpth.c.o",
+          "symbol": "makePath"
+        },
+        {
+          "reference": "<source-build>/build/lib/fdpgen/libfdpgen.a(clusteredges.c.o)",
+          "archive_sha256": "98337bea0027ff1489d9d47f9715573c76942653ad714dc08efffd2d011bee30",
+          "member": "cvt.c.o",
+          "symbol": "Pobsopen"
+        },
+        {
+          "reference": "<source-build>/build/lib/fdpgen/libfdpgen.a(layout.c.o)",
+          "archive_sha256": "1d09f82db3ad82f84d37c27cca28ed2f6c9b1f517d243bc2837350a34685a6bf",
+          "member": "clusteredges.c.o",
+          "symbol": "compoundEdges"
+        },
+        {
+          "reference": "<source-build>/build/lib/fdpgen/libfdpgen.a(layout.c.o)",
+          "archive_sha256": "1d09f82db3ad82f84d37c27cca28ed2f6c9b1f517d243bc2837350a34685a6bf",
+          "member": "comp.c.o",
+          "symbol": "findCComp"
+        },
+        {
+          "reference": "<source-build>/build/plugin/neato_layout/libgvplugin_neato_layout.a(gvlayout_neato_layout.c.o)",
+          "archive_sha256": "1d09f82db3ad82f84d37c27cca28ed2f6c9b1f517d243bc2837350a34685a6bf",
+          "member": "layout.c.o",
+          "symbol": "fdp_layout"
+        },
+        {
+          "reference": "<source-build>/build/lib/fdpgen/libfdpgen.a(grid.c.o)",
+          "archive_sha256": "3927b5909017f21a24a3b23fc233e0cdd4858bb63e5da6c08914f461fd582c0e",
+          "member": "dtwalk.c.o",
+          "symbol": "dtwalk"
+        },
+        {
+          "reference": "<source-build>/build/lib/fdpgen/libfdpgen.a(tlayout.c.o)",
+          "archive_sha256": "1d09f82db3ad82f84d37c27cca28ed2f6c9b1f517d243bc2837350a34685a6bf",
+          "member": "grid.c.o",
+          "symbol": "mkGrid"
+        },
+        {
+          "reference": "<source-build>/build/lib/fdpgen/libfdpgen.a(layout.c.o)",
+          "archive_sha256": "1d09f82db3ad82f84d37c27cca28ed2f6c9b1f517d243bc2837350a34685a6bf",
+          "member": "tlayout.c.o",
+          "symbol": "fdp_initParams"
+        },
+        {
+          "reference": "<source-build>/build/lib/fdpgen/libfdpgen.a(layout.c.o)",
+          "archive_sha256": "1d09f82db3ad82f84d37c27cca28ed2f6c9b1f517d243bc2837350a34685a6bf",
+          "member": "xlayout.c.o",
+          "symbol": "fdp_xLayout"
+        },
+        {
+          "reference": "<source-build>/build/lib/fdpgen/libfdpgen.a(layout.c.o)",
+          "archive_sha256": "72c489c7fd71b1204bb6165f208b4f713a1ad3a4425fafd015be0e566b638028",
+          "member": "adjust.c.o",
+          "symbol": "normalize"
+        },
+        {
+          "reference": "<source-build>/build/lib/neatogen/libneatogen.a(adjust.c.o)",
+          "archive_sha256": "72c489c7fd71b1204bb6165f208b4f713a1ad3a4425fafd015be0e566b638028",
+          "member": "constraint.c.o",
+          "symbol": "cAdjust"
+        },
+        {
+          "reference": "<source-build>/build/lib/neatogen/libneatogen.a(adjust.c.o)",
+          "archive_sha256": "72c489c7fd71b1204bb6165f208b4f713a1ad3a4425fafd015be0e566b638028",
+          "member": "edges.c.o",
+          "symbol": "pymax"
+        },
+        {
+          "reference": "<source-build>/build/lib/neatogen/libneatogen.a(adjust.c.o)",
+          "archive_sha256": "72c489c7fd71b1204bb6165f208b4f713a1ad3a4425fafd015be0e566b638028",
+          "member": "geometry.c.o",
+          "symbol": "geominit"
+        },
+        {
+          "reference": "<source-build>/build/lib/neatogen/libneatogen.a(adjust.c.o)",
+          "archive_sha256": "72c489c7fd71b1204bb6165f208b4f713a1ad3a4425fafd015be0e566b638028",
+          "member": "info.c.o",
+          "symbol": "addVertex"
+        },
+        {
+          "reference": "<source-build>/build/lib/fdpgen/libfdpgen.a(clusteredges.c.o)",
+          "archive_sha256": "72c489c7fd71b1204bb6165f208b4f713a1ad3a4425fafd015be0e566b638028",
+          "member": "legal.c.o",
+          "symbol": "Plegal_arrangement"
+        },
+        {
+          "reference": "<source-build>/build/lib/neatogen/libneatogen.a(matinv.c.o)",
+          "archive_sha256": "72c489c7fd71b1204bb6165f208b4f713a1ad3a4425fafd015be0e566b638028",
+          "member": "lu.c.o",
+          "symbol": "lu_decompose"
+        },
+        {
+          "reference": "<source-build>/build/lib/neatogen/libneatogen.a(circuit.c.o)",
+          "archive_sha256": "72c489c7fd71b1204bb6165f208b4f713a1ad3a4425fafd015be0e566b638028",
+          "member": "matinv.c.o",
+          "symbol": "matinv"
+        },
+        {
+          "reference": "<source-build>/build/lib/neatogen/libneatogen.a(neatoinit.c.o)",
+          "archive_sha256": "72c489c7fd71b1204bb6165f208b4f713a1ad3a4425fafd015be0e566b638028",
+          "member": "circuit.c.o",
+          "symbol": "circuit_model"
+        },
+        {
+          "reference": "<source-build>/build/lib/neatogen/libneatogen.a(neatoinit.c.o)",
+          "archive_sha256": "72c489c7fd71b1204bb6165f208b4f713a1ad3a4425fafd015be0e566b638028",
+          "member": "delaunay.c.o",
+          "symbol": "freeGraphData"
+        },
+        {
+          "reference": "<source-build>/build/lib/neatogen/libneatogen.a(kkutils.c.o)",
+          "archive_sha256": "72c489c7fd71b1204bb6165f208b4f713a1ad3a4425fafd015be0e566b638028",
+          "member": "bfs.c.o",
+          "symbol": "bfs"
+        },
+        {
+          "reference": "<source-build>/build/lib/neatogen/libneatogen.a(kkutils.c.o)",
+          "archive_sha256": "72c489c7fd71b1204bb6165f208b4f713a1ad3a4425fafd015be0e566b638028",
+          "member": "dijkstra.c.o",
+          "symbol": "ngdijkstra"
+        },
+        {
+          "reference": "<source-build>/build/lib/neatogen/libneatogen.a(neatoinit.c.o)",
+          "archive_sha256": "72c489c7fd71b1204bb6165f208b4f713a1ad3a4425fafd015be0e566b638028",
+          "member": "kkutils.c.o",
+          "symbol": "compute_apsp_artificial_weights"
+        },
+        {
+          "reference": "<source-build>/build/lib/circogen/libcircogen.a(circularinit.c.o)",
+          "archive_sha256": "72c489c7fd71b1204bb6165f208b4f713a1ad3a4425fafd015be0e566b638028",
+          "member": "neatoinit.c.o",
+          "symbol": "neato_init_node"
+        },
+        {
+          "reference": "<source-build>/build/lib/fdpgen/libfdpgen.a(clusteredges.c.o)",
+          "archive_sha256": "72c489c7fd71b1204bb6165f208b4f713a1ad3a4425fafd015be0e566b638028",
+          "member": "neatosplines.c.o",
+          "symbol": "makeSelfArcs"
+        },
+        {
+          "reference": "<source-build>/build/lib/neatogen/libneatogen.a(adjust.c.o)",
+          "archive_sha256": "72c489c7fd71b1204bb6165f208b4f713a1ad3a4425fafd015be0e566b638028",
+          "member": "poly.c.o",
+          "symbol": "breakPoly"
+        },
+        {
+          "reference": "<source-build>/build/lib/neatogen/libneatogen.a(stuff.c.o)",
+          "archive_sha256": "72c489c7fd71b1204bb6165f208b4f713a1ad3a4425fafd015be0e566b638028",
+          "member": "solve.c.o",
+          "symbol": "solve"
+        },
+        {
+          "reference": "<source-build>/build/lib/neatogen/libneatogen.a(lu.c.o)",
+          "archive_sha256": "72c489c7fd71b1204bb6165f208b4f713a1ad3a4425fafd015be0e566b638028",
+          "member": "stuff.c.o",
+          "symbol": "new_array"
+        },
+        {
+          "reference": "<source-build>/build/lib/neatogen/libneatogen.a(stress.c.o)",
+          "archive_sha256": "72c489c7fd71b1204bb6165f208b4f713a1ad3a4425fafd015be0e566b638028",
+          "member": "matrix_ops.c.o",
+          "symbol": "orthog1"
+        },
+        {
+          "reference": "<source-build>/build/lib/neatogen/libneatogen.a(stress.c.o)",
+          "archive_sha256": "72c489c7fd71b1204bb6165f208b4f713a1ad3a4425fafd015be0e566b638028",
+          "member": "embed_graph.c.o",
+          "symbol": "embed_graph"
+        },
+        {
+          "reference": "<source-build>/build/lib/neatogen/libneatogen.a(pca.c.o)",
+          "archive_sha256": "72c489c7fd71b1204bb6165f208b4f713a1ad3a4425fafd015be0e566b638028",
+          "member": "closest.c.o",
+          "symbol": "closest_pairs2graph"
+        },
+        {
+          "reference": "<source-build>/build/lib/neatogen/libneatogen.a(stress.c.o)",
+          "archive_sha256": "72c489c7fd71b1204bb6165f208b4f713a1ad3a4425fafd015be0e566b638028",
+          "member": "pca.c.o",
+          "symbol": "PCA_alloc"
+        },
+        {
+          "reference": "<source-build>/build/lib/neatogen/libneatogen.a(stress.c.o)",
+          "archive_sha256": "72c489c7fd71b1204bb6165f208b4f713a1ad3a4425fafd015be0e566b638028",
+          "member": "conjgrad.c.o",
+          "symbol": "conjugate_gradient_f"
+        },
+        {
+          "reference": "<source-build>/build/lib/neatogen/libneatogen.a(neatoinit.c.o)",
+          "archive_sha256": "72c489c7fd71b1204bb6165f208b4f713a1ad3a4425fafd015be0e566b638028",
+          "member": "stress.c.o",
+          "symbol": "stress_majorization_kD_mkernel"
+        },
+        {
+          "reference": "<source-build>/build/lib/neatogen/libneatogen.a(voronoi.c.o)",
+          "archive_sha256": "72c489c7fd71b1204bb6165f208b4f713a1ad3a4425fafd015be0e566b638028",
+          "member": "heap.c.o",
+          "symbol": "PQinitialize"
+        },
+        {
+          "reference": "<source-build>/build/lib/neatogen/libneatogen.a(voronoi.c.o)",
+          "archive_sha256": "72c489c7fd71b1204bb6165f208b4f713a1ad3a4425fafd015be0e566b638028",
+          "member": "site.c.o",
+          "symbol": "bottomsite"
+        },
+        {
+          "reference": "<source-build>/build/lib/neatogen/libneatogen.a(voronoi.c.o)",
+          "archive_sha256": "72c489c7fd71b1204bb6165f208b4f713a1ad3a4425fafd015be0e566b638028",
+          "member": "hedges.c.o",
+          "symbol": "ELinitialize"
+        },
+        {
+          "reference": "<source-build>/build/lib/neatogen/libneatogen.a(adjust.c.o)",
+          "archive_sha256": "72c489c7fd71b1204bb6165f208b4f713a1ad3a4425fafd015be0e566b638028",
+          "member": "voronoi.c.o",
+          "symbol": "voronoi"
+        },
+        {
+          "reference": "<source-build>/build/lib/neatogen/libneatogen.a(neatoinit.c.o)",
+          "archive_sha256": "72c489c7fd71b1204bb6165f208b4f713a1ad3a4425fafd015be0e566b638028",
+          "member": "sgd.c.o",
+          "symbol": "sgd"
+        },
+        {
+          "reference": "<source-build>/build/lib/neatogen/libneatogen.a(sgd.c.o)",
+          "archive_sha256": "72c489c7fd71b1204bb6165f208b4f713a1ad3a4425fafd015be0e566b638028",
+          "member": "randomkit.c.o",
+          "symbol": "rk_seed"
+        },
+        {
+          "reference": "<source-build>/build/plugin/neato_layout/libgvplugin_neato_layout.a(gvlayout_neato_layout.c.o)",
+          "archive_sha256": "a58f942e3fcec8dbb955e01db0a3e54951640c2ccce99ed1883ef137637c8ff0",
+          "member": "osageinit.c.o",
+          "symbol": "osage_layout"
+        },
+        {
+          "reference": "<source-build>/build/lib/patchwork/libpatchwork.a(patchworkinit.c.o)",
+          "archive_sha256": "391c940e3b6e093254cc2b45fcf71e992ca379162e2de4773d5c4b9c75715c00",
+          "member": "patchwork.c.o",
+          "symbol": "patchworkLayout"
+        },
+        {
+          "reference": "<source-build>/build/plugin/neato_layout/libgvplugin_neato_layout.a(gvlayout_neato_layout.c.o)",
+          "archive_sha256": "391c940e3b6e093254cc2b45fcf71e992ca379162e2de4773d5c4b9c75715c00",
+          "member": "patchworkinit.c.o",
+          "symbol": "patchwork_layout"
+        },
+        {
+          "reference": "<source-build>/build/lib/patchwork/libpatchwork.a(patchwork.c.o)",
+          "archive_sha256": "391c940e3b6e093254cc2b45fcf71e992ca379162e2de4773d5c4b9c75715c00",
+          "member": "tree_map.c.o",
+          "symbol": "tree_map"
+        },
+        {
+          "reference": "<source-build>/build/lib/neatogen/libneatogen.a(adjust.c.o)",
+          "archive_sha256": "91a35f82912a8c00a657b94a4e4a4b495ec0fad596466b1c38ee9ab152150227",
+          "member": "SparseMatrix.c.o",
+          "symbol": "SparseMatrix_from_coordinate_arrays"
+        },
+        {
+          "reference": "<source-build>/build/lib/twopigen/libtwopigen.a(twopiinit.c.o)",
+          "archive_sha256": "72e69041cf26451a8b481fe5d160e524abd7ed7177de4f8427fde6d10e9541e9",
+          "member": "circle.c.o",
+          "symbol": "circleLayout"
+        },
+        {
+          "reference": "<source-build>/build/plugin/neato_layout/libgvplugin_neato_layout.a(gvlayout_neato_layout.c.o)",
+          "archive_sha256": "72e69041cf26451a8b481fe5d160e524abd7ed7177de4f8427fde6d10e9541e9",
+          "member": "twopiinit.c.o",
+          "symbol": "twopi_layout"
+        },
+        {
+          "reference": "<source-build>/build/lib/label/liblabel.a(node.c.o)",
+          "archive_sha256": "9e79fca6c96b5257a533e633e124492d72addbd21a588d907303b6026ef5753d",
+          "member": "rectangle.c.o",
+          "symbol": "InitRect"
+        },
+        {
+          "reference": "<source-build>/build/lib/label/liblabel.a(node.c.o)",
+          "archive_sha256": "9e79fca6c96b5257a533e633e124492d72addbd21a588d907303b6026ef5753d",
+          "member": "split.q.c.o",
+          "symbol": "SplitNode"
+        },
+        {
+          "reference": "<source-build>/build/lib/label/liblabel.a(index.c.o)",
+          "archive_sha256": "9e79fca6c96b5257a533e633e124492d72addbd21a588d907303b6026ef5753d",
+          "member": "node.c.o",
+          "symbol": "RTreeNewNode"
+        },
+        {
+          "reference": "<source-build>/build/lib/label/liblabel.a(xlabels.c.o)",
+          "archive_sha256": "9e79fca6c96b5257a533e633e124492d72addbd21a588d907303b6026ef5753d",
+          "member": "index.c.o",
+          "symbol": "RTreeOpen"
+        },
+        {
+          "reference": "<source-build>/build/lib/common/CMakeFiles/common_obj.dir/postproc.c.o",
+          "archive_sha256": "9e79fca6c96b5257a533e633e124492d72addbd21a588d907303b6026ef5753d",
+          "member": "xlabels.c.o",
+          "symbol": "placeLabels"
+        },
+        {
+          "reference": "<source-build>/build/lib/neatogen/libneatogen.a(edges.c.o)",
+          "archive_sha256": "ed195d0580cb0f2f375f4028369c86603c90abc0b66270d27669348f376f354e",
+          "member": "arena.c.o",
+          "symbol": "gv_arena_alloc"
+        },
+        {
+          "reference": "<source-build>/build/lib/common/CMakeFiles/common_obj.dir/input.c.o",
+          "archive_sha256": "ed195d0580cb0f2f375f4028369c86603c90abc0b66270d27669348f376f354e",
+          "member": "gv_fopen.c.o",
+          "symbol": "gv_fopen"
+        },
+        {
+          "reference": "<source-build>/build/lib/common/CMakeFiles/common_obj.dir/ellipse.c.o",
+          "archive_sha256": "ed195d0580cb0f2f375f4028369c86603c90abc0b66270d27669348f376f354e",
+          "member": "list.c.o",
+          "symbol": "gv_list_append_slot_"
+        },
+        {
+          "reference": "<source-build>/build/lib/gvc/libgvc.a(gvdevice.c.o)",
+          "archive_sha256": "ed195d0580cb0f2f375f4028369c86603c90abc0b66270d27669348f376f354e",
+          "member": "xml.c.o",
+          "symbol": "gv_xml_escape"
+        },
+        {
+          "reference": "<source-build>/build/lib/common/CMakeFiles/common_obj.dir/textspan_lut.c.o",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/4cb263008afdf50aabe14006b3a43a9e/tolower.o",
+          "symbol": "tolower"
+        },
+        {
+          "reference": "<private-sdk>/cache/o/578d17c2d4962c9d8821df1a5ffef7ab/libc.a(<private-sdk>/cache/o/231037893ec99ce31879e912d43825d9/getenv.o)",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/408d6ae4402087eb4c5d7822bc8e5f5b/__environ.o",
+          "symbol": "__environ"
+        },
+        {
+          "reference": "<source-build>/build/lib/common/CMakeFiles/common_obj.dir/input.c.o",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/231037893ec99ce31879e912d43825d9/getenv.o",
+          "symbol": "getenv"
+        },
+        {
+          "reference": "<private-sdk>/cache/o/578d17c2d4962c9d8821df1a5ffef7ab/libc.a(<private-sdk>/cache/o/27ac5c02ea789fdd176a2340fb9ebd8e/__libc_start_main.o)",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/1f0b84326aca2335bec78fd92954cedf/__init_tls.o",
+          "symbol": "__init_tls"
+        },
+        {
+          "reference": "<private-sdk>/cache/o/ac9679572512c5513cb54f68e80d64a3/crt1.o",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/27ac5c02ea789fdd176a2340fb9ebd8e/__libc_start_main.o",
+          "symbol": "__libc_start_main"
+        },
+        {
+          "reference": "<private-sdk>/cache/o/578d17c2d4962c9d8821df1a5ffef7ab/libc.a(<private-sdk>/cache/o/a6131f25a5220afcd46febf2e89f0543/setenv.o)",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/0e4bfeaadf5c9c1aa8aacf499f9ea7d1/putenv.o",
+          "symbol": "__putenv"
+        },
+        {
+          "reference": "<source-build>/build/lib/common/CMakeFiles/common_obj.dir/input.c.o",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/a6131f25a5220afcd46febf2e89f0543/setenv.o",
+          "symbol": "setenv"
+        },
+        {
+          "reference": "<private-sdk>/cache/o/578d17c2d4962c9d8821df1a5ffef7ab/libc.a(<private-sdk>/cache/o/0e4bfeaadf5c9c1aa8aacf499f9ea7d1/putenv.o)",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/4492615e5486c4af354e97c10ca43d6d/unsetenv.o",
+          "symbol": "unsetenv"
+        },
+        {
+          "reference": "<source-build>/build/lib/common/CMakeFiles/common_obj.dir/input.c.o",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/96a5d1a75d1b64f53df4c060109e3d02/__errno_location.o",
+          "symbol": "__errno_location"
+        },
+        {
+          "reference": "<source-build>/build/lib/common/CMakeFiles/common_obj.dir/input.c.o",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/0ce7548b232296ced313a3948cab6f10/strerror.o",
+          "symbol": "strerror"
+        },
+        {
+          "reference": "<source-build>/build/lib/common/CMakeFiles/common_obj.dir/colxlate.c.o",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/611c34a92b95ecbe99da9201e51653c5/abort.o",
+          "symbol": "abort"
+        },
+        {
+          "reference": "<private-sdk>/cache/o/578d17c2d4962c9d8821df1a5ffef7ab/libc.a(<private-sdk>/cache/o/611c34a92b95ecbe99da9201e51653c5/abort.o)",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/0dcf3bc03fbd6f8b6660f55aff338d74/abort_lock.o",
+          "symbol": "__abort_lock"
+        },
+        {
+          "reference": "<source-build>/build/cmd/dot/CMakeFiles/dot.dir/dot.c.o",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/ab3182a27296c3886d0ac010cc6ece33/exit.o",
+          "symbol": "exit"
+        },
+        {
+          "reference": "<private-sdk>/cache/o/578d17c2d4962c9d8821df1a5ffef7ab/libc.a(<private-sdk>/cache/o/611c34a92b95ecbe99da9201e51653c5/abort.o)",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/427a1d5af3db05b9c7fa6f2b5e1755b1/_Exit.o",
+          "symbol": "_Exit"
+        },
+        {
+          "reference": "<private-sdk>/cache/o/578d17c2d4962c9d8821df1a5ffef7ab/libc.a(<private-sdk>/cache/o/27ac5c02ea789fdd176a2340fb9ebd8e/__libc_start_main.o)",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/b77ae63e24443db3e148d18c2af4ce3c/defsysinfo.o",
+          "symbol": "__sysinfo"
+        },
+        {
+          "reference": "<private-sdk>/cache/o/578d17c2d4962c9d8821df1a5ffef7ab/libc.a(<private-sdk>/cache/o/27ac5c02ea789fdd176a2340fb9ebd8e/__libc_start_main.o)",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/08252969473cff93f8f9087901e9e693/libc.o",
+          "symbol": "__progname"
+        },
+        {
+          "reference": "<private-sdk>/cache/o/578d17c2d4962c9d8821df1a5ffef7ab/libc.a(<private-sdk>/cache/o/0ce7548b232296ced313a3948cab6f10/strerror.o)",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/57e0c916a39ecf9e90c6fca40def00ab/__lctrans.o",
+          "symbol": "__lctrans"
+        },
+        {
+          "reference": "<private-sdk>/cache/o/578d17c2d4962c9d8821df1a5ffef7ab/libc.a(<private-sdk>/cache/o/70e7b5aa7f74b24d9a728923275ea5b1/locale_map.o)",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/51965e97a973ef5a0d8ae72a34497fb3/__mo_lookup.o",
+          "symbol": "__mo_lookup"
+        },
+        {
+          "reference": "<private-sdk>/cache/o/578d17c2d4962c9d8821df1a5ffef7ab/libc.a(<private-sdk>/cache/o/70e7b5aa7f74b24d9a728923275ea5b1/locale_map.o)",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/dae6c31046281d4ca9b6564eeaea5a7d/c_locale.o",
+          "symbol": "__c_dot_utf8"
+        },
+        {
+          "reference": "<private-sdk>/cache/o/578d17c2d4962c9d8821df1a5ffef7ab/libc.a(<private-sdk>/cache/o/aef9eec3f2d0ff1ff8abf755e437eb18/setlocale.o)",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/70e7b5aa7f74b24d9a728923275ea5b1/locale_map.o",
+          "symbol": "__locale_lock"
+        },
+        {
+          "reference": "<source-build>/build/lib/common/CMakeFiles/common_obj.dir/emit.c.o",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/aef9eec3f2d0ff1ff8abf755e437eb18/setlocale.o",
+          "symbol": "setlocale"
+        },
+        {
+          "reference": "<source-build>/build/lib/common/CMakeFiles/common_obj.dir/colxlate.c.o",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/10d4ad6392691e104bf4af59d68034b2/calloc.o",
+          "symbol": "calloc"
+        },
+        {
+          "reference": "<source-build>/build/lib/common/CMakeFiles/common_obj.dir/colxlate.c.o",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/b3ea91c903aab5e1c3566bcfa3489662/free.o",
+          "symbol": "free"
+        },
+        {
+          "reference": "<private-sdk>/cache/o/578d17c2d4962c9d8821df1a5ffef7ab/libc.a(<private-sdk>/cache/o/70e7b5aa7f74b24d9a728923275ea5b1/locale_map.o)",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/6d3fd37a9c69681e32ad7aa548ed35ff/lite_malloc.o",
+          "symbol": "__libc_malloc"
+        },
+        {
+          "reference": "<private-sdk>/cache/o/578d17c2d4962c9d8821df1a5ffef7ab/libc.a(<private-sdk>/cache/o/b3ea91c903aab5e1c3566bcfa3489662/free.o)",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/802b7385aea6423d4c01c56e0daaa855/free.o",
+          "symbol": "__libc_free"
+        },
+        {
+          "reference": "<private-sdk>/cache/o/578d17c2d4962c9d8821df1a5ffef7ab/libc.a(<private-sdk>/cache/o/802b7385aea6423d4c01c56e0daaa855/free.o)",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/a326839043c4255ca1d8e391d6ea7a0d/malloc.o",
+          "symbol": "__malloc_lock"
+        },
+        {
+          "reference": "<private-sdk>/cache/o/578d17c2d4962c9d8821df1a5ffef7ab/libc.a(<private-sdk>/cache/o/0179ef2aaf9d332369a16f214e90ad33/realloc.o)",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/701e80735b1af4cea1b1468bb2685f21/realloc.o",
+          "symbol": "__libc_realloc"
+        },
+        {
+          "reference": "<source-build>/build/lib/common/CMakeFiles/common_obj.dir/colxlate.c.o",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/0179ef2aaf9d332369a16f214e90ad33/realloc.o",
+          "symbol": "realloc"
+        },
+        {
+          "reference": "<private-sdk>/cache/o/578d17c2d4962c9d8821df1a5ffef7ab/libc.a(<private-sdk>/cache/o/10d4ad6392691e104bf4af59d68034b2/calloc.o)",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/88896ecca2ad3d7757c1bce57a40ba65/replaced.o",
+          "symbol": "__malloc_replaced"
+        },
+        {
+          "reference": "<source-build>/build/lib/common/CMakeFiles/common_obj.dir/arrows.c.o",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/f1bfc1d81f48f1bf069f1ded23e6caad/acos.o",
+          "symbol": "acos"
+        },
+        {
+          "reference": "<source-build>/build/lib/circogen/libcircogen.a(circpos.c.o)",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/f3a2cc99d15ebc024159bc37971f2b0b/asin.o",
+          "symbol": "asin"
+        },
+        {
+          "reference": "<source-build>/build/lib/common/CMakeFiles/common_obj.dir/ellipse.c.o",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/3d21d4f3240f2458a2c3acf15d3fcab7/atan2.o",
+          "symbol": "atan2"
+        },
+        {
+          "reference": "<source-build>/build/plugin/core/libgvplugin_core.a(gvrender_core_pov.c.o)",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/de61d76ff04220c7647170bc68c3ba6c/atan.o",
+          "symbol": "atan"
+        },
+        {
+          "reference": "<source-build>/build/lib/pathplan/libpathplan.a(solvers.c.o)",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/49db4e9dbb20ccb890a53096b98a2afe/cbrt.o",
+          "symbol": "cbrt"
+        },
+        {
+          "reference": "<source-build>/build/lib/common/CMakeFiles/common_obj.dir/shapes.c.o",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/c480c337d8d5293bab0230a4ec071acd/ceil.o",
+          "symbol": "ceil"
+        },
+        {
+          "reference": "<source-build>/build/lib/common/CMakeFiles/common_obj.dir/ellipse.c.o",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/b30e9c7de14c0d686fd1244fa014a1aa/exp.o",
+          "symbol": "exp"
+        },
+        {
+          "reference": "<private-sdk>/cache/o/578d17c2d4962c9d8821df1a5ffef7ab/libc.a(<private-sdk>/cache/o/b30e9c7de14c0d686fd1244fa014a1aa/exp.o)",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/6aa35e7d82d027d6e0a3da4c55571598/exp_data.o",
+          "symbol": "__exp_data"
+        },
+        {
+          "reference": "<source-build>/build/lib/common/CMakeFiles/common_obj.dir/emit.c.o",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/09925e6476a7e3ba1fc93b4af7dca710/fmod.o",
+          "symbol": "fmod"
+        },
+        {
+          "reference": "<source-build>/build/lib/common/CMakeFiles/common_obj.dir/arrows.c.o",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/969904eef2a6eebc3f809093b9e50d15/hypot.o",
+          "symbol": "hypot"
+        },
+        {
+          "reference": "<source-build>/build/plugin/core/libgvplugin_core.a(gvrender_core_pic.c.o)",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/cab8a523682657cd9c797e7ddc79be72/log10.o",
+          "symbol": "log10"
+        },
+        {
+          "reference": "<source-build>/build/lib/ortho/CMakeFiles/ortho_obj.dir/trapezoid.c.o",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/a087a9d9c6207c446ad81df822ff7816/log2.o",
+          "symbol": "log2"
+        },
+        {
+          "reference": "<private-sdk>/cache/o/578d17c2d4962c9d8821df1a5ffef7ab/libc.a(<private-sdk>/cache/o/a087a9d9c6207c446ad81df822ff7816/log2.o)",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/2ceae717186c81a839e6a3c9cba7ca40/log2_data.o",
+          "symbol": "__log2_data"
+        },
+        {
+          "reference": "<source-build>/build/lib/neatogen/libneatogen.a(sgd.c.o)",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/a68b0e11a77fec27f6d37a0d2a33f5f0/log.o",
+          "symbol": "log"
+        },
+        {
+          "reference": "<private-sdk>/cache/o/578d17c2d4962c9d8821df1a5ffef7ab/libc.a(<private-sdk>/cache/o/a68b0e11a77fec27f6d37a0d2a33f5f0/log.o)",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/81c7b816be27003a730fe02726c1da91/log_data.o",
+          "symbol": "__log_data"
+        },
+        {
+          "reference": "<private-sdk>/cache/o/578d17c2d4962c9d8821df1a5ffef7ab/libc.a(<private-sdk>/cache/o/a087a9d9c6207c446ad81df822ff7816/log2.o)",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/366f5eb7e0f1168b072f468a1051be0f/__math_divzero.o",
+          "symbol": "__math_divzero"
+        },
+        {
+          "reference": "<private-sdk>/cache/o/578d17c2d4962c9d8821df1a5ffef7ab/libc.a(<private-sdk>/cache/o/a087a9d9c6207c446ad81df822ff7816/log2.o)",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/dc761596ed0d9ef3862ceb5965f6a463/__math_invalid.o",
+          "symbol": "__math_invalid"
+        },
+        {
+          "reference": "<private-sdk>/cache/o/578d17c2d4962c9d8821df1a5ffef7ab/libc.a(<private-sdk>/cache/o/b30e9c7de14c0d686fd1244fa014a1aa/exp.o)",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/2deac4252cc285693eca06132b9528aa/__math_oflow.o",
+          "symbol": "__math_oflow"
+        },
+        {
+          "reference": "<private-sdk>/cache/o/578d17c2d4962c9d8821df1a5ffef7ab/libc.a(<private-sdk>/cache/o/b30e9c7de14c0d686fd1244fa014a1aa/exp.o)",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/32d561b15236e85eee0267b8d1e816c7/__math_uflow.o",
+          "symbol": "__math_uflow"
+        },
+        {
+          "reference": "<private-sdk>/cache/o/578d17c2d4962c9d8821df1a5ffef7ab/libc.a(<private-sdk>/cache/o/2deac4252cc285693eca06132b9528aa/__math_oflow.o)",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/718c463a854fd09bb6dc8400fdf77392/__math_xflow.o",
+          "symbol": "__math_xflow"
+        },
+        {
+          "reference": "<source-build>/build/plugin/core/libgvplugin_core.a(gvrender_core_pic.c.o)",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/46a5185fc7b400f39585d070b4d6ae1a/pow.o",
+          "symbol": "pow"
+        },
+        {
+          "reference": "<private-sdk>/cache/o/578d17c2d4962c9d8821df1a5ffef7ab/libc.a(<private-sdk>/cache/o/46a5185fc7b400f39585d070b4d6ae1a/pow.o)",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/9c4141e05d39063625980723b23bc178/pow_data.o",
+          "symbol": "__pow_log_data"
+        },
+        {
+          "reference": "<source-build>/build/lib/pack/CMakeFiles/pack_obj.dir/pack.c.o",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/db0963da33463402ceaefbf3ec860624/round.o",
+          "symbol": "round"
+        },
+        {
+          "reference": "<source-build>/build/plugin/core/libgvplugin_core.a(gvrender_core_tk.c.o)",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/c588ade80bd40eafcab623551121e9b0/trunc.o",
+          "symbol": "trunc"
+        },
+        {
+          "reference": "<private-sdk>/cache/o/578d17c2d4962c9d8821df1a5ffef7ab/libc.a(<private-sdk>/cache/o/f1bfc1d81f48f1bf069f1ded23e6caad/acos.o)",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/46461b85b622e936af82f3a8646764a1/sqrt.o",
+          "symbol": "sqrt"
+        },
+        {
+          "reference": "<private-sdk>/cache/o/578d17c2d4962c9d8821df1a5ffef7ab/libc.a(<private-sdk>/cache/o/b420ce43505ffda20994461eed1eecc0/mmap.o)",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/53950ee222ce612d8d169878a2114553/syscall_ret.o",
+          "symbol": "__syscall_ret"
+        },
+        {
+          "reference": "<private-sdk>/cache/o/578d17c2d4962c9d8821df1a5ffef7ab/libc.a(<private-sdk>/cache/o/6d3fd37a9c69681e32ad7aa548ed35ff/lite_malloc.o)",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/b420ce43505ffda20994461eed1eecc0/mmap.o",
+          "symbol": "__mmap"
+        },
+        {
+          "reference": "<private-sdk>/cache/o/578d17c2d4962c9d8821df1a5ffef7ab/libc.a(<private-sdk>/cache/o/a326839043c4255ca1d8e391d6ea7a0d/malloc.o)",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/937e27cf42b2723d16f695f592221e2c/mprotect.o",
+          "symbol": "mprotect"
+        },
+        {
+          "reference": "<private-sdk>/cache/o/578d17c2d4962c9d8821df1a5ffef7ab/libc.a(<private-sdk>/cache/o/701e80735b1af4cea1b1468bb2685f21/realloc.o)",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/e9b218c8512b24a8905694c90d6183c6/mremap.o",
+          "symbol": "__mremap"
+        },
+        {
+          "reference": "<private-sdk>/cache/o/578d17c2d4962c9d8821df1a5ffef7ab/libc.a(<private-sdk>/cache/o/70e7b5aa7f74b24d9a728923275ea5b1/locale_map.o)",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/3459d0cfa6c33049faf88626f06fc660/munmap.o",
+          "symbol": "__munmap"
+        },
+        {
+          "reference": "<source-build>/build/lib/ortho/CMakeFiles/ortho_obj.dir/partition.c.o",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/e3e61fe658fea56e004c739302c9d119/drand48.o",
+          "symbol": "drand48"
+        },
+        {
+          "reference": "<private-sdk>/cache/o/578d17c2d4962c9d8821df1a5ffef7ab/libc.a(<private-sdk>/cache/o/e3e61fe658fea56e004c739302c9d119/drand48.o)",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/d6658f0d4957a7e3191c5948e1ccd1cc/__rand48_step.o",
+          "symbol": "__rand48_step"
+        },
+        {
+          "reference": "<source-build>/build/lib/fdpgen/libfdpgen.a(tlayout.c.o)",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/442d0e6b3efba035db8d8ade9fa8adff/rand.o",
+          "symbol": "rand"
+        },
+        {
+          "reference": "<private-sdk>/cache/o/578d17c2d4962c9d8821df1a5ffef7ab/libc.a(<private-sdk>/cache/o/e3e61fe658fea56e004c739302c9d119/drand48.o)",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/62a2c7b64aed1bfb8fc717a9b14a68de/__seed48.o",
+          "symbol": "__seed48"
+        },
+        {
+          "reference": "<private-sdk>/cache/o/578d17c2d4962c9d8821df1a5ffef7ab/libc.a(<private-sdk>/cache/o/539c1b97edd114b1248d23eab5d621b7/srand48.o)",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/0beb0cc22d7393f5531279cc698d1993/seed48.o",
+          "symbol": "seed48"
+        },
+        {
+          "reference": "<source-build>/build/lib/ortho/CMakeFiles/ortho_obj.dir/partition.c.o",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/539c1b97edd114b1248d23eab5d621b7/srand48.o",
+          "symbol": "srand48"
+        },
+        {
+          "reference": "<private-sdk>/cache/o/578d17c2d4962c9d8821df1a5ffef7ab/libc.a(<private-sdk>/cache/o/611c34a92b95ecbe99da9201e51653c5/abort.o)",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/37071106babcbeccaa1d1cb01da141f4/block.o",
+          "symbol": "__block_all_sigs"
+        },
+        {
+          "reference": "<private-sdk>/cache/o/578d17c2d4962c9d8821df1a5ffef7ab/libc.a(<private-sdk>/cache/o/611c34a92b95ecbe99da9201e51653c5/abort.o)",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/c7460a311cd1732eaac2a6271c24eb7e/raise.o",
+          "symbol": "raise"
+        },
+        {
+          "reference": "<private-sdk>/cache/o/578d17c2d4962c9d8821df1a5ffef7ab/libc.a(<private-sdk>/cache/o/4d46a517b6341cf561fcc0518c818654/signal.o)",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/68a4104b5f58e17698ed23c0605e106a/sigaction.o",
+          "symbol": "__sigaction"
+        },
+        {
+          "reference": "<source-build>/build/cmd/dot/CMakeFiles/dot.dir/dot.c.o",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/4d46a517b6341cf561fcc0518c818654/signal.o",
+          "symbol": "signal"
+        },
+        {
+          "reference": "<private-sdk>/cache/o/578d17c2d4962c9d8821df1a5ffef7ab/libc.a(<private-sdk>/cache/o/68a4104b5f58e17698ed23c0605e106a/sigaction.o)",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/80c64e07e91ff122fce937030ccfa639/restore.o",
+          "symbol": "__restore_rt"
+        },
+        {
+          "reference": "<private-sdk>/cache/o/578d17c2d4962c9d8821df1a5ffef7ab/libc.a(<private-sdk>/cache/o/7c92d33efc3ecf48c1df2e42b31e2578/fstatat.o)",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/021fb7d1e2c0f4793e8f7700f5a1cb52/procfdname.o",
+          "symbol": "__procfdname"
+        },
+        {
+          "reference": "<private-sdk>/cache/o/578d17c2d4962c9d8821df1a5ffef7ab/libc.a(<private-sdk>/cache/o/d9998a5cd2e9afd46cf7325944c8ae48/fstat.o)",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/7c92d33efc3ecf48c1df2e42b31e2578/fstatat.o",
+          "symbol": "__fstatat"
+        },
+        {
+          "reference": "<source-build>/build/lib/common/CMakeFiles/common_obj.dir/psusershape.c.o",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/d9998a5cd2e9afd46cf7325944c8ae48/fstat.o",
+          "symbol": "fstat"
+        },
+        {
+          "reference": "<source-build>/build/lib/common/CMakeFiles/common_obj.dir/input.c.o",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/9ff486cf0e0575ce6aa268a40e8d8100/fclose.o",
+          "symbol": "fclose"
+        },
+        {
+          "reference": "<source-build>/build/lib/gvc/libgvc.a(gvusershape.c.o)",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/63056f66b7026210d9e554b41f32e60d/feof.o",
+          "symbol": "feof"
+        },
+        {
+          "reference": "<source-build>/build/lib/gvc/libgvc.a(gvdevice.c.o)",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/614e84cfbd0dc6d1fdc5753f7920b940/ferror.o",
+          "symbol": "ferror"
+        },
+        {
+          "reference": "<source-build>/build/lib/cgraph/libcgraph.a(io.c.o)",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/ca13416eeb5d864e220b2195b532db57/fflush.o",
+          "symbol": "fflush"
+        },
+        {
+          "reference": "<source-build>/build/lib/gvc/libgvc.a(gvusershape.c.o)",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/a6d4dc9ecb2ed364a830f08112ce28e6/fgetc.o",
+          "symbol": "fgetc"
+        },
+        {
+          "reference": "<source-build>/build/lib/common/CMakeFiles/common_obj.dir/psusershape.c.o",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/7eb667fa9b7689ba5e1354875b378067/fgets.o",
+          "symbol": "fgets"
+        },
+        {
+          "reference": "<source-build>/build/lib/common/CMakeFiles/common_obj.dir/psusershape.c.o",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/a3714dde15ee07b8574418060720b4e7/fileno.o",
+          "symbol": "fileno"
+        },
+        {
+          "reference": "<source-build>/build/lib/common/CMakeFiles/common_obj.dir/emit.c.o",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/b3c8bb66fc1d23991d3721b58eac6432/flockfile.o",
+          "symbol": "flockfile"
+        },
+        {
+          "reference": "<private-sdk>/cache/o/578d17c2d4962c9d8821df1a5ffef7ab/libc.a(<private-sdk>/cache/o/d6a6351da40aca7de8d20afd7ef78305/fopen.o)",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/421c9c20919a782d2d92b77baa8a70d5/__fmodeflags.o",
+          "symbol": "__fmodeflags"
+        },
+        {
+          "reference": "<private-sdk>/cache/o/578d17c2d4962c9d8821df1a5ffef7ab/libc.a(<private-sdk>/cache/o/d6a6351da40aca7de8d20afd7ef78305/fopen.o)",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/926bbe1d55979c3f67d410f911dba090/__fdopen.o",
+          "symbol": "__fdopen"
+        },
+        {
+          "reference": "<source-build>/build/lib/util/libutil.a(gv_fopen.c.o)",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/d6a6351da40aca7de8d20afd7ef78305/fopen.o",
+          "symbol": "fopen"
+        },
+        {
+          "reference": "<source-build>/build/cmd/dot/CMakeFiles/dot.dir/dot.c.o",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/2638fa1f0f934825dd13206c02d48e98/fprintf.o",
+          "symbol": "fprintf"
+        },
+        {
+          "reference": "<source-build>/build/lib/common/CMakeFiles/common_obj.dir/emit.c.o",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/2a3b557567116ee423567322a33c156a/fputc.o",
+          "symbol": "fputc"
+        },
+        {
+          "reference": "<source-build>/build/lib/common/CMakeFiles/common_obj.dir/ns.c.o",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/360282e909090daa3440de9d6a1fbe02/fputs.o",
+          "symbol": "fputs"
+        },
+        {
+          "reference": "<source-build>/build/lib/common/CMakeFiles/common_obj.dir/psusershape.c.o",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/f0eaf796c3caa48d252cfbdda0698bb1/fread.o",
+          "symbol": "fread"
+        },
+        {
+          "reference": "<source-build>/build/lib/gvc/libgvc.a(gvusershape.c.o)",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/5f35ac440a7aea92d88c5499d38c7d41/fseek.o",
+          "symbol": "fseek"
+        },
+        {
+          "reference": "<private-sdk>/cache/o/578d17c2d4962c9d8821df1a5ffef7ab/libc.a(<private-sdk>/cache/o/b3c8bb66fc1d23991d3721b58eac6432/flockfile.o)",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/9df8e1060c389306cd8a8d80d68599a2/ftrylockfile.o",
+          "symbol": "__register_locked_file"
+        },
+        {
+          "reference": "<source-build>/build/lib/common/CMakeFiles/common_obj.dir/emit.c.o",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/f0736d9011d739911e40a39114d5c386/funlockfile.o",
+          "symbol": "funlockfile"
+        },
+        {
+          "reference": "<source-build>/build/lib/common/CMakeFiles/common_obj.dir/emit.c.o",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/bc5fed0c00a013888757f9c082548db9/fwrite.o",
+          "symbol": "fwrite"
+        },
+        {
+          "reference": "<source-build>/build/lib/gvc/libgvc.a(gvusershape.c.o)",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/5b2d061e7b21f06c2e8bdf8a250951df/getc.o",
+          "symbol": "getc"
+        },
+        {
+          "reference": "<private-sdk>/cache/o/578d17c2d4962c9d8821df1a5ffef7ab/libc.a(<private-sdk>/cache/o/9ff486cf0e0575ce6aa268a40e8d8100/fclose.o)",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/2e39b26016dea1ca5041a5be3edf948c/__lockfile.o",
+          "symbol": "__lockfile"
+        },
+        {
+          "reference": "<private-sdk>/cache/o/578d17c2d4962c9d8821df1a5ffef7ab/libc.a(<private-sdk>/cache/o/926bbe1d55979c3f67d410f911dba090/__fdopen.o)",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/944b384dccae52620ad9c1725368ce9f/ofl_add.o",
+          "symbol": "__ofl_add"
+        },
+        {
+          "reference": "<private-sdk>/cache/o/578d17c2d4962c9d8821df1a5ffef7ab/libc.a(<private-sdk>/cache/o/9ff486cf0e0575ce6aa268a40e8d8100/fclose.o)",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/bd7a4b12f7b34cea19cb5a70849ad252/ofl.o",
+          "symbol": "__ofl_lock"
+        },
+        {
+          "reference": "<private-sdk>/cache/o/578d17c2d4962c9d8821df1a5ffef7ab/libc.a(<private-sdk>/cache/o/2a3b557567116ee423567322a33c156a/fputc.o)",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/115eee7d0ee05a3db184b2bf22c78ac8/__overflow.o",
+          "symbol": "__overflow"
+        },
+        {
+          "reference": "<source-build>/build/lib/cgraph/libcgraph.a(agerror.c.o)",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/18b5793f0aa5155494b1f35885ae9662/putc.o",
+          "symbol": "putc"
+        },
+        {
+          "reference": "<source-build>/build/lib/neatogen/libneatogen.a(solve.c.o)",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/6d70f76465a2780818495ae0aebfe434/puts.o",
+          "symbol": "puts"
+        },
+        {
+          "reference": "<source-build>/build/lib/common/CMakeFiles/common_obj.dir/psusershape.c.o",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/0025489595d6fe5e14f8fe1f84f6aac2/rewind.o",
+          "symbol": "rewind"
+        },
+        {
+          "reference": "<source-build>/build/lib/cgraph/libcgraph.a(id.c.o)",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/a1439e21eec1667a84826b2c99f002a5/snprintf.o",
+          "symbol": "snprintf"
+        },
+        {
+          "reference": "<source-build>/build/lib/cgraph/libcgraph.a(write.c.o)",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/5b1c52491be11b6730564a7a3357c502/sprintf.o",
+          "symbol": "sprintf"
+        },
+        {
+          "reference": "<source-build>/build/lib/common/CMakeFiles/common_obj.dir/colxlate.c.o",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/24a8e9a181cfcc7c6d59b914d2c45e0f/sscanf.o",
+          "symbol": "sscanf"
+        },
+        {
+          "reference": "<source-build>/build/cmd/dot/CMakeFiles/dot.dir/dot.c.o",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/41a06a641292cfef194f0c7101f73f6e/stderr.o",
+          "symbol": "stderr"
+        },
+        {
+          "reference": "<source-build>/build/lib/common/CMakeFiles/common_obj.dir/input.c.o",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/ab516fdcea1405e10f5d311518d35b1d/stdin.o",
+          "symbol": "stdin"
+        },
+        {
+          "reference": "<private-sdk>/cache/o/578d17c2d4962c9d8821df1a5ffef7ab/libc.a(<private-sdk>/cache/o/926bbe1d55979c3f67d410f911dba090/__fdopen.o)",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/1d37e733a9e97534f2a7bd41946d6333/__stdio_close.o",
+          "symbol": "__stdio_close"
+        },
+        {
+          "reference": "<private-sdk>/cache/o/578d17c2d4962c9d8821df1a5ffef7ab/libc.a(<private-sdk>/cache/o/926bbe1d55979c3f67d410f911dba090/__fdopen.o)",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/5b8a1a34e495c4428a4ae1be76572635/__stdio_read.o",
+          "symbol": "__stdio_read"
+        },
+        {
+          "reference": "<private-sdk>/cache/o/578d17c2d4962c9d8821df1a5ffef7ab/libc.a(<private-sdk>/cache/o/926bbe1d55979c3f67d410f911dba090/__fdopen.o)",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/454bf4438d2bad10ca2a6f09bc7767fb/__stdio_seek.o",
+          "symbol": "__stdio_seek"
+        },
+        {
+          "reference": "<private-sdk>/cache/o/578d17c2d4962c9d8821df1a5ffef7ab/libc.a(<private-sdk>/cache/o/926bbe1d55979c3f67d410f911dba090/__fdopen.o)",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/d05f6a4411e5dab50692da2fa099928b/__stdio_write.o",
+          "symbol": "__stdio_write"
+        },
+        {
+          "reference": "<private-sdk>/cache/o/578d17c2d4962c9d8821df1a5ffef7ab/libc.a(<private-sdk>/cache/o/6d70f76465a2780818495ae0aebfe434/puts.o)",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/9c6c5add46514fdf83cc4f38c9998b01/stdout.o",
+          "symbol": "__stdout_FILE"
+        },
+        {
+          "reference": "<private-sdk>/cache/o/578d17c2d4962c9d8821df1a5ffef7ab/libc.a(<private-sdk>/cache/o/9c6c5add46514fdf83cc4f38c9998b01/stdout.o)",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/a9f2762443fe8e255edb4efb81cdb9ad/__stdout_write.o",
+          "symbol": "__stdout_write"
+        },
+        {
+          "reference": "<private-sdk>/cache/o/578d17c2d4962c9d8821df1a5ffef7ab/libc.a(<private-sdk>/cache/o/4422d138374b6d6ce2f8c520d9aa5c34/__toread.o)",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/b95fb4cd2fd289f0256d20ea04a23387/__stdio_exit.o",
+          "symbol": "__stdio_exit_needed"
+        },
+        {
+          "reference": "<private-sdk>/cache/o/578d17c2d4962c9d8821df1a5ffef7ab/libc.a(<private-sdk>/cache/o/f0eaf796c3caa48d252cfbdda0698bb1/fread.o)",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/4422d138374b6d6ce2f8c520d9aa5c34/__toread.o",
+          "symbol": "__toread"
+        },
+        {
+          "reference": "<private-sdk>/cache/o/578d17c2d4962c9d8821df1a5ffef7ab/libc.a(<private-sdk>/cache/o/bc5fed0c00a013888757f9c082548db9/fwrite.o)",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/143a286af14b2d2587ffb1a3888fbae2/__towrite.o",
+          "symbol": "__towrite"
+        },
+        {
+          "reference": "<private-sdk>/cache/o/578d17c2d4962c9d8821df1a5ffef7ab/libc.a(<private-sdk>/cache/o/a6d4dc9ecb2ed364a830f08112ce28e6/fgetc.o)",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/e089b48708a3e13542dd223f5fa425b1/__uflow.o",
+          "symbol": "__uflow"
+        },
+        {
+          "reference": "<source-build>/build/lib/gvc/libgvc.a(gvusershape.c.o)",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/2472bde6b5a555550a973a4055cb9269/ungetc.o",
+          "symbol": "ungetc"
+        },
+        {
+          "reference": "<private-sdk>/cache/o/578d17c2d4962c9d8821df1a5ffef7ab/libc.a(<private-sdk>/cache/o/9b7eb7feb77fa6294bdd791a6a401fc4/vfprintf.o)",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/ad164ffc2c553df7394ada658a46a828/__signbitl.o",
+          "symbol": "__signbitl"
+        },
+        {
+          "reference": "<private-sdk>/cache/o/578d17c2d4962c9d8821df1a5ffef7ab/libc.a(<private-sdk>/cache/o/9b7eb7feb77fa6294bdd791a6a401fc4/vfprintf.o)",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/29837de69efda253a38ab219c07c260c/__fpclassifyl.o",
+          "symbol": "__fpclassifyl"
+        },
+        {
+          "reference": "<private-sdk>/cache/o/578d17c2d4962c9d8821df1a5ffef7ab/libc.a(<private-sdk>/cache/o/9b7eb7feb77fa6294bdd791a6a401fc4/vfprintf.o)",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/4ffed43d58955474e5da2b6db9e6a7f0/frexpl.o",
+          "symbol": "frexpl"
+        },
+        {
+          "reference": "<private-sdk>/cache/o/578d17c2d4962c9d8821df1a5ffef7ab/libc.a(<private-sdk>/cache/o/2a9d75b29d4b0e1f1a8e1816cca4421d/wctomb.o)",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/e65afd2b3a451fba4196e85fbab266d7/wcrtomb.o",
+          "symbol": "wcrtomb"
+        },
+        {
+          "reference": "<private-sdk>/cache/o/578d17c2d4962c9d8821df1a5ffef7ab/libc.a(<private-sdk>/cache/o/9b7eb7feb77fa6294bdd791a6a401fc4/vfprintf.o)",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/2a9d75b29d4b0e1f1a8e1816cca4421d/wctomb.o",
+          "symbol": "wctomb"
+        },
+        {
+          "reference": "<source-build>/build/lib/xdot/libxdot.a(xdot.c.o)",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/9b7eb7feb77fa6294bdd791a6a401fc4/vfprintf.o",
+          "symbol": "vfprintf"
+        },
+        {
+          "reference": "<source-build>/build/lib/common/CMakeFiles/common_obj.dir/colxlate.c.o",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/c6bbbbd60ead48c2c1f68483b474a4fb/vsnprintf.o",
+          "symbol": "vsnprintf"
+        },
+        {
+          "reference": "<private-sdk>/cache/o/578d17c2d4962c9d8821df1a5ffef7ab/libc.a(<private-sdk>/cache/o/5b1c52491be11b6730564a7a3357c502/sprintf.o)",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/8a2b0474780f9e5a33981140db402149/vsprintf.o",
+          "symbol": "vsprintf"
+        },
+        {
+          "reference": "<private-sdk>/cache/o/578d17c2d4962c9d8821df1a5ffef7ab/libc.a(<private-sdk>/cache/o/56ea046341278796beb241c758f60d7a/vfscanf.o)",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/ea0ba1a89c809a5683ee5b0c260043cb/shgetc.o",
+          "symbol": "__shlim"
+        },
+        {
+          "reference": "<private-sdk>/cache/o/578d17c2d4962c9d8821df1a5ffef7ab/libc.a(<private-sdk>/cache/o/27334a97cd8c3d24fe91659f0539beeb/floatscan.o)",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/c1d2e4ae152d1b94c35018b7aca83023/scalbn.o",
+          "symbol": "scalbn"
+        },
+        {
+          "reference": "<private-sdk>/cache/o/578d17c2d4962c9d8821df1a5ffef7ab/libc.a(<private-sdk>/cache/o/27334a97cd8c3d24fe91659f0539beeb/floatscan.o)",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/72be966ba76768b453e439ef23314d11/copysignl.o",
+          "symbol": "copysignl"
+        },
+        {
+          "reference": "<private-sdk>/cache/o/578d17c2d4962c9d8821df1a5ffef7ab/libc.a(<private-sdk>/cache/o/27334a97cd8c3d24fe91659f0539beeb/floatscan.o)",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/307adda99404f5e328afb8b7ccddafe1/fmodl.o",
+          "symbol": "fmodl"
+        },
+        {
+          "reference": "<private-sdk>/cache/o/578d17c2d4962c9d8821df1a5ffef7ab/libc.a(<private-sdk>/cache/o/27334a97cd8c3d24fe91659f0539beeb/floatscan.o)",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/8f627bc40316025c584434afdc3bf025/scalbnl.o",
+          "symbol": "scalbnl"
+        },
+        {
+          "reference": "<private-sdk>/cache/o/578d17c2d4962c9d8821df1a5ffef7ab/libc.a(<private-sdk>/cache/o/56ea046341278796beb241c758f60d7a/vfscanf.o)",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/27334a97cd8c3d24fe91659f0539beeb/floatscan.o",
+          "symbol": "__floatscan"
+        },
+        {
+          "reference": "<private-sdk>/cache/o/578d17c2d4962c9d8821df1a5ffef7ab/libc.a(<private-sdk>/cache/o/56ea046341278796beb241c758f60d7a/vfscanf.o)",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/23b732b3fdd42879471b39ca3a6cdf7d/intscan.o",
+          "symbol": "__intscan"
+        },
+        {
+          "reference": "<private-sdk>/cache/o/578d17c2d4962c9d8821df1a5ffef7ab/libc.a(<private-sdk>/cache/o/2e3afb04eac6ecae3c53659fff66416b/mbrtowc.o)",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/768046ddeedeee4a33e2c18eb59e46d5/internal.o",
+          "symbol": "__fsmu8"
+        },
+        {
+          "reference": "<private-sdk>/cache/o/578d17c2d4962c9d8821df1a5ffef7ab/libc.a(<private-sdk>/cache/o/56ea046341278796beb241c758f60d7a/vfscanf.o)",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/2e3afb04eac6ecae3c53659fff66416b/mbrtowc.o",
+          "symbol": "mbrtowc"
+        },
+        {
+          "reference": "<private-sdk>/cache/o/578d17c2d4962c9d8821df1a5ffef7ab/libc.a(<private-sdk>/cache/o/56ea046341278796beb241c758f60d7a/vfscanf.o)",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/c1b4644c911c64fab44ab247298373d6/mbsinit.o",
+          "symbol": "mbsinit"
+        },
+        {
+          "reference": "<private-sdk>/cache/o/578d17c2d4962c9d8821df1a5ffef7ab/libc.a(<private-sdk>/cache/o/b48c8cdaa4926ccb456511d005f49403/vsscanf.o)",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/56ea046341278796beb241c758f60d7a/vfscanf.o",
+          "symbol": "vfscanf"
+        },
+        {
+          "reference": "<private-sdk>/cache/o/578d17c2d4962c9d8821df1a5ffef7ab/libc.a(<private-sdk>/cache/o/24a8e9a181cfcc7c6d59b914d2c45e0f/sscanf.o)",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/b48c8cdaa4926ccb456511d005f49403/vsscanf.o",
+          "symbol": "vsscanf"
+        },
+        {
+          "reference": "<source-build>/build/lib/common/CMakeFiles/common_obj.dir/emit.c.o",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/4ec40a2fb245dbf676f9716ddc4c9bd5/atof.o",
+          "symbol": "atof"
+        },
+        {
+          "reference": "<source-build>/build/lib/common/CMakeFiles/common_obj.dir/args.c.o",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/ca0c41d8cda8b4f8491f7b77fccd271f/atoi.o",
+          "symbol": "atoi"
+        },
+        {
+          "reference": "<source-build>/build/lib/common/CMakeFiles/common_obj.dir/colxlate.c.o",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/1e2bb61fd66f814c24458265941a2af3/bsearch.o",
+          "symbol": "bsearch"
+        },
+        {
+          "reference": "<private-sdk>/cache/o/578d17c2d4962c9d8821df1a5ffef7ab/libc.a(<private-sdk>/cache/o/c6c7aaaa378eaf3be3991a0b429c9620/qsort_nr.o)",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/9bf6364cca2c626c523bbeca94c79c00/qsort.o",
+          "symbol": "__qsort_r"
+        },
+        {
+          "reference": "<source-build>/build/lib/pack/CMakeFiles/pack_obj.dir/pack.c.o",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/c6c7aaaa378eaf3be3991a0b429c9620/qsort_nr.o",
+          "symbol": "qsort"
+        },
+        {
+          "reference": "<source-build>/build/lib/common/CMakeFiles/common_obj.dir/args.c.o",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/282b2c47d5d6f5b3c8b13ed4988064f6/strtod.o",
+          "symbol": "strtod"
+        },
+        {
+          "reference": "<source-build>/build/lib/common/CMakeFiles/common_obj.dir/output.c.o",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/2687c8e72c90e51fb063651e1ad5928e/strtol.o",
+          "symbol": "strtoul"
+        },
+        {
+          "reference": "<source-build>/build/lib/util/libutil.a(list.c.o)",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/6af4ee790eb246ba1d811034798ecbeb/bcmp.o",
+          "symbol": "bcmp"
+        },
+        {
+          "reference": "<source-build>/build/lib/common/CMakeFiles/common_obj.dir/emit.c.o",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/22487d49894f74a34da44a3565f70650/memchr.o",
+          "symbol": "memchr"
+        },
+        {
+          "reference": "<source-build>/build/lib/cdt/libcdt.a(dttree.c.o)",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/3bd2bb1928e7f75afc8f1c8167f3ae63/memcmp.o",
+          "symbol": "memcmp"
+        },
+        {
+          "reference": "<source-build>/build/plugin/core/libgvplugin_core.a(gvrender_core_pic.c.o)",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/a79f6a5e1ebb3aa1476a0224672c7f00/memrchr.o",
+          "symbol": "memrchr"
+        },
+        {
+          "reference": "<source-build>/build/lib/common/CMakeFiles/common_obj.dir/colxlate.c.o",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/cbe6f6b0ca22f51ed24388f56c5825b0/strchr.o",
+          "symbol": "strchr"
+        },
+        {
+          "reference": "<private-sdk>/cache/o/578d17c2d4962c9d8821df1a5ffef7ab/libc.a(<private-sdk>/cache/o/231037893ec99ce31879e912d43825d9/getenv.o)",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/f2b956779ef08bcd40273d5603f1c55f/strchrnul.o",
+          "symbol": "__strchrnul"
+        },
+        {
+          "reference": "<source-build>/build/lib/common/CMakeFiles/common_obj.dir/emit.c.o",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/c2df79822039e801407361a13a035831/strcspn.o",
+          "symbol": "strcspn"
+        },
+        {
+          "reference": "<source-build>/build/lib/common/CMakeFiles/common_obj.dir/colxlate.c.o",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/6434ac066c947a6de3cb85feae20e3d7/strdup.o",
+          "symbol": "strdup"
+        },
+        {
+          "reference": "<source-build>/build/lib/common/CMakeFiles/common_obj.dir/emit.c.o",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/901e4ef56aea03c6747fc0c123b2d119/strndup.o",
+          "symbol": "strndup"
+        },
+        {
+          "reference": "<private-sdk>/cache/o/578d17c2d4962c9d8821df1a5ffef7ab/libc.a(<private-sdk>/cache/o/9b7eb7feb77fa6294bdd791a6a401fc4/vfprintf.o)",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/b13bfa91afdac2c76830cba26c1389c4/strnlen.o",
+          "symbol": "strnlen"
+        },
+        {
+          "reference": "<source-build>/build/lib/common/CMakeFiles/common_obj.dir/emit.c.o",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/f6a1a76a3519fe843e11dca8c30ea1db/strpbrk.o",
+          "symbol": "strpbrk"
+        },
+        {
+          "reference": "<source-build>/build/lib/common/CMakeFiles/common_obj.dir/utils.c.o",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/d984dc7fca758cdae3d08c7d3ff0698f/strrchr.o",
+          "symbol": "strrchr"
+        },
+        {
+          "reference": "<source-build>/build/lib/common/CMakeFiles/common_obj.dir/emit.c.o",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/1f1a796ae80a4dbe5b80711d8f4c292f/strspn.o",
+          "symbol": "strspn"
+        },
+        {
+          "reference": "<source-build>/build/lib/common/CMakeFiles/common_obj.dir/input.c.o",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/baccc19ba6c20837c32d6c3c24052e5c/strstr.o",
+          "symbol": "strstr"
+        },
+        {
+          "reference": "<source-build>/build/lib/common/CMakeFiles/common_obj.dir/emit.c.o",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/78cc36798c069265e9bacee2fcd23463/strtok.o",
+          "symbol": "strtok"
+        },
+        {
+          "reference": "<source-build>/build/lib/common/CMakeFiles/common_obj.dir/emit.c.o",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/1738cf7c7fa81c46ba34063056d78009/strtok_r.o",
+          "symbol": "strtok_r"
+        },
+        {
+          "reference": "<source-build>/build/lib/common/CMakeFiles/common_obj.dir/colxlate.c.o",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/8ab6cf028a9f3c8ebebbd0bbe098828f/memset.o",
+          "symbol": "memset"
+        },
+        {
+          "reference": "<private-sdk>/cache/o/578d17c2d4962c9d8821df1a5ffef7ab/libc.a(<private-sdk>/cache/o/1f0b84326aca2335bec78fd92954cedf/__init_tls.o)",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/3fca09cd044b5fbc7fd481f429ade1e9/default_attr.o",
+          "symbol": "__default_stacksize"
+        },
+        {
+          "reference": "<private-sdk>/cache/o/578d17c2d4962c9d8821df1a5ffef7ab/libc.a(<private-sdk>/cache/o/611c34a92b95ecbe99da9201e51653c5/abort.o)",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/75820a03b840a51b6256bddca5faf345/__lock.o",
+          "symbol": "__lock"
+        },
+        {
+          "reference": "<source-build>/build/lib/common/CMakeFiles/common_obj.dir/colxlate.c.o",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/2e54f056134914cd8bbf06593c9e3be3/__tls_get_addr.o",
+          "symbol": "__tls_get_addr"
+        },
+        {
+          "reference": "<private-sdk>/cache/o/578d17c2d4962c9d8821df1a5ffef7ab/libc.a(<private-sdk>/cache/o/1f0b84326aca2335bec78fd92954cedf/__init_tls.o)",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/9db3ed9c296f29d7f81e660a87b2a378/__set_thread_area.o",
+          "symbol": "__set_thread_area"
+        },
+        {
+          "reference": "<source-build>/build/lib/common/CMakeFiles/common_obj.dir/timing.c.o",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/bdf85919d529b0e62d1c50786e5f832e/clock.o",
+          "symbol": "clock"
+        },
+        {
+          "reference": "<private-sdk>/cache/o/578d17c2d4962c9d8821df1a5ffef7ab/libc.a(<private-sdk>/cache/o/a718bb26dfb5eba62df884047a60b59b/clock_gettime.o)",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/dd25bae993127230d363069b1f910c4b/vdso.o",
+          "symbol": "__vdsosym"
+        },
+        {
+          "reference": "<private-sdk>/cache/o/578d17c2d4962c9d8821df1a5ffef7ab/libc.a(<private-sdk>/cache/o/bdf85919d529b0e62d1c50786e5f832e/clock.o)",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/a718bb26dfb5eba62df884047a60b59b/clock_gettime.o",
+          "symbol": "__clock_gettime"
+        },
+        {
+          "reference": "<source-build>/build/lib/common/CMakeFiles/common_obj.dir/emit.c.o",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/b08c68bb7dc61f13f1a577a176e9c279/localtime.o",
+          "symbol": "localtime"
+        },
+        {
+          "reference": "<private-sdk>/cache/o/578d17c2d4962c9d8821df1a5ffef7ab/libc.a(<private-sdk>/cache/o/b08c68bb7dc61f13f1a577a176e9c279/localtime.o)",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/ee8484b671d0440678f7bad80c4c0fdd/localtime_r.o",
+          "symbol": "__localtime_r"
+        },
+        {
+          "reference": "<private-sdk>/cache/o/578d17c2d4962c9d8821df1a5ffef7ab/libc.a(<private-sdk>/cache/o/70e7b5aa7f74b24d9a728923275ea5b1/locale_map.o)",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/2dcafb40d17ebcc581bd7f02c6602bbb/__map_file.o",
+          "symbol": "__map_file"
+        },
+        {
+          "reference": "<private-sdk>/cache/o/578d17c2d4962c9d8821df1a5ffef7ab/libc.a(<private-sdk>/cache/o/ee8484b671d0440678f7bad80c4c0fdd/localtime_r.o)",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/cdbe26062fcb66123a75f7d622146fab/__secs_to_tm.o",
+          "symbol": "__secs_to_tm"
+        },
+        {
+          "reference": "<source-build>/build/lib/common/CMakeFiles/common_obj.dir/emit.c.o",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/465d3e9256145310e90cba90eed520b1/time.o",
+          "symbol": "time"
+        },
+        {
+          "reference": "<private-sdk>/cache/o/578d17c2d4962c9d8821df1a5ffef7ab/libc.a(<private-sdk>/cache/o/41da2835d345404eccb324af202e9fc7/__tz.o)",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/497e493000643e3c05a19e09e5714471/__month_to_secs.o",
+          "symbol": "__month_to_secs"
+        },
+        {
+          "reference": "<private-sdk>/cache/o/578d17c2d4962c9d8821df1a5ffef7ab/libc.a(<private-sdk>/cache/o/ee8484b671d0440678f7bad80c4c0fdd/localtime_r.o)",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/41da2835d345404eccb324af202e9fc7/__tz.o",
+          "symbol": "__secs_to_zone"
+        },
+        {
+          "reference": "<private-sdk>/cache/o/578d17c2d4962c9d8821df1a5ffef7ab/libc.a(<private-sdk>/cache/o/41da2835d345404eccb324af202e9fc7/__tz.o)",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/43ee1d7744180702cf815bdf998deade/__year_to_secs.o",
+          "symbol": "__year_to_secs"
+        },
+        {
+          "reference": "<source-build>/build/lib/common/CMakeFiles/common_obj.dir/utils.c.o",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/a525e416b8fb66abc8510508f7decad8/access.o",
+          "symbol": "access"
+        },
+        {
+          "reference": "<private-sdk>/cache/o/578d17c2d4962c9d8821df1a5ffef7ab/libc.a(<private-sdk>/cache/o/454bf4438d2bad10ca2a6f09bc7767fb/__stdio_seek.o)",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "member": "<private-sdk>/cache/o/668eab9e40a41f32a70c69d028b792b2/lseek.o",
+          "symbol": "__lseek"
+        },
+        {
+          "reference": "<source-build>/build/lib/common/CMakeFiles/common_obj.dir/arrows.c.o",
+          "archive_sha256": "6d80c5e65a9dd862453d3b3046595620ee6fd5f2d2deb253bd21acd635a66b61",
+          "member": "<private-sdk>/cache/o/bfc52f89c10b487b178076e8a9a2a50a/libzigc_zcu.o",
+          "symbol": "strcmp"
+        },
+        {
+          "reference": "<source-build>/build/lib/common/CMakeFiles/common_obj.dir/arrows.c.o",
+          "archive_sha256": "596fb2eb5e84701ddd0079a3a5ad6065a9ca5916518f38ad522d8f1de559cc2a",
+          "member": "<private-sdk>/cache/o/d2a14289a5e4659a5e02131c07ce703e/libcompiler_rt_zcu.o",
+          "symbol": "cos"
+        }
+      ],
+      "archives": [
+        {
+          "path": "lib/cdt/libcdt.a",
+          "scope": "build",
+          "archive_sha256": "3927b5909017f21a24a3b23fc233e0cdd4858bb63e5da6c08914f461fd582c0e",
+          "extracted_member_count": 12
+        },
+        {
+          "path": "lib/cgraph/libcgraph.a",
+          "scope": "build",
+          "archive_sha256": "9d5538d091689d584fd8e0966b80a61f74b5b31cdbeb9736dd805f6021e08d6e",
+          "extracted_member_count": 18
+        },
+        {
+          "path": "lib/circogen/libcircogen.a",
+          "scope": "build",
+          "archive_sha256": "080cbce278f38c3c23319625f67cfb48f8f2557d335b8f2ca4040ef622031fee",
+          "extracted_member_count": 8
+        },
+        {
+          "path": "lib/common/libcommon.a",
+          "scope": "build",
+          "archive_sha256": "02114b53c2a07d56cde60652b5bc0e7eff6bfa49a15e4643d0cd6ae424a8bf1f",
+          "extracted_member_count": 0
+        },
+        {
+          "path": "lib/dotgen/libdotgen.a",
+          "scope": "build",
+          "archive_sha256": "4796c954f423f93e453f9b59f54352217fd3674a1be3490ac56b970963642658",
+          "extracted_member_count": 16
+        },
+        {
+          "path": "lib/fdpgen/libfdpgen.a",
+          "scope": "build",
+          "archive_sha256": "1d09f82db3ad82f84d37c27cca28ed2f6c9b1f517d243bc2837350a34685a6bf",
+          "extracted_member_count": 7
+        },
+        {
+          "path": "lib/gvc/libgvc.a",
+          "scope": "build",
+          "archive_sha256": "dc8abf94f09a879109b84c6e617c6f85771b8ad27ad3bec7a2bada9c4f9acc87",
+          "extracted_member_count": 12
+        },
+        {
+          "path": "lib/label/liblabel.a",
+          "scope": "build",
+          "archive_sha256": "9e79fca6c96b5257a533e633e124492d72addbd21a588d907303b6026ef5753d",
+          "extracted_member_count": 5
+        },
+        {
+          "path": "lib/neatogen/libneatogen.a",
+          "scope": "build",
+          "archive_sha256": "72c489c7fd71b1204bb6165f208b4f713a1ad3a4425fafd015be0e566b638028",
+          "extracted_member_count": 30
+        },
+        {
+          "path": "lib/ortho/libortho.a",
+          "scope": "build",
+          "archive_sha256": "8bdcc61f9134a8ebbb9b4d268b1b78d15875bf7d1a952895f7747f63eb986bd2",
+          "extracted_member_count": 0
+        },
+        {
+          "path": "lib/osage/libosage.a",
+          "scope": "build",
+          "archive_sha256": "a58f942e3fcec8dbb955e01db0a3e54951640c2ccce99ed1883ef137637c8ff0",
+          "extracted_member_count": 1
+        },
+        {
+          "path": "lib/pack/libpack.a",
+          "scope": "build",
+          "archive_sha256": "4e736e9f0e5422ee4ed3d99348f2924603b8ea8a9fa41a04c2e15305135ae3f5",
+          "extracted_member_count": 0
+        },
+        {
+          "path": "lib/patchwork/libpatchwork.a",
+          "scope": "build",
+          "archive_sha256": "391c940e3b6e093254cc2b45fcf71e992ca379162e2de4773d5c4b9c75715c00",
+          "extracted_member_count": 3
+        },
+        {
+          "path": "lib/pathplan/libpathplan.a",
+          "scope": "build",
+          "archive_sha256": "98337bea0027ff1489d9d47f9715573c76942653ad714dc08efffd2d011bee30",
+          "extracted_member_count": 9
+        },
+        {
+          "path": "lib/rbtree/librbtree.a",
+          "scope": "build",
+          "archive_sha256": "9ba532960667681e09c30863729fe16ad477274969c6256e54d34a91adf2b396",
+          "extracted_member_count": 0
+        },
+        {
+          "path": "lib/sparse/libsparse.a",
+          "scope": "build",
+          "archive_sha256": "91a35f82912a8c00a657b94a4e4a4b495ec0fad596466b1c38ee9ab152150227",
+          "extracted_member_count": 1
+        },
+        {
+          "path": "lib/twopigen/libtwopigen.a",
+          "scope": "build",
+          "archive_sha256": "72e69041cf26451a8b481fe5d160e524abd7ed7177de4f8427fde6d10e9541e9",
+          "extracted_member_count": 2
+        },
+        {
+          "path": "lib/util/libutil.a",
+          "scope": "build",
+          "archive_sha256": "ed195d0580cb0f2f375f4028369c86603c90abc0b66270d27669348f376f354e",
+          "extracted_member_count": 4
+        },
+        {
+          "path": "lib/xdot/libxdot.a",
+          "scope": "build",
+          "archive_sha256": "a4e5b0cc9c62b2b73847ecb454544aaa4025f23484a81ce63d429925ee0f003c",
+          "extracted_member_count": 1
+        },
+        {
+          "path": "plugin/core/libgvplugin_core.a",
+          "scope": "build",
+          "archive_sha256": "232db65b39847a870718f12cea867a73e672f23e0bf5a94985a5c8fa0293798c",
+          "extracted_member_count": 11
+        },
+        {
+          "path": "plugin/dot_layout/libgvplugin_dot_layout.a",
+          "scope": "build",
+          "archive_sha256": "26224e74379211e3a4ab7d567224dafbd5ce306cb55acf711fd1491a100fcf38",
+          "extracted_member_count": 2
+        },
+        {
+          "path": "plugin/neato_layout/libgvplugin_neato_layout.a",
+          "scope": "build",
+          "archive_sha256": "ea72783cc0d222a72cbf60084eee592ed1d65bba2aea8333e7b14e7d76234572",
+          "extracted_member_count": 2
+        },
+        {
+          "path": "plugin/vt/libgvplugin_vt.a",
+          "scope": "build",
+          "archive_sha256": "1aa561dc0766c6c38ba2ebae94835c981b39dc8f98a03da69fbd928b6d3d45a2",
+          "extracted_member_count": 1
+        },
+        {
+          "path": "<private-sdk>/cache/o/08a2639b46fa64535864c1ada8c0d8e6/libc++abi.a",
+          "scope": "sdk",
+          "archive_sha256": "2d29aa4da92be7dfb144de8fbac7de6209da2dc33bb87f4bef4ebcb923a680f7",
+          "extracted_member_count": 0
+        },
+        {
+          "path": "<private-sdk>/cache/o/578d17c2d4962c9d8821df1a5ffef7ab/libc.a",
+          "scope": "sdk",
+          "archive_sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+          "extracted_member_count": 177
+        },
+        {
+          "path": "<private-sdk>/cache/o/9e95249ff19d8357badae87d1b62c706/libunwind.a",
+          "scope": "sdk",
+          "archive_sha256": "2bb7cb9d4b6403af17ac52dd6def32e6e47f94c2f040a58e95e9df72e9b4a839",
+          "extracted_member_count": 0
+        },
+        {
+          "path": "<private-sdk>/cache/o/bfc52f89c10b487b178076e8a9a2a50a/libzigc.a",
+          "scope": "sdk",
+          "archive_sha256": "6d80c5e65a9dd862453d3b3046595620ee6fd5f2d2deb253bd21acd635a66b61",
+          "extracted_member_count": 1
+        },
+        {
+          "path": "<private-sdk>/cache/o/d2a14289a5e4659a5e02131c07ce703e/libcompiler_rt.a",
+          "scope": "sdk",
+          "archive_sha256": "596fb2eb5e84701ddd0079a3a5ad6065a9ca5916518f38ad522d8f1de559cc2a",
+          "extracted_member_count": 1
+        },
+        {
+          "path": "<private-sdk>/cache/o/dfcde3eeb74fd7b39d0f6ec7b96d21ee/libc++.a",
+          "scope": "sdk",
+          "archive_sha256": "79676011395f14ff8a9b83734f028ff16ae3e8cbd8a9ec8ea618f211b5bd5d3c",
+          "extracted_member_count": 0
+        }
+      ]
+    }
+  },
+  "observed_static_sdk_inputs": [
+    {
+      "file": "libc++abi.a",
+      "sha256": "2d29aa4da92be7dfb144de8fbac7de6209da2dc33bb87f4bef4ebcb923a680f7",
+      "size": 2008078
+    },
+    {
+      "file": "libc.a",
+      "sha256": "ab7e5d154ff234003d94776e89a146b225048e486876c7c8c915af2a7244c7e1",
+      "size": 8601322
+    },
+    {
+      "file": "libunwind.a",
+      "sha256": "2bb7cb9d4b6403af17ac52dd6def32e6e47f94c2f040a58e95e9df72e9b4a839",
+      "size": 298898
+    },
+    {
+      "file": "crt1.o",
+      "sha256": "9d368a3fc8fd67bbf70bbd37cfee47bb96c1bf8ca802ac74861cabb3812af7b6",
+      "size": 3992
+    },
+    {
+      "file": "libzigc.a",
+      "sha256": "6d80c5e65a9dd862453d3b3046595620ee6fd5f2d2deb253bd21acd635a66b61",
+      "size": 49314
+    },
+    {
+      "file": "libcompiler_rt.a",
+      "sha256": "596fb2eb5e84701ddd0079a3a5ad6065a9ca5916518f38ad522d8f1de559cc2a",
+      "size": 1674862
+    },
+    {
+      "file": "libc++.a",
+      "sha256": "79676011395f14ff8a9b83734f028ff16ae3e8cbd8a9ec8ea618f211b5bd5d3c",
+      "size": 13718908
+    }
+  ],
+  "sdk_headers_verified": 58,
+  "musl_source_tree": {
+    "files": 2467,
+    "bytes": 3041358,
+    "canonical_manifest_sha256": "d73947496409ec4918c19a1d372997740fc8a98d8d6e7b6eee211cbcf9cadd87",
+    "algorithm": "sorted path/size/sha256 entries, sorted keys, compact UTF-8 JSON; private complete manifest retained"
+  },
+  "musl_version": null,
+  "musl_copyright": {
+    "source_path": "lib/libc/musl/COPYRIGHT",
+    "path": "linux-musl-static.logs/musl-COPYRIGHT.txt",
+    "sha256": "f9bc4423732350eb0b3f7ed7e91d530298476f8fec0c6c427a1c04ade22655af",
+    "status": "copied-not-license-audit-approval"
+  },
+  "corpus": [
+    {
+      "path": "linux-musl-corpus-3.12.json",
+      "sha256": "d1fd9cad97f4ac4da38d1f8c4d50374819d64c4b2f10b9e7f318eb9e6b28d116"
+    },
+    {
+      "path": "linux-musl-corpus-3.14.json",
+      "sha256": "1df66ef6e490a328f95ea0f70069a1173756c2f575efb400bffc13f7dbff01e5"
+    }
+  ],
+  "logs": [
+    {
+      "path": "linux-musl-static.logs/build.txt",
+      "sha256": "2bc1521e29beb618515ed458c0836580a3f57f7437e485526fa2b431ef069daa"
+    },
+    {
+      "path": "linux-musl-static.logs/static-elf.txt",
+      "sha256": "b07d5f0eb5e86646f081307ea6175019ea9b25b08dc684397d5b4e030b42976b"
+    },
+    {
+      "path": "linux-musl-static.logs/compiler-verbose.txt",
+      "sha256": "9c26996094d29f7899346265cc7c8b7898e8def802e791578cbf0e160408480e"
+    },
+    {
+      "path": "linux-musl-static.logs/link.d",
+      "sha256": "60e59615f547ae52aeb926492407a2ec76a6872eafb1fedf588c1db00c8c8a81"
+    },
+    {
+      "path": "linux-musl-static.logs/why-extract.tsv",
+      "sha256": "e5276f2b7cbc51caae277c173a4194c5e2168a2829882124ce0daf6e7ba6d125"
+    }
+  ],
+  "graphviz_source_evidence": {
+    "path": "linux-musl-graphviz-sources.json",
+    "sha256": "2bf9f3d7ae3af0fbe9570e0d2406eb636f44e4f869d5b66094990a068442eca3",
+    "summary": {
+      "objects": 181,
+      "verified_graphviz_source_files": 322,
+      "generated_files": 9,
+      "external_files": 58
+    }
+  },
+  "tools_sha256": {
+    "build-common.py": "133e26c70c16e2cdfc61e231af14152a45749a48a6ff5017287ea4d38c12819b",
+    "verify-artifact.py": "d52c4d6f46056767528bb748e32f592137eccd9e6291a397abae29d576561276",
+    "relink-zig.py": "7af8ea3f341ebf60ae3c911810db3040b11cbdbb548dddd802dbe446bbd21aea"
+  },
+  "limitations": [
+    "Host is Ubuntu/glibc WSL, not native Alpine; no Python musl installation/normal acquisition acceptance",
+    "Kernel 4.15/CPU baseline are compiler settings only; native Alpine 3.21-3.24 baselines remain untested",
+    "SDK VERSION file absent; no upstream musl version or minimum-host-libc claim inferred",
+    "Static musl sources, headers and licenses require independent audit; glibc audit/notices are not reused",
+    "Corpus network blocking is Python only, without native network trace",
+    "No runtime catalog change, official support or publication"
+  ]
+}

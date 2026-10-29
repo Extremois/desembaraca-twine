@@ -1,0 +1,139 @@
+-- The C compiler identification is Clang 20.1.2
+-- The CXX compiler identification is Clang 20.1.2
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - failed
+-- Check for working C compiler: <private-sdk>/cc
+-- Check for working C compiler: <private-sdk>/cc - broken
+CMake Error at /usr/share/cmake-4.2/Modules/CMakeTestCCompiler.cmake:67 (message):
+  The C compiler
+
+    "<private-sdk>/cc"
+
+  is not able to compile a simple test program.
+
+  It fails with the following output:
+
+    Change Dir: '<private-build>/build/CMakeFiles/CMakeScratch/TryCompile-CkXDIB'
+    
+    Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_d6a79/fast
+    /usr/bin/gmake  -f CMakeFiles/cmTC_d6a79.dir/build.make CMakeFiles/cmTC_d6a79.dir/build
+    gmake[1]: Entering directory '<private-build>/build/CMakeFiles/CMakeScratch/TryCompile-CkXDIB'
+    Building C object CMakeFiles/cmTC_d6a79.dir/testCCompiler.c.o
+    <private-sdk>/cc   -march=x86-64  -MD -MT CMakeFiles/cmTC_d6a79.dir/testCCompiler.c.o -MF CMakeFiles/cmTC_d6a79.dir/testCCompiler.c.o.d -o CMakeFiles/cmTC_d6a79.dir/testCCompiler.c.o -c <private-build>/build/CMakeFiles/CMakeScratch/TryCompile-CkXDIB/testCCompiler.c
+    info: available CPUs for architecture 'x86_64':
+     alderlake
+     amdfam10
+     arrowlake
+     arrowlake_s
+     athlon
+     athlon64
+     athlon64_sse3
+     athlon_4
+     athlon_fx
+     athlon_mp
+     athlon_tbird
+     athlon_xp
+     atom
+     atom_sse4_2_movbe
+     barcelona
+     bdver1
+     bdver2
+     bdver3
+     bdver4
+     bonnell
+     broadwell
+     btver1
+     btver2
+     c3
+     c3_2
+     cannonlake
+     cascadelake
+     clearwaterforest
+     cooperlake
+     core2
+     corei7
+     diamondrapids
+     emeraldrapids
+     generic
+     geode
+     goldmont
+     goldmont_plus
+     gracemont
+     grandridge
+     graniterapids
+     graniterapids_d
+     haswell
+     i386
+     i486
+     i586
+     i686
+     icelake_client
+     icelake_server
+     ivybridge
+     k6
+     k6_2
+     k6_3
+     k8
+     k8_sse3
+     knl
+     knm
+     lakemont
+     lunarlake
+     meteorlake
+     nehalem
+     nocona
+     opteron
+     opteron_sse3
+     pantherlake
+     penryn
+     pentium
+     pentium2
+     pentium3
+     pentium3m
+     pentium4
+     pentium_m
+     pentium_mmx
+     pentiumpro
+     prescott
+     raptorlake
+     rocketlake
+     sandybridge
+     sapphirerapids
+     sierraforest
+     silvermont
+     skx
+     skylake
+     skylake_avx512
+     slm
+     tigerlake
+     tremont
+     westmere
+     winchip2
+     winchip_c6
+     x86_64
+     x86_64_v2
+     x86_64_v3
+     x86_64_v4
+     yonah
+     znver1
+     znver2
+     znver3
+     znver4
+     znver5
+    
+    error: unknown CPU: 'x86'
+    gmake[1]: *** [CMakeFiles/cmTC_d6a79.dir/build.make:82: CMakeFiles/cmTC_d6a79.dir/testCCompiler.c.o] Error 1
+    gmake[1]: Leaving directory '<private-build>/build/CMakeFiles/CMakeScratch/TryCompile-CkXDIB'
+    gmake: *** [Makefile:134: cmTC_d6a79/fast] Error 2
+    
+    
+
+
+
+  CMake will not be able to correctly generate this project.
+Call Stack (most recent call first):
+  CMakeLists.txt:2 (project)
+
+
+-- Configuring incomplete, errors occurred!
+CalledProcessError: Command '['/usr/bin/cmake', '-S', '<private-build>/source/graphviz-16.1.0', '-B', '<private-build>/build', '-DCMAKE_BUILD_TYPE=Release', '-DCMAKE_C_COMPILER=<private-sdk>/cc', '-DCMAKE_CXX_COMPILER=<private-sdk>/cxx', '-DCMAKE_INSTALL_PREFIX=<private-build>/install', '-DBUILD_SHARED_LIBS=OFF', '-DENABLE_LTDL=OFF', '-DWITH_EXPAT=OFF', '-DWITH_ZLIB=OFF', '-DWITH_GVEDIT=OFF', '-DWITH_SMYRNA=OFF', '-DWITH_GDK=OFF', '-DWITH_GHOSTSCRIPT=OFF', '-DWITH_GTK=OFF', '-DWITH_POPPLER=OFF', '-DWITH_QUARTZ=OFF', '-DWITH_RSVG=OFF', '-DWITH_WEBP=OFF', '-DWITH_X=OFF', '-DENABLE_TCL=OFF', '-DENABLE_SWIG=OFF', '-Dwith_digcola=OFF', '-Dwith_ipsepcola=OFF', '-Dwith_sfdp=OFF', '-Dwith_cxx_api=OFF', '-Dwith_cxx_tests=OFF', '-DCMAKE_DISABLE_FIND_PACKAGE_ANN=ON', '-DCMAKE_DISABLE_FIND_PACKAGE_CAIRO=ON', '-DCMAKE_DISABLE_FIND_PACKAGE_GTS=ON', '-DCMAKE_DISABLE_FIND_PACKAGE_PANGOCAIRO=ON', '-DCMAKE_DISABLE_FIND_PACKAGE_Freetype=ON', '-DCMAKE_DISABLE_FIND_PACKAGE_GLUT=ON', '-DCMAKE_DISABLE_FIND_PACKAGE_GTK2=ON', '-DCMAKE_DISABLE_FIND_PACKAGE_Fontconfig=ON', '-DCMAKE_DISABLE_FIND_PACKAGE_GD=ON', '-DCMAKE_DISABLE_FIND_PACKAGE_GS=ON', '-DCMAKE_DISABLE_FIND_PACKAGE_LTDL=ON', '-DCMAKE_DISABLE_FIND_PACKAGE_AA=ON', '-DCMAKE_DISABLE_FIND_PACKAGE_DevIL=ON', '-DCMAKE_EXE_LINKER_FLAGS=-static-libstdc++ -static-libgcc', '-DCMAKE_C_FLAGS=-march=x86-64', '-DCMAKE_CXX_FLAGS=-march=x86-64', '-DENABLE_SHARP=OFF', '-DENABLE_D=OFF', '-DENABLE_GO=OFF', '-DENABLE_GUILE=OFF', '-DENABLE_JAVA=OFF', '-DENABLE_JAVASCRIPT=OFF', '-DENABLE_LUA=OFF', '-DENABLE_PERL=OFF', '-DENABLE_PHP=OFF', '-DENABLE_PYTHON=OFF', '-DENABLE_R=OFF', '-DENABLE_RUBY=OFF', '-DCMAKE_SKIP_RPATH=ON']' returned non-zero exit status 1.

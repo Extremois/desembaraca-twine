@@ -1,0 +1,75 @@
+{
+  "application_revision": "993bc6fc3d0c9a4eaa2f16e268cb11212dc6b54f",
+  "run_id": 40768639862,
+  "workflow_url": "https://github.com/Extremois/desembaraca-twine/actions/runs/40768639862",
+  "passed": true,
+  "qualified": false,
+  "jobs": [
+    {
+      "job_id": 123099494735,
+      "name": "Pure contracts (macos-15, Python 3.12)",
+      "conclusion": "success",
+      "tests": 306,
+      "raw_log_sha256": "0e4cf835f6aca4c4b6e06221843da47c80ee9804a11fa230b4395ba136822664",
+      "log": {
+        "path": "specs/003-add-cross-platform-support/evidence/project-notice-ci-2026-10-28/foundation-123099494735.log.gz",
+        "sha256": "5699aaa5a3db273b0c1b9c560b487b7275c88b96018455e872f4dcbb9f1bb073"
+      }
+    },
+    {
+      "job_id": 123099495215,
+      "name": "Pure contracts (windows-latest, Python 3.14)",
+      "conclusion": "success",
+      "tests": 306,
+      "raw_log_sha256": "b96f812cfc3a0763bcc71729248a0e75aa6c7418be4017cc601d0a2668fc17b6",
+      "log": {
+        "path": "specs/003-add-cross-platform-support/evidence/project-notice-ci-2026-10-28/foundation-123099495215.log.gz",
+        "sha256": "10e0cfec5f91ca18fd7e5a7b882c90b19cdc10b6bc45b759a7a993cad2aac259"
+      }
+    },
+    {
+      "job_id": 123099495229,
+      "name": "Pure contracts (ubuntu-24.04, Python 3.12)",
+      "conclusion": "success",
+      "tests": 306,
+      "raw_log_sha256": "f9c8f917b9a8853e364e0a1e3ab88878034e984e74e7311e9e12877baef6f6ff",
+      "log": {
+        "path": "specs/003-add-cross-platform-support/evidence/project-notice-ci-2026-10-28/foundation-123099495229.log.gz",
+        "sha256": "266e6fcbd3e8148e34fee1efaf9df143be12206123610a2b9a05befb933da618"
+      }
+    },
+    {
+      "job_id": 123099495339,
+      "name": "Pure contracts (windows-latest, Python 3.12)",
+      "conclusion": "success",
+      "tests": 306,
+      "raw_log_sha256": "54f152cc94b19bad87686a613902589b5d460abb60e0916882fa2d8840f2a270",
+      "log": {
+        "path": "specs/003-add-cross-platform-support/evidence/project-notice-ci-2026-10-28/foundation-123099495339.log.gz",
+        "sha256": "f2175dc365a9433b3ff69817b725eef9738f9104288f685ce641a2d8d434e790"
+      }
+    },
+    {
+      "job_id": 123099495377,
+      "name": "Pure contracts (macos-15, Python 3.14)",
+      "conclusion": "success",
+      "tests": 306,
+      "raw_log_sha256": "f7e54a94b6ac10ed47b0d2a0f4660c2ae3cc350a51368ce0181a385dfc105e64",
+      "log": {
+        "path": "specs/003-add-cross-platform-support/evidence/project-notice-ci-2026-10-28/foundation-123099495377.log.gz",
+        "sha256": "a3154b3fd4284c77e8ef94e08722fdd8fae332003de7253b1a840cacedd2561b"
+      }
+    },
+    {
+      "job_id": 123099495440,
+      "name": "Pure contracts (ubuntu-24.04, Python 3.14)",
+      "conclusion": "success",
+      "tests": 306,
+      "raw_log_sha256": "428849b30534428e9bbc222a6472a899a732c2840e361451d8b00d7c1a71ed74",
+      "log": {
+        "path": "specs/003-add-cross-platform-support/evidence/project-notice-ci-2026-10-28/foundation-123099495440.log.gz",
+        "sha256": "d3748c17003a8f75fb95b862e09d0d5c32be586a52e925804b23ba6cb678e126"
+      }
+    }
+  ]
+}

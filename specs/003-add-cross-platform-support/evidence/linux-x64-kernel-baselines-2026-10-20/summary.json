@@ -1,0 +1,54 @@
+{
+  "kind": "glibc-and-musl-x64-native-kernel-baseline-confirmation",
+  "revision": "18366817334ec4e4db07689c6da603b466756a66",
+  "passed": true,
+  "approved": false,
+  "qualified": false,
+  "workflow_runs": [
+    {
+      "id": 39471107868,
+      "name": "Ubuntu 18.04 native kernel engine baseline",
+      "conclusion": "success"
+    },
+    {
+      "id": 39471108000,
+      "name": "Cross-platform foundation",
+      "conclusion": "success"
+    }
+  ],
+  "native_engine_receipts": [
+    {
+      "abi": "glibc",
+      "report": "glibc/summary.json",
+      "sha256": "0b5f0fa5d979a2418708d584b55a2a292f106fdf0ba3d63eb29f2756b468ea63",
+      "engine_sha256": "43ce8d686720467c21be91cab4b8f3b246baae49c2cfe293714ebdf8a82f5716"
+    },
+    {
+      "abi": "musl",
+      "report": "musl/summary.json",
+      "sha256": "3db4cc52df7850d3cec43adf807661ea1e242016be4cfed5c5cfbd0115ed51f3",
+      "engine_sha256": "f4dfee4e052704b1a7efdb7b6a4c43583ccaa062aec800b76224dae24eb2b69b"
+    }
+  ],
+  "musl_recipe_completion": {
+    "report": "musl-recipe-completion.json",
+    "sha256": "8a5619facdff48bc22575a007f4abc3bdd018270b16bd3347146be8c68568173"
+  },
+  "foundation": {
+    "report": "foundation.json",
+    "sha256": "12e27340366a5a8206921431e43a299b4a83ca7f7d8f89f0351356323696c418",
+    "jobs": 6,
+    "tests_per_job": 231
+  },
+  "completed_tasks": 56,
+  "total_tasks": 84,
+  "newly_completed": [
+    "T026"
+  ],
+  "native_alpine_qualification": false,
+  "limitations": [
+    "Native kernel baseline guest is Ubuntu; Alpine records remain container userland records",
+    "Native Alpine kernel/cell acceptance, ARM64 minimum kernel, licenses/source offer and catalog remain pending",
+    "No local VM was created; KVM guests ran only on ephemeral GitHub runners"
+  ]
+}

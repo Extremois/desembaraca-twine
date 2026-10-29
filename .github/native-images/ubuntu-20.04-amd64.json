@@ -1,0 +1,12 @@
+{
+  "url": "https://cloud-images.ubuntu.com/releases/focal/release-20250516/ubuntu-20.04-server-cloudimg-amd64.img",
+  "size": 647783424,
+  "sha256": "3d5a77f8f6a240cd3478c24cc4d0a11a823236b03868d79a432906c394b835a9",
+  "checksum_manifest_url": "https://cloud-images.ubuntu.com/releases/focal/release-20250516/SHA256SUMS",
+  "checksum_manifest_sha256": "85b662b5a7dab3aa7336f2bd6e4e8fb7dc4f07c1f8817db9f7e9d72dca4fc4a4",
+  "package_manifest_url": "https://cloud-images.ubuntu.com/releases/focal/release-20250516/ubuntu-20.04-server-cloudimg-amd64.manifest",
+  "package_manifest_sha256": "d08b3218695da3fcc06c5683fc9faa2d57bdbca3f0e8407a02d1d9cb10df6b31",
+  "release": "20.04",
+  "arch": "x86_64",
+  "scope": "Historical image for private native-kernel tests; no ESM entitlement or support qualification"
+}

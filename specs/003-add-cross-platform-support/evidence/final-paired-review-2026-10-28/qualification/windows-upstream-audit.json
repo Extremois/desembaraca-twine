@@ -1,0 +1,24 @@
+{
+  "kind": "technical-review-of-preserved-upstream-Windows-acquisition",
+  "approved": true,
+  "reviewer": "Codex technical implementation review",
+  "artifact_sha256": "37906f29ede26cf1952f8cf942c1e7814ab86ef448130136c8607b1b6ffe0870",
+  "scope": "Application distributes pinned notices and source references; unchanged Windows binaries are acquired directly from upstream, never redistributed by this release.",
+  "manifest": {
+    "path": "src/twine_edge_overlap/runtime-manifest.json",
+    "sha256": "8aed45fdbd206069cf7e37df8b505a979acaa219bb3f013f2dd9c7f11e680f9d"
+  },
+  "source_references": {
+    "path": "src/twine_edge_overlap/third_party/graphviz-16.1.0/SOURCES.json",
+    "sha256": "8cd2a88eb55995f4f5c825173640c85cf81ef5416eb70feda31cdfa1278ed831"
+  },
+  "components": [
+    {
+      "name": "Graphviz upstream source; dependency notices/source routes preserved separately",
+      "license_expression": "EPL-2.0 AND LicenseRef-Upstream-Component-Notices",
+      "source_url": "https://gitlab.com/graphviz/graphviz/-/archive/16.1.0/graphviz-16.1.0.tar.gz",
+      "source_sha256": "1e028b2b3e84e946c1d3e8c47590f8f0741bba1041fe6eff36eee87e598ea249"
+    }
+  ],
+  "decision": "Keep EPL and dependency terms separate from Apache-2.0. Existing upstream DLLs remain replaceable; preserve the complete notices/SOURCES inventory offline. No Windows bundle repackaging, license change or new redistribution is approved."
+}

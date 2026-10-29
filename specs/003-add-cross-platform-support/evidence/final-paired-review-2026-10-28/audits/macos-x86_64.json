@@ -1,0 +1,266 @@
+{
+  "kind": "reviewed-exact-pair-technical-license-audit",
+  "approved": true,
+  "qualified": false,
+  "reviewer": "Codex technical implementation review",
+  "application_revision": "46d111de81038d6ae0e7e7772813693c5b0a2345",
+  "artifact_id": "macos-x86_64",
+  "provenance_sha256": "029b12105384c776d24c4b4db60b3f514ca49b68b5945e0e2e2c23c89e63e13c",
+  "components": [
+    {
+      "name": "Graphviz program and separately preserved third-party terms",
+      "license_expression": "EPL-2.0 AND LicenseRef-Graphviz-Third-Party-Terms",
+      "source_url": "https://gitlab.com/graphviz/graphviz/-/archive/16.1.0/graphviz-16.1.0.tar.gz",
+      "source_sha256": "1e028b2b3e84e946c1d3e8c47590f8f0741bba1041fe6eff36eee87e598ea249",
+      "notice_path": "third-party-notices/Graphviz-COPYING.txt",
+      "notice_sha256": "0becf16567beb77fa252b7664631dd177c8f9a1889e48995b45379c7130e5303",
+      "link_input_sha256": [],
+      "review_status": "reviewed-for-exact-paired-distribution"
+    },
+    {
+      "name": "Observed Apple headers APSL 1.1",
+      "license_expression": "APSL-1.1",
+      "source_url": "https://github.com/Extremois/desembaraca-twine/releases/download/graphviz-16.1.0-posix-46d111d/graphviz-16.1.0-macos-x86_64-96f093e56aab8f476fa7a792e0d7202bdeab2c3487853c4a86d8eab207078142-sources.tar.gz",
+      "source_sha256": "96f093e56aab8f476fa7a792e0d7202bdeab2c3487853c4a86d8eab207078142",
+      "notice_path": "third-party-notices/APSL-1.1-COPYING.txt",
+      "notice_sha256": "359a21ed59e82096455398ea10c5bc8c3ff28e7acf7935b77751d70e3630fc95",
+      "link_input_sha256": [],
+      "review_status": "reviewed-for-exact-paired-distribution"
+    },
+    {
+      "name": "Observed Apple headers APSL 2.0",
+      "license_expression": "APSL-2.0",
+      "source_url": "https://github.com/Extremois/desembaraca-twine/releases/download/graphviz-16.1.0-posix-46d111d/graphviz-16.1.0-macos-x86_64-96f093e56aab8f476fa7a792e0d7202bdeab2c3487853c4a86d8eab207078142-sources.tar.gz",
+      "source_sha256": "96f093e56aab8f476fa7a792e0d7202bdeab2c3487853c4a86d8eab207078142",
+      "notice_path": "third-party-notices/APSL-2.0-COPYING.txt",
+      "notice_sha256": "e5881019d8766c1e88a5fe1dbca4ba40c78011d41fcb18f6e9f50df60182685b",
+      "link_input_sha256": [],
+      "review_status": "reviewed-for-exact-paired-distribution"
+    },
+    {
+      "name": "Observed LLVM SDK headers",
+      "license_expression": "Apache-2.0 WITH LLVM-exception",
+      "source_url": "https://github.com/Extremois/desembaraca-twine/releases/download/graphviz-16.1.0-posix-46d111d/graphviz-16.1.0-macos-x86_64-96f093e56aab8f476fa7a792e0d7202bdeab2c3487853c4a86d8eab207078142-sources.tar.gz",
+      "source_sha256": "96f093e56aab8f476fa7a792e0d7202bdeab2c3487853c4a86d8eab207078142",
+      "source_identity_kind": "Recorded SDK source/header/stub tree digest, not a downloadable archive digest",
+      "notice_path": "third-party-notices/SDK-header-91a9519314e9f449d18f8002.txt",
+      "notice_sha256": "8b548ce9c0772f64352e0a72e894ec00ce269b9e0b9f607bbca6b1b7568147df",
+      "additional_notices": [
+        {
+          "path": "third-party-notices/SDK-header-ab347cf153976d4db66f5152.txt",
+          "sha256": "945de68c47db6ae086ca724e56955f58a2fcd24996ff855729844e4da2b69eb9"
+        },
+        {
+          "path": "third-party-notices/SDK-header-b5396b1bccba6d4c361e064b.txt",
+          "sha256": "51649fa4a0f431eebab1437ed612fb019ec2e7787e56eed82221eefd46a3703b"
+        },
+        {
+          "path": "third-party-notices/SDK-header-44c862a93062de464876ed7d.txt",
+          "sha256": "b595a97ed09833b689e3f363e6dc485c1383ebeb8f501ad0669fefdf267d1e33"
+        },
+        {
+          "path": "third-party-notices/SDK-header-e029e12725002816d03ac787.txt",
+          "sha256": "a517fd65b43e273f5a8058114a09ed1571404207f694828be663fdde7eb5c25f"
+        },
+        {
+          "path": "third-party-notices/SDK-header-1979f81f3709afcd363d036f.txt",
+          "sha256": "5754c957355450437a3f49af4b4ff624ace44a28722dda812a0533f2fd0ae618"
+        },
+        {
+          "path": "third-party-notices/SDK-header-01e702b5a26cf201b9616734.txt",
+          "sha256": "d90e4486cbe230e2a69b2208b3cfa00d2f37dde34fecba5641a1e765f0ec53ad"
+        },
+        {
+          "path": "third-party-notices/SDK-header-8e3ffe3f447157ea7e291245.txt",
+          "sha256": "8998ce0e1626fdc5b04f6744ffc2eb65caea027ca78b5941d9df9a97ba4bebba"
+        },
+        {
+          "path": "third-party-notices/SDK-header-2ce8c2ac50698b9d94f9b4c9.txt",
+          "sha256": "e422064af9560b26465ed99c1e6e46f5a00d7e0bdd892d5b0ac845968a77b338"
+        },
+        {
+          "path": "third-party-notices/SDK-header-655987725eacd8982d50acc4.txt",
+          "sha256": "e0da127a73aeec439eda8e78f90180ccd950b574dc51921b11a8220792105973"
+        },
+        {
+          "path": "third-party-notices/SDK-header-eea79286e672cb93a8fd0dfb.txt",
+          "sha256": "d836ead13fa0c2712f504f4ec30129528644807b7cd725987de154a003ff51c5"
+        },
+        {
+          "path": "third-party-notices/SDK-header-9b388d04c9fa7e33e103df4b.txt",
+          "sha256": "b4c43cc9688b5c307b367004710ff8bc11731d15d4761d74824b7e163d8d3db8"
+        },
+        {
+          "path": "third-party-notices/SDK-header-94443db0e92972a993fec11e.txt",
+          "sha256": "44886d090522af81bbbf9e6245f69625fc84430086bb2d1bdc8a41ce1310db3b"
+        },
+        {
+          "path": "third-party-notices/SDK-header-f63db149a7bafc41da58c230.txt",
+          "sha256": "713ec82c8194a15383c5bad779fd8baca97f7eae52db544db760b011c17936f8"
+        },
+        {
+          "path": "third-party-notices/SDK-header-84b1727402338161172287e5.txt",
+          "sha256": "6015b181e142f418229b0ec6bfbac1b96bf12ae8e802b43c8aecc425d370c90c"
+        },
+        {
+          "path": "third-party-notices/SDK-header-e44063a421324132dbea6a57.txt",
+          "sha256": "6ba160fe160e2d0f4b1d9e18dba676a82d068477c4e3c713683375e2e27ff98e"
+        },
+        {
+          "path": "third-party-notices/SDK-header-82e430add7f776404b6af43d.txt",
+          "sha256": "ed26adcef0b553b44030433d6892bb489b12cc28b7e39423421caf87a0134bed"
+        },
+        {
+          "path": "third-party-notices/SDK-header-6eb86e5a1f600672ddbd3a01.txt",
+          "sha256": "1dde451e831ce68164036a3b56fb72460ba58b3577876cb513f201ac1dfe19ea"
+        },
+        {
+          "path": "third-party-notices/SDK-header-a6859eaaf445765109ee287f.txt",
+          "sha256": "4efb5f80669b7c385442e87625b2edd0b5cea825b268181b645b92971c91b811"
+        },
+        {
+          "path": "third-party-notices/SDK-header-ea3512383f1e750b70114e06.txt",
+          "sha256": "fe069d0d0e201f94ecf04b789a95d01fe0295c340517ab50c30d11d912b91bac"
+        },
+        {
+          "path": "third-party-notices/SDK-header-34f0812e484859a9c0bc84db.txt",
+          "sha256": "c187113158e65259c99f706181adf0678112bb58fbbcd688fe8d2b581755b1f7"
+        },
+        {
+          "path": "third-party-notices/SDK-header-ec4a643daffd2b41e7dbd761.txt",
+          "sha256": "48c8236343fafbfc67792dc3c7ac85af049bc64a772adcd88b266b905d4b52dc"
+        },
+        {
+          "path": "third-party-notices/SDK-header-39a96a9a0c07463108fcad89.txt",
+          "sha256": "385a49d08a399b48318c9704ef53eaec8e5a648cd7ac9f51800d8109c262566f"
+        },
+        {
+          "path": "third-party-notices/SDK-header-5f310fed1b3c28eef6c3df6c.txt",
+          "sha256": "adcb355d09cc4b49be216bcd74ae4116f26975901975e22820f5d859921c8a6f"
+        }
+      ],
+      "link_input_sha256": [],
+      "review_status": "reviewed-for-exact-paired-distribution",
+      "permission_basis": "Recorded EA1879 sections 2.2 A(ii), 2.4 and individual terms. SDK development/distribution permission is not an end-user license for the application. Proprietary header sources and SDK libraries are not redistributed."
+    },
+    {
+      "name": "Observed BSD permission blocks",
+      "license_expression": "LicenseRef-BSD-Four-Condition-Blocks",
+      "source_url": "https://github.com/Extremois/desembaraca-twine/releases/download/graphviz-16.1.0-posix-46d111d/graphviz-16.1.0-macos-x86_64-96f093e56aab8f476fa7a792e0d7202bdeab2c3487853c4a86d8eab207078142-sources.tar.gz",
+      "source_sha256": "96f093e56aab8f476fa7a792e0d7202bdeab2c3487853c4a86d8eab207078142",
+      "source_identity_kind": "Recorded SDK source/header/stub tree digest, not a downloadable archive digest",
+      "notice_path": "third-party-notices/SDK-header-96ff23d4276f23e2f8e26652.txt",
+      "notice_sha256": "db3206761973d830bf6d2cf05bd814b7cf070201f40484fd9d3e516c32ad6b3a",
+      "additional_notices": [
+        {
+          "path": "third-party-notices/SDK-header-76f5319e02595f33cd3e40d0.txt",
+          "sha256": "9e9da644bfa3177aa5658d22a52edc14e80b193718246c97093a0f9ace84e7af"
+        },
+        {
+          "path": "third-party-notices/SDK-header-e8cecbdfadd05cca28c42a51.txt",
+          "sha256": "0c02eed2c8e9051372fd02ea5d9feac6edf2c589e771a9e2a45cd76203a8ff40"
+        },
+        {
+          "path": "third-party-notices/SDK-header-b040f27f37038e24b11fe5d2.txt",
+          "sha256": "db3206761973d830bf6d2cf05bd814b7cf070201f40484fd9d3e516c32ad6b3a"
+        },
+        {
+          "path": "third-party-notices/SDK-header-d4beec375df82fc0e2189412.txt",
+          "sha256": "c37b78ec41a8dc318295e88303ab32207cc8b98ddfa3f1e981b3fb808037d5a6"
+        }
+      ],
+      "link_input_sha256": [],
+      "review_status": "reviewed-for-exact-paired-distribution",
+      "permission_basis": "Recorded EA1879 sections 2.2 A(ii), 2.4 and individual terms. SDK development/distribution permission is not an end-user license for the application. Proprietary header sources and SDK libraries are not redistributed."
+    },
+    {
+      "name": "Other observed macOS SDK compile inputs",
+      "license_expression": "LicenseRef-Xcode-macOS-SDK-Compile-Inputs",
+      "source_url": "https://github.com/Extremois/desembaraca-twine/releases/download/graphviz-16.1.0-posix-46d111d/graphviz-16.1.0-macos-x86_64-96f093e56aab8f476fa7a792e0d7202bdeab2c3487853c4a86d8eab207078142-sources.tar.gz",
+      "source_sha256": "96f093e56aab8f476fa7a792e0d7202bdeab2c3487853c4a86d8eab207078142",
+      "source_identity_kind": "Recorded SDK source/header/stub tree digest, not a downloadable archive digest",
+      "notice_path": "third-party-notices/SDK-header-12046e3c88c52e9b7c448e3d.txt",
+      "notice_sha256": "827c9c49529b10fea56b0e030269acd4b21ce327491f085a25c8572f0aebd1d3",
+      "additional_notices": [
+        {
+          "path": "third-party-notices/SDK-header-1b9e7463f2f6ad7bf69bce16.txt",
+          "sha256": "9f105e74e8387de0a678ea21df6f8c6c4139d94dcb21416e704469adb665c36d"
+        }
+      ],
+      "link_input_sha256": [],
+      "review_status": "reviewed-for-exact-paired-distribution",
+      "permission_basis": "Recorded EA1879 sections 2.2 A(ii), 2.4 and individual terms. SDK development/distribution permission is not an end-user license for the application. Proprietary header sources and SDK libraries are not redistributed."
+    },
+    {
+      "name": "Entity values",
+      "license_expression": "BSD-3-Clause",
+      "source_url": "https://raw.githubusercontent.com/whatwg/html-build/283a3531a61106d07d9a7d9fb3e6f3b9bfd33d70/entities/out/entities.json",
+      "source_sha256": "d741d877ac77c4194c4ad526b5b4a19aef8dfe411ab840a466891cdbb9f362e6",
+      "notice_path": "third-party-notices/ENTITY-DATA-LICENSES.txt",
+      "notice_sha256": "b6a37ddb2a6efd2eac61c0c99be2d546140ca5578dfa87f94cfa1ec58e6b3d57",
+      "link_input_sha256": [],
+      "review_status": "reviewed-for-exact-paired-distribution",
+      "selectors": null
+    },
+    {
+      "name": "Entity selectors",
+      "license_expression": "W3C-20021231",
+      "source_url": "https://www.w3.org/2003/entities/2007/xhtml1-lat1.ent",
+      "source_sha256": "11b3abc191cc5f33fee63be49fabb35a8052e629949bc793f823a0d819bbfd66",
+      "notice_path": "third-party-notices/ENTITY-DATA-LICENSES.txt",
+      "notice_sha256": "b6a37ddb2a6efd2eac61c0c99be2d546140ca5578dfa87f94cfa1ec58e6b3d57",
+      "link_input_sha256": [],
+      "review_status": "reviewed-for-exact-paired-distribution",
+      "selectors": "All three complete W3C selector files and individual hashes accompany sources"
+    }
+  ],
+  "source_references": [
+    "https://github.com/Extremois/desembaraca-twine/releases/download/graphviz-16.1.0-posix-46d111d/graphviz-16.1.0-macos-x86_64-96f093e56aab8f476fa7a792e0d7202bdeab2c3487853c4a86d8eab207078142-sources.tar.gz",
+    "https://gitlab.com/graphviz/graphviz/-/archive/16.1.0/graphviz-16.1.0.tar.gz",
+    "https://raw.githubusercontent.com/whatwg/html-build/283a3531a61106d07d9a7d9fb3e6f3b9bfd33d70/entities/out/entities.json",
+    "https://www.w3.org/2003/entities/2007/xhtml1-lat1.ent"
+  ],
+  "source_pair": {
+    "candidate_sha256": "aa9ea80350aa63b269b9228da9b7e5b2812d7ef6ac3fa3c3a6205e9d1a7ad897",
+    "sources_sha256": "96f093e56aab8f476fa7a792e0d7202bdeab2c3487853c4a86d8eab207078142"
+  },
+  "static_link_input_mapping": [],
+  "static_link_input_mapping_complete": false,
+  "decision_document": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/audits/DECISIONS.md",
+  "decision_sha256": "39e1e693c96f21d4fe5ff0f3c6be16168a14a68e92d3eaef1a0700615e5e02e9",
+  "system_libraries": [
+    "/usr/lib/libSystem.B.dylib",
+    "/usr/lib/libc++.1.dylib"
+  ],
+  "source_delivery": {
+    "publicly_available": false,
+    "paired_sources_verified": true,
+    "source_files": 328,
+    "planned_binary_url": "https://github.com/Extremois/desembaraca-twine/releases/download/graphviz-16.1.0-posix-46d111d/graphviz-16.1.0-macos-x86_64-aa9ea80350aa63b269b9228da9b7e5b2812d7ef6ac3fa3c3a6205e9d1a7ad897.zip",
+    "planned_source_url": "https://github.com/Extremois/desembaraca-twine/releases/download/graphviz-16.1.0-posix-46d111d/graphviz-16.1.0-macos-x86_64-96f093e56aab8f476fa7a792e0d7202bdeab2c3487853c4a86d8eab207078142-sources.tar.gz",
+    "requirement": "Publish both exact assets with equivalent access; preserve sources for binary availability"
+  },
+  "source_changes": {
+    "source_tree_sha256": "54ae15738f636a57581272de3565f933c7c55b8d84005d2d8b3361aeb429f4d0",
+    "files": {
+      "lib/common/entities.html": {
+        "file": "licenses/entity-replacement/entities.html",
+        "sha256": "ba4f9f39a468f9d4697a5d50c3e806c21ca31434a0f2d641c32849ce699553d7",
+        "size": 18205,
+        "upstream_sha256": "d90554950424a27e062eedaf43683132886dfe31570d5b0c5a2cb97ced46ba2a"
+      },
+      "lib/common/entities.py": {
+        "file": "licenses/entity-replacement/entities.py",
+        "sha256": "66a3b1cb1249732bd59b10ea9e635a952190aa6fc6b8e5d8112c482f4e0194e5",
+        "size": 5757,
+        "upstream_sha256": "dd4f74ea85a0ab1edf842aec4e19503bd1e0dd8ba8ce66ed408fd66c9239fd00"
+      }
+    },
+    "proof_revision": "691e9bc46dbf47557ac78f2db2d7c8bda9c03c83"
+  },
+  "remaining_gates": [
+    "Authorized public paired delivery",
+    "Final remote installed-catalog acceptance"
+  ],
+  "authorization_to_publish": false
+}

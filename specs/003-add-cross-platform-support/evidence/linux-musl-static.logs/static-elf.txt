@@ -1,0 +1,42 @@
+
+Elf file type is EXEC (Executable file)
+Entry point 0x102f3b0
+There are 9 program headers, starting at offset 64
+
+Program Headers:
+  Type           Offset             VirtAddr           PhysAddr
+                 FileSiz            MemSiz              Flags  Align
+  PHDR           0x0000000000000040 0x0000000001000040 0x0000000001000040
+                 0x00000000000001f8 0x00000000000001f8  R      0x8
+  LOAD           0x0000000000000000 0x0000000001000000 0x0000000001000000
+                 0x000000000002e3ac 0x000000000002e3ac  R      0x1000
+  LOAD           0x000000000002e3b0 0x000000000102f3b0 0x000000000102f3b0
+                 0x00000000000e40aa 0x00000000000e40aa  R E    0x1000
+  LOAD           0x0000000000112460 0x0000000001114460 0x0000000001114460
+                 0x000000000000f660 0x000000000000fba0  RW     0x1000
+  LOAD           0x0000000000121ac0 0x0000000001124ac0 0x0000000001124ac0
+                 0x0000000000005bb8 0x00000000000076a0  RW     0x1000
+  TLS            0x0000000000112460 0x0000000001113460 0x0000000001113460
+                 0x0000000000000000 0x0000000000000038  R      0x8
+  GNU_RELRO      0x0000000000112460 0x0000000001114460 0x0000000001114460
+                 0x000000000000f660 0x000000000000fba0  R      0x1
+  GNU_EH_FRAME   0x0000000000019e98 0x0000000001019e98 0x0000000001019e98
+                 0x0000000000003604 0x0000000000003604  R      0x4
+  GNU_STACK      0x0000000000000000 0x0000000000000000 0x0000000000000000
+                 0x0000000000000000 0x0000000001000000  RW     0x0
+
+ Section to Segment mapping:
+  Segment Sections...
+   00     
+   01     .rodata .eh_frame_hdr .eh_frame 
+   02     .text 
+   03     .data.rel.ro .got .relro_padding 
+   04     .data .bss 
+   05     .tbss 
+   06     .data.rel.ro .got .relro_padding 
+   07     .eh_frame_hdr 
+   08     
+
+There is no dynamic section in this file.
+
+No version information found in this file.

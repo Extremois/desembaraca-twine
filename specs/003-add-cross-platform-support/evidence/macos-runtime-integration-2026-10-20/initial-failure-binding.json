@@ -1,0 +1,13 @@
+{
+  "kind": "native-test-driver-regression",
+  "approved": false,
+  "qualified": false,
+  "revision": "32fa3836c28c9dbc24837315a09eb47fea16b1f3",
+  "run_id": 39412829774,
+  "job_id": 118594547547,
+  "artifact_id": 12259533910,
+  "artifact_sha256": "4df763e5f9a88084bc3ed9d926ada743a1ec712b4f8cbbc95be9fbb7d6092b01",
+  "report_sha256": "844a86c8cf247f12945a2d097a5d90f9c4481a7e68a5bc404a525d7f64b3716c",
+  "cause": "os.listxattr is unavailable in this macOS Python; replaced with bounded read-only /usr/bin/xattr",
+  "replacement_requires_native_confirmation": true
+}

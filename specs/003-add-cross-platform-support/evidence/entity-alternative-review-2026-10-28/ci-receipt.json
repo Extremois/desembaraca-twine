@@ -1,0 +1,12 @@
+{
+  "workflow_url": "https://github.com/Extremois/desembaraca-twine/actions/runs/40787575362",
+  "application_revision": "691e9bc46dbf47557ac78f2db2d7c8bda9c03c83",
+  "actions_artifact_id": 12860062151,
+  "actions_zip_sha256": "8ba241fe8561c9b3a583497674f2b9a2d094aa6f2a2f8f5f3907914dd50ccf02",
+  "passed": true,
+  "approved": false,
+  "qualified": false,
+  "report_raw_sha256": "c2e45dcb68fe52e2d526eb18f5501e857442a8de15ee456db638dcf920e5dae4",
+  "replacement_source_tree_sha256": "54ae15738f636a57581272de3565f933c7c55b8d84005d2d8b3361aeb429f4d0",
+  "production_changed": false
+}

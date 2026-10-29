@@ -1,0 +1,55 @@
+{
+  "kind": "macos-source-review-pairing-not-approved-audit",
+  "application_revision": "6279d6ff715abbd4fc8d5fdf778d8a27a4f3ddfb",
+  "workflow_url": "https://github.com/Extremois/desembaraca-twine/actions/runs/40781012838",
+  "approved": false,
+  "qualified": false,
+  "task_complete": false,
+  "task": "T052",
+  "reports": [
+    {
+      "artifact_id": "macos-x86_64",
+      "binary_actions_artifact_id": 12858030502,
+      "sources_actions_artifact_id": 12856866848,
+      "binary_actions_zip_sha256": "5790454cfc65d236ebf9e2d36af99ca5a23bf9dc5875e283beb3616905f36288",
+      "sources_actions_zip_sha256": "7e94632a73968e2790e6d931a95a64a42f4dcead92dfc70cc838b1a00e7e0ffe",
+      "executable_sha256": "b1bcd8fb3ea37bbe51ea4e4b8611cfcdb4c01856bffb21c08e317d0c4ed32b88",
+      "candidate_archive_sha256": "c85dc0697e3bfa613636fbb7b4c638ae5f7adb66c360e9345d9617db3fc1644b",
+      "sources_archive_sha256": "05a2f6e27098175c4676705b7e3f56b194f31200b353d3d0c28e3ea456643d65",
+      "provenance_sha256": "c59fd5be471c02b8b7223e8483f844bd140dd8d71e38174e332bcec6d16054b9",
+      "source_files": 316,
+      "source_file_hashes_verified": true,
+      "graphviz_source_archive_verified": true,
+      "recipe_hash_verified": true,
+      "apple_sdk_archive_files_exported": 0,
+      "selected_sdk_header_files": 186,
+      "pairing_verified_on_both_archives": true,
+      "evidence_directory": "macos-x86_64"
+    },
+    {
+      "artifact_id": "macos-arm64",
+      "binary_actions_artifact_id": 12857307012,
+      "sources_actions_artifact_id": 12856987666,
+      "binary_actions_zip_sha256": "7508e37a5c8f6e0052c43c1490dbf699198f8b6a8ee089da582506c31e29da05",
+      "sources_actions_zip_sha256": "fd551446fe2bcd30067955cb154e55617abb38dd2d66d5dd360a00c6d53929d1",
+      "executable_sha256": "803a5622cc994d27947aad56498c6f975ce174827f7495a52745f695aa8ce9eb",
+      "candidate_archive_sha256": "accdf413189d69e0df95d48ce5bfdf3ac8d160f8b87ac35026fa23499af4ed0a",
+      "sources_archive_sha256": "ceba8b50f6bb1a982afcf293c94849fa705cccc96c68f990e405040d270d9720",
+      "provenance_sha256": "82e9de3597e61c0f551396352d9a6e56a3cc76227541128d889c4bfacad2422b",
+      "source_files": 311,
+      "source_file_hashes_verified": true,
+      "graphviz_source_archive_verified": true,
+      "recipe_hash_verified": true,
+      "apple_sdk_archive_files_exported": 0,
+      "selected_sdk_header_files": 181,
+      "pairing_verified_on_both_archives": true,
+      "evidence_directory": "macos-arm64"
+    }
+  ],
+  "limitations": [
+    "Observed APSL header sources and both APSL texts included; full SDK archive excluded",
+    "Per-file license and SDK/runtime contribution applicability still pending",
+    "Source completeness, rebuild and immutable public delivery remain separate",
+    "Local read-only archive/hash inspection; all runtime tests executed in Actions"
+  ]
+}

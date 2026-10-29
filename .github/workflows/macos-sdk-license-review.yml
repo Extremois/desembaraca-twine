@@ -1,0 +1,86 @@
+name: macOS SDK license review material
+on:
+  workflow_dispatch:
+  push:
+    branches: [feat/003-add-cross-platform-support]
+    paths: ['.github/workflows/macos-sdk-license-review.yml']
+permissions:
+  contents: read
+jobs:
+  review:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [macos-15, macos-15-intel]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 5
+    env:
+      DEVELOPER_DIR: /Applications/Xcode_16.4.app/Contents/Developer
+    steps:
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Read installed agreement and hash the unresolved headers without building
+        shell: bash
+        run: |
+          python - <<'PY'
+          import hashlib, json, os, platform, re, subprocess
+          from pathlib import Path
+          developer = Path(os.environ['DEVELOPER_DIR']).resolve(strict=True)
+          contents = developer.parent
+          def command(args):
+              return subprocess.check_output(args, timeout=15).decode('utf-8').strip()
+          version = command(['/usr/bin/xcodebuild', '-version'])
+          assert version == 'Xcode 16.4\nBuild version 16F6'
+          assert command(['/usr/bin/xcrun', '--sdk', 'macosx', '--show-sdk-version']) == '15.5'
+          sdk = Path(command(['/usr/bin/xcrun', '--sdk', 'macosx', '--show-sdk-path'])).resolve(strict=True)
+          assert sdk.is_relative_to(developer)
+          def read(path):
+              assert path.resolve(strict=True).is_relative_to(contents) and path.is_file()
+              with path.open('rb') as stream:
+                  raw = stream.read(1024**2 + 1)
+              assert len(raw) <= 1024**2
+              return raw
+          def sha(raw):
+              return hashlib.sha256(raw).hexdigest()
+          licenses = [contents/'Resources'/lang/'License.rtf' for lang in ('en.lproj', 'English.lproj')]
+          licenses = [p for p in licenses if p.is_file()]
+          assert licenses and len({sha(read(p)) for p in licenses}) == 1
+          raw = read(licenses[0])
+          text = command(['/usr/bin/textutil', '-convert', 'txt', '-stdout', str(licenses[0])]).encode()
+          assert 1000 < len(text) < 1024**2 and b'Xcode' in text
+          out = Path(os.environ['RUNNER_TEMP'])/'sdk-license-review'
+          out.mkdir(exist_ok=False)
+          (out/'License.rtf').write_bytes(raw)
+          (out/'License.txt').write_bytes(text)
+          pins = {
+              'arm/_limits.h': 'b64325f6b5aba08a361b7b8e537df3d8d193538c1d6329a4c4a7e72f5aa63478',
+              'arm/_types.h': '4f0bde85f9a41cc7d30fff22ebd7e8f4eb206a55a926eda012a2e7481e3524fa',
+              'arm/signal.h': 'de0bc923b92bd88f3bd8bcd38b20f8123277732d7d3309cb2a5bdc60bb4dd8c6',
+              'machine/limits.h': '50345f1ab843fca787a38c552a84177e678d79dab86e714434f94f2546839357',
+              'stdint.h': '9d070aad02d9f2ba1f2248d093b4194b62cf8d363778c737d1110f4736e5ed3c',
+          }
+          headers = []
+          for name, expected in pins.items():
+              data = read(sdk/'usr/include'/name)
+              assert sha(data) == expected
+              body = re.sub(rb'/\*.*?\*/|//[^\n]*', b'', data, flags=re.S)
+              headers.append(dict(path='usr/include/'+name, sha256=sha(data), bytes=len(data),
+                  lines=len(data.splitlines()), includes=len(re.findall(rb'^\s*#\s*include\b', body, re.M)),
+                  defines=len(re.findall(rb'^\s*#\s*define\b', body, re.M)),
+                  opening_braces=body.count(b'{'), inline_tokens=len(re.findall(rb'\b(?:inline|__inline|__inline__)\b', body))))
+          report = dict(kind='installed-xcode-license-review-not-approval', approved=False, qualified=False,
+              application_revision=os.environ['GITHUB_SHA'], candidate_revision='6279d6ff715abbd4fc8d5fdf778d8a27a4f3ddfb',
+              xcode=version, sdk='15.5', machine=platform.machine(),
+              license_path=licenses[0].relative_to(contents).as_posix(), license_rtf_sha256=sha(raw),
+              license_text_sha256=sha(text), headers=headers, header_source_code_copied=False,
+              limitations=['Lexical counts are review aids, not proof of non-retention or permission',
+                           'No license acceptance, SDK redistribution, engine build or runtime test performed'])
+          (out/'review.json').write_text(json.dumps(report, indent=2)+'\n')
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: sdk-license-${{ matrix.os }}-${{ github.sha }}
+          path: ${{ runner.temp }}/sdk-license-review/
+          if-no-files-found: error
+          retention-days: 30

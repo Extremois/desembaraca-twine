@@ -1,0 +1,148 @@
+{
+  "kind": "final-documented-quickstart-acceptance",
+  "task": "T083",
+  "task_complete": true,
+  "passed": true,
+  "qualified": true,
+  "immutable_revision": "53fb2aba47d78b5cb4a6679cafaaef5fc5e52c29",
+  "documentation_revision": "a7f02fc0323a92a6e0c217bf94c06473ea32792c",
+  "documented_installations": 14,
+  "runtime_acceptance": {
+    "path": "specs/003-add-cross-platform-support/evidence/package-installation.json",
+    "sha256": "8251fd489e83c7ecf9bd4a6c99d860aa54847046877ee81c59a4115e65787d47"
+  },
+  "help_reports": [
+    {
+      "evidence": {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/a7f02fc/12889025419/documented-installation.json.gz",
+        "sha256": "2e7c52e37a5c31b0396f59efe86c17954c3faed8269ef2d9bff0279ec713e20a"
+      },
+      "run_id": 40853981103,
+      "python": "3.14.7",
+      "os": "Darwin"
+    },
+    {
+      "evidence": {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/a7f02fc/12889005121/documented-installation.json.gz",
+        "sha256": "458293614381001cdcb06c9eb87296d8436909461655c6c285149c95d2aac655"
+      },
+      "run_id": 40853981103,
+      "python": "3.12.10",
+      "os": "Windows"
+    },
+    {
+      "evidence": {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/a7f02fc/12888791642/documented-installation.json.gz",
+        "sha256": "a2972081e3709d52f5c275b55b31295cfd242445e3537f5f8cd0b49cabe6a681"
+      },
+      "run_id": 40853981103,
+      "python": "3.14.7",
+      "os": "Darwin"
+    },
+    {
+      "evidence": {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/a7f02fc/12888561929/documented-installation.json.gz",
+        "sha256": "dbe4c0dd0adff7e9a6ff6c7ef3410e669218a35be8916379f7f68dadcfe4596c"
+      },
+      "run_id": 40853981103,
+      "python": "3.12.15",
+      "os": "Linux"
+    },
+    {
+      "evidence": {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/a7f02fc/12888258658/documented-installation.json.gz",
+        "sha256": "250027416a008a878c9c56920525ef36ed124fe22f79bffb75854f3ea19dcb69"
+      },
+      "run_id": 40853981103,
+      "python": "3.12.10",
+      "os": "Darwin"
+    },
+    {
+      "evidence": {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/a7f02fc/12888258208/documented-installation.json.gz",
+        "sha256": "8339c736e8237691315f27f80c7f729d389cd3f86e2789c6910f9d186256aa02"
+      },
+      "run_id": 40853981103,
+      "python": "3.14.9",
+      "os": "Windows"
+    },
+    {
+      "evidence": {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/a7f02fc/12888243193/documented-installation.json.gz",
+        "sha256": "8f34320550632d8439b8bb58ec6861c3fbba1388cf7ce990c4108a1c8512e712"
+      },
+      "run_id": 40853981103,
+      "python": "3.12.15",
+      "os": "Linux"
+    },
+    {
+      "evidence": {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/a7f02fc/12888152623/documented-installation.json.gz",
+        "sha256": "292f9b97be8bfaf6f221660572e852a0010dbf016d0ac28b297588923ec7a938"
+      },
+      "run_id": 40853981103,
+      "python": "3.12.10",
+      "os": "Darwin"
+    },
+    {
+      "evidence": {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/a7f02fc/12887973673/documented-installation.json.gz",
+        "sha256": "4927fd5d40ba2930ae5bbaa3e693852d568f97b704bbc45ebfe0d0cb100ab118"
+      },
+      "run_id": 40853981103,
+      "python": "3.14.9",
+      "os": "Linux"
+    },
+    {
+      "evidence": {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/a7f02fc/12887868054/documented-installation.json.gz",
+        "sha256": "2c92be3f7c3a8f8ab7597eef9b64a026ef096030eefa1b392d55a2585a63bd22"
+      },
+      "run_id": 40853981103,
+      "python": "3.14.9",
+      "os": "Linux"
+    },
+    {
+      "evidence": {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/a7f02fc/12888911196/musl-notices/slot/remote-installation.json.gz",
+        "sha256": "463c13d90352e339cc322a918d107c7ac4ddcd2ff87e8a6a5f335cacc08ff953"
+      },
+      "run_id": 40853981099,
+      "python": "3.12.13",
+      "os": "Linux"
+    },
+    {
+      "evidence": {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/a7f02fc/12888093506/musl-notices/slot/remote-installation.json.gz",
+        "sha256": "4207be1c08d5c9f12d222a832b8f48e8529780b351fb420193a130dcae4c0cb3"
+      },
+      "run_id": 40853981099,
+      "python": "3.12.13",
+      "os": "Linux"
+    },
+    {
+      "evidence": {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/a7f02fc/12888038679/musl-notices/slot/remote-installation.json.gz",
+        "sha256": "611b8555ccf1080714959db10a089ad6c0d05cb010b469eac72b5520a70e427c"
+      },
+      "run_id": 40853981099,
+      "python": "3.14.5",
+      "os": "Linux"
+    },
+    {
+      "evidence": {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/a7f02fc/12887914063/musl-notices/slot/remote-installation.json.gz",
+        "sha256": "f4eed4f242f9d31d3657420c3190e5c4851c78fd40f908b1163a3ea4cc425025"
+      },
+      "run_id": 40853981099,
+      "python": "3.14.5",
+      "os": "Linux"
+    }
+  ],
+  "recovery": {
+    "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/qualification/summary.json",
+    "sha256": "607d07a5d5ab823187ce2f86a3fa8140ad146828b16ca4c195ef25f01d481bbf"
+  },
+  "commands": "venv/pip immutable URL; console, package module and CLI module help; auto first valid input, --prepare-runtime, corpus and offline reuse. Controlled repairs/crashes/concurrency use separate temporary caches in Actions.",
+  "scope": "Seven ABI targets, not 69 individual distro certifications; no local tests or VMs; signing/notarization optional."
+}

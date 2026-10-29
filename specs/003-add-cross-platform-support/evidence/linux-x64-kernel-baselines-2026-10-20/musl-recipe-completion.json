@@ -1,0 +1,112 @@
+{
+  "kind": "musl-x64-private-recipe-completion-not-alpine-cell-qualification",
+  "T026_complete": true,
+  "approved": false,
+  "qualified": false,
+  "T044_complete": false,
+  "T027_complete": false,
+  "revision": "18366817334ec4e4db07689c6da603b466756a66",
+  "engine_sha256": "f4dfee4e052704b1a7efdb7b6a4c43583ccaa062aec800b76224dae24eb2b69b",
+  "native_kernel_baseline": {
+    "report": "musl/summary.json",
+    "sha256": "3db4cc52df7850d3cec43adf807661ea1e242016be4cfed5c5cfbd0115ed51f3",
+    "kernel": "4.15.0-212-generic",
+    "guest_os": "Ubuntu 18.04"
+  },
+  "alpine_userland_evidence": {
+    "report": "../alpine-userland-compatibility-2026-10-20/summary.json",
+    "sha256": "b8e05e7fe713762b221988c49d4084ced82817fc39186a66b90ce51f0952933e"
+  },
+  "alpine_x64_slots": [
+    {
+      "alpine": "3.21",
+      "patch": "3.21.5",
+      "python": "3.12.12",
+      "corpus": "../alpine-userland-compatibility-2026-10-20/3.21/x86_64/python-3.12/runtime-corpus.json",
+      "corpus_sha256": "ce19801ecac3a46d4c5f92733c009a2d6a3b0b87bb2a7ea3c96e50608da62fc5",
+      "six_known_layouts_zero": true,
+      "environment_kind": "container"
+    },
+    {
+      "alpine": "3.21",
+      "patch": "3.21.5",
+      "python": "3.14.1",
+      "corpus": "../alpine-userland-compatibility-2026-10-20/3.21/x86_64/python-3.14/runtime-corpus.json",
+      "corpus_sha256": "d5b103ee38b58d12ceae2e9392a02faf6e873f4ef2dbaff821fb76987da988c2",
+      "six_known_layouts_zero": true,
+      "environment_kind": "container"
+    },
+    {
+      "alpine": "3.22",
+      "patch": "3.22.4",
+      "python": "3.12.13",
+      "corpus": "../alpine-userland-compatibility-2026-10-20/3.22/x86_64/python-3.12/runtime-corpus.json",
+      "corpus_sha256": "6853a0bf43ff4b3cdf0829989ee2168d04ade8a91d61827a8d42fc44b608d8c4",
+      "six_known_layouts_zero": true,
+      "environment_kind": "container"
+    },
+    {
+      "alpine": "3.22",
+      "patch": "3.22.4",
+      "python": "3.14.5",
+      "corpus": "../alpine-userland-compatibility-2026-10-20/3.22/x86_64/python-3.14/runtime-corpus.json",
+      "corpus_sha256": "051b47c1cd3ca660efbb94b589c8e4ab388710ed53cb8daaab9f8e04ef1cfe1e",
+      "six_known_layouts_zero": true,
+      "environment_kind": "container"
+    },
+    {
+      "alpine": "3.23",
+      "patch": "3.23.6",
+      "python": "3.12.15",
+      "corpus": "../alpine-userland-compatibility-2026-10-20/3.23/x86_64/python-3.12/runtime-corpus.json",
+      "corpus_sha256": "06d9a3c60c3ef24f856c43d37696c268ee20fef5e585057dd594330e875b9383",
+      "six_known_layouts_zero": true,
+      "environment_kind": "container"
+    },
+    {
+      "alpine": "3.23",
+      "patch": "3.23.6",
+      "python": "3.14.8",
+      "corpus": "../alpine-userland-compatibility-2026-10-20/3.23/x86_64/python-3.14/runtime-corpus.json",
+      "corpus_sha256": "72e889a8e5186b5c106ed63ee27d6e1647c5efad68570b208d61a366f9a4198c",
+      "six_known_layouts_zero": true,
+      "environment_kind": "container"
+    },
+    {
+      "alpine": "3.24",
+      "patch": "3.24.2",
+      "python": "3.12.15",
+      "corpus": "../alpine-userland-compatibility-2026-10-20/3.24/x86_64/python-3.12/runtime-corpus.json",
+      "corpus_sha256": "06d9a3c60c3ef24f856c43d37696c268ee20fef5e585057dd594330e875b9383",
+      "six_known_layouts_zero": true,
+      "environment_kind": "container"
+    },
+    {
+      "alpine": "3.24",
+      "patch": "3.24.2",
+      "python": "3.14.8",
+      "corpus": "../alpine-userland-compatibility-2026-10-20/3.24/x86_64/python-3.14/runtime-corpus.json",
+      "corpus_sha256": "72e889a8e5186b5c106ed63ee27d6e1647c5efad68570b208d61a366f9a4198c",
+      "six_known_layouts_zero": true,
+      "environment_kind": "container"
+    }
+  ],
+  "private_dependencies": "Fully static musl ELF; no interpreter, dynamic section, DT_NEEDED or GLIBC versions",
+  "limits": {
+    "archive_bytes": 7984233,
+    "expanded_bytes": 7894259,
+    "entries": 450
+  },
+  "foundation": {
+    "report": "foundation.json",
+    "sha256": "12e27340366a5a8206921431e43a299b4a83ca7f7d8f89f0351356323696c418",
+    "jobs": 6,
+    "tests_per_job": 231
+  },
+  "boundaries": [
+    "Completes recipe/build compatibility and minimum Linux kernel scope of T026",
+    "Userland evidence remains container evidence; kernel probe guest remains Ubuntu, never relabeled as Alpine",
+    "Native Alpine OS/patch/kernel and installed-candidate acceptance remain T044 and common gates",
+    "T030 licensing/source offer, T031 catalog, ARM64 minimum kernel and all other targets remain pending"
+  ]
+}

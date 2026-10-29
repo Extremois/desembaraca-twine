@@ -1,0 +1,168 @@
+name: Linux ARM64 Graphviz candidate
+on:
+  push:
+    branches: [feat/003-add-cross-platform-support]
+    paths:
+      - '.github/workflows/linux-arm64-candidate.yml'
+      - 'tools/runtime/**'
+      - '!tools/runtime/abi-targets.json'
+      - '!tools/runtime/licenses/linux.json'
+      - '!tools/runtime/licenses/macos.json'
+      - 'src/**/*.py'
+      - 'tests/fixtures/**'
+      - 'tests/integration/test_linux_runtime.py'
+      - 'tests/runtime_support.py'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: linux-arm64-candidate-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  native-build:
+    runs-on: ubuntu-24.04-arm
+    timeout-minutes: 25
+    env:
+      PYTHONUTF8: '1'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        id: python312
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-python@v5
+        id: python314
+        with:
+          python-version: '3.14'
+      - name: Ensure build tools and tracer on ephemeral runner
+        shell: bash
+        run: |
+          missing=()
+          for tool in cmake make bison flex strace readelf; do
+            if ! command -v "$tool" >/dev/null; then
+              if [ "$tool" = readelf ]; then missing+=(binutils); else missing+=("$tool"); fi
+            fi
+          done
+          if [ "${#missing[@]}" -gt 0 ]; then
+            sudo apt-get update -qq
+            sudo apt-get install --yes --no-install-recommends "${missing[@]}"
+          fi
+          strace --kill-on-exit -qq true
+      - name: Prepare pinned native ARM64 SDK and source
+        run: python tools/runtime/prepare-linux-ci.py --work "$RUNNER_TEMP/twine-arm64-sdk" --arch aarch64
+      - name: Build experimental native ARM64 glibc candidate
+        shell: bash
+        run: |
+          set -o pipefail
+          mkdir -p .tmp/native-linux-arm64
+          python tools/runtime/build-common.py --artifact-id linux-glibc-aarch64 --source-archive "$RUNNER_TEMP/twine-arm64-sdk/graphviz.tar.gz" --sdk-record "$RUNNER_TEMP/twine-arm64-sdk/sdk-record.json" --output "$RUNNER_TEMP/twine-arm64-build" --execute 2>&1 | tee .tmp/native-linux-arm64/build.log
+      - name: Capture actual ARM64 linker inputs and archive extractions
+        run: python tools/runtime/relink-zig.py --source-output "$RUNNER_TEMP/twine-arm64-build" --output "$RUNNER_TEMP/twine-arm64-linked" --zig "$RUNNER_TEMP/twine-arm64-sdk/sdk/zig-aarch64-linux-0.15.2/zig"
+      - name: Bind compiled ARM64 Graphviz sources to the pinned archive
+        run: python tools/runtime/audit-graphviz-sources.py --source-build "$RUNNER_TEMP/twine-arm64-build" --linked-build "$RUNNER_TEMP/twine-arm64-linked" --source-archive "$RUNNER_TEMP/twine-arm64-sdk/graphviz.tar.gz" --report .tmp/native-linux-arm64/graphviz-source-evidence.json
+      - name: Observe ARM64 Zig runtime sources from extracted member
+        run: python tools/runtime/audit-zig-runtime.py --linked-build "$RUNNER_TEMP/twine-arm64-linked" --sdk-root "$RUNNER_TEMP/twine-arm64-sdk/sdk/zig-aarch64-linux-0.15.2" --sdk-archive "$RUNNER_TEMP/twine-arm64-sdk/zig.tar.xz" --report .tmp/native-linux-arm64/zig-runtime-evidence.json
+      - name: Observe ARM64 glibc startup and nonshared sources separately
+        run: python tools/runtime/audit-glibc-objects.py --linked-build "$RUNNER_TEMP/twine-arm64-linked" --sdk-root "$RUNNER_TEMP/twine-arm64-sdk/sdk/zig-aarch64-linux-0.15.2" --sdk-archive "$RUNNER_TEMP/twine-arm64-sdk/zig.tar.xz" --report .tmp/native-linux-arm64/glibc-object-evidence.json
+      - name: Verify generated data and prepare byte-bound ARM64 notices
+        run: |
+          python tools/runtime/audit-graphviz-data.py --source-build "$RUNNER_TEMP/twine-arm64-build" --linked-build "$RUNNER_TEMP/twine-arm64-linked" --source-archive "$RUNNER_TEMP/twine-arm64-sdk/graphviz.tar.gz" --compiler-evidence .tmp/native-linux-arm64/graphviz-source-evidence.json --report .tmp/native-linux-arm64/graphviz-data-evidence.json
+          python tools/runtime/prepare-draft-notices.py --linked-build "$RUNNER_TEMP/twine-arm64-linked" --source-build "$RUNNER_TEMP/twine-arm64-build" --evidence .tmp/native-linux-arm64/graphviz-source-evidence.json --graphviz-archive "$RUNNER_TEMP/twine-arm64-sdk/graphviz.tar.gz" --sdk-archive "$RUNNER_TEMP/twine-arm64-sdk/zig.tar.xz" --sdk-root "$RUNNER_TEMP/twine-arm64-sdk/sdk/zig-aarch64-linux-0.15.2" --glibc-object-evidence .tmp/native-linux-arm64/glibc-object-evidence.json --zig-runtime-evidence .tmp/native-linux-arm64/zig-runtime-evidence.json --data-evidence .tmp/native-linux-arm64/graphviz-data-evidence.json --output "$RUNNER_TEMP/twine-arm64-notices"
+      - name: Inspect ELF architecture, loader, dependencies and glibc baseline
+        shell: bash
+        run: |
+          readelf --file-header --program-headers --dynamic --version-info "$RUNNER_TEMP/twine-arm64-linked/candidate/bin/dot" > .tmp/native-linux-arm64/elf.txt
+          python - <<'PY'
+          import importlib.util, os
+          from pathlib import Path
+          spec = importlib.util.spec_from_file_location('verifier', 'tools/runtime/verify-artifact.py')
+          verifier = importlib.util.module_from_spec(spec)
+          spec.loader.exec_module(verifier)
+          verifier.elf_architecture(Path(os.environ['RUNNER_TEMP']) / 'twine-arm64-linked/candidate/bin/dot', 'aarch64')
+          text = Path('.tmp/native-linux-arm64/elf.txt').read_text()
+          verifier.linux_dependencies(text, ['libc.so.6', 'libm.so.6', 'libpthread.so.0', 'libdl.so.2', 'librt.so.1'], '2.27')
+          if '[Requesting program interpreter: /lib/ld-linux-aarch64.so.1]' not in text:
+              raise ValueError('Unexpected ARM64 glibc loader')
+          PY
+      - name: Corpus, Unicode relocation and native network observation on Python 3.12
+        run: '"${{ steps.python312.outputs.python-path }}" tools/runtime/observe-linux-network.py --build-output "$RUNNER_TEMP/twine-arm64-notices" --environment-kind native --report .tmp/native-linux-arm64/network-312.json --corpus-report .tmp/native-linux-arm64/corpus-312.json'
+      - name: Corpus, Unicode relocation and native network observation on Python 3.14
+        run: '"${{ steps.python314.outputs.python-path }}" tools/runtime/observe-linux-network.py --build-output "$RUNNER_TEMP/twine-arm64-notices" --environment-kind native --report .tmp/native-linux-arm64/network-314.json --corpus-report .tmp/native-linux-arm64/corpus-314.json'
+      - name: Inventory and package without approving licenses or support
+        run: |
+          python tools/runtime/verify-artifact.py --root "$RUNNER_TEMP/twine-arm64-notices/candidate" --provenance "$RUNNER_TEMP/twine-arm64-notices/provenance.json" --write-inventory .tmp/native-linux-arm64/inventory.json --minimum-libc 2.27
+          python tools/runtime/pack-candidate.py --root "$RUNNER_TEMP/twine-arm64-notices/candidate" --inventory .tmp/native-linux-arm64/inventory.json --provenance "$RUNNER_TEMP/twine-arm64-notices/provenance.json" --output "$RUNNER_TEMP/twine-arm64-package"
+      - name: Real ARM64 runtime preparation and offline cache on both Pythons
+        # Acquisition below is a controlled test fixture; native engine bytes are real.
+        # Installed/distributed-candidate qualification remains a separate gate.
+        run: |
+          "${{ steps.python312.outputs.python-path }}" tools/runtime/observe-linux-network.py --build-output "$RUNNER_TEMP/twine-arm64-notices" --private-package "$RUNNER_TEMP/twine-arm64-package" --environment-kind native --report .tmp/native-linux-arm64/runtime-network-312.json --corpus-report .tmp/native-linux-arm64/runtime-corpus-312.json
+          "${{ steps.python314.outputs.python-path }}" tools/runtime/observe-linux-network.py --build-output "$RUNNER_TEMP/twine-arm64-notices" --private-package "$RUNNER_TEMP/twine-arm64-package" --environment-kind native --report .tmp/native-linux-arm64/runtime-network-314.json --corpus-report .tmp/native-linux-arm64/runtime-corpus-314.json
+      - name: Export ARM64 source review package
+        run: |
+          python tools/runtime/pack-sources.py --graphviz "$RUNNER_TEMP/twine-arm64-sdk/graphviz.tar.gz" --sdk "$RUNNER_TEMP/twine-arm64-sdk/zig.tar.xz" --provenance "$RUNNER_TEMP/twine-arm64-notices/provenance.json" --output "$RUNNER_TEMP/twine-arm64-sources"
+          cp "$RUNNER_TEMP/twine-arm64-sources/sources.json" .tmp/native-linux-arm64/sources.json
+      - name: Verify ARM64 binary and source archive pairing without approving delivery
+        run: |
+          python tools/runtime/verify-source-pairing.py --candidate-receipt "$RUNNER_TEMP/twine-arm64-package/candidate.json" --sources-receipt "$RUNNER_TEMP/twine-arm64-sources/sources.json" --candidate-archive "$RUNNER_TEMP/twine-arm64-package/candidate.zip" --sources-archive "$RUNNER_TEMP/twine-arm64-sources/sources.tar.gz" --application-revision "$GITHUB_SHA" --output .tmp/native-linux-arm64/source-pairing.json
+          cp .tmp/native-linux-arm64/source-pairing.json "$RUNNER_TEMP/twine-arm64-sources/source-pairing.json"
+      - name: Rebuild ARM64 using only exported sources and recipes
+        shell: bash
+        run: |
+          set -o pipefail
+          mkdir "$RUNNER_TEMP/twine-arm64-source-replay"
+          tar -xzf "$RUNNER_TEMP/twine-arm64-sources/sources.tar.gz" -C "$RUNNER_TEMP/twine-arm64-source-replay"
+          cd "$RUNNER_TEMP/twine-arm64-source-replay"
+          python tools/runtime/prepare-linux-ci.py --work "$RUNNER_TEMP/twine-arm64-replay-sdk" --arch aarch64
+          cp -a sdk/lib/. "$RUNNER_TEMP/twine-arm64-replay-sdk/sdk/zig-aarch64-linux-0.15.2/lib/"
+          python tools/runtime/build-common.py --artifact-id linux-glibc-aarch64 --source-archive graphviz.tar.gz --sdk-record "$RUNNER_TEMP/twine-arm64-replay-sdk/sdk-record.json" --output "$RUNNER_TEMP/twine-arm64-replay-build" --execute 2>&1 | tee "$GITHUB_WORKSPACE/.tmp/native-linux-arm64/source-rebuild.log"
+          cd "$GITHUB_WORKSPACE"
+          python tools/runtime/observe-linux-network.py --build-output "$RUNNER_TEMP/twine-arm64-replay-build" --environment-kind native --report .tmp/native-linux-arm64/rebuilt-network.json --corpus-report .tmp/native-linux-arm64/rebuilt-corpus.json
+      - name: Verify controlled modified-glibc ARM64 relink from exported sources
+        shell: bash
+        run: |
+          set -o pipefail
+          cd "$RUNNER_TEMP/twine-arm64-source-replay"
+          python tools/runtime/relink-zig.py --source-output "$RUNNER_TEMP/twine-arm64-replay-build" --output "$RUNNER_TEMP/twine-arm64-replay-linked" --zig "$RUNNER_TEMP/twine-arm64-replay-sdk/sdk/zig-aarch64-linux-0.15.2/zig"
+          python tools/runtime/audit-glibc-objects.py --linked-build "$RUNNER_TEMP/twine-arm64-replay-linked" --sdk-root "$RUNNER_TEMP/twine-arm64-replay-sdk/sdk/zig-aarch64-linux-0.15.2" --sdk-archive "$RUNNER_TEMP/twine-arm64-replay-sdk/zig.tar.xz" --report "$RUNNER_TEMP/twine-arm64-replay-linked/glibc-object-sources.json"
+          python tools/runtime/verify-modified-glibc-relink.py --modify-sdk --sdk-root "$RUNNER_TEMP/twine-arm64-replay-sdk/sdk/zig-aarch64-linux-0.15.2" --cache-dir "$RUNNER_TEMP/twine-arm64-replay-sdk/cache" --edit-receipt "$GITHUB_WORKSPACE/.tmp/native-linux-arm64/modified-glibc-edits.json"
+          python tools/runtime/relink-zig.py --source-output "$RUNNER_TEMP/twine-arm64-replay-build" --output "$RUNNER_TEMP/twine-arm64-modified-glibc-linked" --zig "$RUNNER_TEMP/twine-arm64-replay-sdk/sdk/zig-aarch64-linux-0.15.2/zig"
+          cd "$GITHUB_WORKSPACE"
+          python tools/runtime/observe-linux-network.py --build-output "$RUNNER_TEMP/twine-arm64-modified-glibc-linked" --environment-kind native --report .tmp/native-linux-arm64/modified-glibc-network.json --corpus-report .tmp/native-linux-arm64/modified-glibc-corpus.json
+          python "$RUNNER_TEMP/twine-arm64-source-replay/tools/runtime/verify-modified-glibc-relink.py" --verify --baseline-linked "$RUNNER_TEMP/twine-arm64-replay-linked" --modified-linked "$RUNNER_TEMP/twine-arm64-modified-glibc-linked" --modified-sdk-root "$RUNNER_TEMP/twine-arm64-replay-sdk/sdk/zig-aarch64-linux-0.15.2" --sdk-archive "$RUNNER_TEMP/twine-arm64-replay-sdk/zig.tar.xz" --edit-receipt .tmp/native-linux-arm64/modified-glibc-edits.json --syscall-report .tmp/native-linux-arm64/modified-glibc-network.json --corpus-report .tmp/native-linux-arm64/modified-glibc-corpus.json --modified-observations-out .tmp/native-linux-arm64/modified-glibc-object-sources.json --report .tmp/native-linux-arm64/modified-glibc-relink.json
+      - name: Retain unqualified native ARM64 build for review
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: linux-glibc-aarch64-unqualified-${{ github.sha }}
+          retention-days: 7
+          include-hidden-files: true
+          path: |
+            .tmp/native-linux-arm64/
+            ${{ runner.temp }}/twine-arm64-sdk/sdk-record.json
+            ${{ runner.temp }}/twine-arm64-build/provenance.json
+            ${{ runner.temp }}/twine-arm64-linked/provenance.json
+            ${{ runner.temp }}/twine-arm64-linked/compiler-verbose.txt
+            ${{ runner.temp }}/twine-arm64-linked/lld-output.txt
+            ${{ runner.temp }}/twine-arm64-linked/allocated-sections.json
+            ${{ runner.temp }}/twine-arm64-linked/build/cmd/dot/CMakeFiles/dot.dir/
+            ${{ runner.temp }}/twine-arm64-notices/provenance.json
+            ${{ runner.temp }}/twine-arm64-notices/review.json
+            ${{ runner.temp }}/twine-arm64-package/
+            ${{ runner.temp }}/twine-arm64-replay-build/provenance.json
+            ${{ runner.temp }}/twine-arm64-replay-linked/provenance.json
+            ${{ runner.temp }}/twine-arm64-replay-linked/allocated-sections.json
+            ${{ runner.temp }}/twine-arm64-replay-linked/glibc-object-sources.json
+            ${{ runner.temp }}/twine-arm64-modified-glibc-linked/provenance.json
+            ${{ runner.temp }}/twine-arm64-modified-glibc-linked/allocated-sections.json
+            ${{ runner.temp }}/twine-arm64-modified-glibc-linked/compiler-verbose.txt
+            ${{ runner.temp }}/twine-arm64-modified-glibc-linked/lld-output.txt
+      - name: Retain ARM64 source review material (not a published source offer)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: linux-glibc-aarch64-source-review-${{ github.sha }}
+          retention-days: 7
+          path: ${{ runner.temp }}/twine-arm64-sources/

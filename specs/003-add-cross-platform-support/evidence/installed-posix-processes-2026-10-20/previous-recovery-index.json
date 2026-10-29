@@ -1,0 +1,1873 @@
+{
+  "kind": "partial-recovery-matrix-evidence-index",
+  "task": "T076",
+  "task_complete": false,
+  "qualified": false,
+  "captured_at": "2026-10-20T23:26:02.708845+00:00",
+  "registry": {
+    "path": "tools/runtime/support-targets.json",
+    "sha256": "be3e8a77e3836d1125658c00a75fbf0e3584f1e26a166a053583336c29a5d295"
+  },
+  "expected_targets": 69,
+  "expected_python_slots": 138,
+  "complete_targets": 0,
+  "targets_with_partial_native_observations": 5,
+  "python_slots_with_partial_native_observations": 10,
+  "current_failed_repair_summary": {
+    "path": "specs/003-add-cross-platform-support/evidence/installed-posix-recovery-2026-10-20/runtime/summary.json",
+    "sha256": "83e8aab8ee246e6469c2354b3c17cd211a6cb4c9ce958d6e89a8fa420b78ddaf"
+  },
+  "earlier_ubuntu1804_summary": {
+    "path": "specs/003-add-cross-platform-support/evidence/ubuntu1804-installed-recovery-2026-10-20/summary.json",
+    "sha256": "d631936e2b39a10849345866e9ebf7a52d2814a48b7da5389ff97fdf442c78ce"
+  },
+  "limitations": [
+    "No source/license/signature/catalog promotion",
+    "Current receipts use controlled acquisition and Python-only network guard",
+    "Earlier Ubuntu 18.04 syscall observations remain scoped to their recorded revision",
+    "Hosted labels and private artifacts do not qualify whole support cells"
+  ],
+  "targets": [
+    {
+      "target_id": "windows-11-stable-x86_64-distribution-default",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        }
+      ]
+    },
+    {
+      "target_id": "macos-15-stable-x86_64-distribution-default",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "partial-native-observation",
+          "evidence": {
+            "path": "specs/003-add-cross-platform-support/evidence/installed-posix-recovery-2026-10-20/runtime/macos-15-intel-3.12.json",
+            "sha256": "94210e0c8040f5c2efbdce94462414fd5714cdbbae9dd47fc87ccb9bc51c6239",
+            "application_revision": "a00efdd4ae6df0832a3613e8b93ec34305a7b69f",
+            "scope": "Hosted native runner; four failed repairs, installed wheel/sdist; not final distribution acceptance",
+            "package_modes": [
+              "wheel",
+              "sdist"
+            ],
+            "failed_repairs_per_format": 4,
+            "offline_references_per_format": 24,
+            "syscall_network_observation": false,
+            "controlled_injections": [
+              "transfer",
+              "ENOSPC",
+              "corrupt archive"
+            ],
+            "real_operations": [
+              "Production manager",
+              "Native engine",
+              "chmod/exec permission denial"
+            ],
+            "pending": [
+              "Crash and concurrency in this runner/format",
+              "Final qualified distributed candidate",
+              "Canonical cell environment and full acceptance"
+            ]
+          },
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "partial-native-observation",
+          "evidence": {
+            "path": "specs/003-add-cross-platform-support/evidence/installed-posix-recovery-2026-10-20/runtime/macos-15-intel-3.14.json",
+            "sha256": "beb2b6247149fe36e7325464976af2aa864d367922e8d067843f633b42a01b0f",
+            "application_revision": "a00efdd4ae6df0832a3613e8b93ec34305a7b69f",
+            "scope": "Hosted native runner; four failed repairs, installed wheel/sdist; not final distribution acceptance",
+            "package_modes": [
+              "wheel",
+              "sdist"
+            ],
+            "failed_repairs_per_format": 4,
+            "offline_references_per_format": 24,
+            "syscall_network_observation": false,
+            "controlled_injections": [
+              "transfer",
+              "ENOSPC",
+              "corrupt archive"
+            ],
+            "real_operations": [
+              "Production manager",
+              "Native engine",
+              "chmod/exec permission denial"
+            ],
+            "pending": [
+              "Crash and concurrency in this runner/format",
+              "Final qualified distributed candidate",
+              "Canonical cell environment and full acceptance"
+            ]
+          },
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        }
+      ]
+    },
+    {
+      "target_id": "macos-15-stable-aarch64-distribution-default",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "partial-native-observation",
+          "evidence": {
+            "path": "specs/003-add-cross-platform-support/evidence/installed-posix-recovery-2026-10-20/runtime/macos-15-3.12.json",
+            "sha256": "43e4d0b2845bafb05e7b3256e30bdd5aa576ce2ba8a9b02b4f2eba203bb35e10",
+            "application_revision": "a00efdd4ae6df0832a3613e8b93ec34305a7b69f",
+            "scope": "Hosted native runner; four failed repairs, installed wheel/sdist; not final distribution acceptance",
+            "package_modes": [
+              "wheel",
+              "sdist"
+            ],
+            "failed_repairs_per_format": 4,
+            "offline_references_per_format": 24,
+            "syscall_network_observation": false,
+            "controlled_injections": [
+              "transfer",
+              "ENOSPC",
+              "corrupt archive"
+            ],
+            "real_operations": [
+              "Production manager",
+              "Native engine",
+              "chmod/exec permission denial"
+            ],
+            "pending": [
+              "Crash and concurrency in this runner/format",
+              "Final qualified distributed candidate",
+              "Canonical cell environment and full acceptance"
+            ]
+          },
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "partial-native-observation",
+          "evidence": {
+            "path": "specs/003-add-cross-platform-support/evidence/installed-posix-recovery-2026-10-20/runtime/macos-15-3.14.json",
+            "sha256": "d26dca9e105a4894b76c262860ba9283820ea8762a403110b9cdc3ce00314e01",
+            "application_revision": "a00efdd4ae6df0832a3613e8b93ec34305a7b69f",
+            "scope": "Hosted native runner; four failed repairs, installed wheel/sdist; not final distribution acceptance",
+            "package_modes": [
+              "wheel",
+              "sdist"
+            ],
+            "failed_repairs_per_format": 4,
+            "offline_references_per_format": 24,
+            "syscall_network_observation": false,
+            "controlled_injections": [
+              "transfer",
+              "ENOSPC",
+              "corrupt archive"
+            ],
+            "real_operations": [
+              "Production manager",
+              "Native engine",
+              "chmod/exec permission denial"
+            ],
+            "pending": [
+              "Crash and concurrency in this runner/format",
+              "Final qualified distributed candidate",
+              "Canonical cell environment and full acceptance"
+            ]
+          },
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        }
+      ]
+    },
+    {
+      "target_id": "ubuntu-18.04-stable-x86_64-distribution-default",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "partial-native-observation",
+          "evidence": {
+            "path": "specs/003-add-cross-platform-support/evidence/ubuntu1804-installed-recovery-2026-10-20/application-3.12.json",
+            "sha256": "c2d1bc4fa6cab568f99c1ddf724e48b4209a70d14e6f9cd39b3f98bd7b781e44",
+            "summary": {
+              "path": "specs/003-add-cross-platform-support/evidence/ubuntu1804-installed-recovery-2026-10-20/summary.json",
+              "sha256": "d631936e2b39a10849345866e9ebf7a52d2814a48b7da5389ff97fdf442c78ce"
+            },
+            "application_revision": "58f69b0bfc8675b2d6cd6bc23f318ec2349965b4",
+            "scope": "Earlier private installed wheel in KVM Ubuntu 18.04 x64; distinct revision",
+            "package_modes": [
+              "wheel"
+            ],
+            "scenarios": 8,
+            "offline_references": 48,
+            "syscall_network_observation": true,
+            "pending": [
+              "Final qualified distributed candidate",
+              "Required cell eligibility and full acceptance"
+            ]
+          },
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "partial-native-observation",
+          "evidence": {
+            "path": "specs/003-add-cross-platform-support/evidence/ubuntu1804-installed-recovery-2026-10-20/application-3.14.json",
+            "sha256": "ed509468ce50bc370f003c9d6338f3e12faa8d615f7f48a4d03aaee279a01920",
+            "summary": {
+              "path": "specs/003-add-cross-platform-support/evidence/ubuntu1804-installed-recovery-2026-10-20/summary.json",
+              "sha256": "d631936e2b39a10849345866e9ebf7a52d2814a48b7da5389ff97fdf442c78ce"
+            },
+            "application_revision": "58f69b0bfc8675b2d6cd6bc23f318ec2349965b4",
+            "scope": "Earlier private installed wheel in KVM Ubuntu 18.04 x64; distinct revision",
+            "package_modes": [
+              "wheel"
+            ],
+            "scenarios": 8,
+            "offline_references": 48,
+            "syscall_network_observation": true,
+            "pending": [
+              "Final qualified distributed candidate",
+              "Required cell eligibility and full acceptance"
+            ]
+          },
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        }
+      ]
+    },
+    {
+      "target_id": "ubuntu-18.04-stable-aarch64-distribution-default",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        }
+      ]
+    },
+    {
+      "target_id": "ubuntu-20.04-stable-x86_64-distribution-default",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        }
+      ]
+    },
+    {
+      "target_id": "ubuntu-20.04-stable-aarch64-distribution-default",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        }
+      ]
+    },
+    {
+      "target_id": "ubuntu-22.04-stable-x86_64-distribution-default",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        }
+      ]
+    },
+    {
+      "target_id": "ubuntu-22.04-stable-aarch64-distribution-default",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        }
+      ]
+    },
+    {
+      "target_id": "ubuntu-24.04-stable-x86_64-distribution-default",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "partial-native-observation",
+          "evidence": {
+            "path": "specs/003-add-cross-platform-support/evidence/installed-posix-recovery-2026-10-20/runtime/ubuntu-24.04-3.12.json",
+            "sha256": "13e7ba385419d254cd9ef82454bb34793b98ba32623e5f0a2006b27e54806d54",
+            "application_revision": "a00efdd4ae6df0832a3613e8b93ec34305a7b69f",
+            "scope": "Hosted native runner; four failed repairs, installed wheel/sdist; not final distribution acceptance",
+            "package_modes": [
+              "wheel",
+              "sdist"
+            ],
+            "failed_repairs_per_format": 4,
+            "offline_references_per_format": 24,
+            "syscall_network_observation": false,
+            "controlled_injections": [
+              "transfer",
+              "ENOSPC",
+              "corrupt archive"
+            ],
+            "real_operations": [
+              "Production manager",
+              "Native engine",
+              "chmod/exec permission denial"
+            ],
+            "pending": [
+              "Crash and concurrency in this runner/format",
+              "Final qualified distributed candidate",
+              "Canonical cell environment and full acceptance"
+            ]
+          },
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "partial-native-observation",
+          "evidence": {
+            "path": "specs/003-add-cross-platform-support/evidence/installed-posix-recovery-2026-10-20/runtime/ubuntu-24.04-3.14.json",
+            "sha256": "56131ee315a13ef58e8897e43cb3a280c63f14b0621ab3d97e2b5fa4bc75b155",
+            "application_revision": "a00efdd4ae6df0832a3613e8b93ec34305a7b69f",
+            "scope": "Hosted native runner; four failed repairs, installed wheel/sdist; not final distribution acceptance",
+            "package_modes": [
+              "wheel",
+              "sdist"
+            ],
+            "failed_repairs_per_format": 4,
+            "offline_references_per_format": 24,
+            "syscall_network_observation": false,
+            "controlled_injections": [
+              "transfer",
+              "ENOSPC",
+              "corrupt archive"
+            ],
+            "real_operations": [
+              "Production manager",
+              "Native engine",
+              "chmod/exec permission denial"
+            ],
+            "pending": [
+              "Crash and concurrency in this runner/format",
+              "Final qualified distributed candidate",
+              "Canonical cell environment and full acceptance"
+            ]
+          },
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        }
+      ]
+    },
+    {
+      "target_id": "ubuntu-24.04-stable-aarch64-distribution-default",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "partial-native-observation",
+          "evidence": {
+            "path": "specs/003-add-cross-platform-support/evidence/installed-posix-recovery-2026-10-20/runtime/ubuntu-24.04-arm-3.12.json",
+            "sha256": "12089d9edd1744c8025fed20b74a23420e08098989cd187f30b5ac05958f986f",
+            "application_revision": "a00efdd4ae6df0832a3613e8b93ec34305a7b69f",
+            "scope": "Hosted native runner; four failed repairs, installed wheel/sdist; not final distribution acceptance",
+            "package_modes": [
+              "wheel",
+              "sdist"
+            ],
+            "failed_repairs_per_format": 4,
+            "offline_references_per_format": 24,
+            "syscall_network_observation": false,
+            "controlled_injections": [
+              "transfer",
+              "ENOSPC",
+              "corrupt archive"
+            ],
+            "real_operations": [
+              "Production manager",
+              "Native engine",
+              "chmod/exec permission denial"
+            ],
+            "pending": [
+              "Crash and concurrency in this runner/format",
+              "Final qualified distributed candidate",
+              "Canonical cell environment and full acceptance"
+            ]
+          },
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "partial-native-observation",
+          "evidence": {
+            "path": "specs/003-add-cross-platform-support/evidence/installed-posix-recovery-2026-10-20/runtime/ubuntu-24.04-arm-3.14.json",
+            "sha256": "146bc3d13b6e79350354b4185e870e21223e45e6b952351a92af957517fb8900",
+            "application_revision": "a00efdd4ae6df0832a3613e8b93ec34305a7b69f",
+            "scope": "Hosted native runner; four failed repairs, installed wheel/sdist; not final distribution acceptance",
+            "package_modes": [
+              "wheel",
+              "sdist"
+            ],
+            "failed_repairs_per_format": 4,
+            "offline_references_per_format": 24,
+            "syscall_network_observation": false,
+            "controlled_injections": [
+              "transfer",
+              "ENOSPC",
+              "corrupt archive"
+            ],
+            "real_operations": [
+              "Production manager",
+              "Native engine",
+              "chmod/exec permission denial"
+            ],
+            "pending": [
+              "Crash and concurrency in this runner/format",
+              "Final qualified distributed candidate",
+              "Canonical cell environment and full acceptance"
+            ]
+          },
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        }
+      ]
+    },
+    {
+      "target_id": "ubuntu-26.04-stable-x86_64-distribution-default",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        }
+      ]
+    },
+    {
+      "target_id": "ubuntu-26.04-stable-aarch64-distribution-default",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        }
+      ]
+    },
+    {
+      "target_id": "ubuntu-26.10-stable-x86_64-distribution-default",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        }
+      ]
+    },
+    {
+      "target_id": "ubuntu-26.10-stable-aarch64-distribution-default",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        }
+      ]
+    },
+    {
+      "target_id": "debian-12-stable-x86_64-distribution-default",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        }
+      ]
+    },
+    {
+      "target_id": "debian-12-stable-aarch64-distribution-default",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        }
+      ]
+    },
+    {
+      "target_id": "debian-13-stable-x86_64-distribution-default",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        }
+      ]
+    },
+    {
+      "target_id": "debian-13-stable-aarch64-distribution-default",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        }
+      ]
+    },
+    {
+      "target_id": "fedora-43-stable-x86_64-distribution-default",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        }
+      ]
+    },
+    {
+      "target_id": "fedora-43-stable-aarch64-distribution-default",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        }
+      ]
+    },
+    {
+      "target_id": "fedora-44-stable-x86_64-distribution-default",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        }
+      ]
+    },
+    {
+      "target_id": "fedora-44-stable-aarch64-distribution-default",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        }
+      ]
+    },
+    {
+      "target_id": "rhel-8.10-stable-x86_64-distribution-default",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        }
+      ]
+    },
+    {
+      "target_id": "rhel-8.10-stable-aarch64-distribution-default",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        }
+      ]
+    },
+    {
+      "target_id": "rhel-9.8-stable-x86_64-distribution-default",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        }
+      ]
+    },
+    {
+      "target_id": "rhel-9.8-stable-aarch64-distribution-default",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        }
+      ]
+    },
+    {
+      "target_id": "rhel-10.2-stable-x86_64-distribution-default",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        }
+      ]
+    },
+    {
+      "target_id": "rhel-10.2-stable-aarch64-distribution-default",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        }
+      ]
+    },
+    {
+      "target_id": "rocky-8.10-stable-x86_64-distribution-default",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        }
+      ]
+    },
+    {
+      "target_id": "rocky-8.10-stable-aarch64-distribution-default",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        }
+      ]
+    },
+    {
+      "target_id": "rocky-9.8-stable-x86_64-distribution-default",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        }
+      ]
+    },
+    {
+      "target_id": "rocky-9.8-stable-aarch64-distribution-default",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        }
+      ]
+    },
+    {
+      "target_id": "rocky-10.2-stable-x86_64-distribution-default",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        }
+      ]
+    },
+    {
+      "target_id": "rocky-10.2-stable-aarch64-distribution-default",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        }
+      ]
+    },
+    {
+      "target_id": "almalinux-8.10-stable-x86_64-distribution-default",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        }
+      ]
+    },
+    {
+      "target_id": "almalinux-8.10-stable-aarch64-distribution-default",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        }
+      ]
+    },
+    {
+      "target_id": "almalinux-9.8-stable-x86_64-distribution-default",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        }
+      ]
+    },
+    {
+      "target_id": "almalinux-9.8-stable-aarch64-distribution-default",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        }
+      ]
+    },
+    {
+      "target_id": "almalinux-10.2-stable-x86_64-distribution-default",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        }
+      ]
+    },
+    {
+      "target_id": "almalinux-10.2-stable-x86_64-x86-64-v2",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        }
+      ]
+    },
+    {
+      "target_id": "almalinux-10.2-stable-aarch64-distribution-default",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        }
+      ]
+    },
+    {
+      "target_id": "opensuse-leap-16.0-stable-x86_64-distribution-default",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        }
+      ]
+    },
+    {
+      "target_id": "opensuse-leap-16.0-stable-aarch64-distribution-default",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        }
+      ]
+    },
+    {
+      "target_id": "opensuse-tumbleweed-rolling-tumbleweed-x86_64-distribution-default",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        }
+      ]
+    },
+    {
+      "target_id": "opensuse-tumbleweed-rolling-tumbleweed-aarch64-distribution-default",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        }
+      ]
+    },
+    {
+      "target_id": "arch-rolling-rolling-x86_64-distribution-default",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        }
+      ]
+    },
+    {
+      "target_id": "archarm-rolling-rolling-aarch64-distribution-default",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        }
+      ]
+    },
+    {
+      "target_id": "manjaro-rolling-stable-x86_64-distribution-default",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        }
+      ]
+    },
+    {
+      "target_id": "manjaro-rolling-stable-aarch64-distribution-default",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        }
+      ]
+    },
+    {
+      "target_id": "alpine-3.21-stable-x86_64-distribution-default",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        }
+      ]
+    },
+    {
+      "target_id": "alpine-3.21-stable-aarch64-distribution-default",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        }
+      ]
+    },
+    {
+      "target_id": "alpine-3.22-stable-x86_64-distribution-default",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        }
+      ]
+    },
+    {
+      "target_id": "alpine-3.22-stable-aarch64-distribution-default",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        }
+      ]
+    },
+    {
+      "target_id": "alpine-3.23-stable-x86_64-distribution-default",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        }
+      ]
+    },
+    {
+      "target_id": "alpine-3.23-stable-aarch64-distribution-default",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        }
+      ]
+    },
+    {
+      "target_id": "alpine-3.24-stable-x86_64-distribution-default",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        }
+      ]
+    },
+    {
+      "target_id": "alpine-3.24-stable-aarch64-distribution-default",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        }
+      ]
+    },
+    {
+      "target_id": "postmarketos-26.06-stable-x86_64-distribution-default",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        }
+      ]
+    },
+    {
+      "target_id": "postmarketos-26.06-stable-aarch64-distribution-default",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        }
+      ]
+    },
+    {
+      "target_id": "linuxmint-21-stable-x86_64-distribution-default",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        }
+      ]
+    },
+    {
+      "target_id": "linuxmint-21.1-stable-x86_64-distribution-default",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        }
+      ]
+    },
+    {
+      "target_id": "linuxmint-21.2-stable-x86_64-distribution-default",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        }
+      ]
+    },
+    {
+      "target_id": "linuxmint-21.3-stable-x86_64-distribution-default",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        }
+      ]
+    },
+    {
+      "target_id": "linuxmint-22-stable-x86_64-distribution-default",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        }
+      ]
+    },
+    {
+      "target_id": "linuxmint-22.1-stable-x86_64-distribution-default",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        }
+      ]
+    },
+    {
+      "target_id": "linuxmint-22.2-stable-x86_64-distribution-default",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        }
+      ]
+    },
+    {
+      "target_id": "linuxmint-22.3-stable-x86_64-distribution-default",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        }
+      ]
+    },
+    {
+      "target_id": "linuxmint-lmde-7-stable-x86_64-distribution-default",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "pending_reason": "Full required cell recovery acceptance with final candidate remains pending"
+        }
+      ]
+    }
+  ]
+}

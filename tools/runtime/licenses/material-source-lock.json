@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "go_tangent_history": {
+    "source_path": "lib/compiler_rt/tan.zig",
+    "source_sha256": "828484649e0a61f634bd1bea179255ec24ee9c77b1511a99ccad2b874e0e1a6c",
+    "replacement_commit": "e24398361dacc4b995ec67043746561927f5f1d2",
+    "purpose": "Upstream replaced Go tangent with musl; retain Go BSD terms conservatively for historical documentation/tests"
+  },
+  "go_1_17_license": {
+    "url": "https://raw.githubusercontent.com/golang/go/go1.17/LICENSE",
+    "sha256": "2d36597f7117c38b006835ae7f537487207d8ec407aa9d9980794b2030cbc067",
+    "size": 1479,
+    "file": "go-1.17-COPYING.txt",
+    "purpose": "Historical tangent reference terms; not a claim that current runtime uses the replaced Go/Cephes algorithm"
+  },
+  "lgpl_2_1_copying": {
+    "url": "https://www.gnu.org/licenses/old-licenses/lgpl-2.1.txt",
+    "sha256": "20e50fe7aae3e56378ebf0417d9de904f55a0e61e4df315333e632a4d3555d95",
+    "size": 26419,
+    "file": "lgpl-2.1-COPYING.txt",
+    "purpose": "Full canonical LGPL 2.1 text for glibc source notices; not blanket application of a per-file linking exception"
+  },
+  "flex_2_6_4_copying": {
+    "url": "https://raw.githubusercontent.com/westes/flex/v2.6.4/COPYING",
+    "sha256": "97fd685958d93be7f8dab939bb8161dbd6afb0718c63bfc337c24321aea44273",
+    "size": 1855,
+    "file": "flex-2.6.4-COPYING.txt",
+    "purpose": "Preserve upstream text, including generated-scanner exception; not approval of a complete bundle"
+  },
+  "flex_apple_35_copying": {
+    "url": "https://raw.githubusercontent.com/apple-oss-distributions/flex/8548f53e24244c0a411dea128a21686b61d29df4/COPYING",
+    "source_tag": "flex-35",
+    "source_commit": "8548f53e24244c0a411dea128a21686b61d29df4",
+    "sha256": "97fd685958d93be7f8dab939bb8161dbd6afb0718c63bfc337c24321aea44273",
+    "size": 1855,
+    "file": "flex-2.6.4-COPYING.txt",
+    "purpose": "Apple flex-35 notice verified byte-identical to upstream material; not proof of scanner skeleton correspondence or complete macOS license audit"
+  },
+  "apsl_2_copying": {
+    "url": "https://raw.githubusercontent.com/apple-oss-distributions/xnu/f6217f891ac0bb64f3d375211650a4c1ff8ca1ea/APPLE_LICENSE",
+    "sha256": "e5881019d8766c1e88a5fe1dbca4ba40c78011d41fcb18f6e9f50df60182685b",
+    "size": 19829,
+    "file": "apsl-2.0-COPYING.txt",
+    "purpose": "Full license reference for observed macOS notices; no per-file applicability, compiler source equivalence or bundle approval"
+  },
+  "llvm_17_license_reference": {
+    "url": "https://raw.githubusercontent.com/llvm/llvm-project/llvmorg-17.0.6/llvm/LICENSE.TXT",
+    "sha256": "8d85c1057d742e597985c7d4e6320b015a9139385cff4cbae06ffc0ebe89afee",
+    "size": 15141,
+    "file": "llvm-17.0.6-COPYING.txt",
+    "purpose": "Full license reference for observed macOS notices; no per-file applicability, compiler source equivalence or bundle approval"
+  },
+  "gpl_3_copying": {
+    "url": "https://www.gnu.org/licenses/gpl-3.0.txt",
+    "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+    "size": 35149,
+    "file": "gpl-3.0-COPYING.txt",
+    "purpose": "Full license reference for observed macOS notices; no per-file applicability, compiler source equivalence or bundle approval"
+  },
+  "apsl_1_1_copying": {
+    "url": "https://raw.githubusercontent.com/apple-oss-distributions/IOSerialFamily/ed4bc21ffe5d80594cc3771ac6527ea62d50dc45/APPLE_LICENSE",
+    "source_tag": "IOSerialFamily-7",
+    "source_commit": "ed4bc21ffe5d80594cc3771ac6527ea62d50dc45",
+    "sha256": "359a21ed59e82096455398ea10c5bc8c3ff28e7acf7935b77751d70e3630fc95",
+    "size": 19930,
+    "file": "apsl-1.1-COPYING.txt",
+    "purpose": "Full historical license reference for explicit APSL 1.1 header declarations; not replaced with APSL 2.0 or redistribution approval"
+  }
+}

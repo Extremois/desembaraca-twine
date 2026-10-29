@@ -1,0 +1,720 @@
+{
+  "schema_version": 1,
+  "reference_date": "2026-10-28",
+  "qualification_scope": "abi",
+  "macos_signing_required": false,
+  "validation_platform": "github-actions",
+  "compatibility_declarations": "support-targets.json",
+  "targets": [
+    {
+      "id": "abi-windows-win32-x86_64",
+      "reference_date": "2026-10-28",
+      "os": "windows",
+      "distribution_id": "abi",
+      "display_name": "windows win32",
+      "version": "abi",
+      "channel": "abi",
+      "arch": "x86_64",
+      "cpu_variant": "distribution-default",
+      "snapshot_id": null,
+      "availability": "published",
+      "required_python_minors": [
+        "3.12",
+        "3.14"
+      ],
+      "application_revision": "c0078230a3bf1a2b934f1754e8b12664f100b4cc",
+      "artifact_id": "graphviz-16.1.0-windows-legacy",
+      "maintenance_state": "abi-baseline",
+      "free_eligibility": "without-paid-subscription",
+      "maintenance_sources": [],
+      "status": "validada",
+      "python_qualifications": [
+        {
+          "target_id": "abi-windows-win32-x86_64",
+          "python_minor": "3.12",
+          "status": "validada",
+          "application_revision": "c0078230a3bf1a2b934f1754e8b12664f100b4cc",
+          "artifact_id": "graphviz-16.1.0-windows-legacy",
+          "evidence_ids": [
+            "final-abi-windows-win32-x86_64-3.12-c007823"
+          ],
+          "pending_reason": null
+        },
+        {
+          "target_id": "abi-windows-win32-x86_64",
+          "python_minor": "3.14",
+          "status": "validada",
+          "application_revision": "c0078230a3bf1a2b934f1754e8b12664f100b4cc",
+          "artifact_id": "graphviz-16.1.0-windows-legacy",
+          "evidence_ids": [
+            "final-abi-windows-win32-x86_64-3.14-c007823"
+          ],
+          "pending_reason": null
+        }
+      ],
+      "evidence_ids": [],
+      "pending_reason": null,
+      "abi": "win32",
+      "qualification_scope": "abi",
+      "artifact_sha256": "37906f29ede26cf1952f8cf942c1e7814ab86ef448130136c8607b1b6ffe0870"
+    },
+    {
+      "id": "abi-darwin-darwin-x86_64",
+      "reference_date": "2026-10-28",
+      "os": "darwin",
+      "distribution_id": "abi",
+      "display_name": "darwin darwin",
+      "version": "abi",
+      "channel": "abi",
+      "arch": "x86_64",
+      "cpu_variant": "distribution-default",
+      "snapshot_id": null,
+      "availability": "published",
+      "required_python_minors": [
+        "3.12",
+        "3.14"
+      ],
+      "application_revision": null,
+      "artifact_id": null,
+      "maintenance_state": "abi-baseline",
+      "free_eligibility": "without-paid-subscription",
+      "maintenance_sources": [],
+      "status": "pendente",
+      "python_qualifications": [
+        {
+          "target_id": "abi-darwin-darwin-x86_64",
+          "python_minor": "3.12",
+          "status": "pendente",
+          "application_revision": null,
+          "artifact_id": null,
+          "evidence_ids": [],
+          "pending_reason": "ABI evidence pending"
+        },
+        {
+          "target_id": "abi-darwin-darwin-x86_64",
+          "python_minor": "3.14",
+          "status": "pendente",
+          "application_revision": null,
+          "artifact_id": null,
+          "evidence_ids": [],
+          "pending_reason": "ABI evidence pending"
+        }
+      ],
+      "evidence_ids": [],
+      "pending_reason": "GitHub Actions ABI validation and remaining artifact/delivery gates",
+      "abi": "darwin",
+      "qualification_scope": "abi",
+      "minimum_os": "15.0"
+    },
+    {
+      "id": "abi-darwin-darwin-aarch64",
+      "reference_date": "2026-10-28",
+      "os": "darwin",
+      "distribution_id": "abi",
+      "display_name": "darwin darwin",
+      "version": "abi",
+      "channel": "abi",
+      "arch": "aarch64",
+      "cpu_variant": "distribution-default",
+      "snapshot_id": null,
+      "availability": "published",
+      "required_python_minors": [
+        "3.12",
+        "3.14"
+      ],
+      "application_revision": null,
+      "artifact_id": null,
+      "maintenance_state": "abi-baseline",
+      "free_eligibility": "without-paid-subscription",
+      "maintenance_sources": [],
+      "status": "pendente",
+      "python_qualifications": [
+        {
+          "target_id": "abi-darwin-darwin-aarch64",
+          "python_minor": "3.12",
+          "status": "pendente",
+          "application_revision": null,
+          "artifact_id": null,
+          "evidence_ids": [],
+          "pending_reason": "ABI evidence pending"
+        },
+        {
+          "target_id": "abi-darwin-darwin-aarch64",
+          "python_minor": "3.14",
+          "status": "pendente",
+          "application_revision": null,
+          "artifact_id": null,
+          "evidence_ids": [],
+          "pending_reason": "ABI evidence pending"
+        }
+      ],
+      "evidence_ids": [],
+      "pending_reason": "GitHub Actions ABI validation and remaining artifact/delivery gates",
+      "abi": "darwin",
+      "qualification_scope": "abi",
+      "minimum_os": "15.0"
+    },
+    {
+      "id": "abi-linux-glibc-x86_64",
+      "reference_date": "2026-10-28",
+      "os": "linux",
+      "distribution_id": "abi",
+      "display_name": "linux glibc",
+      "version": "abi",
+      "channel": "abi",
+      "arch": "x86_64",
+      "cpu_variant": "distribution-default",
+      "snapshot_id": null,
+      "availability": "published",
+      "required_python_minors": [
+        "3.12",
+        "3.14"
+      ],
+      "application_revision": null,
+      "artifact_id": null,
+      "maintenance_state": "abi-baseline",
+      "free_eligibility": "without-paid-subscription",
+      "maintenance_sources": [],
+      "status": "pendente",
+      "python_qualifications": [
+        {
+          "target_id": "abi-linux-glibc-x86_64",
+          "python_minor": "3.12",
+          "status": "pendente",
+          "application_revision": null,
+          "artifact_id": null,
+          "evidence_ids": [],
+          "pending_reason": "ABI evidence pending"
+        },
+        {
+          "target_id": "abi-linux-glibc-x86_64",
+          "python_minor": "3.14",
+          "status": "pendente",
+          "application_revision": null,
+          "artifact_id": null,
+          "evidence_ids": [],
+          "pending_reason": "ABI evidence pending"
+        }
+      ],
+      "evidence_ids": [],
+      "pending_reason": "GitHub Actions ABI validation and remaining artifact/delivery gates",
+      "abi": "glibc",
+      "qualification_scope": "abi",
+      "minimum_libc": "2.27"
+    },
+    {
+      "id": "abi-linux-glibc-aarch64",
+      "reference_date": "2026-10-28",
+      "os": "linux",
+      "distribution_id": "abi",
+      "display_name": "linux glibc",
+      "version": "abi",
+      "channel": "abi",
+      "arch": "aarch64",
+      "cpu_variant": "distribution-default",
+      "snapshot_id": null,
+      "availability": "published",
+      "required_python_minors": [
+        "3.12",
+        "3.14"
+      ],
+      "application_revision": null,
+      "artifact_id": null,
+      "maintenance_state": "abi-baseline",
+      "free_eligibility": "without-paid-subscription",
+      "maintenance_sources": [],
+      "status": "pendente",
+      "python_qualifications": [
+        {
+          "target_id": "abi-linux-glibc-aarch64",
+          "python_minor": "3.12",
+          "status": "pendente",
+          "application_revision": null,
+          "artifact_id": null,
+          "evidence_ids": [],
+          "pending_reason": "ABI evidence pending"
+        },
+        {
+          "target_id": "abi-linux-glibc-aarch64",
+          "python_minor": "3.14",
+          "status": "pendente",
+          "application_revision": null,
+          "artifact_id": null,
+          "evidence_ids": [],
+          "pending_reason": "ABI evidence pending"
+        }
+      ],
+      "evidence_ids": [],
+      "pending_reason": "GitHub Actions ABI validation and remaining artifact/delivery gates",
+      "abi": "glibc",
+      "qualification_scope": "abi",
+      "minimum_libc": "2.27"
+    },
+    {
+      "id": "abi-linux-musl-x86_64",
+      "reference_date": "2026-10-28",
+      "os": "linux",
+      "distribution_id": "abi",
+      "display_name": "linux musl",
+      "version": "abi",
+      "channel": "abi",
+      "arch": "x86_64",
+      "cpu_variant": "distribution-default",
+      "snapshot_id": null,
+      "availability": "published",
+      "required_python_minors": [
+        "3.12",
+        "3.14"
+      ],
+      "application_revision": null,
+      "artifact_id": null,
+      "maintenance_state": "abi-baseline",
+      "free_eligibility": "without-paid-subscription",
+      "maintenance_sources": [],
+      "status": "pendente",
+      "python_qualifications": [
+        {
+          "target_id": "abi-linux-musl-x86_64",
+          "python_minor": "3.12",
+          "status": "pendente",
+          "application_revision": null,
+          "artifact_id": null,
+          "evidence_ids": [],
+          "pending_reason": "ABI evidence pending"
+        },
+        {
+          "target_id": "abi-linux-musl-x86_64",
+          "python_minor": "3.14",
+          "status": "pendente",
+          "application_revision": null,
+          "artifact_id": null,
+          "evidence_ids": [],
+          "pending_reason": "ABI evidence pending"
+        }
+      ],
+      "evidence_ids": [],
+      "pending_reason": "GitHub Actions ABI validation and remaining artifact/delivery gates",
+      "abi": "musl",
+      "qualification_scope": "abi",
+      "minimum_libc": "1.2.0"
+    },
+    {
+      "id": "abi-linux-musl-aarch64",
+      "reference_date": "2026-10-28",
+      "os": "linux",
+      "distribution_id": "abi",
+      "display_name": "linux musl",
+      "version": "abi",
+      "channel": "abi",
+      "arch": "aarch64",
+      "cpu_variant": "distribution-default",
+      "snapshot_id": null,
+      "availability": "published",
+      "required_python_minors": [
+        "3.12",
+        "3.14"
+      ],
+      "application_revision": null,
+      "artifact_id": null,
+      "maintenance_state": "abi-baseline",
+      "free_eligibility": "without-paid-subscription",
+      "maintenance_sources": [],
+      "status": "pendente",
+      "python_qualifications": [
+        {
+          "target_id": "abi-linux-musl-aarch64",
+          "python_minor": "3.12",
+          "status": "pendente",
+          "application_revision": null,
+          "artifact_id": null,
+          "evidence_ids": [],
+          "pending_reason": "ABI evidence pending"
+        },
+        {
+          "target_id": "abi-linux-musl-aarch64",
+          "python_minor": "3.14",
+          "status": "pendente",
+          "application_revision": null,
+          "artifact_id": null,
+          "evidence_ids": [],
+          "pending_reason": "ABI evidence pending"
+        }
+      ],
+      "evidence_ids": [],
+      "pending_reason": "GitHub Actions ABI validation and remaining artifact/delivery gates",
+      "abi": "musl",
+      "qualification_scope": "abi",
+      "minimum_libc": "1.2.0"
+    }
+  ],
+  "evidence": {
+    "final-abi-windows-win32-x86_64-3.12-c007823": {
+      "id": "final-abi-windows-win32-x86_64-3.12-c007823",
+      "target_id": "abi-windows-win32-x86_64",
+      "python_minor": "3.12",
+      "python_patch": "3.12.10",
+      "python_origin": "GitHub Actions native CPython; exact patch recorded",
+      "application_revision": "c0078230a3bf1a2b934f1754e8b12664f100b4cc",
+      "artifact_id": "graphviz-16.1.0-windows-legacy",
+      "artifact_sha256": "37906f29ede26cf1952f8cf942c1e7814ab86ef448130136c8607b1b6ffe0870",
+      "source_state": "committed",
+      "recipe_revision": "legacy-upstream-16.1.0",
+      "package_sha256": "b30be2dcecbf62c37f8769cd9daffbb33b1c5ae27e20fcc0cf59ef829bb1c2ad",
+      "os": "windows",
+      "os_version": "server",
+      "distribution_id": "windows",
+      "channel": "",
+      "cpu_variant": "distribution-default",
+      "abi": "win32",
+      "libc_version": "",
+      "architecture": "x86_64",
+      "kernel": "2025Server",
+      "cpu": "AMD64 Family 25 Model 1 Stepping 1, AuthenticAMD",
+      "image_id": "win25-vs2026/20261021.278.1",
+      "image_digest": "efdccfca575fa41375e1a2835d3f769be64cb9a0803b89df4d2dc3098513bd0e",
+      "captured_at": "2026-10-29T09:51:37.372038+00:00",
+      "environment_kind": "github-actions",
+      "github_actions": {
+        "repository": "Extremois/desembaraca-twine",
+        "run_id": "40852552232",
+        "run_sha": "c0078230a3bf1a2b934f1754e8b12664f100b4cc",
+        "run_url": "https://github.com/Extremois/desembaraca-twine/actions/runs/40852552232",
+        "execution_kind": "runner"
+      },
+      "snapshot_id": null,
+      "checks": {
+        "offline": true,
+        "interruption": true,
+        "licenses": true,
+        "repair": true,
+        "first_run": true,
+        "installation": true,
+        "preservation": true,
+        "crash": true,
+        "concurrency": true,
+        "twine": true
+      },
+      "passed": true,
+      "pending_checks": [],
+      "observations": {
+        "cache_matches_platform": false,
+        "invalid_input_refused_without_acquisition": true,
+        "executable_mode": 511,
+        "runtime_schema": 1,
+        "healthy_generation_reused": true,
+        "macos_security_assessed": false,
+        "macos_signing_required": false,
+        "paths_with_spaces_and_accents": true
+      },
+      "commands": [
+        "external venv installation --no-index",
+        "console script --help",
+        "python -m twine_edge_overlap --help",
+        "CLI invalid first input without acquisition",
+        "CLI first valid file",
+        "CLI --prepare-runtime",
+        "public corpus using normal installed runtime"
+      ],
+      "network": {
+        "observation": "github-actions-log",
+        "attempts": 0,
+        "reviewer": "Codex technical implementation review",
+        "log": {
+          "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/qualification/abi-windows-win32-x86_64-3.12-network.json",
+          "sha256": "6b2c883af857612c2b9701dcc345ddf4f2df79be6f2ef93d4ea9a6f6854673ed"
+        }
+      },
+      "installation": {
+        "wheel": true,
+        "sdist": true,
+        "remote": true,
+        "outside_checkout": true,
+        "console": true,
+        "module": true
+      },
+      "pending_reason": null,
+      "reviewer": "Codex technical implementation review",
+      "logs": [
+        {
+          "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/c007823/12887547372/final-catalog.json.gz",
+          "sha256": "56e3bc1aa7c82bf5cdd7d7d0a6fa25a93f90f4b9715919dafd0fa7b4daf696ae"
+        },
+        {
+          "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/c007823/12886974420/windows-cache-notices.json.gz",
+          "sha256": "75c80a862bf10f4bf10ec85b6d3b37bf98b436ee189ed9e21216da514a9dfd21"
+        },
+        {
+          "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/c007823/12887697793/musl-notices/slot/cache-notices.json.gz",
+          "sha256": "8e9c8660a64766a1020d3b490c9e69d178e725cd08b1de2b99971d2d94d9cbf8"
+        },
+        {
+          "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/qualification/windows-upstream-audit.json",
+          "sha256": "5e1b399eb60d214536eea1a8eca27c35ef8d6e91f0f307d29398fd474d9373f6"
+        },
+        {
+          "path": "specs/003-add-cross-platform-support/evidence/twine-visual-review-2026-10-28.json",
+          "sha256": "c5106fa06acf5cb7e0400eaee7c61fe39e5b571dcafd8d67f9fabe4f20990b02"
+        },
+        {
+          "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/publication.json",
+          "sha256": "33bb6194eaac623b9ae488397b2a5b920b5112460f38b681b24b88328c620b3a"
+        }
+      ],
+      "license_audit": {
+        "approved": true,
+        "reviewer": "Codex technical implementation review",
+        "artifact_sha256": "37906f29ede26cf1952f8cf942c1e7814ab86ef448130136c8607b1b6ffe0870",
+        "components": [
+          {
+            "name": "Graphviz upstream source; dependency notices/source routes preserved separately",
+            "license_expression": "EPL-2.0 AND LicenseRef-Upstream-Component-Notices",
+            "source_url": "https://gitlab.com/graphviz/graphviz/-/archive/16.1.0/graphviz-16.1.0.tar.gz",
+            "source_sha256": "1e028b2b3e84e946c1d3e8c47590f8f0741bba1041fe6eff36eee87e598ea249"
+          }
+        ],
+        "log": {
+          "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/qualification/windows-upstream-audit.json",
+          "sha256": "5e1b399eb60d214536eea1a8eca27c35ef8d6e91f0f307d29398fd474d9373f6"
+        }
+      },
+      "twine": {
+        "version": "2.12.1",
+        "reviewer": "user",
+        "outputs": [
+          {
+            "case": "crossing",
+            "sha256": "aa821f1611a98d479811f652197070728904bd2afe31c8e6fca64ed9fbec8e8b",
+            "reopened": true
+          },
+          {
+            "case": "coincident",
+            "sha256": "8644eeb3404043bec66b149c0ed3f2f4bea0600914a944e75c5f6464b78c1ed6",
+            "reopened": true
+          },
+          {
+            "case": "isolated_overlap",
+            "sha256": "bef1e0132bce9b72f1317cdbb43d3c2a54e604632459cbda2c5af7d52c17a03a",
+            "reopened": true
+          },
+          {
+            "case": "connected_overlap",
+            "sha256": "137e849cfdf04ef3db7ed9057a7142ebecc403ee78952f307138ff5ecca72618",
+            "reopened": true
+          },
+          {
+            "case": "through_isolated",
+            "sha256": "f2460867ce13305139836fc5737093e3e513fae53c4bee8fe0742fe5fc98c341",
+            "reopened": true
+          },
+          {
+            "case": "through_connected",
+            "sha256": "8c13ace7ce2f65beff622e529456029fda6c7e1f624a5046886a7065f60a2f3f",
+            "reopened": true
+          }
+        ],
+        "log": {
+          "path": "specs/003-add-cross-platform-support/evidence/twine-visual-review-2026-10-28.json",
+          "sha256": "c5106fa06acf5cb7e0400eaee7c61fe39e5b571dcafd8d67f9fabe4f20990b02"
+        }
+      },
+      "constituent_evidence": {
+        "public_catalog_run_id": 40852552232,
+        "recovery_run_id": 40852552179,
+        "recovery_revision": "c0078230a3bf1a2b934f1754e8b12664f100b4cc",
+        "visual_review_revision": "07688e264e6c9915790c2728beb24552a23f6388",
+        "visual_binding": "Same six byte hashes, checked for all three final installation modes; no claim of a new GUI session.",
+        "recovery_scope": "Installed real engine, process exits and OS locks; transfer/disk/permission faults controlled. Tests executed only in Actions.",
+        "source_build_revision": null,
+        "public_delivery": {
+          "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/publication.json",
+          "sha256": "33bb6194eaac623b9ae488397b2a5b920b5112460f38b681b24b88328c620b3a"
+        }
+      },
+      "qualified_record_sha256": "dbde607900539ffd65e5dea00680521e614eedc2ffd8eecc884a53ff1b9c68a2"
+    },
+    "final-abi-windows-win32-x86_64-3.14-c007823": {
+      "id": "final-abi-windows-win32-x86_64-3.14-c007823",
+      "target_id": "abi-windows-win32-x86_64",
+      "python_minor": "3.14",
+      "python_patch": "3.14.9",
+      "python_origin": "GitHub Actions native CPython; exact patch recorded",
+      "application_revision": "c0078230a3bf1a2b934f1754e8b12664f100b4cc",
+      "artifact_id": "graphviz-16.1.0-windows-legacy",
+      "artifact_sha256": "37906f29ede26cf1952f8cf942c1e7814ab86ef448130136c8607b1b6ffe0870",
+      "source_state": "committed",
+      "recipe_revision": "legacy-upstream-16.1.0",
+      "package_sha256": "b0138d34b1626f72958cc6d7c48dd38058cda4e5709c37d56b88463ce488c340",
+      "os": "windows",
+      "os_version": "server",
+      "distribution_id": "windows",
+      "channel": "",
+      "cpu_variant": "distribution-default",
+      "abi": "win32",
+      "libc_version": "",
+      "architecture": "x86_64",
+      "kernel": "2025Server",
+      "cpu": "AMD64 Family 25 Model 1 Stepping 1, AuthenticAMD",
+      "image_id": "win25-vs2026/20261021.278.1",
+      "image_digest": "29daf6e222cb84cb3d5f1d3ae35c1d0da4f19274e82be5734f2d168b4ccb3215",
+      "captured_at": "2026-10-29T09:51:43.408083+00:00",
+      "environment_kind": "github-actions",
+      "github_actions": {
+        "repository": "Extremois/desembaraca-twine",
+        "run_id": "40852552232",
+        "run_sha": "c0078230a3bf1a2b934f1754e8b12664f100b4cc",
+        "run_url": "https://github.com/Extremois/desembaraca-twine/actions/runs/40852552232",
+        "execution_kind": "runner"
+      },
+      "snapshot_id": null,
+      "checks": {
+        "offline": true,
+        "interruption": true,
+        "licenses": true,
+        "repair": true,
+        "first_run": true,
+        "installation": true,
+        "preservation": true,
+        "crash": true,
+        "concurrency": true,
+        "twine": true
+      },
+      "passed": true,
+      "pending_checks": [],
+      "observations": {
+        "cache_matches_platform": false,
+        "invalid_input_refused_without_acquisition": true,
+        "executable_mode": 511,
+        "runtime_schema": 1,
+        "healthy_generation_reused": true,
+        "macos_security_assessed": false,
+        "macos_signing_required": false,
+        "paths_with_spaces_and_accents": true
+      },
+      "commands": [
+        "external venv installation --no-index",
+        "console script --help",
+        "python -m twine_edge_overlap --help",
+        "CLI invalid first input without acquisition",
+        "CLI first valid file",
+        "CLI --prepare-runtime",
+        "public corpus using normal installed runtime"
+      ],
+      "network": {
+        "observation": "github-actions-log",
+        "attempts": 0,
+        "reviewer": "Codex technical implementation review",
+        "log": {
+          "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/qualification/abi-windows-win32-x86_64-3.14-network.json",
+          "sha256": "b696473cc31ef95460436f1e20605133d487de639f2210f4a67b9dede30f9f34"
+        }
+      },
+      "installation": {
+        "wheel": true,
+        "sdist": true,
+        "remote": true,
+        "outside_checkout": true,
+        "console": true,
+        "module": true
+      },
+      "pending_reason": null,
+      "reviewer": "Codex technical implementation review",
+      "logs": [
+        {
+          "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/c007823/12888122090/final-catalog.json.gz",
+          "sha256": "2055ef2bce542a397209e63b4e198761d9a77df94672e347ccda425c2ff39c3a"
+        },
+        {
+          "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/c007823/12887318663/windows-cache-notices.json.gz",
+          "sha256": "5158a4db1aac39c394280f8d62cadb9649559f7ca555159ff0be3a4110e8e9f3"
+        },
+        {
+          "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/c007823/12888395587/musl-notices/slot/cache-notices.json.gz",
+          "sha256": "5a81eff8055bb45d53e58aebc581b87a5dc22ab7c9f6cd9d7f78bb26e26c098d"
+        },
+        {
+          "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/qualification/windows-upstream-audit.json",
+          "sha256": "5e1b399eb60d214536eea1a8eca27c35ef8d6e91f0f307d29398fd474d9373f6"
+        },
+        {
+          "path": "specs/003-add-cross-platform-support/evidence/twine-visual-review-2026-10-28.json",
+          "sha256": "c5106fa06acf5cb7e0400eaee7c61fe39e5b571dcafd8d67f9fabe4f20990b02"
+        },
+        {
+          "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/publication.json",
+          "sha256": "33bb6194eaac623b9ae488397b2a5b920b5112460f38b681b24b88328c620b3a"
+        }
+      ],
+      "license_audit": {
+        "approved": true,
+        "reviewer": "Codex technical implementation review",
+        "artifact_sha256": "37906f29ede26cf1952f8cf942c1e7814ab86ef448130136c8607b1b6ffe0870",
+        "components": [
+          {
+            "name": "Graphviz upstream source; dependency notices/source routes preserved separately",
+            "license_expression": "EPL-2.0 AND LicenseRef-Upstream-Component-Notices",
+            "source_url": "https://gitlab.com/graphviz/graphviz/-/archive/16.1.0/graphviz-16.1.0.tar.gz",
+            "source_sha256": "1e028b2b3e84e946c1d3e8c47590f8f0741bba1041fe6eff36eee87e598ea249"
+          }
+        ],
+        "log": {
+          "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/qualification/windows-upstream-audit.json",
+          "sha256": "5e1b399eb60d214536eea1a8eca27c35ef8d6e91f0f307d29398fd474d9373f6"
+        }
+      },
+      "twine": {
+        "version": "2.12.1",
+        "reviewer": "user",
+        "outputs": [
+          {
+            "case": "crossing",
+            "sha256": "aa821f1611a98d479811f652197070728904bd2afe31c8e6fca64ed9fbec8e8b",
+            "reopened": true
+          },
+          {
+            "case": "coincident",
+            "sha256": "8644eeb3404043bec66b149c0ed3f2f4bea0600914a944e75c5f6464b78c1ed6",
+            "reopened": true
+          },
+          {
+            "case": "isolated_overlap",
+            "sha256": "bef1e0132bce9b72f1317cdbb43d3c2a54e604632459cbda2c5af7d52c17a03a",
+            "reopened": true
+          },
+          {
+            "case": "connected_overlap",
+            "sha256": "137e849cfdf04ef3db7ed9057a7142ebecc403ee78952f307138ff5ecca72618",
+            "reopened": true
+          },
+          {
+            "case": "through_isolated",
+            "sha256": "f2460867ce13305139836fc5737093e3e513fae53c4bee8fe0742fe5fc98c341",
+            "reopened": true
+          },
+          {
+            "case": "through_connected",
+            "sha256": "8c13ace7ce2f65beff622e529456029fda6c7e1f624a5046886a7065f60a2f3f",
+            "reopened": true
+          }
+        ],
+        "log": {
+          "path": "specs/003-add-cross-platform-support/evidence/twine-visual-review-2026-10-28.json",
+          "sha256": "c5106fa06acf5cb7e0400eaee7c61fe39e5b571dcafd8d67f9fabe4f20990b02"
+        }
+      },
+      "constituent_evidence": {
+        "public_catalog_run_id": 40852552232,
+        "recovery_run_id": 40852552179,
+        "recovery_revision": "c0078230a3bf1a2b934f1754e8b12664f100b4cc",
+        "visual_review_revision": "07688e264e6c9915790c2728beb24552a23f6388",
+        "visual_binding": "Same six byte hashes, checked for all three final installation modes; no claim of a new GUI session.",
+        "recovery_scope": "Installed real engine, process exits and OS locks; transfer/disk/permission faults controlled. Tests executed only in Actions.",
+        "source_build_revision": null,
+        "public_delivery": {
+          "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/publication.json",
+          "sha256": "33bb6194eaac623b9ae488397b2a5b920b5112460f38b681b24b88328c620b3a"
+        }
+      },
+      "qualified_record_sha256": "f76d6abc08c4914defcda9a4767c7a97c7af89ac773905feaa4c9662eb417472"
+    }
+  }
+}

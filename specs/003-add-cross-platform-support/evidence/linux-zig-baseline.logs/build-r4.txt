@@ -1,0 +1,632 @@
+-- The C compiler identification is Clang 20.1.2
+-- The CXX compiler identification is Clang 20.1.2
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: <private-sdk>/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: <private-sdk>/cxx - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found BISON: /usr/bin/bison (found suitable version "3.8.2", minimum required is "3.0")
+-- Found FLEX: /usr/bin/flex (found version "2.6.4")
+-- skipping Ghostscript discovery because -DWITH_GHOSTSCRIPT=OFF
+-- Found PkgConfig: /usr/bin/pkg-config (found version "2.5.1")
+-- skipping GDK discovery because -DWITH_GDK=OFF
+-- Checking for module 'gdk-pixbuf-2.0'
+--   Package 'gdk-pixbuf-2.0' not found
+-- Checking for module 'lasi'
+--   Package 'lasi' not found
+-- skipping Poppler discovery because -DWITH_POPPLER=OFF
+-- skipping librsvg discovery because -DWITH_RSVG=OFF
+-- skipping libwebp discovery because -DWITH_WEBP=OFF
+-- skipping x11, xrender discovery because -DWITH_X=OFF
+-- Found Python3: /usr/bin/python3 (found version "3.14.4") found components: Interpreter
+fatal: not a git repository (or any of the parent directories): .git
+fatal: not a git repository (or any of the parent directories): .git
+fatal: not a git repository (or any of the parent directories): .git
+fatal: not a git repository (or any of the parent directories): .git
+fatal: not a git repository (or any of the parent directories): .git
+fatal: not a git repository (or any of the parent directories): .git
+Warning: build not started in a Git clone: setting version date to 0.
+-- Graphviz version: 16.1.0
+-- Looking for sys/inotify.h
+-- Looking for sys/inotify.h - found
+-- Looking for sys/ioctl.h
+-- Looking for sys/ioctl.h - found
+-- Looking for sys/mman.h
+-- Looking for sys/mman.h - found
+-- Looking for sys/select.h
+-- Looking for sys/select.h - found
+-- Looking for sys/time.h
+-- Looking for sys/time.h - found
+-- Looking for getopt.h
+-- Looking for getopt.h - found
+-- Looking for dl_iterate_phdr
+-- Looking for dl_iterate_phdr - found
+-- Looking for drand48
+-- Looking for drand48 - found
+-- Looking for inotify_init1
+-- Looking for inotify_init1 - found
+-- Looking for memrchr
+-- Looking for memrchr - found
+-- Pangocairo not found, so do not have pango_fc_font_lock_face
+-- Looking for setenv
+-- Looking for setenv - found
+-- Looking for setmode
+-- Looking for setmode - not found
+-- Looking for srand48
+-- Looking for srand48 - found
+-- Looking for strcasestr
+-- Looking for strcasestr - found
+-- Performing Test HAVE_C_WCAST_FUNCTION_TYPE
+-- Performing Test HAVE_C_WCAST_FUNCTION_TYPE - Success
+-- Performing Test HAVE_C_WFORMAT_OVERFLOW_2
+-- Performing Test HAVE_C_WFORMAT_OVERFLOW_2 - Failed
+-- Performing Test HAVE_C_WIMPLICIT_FALLTHROUGH
+-- Performing Test HAVE_C_WIMPLICIT_FALLTHROUGH - Success
+-- Performing Test HAVE_C_WMAYBE_UNINITIALIZED
+-- Performing Test HAVE_C_WMAYBE_UNINITIALIZED - Failed
+-- Performing Test HAVE_C_WMISSING_FIELD_INITIALIZERS
+-- Performing Test HAVE_C_WMISSING_FIELD_INITIALIZERS - Success
+-- Performing Test HAVE_C_WMISSING_PROTOTYPES
+-- Performing Test HAVE_C_WMISSING_PROTOTYPES - Success
+-- Performing Test HAVE_C_WSHADOW
+-- Performing Test HAVE_C_WSHADOW - Success
+-- Performing Test HAVE_C_WUNDEF
+-- Performing Test HAVE_C_WUNDEF - Success
+-- Performing Test HAVE_C_WUNUSED_BUT_SET_VARIABLE
+-- Performing Test HAVE_C_WUNUSED_BUT_SET_VARIABLE - Success
+-- Performing Test HAVE_C_WUNUSED_PARAMETER
+-- Performing Test HAVE_C_WUNUSED_PARAMETER - Success
+-- Performing Test HAVE_CXX_WMISSING_FIELD_INITIALIZERS
+-- Performing Test HAVE_CXX_WMISSING_FIELD_INITIALIZERS - Success
+-- Performing Test HAVE_CXX_WSHADOW
+-- Performing Test HAVE_CXX_WSHADOW - Success
+-- Performing Test HAVE_CXX_WSIGN_COMPARE
+-- Performing Test HAVE_CXX_WSIGN_COMPARE - Success
+-- Performing Test HAVE_CXX_WUNUSED_FUNCTION
+-- Performing Test HAVE_CXX_WUNUSED_FUNCTION - Success
+-- Performing Test HAVE_CXX_WUNUSED_LABEL
+-- Performing Test HAVE_CXX_WUNUSED_LABEL - Success
+-- Performing Test HAVE_CXX_WUNUSED_PARAMETER
+-- Performing Test HAVE_CXX_WUNUSED_PARAMETER - Success
+-- Performing Test HAVE_CXX_WUNUSED_VARIABLE
+-- Performing Test HAVE_CXX_WUNUSED_VARIABLE - Success
+-- The following OPTIONAL packages have been found:
+
+ * PkgConfig
+
+-- The following REQUIRED packages have been found:
+
+ * BISON (required version >= 3.0)
+ * FLEX
+ * Python3
+
+-- Configuring done (7.7s)
+-- Generating done (0.3s)
+CMake Warning:
+  Manually-specified variables were not used by the project:
+
+    CMAKE_DISABLE_FIND_PACKAGE_Fontconfig
+    CMAKE_DISABLE_FIND_PACKAGE_GLUT
+    CMAKE_DISABLE_FIND_PACKAGE_GS
+    CMAKE_DISABLE_FIND_PACKAGE_GTK2
+    CMAKE_DISABLE_FIND_PACKAGE_LTDL
+
+
+-- Build files have been written to: <private-build>/build
+[  0%] Building C object lib/util/CMakeFiles/util.dir/arena.c.o
+[  0%] Building C object lib/cdt/CMakeFiles/cdt.dir/dtclose.c.o
+[  0%] Building C object lib/cdt/CMakeFiles/cdt.dir/dtdisc.c.o
+[  0%] Building C object lib/util/CMakeFiles/util.dir/base64.c.o
+[  1%] Building C object lib/cdt/CMakeFiles/cdt.dir/dtextract.c.o
+[  3%] Building C object lib/util/CMakeFiles/util.dir/gv_find_me.c.o
+[  3%] Building C object lib/cdt/CMakeFiles/cdt.dir/dtflatten.c.o
+[  3%] Building C object lib/util/CMakeFiles/util.dir/gv_fopen.c.o
+[  3%] Building C object lib/cdt/CMakeFiles/cdt.dir/dthash.c.o
+[  3%] Building C object lib/util/CMakeFiles/util.dir/list.c.o
+[  3%] Building C object lib/cdt/CMakeFiles/cdt.dir/dtmethod.c.o
+[  4%] Building C object lib/cdt/CMakeFiles/cdt.dir/dtopen.c.o
+[  4%] Building C object lib/util/CMakeFiles/util.dir/random.c.o
+[  4%] Building C object lib/cdt/CMakeFiles/cdt.dir/dtrenew.c.o
+[  4%] Building C object lib/cdt/CMakeFiles/cdt.dir/dtrestore.c.o
+[  6%] Building C object lib/util/CMakeFiles/util.dir/xml.c.o
+[  6%] Building C object lib/cdt/CMakeFiles/cdt.dir/dtsize.c.o
+[  6%] Linking C static library libutil.a
+[  8%] Building C object lib/cdt/CMakeFiles/cdt.dir/dtstat.c.o
+[  8%] Built target util
+[  8%] [BISON][HTMLparse] Building parser with bison 3.8.2
+<private-build>/source/graphviz-16.1.0/lib/common/htmlparse.y: warning: 2 shift/reduce conflicts [-Wconflicts-sr]
+<private-build>/source/graphviz-16.1.0/lib/common/htmlparse.y: note: rerun with option '-Wcounterexamples' to generate conflict counterexamples
+[  8%] Building C object lib/cdt/CMakeFiles/cdt.dir/dtstrhash.c.o
+[  8%] generate color table
+[  8%] Building C object lib/cdt/CMakeFiles/cdt.dir/dttree.c.o
+[  9%] generate entities.h
+[  9%] Building C object lib/common/CMakeFiles/common_obj.dir/args.c.o
+[  9%] Building C object lib/cdt/CMakeFiles/cdt.dir/dtview.c.o
+[ 11%] Building C object lib/cdt/CMakeFiles/cdt.dir/dtwalk.c.o
+[ 11%] Building C object lib/common/CMakeFiles/common_obj.dir/arrows.c.o
+[ 11%] Linking C static library libcdt.a
+[ 11%] Built target cdt
+[ 11%] Building C object lib/pathplan/CMakeFiles/pathplan.dir/cvt.c.o
+[ 11%] Building C object lib/pathplan/CMakeFiles/pathplan.dir/inpoly.c.o
+[ 11%] Building C object lib/pathplan/CMakeFiles/pathplan.dir/route.c.o
+[ 12%] Building C object lib/common/CMakeFiles/common_obj.dir/colxlate.c.o
+[ 14%] Building C object lib/pathplan/CMakeFiles/pathplan.dir/shortest.c.o
+[ 14%] Building C object lib/common/CMakeFiles/common_obj.dir/ellipse.c.o
+[ 14%] Building C object lib/pathplan/CMakeFiles/pathplan.dir/shortestpth.c.o
+[ 14%] Building C object lib/common/CMakeFiles/common_obj.dir/emit.c.o
+[ 14%] Building C object lib/pathplan/CMakeFiles/pathplan.dir/solvers.c.o
+[ 14%] Building C object lib/pathplan/CMakeFiles/pathplan.dir/triang.c.o
+[ 16%] Building C object lib/pathplan/CMakeFiles/pathplan.dir/util.c.o
+[ 16%] Building C object lib/pathplan/CMakeFiles/pathplan.dir/visibility.c.o
+[ 16%] Linking C static library libpathplan.a
+[ 16%] Built target pathplan
+[ 16%] Building C object lib/xdot/CMakeFiles/xdot.dir/xdot.c.o
+[ 17%] Linking C static library libxdot.a
+[ 17%] Built target xdot
+[ 19%] Building C object lib/ortho/CMakeFiles/ortho_obj.dir/fPQ.c.o
+[ 19%] Building C object lib/ortho/CMakeFiles/ortho_obj.dir/maze.c.o
+[ 19%] Building C object lib/ortho/CMakeFiles/ortho_obj.dir/ortho.c.o
+[ 19%] Building C object lib/common/CMakeFiles/common_obj.dir/geom.c.o
+[ 20%] Building C object lib/common/CMakeFiles/common_obj.dir/globals.c.o
+[ 20%] Building C object lib/common/CMakeFiles/common_obj.dir/htmllex.c.o
+[ 20%] Building C object lib/common/CMakeFiles/common_obj.dir/htmltable.c.o
+[ 20%] Building C object lib/ortho/CMakeFiles/ortho_obj.dir/partition.c.o
+[ 22%] Building C object lib/ortho/CMakeFiles/ortho_obj.dir/rawgraph.c.o
+[ 22%] Building C object lib/ortho/CMakeFiles/ortho_obj.dir/sgraph.c.o
+[ 22%] Building C object lib/common/CMakeFiles/common_obj.dir/input.c.o
+[ 22%] Building C object lib/ortho/CMakeFiles/ortho_obj.dir/trapezoid.c.o
+[ 24%] Building C object lib/common/CMakeFiles/common_obj.dir/labels.c.o
+<private-build>/source/graphviz-16.1.0/lib/common/labels.c:373:6: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  373 |             default:  /* leave other escape sequences unmodified, e.g. \n \l \r */
+      |             ^
+<private-build>/source/graphviz-16.1.0/lib/common/labels.c:373:6: note: insert '__attribute__((fallthrough));' to silence this warning
+  373 |             default:  /* leave other escape sequences unmodified, e.g. \n \l \r */
+      |             ^
+      |             __attribute__((fallthrough)); 
+<private-build>/source/graphviz-16.1.0/lib/common/labels.c:373:6: note: insert 'break;' to avoid fall-through
+  373 |             default:  /* leave other escape sequences unmodified, e.g. \n \l \r */
+      |             ^
+      |             break; 
+[ 24%] Built target ortho_obj
+[ 24%] Building C object lib/pack/CMakeFiles/pack_obj.dir/ccomps.c.o
+1 warning generated.
+[ 24%] Building C object lib/common/CMakeFiles/common_obj.dir/ns.c.o
+[ 25%] Building C object lib/pack/CMakeFiles/pack_obj.dir/pack.c.o
+[ 25%] Built target pack_obj
+[ 25%] Building C object lib/rbtree/CMakeFiles/rbtree.dir/red_black_tree.c.o
+[ 25%] Building C object lib/common/CMakeFiles/common_obj.dir/output.c.o
+[ 25%] Linking C static library librbtree.a
+[ 25%] Built target rbtree
+[ 25%] Building C object lib/sparse/CMakeFiles/sparse.dir/clustering.c.o
+[ 25%] Building C object lib/sparse/CMakeFiles/sparse.dir/color_palette.c.o
+[ 25%] Building C object lib/common/CMakeFiles/common_obj.dir/pointset.c.o
+[ 25%] Building C object lib/sparse/CMakeFiles/sparse.dir/colorutil.c.o
+[ 27%] Building C object lib/common/CMakeFiles/common_obj.dir/postproc.c.o
+[ 29%] Building C object lib/sparse/CMakeFiles/sparse.dir/DotIO.c.o
+[ 29%] Building C object lib/common/CMakeFiles/common_obj.dir/psusershape.c.o
+[ 29%] Building C object lib/sparse/CMakeFiles/sparse.dir/general.c.o
+[ 29%] Building C object lib/common/CMakeFiles/common_obj.dir/routespl.c.o
+[ 29%] Building C object lib/sparse/CMakeFiles/sparse.dir/mq.c.o
+[ 29%] Building C object lib/sparse/CMakeFiles/sparse.dir/QuadTree.c.o
+[ 30%] Building C object lib/common/CMakeFiles/common_obj.dir/shapes.c.o
+<private-build>/source/graphviz-16.1.0/lib/common/shapes.c:3473:2: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+ 3473 |         default:
+      |         ^
+<private-build>/source/graphviz-16.1.0/lib/common/shapes.c:3473:2: note: insert '__attribute__((fallthrough));' to silence this warning
+ 3473 |         default:
+      |         ^
+      |         __attribute__((fallthrough)); 
+<private-build>/source/graphviz-16.1.0/lib/common/shapes.c:3473:2: note: insert 'break;' to avoid fall-through
+ 3473 |         default:
+      |         ^
+      |         break; 
+[ 32%] Building C object lib/sparse/CMakeFiles/sparse.dir/SparseMatrix.c.o
+<private-build>/source/graphviz-16.1.0/lib/sparse/SparseMatrix.c:928:58: warning: unused parameter 'type' [-Wunused-parameter]
+  928 |                                                      int type) {
+      |                                                          ^
+1 warning generated.
+[ 32%] Building C object lib/common/CMakeFiles/common_obj.dir/splines.c.o
+1 warning generated.
+[ 32%] Linking C static library libsparse.a
+[ 32%] Built target sparse
+[ 33%] [FLEX][Scan] Building scanner with flex 2.6.4
+[ 33%] [BISON][Grammar] Building parser with bison 3.8.2
+[ 33%] Building C object lib/cgraph/CMakeFiles/cgraph.dir/acyclic.c.o
+[ 33%] Building C object lib/cgraph/CMakeFiles/cgraph.dir/agerror.c.o
+[ 33%] Building C object lib/common/CMakeFiles/common_obj.dir/taper.c.o
+[ 33%] Building C object lib/cgraph/CMakeFiles/cgraph.dir/apply.c.o
+[ 35%] Building C object lib/cgraph/CMakeFiles/cgraph.dir/attr.c.o
+[ 35%] Building C object lib/common/CMakeFiles/common_obj.dir/textspan.c.o
+[ 37%] Building C object lib/common/CMakeFiles/common_obj.dir/textspan_lut.c.o
+[ 37%] Building C object lib/cgraph/CMakeFiles/cgraph.dir/edge.c.o
+[ 37%] Building C object lib/common/CMakeFiles/common_obj.dir/timing.c.o
+[ 37%] Building C object lib/common/CMakeFiles/common_obj.dir/utils.c.o
+[ 37%] Building C object lib/cgraph/CMakeFiles/cgraph.dir/graph.c.o
+[ 37%] Building C object lib/cgraph/CMakeFiles/cgraph.dir/id.c.o
+[ 38%] Building C object lib/cgraph/CMakeFiles/cgraph.dir/imap.c.o
+[ 38%] Building C object lib/cgraph/CMakeFiles/cgraph.dir/ingraphs.c.o
+[ 38%] Building C object lib/cgraph/CMakeFiles/cgraph.dir/io.c.o
+[ 38%] Building C object lib/cgraph/CMakeFiles/cgraph.dir/node.c.o
+[ 38%] Building C object lib/common/CMakeFiles/common_obj.dir/htmlparse.c.o
+[ 40%] Building C object lib/cgraph/CMakeFiles/cgraph.dir/node_induce.c.o
+[ 40%] Building C object lib/cgraph/CMakeFiles/cgraph.dir/obj.c.o
+[ 40%] Built target common_obj
+[ 41%] Building C object lib/label/CMakeFiles/label.dir/index.c.o
+[ 41%] Building C object lib/cgraph/CMakeFiles/cgraph.dir/rec.c.o
+[ 41%] Building C object lib/label/CMakeFiles/label.dir/node.c.o
+[ 41%] Building C object lib/cgraph/CMakeFiles/cgraph.dir/refstr.c.o
+[ 41%] Building C object lib/label/CMakeFiles/label.dir/rectangle.c.o
+<private-build>/source/graphviz-16.1.0/lib/cgraph/refstr.c:119:3: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  119 |   case 6:
+      |   ^
+<private-build>/source/graphviz-16.1.0/lib/cgraph/refstr.c:119:3: note: insert '__attribute__((fallthrough));' to silence this warning
+  119 |   case 6:
+      |   ^
+      |   __attribute__((fallthrough)); 
+<private-build>/source/graphviz-16.1.0/lib/cgraph/refstr.c:119:3: note: insert 'break;' to avoid fall-through
+  119 |   case 6:
+      |   ^
+      |   break; 
+<private-build>/source/graphviz-16.1.0/lib/cgraph/refstr.c:121:3: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  121 |   case 5:
+      |   ^
+<private-build>/source/graphviz-16.1.0/lib/cgraph/refstr.c:121:3: note: insert '__attribute__((fallthrough));' to silence this warning
+  121 |   case 5:
+      |   ^
+      |   __attribute__((fallthrough)); 
+<private-build>/source/graphviz-16.1.0/lib/cgraph/refstr.c:121:3: note: insert 'break;' to avoid fall-through
+  121 |   case 5:
+      |   ^
+      |   break; 
+<private-build>/source/graphviz-16.1.0/lib/cgraph/refstr.c:123:3: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  123 |   case 4:
+      |   ^[ 41%] Building C object lib/label/CMakeFiles/label.dir/split.q.c.o
+
+<private-build>/source/graphviz-16.1.0/lib/cgraph/refstr.c:123:3: note: insert '__attribute__((fallthrough));' to silence this warning
+  123 |   case 4:
+      |   ^
+      |   __attribute__((fallthrough)); 
+<private-build>/source/graphviz-16.1.0/lib/cgraph/refstr.c:123:3: note: insert 'break;' to avoid fall-through
+  123 |   case 4:
+      |   ^
+      |   break; 
+<private-build>/source/graphviz-16.1.0/lib/cgraph/refstr.c:125:3: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  125 |   case 3:
+      |   ^
+<private-build>/source/graphviz-16.1.0/lib/cgraph/refstr.c:125:3: note: insert '__attribute__((fallthrough));' to silence this warning
+  125 |   case 3:
+      |   ^
+      |   __attribute__((fallthrough)); 
+<private-build>/source/graphviz-16.1.0/lib/cgraph/refstr.c:125:3: note: insert 'break;' to avoid fall-through
+  125 |   case 3:
+      |   ^
+      |   break; 
+<private-build>/source/graphviz-16.1.0/lib/cgraph/refstr.c:127:3: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  127 |   case 2:
+      |   ^
+<private-build>/source/graphviz-16.1.0/lib/cgraph/refstr.c:127:3: note: insert '__attribute__((fallthrough));' to silence this warning
+  127 |   case 2:
+      |   ^
+      |   __attribute__((fallthrough)); 
+<private-build>/source/graphviz-16.1.0/lib/cgraph/refstr.c:127:3: note: insert 'break;' to avoid fall-through
+  127 |   case 2:
+      |   ^
+      |   break; 
+<private-build>/source/graphviz-16.1.0/lib/cgraph/refstr.c:129:3: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  129 |   case 1:
+      |   ^
+<private-build>/source/graphviz-16.1.0/lib/cgraph/refstr.c:129:3: note: insert '__attribute__((fallthrough));' to silence this warning
+  129 |   case [ 43%] Building C object lib/label/CMakeFiles/label.dir/xlabels.c.o
+1:
+      |   ^
+      |   __attribute__((fallthrough)); 
+<private-build>/source/graphviz-16.1.0/lib/cgraph/refstr.c:129:3: note: insert 'break;' to avoid fall-through
+  129 |   case 1:
+      |   ^
+      |   break; 
+6 warnings generated.
+[ 45%] Building C object lib/cgraph/CMakeFiles/cgraph.dir/subg.c.o
+[ 45%] Linking C static library liblabel.a
+[ 45%] Building C object lib/cgraph/CMakeFiles/cgraph.dir/tred.c.o
+[ 45%] Built target label
+[ 45%] Linking C static library libortho.a
+[ 45%] Built target ortho
+[ 45%] Linking C static library libpack.a
+[ 45%] Building C object lib/cgraph/CMakeFiles/cgraph.dir/unflatten.c.o
+[ 45%] Built target pack
+[ 45%] Building C object lib/cgraph/CMakeFiles/cgraph.dir/utils.c.o
+[ 46%] Building C object lib/cgraph/CMakeFiles/cgraph.dir/write.c.o
+[ 46%] Building C object lib/cgraph/CMakeFiles/cgraph.dir/grammar.c.o
+[ 46%] Building C object lib/cgraph/CMakeFiles/cgraph.dir/scan.c.o
+[ 46%] Linking C static library libcgraph.a
+[ 46%] Built target cgraph
+[ 48%] Linking C static library libcommon.a
+[ 48%] Building C object lib/circogen/CMakeFiles/circogen.dir/block.c.o
+[ 48%] Built target common
+[ 48%] Building C object lib/dotgen/CMakeFiles/dotgen.dir/aspect.c.o
+[ 48%] Building C object lib/circogen/CMakeFiles/circogen.dir/blockpath.c.o
+[ 48%] Building C object lib/dotgen/CMakeFiles/dotgen.dir/acyclic.c.o
+[ 48%] Building C object lib/dotgen/CMakeFiles/dotgen.dir/class1.c.o
+[ 50%] Building C object lib/dotgen/CMakeFiles/dotgen.dir/class2.c.o
+[ 50%] Building C object lib/circogen/CMakeFiles/circogen.dir/blocktree.c.o
+[ 50%] Building C object lib/dotgen/CMakeFiles/dotgen.dir/cluster.c.o
+[ 51%] Building C object lib/circogen/CMakeFiles/circogen.dir/circpos.c.o
+[ 51%] Building C object lib/dotgen/CMakeFiles/dotgen.dir/compound.c.o
+[ 51%] Building C object lib/circogen/CMakeFiles/circogen.dir/circular.c.o
+[ 51%] Building C object lib/circogen/CMakeFiles/circogen.dir/circularinit.c.o
+[ 51%] Building C object lib/dotgen/CMakeFiles/dotgen.dir/conc.c.o
+[ 51%] Building C object lib/circogen/CMakeFiles/circogen.dir/edgelist.c.o
+[ 53%] Building C object lib/dotgen/CMakeFiles/dotgen.dir/decomp.c.o
+[ 54%] Building C object lib/circogen/CMakeFiles/circogen.dir/nodelist.c.o
+[ 54%] Linking C static library libcircogen.a
+[ 54%] Building C object lib/dotgen/CMakeFiles/dotgen.dir/dotinit.c.o
+[ 54%] Built target circogen
+[ 54%] Building C object lib/osage/CMakeFiles/osage.dir/osageinit.c.o
+[ 54%] Building C object lib/dotgen/CMakeFiles/dotgen.dir/dotsplines.c.o
+[ 56%] Linking C static library libosage.a
+[ 56%] Built target osage
+[ 58%] Building C object lib/twopigen/CMakeFiles/twopigen.dir/circle.c.o
+[ 58%] Building C object lib/twopigen/CMakeFiles/twopigen.dir/twopiinit.c.o
+[ 58%] Linking C static library libtwopigen.a
+[ 58%] Built target twopigen
+[ 59%] Building C object lib/gvc/CMakeFiles/gvc.dir/gvc.c.o
+[ 59%] Building C object lib/gvc/CMakeFiles/gvc.dir/gvconfig.c.o
+[ 59%] Building C object lib/gvc/CMakeFiles/gvc.dir/gvcontext.c.o
+[ 59%] Building C object lib/gvc/CMakeFiles/gvc.dir/gvdevice.c.o
+[ 61%] Building C object lib/dotgen/CMakeFiles/dotgen.dir/fastgr.c.o
+[ 61%] Building C object lib/gvc/CMakeFiles/gvc.dir/gvevent.c.o
+[ 61%] Building C object lib/gvc/CMakeFiles/gvc.dir/gvjobs.c.o
+[ 62%] Building C object lib/dotgen/CMakeFiles/dotgen.dir/flat.c.o
+[ 62%] Building C object lib/gvc/CMakeFiles/gvc.dir/gvlayout.c.o
+[ 62%] Building C object lib/gvc/CMakeFiles/gvc.dir/gvloadimage.c.o
+[ 62%] Building C object lib/dotgen/CMakeFiles/dotgen.dir/mincross.c.o
+[ 64%] Building C object lib/gvc/CMakeFiles/gvc.dir/gvplugin.c.o
+[ 64%] Building C object lib/gvc/CMakeFiles/gvc.dir/gvrender.c.o
+[ 64%] Building C object lib/gvc/CMakeFiles/gvc.dir/gvtextlayout.c.o
+[ 64%] Building C object lib/dotgen/CMakeFiles/dotgen.dir/position.c.o
+[ 66%] Building C object lib/gvc/CMakeFiles/gvc.dir/gvtool_tred.c.o
+[ 66%] Building C object lib/gvc/CMakeFiles/gvc.dir/gvusershape.c.o
+[ 66%] Linking C static library libgvc.a
+[ 67%] Building C object lib/dotgen/CMakeFiles/dotgen.dir/rank.c.o
+[ 67%] Built target gvc
+[ 67%] Building C object lib/dotgen/CMakeFiles/dotgen.dir/sameport.c.o
+[ 67%] Building C object plugin/vt/CMakeFiles/gvplugin_vt.dir/gvplugin_vt.c.o
+[ 67%] Linking C static library libgvplugin_vt.a
+[ 67%] Built target gvplugin_vt
+[ 67%] Linking C static library libdotgen.a
+[ 69%] Building C object lib/fdpgen/CMakeFiles/fdpgen.dir/clusteredges.c.o
+[ 69%] Built target dotgen
+[ 69%] Building C object lib/neatogen/CMakeFiles/neatogen.dir/adjust.c.o
+[ 69%] Building C object lib/fdpgen/CMakeFiles/fdpgen.dir/comp.c.o
+[ 69%] Building C object lib/fdpgen/CMakeFiles/fdpgen.dir/dbg.c.o
+[ 70%] Building C object lib/fdpgen/CMakeFiles/fdpgen.dir/fdpinit.c.o
+[ 70%] Building C object lib/neatogen/CMakeFiles/neatogen.dir/bfs.c.o
+[ 70%] Building C object lib/neatogen/CMakeFiles/neatogen.dir/call_tri.c.o
+[ 70%] Building C object lib/fdpgen/CMakeFiles/fdpgen.dir/grid.c.o
+[ 72%] Building C object lib/neatogen/CMakeFiles/neatogen.dir/circuit.c.o
+[ 72%] Building C object lib/fdpgen/CMakeFiles/fdpgen.dir/layout.c.o
+[ 72%] Building C object lib/neatogen/CMakeFiles/neatogen.dir/closest.c.o
+[ 72%] Building C object lib/neatogen/CMakeFiles/neatogen.dir/compute_hierarchy.c.o
+[ 72%] Building C object lib/fdpgen/CMakeFiles/fdpgen.dir/tlayout.c.o
+[ 72%] Building C object lib/neatogen/CMakeFiles/neatogen.dir/conjgrad.c.o
+[ 74%] Building C object lib/fdpgen/CMakeFiles/fdpgen.dir/xlayout.c.o
+[ 75%] Building C object lib/neatogen/CMakeFiles/neatogen.dir/constrained_majorization.c.o
+[ 75%] Building C object lib/neatogen/CMakeFiles/neatogen.dir/constraint.c.o
+[ 75%] Linking C static library libfdpgen.a
+[ 75%] Built target fdpgen
+[ 75%] Building C object lib/patchwork/CMakeFiles/patchwork.dir/patchwork.c.o
+[ 75%] Building C object lib/neatogen/CMakeFiles/neatogen.dir/delaunay.c.o
+[ 75%] Building C object lib/patchwork/CMakeFiles/patchwork.dir/patchworkinit.c.o
+[ 75%] Building C object lib/neatogen/CMakeFiles/neatogen.dir/dijkstra.c.o
+[ 75%] Building C object lib/patchwork/CMakeFiles/patchwork.dir/tree_map.c.o
+[ 77%] Linking C static library libpatchwork.a
+[ 77%] Built target patchwork
+[ 77%] Building C object plugin/core/CMakeFiles/gvplugin_core.dir/gvloadimage_core.c.o
+[ 79%] Building C object lib/neatogen/CMakeFiles/neatogen.dir/edges.c.o
+[ 80%] Building C object plugin/core/CMakeFiles/gvplugin_core.dir/gvplugin_core.c.o
+[ 80%] Building C object lib/neatogen/CMakeFiles/neatogen.dir/embed_graph.c.o
+[ 80%] Building C object plugin/core/CMakeFiles/gvplugin_core.dir/gvrender_core_dot.c.o
+[ 80%] Building C object lib/neatogen/CMakeFiles/neatogen.dir/geometry.c.o
+[ 80%] Building C object lib/neatogen/CMakeFiles/neatogen.dir/heap.c.o
+[ 82%] Building C object lib/neatogen/CMakeFiles/neatogen.dir/hedges.c.o
+[ 82%] Building C object plugin/core/CMakeFiles/gvplugin_core.dir/gvrender_core_json.c.o
+[ 82%] Building C object lib/neatogen/CMakeFiles/neatogen.dir/info.c.o
+[ 82%] Building C object lib/neatogen/CMakeFiles/neatogen.dir/kkutils.c.o
+[ 82%] Building C object plugin/core/CMakeFiles/gvplugin_core.dir/gvrender_core_fig.c.o
+[ 82%] Building C object lib/neatogen/CMakeFiles/neatogen.dir/legal.c.o
+[ 83%] Building C object plugin/core/CMakeFiles/gvplugin_core.dir/gvrender_core_map.c.o
+[ 85%] Building C object lib/neatogen/CMakeFiles/neatogen.dir/lu.c.o
+[ 85%] Building C object plugin/core/CMakeFiles/gvplugin_core.dir/gvrender_core_pic.c.o
+[ 85%] Building C object lib/neatogen/CMakeFiles/neatogen.dir/matinv.c.o
+[ 85%] Building C object plugin/core/CMakeFiles/gvplugin_core.dir/gvrender_core_pov.c.o
+[ 85%] Building C object lib/neatogen/CMakeFiles/neatogen.dir/matrix_ops.c.o
+[ 85%] Building C object plugin/core/CMakeFiles/gvplugin_core.dir/gvrender_core_ps.c.o
+[ 87%] Building C object plugin/core/CMakeFiles/gvplugin_core.dir/gvrender_core_svg.c.o
+[ 87%] Building C object lib/neatogen/CMakeFiles/neatogen.dir/multispline.c.o
+[ 87%] Building C object plugin/core/CMakeFiles/gvplugin_core.dir/gvrender_core_tk.c.o
+[ 87%] Linking C static library libgvplugin_core.a
+[ 87%] Built target gvplugin_core
+[ 87%] Building C object plugin/dot_layout/CMakeFiles/gvplugin_dot_layout.dir/gvplugin_dot_layout.c.o
+[ 88%] Building C object plugin/dot_layout/CMakeFiles/gvplugin_dot_layout.dir/gvlayout_dot_layout.c.o
+[ 88%] Linking C static library libgvplugin_dot_layout.a
+[ 88%] Built target gvplugin_dot_layout
+[ 90%] Building C object lib/neatogen/CMakeFiles/neatogen.dir/neatoinit.c.o
+[ 90%] Building C object lib/neatogen/CMakeFiles/neatogen.dir/neatosplines.c.o
+[ 90%] Building C object lib/neatogen/CMakeFiles/neatogen.dir/opt_arrangement.c.o
+[ 91%] Building C object lib/neatogen/CMakeFiles/neatogen.dir/overlap.c.o
+[ 91%] Building C object lib/neatogen/CMakeFiles/neatogen.dir/pca.c.o
+[ 91%] Building C object lib/neatogen/CMakeFiles/neatogen.dir/poly.c.o
+[ 91%] Building C object lib/neatogen/CMakeFiles/neatogen.dir/quad_prog_solve.c.o
+[ 93%] Building C object lib/neatogen/CMakeFiles/neatogen.dir/site.c.o
+[ 93%] Building C object lib/neatogen/CMakeFiles/neatogen.dir/smart_ini_x.c.o
+[ 93%] Building C object lib/neatogen/CMakeFiles/neatogen.dir/solve.c.o
+[ 93%] Building C object lib/neatogen/CMakeFiles/neatogen.dir/stuff.c.o
+[ 95%] Building C object lib/neatogen/CMakeFiles/neatogen.dir/stress.c.o
+[ 95%] Building C object lib/neatogen/CMakeFiles/neatogen.dir/voronoi.c.o
+[ 95%] Building C object lib/neatogen/CMakeFiles/neatogen.dir/sgd.c.o
+[ 95%] Building C object lib/neatogen/CMakeFiles/neatogen.dir/randomkit.c.o
+[ 96%] Linking C static library libneatogen.a
+[ 96%] Built target neatogen
+[ 98%] Building C object plugin/neato_layout/CMakeFiles/gvplugin_neato_layout.dir/gvplugin_neato_layout.c.o
+[ 98%] Building C object plugin/neato_layout/CMakeFiles/gvplugin_neato_layout.dir/gvlayout_neato_layout.c.o
+[ 98%] Linking C static library libgvplugin_neato_layout.a
+[ 98%] Built target gvplugin_neato_layout
+[ 98%] Building CXX object cmd/dot/CMakeFiles/dot.dir/dot_builtins.cpp.o
+[ 98%] Building C object cmd/dot/CMakeFiles/dot.dir/dot.c.o
+[100%] Linking CXX executable dot
+Linking dot as circo
+Linking dot as fdp
+Linking dot as neato
+Linking dot as osage
+Linking dot as patchwork
+Linking dot as twopi
+[100%] Built target dot
+{
+  "artifact_id": "linux-glibc-x86_64",
+  "recipe": {
+    "schema_version": 1,
+    "id": "linux-glibc-x86_64",
+    "os": "linux",
+    "arch": "x86_64",
+    "abi": "glibc",
+    "source_lock": "source-lock.json",
+    "cmake": {
+      "BUILD_SHARED_LIBS": "OFF",
+      "ENABLE_LTDL": "OFF",
+      "WITH_EXPAT": "OFF",
+      "WITH_ZLIB": "OFF",
+      "WITH_GVEDIT": "OFF",
+      "WITH_SMYRNA": "OFF",
+      "WITH_GDK": "OFF",
+      "WITH_GHOSTSCRIPT": "OFF",
+      "WITH_GTK": "OFF",
+      "WITH_POPPLER": "OFF",
+      "WITH_QUARTZ": "OFF",
+      "WITH_RSVG": "OFF",
+      "WITH_WEBP": "OFF",
+      "WITH_X": "OFF",
+      "ENABLE_TCL": "OFF",
+      "ENABLE_SWIG": "OFF",
+      "with_digcola": "OFF",
+      "with_ipsepcola": "OFF",
+      "with_sfdp": "OFF",
+      "with_cxx_api": "OFF",
+      "with_cxx_tests": "OFF",
+      "CMAKE_DISABLE_FIND_PACKAGE_ANN": "ON",
+      "CMAKE_DISABLE_FIND_PACKAGE_CAIRO": "ON",
+      "CMAKE_DISABLE_FIND_PACKAGE_GTS": "ON",
+      "CMAKE_DISABLE_FIND_PACKAGE_PANGOCAIRO": "ON",
+      "CMAKE_DISABLE_FIND_PACKAGE_Freetype": "ON",
+      "CMAKE_DISABLE_FIND_PACKAGE_GLUT": "ON",
+      "CMAKE_DISABLE_FIND_PACKAGE_GTK2": "ON",
+      "CMAKE_DISABLE_FIND_PACKAGE_Fontconfig": "ON",
+      "CMAKE_DISABLE_FIND_PACKAGE_GD": "ON",
+      "CMAKE_DISABLE_FIND_PACKAGE_GS": "ON",
+      "CMAKE_DISABLE_FIND_PACKAGE_LTDL": "ON",
+      "CMAKE_DISABLE_FIND_PACKAGE_AA": "ON",
+      "CMAKE_DISABLE_FIND_PACKAGE_DevIL": "ON",
+      "CMAKE_EXE_LINKER_FLAGS": "-static-libstdc++ -static-libgcc",
+      "CMAKE_C_FLAGS": "-march=x86-64 -mtune=generic",
+      "CMAKE_CXX_FLAGS": "-march=x86-64 -mtune=generic",
+      "ENABLE_SHARP": "OFF",
+      "ENABLE_D": "OFF",
+      "ENABLE_GO": "OFF",
+      "ENABLE_GUILE": "OFF",
+      "ENABLE_JAVA": "OFF",
+      "ENABLE_JAVASCRIPT": "OFF",
+      "ENABLE_LUA": "OFF",
+      "ENABLE_PERL": "OFF",
+      "ENABLE_PHP": "OFF",
+      "ENABLE_PYTHON": "OFF",
+      "ENABLE_R": "OFF",
+      "ENABLE_RUBY": "OFF",
+      "CMAKE_SKIP_RPATH": "ON"
+    },
+    "qualification": "pending-native-build-and-audit",
+    "sdk_environment_digest": null,
+    "baseline_target": "Ubuntu 18.04 or older glibc ABI",
+    "required_evidence": [
+      "native build",
+      "compiler/sysroot/image digests",
+      "dependency closure and ABI symbols",
+      "source/license audit",
+      "relocation",
+      "six known layouts",
+      "cell qualification"
+    ],
+    "notes": "Graphviz internal libraries/plugins statically linked using upstream dot_builtins; libc/OS linkage remains platform-specific. No universal Linux claim."
+  },
+  "source": {
+    "schema_version": 1,
+    "engine": "graphviz",
+    "version": "16.1.0",
+    "url": "https://gitlab.com/graphviz/graphviz/-/archive/16.1.0/graphviz-16.1.0.tar.gz",
+    "sha256": "1e028b2b3e84e946c1d3e8c47590f8f0741bba1041fe6eff36eee87e598ea249",
+    "size": 41189481,
+    "git_revision": "e41c710710be080ad37af1b51c6e2f8beffa9ee5",
+    "license": "EPL-2.0",
+    "license_path": "COPYING",
+    "license_sha256": "0becf16567beb77fa252b7664631dd177c8f9a1889e48995b45379c7130e5303",
+    "qualification": "source-only; no POSIX binary qualified"
+  },
+  "recipe_sha256": "ce509aa37846e078bca9765abae6bc425a6bbd6a75eabff806ff5999c4b48f44",
+  "output": "<private-build>",
+  "qualification": "build-only; dependency/license/corpus/signature qualification still required",
+  "sdk": {
+    "cmake": {
+      "path": "<private-sdk>/cmake-math",
+      "sha256": "89ab33aebe9d65e3cc40553beffcf7323dfe1cb8d2643ed271d896a974532add"
+    },
+    "c_compiler": {
+      "path": "<private-sdk>/cc",
+      "sha256": "4b4d45312a9a4aded6c4e966cb91e11dff45877e4d6865d5ee1cadf012239aeb"
+    },
+    "cxx_compiler": {
+      "path": "<private-sdk>/cxx",
+      "sha256": "b62eff2ef73639c52a457bfa930a9cff4232c798159a443a1aa826888d835062"
+    },
+    "environment_digest": "409b5f368225afc3579fa820e7f504eb5fc18005e98e017457814dd3f352cd13",
+    "facts": {
+      "provider": "Zig",
+      "version": "0.15.2",
+      "archive_url": "https://ziglang.org/download/0.15.2/zig-x86_64-linux-0.15.2.tar.xz",
+      "archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+      "zig_sha256": "2858dc89dbbfdd08cceda1b841e7fd0a793a1a67b49f150bc3d0d1de44ed7f51",
+      "target": "x86_64-linux-gnu.2.27",
+      "environment_kind": "wsl",
+      "qualification": "private-SDK-candidate-not-audited",
+      "tools": {
+        "cmake": {
+          "path": "<private-sdk>/cmake-math",
+          "sha256": "89ab33aebe9d65e3cc40553beffcf7323dfe1cb8d2643ed271d896a974532add"
+        },
+        "c_compiler": {
+          "path": "<private-sdk>/cc",
+          "sha256": "4b4d45312a9a4aded6c4e966cb91e11dff45877e4d6865d5ee1cadf012239aeb"
+        },
+        "cxx_compiler": {
+          "path": "<private-sdk>/cxx",
+          "sha256": "b62eff2ef73639c52a457bfa930a9cff4232c798159a443a1aa826888d835062"
+        }
+      },
+      "cpu": "baseline",
+      "wrapper_translation": "GCC march=x86-64 and mtune=generic -> Zig mcpu=baseline; no other flags removed",
+      "math_library": "CMake MATH_LIB=m; resolved by Zig target linker, no host absolute libm"
+    }
+  },
+  "native_os": "linux",
+  "native_arch": "x86_64",
+  "libc": "2.43",
+  "kernel": "6.18.33.1-microsoft-standard-WSL2",
+  "completed": true,
+  "linkage": {
+    "recorded": false,
+    "pending_reason": "GNU ld dependency metadata unavailable; equivalent reviewed linkage evidence still required."
+  },
+  "executable_sha256": "97347dcf491874804d063acf48f78d323b28af896a8008f8f8f4cd72de602c4c"
+}

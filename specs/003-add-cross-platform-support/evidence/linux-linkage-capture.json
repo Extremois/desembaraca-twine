@@ -1,0 +1,590 @@
+{
+  "kind": "linkage-capture-smoke-not-license-approval",
+  "captured_at": "2026-10-18T12:20:32.028647+00:00",
+  "environment_kind": "wsl",
+  "artifact_id": "linux-glibc-x86_64",
+  "executable_sha256": "b9b16ddaddd87e2b855a259a6d2d6b49c4e7649bd43a6f87d0dc67ddbbc655b1",
+  "provenance_sha256": "f32611b295b3c8b468edc3109e6ef70069117021ab4cc3d0a36486b030a174f9",
+  "recipe_sha256": "ce509aa37846e078bca9765abae6bc425a6bbd6a75eabff806ff5999c4b48f44",
+  "linkage": {
+    "recorded": true,
+    "kind": "linker-read-inputs-not-member-proof",
+    "executable_sha256": "b9b16ddaddd87e2b855a259a6d2d6b49c4e7649bd43a6f87d0dc67ddbbc655b1",
+    "link_command_sha256": "925a758590a8cfe0fd86a1356ac92d3330c75959f58dc0eb962080d04f46f624",
+    "dependency_file_sha256": "9e7cc930106d9b975dae50105515650effd4080ce40e99337449c4e0fd760748",
+    "inputs": [
+      {
+        "path": "cmd/dot/CMakeFiles/dot.dir/dot.c.o",
+        "scope": "build",
+        "size": 11832,
+        "sha256": "278dc54403f4133ede6ab6b74470d70a2d62041d9081608432c760c1776d0fdf",
+        "references": 1
+      },
+      {
+        "path": "cmd/dot/CMakeFiles/dot.dir/dot_builtins.cpp.o",
+        "scope": "build",
+        "size": 4960,
+        "sha256": "9669358b50a9cd5024a9fecb51d14f547da0c4f21cd83e20fd56800899b8e46d",
+        "references": 1
+      },
+      {
+        "path": "lib/cdt/libcdt.a",
+        "scope": "build",
+        "size": 139798,
+        "sha256": "b85e3ca5a7160124b928a4faf8db3121b66e5f9e2b52c98f4bbe9ff9d33258de",
+        "references": 2
+      },
+      {
+        "path": "lib/cgraph/libcgraph.a",
+        "scope": "build",
+        "size": 757718,
+        "sha256": "982f1e1a5f7c4b83c5d1d8912c2c2a3384be309d9db789110f2c80eae5754a8f",
+        "references": 2
+      },
+      {
+        "path": "lib/circogen/libcircogen.a",
+        "scope": "build",
+        "size": 274556,
+        "sha256": "095cf72a688c94997e74b986c79fc28d3d6a28a78641bdf6425facdb4dbc0d03",
+        "references": 1
+      },
+      {
+        "path": "lib/common/CMakeFiles/common_obj.dir/args.c.o",
+        "scope": "build",
+        "size": 21696,
+        "sha256": "622082a69366fb06cb32e28f9f1e9a397d19a48a56a8b75ae9f0c0d8dc8215de",
+        "references": 1
+      },
+      {
+        "path": "lib/common/CMakeFiles/common_obj.dir/arrows.c.o",
+        "scope": "build",
+        "size": 83464,
+        "sha256": "498c9f3da16d8b91728c3881792228aea8e97d3a3d57b450ce70f4bdf1560de2",
+        "references": 1
+      },
+      {
+        "path": "lib/common/CMakeFiles/common_obj.dir/colxlate.c.o",
+        "scope": "build",
+        "size": 102176,
+        "sha256": "64afd7c32a854876436a1186ff7d2f3884c4a70db2c647d54dfa8793d9c7958a",
+        "references": 1
+      },
+      {
+        "path": "lib/common/CMakeFiles/common_obj.dir/ellipse.c.o",
+        "scope": "build",
+        "size": 22888,
+        "sha256": "4bbb1c319d86661054d3456fc3b6f0ef7831bd188ad64b16b7ebbc040fb1a848",
+        "references": 1
+      },
+      {
+        "path": "lib/common/CMakeFiles/common_obj.dir/emit.c.o",
+        "scope": "build",
+        "size": 315216,
+        "sha256": "357ab62650b3103d490a81fca37a9678aafaa15de60a0de08dd0161356eba471",
+        "references": 1
+      },
+      {
+        "path": "lib/common/CMakeFiles/common_obj.dir/geom.c.o",
+        "scope": "build",
+        "size": 18368,
+        "sha256": "88d3a805674a7abffe3df9b23ffbfe7d349f724b37603d7a3b6c3852ee3e4549",
+        "references": 1
+      },
+      {
+        "path": "lib/common/CMakeFiles/common_obj.dir/globals.c.o",
+        "scope": "build",
+        "size": 10080,
+        "sha256": "989eb85f4a429f9198403ea927daef27619e3e47dde942bcf68a538893e7c2ee",
+        "references": 1
+      },
+      {
+        "path": "lib/common/CMakeFiles/common_obj.dir/htmllex.c.o",
+        "scope": "build",
+        "size": 12776,
+        "sha256": "71e7d97ee195b281c5f689f2ad326afb772485eed30a2969672a8b7aee4341b9",
+        "references": 1
+      },
+      {
+        "path": "lib/common/CMakeFiles/common_obj.dir/htmlparse.c.o",
+        "scope": "build",
+        "size": 80296,
+        "sha256": "31c0b874d5b583ff4dd5b98904d354a0d96f10012aaf9b2901614d84c7f2f0fb",
+        "references": 1
+      },
+      {
+        "path": "lib/common/CMakeFiles/common_obj.dir/htmltable.c.o",
+        "scope": "build",
+        "size": 141264,
+        "sha256": "c2c3cbb4a5ae0b647ac95e3cec63299707828b62960b625a7d7aeca158c8b329",
+        "references": 1
+      },
+      {
+        "path": "lib/common/CMakeFiles/common_obj.dir/input.c.o",
+        "scope": "build",
+        "size": 90712,
+        "sha256": "002a6f5372ea463a7f2859eb317ded7d02f678716852c2dbf9fa1158a471d697",
+        "references": 1
+      },
+      {
+        "path": "lib/common/CMakeFiles/common_obj.dir/labels.c.o",
+        "scope": "build",
+        "size": 64328,
+        "sha256": "b514a3f9fc8901733f33548c8039c4c1d7d7607cc0f6a89b8206d9be2301b4e4",
+        "references": 1
+      },
+      {
+        "path": "lib/common/CMakeFiles/common_obj.dir/ns.c.o",
+        "scope": "build",
+        "size": 111872,
+        "sha256": "95ae0faae8a4970a7ff02a6986ae97ed71e0f241dba0ed93f4afb5ec1e01dc79",
+        "references": 1
+      },
+      {
+        "path": "lib/common/CMakeFiles/common_obj.dir/output.c.o",
+        "scope": "build",
+        "size": 68584,
+        "sha256": "3378b9286e0c4ea142edbfa821c46bd249bd9c994fdfe7b852295c015d513a93",
+        "references": 1
+      },
+      {
+        "path": "lib/common/CMakeFiles/common_obj.dir/pointset.c.o",
+        "scope": "build",
+        "size": 23584,
+        "sha256": "c5fc30a48e9c2c54d7c0aad34341794af5e6d1fbb25168541488bd235a72573f",
+        "references": 1
+      },
+      {
+        "path": "lib/common/CMakeFiles/common_obj.dir/postproc.c.o",
+        "scope": "build",
+        "size": 73848,
+        "sha256": "dce3b6f5893aa186f422223ae4f5eca1bd2e4b6b30b2bce9960b9e42b37c66a3",
+        "references": 1
+      },
+      {
+        "path": "lib/common/CMakeFiles/common_obj.dir/psusershape.c.o",
+        "scope": "build",
+        "size": 47832,
+        "sha256": "185bda7a94fff6dcbb673219d6ed2e030a60ea0c7899980ef271fa43a5a4ac1f",
+        "references": 1
+      },
+      {
+        "path": "lib/common/CMakeFiles/common_obj.dir/routespl.c.o",
+        "scope": "build",
+        "size": 78672,
+        "sha256": "ff1750a98b947834bf1c82f3ba47a66a11cd5e54763ffc98b78a0c12d539bb87",
+        "references": 1
+      },
+      {
+        "path": "lib/common/CMakeFiles/common_obj.dir/shapes.c.o",
+        "scope": "build",
+        "size": 216728,
+        "sha256": "32f3f659c846a0ebe15bffb2be8c9fa0cf13039e74def3bb9a6c6b930cc48c43",
+        "references": 1
+      },
+      {
+        "path": "lib/common/CMakeFiles/common_obj.dir/splines.c.o",
+        "scope": "build",
+        "size": 92024,
+        "sha256": "9a6f52595ed144b16bdbb5355c3c7374060bb552d22351cb94f59157d85a4667",
+        "references": 1
+      },
+      {
+        "path": "lib/common/CMakeFiles/common_obj.dir/taper.c.o",
+        "scope": "build",
+        "size": 24064,
+        "sha256": "2fd5361eeaa59573ef576e7299161489cf1bf2d5a9928c42172df1a48ab85969",
+        "references": 1
+      },
+      {
+        "path": "lib/common/CMakeFiles/common_obj.dir/textspan.c.o",
+        "scope": "build",
+        "size": 30800,
+        "sha256": "a08cd6198c9df998026d068cc7f290511d639fb8fc45850be668edc5f9332cf2",
+        "references": 1
+      },
+      {
+        "path": "lib/common/CMakeFiles/common_obj.dir/textspan_lut.c.o",
+        "scope": "build",
+        "size": 45360,
+        "sha256": "79ff7c3de336435ed215d95db7cf8d81e4b2883e1a6f2ba9498894e6e14bf457",
+        "references": 1
+      },
+      {
+        "path": "lib/common/CMakeFiles/common_obj.dir/timing.c.o",
+        "scope": "build",
+        "size": 4824,
+        "sha256": "963d940133e916e0a947ec0c05e068148162977dd9c181d3236fed9baeec96be",
+        "references": 1
+      },
+      {
+        "path": "lib/common/CMakeFiles/common_obj.dir/utils.c.o",
+        "scope": "build",
+        "size": 166288,
+        "sha256": "cc5c29797e72505e835a00772fd257678861cd7f685752402ede3b888862b82c",
+        "references": 1
+      },
+      {
+        "path": "lib/common/libcommon.a",
+        "scope": "build",
+        "size": 1953448,
+        "sha256": "8a4c7c170a8f388a14e5c0656e1e1ae9442cc82f44aec5585e1d2b8aff8aac20",
+        "references": 1
+      },
+      {
+        "path": "lib/dotgen/libdotgen.a",
+        "scope": "build",
+        "size": 904596,
+        "sha256": "f2427b63350c9854a8cedb3cb02df2f5816a77999a4fbd79c964b848a232924b",
+        "references": 1
+      },
+      {
+        "path": "lib/fdpgen/libfdpgen.a",
+        "scope": "build",
+        "size": 293822,
+        "sha256": "af9bca28e6b43856fed1555a560a8707badac511d8e1d151fbdc0086a594969e",
+        "references": 1
+      },
+      {
+        "path": "lib/gvc/libgvc.a",
+        "scope": "build",
+        "size": 519560,
+        "sha256": "92fde26ddaee582d8adee90f6e58b47bf802b9d4cae4f0d6b28a0de2494c6255",
+        "references": 2
+      },
+      {
+        "path": "lib/label/liblabel.a",
+        "scope": "build",
+        "size": 105350,
+        "sha256": "98ae5d95ec3450a9345947f9d737ec0ca0946af8fb9d668316bd181accb7985d",
+        "references": 1
+      },
+      {
+        "path": "lib/neatogen/libneatogen.a",
+        "scope": "build",
+        "size": 1077808,
+        "sha256": "b6ac62358661a631a9490109ca275abbb86f5bb38c9f93ab61c04b00824f2887",
+        "references": 1
+      },
+      {
+        "path": "lib/ortho/CMakeFiles/ortho_obj.dir/fPQ.c.o",
+        "scope": "build",
+        "size": 16232,
+        "sha256": "49781c3a2e12c943f909daff0c1d9a4579b03a081c7171b3c891dc5bf741fd4e",
+        "references": 1
+      },
+      {
+        "path": "lib/ortho/CMakeFiles/ortho_obj.dir/maze.c.o",
+        "scope": "build",
+        "size": 45296,
+        "sha256": "8178647f5c00bcea38e519a0fcb2f69aa51274f759569063d2b8eab20199f358",
+        "references": 1
+      },
+      {
+        "path": "lib/ortho/CMakeFiles/ortho_obj.dir/ortho.c.o",
+        "scope": "build",
+        "size": 123584,
+        "sha256": "a7e0f74ebc7d5d08ffc749a7d1eb210b2025d8a42ea77e102988f3f32351803c",
+        "references": 1
+      },
+      {
+        "path": "lib/ortho/CMakeFiles/ortho_obj.dir/partition.c.o",
+        "scope": "build",
+        "size": 49680,
+        "sha256": "22b15e54c1c310fe1c438b106b2f2a6068ce74ac154a04412d774c2357e1f154",
+        "references": 1
+      },
+      {
+        "path": "lib/ortho/CMakeFiles/ortho_obj.dir/rawgraph.c.o",
+        "scope": "build",
+        "size": 21792,
+        "sha256": "a0eb81475abf27cd2a58af1cdb7665d0b2d404f82fbfa8f90aeadb3cc8f0eea5",
+        "references": 1
+      },
+      {
+        "path": "lib/ortho/CMakeFiles/ortho_obj.dir/sgraph.c.o",
+        "scope": "build",
+        "size": 19120,
+        "sha256": "fd187a14edc63946c2e6df5e07c28af6972e4a674d77f6d44952c34c118ab325",
+        "references": 1
+      },
+      {
+        "path": "lib/ortho/CMakeFiles/ortho_obj.dir/trapezoid.c.o",
+        "scope": "build",
+        "size": 62304,
+        "sha256": "26de19c01dd9f59c1c2199e4a837d91808f760ed1bfbb81a3b4640ede09d2c21",
+        "references": 1
+      },
+      {
+        "path": "lib/ortho/libortho.a",
+        "scope": "build",
+        "size": 338900,
+        "sha256": "a4293a82c7b1f7e29c6b950f9e02026034ca8920d1abf108db50bf11dc2ec66e",
+        "references": 1
+      },
+      {
+        "path": "lib/osage/libosage.a",
+        "scope": "build",
+        "size": 45032,
+        "sha256": "333c046eb7025ed4a6ddf6c05df7b0505ad1c72c6737675a1ac6c15829bc0b5c",
+        "references": 1
+      },
+      {
+        "path": "lib/pack/CMakeFiles/pack_obj.dir/ccomps.c.o",
+        "scope": "build",
+        "size": 63288,
+        "sha256": "08a8e11626aa13c4558e6507e9f48e657de5ddcbe6b3cc2b6ad7c9c220062e18",
+        "references": 1
+      },
+      {
+        "path": "lib/pack/CMakeFiles/pack_obj.dir/pack.c.o",
+        "scope": "build",
+        "size": 97720,
+        "sha256": "35f314f92e14d53590af33553e254c7547e6590dddbbf3ec0e28ed81c7935d92",
+        "references": 1
+      },
+      {
+        "path": "lib/pack/libpack.a",
+        "scope": "build",
+        "size": 161456,
+        "sha256": "0feefbbcd09ab0db24c54a64c82416f358fb60df112f11d875745feca46c6487",
+        "references": 1
+      },
+      {
+        "path": "lib/patchwork/libpatchwork.a",
+        "scope": "build",
+        "size": 75368,
+        "sha256": "120b7d2618b1e1995f38233833ebc6340ea2ca9ff0220937fe0f2a4e13ddbbe2",
+        "references": 1
+      },
+      {
+        "path": "lib/pathplan/libpathplan.a",
+        "scope": "build",
+        "size": 166160,
+        "sha256": "815a8e7da7e63fcb6902b96584b9d234f773961d399eecbff970e2775e3a40ef",
+        "references": 2
+      },
+      {
+        "path": "lib/rbtree/librbtree.a",
+        "scope": "build",
+        "size": 20924,
+        "sha256": "303a13d594343f1644c42f27190c5a64ba802a032b1e767b6b71edcd3942b4e7",
+        "references": 1
+      },
+      {
+        "path": "lib/sparse/libsparse.a",
+        "scope": "build",
+        "size": 570232,
+        "sha256": "8907e312dee736b20b42ea52f7ed3d4d880a7e00254c37bb427574f80983d3bb",
+        "references": 1
+      },
+      {
+        "path": "lib/twopigen/libtwopigen.a",
+        "scope": "build",
+        "size": 66930,
+        "sha256": "f852224cd8e7d7cd376ac1f05d32116a0ddfbb2ce5db9891d4025c6e9c5a386d",
+        "references": 1
+      },
+      {
+        "path": "lib/util/libutil.a",
+        "scope": "build",
+        "size": 104668,
+        "sha256": "9b7ff7967df3054c1bcb51f5a57da98b6d775883c6e0daccdb01fefdabab3f81",
+        "references": 1
+      },
+      {
+        "path": "lib/xdot/libxdot.a",
+        "scope": "build",
+        "size": 84460,
+        "sha256": "3f453b1f26266e4cf37eb42395b3d65fac9a29557d99598162ab5eb068d79d18",
+        "references": 2
+      },
+      {
+        "path": "plugin/core/libgvplugin_core.a",
+        "scope": "build",
+        "size": 577446,
+        "sha256": "8df331a911fdeff9c746a985078eb36b662d12d0c07fa360d6e84ac81d3c02db",
+        "references": 1
+      },
+      {
+        "path": "plugin/dot_layout/libgvplugin_dot_layout.a",
+        "scope": "build",
+        "size": 9794,
+        "sha256": "9d411756f39b7289e884700f436b0ce39afcf4f1380790100fc4adc593198f6e",
+        "references": 1
+      },
+      {
+        "path": "plugin/neato_layout/libgvplugin_neato_layout.a",
+        "scope": "build",
+        "size": 16042,
+        "sha256": "b49bb90cc2dae445180e559658aa913f1cf47bd051c01ffb1bd8ccf3e526e671",
+        "references": 1
+      },
+      {
+        "path": "plugin/vt/libgvplugin_vt.a",
+        "scope": "build",
+        "size": 37168,
+        "sha256": "10714bb0dfa297ad2f9d310509e3f5ec7acce78eed45e7d32cde334b06d999d4",
+        "references": 1
+      },
+      {
+        "path": "<sdk>/crtbeginS.o",
+        "scope": "sdk",
+        "size": 2744,
+        "sha256": "178f90d86c9bf8c3bf0746e288bed4af492c4b65397d54caf386a9b807d8e2c5",
+        "references": 1
+      },
+      {
+        "path": "<sdk>/crtendS.o",
+        "scope": "sdk",
+        "size": 1160,
+        "sha256": "b4b7d9001893f0baf4ebfbe12df8d5cf0dd7f69643a5caae04d956d1a443b246",
+        "references": 1
+      },
+      {
+        "path": "<sdk>/libgcc.a",
+        "scope": "sdk",
+        "size": 3237076,
+        "sha256": "d9c2e7a0c0f3dbfc0ff2dec153b0d044cf49d66d64d736b5d1db8ae25ca9c75e",
+        "references": 2
+      },
+      {
+        "path": "<sdk>/libgcc_eh.a",
+        "scope": "sdk",
+        "size": 71426,
+        "sha256": "050160c9613ecf99b449bb34743fb8b2f4aafb3ae03a38a63e69a6926f956140",
+        "references": 2
+      },
+      {
+        "path": "<sdk>/libstdc++.a",
+        "scope": "sdk",
+        "size": 6730712,
+        "sha256": "993dfc23322500e516204ea416b98af99140eafd6c498b5a519cd847e024ef0b",
+        "references": 1
+      },
+      {
+        "path": "<sdk>/Scrt1.o",
+        "scope": "sdk",
+        "size": 1656,
+        "sha256": "75c40260f996747732aeaac415985947403f7992916bc5d35465e1f9e6c93082",
+        "references": 1
+      },
+      {
+        "path": "<sdk>/crti.o",
+        "scope": "sdk",
+        "size": 1192,
+        "sha256": "077ccb6c68db1794da3ee262c4a16a3c6f8e902845dd0829110ad4b7065e5aa3",
+        "references": 1
+      },
+      {
+        "path": "<sdk>/crtn.o",
+        "scope": "sdk",
+        "size": 760,
+        "sha256": "a2266079f95b84ccc2162ebbf279bcd78858a748aa1882e0bdb912316c76a58f",
+        "references": 1
+      },
+      {
+        "path": "<sdk>/ld-linux-x86-64.so.2",
+        "scope": "sdk",
+        "size": 254864,
+        "sha256": "bda779ea9e9ad234f60315477d7cfd0bdde861cd8ddd9df8cdaf62f18c4cec14",
+        "references": 2
+      },
+      {
+        "path": "<sdk>/libc.so",
+        "scope": "sdk",
+        "size": 287,
+        "sha256": "649e1aa91af2551216685f45effca270fcc09ef39e28acd4b22745f0ae77e7f2",
+        "references": 3
+      },
+      {
+        "path": "<sdk>/libc.so.6",
+        "scope": "sdk",
+        "size": 2190608,
+        "sha256": "85e64f97e348786a8fb4d9f3d52fec289e2fb86bba20f0731dfe61990525e0f7",
+        "references": 1
+      },
+      {
+        "path": "<sdk>/libc_nonshared.a",
+        "scope": "sdk",
+        "size": 5594,
+        "sha256": "8fc3f78f6a5cac0cbe80a4fd96a00dcf5269425941fa33a0f2b7d25b96941662",
+        "references": 1
+      },
+      {
+        "path": "<sdk>/libm.so",
+        "scope": "sdk",
+        "size": 148,
+        "sha256": "0789aa234121bb6b77f060e40577027323ae1e7531a430fe208d29e57a697e4a",
+        "references": 6
+      },
+      {
+        "path": "<sdk>/libm.so.6",
+        "scope": "sdk",
+        "size": 1198376,
+        "sha256": "1c488db6f4fe8cecb72456bc018de000b7a9b539c2994864b0416b5e8371b3d8",
+        "references": 2
+      },
+      {
+        "path": "<sdk>/libmvec.so.1",
+        "scope": "sdk",
+        "size": 1022240,
+        "sha256": "2f2e7f4ad88e1b13f2f8345c826b25f85ba61c93527d91e59dd0d2943eac6e80",
+        "references": 2
+      }
+    ]
+  },
+  "sdk_static_archives": [
+    "libc_nonshared.a",
+    "libgcc.a",
+    "libgcc_eh.a",
+    "libstdc++.a"
+  ],
+  "approved": false,
+  "download_commands_used": false,
+  "limitations": [
+    "Records linker-read files, not individual archive members or legal compatibility.",
+    "Compiler runtimes/startup objects and Graphviz components require matching source/notice review.",
+    "Existing SDK in WSL, not native Linux matrix qualification or oldest glibc baseline.",
+    "Build/log collection only; the new executable has not been qualified or visually reviewed. Foundation results observed in tool output."
+  ],
+  "logs": [
+    {
+      "path": "linkage-build.logs/build.txt",
+      "sha256": "dc4795a3bb227f892835922e4e1f9883d53070deecde9a31de266f7c9339cc96"
+    }
+  ],
+  "source_sha256": {
+    "tools/runtime/build-common.py": "3632de9b983543400f4f8c846de6ef69d459d7bbc719dce50b5329033661435d",
+    "tools/runtime/verify-artifact.py": "f116919b2ef3d8bd44bbb8db4ef6ee3d5cd90041066458e60253ec309e1b482d",
+    "tests/unit/test_runtime_build_tools.py": "44ed952282dada08eb329efc978d911dd21976a55bf69bb57054cd2aa9d7643a"
+  },
+  "executions": [
+    {
+      "environment": "Windows 11 x86_64",
+      "python": "3.14.6",
+      "suite": "tests/run_foundation.py",
+      "tests": 126,
+      "skipped": 6,
+      "seconds": 22.758,
+      "passed": true
+    },
+    {
+      "environment": "Windows 11 x86_64",
+      "python": "3.12.10",
+      "suite": "tests/run_foundation.py",
+      "tests": 126,
+      "skipped": 6,
+      "seconds": 22.434,
+      "passed": true
+    },
+    {
+      "environment": "existing Ubuntu 26.04 x86_64 WSL",
+      "python": "3.14.4",
+      "suite": "tests/run_foundation.py",
+      "tests": 126,
+      "skipped": 5,
+      "seconds": 41.243,
+      "passed": true
+    }
+  ]
+}

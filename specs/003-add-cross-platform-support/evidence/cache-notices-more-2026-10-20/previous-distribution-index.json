@@ -1,0 +1,169 @@
+{
+  "kind": "partial-distribution-integrity-evidence-index",
+  "task": "T066",
+  "task_complete": false,
+  "passed": true,
+  "qualified": false,
+  "license_compatibility_approved": false,
+  "captured_at": "2026-10-21T00:28:52.113350+00:00",
+  "archive_checks": {
+    "path": "specs/003-add-cross-platform-support/evidence/distribution-integrity-2026-10-20/final-check.json",
+    "sha256": "bad3b2c0848021832f4a7491d5f8887de9b0f3afede0a24459597dea902e4ae5"
+  },
+  "archive_check_index": {
+    "path": "specs/003-add-cross-platform-support/evidence/distribution-integrity-2026-10-20/summary.json",
+    "sha256": "01f63cbed24a5b8b1cdaae3ba27cf9ae20a14e0759715832d3184436a199d5d2"
+  },
+  "archive_bundles": 6,
+  "archive_files_verified": 2419,
+  "archive_notice_payloads_verified": 2407,
+  "package_files_verified": 53,
+  "cache_checks": {
+    "path": "specs/003-add-cross-platform-support/evidence/cache-notices-2026-10-20/native/summary.json",
+    "sha256": "42a2765d1ba9850a892ef75b9ae600b35c5eb26c021c1ecc200d132aa0b28f94"
+  },
+  "native_cache_bundles": 4,
+  "native_cache_python_slots": 8,
+  "native_cache_installations": 16,
+  "cache_notice_files_per_snapshot_total": 6076,
+  "cache_corruption_checks": 16,
+  "cache_restored_snapshots": 16,
+  "cache_slots": [
+    {
+      "artifact_id": "linux-glibc-x86_64",
+      "runner": "ubuntu-24.04",
+      "python": "3.12.15",
+      "report": {
+        "path": "specs/003-add-cross-platform-support/evidence/cache-notices-2026-10-20/native/ubuntu-24.04-3.12.json",
+        "sha256": "da151c7d945e5b97dbdd2d35c6e7b7ea99ed013efe5963446580648a892707fd"
+      },
+      "notice_files_per_format": 480,
+      "installed_modes": [
+        "wheel",
+        "sdist"
+      ]
+    },
+    {
+      "artifact_id": "linux-glibc-x86_64",
+      "runner": "ubuntu-24.04",
+      "python": "3.14.8",
+      "report": {
+        "path": "specs/003-add-cross-platform-support/evidence/cache-notices-2026-10-20/native/ubuntu-24.04-3.14.json",
+        "sha256": "b95eacac31ccde884b0b1201f781a854cc06d91acc39ca5a8b402287dfa8027b"
+      },
+      "notice_files_per_format": 480,
+      "installed_modes": [
+        "wheel",
+        "sdist"
+      ]
+    },
+    {
+      "artifact_id": "linux-glibc-aarch64",
+      "runner": "ubuntu-24.04-arm",
+      "python": "3.12.15",
+      "report": {
+        "path": "specs/003-add-cross-platform-support/evidence/cache-notices-2026-10-20/native/ubuntu-24.04-arm-3.12.json",
+        "sha256": "c8a160e82aac9b69b8918938d20cd9cb1e299d0e4501102528854c0de8bd1247"
+      },
+      "notice_files_per_format": 573,
+      "installed_modes": [
+        "wheel",
+        "sdist"
+      ]
+    },
+    {
+      "artifact_id": "linux-glibc-aarch64",
+      "runner": "ubuntu-24.04-arm",
+      "python": "3.14.8",
+      "report": {
+        "path": "specs/003-add-cross-platform-support/evidence/cache-notices-2026-10-20/native/ubuntu-24.04-arm-3.14.json",
+        "sha256": "6f2687acb31ede44afc885b356c665b6a7db070e55ef6b4d720390e3eae492ae"
+      },
+      "notice_files_per_format": 573,
+      "installed_modes": [
+        "wheel",
+        "sdist"
+      ]
+    },
+    {
+      "artifact_id": "macos-arm64",
+      "runner": "macos-15",
+      "python": "3.12.10",
+      "report": {
+        "path": "specs/003-add-cross-platform-support/evidence/cache-notices-2026-10-20/native/macos-15-3.12.json",
+        "sha256": "19349e7addd2deebd52af2d049cef9acecc629678493d6954240146d178d4ceb"
+      },
+      "notice_files_per_format": 233,
+      "installed_modes": [
+        "wheel",
+        "sdist"
+      ]
+    },
+    {
+      "artifact_id": "macos-arm64",
+      "runner": "macos-15",
+      "python": "3.14.7",
+      "report": {
+        "path": "specs/003-add-cross-platform-support/evidence/cache-notices-2026-10-20/native/macos-15-3.14.json",
+        "sha256": "e7c3d2505b5f89c222324bf039ecbf2a100e10fbd71718d263bc8dac5aca35dd"
+      },
+      "notice_files_per_format": 233,
+      "installed_modes": [
+        "wheel",
+        "sdist"
+      ]
+    },
+    {
+      "artifact_id": "macos-x86_64",
+      "runner": "macos-15-intel",
+      "python": "3.12.10",
+      "report": {
+        "path": "specs/003-add-cross-platform-support/evidence/cache-notices-2026-10-20/native/macos-15-intel-3.12.json",
+        "sha256": "0e443d81b48245d965a170011e1627a42070985c0a66b7160e18d4240c1a0a21"
+      },
+      "notice_files_per_format": 233,
+      "installed_modes": [
+        "wheel",
+        "sdist"
+      ]
+    },
+    {
+      "artifact_id": "macos-x86_64",
+      "runner": "macos-15-intel",
+      "python": "3.14.7",
+      "report": {
+        "path": "specs/003-add-cross-platform-support/evidence/cache-notices-2026-10-20/native/macos-15-intel-3.14.json",
+        "sha256": "be5ca1b48b6c91fecde766842b25c1abe1adf7c327dab707a7e3e9b83a86d070"
+      },
+      "notice_files_per_format": 233,
+      "installed_modes": [
+        "wheel",
+        "sdist"
+      ]
+    }
+  ],
+  "foundation": {
+    "path": "specs/003-add-cross-platform-support/evidence/cache-notices-2026-10-20/foundation.json",
+    "sha256": "1d6e0af9b754e990c14def2dc3ccb0642a3a1b51dde0994813bc12d72995d554"
+  },
+  "package_regression": {
+    "path": "specs/003-add-cross-platform-support/evidence/cache-notices-2026-10-20/packages/summary.json",
+    "sha256": "cf8d94ed16d907798553043d1a5033ebe89d98f07006e3b5a67ba8e06ccc9ae8"
+  },
+  "runtime_regression": {
+    "path": "specs/003-add-cross-platform-support/evidence/cache-notices-2026-10-20/runtime-regression/summary.json",
+    "sha256": "195ffbc04ccc686c16a660c3464118d7173e76b96f30b1b9d7a8dad5ba2ad6c9"
+  },
+  "pending": [
+    "Native cache snapshots for Linux musl x64/ARM64 and Windows",
+    "Per-component license applicability and compatibility approval",
+    "Corresponding sources and permanent source retention/offer",
+    "Final distributed bundles, macOS signing/notarization and complete cell acceptance"
+  ],
+  "limitations": [
+    "Private development bundles; archive and cache checks are separately scoped",
+    "Cache checks execute real probes with fixture acquisition and Python-only network guard",
+    "No full native corpus rerun in the cache-specific driver; default runtime regression preserved separately",
+    "No support promotion or whole-spec completion"
+  ]
+}

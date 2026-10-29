@@ -1,0 +1,8 @@
+//! neg - negate (the number)
+//! - negXi2 for unoptimized little and big endian
+//! sfffffff = 2^31-1
+//! two's complement inverting bits and add 1 would result in -INT_MIN == 0
+//! => -INT_MIN = -2^31 forbidden
+//! * size optimized builds
+//! * machines that dont support carry operations
+

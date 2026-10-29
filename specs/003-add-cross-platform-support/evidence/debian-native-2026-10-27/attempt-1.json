@@ -1,0 +1,50 @@
+{
+  "revision": "3847fad4c3e0359b0d28e784bf6b3c5eeaf9e077",
+  "run_id": 40588935024,
+  "qualified": false,
+  "passed": false,
+  "logs": [
+    {
+      "job_id": 122487767203,
+      "path": "attempt-1/job-122487767203.log.gz",
+      "sha256": "9b2283d8501795a76f804cd33f9428430907b4905f33dc07f95ea7d19a3eb7c5",
+      "failure": "Image origin redirected; refused before VM boot"
+    },
+    {
+      "job_id": 122487767519,
+      "path": "attempt-1/job-122487767519.log.gz",
+      "sha256": "d2b6a26590509c977469ecb1828045cb932d743c416a716344cd3691f02c6da9",
+      "failure": "Image origin redirected; refused before VM boot"
+    },
+    {
+      "job_id": 122487767761,
+      "path": "attempt-1/job-122487767761.log.gz",
+      "sha256": "f259d034a0f355546fb939df1074af60db9bf655bbe5e65785d577214e204ba2",
+      "failure": "Image origin redirected; refused before VM boot"
+    },
+    {
+      "job_id": 122487767792,
+      "path": "attempt-1/job-122487767792.log.gz",
+      "sha256": "2030c93be2d67763289ce652d471bed9b70185338d606eec8cbcf173093dc3a9",
+      "failure": "Image origin redirected; refused before VM boot"
+    }
+  ],
+  "origin_review": [
+    {
+      "release": "12",
+      "requested": "https://cloud.debian.org/images/cloud/bookworm/20261026-2643/debian-12-generic-amd64-20261026-2643.qcow2",
+      "direct": "https://laotzu.ftp.acc.umu.se/images/cloud/bookworm/20261026-2643/debian-12-generic-amd64-20261026-2643.qcow2",
+      "range": "bytes 0-0/448790528",
+      "checksums_match_official_manifest": true,
+      "checksum_manifest_sha256": "089516de68111e28139618161c289ddfea0d872ec1c2cf452ee87e466c84904c"
+    },
+    {
+      "release": "13",
+      "requested": "https://cloud.debian.org/images/cloud/trixie/20261026-2643/debian-13-generic-amd64-20261026-2643.qcow2",
+      "direct": "https://chuangtzu.ftp.acc.umu.se/images/cloud/trixie/20261026-2643/debian-13-generic-amd64-20261026-2643.qcow2",
+      "range": "bytes 0-0/438894592",
+      "checksums_match_official_manifest": true,
+      "checksum_manifest_sha256": "f9e3b6d25a73706755c83d34edf9ad52e990b543169d695a8fd95037b3f6155f"
+    }
+  ]
+}

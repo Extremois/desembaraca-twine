@@ -1,0 +1,98 @@
+{
+  "kind": "native-linux-public-corpus-network-observation",
+  "qualified": false,
+  "run_url": "https://github.com/Extremois/desembaraca-twine/actions/runs/39242166311",
+  "commit": "054fdb94236b64a3c9f6cd61346c7830c8d24825",
+  "artifact_zip_sha256": "381c9a2e4c575ca4a0779c5eb756d9275811a2c140f01805aabde3bddf100647",
+  "executable_sha256": "43ce8d686720467c21be91cab4b8f3b246baae49c2cfe293714ebdf8a82f5716",
+  "kernel": "6.17.0-1022-azure",
+  "image_version": "20261012.334.1",
+  "results": [
+    {
+      "python": "3.12.15",
+      "cases": 13,
+      "dot_executions": 8,
+      "network_syscalls": {},
+      "control_network_syscalls": {
+        "socket": 1,
+        "connect": 1,
+        "getsockopt": 1
+      },
+      "tracer": {
+        "path": "/usr/bin/strace",
+        "sha256": "28f957c227012de0b18d1bd7fff2d396cb693ea60ed8013be68de071e84b5001",
+        "version": "strace -- version 6.8",
+        "filter": "trace=%network,execve",
+        "follow_children": true,
+        "kill_on_exit": true
+      }
+    },
+    {
+      "python": "3.14.8",
+      "cases": 13,
+      "dot_executions": 8,
+      "network_syscalls": {},
+      "control_network_syscalls": {
+        "socket": 1,
+        "connect": 1,
+        "getsockopt": 1
+      },
+      "tracer": {
+        "path": "/usr/bin/strace",
+        "sha256": "28f957c227012de0b18d1bd7fff2d396cb693ea60ed8013be68de071e84b5001",
+        "version": "strace -- version 6.8",
+        "filter": "trace=%network,execve",
+        "follow_children": true,
+        "kill_on_exit": true
+      }
+    }
+  ],
+  "files": [
+    {
+      "file": "provenance.json",
+      "sha256": "9466a5e8b9b47d2e36f3c0d0bc33944ade60155dff80ce8ab792dc584229a9ac",
+      "uncompressed_sha256": "9466a5e8b9b47d2e36f3c0d0bc33944ade60155dff80ce8ab792dc584229a9ac"
+    },
+    {
+      "file": "network-312.json",
+      "sha256": "226e8d69e8007d62ce69371533094f759069dc3b882cb6ebf9bc060d72754abd",
+      "uncompressed_sha256": "226e8d69e8007d62ce69371533094f759069dc3b882cb6ebf9bc060d72754abd"
+    },
+    {
+      "file": "corpus-312.json",
+      "sha256": "d363b59c23f699bdefb49135edbcf40a81d63fea885dcb19eb18b7ff7bf19897",
+      "uncompressed_sha256": "d363b59c23f699bdefb49135edbcf40a81d63fea885dcb19eb18b7ff7bf19897"
+    },
+    {
+      "file": "network-312.control.trace.gz",
+      "sha256": "a7f75a202cea98a3041adc9899d3c223ead38d9ccde795eeef9b359f10f46b2f",
+      "uncompressed_sha256": "3eb4a6d9a9764df7c23e89897427a6b47ca6e1146a56dfce20b8887fa7fa7b37"
+    },
+    {
+      "file": "network-312.corpus.trace.gz",
+      "sha256": "b5a66177cdeee96bc23248b0756aeacc5d0ac97888172b1b1b1cc3b6b8238438",
+      "uncompressed_sha256": "9dcbc6c9a571c2b508490d71464564fb4feaecf7ea5001393a4f8cce617faca8"
+    },
+    {
+      "file": "network-314.json",
+      "sha256": "7e723153778422c1f71720aa369220f6d6776bf76f47e94313f55674ff4e1c68",
+      "uncompressed_sha256": "7e723153778422c1f71720aa369220f6d6776bf76f47e94313f55674ff4e1c68"
+    },
+    {
+      "file": "corpus-314.json",
+      "sha256": "923a505bf4d3db9a99f8c565d3e2bac08b95fa596eac0ca2561b3e40cc98b4b7",
+      "uncompressed_sha256": "923a505bf4d3db9a99f8c565d3e2bac08b95fa596eac0ca2561b3e40cc98b4b7"
+    },
+    {
+      "file": "network-314.control.trace.gz",
+      "sha256": "b55ce896741b3e218a60ed81499daf27a852040e29ae2a21f8117130eb93c9e9",
+      "uncompressed_sha256": "ce151fb13402382eba1485face212a1462015477728f7977b4795db085d20450"
+    },
+    {
+      "file": "network-314.corpus.trace.gz",
+      "sha256": "aec5d9af04cfebab11d9a8f1e2348d1b1773f2d04686f4ad97f18ea6dba267ad",
+      "uncompressed_sha256": "5e9ec80ca4a5dc6cab0c89b75e9faba90d8fb8b0e5289da9f36bcb690949904a"
+    }
+  ],
+  "scope": "Observed public build corpus; networking available, no observed sockets/network syscalls. Not remote installation, runtime acquisition, recovery, native whole-cell acceptance, oldest baseline or Twine review."
+}

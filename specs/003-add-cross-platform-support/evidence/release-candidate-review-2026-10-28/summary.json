@@ -1,0 +1,116 @@
+{
+  "kind": "distribution-draft-preparation-not-qualification",
+  "application_revision": "6279d6ff715abbd4fc8d5fdf778d8a27a4f3ddfb",
+  "approved": false,
+  "qualified": false,
+  "active_catalog_changed": false,
+  "catalog_sha256": "525580c22ac27e58cfbf74ca6877e25f09a696bf07813ae4a1bdad059d72b762",
+  "artifacts": [
+    {
+      "artifact_id": "linux-glibc-aarch64",
+      "draft": "linux-glibc-aarch64/manifest-draft.json",
+      "draft_sha256": "e3ba67dba0a580a677b47abab08423775d860f3c54abff91369f422565e17476",
+      "binary_sha256": "015884600c6f1ed0c16b42961c3f58193f5e515bbb5800c0f392110d89a00cc7",
+      "sources_sha256": "0c0f21a31433c68586e38e5ea5f876bffd8bb2bc7692182a944daccf786096e5",
+      "files_verified": 573,
+      "notice_payloads_verified": 571,
+      "approved": false,
+      "license_audit_draft": {
+        "path": "specs/003-add-cross-platform-support/evidence/release-candidate-review-2026-10-28/linux-glibc-aarch64/license-audit-draft.json",
+        "sha256": "bd48bc75a8de6c76dea0b9eb63fec2f9403ce6a6b511951e6ecb3616fec52d6e"
+      },
+      "static_link_inputs_mapped": 65
+    },
+    {
+      "artifact_id": "linux-glibc-x86_64",
+      "draft": "linux-glibc-x86_64/manifest-draft.json",
+      "draft_sha256": "b287d5fe59b8a82d7274040dd8b618451f1a110790efd98f3e355c48aaab773c",
+      "binary_sha256": "f07586b000f195ab8303bed27cfaeb4c0bfc956092948d906a54b831cf8429bf",
+      "sources_sha256": "0db5becca81a0567a7e6cb0295d322d894324cbb9743077be5911d2d601b9bd6",
+      "files_verified": 480,
+      "notice_payloads_verified": 478,
+      "approved": false,
+      "license_audit_draft": {
+        "path": "specs/003-add-cross-platform-support/evidence/release-candidate-review-2026-10-28/linux-glibc-x86_64/license-audit-draft.json",
+        "sha256": "708e40a050ebd6d61a6dfea8b7ddec0cb530cc90b836a122c183c12193d8b577"
+      },
+      "static_link_inputs_mapped": 65
+    },
+    {
+      "artifact_id": "linux-musl-aarch64",
+      "draft": "linux-musl-aarch64/manifest-draft.json",
+      "draft_sha256": "121f322ccb8ab6ce229149f338ed6361a40bde4b054bad42e346a3770d2bedce",
+      "binary_sha256": "e12632dbb7035d4bb6fbba8dcf99cc68ef41f2601f3448030d396e682f2159d9",
+      "sources_sha256": "b24703663e33c98d75b71c223de7bb1286fcc63b1b5aa2626d41b05af736e1cc",
+      "files_verified": 450,
+      "notice_payloads_verified": 448,
+      "approved": false,
+      "license_audit_draft": {
+        "path": "specs/003-add-cross-platform-support/evidence/release-candidate-review-2026-10-28/linux-musl-aarch64/license-audit-draft.json",
+        "sha256": "76460a05c2d724ae6e4a842b42f991cdb2e8d1db3cacaf87a3839025ea98771b"
+      },
+      "static_link_inputs_mapped": 66
+    },
+    {
+      "artifact_id": "linux-musl-x86_64",
+      "draft": "linux-musl-x86_64/manifest-draft.json",
+      "draft_sha256": "ab6bcc6360aa03504fa526823a45ac66c6a373caf9839d7759e52db969d516a6",
+      "binary_sha256": "77800cb23d25f1311bda41b4f7156ed1f2b5b2fc3c0a83bac669a153abe3fc57",
+      "sources_sha256": "a52c39e96c9013d7e5453bd2287d5e5c174a64de468c35334c3673410ff607d2",
+      "files_verified": 450,
+      "notice_payloads_verified": 448,
+      "approved": false,
+      "license_audit_draft": {
+        "path": "specs/003-add-cross-platform-support/evidence/release-candidate-review-2026-10-28/linux-musl-x86_64/license-audit-draft.json",
+        "sha256": "b3e5576ccd6681651ed065142529c3ef8cfdf99aba79d31836dc5bf8745998c5"
+      },
+      "static_link_inputs_mapped": 66
+    },
+    {
+      "artifact_id": "macos-arm64",
+      "draft": "macos-arm64/manifest-draft.json",
+      "draft_sha256": "8c1d84e684b6e490033fd2b85fc02b882f9675962b59714a3eafd09f28ea2faf",
+      "binary_sha256": "accdf413189d69e0df95d48ce5bfdf3ac8d160f8b87ac35026fa23499af4ed0a",
+      "sources_sha256": "ceba8b50f6bb1a982afcf293c94849fa705cccc96c68f990e405040d270d9720",
+      "files_verified": 550,
+      "notice_payloads_verified": 548,
+      "approved": false,
+      "license_audit_draft": {
+        "path": "specs/003-add-cross-platform-support/evidence/release-candidate-review-2026-10-28/macos-arm64/license-audit-draft.json",
+        "sha256": "dc9620081cf5fdba4287fdb33947c1974669840939aa05091e80f007c05203a9"
+      },
+      "static_link_inputs_mapped": 0
+    },
+    {
+      "artifact_id": "macos-x86_64",
+      "draft": "macos-x86_64/manifest-draft.json",
+      "draft_sha256": "2b5a4f9185f8f92fa25cbc38023d99b54d62071318514b4ca4122e65e25554de",
+      "binary_sha256": "c85dc0697e3bfa613636fbb7b4c638ae5f7adb66c360e9345d9617db3fc1644b",
+      "sources_sha256": "05a2f6e27098175c4676705b7e3f56b194f31200b353d3d0c28e3ea456643d65",
+      "files_verified": 550,
+      "notice_payloads_verified": 548,
+      "approved": false,
+      "license_audit_draft": {
+        "path": "specs/003-add-cross-platform-support/evidence/release-candidate-review-2026-10-28/macos-x86_64/license-audit-draft.json",
+        "sha256": "d4f69ffe1c85a62a3ee437f5ea12b596fe66da0ed8426e5490f61ce01efc7f30"
+      },
+      "static_link_inputs_mapped": 0
+    }
+  ],
+  "sources_archive_bytes_rechecked_in_actions": true,
+  "license_compatibility_approved": false,
+  "verification": "Read-only archive, inventory, mode and notice-origin inspection; no local runtime tests",
+  "static_link_inputs_mapped": 262,
+  "audit_drafts": 6,
+  "local_payloads": {
+    "path": "specs/003-add-cross-platform-support/evidence/release-candidate-review-2026-10-28/payload-plan.json",
+    "sha256": "634136cfdeaca8c4b4532f6aeffcca01078d209d713ee93d6827573a907c6099"
+  },
+  "local_payload_count": 12,
+  "local_payload_bytes": 391746756,
+  "source_kit_notice_update_pending": true,
+  "macos_header_term_review": {
+    "path": "specs/003-add-cross-platform-support/evidence/macos-sdk-terms-review-2026-10-28/header-findings.json",
+    "sha256": "eca4a021732300412b5b5ddda5d8225b2aeeae05fb5023172e3cac3911cf19d3"
+  }
+}

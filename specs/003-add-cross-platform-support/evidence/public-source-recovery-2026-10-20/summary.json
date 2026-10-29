@@ -1,0 +1,97 @@
+{
+  "kind": "public-source-recovery-four-candidate-review",
+  "task": "T030",
+  "task_complete": false,
+  "approved": false,
+  "qualified": false,
+  "source_state": "working-tree",
+  "tool_sha256": "e476643e86a830964eb4f5e9915decf2418f91412a802915e73f9dc9cfa29f4a",
+  "tests_sha256": "001e244e26e8e541a911ddb47f01bed451d18b4b783d406c9e80bb9410b59032",
+  "recipe_pin_sha256": "4f9c3f100f05890a27685d8a586e152ea37ea51a2a50dd047f6f97ba78f2a6c7",
+  "existing_public_revision": "7d0476f3943e679ff1e151bf656f9992084209ba",
+  "unauthenticated_project_download": "project-download.json",
+  "bindings": [
+    {
+      "artifact_id": "linux-glibc-x86_64",
+      "report": "x86_64.json",
+      "report_sha256": "a765de0a876de91242edcc93fcbe7038933fd8834d7bbd790ddfb8bf1ba1b9b3",
+      "source_artifact_id": 12234824706,
+      "source_actions_archive_sha256": "7d519eb1831d003b8b2a23ff7edaf529b619d977e128431d9ab8c3f3c85291dc",
+      "native_provenance_sha256": "8c9b89730f58c2ed964bf491d2ac0c974549cad642366ac9027a16258237bae9",
+      "source_export_receipt": "glibc-x86_64-source-receipt.json",
+      "source_export_receipt_sha256": "cc59088ae97ccde6947eb6e4e9bb563babf3a8245dd4d8cd27a2b81f24b291ab",
+      "approved": false,
+      "qualified": false
+    },
+    {
+      "artifact_id": "linux-glibc-aarch64",
+      "report": "aarch64.json",
+      "report_sha256": "a7da94a124668b3c38b4fb468d693c8e6441d64ea73694b575203f4eda0a9a3e",
+      "source_artifact_id": 12235641627,
+      "source_actions_archive_sha256": "12a4d212867965e11a6356a9671c9fe0aee7aec07da5813fbe11def408fd291b",
+      "native_provenance_sha256": "1b6cbcbea3145905c46b2a21488f930c0a929f42e7a8dc8f8d95c56eb12721e2",
+      "source_export_receipt": "glibc-aarch64-source-receipt.json",
+      "source_export_receipt_sha256": "9977185df833eaa1a4081ed7a365bf13e0bffb88dbc342365bda1e959bffa562",
+      "approved": false,
+      "qualified": false
+    },
+    {
+      "artifact_id": "linux-musl-x86_64",
+      "report": "musl-x86_64.json",
+      "report_sha256": "f256b2cf30feb9825ca8ff4ad479f8dd77b2eed6e9bc58f12a15c4daf67a448d",
+      "source_artifact_id": 12234914417,
+      "source_actions_archive_sha256": "1cf8e46234539056914c82f37ec3b0a7a5e58d34b57dcb56a56038f0c062d498",
+      "native_provenance_sha256": "69a937c68949ec2db50c93f45b3535a42e0171c3149900fe08825b32c10a7c27",
+      "source_export_receipt": "musl-x86_64-source-receipt.json",
+      "source_export_receipt_sha256": "4167c96e89adf2b4b5df9b9f067705937d52f26352fc9003079d3cb8bc19f5a2",
+      "approved": false,
+      "qualified": false
+    },
+    {
+      "artifact_id": "linux-musl-aarch64",
+      "report": "musl-aarch64.json",
+      "report_sha256": "ecd5dcda90aa93384394a83e842384400b290b5810d4613753dbcee80e486bce",
+      "source_artifact_id": 12235472167,
+      "source_actions_archive_sha256": "db242e0dc42363c293c6176a1cd6a85daa3a8c6d90c4fb66c865e954b3fca219",
+      "native_provenance_sha256": "47304bee720bd5865cbfb3aac0dc66885b9648e66f6accfabf0539c3c4288a49",
+      "source_export_receipt": "musl-aarch64-source-receipt.json",
+      "source_export_receipt_sha256": "9ab1fe44bf169752d8d8999c809a6a23abc418da7282e125c2504f7d23540be4",
+      "approved": false,
+      "qualified": false
+    }
+  ],
+  "source_entries_per_variant": 18162,
+  "generated_metadata_per_variant": 2,
+  "tests": [
+    {
+      "python": "3.12",
+      "suite": "tests/run_foundation.py",
+      "tests": 212,
+      "skipped": 8,
+      "seconds": 26.688,
+      "passed": true
+    },
+    {
+      "python": "3.14",
+      "suite": "tests/run_foundation.py",
+      "tests": 212,
+      "skipped": 8,
+      "seconds": 26.415,
+      "passed": true
+    }
+  ],
+  "regressions": "Missing verifier failed first; full fixture now passes and rejects a re-export with matching internal hashes but altered public recipe source",
+  "limits": {
+    "per_file_bytes": 67108864,
+    "expanded_bytes": 536870912,
+    "archive_entries": 30000,
+    "source_metadata_bytes": 8388608,
+    "receipt_bytes": 65536
+  },
+  "scope": "Every exported program-source entry matches existing pinned public archives; source export indexes and candidate provenance are generated metadata",
+  "limitations": [
+    "No new native build; prior functional rebuild evidence remains separate",
+    "Successful recovery does not approve source retention policy, license applicability or corresponding-source offer",
+    "No release, catalog promotion, public upload, commit or push in this increment"
+  ]
+}

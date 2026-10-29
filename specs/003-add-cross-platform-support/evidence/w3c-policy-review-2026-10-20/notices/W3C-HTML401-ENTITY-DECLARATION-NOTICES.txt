@@ -1,0 +1,23 @@
+Entity declaration notice review; conditions and applicability remain under review.
+Graphviz source: https://gitlab.com/graphviz/graphviz/-/archive/16.1.0/graphviz-16.1.0.tar.gz
+Path: lib/common/entities.html
+Source SHA-256: d90554950424a27e062eedaf43683132886dfe31570d5b0c5a2cb97ced46ba2a
+Reference: https://www.w3.org/TR/1999/REC-html401-19991224/sgml/entities.html
+
+<!-- Portions © International Organization for Standardization 1986
+     Permission to copy in any form is granted for use with
+     conforming SGML systems and applications as defined in
+     ISO 8879, provided this notice is included in all copies.
+-->
+
+<!-- Portions © International Organization for Standardization 1986:
+     Permission to copy in any form is granted for use with
+     conforming SGML systems and applications as defined in
+     ISO 8879, provided this notice is included in all copies.
+-->
+
+<!-- Portions © International Organization for Standardization 1986:
+     Permission to copy in any form is granted for use with
+     conforming SGML systems and applications as defined in
+     ISO 8879, provided this notice is included in all copies.
+-->

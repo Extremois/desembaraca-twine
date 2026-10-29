@@ -1,0 +1,58 @@
+{
+  "kind": "github-actions-foundation",
+  "application_revision": "a192890556a437a772a5997e3908564df3c59777",
+  "run_id": 40762408452,
+  "workflow_url": "https://github.com/Extremois/desembaraca-twine/actions/runs/40762408452",
+  "passed": true,
+  "jobs": [
+    {
+      "name": "Pure contracts (macos-15, Python 3.12)",
+      "job_id": 123077519593,
+      "conclusion": "success",
+      "tests": 306,
+      "log_path": "specs/003-add-cross-platform-support/evidence/macos-source-data-notices-ci-2026-10-28/foundation-123077519593.log.gz",
+      "raw_log_sha256": "a29f121ba50a64928ee88d1c3ef81ff06ba931b092bdef43fc2e4ba67ba8ef9d"
+    },
+    {
+      "name": "Pure contracts (ubuntu-24.04, Python 3.14)",
+      "job_id": 123077519948,
+      "conclusion": "success",
+      "tests": 306,
+      "log_path": "specs/003-add-cross-platform-support/evidence/macos-source-data-notices-ci-2026-10-28/foundation-123077519948.log.gz",
+      "raw_log_sha256": "935d44093eb4d66b2602c04abaa34297eec5525ae20d5c3d4ca354941f9d870e"
+    },
+    {
+      "name": "Pure contracts (windows-latest, Python 3.12)",
+      "job_id": 123077520041,
+      "conclusion": "success",
+      "tests": 306,
+      "log_path": "specs/003-add-cross-platform-support/evidence/macos-source-data-notices-ci-2026-10-28/foundation-123077520041.log.gz",
+      "raw_log_sha256": "900bb704e5dc4480e8718529c2751711483418f332a4109442d56d4cd580d73d"
+    },
+    {
+      "name": "Pure contracts (macos-15, Python 3.14)",
+      "job_id": 123077520055,
+      "conclusion": "success",
+      "tests": 306,
+      "log_path": "specs/003-add-cross-platform-support/evidence/macos-source-data-notices-ci-2026-10-28/foundation-123077520055.log.gz",
+      "raw_log_sha256": "bff94907b81fc088c9b52e7af8ccc9ffe41f459e12697ce33dbdac405bd724af"
+    },
+    {
+      "name": "Pure contracts (windows-latest, Python 3.14)",
+      "job_id": 123077520218,
+      "conclusion": "success",
+      "tests": 306,
+      "log_path": "specs/003-add-cross-platform-support/evidence/macos-source-data-notices-ci-2026-10-28/foundation-123077520218.log.gz",
+      "raw_log_sha256": "f74e49141fd091f27dab612862f112a5a97b409c4fa10065f0db1ead9debf93a"
+    },
+    {
+      "name": "Pure contracts (ubuntu-24.04, Python 3.12)",
+      "job_id": 123077520366,
+      "conclusion": "success",
+      "tests": 306,
+      "log_path": "specs/003-add-cross-platform-support/evidence/macos-source-data-notices-ci-2026-10-28/foundation-123077520366.log.gz",
+      "raw_log_sha256": "635f59da0b589819d2ac3f42f0c5009292bdc25c34494c4d6cfda9c6eeafcb8f"
+    }
+  ],
+  "qualified": false
+}

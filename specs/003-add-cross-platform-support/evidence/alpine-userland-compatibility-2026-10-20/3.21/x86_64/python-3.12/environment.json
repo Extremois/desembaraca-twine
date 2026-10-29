@@ -1,0 +1,31 @@
+{
+  "kind": "alpine-private-bundle-userland-compatibility",
+  "passed": true,
+  "qualified": false,
+  "approved": false,
+  "environment_kind": "container",
+  "alpine": "3.21",
+  "python": "3.12.12",
+  "arch": "x86_64",
+  "kernel": "6.17.0-1022-azure",
+  "image": "python@sha256:a5473623dca35f686018ccd624373a9bb77105b06a392d57d361cfb91b633cbe",
+  "identity": {
+    "NAME": "Alpine Linux",
+    "ID": "alpine",
+    "VERSION_ID": "3.21.5",
+    "PRETTY_NAME": "Alpine Linux v3.21",
+    "HOME_URL": "https://alpinelinux.org/",
+    "BUG_REPORT_URL": "https://gitlab.alpinelinux.org/alpine/aports/-/issues"
+  },
+  "os_release_sha256": "32e81403c063cac6c68822d41e3253f95bb74d59ebf78824a300a4706f345843",
+  "image_lock_sha256": "39cd0d8565417148c99ea96f9e4ef50ea4d73e6b5fd150ee333d0c35893268f0",
+  "candidate_sha256": "50b51b2c2042a745c0d962398103ed4229fe857e2033f36b3a10a38631d13bea",
+  "provenance_sha256": "d10936711a270294eb0b5a185400ccf8edb21087500a8c6df43c0229629ad795",
+  "engine_sha256": "f4dfee4e052704b1a7efdb7b6a4c43583ccaa062aec800b76224dae24eb2b69b",
+  "application_revision": "b13cd6f90db31163e62119bb83e2eb8db5ac8458",
+  "global_graphviz_absent": true,
+  "scope": "Matching CPU, container userland and controlled acquisition; no native Alpine kernel/cell qualification",
+  "venv_and_pip_verified": true,
+  "pip_version_sha256": "2a17041798370959090a5dbf64c1d46bcd8aa0b0482267771c8a10127f2b38d6",
+  "runtime_network_sha256": "de1079f4c01440ede979617cf9b374f59f85844e1d7300a5b9eb1d7af5fd1b87"
+}

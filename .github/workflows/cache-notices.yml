@@ -1,0 +1,87 @@
+name: Installed cache notice integrity
+on:
+  workflow_dispatch:
+  push:
+    branches: [feat/003-add-cross-platform-support]
+    paths:
+      - '.gitattributes'
+      - '.github/workflows/cache-notices.yml'
+      - '.github/scripts/probe-cache-notices.py'
+      - 'tools/validation/check-built-packages.py'
+      - 'tests/unit/test_built_packages.py'
+      - 'tests/unit/test_cache_notices.py'
+      - 'tests/runtime_support.py'
+      - 'src/**'
+permissions:
+  contents: read
+  actions: read
+concurrency:
+  group: cache-notices-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  runtime:
+    name: Cache notices (${{ matrix.runner }}, Python ${{ matrix.python }})
+    strategy:
+      fail-fast: false
+      matrix:
+        runner: [ubuntu-24.04, ubuntu-24.04-arm, macos-15, macos-15-intel]
+        python: ['3.12', '3.14']
+        include:
+          - runner: ubuntu-24.04
+            artifact_id: linux-glibc-x86_64
+            candidate_run: 40801175547
+            candidate_name: linux-glibc-x86_64-unqualified-46d111de81038d6ae0e7e7772813693c5b0a2345
+          - runner: ubuntu-24.04-arm
+            artifact_id: linux-glibc-aarch64
+            candidate_run: 40801175634
+            candidate_name: linux-glibc-aarch64-unqualified-46d111de81038d6ae0e7e7772813693c5b0a2345
+          - runner: macos-15
+            artifact_id: macos-arm64
+            candidate_run: 40801175532
+            candidate_name: macos-arm64-unqualified-46d111de81038d6ae0e7e7772813693c5b0a2345
+          - runner: macos-15-intel
+            artifact_id: macos-x86_64
+            candidate_run: 40801175532
+            candidate_name: macos-x86_64-unqualified-46d111de81038d6ae0e7e7772813693c5b0a2345
+    runs-on: ${{ matrix.runner }}
+    timeout-minutes: 10
+    env:
+      PYTHONUTF8: '1'
+      PIP_DISABLE_PIP_VERSION_CHECK: '1'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - uses: actions/download-artifact@v4
+        with:
+          github-token: ${{ github.token }}
+          run-id: ${{ matrix.candidate_run }}
+          name: ${{ matrix.candidate_name }}
+          path: ${{ runner.temp }}/private-engine-artifact
+      - name: Build current development distributions on ephemeral runner
+        run: |
+          python -m pip install build
+          python -m build --outdir "${{ runner.temp }}/current-packages"
+      - name: Obtain offline build backend wheels
+        run: >-
+          python -m pip download --only-binary=:all: --no-deps
+          --dest "${{ runner.temp }}/package-wheelhouse" setuptools wheel packaging
+      - name: Read installed native cache notices independently
+        run: >-
+          python tools/validation/check-built-packages.py
+          --dist-dir "${{ runner.temp }}/current-packages"
+          --wheelhouse "${{ runner.temp }}/package-wheelhouse"
+          --engine-artifact "${{ runner.temp }}/private-engine-artifact"
+          --engine-id "${{ matrix.artifact_id }}"
+          --engine-check notices
+          --report "${{ runner.temp }}/cache-notices.json"
+      - name: Preserve independent cache notice evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cache-notices-${{ matrix.runner }}-${{ matrix.python }}-${{ github.sha }}
+          retention-days: 7
+          path: ${{ runner.temp }}/cache-notices.json

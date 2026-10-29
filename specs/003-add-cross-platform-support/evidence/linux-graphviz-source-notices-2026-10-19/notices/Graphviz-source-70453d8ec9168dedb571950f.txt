@@ -1,0 +1,9 @@
+/// @file
+/// @brief `qsort` with carried along context
+/// @ingroup cgraph_utils
+///
+/// The non-standard `qsort_r`, Windows’ `qsort_s`, and C11’s `qsort_s` provide
+/// a `qsort` alternative with an extra state parameter. Unfortunately none of
+/// these are easily usable portably in Graphviz. This header implements an
+/// alternative that hopefully is.
+

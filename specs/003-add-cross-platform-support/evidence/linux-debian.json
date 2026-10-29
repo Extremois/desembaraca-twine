@@ -1,0 +1,176 @@
+{
+  "kind": "partial-native-private-debian-evidence-index",
+  "task": "T038",
+  "task_complete": false,
+  "qualified": false,
+  "captured_at": "2026-10-27T22:34:24.340758+00:00",
+  "registry": {
+    "path": "tools/runtime/support-targets.json",
+    "sha256": "be3e8a77e3836d1125658c00a75fbf0e3584f1e26a166a053583336c29a5d295"
+  },
+  "application_revision": "7b30c80a7a1b980860e0fa9e6b16a14d8245c28e",
+  "evidence": {
+    "path": "specs/003-add-cross-platform-support/evidence/fedora-native-2026-10-27/summary.json",
+    "sha256": "97527f029df1ba333ada037872badd3b37d76a24552cf02b10e9ed2cafe1120e"
+  },
+  "expected_targets": 4,
+  "expected_python_slots": 8,
+  "complete_targets": 0,
+  "targets_with_partial_native_observations": 2,
+  "python_slots_with_partial_native_observations": 4,
+  "targets": [
+    {
+      "target_id": "debian-12-stable-x86_64-distribution-default",
+      "version": "12",
+      "arch": "x86_64",
+      "distribution_patch": "12.15",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "partial-native-observation",
+          "evidence": {
+            "path": "specs/003-add-cross-platform-support/evidence/fedora-native-2026-10-27/summary.json",
+            "sha256": "97527f029df1ba333ada037872badd3b37d76a24552cf02b10e9ed2cafe1120e"
+          },
+          "observed_python": "3.12.15"
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "partial-native-observation",
+          "evidence": {
+            "path": "specs/003-add-cross-platform-support/evidence/fedora-native-2026-10-27/summary.json",
+            "sha256": "97527f029df1ba333ada037872badd3b37d76a24552cf02b10e9ed2cafe1120e"
+          },
+          "observed_python": "3.14.8"
+        }
+      ],
+      "pending_reason": "Final distributed candidate, remote/sdist modalities, security/LTS package scope, Twine and remaining common gates"
+    },
+    {
+      "target_id": "debian-12-stable-aarch64-distribution-default",
+      "version": "12",
+      "arch": "aarch64",
+      "distribution_patch": null,
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "observed_python": null
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "observed_python": null
+        }
+      ],
+      "pending_reason": "Final distributed candidate, remote/sdist modalities, security/LTS package scope, Twine and remaining common gates"
+    },
+    {
+      "target_id": "debian-13-stable-x86_64-distribution-default",
+      "version": "13",
+      "arch": "x86_64",
+      "distribution_patch": "13.7",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "partial-native-observation",
+          "evidence": {
+            "path": "specs/003-add-cross-platform-support/evidence/fedora-native-2026-10-27/summary.json",
+            "sha256": "97527f029df1ba333ada037872badd3b37d76a24552cf02b10e9ed2cafe1120e"
+          },
+          "observed_python": "3.12.15"
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "partial-native-observation",
+          "evidence": {
+            "path": "specs/003-add-cross-platform-support/evidence/fedora-native-2026-10-27/summary.json",
+            "sha256": "97527f029df1ba333ada037872badd3b37d76a24552cf02b10e9ed2cafe1120e"
+          },
+          "observed_python": "3.14.8"
+        }
+      ],
+      "pending_reason": "Final distributed candidate, remote/sdist modalities, security/LTS package scope, Twine and remaining common gates"
+    },
+    {
+      "target_id": "debian-13-stable-aarch64-distribution-default",
+      "version": "13",
+      "arch": "aarch64",
+      "distribution_patch": null,
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "observed_python": null
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "observed_python": null
+        }
+      ],
+      "pending_reason": "Final distributed candidate, remote/sdist modalities, security/LTS package scope, Twine and remaining common gates"
+    }
+  ],
+  "limitations": [
+    "Private development wheel and controlled runtime acquisition; no final remote candidate or sdist acceptance",
+    "Pinned Fedora image builds and dated Debian/Ubuntu images; no package security/maintenance, LTS or Pro eligibility acceptance",
+    "Musl engine kernel observation on Fedora/Debian/Ubuntu; no native Alpine qualification",
+    "No local VM, Twine review, ARM64 qualification, catalog or support promotion"
+  ],
+  "maintenance_review": {
+    "reviewed_at": "2026-10-27",
+    "package_security_acceptance": false,
+    "releases": [
+      {
+        "version": "12",
+        "phase": "LTS",
+        "end": "2028-06-30",
+        "architectures": [
+          "amd64",
+          "arm64"
+        ],
+        "source": "https://www.debian.org/releases/bookworm/"
+      },
+      {
+        "version": "13",
+        "phase": "regular",
+        "regular_end": "2028-08-09",
+        "lts_end": "2030-06-30",
+        "source": "https://www.debian.org/releases/trixie/"
+      }
+    ]
+  },
+  "previous_index": {
+    "path": "specs/003-add-cross-platform-support/evidence/fedora-native-2026-10-27/previous-linux-debian.json",
+    "sha256": "2fa52eea0aebc7da24b5cc0bb7dcd709fec55626d4dc549c290c46f9679f5e12"
+  }
+}

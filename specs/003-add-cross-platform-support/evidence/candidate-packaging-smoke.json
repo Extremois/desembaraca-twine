@@ -1,0 +1,103 @@
+{
+  "kind": "local-candidate-packaging-smoke-not-qualification",
+  "captured_at": "2026-10-18T12:08:21.535853+00:00",
+  "environment_kind": "wsl",
+  "reports": [
+    {
+      "kind": "local-candidate-archive",
+      "qualified": false,
+      "artifact_id": "linux-glibc-x86_64",
+      "platform": "linux",
+      "artifact_arch": "x86_64",
+      "abi": "glibc",
+      "archive": "candidate.zip",
+      "archive_sha256": "423781270cbc8a2237f9893e78b19688aa5945ab6c85f2aca4eb8f93d4bd94c4",
+      "archive_bytes": 1584834,
+      "inventory": "inventory.json",
+      "inventory_sha256": "7ca8d9087fb66766dc8062fbc1c9e4b4dafeee48d0e49b332917513cf5440701",
+      "provenance_sha256": "fffbbdc949e4d4ad0acaca844be267f33e7a8aa831c1a3121c56a7acb5357aaf",
+      "file_count": 2,
+      "source_modes_checked": true,
+      "zip_modes": "from-validated-inventory",
+      "compression": "stored",
+      "pending": [
+        "dependency/license audit",
+        "native inspection/ABI",
+        "signing/notarization if applicable",
+        "real immutable distribution URL and runtime manifest",
+        "native cell acceptance"
+      ]
+    },
+    {
+      "kind": "local-candidate-archive",
+      "qualified": false,
+      "artifact_id": "linux-glibc-x86_64",
+      "platform": "linux",
+      "artifact_arch": "x86_64",
+      "abi": "glibc",
+      "archive": "candidate.zip",
+      "archive_sha256": "423781270cbc8a2237f9893e78b19688aa5945ab6c85f2aca4eb8f93d4bd94c4",
+      "archive_bytes": 1584834,
+      "inventory": "inventory.json",
+      "inventory_sha256": "7ca8d9087fb66766dc8062fbc1c9e4b4dafeee48d0e49b332917513cf5440701",
+      "provenance_sha256": "fffbbdc949e4d4ad0acaca844be267f33e7a8aa831c1a3121c56a7acb5357aaf",
+      "file_count": 2,
+      "source_modes_checked": true,
+      "zip_modes": "from-validated-inventory",
+      "compression": "stored",
+      "pending": [
+        "dependency/license audit",
+        "native inspection/ABI",
+        "signing/notarization if applicable",
+        "real immutable distribution URL and runtime manifest",
+        "native cell acceptance"
+      ]
+    }
+  ],
+  "repeatable_bytes": true,
+  "archive_entries_verified": true,
+  "existing_output_preserved": true,
+  "binary_executed": false,
+  "download_commands_used": false,
+  "qualified": false,
+  "limitations": [
+    "Existing experimental WSL build only, still requires GLIBC_2.38.",
+    "Packaging does not grant dependency/license, ABI, signature or native cell approval.",
+    "ZIP candidates retained locally, not published, not in active catalog; no remote network trace or Twine review.",
+    "Regression results were observed in tool output; source is uncommitted. No support target was promoted."
+  ],
+  "source_sha256": {
+    "tools/runtime/pack-candidate.py": "f6b866a3c1a8a35687e65d05fb82b0a2143d2cc462d7030d19d756a1e83c8498",
+    "tools/runtime/verify-artifact.py": "1bdd68d60f63b3dbb760c72a813f9f76aca3f45d8a8933a016bf264ac23e0250",
+    "tests/unit/test_candidate_archive.py": "db41cfc4e2b0595b9cfe255b0bbdd2789fff2e9b482fd5adf81f86a95f2f9fd1"
+  },
+  "executions": [
+    {
+      "environment": "Windows 11 x86_64",
+      "python": "3.14.6",
+      "suite": "tests/run_foundation.py",
+      "tests": 122,
+      "skipped": 6,
+      "seconds": 21.02,
+      "passed": true
+    },
+    {
+      "environment": "Windows 11 x86_64",
+      "python": "3.12.10",
+      "suite": "tests/run_foundation.py",
+      "tests": 122,
+      "skipped": 6,
+      "seconds": 20.672,
+      "passed": true
+    },
+    {
+      "environment": "existing Ubuntu 26.04 x86_64 WSL",
+      "python": "3.14.4",
+      "suite": "tests/run_foundation.py",
+      "tests": 122,
+      "skipped": 5,
+      "seconds": 36.897,
+      "passed": true
+    }
+  ]
+}

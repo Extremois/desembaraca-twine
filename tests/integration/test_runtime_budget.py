@@ -9,6 +9,23 @@ from twine_edge_overlap.errors import DependencyError
 
 
 class RuntimeBudgetTests(unittest.TestCase):
+    def test_snapshot_classification_consumes_processing_allowance(self):
+        from dataclasses import replace
+        clock=[100.0]
+        seen=[]
+        def prepare():
+            clock[0]+=50
+            return replace(controlled_runtime(),classification_seconds=5)
+        def engine(document,deadline):
+            seen.append(deadline)
+            return {node.id:(node.x,node.y) for node in document.nodes}
+        with tempfile.TemporaryDirectory() as folder:
+            source=Path(folder)/'story.twee'
+            source.write_bytes(fixture('crossing'))
+            with patch('twine_edge_overlap.application.time.monotonic',side_effect=lambda:clock[0]):
+                run(source,engine=engine,runtime_provider=prepare,seconds=10)
+        self.assertEqual(seen,[155.0])
+
     def test_application_prepares_once_and_passes_the_resolved_handle(self):
         handle=controlled_runtime()
         seen=[]

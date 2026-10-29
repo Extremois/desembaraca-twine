@@ -1,0 +1,73 @@
+{
+  "application_revision": "6279d6ff715abbd4fc8d5fdf778d8a27a4f3ddfb",
+  "run_id": 40781012839,
+  "passed": true,
+  "jobs": [
+    {
+      "job_id": 123142404568,
+      "name": "Pure contracts (ubuntu-24.04, Python 3.12)",
+      "tests": 307,
+      "conclusion": "success",
+      "raw_log_sha256": "6af6d714f37ad77191568ff7b3ff6a83021e6e917479079d03388ab1c2ec1da2",
+      "log": {
+        "path": "specs/003-add-cross-platform-support/evidence/macos-apsl-source-delivery-ci-2026-10-28/foundation-123142404568.log.gz",
+        "sha256": "a155ded65131354523ce387bbd4f90a0c128a99d50e8a1195d5233edfc4a31f5"
+      }
+    },
+    {
+      "job_id": 123142405081,
+      "name": "Pure contracts (macos-15, Python 3.12)",
+      "tests": 307,
+      "conclusion": "success",
+      "raw_log_sha256": "02ee7a3e117b1b7f65d07a2222b085c62a9daec69444c20ef014aff6448e13b3",
+      "log": {
+        "path": "specs/003-add-cross-platform-support/evidence/macos-apsl-source-delivery-ci-2026-10-28/foundation-123142405081.log.gz",
+        "sha256": "1cbd67e5d1d3b9be0b6a191f1533953db81b6eb72fdec2e57bf05b01a1aeef28"
+      }
+    },
+    {
+      "job_id": 123142405095,
+      "name": "Pure contracts (ubuntu-24.04, Python 3.14)",
+      "tests": 307,
+      "conclusion": "success",
+      "raw_log_sha256": "6c41c3a9cabbd17236c3ad078f34574accf6a697763cda7e0d59c4de04b12796",
+      "log": {
+        "path": "specs/003-add-cross-platform-support/evidence/macos-apsl-source-delivery-ci-2026-10-28/foundation-123142405095.log.gz",
+        "sha256": "62a2cf220ad5c07c757cc20a5d2f848b9161fdcd2dc6c493eaffc45a3d7e2742"
+      }
+    },
+    {
+      "job_id": 123142405112,
+      "name": "Pure contracts (macos-15, Python 3.14)",
+      "tests": 307,
+      "conclusion": "success",
+      "raw_log_sha256": "980eac087352ec8785352cda492eec897723b521211825de1efc1910c8b7276b",
+      "log": {
+        "path": "specs/003-add-cross-platform-support/evidence/macos-apsl-source-delivery-ci-2026-10-28/foundation-123142405112.log.gz",
+        "sha256": "1c084099ded53e5d0b6698ae19fe15b664c2a5c04bee91ac567f83e5fbcdd02a"
+      }
+    },
+    {
+      "job_id": 123142405231,
+      "name": "Pure contracts (windows-latest, Python 3.14)",
+      "tests": 307,
+      "conclusion": "success",
+      "raw_log_sha256": "7f87c2f2a3f16760203f21e4433704d6c475baf266b310c5d7a444022c24a2d7",
+      "log": {
+        "path": "specs/003-add-cross-platform-support/evidence/macos-apsl-source-delivery-ci-2026-10-28/foundation-123142405231.log.gz",
+        "sha256": "50650307fe647f6448c2b0d4302cdd7eb235852f637a1d4aa900fa43d073b574"
+      }
+    },
+    {
+      "job_id": 123142405413,
+      "name": "Pure contracts (windows-latest, Python 3.12)",
+      "tests": 307,
+      "conclusion": "success",
+      "raw_log_sha256": "92a372b00cb9cd4f7e32980f0847183be4dd20eb01e5c2c2733a3c753c3f2db9",
+      "log": {
+        "path": "specs/003-add-cross-platform-support/evidence/macos-apsl-source-delivery-ci-2026-10-28/foundation-123142405413.log.gz",
+        "sha256": "3006f443f55e1d0fd0d3fb700aca754f8651d162b1ae5c54900ad2043f7c95e0"
+      }
+    }
+  ]
+}

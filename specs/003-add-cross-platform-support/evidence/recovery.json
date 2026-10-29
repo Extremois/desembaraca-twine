@@ -1,0 +1,31 @@
+{
+  "kind": "github-actions-abi-recovery-acceptance",
+  "task": "T076",
+  "task_complete": true,
+  "qualified": false,
+  "application_revision": "07688e264e6c9915790c2728beb24552a23f6388",
+  "qualification_scope": "abi",
+  "expected_targets": 7,
+  "expected_python_slots": 14,
+  "complete_targets": 7,
+  "complete_python_slots": 14,
+  "installations": 28,
+  "repair_scenarios": 112,
+  "process_recovery_scenarios": 112,
+  "evidence": {
+    "path": "specs/003-add-cross-platform-support/evidence/abi-recovery-ci-canonical/summary.json",
+    "sha256": "17969174aba882633781cec60e40b31bf76daee18cab179bc7a3befd33202d1a"
+  },
+  "historical_index": {
+    "path": "specs/003-add-cross-platform-support/evidence/abi-recovery-ci-canonical/previous-recovery.json.gz",
+    "sha256": "aa38d4f13ea75d3c68b47772c374a3a5f7422444cbf669c5a2fa6ae1448923f2"
+  },
+  "limitations": [
+    "Controlled repair transfers/disk-full errors",
+    "Windows EACCES is injected; POSIX execute denial uses real permissions",
+    "Process exit, locking and concurrency are real",
+    "Python-only offline network guard",
+    "Windows hosted OS is recorded, without Windows 11 certification",
+    "No license, release or support promotion"
+  ]
+}

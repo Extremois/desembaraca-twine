@@ -1,0 +1,162 @@
+{
+  "kind": "local-source-and-contract-audit-not-support-qualification",
+  "task": "T080",
+  "captured_at": "2026-10-18T11:25:24.529163+00:00",
+  "reviewer": "Codex: source inspection and isolated contract execution",
+  "working_tree_dirty": true,
+  "limits": [
+    {
+      "area": "preparation",
+      "seconds": 300,
+      "enforcement": "cooperative deadline, checked between I/O and steps",
+      "source": "runtime.py:RuntimeManager.ensure/check"
+    },
+    {
+      "area": "download",
+      "socket_seconds": 30,
+      "archive_bytes": 134217728,
+      "redirect_limit": 5,
+      "enforcement": "HTTPS allowlisted origins and received-byte counter; no story-bearing request",
+      "tests": [
+        "unit.test_security_limits",
+        "unit.test_runtime_archives"
+      ]
+    },
+    {
+      "area": "probe",
+      "seconds": 10,
+      "combined_output_bytes": 1048576,
+      "enforcement": "minimum of remaining preparation allowance and probe limit",
+      "tests": [
+        "unit.test_security_limits"
+      ]
+    },
+    {
+      "area": "lock",
+      "seconds": 10,
+      "enforcement": "OS descriptor lock; minimum of preparation deadline and ten seconds",
+      "tests": [
+        "integration.test_runtime_concurrency"
+      ]
+    },
+    {
+      "area": "processing",
+      "seconds": 60,
+      "engine_seconds": 30,
+      "engine_combined_output_bytes": 8388608,
+      "enforcement": "read/parse/classification charged; acquisition excluded; production runner bounded with direct process cleanup",
+      "tests": [
+        "integration.test_runtime_budget",
+        "unit.test_security_limits"
+      ]
+    },
+    {
+      "area": "archive_expansion",
+      "bytes": 536870912,
+      "entries": 5000,
+      "enforcement": "pinned inventory plus real streaming counters; reject links, traversal, duplicates, privileged modes",
+      "tests": [
+        "unit.test_runtime_archives",
+        "unit.test_runtime_posix"
+      ]
+    },
+    {
+      "area": "rolling",
+      "seconds": 5,
+      "aggregate_output_bytes": 8388608,
+      "records_per_read": 100000,
+      "identity_bytes": 65536,
+      "enforcement": "two equal canonical captures; fixed read-only argv; no persistence/upload; unknown on failure",
+      "tests": [
+        "unit.test_runtime_snapshot",
+        "unit.test_security_limits"
+      ]
+    },
+    {
+      "area": "host_facts",
+      "release_identity_bytes": 65536,
+      "alma_query_seconds": 1,
+      "alma_query_output_bytes": 65536,
+      "musl_probe_seconds": 1,
+      "musl_probe_output_bytes": 65536,
+      "cpuinfo_bytes": 1048576,
+      "enforcement": "bounded local data; no shell evaluation",
+      "tests": [
+        "unit.test_runtime_platform"
+      ]
+    },
+    {
+      "area": "story",
+      "bytes": 10485760,
+      "nodes": 100,
+      "edges": 300,
+      "header_bytes": 8192,
+      "enforcement": "validation before acquisition; identifiers replaced in DOT and story text omitted",
+      "tests": [
+        "contract.test_cross_platform_results",
+        "unit.test_security_limits"
+      ]
+    }
+  ],
+  "privacy": {
+    "download": "Fixed manifest HTTPS GET; only fixed User-Agent; no body or story/paths in request",
+    "graphviz": "Generated node IDs, dimensions and edges only; no titles, text or story commands",
+    "child_environment": "Allowlisted OS/locale/temp keys; controlled PATH/GVBINDIR; no LD_/DYLD_/GV_ overrides or proxy secrets",
+    "rolling": "Local read-only inventory; no application network or persistence",
+    "filesystem": "Writes limited to selected story copy, isolated temporaries and managed per-user cache; no global Graphviz/Python/security changes",
+    "scope": "Normal application source; maintainer qualification explicitly handles only public test fixtures"
+  },
+  "executions": [
+    {
+      "environment": "current Windows 11 x86_64",
+      "python": "3.14.6",
+      "suite": "tests/run_foundation.py",
+      "tests": 115,
+      "skipped": 4,
+      "seconds": 20.488,
+      "passed": true
+    },
+    {
+      "environment": "current Windows 11 x86_64",
+      "python": "3.12.10",
+      "suite": "tests/run_foundation.py",
+      "tests": 115,
+      "skipped": 4,
+      "seconds": 19.969,
+      "passed": true
+    },
+    {
+      "environment": "existing Ubuntu 26.04 x86_64 WSL",
+      "python": "3.14.4",
+      "suite": "tests/run_foundation.py",
+      "tests": 115,
+      "skipped": 5,
+      "seconds": 34.595,
+      "passed": true
+    }
+  ],
+  "limitations": [
+    "This is the application-code audit required by T080, not native artifact/license/security qualification for any new support cell.",
+    "Controlled transports/probes are not native engine trials; actual process-output/deadline tests use the production runner with CPython children.",
+    "No native syscall network trace, native macOS execution or full Linux distribution matrix; these remain separate pending gates.",
+    "Deadlines are cooperative with up to two seconds direct-process cleanup; arbitrary process trees or hostile same-user cache races are not claimed contained.",
+    "Suite results observed in tool output; no VM, provisioning, remote CI or publication."
+  ],
+  "source_sha256": {
+    "src/twine_edge_overlap/runtime.py": "dab6499fdc5abe5f417d5ed8f9242d711f1bda7be0c98e8b3c819b273af669cb",
+    "src/twine_edge_overlap/runtime_platform.py": "2f811109e2528ed1fcc8d8eab16577f771c466df216cf718feb9c7c6ccf1deb8",
+    "src/twine_edge_overlap/runtime_snapshot.py": "8a255c6a0b13eb132215a1ebac3bf11b70682c29ed1bdb7b5899db46243c871f",
+    "src/twine_edge_overlap/application.py": "e011ebe5ef1ab4a980238dd62b8ea1d950d4aac6172d9d2e5764a24bd226f3bd",
+    "src/twine_edge_overlap/engines/process.py": "54219fb40a6c2f8a7db034f8454c9d31b77fd63ede38e09639ae7404fd7f7d81",
+    "src/twine_edge_overlap/engines/graphviz.py": "218dd40b9de3f78394286f96003a2f0aec3e7ef08955ce81479c1b319426a2a6",
+    "src/twine_edge_overlap/domain/model.py": "0d82e3f3e0dd120df53f366ae1ddda129146f222f7ee3f01a7c06fbb18610a80",
+    "src/twine_edge_overlap/formats/profile.py": "14ca026f83b79ac01afb92d314ab6fa9cb6902c1ad11470e6cc57244398187e4",
+    "src/twine_edge_overlap/files.py": "301a50479ae75488263c4f966f1eb5299ddd5b65aad4280f52df0ccc55869186",
+    "tools/runtime/qualify-target.py": "bc816c95261f980b5acbad6022792b1602e0bfab867fc0286db0e3603a29caa9",
+    "tools/runtime/qualification-worker.py": "e518cce677570a3b0b05255387e3559f1cc35a51b5435efbc93691ce184ebe4a",
+    "tools/runtime/run-qualification-ci.py": "9ea6ee1626623770a978fcda67337f413583a6294555e5a95486b1de1072b9a1",
+    "tests/unit/test_security_limits.py": "90fc273806d799f6ff222c90274ca8efb52d129338d7c5b64eb3e5620a531fed",
+    "tests/unit/test_qualification_tools.py": "ad699d1412f7185f573fbaf0a2519179aee57476414f78aae1e2d08c2d18ed5a"
+  },
+  "task_status": "partial: local code audit complete; final packages and per-cell prerequisites remain pending"
+}

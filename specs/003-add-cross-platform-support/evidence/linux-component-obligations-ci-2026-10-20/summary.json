@@ -1,0 +1,184 @@
+{
+  "kind": "linux-source-notice-package-ci-review",
+  "revision": "47844106ff072cad005a8a1c795153c658b2bc89",
+  "approved": false,
+  "qualified": false,
+  "task": "T030",
+  "task_complete": false,
+  "runs": [
+    {
+      "id": 39404335588,
+      "name": "Cross-platform foundation",
+      "url": "https://github.com/Extremois/desembaraca-twine/actions/runs/39404335588",
+      "revision": "47844106ff072cad005a8a1c795153c658b2bc89",
+      "conclusion": "success",
+      "jobs": [
+        {
+          "id": 118566471500,
+          "name": "Pure contracts (windows-latest, Python 3.12)",
+          "conclusion": "success"
+        },
+        {
+          "id": 118566471790,
+          "name": "Pure contracts (macos-15, Python 3.12)",
+          "conclusion": "success"
+        },
+        {
+          "id": 118566471875,
+          "name": "Pure contracts (ubuntu-24.04, Python 3.12)",
+          "conclusion": "success"
+        },
+        {
+          "id": 118566471876,
+          "name": "Pure contracts (ubuntu-24.04, Python 3.14)",
+          "conclusion": "success"
+        },
+        {
+          "id": 118566471992,
+          "name": "Pure contracts (windows-latest, Python 3.14)",
+          "conclusion": "success"
+        },
+        {
+          "id": 118566472135,
+          "name": "Pure contracts (macos-15, Python 3.14)",
+          "conclusion": "success"
+        },
+        {
+          "id": 118566474332,
+          "name": "windows-acceptance",
+          "conclusion": "skipped"
+        }
+      ]
+    },
+    {
+      "id": 39404335738,
+      "name": "Linux Graphviz candidate",
+      "url": "https://github.com/Extremois/desembaraca-twine/actions/runs/39404335738",
+      "revision": "47844106ff072cad005a8a1c795153c658b2bc89",
+      "conclusion": "success",
+      "jobs": [
+        {
+          "id": 118566472305,
+          "name": "build-and-corpus",
+          "conclusion": "success"
+        }
+      ]
+    },
+    {
+      "id": 39404335649,
+      "name": "Linux ARM64 Graphviz candidate",
+      "url": "https://github.com/Extremois/desembaraca-twine/actions/runs/39404335649",
+      "revision": "47844106ff072cad005a8a1c795153c658b2bc89",
+      "conclusion": "success",
+      "jobs": [
+        {
+          "id": 118566472238,
+          "name": "native-build",
+          "conclusion": "success"
+        }
+      ]
+    },
+    {
+      "id": 39404335702,
+      "name": "Alpine musl Graphviz candidates",
+      "url": "https://github.com/Extremois/desembaraca-twine/actions/runs/39404335702",
+      "revision": "47844106ff072cad005a8a1c795153c658b2bc89",
+      "conclusion": "success",
+      "jobs": [
+        {
+          "id": 118566472478,
+          "name": "alpine-build (ubuntu-24.04-arm, aarch64)",
+          "conclusion": "success"
+        },
+        {
+          "id": 118566472665,
+          "name": "alpine-build (ubuntu-24.04, x86_64)",
+          "conclusion": "success"
+        }
+      ]
+    },
+    {
+      "id": 39404335672,
+      "name": "macOS Graphviz candidates",
+      "url": "https://github.com/Extremois/desembaraca-twine/actions/runs/39404335672",
+      "revision": "47844106ff072cad005a8a1c795153c658b2bc89",
+      "conclusion": "success",
+      "jobs": [
+        {
+          "id": 118566471687,
+          "name": "native-build (macos-15, aarch64, macos-arm64)",
+          "conclusion": "success"
+        },
+        {
+          "id": 118566472142,
+          "name": "native-build (macos-15-intel, x86_64, macos-x86_64)",
+          "conclusion": "success"
+        }
+      ]
+    }
+  ],
+  "artifacts": [
+    {
+      "artifact_id": "linux-glibc-x86_64",
+      "receipt": "specs/003-add-cross-platform-support/evidence/linux-component-obligations-ci-2026-10-20/glibc-x86_64/summary.json",
+      "receipt_sha256": "a61071c0df3144efdeca66e67a83b4290bcf3c89ebfebdf58a1953a6bd24585f",
+      "executable_sha256": "43ce8d686720467c21be91cab4b8f3b246baae49c2cfe293714ebdf8a82f5716",
+      "candidate_archive_sha256": "15d2d904d6ae03214d56f3b484d69751f96d176721435e437fe7a72dceb0574a",
+      "notices": 479,
+      "graphviz_sources": 322,
+      "source_prefixes": 303,
+      "additional_source_references": 2,
+      "executable_unchanged": true,
+      "approved": false,
+      "qualified": false
+    },
+    {
+      "artifact_id": "linux-glibc-aarch64",
+      "receipt": "specs/003-add-cross-platform-support/evidence/linux-component-obligations-ci-2026-10-20/glibc-aarch64/summary.json",
+      "receipt_sha256": "c9a941cd9b9a70b4c32057be0d5e525d0809c78915b3744bf054e59f853eef64",
+      "executable_sha256": "933b6c63370bdd3e814627e2a9a06176416c8da017a21dcbc96d8137dbc17e22",
+      "candidate_archive_sha256": "47c4b4047b145ebc1b1576320245758cdd1d6116d5adf898e111d08101b63301",
+      "notices": 543,
+      "graphviz_sources": 322,
+      "source_prefixes": 303,
+      "additional_source_references": 2,
+      "executable_unchanged": true,
+      "approved": false,
+      "qualified": false
+    },
+    {
+      "artifact_id": "linux-musl-x86_64",
+      "receipt": "specs/003-add-cross-platform-support/evidence/linux-component-obligations-ci-2026-10-20/musl-x86_64/summary.json",
+      "receipt_sha256": "95fd3f1d498e8f123706779287594e1c94220ff8583e0b7fe87a67b2333646cd",
+      "executable_sha256": "f4dfee4e052704b1a7efdb7b6a4c43583ccaa062aec800b76224dae24eb2b69b",
+      "candidate_archive_sha256": "7813ffa0d4ced072c3c9459a71759fa0988358ff8e8ce36ea19579d5f03d094f",
+      "notices": 420,
+      "graphviz_sources": 322,
+      "source_prefixes": 303,
+      "additional_source_references": 2,
+      "executable_unchanged": true,
+      "approved": false,
+      "qualified": false
+    },
+    {
+      "artifact_id": "linux-musl-aarch64",
+      "receipt": "specs/003-add-cross-platform-support/evidence/linux-component-obligations-ci-2026-10-20/musl-aarch64/summary.json",
+      "receipt_sha256": "562b87217209675897f506756af40de997af269c76ebd43acf1e92c570816751",
+      "executable_sha256": "2d7a4b6024eb000c33ecf8b14d1a32d0aac8dde65bed00de138604d081fd3ee4",
+      "candidate_archive_sha256": "3427cfa463f1616a6984751a9a9772cf431961d4f22827dbb0485cd0b290a8c5",
+      "notices": 420,
+      "graphviz_sources": 322,
+      "source_prefixes": 303,
+      "additional_source_references": 2,
+      "executable_unchanged": true,
+      "approved": false,
+      "qualified": false
+    }
+  ],
+  "observations": "All notice payloads/inventories/offline origins verified after download; original executable hashes unchanged; corpus/cache/network and exported-source rebuild workflows passed",
+  "limitations": [
+    "Per-file applicability, transitive-source audit and permanent source offer remain pending",
+    "Successful builds and controlled-transport runtime tests do not qualify distribution/version/kernel cells",
+    "macOS CI success does not supply Developer ID signing, notarization or installed native qualification"
+  ]
+}

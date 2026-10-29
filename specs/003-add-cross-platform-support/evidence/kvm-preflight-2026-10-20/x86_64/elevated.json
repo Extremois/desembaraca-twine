@@ -1,0 +1,27 @@
+{
+  "kind": "github-kvm-api-preflight-not-guest-execution",
+  "qualified": false,
+  "approved": false,
+  "revision": "28a03bbdfa603a1dfdf6fa14dd9c8ff0eb3bcc22",
+  "arch": "x86_64",
+  "kernel": "6.17.0-1022-azure",
+  "runner_image": "ubuntu24",
+  "runner_image_version": "20261012.334.1",
+  "elevated": true,
+  "source_sha256": "3171fb1f41be0fc9f1ba4d0e1c75bdd504ac3525a012e5dcaf5432fb7656cf20",
+  "probe": {
+    "status": "query-ready",
+    "device_present": true,
+    "device_opened": true,
+    "api_version": 12,
+    "user_memory": 1,
+    "no_vm_created": true,
+    "no_guest_executed": true,
+    "device_mode": 432
+  },
+  "scope": "API/access query only; guest boot, acceleration, guest kernel and distribution acceptance remain untested",
+  "references": [
+    "https://docs.kernel.org/virt/kvm/api.html#kvm-get-api-version",
+    "https://docs.github.com/en/actions/reference/runners/github-hosted-runners"
+  ]
+}

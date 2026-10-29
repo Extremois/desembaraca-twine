@@ -1,0 +1,935 @@
+{
+  "application_revision": "07688e264e6c9915790c2728beb24552a23f6388",
+  "qualification_scope": "abi",
+  "completed_task": "T076",
+  "task_complete": true,
+  "qualified": false,
+  "workflows": [
+    {
+      "id": 40691742014,
+      "name": "Cross-platform foundation",
+      "url": "https://github.com/Extremois/desembaraca-twine/actions/runs/40691742014",
+      "conclusion": "success"
+    },
+    {
+      "id": 40691741980,
+      "name": "Installed packages with private POSIX engines",
+      "url": "https://github.com/Extremois/desembaraca-twine/actions/runs/40691741980",
+      "conclusion": "success"
+    },
+    {
+      "id": 40691742025,
+      "name": "Musl and Windows cache notice integrity",
+      "url": "https://github.com/Extremois/desembaraca-twine/actions/runs/40691742025",
+      "conclusion": "success"
+    },
+    {
+      "id": 40691742123,
+      "name": "Current wheel and sdist installation",
+      "url": "https://github.com/Extremois/desembaraca-twine/actions/runs/40691742123",
+      "conclusion": "success"
+    },
+    {
+      "id": 40691741975,
+      "name": "Installed cache notice integrity",
+      "url": "https://github.com/Extremois/desembaraca-twine/actions/runs/40691741975",
+      "conclusion": "success"
+    }
+  ],
+  "slots": [
+    {
+      "slot": "darwin-darwin-aarch64-3.12",
+      "os": "darwin",
+      "abi": "darwin",
+      "arch": "aarch64",
+      "python": "3.12.10",
+      "actions_artifact_id": 12817826663,
+      "report": "darwin-darwin-aarch64-3.12.json.gz",
+      "raw_sha256": "75567b23e76ae7f99753e41e034d92b98cbcea6c25fda69fac848db6a9856778",
+      "archive_sha256": "fcdda3241cbce0e444665e05afc196d5a4ea879aa0701984261f25db2c93b0e5"
+    },
+    {
+      "slot": "darwin-darwin-aarch64-3.14",
+      "os": "darwin",
+      "abi": "darwin",
+      "arch": "aarch64",
+      "python": "3.14.7",
+      "actions_artifact_id": 12817950664,
+      "report": "darwin-darwin-aarch64-3.14.json.gz",
+      "raw_sha256": "114421246cb54ccc8d488fbfc96dfe50be92d0b19539655c258733b3be7de650",
+      "archive_sha256": "d6bd76d9932fd70bb330ea864caab5e8bced064d338ed9a16a369431cd67b17f"
+    },
+    {
+      "slot": "darwin-darwin-x86_64-3.12",
+      "os": "darwin",
+      "abi": "darwin",
+      "arch": "x86_64",
+      "python": "3.12.10",
+      "actions_artifact_id": 12817696801,
+      "report": "darwin-darwin-x86_64-3.12.json.gz",
+      "raw_sha256": "d3cf31b272c1918ae3ea06afd4dda4eda4aa12ba5d4ed2d45530b31bcf3e235e",
+      "archive_sha256": "eb11c8e3f3015f851b337135a91855ae6f5ff8cb3c282424039fad3afd303961"
+    },
+    {
+      "slot": "darwin-darwin-x86_64-3.14",
+      "os": "darwin",
+      "abi": "darwin",
+      "arch": "x86_64",
+      "python": "3.14.7",
+      "actions_artifact_id": 12817167983,
+      "report": "darwin-darwin-x86_64-3.14.json.gz",
+      "raw_sha256": "0a88e364eedbd36d53e90aa269bfce1ecea74309b438514cf062c9c7fe8d2bba",
+      "archive_sha256": "d84b5699c61e08e9274191b49479bbaef358cbff68be0ac4c754aef92af236aa"
+    },
+    {
+      "slot": "linux-glibc-aarch64-3.12",
+      "os": "linux",
+      "abi": "glibc",
+      "arch": "aarch64",
+      "python": "3.12.15",
+      "actions_artifact_id": 12817297454,
+      "report": "linux-glibc-aarch64-3.12.json.gz",
+      "raw_sha256": "2a9f3da54df2ad389e16033b2b238bf45ee5c4ad487adabbe6dfa5ac9bdb88d7",
+      "archive_sha256": "9291f9386c887bdad368a172358482d0cca295419a3736fdd0db60354604dab5"
+    },
+    {
+      "slot": "linux-glibc-aarch64-3.14",
+      "os": "linux",
+      "abi": "glibc",
+      "arch": "aarch64",
+      "python": "3.14.8",
+      "actions_artifact_id": 12817257971,
+      "report": "linux-glibc-aarch64-3.14.json.gz",
+      "raw_sha256": "2aad19706f12f3111ba0e60b547f3f93c8c45146330ca5857f8618a8a8302920",
+      "archive_sha256": "c13144bdc0f145953185380406e7da64356026cd4b3f11f0b5685eeec84ca00d"
+    },
+    {
+      "slot": "linux-glibc-x86_64-3.12",
+      "os": "linux",
+      "abi": "glibc",
+      "arch": "x86_64",
+      "python": "3.12.15",
+      "actions_artifact_id": 12817327824,
+      "report": "linux-glibc-x86_64-3.12.json.gz",
+      "raw_sha256": "08ed053edb8f4ba1cd5e44a5abef83b8666e6f821b389be68a83aed4aa32511d",
+      "archive_sha256": "6c598d76ced7abacc50df08b21a3b81350121bd4fb43fc8e1e9c9f69b818d73d"
+    },
+    {
+      "slot": "linux-glibc-x86_64-3.14",
+      "os": "linux",
+      "abi": "glibc",
+      "arch": "x86_64",
+      "python": "3.14.8",
+      "actions_artifact_id": 12816887967,
+      "report": "linux-glibc-x86_64-3.14.json.gz",
+      "raw_sha256": "178c2a75ff22a38db2a41fcf88d9a6ea3c52f895852221b3040a7e94b94735a7",
+      "archive_sha256": "831e84f62269aef72ef6819cc8771b80552c90e35d76d3182f42b1d750d38519"
+    },
+    {
+      "slot": "linux-musl-aarch64-3.12",
+      "os": "linux",
+      "abi": "musl",
+      "arch": "aarch64",
+      "python": "3.12.13",
+      "actions_artifact_id": 12816714099,
+      "report": "linux-musl-aarch64-3.12.json.gz",
+      "raw_sha256": "27339842eab21ec2971fd3e36e294753fadf5c07dffb8b207fddba1b7e615527",
+      "archive_sha256": "69be8aac7cfbec1beceae914883825659a38f7ab39ac5b5b4911d92d906f6237"
+    },
+    {
+      "slot": "linux-musl-aarch64-3.14",
+      "os": "linux",
+      "abi": "musl",
+      "arch": "aarch64",
+      "python": "3.14.5",
+      "actions_artifact_id": 12816958724,
+      "report": "linux-musl-aarch64-3.14.json.gz",
+      "raw_sha256": "ede3f2ecf1401b4df04748c4cb5e1e1c86fed0edf2c54a237b0f54664ff456b1",
+      "archive_sha256": "06930724bd72fa19cf14c6f0f46a5fb2568d17b113a95f0c0f8630a08a52df82"
+    },
+    {
+      "slot": "linux-musl-x86_64-3.12",
+      "os": "linux",
+      "abi": "musl",
+      "arch": "x86_64",
+      "python": "3.12.13",
+      "actions_artifact_id": 12817547666,
+      "report": "linux-musl-x86_64-3.12.json.gz",
+      "raw_sha256": "898a187366ebf021404d25b06e60b07f66bd5c57fdab74b542010d32896424e6",
+      "archive_sha256": "666311ec31de60a9a3484e504c6408fc7f02a02300770e23ae7681936016ab5b"
+    },
+    {
+      "slot": "linux-musl-x86_64-3.14",
+      "os": "linux",
+      "abi": "musl",
+      "arch": "x86_64",
+      "python": "3.14.5",
+      "actions_artifact_id": 12816783300,
+      "report": "linux-musl-x86_64-3.14.json.gz",
+      "raw_sha256": "49c043faa29cd22ecc8c9a3fb5846c860ddcbde75c382378b59e09dbee8434e0",
+      "archive_sha256": "d7f679f692df1a76c066cbec493fbdd856c1f425ed0b45a9a22d5b38f120cd7e"
+    },
+    {
+      "slot": "windows-win32-x86_64-3.12",
+      "os": "windows",
+      "abi": "win32",
+      "arch": "x86_64",
+      "python": "3.12.10",
+      "actions_artifact_id": 12817222980,
+      "report": "windows-win32-x86_64-3.12.json.gz",
+      "raw_sha256": "09d1149bb8b80f48a51ff4e953e0832c63c7cc78521f86d0b12308d9ef6902af",
+      "archive_sha256": "6ad1527c8e419bf9f055e5b443b1cf07f7ed3d9d5957694ff4ca64074efb8684"
+    },
+    {
+      "slot": "windows-win32-x86_64-3.14",
+      "os": "windows",
+      "abi": "win32",
+      "arch": "x86_64",
+      "python": "3.14.9",
+      "actions_artifact_id": 12817067912,
+      "report": "windows-win32-x86_64-3.14.json.gz",
+      "raw_sha256": "b9bbb9546007a8b2548b1f57322fc5b8ccec5814eda06d0c11d77d66ceec5d99",
+      "archive_sha256": "6d439ed02f9976b444f459f0173fd9440dda53ac3ecff10e0e548ca66917e4e1"
+    }
+  ],
+  "targets": 7,
+  "python_slots": 14,
+  "installations": 28,
+  "corpus_executions": 364,
+  "known_zero_reference_executions": 168,
+  "repair_scenarios": 112,
+  "process_recovery_scenarios": 112,
+  "installed_files_verified_per_mode": 53,
+  "exported_outputs": 168,
+  "distinct_outputs": [
+    {
+      "case": "crossing",
+      "sha256": "aa821f1611a98d479811f652197070728904bd2afe31c8e6fca64ed9fbec8e8b",
+      "path": "review-by-hash/crossing-aa821f1611a9.twee",
+      "occurrences": [
+        {
+          "slot": "darwin-darwin-aarch64-3.14",
+          "mode": "wheel"
+        },
+        {
+          "slot": "darwin-darwin-aarch64-3.14",
+          "mode": "sdist"
+        },
+        {
+          "slot": "darwin-darwin-aarch64-3.12",
+          "mode": "wheel"
+        },
+        {
+          "slot": "darwin-darwin-aarch64-3.12",
+          "mode": "sdist"
+        },
+        {
+          "slot": "darwin-darwin-x86_64-3.12",
+          "mode": "wheel"
+        },
+        {
+          "slot": "darwin-darwin-x86_64-3.12",
+          "mode": "sdist"
+        },
+        {
+          "slot": "linux-glibc-x86_64-3.12",
+          "mode": "wheel"
+        },
+        {
+          "slot": "linux-glibc-x86_64-3.12",
+          "mode": "sdist"
+        },
+        {
+          "slot": "linux-glibc-aarch64-3.12",
+          "mode": "wheel"
+        },
+        {
+          "slot": "linux-glibc-aarch64-3.12",
+          "mode": "sdist"
+        },
+        {
+          "slot": "linux-glibc-aarch64-3.14",
+          "mode": "wheel"
+        },
+        {
+          "slot": "linux-glibc-aarch64-3.14",
+          "mode": "sdist"
+        },
+        {
+          "slot": "darwin-darwin-x86_64-3.14",
+          "mode": "wheel"
+        },
+        {
+          "slot": "darwin-darwin-x86_64-3.14",
+          "mode": "sdist"
+        },
+        {
+          "slot": "linux-glibc-x86_64-3.14",
+          "mode": "wheel"
+        },
+        {
+          "slot": "linux-glibc-x86_64-3.14",
+          "mode": "sdist"
+        },
+        {
+          "slot": "linux-musl-x86_64-3.12",
+          "mode": "wheel"
+        },
+        {
+          "slot": "linux-musl-x86_64-3.12",
+          "mode": "sdist"
+        },
+        {
+          "slot": "windows-win32-x86_64-3.12",
+          "mode": "wheel"
+        },
+        {
+          "slot": "windows-win32-x86_64-3.12",
+          "mode": "sdist"
+        },
+        {
+          "slot": "windows-win32-x86_64-3.14",
+          "mode": "wheel"
+        },
+        {
+          "slot": "windows-win32-x86_64-3.14",
+          "mode": "sdist"
+        },
+        {
+          "slot": "linux-musl-aarch64-3.14",
+          "mode": "wheel"
+        },
+        {
+          "slot": "linux-musl-aarch64-3.14",
+          "mode": "sdist"
+        },
+        {
+          "slot": "linux-musl-x86_64-3.14",
+          "mode": "wheel"
+        },
+        {
+          "slot": "linux-musl-x86_64-3.14",
+          "mode": "sdist"
+        },
+        {
+          "slot": "linux-musl-aarch64-3.12",
+          "mode": "wheel"
+        },
+        {
+          "slot": "linux-musl-aarch64-3.12",
+          "mode": "sdist"
+        }
+      ],
+      "reopened": false
+    },
+    {
+      "case": "coincident",
+      "sha256": "8644eeb3404043bec66b149c0ed3f2f4bea0600914a944e75c5f6464b78c1ed6",
+      "path": "review-by-hash/coincident-8644eeb34040.twee",
+      "occurrences": [
+        {
+          "slot": "darwin-darwin-aarch64-3.14",
+          "mode": "wheel"
+        },
+        {
+          "slot": "darwin-darwin-aarch64-3.14",
+          "mode": "sdist"
+        },
+        {
+          "slot": "darwin-darwin-aarch64-3.12",
+          "mode": "wheel"
+        },
+        {
+          "slot": "darwin-darwin-aarch64-3.12",
+          "mode": "sdist"
+        },
+        {
+          "slot": "darwin-darwin-x86_64-3.12",
+          "mode": "wheel"
+        },
+        {
+          "slot": "darwin-darwin-x86_64-3.12",
+          "mode": "sdist"
+        },
+        {
+          "slot": "linux-glibc-x86_64-3.12",
+          "mode": "wheel"
+        },
+        {
+          "slot": "linux-glibc-x86_64-3.12",
+          "mode": "sdist"
+        },
+        {
+          "slot": "linux-glibc-aarch64-3.12",
+          "mode": "wheel"
+        },
+        {
+          "slot": "linux-glibc-aarch64-3.12",
+          "mode": "sdist"
+        },
+        {
+          "slot": "linux-glibc-aarch64-3.14",
+          "mode": "wheel"
+        },
+        {
+          "slot": "linux-glibc-aarch64-3.14",
+          "mode": "sdist"
+        },
+        {
+          "slot": "darwin-darwin-x86_64-3.14",
+          "mode": "wheel"
+        },
+        {
+          "slot": "darwin-darwin-x86_64-3.14",
+          "mode": "sdist"
+        },
+        {
+          "slot": "linux-glibc-x86_64-3.14",
+          "mode": "wheel"
+        },
+        {
+          "slot": "linux-glibc-x86_64-3.14",
+          "mode": "sdist"
+        },
+        {
+          "slot": "linux-musl-x86_64-3.12",
+          "mode": "wheel"
+        },
+        {
+          "slot": "linux-musl-x86_64-3.12",
+          "mode": "sdist"
+        },
+        {
+          "slot": "windows-win32-x86_64-3.12",
+          "mode": "wheel"
+        },
+        {
+          "slot": "windows-win32-x86_64-3.12",
+          "mode": "sdist"
+        },
+        {
+          "slot": "windows-win32-x86_64-3.14",
+          "mode": "wheel"
+        },
+        {
+          "slot": "windows-win32-x86_64-3.14",
+          "mode": "sdist"
+        },
+        {
+          "slot": "linux-musl-aarch64-3.14",
+          "mode": "wheel"
+        },
+        {
+          "slot": "linux-musl-aarch64-3.14",
+          "mode": "sdist"
+        },
+        {
+          "slot": "linux-musl-x86_64-3.14",
+          "mode": "wheel"
+        },
+        {
+          "slot": "linux-musl-x86_64-3.14",
+          "mode": "sdist"
+        },
+        {
+          "slot": "linux-musl-aarch64-3.12",
+          "mode": "wheel"
+        },
+        {
+          "slot": "linux-musl-aarch64-3.12",
+          "mode": "sdist"
+        }
+      ],
+      "reopened": false
+    },
+    {
+      "case": "isolated_overlap",
+      "sha256": "bef1e0132bce9b72f1317cdbb43d3c2a54e604632459cbda2c5af7d52c17a03a",
+      "path": "review-by-hash/isolated_overlap-bef1e0132bce.twee",
+      "occurrences": [
+        {
+          "slot": "darwin-darwin-aarch64-3.14",
+          "mode": "wheel"
+        },
+        {
+          "slot": "darwin-darwin-aarch64-3.14",
+          "mode": "sdist"
+        },
+        {
+          "slot": "darwin-darwin-aarch64-3.12",
+          "mode": "wheel"
+        },
+        {
+          "slot": "darwin-darwin-aarch64-3.12",
+          "mode": "sdist"
+        },
+        {
+          "slot": "darwin-darwin-x86_64-3.12",
+          "mode": "wheel"
+        },
+        {
+          "slot": "darwin-darwin-x86_64-3.12",
+          "mode": "sdist"
+        },
+        {
+          "slot": "linux-glibc-x86_64-3.12",
+          "mode": "wheel"
+        },
+        {
+          "slot": "linux-glibc-x86_64-3.12",
+          "mode": "sdist"
+        },
+        {
+          "slot": "linux-glibc-aarch64-3.12",
+          "mode": "wheel"
+        },
+        {
+          "slot": "linux-glibc-aarch64-3.12",
+          "mode": "sdist"
+        },
+        {
+          "slot": "linux-glibc-aarch64-3.14",
+          "mode": "wheel"
+        },
+        {
+          "slot": "linux-glibc-aarch64-3.14",
+          "mode": "sdist"
+        },
+        {
+          "slot": "darwin-darwin-x86_64-3.14",
+          "mode": "wheel"
+        },
+        {
+          "slot": "darwin-darwin-x86_64-3.14",
+          "mode": "sdist"
+        },
+        {
+          "slot": "linux-glibc-x86_64-3.14",
+          "mode": "wheel"
+        },
+        {
+          "slot": "linux-glibc-x86_64-3.14",
+          "mode": "sdist"
+        },
+        {
+          "slot": "linux-musl-x86_64-3.12",
+          "mode": "wheel"
+        },
+        {
+          "slot": "linux-musl-x86_64-3.12",
+          "mode": "sdist"
+        },
+        {
+          "slot": "windows-win32-x86_64-3.12",
+          "mode": "wheel"
+        },
+        {
+          "slot": "windows-win32-x86_64-3.12",
+          "mode": "sdist"
+        },
+        {
+          "slot": "windows-win32-x86_64-3.14",
+          "mode": "wheel"
+        },
+        {
+          "slot": "windows-win32-x86_64-3.14",
+          "mode": "sdist"
+        },
+        {
+          "slot": "linux-musl-aarch64-3.14",
+          "mode": "wheel"
+        },
+        {
+          "slot": "linux-musl-aarch64-3.14",
+          "mode": "sdist"
+        },
+        {
+          "slot": "linux-musl-x86_64-3.14",
+          "mode": "wheel"
+        },
+        {
+          "slot": "linux-musl-x86_64-3.14",
+          "mode": "sdist"
+        },
+        {
+          "slot": "linux-musl-aarch64-3.12",
+          "mode": "wheel"
+        },
+        {
+          "slot": "linux-musl-aarch64-3.12",
+          "mode": "sdist"
+        }
+      ],
+      "reopened": false
+    },
+    {
+      "case": "connected_overlap",
+      "sha256": "137e849cfdf04ef3db7ed9057a7142ebecc403ee78952f307138ff5ecca72618",
+      "path": "review-by-hash/connected_overlap-137e849cfdf0.twee",
+      "occurrences": [
+        {
+          "slot": "darwin-darwin-aarch64-3.14",
+          "mode": "wheel"
+        },
+        {
+          "slot": "darwin-darwin-aarch64-3.14",
+          "mode": "sdist"
+        },
+        {
+          "slot": "darwin-darwin-aarch64-3.12",
+          "mode": "wheel"
+        },
+        {
+          "slot": "darwin-darwin-aarch64-3.12",
+          "mode": "sdist"
+        },
+        {
+          "slot": "darwin-darwin-x86_64-3.12",
+          "mode": "wheel"
+        },
+        {
+          "slot": "darwin-darwin-x86_64-3.12",
+          "mode": "sdist"
+        },
+        {
+          "slot": "linux-glibc-x86_64-3.12",
+          "mode": "wheel"
+        },
+        {
+          "slot": "linux-glibc-x86_64-3.12",
+          "mode": "sdist"
+        },
+        {
+          "slot": "linux-glibc-aarch64-3.12",
+          "mode": "wheel"
+        },
+        {
+          "slot": "linux-glibc-aarch64-3.12",
+          "mode": "sdist"
+        },
+        {
+          "slot": "linux-glibc-aarch64-3.14",
+          "mode": "wheel"
+        },
+        {
+          "slot": "linux-glibc-aarch64-3.14",
+          "mode": "sdist"
+        },
+        {
+          "slot": "darwin-darwin-x86_64-3.14",
+          "mode": "wheel"
+        },
+        {
+          "slot": "darwin-darwin-x86_64-3.14",
+          "mode": "sdist"
+        },
+        {
+          "slot": "linux-glibc-x86_64-3.14",
+          "mode": "wheel"
+        },
+        {
+          "slot": "linux-glibc-x86_64-3.14",
+          "mode": "sdist"
+        },
+        {
+          "slot": "linux-musl-x86_64-3.12",
+          "mode": "wheel"
+        },
+        {
+          "slot": "linux-musl-x86_64-3.12",
+          "mode": "sdist"
+        },
+        {
+          "slot": "windows-win32-x86_64-3.12",
+          "mode": "wheel"
+        },
+        {
+          "slot": "windows-win32-x86_64-3.12",
+          "mode": "sdist"
+        },
+        {
+          "slot": "windows-win32-x86_64-3.14",
+          "mode": "wheel"
+        },
+        {
+          "slot": "windows-win32-x86_64-3.14",
+          "mode": "sdist"
+        },
+        {
+          "slot": "linux-musl-aarch64-3.14",
+          "mode": "wheel"
+        },
+        {
+          "slot": "linux-musl-aarch64-3.14",
+          "mode": "sdist"
+        },
+        {
+          "slot": "linux-musl-x86_64-3.14",
+          "mode": "wheel"
+        },
+        {
+          "slot": "linux-musl-x86_64-3.14",
+          "mode": "sdist"
+        },
+        {
+          "slot": "linux-musl-aarch64-3.12",
+          "mode": "wheel"
+        },
+        {
+          "slot": "linux-musl-aarch64-3.12",
+          "mode": "sdist"
+        }
+      ],
+      "reopened": false
+    },
+    {
+      "case": "through_isolated",
+      "sha256": "f2460867ce13305139836fc5737093e3e513fae53c4bee8fe0742fe5fc98c341",
+      "path": "review-by-hash/through_isolated-f2460867ce13.twee",
+      "occurrences": [
+        {
+          "slot": "darwin-darwin-aarch64-3.14",
+          "mode": "wheel"
+        },
+        {
+          "slot": "darwin-darwin-aarch64-3.14",
+          "mode": "sdist"
+        },
+        {
+          "slot": "darwin-darwin-aarch64-3.12",
+          "mode": "wheel"
+        },
+        {
+          "slot": "darwin-darwin-aarch64-3.12",
+          "mode": "sdist"
+        },
+        {
+          "slot": "darwin-darwin-x86_64-3.12",
+          "mode": "wheel"
+        },
+        {
+          "slot": "darwin-darwin-x86_64-3.12",
+          "mode": "sdist"
+        },
+        {
+          "slot": "linux-glibc-x86_64-3.12",
+          "mode": "wheel"
+        },
+        {
+          "slot": "linux-glibc-x86_64-3.12",
+          "mode": "sdist"
+        },
+        {
+          "slot": "linux-glibc-aarch64-3.12",
+          "mode": "wheel"
+        },
+        {
+          "slot": "linux-glibc-aarch64-3.12",
+          "mode": "sdist"
+        },
+        {
+          "slot": "linux-glibc-aarch64-3.14",
+          "mode": "wheel"
+        },
+        {
+          "slot": "linux-glibc-aarch64-3.14",
+          "mode": "sdist"
+        },
+        {
+          "slot": "darwin-darwin-x86_64-3.14",
+          "mode": "wheel"
+        },
+        {
+          "slot": "darwin-darwin-x86_64-3.14",
+          "mode": "sdist"
+        },
+        {
+          "slot": "linux-glibc-x86_64-3.14",
+          "mode": "wheel"
+        },
+        {
+          "slot": "linux-glibc-x86_64-3.14",
+          "mode": "sdist"
+        },
+        {
+          "slot": "linux-musl-x86_64-3.12",
+          "mode": "wheel"
+        },
+        {
+          "slot": "linux-musl-x86_64-3.12",
+          "mode": "sdist"
+        },
+        {
+          "slot": "windows-win32-x86_64-3.12",
+          "mode": "wheel"
+        },
+        {
+          "slot": "windows-win32-x86_64-3.12",
+          "mode": "sdist"
+        },
+        {
+          "slot": "windows-win32-x86_64-3.14",
+          "mode": "wheel"
+        },
+        {
+          "slot": "windows-win32-x86_64-3.14",
+          "mode": "sdist"
+        },
+        {
+          "slot": "linux-musl-aarch64-3.14",
+          "mode": "wheel"
+        },
+        {
+          "slot": "linux-musl-aarch64-3.14",
+          "mode": "sdist"
+        },
+        {
+          "slot": "linux-musl-x86_64-3.14",
+          "mode": "wheel"
+        },
+        {
+          "slot": "linux-musl-x86_64-3.14",
+          "mode": "sdist"
+        },
+        {
+          "slot": "linux-musl-aarch64-3.12",
+          "mode": "wheel"
+        },
+        {
+          "slot": "linux-musl-aarch64-3.12",
+          "mode": "sdist"
+        }
+      ],
+      "reopened": false
+    },
+    {
+      "case": "through_connected",
+      "sha256": "8c13ace7ce2f65beff622e529456029fda6c7e1f624a5046886a7065f60a2f3f",
+      "path": "review-by-hash/through_connected-8c13ace7ce2f.twee",
+      "occurrences": [
+        {
+          "slot": "darwin-darwin-aarch64-3.14",
+          "mode": "wheel"
+        },
+        {
+          "slot": "darwin-darwin-aarch64-3.14",
+          "mode": "sdist"
+        },
+        {
+          "slot": "darwin-darwin-aarch64-3.12",
+          "mode": "wheel"
+        },
+        {
+          "slot": "darwin-darwin-aarch64-3.12",
+          "mode": "sdist"
+        },
+        {
+          "slot": "darwin-darwin-x86_64-3.12",
+          "mode": "wheel"
+        },
+        {
+          "slot": "darwin-darwin-x86_64-3.12",
+          "mode": "sdist"
+        },
+        {
+          "slot": "linux-glibc-x86_64-3.12",
+          "mode": "wheel"
+        },
+        {
+          "slot": "linux-glibc-x86_64-3.12",
+          "mode": "sdist"
+        },
+        {
+          "slot": "linux-glibc-aarch64-3.12",
+          "mode": "wheel"
+        },
+        {
+          "slot": "linux-glibc-aarch64-3.12",
+          "mode": "sdist"
+        },
+        {
+          "slot": "linux-glibc-aarch64-3.14",
+          "mode": "wheel"
+        },
+        {
+          "slot": "linux-glibc-aarch64-3.14",
+          "mode": "sdist"
+        },
+        {
+          "slot": "darwin-darwin-x86_64-3.14",
+          "mode": "wheel"
+        },
+        {
+          "slot": "darwin-darwin-x86_64-3.14",
+          "mode": "sdist"
+        },
+        {
+          "slot": "linux-glibc-x86_64-3.14",
+          "mode": "wheel"
+        },
+        {
+          "slot": "linux-glibc-x86_64-3.14",
+          "mode": "sdist"
+        },
+        {
+          "slot": "linux-musl-x86_64-3.12",
+          "mode": "wheel"
+        },
+        {
+          "slot": "linux-musl-x86_64-3.12",
+          "mode": "sdist"
+        },
+        {
+          "slot": "windows-win32-x86_64-3.12",
+          "mode": "wheel"
+        },
+        {
+          "slot": "windows-win32-x86_64-3.12",
+          "mode": "sdist"
+        },
+        {
+          "slot": "windows-win32-x86_64-3.14",
+          "mode": "wheel"
+        },
+        {
+          "slot": "windows-win32-x86_64-3.14",
+          "mode": "sdist"
+        },
+        {
+          "slot": "linux-musl-aarch64-3.14",
+          "mode": "wheel"
+        },
+        {
+          "slot": "linux-musl-aarch64-3.14",
+          "mode": "sdist"
+        },
+        {
+          "slot": "linux-musl-x86_64-3.14",
+          "mode": "wheel"
+        },
+        {
+          "slot": "linux-musl-x86_64-3.14",
+          "mode": "sdist"
+        },
+        {
+          "slot": "linux-musl-aarch64-3.12",
+          "mode": "wheel"
+        },
+        {
+          "slot": "linux-musl-aarch64-3.12",
+          "mode": "sdist"
+        }
+      ],
+      "reopened": false
+    }
+  ],
+  "visual_review_complete": false,
+  "limitations": [
+    "Controlled repair transfers/disk-full errors",
+    "Windows EACCES is injected; POSIX execute denial uses real permissions",
+    "Process exit, locking and concurrency are real",
+    "Python-only offline network guard",
+    "Windows hosted OS is recorded, without Windows 11 certification",
+    "No license, release or support promotion"
+  ]
+}

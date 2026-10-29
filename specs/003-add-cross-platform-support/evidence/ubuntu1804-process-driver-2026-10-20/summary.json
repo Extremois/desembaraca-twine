@@ -1,0 +1,67 @@
+{
+  "kind": "verified-native-ubuntu1804-installed-wheel-recovery-and-native-network-observation",
+  "passed": true,
+  "qualified": false,
+  "approved": false,
+  "captured_at": "2026-10-20T23:40:11.288527+00:00",
+  "revision": "eea100c37599517e09b6626d1edb82b599a1b19c",
+  "workflow_run": 39515645035,
+  "workflow_url": "https://github.com/Extremois/desembaraca-twine/actions/runs/39515645035",
+  "artifact_id": 12307494381,
+  "artifact_sha256": "61fdc5447446615617d0b24786200a0719c707af0eb82d2719dccb32d04feb7e",
+  "native_summary_sha256": "ade430f01d6a4011afc23c742d0aea962d784c82b0f5b3c345a46d8169e9ce2f",
+  "wheel_sha256": "a992ec377786a12ed438304f12258cc20ae8b232820232a25c851774bf191573",
+  "installed_source_files_verified_against_commit": 53,
+  "engine_sha256": "43ce8d686720467c21be91cab4b8f3b246baae49c2cfe293714ebdf8a82f5716",
+  "kernel": "4.15.0-212-generic",
+  "glibc": "glibc 2.27",
+  "arch": "x86_64",
+  "kvm": {
+    "enabled": true,
+    "present": true
+  },
+  "interpreters": [
+    {
+      "python": "3.12.15",
+      "report": "application-3.12.json",
+      "sha256": "86c4536766664c92bb1ae0598800ce12ae3e6bea8eab4163860127d4d669f704",
+      "cases": 13,
+      "known_zero_references": 6,
+      "outer_recovery_scenarios": 8,
+      "nested_process_scenarios": 4,
+      "outer_offline_references": 48,
+      "nested_process_offline_references": 24,
+      "dot_executions": 389,
+      "native_network_syscalls": {},
+      "nested_failed_repair_scenarios": 4,
+      "nested_failed_repair_offline_references": 24,
+      "total_recovery_scenario_executions": 16,
+      "total_offline_reference_executions_after_recovery": 96
+    },
+    {
+      "python": "3.14.8",
+      "report": "application-3.14.json",
+      "sha256": "05a48a045b370b5d2f72ef03638d48239f7670a9fad84447552c3cf211f64e9f",
+      "cases": 13,
+      "known_zero_references": 6,
+      "outer_recovery_scenarios": 8,
+      "nested_process_scenarios": 4,
+      "outer_offline_references": 48,
+      "nested_process_offline_references": 24,
+      "dot_executions": 389,
+      "native_network_syscalls": {},
+      "nested_failed_repair_scenarios": 4,
+      "nested_failed_repair_offline_references": 24,
+      "total_recovery_scenario_executions": 16,
+      "total_offline_reference_executions_after_recovery": 96
+    }
+  ],
+  "system_python_unchanged": true,
+  "tasks_complete": 57,
+  "tasks_total": 84,
+  "limitations": [
+    "Installed development wheel only; catalog remains Windows-only and acquisition is a controlled fixture",
+    "strace follows children and reports zero native network calls; controlled acquisition remains separate from final remote distribution acceptance",
+    "T076 remains partial: eight scenarios per Python on Ubuntu 18.04 x64 only; remaining matrix and common distribution gates pending"
+  ]
+}

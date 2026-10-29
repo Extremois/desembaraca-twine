@@ -1,0 +1,8 @@
+/*
+ * Copyright (c) 2000-2009 Apple, Inc. All rights reserved.
+ */
+/*
+ * Copyright (c) 1992 NeXT Computer, Inc.
+ *
+ */
+

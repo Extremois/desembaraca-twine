@@ -1,14 +1,12 @@
 """Pinned Graphviz preparation, isolated from stories and geometric processing."""
-from dataclasses import dataclass
+from dataclasses import dataclass, replace
 import hashlib
 import json
 import ntpath
 import os
 from pathlib import Path
-import platform
 import re
 import stat
-import struct
 import sys
 import contextlib
 import errno
@@ -23,7 +21,9 @@ import zipfile
 
 from .engines.process import run_bounded, ProcessLimitError
 
-from .errors import DependencyError
+from .errors import DependencyError, execution_diagnostic
+from . import runtime_platform
+from .runtime_catalog import CatalogError, load_catalog, select_artifact, verified_manifest, load_support_matrix, classify_support, validate_manifest_identity, version_tuple
 
 
 PACKAGE = Path(__file__).resolve().parent
@@ -53,11 +53,10 @@ def relative_path(value):
 
 
 def check_platform():
-    if (sys.platform != 'win32' or platform.machine().upper() not in ('AMD64', 'X86_64')
-            or platform.python_implementation() != 'CPython' or struct.calcsize('P') != 8
-            or sys.version_info[:2] not in ((3, 12), (3, 14))
-            or sys.getwindowsversion().build < 22000):
-        raise failure('Ambiente fora da matriz suportada', 'Use Windows 11 x64 com CPython 3.12 x64 ou 3.14 x64.')
+    try:
+        return select_artifact(load_catalog(), runtime_platform.detect_host())
+    except CatalogError as exc:
+        raise failure(str(exc), 'Consulte a matriz de componentes disponíveis; use CPython 3.12 ou 3.14 nativo em ambiente compatível.') from exc
 
 
 def _unique_json(pairs):
@@ -82,7 +81,13 @@ def _digest_file(path, check=lambda: None):
     return digest.hexdigest()
 
 
-def _no_links(path):
+def _no_links(path, root=None):
+    if os.name != 'nt':
+        try:
+            runtime_platform.assert_managed_path(path, root or PACKAGE, private=root is not None)
+        except ValueError as exc:
+            raise _PreparationProblem(str(exc)) from exc
+        return
     for part in (path, *path.parents):
         try:
             info = part.lstat()
@@ -98,7 +103,10 @@ class Artifact:
 
     @property
     def identity(self):
-        return '-'.join(str(self.data[key]) for key in ('engine', 'version', 'platform', 'artifact_arch', 'archive_sha256'))
+        keys = ('engine', 'version', 'platform', 'artifact_arch', 'archive_sha256')
+        if self.data.get('schema_version') == 2:
+            keys = ('engine', 'version', 'platform', 'artifact_arch', 'abi', 'build_variant', 'archive_sha256', '_manifest_sha256')
+        return '-'.join(str(self.data[key]) for key in keys)
 
 
 @dataclass(frozen=True)
@@ -109,16 +117,31 @@ class RuntimeHandle:
     executable: Path
     cwd: Path
     env: dict
+    classification_seconds: float = 0.0
 
 
 def load_manifest(path=None):
     from urllib.parse import urlsplit
     try:
-        data = _read_json(path or PACKAGE / 'runtime-manifest.json')
-        if (type(data['schema_version']) is not int or data['schema_version'] != 1 or data['engine'] != 'graphviz'
-                or data['version'] != '16.1.0' or data['platform'] != 'windows'
-                or data['artifact_arch'] != 'win32' or not _DIGEST.fullmatch(data['archive_sha256'])):
+        manifest_path = Path(path or PACKAGE / 'runtime-manifest.json')
+        if manifest_path.stat().st_size > 8 * 1024**2:
+            raise _PreparationProblem('manifesto excede limite')
+        data = _read_json(manifest_path)
+        schema = data['schema_version']
+        if (type(schema) is not int or schema not in (1, 2) or data['engine'] != 'graphviz'
+                or data['version'] != '16.1.0' or not _DIGEST.fullmatch(data['archive_sha256'])):
             raise _PreparationProblem('identidade/esquema/hash inválido')
+        if schema == 1:
+            if data['platform'] != 'windows' or data['artifact_arch'] != 'win32':
+                raise _PreparationProblem('identidade legada inválida')
+        else:
+            if (data['platform'] not in ('linux', 'darwin') or data['artifact_arch'] not in ('x86_64', 'aarch64')
+                    or data['abi'] not in (('glibc', 'musl') if data['platform'] == 'linux' else ('darwin',))
+                    or not re.fullmatch(r'[a-zA-Z0-9_.-]{1,80}', data['build_variant'])):
+                raise _PreparationProblem('identidade nativa inválida')
+            data['_manifest_sha256'] = _digest_file(manifest_path)
+            for key in (('minimum_libc', 'minimum_kernel') if data['platform']=='linux' else ('minimum_os',)):
+                version_tuple(data[key])
         url = urlsplit(data['url'])
         hosts = data['allowed_redirect_hosts']
         if (url.scheme != 'https' or url.username or url.password or url.port not in (None, 443)
@@ -136,11 +159,20 @@ def load_manifest(path=None):
                 raise _PreparationProblem('inventário inválido')
             total += entry['size']
             seen.add(name)
+            if schema == 2 and (type(entry.get('mode')) is not int or entry['mode'] not in (0o644, 0o755)):
+                raise _PreparationProblem('modo POSIX não aprovado')
         if not seen or len(seen) > data['entry_limit'] or total > data['expanded_bytes_limit']:
             raise _PreparationProblem('limites do inventário')
         executable = relative_path(data['executable_relative_path'])
         if executable.as_posix().casefold() not in seen:
             raise _PreparationProblem('executável fora do inventário')
+        if schema == 2:
+            if next((entry['mode'] for entry in data['files'] if entry['path'] == executable.as_posix()), None) != 0o755:
+                raise _PreparationProblem('executável sem modo aprovado')
+            if 'plugin_relative_path' in data:
+                plugin = relative_path(data['plugin_relative_path']).as_posix()
+                if not any(entry['path'].startswith(plugin + '/') for entry in data['files']):
+                    raise _PreparationProblem('plugins fora do inventário')
         # The qualified ZIP already contains a portable config8: no generated files are needed.
         if data['generated_files'] != []:
             raise _PreparationProblem('configuração gerada não qualificada')
@@ -191,8 +223,7 @@ class _Redirects(urllib.request.HTTPRedirectHandler):
 
 
 def cache_directory():
-    base = Path(os.environ.get('LOCALAPPDATA') or Path.home() / 'AppData/Local')
-    return base.absolute() / 'DesembaracaTwine/runtimes/graphviz'
+    return runtime_platform.cache_directory()
 
 
 class RuntimeManager:
@@ -202,7 +233,14 @@ class RuntimeManager:
                  progress=None, checkpoint=None):
         self.artifact = artifact or load_manifest()
         self.data = self.artifact.data
-        root = Path(cache_root or cache_directory()).absolute() / self.artifact.identity
+        base = Path(cache_root or cache_directory()).absolute()
+        anchor = base if cache_root is not None else base.parents[1]
+        if os.name != 'nt':
+            canonical_anchor = anchor.parent.resolve() / anchor.name
+            base = canonical_anchor / base.relative_to(anchor)
+            anchor = canonical_anchor
+        self.anchor = anchor
+        root = base / self.artifact.identity
         # Generations plus the pinned archive tree exceed MAX_PATH on ordinary profiles.
         # The extended namespace needs no registry change or user configuration.
         value = str(root)
@@ -215,62 +253,78 @@ class RuntimeManager:
         self.checkpoint = checkpoint or (lambda stage: None)
         self.deadline = 0.0
 
+    def safe_path(self, path):
+        _no_links(path, self.anchor)
+
+    def make_directories(self, path):
+        """Create owned descendants privately, without changing existing modes."""
+        self.safe_path(path)
+        if os.name == 'nt':
+            path.mkdir(parents=True, exist_ok=True)
+            return
+        # A selected XDG/cache base need not exist on first use. Create only
+        # missing ancestors, privately even with umask 000; never chmod existing
+        # user directories. The anchor was canonicalized during construction.
+        missing_parents = []
+        parent = self.anchor.parent
+        while not parent.exists():
+            missing_parents.append(parent)
+            parent = parent.parent
+        for directory in reversed(missing_parents):
+            self.check()
+            directory.mkdir(mode=0o700, exist_ok=True)
+            try:
+                runtime_platform.assert_managed_path(directory, directory, private=True)
+            except ValueError as exc:
+                raise _PreparationProblem(str(exc)) from exc
+        missing = []
+        current = path
+        while current.is_relative_to(self.anchor) and not current.exists():
+            missing.append(current)
+            current = current.parent
+        for directory in reversed(missing):
+            directory.mkdir(mode=0o700, exist_ok=True)
+            self.safe_path(directory)
+
     def check(self):
         if time.monotonic() >= self.deadline:
             raise TimeoutError('prazo de preparação esgotado')
 
     @contextlib.contextmanager
     def locked(self):
-        import msvcrt
-        _no_links(self.root)
-        self.root.mkdir(parents=True, exist_ok=True)
+        self.safe_path(self.root)
+        self.make_directories(self.root)
         lock_path = self.root / 'prepare.lock'
-        _no_links(lock_path)
-        acquired = False
-        with lock_path.open('a+b') as stream:
-            if stream.tell() == 0:
-                stream.write(b'\0')
-                stream.flush()
-            until = min(self.deadline, time.monotonic() + 10)
-            while not acquired:
-                self.check()
-                try:
-                    stream.seek(0)
-                    msvcrt.locking(stream.fileno(), msvcrt.LK_NBLCK, 1)
-                    acquired = True
-                except OSError:
-                    if time.monotonic() >= until:
-                        raise failure('Outra preparação está em andamento', 'Aguarde sua conclusão e repita o comando.')
-                    time.sleep(min(0.05, max(0, until - time.monotonic())))
-            try:
+        self.safe_path(lock_path)
+        try:
+            with runtime_platform.preparation_lock(lock_path, deadline=self.deadline, check=self.check):
                 yield
-            finally:
-                stream.seek(0)
-                msvcrt.locking(stream.fileno(), msvcrt.LK_UNLCK, 1)
+        except runtime_platform.LockBusyError as exc:
+            raise failure('Outra preparação está em andamento', 'Aguarde sua conclusão e repita o comando.') from exc
 
     def context(self, root, generation_id):
         executable = root / relative_path(self.data['executable_relative_path'])
-        env = {key: os.environ[key] for key in ('SystemRoot', 'WINDIR', 'TEMP', 'TMP', 'USERPROFILE', 'LOCALAPPDATA') if key in os.environ}
-        env['PATH'] = str(executable.parent)
-        env['GVBINDIR'] = str(executable.parent)
+        plugins = root / relative_path(self.data['plugin_relative_path']) if 'plugin_relative_path' in self.data else executable.parent
+        env = runtime_platform.runtime_environment(executable, plugin_directory=plugins)
         # CreateProcess rejects a working directory beyond MAX_PATH even with the
         # extended namespace. Use the common runtime cache; executable and plugin
         # paths remain absolute and fixed to this generation.
-        return RuntimeHandle(self.artifact.identity, generation_id, root, executable, self.root.parent, env)
+        cwd = self.root.parent if os.name == 'nt' else root
+        return RuntimeHandle(self.artifact.identity, generation_id, root, executable, cwd, env)
 
     def verify_files(self, root, *, ready):
         self.check()
-        _no_links(root)
+        self.safe_path(root)
         expected = {entry['path']: entry for entry in self.data['files']}
         expected.update({entry['destination']: entry for entry in self.data['notices']})
         found = set()
         for folder, directories, filenames in os.walk(root, followlinks=False):
             self.check()
             for name in directories:
-                _no_links(Path(folder) / name)
+                self.safe_path(Path(folder) / name)
             for name in filenames:
                 path = Path(folder) / name
-                _no_links(path)
+                self.safe_path(path)
                 relative = path.relative_to(root).as_posix()
                 if relative == 'ready.json' and ready:
                     continue
@@ -279,6 +333,8 @@ class RuntimeManager:
                 entry = expected[relative]
                 if ('size' in entry and path.stat().st_size != entry['size']) or _digest_file(path, self.check) != entry['sha256']:
                     raise _PreparationProblem('arquivo da geração ausente ou alterado')
+                if self.data['schema_version'] == 2 and os.name != 'nt' and stat.S_IMODE(path.stat().st_mode) != entry.get('mode', 0o644):
+                    raise _PreparationProblem('modo instalado difere do inventário')
                 found.add(relative)
         if found != set(expected):
             raise _PreparationProblem('geração incompleta')
@@ -286,8 +342,11 @@ class RuntimeManager:
     def probe(self, handle):
         def invoke(arguments):
             self.check()
-            result = self.runner([str(handle.executable), *arguments], cwd=handle.cwd, env=handle.env,
-                                 timeout=min(10, self.deadline-time.monotonic()), max_output=1024**2)
+            try:
+                result = self.runner([str(handle.executable), *arguments], cwd=handle.cwd, env=handle.env,
+                                     timeout=min(10, self.deadline-time.monotonic()), max_output=1024**2)
+            except OSError as exc:
+                raise execution_diagnostic(exc, self.data['platform']) from exc
             if result.returncode:
                 raise _PreparationProblem('sondagem retornou erro')
             return result
@@ -312,7 +371,7 @@ class RuntimeManager:
     def current(self):
         try:
             selector = self.root / 'active.json'
-            _no_links(selector)
+            self.safe_path(selector)
             if selector.stat().st_size > 16384:
                 return None
             active = _read_json(selector)
@@ -322,7 +381,7 @@ class RuntimeManager:
                 return None
             root = self.root / 'generations' / generation_id
             self.verify_files(root, ready=True)
-            _no_links(root / 'ready.json')
+            self.safe_path(root / 'ready.json')
             if (root / 'ready.json').stat().st_size > 16384 or _read_json(root / 'ready.json') != active:
                 return None
             handle = self.context(root, generation_id)
@@ -385,15 +444,15 @@ class RuntimeManager:
                     raise _PreparationProblem('entrada ZIP especial/duplicada/insegura')
                 seen_normalized.add(normalized)
                 destination = staging / relative
-                _no_links(destination)
+                self.safe_path(destination)
                 if entry.is_dir():
-                    destination.mkdir(parents=True, exist_ok=True)
+                    self.make_directories(destination)
                     continue
                 if key not in expected or entry.file_size != expected[key]['size']:
                     raise _PreparationProblem('estrutura ZIP diferente do inventário')
                 if total + entry.file_size > self.data['expanded_bytes_limit']:
                     raise _PreparationProblem('expansão acima do limite')
-                destination.parent.mkdir(parents=True, exist_ok=True)
+                self.make_directories(destination.parent)
                 actual = 0
                 digest = hashlib.sha256()
                 with source.open(entry) as incoming, destination.open('xb') as outgoing:
@@ -407,6 +466,8 @@ class RuntimeManager:
                         outgoing.write(chunk)
                 if actual != expected[key]['size'] or digest.hexdigest() != expected[key]['sha256']:
                     raise _PreparationProblem('arquivo extraído inválido')
+                if self.data['schema_version'] == 2 and os.name != 'nt':
+                    destination.chmod(expected[key]['mode'])
                 seen.add(key)
         if seen != set(expected):
             raise _PreparationProblem('ZIP incompleto')
@@ -417,23 +478,43 @@ class RuntimeManager:
             _no_links(source)
             if _digest_file(source, self.check) != notice['sha256']:
                 raise _PreparationProblem('aviso da aplicação alterado')
-            destination.parent.mkdir(parents=True, exist_ok=True)
+            self.make_directories(destination.parent)
             with source.open('rb') as incoming, destination.open('xb') as outgoing:
                 while chunk := incoming.read(65536):
                     self.check()
                     outgoing.write(chunk)
+            if self.data['schema_version'] == 2 and os.name != 'nt':
+                destination.chmod(0o644)
 
     @staticmethod
     def write_record(path, record):
-        with path.open('x', encoding='utf-8') as stream:
+        if os.name == 'nt':
+            stream = path.open('x', encoding='utf-8')
+        else:
+            descriptor = os.open(path, os.O_WRONLY | os.O_CREAT | os.O_EXCL | getattr(os, 'O_NOFOLLOW', 0), 0o600)
+            try:
+                stream = os.fdopen(descriptor, 'w', encoding='utf-8')
+            except BaseException:
+                os.close(descriptor)
+                raise
+        with stream:
             json.dump(record, stream)
             stream.flush()
             os.fsync(stream.fileno())
 
-    def ensure(self, *, force_repair=False):
-        self.deadline = time.monotonic() + 300
+    @staticmethod
+    def sync_directory(path):
+        if os.name != 'nt':
+            descriptor = os.open(path, os.O_RDONLY | getattr(os, 'O_DIRECTORY', 0))
+            try:
+                os.fsync(descriptor)
+            finally:
+                os.close(descriptor)
+
+    def ensure(self, *, force_repair=False, deadline=None):
+        self.deadline = time.monotonic() + 300 if deadline is None else deadline
         try:
-            _no_links(self.root)
+            self.safe_path(self.root)
             if not force_repair:
                 current = self.current()
                 if current:
@@ -445,13 +526,13 @@ class RuntimeManager:
                         return current
                 generation_id = uuid.uuid4().hex
                 generations = self.root / 'generations'
-                _no_links(generations)
-                generations.mkdir(exist_ok=True)
+                self.safe_path(generations)
+                self.make_directories(generations)
                 with tempfile.TemporaryDirectory(prefix='staging-', dir=self.root) as temporary:
                     temporary = Path(temporary)
                     archive = temporary / 'artifact.zip'
                     staging = temporary / 'tree'
-                    staging.mkdir()
+                    staging.mkdir(mode=0o700)
                     self.download(archive)
                     self.extract(archive, staging)
                     generation = generations / generation_id
@@ -462,18 +543,21 @@ class RuntimeManager:
                     self.probe(handle)
                     record = dict(artifact_identity=self.artifact.identity, generation_id=generation_id)
                     self.write_record(generation / 'ready.json', record)
+                    self.sync_directory(generation)
+                    self.sync_directory(generations)
                     self.checkpoint('validated')
                     pending = self.root / ('.active-' + generation_id + '.tmp')
                     try:
                         self.write_record(pending, record)
                         self.check()
-                        _no_links(self.root / 'active.json')
+                        self.safe_path(self.root / 'active.json')
                         self.checkpoint('before_select')
                         os.replace(pending, self.root / 'active.json')
+                        self.sync_directory(self.root)
                         self.checkpoint('after_select')
                     finally:
                         if pending.exists():
-                            _no_links(pending)
+                            self.safe_path(pending)
                             pending.unlink()
                     return handle
         except DependencyError:
@@ -497,5 +581,22 @@ class RuntimeManager:
 
 
 def ensure_runtime(*, force_repair=False, progress=None):
-    check_platform()
-    return RuntimeManager(progress=progress).ensure(force_repair=force_repair)
+    started = time.monotonic()
+    try:
+        host = runtime_platform.detect_host()
+        catalog = load_catalog()
+        descriptor = select_artifact(catalog, host)
+        artifact = load_manifest(verified_manifest(descriptor))
+        validate_manifest_identity(descriptor, artifact.data)
+        if host.os != 'windows':
+            from .runtime_snapshot import snapshot_for_host
+            snapshot = snapshot_for_host(host)
+            decision = classify_support(host, descriptor, load_support_matrix(), snapshot=snapshot,
+                                        application_revision=catalog.get('application_revision'))
+            if decision.level != 'official' and progress:
+                progress('Aviso: ambiente não validado; uso de melhor esforço, sem garantia de suporte completo. ' + decision.reason)
+    except (OSError, CatalogError) as exc:
+        raise failure(str(exc), 'Consulte a matriz e os pré-requisitos; obtenha novamente o pacote completo se os metadados estiverem alterados.') from exc
+    classification_seconds = time.monotonic() - started
+    handle = RuntimeManager(artifact=artifact, progress=progress).ensure(force_repair=force_repair, deadline=started + 300)
+    return replace(handle, classification_seconds=classification_seconds)

@@ -1,0 +1,177 @@
+{
+  "kind": "github-hosted-current-wheel-sdist-installation",
+  "passed": true,
+  "qualified": false,
+  "application_revision": "ec5ff25f838416aea8a7526367bb1820df04e9a2",
+  "run_id": 39525752730,
+  "url": "https://github.com/Extremois/desembaraca-twine/actions/runs/39525752730",
+  "reports": [
+    {
+      "runner": "ubuntu-24.04",
+      "python": "3.12.15",
+      "arch": "x86_64",
+      "modes": [
+        "wheel",
+        "sdist"
+      ],
+      "file": "ubuntu-24.04-3.12.json",
+      "sha256": "0f26b91d38d06aae962f8b77e807ec1e4f339699cf7174db7d9c87a941e299bc",
+      "artifact_id": 12313906040,
+      "actions_archive_sha256": "8e3bbc9a143cc2dffeaca4213e0161dfa92b1ca0c55dfff7f9aa2c3716b6ce19",
+      "installed_files_per_format": 53,
+      "entrypoints_per_format": 3,
+      "passed": true
+    },
+    {
+      "runner": "ubuntu-24.04",
+      "python": "3.14.8",
+      "arch": "x86_64",
+      "modes": [
+        "wheel",
+        "sdist"
+      ],
+      "file": "ubuntu-24.04-3.14.json",
+      "sha256": "6600c71bdc781a1a29df007b626b3e6d1b00ba12fd86e76222256aa029632a21",
+      "artifact_id": 12313990985,
+      "actions_archive_sha256": "43433685a6878e5295042b4e1c56d362582b36fe204c035c956afe5423497412",
+      "installed_files_per_format": 53,
+      "entrypoints_per_format": 3,
+      "passed": true
+    },
+    {
+      "runner": "ubuntu-24.04-arm",
+      "python": "3.12.15",
+      "arch": "aarch64",
+      "modes": [
+        "wheel",
+        "sdist"
+      ],
+      "file": "ubuntu-24.04-arm-3.12.json",
+      "sha256": "bad469929e3614f8e32bfabf01e2c15b24763cd0a927fe1ad112e8053c96a8da",
+      "artifact_id": 12313496415,
+      "actions_archive_sha256": "6b450342893eb20cb6ddb0d4146ceb21466417f98aff7afc5ec14ea4a17d25ea",
+      "installed_files_per_format": 53,
+      "entrypoints_per_format": 3,
+      "passed": true
+    },
+    {
+      "runner": "ubuntu-24.04-arm",
+      "python": "3.14.8",
+      "arch": "aarch64",
+      "modes": [
+        "wheel",
+        "sdist"
+      ],
+      "file": "ubuntu-24.04-arm-3.14.json",
+      "sha256": "8821497c331cf894c0526abb008d08b0a325e3da26bda2d5be9d0e56176bb29f",
+      "artifact_id": 12313601376,
+      "actions_archive_sha256": "18597c1c95e29afa346e606d1f64ae350bb783a6e07b61ee9af173a0285836f7",
+      "installed_files_per_format": 53,
+      "entrypoints_per_format": 3,
+      "passed": true
+    },
+    {
+      "runner": "macos-15",
+      "python": "3.12.10",
+      "arch": "arm64",
+      "modes": [
+        "wheel",
+        "sdist"
+      ],
+      "file": "macos-15-3.12.json",
+      "sha256": "b3fc5aa440ac9eec93442635f42ce464dea757780e27975181acc836ce749ebc",
+      "artifact_id": 12313936042,
+      "actions_archive_sha256": "fe3e759ea989b03642366f9224a79f9f8af4a9c7a5f5b39f1fc62f2ccd86252f",
+      "installed_files_per_format": 53,
+      "entrypoints_per_format": 3,
+      "passed": true
+    },
+    {
+      "runner": "macos-15",
+      "python": "3.14.7",
+      "arch": "arm64",
+      "modes": [
+        "wheel",
+        "sdist"
+      ],
+      "file": "macos-15-3.14.json",
+      "sha256": "e1adb3ab4095432cf67590642f4584efde903e5d112d53c415f6f4d1daf39fa1",
+      "artifact_id": 12313276501,
+      "actions_archive_sha256": "951451b4cde2a49ef60603342e8ab0e023a137625dc5702dbec9fd65c8395884",
+      "installed_files_per_format": 53,
+      "entrypoints_per_format": 3,
+      "passed": true
+    },
+    {
+      "runner": "macos-15-intel",
+      "python": "3.12.10",
+      "arch": "x86_64",
+      "modes": [
+        "wheel",
+        "sdist"
+      ],
+      "file": "macos-15-intel-3.12.json",
+      "sha256": "69ec05a7a2e4af83f2898456d872b61197fccc1367dc23cb13dc37718c27c949",
+      "artifact_id": 12313696147,
+      "actions_archive_sha256": "6a06e90d8d8b55b95ff9e52e213e3f3f56f33475a16cf9326d003dc4ddc26ff8",
+      "installed_files_per_format": 53,
+      "entrypoints_per_format": 3,
+      "passed": true
+    },
+    {
+      "runner": "macos-15-intel",
+      "python": "3.14.7",
+      "arch": "x86_64",
+      "modes": [
+        "wheel",
+        "sdist"
+      ],
+      "file": "macos-15-intel-3.14.json",
+      "sha256": "430c62a9edb7ed2af84e0e4219b6e012a6ec7c1e2e3404bcfb84678d562e00f4",
+      "artifact_id": 12313506177,
+      "actions_archive_sha256": "f3334e431677aef5f855f0c7fb9f987059193fd5b219c21987bdfded2e8e120e",
+      "installed_files_per_format": 53,
+      "entrypoints_per_format": 3,
+      "passed": true
+    },
+    {
+      "runner": "windows-latest",
+      "python": "3.12.10",
+      "arch": "AMD64",
+      "modes": [
+        "wheel",
+        "sdist"
+      ],
+      "file": "windows-latest-3.12.json",
+      "sha256": "a299a967b00eb50475d9bc58e57c9e1d1c24fab40254edae74f5d79e96980291",
+      "artifact_id": 12313941168,
+      "actions_archive_sha256": "256503af71a540ed2467677429b546f49dd31928416230507d6402c314f853ea",
+      "installed_files_per_format": 53,
+      "entrypoints_per_format": 3,
+      "passed": true
+    },
+    {
+      "runner": "windows-latest",
+      "python": "3.14.8",
+      "arch": "AMD64",
+      "modes": [
+        "wheel",
+        "sdist"
+      ],
+      "file": "windows-latest-3.14.json",
+      "sha256": "b04cb6256c544d8e1437e87150f0170fdae3501dfdf4801045c2002bbdb85a5e",
+      "artifact_id": 12313761019,
+      "actions_archive_sha256": "6b9f1597e2f45042e327a63cb25569480f681a882679faf2f9805a0ecc81c8ba",
+      "installed_files_per_format": 53,
+      "entrypoints_per_format": 3,
+      "passed": true
+    }
+  ],
+  "installation_slots": 20,
+  "entrypoint_checks": 60,
+  "package_files_checked": 1060,
+  "limitations": [
+    "Development Python distributions and help only; no private POSIX engine acquired or qualified",
+    "Hosted runner labels are not approval of all support-target images; no license/signature/catalog promotion"
+  ]
+}

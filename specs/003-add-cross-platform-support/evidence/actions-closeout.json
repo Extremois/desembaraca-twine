@@ -1,0 +1,191 @@
+{
+  "kind": "implementation-closeout-checkpoint",
+  "validation_policy": "github-actions-only-no-vm",
+  "tasks_complete": 76,
+  "tasks_pending": 8,
+  "task_count": 84,
+  "completed_recipe_tasks": [
+    "T025",
+    "T027"
+  ],
+  "recipe_evidence": {
+    "path": "specs/003-add-cross-platform-support/evidence/source-pairing-ci-2026-10-27/summary.json",
+    "sha256": "2ab20c3dc86d6db9ca07222d1b241a7752931fd420c8821505a74211f16b7702"
+  },
+  "changes": [
+    "Preserve Actions provenance within container execution",
+    "Run macOS integration contracts in foundation CI"
+  ],
+  "preflight": {
+    "repository_apple_secrets_configured": false,
+    "distribution_releases_present": false
+  },
+  "remaining_decisions": [],
+  "remaining_delivery": [
+    "Approved artifact license/source audits",
+    "Immutable qualified binary/source delivery",
+    "Final-package ABI acceptance, installation and quickstart after catalog preparation"
+  ],
+  "feature_complete": false,
+  "post_validation_local_reconciliation": [
+    "T036",
+    "T056",
+    "T033",
+    "T044",
+    "T076",
+    "T063",
+    "T065"
+  ],
+  "qualification_scope": "abi",
+  "required_abi_targets": 7,
+  "required_python_slots": 14,
+  "macos_signing_required": false,
+  "retired_by_scope_change": [
+    "T037",
+    "T038",
+    "T039",
+    "T040",
+    "T041",
+    "T042",
+    "T043",
+    "T045",
+    "T051"
+  ],
+  "tasks_executed": 67,
+  "tasks_retired_by_scope": 9,
+  "abi_execution_evidence": {
+    "posix": {
+      "path": "specs/003-add-cross-platform-support/evidence/abi-scope-ci/installed-posix/summary.json",
+      "sha256": "60c7b4c8b9978c8bcd291d816cc59dac727da2871a717c771f3939e52d3ec851"
+    },
+    "musl": {
+      "path": "specs/003-add-cross-platform-support/evidence/abi-scope-ci/musl/summary.json",
+      "sha256": "94e502d737d480ca0217e7a2842022dcbf6ec07f4dba4ed4c50fd79ac253d46e"
+    }
+  },
+  "latest_validated_application_revision": "07688e264e6c9915790c2728beb24552a23f6388",
+  "abi_recovery_evidence": {
+    "path": "specs/003-add-cross-platform-support/evidence/abi-recovery-ci-canonical/summary.json",
+    "sha256": "17969174aba882633781cec60e40b31bf76daee18cab179bc7a3befd33202d1a"
+  },
+  "latest_source_review_revision": "fed01cc58e7a51625ce8b6da43b526dbc55c80a0",
+  "macos_source_rebuild_evidence": {
+    "path": "specs/003-add-cross-platform-support/evidence/macos-source-rebuild-ci-2026-10-28/summary.json",
+    "sha256": "f00cce4a84132e9bfe0aee170ae9a416680e2856c4038524e4a1c2b4187fbe7d"
+  },
+  "twine_visual_review_evidence": {
+    "path": "specs/003-add-cross-platform-support/evidence/twine-visual-review-2026-10-28.json",
+    "sha256": "c5106fa06acf5cb7e0400eaee7c61fe39e5b571dcafd8d67f9fabe4f20990b02"
+  },
+  "distribution_candidate_drafts": {
+    "path": "specs/003-add-cross-platform-support/evidence/distribution-candidate-drafts-2026-10-28/summary.json",
+    "sha256": "b58e25b5907bc5a9cee20bb1d7a7dda4baff93844b07afa49d6341215e28c826"
+  },
+  "distribution_integrity_evidence": {
+    "path": "specs/003-add-cross-platform-support/evidence/distribution-integrity.json",
+    "sha256": "6d6cdf4044f4b75c09f82e42f250537ec3dd22a0d93f42730edfc9c57f2143cb"
+  },
+  "current_remote_installation_evidence": {
+    "path": "specs/003-add-cross-platform-support/evidence/abi-remote-install-ci-2026-10-28/summary.json",
+    "sha256": "34a2b6bab8716eca8f682cb3f79a54d0b095b3f5b2d5d9149aa097e2d1a6271e"
+  },
+  "latest_candidate_review_revision": "f5e1ad22aea915e9d42e7da1f76de86ffbd23a4f",
+  "current_macos_source_notice_evidence": {
+    "approved": false,
+    "qualified": false,
+    "evidence": {
+      "path": "specs/003-add-cross-platform-support/evidence/macos-source-data-notices-ci-2026-10-28/summary.json",
+      "sha256": "192c0f058387d32b4e6e1ac5c014169032b9c75d2b7bf405d9dde4f9f17b3c7c"
+    },
+    "application_revision": "a192890556a437a772a5997e3908564df3c59777"
+  },
+  "current_macos_named_link_input_evidence": {
+    "approved": false,
+    "qualified": false,
+    "evidence": {
+      "path": "specs/003-add-cross-platform-support/evidence/macos-named-link-inputs-ci-2026-10-28/summary.json",
+      "sha256": "ff200db21f545dbdf44caf9f9a92bee24d6e837f0914c9d2872c2951da809eb0"
+    },
+    "application_revision": "f63b43e8842539336dc93f08cfa5711a94d0003f"
+  },
+  "latest_workflow_evidence": {
+    "path": "specs/003-add-cross-platform-support/evidence/macos-named-link-inputs-ci-2026-10-28/workflows.json",
+    "sha256": "22efdbcc8fd1bf2381d214517cdf3a9f488dd3924fec30aaae212c23b2be6204"
+  },
+  "license_review_dossier": {
+    "approved": false,
+    "index": {
+      "path": "specs/003-add-cross-platform-support/evidence/license-review-2026-10-28/candidate-index.json",
+      "sha256": "20cdf1efc5bc050d409b05a857b4c715c9190083d70714a2e0b396ee8133a89c"
+    },
+    "review_questions": {
+      "path": "specs/003-add-cross-platform-support/evidence/license-review-2026-10-28/README.md",
+      "sha256": "25c305d9cce25b3ae25e846e6e8600f599ed4d467b89930edfaee239a7b36a7a"
+    }
+  },
+  "current_project_notice_package_evidence": {
+    "path": "specs/003-add-cross-platform-support/evidence/berkeley-notice-packages-ci-2026-10-28/summary.json",
+    "sha256": "cd6793745f9a178f5ab49e26694291d6b498335c01d357f8776430fb4875de97"
+  },
+  "current_component_text_review": {
+    "path": "specs/003-add-cross-platform-support/evidence/license-review-2026-10-28/component-findings.json",
+    "sha256": "91b1ca4c569ddcfb73fd924186645961746ae1efef8d75ac68e1d6eebb019ca9"
+  },
+  "current_apple_header_source_evidence": {
+    "path": "specs/003-add-cross-platform-support/evidence/apple-sdk-header-source-review-2026-10-28/summary.json",
+    "sha256": "c741531b49ecd3fc6d22b330582bd3645b9529c9b1d72d948ece3c6ff5d47ec5"
+  },
+  "current_runtime_reference_grant_evidence": {
+    "path": "specs/003-add-cross-platform-support/evidence/license-review-2026-10-28/runtime-reference-findings.json",
+    "sha256": "3f0239c9c664dcba71f0542129f554c49d697780a8b4f65448503d8fc4cb168b"
+  },
+  "current_selected_header_source_delivery": {
+    "approved": false,
+    "qualified": false,
+    "evidence": {
+      "path": "specs/003-add-cross-platform-support/evidence/macos-header-source-delivery-ci-2026-10-28/summary.json",
+      "sha256": "607293918e38a8e96512112cc1481b3e96b2b96e2d5792b5d0b7115aa5675aae"
+    },
+    "application_revision": "721b90f3ab44e16b0e88f2d35118ef6fe5cc820c",
+    "selected_headers_per_architecture": 2,
+    "full_sdk_archive_included": false
+  },
+  "current_all_observed_apsl_source_delivery": {
+    "approved": false,
+    "qualified": false,
+    "evidence": {
+      "path": "specs/003-add-cross-platform-support/evidence/macos-apsl-source-delivery-ci-2026-10-28/summary.json",
+      "sha256": "a6ef69dff95fcfb380e6bad819bb7918dbb7ec4be272d5c026cc0fc556897733"
+    },
+    "application_revision": "6279d6ff715abbd4fc8d5fdf778d8a27a4f3ddfb",
+    "observed_apsl_source_coverage_complete": true,
+    "full_sdk_archive_included": false
+  },
+  "current_release_candidate_review": {
+    "approved": false,
+    "qualified": false,
+    "evidence": {
+      "path": "specs/003-add-cross-platform-support/evidence/release-candidate-review-2026-10-28/summary.json",
+      "sha256": "59e0302b12f81a7d6fae55d14a443f0787f7755fcc87f6f800b9287010c87b52"
+    },
+    "application_revision": "6279d6ff715abbd4fc8d5fdf778d8a27a4f3ddfb",
+    "audit_drafts": 6,
+    "linux_static_link_inputs_mapped": 262,
+    "local_payloads_verified": 12,
+    "published": false,
+    "source_kit_notice_update_pending": true
+  },
+  "current_macos_sdk_header_terms": {
+    "approved": false,
+    "qualified": false,
+    "evidence": {
+      "path": "specs/003-add-cross-platform-support/evidence/macos-sdk-terms-review-2026-10-28/header-findings.json",
+      "sha256": "eca4a021732300412b5b5ddda5d8225b2aeeae05fb5023172e3cac3911cf19d3"
+    },
+    "reviewed_headers": 67,
+    "collection_evidence": {
+      "path": "specs/003-add-cross-platform-support/evidence/macos-sdk-terms-review-2026-10-28/summary.json",
+      "sha256": "595ceb68d7a99de10fbefd52a996cae4080543f2a1a39d9cf34a5a1a455bfd39"
+    }
+  }
+}

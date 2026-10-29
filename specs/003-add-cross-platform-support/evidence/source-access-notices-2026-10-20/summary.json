@@ -1,0 +1,653 @@
+{
+  "kind": "source-access-notice-native-package-review",
+  "revision": "62489c84dfd4cf95a11f38877087b795f7d5274c",
+  "task": "T030/T052/T066",
+  "task_complete": false,
+  "passed": true,
+  "approved": false,
+  "qualified": false,
+  "runs": [
+    {
+      "id": 39531303569,
+      "name": "Linux Graphviz candidate",
+      "url": "https://github.com/Extremois/desembaraca-twine/actions/runs/39531303569",
+      "status": "completed",
+      "conclusion": "success",
+      "jobs": [
+        {
+          "id": 118997571407,
+          "name": "build-and-corpus",
+          "conclusion": "success",
+          "active_steps": []
+        }
+      ]
+    },
+    {
+      "id": 39531303576,
+      "name": "Linux ARM64 Graphviz candidate",
+      "url": "https://github.com/Extremois/desembaraca-twine/actions/runs/39531303576",
+      "status": "completed",
+      "conclusion": "success",
+      "jobs": [
+        {
+          "id": 118997571353,
+          "name": "native-build",
+          "conclusion": "success",
+          "active_steps": []
+        }
+      ]
+    },
+    {
+      "id": 39531303564,
+      "name": "Alpine musl Graphviz candidates",
+      "url": "https://github.com/Extremois/desembaraca-twine/actions/runs/39531303564",
+      "status": "completed",
+      "conclusion": "success",
+      "jobs": [
+        {
+          "id": 118997571128,
+          "name": "alpine-build (ubuntu-24.04, x86_64)",
+          "conclusion": "success",
+          "active_steps": []
+        },
+        {
+          "id": 118997571344,
+          "name": "alpine-build (ubuntu-24.04-arm, aarch64)",
+          "conclusion": "success",
+          "active_steps": []
+        },
+        {
+          "id": 118999905346,
+          "name": "Alpine userland 3.21 (x86_64, both Pythons)",
+          "conclusion": "success",
+          "active_steps": []
+        },
+        {
+          "id": 118999905389,
+          "name": "Alpine userland 3.22 (aarch64, both Pythons)",
+          "conclusion": "success",
+          "active_steps": []
+        },
+        {
+          "id": 118999905394,
+          "name": "Alpine userland 3.22 (x86_64, both Pythons)",
+          "conclusion": "success",
+          "active_steps": []
+        },
+        {
+          "id": 118999905395,
+          "name": "Alpine userland 3.24 (aarch64, both Pythons)",
+          "conclusion": "success",
+          "active_steps": []
+        },
+        {
+          "id": 118999905407,
+          "name": "Alpine userland 3.23 (x86_64, both Pythons)",
+          "conclusion": "success",
+          "active_steps": []
+        },
+        {
+          "id": 118999905436,
+          "name": "Alpine userland 3.24 (x86_64, both Pythons)",
+          "conclusion": "success",
+          "active_steps": []
+        },
+        {
+          "id": 118999905494,
+          "name": "Alpine userland 3.23 (aarch64, both Pythons)",
+          "conclusion": "success",
+          "active_steps": []
+        },
+        {
+          "id": 118999905546,
+          "name": "Alpine userland 3.21 (aarch64, both Pythons)",
+          "conclusion": "success",
+          "active_steps": []
+        }
+      ]
+    },
+    {
+      "id": 39531303568,
+      "name": "macOS Graphviz candidates",
+      "url": "https://github.com/Extremois/desembaraca-twine/actions/runs/39531303568",
+      "status": "completed",
+      "conclusion": "success",
+      "jobs": [
+        {
+          "id": 118997571166,
+          "name": "native-build (macos-15, aarch64, macos-arm64)",
+          "conclusion": "success",
+          "active_steps": []
+        },
+        {
+          "id": 118997571517,
+          "name": "native-build (macos-15-intel, x86_64, macos-x86_64)",
+          "conclusion": "success",
+          "active_steps": []
+        }
+      ]
+    },
+    {
+      "id": 39531303590,
+      "name": "Cross-platform foundation",
+      "url": "https://github.com/Extremois/desembaraca-twine/actions/runs/39531303590",
+      "status": "completed",
+      "conclusion": "success",
+      "jobs": [
+        {
+          "id": 118997571404,
+          "name": "Pure contracts (windows-latest, Python 3.14)",
+          "conclusion": "success",
+          "active_steps": []
+        },
+        {
+          "id": 118997571625,
+          "name": "Pure contracts (ubuntu-24.04, Python 3.14)",
+          "conclusion": "success",
+          "active_steps": []
+        },
+        {
+          "id": 118997571637,
+          "name": "Pure contracts (windows-latest, Python 3.12)",
+          "conclusion": "success",
+          "active_steps": []
+        },
+        {
+          "id": 118997571639,
+          "name": "Pure contracts (macos-15, Python 3.14)",
+          "conclusion": "success",
+          "active_steps": []
+        },
+        {
+          "id": 118997571690,
+          "name": "Pure contracts (macos-15, Python 3.12)",
+          "conclusion": "success",
+          "active_steps": []
+        },
+        {
+          "id": 118997571725,
+          "name": "Pure contracts (ubuntu-24.04, Python 3.12)",
+          "conclusion": "success",
+          "active_steps": []
+        },
+        {
+          "id": 118997572776,
+          "name": "windows-acceptance",
+          "conclusion": "skipped",
+          "active_steps": []
+        }
+      ]
+    }
+  ],
+  "foundation": [
+    {
+      "job_id": 118997571404,
+      "name": "Pure contracts (windows-latest, Python 3.14)",
+      "tests": 251,
+      "skipped": 8,
+      "raw_log_sha256": "bf6663d1a4155761fbbceb78fb76f4179f2c6a4df1ffd538bdf830330a905c9c"
+    },
+    {
+      "job_id": 118997571625,
+      "name": "Pure contracts (ubuntu-24.04, Python 3.14)",
+      "tests": 251,
+      "skipped": 6,
+      "raw_log_sha256": "c5e96744257c8909251120971da55abc08e5bda1727f0289b24dfbb522bb909a"
+    },
+    {
+      "job_id": 118997571637,
+      "name": "Pure contracts (windows-latest, Python 3.12)",
+      "tests": 251,
+      "skipped": 8,
+      "raw_log_sha256": "dde7d10909f7cd5f43fbf625bf840afe3097c7ef5121e7a298f5a79ffc4fe80e"
+    },
+    {
+      "job_id": 118997571639,
+      "name": "Pure contracts (macos-15, Python 3.14)",
+      "tests": 251,
+      "skipped": 6,
+      "raw_log_sha256": "9ea981d7ebfb1f31fc9c004a6f6d394f2133b66440506a5398231bd78cc8b1da"
+    },
+    {
+      "job_id": 118997571690,
+      "name": "Pure contracts (macos-15, Python 3.12)",
+      "tests": 251,
+      "skipped": 6,
+      "raw_log_sha256": "020314c3bcadd3e8dd06f448e9fd5b644ca465d0c22ba9cddc13f23c26f04188"
+    },
+    {
+      "job_id": 118997571725,
+      "name": "Pure contracts (ubuntu-24.04, Python 3.12)",
+      "tests": 251,
+      "skipped": 6,
+      "raw_log_sha256": "8ea2e6d150c3dc693a72a699d200234f497a443982692016450e5c1affbc7f82"
+    }
+  ],
+  "artifacts": [
+    {
+      "artifact_id": "linux-glibc-x86_64",
+      "run_id": 39531303569,
+      "actions_artifact_id": 12314944487,
+      "artifact_sha256": "0c3680347437084df831bb86e546a220975608272f3d0a8cc1b837c4d3fcf234",
+      "engine_sha256": "43ce8d686720467c21be91cab4b8f3b246baae49c2cfe293714ebdf8a82f5716",
+      "engine_unchanged": true,
+      "archive_sha256": "16561966f8e9bf80ca26ab083a05a08811d3eddbc32ad0f8606f54949f952f1c",
+      "provenance_sha256": "e7dc27d85f0ccd7f9bfc5d228d13578c6f69ca8daa45dde41b7145dfe65a1704",
+      "files_verified": 480,
+      "notice_payloads_verified": 478,
+      "source_notice_matches_generator": true,
+      "glibc_section_6_notice": true,
+      "approved": false,
+      "qualified": false,
+      "retained_files": {
+        "candidate.json": {
+          "sha256": "37f7e89cc8a811aa056cb9990932a014487cbf37986d82254a22538c172748a5",
+          "bytes": 866
+        },
+        "inventory.json": {
+          "sha256": "c71e67003c9bb9ba73711a0af49e8b968052dbd8dc4ba39217d1587081ef5026",
+          "bytes": 102909
+        },
+        "provenance.json.gz": {
+          "sha256": "68b95b364b642c1af76fb78fbd01c9ef939986f2fea82968aa3bca3ed5a56ad5",
+          "bytes": 12433
+        },
+        "SOURCE-REFERENCES.txt": {
+          "sha256": "e4c84bbef4cdc74b9a9d5da9bff9961b1ed2bcc3a9b0b389d937fb4ba462c7a2",
+          "bytes": 1935
+        },
+        "NOTICE-ORIGINS.json.gz": {
+          "sha256": "0f53164e82d54aaeb3c56ee2d67140c012ac0ec5094c94f8fb8a576ab995e17b",
+          "bytes": 50414
+        },
+        "corpus-312.json": {
+          "sha256": "27954a127466fb6180e90d61a69c5ef24bde60ea1394ef7230ae65e030025422",
+          "bytes": 5586
+        },
+        "corpus-314.json": {
+          "sha256": "61d3b2fab1b01e205231536546885a273f41ab520eb9d96783e23889f7e431d2",
+          "bytes": 5585
+        },
+        "network-312.json": {
+          "sha256": "3513a63d2055e0729ccd528de3c8ec65737d1905362355d1957e301e63c67405",
+          "bytes": 1350
+        },
+        "network-314.json": {
+          "sha256": "3169ffe612c92c0fdc74eeec29362a52fc3b595aa61a86e0b96f9a34e36293e3",
+          "bytes": 1349
+        },
+        "runtime-corpus-312.json": {
+          "sha256": "81ace88bae97ac8c2b06ac7b4c039932ce90c4b72d58b6956dd25e991065eef1",
+          "bytes": 34430
+        },
+        "runtime-corpus-314.json": {
+          "sha256": "e740a5683ee9cb410d8d44acc1b1c7f49b00fc3f1408a76cc6307ed600e0a6ba",
+          "bytes": 34429
+        },
+        "runtime-network-312.json": {
+          "sha256": "29412103f5ead779421b2943cbcb145b54bfcb0951fb413ed33ff436e446f9a9",
+          "bytes": 1352
+        },
+        "runtime-network-314.json": {
+          "sha256": "1809ffa75759eebb2ae64d047af0aec9c728526146d69d9e5a0f8e9c82acec92",
+          "bytes": 1351
+        },
+        "archive-check.json": {
+          "sha256": "71a818bfe024672d979c4a8b094bf8c99448dbc9256ec4bc4af5a61c0cf59d58",
+          "bytes": 267735
+        }
+      }
+    },
+    {
+      "artifact_id": "linux-glibc-aarch64",
+      "run_id": 39531303576,
+      "actions_artifact_id": 12315951459,
+      "artifact_sha256": "e5d12dfb334cae6eae6bd302c9e081919c42e06db91cb6897cd895e58e2e565a",
+      "engine_sha256": "933b6c63370bdd3e814627e2a9a06176416c8da017a21dcbc96d8137dbc17e22",
+      "engine_unchanged": true,
+      "archive_sha256": "937ae52a817c63682a49ccd8e4cce8bb84bb135241d7a55b438b851e4fee5088",
+      "provenance_sha256": "a19d7391e4d008a1a03a93a5da9427323bbb0412e6791c6a26730cd2bbcdda3c",
+      "files_verified": 573,
+      "notice_payloads_verified": 571,
+      "source_notice_matches_generator": true,
+      "glibc_section_6_notice": true,
+      "approved": false,
+      "qualified": false,
+      "retained_files": {
+        "candidate.json": {
+          "sha256": "5edd03707f8126310dfcd98a3cf0c9ff5eea776dfb66c0748c4c84d62e225e04",
+          "bytes": 868
+        },
+        "inventory.json": {
+          "sha256": "f651c77f17eb74f41139ea83061cb20d5cae8351e8acf2435b23e263f65ee47c",
+          "bytes": 122541
+        },
+        "provenance.json.gz": {
+          "sha256": "b0e83281318030ff0e5eee3c060262c47e34fdf186362082501eec836300bfb3",
+          "bytes": 12529
+        },
+        "SOURCE-REFERENCES.txt": {
+          "sha256": "a6333f2cafec211982f727105a419b7625a5f782a6e5514be4ba5daaa2c9d76b",
+          "bytes": 1937
+        },
+        "NOTICE-ORIGINS.json.gz": {
+          "sha256": "420fed152c8f76eaaedd55f1bb340c65ff5c30c96a57bc0603ca35888f77e9ef",
+          "bytes": 60550
+        },
+        "corpus-314.json": {
+          "sha256": "55c327c9aa2c6e0a0cdf681638b8d0f4a942c7bd2b66a0d91970b9f3511db947",
+          "bytes": 5559
+        },
+        "corpus-312.json": {
+          "sha256": "6a0a536ba575395ef3086056a90b376a96ea1e6e44ac4ce78e6c1c79d9eff313",
+          "bytes": 5560
+        },
+        "network-312.json": {
+          "sha256": "66b1d1500080c58fd87e73d4d9983caf9e351b811a9d18a4f29aba7dc7a618f3",
+          "bytes": 1352
+        },
+        "network-314.json": {
+          "sha256": "435b382ad7e656c614af8707b5202e8b7c946ab43588ea06110bcde2cd09d0af",
+          "bytes": 1351
+        },
+        "runtime-corpus-312.json": {
+          "sha256": "07c8f82bfca14a98e8991b821acc09a46b77c2d35e1870d98e7dfb9a3bf27fc4",
+          "bytes": 34431
+        },
+        "runtime-corpus-314.json": {
+          "sha256": "797ae0d92fbf6a0e658242ff99daaaec6e7a8bc8ff070568896e1a8003e18cb9",
+          "bytes": 34430
+        },
+        "runtime-network-312.json": {
+          "sha256": "84f35bb75a0bdbdad1c477e5c8989eb0e2205b4d1c7950bbf45173ca89906c0d",
+          "bytes": 1354
+        },
+        "runtime-network-314.json": {
+          "sha256": "98c8079e49517e3fa819820b370f7b138525bd66133f18ea208f27291a5b2682",
+          "bytes": 1353
+        },
+        "archive-check.json": {
+          "sha256": "55653c1f17774d5a9c1b5cc39d20165a5c53f78255d15ba1d0168d075b6f1151",
+          "bytes": 331001
+        }
+      }
+    },
+    {
+      "artifact_id": "linux-musl-x86_64",
+      "run_id": 39531303564,
+      "actions_artifact_id": 12315817105,
+      "artifact_sha256": "e80b37fad86d6e1faa801d6162c8d0190926a2b44e32823b548072e1d70942fc",
+      "engine_sha256": "f4dfee4e052704b1a7efdb7b6a4c43583ccaa062aec800b76224dae24eb2b69b",
+      "engine_unchanged": true,
+      "archive_sha256": "13b9e30f56d786860b5886cff839445b52492be76cd8108e4255c579026a306b",
+      "provenance_sha256": "6d1404b7b3813a7c6be6c13dd5daf81e80ade1f1bc25480d375bd74e9864f0e8",
+      "files_verified": 450,
+      "notice_payloads_verified": 448,
+      "source_notice_matches_generator": true,
+      "glibc_section_6_notice": false,
+      "approved": false,
+      "qualified": false,
+      "retained_files": {
+        "candidate.json": {
+          "sha256": "4acda28c9887bc8d605beb14462ac99bfdee7c86baec8a6bdc71e04bd469cbed",
+          "bytes": 864
+        },
+        "inventory.json": {
+          "sha256": "2c9091089f4e268e1edeb2af8ba1eb513bb48ec12f5c6a8e85726afa0a68a69c",
+          "bytes": 96762
+        },
+        "provenance.json.gz": {
+          "sha256": "9005405505a776bb9b0e8b09b713cdc26b477cc444503f37fb6aef1ff89f7962",
+          "bytes": 19810
+        },
+        "SOURCE-REFERENCES.txt": {
+          "sha256": "52d630d816349749deca2cca5f148fe89d14aed3ae8101d9b3d6f9665eba4f32",
+          "bytes": 1066
+        },
+        "NOTICE-ORIGINS.json.gz": {
+          "sha256": "adeddf998a7aa463e2ba0b22be8c967e4985e0edae35b0d00277863a545d9fad",
+          "bytes": 46377
+        },
+        "corpus-312.json": {
+          "sha256": "d105306620c3a277f8aa9e00507de206faa87a8c2785fae43c77bfa8bb885b17",
+          "bytes": 5501
+        },
+        "corpus-314.json": {
+          "sha256": "59260331d265ae52260c79d832de8e338e88c9f0732b500654e56ee7123f9ba1",
+          "bytes": 5500
+        },
+        "network-312.json": {
+          "sha256": "b12bc9506327124704513fe04a00f5eeea868ab885821c2c45bdcdbf2d1e53a4",
+          "bytes": 1355
+        },
+        "network-314.json": {
+          "sha256": "82b1175fadb734d2bc45a1f5be06c40d3d5ea25cc8915ee9ca65542a6b24f274",
+          "bytes": 1354
+        },
+        "runtime-corpus-314.json": {
+          "sha256": "f0daa13bba71afe6337b79e10edb35e6a2573de05f37cf1bc19131a26ffc6070",
+          "bytes": 34432
+        },
+        "runtime-corpus-312.json": {
+          "sha256": "df4f2a9c92e1a80d43aa6225e9f5bd3074ada0738f78c1bd4dabef8d830e1d2f",
+          "bytes": 34433
+        },
+        "runtime-network-312.json": {
+          "sha256": "3ad91d795481c17ffbb35fd337b19fef37dbbf19309e8ab6368ed7002fac9bb8",
+          "bytes": 1357
+        },
+        "runtime-network-314.json": {
+          "sha256": "01b6d6b57459321494ed48b95c2e47cb1e9f5994d1e818730164644ee441200c",
+          "bytes": 1356
+        },
+        "archive-check.json": {
+          "sha256": "eaef422240d5c78b06905d002102a53f190050c1fb537fa8023cdacb56456d40",
+          "bytes": 261269
+        }
+      }
+    },
+    {
+      "artifact_id": "linux-musl-aarch64",
+      "run_id": 39531303564,
+      "actions_artifact_id": 12315642010,
+      "artifact_sha256": "7b973993d530db0d9fc78c8cf2d3af858f8dfe30fa6f4d3b232ccbba8291c305",
+      "engine_sha256": "2d7a4b6024eb000c33ecf8b14d1a32d0aac8dde65bed00de138604d081fd3ee4",
+      "engine_unchanged": true,
+      "archive_sha256": "60254d4d24ea5920a9fed5648d0f604d0b564f2498ad3db44f74eaa9e45d5ada",
+      "provenance_sha256": "61e553a8b5aa0349266826c3623932796564d31b5523bd61cdfc040827680a25",
+      "files_verified": 450,
+      "notice_payloads_verified": 448,
+      "source_notice_matches_generator": true,
+      "glibc_section_6_notice": false,
+      "approved": false,
+      "qualified": false,
+      "retained_files": {
+        "candidate.json": {
+          "sha256": "d49f1972f47f9900e881a8fb1d7ff2182a013ea47191e3e214c058e40ace6f42",
+          "bytes": 866
+        },
+        "inventory.json": {
+          "sha256": "5865e82195d70daa9e0a13b278b75ef6b1cd5ecbf23c9d0a95c1edfed7bf45fd",
+          "bytes": 96787
+        },
+        "provenance.json.gz": {
+          "sha256": "adc324c3d7d671ab8d3f104e7e46e8376d1fc5c3549ed67c1d6688214f1b6408",
+          "bytes": 19641
+        },
+        "SOURCE-REFERENCES.txt": {
+          "sha256": "ce4621cd75abf50bcc15dd8dd40a3fc07bd9efca2295c44318f71deaadcd755b",
+          "bytes": 1068
+        },
+        "NOTICE-ORIGINS.json.gz": {
+          "sha256": "ce26810fcb71c44457ba5c4942fd60b06b376625a369ef59d6dbc283f8f20229",
+          "bytes": 46348
+        },
+        "corpus-312.json": {
+          "sha256": "e78410bf5a9bc3b052eb6e70b08bf9c8de47ae7fa9bf89bd03a324c6b63275f1",
+          "bytes": 5502
+        },
+        "corpus-314.json": {
+          "sha256": "08688e6aeab99656962bd34fd8b1c58bd30a0e7e2e0bacf5f450eae152451ccf",
+          "bytes": 5501
+        },
+        "network-312.json": {
+          "sha256": "27102cc97684e512cd6a383af6a4b869fae007978ae39c0c053cd81da26ceeb4",
+          "bytes": 1356
+        },
+        "network-314.json": {
+          "sha256": "b08f87d132806b6385bc25386202495aa1851cbeb73f4cc20e7eb42e9572e818",
+          "bytes": 1355
+        },
+        "runtime-corpus-312.json": {
+          "sha256": "10d6f3fb2798109d051c495b32b60ebef967fb004a545cba25e5b19c3f9e3288",
+          "bytes": 34434
+        },
+        "runtime-corpus-314.json": {
+          "sha256": "d4ae6d18fa1fe34084c2a95d333daada19d85362191361450dad05cba2724963",
+          "bytes": 34433
+        },
+        "runtime-network-312.json": {
+          "sha256": "3a6f09312b96ff4e7d255d694837c085b61895410776d6c17e0a7b49ca68a901",
+          "bytes": 1358
+        },
+        "runtime-network-314.json": {
+          "sha256": "9e4974f99a3ea9baba921f70f1c8a9c9850168ee788a977021c89e18b6bb9ac6",
+          "bytes": 1357
+        },
+        "archive-check.json": {
+          "sha256": "63bec6e22e884c90a2f2a0fbc92b1a7f3ce1a944d6c4ef2d05ffbe67db2778b2",
+          "bytes": 261285
+        }
+      }
+    },
+    {
+      "artifact_id": "macos-x86_64",
+      "run_id": 39531303568,
+      "actions_artifact_id": 12315506264,
+      "artifact_sha256": "8a8df2ed34b3c8adfbcad268759193dd019c357a06e0d4721b5a538f9d5d2e1e",
+      "engine_sha256": "d8ab197fbdfa9312050f4c4827f4bb612f7f4d1d021d4308a9850ee1a1104fff",
+      "engine_unchanged": true,
+      "archive_sha256": "913cb51a1c1e18813e982e9ab9dfb9b7b9220fdf18ff88dab0e6d03574bd5341",
+      "provenance_sha256": "f53a79c7d0828f3b487cd4590e2d4c77fc5ddaafcb36813a098f758201f5f571",
+      "files_verified": 233,
+      "notice_payloads_verified": 231,
+      "source_notice_matches_generator": true,
+      "glibc_section_6_notice": false,
+      "approved": false,
+      "qualified": false,
+      "retained_files": {
+        "candidate.json": {
+          "sha256": "c0f07e4f2685723fda30ce0e96f77ad0b46371eecf99e5844c2118a327b5fa45",
+          "bytes": 862
+        },
+        "inventory.json": {
+          "sha256": "787d556a99e4dc67ce44131e7d180df8baad023312586efed94ffd24669da871",
+          "bytes": 49484
+        },
+        "provenance.json.gz": {
+          "sha256": "904645cbb49de383c212ed5960d512c990ec4a2595e6610d92e3d09e75770e29",
+          "bytes": 2648
+        },
+        "SOURCE-REFERENCES.txt": {
+          "sha256": "d6f341de14f8641d55181a19be3819ca369caa1ec345bff48abe15dc643e9397",
+          "bytes": 1300
+        },
+        "NOTICE-ORIGINS.json.gz": {
+          "sha256": "361cd0fc69fd6f49ab21275a3bbda53f3bffef50e0400cbd10c83086af2ee2d3",
+          "bytes": 27822
+        },
+        "corpus-312.json": {
+          "sha256": "82df13fc80e6c601ea4b5f3312b879de09975894525b4730ee5466fe35bd3eec",
+          "bytes": 5348
+        },
+        "corpus-314.json": {
+          "sha256": "26ffb109c65bfbfd7043f8091280c7efe668774e1952b441dcdd2ef99b97d025",
+          "bytes": 5347
+        },
+        "runtime-312.json": {
+          "sha256": "424a6c27e257a8dbebfe09c630d7fc79c5f7f4a48b4ce5711a9dcb6301fdacfc",
+          "bytes": 36250
+        },
+        "runtime-314.json": {
+          "sha256": "0d9c8815856425dec2e717d3839343af1e69910a46d9bcc28eaba49b776ef9ca",
+          "bytes": 36249
+        },
+        "archive-check.json": {
+          "sha256": "e82f37582957ee78ac91930b3e24c41155c91bad6dc32dbbc8712e66949c5bd4",
+          "bytes": 156357
+        }
+      }
+    },
+    {
+      "artifact_id": "macos-arm64",
+      "run_id": 39531303568,
+      "actions_artifact_id": 12315371495,
+      "artifact_sha256": "6db168bd4aa463e3c3857e7eff1618d7313b276c1d513a9028cededd4402760a",
+      "engine_sha256": "774115a1a9e4b2385d33fa55fe02de0d8728cb0984967d445528c6fe04f97dac",
+      "engine_unchanged": true,
+      "archive_sha256": "37c27809562066aa4ec30be4fd419af20e1d0636796e56347f06dbca75f7040b",
+      "provenance_sha256": "2ae7be4291ed2facd349d20145641473da0a38c43d4037cee62dd16f8da9d3e3",
+      "files_verified": 233,
+      "notice_payloads_verified": 231,
+      "source_notice_matches_generator": true,
+      "glibc_section_6_notice": false,
+      "approved": false,
+      "qualified": false,
+      "retained_files": {
+        "candidate.json": {
+          "sha256": "b23ecb641d461196e8f6a6df02bb6d6d10a32334edfb26b9dd7ddbf90d53288e",
+          "bytes": 862
+        },
+        "inventory.json": {
+          "sha256": "a3c79768c0059e09db91c02433416ff6f9540ba95ab721c5d05c5616f400a97d",
+          "bytes": 49480
+        },
+        "provenance.json.gz": {
+          "sha256": "8bf1a15b9fb6ae3fa5a89c25cb3f11da59f651cd4a5122dbe6588ee2274b09e0",
+          "bytes": 2656
+        },
+        "SOURCE-REFERENCES.txt": {
+          "sha256": "dc645330b30f01973a237e5a729651af7b10148f6b6c590a704ecd7a5d1890f6",
+          "bytes": 1299
+        },
+        "NOTICE-ORIGINS.json.gz": {
+          "sha256": "f842181f5fae5b6f9c7aea51c61c2a04bea8b6f82440522c79443557e84165a9",
+          "bytes": 27717
+        },
+        "corpus-314.json": {
+          "sha256": "13c1d28782a7a64c71bb5380f11b584b73ad7e2dcb1d8d112f5d9a251681acad",
+          "bytes": 5346
+        },
+        "corpus-312.json": {
+          "sha256": "619cad17c1cdfa99d17137795e0018dadcf73e6b52586e5c4e97e12172747c2c",
+          "bytes": 5347
+        },
+        "runtime-312.json": {
+          "sha256": "3510b3becab67a5d2635785e7c0cfa6d29d363790516ef4c92f65299cba1f73e",
+          "bytes": 36249
+        },
+        "runtime-314.json": {
+          "sha256": "dcd59d3be0976437ece6067e444b9caf31de88fff70d1f0c462ca634b81853bd",
+          "bytes": 36248
+        },
+        "archive-check.json": {
+          "sha256": "79d544dbf86eb557d459109f489c0836def454e866311088e4a789798cd463a3",
+          "bytes": 156051
+        }
+      }
+    }
+  ],
+  "files_verified": 2419,
+  "notice_payloads_verified": 2407,
+  "limitations": [
+    "No completed corresponding-source delivery or modified-library relink proof",
+    "ISO/entity and remaining third-party compatibility reviews remain open",
+    "No signature, release publication or complete support-cell qualification",
+    "Existing cache snapshots refer to previous bundle hashes; not transferred to these archives"
+  ],
+  "verification_tools": {
+    "archive_checker_sha256": "ae63ad61c7f1fdce8a5303538ac5a9c6b1d49248cc8f96410da1a6ac73c498a7",
+    "source_notice_generator_sha256": "22f870c89646f4aa63dfb0d69e0b6a2484381ee4599377bfe948a413032bf1f8",
+    "capture_tool_sha256": "b21f0dfe2727df124f1af4a2df3b0cdf91485bd361b8ab4cb4f5a9a384ec4765"
+  }
+}

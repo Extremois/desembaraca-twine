@@ -1,0 +1,14 @@
+//!
+//! Small Zig reimplementation of gcc's libssp.
+//!
+//! This library implements most of the builtins required by the stack smashing
+//! protection as implemented by gcc&clang.
+//! Missing exports:
+//! - __gets_chk
+//! - __mempcpy_chk
+//! - __snprintf_chk
+//! - __sprintf_chk
+//! - __stpcpy_chk
+//! - __vsnprintf_chk
+//! - __vsprintf_chk
+

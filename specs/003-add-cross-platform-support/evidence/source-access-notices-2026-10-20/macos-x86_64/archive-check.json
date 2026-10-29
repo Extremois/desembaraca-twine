@@ -1,0 +1,3247 @@
+{
+  "artifact_id": "macos-x86_64",
+  "passed": true,
+  "qualified": false,
+  "license_compatibility_approved": false,
+  "archive_sha256": "913cb51a1c1e18813e982e9ab9dfb9b7b9220fdf18ff88dab0e6d03574bd5341",
+  "provenance_sha256": "f53a79c7d0828f3b487cd4590e2d4c77fc5ddaafcb36813a098f758201f5f571",
+  "inventory_sha256": "787d556a99e4dc67ce44131e7d180df8baad023312586efed94ffd24669da871",
+  "engine_sha256": "d8ab197fbdfa9312050f4c4827f4bb612f7f4d1d021d4308a9850ee1a1104fff",
+  "files_verified": 233,
+  "notice_payloads_verified": 231,
+  "notice_index_sha256": "4b8d5d6b6a87cb866c22cc29e37852ec9a2a65cec9d73ece949f4034fbc09f57",
+  "offline_notice_origins": {
+    "approved": false,
+    "kind": "macos-offline-notice-origins",
+    "notices": [
+      {
+        "origin": {
+          "archive_sha256": "1e028b2b3e84e946c1d3e8c47590f8f0741bba1041fe6eff36eee87e598ea249",
+          "kind": "pinned-graphviz-source",
+          "path": "AUTHORS",
+          "source_sha256": "182eaf397edc803d0e44a25708ba70ecafc143c0f610ea7048c6b9687a939ff0"
+        },
+        "path": "Graphviz-AUTHORS.txt",
+        "sha256": "182eaf397edc803d0e44a25708ba70ecafc143c0f610ea7048c6b9687a939ff0",
+        "size": 694
+      },
+      {
+        "origin": {
+          "archive_sha256": "1e028b2b3e84e946c1d3e8c47590f8f0741bba1041fe6eff36eee87e598ea249",
+          "kind": "pinned-graphviz-source",
+          "path": "COPYING",
+          "source_sha256": "0becf16567beb77fa252b7664631dd177c8f9a1889e48995b45379c7130e5303"
+        },
+        "path": "Graphviz-COPYING.txt",
+        "sha256": "0becf16567beb77fa252b7664631dd177c8f9a1889e48995b45379c7130e5303",
+        "size": 14198
+      },
+      {
+        "origin": {
+          "archive_sha256": "1e028b2b3e84e946c1d3e8c47590f8f0741bba1041fe6eff36eee87e598ea249",
+          "kind": "pinned-graphviz-source",
+          "path": "lib/common/brewer_colors",
+          "source_sha256": "a069692c03e8bcd402fbd88b2e664a7cc0f39870c05cc1d751413f8302a7d34e"
+        },
+        "path": "ColorBrewer.txt",
+        "sha256": "09598cbb53b21f3cab841d5be8ceee6ef9bc0387f3b60330da94e9c98f4ada19",
+        "size": 2130
+      },
+      {
+        "origin": {
+          "archive_sha256": "1e028b2b3e84e946c1d3e8c47590f8f0741bba1041fe6eff36eee87e598ea249",
+          "kind": "pinned-graphviz-source",
+          "path": "lib/rbtree/LICENSE",
+          "source_sha256": "fcb423209a3a3909f41e629a4973eab3995ceb93136dd72485fb12ad3de29dfc"
+        },
+        "path": "Graphviz-lib__rbtree__LICENSE.txt",
+        "sha256": "fcb423209a3a3909f41e629a4973eab3995ceb93136dd72485fb12ad3de29dfc",
+        "size": 1048
+      },
+      {
+        "origin": {
+          "kind": "generated-parser-prefix",
+          "length": 1532,
+          "offset": 0,
+          "path": "lib/cgraph/grammar.c",
+          "source_sha256": "b967030c4a5d53d21f9901df8147e5dba152138391b937bb060c2c2f5d495ad6"
+        },
+        "path": "Bison-lib__cgraph__grammar.c.txt",
+        "sha256": "b979bc0e49fa1efed0fad3af4ecc582b471da7662626cebfd0d5f998b1119f72",
+        "size": 1532
+      },
+      {
+        "origin": {
+          "kind": "generated-parser-prefix",
+          "length": 1527,
+          "offset": 0,
+          "path": "lib/cgraph/grammar.h",
+          "source_sha256": "b8b5590815ed422c7a9084d356bb61946c9cbcf528101e2f43b0bd106d77ea94"
+        },
+        "path": "Bison-lib__cgraph__grammar.h.txt",
+        "sha256": "ecd76b7233bacbeeafca33a46b80f4120864e3de861e7d0a7d7c6fcce3d664dd",
+        "size": 1527
+      },
+      {
+        "origin": {
+          "kind": "generated-parser-prefix",
+          "length": 1532,
+          "offset": 0,
+          "path": "lib/common/htmlparse.c",
+          "source_sha256": "7fc12d95f1c6ee59576a143d4d6c76e9b35e0c56c287533414d39c855b43e4ea"
+        },
+        "path": "Bison-lib__common__htmlparse.c.txt",
+        "sha256": "b979bc0e49fa1efed0fad3af4ecc582b471da7662626cebfd0d5f998b1119f72",
+        "size": 1532
+      },
+      {
+        "origin": {
+          "kind": "generated-parser-prefix",
+          "length": 1527,
+          "offset": 0,
+          "path": "lib/common/htmlparse.h",
+          "source_sha256": "8b2e0119bf024ef065e0132e9ad72383443b9c95b48897f129e5c54b6e9c49f1"
+        },
+        "path": "Bison-lib__common__htmlparse.h.txt",
+        "sha256": "ecd76b7233bacbeeafca33a46b80f4120864e3de861e7d0a7d7c6fcce3d664dd",
+        "size": 1527
+      },
+      {
+        "origin": {
+          "generated_path": "lib/cgraph/scan.c",
+          "generated_sha256": "cb9a8d6f06b96621d69e7804b8529c94d488f1b4d8f83aa111520d26d9bcc2d7",
+          "generator_sha256": "ab177c6ac8bf8319e01a401af47390322d935d520b6ae833873eef232d44f577",
+          "generator_version": "2.6.4",
+          "kind": "pinned-generator-license-material",
+          "qualification": "Recorded generator/scanner versions agree; preserves upstream generated-scanner exception, no bundle approval",
+          "recorded_generator_version": "flex 2.6.4 Apple(flex-35)",
+          "source_sha256": "97fd685958d93be7f8dab939bb8161dbd6afb0718c63bfc337c24321aea44273",
+          "source_url": "https://raw.githubusercontent.com/apple-oss-distributions/flex/8548f53e24244c0a411dea128a21686b61d29df4/COPYING"
+        },
+        "path": "Flex-Apple-35-COPYING.txt",
+        "sha256": "97fd685958d93be7f8dab939bb8161dbd6afb0718c63bfc337c24321aea44273",
+        "size": 1855
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 980,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/Availability.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "19778e53358af735e2eeb61696c3f961c5d843e25bb2b1222540dffcc08b65e3"
+        },
+        "path": "SDK-header-eebf10a734f7041302d45755.txt",
+        "sha256": "c376767e75918612970e0f19c860579468f7c82202946baff5fe901506fcdca8",
+        "size": 980
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 1116,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/AvailabilityInternal.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "bc7678491a219f97121a4e47c93f02ef73b26858f70229c98100dfea058ab08d"
+        },
+        "path": "SDK-header-561fe63bc3c75fc18915ecc5.txt",
+        "sha256": "3d0e3ecb9c879d31585b49631e699a3cadc9ff5d38004654afaeeb59152cffe9",
+        "size": 1116
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 1123,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/AvailabilityInternalLegacy.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "c870957de1ab12b504c5d3d54f894630dee0aac25acd29946438aa6729005a31"
+        },
+        "path": "SDK-header-18c76649ac4bf86780d97b69.txt",
+        "sha256": "cd224b84efda4e1e80932e1148858870199e7882f696b896d663501e302f6611",
+        "size": 1123
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 975,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/AvailabilityVersions.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "09eec914d3f2b9b9052f0823ba4300b44bab38a107153f32f00fe764ac8842f1"
+        },
+        "path": "SDK-header-6c3824b608a0d34e4ea72e5c.txt",
+        "sha256": "b069fc1277de21ec1dfa731bffffe832a2aad9cef635115ca5f456da3a1fb8da",
+        "size": 975
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 1331,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/TargetConditionals.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "848b421facded3124edb3d1a86f7270001dcee2df6a1c10edbf868ef90f75937"
+        },
+        "path": "SDK-header-38627b2087f13c10e2a3ff61.txt",
+        "sha256": "bd4c34de0ded9a1f1a362b9f39a8276f106f9e3fbd72e010b8afe4f83550b9fa",
+        "size": 1331
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 967,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/_abort.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "ad37627745fd324a640fa93c5f9909250c036d577457090a1e72ee939cd7fc7b"
+        },
+        "path": "SDK-header-c494c75b4dce577d9667b40b.txt",
+        "sha256": "df2f5d9446a46404bd3bf5c4cb321b11082f485d2e527e64d0f69bc7edfc0f44",
+        "size": 967
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 970,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/_bounds.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "a812392ac98f78ea54686c9ec1971522fc6464073a5f024d3e11eeb4ecbd2679"
+        },
+        "path": "SDK-header-1e09718f55bf14002db7c15d.txt",
+        "sha256": "8113e8560a6e63f1cbc86ce8ef380392dfa918375c694a1a47b4db8e593edab4",
+        "size": 970
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 1001,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/_ctermid.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "60d8842ee8b02083bfb0725fe26dfc6c012dd80ce327a04a7c221bf011bed025"
+        },
+        "path": "SDK-header-84f894373a4fec35a522928f.txt",
+        "sha256": "e6a6a6214d723e5b6c04af658fc28339893a5dc2d82d0091bdeeb59c25d7da2a",
+        "size": 1001
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 3267,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/_ctype.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "25537854e8f0520acf02b9a069f045edb232e77a277feb3cfa5826cfe7821414"
+        },
+        "path": "SDK-header-134f1226d6f27fc6e2ca23b6.txt",
+        "sha256": "296e847a0d8048379146f623aae786868b2494937c041d4d2aa2bfd2491ca203",
+        "size": 3267
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 1202,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/_inttypes.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "636d27850c5d995bad2bc1e8ca0bde1ccca16977a81498e8bf71f8acc45ecd5f"
+        },
+        "path": "SDK-header-fc8b002f73cb776958ad1b0d.txt",
+        "sha256": "7dfa0ebb3837498d769a9a96b2778d5176f9f6b6ff5c3ab87fdd193d2a7d4758",
+        "size": 1202
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 1959,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/_locale.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "54b21dd976827f49d5678d21faae67dd21e9bc7eb375c4c7c3a1761c749a2995"
+        },
+        "path": "SDK-header-96ff23d4276f23e2f8e26652.txt",
+        "sha256": "db3206761973d830bf6d2cf05bd814b7cf070201f40484fd9d3e516c32ad6b3a",
+        "size": 1959
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 967,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/_printf.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "d90a7023063c22dfb77d3034163d2c35908f3103b458a83659b7f7b38d2d0cb2"
+        },
+        "path": "SDK-header-32074670f155c4d77c615540.txt",
+        "sha256": "df2f5d9446a46404bd3bf5c4cb321b11082f485d2e527e64d0f69bc7edfc0f44",
+        "size": 967
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 967,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/_static_assert.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "8b2be61bd4bc65c9ad62a661a98165a34414ce962aff97e563f876ea2efa42c3"
+        },
+        "path": "SDK-header-3c2f567a1bc52fb2de9b66b6.txt",
+        "sha256": "df2f5d9446a46404bd3bf5c4cb321b11082f485d2e527e64d0f69bc7edfc0f44",
+        "size": 967
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 3012,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/_stdio.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "4b4cd0b2b9f470546f530b7a23f454ffe9be659762bd4bbbfc24319713022b5c"
+        },
+        "path": "SDK-header-70e0eaaf496b72913cdcc18d.txt",
+        "sha256": "4a07727b1bf38c71decd13670a23631b46070d88c256d8456044e9966c8f3896",
+        "size": 3012
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 2844,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/_stdlib.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "3a08bba562642ce27a7163221e00e367fc9dc5e848006555f3e8ff47b984e204"
+        },
+        "path": "SDK-header-b50899a30b4da72bd368e2ae.txt",
+        "sha256": "772b43a6fa9a66410dc936593fdac02c825f606f0cad8606b19b21980b18ee73",
+        "size": 2844
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 2840,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/_string.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "f9ff67a1e82c3ce2f15d0a8bb3031b6d49ceaac149829cb9b769a9476391c63e"
+        },
+        "path": "SDK-header-9592b6834c52798b051ba283.txt",
+        "sha256": "5bef364a6b0bcbd510683844cf80a25a37bc628885dbc1a1ae324dd6221172f6",
+        "size": 2840
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 2862,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/_strings.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "76b984c39538b145bcb8a930538e07ce446e9d4ace00916d6110c775151d800e"
+        },
+        "path": "SDK-header-cc4e0e35c898d237de1efda5.txt",
+        "sha256": "8bc33760cc0251b9bbd42330c0402e6f58c4c6f2c2611fa0a14a5370ececf06b",
+        "size": 2862
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 3156,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/_time.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "a3dceadf2c95133018af363187829ca072d85a93d69f9682a2e4fb993902f28d"
+        },
+        "path": "SDK-header-428d21b43cc5fffae11b9250.txt",
+        "sha256": "e46b06cbb4216acf6a0afadaed3e168052229caac258df2437d6bd3e2d89eb6b",
+        "size": 3156
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 982,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/_types.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "532c4b0f11274f6b10875db65e154e6cedaa20fdd189f5f40a8780c9a4c39449"
+        },
+        "path": "SDK-header-471c752c2a1ac7805c459c2f.txt",
+        "sha256": "4abc93ff8725ad6dbba770e38f3f29259543f282020233dee1d4ad4b4863c065",
+        "size": 982
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 1325,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/_types/_intmax_t.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "215f90a4efdca4991735be55a1ff701964dde07d8b4a8382ec8ed41ecbf5f115"
+        },
+        "path": "SDK-header-f70be20fbc5e21251f513df5.txt",
+        "sha256": "4a7b739c9f9816d8872b0a680315154568754b84d30bdc8950f0c21e21da8b70",
+        "size": 1325
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 1321,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/_types/_locale_t.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "3d17f3d35fad80f35b95ab53360a1362b701d1056120f5008a54166a810ca511"
+        },
+        "path": "SDK-header-c414d249ee85ab9dedd30f76.txt",
+        "sha256": "ce1e3542d21850f07cd1d13e378b3e65bc85e2bda01293f263d59824af403a25",
+        "size": 1321
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 1325,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/_types/_uint16_t.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "adf29323b0ecb87cbc43ac3ff25c096de7a214ceb90007c2828616151c66ad37"
+        },
+        "path": "SDK-header-1b65645f8bfdc38180f99d6a.txt",
+        "sha256": "4a7b739c9f9816d8872b0a680315154568754b84d30bdc8950f0c21e21da8b70",
+        "size": 1325
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 1325,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/_types/_uint32_t.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "951131475ec815813c8ff40d5e875029cd968334fd3a42d5a65fbe7851d1718c"
+        },
+        "path": "SDK-header-aa877892a5046a8c3a4eab4a.txt",
+        "sha256": "4a7b739c9f9816d8872b0a680315154568754b84d30bdc8950f0c21e21da8b70",
+        "size": 1325
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 1325,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/_types/_uint64_t.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "a5692cddb9c42d1b55ebcd6fa445b212c4b0c46db4583aaf3293ed6386d3d0d6"
+        },
+        "path": "SDK-header-363726fd039d741f92e71fdc.txt",
+        "sha256": "4a7b739c9f9816d8872b0a680315154568754b84d30bdc8950f0c21e21da8b70",
+        "size": 1325
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 1325,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/_types/_uint8_t.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "0a5c0353c8410f5e502db7971d987ac83a9ec3148905f10984c78152f541de68"
+        },
+        "path": "SDK-header-109d605d73439bf87da8c9c3.txt",
+        "sha256": "4a7b739c9f9816d8872b0a680315154568754b84d30bdc8950f0c21e21da8b70",
+        "size": 1325
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 1325,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/_types/_uintmax_t.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "0b154b16a3945edff78f00321d90a662d522e197c08e7de3b68f0ea44ae0d042"
+        },
+        "path": "SDK-header-4c2aeb31cd6f997e346ab0b7.txt",
+        "sha256": "4a7b739c9f9816d8872b0a680315154568754b84d30bdc8950f0c21e21da8b70",
+        "size": 1325
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 980,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/alloca.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "5e956d0cffbf6d069d2cc9cee52686e1e7b73e3e2939cfb3fd3a7ca096bd8980"
+        },
+        "path": "SDK-header-8d196b8917872e40a4f52a38.txt",
+        "sha256": "5bd9b65413176c8cc731c072aedd3bdfc02c90e16b8e7166b1edc66ea95e5023",
+        "size": 980
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 1066,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/architecture/byte_order.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "3d68c96c2ef9c6c7d2fd344f35eddbe63cbd968850e2c7bf26f6ece7df9bca4c"
+        },
+        "path": "SDK-header-e73060d07a9c3258f47aa160.txt",
+        "sha256": "d1d5beba9d595e39e952f93ef00ada88b2d2ab7a2cef983bfb11c3f159a90a5f",
+        "size": 1066
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 2250,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/assert.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "ce61ce31a18d5e82f70bd637441629ddb0b48c31871bb280ea6457fe7eff2d32"
+        },
+        "path": "SDK-header-76f5319e02595f33cd3e40d0.txt",
+        "sha256": "9e9da644bfa3177aa5658d22a52edc14e80b193718246c97093a0f9ace84e7af",
+        "size": 2250
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 3267,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/ctype.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "5aec0e370e25838b080f9159f2328eb49a2caa24f2e11a88721a2d4aa91882e5"
+        },
+        "path": "SDK-header-508162a7a02b6e93686daaba.txt",
+        "sha256": "296e847a0d8048379146f623aae786868b2494937c041d4d2aa2bfd2491ca203",
+        "size": 3267
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 979,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/errno.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "ff95a158e0799dcf0622e83882e64d88f1783b98a91d9b206bcba2a12f8425e6"
+        },
+        "path": "SDK-header-885f93501d1d9449677ba75d.txt",
+        "sha256": "d625103a21d8c4197b2b173e88dc378d13d1e850d002d2f57aaf3c7bd74e78fc",
+        "size": 979
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 979,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/fcntl.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "289f3be20c07d8eae5589f43994cfdb5fb33b3b099a6aee67f63e00d90039a8f"
+        },
+        "path": "SDK-header-4b4aaf3c3d495db9a9a3b31e.txt",
+        "sha256": "d625103a21d8c4197b2b173e88dc378d13d1e850d002d2f57aaf3c7bd74e78fc",
+        "size": 979
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 919,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/float.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "4346c126d6f51ea8b63ea394f609f2474b26fdb9257c65cf3d2b43aaef36cd3e"
+        },
+        "path": "SDK-header-18546e31851e3d9266dc5e97.txt",
+        "sha256": "c2ff1a50d2487d96c1322ba69691e1addb352e676872fe342b08546888bb538c",
+        "size": 919
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 1321,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/gethostuuid.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "0a4f4be11c5503f991d5e44f38ee8d50d8b5d4dbfaa5d0da361027968ea4d2c8"
+        },
+        "path": "SDK-header-f8e08e01d5411dd0a30d3b5f.txt",
+        "sha256": "5fe42b8879032d5e17a77d709a62127f7acfaf402ac1b4c1a243429fd57d3676",
+        "size": 1321
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 4579,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/i386/_endian.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "31eb3fb3163bc92ba425c93e748398ed4458ae6fdce05179208bd9cdd5e04790"
+        },
+        "path": "SDK-header-ea81cb6010d1a3e2a4eb016b.txt",
+        "sha256": "25fb2df3e2f22c7c39400385f3171a6b040551efb452df03b097a4140bb21976",
+        "size": 4579
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 931,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/i386/_limits.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "cf2c6461281daf4ac20b06459e7b70bc405fec5ce95b9c748475a1f87c302de4"
+        },
+        "path": "SDK-header-f3de78351ae8eb6abac868a1.txt",
+        "sha256": "b354d3a77d6ed6237d97562a4a9b4e5b70b7cafcd0c2c98eaed81ce1591c7c5b",
+        "size": 931
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 1326,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/i386/_mcontext.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "5b045b513673ffe42a8b3ec2c9c0a7e75ed107e48cbcc30e65724695d4ca744c"
+        },
+        "path": "SDK-header-3a4ed49bd325fa7fcfa6017a.txt",
+        "sha256": "120f58e47384392824e3e23a3c22fd80fb90ebaf5070196286c794b31f9b5be8",
+        "size": 1326
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 1335,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/i386/_types.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "570ce4f21d5fb0657a6f8ef02460561b7b0b845f49f7f096412eda28eead085e"
+        },
+        "path": "SDK-header-737ff00fb0d62ebd8d050cef.txt",
+        "sha256": "8e615b9881021bec4d84b313fb7537e66d05c060bedf9121d9a4df6d357f3ad7",
+        "size": 1335
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 2400,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/i386/eflags.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "443b68f584255f7f9942bd3f7579375e734e43a71351791fdde2d1e7255b6d73"
+        },
+        "path": "SDK-header-d37faa79b7812c4293eb62ee.txt",
+        "sha256": "33cd9305b3bce09b9382840e38ca1360523f51bf215df4dd966eb22563ce6e0e",
+        "size": 2400
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 3281,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/i386/endian.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "fd6f9b2e3b397eecb37822ee2c18c79ea78794c60a2b9d93f645fc99a844e827"
+        },
+        "path": "SDK-header-7d2c9654af9757901b9d402b.txt",
+        "sha256": "9df4a005b50282c224db69b8a8921d939accabcfeb3b4d4b43bdf0b58f337fb7",
+        "size": 3281
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 1873,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/i386/limits.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "5f217d3264db40123bd92898ba7d1874c301b7b183d6c3b8c2d84e71bc82f89c"
+        },
+        "path": "SDK-header-e8cecbdfadd05cca28c42a51.txt",
+        "sha256": "0c02eed2c8e9051372fd02ea5d9feac6edf2c589e771a9e2a45cd76203a8ff40",
+        "size": 1873
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 1388,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/i386/signal.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "e44703be27d4b669d69757b811cd54b908bd129449a52e254d19b3b2ba145a68"
+        },
+        "path": "SDK-header-60b1634b1e1ef09b14d06a76.txt",
+        "sha256": "d4541770ffc3cc5f4f38082e0cb93cdfe629d22366ddae4576e820df41480ca8",
+        "size": 1388
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 3263,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/i386/types.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "de798ccef8429cb17164d1d2e4e9486c92a89a3321ceedb339a6255afa10543a"
+        },
+        "path": "SDK-header-540fbb57f9a6765120123bae.txt",
+        "sha256": "6334aef1cd4cca2093cb7aaef6a7a9015eeed5dc8eea33538ec7af8ca7f82cce",
+        "size": 3263
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 1219,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/inttypes.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "d5fbab3ef6097275a1d35768976eea152fe8fa8b73159d3b49697d6de3cd05d9"
+        },
+        "path": "SDK-header-2664fb7eccf08f97e0f67b6a.txt",
+        "sha256": "3c3a163b7c260c7e479d5d3584ce7db6a872da647810141192d4ab619db8fa83",
+        "size": 1219
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 1336,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/libkern/OSByteOrder.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "d17d3304cb999d80a98165490aa38e0a550a8a3fa914b764e906dd68681bd3c9"
+        },
+        "path": "SDK-header-9c288984f11cc34f6bca291c.txt",
+        "sha256": "530e156d73aabc04351a1eb0ffa97986c2afe4020fff44e9f1953d9e3eb942a6",
+        "size": 1336
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 1336,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/libkern/_OSByteOrder.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "f0febaef6f9ec75339ebdd896dab2a6d1a1934628d76098f165f1db1b4b74c14"
+        },
+        "path": "SDK-header-598c9e4bd70377c9cd3b48a4.txt",
+        "sha256": "d1720a60472b35c6a3f7aefd0a49ca56b8b1a839f0d21065e916bddcc1856b47",
+        "size": 1336
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 1336,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/libkern/i386/OSByteOrder.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "a5aff364a9b4703ddd71b45ec4bb570b665308dc2d0459e40a5701694e0e3ee4"
+        },
+        "path": "SDK-header-ed9d825d1e2e4b7b139bf55e.txt",
+        "sha256": "da80d8b75b7258378857a5e293b65f6329f4086ea68298f0ef8f595c0971a2d6",
+        "size": 1336
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 1326,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/libkern/i386/_OSByteOrder.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "1114ce25796b6a04172f4372bf6c2e6c9d5e65919364ed12911d85ed928aaa7d"
+        },
+        "path": "SDK-header-5070f6f8dc192eb8c3b0f319.txt",
+        "sha256": "3d464ceaaf21260c666df933633aa497001b363408c7748cf74edadf925e71dd",
+        "size": 1326
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 2920,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/limits.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "4e09d7a2307887fe787c65e31d63747720c4d462b7ba3bf8f45e401d74f0b246"
+        },
+        "path": "SDK-header-3f8cdbf1780ec26607e04ac6.txt",
+        "sha256": "45719c527a244c548ffc2610e4ffa5e81d539013d2cc485e497be47ebcfbf8b3",
+        "size": 2920
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 1959,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/locale.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "c6b8754c14162db64dd94f6d4f489cb1fa8c4b7504311a83081103dc3b903218"
+        },
+        "path": "SDK-header-b040f27f37038e24b11fe5d2.txt",
+        "sha256": "db3206761973d830bf6d2cf05bd814b7cf070201f40484fd9d3e516c32ad6b3a",
+        "size": 1959
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 974,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/mach-o/dyld.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "7c8583f2b4edcfcde7da60ffe02c75974ec87f885fecc4e8d40761fe0b553a80"
+        },
+        "path": "SDK-header-f7b42d7427fa4716b07ebe56.txt",
+        "sha256": "4ad62bf4c758ea20addd3db4d7adceada767fc4959c35e128bb6ca9b2e9f4579",
+        "size": 974
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 975,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/mach-o/loader.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "ce7e318ab069fb20f6ecb6c356ab1aa18ce1cd15a413f37787b9184a7eb416e7"
+        },
+        "path": "SDK-header-2d990211e32f697038d777e2.txt",
+        "sha256": "42fee5f23677ec6b42f6f5e75be762a3261441dd97bed1e513890819306564c8",
+        "size": 975
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 2464,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/mach/boolean.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "c050da6ed29d186ac403c0ba187031aca3ac32da2b4e618e0d0c8ba1b7665523"
+        },
+        "path": "SDK-header-935cc68806a2c787d3d6af3e.txt",
+        "sha256": "27a3c7cd4ac18db52351ef078f1ecff7b3681bfdd6f1567780ff35af7f015487",
+        "size": 2464
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 1366,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/mach/i386/_structs.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "6003cc7f64c45d144be10f5ddb270e0133e0e94f852a98be9a78771dd442ab03"
+        },
+        "path": "SDK-header-49ff20bedc0d7452356cccb3.txt",
+        "sha256": "5c7389fb145c92103bd91a86aa9a62b7d25efb24a7aeee22e4a6f3499acf9d33",
+        "size": 1366
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 2457,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/mach/i386/boolean.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "ee266280e9982d6efa1decf132c079769e17f66b9ea1908b838c78a8bbbebebb"
+        },
+        "path": "SDK-header-81ebe551ec07bf48f8e28944.txt",
+        "sha256": "e5e278e6ec3d5c91211f183bce2e1e0e87140394ad3cd4a343412e0c63186ec0",
+        "size": 2457
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 2390,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/mach/i386/fp_reg.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "6476d6a3532d0618a55c68cc8a5201fe3f1e19acc220ed76868b521b790ef965"
+        },
+        "path": "SDK-header-12be10fcea310e66355eabaa.txt",
+        "sha256": "40f795398f2e8296e5aa74c9252ba0f8aa9090af02feefa1314155d29e43fdc4",
+        "size": 2390
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 2544,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/mach/i386/kern_return.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "3c806753bb3af781d46d45fef3321928691e2e1b4ec86c4d89d163c3f399ad17"
+        },
+        "path": "SDK-header-db3b320adf615fdfa56cb3d0.txt",
+        "sha256": "f4ffb65c00bbda7c375dd11cd8ed25a6b395d5299a90f2f683628b0ca7d5ecaa",
+        "size": 2544
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 1362,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/mach/i386/thread_state.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "ec167951a952a94045359aff7d34153d32fb52af0f65f75576656d69898e0564"
+        },
+        "path": "SDK-header-c9e07c215f767360429a03ca.txt",
+        "sha256": "14ed415b6f4e4cd50b2639d012592e552fad628d6ce80d1115235e1b2ea8ee7d",
+        "size": 1362
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 2584,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/mach/i386/thread_status.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "e92e479c33f426ca2f6a7fd80a30e1effa21d1d7084e573e3103806b02d8bc6c"
+        },
+        "path": "SDK-header-41bb8a227d138eabdba55ff6.txt",
+        "sha256": "91e0441c0702387d792d6abc289bdf437cd9b8fcc47b322ea5992b62c8e6717b",
+        "size": 2584
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 2531,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/mach/i386/vm_types.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "fd08a1f8d73c50d02b568a85ec995937ffc0c1426c8b464d94b79c1ecfce2565"
+        },
+        "path": "SDK-header-db6f95a24f0ab227080f05e9.txt",
+        "sha256": "61341feb8657718c5aba5638f0c03496ae158de261813af5b0077e22ead5d8a0",
+        "size": 2531
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 2513,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/mach/kern_return.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "4577d58f74dfbb8ef07ce460f82cb7a45999ad2a0479486df8d22658d4847f50"
+        },
+        "path": "SDK-header-55a1bf3bea1bc6b13dac3649.txt",
+        "sha256": "6e2c414473ea9dc3d5c5f91a35bbcd117edff9206807d69a107c58b77f6dc799",
+        "size": 2513
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 2548,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/mach/machine.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "49a270495ddd645d22dce3855e1633c29971baa21aef0d12713785e2e6b95bb3"
+        },
+        "path": "SDK-header-1526764b57ace3f488dae93f.txt",
+        "sha256": "40ad7ba8276b3d797b3c56dc864f75eb795ac2a3fd294ec5e162bf57272637c2",
+        "size": 2548
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 1321,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/mach/machine/_structs.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "410350f04225bf139bd89f1a99418a55734e4ab2101bb93dc301f790a130f59c"
+        },
+        "path": "SDK-header-4e333a65145c38ceb912e720.txt",
+        "sha256": "4d4cbef2a5ce3b22d5e4ec5d188da7675c347f4a7dfe46064bd1f7ef0aef6e65",
+        "size": 1321
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 1326,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/mach/machine/boolean.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "a22e0c8c541b9117a86d85ab4a977eda49917a9867b24576f5972b6fa6554f23"
+        },
+        "path": "SDK-header-fb454591fd033048a3fc85e8.txt",
+        "sha256": "64dc590c8eaaf4ec9ef5b66c7aa5e6448f22e8db30d23d2f474c712ed0ff2915",
+        "size": 1326
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 1326,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/mach/machine/kern_return.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "160d3b4460244b7f469a34f3030071bd717d2918cb748527c1207ca78310d51d"
+        },
+        "path": "SDK-header-d02f1563a357432a1cbbad7b.txt",
+        "sha256": "64dc590c8eaaf4ec9ef5b66c7aa5e6448f22e8db30d23d2f474c712ed0ff2915",
+        "size": 1326
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 1326,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/mach/machine/thread_state.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "c8b6a465623bee017fbaecb5fffbe86d96b34bc657f026950389e0f760ad02f3"
+        },
+        "path": "SDK-header-4677de728db29e459c927ccc.txt",
+        "sha256": "64dc590c8eaaf4ec9ef5b66c7aa5e6448f22e8db30d23d2f474c712ed0ff2915",
+        "size": 1326
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 1326,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/mach/machine/thread_status.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "756a3db7289b7cea839f9bd9e9556427ab3c9effa77e552bdc9b2e6e096d2f7c"
+        },
+        "path": "SDK-header-03bfc12afa560e217f03af58.txt",
+        "sha256": "64dc590c8eaaf4ec9ef5b66c7aa5e6448f22e8db30d23d2f474c712ed0ff2915",
+        "size": 1326
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 1326,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/mach/machine/vm_types.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "1c2a4ff4b5843ded602775a447494f353a295015ca8d913a0a13439f4ee28654"
+        },
+        "path": "SDK-header-d8612372dabdbc34f7f7e29a.txt",
+        "sha256": "64dc590c8eaaf4ec9ef5b66c7aa5e6448f22e8db30d23d2f474c712ed0ff2915",
+        "size": 1326
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 2780,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/mach/message.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "580ce0dd5ffb98281cdd81e249df8f64bdd8cec5066e76c77b25f56b2eed1b7c"
+        },
+        "path": "SDK-header-20d113de92b4fa2c0e1e188a.txt",
+        "sha256": "2177c074dabaa2db91c0ca4d6238caf51bead500b6dcbfd3248349c496f70a64",
+        "size": 2780
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 3403,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/mach/port.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "74abcf54e828aeecc2c72640f9ea647770709c3be4cf96406d7228ec97171025"
+        },
+        "path": "SDK-header-bddd986df5f75284648a8280.txt",
+        "sha256": "5b610d12e236f387135d0e6e2a84534407945be3a39995f2a8643fda2a7c57ef",
+        "size": 3403
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 2542,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/mach/vm_prot.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "61cf112227e4cb0ae68d8273fa507f9172996d7a09d992bdd829307e0504370a"
+        },
+        "path": "SDK-header-b25d4edbc2f4bf33ba9c21fc.txt",
+        "sha256": "b71c4190ef494fd6b7d8a26b7d563f0e376be1278688dbdda8953cda05c397ab",
+        "size": 2542
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 1391,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/machine/_endian.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "17eb7d38845502ce04aac3ab709dffeb4ec253781051b5d7894703e9786730de"
+        },
+        "path": "SDK-header-006126cedb9f90af1e427902.txt",
+        "sha256": "652aae93eae75061dd919056f7455a10fe3605805862c2caa4ffd7841c2aaa53",
+        "size": 1391
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 1325,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/machine/_mcontext.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "9d3425653d2a1623d785dee4601c3c00e05f4797d7e840b00f17d529f8c6c51e"
+        },
+        "path": "SDK-header-1dfee1a84a5573453e881f80.txt",
+        "sha256": "69ddfafa862a42539b198481671197c3b77e234f361395f7783571ecc1da7f15",
+        "size": 1325
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 1325,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/machine/_types.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "f27264f8fdec9f164b4fc2b556f666ed7c5c0e5b88fd9f23db0b731ffa6cf864"
+        },
+        "path": "SDK-header-7a23cd98b79d8ceafd9ab617.txt",
+        "sha256": "3300b486cffb77579ce860944ac9df806ec924d2df49d290377e4ed86e6232b8",
+        "size": 1325
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 1391,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/machine/endian.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "37f9e1c8599a729e605477a5b6a77cea727fa66816e4585d0dd32e3ba377f450"
+        },
+        "path": "SDK-header-8738e3d7a65a0fbc937b5235.txt",
+        "sha256": "56e14145d9529d14bd30f7948177007d2c7efabc7fff28953110240a73368c35",
+        "size": 1391
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 222,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/machine/limits.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "50345f1ab843fca787a38c552a84177e678d79dab86e714434f94f2546839357"
+        },
+        "path": "SDK-header-12046e3c88c52e9b7c448e3d.txt",
+        "sha256": "827c9c49529b10fea56b0e030269acd4b21ce327491f085a25c8572f0aebd1d3",
+        "size": 222
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 1325,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/machine/signal.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "09b1798034cf3b5217df3e415d6053df9c2e16b858036fc11888e63f4493f53f"
+        },
+        "path": "SDK-header-7263cf9856add583a271d242.txt",
+        "sha256": "eb69987639fc7d31ae4b2901f77fc16bcc38418ad83dbc2c43f5d422e04e5b52",
+        "size": 1325
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 1391,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/machine/types.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "76e7c59451d996fe674a6fc7e518366609a95875c9b9aec9fd590a3ac138dddd"
+        },
+        "path": "SDK-header-ec545a4f441ae0dcacd0ab8c.txt",
+        "sha256": "56e14145d9529d14bd30f7948177007d2c7efabc7fff28953110240a73368c35",
+        "size": 1391
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 982,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/malloc/_malloc.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "28b33ab4f20da030c11fd248d8a340c1af80d18d0c331c8248fd4da677760949"
+        },
+        "path": "SDK-header-ab2fbf5194e9e4aacc886755.txt",
+        "sha256": "5ddf554248ff8a75d547ca2964ca1d6bfb9cb11f34abcddc9eadf6e26e99e750",
+        "size": 982
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 977,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/malloc/_malloc_type.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "8cf89bcedf5e86bd0733f9f0b3292c1dff7d17c5966d475cb2fe1871e904bece"
+        },
+        "path": "SDK-header-32f89c74481ce696e89903b6.txt",
+        "sha256": "19a87586051289e5ce6c0c9275c76d22f228dcfec3ce5de615a6199829e166be",
+        "size": 977
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 977,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/malloc/_ptrcheck.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "d3c4e809117b24467e9313cc348c0495aad8780cea6bf58177743b9be09c3591"
+        },
+        "path": "SDK-header-1a807909b340ba596434ca71.txt",
+        "sha256": "f8270978cfb642739401df51479b55ee553f1bfebb6abfebb4613f108165e10d",
+        "size": 977
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 931,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/math.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "00606d7b27eb5db0a3b93c575a7084f432d1e783cfca2eedcdc234c01cb15134"
+        },
+        "path": "SDK-header-a9797af56fc1472f302ffa23.txt",
+        "sha256": "14e86585aa276d314cd7435c1f49fbfc6cf4a292ad5d23c8c5db69c7b4753d0e",
+        "size": 931
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 1978,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/runetype.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "77e4c54bae90d051e567de33c1a56f97e8e3c61fb28f5e7e96e1f859ba50c72a"
+        },
+        "path": "SDK-header-d4beec375df82fc0e2189412.txt",
+        "sha256": "c37b78ec41a8dc318295e88303ab32207cc8b98ddfa3f1e981b3fb808037d5a6",
+        "size": 1978
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 973,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/secure/_common.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "997b924af11bcfe37938026ec342d9ae4e0ae60b5b6a72f9afe65a55cc9425d5"
+        },
+        "path": "SDK-header-2868d7685d8d501ef72ffd92.txt",
+        "sha256": "90c78f5531f3b124803028ad23017579012752e08f7d47f28b6ddc635e69180e",
+        "size": 973
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 979,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/secure/_stdio.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "a46f090ec9a49c720c0139170eb7f6e5c0d7400654c5b376f45d4ca5e7749ffe"
+        },
+        "path": "SDK-header-8a7d4baae2747a3383239aac.txt",
+        "sha256": "cc582855bea4ca3182175800849c592392bf0b0f66e7247c8c874049b26f7090",
+        "size": 979
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 977,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/secure/_string.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "9e5e21cf8ed67d864794468e71bc2019e5c4126d9d7777d3c3bf4f4496ecd462"
+        },
+        "path": "SDK-header-9bec7091ee4f5a2e9574a920.txt",
+        "sha256": "e367da87e19e066d566c70ee8a30787a513aeb905b8047bc51f07d9996421cd0",
+        "size": 977
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 973,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/secure/_strings.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "13777f242e3ec91a8da1108df04a0b6ac1b065730a5b6bd71b4b4913b8425f0f"
+        },
+        "path": "SDK-header-80548847b1636824f655e9bc.txt",
+        "sha256": "ce27d9ff25a86dc31dff1ff06d97a72d86915ca5e86542309eb066619a33020a",
+        "size": 973
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 2854,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/signal.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "3bfc3ab2ba66f5e916ea444c0e6204d165a45af0abdfe35202a4d363cf15785f"
+        },
+        "path": "SDK-header-eb8282b4925c98c8f708c784.txt",
+        "sha256": "708efb21e8c706d31c183225a6e55b819d64bd4fc9a9d12d614beecaa272b715",
+        "size": 2854
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 2966,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/stddef.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "1e871643e931a1fe9ba76c2cc55dd32aa1a4b4cdf4584901b65b6203db321d2b"
+        },
+        "path": "SDK-header-c1afd559d26f51d9d8ad4fa4.txt",
+        "sha256": "2d74ebdaa674cbcadf971171e9589c0fae9e096084769fd22f6b7719a4537080",
+        "size": 2966
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 70,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/stdint.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "9d070aad02d9f2ba1f2248d093b4194b62cf8d363778c737d1110f4736e5ed3c"
+        },
+        "path": "SDK-header-1b9e7463f2f6ad7bf69bce16.txt",
+        "sha256": "9f105e74e8387de0a678ea21df6f8c6c4139d94dcb21416e704469adb665c36d",
+        "size": 70
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 2954,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/stdio.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "d2220614f42d3cb678ae0de176ba0ab3256e15fb45b3efdb5d17b8ac1f6a4b54"
+        },
+        "path": "SDK-header-e9d739adf6454e6372c162a8.txt",
+        "sha256": "8921c12a63153c0ea9fd42e0499d2e1f380241dc3a187f22fc1905208d5fc56c",
+        "size": 2954
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 2863,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/stdlib.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "7995a2df951dd1fdbd9fd4ec38900b79ef1797655ff239728fdbac56bb9bd7ff"
+        },
+        "path": "SDK-header-fbfc9af6423980fd9ae37cf0.txt",
+        "sha256": "8af69ddc7e203f00014b2db65d91254b3eb74a507be6a992bd8132011364c684",
+        "size": 2863
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 2858,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/string.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "4b1b9c05bfe370d423d7a6bf9e74b189bcc7f59c1cd97f23d6d94f2f3df6a4bc"
+        },
+        "path": "SDK-header-d8564d29ec6f8ae98de366dc.txt",
+        "sha256": "90d1c0638ceede09f3ad1b79f44f5a0f5a1ab8895c3703c14e882d8b2031e700",
+        "size": 2858
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 2862,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/strings.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "fedc79f933c3cd6065c26dc8ea07b8f4b2b2d3364727fa48615e293d131b453c"
+        },
+        "path": "SDK-header-c355fa158f047789d8ddefe9.txt",
+        "sha256": "8bc33760cc0251b9bbd42330c0402e6f58c4c6f2c2611fa0a14a5370ececf06b",
+        "size": 2862
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 4588,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/__endian.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "8697850f0ec13e9082081e9b8dda8f94053970f3546e4a8d42738b16400eac91"
+        },
+        "path": "SDK-header-867408fe6bac4fec5e9befcc.txt",
+        "sha256": "021da6cb7d05082ad03801b87630fbefb3d5e25ae6a083e74dd738571bba7b03",
+        "size": 4588
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 4579,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_endian.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "fcb57b694d555b2a8646e35bc68cc6864deecbc8d5528cd40bf764b1ff14d3fd"
+        },
+        "path": "SDK-header-a6555fd2e68175778289b16a.txt",
+        "sha256": "25fb2df3e2f22c7c39400385f3171a6b040551efb452df03b097a4140bb21976",
+        "size": 4579
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 1323,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_posix_availability.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "452bff9ae32655a49b65802e29b21c67a546be1446553f908ef9850a694746bd"
+        },
+        "path": "SDK-header-e83be1159f9450734e086876.txt",
+        "sha256": "1ca5aa536b04f6ea67cce540c02d43e86b9f39d5944eea41205e0b13979d99cf",
+        "size": 1323
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 1325,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_pthread/_pthread_attr_t.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "987973d4e4f0c84a929fb1288755637453d88bf1410b778f81b2550ea4ad211c"
+        },
+        "path": "SDK-header-6468389f15469bc02965aa8a.txt",
+        "sha256": "69ddfafa862a42539b198481671197c3b77e234f361395f7783571ecc1da7f15",
+        "size": 1325
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 1325,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_pthread/_pthread_cond_t.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "1f44e579de86408da3f83e47918e11d62d41fdce1c0230a7e30f5c56414ef914"
+        },
+        "path": "SDK-header-fb6da5d0c3b5b673d8a81b88.txt",
+        "sha256": "69ddfafa862a42539b198481671197c3b77e234f361395f7783571ecc1da7f15",
+        "size": 1325
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 1325,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_pthread/_pthread_condattr_t.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "167ad51c9e184c2f22e67dd7100e321305b11b3fe2cbeffd074015f20ce4e315"
+        },
+        "path": "SDK-header-2ed51319d34f90035859c9ae.txt",
+        "sha256": "69ddfafa862a42539b198481671197c3b77e234f361395f7783571ecc1da7f15",
+        "size": 1325
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 1325,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_pthread/_pthread_key_t.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "aa386e8d73d64c95432c42133e1ce1a0f4e6b5769a4720ad38c81c71355e12b9"
+        },
+        "path": "SDK-header-477889e1bae6d5436ca4b79d.txt",
+        "sha256": "69ddfafa862a42539b198481671197c3b77e234f361395f7783571ecc1da7f15",
+        "size": 1325
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 1325,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_pthread/_pthread_mutex_t.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "9af87ec733f482f5bb59ff9c49b7884c6fd58444669fac8e64525da82f03cc91"
+        },
+        "path": "SDK-header-b8cca965f0ad9378e053e7f8.txt",
+        "sha256": "69ddfafa862a42539b198481671197c3b77e234f361395f7783571ecc1da7f15",
+        "size": 1325
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 1325,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_pthread/_pthread_mutexattr_t.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "93686494113a5167f198d6a586c1ac1c5f87eb0ef5751b9c441db52df0e9edd9"
+        },
+        "path": "SDK-header-a07c8bae2cf2d3bb4e640c59.txt",
+        "sha256": "69ddfafa862a42539b198481671197c3b77e234f361395f7783571ecc1da7f15",
+        "size": 1325
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 1325,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_pthread/_pthread_once_t.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "5ea5cc064b4770a6c776a0c84f9458f8089540a62244417de37309aa72c89fc9"
+        },
+        "path": "SDK-header-75019fabbfcb7845394efd6f.txt",
+        "sha256": "69ddfafa862a42539b198481671197c3b77e234f361395f7783571ecc1da7f15",
+        "size": 1325
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 1325,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_pthread/_pthread_rwlock_t.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "1e20731f227b6c0c83d149c9564bceaa62220128d81c04833abd835d469115c7"
+        },
+        "path": "SDK-header-d23b8d47585029323d1948fa.txt",
+        "sha256": "69ddfafa862a42539b198481671197c3b77e234f361395f7783571ecc1da7f15",
+        "size": 1325
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 1325,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_pthread/_pthread_rwlockattr_t.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "f60fae1acfd6742846ffdd7a07a47996caab73ac12bb421b49a4aae3edb80d66"
+        },
+        "path": "SDK-header-7d3f81717ee855ac8a063832.txt",
+        "sha256": "69ddfafa862a42539b198481671197c3b77e234f361395f7783571ecc1da7f15",
+        "size": 1325
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 1325,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_pthread/_pthread_t.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "7bcef3e2436e7a96bf0201e99bad5a11e6d495dbac85b10207441c05d7fb461e"
+        },
+        "path": "SDK-header-ea7f3bde01548ce75e5d6c4e.txt",
+        "sha256": "69ddfafa862a42539b198481671197c3b77e234f361395f7783571ecc1da7f15",
+        "size": 1325
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 1326,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_pthread/_pthread_types.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "741433612525badf767d48b1924d4c7ba564ccc5c1bab5cb7045c238850fa86b"
+        },
+        "path": "SDK-header-81c1e9255987107b5ce95083.txt",
+        "sha256": "69b48d7cbf1baf42c244fbd190e923e4767adee044a9b991821b02e4e2576168",
+        "size": 1326
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 1678,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_select.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "23e013274b46f4eb46aae8492206ed2862ea6c998e28e793427f38a5e499bb6d"
+        },
+        "path": "SDK-header-c50fa1947a24db1ff6bbe5a3.txt",
+        "sha256": "8677205b2aa5cabafe51a9c0ac38b436af3a96fe7c7357b129e1d899f13bef22",
+        "size": 1678
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 1323,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_symbol_aliasing.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "e60d53a2fcd8ec66c66c8b21d48890ec27bd0563559915fee4dad4f5906b7014"
+        },
+        "path": "SDK-header-0007956af54f3688f2e22df4.txt",
+        "sha256": "1ca5aa536b04f6ea67cce540c02d43e86b9f39d5944eea41205e0b13979d99cf",
+        "size": 1323
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 1326,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "863c4f07045775002b63b7e616742d9f746e4a02da4441442d8fe1138bbd0ff9"
+        },
+        "path": "SDK-header-2be3bba26596dba6b83b3a87.txt",
+        "sha256": "c84bb87517d88b9d6deb5509f574a8e6e3bbef28b0a4fbeb788bba58517f8dd0",
+        "size": 1326
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 1325,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_blkcnt_t.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "3526cf25ca7734bf6bc945c9483727b8c1ab3fde5ad8fb23acad7489e231330d"
+        },
+        "path": "SDK-header-57b8b53018a55f1d6a29f156.txt",
+        "sha256": "69ddfafa862a42539b198481671197c3b77e234f361395f7783571ecc1da7f15",
+        "size": 1325
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 1325,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_blksize_t.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "4331ba446f9b5930e5da1dc065c97e258672ed0cbec5b3f0816c228fd0198955"
+        },
+        "path": "SDK-header-dee5bbebea882b7bec52149a.txt",
+        "sha256": "69ddfafa862a42539b198481671197c3b77e234f361395f7783571ecc1da7f15",
+        "size": 1325
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 1320,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_caddr_t.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "de66a048df85e5fc79222edb89f9d73d63381c7076d0ec0bcdd41f23d0a01134"
+        },
+        "path": "SDK-header-bb8eacd141299efd7499ef15.txt",
+        "sha256": "133b8d5f5e4c6cbcfc88b8fe20b2bf50796ff534fe5824edd9c8e08cb058d822",
+        "size": 1320
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 1325,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_clock_t.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "e7be094e48f450875288ef68a59409e530dbe2d9449c78ff3d9ea9d654e0e857"
+        },
+        "path": "SDK-header-006c1e03a91bcb99c264aa2f.txt",
+        "sha256": "69ddfafa862a42539b198481671197c3b77e234f361395f7783571ecc1da7f15",
+        "size": 1325
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 1321,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_ct_rune_t.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "17b8b91c92c4929111a4e854a38a04c3d07fe0da2a31f3692e1407db6a69de63"
+        },
+        "path": "SDK-header-04580e58ae6e35bb9e261427.txt",
+        "sha256": "7315649c09fff5075326031926b33fa6d6c7c1b85b6ac087d7572218e8e18ce2",
+        "size": 1321
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 1325,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_dev_t.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "4ba3d19759544b9f7bf424d2a16a518ff586e31ed968d525440e678cfbb07a5d"
+        },
+        "path": "SDK-header-be357d21e44c7c894f284257.txt",
+        "sha256": "69ddfafa862a42539b198481671197c3b77e234f361395f7783571ecc1da7f15",
+        "size": 1325
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 1325,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_errno_t.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "ca230b22b22becab1bb191bfe5a8dd4595ea0566f5c8cc9b299eca308ee5a271"
+        },
+        "path": "SDK-header-dfd91f9b746a82fb8f415221.txt",
+        "sha256": "69ddfafa862a42539b198481671197c3b77e234f361395f7783571ecc1da7f15",
+        "size": 1325
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 1325,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_fd_clr.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "ccb785f37fdf5503df860a3fba82d8570a65f7ecbd754a5558254483b996747c"
+        },
+        "path": "SDK-header-a6d32241d59a09b8c9f8a5f1.txt",
+        "sha256": "69ddfafa862a42539b198481671197c3b77e234f361395f7783571ecc1da7f15",
+        "size": 1325
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 1325,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_fd_copy.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "f4f4289b3da098621b7ed0115faa7d4b85b65852c4615c9bad5e222a8ceb0078"
+        },
+        "path": "SDK-header-e9a8f771f8906746c4c40a74.txt",
+        "sha256": "69ddfafa862a42539b198481671197c3b77e234f361395f7783571ecc1da7f15",
+        "size": 1325
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 1325,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_fd_def.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "feea8c758abe49372bcf3ab7dd9b0391d02269e4a531ef838895e961e9f43f30"
+        },
+        "path": "SDK-header-2d6553a299d8423685054e4a.txt",
+        "sha256": "69ddfafa862a42539b198481671197c3b77e234f361395f7783571ecc1da7f15",
+        "size": 1325
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 1325,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_fd_isset.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "17bdc86c26b6c82411601e955af5e2563a86f2fdd345568b78ab8642b895d1ae"
+        },
+        "path": "SDK-header-08d854eb89a7cf940c0f23ec.txt",
+        "sha256": "69ddfafa862a42539b198481671197c3b77e234f361395f7783571ecc1da7f15",
+        "size": 1325
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 1325,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_fd_set.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "57009e7fed060e007604e0259788a7bea6afcb18fc4840fc30cd641f58655190"
+        },
+        "path": "SDK-header-032aeb8a8655e5fb25e88b09.txt",
+        "sha256": "69ddfafa862a42539b198481671197c3b77e234f361395f7783571ecc1da7f15",
+        "size": 1325
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 1325,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_fd_setsize.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "7cd3a93f51f4521e60151c08b1fab36ea8efbb98988bb03db24264a1c434eaee"
+        },
+        "path": "SDK-header-0405f8ee935bc5de024135a3.txt",
+        "sha256": "69ddfafa862a42539b198481671197c3b77e234f361395f7783571ecc1da7f15",
+        "size": 1325
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 1325,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_fd_zero.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "e5c44af3534182fe3b0872f39617ae17cd2ada72339e6f388eead5472df64c6f"
+        },
+        "path": "SDK-header-4ab097190b40128d3315998b.txt",
+        "sha256": "69ddfafa862a42539b198481671197c3b77e234f361395f7783571ecc1da7f15",
+        "size": 1325
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 1325,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_filesec_t.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "d5f38f0f50dad1020edf0594798912b34922397a1be0cd33e71e565cd46cf44e"
+        },
+        "path": "SDK-header-d34f02589fc1c57417f26869.txt",
+        "sha256": "69ddfafa862a42539b198481671197c3b77e234f361395f7783571ecc1da7f15",
+        "size": 1325
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 1325,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_fsblkcnt_t.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "f986ed21599c2e0e1fc2efb8e014aae5a99e9f40d374a3e1af9b7c98ac9815cf"
+        },
+        "path": "SDK-header-ab772b7006b67742220e0398.txt",
+        "sha256": "69ddfafa862a42539b198481671197c3b77e234f361395f7783571ecc1da7f15",
+        "size": 1325
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 1325,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_fsfilcnt_t.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "e56f6f9b9c48eb7c035d5241a611169cd130a6319a5d179522c818d9d3384cdb"
+        },
+        "path": "SDK-header-224066438e5bc20443f7c31e.txt",
+        "sha256": "69ddfafa862a42539b198481671197c3b77e234f361395f7783571ecc1da7f15",
+        "size": 1325
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 1325,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_gid_t.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "e687ad58c03701c132a02ebf20699c8cacfd34c3a67271bd2a415a5a8e4a9ea7"
+        },
+        "path": "SDK-header-d3868dea3f325861d75b9ec8.txt",
+        "sha256": "69ddfafa862a42539b198481671197c3b77e234f361395f7783571ecc1da7f15",
+        "size": 1325
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 1325,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_id_t.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "fb7255c9872e2a805c206796326e21d47146e22c93c09752126d7166bdaba5e5"
+        },
+        "path": "SDK-header-83a7f70cf4e052285b4be6c2.txt",
+        "sha256": "69ddfafa862a42539b198481671197c3b77e234f361395f7783571ecc1da7f15",
+        "size": 1325
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 1325,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_in_addr_t.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "8da608117e441ff6e6b108d35334d7cf4b346b838522f97bcc621d925e0ba7fe"
+        },
+        "path": "SDK-header-5ce083df0e4fe54da0bbcc14.txt",
+        "sha256": "69ddfafa862a42539b198481671197c3b77e234f361395f7783571ecc1da7f15",
+        "size": 1325
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 1325,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_in_port_t.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "cf4b90c7af861346ee46c6b9e5d57cfe20bd62a03b1533ee9a369480ace0bac9"
+        },
+        "path": "SDK-header-84cc410474123a12e02d5b9d.txt",
+        "sha256": "69ddfafa862a42539b198481671197c3b77e234f361395f7783571ecc1da7f15",
+        "size": 1325
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 1325,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_ino64_t.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "f143d5c0bfea65489ef89a866e96c9065d7ac28d62c0cec36f79d4dd7269fd13"
+        },
+        "path": "SDK-header-0034e32e82d089f8eebfbcde.txt",
+        "sha256": "69ddfafa862a42539b198481671197c3b77e234f361395f7783571ecc1da7f15",
+        "size": 1325
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 1325,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_ino_t.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "1e067108b372f2c81cfcad28413d6c0d2b9ef21d34fab740c3c8af059deadfea"
+        },
+        "path": "SDK-header-1d161f4ef0192cc728f45249.txt",
+        "sha256": "69ddfafa862a42539b198481671197c3b77e234f361395f7783571ecc1da7f15",
+        "size": 1325
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 1320,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_int16_t.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "e40d40ad59c6dc98577b2c7cfdba1121ebfee17b29e093cbd10b7936df496d8e"
+        },
+        "path": "SDK-header-5b78df1ac25081508f6e02cf.txt",
+        "sha256": "5990bc037faa98727711c4c7caa0b732f7e2f35da0268e489d53c5937cc609b3",
+        "size": 1320
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 1320,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_int32_t.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "77127195e57f1690402377ddd72e3dcda684ddf591346f08ef4772dddcbbc281"
+        },
+        "path": "SDK-header-cb68a1d471292ccfb27fc302.txt",
+        "sha256": "5990bc037faa98727711c4c7caa0b732f7e2f35da0268e489d53c5937cc609b3",
+        "size": 1320
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 1320,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_int64_t.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "a2427b34e5e83996bd28d83cec920cf3b82a366af90e767234557bd11fa33a18"
+        },
+        "path": "SDK-header-8d54525eb0886df2e70ffcf4.txt",
+        "sha256": "5990bc037faa98727711c4c7caa0b732f7e2f35da0268e489d53c5937cc609b3",
+        "size": 1320
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 1320,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_int8_t.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "607f6beede0251eb801e763493df26fd45d46eb951e4ff9cac17f1ac951b8cc0"
+        },
+        "path": "SDK-header-636a284d359280b90d2e9b13.txt",
+        "sha256": "5990bc037faa98727711c4c7caa0b732f7e2f35da0268e489d53c5937cc609b3",
+        "size": 1320
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 1325,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_intptr_t.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "b2a7ba9b9b2d357d75e59114874658f893b23ea6d1357815b027d8189075daba"
+        },
+        "path": "SDK-header-0ab085f82be0fa4611d7ea93.txt",
+        "sha256": "69ddfafa862a42539b198481671197c3b77e234f361395f7783571ecc1da7f15",
+        "size": 1325
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 1325,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_key_t.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "42e8a3f076c5892d7b8ca5594b15a989eb206df5834070bd2b89b1febb3e9913"
+        },
+        "path": "SDK-header-f8af5f25318e59ac0c131634.txt",
+        "sha256": "69ddfafa862a42539b198481671197c3b77e234f361395f7783571ecc1da7f15",
+        "size": 1325
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 1937,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_mach_port_t.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "8f178c4c396766f74c2cf8240af9ca420aef38b67bd0d6b7b1ec84c2c48dfc91"
+        },
+        "path": "SDK-header-2a4b04cf839dc6b8d24071a7.txt",
+        "sha256": "45c1cf1dd44b609a5d0c3b513fa3601f175eaac96edf81b4f8e22d7fa46252b9",
+        "size": 1937
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 1325,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_mode_t.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "7c4261bde41387fc23aefe5dee1e6298ae6b6f5592bca51947fdd9736e0640a6"
+        },
+        "path": "SDK-header-7dcb10fd21ddf376bb4802e3.txt",
+        "sha256": "69ddfafa862a42539b198481671197c3b77e234f361395f7783571ecc1da7f15",
+        "size": 1325
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 1325,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_nlink_t.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "7cc46bfc5d0f4238c735ff28bb1a8dcefc26d1f0e52b7098a5c89e68bf87288a"
+        },
+        "path": "SDK-header-97fd3fc99a148b4fa70d23d7.txt",
+        "sha256": "69ddfafa862a42539b198481671197c3b77e234f361395f7783571ecc1da7f15",
+        "size": 1325
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 1325,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_null.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "3e021525d2a711070e9c78ea2791e020ef6105c51121d8496d617f89a83d2f92"
+        },
+        "path": "SDK-header-08a96c44c4ddbbd3259bef3e.txt",
+        "sha256": "69ddfafa862a42539b198481671197c3b77e234f361395f7783571ecc1da7f15",
+        "size": 1325
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 1325,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_o_dsync.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "47e59afa1ca0d9beeb20835cbf44ea9d6dddc5bd12822ca35c5c0fc21dd45c49"
+        },
+        "path": "SDK-header-79e4b1f37e443868151a832f.txt",
+        "sha256": "69ddfafa862a42539b198481671197c3b77e234f361395f7783571ecc1da7f15",
+        "size": 1325
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 1325,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_o_sync.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "76de975c1a6a1c621851079934547a628665d15049a451dc6c7e2ddec779f1b0"
+        },
+        "path": "SDK-header-6c68320ecebf18f0654e993e.txt",
+        "sha256": "69ddfafa862a42539b198481671197c3b77e234f361395f7783571ecc1da7f15",
+        "size": 1325
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 1325,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_off_t.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "7b07626d71084f1b3220e045089f54fd30f4d736be9cd0449042c5fe411fc569"
+        },
+        "path": "SDK-header-9f7fb56482ac38f962e10ccf.txt",
+        "sha256": "69ddfafa862a42539b198481671197c3b77e234f361395f7783571ecc1da7f15",
+        "size": 1325
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 1325,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_os_inline.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "0b4aa055199f1aa01485a7951a191aed5e3c8377be334e9a9e928988d52d1409"
+        },
+        "path": "SDK-header-db97928ad87fc6089d419de1.txt",
+        "sha256": "69ddfafa862a42539b198481671197c3b77e234f361395f7783571ecc1da7f15",
+        "size": 1325
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 1325,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_pid_t.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "052a6dbbec8e30623c2d33dd373992f6c5d0c57c57ed4949d2b48c4ab0976487"
+        },
+        "path": "SDK-header-62589161837eccd9f0825162.txt",
+        "sha256": "69ddfafa862a42539b198481671197c3b77e234f361395f7783571ecc1da7f15",
+        "size": 1325
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 1325,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_posix_vdisable.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "f32872a8af4cfb71be9ca5bcd356241badadceba195d55907129425bc239c222"
+        },
+        "path": "SDK-header-882a467e394356afd50b4dd8.txt",
+        "sha256": "69ddfafa862a42539b198481671197c3b77e234f361395f7783571ecc1da7f15",
+        "size": 1325
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 1325,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_rsize_t.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "ac4928fae2b5d9d3728c1365c8e6552652cc22680158655151ddaf6a49ce795d"
+        },
+        "path": "SDK-header-f0142a36772d9dff2b6bafe4.txt",
+        "sha256": "69ddfafa862a42539b198481671197c3b77e234f361395f7783571ecc1da7f15",
+        "size": 1325
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 1320,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_rune_t.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "36cd7e6c6ce34e125b4c52f005262d38eba8ef8486c7cac7adedcc5d37cc3b49"
+        },
+        "path": "SDK-header-ffbb193f94fc0c3f3d8c9a0d.txt",
+        "sha256": "5990bc037faa98727711c4c7caa0b732f7e2f35da0268e489d53c5937cc609b3",
+        "size": 1320
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 1453,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_s_ifmt.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "95154f4d16869867b303c173ed569ab17957fedb98ce7140583df75bcca2bd9e"
+        },
+        "path": "SDK-header-6f4b76619d1e7d0ea7f849a6.txt",
+        "sha256": "362e1c0e5b3d8989368983423ad054dfe7272440f9a6a3e25a498bd3241eb822",
+        "size": 1453
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 1326,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_seek_set.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "353b2276ef8132f625b1b780e7593a43183fbf054c1bc906c0515f89dad335c8"
+        },
+        "path": "SDK-header-c0eaf10e7373c8f5d47f4ed0.txt",
+        "sha256": "120f58e47384392824e3e23a3c22fd80fb90ebaf5070196286c794b31f9b5be8",
+        "size": 1326
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 1368,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_sigaltstack.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "2bc87d34186fe6524fe89fa1e2d878462c6688134d03880b8bfa1486db297687"
+        },
+        "path": "SDK-header-4fc361dcd1aa8c587afc5285.txt",
+        "sha256": "d81c65ddf54837560051c5ae871b1578ce9fbb0573687d286984b7112c63d1b0",
+        "size": 1368
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 1325,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_sigset_t.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "df99c73ecdbde1fcb3a4a22169871e036240452472b8ea70f287456d42593972"
+        },
+        "path": "SDK-header-87793ce013e7a19d25faaba6.txt",
+        "sha256": "69ddfafa862a42539b198481671197c3b77e234f361395f7783571ecc1da7f15",
+        "size": 1325
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 1325,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_size_t.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "3e1bcf6c23ad00e0fe2b5a4683e687299baf51cf26b0a4ebc73db6140378acc2"
+        },
+        "path": "SDK-header-2cea10690622621440a3cb8d.txt",
+        "sha256": "69ddfafa862a42539b198481671197c3b77e234f361395f7783571ecc1da7f15",
+        "size": 1325
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 1325,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_ssize_t.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "58eb3bdea24b27e6b5fb45e203e476faf2510b5c0aa81a0b45c17b528aa9c192"
+        },
+        "path": "SDK-header-f0832a1409201a00d869a257.txt",
+        "sha256": "69ddfafa862a42539b198481671197c3b77e234f361395f7783571ecc1da7f15",
+        "size": 1325
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 1325,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_suseconds_t.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "d799ffc16cf29b6559b36d879fc7d5fec80ec3c39502eaef078ae9178eeaf275"
+        },
+        "path": "SDK-header-f87ecabe4118dca2ec25c088.txt",
+        "sha256": "69ddfafa862a42539b198481671197c3b77e234f361395f7783571ecc1da7f15",
+        "size": 1325
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 1325,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_time_t.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "c0a28cdc5c9c8cf99abea53556895bd8001a6cb13ae6ca9f366955500678b35a"
+        },
+        "path": "SDK-header-6ae316a503d6c0a22aca10bd.txt",
+        "sha256": "69ddfafa862a42539b198481671197c3b77e234f361395f7783571ecc1da7f15",
+        "size": 1325
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 1325,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_timespec.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "3314f260a6b3ce09c02df185ba2253577b2a268dac05d3cad55f76bb3e8019e8"
+        },
+        "path": "SDK-header-890b944eba21028941a95440.txt",
+        "sha256": "69ddfafa862a42539b198481671197c3b77e234f361395f7783571ecc1da7f15",
+        "size": 1325
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 1325,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_timeval.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "f723018fec267200e915777897515b5d7ed20901bcb294873f94b1d835f9ae45"
+        },
+        "path": "SDK-header-24abc915628ab1661963ba02.txt",
+        "sha256": "69ddfafa862a42539b198481671197c3b77e234f361395f7783571ecc1da7f15",
+        "size": 1325
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 1320,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_u_char.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "50e11dbb6152079cdefd9eaf854e3182496130b651142e0fc08fcd1456802e81"
+        },
+        "path": "SDK-header-58d128007fc45c5cddc7746a.txt",
+        "sha256": "133b8d5f5e4c6cbcfc88b8fe20b2bf50796ff534fe5824edd9c8e08cb058d822",
+        "size": 1320
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 1320,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_u_int.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "85e9858c13fdc4fb614948fbcadec5f5973dbf6874b97464044a3b4e23486978"
+        },
+        "path": "SDK-header-f851502d26d0b308ce1d7130.txt",
+        "sha256": "133b8d5f5e4c6cbcfc88b8fe20b2bf50796ff534fe5824edd9c8e08cb058d822",
+        "size": 1320
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 1320,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_u_int16_t.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "9dabbd8280c28416a5ba115355678d2540588df1a7251bd9b4a13e30c309a71b"
+        },
+        "path": "SDK-header-158f6ef3af780022ff9f18f1.txt",
+        "sha256": "5990bc037faa98727711c4c7caa0b732f7e2f35da0268e489d53c5937cc609b3",
+        "size": 1320
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 1320,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_u_int32_t.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "196cba7a865c086bba457758d3b2605a4c1299c54a758366b7d420a585895f1d"
+        },
+        "path": "SDK-header-dbab71694af8b5a5616f331b.txt",
+        "sha256": "5990bc037faa98727711c4c7caa0b732f7e2f35da0268e489d53c5937cc609b3",
+        "size": 1320
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 1320,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_u_int64_t.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "d096eee54a5acc2c3cd5cf71256d69198ada8f8d82cdb0a717bc8ed65650ad93"
+        },
+        "path": "SDK-header-5e984f9f644cf4357925bbfa.txt",
+        "sha256": "5990bc037faa98727711c4c7caa0b732f7e2f35da0268e489d53c5937cc609b3",
+        "size": 1320
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 1320,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_u_int8_t.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "7505dbbdf3ecca2b8e585871ad81c0e67a3cb63c97c47abe73fe262e071a3ebb"
+        },
+        "path": "SDK-header-7ccedcdf1f617c4a0642570e.txt",
+        "sha256": "6ee18ae1877139f66853ee85fa5860de71abbe8ce6003629239f985e6a9a3805",
+        "size": 1320
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 1320,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_u_short.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "f78b1ac66a04e293df9a08ce2466401f50075a773c5f64000864b9d59ec4edc9"
+        },
+        "path": "SDK-header-a90a14984521dd24bd752d2d.txt",
+        "sha256": "133b8d5f5e4c6cbcfc88b8fe20b2bf50796ff534fe5824edd9c8e08cb058d822",
+        "size": 1320
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 1325,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_ucontext.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "d67fecbd5fba1fc876b41b0a69ff080e3d47c9884f3ea4012f8a334ffda62681"
+        },
+        "path": "SDK-header-ff601f3e67a308756d88d587.txt",
+        "sha256": "69ddfafa862a42539b198481671197c3b77e234f361395f7783571ecc1da7f15",
+        "size": 1325
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 1325,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_uid_t.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "d2140a65a17943a857381757c0b73a920f35ade41dc9809437c168be457c276a"
+        },
+        "path": "SDK-header-219993c7648aed73c0f9fe45.txt",
+        "sha256": "69ddfafa862a42539b198481671197c3b77e234f361395f7783571ecc1da7f15",
+        "size": 1325
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 1325,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_uintptr_t.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "f435cf25e4f06dace9c1884c066392bafd204c6d71f16696e71acde5912bc81f"
+        },
+        "path": "SDK-header-44b15ed17397d882eb5ed87d.txt",
+        "sha256": "69ddfafa862a42539b198481671197c3b77e234f361395f7783571ecc1da7f15",
+        "size": 1325
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 1325,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_useconds_t.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "37c49808a92cc4417181adb1530cc24ca11cc89f064c6c0494a1aff981f92870"
+        },
+        "path": "SDK-header-7b41083f339a5a38419d602c.txt",
+        "sha256": "69ddfafa862a42539b198481671197c3b77e234f361395f7783571ecc1da7f15",
+        "size": 1325
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 1325,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_uuid_t.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "ba8364ff4aed847f5ca3259e27fc2d1920432d02e8e79c7ac57ec043f1dc2842"
+        },
+        "path": "SDK-header-fdbcebf663f5fbb0aad029e6.txt",
+        "sha256": "69ddfafa862a42539b198481671197c3b77e234f361395f7783571ecc1da7f15",
+        "size": 1325
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 1321,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_va_list.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "688c84ca73e82898609ae7282c820e896e4b82b7dc14f4fc92b4263df5827de2"
+        },
+        "path": "SDK-header-0e0afa328c37cb5ac4380d6c.txt",
+        "sha256": "7315649c09fff5075326031926b33fa6d6c7c1b85b6ac087d7572218e8e18ce2",
+        "size": 1321
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 1321,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_wchar_t.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "f0c3da0beecb5feb19ddede0ea9d5fbb9274e7b1de1b7cb91f64196ac1395008"
+        },
+        "path": "SDK-header-e1dbdae9d4cd0887ebbcda01.txt",
+        "sha256": "7315649c09fff5075326031926b33fa6d6c7c1b85b6ac087d7572218e8e18ce2",
+        "size": 1321
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 1321,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_wint_t.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "f6bb1d228df3635d191ee34fdd786fad6851f679ed9da7d6c48e12d3f437854e"
+        },
+        "path": "SDK-header-6390f6de17780a5caf4b6595.txt",
+        "sha256": "7315649c09fff5075326031926b33fa6d6c7c1b85b6ac087d7572218e8e18ce2",
+        "size": 1321
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 1331,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/appleapiopts.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "efd9793f56c08917cf1ddf5108b78240ede88a5bbc8977d6fdaf1684b6b01c1c"
+        },
+        "path": "SDK-header-2998f7f720cb6a398ecc8da3.txt",
+        "sha256": "c6d794f83beb62dff4e12386494fae962927d67fbb34d79e7cba3cad963c3316",
+        "size": 1331
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 3361,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/cdefs.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "12c3f06e56e972e13185e7d0463a605ec893b67e2e28c09381162e7d6016a69e"
+        },
+        "path": "SDK-header-ff2b70cab91c5d58a6e20639.txt",
+        "sha256": "56919a7400a922c625c86de6117536db3f3a45577977478f9136c7516d8e634b",
+        "size": 3361
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 3581,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/errno.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "80dc0ead0d8a003014c02d1f2bf63808000af9babc63a67ea1f36252c0a05212"
+        },
+        "path": "SDK-header-fbd7c259d2bbd6c833fabefc.txt",
+        "sha256": "508b52ca5d84f75b24d3abcdac8b0e32f83f01c801295bf0b7a3075416904951",
+        "size": 3581
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 3576,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/fcntl.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "ebe22134742232b94f282575ff1fd901ac8b834976aab8d988ea0b37b0c52f85"
+        },
+        "path": "SDK-header-fa123e8c055199d324fdd987.txt",
+        "sha256": "d44a24bb083baabc45a8a6c3af4ed73d61aa9dfd5d48fbb104f853c00a4b2765",
+        "size": 3576
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 3564,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/mman.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "16195e20f0f4b31d1afdd7ee54d5e6c470e42ffaee4b9ddbe08374a965af4073"
+        },
+        "path": "SDK-header-9bb45bbf689c7d2887d2533e.txt",
+        "sha256": "8b4ee237e17c32428963dd73f9d0c4628e6b7af855470a3ba83b0f67eaa83b1e",
+        "size": 3564
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 3271,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/resource.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "67b82d1a9c0d5e788bcfed206e5a63d519e9f05879f475e736827e4131959f68"
+        },
+        "path": "SDK-header-59da43e436fef3bc04117a54.txt",
+        "sha256": "153a04a5ae579fc3b91149f4c7d4e5b334ef9d334811ec6e7025ef924c41f6ed",
+        "size": 3271
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 3208,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/select.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "cffe3e51c7c6c6ef68750cc85f7ddc1b7b4be041a4bbb47fd19914125bf1b6df"
+        },
+        "path": "SDK-header-c425834eb984f19f8046c1e6.txt",
+        "sha256": "fdab528e95c92498a382c32113d5a658ee2f47dc203a0388a9d9524d99679d61",
+        "size": 3208
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 3597,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/signal.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "171af7545ef750627aeba02c1de838c05e2cf396e2f49881ea74dba6990c44a3"
+        },
+        "path": "SDK-header-a52064bb44f6671dd11b87e0.txt",
+        "sha256": "e76f8bcc2c00095b370f6b1d4efae6457d61699b9176f8d87266e51b4bb29c48",
+        "size": 3597
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 3581,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/stat.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "31c8f252b05785343ca577c007657c0fbab45a182b60fc5b73994c621dc318d4"
+        },
+        "path": "SDK-header-84b0a79b3786cf84c123794d.txt",
+        "sha256": "995996c0687e6408d6104a97f6ec69365197bad38bc4e0b892d7bace8b353375",
+        "size": 3581
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 1321,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/stdio.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "903ab8dd48a74d66dda5dcd93f2f681c74f2ad54a9a87c5201d9ac059c51603c"
+        },
+        "path": "SDK-header-f514bdac0f0b6764ae8af5d4.txt",
+        "sha256": "5fe42b8879032d5e17a77d709a62127f7acfaf402ac1b4c1a243429fd57d3676",
+        "size": 1321
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 3273,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/syslimits.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "170629c923b4ef2b7132dc8a9d71e9f010332bada56363f619b7c758e17d2c83"
+        },
+        "path": "SDK-header-4cbba5ac4f47f72f6feda9ca.txt",
+        "sha256": "6e31dde39d45650fc0fee889a50dbd6b275a2305d7f240060688fc92ebc6772a",
+        "size": 3273
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 3586,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/types.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "82111e1f1d0262bee191b4679842e5ff51de57310ce4da9f48d39af0d8e10284"
+        },
+        "path": "SDK-header-3ad40e3700e7eb960fa7f942.txt",
+        "sha256": "a09e180ead2b2f1c8b25af9a35b970cb62d6ebd86c93c9e307db9bb5cac643cb",
+        "size": 3586
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 3263,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/unistd.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "a3c7d6da838b8858cf04711dcbbab6e28fa5a58cc72175fcf4366158f548369a"
+        },
+        "path": "SDK-header-91f384f463403572c9add413.txt",
+        "sha256": "b58bb884053d884e807246b58c12652e452ea4ded1aa4229e38ca8580b5ae549",
+        "size": 3263
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 3285,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/wait.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "b77f7dd6f592eba8b0d51c15c7b975472fdad50c12ea296f74f062cbf98dcbf7"
+        },
+        "path": "SDK-header-8cc06742742ba76da645eec2.txt",
+        "sha256": "2bb7ec009c4b10cf755acaca23830310f9c89d64ab1c0d5283ce5ebcc81d66eb",
+        "size": 3285
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 3162,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/time.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "cf4912303943c5bda8404f5fd7a2a8219153353a49df2aeaddbb2dcd4b35c0bf"
+        },
+        "path": "SDK-header-c63a8b902bcc26a7c4eb9c99.txt",
+        "sha256": "c9dbf8bb3e0fb6e70025b0fd4f977b40a1bb9cc14ed3b73d8facf3f1282731de",
+        "size": 3162
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 3239,
+          "offset": 0,
+          "path": "Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/unistd.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "be3d2b42ce70c5934942bed0ad31d512e9226393140ea783fca887ea35324ab1"
+        },
+        "path": "SDK-header-c824ab4a159e2787bf5867a2.txt",
+        "sha256": "710a982bd446d7b58020bf9397d3149b26a5dcaa4416876c125fb640fb071161",
+        "size": 3239
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 372,
+          "offset": 0,
+          "path": "Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/17/include/__stdarg___gnuc_va_list.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "feca975bfdfb254d17458a8e3d51f8ad6d9bdc9fd6287727f0f8b2fb81fcb0b0"
+        },
+        "path": "SDK-header-91a9519314e9f449d18f8002.txt",
+        "sha256": "8b548ce9c0772f64352e0a72e894ec00ce269b9e0b9f607bbca6b1b7568147df",
+        "size": 372
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 372,
+          "offset": 0,
+          "path": "Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/17/include/__stdarg___va_copy.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "f0a8d3c963338173f2d57b2cbc209dde38c90536107b15eb0cf78166d4caee1f"
+        },
+        "path": "SDK-header-ab347cf153976d4db66f5152.txt",
+        "sha256": "945de68c47db6ae086ca724e56955f58a2fcd24996ff855729844e4da2b69eb9",
+        "size": 372
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 372,
+          "offset": 0,
+          "path": "Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/17/include/__stdarg_header_macro.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "7b3fbcc442af2508f36bb2dc98d9ad2b8a1f5c0f5333394fb2159c8bd5ecd5b8"
+        },
+        "path": "SDK-header-b5396b1bccba6d4c361e064b.txt",
+        "sha256": "51649fa4a0f431eebab1437ed612fb019ec2e7787e56eed82221eefd46a3703b",
+        "size": 372
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 372,
+          "offset": 0,
+          "path": "Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/17/include/__stdarg_va_arg.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "db0cca3b7768cf07807553fb88ea74e00cba4503e08a5f5504989fb3cc3e4cf1"
+        },
+        "path": "SDK-header-44c862a93062de464876ed7d.txt",
+        "sha256": "b595a97ed09833b689e3f363e6dc485c1383ebeb8f501ad0669fefdf267d1e33",
+        "size": 372
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 372,
+          "offset": 0,
+          "path": "Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/17/include/__stdarg_va_copy.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "bb195f56cb08d4cee6a60bd9f62f34466e8ac4f89f6fed043b044cb2f7ead010"
+        },
+        "path": "SDK-header-e029e12725002816d03ac787.txt",
+        "sha256": "a517fd65b43e273f5a8058114a09ed1571404207f694828be663fdde7eb5c25f",
+        "size": 372
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 372,
+          "offset": 0,
+          "path": "Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/17/include/__stdarg_va_list.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "81c3055f7033e26e7f53705653bc9d69b5202f25c2692e03b3a4f77ff44a7d76"
+        },
+        "path": "SDK-header-1979f81f3709afcd363d036f.txt",
+        "sha256": "5754c957355450437a3f49af4b4ff624ace44a28722dda812a0533f2fd0ae618",
+        "size": 372
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 372,
+          "offset": 0,
+          "path": "Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/17/include/__stddef_header_macro.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "4cf46e8fbb809df048eecbbd63686fa741da27afa8db4245bd1f61c1fb1611dc"
+        },
+        "path": "SDK-header-01e702b5a26cf201b9616734.txt",
+        "sha256": "d90e4486cbe230e2a69b2208b3cfa00d2f37dde34fecba5641a1e765f0ec53ad",
+        "size": 372
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 372,
+          "offset": 0,
+          "path": "Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/17/include/__stddef_max_align_t.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "3c1e4de47f4f06b35e2c5890d670052e84f716760505ff51b022fc8b21a9400f"
+        },
+        "path": "SDK-header-8e3ffe3f447157ea7e291245.txt",
+        "sha256": "8998ce0e1626fdc5b04f6744ffc2eb65caea027ca78b5941d9df9a97ba4bebba",
+        "size": 372
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 372,
+          "offset": 0,
+          "path": "Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/17/include/__stddef_null.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "b1d71b08563ab3d2c22a1e4f8ddf4d9a1111c89e9404b859a45c307e8ebc6c69"
+        },
+        "path": "SDK-header-2ce8c2ac50698b9d94f9b4c9.txt",
+        "sha256": "e422064af9560b26465ed99c1e6e46f5a00d7e0bdd892d5b0ac845968a77b338",
+        "size": 372
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 504,
+          "offset": 0,
+          "path": "Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/17/include/__stddef_offsetof.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "e5f0f4ff8ff5fc6a1cc8b535f5065f1728eadd2bf1e1401f021f803ec7b4222f"
+        },
+        "path": "SDK-header-655987725eacd8982d50acc4.txt",
+        "sha256": "e0da127a73aeec439eda8e78f90180ccd950b574dc51921b11a8220792105973",
+        "size": 504
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 504,
+          "offset": 0,
+          "path": "Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/17/include/__stddef_ptrdiff_t.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "b4178a57f3711b7013cba747a72a2f178c29fa9364e77d75b2159754072ced43"
+        },
+        "path": "SDK-header-eea79286e672cb93a8fd0dfb.txt",
+        "sha256": "d836ead13fa0c2712f504f4ec30129528644807b7cd725987de154a003ff51c5",
+        "size": 504
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 504,
+          "offset": 0,
+          "path": "Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/17/include/__stddef_rsize_t.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "132339d4f07e852bf2d879bc91c4ccdfcf08c581c7c97f6f3794510e0bdda7bd"
+        },
+        "path": "SDK-header-9b388d04c9fa7e33e103df4b.txt",
+        "sha256": "b4c43cc9688b5c307b367004710ff8bc11731d15d4761d74824b7e163d8d3db8",
+        "size": 504
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 504,
+          "offset": 0,
+          "path": "Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/17/include/__stddef_size_t.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "d86ddc0238da09b385846ebef814ffc50a44e40cf85d4e3793f485952b7e73ad"
+        },
+        "path": "SDK-header-94443db0e92972a993fec11e.txt",
+        "sha256": "44886d090522af81bbbf9e6245f69625fc84430086bb2d1bdc8a41ce1310db3b",
+        "size": 504
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 372,
+          "offset": 0,
+          "path": "Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/17/include/__stddef_wchar_t.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "1900d4998aef3698b06399ed686db0c21e26509b08638a25734fb97ae89b1001"
+        },
+        "path": "SDK-header-f63db149a7bafc41da58c230.txt",
+        "sha256": "713ec82c8194a15383c5bad779fd8baca97f7eae52db544db760b011c17936f8",
+        "size": 372
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 372,
+          "offset": 0,
+          "path": "Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/17/include/float.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "8ecb63a07f580d3a6764c7b83015ac57c93ad5359236307d922a246e093ae562"
+        },
+        "path": "SDK-header-84b1727402338161172287e5.txt",
+        "sha256": "6015b181e142f418229b0ec6bfbac1b96bf12ae8e802b43c8aecc425d370c90c",
+        "size": 372
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 370,
+          "offset": 0,
+          "path": "Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/17/include/inttypes.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "eb8a7b2e17d57e9321043282bf0267fedd2ca58aadb11b04929ddbf8100fc3bc"
+        },
+        "path": "SDK-header-e44063a421324132dbea6a57.txt",
+        "sha256": "6ba160fe160e2d0f4b1d9e18dba676a82d068477c4e3c713683375e2e27ff98e",
+        "size": 370
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 370,
+          "offset": 0,
+          "path": "Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/17/include/limits.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "a7ef4c2d6cf10dc257685a7053c3e5762d497094a6a00c52d1ffb7f256d1d0fb"
+        },
+        "path": "SDK-header-82e430add7f776404b6af43d.txt",
+        "sha256": "ed26adcef0b553b44030433d6892bb489b12cc28b7e39423421caf87a0134bed",
+        "size": 370
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 373,
+          "offset": 0,
+          "path": "Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/17/include/ptrcheck.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "ac60d1e96ac17d789d1879b968d391dfbfa222f12213ba95f14592453eebe338"
+        },
+        "path": "SDK-header-6eb86e5a1f600672ddbd3a01.txt",
+        "sha256": "1dde451e831ce68164036a3b56fb72460ba58b3577876cb513f201ac1dfe19ea",
+        "size": 373
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 373,
+          "offset": 0,
+          "path": "Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/17/include/stdalign.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "889808f7d7c3cb9fd6b3fdc01ee21ed3771dbf478f2942a028d9686d9c61f662"
+        },
+        "path": "SDK-header-a6859eaaf445765109ee287f.txt",
+        "sha256": "4efb5f80669b7c385442e87625b2edd0b5cea825b268181b645b92971c91b811",
+        "size": 373
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 969,
+          "offset": 0,
+          "path": "Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/17/include/stdarg.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "ce6e43d79dc89b50208ecf259b1ffd519f5a78cd3a2c7fcaac6386f376b89fef"
+        },
+        "path": "SDK-header-ea3512383f1e750b70114e06.txt",
+        "sha256": "fe069d0d0e201f94ecf04b789a95d01fe0295c340517ab50c30d11d912b91bac",
+        "size": 969
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 373,
+          "offset": 0,
+          "path": "Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/17/include/stdatomic.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "728b690f127fc85faa32b9031e3a0019da92f77db92ca91b749571e45617a9ea"
+        },
+        "path": "SDK-header-34f0812e484859a9c0bc84db.txt",
+        "sha256": "c187113158e65259c99f706181adf0678112bb58fbbcd688fe8d2b581755b1f7",
+        "size": 373
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 372,
+          "offset": 0,
+          "path": "Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/17/include/stdbool.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "48655faf4ebd4ca0af26a1ee8e3e16f8dc68385c9cd550ffb3629320681305b3"
+        },
+        "path": "SDK-header-ec4a643daffd2b41e7dbd761.txt",
+        "sha256": "48c8236343fafbfc67792dc3c7ac85af049bc64a772adcd88b266b905d4b52dc",
+        "size": 372
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 969,
+          "offset": 0,
+          "path": "Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/17/include/stddef.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "e8d92dad1b380f2f2130fd7aa446bcb4fc923f7062a41c7c35beb4913093a8f5"
+        },
+        "path": "SDK-header-39a96a9a0c07463108fcad89.txt",
+        "sha256": "385a49d08a399b48318c9704ef53eaec8e5a648cd7ac9f51800d8109c262566f",
+        "size": 969
+      },
+      {
+        "origin": {
+          "kind": "recorded-xcode-header-prefix",
+          "length": 370,
+          "offset": 0,
+          "path": "Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/17/include/stdint.h",
+          "qualification": "Leading comment material only; applicability and complete text remain under review",
+          "source_sha256": "655616d8fcb2c92b38c039019685c658c2346b3dd0021aed4ea057b43f621247"
+        },
+        "path": "SDK-header-5f310fed1b3c28eef6c3df6c.txt",
+        "sha256": "adcb355d09cc4b49be216bcd74ae4116f26975901975e22820f5d859921c8a6f",
+        "size": 370
+      },
+      {
+        "origin": {
+          "kind": "maintainer-source-review-reference"
+        },
+        "path": "SOURCE-REFERENCES.txt",
+        "sha256": "d6f341de14f8641d55181a19be3819ca369caa1ec345bff48abe15dc643e9397",
+        "size": 1300
+      },
+      {
+        "origin": {
+          "applicability": "Per-file applicability pending; reference text does not identify compiler sources or approve redistribution",
+          "kind": "pinned-canonical-license-text",
+          "referenced_by": [
+            "SDK-header-18546e31851e3d9266dc5e97.txt",
+            "SDK-header-a9797af56fc1472f302ffa23.txt",
+            "SDK-header-f3de78351ae8eb6abac868a1.txt"
+          ],
+          "source_sha256": "359a21ed59e82096455398ea10c5bc8c3ff28e7acf7935b77751d70e3630fc95",
+          "source_url": "https://raw.githubusercontent.com/apple-oss-distributions/IOSerialFamily/ed4bc21ffe5d80594cc3771ac6527ea62d50dc45/APPLE_LICENSE"
+        },
+        "path": "APSL-1.1-COPYING.txt",
+        "sha256": "359a21ed59e82096455398ea10c5bc8c3ff28e7acf7935b77751d70e3630fc95",
+        "size": 19930
+      },
+      {
+        "origin": {
+          "applicability": "Per-file applicability pending; reference text does not identify compiler sources or approve redistribution",
+          "kind": "pinned-canonical-license-text",
+          "referenced_by": [
+            "SDK-header-0007956af54f3688f2e22df4.txt",
+            "SDK-header-0034e32e82d089f8eebfbcde.txt",
+            "SDK-header-006126cedb9f90af1e427902.txt",
+            "SDK-header-006c1e03a91bcb99c264aa2f.txt",
+            "SDK-header-032aeb8a8655e5fb25e88b09.txt",
+            "SDK-header-03bfc12afa560e217f03af58.txt",
+            "SDK-header-0405f8ee935bc5de024135a3.txt",
+            "SDK-header-04580e58ae6e35bb9e261427.txt",
+            "SDK-header-08a96c44c4ddbbd3259bef3e.txt",
+            "SDK-header-08d854eb89a7cf940c0f23ec.txt",
+            "SDK-header-0ab085f82be0fa4611d7ea93.txt",
+            "SDK-header-0e0afa328c37cb5ac4380d6c.txt",
+            "SDK-header-109d605d73439bf87da8c9c3.txt",
+            "SDK-header-12be10fcea310e66355eabaa.txt",
+            "SDK-header-134f1226d6f27fc6e2ca23b6.txt",
+            "SDK-header-1526764b57ace3f488dae93f.txt",
+            "SDK-header-158f6ef3af780022ff9f18f1.txt",
+            "SDK-header-18c76649ac4bf86780d97b69.txt",
+            "SDK-header-1a807909b340ba596434ca71.txt",
+            "SDK-header-1b65645f8bfdc38180f99d6a.txt",
+            "SDK-header-1d161f4ef0192cc728f45249.txt",
+            "SDK-header-1dfee1a84a5573453e881f80.txt",
+            "SDK-header-1e09718f55bf14002db7c15d.txt",
+            "SDK-header-20d113de92b4fa2c0e1e188a.txt",
+            "SDK-header-219993c7648aed73c0f9fe45.txt",
+            "SDK-header-224066438e5bc20443f7c31e.txt",
+            "SDK-header-24abc915628ab1661963ba02.txt",
+            "SDK-header-2664fb7eccf08f97e0f67b6a.txt",
+            "SDK-header-2868d7685d8d501ef72ffd92.txt",
+            "SDK-header-2998f7f720cb6a398ecc8da3.txt",
+            "SDK-header-2a4b04cf839dc6b8d24071a7.txt",
+            "SDK-header-2be3bba26596dba6b83b3a87.txt",
+            "SDK-header-2cea10690622621440a3cb8d.txt",
+            "SDK-header-2d6553a299d8423685054e4a.txt",
+            "SDK-header-2d990211e32f697038d777e2.txt",
+            "SDK-header-2ed51319d34f90035859c9ae.txt",
+            "SDK-header-32074670f155c4d77c615540.txt",
+            "SDK-header-32f89c74481ce696e89903b6.txt",
+            "SDK-header-363726fd039d741f92e71fdc.txt",
+            "SDK-header-38627b2087f13c10e2a3ff61.txt",
+            "SDK-header-3a4ed49bd325fa7fcfa6017a.txt",
+            "SDK-header-3ad40e3700e7eb960fa7f942.txt",
+            "SDK-header-3c2f567a1bc52fb2de9b66b6.txt",
+            "SDK-header-3f8cdbf1780ec26607e04ac6.txt",
+            "SDK-header-41bb8a227d138eabdba55ff6.txt",
+            "SDK-header-428d21b43cc5fffae11b9250.txt",
+            "SDK-header-44b15ed17397d882eb5ed87d.txt",
+            "SDK-header-4677de728db29e459c927ccc.txt",
+            "SDK-header-471c752c2a1ac7805c459c2f.txt",
+            "SDK-header-477889e1bae6d5436ca4b79d.txt",
+            "SDK-header-49ff20bedc0d7452356cccb3.txt",
+            "SDK-header-4ab097190b40128d3315998b.txt",
+            "SDK-header-4b4aaf3c3d495db9a9a3b31e.txt",
+            "SDK-header-4c2aeb31cd6f997e346ab0b7.txt",
+            "SDK-header-4cbba5ac4f47f72f6feda9ca.txt",
+            "SDK-header-4e333a65145c38ceb912e720.txt",
+            "SDK-header-4fc361dcd1aa8c587afc5285.txt",
+            "SDK-header-5070f6f8dc192eb8c3b0f319.txt",
+            "SDK-header-508162a7a02b6e93686daaba.txt",
+            "SDK-header-540fbb57f9a6765120123bae.txt",
+            "SDK-header-55a1bf3bea1bc6b13dac3649.txt",
+            "SDK-header-561fe63bc3c75fc18915ecc5.txt",
+            "SDK-header-57b8b53018a55f1d6a29f156.txt",
+            "SDK-header-58d128007fc45c5cddc7746a.txt",
+            "SDK-header-598c9e4bd70377c9cd3b48a4.txt",
+            "SDK-header-59da43e436fef3bc04117a54.txt",
+            "SDK-header-5b78df1ac25081508f6e02cf.txt",
+            "SDK-header-5ce083df0e4fe54da0bbcc14.txt",
+            "SDK-header-5e984f9f644cf4357925bbfa.txt",
+            "SDK-header-60b1634b1e1ef09b14d06a76.txt",
+            "SDK-header-62589161837eccd9f0825162.txt",
+            "SDK-header-636a284d359280b90d2e9b13.txt",
+            "SDK-header-6390f6de17780a5caf4b6595.txt",
+            "SDK-header-6468389f15469bc02965aa8a.txt",
+            "SDK-header-6ae316a503d6c0a22aca10bd.txt",
+            "SDK-header-6c3824b608a0d34e4ea72e5c.txt",
+            "SDK-header-6c68320ecebf18f0654e993e.txt",
+            "SDK-header-6f4b76619d1e7d0ea7f849a6.txt",
+            "SDK-header-70e0eaaf496b72913cdcc18d.txt",
+            "SDK-header-7263cf9856add583a271d242.txt",
+            "SDK-header-737ff00fb0d62ebd8d050cef.txt",
+            "SDK-header-75019fabbfcb7845394efd6f.txt",
+            "SDK-header-79e4b1f37e443868151a832f.txt",
+            "SDK-header-7a23cd98b79d8ceafd9ab617.txt",
+            "SDK-header-7b41083f339a5a38419d602c.txt",
+            "SDK-header-7ccedcdf1f617c4a0642570e.txt",
+            "SDK-header-7d2c9654af9757901b9d402b.txt",
+            "SDK-header-7d3f81717ee855ac8a063832.txt",
+            "SDK-header-7dcb10fd21ddf376bb4802e3.txt",
+            "SDK-header-80548847b1636824f655e9bc.txt",
+            "SDK-header-81c1e9255987107b5ce95083.txt",
+            "SDK-header-81ebe551ec07bf48f8e28944.txt",
+            "SDK-header-83a7f70cf4e052285b4be6c2.txt",
+            "SDK-header-84b0a79b3786cf84c123794d.txt",
+            "SDK-header-84cc410474123a12e02d5b9d.txt",
+            "SDK-header-84f894373a4fec35a522928f.txt",
+            "SDK-header-867408fe6bac4fec5e9befcc.txt",
+            "SDK-header-8738e3d7a65a0fbc937b5235.txt",
+            "SDK-header-87793ce013e7a19d25faaba6.txt",
+            "SDK-header-882a467e394356afd50b4dd8.txt",
+            "SDK-header-885f93501d1d9449677ba75d.txt",
+            "SDK-header-890b944eba21028941a95440.txt",
+            "SDK-header-8a7d4baae2747a3383239aac.txt",
+            "SDK-header-8cc06742742ba76da645eec2.txt",
+            "SDK-header-8d196b8917872e40a4f52a38.txt",
+            "SDK-header-8d54525eb0886df2e70ffcf4.txt",
+            "SDK-header-91f384f463403572c9add413.txt",
+            "SDK-header-935cc68806a2c787d3d6af3e.txt",
+            "SDK-header-9592b6834c52798b051ba283.txt",
+            "SDK-header-97fd3fc99a148b4fa70d23d7.txt",
+            "SDK-header-9bb45bbf689c7d2887d2533e.txt",
+            "SDK-header-9bec7091ee4f5a2e9574a920.txt",
+            "SDK-header-9c288984f11cc34f6bca291c.txt",
+            "SDK-header-9f7fb56482ac38f962e10ccf.txt",
+            "SDK-header-a07c8bae2cf2d3bb4e640c59.txt",
+            "SDK-header-a52064bb44f6671dd11b87e0.txt",
+            "SDK-header-a6555fd2e68175778289b16a.txt",
+            "SDK-header-a6d32241d59a09b8c9f8a5f1.txt",
+            "SDK-header-a90a14984521dd24bd752d2d.txt",
+            "SDK-header-aa877892a5046a8c3a4eab4a.txt",
+            "SDK-header-ab2fbf5194e9e4aacc886755.txt",
+            "SDK-header-ab772b7006b67742220e0398.txt",
+            "SDK-header-b25d4edbc2f4bf33ba9c21fc.txt",
+            "SDK-header-b50899a30b4da72bd368e2ae.txt",
+            "SDK-header-b8cca965f0ad9378e053e7f8.txt",
+            "SDK-header-bb8eacd141299efd7499ef15.txt",
+            "SDK-header-bddd986df5f75284648a8280.txt",
+            "SDK-header-be357d21e44c7c894f284257.txt",
+            "SDK-header-c0eaf10e7373c8f5d47f4ed0.txt",
+            "SDK-header-c1afd559d26f51d9d8ad4fa4.txt",
+            "SDK-header-c355fa158f047789d8ddefe9.txt",
+            "SDK-header-c414d249ee85ab9dedd30f76.txt",
+            "SDK-header-c425834eb984f19f8046c1e6.txt",
+            "SDK-header-c494c75b4dce577d9667b40b.txt",
+            "SDK-header-c50fa1947a24db1ff6bbe5a3.txt",
+            "SDK-header-c63a8b902bcc26a7c4eb9c99.txt",
+            "SDK-header-c824ab4a159e2787bf5867a2.txt",
+            "SDK-header-c9e07c215f767360429a03ca.txt",
+            "SDK-header-cb68a1d471292ccfb27fc302.txt",
+            "SDK-header-cc4e0e35c898d237de1efda5.txt",
+            "SDK-header-d02f1563a357432a1cbbad7b.txt",
+            "SDK-header-d23b8d47585029323d1948fa.txt",
+            "SDK-header-d34f02589fc1c57417f26869.txt",
+            "SDK-header-d37faa79b7812c4293eb62ee.txt",
+            "SDK-header-d3868dea3f325861d75b9ec8.txt",
+            "SDK-header-d8564d29ec6f8ae98de366dc.txt",
+            "SDK-header-d8612372dabdbc34f7f7e29a.txt",
+            "SDK-header-db3b320adf615fdfa56cb3d0.txt",
+            "SDK-header-db6f95a24f0ab227080f05e9.txt",
+            "SDK-header-db97928ad87fc6089d419de1.txt",
+            "SDK-header-dbab71694af8b5a5616f331b.txt",
+            "SDK-header-dee5bbebea882b7bec52149a.txt",
+            "SDK-header-dfd91f9b746a82fb8f415221.txt",
+            "SDK-header-e1dbdae9d4cd0887ebbcda01.txt",
+            "SDK-header-e73060d07a9c3258f47aa160.txt",
+            "SDK-header-e83be1159f9450734e086876.txt",
+            "SDK-header-e9a8f771f8906746c4c40a74.txt",
+            "SDK-header-e9d739adf6454e6372c162a8.txt",
+            "SDK-header-ea7f3bde01548ce75e5d6c4e.txt",
+            "SDK-header-ea81cb6010d1a3e2a4eb016b.txt",
+            "SDK-header-eb8282b4925c98c8f708c784.txt",
+            "SDK-header-ec545a4f441ae0dcacd0ab8c.txt",
+            "SDK-header-ed9d825d1e2e4b7b139bf55e.txt",
+            "SDK-header-eebf10a734f7041302d45755.txt",
+            "SDK-header-f0142a36772d9dff2b6bafe4.txt",
+            "SDK-header-f0832a1409201a00d869a257.txt",
+            "SDK-header-f514bdac0f0b6764ae8af5d4.txt",
+            "SDK-header-f70be20fbc5e21251f513df5.txt",
+            "SDK-header-f7b42d7427fa4716b07ebe56.txt",
+            "SDK-header-f851502d26d0b308ce1d7130.txt",
+            "SDK-header-f87ecabe4118dca2ec25c088.txt",
+            "SDK-header-f8af5f25318e59ac0c131634.txt",
+            "SDK-header-f8e08e01d5411dd0a30d3b5f.txt",
+            "SDK-header-fa123e8c055199d324fdd987.txt",
+            "SDK-header-fb454591fd033048a3fc85e8.txt",
+            "SDK-header-fb6da5d0c3b5b673d8a81b88.txt",
+            "SDK-header-fbd7c259d2bbd6c833fabefc.txt",
+            "SDK-header-fbfc9af6423980fd9ae37cf0.txt",
+            "SDK-header-fc8b002f73cb776958ad1b0d.txt",
+            "SDK-header-fdbcebf663f5fbb0aad029e6.txt",
+            "SDK-header-ff2b70cab91c5d58a6e20639.txt",
+            "SDK-header-ff601f3e67a308756d88d587.txt",
+            "SDK-header-ffbb193f94fc0c3f3d8c9a0d.txt"
+          ],
+          "source_sha256": "e5881019d8766c1e88a5fe1dbca4ba40c78011d41fcb18f6e9f50df60182685b",
+          "source_url": "https://raw.githubusercontent.com/apple-oss-distributions/xnu/f6217f891ac0bb64f3d375211650a4c1ff8ca1ea/APPLE_LICENSE"
+        },
+        "path": "APSL-2.0-COPYING.txt",
+        "sha256": "e5881019d8766c1e88a5fe1dbca4ba40c78011d41fcb18f6e9f50df60182685b",
+        "size": 19829
+      },
+      {
+        "origin": {
+          "applicability": "Per-file applicability pending; reference text does not identify compiler sources or approve redistribution",
+          "kind": "pinned-canonical-license-text",
+          "referenced_by": [
+            "SDK-header-01e702b5a26cf201b9616734.txt",
+            "SDK-header-1979f81f3709afcd363d036f.txt",
+            "SDK-header-2ce8c2ac50698b9d94f9b4c9.txt",
+            "SDK-header-34f0812e484859a9c0bc84db.txt",
+            "SDK-header-39a96a9a0c07463108fcad89.txt",
+            "SDK-header-44c862a93062de464876ed7d.txt",
+            "SDK-header-5f310fed1b3c28eef6c3df6c.txt",
+            "SDK-header-655987725eacd8982d50acc4.txt",
+            "SDK-header-6eb86e5a1f600672ddbd3a01.txt",
+            "SDK-header-82e430add7f776404b6af43d.txt",
+            "SDK-header-84b1727402338161172287e5.txt",
+            "SDK-header-8e3ffe3f447157ea7e291245.txt",
+            "SDK-header-91a9519314e9f449d18f8002.txt",
+            "SDK-header-94443db0e92972a993fec11e.txt",
+            "SDK-header-9b388d04c9fa7e33e103df4b.txt",
+            "SDK-header-a6859eaaf445765109ee287f.txt",
+            "SDK-header-ab347cf153976d4db66f5152.txt",
+            "SDK-header-b5396b1bccba6d4c361e064b.txt",
+            "SDK-header-e029e12725002816d03ac787.txt",
+            "SDK-header-e44063a421324132dbea6a57.txt",
+            "SDK-header-ea3512383f1e750b70114e06.txt",
+            "SDK-header-ec4a643daffd2b41e7dbd761.txt",
+            "SDK-header-eea79286e672cb93a8fd0dfb.txt",
+            "SDK-header-f63db149a7bafc41da58c230.txt"
+          ],
+          "source_sha256": "8d85c1057d742e597985c7d4e6320b015a9139385cff4cbae06ffc0ebe89afee",
+          "source_url": "https://raw.githubusercontent.com/llvm/llvm-project/llvmorg-17.0.6/llvm/LICENSE.TXT"
+        },
+        "path": "LLVM-license-reference-COPYING.txt",
+        "sha256": "8d85c1057d742e597985c7d4e6320b015a9139385cff4cbae06ffc0ebe89afee",
+        "size": 15141
+      },
+      {
+        "origin": {
+          "applicability": "Per-file applicability pending; reference text does not identify compiler sources or approve redistribution",
+          "kind": "pinned-canonical-license-text",
+          "referenced_by": [
+            "Bison-lib__cgraph__grammar.c.txt",
+            "Bison-lib__cgraph__grammar.h.txt",
+            "Bison-lib__common__htmlparse.c.txt",
+            "Bison-lib__common__htmlparse.h.txt"
+          ],
+          "source_sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+          "source_url": "https://www.gnu.org/licenses/gpl-3.0.txt"
+        },
+        "path": "GPL-3.0-COPYING.txt",
+        "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+        "size": 35149
+      }
+    ],
+    "parent_provenance_sha256": "96c85e7cee6dd71245fe5a2f46afec005a62f701ab56d437b0bf17374940a768",
+    "qualified": false,
+    "schema_version": 1,
+    "scope": "Payload notices excluding this index; complete applicability/source review remains pending",
+    "source_evidence_sha256": "dc9e9d0c805039bfd250b1bfbd06f91d5dd6b75667795d826897640dcf72717b"
+  },
+  "source": {
+    "schema_version": 1,
+    "engine": "graphviz",
+    "version": "16.1.0",
+    "url": "https://gitlab.com/graphviz/graphviz/-/archive/16.1.0/graphviz-16.1.0.tar.gz",
+    "sha256": "1e028b2b3e84e946c1d3e8c47590f8f0741bba1041fe6eff36eee87e598ea249",
+    "size": 41189481,
+    "git_revision": "e41c710710be080ad37af1b51c6e2f8beffa9ee5",
+    "license": "EPL-2.0",
+    "license_path": "COPYING",
+    "license_sha256": "0becf16567beb77fa252b7664631dd177c8f9a1889e48995b45379c7130e5303",
+    "qualification": "source-only; no POSIX binary qualified"
+  },
+  "checks": [
+    "Exact inventory, file bytes, sizes and encoded POSIX modes",
+    "Every bundled notice has an offline origin entry and matching bytes",
+    "Pinned upstream license text present; no compatibility approval inferred"
+  ],
+  "artifact_file": "actions-artifact-12315506264.zip",
+  "artifact_sha256": "8a8df2ed34b3c8adfbcad268759193dd019c357a06e0d4721b5a538f9d5d2e1e"
+}

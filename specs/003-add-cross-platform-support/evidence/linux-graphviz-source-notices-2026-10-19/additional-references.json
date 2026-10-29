@@ -1,0 +1,174 @@
+{
+  "kind": "graphviz-later-license-text-review-material",
+  "approved": false,
+  "qualified": false,
+  "source_state": "working-tree",
+  "prior_review_sha256": "2059e3438e9efdcfedc01f0dc6ceea7aac371ebe0f17ae9ffbcff56880dd2e6e",
+  "tool_sha256": "c75b00599c400940d9f3df31cbe65e547e331c5f829aa683f58e91f08778ea42",
+  "sources_verified": 322,
+  "source_archive_sha256": "1e028b2b3e84e946c1d3e8c47590f8f0741bba1041fe6eff36eee87e598ea249",
+  "artifact_bindings": [
+    {
+      "artifact_id": "linux-glibc-x86_64",
+      "executable_sha256": "43ce8d686720467c21be91cab4b8f3b246baae49c2cfe293714ebdf8a82f5716",
+      "linked_provenance_sha256": "6202b10c2db173ce7a8a0e4511ce655427b20f5735ca63aa5ec78c2c4d61d287",
+      "source_evidence": {
+        "path": "specs/003-add-cross-platform-support/evidence/linux-native-glibc-license-package-2026-10-19/graphviz-source-evidence.json.gz",
+        "file_sha256": "f01126a156e2b01f42ad2babb3dd703b9368bc9c76a3ba73329d9f16663ffa8c",
+        "uncompressed_sha256": "8861700b227371425260c9fcdcc8f0cd497d1d7e209705c8698d90ffca4e429d"
+      },
+      "historical_review": {
+        "path": "specs/003-add-cross-platform-support/evidence/linux-native-glibc-license-package-2026-10-19/review.json",
+        "file_sha256": "0af5578f60b2da93078ec29a0eac2e311c75b8412446f560bfb056ec5e11a709",
+        "uncompressed_sha256": "0af5578f60b2da93078ec29a0eac2e311c75b8412446f560bfb056ec5e11a709"
+      },
+      "sources_verified": 322,
+      "prefixes_preserved": 303,
+      "approved": false,
+      "qualified": false
+    },
+    {
+      "artifact_id": "linux-glibc-aarch64",
+      "executable_sha256": "933b6c63370bdd3e814627e2a9a06176416c8da017a21dcbc96d8137dbc17e22",
+      "linked_provenance_sha256": "77da6f80135c44a3099e07898af80567dcad1dbd0e341fbb18ce58a425e369f3",
+      "source_evidence": {
+        "path": "specs/003-add-cross-platform-support/evidence/linux-arm64-draft-notices-2026-10-19/graphviz-source-evidence.json.gz",
+        "file_sha256": "14adf9d2298b57e3128145d06137d98fbafe2f1c6602a935f034a559c33465fc",
+        "uncompressed_sha256": "f0c13ed3b247aebe0b27721fd0820adbcff4383c76652bfc923843bcdc0f7a47"
+      },
+      "historical_review": {
+        "path": "specs/003-add-cross-platform-support/evidence/linux-arm64-draft-notices-2026-10-19/review.json.gz",
+        "file_sha256": "32f58f136408c3ae80dca240444b9d410c70867659b8c308ebab27799f63736a",
+        "uncompressed_sha256": "bc3a4d531029931d77ddf119439e37694ef78a4d5a6532ba4e467a05f214455b"
+      },
+      "sources_verified": 322,
+      "prefixes_preserved": 303,
+      "approved": false,
+      "qualified": false
+    },
+    {
+      "artifact_id": "linux-musl-x86_64",
+      "executable_sha256": "f4dfee4e052704b1a7efdb7b6a4c43583ccaa062aec800b76224dae24eb2b69b",
+      "linked_provenance_sha256": "e1937d91366e992a02ec97a7486bb7ae8a932c408645c03d19f8e03c0a48cd97",
+      "source_evidence": {
+        "path": "specs/003-add-cross-platform-support/evidence/alpine-musl-sdk-notices-2026-10-19/x86_64/graphviz-source-evidence.json.gz",
+        "file_sha256": "955ec54654e3c58ec48db91bbbc478f271fc64b68b1d157eec633298f0ee300a",
+        "uncompressed_sha256": "a0ba6e7ceba3290aa99a3a353443feae75a0cb76a1f7216e0a7c7f93f785e769"
+      },
+      "historical_review": {
+        "path": "specs/003-add-cross-platform-support/evidence/alpine-musl-sdk-notices-2026-10-19/x86_64/review.json.gz",
+        "file_sha256": "2fcf396ffa0b96758bdee52d5a1bd54454f784e82dcde72f371341c09c9b1dd8",
+        "uncompressed_sha256": "cc5f43197cd9c3a6ec5cd74dcda4e57f90d2f2ca04f05e277859488e688bbac8"
+      },
+      "sources_verified": 322,
+      "prefixes_preserved": 303,
+      "approved": false,
+      "qualified": false
+    },
+    {
+      "artifact_id": "linux-musl-aarch64",
+      "executable_sha256": "2d7a4b6024eb000c33ecf8b14d1a32d0aac8dde65bed00de138604d081fd3ee4",
+      "linked_provenance_sha256": "877d379830eee6663479f5cd274a7b3d384420797a1eaf6b926ef74e1a82489b",
+      "source_evidence": {
+        "path": "specs/003-add-cross-platform-support/evidence/alpine-musl-sdk-notices-2026-10-19/aarch64/graphviz-source-evidence.json.gz",
+        "file_sha256": "85e67545f183ab23c245a49bbc449379e0114a0a87137c7bfafe29238db29b0a",
+        "uncompressed_sha256": "03c8a002184e76b5a4f19faf2332df5a045a2b4737b6adde5b50176420a4267b"
+      },
+      "historical_review": {
+        "path": "specs/003-add-cross-platform-support/evidence/alpine-musl-sdk-notices-2026-10-19/aarch64/review.json.gz",
+        "file_sha256": "069b96deae4d0d255c716104b942ba07dd0b4fa4b81ab732819443b17ce26456",
+        "uncompressed_sha256": "a7f130be33a7005bee9f9a36cd8f355e701f6c28d167b1269f821eeab9bd1784"
+      },
+      "sources_verified": 322,
+      "prefixes_preserved": 303,
+      "approved": false,
+      "qualified": false
+    }
+  ],
+  "sources_with_later_indicators": [
+    {
+      "path": "lib/cgraph/refstr.c",
+      "source_sha256": "242e01992fe455d3bd70d597e8c8977f2e150004b86bf4ecf111afccd19dc820",
+      "size": 12408,
+      "prefix_sha256": "f2c40fe3bc42c588e282ce36d339357d65190f78f160d5eb719fdee740a2629d",
+      "prefix_bytes": 592,
+      "applicability": "pending",
+      "later_license_indicators": [
+        {
+          "line": 74,
+          "offset": 2204,
+          "text": "  // public domain MurmurHash by Austin Appleby. More information on this at"
+        }
+      ]
+    },
+    {
+      "path": "lib/label/index.h",
+      "source_sha256": "68bca82d917b74f887644b77c480a0816a4e2d5a0e41ecf43741166ad79bae20",
+      "size": 2394,
+      "prefix_sha256": "49360311d338280114fa442e36aaf4f505d6a02c0b78891634e721b23376f9e2",
+      "prefix_bytes": 516,
+      "applicability": "pending",
+      "later_license_indicators": [
+        {
+          "line": 29,
+          "offset": 1200,
+          "text": " * per Antonin there is no copyright"
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "path": "notices/Graphviz-source-reference-6b46b81f68f50612091fce2c.txt",
+      "size": 12408,
+      "sha256": "242e01992fe455d3bd70d597e8c8977f2e150004b86bf4ecf111afccd19dc820",
+      "origin": {
+        "kind": "pinned-graphviz-source-additional-reference",
+        "path": "lib/cgraph/refstr.c",
+        "archive_sha256": "1e028b2b3e84e946c1d3e8c47590f8f0741bba1041fe6eff36eee87e598ea249",
+        "source_sha256": "242e01992fe455d3bd70d597e8c8977f2e150004b86bf4ecf111afccd19dc820",
+        "offset": 0,
+        "length": 12408,
+        "scope": "Full source for review of later license-related text; indicator matches are not license decisions"
+      }
+    },
+    {
+      "path": "notices/Graphviz-source-reference-98a057d7f31283e525874559.txt",
+      "size": 2394,
+      "sha256": "68bca82d917b74f887644b77c480a0816a4e2d5a0e41ecf43741166ad79bae20",
+      "origin": {
+        "kind": "pinned-graphviz-source-additional-reference",
+        "path": "lib/label/index.h",
+        "archive_sha256": "1e028b2b3e84e946c1d3e8c47590f8f0741bba1041fe6eff36eee87e598ea249",
+        "source_sha256": "68bca82d917b74f887644b77c480a0816a4e2d5a0e41ecf43741166ad79bae20",
+        "offset": 0,
+        "length": 2394,
+        "scope": "Full source for review of later license-related text; indicator matches are not license decisions"
+      }
+    }
+  ],
+  "regression": "Full synthetic package test failed before implementation and passed afterward",
+  "scope": "Complete original source retained for each later indicator; matching text does not determine applicability",
+  "limitations": [
+    "Historical runtime archives unchanged; fresh CI package validation pending",
+    "Per-file applicability, source closure and source offer remain pending"
+  ],
+  "executions": [
+    {
+      "python": "3.12",
+      "tests": 210,
+      "skipped": 8,
+      "seconds": 37.024,
+      "passed": true,
+      "suite": "tests/run_foundation.py"
+    },
+    {
+      "python": "3.14",
+      "tests": 210,
+      "skipped": 8,
+      "seconds": 37.554,
+      "passed": true,
+      "suite": "tests/run_foundation.py"
+    }
+  ]
+}

@@ -1,0 +1,1182 @@
+[
+  {
+    "id": "final-abi-linux-musl-aarch64-3.12-c007823",
+    "target_id": "abi-linux-musl-aarch64",
+    "python_minor": "3.12",
+    "python_patch": "3.12.13",
+    "python_origin": "GitHub Actions native CPython; exact patch recorded",
+    "application_revision": "c0078230a3bf1a2b934f1754e8b12664f100b4cc",
+    "artifact_id": "graphviz-16.1.0-linux-musl-aarch64",
+    "artifact_sha256": "b342050b5f6a9ff861e4528bca1710298366938491db2b8c3cad0ba16b680df9",
+    "source_state": "committed",
+    "recipe_revision": "linux-musl-aarch64",
+    "package_sha256": "1b92c74f50de7a7a69ae2bb1e73e4e68b8949a9a7d65ad8ca46dbbf884204477",
+    "os": "linux",
+    "os_version": "3.22.4",
+    "distribution_id": "alpine",
+    "channel": "",
+    "cpu_variant": "distribution-default",
+    "abi": "musl",
+    "libc_version": "1.2.5",
+    "architecture": "aarch64",
+    "kernel": "7.0.0-1017-azure",
+    "cpu": "aarch64",
+    "image_id": "python@sha256:07b3a3b85d5b208f164a3276d5eb9c51e0ce61bbe4cb7ab4df0da50d5a78dc11",
+    "image_digest": "cc8fe5a166f3145327083f1c258fe027a920d1bbf04eb0b6a2e462bea8821493",
+    "captured_at": "2026-10-29T09:51:02.745947+00:00",
+    "environment_kind": "github-actions",
+    "github_actions": {
+      "repository": "Extremois/desembaraca-twine",
+      "run_id": "40852552232",
+      "run_sha": "c0078230a3bf1a2b934f1754e8b12664f100b4cc",
+      "run_url": "https://github.com/Extremois/desembaraca-twine/actions/runs/40852552232",
+      "execution_kind": "container"
+    },
+    "snapshot_id": null,
+    "checks": {
+      "offline": true,
+      "interruption": true,
+      "licenses": true,
+      "repair": true,
+      "first_run": true,
+      "installation": true,
+      "preservation": true,
+      "crash": true,
+      "concurrency": true,
+      "twine": true
+    },
+    "passed": true,
+    "pending_checks": [],
+    "observations": {
+      "cache_matches_platform": true,
+      "invalid_input_refused_without_acquisition": true,
+      "executable_mode": 493,
+      "runtime_schema": 2,
+      "healthy_generation_reused": true,
+      "macos_security_assessed": false,
+      "macos_signing_required": false,
+      "paths_with_spaces_and_accents": true
+    },
+    "commands": [
+      "external venv installation --no-index",
+      "console script --help",
+      "python -m twine_edge_overlap --help",
+      "CLI invalid first input without acquisition",
+      "CLI first valid file",
+      "CLI --prepare-runtime",
+      "public corpus using normal installed runtime"
+    ],
+    "corpus": [
+      {
+        "case": "crossing",
+        "input_sha256": "d7c694abfcf286588792ea3f537bebafbe45eb4a7774252782bda6dc8319b25b",
+        "output_sha256": "aa821f1611a98d479811f652197070728904bd2afe31c8e6fca64ed9fbec8e8b",
+        "before": [
+          1,
+          0,
+          0
+        ],
+        "after": [
+          0,
+          0,
+          0
+        ],
+        "original_preserved": true,
+        "semantics_preserved": true,
+        "status": "sucesso"
+      },
+      {
+        "case": "coincident",
+        "input_sha256": "f63665a740e024a5e361546627f324ce8ddb9b1792b55b16984a87eee6ac49ea",
+        "output_sha256": "8644eeb3404043bec66b149c0ed3f2f4bea0600914a944e75c5f6464b78c1ed6",
+        "before": [
+          1,
+          2,
+          0
+        ],
+        "after": [
+          0,
+          0,
+          0
+        ],
+        "original_preserved": true,
+        "semantics_preserved": true,
+        "status": "sucesso"
+      },
+      {
+        "case": "clean",
+        "input_sha256": "5e8d75b9a72cd1afcaeb7b3646cc5d0cec1f7368b2b6275f324eaa7c3f1299f6",
+        "output_sha256": "5e8d75b9a72cd1afcaeb7b3646cc5d0cec1f7368b2b6275f324eaa7c3f1299f6",
+        "before": [
+          0,
+          0,
+          0
+        ],
+        "after": [
+          0,
+          0,
+          0
+        ],
+        "original_preserved": true,
+        "semantics_preserved": true,
+        "status": "sucesso"
+      },
+      {
+        "case": "isolated_overlap",
+        "input_sha256": "6ce9fbd0eb53e57209879944c2ebdc2b66bc6ea26d68fb8a2bd9bd2104f99ef6",
+        "output_sha256": "bef1e0132bce9b72f1317cdbb43d3c2a54e604632459cbda2c5af7d52c17a03a",
+        "before": [
+          0,
+          1,
+          0
+        ],
+        "after": [
+          0,
+          0,
+          0
+        ],
+        "original_preserved": true,
+        "semantics_preserved": true,
+        "status": "sucesso"
+      },
+      {
+        "case": "connected_overlap",
+        "input_sha256": "adf06218e2172f4e0b7bd640bc3cb24cd10de327da92848f888943bf6edb50fb",
+        "output_sha256": "137e849cfdf04ef3db7ed9057a7142ebecc403ee78952f307138ff5ecca72618",
+        "before": [
+          1,
+          1,
+          1
+        ],
+        "after": [
+          0,
+          0,
+          0
+        ],
+        "original_preserved": true,
+        "semantics_preserved": true,
+        "status": "sucesso"
+      },
+      {
+        "case": "through_isolated",
+        "input_sha256": "e584fe80a571da6355922139925a930603454fc5e27a6a44037401e433f6cf36",
+        "output_sha256": "f2460867ce13305139836fc5737093e3e513fae53c4bee8fe0742fe5fc98c341",
+        "before": [
+          0,
+          0,
+          1
+        ],
+        "after": [
+          0,
+          0,
+          0
+        ],
+        "original_preserved": true,
+        "semantics_preserved": true,
+        "status": "sucesso"
+      },
+      {
+        "case": "through_connected",
+        "input_sha256": "481d38cd9ba76522c25530ea382e13ee73f2ff1000829e335c58dff96f4de6f8",
+        "output_sha256": "8c13ace7ce2f65beff622e529456029fda6c7e1f624a5046886a7065f60a2f3f",
+        "before": [
+          0,
+          0,
+          1
+        ],
+        "after": [
+          0,
+          0,
+          0
+        ],
+        "original_preserved": true,
+        "semantics_preserved": true,
+        "status": "sucesso"
+      },
+      {
+        "case": "border_only",
+        "input_sha256": "da0a8b50743446027bccf723f022a8081efe1fd135a118e504615b81ecf88701",
+        "output_sha256": "da0a8b50743446027bccf723f022a8081efe1fd135a118e504615b81ecf88701",
+        "before": [
+          0,
+          0,
+          0
+        ],
+        "after": [
+          0,
+          0,
+          0
+        ],
+        "original_preserved": true,
+        "semantics_preserved": true,
+        "status": "sucesso"
+      },
+      {
+        "case": "cycle",
+        "input_sha256": "a35feef5fdb5d2e5a41b99fe826fd9f0ebb861c50c6f148afc0597f87b6ea6c1",
+        "output_sha256": "a35feef5fdb5d2e5a41b99fe826fd9f0ebb861c50c6f148afc0597f87b6ea6c1",
+        "before": [
+          0,
+          0,
+          0
+        ],
+        "after": [
+          0,
+          0,
+          0
+        ],
+        "original_preserved": true,
+        "semantics_preserved": true,
+        "status": "sucesso"
+      },
+      {
+        "case": "parallel_occurrences",
+        "input_sha256": "cda380247a05431a6d4aaf3a70eb5488ec01770fe89f9562b95691d4823f8df0",
+        "output_sha256": "cda380247a05431a6d4aaf3a70eb5488ec01770fe89f9562b95691d4823f8df0",
+        "before": [
+          0,
+          0,
+          0
+        ],
+        "after": [
+          0,
+          0,
+          0
+        ],
+        "original_preserved": true,
+        "semantics_preserved": true,
+        "status": "sucesso"
+      },
+      {
+        "case": "self_loop",
+        "input_sha256": "7df0478afa2ca0e1e400454d2bbba7571a3f9de9d2d4417f5640e4cd3e94921e",
+        "output_sha256": "7df0478afa2ca0e1e400454d2bbba7571a3f9de9d2d4417f5640e4cd3e94921e",
+        "before": [
+          0,
+          0,
+          0
+        ],
+        "after": [
+          0,
+          0,
+          0
+        ],
+        "original_preserved": true,
+        "semantics_preserved": true,
+        "status": "sucesso"
+      },
+      {
+        "case": "reciprocal",
+        "input_sha256": "f2f16549e43ad54c3f09ba12cf7ebb677fb72a32d2c3a3ac6ba82c311e626979",
+        "output_sha256": "f2f16549e43ad54c3f09ba12cf7ebb677fb72a32d2c3a3ac6ba82c311e626979",
+        "before": [
+          1,
+          0,
+          0
+        ],
+        "after": [
+          1,
+          0,
+          0
+        ],
+        "original_preserved": true,
+        "semantics_preserved": true,
+        "status": "limitações"
+      },
+      {
+        "case": "empty",
+        "input_sha256": "45e3a62ea1b3c31df65b0f7a7bac769ddf9aafc4006bc7cf379d19b2c289c23c",
+        "output_sha256": "45e3a62ea1b3c31df65b0f7a7bac769ddf9aafc4006bc7cf379d19b2c289c23c",
+        "before": [
+          0,
+          0,
+          0
+        ],
+        "after": [
+          0,
+          0,
+          0
+        ],
+        "original_preserved": true,
+        "semantics_preserved": true,
+        "status": "sucesso"
+      }
+    ],
+    "network": {
+      "observation": "github-actions-log",
+      "attempts": 0,
+      "reviewer": "Codex technical implementation review",
+      "log": {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/qualification/abi-linux-musl-aarch64-3.12-network.json",
+        "sha256": "cfcd300ded301e235b0bdf58d7b331ee3c834981b38b9839e81760804d9dc168"
+      }
+    },
+    "log_text": "Estado: sucesso\nLayout melhorado sem aumentar nenhuma das três contagens\nArquivo gerado: <test-work>/crossing.layout.twee\nPares de arestas: 1 -> 0\nPares de nós: 0 -> 0\nPares aresta–nó: 0 -> 0\nComponentes de processamento prontos para uso sem internet.\nComponentes de processamento prontos para uso sem internet.\n\nAviso: ambiente não validado; uso de melhor esforço, sem garantia de suporte completo. Esta revisÃ£o ainda nÃ£o tem qualificaÃ§Ã£o oficial publicada para o ambiente.\nPreparando componente de processamento; a obtenção do pacote requer internet.\nAviso: ambiente não validado; uso de melhor esforço, sem garantia de suporte completo. Esta revisÃ£o ainda nÃ£o tem qualificaÃ§Ã£o oficial publicada para o ambiente.\nAviso: ambiente não validado; uso de melhor esforço, sem garantia de suporte completo. Esta revisÃ£o ainda nÃ£o tem qualificaÃ§Ã£o oficial publicada para o ambiente.\n",
+    "installation": {
+      "wheel": true,
+      "sdist": true,
+      "remote": true,
+      "outside_checkout": true,
+      "console": true,
+      "module": true
+    },
+    "pending_reason": null,
+    "reviewer": "Codex technical implementation review",
+    "logs": [
+      {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/c007823/12887174861/final-catalog.json.gz",
+        "sha256": "bd57e2092deaff4d650b40b416e187b6d96aa9346463e67a95666276530df4b1"
+      },
+      {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/c007823/12887697793/musl-notices/slot/installed-runtime.json.gz",
+        "sha256": "cbe5b924b09028afc943d13679763cb05f5a85690268c5f58ac036af0865ddf6"
+      },
+      {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/c007823/12887697793/musl-notices/slot/cache-notices.json.gz",
+        "sha256": "8e9c8660a64766a1020d3b490c9e69d178e725cd08b1de2b99971d2d94d9cbf8"
+      },
+      {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/audits/linux-musl-aarch64.json",
+        "sha256": "b2bd2cb714dc7bbb9e0d283401129dadc4caea185e8c49548ad5b8c670227596"
+      },
+      {
+        "path": "specs/003-add-cross-platform-support/evidence/twine-visual-review-2026-10-28.json",
+        "sha256": "c5106fa06acf5cb7e0400eaee7c61fe39e5b571dcafd8d67f9fabe4f20990b02"
+      },
+      {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/publication.json",
+        "sha256": "33bb6194eaac623b9ae488397b2a5b920b5112460f38b681b24b88328c620b3a"
+      }
+    ],
+    "license_audit": {
+      "approved": true,
+      "reviewer": "Codex technical implementation review",
+      "artifact_sha256": "b342050b5f6a9ff861e4528bca1710298366938491db2b8c3cad0ba16b680df9",
+      "components": [
+        {
+          "name": "Graphviz program and separately preserved third-party terms",
+          "license_expression": "EPL-2.0 AND LicenseRef-Graphviz-Third-Party-Terms",
+          "source_url": "https://gitlab.com/graphviz/graphviz/-/archive/16.1.0/graphviz-16.1.0.tar.gz",
+          "source_sha256": "1e028b2b3e84e946c1d3e8c47590f8f0741bba1041fe6eff36eee87e598ea249",
+          "notice_path": "third-party-notices/Graphviz-COPYING.txt",
+          "notice_sha256": "0becf16567beb77fa252b7664631dd177c8f9a1889e48995b45379c7130e5303",
+          "link_input_sha256": [
+            "b8afeb2c266518d6b2e5b14cc376ee23ed4460daabf1780e6442ac269bde3ea8",
+            "476efac99c57835509f932c20a2bf533a05667b848fd2f6fca7a63d492de9b78",
+            "3767d988f17e27337cc714c444dd1adf0acab84e0ac4e51cba8590a0b144386b",
+            "d030cd256c6ce0e17cc543e22452b589dc380c217ce4349591e282a6c689953d",
+            "d77c9963aaf1e7843584150c68df5444f8d21dcf4bef0613f5717e64f9f5d569",
+            "3d57836f986f4fbe7c71d3fc217e82a569df2530175b5f55d43ce061d15c4bbe",
+            "a637af2ecd973ecc111bd16df03a92cacd94754eac3147e538b409cc3dc3ce83",
+            "56a4af8371216445356de14213e0e76d7d990c8ef1a199ae0b90328c94ccb7bc",
+            "e30ee07ddd23ae88b80dcc157f156e276d4367be537fb8512dc22654bc54353e",
+            "a816fe1a64db653d66c1dd991408b6b1ea3cd36a980e04f716c6616b2cb9916a",
+            "d95ce9e474d02a3c2fd082869907538d6c4007dda5031cd8a8a898d71401e402",
+            "ed3faff5df0afb69fed37cddead39ac09ae8b23250516902bc76b24837b51b9d",
+            "349f48cc7f31c6744564ca0f05e672a19a4a9fda5c7cb7dc6a1cf22093934e8e",
+            "04ba3747053fd4e52e61eac6d5bc44a7313e3c6fd24cb68ef8c223aa6d851f26",
+            "b533f57fffa5b3db020942b8d038bf6c784aa0f1f542a8221da1a3e71211a5a8",
+            "49bb4de996b14d4e9dae3c4dbe5961c30a0ceac814fa3b0da339e354706b805b",
+            "2f4e198f3e4f81f89230a456ea2acdac64b5bea5f6c4c7a24c454a8bfa692f1c",
+            "63d8d1d97bf65fddb97c110fed15f7e223d55a2decddbe4e984a2546b1320bf0",
+            "f9ca7e1ce4001498484122f3e7370fd62a9bf0da19cdbe4080d1f76f38401b4f",
+            "b72e113c4088637351242e685648bf9d272ab58057e5d10555717480d3df9c12",
+            "e2c472ea4018820620a552bbb0f4c67bd7736ffe4bbec00937c817a914f97598",
+            "90b43a105be301d20ec2afa06134b25c1d59a7cc0ffa69c598a3683c415556d3",
+            "226cf73f624a3ea3a4103c381968f634964f41ab1eeb1e6b27f6adfe628c5b50",
+            "7d4d8add4aedca73bc306da16e67ce85e28f6bb4c6a9f429a223373a5b3110fe",
+            "b55f1d23eb45eb400a68a04fd399a4bfb494cd2b71084e76c6ed28736470712a",
+            "9887445b7ef23831675c047aff8925f37cabd7ed1a24d52caf3eccc61ec5b5fb",
+            "8c752501ba7cca4c106a799e8eaae128d10cd3db56e0021f358404eeb3bb5fe1",
+            "899f446688892df342a560eb5a20f5157531e9049f7762479c89d49e73ccb873",
+            "d6b2cbf392f13faf09b185e74fdc45770a68e2460f728094922d14c3536afc54",
+            "e9446fb4e12eb11248f95f04c0c2e533b99f4d529ee2e5ce8970ec07c1ca29bc",
+            "7969646fbbf21f4269b3e15b5842f2e8fb381fb4666bb2125e8e8a570f708d64",
+            "80644a2587e713fe05423fb2bfc5fbfdab33dc2c5678eac0623a694446c17273",
+            "ae0b1cbba1ebeee34e096563830d2c9e5e658da0fab4814f1e930a74049dd3c0",
+            "8a04efbd05f419d90a29cd4c7024f1c13c9c54b34d410e0f25bb178c43d7b4b5",
+            "9321362bb3319ebb24ab2bedbc7cac496e78cd5f6eb9714c6dd4bb3c085633bf",
+            "eef0994540a3f8bcd5703856dd257e34706898b62f571d3e8c3c25ad47a5d59e",
+            "c0cbdc5b87af320135c0b9225ed5e058c60049c15f50e16543a5cf7742d51f08",
+            "4563d9bd12d2ba5ce89af2f0aaab955e466624da91b57ab348f5c4473d7b1c66",
+            "eb3b74265090b03cc01e2708cfbb478e87dcafcf3b249b213f3dd9f38735c6c4",
+            "0d483a5d1bfa58b7b0b1b3fba0c34e8f3b9166ae1723184c50d84c1b8c7eb486",
+            "32ccf44707243ec54c36407d1316fca9080554aafc2bf64b5e09144ad006179c",
+            "a7cc586b3dd757829e6a2a29a8571a63554a14ff58a6d24e921489e350d41b66",
+            "4ac3824de33c246bcd630f6a871fdcadc59a4105949c53a86fb10ac499dcf148",
+            "336a124f30d250404b6787f987c6046136edae0f8cf22c6bd84dd8a854343aca",
+            "ace8169437603e4ecd1d5566ac90beac0e96df40de231876374b0b14a81bfc84",
+            "37816096f4305da7cd499a6a1777923f9a5893e6e7ca6e45ed481f2414e710d9",
+            "9fb6095f8ebc18ddeae7bdf047e230bb722f1e65bdb1d24ba3b3a3a51a29166f",
+            "6fb45b9da66f3a63ed13c2477e0fb38bc99112cc2969d79eaa3b589e4c0da933",
+            "363c52a0a1c70ba3fcac57b3a543c9c34b95068e00ef81e20737dc4304e04873",
+            "a98a551d36e7f66b01254252786e2a8f0e2802c8d06fe2ce77a7a7e7a38371ce",
+            "0c5e4ec2bd95d9927fe5d141323e8abd133b2463e69cbf0ff83044fd3079a47f",
+            "835247938a552a4a6d79f3f23ecbe0c5dd166b988fc2e1621f1085d74c585951",
+            "a7ba833b8275d5a44b9c17a9a76e48fe21d922199b768cfacfb33bd4b73e43f8",
+            "37e794b08720ac374a1428a6e194dbe252387ef1dc44a11974a9af4fb7017a10",
+            "753e99ac13a929bd5f93a9cfa0727f57dacccfa243099b21a6e0e9a4e4ac303b",
+            "f975557df231ed19796175e982f46c35dfed8f5aa3ab22da5499dfc1c5878a49",
+            "9ff6c396a2c6790723cb632cc3275daba131c82d5f95a3d964484a33f3618cce",
+            "66b68b1e0ea68a772b0745ac22a8be56de631f61ed97fb6607365947c5edc51f",
+            "1432607b39d73cc977d77611371472b77669b9d51b208483e8a4931b88ae5f26"
+          ],
+          "review_status": "reviewed-for-exact-paired-distribution"
+        },
+        {
+          "name": "LLVM libunwind",
+          "license_expression": "Apache-2.0 WITH LLVM-exception AND LicenseRef-LLVM-Per-File-Notices",
+          "source_url": "https://ziglang.org/download/0.15.2/zig-aarch64-linux-0.15.2.tar.xz",
+          "source_sha256": "958ed7d1e00d0ea76590d27666efbf7a932281b3d7ba0c6b01b0ff26498f667f",
+          "notice_path": "third-party-notices/SDK-lib__libunwind__LICENSE.TXT.txt",
+          "notice_sha256": "b5efebcaca80879234098e52d1725e6d9eb8fb96a19fce625d39184b705f7b6d",
+          "link_input_sha256": [
+            "c36e52231f017cffd61f1d692c2e204c2dbfe1115fc597bcf1a4848e496d9d80"
+          ],
+          "review_status": "reviewed-for-exact-paired-distribution"
+        },
+        {
+          "name": "LLVM libc++",
+          "license_expression": "Apache-2.0 WITH LLVM-exception AND LicenseRef-LLVM-Per-File-Notices",
+          "source_url": "https://ziglang.org/download/0.15.2/zig-aarch64-linux-0.15.2.tar.xz",
+          "source_sha256": "958ed7d1e00d0ea76590d27666efbf7a932281b3d7ba0c6b01b0ff26498f667f",
+          "notice_path": "third-party-notices/SDK-lib__libcxx__LICENSE.TXT.txt",
+          "notice_sha256": "539dd7aed86e8a4f12cbdd0e6c50c189c7d74847e4fecc64ce2c6ee3a01da38b",
+          "link_input_sha256": [
+            "bb9b29785b099f50deb61a3e7f17beae20b3cafa54209c9632e0788daed5d0de"
+          ],
+          "review_status": "reviewed-for-exact-paired-distribution"
+        },
+        {
+          "name": "musl libc.a",
+          "license_expression": "MIT AND LicenseRef-musl-Per-File-Notices",
+          "source_url": "https://ziglang.org/download/0.15.2/zig-aarch64-linux-0.15.2.tar.xz",
+          "source_sha256": "958ed7d1e00d0ea76590d27666efbf7a932281b3d7ba0c6b01b0ff26498f667f",
+          "notice_path": "third-party-notices/SDK-lib__libc__musl__COPYRIGHT.txt",
+          "notice_sha256": "f9bc4423732350eb0b3f7ed7e91d530298476f8fec0c6c427a1c04ade22655af",
+          "link_input_sha256": [
+            "f3e3c2f1eaf496d62947df1c16d35e72627318cfa3750eef255ba953c49372b5"
+          ],
+          "review_status": "reviewed-for-exact-paired-distribution"
+        },
+        {
+          "name": "Zig C runtime",
+          "license_expression": "MIT",
+          "source_url": "https://ziglang.org/download/0.15.2/zig-aarch64-linux-0.15.2.tar.xz",
+          "source_sha256": "958ed7d1e00d0ea76590d27666efbf7a932281b3d7ba0c6b01b0ff26498f667f",
+          "notice_path": "third-party-notices/SDK-LICENSE.txt",
+          "notice_sha256": "5c537d6853e005298a285d508cff9ac7192cea23576c840d485b2b586a7ff177",
+          "link_input_sha256": [
+            "4f7e41b63349a9783b254d546f8803fa22d1f4deccde5899395a56ec060fc306"
+          ],
+          "review_status": "reviewed-for-exact-paired-distribution"
+        },
+        {
+          "name": "musl crt1.o",
+          "license_expression": "MIT AND LicenseRef-musl-Per-File-Notices",
+          "source_url": "https://ziglang.org/download/0.15.2/zig-aarch64-linux-0.15.2.tar.xz",
+          "source_sha256": "958ed7d1e00d0ea76590d27666efbf7a932281b3d7ba0c6b01b0ff26498f667f",
+          "notice_path": "third-party-notices/SDK-lib__libc__musl__COPYRIGHT.txt",
+          "notice_sha256": "f9bc4423732350eb0b3f7ed7e91d530298476f8fec0c6c427a1c04ade22655af",
+          "link_input_sha256": [
+            "7656042916327ab550719c742179a00d9f29170fa61c49f917ce05cd26949fa8"
+          ],
+          "review_status": "reviewed-for-exact-paired-distribution"
+        },
+        {
+          "name": "Zig compiler runtime and preserved port notices",
+          "license_expression": "MIT AND LicenseRef-Runtime-Port-Notices",
+          "source_url": "https://ziglang.org/download/0.15.2/zig-aarch64-linux-0.15.2.tar.xz",
+          "source_sha256": "958ed7d1e00d0ea76590d27666efbf7a932281b3d7ba0c6b01b0ff26498f667f",
+          "notice_path": "third-party-notices/SDK-LICENSE.txt",
+          "notice_sha256": "5c537d6853e005298a285d508cff9ac7192cea23576c840d485b2b586a7ff177",
+          "link_input_sha256": [
+            "562489fc4d20e5e76540d632288af520dd739fbbbdceb3a44d70c104d2f628b9"
+          ],
+          "review_status": "reviewed-for-exact-paired-distribution"
+        },
+        {
+          "name": "LLVM libc++abi",
+          "license_expression": "Apache-2.0 WITH LLVM-exception AND LicenseRef-LLVM-Per-File-Notices",
+          "source_url": "https://ziglang.org/download/0.15.2/zig-aarch64-linux-0.15.2.tar.xz",
+          "source_sha256": "958ed7d1e00d0ea76590d27666efbf7a932281b3d7ba0c6b01b0ff26498f667f",
+          "notice_path": "third-party-notices/SDK-lib__libcxxabi__LICENSE.TXT.txt",
+          "notice_sha256": "e2b35be49f7284a45b7baca8fc7b3ab7440e7902392b2528a457816b5bb2a15c",
+          "link_input_sha256": [
+            "e13d9a613e232f5ecf53b8a8722143cfd99c97aa69c9466f31402740e578e040"
+          ],
+          "review_status": "reviewed-for-exact-paired-distribution"
+        },
+        {
+          "name": "Entity values",
+          "license_expression": "BSD-3-Clause",
+          "source_url": "https://raw.githubusercontent.com/whatwg/html-build/283a3531a61106d07d9a7d9fb3e6f3b9bfd33d70/entities/out/entities.json",
+          "source_sha256": "d741d877ac77c4194c4ad526b5b4a19aef8dfe411ab840a466891cdbb9f362e6",
+          "notice_path": "third-party-notices/ENTITY-DATA-LICENSES.txt",
+          "notice_sha256": "b6a37ddb2a6efd2eac61c0c99be2d546140ca5578dfa87f94cfa1ec58e6b3d57",
+          "link_input_sha256": [],
+          "review_status": "reviewed-for-exact-paired-distribution",
+          "selectors": null
+        },
+        {
+          "name": "Entity selectors",
+          "license_expression": "W3C-20021231",
+          "source_url": "https://www.w3.org/2003/entities/2007/xhtml1-lat1.ent",
+          "source_sha256": "11b3abc191cc5f33fee63be49fabb35a8052e629949bc793f823a0d819bbfd66",
+          "notice_path": "third-party-notices/ENTITY-DATA-LICENSES.txt",
+          "notice_sha256": "b6a37ddb2a6efd2eac61c0c99be2d546140ca5578dfa87f94cfa1ec58e6b3d57",
+          "link_input_sha256": [],
+          "review_status": "reviewed-for-exact-paired-distribution",
+          "selectors": "All three complete W3C selector files and individual hashes accompany sources"
+        }
+      ],
+      "log": {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/audits/linux-musl-aarch64.json",
+        "sha256": "b2bd2cb714dc7bbb9e0d283401129dadc4caea185e8c49548ad5b8c670227596"
+      }
+    },
+    "twine": {
+      "version": "2.12.1",
+      "reviewer": "user",
+      "outputs": [
+        {
+          "case": "crossing",
+          "sha256": "aa821f1611a98d479811f652197070728904bd2afe31c8e6fca64ed9fbec8e8b",
+          "reopened": true
+        },
+        {
+          "case": "coincident",
+          "sha256": "8644eeb3404043bec66b149c0ed3f2f4bea0600914a944e75c5f6464b78c1ed6",
+          "reopened": true
+        },
+        {
+          "case": "isolated_overlap",
+          "sha256": "bef1e0132bce9b72f1317cdbb43d3c2a54e604632459cbda2c5af7d52c17a03a",
+          "reopened": true
+        },
+        {
+          "case": "connected_overlap",
+          "sha256": "137e849cfdf04ef3db7ed9057a7142ebecc403ee78952f307138ff5ecca72618",
+          "reopened": true
+        },
+        {
+          "case": "through_isolated",
+          "sha256": "f2460867ce13305139836fc5737093e3e513fae53c4bee8fe0742fe5fc98c341",
+          "reopened": true
+        },
+        {
+          "case": "through_connected",
+          "sha256": "8c13ace7ce2f65beff622e529456029fda6c7e1f624a5046886a7065f60a2f3f",
+          "reopened": true
+        }
+      ],
+      "log": {
+        "path": "specs/003-add-cross-platform-support/evidence/twine-visual-review-2026-10-28.json",
+        "sha256": "c5106fa06acf5cb7e0400eaee7c61fe39e5b571dcafd8d67f9fabe4f20990b02"
+      }
+    },
+    "constituent_evidence": {
+      "public_catalog_run_id": 40852552232,
+      "recovery_run_id": 40852552179,
+      "recovery_revision": "c0078230a3bf1a2b934f1754e8b12664f100b4cc",
+      "visual_review_revision": "07688e264e6c9915790c2728beb24552a23f6388",
+      "visual_binding": "Same six byte hashes, checked for all three final installation modes; no claim of a new GUI session.",
+      "recovery_scope": "Installed real engine, process exits and OS locks; transfer/disk/permission faults controlled. Tests executed only in Actions.",
+      "source_build_revision": "46d111de81038d6ae0e7e7772813693c5b0a2345",
+      "public_delivery": {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/publication.json",
+        "sha256": "33bb6194eaac623b9ae488397b2a5b920b5112460f38b681b24b88328c620b3a"
+      }
+    }
+  },
+  {
+    "id": "final-abi-linux-musl-aarch64-3.14-c007823",
+    "target_id": "abi-linux-musl-aarch64",
+    "python_minor": "3.14",
+    "python_patch": "3.14.5",
+    "python_origin": "GitHub Actions native CPython; exact patch recorded",
+    "application_revision": "c0078230a3bf1a2b934f1754e8b12664f100b4cc",
+    "artifact_id": "graphviz-16.1.0-linux-musl-aarch64",
+    "artifact_sha256": "b342050b5f6a9ff861e4528bca1710298366938491db2b8c3cad0ba16b680df9",
+    "source_state": "committed",
+    "recipe_revision": "linux-musl-aarch64",
+    "package_sha256": "d3823a6b892e5b779753950d7744ac155c0355ff428161149db88c9ac4563133",
+    "os": "linux",
+    "os_version": "3.22.4",
+    "distribution_id": "alpine",
+    "channel": "",
+    "cpu_variant": "distribution-default",
+    "abi": "musl",
+    "libc_version": "1.2.5",
+    "architecture": "aarch64",
+    "kernel": "7.0.0-1017-azure",
+    "cpu": "aarch64",
+    "image_id": "python@sha256:27b691f87878a079100a3d8fafcd66b3c54d931598f307bcb54617c395f5b43c",
+    "image_digest": "846ddf190ed6b6da5d5f5cbf4bd0de523edff1f6419068351a569d027049fb3a",
+    "captured_at": "2026-10-29T09:51:17.076494+00:00",
+    "environment_kind": "github-actions",
+    "github_actions": {
+      "repository": "Extremois/desembaraca-twine",
+      "run_id": "40852552232",
+      "run_sha": "c0078230a3bf1a2b934f1754e8b12664f100b4cc",
+      "run_url": "https://github.com/Extremois/desembaraca-twine/actions/runs/40852552232",
+      "execution_kind": "container"
+    },
+    "snapshot_id": null,
+    "checks": {
+      "offline": true,
+      "interruption": true,
+      "licenses": true,
+      "repair": true,
+      "first_run": true,
+      "installation": true,
+      "preservation": true,
+      "crash": true,
+      "concurrency": true,
+      "twine": true
+    },
+    "passed": true,
+    "pending_checks": [],
+    "observations": {
+      "cache_matches_platform": true,
+      "invalid_input_refused_without_acquisition": true,
+      "executable_mode": 493,
+      "runtime_schema": 2,
+      "healthy_generation_reused": true,
+      "macos_security_assessed": false,
+      "macos_signing_required": false,
+      "paths_with_spaces_and_accents": true
+    },
+    "commands": [
+      "external venv installation --no-index",
+      "console script --help",
+      "python -m twine_edge_overlap --help",
+      "CLI invalid first input without acquisition",
+      "CLI first valid file",
+      "CLI --prepare-runtime",
+      "public corpus using normal installed runtime"
+    ],
+    "corpus": [
+      {
+        "case": "crossing",
+        "input_sha256": "d7c694abfcf286588792ea3f537bebafbe45eb4a7774252782bda6dc8319b25b",
+        "output_sha256": "aa821f1611a98d479811f652197070728904bd2afe31c8e6fca64ed9fbec8e8b",
+        "before": [
+          1,
+          0,
+          0
+        ],
+        "after": [
+          0,
+          0,
+          0
+        ],
+        "original_preserved": true,
+        "semantics_preserved": true,
+        "status": "sucesso"
+      },
+      {
+        "case": "coincident",
+        "input_sha256": "f63665a740e024a5e361546627f324ce8ddb9b1792b55b16984a87eee6ac49ea",
+        "output_sha256": "8644eeb3404043bec66b149c0ed3f2f4bea0600914a944e75c5f6464b78c1ed6",
+        "before": [
+          1,
+          2,
+          0
+        ],
+        "after": [
+          0,
+          0,
+          0
+        ],
+        "original_preserved": true,
+        "semantics_preserved": true,
+        "status": "sucesso"
+      },
+      {
+        "case": "clean",
+        "input_sha256": "5e8d75b9a72cd1afcaeb7b3646cc5d0cec1f7368b2b6275f324eaa7c3f1299f6",
+        "output_sha256": "5e8d75b9a72cd1afcaeb7b3646cc5d0cec1f7368b2b6275f324eaa7c3f1299f6",
+        "before": [
+          0,
+          0,
+          0
+        ],
+        "after": [
+          0,
+          0,
+          0
+        ],
+        "original_preserved": true,
+        "semantics_preserved": true,
+        "status": "sucesso"
+      },
+      {
+        "case": "isolated_overlap",
+        "input_sha256": "6ce9fbd0eb53e57209879944c2ebdc2b66bc6ea26d68fb8a2bd9bd2104f99ef6",
+        "output_sha256": "bef1e0132bce9b72f1317cdbb43d3c2a54e604632459cbda2c5af7d52c17a03a",
+        "before": [
+          0,
+          1,
+          0
+        ],
+        "after": [
+          0,
+          0,
+          0
+        ],
+        "original_preserved": true,
+        "semantics_preserved": true,
+        "status": "sucesso"
+      },
+      {
+        "case": "connected_overlap",
+        "input_sha256": "adf06218e2172f4e0b7bd640bc3cb24cd10de327da92848f888943bf6edb50fb",
+        "output_sha256": "137e849cfdf04ef3db7ed9057a7142ebecc403ee78952f307138ff5ecca72618",
+        "before": [
+          1,
+          1,
+          1
+        ],
+        "after": [
+          0,
+          0,
+          0
+        ],
+        "original_preserved": true,
+        "semantics_preserved": true,
+        "status": "sucesso"
+      },
+      {
+        "case": "through_isolated",
+        "input_sha256": "e584fe80a571da6355922139925a930603454fc5e27a6a44037401e433f6cf36",
+        "output_sha256": "f2460867ce13305139836fc5737093e3e513fae53c4bee8fe0742fe5fc98c341",
+        "before": [
+          0,
+          0,
+          1
+        ],
+        "after": [
+          0,
+          0,
+          0
+        ],
+        "original_preserved": true,
+        "semantics_preserved": true,
+        "status": "sucesso"
+      },
+      {
+        "case": "through_connected",
+        "input_sha256": "481d38cd9ba76522c25530ea382e13ee73f2ff1000829e335c58dff96f4de6f8",
+        "output_sha256": "8c13ace7ce2f65beff622e529456029fda6c7e1f624a5046886a7065f60a2f3f",
+        "before": [
+          0,
+          0,
+          1
+        ],
+        "after": [
+          0,
+          0,
+          0
+        ],
+        "original_preserved": true,
+        "semantics_preserved": true,
+        "status": "sucesso"
+      },
+      {
+        "case": "border_only",
+        "input_sha256": "da0a8b50743446027bccf723f022a8081efe1fd135a118e504615b81ecf88701",
+        "output_sha256": "da0a8b50743446027bccf723f022a8081efe1fd135a118e504615b81ecf88701",
+        "before": [
+          0,
+          0,
+          0
+        ],
+        "after": [
+          0,
+          0,
+          0
+        ],
+        "original_preserved": true,
+        "semantics_preserved": true,
+        "status": "sucesso"
+      },
+      {
+        "case": "cycle",
+        "input_sha256": "a35feef5fdb5d2e5a41b99fe826fd9f0ebb861c50c6f148afc0597f87b6ea6c1",
+        "output_sha256": "a35feef5fdb5d2e5a41b99fe826fd9f0ebb861c50c6f148afc0597f87b6ea6c1",
+        "before": [
+          0,
+          0,
+          0
+        ],
+        "after": [
+          0,
+          0,
+          0
+        ],
+        "original_preserved": true,
+        "semantics_preserved": true,
+        "status": "sucesso"
+      },
+      {
+        "case": "parallel_occurrences",
+        "input_sha256": "cda380247a05431a6d4aaf3a70eb5488ec01770fe89f9562b95691d4823f8df0",
+        "output_sha256": "cda380247a05431a6d4aaf3a70eb5488ec01770fe89f9562b95691d4823f8df0",
+        "before": [
+          0,
+          0,
+          0
+        ],
+        "after": [
+          0,
+          0,
+          0
+        ],
+        "original_preserved": true,
+        "semantics_preserved": true,
+        "status": "sucesso"
+      },
+      {
+        "case": "self_loop",
+        "input_sha256": "7df0478afa2ca0e1e400454d2bbba7571a3f9de9d2d4417f5640e4cd3e94921e",
+        "output_sha256": "7df0478afa2ca0e1e400454d2bbba7571a3f9de9d2d4417f5640e4cd3e94921e",
+        "before": [
+          0,
+          0,
+          0
+        ],
+        "after": [
+          0,
+          0,
+          0
+        ],
+        "original_preserved": true,
+        "semantics_preserved": true,
+        "status": "sucesso"
+      },
+      {
+        "case": "reciprocal",
+        "input_sha256": "f2f16549e43ad54c3f09ba12cf7ebb677fb72a32d2c3a3ac6ba82c311e626979",
+        "output_sha256": "f2f16549e43ad54c3f09ba12cf7ebb677fb72a32d2c3a3ac6ba82c311e626979",
+        "before": [
+          1,
+          0,
+          0
+        ],
+        "after": [
+          1,
+          0,
+          0
+        ],
+        "original_preserved": true,
+        "semantics_preserved": true,
+        "status": "limitações"
+      },
+      {
+        "case": "empty",
+        "input_sha256": "45e3a62ea1b3c31df65b0f7a7bac769ddf9aafc4006bc7cf379d19b2c289c23c",
+        "output_sha256": "45e3a62ea1b3c31df65b0f7a7bac769ddf9aafc4006bc7cf379d19b2c289c23c",
+        "before": [
+          0,
+          0,
+          0
+        ],
+        "after": [
+          0,
+          0,
+          0
+        ],
+        "original_preserved": true,
+        "semantics_preserved": true,
+        "status": "sucesso"
+      }
+    ],
+    "network": {
+      "observation": "github-actions-log",
+      "attempts": 0,
+      "reviewer": "Codex technical implementation review",
+      "log": {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/qualification/abi-linux-musl-aarch64-3.14-network.json",
+        "sha256": "33b8083197f2e791a2e93376e8825706dc9579e37fb87393750b43068810aa90"
+      }
+    },
+    "log_text": "Estado: sucesso\nLayout melhorado sem aumentar nenhuma das três contagens\nArquivo gerado: <test-work>/crossing.layout.twee\nPares de arestas: 1 -> 0\nPares de nós: 0 -> 0\nPares aresta–nó: 0 -> 0\nComponentes de processamento prontos para uso sem internet.\nComponentes de processamento prontos para uso sem internet.\n\nAviso: ambiente não validado; uso de melhor esforço, sem garantia de suporte completo. Esta revisÃ£o ainda nÃ£o tem qualificaÃ§Ã£o oficial publicada para o ambiente.\nPreparando componente de processamento; a obtenção do pacote requer internet.\nAviso: ambiente não validado; uso de melhor esforço, sem garantia de suporte completo. Esta revisÃ£o ainda nÃ£o tem qualificaÃ§Ã£o oficial publicada para o ambiente.\nAviso: ambiente não validado; uso de melhor esforço, sem garantia de suporte completo. Esta revisÃ£o ainda nÃ£o tem qualificaÃ§Ã£o oficial publicada para o ambiente.\n",
+    "installation": {
+      "wheel": true,
+      "sdist": true,
+      "remote": true,
+      "outside_checkout": true,
+      "console": true,
+      "module": true
+    },
+    "pending_reason": null,
+    "reviewer": "Codex technical implementation review",
+    "logs": [
+      {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/c007823/12886989918/final-catalog.json.gz",
+        "sha256": "aa1821b3526c3e4da97c3f8f5677dfa2f4ea27ae691e439371ecdf95c18dd690"
+      },
+      {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/c007823/12888395587/musl-notices/slot/installed-runtime.json.gz",
+        "sha256": "d16c27415e3cd6f3f4ae023c3f4d43ed9f63d35ff98efb8d08daa105113ddd48"
+      },
+      {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/c007823/12888395587/musl-notices/slot/cache-notices.json.gz",
+        "sha256": "5a81eff8055bb45d53e58aebc581b87a5dc22ab7c9f6cd9d7f78bb26e26c098d"
+      },
+      {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/audits/linux-musl-aarch64.json",
+        "sha256": "b2bd2cb714dc7bbb9e0d283401129dadc4caea185e8c49548ad5b8c670227596"
+      },
+      {
+        "path": "specs/003-add-cross-platform-support/evidence/twine-visual-review-2026-10-28.json",
+        "sha256": "c5106fa06acf5cb7e0400eaee7c61fe39e5b571dcafd8d67f9fabe4f20990b02"
+      },
+      {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/publication.json",
+        "sha256": "33bb6194eaac623b9ae488397b2a5b920b5112460f38b681b24b88328c620b3a"
+      }
+    ],
+    "license_audit": {
+      "approved": true,
+      "reviewer": "Codex technical implementation review",
+      "artifact_sha256": "b342050b5f6a9ff861e4528bca1710298366938491db2b8c3cad0ba16b680df9",
+      "components": [
+        {
+          "name": "Graphviz program and separately preserved third-party terms",
+          "license_expression": "EPL-2.0 AND LicenseRef-Graphviz-Third-Party-Terms",
+          "source_url": "https://gitlab.com/graphviz/graphviz/-/archive/16.1.0/graphviz-16.1.0.tar.gz",
+          "source_sha256": "1e028b2b3e84e946c1d3e8c47590f8f0741bba1041fe6eff36eee87e598ea249",
+          "notice_path": "third-party-notices/Graphviz-COPYING.txt",
+          "notice_sha256": "0becf16567beb77fa252b7664631dd177c8f9a1889e48995b45379c7130e5303",
+          "link_input_sha256": [
+            "b8afeb2c266518d6b2e5b14cc376ee23ed4460daabf1780e6442ac269bde3ea8",
+            "476efac99c57835509f932c20a2bf533a05667b848fd2f6fca7a63d492de9b78",
+            "3767d988f17e27337cc714c444dd1adf0acab84e0ac4e51cba8590a0b144386b",
+            "d030cd256c6ce0e17cc543e22452b589dc380c217ce4349591e282a6c689953d",
+            "d77c9963aaf1e7843584150c68df5444f8d21dcf4bef0613f5717e64f9f5d569",
+            "3d57836f986f4fbe7c71d3fc217e82a569df2530175b5f55d43ce061d15c4bbe",
+            "a637af2ecd973ecc111bd16df03a92cacd94754eac3147e538b409cc3dc3ce83",
+            "56a4af8371216445356de14213e0e76d7d990c8ef1a199ae0b90328c94ccb7bc",
+            "e30ee07ddd23ae88b80dcc157f156e276d4367be537fb8512dc22654bc54353e",
+            "a816fe1a64db653d66c1dd991408b6b1ea3cd36a980e04f716c6616b2cb9916a",
+            "d95ce9e474d02a3c2fd082869907538d6c4007dda5031cd8a8a898d71401e402",
+            "ed3faff5df0afb69fed37cddead39ac09ae8b23250516902bc76b24837b51b9d",
+            "349f48cc7f31c6744564ca0f05e672a19a4a9fda5c7cb7dc6a1cf22093934e8e",
+            "04ba3747053fd4e52e61eac6d5bc44a7313e3c6fd24cb68ef8c223aa6d851f26",
+            "b533f57fffa5b3db020942b8d038bf6c784aa0f1f542a8221da1a3e71211a5a8",
+            "49bb4de996b14d4e9dae3c4dbe5961c30a0ceac814fa3b0da339e354706b805b",
+            "2f4e198f3e4f81f89230a456ea2acdac64b5bea5f6c4c7a24c454a8bfa692f1c",
+            "63d8d1d97bf65fddb97c110fed15f7e223d55a2decddbe4e984a2546b1320bf0",
+            "f9ca7e1ce4001498484122f3e7370fd62a9bf0da19cdbe4080d1f76f38401b4f",
+            "b72e113c4088637351242e685648bf9d272ab58057e5d10555717480d3df9c12",
+            "e2c472ea4018820620a552bbb0f4c67bd7736ffe4bbec00937c817a914f97598",
+            "90b43a105be301d20ec2afa06134b25c1d59a7cc0ffa69c598a3683c415556d3",
+            "226cf73f624a3ea3a4103c381968f634964f41ab1eeb1e6b27f6adfe628c5b50",
+            "7d4d8add4aedca73bc306da16e67ce85e28f6bb4c6a9f429a223373a5b3110fe",
+            "b55f1d23eb45eb400a68a04fd399a4bfb494cd2b71084e76c6ed28736470712a",
+            "9887445b7ef23831675c047aff8925f37cabd7ed1a24d52caf3eccc61ec5b5fb",
+            "8c752501ba7cca4c106a799e8eaae128d10cd3db56e0021f358404eeb3bb5fe1",
+            "899f446688892df342a560eb5a20f5157531e9049f7762479c89d49e73ccb873",
+            "d6b2cbf392f13faf09b185e74fdc45770a68e2460f728094922d14c3536afc54",
+            "e9446fb4e12eb11248f95f04c0c2e533b99f4d529ee2e5ce8970ec07c1ca29bc",
+            "7969646fbbf21f4269b3e15b5842f2e8fb381fb4666bb2125e8e8a570f708d64",
+            "80644a2587e713fe05423fb2bfc5fbfdab33dc2c5678eac0623a694446c17273",
+            "ae0b1cbba1ebeee34e096563830d2c9e5e658da0fab4814f1e930a74049dd3c0",
+            "8a04efbd05f419d90a29cd4c7024f1c13c9c54b34d410e0f25bb178c43d7b4b5",
+            "9321362bb3319ebb24ab2bedbc7cac496e78cd5f6eb9714c6dd4bb3c085633bf",
+            "eef0994540a3f8bcd5703856dd257e34706898b62f571d3e8c3c25ad47a5d59e",
+            "c0cbdc5b87af320135c0b9225ed5e058c60049c15f50e16543a5cf7742d51f08",
+            "4563d9bd12d2ba5ce89af2f0aaab955e466624da91b57ab348f5c4473d7b1c66",
+            "eb3b74265090b03cc01e2708cfbb478e87dcafcf3b249b213f3dd9f38735c6c4",
+            "0d483a5d1bfa58b7b0b1b3fba0c34e8f3b9166ae1723184c50d84c1b8c7eb486",
+            "32ccf44707243ec54c36407d1316fca9080554aafc2bf64b5e09144ad006179c",
+            "a7cc586b3dd757829e6a2a29a8571a63554a14ff58a6d24e921489e350d41b66",
+            "4ac3824de33c246bcd630f6a871fdcadc59a4105949c53a86fb10ac499dcf148",
+            "336a124f30d250404b6787f987c6046136edae0f8cf22c6bd84dd8a854343aca",
+            "ace8169437603e4ecd1d5566ac90beac0e96df40de231876374b0b14a81bfc84",
+            "37816096f4305da7cd499a6a1777923f9a5893e6e7ca6e45ed481f2414e710d9",
+            "9fb6095f8ebc18ddeae7bdf047e230bb722f1e65bdb1d24ba3b3a3a51a29166f",
+            "6fb45b9da66f3a63ed13c2477e0fb38bc99112cc2969d79eaa3b589e4c0da933",
+            "363c52a0a1c70ba3fcac57b3a543c9c34b95068e00ef81e20737dc4304e04873",
+            "a98a551d36e7f66b01254252786e2a8f0e2802c8d06fe2ce77a7a7e7a38371ce",
+            "0c5e4ec2bd95d9927fe5d141323e8abd133b2463e69cbf0ff83044fd3079a47f",
+            "835247938a552a4a6d79f3f23ecbe0c5dd166b988fc2e1621f1085d74c585951",
+            "a7ba833b8275d5a44b9c17a9a76e48fe21d922199b768cfacfb33bd4b73e43f8",
+            "37e794b08720ac374a1428a6e194dbe252387ef1dc44a11974a9af4fb7017a10",
+            "753e99ac13a929bd5f93a9cfa0727f57dacccfa243099b21a6e0e9a4e4ac303b",
+            "f975557df231ed19796175e982f46c35dfed8f5aa3ab22da5499dfc1c5878a49",
+            "9ff6c396a2c6790723cb632cc3275daba131c82d5f95a3d964484a33f3618cce",
+            "66b68b1e0ea68a772b0745ac22a8be56de631f61ed97fb6607365947c5edc51f",
+            "1432607b39d73cc977d77611371472b77669b9d51b208483e8a4931b88ae5f26"
+          ],
+          "review_status": "reviewed-for-exact-paired-distribution"
+        },
+        {
+          "name": "LLVM libunwind",
+          "license_expression": "Apache-2.0 WITH LLVM-exception AND LicenseRef-LLVM-Per-File-Notices",
+          "source_url": "https://ziglang.org/download/0.15.2/zig-aarch64-linux-0.15.2.tar.xz",
+          "source_sha256": "958ed7d1e00d0ea76590d27666efbf7a932281b3d7ba0c6b01b0ff26498f667f",
+          "notice_path": "third-party-notices/SDK-lib__libunwind__LICENSE.TXT.txt",
+          "notice_sha256": "b5efebcaca80879234098e52d1725e6d9eb8fb96a19fce625d39184b705f7b6d",
+          "link_input_sha256": [
+            "c36e52231f017cffd61f1d692c2e204c2dbfe1115fc597bcf1a4848e496d9d80"
+          ],
+          "review_status": "reviewed-for-exact-paired-distribution"
+        },
+        {
+          "name": "LLVM libc++",
+          "license_expression": "Apache-2.0 WITH LLVM-exception AND LicenseRef-LLVM-Per-File-Notices",
+          "source_url": "https://ziglang.org/download/0.15.2/zig-aarch64-linux-0.15.2.tar.xz",
+          "source_sha256": "958ed7d1e00d0ea76590d27666efbf7a932281b3d7ba0c6b01b0ff26498f667f",
+          "notice_path": "third-party-notices/SDK-lib__libcxx__LICENSE.TXT.txt",
+          "notice_sha256": "539dd7aed86e8a4f12cbdd0e6c50c189c7d74847e4fecc64ce2c6ee3a01da38b",
+          "link_input_sha256": [
+            "bb9b29785b099f50deb61a3e7f17beae20b3cafa54209c9632e0788daed5d0de"
+          ],
+          "review_status": "reviewed-for-exact-paired-distribution"
+        },
+        {
+          "name": "musl libc.a",
+          "license_expression": "MIT AND LicenseRef-musl-Per-File-Notices",
+          "source_url": "https://ziglang.org/download/0.15.2/zig-aarch64-linux-0.15.2.tar.xz",
+          "source_sha256": "958ed7d1e00d0ea76590d27666efbf7a932281b3d7ba0c6b01b0ff26498f667f",
+          "notice_path": "third-party-notices/SDK-lib__libc__musl__COPYRIGHT.txt",
+          "notice_sha256": "f9bc4423732350eb0b3f7ed7e91d530298476f8fec0c6c427a1c04ade22655af",
+          "link_input_sha256": [
+            "f3e3c2f1eaf496d62947df1c16d35e72627318cfa3750eef255ba953c49372b5"
+          ],
+          "review_status": "reviewed-for-exact-paired-distribution"
+        },
+        {
+          "name": "Zig C runtime",
+          "license_expression": "MIT",
+          "source_url": "https://ziglang.org/download/0.15.2/zig-aarch64-linux-0.15.2.tar.xz",
+          "source_sha256": "958ed7d1e00d0ea76590d27666efbf7a932281b3d7ba0c6b01b0ff26498f667f",
+          "notice_path": "third-party-notices/SDK-LICENSE.txt",
+          "notice_sha256": "5c537d6853e005298a285d508cff9ac7192cea23576c840d485b2b586a7ff177",
+          "link_input_sha256": [
+            "4f7e41b63349a9783b254d546f8803fa22d1f4deccde5899395a56ec060fc306"
+          ],
+          "review_status": "reviewed-for-exact-paired-distribution"
+        },
+        {
+          "name": "musl crt1.o",
+          "license_expression": "MIT AND LicenseRef-musl-Per-File-Notices",
+          "source_url": "https://ziglang.org/download/0.15.2/zig-aarch64-linux-0.15.2.tar.xz",
+          "source_sha256": "958ed7d1e00d0ea76590d27666efbf7a932281b3d7ba0c6b01b0ff26498f667f",
+          "notice_path": "third-party-notices/SDK-lib__libc__musl__COPYRIGHT.txt",
+          "notice_sha256": "f9bc4423732350eb0b3f7ed7e91d530298476f8fec0c6c427a1c04ade22655af",
+          "link_input_sha256": [
+            "7656042916327ab550719c742179a00d9f29170fa61c49f917ce05cd26949fa8"
+          ],
+          "review_status": "reviewed-for-exact-paired-distribution"
+        },
+        {
+          "name": "Zig compiler runtime and preserved port notices",
+          "license_expression": "MIT AND LicenseRef-Runtime-Port-Notices",
+          "source_url": "https://ziglang.org/download/0.15.2/zig-aarch64-linux-0.15.2.tar.xz",
+          "source_sha256": "958ed7d1e00d0ea76590d27666efbf7a932281b3d7ba0c6b01b0ff26498f667f",
+          "notice_path": "third-party-notices/SDK-LICENSE.txt",
+          "notice_sha256": "5c537d6853e005298a285d508cff9ac7192cea23576c840d485b2b586a7ff177",
+          "link_input_sha256": [
+            "562489fc4d20e5e76540d632288af520dd739fbbbdceb3a44d70c104d2f628b9"
+          ],
+          "review_status": "reviewed-for-exact-paired-distribution"
+        },
+        {
+          "name": "LLVM libc++abi",
+          "license_expression": "Apache-2.0 WITH LLVM-exception AND LicenseRef-LLVM-Per-File-Notices",
+          "source_url": "https://ziglang.org/download/0.15.2/zig-aarch64-linux-0.15.2.tar.xz",
+          "source_sha256": "958ed7d1e00d0ea76590d27666efbf7a932281b3d7ba0c6b01b0ff26498f667f",
+          "notice_path": "third-party-notices/SDK-lib__libcxxabi__LICENSE.TXT.txt",
+          "notice_sha256": "e2b35be49f7284a45b7baca8fc7b3ab7440e7902392b2528a457816b5bb2a15c",
+          "link_input_sha256": [
+            "e13d9a613e232f5ecf53b8a8722143cfd99c97aa69c9466f31402740e578e040"
+          ],
+          "review_status": "reviewed-for-exact-paired-distribution"
+        },
+        {
+          "name": "Entity values",
+          "license_expression": "BSD-3-Clause",
+          "source_url": "https://raw.githubusercontent.com/whatwg/html-build/283a3531a61106d07d9a7d9fb3e6f3b9bfd33d70/entities/out/entities.json",
+          "source_sha256": "d741d877ac77c4194c4ad526b5b4a19aef8dfe411ab840a466891cdbb9f362e6",
+          "notice_path": "third-party-notices/ENTITY-DATA-LICENSES.txt",
+          "notice_sha256": "b6a37ddb2a6efd2eac61c0c99be2d546140ca5578dfa87f94cfa1ec58e6b3d57",
+          "link_input_sha256": [],
+          "review_status": "reviewed-for-exact-paired-distribution",
+          "selectors": null
+        },
+        {
+          "name": "Entity selectors",
+          "license_expression": "W3C-20021231",
+          "source_url": "https://www.w3.org/2003/entities/2007/xhtml1-lat1.ent",
+          "source_sha256": "11b3abc191cc5f33fee63be49fabb35a8052e629949bc793f823a0d819bbfd66",
+          "notice_path": "third-party-notices/ENTITY-DATA-LICENSES.txt",
+          "notice_sha256": "b6a37ddb2a6efd2eac61c0c99be2d546140ca5578dfa87f94cfa1ec58e6b3d57",
+          "link_input_sha256": [],
+          "review_status": "reviewed-for-exact-paired-distribution",
+          "selectors": "All three complete W3C selector files and individual hashes accompany sources"
+        }
+      ],
+      "log": {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/audits/linux-musl-aarch64.json",
+        "sha256": "b2bd2cb714dc7bbb9e0d283401129dadc4caea185e8c49548ad5b8c670227596"
+      }
+    },
+    "twine": {
+      "version": "2.12.1",
+      "reviewer": "user",
+      "outputs": [
+        {
+          "case": "crossing",
+          "sha256": "aa821f1611a98d479811f652197070728904bd2afe31c8e6fca64ed9fbec8e8b",
+          "reopened": true
+        },
+        {
+          "case": "coincident",
+          "sha256": "8644eeb3404043bec66b149c0ed3f2f4bea0600914a944e75c5f6464b78c1ed6",
+          "reopened": true
+        },
+        {
+          "case": "isolated_overlap",
+          "sha256": "bef1e0132bce9b72f1317cdbb43d3c2a54e604632459cbda2c5af7d52c17a03a",
+          "reopened": true
+        },
+        {
+          "case": "connected_overlap",
+          "sha256": "137e849cfdf04ef3db7ed9057a7142ebecc403ee78952f307138ff5ecca72618",
+          "reopened": true
+        },
+        {
+          "case": "through_isolated",
+          "sha256": "f2460867ce13305139836fc5737093e3e513fae53c4bee8fe0742fe5fc98c341",
+          "reopened": true
+        },
+        {
+          "case": "through_connected",
+          "sha256": "8c13ace7ce2f65beff622e529456029fda6c7e1f624a5046886a7065f60a2f3f",
+          "reopened": true
+        }
+      ],
+      "log": {
+        "path": "specs/003-add-cross-platform-support/evidence/twine-visual-review-2026-10-28.json",
+        "sha256": "c5106fa06acf5cb7e0400eaee7c61fe39e5b571dcafd8d67f9fabe4f20990b02"
+      }
+    },
+    "constituent_evidence": {
+      "public_catalog_run_id": 40852552232,
+      "recovery_run_id": 40852552179,
+      "recovery_revision": "c0078230a3bf1a2b934f1754e8b12664f100b4cc",
+      "visual_review_revision": "07688e264e6c9915790c2728beb24552a23f6388",
+      "visual_binding": "Same six byte hashes, checked for all three final installation modes; no claim of a new GUI session.",
+      "recovery_scope": "Installed real engine, process exits and OS locks; transfer/disk/permission faults controlled. Tests executed only in Actions.",
+      "source_build_revision": "46d111de81038d6ae0e7e7772813693c5b0a2345",
+      "public_delivery": {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/publication.json",
+        "sha256": "33bb6194eaac623b9ae488397b2a5b920b5112460f38b681b24b88328c620b3a"
+      }
+    }
+  }
+]

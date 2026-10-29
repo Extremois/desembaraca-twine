@@ -1,0 +1,19 @@
+{
+  "kind": "candidate-source-review-material",
+  "approved": false,
+  "artifact_id": "linux-musl-x86_64",
+  "executable_sha256": "d853e6011150c86edbb487ccabc2ec375950cbef3e364dccb2f7e47a5f34ee55",
+  "provenance_sha256": "cea6884b8c3331ec66ce94227591b9ef5bd6dc3ea5e102ad92e6c49e9a5899e8",
+  "archive": "sources.tar.gz",
+  "archive_sha256": "f196f2e30a38a7414bcbc6ea00c56e609b71abd65b1d11b026883d1ed35fc859",
+  "archive_bytes": 68248557,
+  "sdk_files": 18102,
+  "selected_sdk_header_files": 0,
+  "file_count": 18241,
+  "expanded_bytes": 216542103,
+  "pending": [
+    "per-file applicability and complete source offer review",
+    "rebuild/relink execution from exported sources",
+    "immutable public source distribution"
+  ]
+}

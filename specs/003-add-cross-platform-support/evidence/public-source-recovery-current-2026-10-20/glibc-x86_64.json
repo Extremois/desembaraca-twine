@@ -1,0 +1,52 @@
+{
+  "kind": "public-source-recovery-verification",
+  "approved": false,
+  "qualified": false,
+  "artifact_id": "linux-glibc-x86_64",
+  "executable_sha256": "43ce8d686720467c21be91cab4b8f3b246baae49c2cfe293714ebdf8a82f5716",
+  "project_revision": "47844106ff072cad005a8a1c795153c658b2bc89",
+  "project_pin": {
+    "kind": "public-recipe-source-review-pin",
+    "approved": false,
+    "revision": "47844106ff072cad005a8a1c795153c658b2bc89",
+    "url": "https://github.com/Extremois/desembaraca-twine/archive/47844106ff072cad005a8a1c795153c658b2bc89.zip",
+    "root": "desembaraca-twine-47844106ff072cad005a8a1c795153c658b2bc89",
+    "size": 15104261,
+    "sha256": "abe77138b46d269dba5f0d484d22b4ec4373e051ab7ba5e78f4de0b97e20fc4b"
+  },
+  "source_package_sha256": "25e58c76a94135c80924500b170c0ad7ce0852e3d4911cdcd5b827cd86c0c93b",
+  "source_files_recovered": 18173,
+  "project_files": 70,
+  "sdk_files": 18102,
+  "generated_metadata_files": [
+    "candidate-provenance.json",
+    "manifest.json"
+  ],
+  "public_sources": [
+    {
+      "url": "https://github.com/Extremois/desembaraca-twine/archive/47844106ff072cad005a8a1c795153c658b2bc89.zip",
+      "size": 15104261,
+      "sha256": "abe77138b46d269dba5f0d484d22b4ec4373e051ab7ba5e78f4de0b97e20fc4b"
+    },
+    {
+      "url": "https://gitlab.com/graphviz/graphviz/-/archive/16.1.0/graphviz-16.1.0.tar.gz",
+      "size": 41189481,
+      "sha256": "1e028b2b3e84e946c1d3e8c47590f8f0741bba1041fe6eff36eee87e598ea249"
+    },
+    {
+      "url": "https://ziglang.org/download/0.15.2/zig-x86_64-linux-0.15.2.tar.xz",
+      "size": 53733924,
+      "sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239"
+    }
+  ],
+  "limitations": [
+    "Byte recovery only; no new compiler execution or byte-identical rebuild claim",
+    "Generated candidate provenance and export index are review metadata, not upstream program sources",
+    "Public upstream availability is not a guarantee of future hosting or an approved corresponding-source offer",
+    "Per-file license applicability and distribution qualification remain separate gates"
+  ],
+  "source_artifact_id": 12255423843,
+  "source_actions_archive_sha256": "e54217b55f41cb3e9957ced36023fa4f2e01b7b47883e3f1e65e1915fbaad276",
+  "native_provenance_sha256": "312e0d57ee7ef8df03c44d31140b9cd8eb07241938dac487f227567075f7c621",
+  "tool_sha256": "f5a9675c0ddc3e2a760b31f6c7de10028deed3892d2e4d95153f6bc0e4ae10ff"
+}

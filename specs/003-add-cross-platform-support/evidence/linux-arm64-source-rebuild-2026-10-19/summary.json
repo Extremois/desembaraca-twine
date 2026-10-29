@@ -1,0 +1,179 @@
+{
+  "kind": "native-exported-source-rebuild",
+  "approved": false,
+  "qualified": false,
+  "revision": "162a57bd67817809f38e8801336bb87eecc0ead7",
+  "run_id": 39325624157,
+  "job_id": 118310584858,
+  "url": "https://github.com/Extremois/desembaraca-twine/actions/runs/39325624157",
+  "foundation_run_id": 39325624416,
+  "foundation_conclusion": "failure",
+  "source_artifact_id": 12220544858,
+  "native_artifact_id": 12220414850,
+  "source_artifact_zip_sha256": "55b01390aae92d59c589b0cd3b4c80c5facc278797bc5819e9d6df65ec4727c4",
+  "native_artifact_zip_sha256": "353e8c5e26eb58530988fd7f7522312b8b9c170b3a9b86acc5633f92050a2fb3",
+  "source_archive_sha256": "00afe5506d3ba7117a7255bcf9c071882f6aba5d67a3399843b80c0d646a3271",
+  "source_archive_bytes": 68324128,
+  "source_files_verified": 18158,
+  "sdk_files_verified": 18102,
+  "sdk_compiler_included": false,
+  "source_rebuild_completed": true,
+  "original_executable_sha256": "933b6c63370bdd3e814627e2a9a06176416c8da017a21dcbc96d8137dbc17e22",
+  "rebuilt_executable_sha256": "e5cca07b6a9a80b7ba9d58910baf25be550a62dbbb54e498f5f3da83103967bb",
+  "byte_identical": false,
+  "observations": [
+    {
+      "report": "network-312.json",
+      "python": "3.12.15",
+      "cases": 13,
+      "engine_sha256": "933b6c63370bdd3e814627e2a9a06176416c8da017a21dcbc96d8137dbc17e22",
+      "network_syscalls": 0,
+      "control_detected": true
+    },
+    {
+      "report": "network-314.json",
+      "python": "3.14.8",
+      "cases": 13,
+      "engine_sha256": "933b6c63370bdd3e814627e2a9a06176416c8da017a21dcbc96d8137dbc17e22",
+      "network_syscalls": 0,
+      "control_detected": true
+    },
+    {
+      "report": "rebuilt-network.json",
+      "python": "3.14.8",
+      "cases": 13,
+      "engine_sha256": "e5cca07b6a9a80b7ba9d58910baf25be550a62dbbb54e498f5f3da83103967bb",
+      "network_syscalls": 0,
+      "control_detected": true
+    }
+  ],
+  "retained_files": {
+    "sources.json": {
+      "sha256": "2c0a6780c9af21db10f7628f2e369397b2528a18a5c9001ee74ba26f3a548719",
+      "bytes": 696,
+      "original_sha256": "2c0a6780c9af21db10f7628f2e369397b2528a18a5c9001ee74ba26f3a548719",
+      "original_bytes": 696
+    },
+    "source-manifest.json.gz": {
+      "sha256": "e86921c9e0e0f6a11b835d68a15bc734803c6d337c1a7f6faf6641b1db77aeec",
+      "bytes": 915936,
+      "original_sha256": "7740edcc1d4756817f322916f1d06c4f35ad5b3af143717582942a9f1e3dcf0e",
+      "original_bytes": 3282097
+    },
+    "original-provenance.json": {
+      "sha256": "ff000efc11529a49b9e5d6a50a0b5b6c2930d8ff047b7f38f6189a1044445062",
+      "bytes": 78597,
+      "original_sha256": "ff000efc11529a49b9e5d6a50a0b5b6c2930d8ff047b7f38f6189a1044445062",
+      "original_bytes": 78597
+    },
+    "rebuilt-provenance.json": {
+      "sha256": "043c6033f81b2bb0af67837b73e12c93ff5f4fe97956cf462bceaaab8ed517fd",
+      "bytes": 7446,
+      "original_sha256": "043c6033f81b2bb0af67837b73e12c93ff5f4fe97956cf462bceaaab8ed517fd",
+      "original_bytes": 7446
+    },
+    "network-312.control.trace.gz": {
+      "sha256": "74da2f97decd731df36718b715d529909386180b4c0d097946f23940f0f6973b",
+      "bytes": 511,
+      "original_sha256": "14e0c41a168df6b750329a1b90df19148ba81fb7985fa0492dffc5ce160d7b4b",
+      "original_bytes": 1025
+    },
+    "network-312.corpus.trace.gz": {
+      "sha256": "491accda776e6466ed090fd8101b62c379471cc38c49ee2f3236595b4e22714f",
+      "bytes": 636,
+      "original_sha256": "c07c476b761abd4357fa9801841539ed3a44778b6297456e3e3fb97d758016f5",
+      "original_bytes": 3708
+    },
+    "network-312.json": {
+      "sha256": "ecfc441a2e574e6a7180095a67b4846a51ec0f4756f37ac804c0089a0992c59b",
+      "bytes": 1352,
+      "original_sha256": "ecfc441a2e574e6a7180095a67b4846a51ec0f4756f37ac804c0089a0992c59b",
+      "original_bytes": 1352
+    },
+    "corpus-312.json": {
+      "sha256": "6a0a536ba575395ef3086056a90b376a96ea1e6e44ac4ce78e6c1c79d9eff313",
+      "bytes": 5560,
+      "original_sha256": "6a0a536ba575395ef3086056a90b376a96ea1e6e44ac4ce78e6c1c79d9eff313",
+      "original_bytes": 5560
+    },
+    "network-314.control.trace.gz": {
+      "sha256": "be52ae3f7af61c77a5dbb836164d3b04fb262b210349f1fa9af0d2035e6e576c",
+      "bytes": 511,
+      "original_sha256": "b854d19adcfab73306e32a13228d45f2fbb6811414e46c92067127fdd66e511e",
+      "original_bytes": 1021
+    },
+    "network-314.corpus.trace.gz": {
+      "sha256": "5b60b11ddf1265ab4fd8c6338b8711a7408c69eed6b12e569bfceacab29bb48a",
+      "bytes": 640,
+      "original_sha256": "13916f5a6eab109d42a0c5dbc7544cc0f749236615ea28944d8264742503f021",
+      "original_bytes": 3706
+    },
+    "network-314.json": {
+      "sha256": "75c1247875d11be6c5049e12a8eebbd3a163028663c6849f501a539f2f44cb7b",
+      "bytes": 1351,
+      "original_sha256": "75c1247875d11be6c5049e12a8eebbd3a163028663c6849f501a539f2f44cb7b",
+      "original_bytes": 1351
+    },
+    "corpus-314.json": {
+      "sha256": "55c327c9aa2c6e0a0cdf681638b8d0f4a942c7bd2b66a0d91970b9f3511db947",
+      "bytes": 5559,
+      "original_sha256": "55c327c9aa2c6e0a0cdf681638b8d0f4a942c7bd2b66a0d91970b9f3511db947",
+      "original_bytes": 5559
+    },
+    "rebuilt-network.control.trace.gz": {
+      "sha256": "ab0cbf43f98185fd20139a4d2db17f691e290dcd551b21c85e996bbe03c66e0a",
+      "bytes": 512,
+      "original_sha256": "437bb330a40324197e14aa8de44ea3e55444ab5fa3cce7db6a0d7e03d541042e",
+      "original_bytes": 1021
+    },
+    "rebuilt-network.corpus.trace.gz": {
+      "sha256": "c75df1565a590eec84fa81afd659c2d8ac11fe7ca3ce430d9f79d9c513f917bc",
+      "bytes": 648,
+      "original_sha256": "43d48bb15455ba67946c77034e610b42cf872dc47f5198d668df177a8068f562",
+      "original_bytes": 3715
+    },
+    "rebuilt-network.json": {
+      "sha256": "710ee29aa46a86197e918094bc602773c0459f6edfee5a27b98bcabb8c16fba5",
+      "bytes": 1351,
+      "original_sha256": "710ee29aa46a86197e918094bc602773c0459f6edfee5a27b98bcabb8c16fba5",
+      "original_bytes": 1351
+    },
+    "rebuilt-corpus.json": {
+      "sha256": "2a7987e0752d28200e0754c26d677fa5f19ccdca3ae05db171df7c6ed64663b1",
+      "bytes": 5559,
+      "original_sha256": "2a7987e0752d28200e0754c26d677fa5f19ccdca3ae05db171df7c6ed64663b1",
+      "original_bytes": 5559
+    },
+    "source-rebuild.log.gz": {
+      "sha256": "d84ca52799823bf2cea2dbce272d6b860dc08c89c0c89b09eaf8e534fd28b1f2",
+      "bytes": 6733,
+      "original_sha256": "09cdf3d6c253361e5c84ea5dcc17e950edafc8e4f60effd3cd65d2fcfff2949b",
+      "original_bytes": 36043
+    },
+    "foundation-windows312-failure.log.gz": {
+      "sha256": "0ee0bc363d266b0ed195da66e4e740d0d2879a3fdc09eea59eee06256031239e",
+      "bytes": 3940,
+      "original_sha256": "1b71428713291e4c8fdb750de78bf27630f82240b370a8175c398b44b8df5f38",
+      "original_bytes": 15960
+    },
+    "followup-regression.json": {
+      "sha256": "5ef14ffa3cefab62e3f1894d528bee84bb1a5e1d4ccd732f0aba1ace4089fb4c",
+      "bytes": 810,
+      "original_sha256": "5ef14ffa3cefab62e3f1894d528bee84bb1a5e1d4ccd732f0aba1ace4089fb4c",
+      "original_bytes": 810
+    }
+  },
+  "limitations": [
+    "Functional source rebuild, not byte-for-byte reproducibility",
+    "SDK compiler is reacquired by verified hash; host build tools come from recorded runner image",
+    "Artifacts retained seven days, not an immutable public source offer",
+    "Per-file applicability, full reviewed license audit, old kernel/CPU and installed-cell qualification remain pending"
+  ],
+  "followup_regression": {
+    "run_id": 39326296051,
+    "revision": "456059b4fbb5b943cf83b842500d8e5a4a8313b3",
+    "conclusion": "success",
+    "url": "https://github.com/Extremois/desembaraca-twine/actions/runs/39326296051",
+    "corrected_failure": "Floating-point subtraction could exceed five-second per-query cap; clamp preserves remaining aggregate deadline"
+  }
+}

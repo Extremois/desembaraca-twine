@@ -1,0 +1,86 @@
+{
+  "passed": true,
+  "revision": "5a1c43fc344d927d30bedc1c91590573983d56ed",
+  "run_url": "https://github.com/Extremois/desembaraca-twine/actions/runs/40860562502",
+  "jobs": 6,
+  "records": [
+    {
+      "name": "user-install-macos-15-3.14",
+      "system": "Darwin",
+      "python": "3.14.7",
+      "arch": "arm64",
+      "path": "user-install-macos-15-3.14.json",
+      "sha256": "86831bdc6b77c8561ac0b410604147f3556e933085637d52e37a828189a404b4",
+      "actions_artifact_id": 12891970016
+    },
+    {
+      "name": "user-install-ubuntu-24.04-3.12",
+      "system": "Linux",
+      "python": "3.12.15",
+      "arch": "x86_64",
+      "path": "user-install-ubuntu-24.04-3.12.json",
+      "sha256": "e7b1df11d21b944453f98ff2699494b7847c0afc1db52631823a1be3ac2ad0ce",
+      "actions_artifact_id": 12891745968
+    },
+    {
+      "name": "user-install-macos-15-3.12",
+      "system": "Darwin",
+      "python": "3.12.10",
+      "arch": "arm64",
+      "path": "user-install-macos-15-3.12.json",
+      "sha256": "cf566229c87cf123ed7410d7c611f97deb84e0a6a726b55515650ec06b1743df",
+      "actions_artifact_id": 12891726123
+    },
+    {
+      "name": "user-install-windows-latest-3.12",
+      "system": "Windows",
+      "python": "3.12.10",
+      "arch": "AMD64",
+      "path": "user-install-windows-latest-3.12.json",
+      "sha256": "da5f527805fda1b034d6c63591c2ae4b9b4db2dca43d9f358b7b8c2fd3173865",
+      "actions_artifact_id": 12891591454
+    },
+    {
+      "name": "user-install-ubuntu-24.04-3.14",
+      "system": "Linux",
+      "python": "3.14.9",
+      "arch": "x86_64",
+      "path": "user-install-ubuntu-24.04-3.14.json",
+      "sha256": "79db361e8ffa3448bad9bd7c6d5641f1c2209fe1be5b20044b78a2628bf134cc",
+      "actions_artifact_id": 12891152585
+    },
+    {
+      "name": "user-install-windows-latest-3.14",
+      "system": "Windows",
+      "python": "3.14.9",
+      "arch": "AMD64",
+      "path": "user-install-windows-latest-3.14.json",
+      "sha256": "72604acacaa73a6cd4fbf2f45a9bf07c5371b3e96f7f1c5fccb6a41c2799a7c0",
+      "actions_artifact_id": 12890648418
+    }
+  ],
+  "installer_url": "https://raw.githubusercontent.com/Extremois/desembaraca-twine/5a1c43fc344d927d30bedc1c91590573983d56ed/install.py",
+  "installer_sha256": "ed9530aa6ebb84ed1bd309f9ebcc99d2f1ad827ea2978aa64036da37dff29f92",
+  "public_installer_bytes_verified": true,
+  "scope": "Six real wheel installations in disposable Unicode profiles, each installed twice. Copied pip entrypoint runs through a new shell with no venv activation; original per-user PATH/profile bytes preserved, argument boundaries checked, PIP_TARGET ignored. No native engine preparation or local personal profile changes.",
+  "supported_shells": [
+    "PowerShell on Windows",
+    "bash and zsh on Linux/macOS"
+  ],
+  "application_source": "93f2699296bdc660f7bb8f57684c3a9501e3f216",
+  "application_source_scope": "Standalone installer default pins this previously accepted public application revision; --source and local checkout can install another explicitly selected build.",
+  "same_version_reinstallation_verified": true,
+  "additional_checks": {
+    "documentation_revision": "710165c893643cc2b39cf51e137de4ae9b5bc9a7",
+    "foundation": {
+      "run_url": "https://github.com/Extremois/desembaraca-twine/actions/runs/40860595083",
+      "jobs": 6,
+      "conclusion": "success"
+    },
+    "documented_remote_installation": {
+      "run_url": "https://github.com/Extremois/desembaraca-twine/actions/runs/40860595069",
+      "jobs": 10,
+      "conclusion": "success"
+    }
+  }
+}

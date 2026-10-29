@@ -1,0 +1,16 @@
+W3C reference review material; license applicability remains pending.
+Source: https://www.w3.org/TR/2011/REC-SVG11-20110816/
+Observed destination: https://www.w3.org/TR/2011/REC-SVG11-20110816/
+Raw source SHA-256: c558313b7129c2c6b75aacd282cc28a6c3e2f61d36b7fdd8cb02452330e1f1a9
+
+(https://www.w3.org/)
+Scalable Vector Graphics (SVG) 1.1 (Second Edition)
+W3C Recommendation 16 August 2011
+This version:http://www.w3.org/TR/2011/REC-SVG11-20110816/ (https://www.w3.org/TR/2011/REC-SVG11-20110816/) Latest version:http://www.w3.org/TR/SVG11/ (https://www.w3.org/TR/SVG11/) Previous version:http://www.w3.org/TR/2011/PR-SVG11-20110609/ (https://www.w3.org/TR/2011/PR-SVG11-20110609/) Public comments:www-svg@w3.org (mailto:www-svg@w3.org) (archive (http://lists.w3.org/Archives/Public/www-svg/) )Editors:Erik Dahlström, Opera Software <ed@opera.com (mailto:ed@opera.com) >Patrick Dengler, Microsoft Corporation <patd@microsoft.com (mailto:patd@microsoft.com) >Anthony Grasso, Canon Inc. <anthony.grasso@cisra.canon.com.au (mailto:anthony.grasso@cisra.canon.com.au) >Chris Lilley, W3C <chris@w3.org (mailto:chris@w3.org) >Cameron McCormack, Mozilla Corporation <cam@mcc.id.au (mailto:cam@mcc.id.au) >Doug Schepers, W3C <schepers@w3.org (mailto:schepers@w3.org) >Jonathan Watt, Mozilla Corporation <jwatt@jwatt.org (mailto:jwatt@jwatt.org) >Jon Ferraiolo, ex Adobe Systems <jferrai@us.ibm.com (mailto:jferrai@us.ibm.com) > (Versions 1.0 and 1.1 First Edition; until 10 May 2006)藤沢 淳 (FUJISAWA Jun), Canon Inc. <fujisawa.jun@canon.co.jp (mailto:fujisawa.jun@canon.co.jp) > (Version 1.1 First Edition)Dean Jackson, ex W3C <dean@w3.org (mailto:dean@w3.org) > (Version 1.1 First Edition; until February 2007)
+Please refer to the errata (https://www.w3.org/2011/08/REC-SVG11-20110816-errata) for this document, which may include some normative corrections.
+This document is also available in these non-normative formats: a
+single-page version (https://www.w3.org/TR/2011/REC-SVG11-20110816/single-page.html) , a
+zip archive of HTML (https://www.w3.org/TR/2011/REC-SVG11-20110816/REC-SVG11-20110816.zip) (without external dependencies),
+and a PDF (https://www.w3.org/TR/2011/REC-SVG11-20110816/REC-SVG11-20110816.pdf) .
+See also translations (https://www.w3.org/Graphics/SVG/svg-updates/translations) , noting that the English version of this specification is the only normative version.
+Copyright (https://www.w3.org/Consortium/Legal/ipr-notice#Copyright) © 2011 W3C (https://www.w3.org/) ® (MIT (http://www.csail.mit.edu/) , ERCIM (http://www.ercim.eu/) , Keio (http://www.keio.ac.jp/) ), All Rights Reserved. W3C liability (https://www.w3.org/Consortium/Legal/ipr-notice#Legal_Disclaimer) , trademark (https://www.w3.org/Consortium/Legal/ipr-notice#W3C_Trademarks) and document use (https://www.w3.org/Consortium/Legal/copyright-documents) rules apply.

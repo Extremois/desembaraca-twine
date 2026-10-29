@@ -1,0 +1,161 @@
+{
+  "kind": "macos-observed-apsl-source-delivery-verified-in-actions",
+  "application_revision": "6279d6ff715abbd4fc8d5fdf778d8a27a4f3ddfb",
+  "run_id": 40781012838,
+  "workflow_url": "https://github.com/Extremois/desembaraca-twine/actions/runs/40781012838",
+  "passed": true,
+  "approved": false,
+  "qualified": false,
+  "task_complete": false,
+  "artifacts": [
+    {
+      "artifact_id": "macos-x86_64",
+      "actions_artifact_id": 12858030502,
+      "actions_zip_sha256": "5790454cfc65d236ebf9e2d36af99ca5a23bf9dc5875e283beb3616905f36288",
+      "executable_sha256": "b1bcd8fb3ea37bbe51ea4e4b8611cfcdb4c01856bffb21c08e317d0c4ed32b88",
+      "archive_sha256": "c85dc0697e3bfa613636fbb7b4c638ae5f7adb66c360e9345d9617db3fc1644b",
+      "files_verified": 550,
+      "graphviz_sources_verified": 322,
+      "notice_payloads": 548,
+      "notice_files_including_origin_index": 549,
+      "review_sha256": "5bf1df3ff554ece890db796df81a0a5cd1258327b64450d039eb6b79f6cc85c2",
+      "current_outputs_match_user_review": true,
+      "corpus_reports": [
+        {
+          "path": "specs/003-add-cross-platform-support/evidence/macos-apsl-source-delivery-ci-2026-10-28/macos-x86_64/corpus-314.json.gz",
+          "raw_sha256": "a5213ce14266ad0a1f2221c5d486078842961c42b06f471ccadc342c7528e7aa",
+          "python": "3.14.7"
+        },
+        {
+          "path": "specs/003-add-cross-platform-support/evidence/macos-apsl-source-delivery-ci-2026-10-28/macos-x86_64/corpus-312.json.gz",
+          "raw_sha256": "346b18ddb30a4d7f43db1e557d01674785f116cd26fca60ae94480f821c0fe69",
+          "python": "3.12.10"
+        },
+        {
+          "path": "specs/003-add-cross-platform-support/evidence/macos-apsl-source-delivery-ci-2026-10-28/macos-x86_64/runtime-312.json.gz",
+          "raw_sha256": "f8767f147740afcdf3a22f05bcd30a1e58f86475c2144005dbdfb2ee552c5a45",
+          "python": "3.12.10"
+        },
+        {
+          "path": "specs/003-add-cross-platform-support/evidence/macos-apsl-source-delivery-ci-2026-10-28/macos-x86_64/runtime-314.json.gz",
+          "raw_sha256": "e57c69c0c09b2eee6f11da8d895026480fe8927b5f7e100adc36ad297a78e525",
+          "python": "3.14.7"
+        }
+      ],
+      "engine_unchanged_from_initial_draft": false,
+      "engine_unchanged_from_named_input_build": true,
+      "source_delivery": {
+        "artifact_id": "macos-x86_64",
+        "binary_actions_artifact_id": 12858030502,
+        "sources_actions_artifact_id": 12856866848,
+        "binary_actions_zip_sha256": "5790454cfc65d236ebf9e2d36af99ca5a23bf9dc5875e283beb3616905f36288",
+        "sources_actions_zip_sha256": "7e94632a73968e2790e6d931a95a64a42f4dcead92dfc70cc838b1a00e7e0ffe",
+        "executable_sha256": "b1bcd8fb3ea37bbe51ea4e4b8611cfcdb4c01856bffb21c08e317d0c4ed32b88",
+        "candidate_archive_sha256": "c85dc0697e3bfa613636fbb7b4c638ae5f7adb66c360e9345d9617db3fc1644b",
+        "sources_archive_sha256": "05a2f6e27098175c4676705b7e3f56b194f31200b353d3d0c28e3ea456643d65",
+        "provenance_sha256": "c59fd5be471c02b8b7223e8483f844bd140dd8d71e38174e332bcec6d16054b9",
+        "source_files": 316,
+        "source_file_hashes_verified": true,
+        "graphviz_source_archive_verified": true,
+        "recipe_hash_verified": true,
+        "apple_sdk_archive_files_exported": 0,
+        "selected_sdk_header_files": 186,
+        "pairing_verified_on_both_archives": true,
+        "evidence_directory": "macos-x86_64"
+      },
+      "observed_apsl_source_coverage_complete": true,
+      "source_counts_by_declared_license": {
+        "APSL-2.0": 183,
+        "APSL-1.1": 3
+      },
+      "header_source_index": {
+        "path": "specs/003-add-cross-platform-support/evidence/macos-apsl-source-delivery-ci-2026-10-28/macos-x86_64/header-source-index.json",
+        "sha256": "99005bffa281fc95f7b0511637217c7fb3d700edfbe1f37e57239bf39ac70af7"
+      }
+    },
+    {
+      "artifact_id": "macos-arm64",
+      "actions_artifact_id": 12857307012,
+      "actions_zip_sha256": "7508e37a5c8f6e0052c43c1490dbf699198f8b6a8ee089da582506c31e29da05",
+      "executable_sha256": "803a5622cc994d27947aad56498c6f975ce174827f7495a52745f695aa8ce9eb",
+      "archive_sha256": "accdf413189d69e0df95d48ce5bfdf3ac8d160f8b87ac35026fa23499af4ed0a",
+      "files_verified": 550,
+      "graphviz_sources_verified": 322,
+      "notice_payloads": 548,
+      "notice_files_including_origin_index": 549,
+      "review_sha256": "e235e041653fb990eacf7406c9b69d5b755317c6035d7c1d6dc83b4eb2a9e40a",
+      "current_outputs_match_user_review": true,
+      "corpus_reports": [
+        {
+          "path": "specs/003-add-cross-platform-support/evidence/macos-apsl-source-delivery-ci-2026-10-28/macos-arm64/corpus-312.json.gz",
+          "raw_sha256": "4be2885404eb21a1b08bfa087b4d4e27133fc774531841fd812081d43a058f4a",
+          "python": "3.12.10"
+        },
+        {
+          "path": "specs/003-add-cross-platform-support/evidence/macos-apsl-source-delivery-ci-2026-10-28/macos-arm64/corpus-314.json.gz",
+          "raw_sha256": "75e4d6b66ef4b4e78212b6f2b38d42fd7477ba11cbc539b98b36b4dcbc61231e",
+          "python": "3.14.7"
+        },
+        {
+          "path": "specs/003-add-cross-platform-support/evidence/macos-apsl-source-delivery-ci-2026-10-28/macos-arm64/runtime-312.json.gz",
+          "raw_sha256": "556359a9540aa95c988ad812007c0d22cfec89d0819359daac4ece32c00dab7a",
+          "python": "3.12.10"
+        },
+        {
+          "path": "specs/003-add-cross-platform-support/evidence/macos-apsl-source-delivery-ci-2026-10-28/macos-arm64/runtime-314.json.gz",
+          "raw_sha256": "88adf0b50caee15a87a21a59a8c545ddaa9cc036c42163b34e508ede6c2e7ed5",
+          "python": "3.14.7"
+        }
+      ],
+      "engine_unchanged_from_initial_draft": false,
+      "engine_unchanged_from_named_input_build": true,
+      "source_delivery": {
+        "artifact_id": "macos-arm64",
+        "binary_actions_artifact_id": 12857307012,
+        "sources_actions_artifact_id": 12856987666,
+        "binary_actions_zip_sha256": "7508e37a5c8f6e0052c43c1490dbf699198f8b6a8ee089da582506c31e29da05",
+        "sources_actions_zip_sha256": "fd551446fe2bcd30067955cb154e55617abb38dd2d66d5dd360a00c6d53929d1",
+        "executable_sha256": "803a5622cc994d27947aad56498c6f975ce174827f7495a52745f695aa8ce9eb",
+        "candidate_archive_sha256": "accdf413189d69e0df95d48ce5bfdf3ac8d160f8b87ac35026fa23499af4ed0a",
+        "sources_archive_sha256": "ceba8b50f6bb1a982afcf293c94849fa705cccc96c68f990e405040d270d9720",
+        "provenance_sha256": "82e9de3597e61c0f551396352d9a6e56a3cc76227541128d889c4bfacad2422b",
+        "source_files": 311,
+        "source_file_hashes_verified": true,
+        "graphviz_source_archive_verified": true,
+        "recipe_hash_verified": true,
+        "apple_sdk_archive_files_exported": 0,
+        "selected_sdk_header_files": 181,
+        "pairing_verified_on_both_archives": true,
+        "evidence_directory": "macos-arm64"
+      },
+      "observed_apsl_source_coverage_complete": true,
+      "source_counts_by_declared_license": {
+        "APSL-2.0": 179,
+        "APSL-1.1": 2
+      },
+      "header_source_index": {
+        "path": "specs/003-add-cross-platform-support/evidence/macos-apsl-source-delivery-ci-2026-10-28/macos-arm64/header-source-index.json",
+        "sha256": "1d828598f8c421a1c8207ff9a1e24169410719b99d0e91434f9068d3a76e4489"
+      }
+    }
+  ],
+  "active_catalog_changed": false,
+  "named_linker_inputs_required": true,
+  "limitations": [
+    "Notice preservation and origin hashes do not decide license applicability",
+    "Source archive pairing/rebuild performed in Actions; no native tests run locally",
+    "Published delivery and final package qualification remain pending"
+  ],
+  "source_delivery_receipt": {
+    "path": "specs/003-add-cross-platform-support/evidence/macos-apsl-source-delivery-ci-2026-10-28/source-delivery.json",
+    "sha256": "232c9787e093acac166f58f1d17cd29b0fe4b7aaa3004d30bce2c750c91834e9"
+  },
+  "foundation": {
+    "path": "specs/003-add-cross-platform-support/evidence/macos-apsl-source-delivery-ci-2026-10-28/foundation.json",
+    "sha256": "48fa4a1bb754c7245704643527d926e2377d02fb4839f5365d8e509af7340d37"
+  },
+  "workflows": {
+    "path": "specs/003-add-cross-platform-support/evidence/macos-apsl-source-delivery-ci-2026-10-28/workflows.json",
+    "sha256": "4a95d1bdc5e370fdc7b8c97d32d7d2154f8bc35969b6d1aa83a0b37123a2511b"
+  }
+}

@@ -1,0 +1,126 @@
+{
+  "kind": "ubuntu1804-native-kernel-engine-baseline",
+  "passed": true,
+  "qualified": false,
+  "identity": {
+    "ID": "ubuntu",
+    "PRETTY_NAME": "Ubuntu 18.04.6 LTS",
+    "VERSION_ID": "18.04"
+  },
+  "arch": "x86_64",
+  "kernel": "4.15.0-212-generic",
+  "glibc": "glibc 2.27",
+  "python": "3.6.9",
+  "python_role": "Image system Python for engine probe only; not a supported application slot",
+  "abi": "glibc",
+  "elf": {
+    "machine": 62,
+    "no_interpreter": false,
+    "no_dynamic_section": false
+  },
+  "engine_sha256": "43ce8d686720467c21be91cab4b8f3b246baae49c2cfe293714ebdf8a82f5716",
+  "inputs_sha256": "d0fa77f311e8f08a5b689c1abd4d3ad6e0d88f9f4cc9f1f4ef43522b579947bd",
+  "cpu": {
+    "model name": "AMD EPYC 7763 64-Core Processor",
+    "flags": "fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm rep_good nopl cpuid extd_apicid tsc_known_freq pni pclmulqdq ssse3 fma cx16 pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm cmp_legacy svm cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw invpcid_single vmmcall fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid rdseed adx smap clflushopt clwb sha_ni xsaveopt xsavec xgetbv1 xsaves clzero xsaveerptr arat npt nrip_save tsc_scale vmcb_clean flushbyasid pausefilter pfthreshold v_vmsave_vmload umip vaes vpclmulqdq rdpid"
+  },
+  "loader": "/lib/x86_64-linux-gnu/ld-2.27.so",
+  "loader_sha256": "da5e0c515d6536d59ce5c100ac5359e7f5a5a354f60eeff369a378ba2c80fdcb",
+  "ldd_sha256": "86004dbf582f897df4ee18ccc93ba51b733aa86718ac029ab71f7755288ad38d",
+  "relocated_unicode_path": true,
+  "global_graphviz_absent": true,
+  "cases": [
+    {
+      "case": "crossing",
+      "dot_sha256": "2f6eb3f8b64d3b96030353b4d523350480c5e3ce7b687535e964d3470f65d526",
+      "output": "crossing.json",
+      "output_sha256": "284ecd02a8c8b5cabd1bc09352bfd64cfd71aa34eaec4e764925e70ea2b9c6c7",
+      "output_bytes": 1253
+    },
+    {
+      "case": "coincident",
+      "dot_sha256": "324df56bbab815f907e21071494646e3bd79ecc431c905e17edeec20399e9484",
+      "output": "coincident.json",
+      "output_sha256": "5e0ee8f776d419bce61a9ef6bb6dca73866497a347f4ef3b52bed5f96e12bd04",
+      "output_bytes": 1253
+    },
+    {
+      "case": "clean",
+      "dot_sha256": "175408dfa843f13a30b9dbd6c6710ece522ad59539b343b879a05e81c773a7de",
+      "output": "clean.json",
+      "output_sha256": "7a3bdb8a5693fdd5a2a3c86d7bf32c43000c23a8470540ebfdc56e5785a6eb61",
+      "output_bytes": 731
+    },
+    {
+      "case": "isolated_overlap",
+      "dot_sha256": "b053599ad91f7ffb8f3126941d276302fea6217f51f71c06f2224b826962ff5e",
+      "output": "isolated_overlap.json",
+      "output_sha256": "e0969b0682d5aa7645769edd3aab25cd2100ee85a3d57f46482ef8296eb70beb",
+      "output_bytes": 582
+    },
+    {
+      "case": "connected_overlap",
+      "dot_sha256": "ee40c26f5d4e4ae5aee46cf16a25556aa17516831dc6a804a97d828c5ab1b6ec",
+      "output": "connected_overlap.json",
+      "output_sha256": "d30afcda91fa423e11958945cbd7324bea5dc1ef40e23fb9f7d5d06e18d9fb07",
+      "output_bytes": 1097
+    },
+    {
+      "case": "through_isolated",
+      "dot_sha256": "ad05f92e06aff043d9bc4a329403fe330970fc25c4b8e1dddafe9d24c26c7c0b",
+      "output": "through_isolated.json",
+      "output_sha256": "8ba7f17057625b767efc6c251e977059d2e7e8a002b3ea2a951699025ece3dfb",
+      "output_bytes": 924
+    },
+    {
+      "case": "through_connected",
+      "dot_sha256": "324df56bbab815f907e21071494646e3bd79ecc431c905e17edeec20399e9484",
+      "output": "through_connected.json",
+      "output_sha256": "5e0ee8f776d419bce61a9ef6bb6dca73866497a347f4ef3b52bed5f96e12bd04",
+      "output_bytes": 1253
+    },
+    {
+      "case": "border_only",
+      "dot_sha256": "2c9eef11987d187c62d8bda6aebbf051f7ba90bb827c64767b53af7f6fb2d6d4",
+      "output": "border_only.json",
+      "output_sha256": "1eea0fc0bd90ab230248b274d385a91c88067c813f702527639efad35aa60850",
+      "output_bytes": 926
+    },
+    {
+      "case": "cycle",
+      "dot_sha256": "d3be26df7ae91ba6f2b24439095b930618c544cd17d3a279e66a45da7b07b7e6",
+      "output": "cycle.json",
+      "output_sha256": "2f1e24cf016fb935e170999e67246b99557f19f7b3e633c83fad4f030eaf5d8f",
+      "output_bytes": 1231
+    },
+    {
+      "case": "parallel_occurrences",
+      "dot_sha256": "663436f533c6d567589278a6611c967a1c2e3f7c7af7be7cd5faf10c6bd64d9f",
+      "output": "parallel_occurrences.json",
+      "output_sha256": "345be09eb92400e407864362825da08e4c37613689a2e685ed16fed8121b36df",
+      "output_bytes": 899
+    },
+    {
+      "case": "self_loop",
+      "dot_sha256": "b494e6422d2d6c36e47f40370d390bef9a64b928359cc1dc3ee2cf6f8a634304",
+      "output": "self_loop.json",
+      "output_sha256": "059eef51012c99eea5f8ff6918586b9b42d581ea871d246ccfaa963ab3ffd562",
+      "output_bytes": 584
+    },
+    {
+      "case": "reciprocal",
+      "dot_sha256": "753c62a7d5f1ac1331a9473d762b4eb24acc3f97588e088b6e1bbdb3dc52ebec",
+      "output": "reciprocal.json",
+      "output_sha256": "5619900998072691afd222022786f6145fa98e50cf1da7b7aae8de0b8644d835",
+      "output_bytes": 899
+    },
+    {
+      "case": "empty",
+      "dot_sha256": "1fe72c1adf5aa81ac384c8ea7b7df5bf07839b78955212284e429fc5ee489bac",
+      "output": "empty.json",
+      "output_sha256": "c599e92f4b1b099fd97fde1f3a07dae747a365a17037f880a333f786f6cf2d27",
+      "output_bytes": 176
+    }
+  ],
+  "scope": "Native guest kernel, glibc and real engine only; no application/Python-slot, Pro eligibility, Twine or support qualification"
+}

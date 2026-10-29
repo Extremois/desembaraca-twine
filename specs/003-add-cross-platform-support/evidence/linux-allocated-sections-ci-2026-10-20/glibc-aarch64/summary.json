@@ -1,0 +1,116 @@
+{
+  "kind": "native-linux-allocated-input-section-review",
+  "approved": false,
+  "qualified": false,
+  "revision": "dfc93c8a29143a2d74a1b1e240d88fa3e221fabd",
+  "run_id": 39418824581,
+  "actions_artifact_id": 12262377316,
+  "actions_archive_sha256": "e5ee04c95f7ee7538b5179cd95a4124abe740c0c8623ab138fc3acb0ac8650d6",
+  "artifact_id": "linux-glibc-aarch64",
+  "executable_sha256": "933b6c63370bdd3e814627e2a9a06176416c8da017a21dcbc96d8137dbc17e22",
+  "candidate_archive_sha256": "b8cc028e37f54027b74ca4e041e72d6621b168747161ad9edcb11d2463315a37",
+  "provenance_sha256": "896ad9119abdb0dc39b1210e3e00d1bc971400f26c445254c2e31e3ff240ddc5",
+  "inventory_sha256": "ac27f729d5986c2339ee11aa809a525d418a2cb8ab6d44bf7204e1f8275dd484",
+  "allocated_sections": 648,
+  "allocated_output_sections": 23,
+  "map_sha256": "3ffad471acd8c9a4f4adba1add8c76d711cbcc0e08fb03d5b7ea495e5bc9af30",
+  "report_sha256": "7c79084f1de5a096b1185f3a6cd9c46c8a9b6307ef72f7d7196c366bb639bfad",
+  "independent_map_reread": true,
+  "allocated_sdk_inputs": {
+    "crt1.o": {
+      "input_sha256": "7abf09d70cfb711ec71a999dfca868452488f17cd5a993cbc255765b72f35984",
+      "allocated_bytes": 88,
+      "executable_bytes": 56,
+      "input_sections": [
+        ".note.ABI-tag",
+        ".text"
+      ],
+      "members": []
+    },
+    "libcompiler_rt.a": {
+      "input_sha256": "00d7cad16eced7116f95f90a152bbff96d4b787091a193104c989cf113ecf357",
+      "allocated_bytes": 19568,
+      "executable_bytes": 15096,
+      "input_sections": [
+        ".eh_frame+0x1230",
+        ".eh_frame+0x17a0",
+        ".eh_frame+0x3074",
+        ".eh_frame+0x32b4",
+        ".eh_frame+0x3e78",
+        ".eh_frame+0x3fa8",
+        ".eh_frame+0x407c",
+        ".eh_frame+0x494c",
+        ".eh_frame+0x4ac4",
+        ".eh_frame+0x4bbc",
+        ".eh_frame+0x4c84",
+        ".eh_frame+0x4ea8",
+        ".eh_frame+0x5194",
+        ".eh_frame+0x5314",
+        ".eh_frame+0x6804",
+        ".eh_frame+0x687c",
+        ".eh_frame+0xe88",
+        ".rodata..L__unnamed_1",
+        ".rodata..L__unnamed_3",
+        ".text.__addtf3",
+        ".text.__extendsftf2",
+        ".text.__subtf3",
+        ".text.__trunctfsf2",
+        ".text.bcmp",
+        ".text.compiler_rt.rem_pio2.rem_pio2",
+        ".text.compiler_rt.rem_pio2_large.rem_pio2_large",
+        ".text.cos",
+        ".text.exp",
+        ".text.fmod",
+        ".text.log",
+        ".text.log10",
+        ".text.log2",
+        ".text.math.ldexp.ldexp__anon_4147",
+        ".text.memcmp",
+        ".text.memcpy",
+        ".text.memmove",
+        ".text.memset",
+        ".text.sin",
+        ".text.sqrt",
+        ".text.sqrtf",
+        ".text.tan"
+      ],
+      "members": [
+        "libcompiler_rt_zcu.o"
+      ]
+    },
+    "libc_nonshared.a": {
+      "input_sha256": "2db42f3e95c93b1b04ecb61b51035e83ef032801eceefb89b0d3654742b77a3c",
+      "allocated_bytes": 136,
+      "executable_bytes": 136,
+      "input_sections": [
+        ".text"
+      ],
+      "members": [
+        "elf-init-2.33.o",
+        "fstat-2.32.o"
+      ]
+    }
+  },
+  "go_terms_present": true,
+  "notice_files": 544,
+  "runtime_network": [
+    {
+      "python": "3.12.15",
+      "dot_executions": 49,
+      "report": "runtime-network-312.json",
+      "sha256": "d073bed145cd1c164c37b6a2a5ca914cec4e3021cb104bd02b3dcf42da5f12fc"
+    },
+    {
+      "python": "3.14.8",
+      "dot_executions": 49,
+      "report": "runtime-network-314.json",
+      "sha256": "64e603800e9d53d0e49a6e256ee70fedf021bdf681cb204b372a6ce20249c218"
+    }
+  ],
+  "source_to_binary_complete": false,
+  "limitations": [
+    "Section observations do not approve component licenses or exhaustive source closure",
+    "Container musl results do not qualify a native Alpine cell; original environment kind remains in network reports",
+    "No source-offer approval, catalog admission or release"
+  ]
+}

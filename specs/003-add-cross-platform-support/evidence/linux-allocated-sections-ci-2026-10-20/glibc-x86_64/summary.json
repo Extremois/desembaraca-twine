@@ -1,0 +1,66 @@
+{
+  "kind": "native-linux-allocated-input-section-review",
+  "approved": false,
+  "qualified": false,
+  "revision": "dfc93c8a29143a2d74a1b1e240d88fa3e221fabd",
+  "run_id": 39418824591,
+  "actions_artifact_id": 12263491789,
+  "actions_archive_sha256": "96de6643695dc3a8f58ce6fceac43b967743f988c34fc8437d1009fa48e47722",
+  "artifact_id": "linux-glibc-x86_64",
+  "executable_sha256": "43ce8d686720467c21be91cab4b8f3b246baae49c2cfe293714ebdf8a82f5716",
+  "candidate_archive_sha256": "ff3d77322bbcd343a27dcabdde8327dae3b7ed3ac312e2c99b62ca7bfa765d4d",
+  "provenance_sha256": "a52826088a3c44991c850085acbfb1737eaef1a55caec7c4826338f569be6e88",
+  "inventory_sha256": "346db86a1b31357a8584186f178dd3833a3ce0dc88edb5c547fa15d10ffa93d8",
+  "allocated_sections": 625,
+  "allocated_output_sections": 23,
+  "map_sha256": "97c5731fc9d24cd203082977c79ea8e42d1c3edda51a31bdd5c4a4c02576ab71",
+  "report_sha256": "c4fe835700c7c995f04e5fd1833140a7f1953eb275809cc7931a20fb3a02d205",
+  "independent_map_reread": true,
+  "allocated_sdk_inputs": {
+    "crt1.o": {
+      "input_sha256": "b05e3c08b80759446a3b08f404401b56e773147d9320c3cfb8770e548361c5f8",
+      "allocated_bytes": 124,
+      "executable_bytes": 44,
+      "input_sections": [
+        ".eh_frame+0x0",
+        ".note.ABI-tag",
+        ".text"
+      ],
+      "members": []
+    },
+    "libc_nonshared.a": {
+      "input_sha256": "c999fbff5f8c4c66bda1b4a24c4eed19e906751b9e106e81e4d570daf87a4bbe",
+      "allocated_bytes": 138,
+      "executable_bytes": 138,
+      "input_sections": [
+        ".text"
+      ],
+      "members": [
+        "elf-init-2.33.o",
+        "fstat-2.32.o"
+      ]
+    }
+  },
+  "go_terms_present": false,
+  "notice_files": 479,
+  "runtime_network": [
+    {
+      "python": "3.12.15",
+      "dot_executions": 49,
+      "report": "runtime-network-312.json",
+      "sha256": "7a66e4b1d2901e40ebd2b0d7ba0e89b72b79c0663c76aef01943d1fc79b3fe6b"
+    },
+    {
+      "python": "3.14.8",
+      "dot_executions": 49,
+      "report": "runtime-network-314.json",
+      "sha256": "cb8353a2cdacc94777045022bfcc0a8e8dc5ea7084df9adbd88a9fda6fcfd30a"
+    }
+  ],
+  "source_to_binary_complete": false,
+  "limitations": [
+    "Section observations do not approve component licenses or exhaustive source closure",
+    "Container musl results do not qualify a native Alpine cell; original environment kind remains in network reports",
+    "No source-offer approval, catalog admission or release"
+  ]
+}

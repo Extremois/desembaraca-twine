@@ -1,0 +1,220 @@
+{
+  "kind": "project-notice-wheel-sdist-checks-not-final-engine-qualification",
+  "application_revision": "993bc6fc3d0c9a4eaa2f16e268cb11212dc6b54f",
+  "run_id": 40768639752,
+  "workflow_url": "https://github.com/Extremois/desembaraca-twine/actions/runs/40768639752",
+  "passed": true,
+  "qualified": false,
+  "task_complete": false,
+  "project_notice_packaging_verified": true,
+  "notice_canonical_lf_sha256": "9bb809abd90c2ed4f4ca904a88f2baa504d5f0a3864367e19d8f641301f8614c",
+  "checkout_line_ending_scope": "Only exact LF or CRLF versions of the tracked license/notice text accepted",
+  "python_slots": 10,
+  "installations": 20,
+  "installed_files_per_format": 53,
+  "records": [
+    {
+      "artifact_id": 12852490600,
+      "artifact_name": "packages-macos-15-3.14-993bc6fc3d0c9a4eaa2f16e268cb11212dc6b54f",
+      "system": "Darwin",
+      "arch": "arm64",
+      "python": "3.14.7",
+      "receipt": {
+        "path": "specs/003-add-cross-platform-support/evidence/project-notice-ci-2026-10-28/12852490600.json.gz",
+        "sha256": "86fe080e453deca43c96a681e080a7f0505a284ed58b2aaebec7bd792f4fcd18"
+      },
+      "raw_receipt_sha256": "256a255a19fbbdc4183feb3f5dcecf553496970f87f87c36721e5e48e1d2eb9e",
+      "formats": [
+        "wheel",
+        "sdist"
+      ],
+      "notice_hashes": [
+        "9bb809abd90c2ed4f4ca904a88f2baa504d5f0a3864367e19d8f641301f8614c"
+      ]
+    },
+    {
+      "artifact_id": 12852055784,
+      "artifact_name": "packages-ubuntu-24.04-arm-3.14-993bc6fc3d0c9a4eaa2f16e268cb11212dc6b54f",
+      "system": "Linux",
+      "arch": "aarch64",
+      "python": "3.14.9",
+      "receipt": {
+        "path": "specs/003-add-cross-platform-support/evidence/project-notice-ci-2026-10-28/12852055784.json.gz",
+        "sha256": "7ded72d0ac675fd6678e768f54bc650ad31ff2271d906acb444c1955929e3a48"
+      },
+      "raw_receipt_sha256": "146799b1a430dd93b9eb6e629b8da40d6e7f5836c84bb8b91826cee045bcbeff",
+      "formats": [
+        "wheel",
+        "sdist"
+      ],
+      "notice_hashes": [
+        "9bb809abd90c2ed4f4ca904a88f2baa504d5f0a3864367e19d8f641301f8614c"
+      ]
+    },
+    {
+      "artifact_id": 12852031151,
+      "artifact_name": "packages-macos-15-intel-3.12-993bc6fc3d0c9a4eaa2f16e268cb11212dc6b54f",
+      "system": "Darwin",
+      "arch": "x86_64",
+      "python": "3.12.10",
+      "receipt": {
+        "path": "specs/003-add-cross-platform-support/evidence/project-notice-ci-2026-10-28/12852031151.json.gz",
+        "sha256": "aa88e1401521c23bb21f63d32caf5953b4d186baabc5dbe5fdaaf1aea6c1475a"
+      },
+      "raw_receipt_sha256": "a158f08d2c2bc86d8a36491d2aa7c72e43b413baf15495a120881e9937ee1a9d",
+      "formats": [
+        "wheel",
+        "sdist"
+      ],
+      "notice_hashes": [
+        "9bb809abd90c2ed4f4ca904a88f2baa504d5f0a3864367e19d8f641301f8614c"
+      ]
+    },
+    {
+      "artifact_id": 12851720927,
+      "artifact_name": "packages-windows-latest-3.12-993bc6fc3d0c9a4eaa2f16e268cb11212dc6b54f",
+      "system": "Windows",
+      "arch": "AMD64",
+      "python": "3.12.10",
+      "receipt": {
+        "path": "specs/003-add-cross-platform-support/evidence/project-notice-ci-2026-10-28/12851720927.json.gz",
+        "sha256": "185588cc66d57b75e1aad87aa3338d119a1fd5604ccc9cf28d3a64b56a89ed48"
+      },
+      "raw_receipt_sha256": "43e68dbb626c29cf447a35f41000b5adcd6e620806f6ed3c19cdc2e8f9febdbb",
+      "formats": [
+        "wheel",
+        "sdist"
+      ],
+      "notice_hashes": [
+        "7b5b5893baf72f2b9173c11a097b6fc0577f537f44562bf537aba17b0972fe39"
+      ]
+    },
+    {
+      "artifact_id": 12851506817,
+      "artifact_name": "packages-ubuntu-24.04-arm-3.12-993bc6fc3d0c9a4eaa2f16e268cb11212dc6b54f",
+      "system": "Linux",
+      "arch": "aarch64",
+      "python": "3.12.15",
+      "receipt": {
+        "path": "specs/003-add-cross-platform-support/evidence/project-notice-ci-2026-10-28/12851506817.json.gz",
+        "sha256": "6c033a6d7f99e75077688ff94c2b0f9b5e76d7a58811186040839a9aec989171"
+      },
+      "raw_receipt_sha256": "3a127013051791548feb8281e5ca1014622128cf360dba9f8755b92335d36265",
+      "formats": [
+        "wheel",
+        "sdist"
+      ],
+      "notice_hashes": [
+        "9bb809abd90c2ed4f4ca904a88f2baa504d5f0a3864367e19d8f641301f8614c"
+      ]
+    },
+    {
+      "artifact_id": 12851491332,
+      "artifact_name": "packages-windows-latest-3.14-993bc6fc3d0c9a4eaa2f16e268cb11212dc6b54f",
+      "system": "Windows",
+      "arch": "AMD64",
+      "python": "3.14.9",
+      "receipt": {
+        "path": "specs/003-add-cross-platform-support/evidence/project-notice-ci-2026-10-28/12851491332.json.gz",
+        "sha256": "ae6ae51cce4f75df153d53a1d9cddcf86f6225b8b74a257509b733f892572570"
+      },
+      "raw_receipt_sha256": "37a4e4a8306aa4c35947b585d3dd25d0c84982bd90132dd988691360af7e11c5",
+      "formats": [
+        "wheel",
+        "sdist"
+      ],
+      "notice_hashes": [
+        "7b5b5893baf72f2b9173c11a097b6fc0577f537f44562bf537aba17b0972fe39"
+      ]
+    },
+    {
+      "artifact_id": 12851331973,
+      "artifact_name": "packages-ubuntu-24.04-3.14-993bc6fc3d0c9a4eaa2f16e268cb11212dc6b54f",
+      "system": "Linux",
+      "arch": "x86_64",
+      "python": "3.14.9",
+      "receipt": {
+        "path": "specs/003-add-cross-platform-support/evidence/project-notice-ci-2026-10-28/12851331973.json.gz",
+        "sha256": "6bfeb01a0786d0a6f49f7601ca4cf194a93e7f43b0de927925e97a2c63028c20"
+      },
+      "raw_receipt_sha256": "c6e4b5dccff020781e308ec5f72abbc001d29326220f515a5c56d9ee051cc4ac",
+      "formats": [
+        "wheel",
+        "sdist"
+      ],
+      "notice_hashes": [
+        "9bb809abd90c2ed4f4ca904a88f2baa504d5f0a3864367e19d8f641301f8614c"
+      ]
+    },
+    {
+      "artifact_id": 12850767708,
+      "artifact_name": "packages-ubuntu-24.04-3.12-993bc6fc3d0c9a4eaa2f16e268cb11212dc6b54f",
+      "system": "Linux",
+      "arch": "x86_64",
+      "python": "3.12.15",
+      "receipt": {
+        "path": "specs/003-add-cross-platform-support/evidence/project-notice-ci-2026-10-28/12850767708.json.gz",
+        "sha256": "5ecd5e3a6bc954a18ef05ff066952b7682a72e5497cea5e4fa20f57ee31f10ac"
+      },
+      "raw_receipt_sha256": "39e0f2a4d7fec3fca82762d3e989dcba46f5920ac6c4531653032c75ce9d8c22",
+      "formats": [
+        "wheel",
+        "sdist"
+      ],
+      "notice_hashes": [
+        "9bb809abd90c2ed4f4ca904a88f2baa504d5f0a3864367e19d8f641301f8614c"
+      ]
+    },
+    {
+      "artifact_id": 12850309797,
+      "artifact_name": "packages-macos-15-intel-3.14-993bc6fc3d0c9a4eaa2f16e268cb11212dc6b54f",
+      "system": "Darwin",
+      "arch": "x86_64",
+      "python": "3.14.7",
+      "receipt": {
+        "path": "specs/003-add-cross-platform-support/evidence/project-notice-ci-2026-10-28/12850309797.json.gz",
+        "sha256": "ff5150c8a0f8d6dcdc3b2191e0fc9dd90c1dd037a77819ae08c26b53bc74b102"
+      },
+      "raw_receipt_sha256": "ac33e00afbc9573d2a92b0e0b0014d3620e882dc9e627546c7daa3fc4e7a4aba",
+      "formats": [
+        "wheel",
+        "sdist"
+      ],
+      "notice_hashes": [
+        "9bb809abd90c2ed4f4ca904a88f2baa504d5f0a3864367e19d8f641301f8614c"
+      ]
+    },
+    {
+      "artifact_id": 12850174591,
+      "artifact_name": "packages-macos-15-3.12-993bc6fc3d0c9a4eaa2f16e268cb11212dc6b54f",
+      "system": "Darwin",
+      "arch": "arm64",
+      "python": "3.12.10",
+      "receipt": {
+        "path": "specs/003-add-cross-platform-support/evidence/project-notice-ci-2026-10-28/12850174591.json.gz",
+        "sha256": "bfc8fd95f2f1f5f7c9d897c43dd48f00c08d774de4a8984ac21d08716dea282e"
+      },
+      "raw_receipt_sha256": "ad78bab0429f12989d46d355d84673209ae1d6c7721532b66a74212384fc7c83",
+      "formats": [
+        "wheel",
+        "sdist"
+      ],
+      "notice_hashes": [
+        "9bb809abd90c2ed4f4ca904a88f2baa504d5f0a3864367e19d8f641301f8614c"
+      ]
+    }
+  ],
+  "limitations": [
+    "No private engine acquired or qualified by this package/help workflow",
+    "POSIX license/source audits and permanent delivery remain open",
+    "These are current development packages, not final released candidates"
+  ],
+  "foundation_evidence": {
+    "path": "specs/003-add-cross-platform-support/evidence/project-notice-ci-2026-10-28/foundation.json",
+    "sha256": "acfad5a93c999ec67113114da8bc969569e703190fb52670551d89bf3f911f21"
+  },
+  "component_findings": {
+    "path": "specs/003-add-cross-platform-support/evidence/license-review-2026-10-28/component-findings.json",
+    "sha256": "91b1ca4c569ddcfb73fd924186645961746ae1efef8d75ac68e1d6eebb019ca9"
+  }
+}

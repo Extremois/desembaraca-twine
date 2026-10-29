@@ -1,0 +1,189 @@
+{
+  "artifact_id": "linux-glibc-x86_64",
+  "recipe": {
+    "schema_version": 1,
+    "id": "linux-glibc-x86_64",
+    "os": "linux",
+    "arch": "x86_64",
+    "abi": "glibc",
+    "source_lock": "source-lock.json",
+    "cmake": {
+      "BUILD_SHARED_LIBS": "OFF",
+      "ENABLE_LTDL": "OFF",
+      "WITH_EXPAT": "OFF",
+      "WITH_ZLIB": "OFF",
+      "WITH_GVEDIT": "OFF",
+      "WITH_SMYRNA": "OFF",
+      "WITH_GDK": "OFF",
+      "WITH_GHOSTSCRIPT": "OFF",
+      "WITH_GTK": "OFF",
+      "WITH_POPPLER": "OFF",
+      "WITH_QUARTZ": "OFF",
+      "WITH_RSVG": "OFF",
+      "WITH_WEBP": "OFF",
+      "WITH_X": "OFF",
+      "ENABLE_TCL": "OFF",
+      "ENABLE_SWIG": "OFF",
+      "with_digcola": "OFF",
+      "with_ipsepcola": "OFF",
+      "with_sfdp": "OFF",
+      "with_cxx_api": "OFF",
+      "with_cxx_tests": "OFF",
+      "CMAKE_DISABLE_FIND_PACKAGE_ANN": "ON",
+      "CMAKE_DISABLE_FIND_PACKAGE_CAIRO": "ON",
+      "CMAKE_DISABLE_FIND_PACKAGE_GTS": "ON",
+      "CMAKE_DISABLE_FIND_PACKAGE_PANGOCAIRO": "ON",
+      "CMAKE_DISABLE_FIND_PACKAGE_Freetype": "ON",
+      "CMAKE_DISABLE_FIND_PACKAGE_GLUT": "ON",
+      "CMAKE_DISABLE_FIND_PACKAGE_GTK2": "ON",
+      "CMAKE_DISABLE_FIND_PACKAGE_Fontconfig": "ON",
+      "CMAKE_DISABLE_FIND_PACKAGE_GD": "ON",
+      "CMAKE_DISABLE_FIND_PACKAGE_GS": "ON",
+      "CMAKE_DISABLE_FIND_PACKAGE_LTDL": "ON",
+      "CMAKE_DISABLE_FIND_PACKAGE_AA": "ON",
+      "CMAKE_DISABLE_FIND_PACKAGE_DevIL": "ON",
+      "CMAKE_EXE_LINKER_FLAGS": "-static-libstdc++ -static-libgcc",
+      "CMAKE_C_FLAGS": "-march=x86-64 -mtune=generic",
+      "CMAKE_CXX_FLAGS": "-march=x86-64 -mtune=generic",
+      "ENABLE_SHARP": "OFF",
+      "ENABLE_D": "OFF",
+      "ENABLE_GO": "OFF",
+      "ENABLE_GUILE": "OFF",
+      "ENABLE_JAVA": "OFF",
+      "ENABLE_JAVASCRIPT": "OFF",
+      "ENABLE_LUA": "OFF",
+      "ENABLE_PERL": "OFF",
+      "ENABLE_PHP": "OFF",
+      "ENABLE_PYTHON": "OFF",
+      "ENABLE_R": "OFF",
+      "ENABLE_RUBY": "OFF",
+      "CMAKE_SKIP_RPATH": "ON"
+    },
+    "qualification": "pending-native-build-and-audit",
+    "sdk_environment_digest": null,
+    "baseline_target": "Ubuntu 18.04 or older glibc ABI",
+    "required_evidence": [
+      "native build",
+      "compiler/sysroot/image digests",
+      "dependency closure and ABI symbols",
+      "source/license audit",
+      "relocation",
+      "six known layouts",
+      "cell qualification"
+    ],
+    "notes": "Graphviz internal libraries/plugins statically linked using upstream dot_builtins; libc/OS linkage remains platform-specific. No universal Linux claim."
+  },
+  "source": {
+    "schema_version": 1,
+    "engine": "graphviz",
+    "version": "16.1.0",
+    "url": "https://gitlab.com/graphviz/graphviz/-/archive/16.1.0/graphviz-16.1.0.tar.gz",
+    "sha256": "1e028b2b3e84e946c1d3e8c47590f8f0741bba1041fe6eff36eee87e598ea249",
+    "size": 41189481,
+    "git_revision": "e41c710710be080ad37af1b51c6e2f8beffa9ee5",
+    "license": "EPL-2.0",
+    "license_path": "COPYING",
+    "license_sha256": "0becf16567beb77fa252b7664631dd177c8f9a1889e48995b45379c7130e5303",
+    "qualification": "source-only; no POSIX binary qualified"
+  },
+  "recipe_sha256": "ce509aa37846e078bca9765abae6bc425a6bbd6a75eabff806ff5999c4b48f44",
+  "output": "/home/runner/work/_temp/twine-replay-build",
+  "qualification": "build-only; dependency/license/corpus/signature qualification still required",
+  "sdk": {
+    "c_compiler": {
+      "path": "/home/runner/work/_temp/twine-replay-sdk/c_compiler",
+      "sha256": "8e932b92afb2ba5a4a141681cad848b4e0a1bcc4f3320e20212bc380ce7af13d"
+    },
+    "cxx_compiler": {
+      "path": "/home/runner/work/_temp/twine-replay-sdk/cxx_compiler",
+      "sha256": "60c6c8ca8cd3f9a5402a0b55fdaad1e5b14a397ed7908bfbc1fbbc512bba06f0"
+    },
+    "cmake": {
+      "path": "/home/runner/work/_temp/twine-replay-sdk/cmake-math",
+      "sha256": "5fa3f4f832dc4a05ef7defb706f6d204e13d05ba88dbb6cdd29086302317df1a"
+    },
+    "elf_inspector": {
+      "path": "/usr/bin/x86_64-linux-gnu-readelf",
+      "sha256": "64c58e15274bbbb5153f31078e455e9e77ee5f51489e709bba5bb788ce9df2b0"
+    },
+    "facts": {
+      "provider": "Zig",
+      "archive": {
+        "version": "0.15.2",
+        "url": "https://ziglang.org/download/0.15.2/zig-x86_64-linux-0.15.2.tar.xz",
+        "sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+        "size": 53733924,
+        "executable_sha256": "2858dc89dbbfdd08cceda1b841e7fd0a793a1a67b49f150bc3d0d1de44ed7f51"
+      },
+      "zig_sha256": "2858dc89dbbfdd08cceda1b841e7fd0a793a1a67b49f150bc3d0d1de44ed7f51",
+      "target": "x86_64-linux.4.15-gnu.2.27",
+      "environment_kind": "native",
+      "kernel": "6.17.0-1022-azure",
+      "host": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+      "tools": {
+        "c_compiler": {
+          "path": "/home/runner/work/_temp/twine-replay-sdk/c_compiler",
+          "sha256": "8e932b92afb2ba5a4a141681cad848b4e0a1bcc4f3320e20212bc380ce7af13d"
+        },
+        "cxx_compiler": {
+          "path": "/home/runner/work/_temp/twine-replay-sdk/cxx_compiler",
+          "sha256": "60c6c8ca8cd3f9a5402a0b55fdaad1e5b14a397ed7908bfbc1fbbc512bba06f0"
+        },
+        "cmake": {
+          "path": "/home/runner/work/_temp/twine-replay-sdk/cmake-math",
+          "sha256": "5fa3f4f832dc4a05ef7defb706f6d204e13d05ba88dbb6cdd29086302317df1a"
+        },
+        "elf_inspector": {
+          "path": "/usr/bin/x86_64-linux-gnu-readelf",
+          "sha256": "64c58e15274bbbb5153f31078e455e9e77ee5f51489e709bba5bb788ce9df2b0"
+        }
+      },
+      "host_tools": {
+        "cmake": {
+          "path": "/usr/local/bin/cmake",
+          "sha256": "c4b3b237dc7a013590db9e90f70fca2dfdedde09521e920d3339569ea364230a",
+          "version": "cmake version 3.31.6"
+        },
+        "make": {
+          "path": "/usr/bin/make",
+          "sha256": "d78b8f1d099fbcfb6f2f49ab87223b9b68fb3956642f92d6ec6de812e8afa965",
+          "version": "GNU Make 4.3"
+        },
+        "bison": {
+          "path": "/usr/bin/bison",
+          "sha256": "b67826f519b3bc9c6cc4fb50d03bf6c362ba3f202b32a553c7256a801f4c985e",
+          "version": "bison (GNU Bison) 3.8.2"
+        },
+        "flex": {
+          "path": "/usr/bin/flex",
+          "sha256": "6b70611fd650c8216b5c8c1a54a69ed470cd82c63ec0dc095dd4d9782bc3efbb",
+          "version": "flex 2.6.4"
+        }
+      },
+      "image_os": "ubuntu24",
+      "image_version": "20261012.334.1",
+      "runner_arch": "X64",
+      "compiler": {
+        "path": "/home/runner/work/_temp/twine-replay-sdk/sdk/zig-x86_64-linux-0.15.2/zig",
+        "sha256": "2858dc89dbbfdd08cceda1b841e7fd0a793a1a67b49f150bc3d0d1de44ed7f51"
+      },
+      "flag_translation": "Only -march=x86-64 and -mtune=generic become -mcpu=baseline",
+      "math_library": "MATH_LIB=m; no absolute host libm",
+      "qualification": "experimental SDK; compiler target is not oldest kernel/CPU qualification"
+    },
+    "environment_digest": "83c9138eaee10a87e1d4726d5112699fabe3b13765cedaac448337be5447d988"
+  },
+  "native_os": "linux",
+  "native_arch": "x86_64",
+  "libc": "2.39",
+  "kernel": "6.17.0-1022-azure",
+  "completed": true,
+  "host_libc_family": "glibc",
+  "target_libc_family": "glibc",
+  "build_execution_kind": "native-host-toolchain",
+  "linkage": {
+    "recorded": false,
+    "pending_reason": "GNU ld dependency metadata unavailable; equivalent reviewed linkage evidence still required."
+  },
+  "executable_sha256": "e712acb3f95800ba373096c21611e299b819daf67ae9b0981cb59ed6b9cb8ff6"
+}

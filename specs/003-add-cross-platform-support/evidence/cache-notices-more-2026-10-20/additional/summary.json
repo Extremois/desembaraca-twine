@@ -1,0 +1,172 @@
+{
+  "kind": "musl-and-windows-independent-cache-notices",
+  "passed": true,
+  "qualified": false,
+  "application_revision": "ec5ff25f838416aea8a7526367bb1820df04e9a2",
+  "run_id": 39525752863,
+  "url": "https://github.com/Extremois/desembaraca-twine/actions/runs/39525752863",
+  "reports": [
+    {
+      "artifact_id": "linux-musl-x86_64",
+      "system": "Linux",
+      "arch": "x86_64",
+      "python": "3.12.13",
+      "file": "musl-cache-notices-x86_64-3.12.json",
+      "sha256": "123f1b22361f92a8b83c5693ec7017b27d23326d826e9bf9f71f7b5a2724e9ca",
+      "actions_artifact_id": 12313886167,
+      "actions_archive_sha256": "83d7b367000c2e27349333e5923a49196c942f5c8985dc2e42e56f3ebbd2ff6a",
+      "notice_files_per_format": 450,
+      "modes": [
+        "wheel",
+        "sdist"
+      ],
+      "environment": {
+        "arch": "x86_64",
+        "python_minor": "3.12",
+        "distribution": "alpine",
+        "version": "3.22.4",
+        "uid": 1001,
+        "environment_kind": "container",
+        "image": "python@sha256:9381e50cc82f4279b949fcd2d2f5e57cf97b1da2399eb956502364ceea2f4e83",
+        "kernel": "7.0.0-1017-azure",
+        "native_cpu": true,
+        "limitation": "Alpine userland on Ubuntu hosted kernel; no native Alpine cell qualification"
+      },
+      "passed": true
+    },
+    {
+      "artifact_id": "linux-musl-x86_64",
+      "system": "Linux",
+      "arch": "x86_64",
+      "python": "3.14.5",
+      "file": "musl-cache-notices-x86_64-3.14.json",
+      "sha256": "94a49db41e2b17d3efcd1723f4c677d397a7d7a77e3b14f4d8881298ac8abab8",
+      "actions_artifact_id": 12313946188,
+      "actions_archive_sha256": "cc34e2155d35c96e0e9df47c960c01b73aa4b6a0b463540f262358bf4dbbfc43",
+      "notice_files_per_format": 450,
+      "modes": [
+        "wheel",
+        "sdist"
+      ],
+      "environment": {
+        "arch": "x86_64",
+        "python_minor": "3.14",
+        "distribution": "alpine",
+        "version": "3.22.4",
+        "uid": 1001,
+        "environment_kind": "container",
+        "image": "python@sha256:1a5f0303fd8941565b5bbda3fac2345148a9fd8245d575c2971ccefcd77c78f6",
+        "kernel": "6.17.0-1022-azure",
+        "native_cpu": true,
+        "limitation": "Alpine userland on Ubuntu hosted kernel; no native Alpine cell qualification"
+      },
+      "passed": true
+    },
+    {
+      "artifact_id": "linux-musl-aarch64",
+      "system": "Linux",
+      "arch": "aarch64",
+      "python": "3.12.13",
+      "file": "musl-cache-notices-aarch64-3.12.json",
+      "sha256": "4f48c6c4b76a1e852f8b1ce19a55dd52052404e69587db6140e2ee01ec794ddc",
+      "actions_artifact_id": 12313226570,
+      "actions_archive_sha256": "28ddd27c68484712c8a4fe57def9d62a12c65a9021d929318258a3e27bccf1cc",
+      "notice_files_per_format": 450,
+      "modes": [
+        "wheel",
+        "sdist"
+      ],
+      "environment": {
+        "arch": "aarch64",
+        "python_minor": "3.12",
+        "distribution": "alpine",
+        "version": "3.22.4",
+        "uid": 1001,
+        "environment_kind": "container",
+        "image": "python@sha256:07b3a3b85d5b208f164a3276d5eb9c51e0ce61bbe4cb7ab4df0da50d5a78dc11",
+        "kernel": "7.0.0-1017-azure",
+        "native_cpu": true,
+        "limitation": "Alpine userland on Ubuntu hosted kernel; no native Alpine cell qualification"
+      },
+      "passed": true
+    },
+    {
+      "artifact_id": "linux-musl-aarch64",
+      "system": "Linux",
+      "arch": "aarch64",
+      "python": "3.14.5",
+      "file": "musl-cache-notices-aarch64-3.14.json",
+      "sha256": "b6d3986bbadd175932d4aa5ffd6dbd8dd50a779647d370ff358d3627f5195763",
+      "actions_artifact_id": 12313991021,
+      "actions_archive_sha256": "d943ad4fc570e6e3765a4683a60f02318f822dd9d8a5702dbd70aeb095748851",
+      "notice_files_per_format": 450,
+      "modes": [
+        "wheel",
+        "sdist"
+      ],
+      "environment": {
+        "arch": "aarch64",
+        "python_minor": "3.14",
+        "distribution": "alpine",
+        "version": "3.22.4",
+        "uid": 1001,
+        "environment_kind": "container",
+        "image": "python@sha256:27b691f87878a079100a3d8fafcd66b3c54d931598f307bcb54617c395f5b43c",
+        "kernel": "7.0.0-1017-azure",
+        "native_cpu": true,
+        "limitation": "Alpine userland on Ubuntu hosted kernel; no native Alpine cell qualification"
+      },
+      "passed": true
+    },
+    {
+      "artifact_id": "graphviz-16.1.0-windows-legacy",
+      "system": "Windows",
+      "arch": "AMD64",
+      "python": "3.12.10",
+      "file": "windows-cache-notices-3.12.json",
+      "sha256": "434fcc9693cc93931940f68df07744f728e8bf4da4a257134af000c2ed3d63fa",
+      "actions_artifact_id": 12313176180,
+      "actions_archive_sha256": "3252df15736e015a1e89f335317a5fec3da874db54e4f8f8175ef9423693d13f",
+      "notice_files_per_format": 29,
+      "modes": [
+        "wheel",
+        "sdist"
+      ],
+      "environment": {
+        "environment_kind": "hosted-windows",
+        "limitation": "Not a clean Windows 11 acceptance environment"
+      },
+      "passed": true
+    },
+    {
+      "artifact_id": "graphviz-16.1.0-windows-legacy",
+      "system": "Windows",
+      "arch": "AMD64",
+      "python": "3.14.8",
+      "file": "windows-cache-notices-3.14.json",
+      "sha256": "a278abfde701807cf7131a8719982231810a33599d971fc9f4ee40c3fb032805",
+      "actions_artifact_id": 12313736243,
+      "actions_archive_sha256": "50f067a2df2a7814f4f0ef31c68d2a377649ff5c9ad3922cf76a9d02a5afccd5",
+      "notice_files_per_format": 29,
+      "modes": [
+        "wheel",
+        "sdist"
+      ],
+      "environment": {
+        "environment_kind": "hosted-windows",
+        "limitation": "Not a clean Windows 11 acceptance environment"
+      },
+      "passed": true
+    }
+  ],
+  "installations": 12,
+  "python_slots": 6,
+  "notice_files_per_snapshot_total": 3716,
+  "corruption_checks": 12,
+  "restored_snapshots": 12,
+  "limitations": [
+    "Musl is native CPU in pinned Alpine userland on Ubuntu kernel, not native Alpine acceptance",
+    "Windows uses pinned upstream acquisition on hosted runner, not clean Windows 11 acceptance",
+    "No component license/source-offer/signature/catalog/support approval"
+  ]
+}

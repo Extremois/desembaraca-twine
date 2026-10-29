@@ -1,0 +1,44 @@
+{
+  "kind": "ubuntu-24.04-github-actions-task-acceptance",
+  "task": "T036",
+  "task_complete": true,
+  "qualified": false,
+  "application_revision": "d66243c1f1f1121b76e95c88f0e48a0a1ee1ff5b",
+  "workflow_run": 40611992837,
+  "slots": [
+    {
+      "arch": "x86_64",
+      "python": "3.14.8",
+      "report": "12783118687.json.gz",
+      "sha256": "95fc9db2141e3575d02de48ba2ac633717b49ed0c41aab9d93683ba74b38376e"
+    },
+    {
+      "arch": "x86_64",
+      "python": "3.12.15",
+      "report": "12782753926.json.gz",
+      "sha256": "b023eede8164d94ee3be36c5b0a2913e39e9309b591ac1cbdd0ea07ec30c6812"
+    },
+    {
+      "arch": "aarch64",
+      "python": "3.14.8",
+      "report": "12782683556.json.gz",
+      "sha256": "58b31d9176ca6f8d84a95f75d987aeaaa29bf1e03b7a5fc0530055eb9371e5b3"
+    },
+    {
+      "arch": "aarch64",
+      "python": "3.12.15",
+      "report": "12782543874.json.gz",
+      "sha256": "5e3003d29591102fb6df2124d4ff82eb01ed897121360db23c93f8013218ed9d"
+    }
+  ],
+  "installation_modes": [
+    "wheel",
+    "sdist"
+  ],
+  "installations": 8,
+  "corpus_executions": 104,
+  "known_zero_reference_executions": 48,
+  "installed_files_verified_per_mode": 53,
+  "network": "Python guards and acquisition counters; no syscall-level observation asserted for these runs",
+  "scope": "Completes execution task T036 under Actions-only policy; no license, public distribution or support promotion"
+}

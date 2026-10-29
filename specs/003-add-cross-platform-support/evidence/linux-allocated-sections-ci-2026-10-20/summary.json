@@ -1,0 +1,92 @@
+{
+  "kind": "four-linux-variant-allocated-section-and-go-terms-review",
+  "task": "T030",
+  "task_complete": false,
+  "approved": false,
+  "qualified": false,
+  "revision": "dfc93c8a29143a2d74a1b1e240d88fa3e221fabd",
+  "foundation": "foundation.json",
+  "foundation_sha256": "12aa9d3644ec0cc6281eecf728cc376876bb186e1b78dc3e01bf08bee4a50380",
+  "bindings": [
+    {
+      "artifact_id": "linux-glibc-x86_64",
+      "summary": "glibc-x86_64/summary.json",
+      "summary_sha256": "eb01b31f85fdf74b6619fe4166be37d32f2ac6c12f318cfe66ad9029bf4bc2b1",
+      "engine_sha256": "43ce8d686720467c21be91cab4b8f3b246baae49c2cfe293714ebdf8a82f5716",
+      "allocated_sections": 625,
+      "allocated_output_sections": 23,
+      "notice_files": 479,
+      "go_terms_present": false
+    },
+    {
+      "artifact_id": "linux-glibc-aarch64",
+      "summary": "glibc-aarch64/summary.json",
+      "summary_sha256": "0f3850f3bb6678eb2cf6a4e4d8eb4cb4a0186cb4ddcdd15ac2d10a5b8d1efdc6",
+      "engine_sha256": "933b6c63370bdd3e814627e2a9a06176416c8da017a21dcbc96d8137dbc17e22",
+      "allocated_sections": 648,
+      "allocated_output_sections": 23,
+      "notice_files": 544,
+      "go_terms_present": true
+    },
+    {
+      "artifact_id": "linux-musl-x86_64",
+      "summary": "musl-x86_64/summary.json",
+      "summary_sha256": "75ddcc367e5b375c785434dc4f3b18f4af7159602b095b5d2405bcfc255a4ba6",
+      "engine_sha256": "f4dfee4e052704b1a7efdb7b6a4c43583ccaa062aec800b76224dae24eb2b69b",
+      "allocated_sections": 964,
+      "allocated_output_sections": 10,
+      "notice_files": 421,
+      "go_terms_present": true
+    },
+    {
+      "artifact_id": "linux-musl-aarch64",
+      "summary": "musl-aarch64/summary.json",
+      "summary_sha256": "641017d45c61812e6a2c0108fca184b0fe6fea283030945e0f31cedd492c6e8e",
+      "engine_sha256": "2d7a4b6024eb000c33ecf8b14d1a32d0aac8dde65bed00de138604d081fd3ee4",
+      "allocated_sections": 968,
+      "allocated_output_sections": 10,
+      "notice_files": 421,
+      "go_terms_present": true
+    }
+  ],
+  "workflow_runs": [
+    {
+      "id": 39418824582,
+      "url": "https://github.com/Extremois/desembaraca-twine/actions/runs/39418824582",
+      "conclusion": "success"
+    },
+    {
+      "id": 39418824581,
+      "url": "https://github.com/Extremois/desembaraca-twine/actions/runs/39418824581",
+      "conclusion": "success"
+    },
+    {
+      "id": 39418824574,
+      "url": "https://github.com/Extremois/desembaraca-twine/actions/runs/39418824574",
+      "conclusion": "success"
+    },
+    {
+      "id": 39418824591,
+      "url": "https://github.com/Extremois/desembaraca-twine/actions/runs/39418824591",
+      "conclusion": "success"
+    },
+    {
+      "id": 39418824604,
+      "url": "https://github.com/Extremois/desembaraca-twine/actions/runs/39418824604",
+      "conclusion": "success"
+    }
+  ],
+  "parser_sha256": "b7d89b0ee9e3716243cfcc6bb74678cc18b1c3a7ae54cc67ded93f6ea4a87544",
+  "all_engines_unchanged_from_previous_notices": true,
+  "findings": [
+    "Four map reports independently reproduced from downloaded ELF/map/provenance bytes",
+    "Go BSD text present in glibc ARM64 and both musl packages; no reference imposed on glibc x64",
+    "Runtime compiler_rt contributes mathematical code in ARM64 glibc and musl; imports cannot all be dismissed as debug-only",
+    "Known input/member and allocated output-range checks are enforced without changing audit approval gates"
+  ],
+  "pending": [
+    "Per-file runtime math attribution and other component applicability",
+    "ISO conditions and full corresponding-source retention/offer review",
+    "Full matrix distribution, recovery, signing/Twine and support qualification"
+  ]
+}

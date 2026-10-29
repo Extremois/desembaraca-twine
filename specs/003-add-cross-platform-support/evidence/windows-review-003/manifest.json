@@ -1,0 +1,41 @@
+{
+  "target_id": "windows-11-stable-x86_64-distribution-default",
+  "python_minor": "3.14",
+  "application_revision": "3ad9b6632140149a65586d2a5519687c93b8b323",
+  "artifact_sha256": "37906f29ede26cf1952f8cf942c1e7814ab86ef448130136c8607b1b6ffe0870",
+  "source_state": "dirty",
+  "schema": "twine-public-review-v1",
+  "review_status": "pending",
+  "outputs": [
+    {
+      "case": "crossing",
+      "file": "crossing.twee",
+      "sha256": "9c0ac2a2b907eeb3229ab8ef56b4ff5a1dbe65fae9df812694c7864c022a7c1e"
+    },
+    {
+      "case": "coincident",
+      "file": "coincident.twee",
+      "sha256": "a870267b461224252dbb643b70c3a998a90da0b2dec1400bdf6a32b7167029d3"
+    },
+    {
+      "case": "isolated_overlap",
+      "file": "isolated_overlap.twee",
+      "sha256": "c49c4576372f8d573544a3a150beedd9591dcfd9cb7d77bf858ed7a44b9ef962"
+    },
+    {
+      "case": "connected_overlap",
+      "file": "connected_overlap.twee",
+      "sha256": "862a119b556213e49b22b249e9581fb69dd1a8561edf014b201db903e3663e87"
+    },
+    {
+      "case": "through_isolated",
+      "file": "through_isolated.twee",
+      "sha256": "da3fcd38728a11e115786c6145784a5bfef4163484627f33676e9d2287c4d0dc"
+    },
+    {
+      "case": "through_connected",
+      "file": "through_connected.twee",
+      "sha256": "a2ff3b953d6ec8ed4b0d7c0792e2960397624090672ca4c68221d74f72c092d2"
+    }
+  ]
+}

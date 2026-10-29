@@ -1,0 +1,43 @@
+{
+  "kind": "alpine-matching-cpu-userland-compatibility-receipt",
+  "passed": true,
+  "qualified": false,
+  "approved": false,
+  "environment_kind": "container",
+  "revision": "b13cd6f90db31163e62119bb83e2eb8db5ac8458",
+  "artifact_download_id": 12269922486,
+  "download_sha256": "8d295d51d7d5708043d0979acc77c357562bbe3553d378da6e34c54f3bffe781",
+  "slots": [
+    {
+      "alpine": "3.22",
+      "patch": "3.22.4",
+      "arch": "x86_64",
+      "python": "3.12.13",
+      "image": "python@sha256:9381e50cc82f4279b949fcd2d2f5e57cf97b1da2399eb956502364ceea2f4e83",
+      "kernel": "6.17.0-1022-azure",
+      "engine_sha256": "f4dfee4e052704b1a7efdb7b6a4c43583ccaa062aec800b76224dae24eb2b69b",
+      "environment": "python-3.12/environment.json",
+      "environment_sha256": "ef313313b15484d10e79aec2dad78377297e93451686fc817ddb85bd7dada0e3",
+      "network_sha256": "0d4cabc478f90310d42b3638c0db394d676f64e8ea12068e84596f6f30b51cfc",
+      "corpus_sha256": "6853a0bf43ff4b3cdf0829989ee2168d04ade8a91d61827a8d42fc44b608d8c4",
+      "venv_and_pip_verified": true,
+      "network_syscalls": {}
+    },
+    {
+      "alpine": "3.22",
+      "patch": "3.22.4",
+      "arch": "x86_64",
+      "python": "3.14.5",
+      "image": "python@sha256:1a5f0303fd8941565b5bbda3fac2345148a9fd8245d575c2971ccefcd77c78f6",
+      "kernel": "6.17.0-1022-azure",
+      "engine_sha256": "f4dfee4e052704b1a7efdb7b6a4c43583ccaa062aec800b76224dae24eb2b69b",
+      "environment": "python-3.14/environment.json",
+      "environment_sha256": "e8d31e7d3c3d0ebeb5e212e320e2f5d6ecb17dc837de30e2acbe6a3a514dab09",
+      "network_sha256": "fa30812eccb38006068c383234aa29f49bca402ffd6a102fc260f75ab9d7af71",
+      "corpus_sha256": "051b47c1cd3ca660efbb94b589c8e4ab388710ed53cb8daaab9f8e04ef1cfe1e",
+      "venv_and_pip_verified": true,
+      "network_syscalls": {}
+    }
+  ],
+  "scope": "Container userland, private runtime and controlled acquisition; native Alpine kernel/cell qualification remains pending"
+}

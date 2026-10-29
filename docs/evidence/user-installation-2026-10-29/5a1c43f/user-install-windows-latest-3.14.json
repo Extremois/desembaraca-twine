@@ -1,0 +1,19 @@
+{
+  "passed": true,
+  "revision": "5a1c43fc344d927d30bedc1c91590573983d56ed",
+  "system": "Windows",
+  "arch": "AMD64",
+  "python": "3.14.9",
+  "outside_checkout": true,
+  "standalone_installer": true,
+  "rerun_idempotent": true,
+  "activation_required": false,
+  "private_launcher": true,
+  "argument_boundaries": true,
+  "existing_path_preserved": true,
+  "profile_hashes": {},
+  "existing_profile_contents_preserved": true,
+  "pip_target_ignored": true,
+  "same_version_reinstallation": true,
+  "runtime_prepared": false
+}

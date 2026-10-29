@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "kind": "corresponding-source-delivery-pairing",
+  "artifact_id": "linux-musl-x86_64",
+  "application_revision": "a825f0d80bd7892de0e307656d28070885a9d1ed",
+  "executable_sha256": "f4dfee4e052704b1a7efdb7b6a4c43583ccaa062aec800b76224dae24eb2b69b",
+  "provenance_sha256": "54ed1980bf2b3ed9c1889e6640a7b000aaee6d0fc686875423239ebe95be9c9c",
+  "pairing_valid": true,
+  "archive_verification": {
+    "candidate": true,
+    "sources": true
+  },
+  "candidate": {
+    "archive": "candidate.zip",
+    "sha256": "186a055cf4341f470cfa9a4827edda503655a7a732de24400436f7394899d70d",
+    "bytes": 7985119,
+    "inventory_sha256": "50ea548c3acfb054fc63c6264ca78fdb05d1d5628b77666789827f9de6e16b82",
+    "file_count": 450
+  },
+  "sources": {
+    "archive": "sources.tar.gz",
+    "sha256": "bdf9d612521dc685e8d9d37192603320c41b613f174a8c0dbd141321a0e73e43",
+    "bytes": 68494688,
+    "file_count": 18228,
+    "sdk_files": 18102
+  },
+  "obligations": {
+    "lgpl_2_1_section_6_d": "Não aplicável diretamente (ambiente sem retenção glibc)",
+    "lgpl_2_1_section_6_a": "Reconstrução funcional e independência de compilação comprovadas",
+    "epl_2_0_section_3_1": "Fontes completas do Graphviz acompanhadas de declaração expressa de licença e avisos preservados",
+    "offline_notices": "Avisos SOURCE-REFERENCES.txt e textos integrais offline incorporados em ambos os arquivos"
+  },
+  "delivery_binding": {
+    "status": "unpromoted_pending_authorized_distribution",
+    "candidate_distribution_url": null,
+    "sources_distribution_url": null,
+    "active_catalog_promoted": false
+  }
+}

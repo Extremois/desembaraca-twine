@@ -1,0 +1,69 @@
+{
+  "kind": "entity-alternative-evaluation-inputs-not-production-source-lock",
+  "whatwg_repository_revision": "283a3531a61106d07d9a7d9fb3e6f3b9bfd33d70",
+  "inputs": {
+    "entities.json": {
+      "url": "https://raw.githubusercontent.com/whatwg/html-build/283a3531a61106d07d9a7d9fb3e6f3b9bfd33d70/entities/out/entities.json",
+      "sha256": "d741d877ac77c4194c4ad526b5b4a19aef8dfe411ab840a466891cdbb9f362e6",
+      "size": 145897,
+      "stored_sha256": "d741d877ac77c4194c4ad526b5b4a19aef8dfe411ab840a466891cdbb9f362e6",
+      "encoding": "identity"
+    },
+    "WHATWG-LICENSE.txt": {
+      "url": "https://raw.githubusercontent.com/whatwg/html-build/283a3531a61106d07d9a7d9fb3e6f3b9bfd33d70/LICENSE",
+      "sha256": "85dc6f5ccb57a6fe8c33d158f9fc8fc7ee5655a5d3db2cdd131c6a3d0f48a864",
+      "size": 16315,
+      "stored_sha256": "85dc6f5ccb57a6fe8c33d158f9fc8fc7ee5655a5d3db2cdd131c6a3d0f48a864",
+      "encoding": "identity"
+    },
+    "xhtml1-lat1.ent": {
+      "url": "https://www.w3.org/2003/entities/2007/xhtml1-lat1.ent",
+      "sha256": "11b3abc191cc5f33fee63be49fabb35a8052e629949bc793f823a0d819bbfd66",
+      "size": 8512,
+      "stored_sha256": "11b3abc191cc5f33fee63be49fabb35a8052e629949bc793f823a0d819bbfd66",
+      "encoding": "identity"
+    },
+    "xhtml1-special.ent": {
+      "url": "https://www.w3.org/2003/entities/2007/xhtml1-special.ent",
+      "sha256": "3f106d400e70cee49b903afec6fe29697bcaa37251eaffae2de1c84ce4b1a90f",
+      "size": 3454,
+      "stored_sha256": "3f106d400e70cee49b903afec6fe29697bcaa37251eaffae2de1c84ce4b1a90f",
+      "encoding": "identity"
+    },
+    "xhtml1-symbol.ent": {
+      "url": "https://www.w3.org/2003/entities/2007/xhtml1-symbol.ent",
+      "sha256": "7244bf53759d2e74430a4471a6e84c2708aff168499f9d7e6cf2713ad660004e",
+      "size": 9598,
+      "stored_sha256": "7244bf53759d2e74430a4471a6e84c2708aff168499f9d7e6cf2713ad660004e",
+      "encoding": "identity"
+    },
+    "W3C-software-2002.html.gz": {
+      "url": "https://www.w3.org/Consortium/Legal/2002/copyright-software-20021231",
+      "sha256": "8ee6eafd819f99fe11dd91eb657a4b2dd3f38f2c35b1f6ba30e66170139bc597",
+      "size": 28003,
+      "stored_sha256": "e66dbf018d80be04bed308c206d7d714b66b44a552e71f33b4a447a60aea9d4f",
+      "encoding": "gzip"
+    },
+    "W3C-software-2002.txt": {
+      "derived_from": "W3C-software-2002.html.gz",
+      "sha256": "a836e894069b243e909f30160f1b5c6e4dcab3ec791175739cb68c85ad1e7212",
+      "size": 1966,
+      "transformation": "HTML to visible text; license and disclaimers section only; 2026-10-28"
+    }
+  },
+  "compatibility_overrides": {
+    "lang": {
+      "modern": 10216,
+      "legacy": 9001
+    },
+    "rang": {
+      "modern": 10217,
+      "legacy": 9002
+    }
+  },
+  "preferred_names": "Names from the three modern W3C XHTML entity files plus the predefined amp name; no legacy ISO table is used to select candidate names",
+  "licenses": {
+    "whatwg": "CC-BY-4.0, with BSD-3-Clause for incorporation into source code",
+    "w3c_selectors": "W3C Software and Document License 2002, as explicitly offered by each input header"
+  }
+}

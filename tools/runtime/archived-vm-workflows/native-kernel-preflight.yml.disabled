@@ -1,0 +1,43 @@
+name: Native kernel test infrastructure preflight
+on:
+  workflow_dispatch:
+  push:
+    branches: [feat/003-add-cross-platform-support]
+    paths:
+      - '.github/workflows/native-kernel-preflight.yml'
+      - '.github/scripts/probe-kvm.py'
+      - 'tests/unit/test_kvm_preflight.py'
+permissions:
+  contents: read
+concurrency:
+  group: native-kernel-preflight-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  probe:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - runner: ubuntu-24.04
+            arch: x86_64
+          - runner: ubuntu-24.04-arm
+            arch: aarch64
+    runs-on: ${{ matrix.runner }}
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Query the existing KVM device without creating a guest
+        shell: bash
+        run: |
+          mkdir "$RUNNER_TEMP/kvm-preflight"
+          python3 .github/scripts/probe-kvm.py --report "$RUNNER_TEMP/kvm-preflight/runner-user.json"
+          sudo --preserve-env=GITHUB_ACTIONS,GITHUB_SHA,RUNNER_ARCH,ImageOS,ImageVersion python3 .github/scripts/probe-kvm.py --report "$RUNNER_TEMP/kvm-preflight/elevated.json"
+      - name: Retain capability observations (not native guest qualification)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: kernel-preflight-${{ matrix.arch }}-${{ github.sha }}
+          retention-days: 7
+          path: ${{ runner.temp }}/kvm-preflight/*.json

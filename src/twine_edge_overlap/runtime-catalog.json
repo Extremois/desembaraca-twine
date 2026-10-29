@@ -1,0 +1,123 @@
+{
+  "schema_version": 2,
+  "engine": "graphviz",
+  "engine_version": "16.1.0",
+  "artifacts": [
+    {
+      "id": "graphviz-16.1.0-windows-legacy",
+      "os": "windows",
+      "arch": "x86_64",
+      "abi": "windows",
+      "minimum_os": "11",
+      "cpu_requirements": [],
+      "build_variant": "upstream-win32-legacy",
+      "manifest_path": "runtime-manifest.json",
+      "manifest_sha256": "8aed45fdbd206069cf7e37df8b505a979acaa219bb3f013f2dd9c7f11e680f9d",
+      "priority": 100,
+      "qualification_evidence": [
+        "specs/002-manage-layout-runtime/convergence-results.json"
+      ]
+    },
+    {
+      "id": "graphviz-16.1.0-linux-glibc-aarch64",
+      "os": "linux",
+      "arch": "aarch64",
+      "abi": "glibc",
+      "cpu_requirements": [],
+      "build_variant": "linux-glibc-aarch64",
+      "manifest_path": "runtime_assets/graphviz-16.1.0-linux-glibc-aarch64.json",
+      "manifest_sha256": "358be1865d757208d7dac906616351dc733861f19a2b2062a292a02bd8b6c479",
+      "priority": 100,
+      "qualification_evidence": [
+        "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/summary.json",
+        "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/public-download-verification.json"
+      ],
+      "minimum_libc": "2.27",
+      "minimum_kernel": "4.15"
+    },
+    {
+      "id": "graphviz-16.1.0-linux-glibc-x86_64",
+      "os": "linux",
+      "arch": "x86_64",
+      "abi": "glibc",
+      "cpu_requirements": [],
+      "build_variant": "linux-glibc-x86_64",
+      "manifest_path": "runtime_assets/graphviz-16.1.0-linux-glibc-x86_64.json",
+      "manifest_sha256": "67b55fdac3461ed8db43093943bd42f3986f4d6b6d5427ddac30c9be1b0e6a83",
+      "priority": 100,
+      "qualification_evidence": [
+        "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/summary.json",
+        "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/public-download-verification.json"
+      ],
+      "minimum_libc": "2.27",
+      "minimum_kernel": "4.15"
+    },
+    {
+      "id": "graphviz-16.1.0-macos-arm64",
+      "os": "darwin",
+      "arch": "aarch64",
+      "abi": "darwin",
+      "cpu_requirements": [],
+      "build_variant": "macos-arm64",
+      "manifest_path": "runtime_assets/graphviz-16.1.0-macos-arm64.json",
+      "manifest_sha256": "a46ef5f8434a60b64e71e0038bd8001eb8bb654b091926379c038465b6983f6a",
+      "priority": 100,
+      "qualification_evidence": [
+        "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/summary.json",
+        "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/public-download-verification.json"
+      ],
+      "minimum_os": "15.0"
+    },
+    {
+      "id": "graphviz-16.1.0-macos-x86_64",
+      "os": "darwin",
+      "arch": "x86_64",
+      "abi": "darwin",
+      "cpu_requirements": [],
+      "build_variant": "macos-x86_64",
+      "manifest_path": "runtime_assets/graphviz-16.1.0-macos-x86_64.json",
+      "manifest_sha256": "8ff91bf13a04a3e6a6fabf54d2de28d5f5c779b4ebe1e69951f147dca321a892",
+      "priority": 100,
+      "qualification_evidence": [
+        "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/summary.json",
+        "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/public-download-verification.json"
+      ],
+      "minimum_os": "15.0"
+    },
+    {
+      "id": "graphviz-16.1.0-linux-musl-aarch64",
+      "os": "linux",
+      "arch": "aarch64",
+      "abi": "musl",
+      "cpu_requirements": [],
+      "build_variant": "linux-musl-aarch64",
+      "manifest_path": "runtime_assets/graphviz-16.1.0-linux-musl-aarch64.json",
+      "manifest_sha256": "9a2e4a2e5234efdcf507b25429d5f02e77a29d21142cd63056b6a8f583420605",
+      "priority": 100,
+      "qualification_evidence": [
+        "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/summary.json",
+        "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/public-download-verification.json"
+      ],
+      "minimum_libc": "1.2.0",
+      "minimum_kernel": "4.15"
+    },
+    {
+      "id": "graphviz-16.1.0-linux-musl-x86_64",
+      "os": "linux",
+      "arch": "x86_64",
+      "abi": "musl",
+      "cpu_requirements": [],
+      "build_variant": "linux-musl-x86_64",
+      "manifest_path": "runtime_assets/graphviz-16.1.0-linux-musl-x86_64.json",
+      "manifest_sha256": "6737c43e1d245fa7b50609be3c3cbbc66012fb533e125e044bc94f93f252854d",
+      "priority": 100,
+      "qualification_evidence": [
+        "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/summary.json",
+        "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/public-download-verification.json"
+      ],
+      "minimum_libc": "1.2.0",
+      "minimum_kernel": "4.15"
+    }
+  ],
+  "application_revision": "c0078230a3bf1a2b934f1754e8b12664f100b4cc"
+}

@@ -1,5 +1,6 @@
 """Bounded read and complete, no-replace publication beside the input."""
 import os
+import errno
 from pathlib import Path
 import tempfile
 from .domain.model import MAX_BYTES
@@ -42,6 +43,10 @@ def publish(source,data,validator,*,original=None):
                 else: os.link(temporary,destination)
                 return destination
             except FileExistsError: continue
+            except OSError as exc:
+                if os.name!='nt' and exc.errno in (errno.EXDEV,errno.EOPNOTSUPP,errno.ENOSYS):
+                    raise WriteError('O sistema de arquivos não oferece a publicação atômica necessária; nenhuma cópia gerada. Use uma pasta em sistema de arquivos com suporte a hardlinks e repita o comando.') from exc
+                raise
         raise WriteError('Nomes de saída ocupados; libere um nome na pasta de entrada')
     except OSError as exc: raise WriteError('Não foi possível salvar a cópia; confira espaço e permissões na pasta de entrada') from exc
     finally:

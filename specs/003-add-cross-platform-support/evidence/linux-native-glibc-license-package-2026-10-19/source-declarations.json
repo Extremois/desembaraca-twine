@@ -1,0 +1,61 @@
+{
+  "approved": false,
+  "scope": "Source comment declarations, not whole-bundle compatibility approval",
+  "sources": [
+    {
+      "path": "lib/libc/glibc/csu/abi-note.S",
+      "source_sha256": "9abb7d71812ff5009197a67c57e3f8ae3138dd5be57c1a8e534e859c6e689ffc",
+      "role": "additional-startup-source-material-not-object-observation",
+      "declared_license": "LGPL-2.1-or-later",
+      "unlimited_linking_permission_in_prefix": true,
+      "notice_file": "notices/glibc-source-lib__libc__glibc__csu__abi-note.S.txt",
+      "prefix_sha256": "610d4102608ad923087a58e2b3a6e34ee45484330a6df096a33278d9e8668a05",
+      "approved": false,
+      "scope": "Declarations read in preserved leading comments; not a complete per-file applicability decision"
+    },
+    {
+      "path": "lib/libc/glibc/csu/elf-init-2.33.c",
+      "source_sha256": "2d9b3d9b6af5d2ad6bf8a881e3c34f0bd7478f9709b62dfe9d48a749a5768519",
+      "role": "observed-compilation-unit",
+      "declared_license": "LGPL-2.1-or-later",
+      "unlimited_linking_permission_in_prefix": true,
+      "notice_file": "notices/glibc-source-lib__libc__glibc__csu__elf-init-2.33.c.txt",
+      "prefix_sha256": "754e3120bb12bda04a831d1e08b544b152930bf7275577b3fc995d337cbbaee3",
+      "approved": false,
+      "scope": "Declarations read in preserved leading comments; not a complete per-file applicability decision"
+    },
+    {
+      "path": "lib/libc/glibc/csu/init.c",
+      "source_sha256": "a06cd917584e309bf39f6f7a6158519e60a35e6ff8b3e96df8308d170c908f33",
+      "role": "observed-compilation-unit",
+      "declared_license": "LGPL-2.1-or-later",
+      "unlimited_linking_permission_in_prefix": false,
+      "notice_file": "notices/glibc-source-lib__libc__glibc__csu__init.c.txt",
+      "prefix_sha256": "1860d3b2f1c52f3d56f965cec59098343a4d270ab7f1543502825a699a7b70c5",
+      "approved": false,
+      "scope": "Declarations read in preserved leading comments; not a complete per-file applicability decision"
+    },
+    {
+      "path": "lib/libc/glibc/io/fstat-2.32.c",
+      "source_sha256": "a835e5cfb407c00c15aead0247d713a536d651d1fef1236b4a87aaf7a27eec68",
+      "role": "observed-compilation-unit",
+      "declared_license": "LGPL-2.1-or-later",
+      "unlimited_linking_permission_in_prefix": true,
+      "notice_file": "notices/glibc-source-lib__libc__glibc__io__fstat-2.32.c.txt",
+      "prefix_sha256": "eb44f02340cb9e3c7d07a5a6e6be063298d2f40d6264c118f9d5628f55673d4c",
+      "approved": false,
+      "scope": "Declarations read in preserved leading comments; not a complete per-file applicability decision"
+    },
+    {
+      "path": "lib/libc/glibc/sysdeps/x86_64/start-2.33.S",
+      "source_sha256": "d3daf6434b838a91785c5ac771a7f01d08cc9234274ca5a13282e530dd22a058",
+      "role": "observed-compilation-unit",
+      "declared_license": "LGPL-2.1-or-later",
+      "unlimited_linking_permission_in_prefix": true,
+      "notice_file": "notices/glibc-source-lib__libc__glibc__sysdeps__x86_64__start-2.33.S.txt",
+      "prefix_sha256": "d3e9ecbc293723e00a641e08ca21f0c2edb30dd115858f53ba3acfd7be3e8c6e",
+      "approved": false,
+      "scope": "Declarations read in preserved leading comments; not a complete per-file applicability decision"
+    }
+  ]
+}

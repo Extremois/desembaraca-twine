@@ -1,0 +1,115 @@
+{
+  "kind": "local-unpublished-release-payload-plan",
+  "application_revision": "6279d6ff715abbd4fc8d5fdf778d8a27a4f3ddfb",
+  "approved": false,
+  "published": false,
+  "final_urls_assigned": false,
+  "assets": [
+    {
+      "artifact_id": "linux-glibc-aarch64",
+      "kind": "binary",
+      "proposed_filename": "graphviz-16.1.0-linux-glibc-aarch64-015884600c6f1ed0c16b42961c3f58193f5e515bbb5800c0f392110d89a00cc7.zip",
+      "local_path": ".tmp/release-candidate-review-6279/linux-glibc-aarch64/candidate.zip",
+      "sha256": "015884600c6f1ed0c16b42961c3f58193f5e515bbb5800c0f392110d89a00cc7",
+      "bytes": 7793739
+    },
+    {
+      "artifact_id": "linux-glibc-aarch64",
+      "kind": "sources",
+      "proposed_filename": "graphviz-16.1.0-linux-glibc-aarch64-sources-0c0f21a31433c68586e38e5ea5f876bffd8bb2bc7692182a944daccf786096e5.tar.gz",
+      "local_path": ".tmp/release-candidate-review-6279/linux-glibc-aarch64/sources.tar.gz",
+      "sha256": "0c0f21a31433c68586e38e5ea5f876bffd8bb2bc7692182a944daccf786096e5",
+      "bytes": 68494312
+    },
+    {
+      "artifact_id": "linux-glibc-x86_64",
+      "kind": "binary",
+      "proposed_filename": "graphviz-16.1.0-linux-glibc-x86_64-f07586b000f195ab8303bed27cfaeb4c0bfc956092948d906a54b831cf8429bf.zip",
+      "local_path": ".tmp/release-candidate-review-6279/linux-glibc-x86_64/candidate.zip",
+      "sha256": "f07586b000f195ab8303bed27cfaeb4c0bfc956092948d906a54b831cf8429bf",
+      "bytes": 6883744
+    },
+    {
+      "artifact_id": "linux-glibc-x86_64",
+      "kind": "sources",
+      "proposed_filename": "graphviz-16.1.0-linux-glibc-x86_64-sources-0db5becca81a0567a7e6cb0295d322d894324cbb9743077be5911d2d601b9bd6.tar.gz",
+      "local_path": ".tmp/release-candidate-review-6279/linux-glibc-x86_64/sources.tar.gz",
+      "sha256": "0db5becca81a0567a7e6cb0295d322d894324cbb9743077be5911d2d601b9bd6",
+      "bytes": 68494317
+    },
+    {
+      "artifact_id": "linux-musl-aarch64",
+      "kind": "binary",
+      "proposed_filename": "graphviz-16.1.0-linux-musl-aarch64-e12632dbb7035d4bb6fbba8dcf99cc68ef41f2601f3448030d396e682f2159d9.zip",
+      "local_path": ".tmp/release-candidate-review-6279/linux-musl-aarch64/candidate.zip",
+      "sha256": "e12632dbb7035d4bb6fbba8dcf99cc68ef41f2601f3448030d396e682f2159d9",
+      "bytes": 7993254
+    },
+    {
+      "artifact_id": "linux-musl-aarch64",
+      "kind": "sources",
+      "proposed_filename": "graphviz-16.1.0-linux-musl-aarch64-sources-b24703663e33c98d75b71c223de7bb1286fcc63b1b5aa2626d41b05af736e1cc.tar.gz",
+      "local_path": ".tmp/release-candidate-review-6279/linux-musl-aarch64/sources.tar.gz",
+      "sha256": "b24703663e33c98d75b71c223de7bb1286fcc63b1b5aa2626d41b05af736e1cc",
+      "bytes": 68499845
+    },
+    {
+      "artifact_id": "linux-musl-x86_64",
+      "kind": "binary",
+      "proposed_filename": "graphviz-16.1.0-linux-musl-x86_64-77800cb23d25f1311bda41b4f7156ed1f2b5b2fc3c0a83bac669a153abe3fc57.zip",
+      "local_path": ".tmp/release-candidate-review-6279/linux-musl-x86_64/candidate.zip",
+      "sha256": "77800cb23d25f1311bda41b4f7156ed1f2b5b2fc3c0a83bac669a153abe3fc57",
+      "bytes": 7985119
+    },
+    {
+      "artifact_id": "linux-musl-x86_64",
+      "kind": "sources",
+      "proposed_filename": "graphviz-16.1.0-linux-musl-x86_64-sources-a52c39e96c9013d7e5453bd2287d5e5c174a64de468c35334c3673410ff607d2.tar.gz",
+      "local_path": ".tmp/release-candidate-review-6279/linux-musl-x86_64/sources.tar.gz",
+      "sha256": "a52c39e96c9013d7e5453bd2287d5e5c174a64de468c35334c3673410ff607d2",
+      "bytes": 68500020
+    },
+    {
+      "artifact_id": "macos-arm64",
+      "kind": "binary",
+      "proposed_filename": "graphviz-16.1.0-macos-arm64-accdf413189d69e0df95d48ce5bfdf3ac8d160f8b87ac35026fa23499af4ed0a.zip",
+      "local_path": ".tmp/release-candidate-review-6279/macos-arm64/candidate.zip",
+      "sha256": "accdf413189d69e0df95d48ce5bfdf3ac8d160f8b87ac35026fa23499af4ed0a",
+      "bytes": 2119569
+    },
+    {
+      "artifact_id": "macos-arm64",
+      "kind": "sources",
+      "proposed_filename": "graphviz-16.1.0-macos-arm64-sources-ceba8b50f6bb1a982afcf293c94849fa705cccc96c68f990e405040d270d9720.tar.gz",
+      "local_path": ".tmp/release-candidate-review-6279/macos-arm64/sources.tar.gz",
+      "sha256": "ceba8b50f6bb1a982afcf293c94849fa705cccc96c68f990e405040d270d9720",
+      "bytes": 41394199
+    },
+    {
+      "artifact_id": "macos-x86_64",
+      "kind": "binary",
+      "proposed_filename": "graphviz-16.1.0-macos-x86_64-c85dc0697e3bfa613636fbb7b4c638ae5f7adb66c360e9345d9617db3fc1644b.zip",
+      "local_path": ".tmp/release-candidate-review-6279/macos-x86_64/candidate.zip",
+      "sha256": "c85dc0697e3bfa613636fbb7b4c638ae5f7adb66c360e9345d9617db3fc1644b",
+      "bytes": 2190803
+    },
+    {
+      "artifact_id": "macos-x86_64",
+      "kind": "sources",
+      "proposed_filename": "graphviz-16.1.0-macos-x86_64-sources-05a2f6e27098175c4676705b7e3f56b194f31200b353d3d0c28e3ea456643d65.tar.gz",
+      "local_path": ".tmp/release-candidate-review-6279/macos-x86_64/sources.tar.gz",
+      "sha256": "05a2f6e27098175c4676705b7e3f56b194f31200b353d3d0c28e3ea456643d65",
+      "bytes": 41397835
+    }
+  ],
+  "limitations": [
+    "License audits remain incomplete",
+    "Actual bytes prepared locally; no publication or support promotion authorized by this plan",
+    "Final package acceptance must follow approved audits and permanent delivery",
+    "The 6279d6f source kits omit the project root NOTICE; refresh all six source kits before final approval or publication"
+  ],
+  "source_kit_notice_update_pending": true,
+  "required_advertising_acknowledgments": [
+    "This product includes software developed by the University of California, Berkeley and its contributors."
+  ]
+}

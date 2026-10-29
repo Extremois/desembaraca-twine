@@ -1,0 +1,102 @@
+{
+  "kind": "github-actions-closeout-validation",
+  "revision": "d66243c1f1f1121b76e95c88f0e48a0a1ee1ff5b",
+  "passed": true,
+  "feature_complete": false,
+  "workflows": [
+    {
+      "id": 40611992836,
+      "name": "Cross-platform foundation",
+      "url": "https://github.com/Extremois/desembaraca-twine/actions/runs/40611992836",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 40611992837,
+      "name": "Installed packages with private POSIX engines",
+      "url": "https://github.com/Extremois/desembaraca-twine/actions/runs/40611992837",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 40611992858,
+      "name": "Current wheel and sdist installation",
+      "url": "https://github.com/Extremois/desembaraca-twine/actions/runs/40611992858",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 40611992885,
+      "name": "Installed cache notice integrity",
+      "url": "https://github.com/Extremois/desembaraca-twine/actions/runs/40611992885",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 40611992844,
+      "name": "Musl and Windows cache notice integrity",
+      "url": "https://github.com/Extremois/desembaraca-twine/actions/runs/40611992844",
+      "status": "completed",
+      "conclusion": "success"
+    }
+  ],
+  "foundation": [
+    {
+      "job_id": 122565500492,
+      "name": "Pure contracts (windows-latest, Python 3.14)",
+      "tests": 299,
+      "skipped": 11,
+      "log": "foundation-122565500492.log.gz",
+      "sha256": "6def9fc148f35089e3b0e27c7feacf881a5c63e011dba6ee077be726888eaaff"
+    },
+    {
+      "job_id": 122565500873,
+      "name": "Pure contracts (macos-15, Python 3.14)",
+      "tests": 299,
+      "skipped": 9,
+      "log": "foundation-122565500873.log.gz",
+      "sha256": "2915be6c1b312bdf4ca601f7a724c91b07ae197821247f821ca1fad8d82cdccc"
+    },
+    {
+      "job_id": 122565500902,
+      "name": "Pure contracts (ubuntu-24.04, Python 3.12)",
+      "tests": 299,
+      "skipped": 9,
+      "log": "foundation-122565500902.log.gz",
+      "sha256": "f15990f51c5bbd318dc0e2f41b34aaa492a58a9fb71f5ff784bba0eb779a7d88"
+    },
+    {
+      "job_id": 122565501354,
+      "name": "Pure contracts (ubuntu-24.04, Python 3.14)",
+      "tests": 299,
+      "skipped": 9,
+      "log": "foundation-122565501354.log.gz",
+      "sha256": "ca59444cee1f05bed224ffb559e780be4c3dbbd381605db45a83dc7e4f818ff7"
+    },
+    {
+      "job_id": 122565501460,
+      "name": "Pure contracts (windows-latest, Python 3.12)",
+      "tests": 299,
+      "skipped": 11,
+      "log": "foundation-122565501460.log.gz",
+      "sha256": "882398d67de66d36e0a10cf081484ed00588b152cfcd86658e372cac5b016049"
+    },
+    {
+      "job_id": 122565502485,
+      "name": "Pure contracts (macos-15, Python 3.12)",
+      "tests": 299,
+      "skipped": 9,
+      "log": "foundation-122565502485.log.gz",
+      "sha256": "45a8336f90fe91a57c8dee65ad570d995c5ecea6da56f46ef15b824c586271bf"
+    }
+  ],
+  "validation_policy": "GitHub Actions only; no VMs",
+  "task_progress": {
+    "complete": 60,
+    "total": 84,
+    "pending": 24
+  },
+  "limitations": [
+    "Does not waive signing, distribution, license audit or unresolved coverage scope"
+  ]
+}

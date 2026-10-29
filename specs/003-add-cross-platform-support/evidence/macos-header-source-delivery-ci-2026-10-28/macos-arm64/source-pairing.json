@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "kind": "corresponding-source-delivery-pairing",
+  "artifact_id": "macos-arm64",
+  "application_revision": "721b90f3ab44e16b0e88f2d35118ef6fe5cc820c",
+  "executable_sha256": "803a5622cc994d27947aad56498c6f975ce174827f7495a52745f695aa8ce9eb",
+  "provenance_sha256": "cb2704331630e925fca36de1ec44672e4700a90d659679a7c2a0c9d2374ceaf1",
+  "pairing_valid": true,
+  "archive_verification": {
+    "candidate": true,
+    "sources": true
+  },
+  "candidate": {
+    "archive": "candidate.zip",
+    "sha256": "4bff4c76213e9f5837280eb2908f73d664a1094607f1c1ecb8595d1ccb86a70b",
+    "bytes": 2119540,
+    "inventory_sha256": "3b31348f28f304a676ec278954a25c1df645cc4d19fe2ed4d5afe1f0c06757f5",
+    "file_count": 550
+  },
+  "sources": {
+    "archive": "sources.tar.gz",
+    "sha256": "bd07b7e8b0a2d7b8528cf6a4955a3986fb61e289b848fd24bd1c01ea7b5cc8c5",
+    "bytes": 41188900,
+    "file_count": 131,
+    "sdk_files": 0
+  },
+  "obligations": {
+    "lgpl_2_1_section_6_d": "Não aplicável diretamente (ambiente sem retenção glibc)",
+    "lgpl_2_1_section_6_a": "Verificar reconstrução funcional em evidência separada",
+    "epl_2_0_section_3_1": "Verificar completude das fontes Graphviz, declaração de licença e avisos",
+    "offline_notices": "Verificar SOURCE-REFERENCES.txt e textos integrais offline nos materiais distribuídos"
+  },
+  "delivery_binding": {
+    "status": "unpromoted_pending_authorized_distribution",
+    "candidate_distribution_url": null,
+    "sources_distribution_url": null,
+    "active_catalog_promoted": false
+  }
+}

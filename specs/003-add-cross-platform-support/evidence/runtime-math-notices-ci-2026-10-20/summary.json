@@ -1,0 +1,151 @@
+{
+  "kind": "historical-math-notices-native-ci-confirmation",
+  "revision": "29ce91235c57a22c66f9c9078c39d89e47b23bce",
+  "approved": false,
+  "qualified": false,
+  "source_to_binary_complete": false,
+  "T030_complete": false,
+  "workflow_runs": [
+    {
+      "id": 39422078031,
+      "name": "macOS Graphviz candidates",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/Extremois/desembaraca-twine/actions/runs/39422078031",
+      "head_sha": "29ce91235c57a22c66f9c9078c39d89e47b23bce"
+    },
+    {
+      "id": 39422077992,
+      "name": "Linux ARM64 Graphviz candidate",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/Extremois/desembaraca-twine/actions/runs/39422077992",
+      "head_sha": "29ce91235c57a22c66f9c9078c39d89e47b23bce"
+    },
+    {
+      "id": 39422078033,
+      "name": "Cross-platform foundation",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/Extremois/desembaraca-twine/actions/runs/39422078033",
+      "head_sha": "29ce91235c57a22c66f9c9078c39d89e47b23bce"
+    },
+    {
+      "id": 39422078053,
+      "name": "Linux Graphviz candidate",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/Extremois/desembaraca-twine/actions/runs/39422078053",
+      "head_sha": "29ce91235c57a22c66f9c9078c39d89e47b23bce"
+    },
+    {
+      "id": 39422078148,
+      "name": "Alpine musl Graphviz candidates",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/Extremois/desembaraca-twine/actions/runs/39422078148",
+      "head_sha": "29ce91235c57a22c66f9c9078c39d89e47b23bce"
+    }
+  ],
+  "artifacts": [
+    {
+      "artifact_id": "linux-glibc-x86_64",
+      "report": "glibc-x86_64/summary.json",
+      "sha256": "0c19a17845d44d8a58b0183a3d7fad65c8d8d7f63e8e73ca83340359c92ba95a",
+      "additional_math_notice_materials": 0,
+      "runtime_network": [
+        {
+          "report": "glibc-x86_64/runtime-network-312.json",
+          "sha256": "0b2de94d3642c78f16c8fcf85a0531461a82a60433454d3ea192bf0d0409603d",
+          "python": "3.12.15",
+          "dot_executions": 49,
+          "network_syscalls": {}
+        },
+        {
+          "report": "glibc-x86_64/runtime-network-314.json",
+          "sha256": "84652d506a610c236be0fbb8df7dc5f2b22f9b8544008ba025709c802ce9c175",
+          "python": "3.14.8",
+          "dot_executions": 49,
+          "network_syscalls": {}
+        }
+      ]
+    },
+    {
+      "artifact_id": "linux-glibc-aarch64",
+      "report": "glibc-aarch64/summary.json",
+      "sha256": "b37d80eb68bf532623575006e6cff0db99aa4291a1f5076232f164454ce07f39",
+      "additional_math_notice_materials": 28,
+      "runtime_network": [
+        {
+          "report": "glibc-aarch64/runtime-network-312.json",
+          "sha256": "6a4f669184bb6a2041c60056c0b907d87aef47e722d114618591ef509a6b4bed",
+          "python": "3.12.15",
+          "dot_executions": 49,
+          "network_syscalls": {}
+        },
+        {
+          "report": "glibc-aarch64/runtime-network-314.json",
+          "sha256": "71e55bd6c72e4157624c28512f3a15aa1522d2adc4e58749820f32198fef891c",
+          "python": "3.14.8",
+          "dot_executions": 49,
+          "network_syscalls": {}
+        }
+      ]
+    },
+    {
+      "artifact_id": "linux-musl-x86_64",
+      "report": "musl-x86_64/summary.json",
+      "sha256": "a3894583b146a072b228a4d41f3c7264a98976890ea3a5d311f5b689f936752f",
+      "additional_math_notice_materials": 28,
+      "runtime_network": [
+        {
+          "report": "musl-x86_64/runtime-network-312.json",
+          "sha256": "fd4cc91f843d7d5087d5d3aca48b065b00546e7478155becaa4794a94756c062",
+          "python": "3.12.13",
+          "dot_executions": 49,
+          "network_syscalls": {}
+        },
+        {
+          "report": "musl-x86_64/runtime-network-314.json",
+          "sha256": "0b7694ddd24e24909c710807ab3b3d41c0293c53cc349840484b3c6f5ab83e07",
+          "python": "3.14.5",
+          "dot_executions": 49,
+          "network_syscalls": {}
+        }
+      ]
+    },
+    {
+      "artifact_id": "linux-musl-aarch64",
+      "report": "musl-aarch64/summary.json",
+      "sha256": "fd7054e00113cdd2cdb6b731e6ebfef2ec22f8ab67b64a11b64b7a4349a4e185",
+      "additional_math_notice_materials": 28,
+      "runtime_network": [
+        {
+          "report": "musl-aarch64/runtime-network-312.json",
+          "sha256": "d2228cf8ec1ceef8142394ee6a1317f003391e7dab87e69475f0c206c112c6f7",
+          "python": "3.12.13",
+          "dot_executions": 49,
+          "network_syscalls": {}
+        },
+        {
+          "report": "musl-aarch64/runtime-network-314.json",
+          "sha256": "39f2c8b6736ab0980e332b728661bc17f326f55504e30d32873266d95bf29f08",
+          "python": "3.14.5",
+          "dot_executions": 49,
+          "network_syscalls": {}
+        }
+      ]
+    }
+  ],
+  "foundation": {
+    "report": "foundation.json",
+    "sha256": "07ca58a17538f3fbb20f269c43cc0d4bedc98ffe98b881033c14399a6aa2b19b"
+  },
+  "notice_materials_confirmed": true,
+  "all_four_engines_unchanged": true,
+  "limitations": [
+    "Historical material preservation does not determine exact translation ancestry or final applicability",
+    "ISO scope, other component review and permanent source offer remain pending",
+    "Musl containers do not qualify native Alpine cells; macOS signing and native distribution acceptance remain pending"
+  ]
+}

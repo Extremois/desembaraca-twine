@@ -1,0 +1,157 @@
+{
+  "kind": "private-zig-baseline-experiment-not-qualified",
+  "captured_at": "2026-10-18T13:00:53.605677+00:00",
+  "environment_kind": "wsl",
+  "artifact_id": "linux-glibc-x86_64",
+  "qualified": false,
+  "source": {
+    "schema_version": 1,
+    "engine": "graphviz",
+    "version": "16.1.0",
+    "url": "https://gitlab.com/graphviz/graphviz/-/archive/16.1.0/graphviz-16.1.0.tar.gz",
+    "sha256": "1e028b2b3e84e946c1d3e8c47590f8f0741bba1041fe6eff36eee87e598ea249",
+    "size": 41189481,
+    "git_revision": "e41c710710be080ad37af1b51c6e2f8beffa9ee5",
+    "license": "EPL-2.0",
+    "license_path": "COPYING",
+    "license_sha256": "0becf16567beb77fa252b7664631dd177c8f9a1889e48995b45379c7130e5303",
+    "qualification": "source-only; no POSIX binary qualified"
+  },
+  "recipe_sha256": "ce509aa37846e078bca9765abae6bc425a6bbd6a75eabff806ff5999c4b48f44",
+  "provenance_sha256": "d0ae12979b7e41c24138f05894fe54e597a574bc1f7f13936d1968ff0773d1cd",
+  "sdk": {
+    "cmake": {
+      "path": "<private-sdk>/cmake-math",
+      "sha256": "89ab33aebe9d65e3cc40553beffcf7323dfe1cb8d2643ed271d896a974532add"
+    },
+    "c_compiler": {
+      "path": "<private-sdk>/cc",
+      "sha256": "4b4d45312a9a4aded6c4e966cb91e11dff45877e4d6865d5ee1cadf012239aeb"
+    },
+    "cxx_compiler": {
+      "path": "<private-sdk>/cxx",
+      "sha256": "b62eff2ef73639c52a457bfa930a9cff4232c798159a443a1aa826888d835062"
+    },
+    "environment_digest": "409b5f368225afc3579fa820e7f504eb5fc18005e98e017457814dd3f352cd13",
+    "facts": {
+      "provider": "Zig",
+      "version": "0.15.2",
+      "archive_url": "https://ziglang.org/download/0.15.2/zig-x86_64-linux-0.15.2.tar.xz",
+      "archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+      "zig_sha256": "2858dc89dbbfdd08cceda1b841e7fd0a793a1a67b49f150bc3d0d1de44ed7f51",
+      "target": "x86_64-linux-gnu.2.27",
+      "environment_kind": "wsl",
+      "qualification": "private-SDK-candidate-not-audited",
+      "tools": {
+        "cmake": {
+          "path": "<private-sdk>/cmake-math",
+          "sha256": "89ab33aebe9d65e3cc40553beffcf7323dfe1cb8d2643ed271d896a974532add"
+        },
+        "c_compiler": {
+          "path": "<private-sdk>/cc",
+          "sha256": "4b4d45312a9a4aded6c4e966cb91e11dff45877e4d6865d5ee1cadf012239aeb"
+        },
+        "cxx_compiler": {
+          "path": "<private-sdk>/cxx",
+          "sha256": "b62eff2ef73639c52a457bfa930a9cff4232c798159a443a1aa826888d835062"
+        }
+      },
+      "cpu": "baseline",
+      "wrapper_translation": "GCC march=x86-64 and mtune=generic -> Zig mcpu=baseline; no other flags removed",
+      "math_library": "CMake MATH_LIB=m; resolved by Zig target linker, no host absolute libm"
+    }
+  },
+  "wrappers": {
+    "cc": {
+      "sha256": "4b4d45312a9a4aded6c4e966cb91e11dff45877e4d6865d5ee1cadf012239aeb",
+      "redacted_source": "#!/usr/bin/python3\nimport os,sys\nos.environ[\"ZIG_GLOBAL_CACHE_DIR\"]='<private-sdk>/cache'\nargs=[x for x in sys.argv[1:] if x not in (\"-march=x86-64\",\"-mtune=generic\")]\nos.execv('<private-sdk>/zig-x86_64-linux-0.15.2/zig', [\"zig\",'cc',\"-target\",\"x86_64-linux-gnu.2.27\",\"-mcpu=baseline\",*args])\n"
+    },
+    "cxx": {
+      "sha256": "b62eff2ef73639c52a457bfa930a9cff4232c798159a443a1aa826888d835062",
+      "redacted_source": "#!/usr/bin/python3\nimport os,sys\nos.environ[\"ZIG_GLOBAL_CACHE_DIR\"]='<private-sdk>/cache'\nargs=[x for x in sys.argv[1:] if x not in (\"-march=x86-64\",\"-mtune=generic\")]\nos.execv('<private-sdk>/zig-x86_64-linux-0.15.2/zig', [\"zig\",'c++',\"-target\",\"x86_64-linux-gnu.2.27\",\"-mcpu=baseline\",*args])\n"
+    },
+    "cmake-math": {
+      "sha256": "89ab33aebe9d65e3cc40553beffcf7323dfe1cb8d2643ed271d896a974532add",
+      "redacted_source": "#!/usr/bin/python3\nimport os,sys\nargs=sys.argv[1:]\nif \"-S\" in args: args.append(\"-DMATH_LIB=m\")\nos.execv(\"/usr/bin/cmake\",[\"cmake\",*args])\n"
+    }
+  },
+  "executable_sha256": "97347dcf491874804d063acf48f78d323b28af896a8008f8f8f4cd72de602c4c",
+  "executable_size": 6057408,
+  "needed": [
+    "libm.so.6",
+    "libpthread.so.0",
+    "libc.so.6",
+    "ld-linux-x86-64.so.2"
+  ],
+  "highest_glibc_symbol": "2.14",
+  "interpreter": "/lib64/ld-linux-x86-64.so.2",
+  "rpath": [],
+  "abi_note": "Linux ABI 2.0.0 is an ELF note, not proof of minimum working kernel",
+  "native_kernel": "6.18.33.1-microsoft-standard-WSL2",
+  "linkage": {
+    "recorded": false,
+    "pending_reason": "GNU ld dependency metadata unavailable; equivalent reviewed linkage evidence still required."
+  },
+  "corpus": [
+    {
+      "path": "linux-zig-corpus-3.12.json",
+      "sha256": "97403f8d44811803d39af152da6d705c737a6f773e5226b12f0cf08482d051b2"
+    },
+    {
+      "path": "linux-zig-corpus-3.14.json",
+      "sha256": "de8016a135bca39de01b1d627926c06cf2c8e0584b44a34ea3ec0948be47bd56"
+    }
+  ],
+  "logs": [
+    {
+      "path": "linux-zig-baseline.logs/build-r1.txt",
+      "sha256": "05f0eb50a471e06016ab8ed88f466a5baeab58ee2cea92a2fe2926e5ee77c928"
+    },
+    {
+      "path": "linux-zig-baseline.logs/build-r2.txt",
+      "sha256": "cebef960bf830076eea384d55c0dc21463016987c8a70c75719f677650aff407"
+    },
+    {
+      "path": "linux-zig-baseline.logs/build-r3.txt",
+      "sha256": "b8600ec5ed803c0335a98e88784f7ea6132270f0eae67c888149faa5d676c6c2"
+    },
+    {
+      "path": "linux-zig-baseline.logs/build-r4.txt",
+      "sha256": "2b6ed8760499fa60ba00048b0aab9e668b1b18701f3f17a46a5f6c4f40b64e33"
+    },
+    {
+      "path": "linux-zig-baseline.logs/readelf.txt",
+      "sha256": "7e9e591a461b0ce671362935a28c92fd9bf6de28fe1368124d4e4201d49b3012"
+    }
+  ],
+  "inspection": {
+    "approved": false,
+    "reason": "Unapproved native dependency: ld-linux-x86-64.so.2 absent from experimental allowlist; no allowlist relaxation"
+  },
+  "attempts": [
+    {
+      "revision": 1,
+      "result": "compiler CPU generic rejected"
+    },
+    {
+      "revision": 2,
+      "result": "compiler CPU x86 rejected"
+    },
+    {
+      "revision": 3,
+      "result": "CMake MATH_LIB NOTFOUND"
+    },
+    {
+      "revision": 4,
+      "result": "build completed; dependency approval refused; both corpus runs passed"
+    }
+  ],
+  "limitations": [
+    "No oldest glibc/kernel/hardware execution",
+    "LLVM/libc++/compiler-rt/static sources and licenses not audited",
+    "Linker input capture unavailable with this toolchain",
+    "No full verifier approval, installation/acquisition/offline/Twine or native cell qualification",
+    "No catalog/support change or publication",
+    "Source tree dirty; experiments are not release artifacts"
+  ]
+}

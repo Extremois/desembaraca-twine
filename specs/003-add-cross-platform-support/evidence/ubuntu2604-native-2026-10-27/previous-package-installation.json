@@ -1,0 +1,116 @@
+{
+  "kind": "partial-package-installation-evidence-index",
+  "task": "T078",
+  "task_complete": false,
+  "qualified": false,
+  "captured_at": "2026-10-20T22:56:36.819152+00:00",
+  "application_revision": "d90b5671cba0477649e71a52b0d94704cce81c4e",
+  "current_installed_formats": [
+    "wheel",
+    "sdist"
+  ],
+  "hosted_installations_verified": 20,
+  "hosted_combinations_verified": 10,
+  "current_package_checks": {
+    "path": "specs/003-add-cross-platform-support/evidence/installed-private-engines-2026-10-20/packages/summary.json",
+    "sha256": "e000983b2a0c21a556c71091dfa801c8796f92efa6566ab0b845a4b91c97cddf"
+  },
+  "foundation_checks": {
+    "path": "specs/003-add-cross-platform-support/evidence/installed-private-engines-2026-10-20/foundation.json",
+    "sha256": "429c3b2d00458d542e6a80aea6967b3a9b9a63990ef47166e8df6a9ae24640a5"
+  },
+  "registry": {
+    "path": "tools/runtime/support-targets.json",
+    "sha256": "be3e8a77e3836d1125658c00a75fbf0e3584f1e26a166a053583336c29a5d295"
+  },
+  "expected_support_targets": 69,
+  "expected_python_slots": 138,
+  "host_scope": [
+    "Ubuntu x64 and ARM64",
+    "macOS 15 ARM64 and Intel",
+    "Windows hosted runner"
+  ],
+  "checks": [
+    "53 package files match source and both installed formats per combination",
+    "Project LICENSE and NOTICE preserved",
+    "Three entrypoints per format",
+    "Import from a fresh external venv",
+    "Restricted PATH without Git or global Graphviz",
+    "Offline installation with staged build tools",
+    "pip records expected input archive SHA-256",
+    "No engine prepared by help",
+    "Optional real private engines: automatic/explicit preparation, final-destination probe, modes, 13 offline cases and semantic/original preservation per installed format"
+  ],
+  "remaining": [
+    "Final immutable remotely installed candidates, not just current development builds",
+    "Required native images/eligibility and both Python slots for every registered support cell",
+    "Private engine mode/manifests/notices and final bundle approvals; no POSIX catalog entry has been activated"
+  ],
+  "local_foundation": {
+    "tests_per_python": 247,
+    "skipped_per_python": 8,
+    "python_minors": [
+      "3.12",
+      "3.14"
+    ],
+    "note": "Five prior glibc-review tests remain local and were not part of this CI-only checkpoint"
+  },
+  "limitations": [
+    "Package installation/help does not qualify native engine execution or any support cell",
+    "Windows hosted runner is not a clean Windows 11 acceptance environment",
+    "No source/legal/signature approval or full-spec completion inferred"
+  ],
+  "installed_private_engine_checks": {
+    "path": "specs/003-add-cross-platform-support/evidence/installed-private-engines-2026-10-20/runtime/summary.json",
+    "sha256": "9bed474295304dc6697f41b1c289f934fc9e5e6e7ab0a8bc3704caccd886d6c7"
+  },
+  "private_engine_installations_verified": 16,
+  "private_engine_explicit_corpus_executions": 208,
+  "private_engine_known_zero_references": 96,
+  "total_verified_installs_current_revision": 46,
+  "previous_index": {
+    "path": "specs/003-add-cross-platform-support/evidence/installed-private-engines-2026-10-20/previous-package-installation.json",
+    "sha256": "48a55157fe3240fe2b1ab33ca587cc035f92d8900ef92a4665d6104b364493e5"
+  },
+  "platform_partial_indexes": [
+    {
+      "path": "specs/003-add-cross-platform-support/evidence/linux-ubuntu-24.04.json",
+      "sha256": "784744c15d7e808519f005e431f3340ff95d385fdec9a2d1a63f30719a9e653b"
+    },
+    {
+      "path": "specs/003-add-cross-platform-support/evidence/macos.json",
+      "sha256": "6f04681d4a9ea9695371cb75c52c16859f7f2acaf1c482816ec8b0923feca4bb"
+    }
+  ],
+  "current_remote_installation_checks": {
+    "path": "specs/003-add-cross-platform-support/evidence/documented-installation-2026-10-20/summary.json",
+    "sha256": "19ca95c9408085890075c2de9e61ad9cdab92eaff37af47e2c91741e894b2323",
+    "installations": 10,
+    "entrypoint_checks": 30,
+    "revision": "d90b5671cba0477649e71a52b0d94704cce81c4e",
+    "final_native_candidate": false
+  },
+  "native_ubuntu_additional_checks": {
+    "path": "specs/003-add-cross-platform-support/evidence/ubuntu2204-native-2026-10-27/summary.json",
+    "sha256": "a2cf581eff0c08625cc12b9d07398cb14c9f6ade0329dd45605c3abdcb6f54cc",
+    "application_revision": "3e7a27e599050776fdacde7f480238e79d22d772",
+    "python_slots": 6,
+    "formats": [
+      "wheel"
+    ],
+    "installed_files_per_slot": 53,
+    "native_targets": [
+      "ubuntu-22.04-stable-x86_64-distribution-default",
+      "ubuntu-20.04-stable-x86_64-distribution-default",
+      "ubuntu-18.04-stable-x86_64-distribution-default"
+    ],
+    "acquisition": "controlled private-engine transport",
+    "scope": "Additional private native observations; excluded from older hosted/current-revision counters",
+    "qualified": false,
+    "final_native_candidate": false
+  },
+  "previous_native_ubuntu_index": {
+    "path": "specs/003-add-cross-platform-support/evidence/ubuntu2204-native-2026-10-27/previous-package-installation.json",
+    "sha256": "dfd2ea4526ef2b52e5f51cafbd75d5bd4f72d8110a3d2f68e851830128d16360"
+  }
+}

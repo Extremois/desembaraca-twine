@@ -1,0 +1,209 @@
+{
+  "kind": "alpine-musl-link-source-receipt",
+  "approved": false,
+  "qualified": false,
+  "revision": "40b3e38f3dc6bef2fe64b17f66e1f812460bd7f1",
+  "run_id": 39331380978,
+  "job_id": 118330141212,
+  "actions_artifact_id": 12223964741,
+  "url": "https://github.com/Extremois/desembaraca-twine/actions/runs/39331380978",
+  "artifact_id": "linux-musl-aarch64",
+  "environment_kind": "container",
+  "cpu_arch": "aarch64",
+  "artifact_sha256": "0aceaa8a76b75e9b0992aa0888f0d390eca7e5fcd55f1fe2f843f835d657d265",
+  "executable_sha256": "2d7a4b6024eb000c33ecf8b14d1a32d0aac8dde65bed00de138604d081fd3ee4",
+  "executable_size": 7237144,
+  "provenance_sha256": "4895fff32f11cac6e61f5ef61e6615a728a278964d7203ef6a73b7db5c361ba1",
+  "sdk_environment_digest": "9f904cb62d6751ae72e14a7b53d0648bb57cf4f9f5569c15c4c3c8985d942bf7",
+  "image_lock_sha256": "d4e51c6e9c92d4cb9314a4562bcbc96b67f49836de62894a3120adc5ade647bb",
+  "image_build": "python@sha256:07b3a3b85d5b208f164a3276d5eb9c51e0ce61bbe4cb7ab4df0da50d5a78dc11",
+  "image_test": "python@sha256:27b691f87878a079100a3d8fafcd66b3c54d931598f307bcb54617c395f5b43c",
+  "kernel": "6.17.0-1022-azure",
+  "host_libc": "1.2.5",
+  "target": "aarch64-linux.4.15-musl",
+  "no_interpreter": true,
+  "no_dynamic_section": true,
+  "no_needed_libraries": true,
+  "no_glibc_symbols": true,
+  "candidate_archive_sha256": "70c0199a7a351b2340df2ec24c346321408266654e92b3d2963f01bc44ebc48c",
+  "candidate_archive_bytes": 7251610,
+  "candidate_file_count": 2,
+  "corpus": [
+    {
+      "python": "3.12.13",
+      "cases": 13,
+      "passed": true,
+      "network_syscalls": {},
+      "dot_executions": 8
+    },
+    {
+      "python": "3.14.5",
+      "cases": 13,
+      "passed": true,
+      "network_syscalls": {},
+      "dot_executions": 8
+    }
+  ],
+  "retained_files": {
+    "link.d.gz": {
+      "sha256": "e68ef0fe39e059080c2bb09a6e3413d071481dcfe6f61059f85b191052c7b97e",
+      "bytes": 1052,
+      "original_sha256": "a1a72eaa36ca1f5d08749d0011067df1c54911dc61375a48dd543d114b523c5e",
+      "original_bytes": 7893
+    },
+    "why-extract.tsv.gz": {
+      "sha256": "c8f46412fc47dc7226a13d9ea623a9ab32a00266cc4a8fe799825be653a399c4",
+      "bytes": 8929,
+      "original_sha256": "e063e7064ede2faffb8fae5f72a698361a63984a7c8968ed37624eb1e6f66636",
+      "original_bytes": 57768
+    },
+    "graphviz-source-evidence.json.gz": {
+      "sha256": "251cb4d14f07f5d00bde048acfa8dab94dec7ffa2eb50f4f057e466e9920bc82",
+      "bytes": 56555,
+      "original_sha256": "b03d968a3d6f822d1aac8a05d5bb98f32e4969762c7f150e49d1588bdbd4ed82",
+      "original_bytes": 985656
+    },
+    "parent-provenance.json.gz": {
+      "sha256": "e0494372fe9b1e52411de40335136315a7e8c79759a7ef9a3454179928c076f0",
+      "bytes": 2718,
+      "original_sha256": "344ea005db48c04d13d5aa44237acf774138603ec9cb1f00d0167fcd42852f9e",
+      "original_bytes": 7685
+    },
+    "network-312.control.trace.gz": {
+      "sha256": "7c2b1642e815bc8d02cef6fd817e4c68c6138a430dbd8d466bf5e2ca76fd9dcf",
+      "bytes": 483,
+      "original_sha256": "ea2df99522b6a71a77d382254d4d511bb0b0556fa1158731e613147ebcb6d604",
+      "original_bytes": 892
+    },
+    "network-312.corpus.trace.gz": {
+      "sha256": "2ca3bca345e7c7ddce9e908dad8186d3571b88e3c00b5bfa28d804736b5eedcb",
+      "bytes": 592,
+      "original_sha256": "4469573df2502e838edf8f9ef58dc81c6a1bc267ac6b7490fae5ce0c94dbb6ed",
+      "original_bytes": 3528
+    },
+    "corpus-312.json": {
+      "sha256": "e78410bf5a9bc3b052eb6e70b08bf9c8de47ae7fa9bf89bd03a324c6b63275f1",
+      "bytes": 5502,
+      "original_sha256": "e78410bf5a9bc3b052eb6e70b08bf9c8de47ae7fa9bf89bd03a324c6b63275f1",
+      "original_bytes": 5502
+    },
+    "network-312.json": {
+      "sha256": "cf9e315834cb5d8dd93547466a99f74eb0e0612ec3429d94b5c6ab94ecbb948f",
+      "bytes": 1356,
+      "original_sha256": "cf9e315834cb5d8dd93547466a99f74eb0e0612ec3429d94b5c6ab94ecbb948f",
+      "original_bytes": 1356
+    },
+    "network-314.control.trace.gz": {
+      "sha256": "e113cdc506705a5c26bfe37b6ff34e87528fab6793bc1c6004ac689e7abda1bf",
+      "bytes": 477,
+      "original_sha256": "9a9c70d8b2ca05918563fc53005aa9cfffb8aa8d4b6626453fe715dfad9d865a",
+      "original_bytes": 901
+    },
+    "network-314.corpus.trace.gz": {
+      "sha256": "84d95c867a65bc2109a199a6309c18a245e41fd5dcea02539c48593642592275",
+      "bytes": 584,
+      "original_sha256": "5fdf3d9cfd031becc49fb77b4db6d8078d7798e5d5510c66ab6f23298a0e7801",
+      "original_bytes": 3508
+    },
+    "corpus-314.json": {
+      "sha256": "08688e6aeab99656962bd34fd8b1c58bd30a0e7e2e0bacf5f450eae152451ccf",
+      "bytes": 5501,
+      "original_sha256": "08688e6aeab99656962bd34fd8b1c58bd30a0e7e2e0bacf5f450eae152451ccf",
+      "original_bytes": 5501
+    },
+    "network-314.json": {
+      "sha256": "96717a98aa7729aa7622fa24d75f501dc552bacb8ce9d74164406b607be27360",
+      "bytes": 1355,
+      "original_sha256": "96717a98aa7729aa7622fa24d75f501dc552bacb8ce9d74164406b607be27360",
+      "original_bytes": 1355
+    },
+    "build-image.json": {
+      "sha256": "508db561af4ce3ba6bfe57a215c2bf2514b16907969756a693476d2ca1f32576",
+      "bytes": 2796,
+      "original_sha256": "508db561af4ce3ba6bfe57a215c2bf2514b16907969756a693476d2ca1f32576",
+      "original_bytes": 2796
+    },
+    "test-image.json": {
+      "sha256": "8958a4f49934a944b41e51e7ad5c8dc9cd1fdeeaec6406dc7b138696e8c198d4",
+      "bytes": 2695,
+      "original_sha256": "8958a4f49934a944b41e51e7ad5c8dc9cd1fdeeaec6406dc7b138696e8c198d4",
+      "original_bytes": 2695
+    },
+    "provenance.json": {
+      "sha256": "4895fff32f11cac6e61f5ef61e6615a728a278964d7203ef6a73b7db5c361ba1",
+      "bytes": 132577,
+      "original_sha256": "4895fff32f11cac6e61f5ef61e6615a728a278964d7203ef6a73b7db5c361ba1",
+      "original_bytes": 132577
+    },
+    "sdk-record.json": {
+      "sha256": "621a67a21f0156b9f3928d941429ea754e536f779aaece650b4a0dbc65ff520f",
+      "bytes": 3402,
+      "original_sha256": "621a67a21f0156b9f3928d941429ea754e536f779aaece650b4a0dbc65ff520f",
+      "original_bytes": 3402
+    },
+    "inventory.json": {
+      "sha256": "b90dc076e6c32b928c8d06f2782792b64f0d1c91189bb261669ea7f8b0fe9edb",
+      "bytes": 806,
+      "original_sha256": "b90dc076e6c32b928c8d06f2782792b64f0d1c91189bb261669ea7f8b0fe9edb",
+      "original_bytes": 806
+    },
+    "candidate.json": {
+      "sha256": "df1aa59ecf272f6925c218a90c483d5aea792ac4e22c01680acc273088b830a5",
+      "bytes": 864,
+      "original_sha256": "df1aa59ecf272f6925c218a90c483d5aea792ac4e22c01680acc273088b830a5",
+      "original_bytes": 864
+    },
+    "static-elf-inspection.txt": {
+      "sha256": "b058b7158963671a4d2850a06d61ee5f5a0554259126e3661cd3a96cdf6f9ef6",
+      "bytes": 1923,
+      "original_sha256": "b058b7158963671a4d2850a06d61ee5f5a0554259126e3661cd3a96cdf6f9ef6",
+      "original_bytes": 1923
+    },
+    "os-release.txt": {
+      "sha256": "87f0a3b549cb5b2e2dd2e9c1b7d0b1eab8c79fca107c034ec1fd48d52922277b",
+      "bytes": 188,
+      "original_sha256": "87f0a3b549cb5b2e2dd2e9c1b7d0b1eab8c79fca107c034ec1fd48d52922277b",
+      "original_bytes": 188
+    },
+    "apk-packages.txt": {
+      "sha256": "685a14b60384f7f4ec1150025dd7430acf27a2dbc9cc400fa0cdbb21c21c2157",
+      "bytes": 4131,
+      "original_sha256": "685a14b60384f7f4ec1150025dd7430acf27a2dbc9cc400fa0cdbb21c21c2157",
+      "original_bytes": 4131
+    },
+    "kernel.txt": {
+      "sha256": "c34ef17d0881c222e1d9c2eb73e4753c0a55781be79e2baaf0822d57ccbc350f",
+      "bytes": 95,
+      "original_sha256": "c34ef17d0881c222e1d9c2eb73e4753c0a55781be79e2baaf0822d57ccbc350f",
+      "original_bytes": 95
+    },
+    "elf.txt": {
+      "sha256": "e21f106f871bd255b712cc2502641b6fb5172b19a2a4acec1071f5eda7f92460",
+      "bytes": 2750,
+      "original_sha256": "e21f106f871bd255b712cc2502641b6fb5172b19a2a4acec1071f5eda7f92460",
+      "original_bytes": 2750
+    },
+    "build.log.gz": {
+      "sha256": "7115026257efff72a0e6710216104b596f7d5ee9335e01e872a48dcc1cc711c0",
+      "bytes": 6726,
+      "original_sha256": "ac602b007c1489974ce1863c67f001949b9b3535c93e973a4c916e9e7f62389e",
+      "original_bytes": 34279
+    }
+  },
+  "source_observations": {
+    "objects": 181,
+    "verified_graphviz_source_files": 322,
+    "generated_files": 9,
+    "external_files": 58
+  },
+  "link_input_count": 66,
+  "archive_extraction_rows": 320,
+  "byte_identical_to_compiler": true,
+  "byte_identical_to_parent": true,
+  "limitations": [
+    "Native matching CPU and Alpine userland; Ubuntu runner kernel, not native Alpine cell acceptance",
+    "Initial bundle has Graphviz COPYING only; SDK sources/notices, license audit and source offer pending",
+    "Image digest pinned; added package versions recorded, not a byte-identical environment rebuild promise",
+    "Old kernel/CPU, Alpine 3.21-3.24 matrix, installed-package/offline/recovery/Twine qualification pending"
+  ]
+}

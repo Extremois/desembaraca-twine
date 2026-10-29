@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "kind": "corresponding-source-delivery-pairing",
+  "artifact_id": "linux-glibc-aarch64",
+  "application_revision": "f5e1ad22aea915e9d42e7da1f76de86ffbd23a4f",
+  "executable_sha256": "933b6c63370bdd3e814627e2a9a06176416c8da017a21dcbc96d8137dbc17e22",
+  "provenance_sha256": "b805765635aa464496d570210bca9670c4368e8c2d635ff358fb8ab731696f69",
+  "pairing_valid": true,
+  "archive_verification": {
+    "candidate": true,
+    "sources": true
+  },
+  "candidate": {
+    "archive": "candidate.zip",
+    "sha256": "14ca15b7f161b999c28a2ce397b172401b6d2aadd42d61180b4ae03d76e598bd",
+    "bytes": 7793739,
+    "inventory_sha256": "4ff51846edbfd0b868d1eb4baf772d1bfb6dd01d866c742eba3867e3846ba782",
+    "file_count": 573
+  },
+  "sources": {
+    "archive": "sources.tar.gz",
+    "sha256": "1e949cc71c67ca38409627e215eb2974f054f317e3f524ff15ea360abfe37f63",
+    "bytes": 68491794,
+    "file_count": 18229,
+    "sdk_files": 18102
+  },
+  "obligations": {
+    "lgpl_2_1_section_6_d": "Acesso equivalente para download das fontes correspondentes no mesmo endpoint de distribuição binária",
+    "lgpl_2_1_section_6_a": "Verificar fontes completas e relink modificado em evidências separadas",
+    "epl_2_0_section_3_1": "Verificar completude das fontes Graphviz, declaração de licença e avisos",
+    "offline_notices": "Verificar SOURCE-REFERENCES.txt e textos integrais offline nos materiais distribuídos"
+  },
+  "delivery_binding": {
+    "status": "unpromoted_pending_authorized_distribution",
+    "candidate_distribution_url": null,
+    "sources_distribution_url": null,
+    "active_catalog_promoted": false
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "kind": "linux-native-syscall-observation",
+  "passed": true,
+  "qualified": false,
+  "environment_kind": "container",
+  "python": "3.12.12",
+  "kernel": "6.17.0-1022-azure",
+  "arch": "x86_64",
+  "tracer": {
+    "path": "/usr/bin/strace",
+    "sha256": "ed52ddebdb887d63241e857bb5f5758bd4ca9c38c2bfd170ede7713256825629",
+    "version": "strace -- version 6.12",
+    "filter": "trace=%network,execve",
+    "follow_children": true,
+    "kill_on_exit": true
+  },
+  "control": {
+    "detected": true,
+    "child_executions": 2,
+    "network_syscalls": {
+      "socket": 1,
+      "connect": 1,
+      "getsockopt": 1
+    },
+    "trace_sha256": "8f7d8aa0ccf33da72c25cb169baa5d2d4580c5cdce2d819d03e908f3ca50609f"
+  },
+  "corpus": {
+    "engine_sha256": "f4dfee4e052704b1a7efdb7b6a4c43583ccaa062aec800b76224dae24eb2b69b",
+    "cases": 13,
+    "report_sha256": "ce19801ecac3a46d4c5f92733c009a2d6a3b0b87bb2a7ea3c96e50608da62fc5",
+    "dot_executions": 49,
+    "network_syscalls": {},
+    "trace_sha256": "ca126ac8875b4006ff25e156e9db3578ab00defc30725802ac4abde657d427cd"
+  },
+  "limits": {
+    "corpus_seconds": 180,
+    "corpus_output_bytes": 8388608,
+    "control_seconds": 15,
+    "control_output_bytes": 1048576
+  },
+  "scope": "Real native engine and runtime manager with controlled acquisition fixture; not distributed-candidate or full-cell acceptance"
+}

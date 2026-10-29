@@ -1,0 +1,167 @@
+{
+  "kind": "arch-manjaro-evidence-index",
+  "task": "T043",
+  "task_complete": false,
+  "qualified": false,
+  "captured_at": "2026-10-27T23:30:00+00:00",
+  "registry": {
+    "path": "tools/runtime/support-targets.json",
+    "sha256": "be3e8a77e3836d1125658c00a75fbf0e3584f1e26a166a053583336c29a5d295"
+  },
+  "application_revision": "7b30c80a7a1b980860e0fa9e6b16a14d8245c28e",
+  "expected_targets": 4,
+  "expected_python_slots": 8,
+  "complete_targets": 0,
+  "targets_with_partial_native_observations": 0,
+  "python_slots_with_partial_native_observations": 0,
+  "targets": [
+    {
+      "target_id": "arch-rolling-rolling-x86_64-distribution-default",
+      "distribution": "arch",
+      "display_name": "Arch Linux",
+      "version": "rolling",
+      "channel": "rolling",
+      "arch": "x86_64",
+      "cpu_variant": "distribution-default",
+      "snapshot_id": null,
+      "rolling_policy": "Requires pacman package inventory snapshot_id and SHA-256 fingerprint; no generic rolling qualification",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "observed_python": null
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "observed_python": null
+        }
+      ],
+      "pending_reason": "Dated snapshot capture with pacman, two Python slots, Twine review and remaining common gates"
+    },
+    {
+      "target_id": "archarm-rolling-rolling-aarch64-distribution-default",
+      "distribution": "archarm",
+      "display_name": "Arch Linux ARM",
+      "version": "rolling",
+      "channel": "rolling",
+      "arch": "aarch64",
+      "cpu_variant": "distribution-default",
+      "snapshot_id": null,
+      "project_classification": "Separate downstream project; not an official upstream port of Arch Linux x86_64",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "observed_python": null
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "observed_python": null
+        }
+      ],
+      "pending_reason": "Hardware/image target verification, dated snapshot capture, two Python slots, Twine review and remaining common gates"
+    },
+    {
+      "target_id": "manjaro-rolling-stable-x86_64-distribution-default",
+      "distribution": "manjaro",
+      "display_name": "Manjaro",
+      "version": "rolling",
+      "channel": "stable",
+      "arch": "x86_64",
+      "cpu_variant": "distribution-default",
+      "snapshot_id": null,
+      "branch": "stable",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "observed_python": null
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "observed_python": null
+        }
+      ],
+      "pending_reason": "Stable branch snapshot verification, two Python slots, Twine review and remaining common gates"
+    },
+    {
+      "target_id": "manjaro-rolling-stable-aarch64-distribution-default",
+      "distribution": "manjaro",
+      "display_name": "Manjaro",
+      "version": "rolling",
+      "channel": "stable",
+      "arch": "aarch64",
+      "cpu_variant": "distribution-default",
+      "snapshot_id": null,
+      "branch": "stable",
+      "maintenance_condition": "Conditioned on maintained image and supported ARM hardware device; not removed from matrix",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "observed_python": null
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "observed_python": null
+        }
+      ],
+      "pending_reason": "Maintained ARM device image identification, two Python slots, Twine review and remaining common gates"
+    }
+  ],
+  "limitations": [
+    "Arch Linux and Manjaro require exact pacman snapshot fingerprints; rolling releases do not inherit generic approval",
+    "Arch Linux ARM is tracked as an independent community project, preserving architectural distinctions",
+    "Manjaro ARM64 availability kept as pending without removing the target from scope",
+    "No local VM, Twine review, final distributed candidate or catalog promotion"
+  ],
+  "release_scope": {
+    "reference_date": "2026-10-17",
+    "distributions": [
+      "arch",
+      "archarm",
+      "manjaro"
+    ],
+    "versions": [
+      "rolling"
+    ],
+    "maintenance_acceptance": false,
+    "source": "tools/runtime/support-targets.json"
+  }
+}

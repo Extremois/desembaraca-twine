@@ -1,0 +1,17 @@
+/*************************************************************************
+ * Copyright (c) 2011 AT&T Intellectual Property
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v2.0
+ * which accompanies this distribution, and is available at
+ * https://www.eclipse.org/org/documents/epl-2.0/EPL-2.0.html
+ *
+ * Contributors: Details at https://graphviz.org
+ *************************************************************************/
+
+/*
+ * dot_mincross(g) takes a ranked graphs, and finds an ordering
+ * that avoids edge crossings.  clusters are expanded.
+ * N.B. the rank structure is global (not allocated per cluster)
+ * because mincross may compare nodes in different clusters.
+ */
+

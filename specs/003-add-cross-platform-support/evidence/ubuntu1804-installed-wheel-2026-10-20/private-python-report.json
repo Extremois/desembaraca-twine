@@ -1,0 +1,45 @@
+{
+  "kind": "native-ubuntu1804-private-python-prerequisites",
+  "passed": true,
+  "qualified": false,
+  "system_python_before": "5e0c61520f859fea220cbe491c687b7a41f380050a5bcfd78b5917bcec921814",
+  "system_python_after": "5e0c61520f859fea220cbe491c687b7a41f380050a5bcfd78b5917bcec921814",
+  "interpreters": [
+    {
+      "minor": "3.12",
+      "archive_sha256": "731af898886c5f821890dc901eca3c651cca8e51fa7308c159d12a1194aeac91",
+      "archive_bytes": 34285590,
+      "facts": {
+        "python": "3.12.15",
+        "implementation": "CPython",
+        "arch": "x86_64",
+        "bits": 64,
+        "pip": "25.0.1",
+        "ensurepip": "25.0.1",
+        "ssl": "OpenSSL 3.5.9 29 Sep 2026",
+        "venv_active": true,
+        "gil_disabled": false,
+        "ssl_context": true
+      }
+    },
+    {
+      "minor": "3.14",
+      "archive_sha256": "d9ec7a6935ade8b671a57ebaf111083d7314eab8dae5071d167054dadd2b97d6",
+      "archive_bytes": 36299485,
+      "facts": {
+        "python": "3.14.8",
+        "implementation": "CPython",
+        "arch": "x86_64",
+        "bits": 64,
+        "pip": "26.2.1",
+        "ensurepip": "26.2.1",
+        "ssl": "OpenSSL 3.5.9 29 Sep 2026",
+        "venv_active": true,
+        "gil_disabled": false,
+        "ssl_context": true
+      }
+    }
+  ],
+  "network": "No guest internet; archives transferred from host after pinned HTTPS acquisition",
+  "scope": "Private prerequisite toolchains only; no installed application, Pro eligibility or full cell qualification"
+}

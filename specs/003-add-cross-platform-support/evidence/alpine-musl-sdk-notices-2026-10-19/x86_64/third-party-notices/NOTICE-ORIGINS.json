@@ -1,0 +1,1358 @@
+{
+  "approved": false,
+  "kind": "linux-musl-offline-notice-origins",
+  "notices": [
+    {
+      "origin": {
+        "archive_sha256": "1e028b2b3e84e946c1d3e8c47590f8f0741bba1041fe6eff36eee87e598ea249",
+        "kind": "graphviz-source-archive",
+        "path": "AUTHORS",
+        "source_sha256": "182eaf397edc803d0e44a25708ba70ecafc143c0f610ea7048c6b9687a939ff0"
+      },
+      "path": "Graphviz-AUTHORS.txt",
+      "sha256": "182eaf397edc803d0e44a25708ba70ecafc143c0f610ea7048c6b9687a939ff0",
+      "size": 694
+    },
+    {
+      "origin": {
+        "archive_sha256": "1e028b2b3e84e946c1d3e8c47590f8f0741bba1041fe6eff36eee87e598ea249",
+        "kind": "graphviz-source-archive",
+        "path": "COPYING",
+        "source_sha256": "0becf16567beb77fa252b7664631dd177c8f9a1889e48995b45379c7130e5303"
+      },
+      "path": "Graphviz-COPYING.txt",
+      "sha256": "0becf16567beb77fa252b7664631dd177c8f9a1889e48995b45379c7130e5303",
+      "size": 14198
+    },
+    {
+      "origin": {
+        "archive_sha256": "1e028b2b3e84e946c1d3e8c47590f8f0741bba1041fe6eff36eee87e598ea249",
+        "kind": "graphviz-source-archive",
+        "path": "lib/common/brewer_colors",
+        "source_sha256": "a069692c03e8bcd402fbd88b2e664a7cc0f39870c05cc1d751413f8302a7d34e"
+      },
+      "path": "ColorBrewer.txt",
+      "sha256": "09598cbb53b21f3cab841d5be8ceee6ef9bc0387f3b60330da94e9c98f4ada19",
+      "size": 2130
+    },
+    {
+      "origin": {
+        "archive_sha256": "1e028b2b3e84e946c1d3e8c47590f8f0741bba1041fe6eff36eee87e598ea249",
+        "kind": "graphviz-source-archive",
+        "path": "lib/rbtree/LICENSE",
+        "source_sha256": "fcb423209a3a3909f41e629a4973eab3995ceb93136dd72485fb12ad3de29dfc"
+      },
+      "path": "Graphviz-lib__rbtree__LICENSE.txt",
+      "sha256": "fcb423209a3a3909f41e629a4973eab3995ceb93136dd72485fb12ad3de29dfc",
+      "size": 1048
+    },
+    {
+      "origin": {
+        "archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+        "kind": "sdk-source-archive",
+        "path": "LICENSE",
+        "source_sha256": "5c537d6853e005298a285d508cff9ac7192cea23576c840d485b2b586a7ff177"
+      },
+      "path": "SDK-LICENSE.txt",
+      "sha256": "5c537d6853e005298a285d508cff9ac7192cea23576c840d485b2b586a7ff177",
+      "size": 1080
+    },
+    {
+      "origin": {
+        "archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+        "kind": "sdk-source-archive",
+        "path": "lib/libc/musl/COPYRIGHT",
+        "source_sha256": "f9bc4423732350eb0b3f7ed7e91d530298476f8fec0c6c427a1c04ade22655af"
+      },
+      "path": "SDK-lib__libc__musl__COPYRIGHT.txt",
+      "sha256": "f9bc4423732350eb0b3f7ed7e91d530298476f8fec0c6c427a1c04ade22655af",
+      "size": 6204
+    },
+    {
+      "origin": {
+        "archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+        "kind": "sdk-source-archive",
+        "path": "lib/libcxx/LICENSE.TXT",
+        "source_sha256": "539dd7aed86e8a4f12cbdd0e6c50c189c7d74847e4fecc64ce2c6ee3a01da38b"
+      },
+      "path": "SDK-lib__libcxx__LICENSE.TXT.txt",
+      "sha256": "539dd7aed86e8a4f12cbdd0e6c50c189c7d74847e4fecc64ce2c6ee3a01da38b",
+      "size": 16703
+    },
+    {
+      "origin": {
+        "archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+        "kind": "sdk-source-archive",
+        "path": "lib/libcxxabi/LICENSE.TXT",
+        "source_sha256": "e2b35be49f7284a45b7baca8fc7b3ab7440e7902392b2528a457816b5bb2a15c"
+      },
+      "path": "SDK-lib__libcxxabi__LICENSE.TXT.txt",
+      "sha256": "e2b35be49f7284a45b7baca8fc7b3ab7440e7902392b2528a457816b5bb2a15c",
+      "size": 16706
+    },
+    {
+      "origin": {
+        "archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+        "kind": "sdk-source-archive",
+        "path": "lib/libunwind/LICENSE.TXT",
+        "source_sha256": "b5efebcaca80879234098e52d1725e6d9eb8fb96a19fce625d39184b705f7b6d"
+      },
+      "path": "SDK-lib__libunwind__LICENSE.TXT.txt",
+      "sha256": "b5efebcaca80879234098e52d1725e6d9eb8fb96a19fce625d39184b705f7b6d",
+      "size": 16706
+    },
+    {
+      "origin": {
+        "archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+        "kind": "sdk-source-comment-prefix",
+        "length": 1194,
+        "offset": 0,
+        "path": "lib/libc/musl/src/math/acos.c",
+        "source_sha256": "cc6f9017e7e2e0ef01516fa12c68aa63865e6415c90dc039dfce9abffae09a4c"
+      },
+      "path": "musl-source-lib__libc__musl__src__math__acos.c.txt",
+      "sha256": "00e4450ab1ffd72751892acf5f406e6ef14dc25e31b9d2409091c27805a41153",
+      "size": 1194
+    },
+    {
+      "origin": {
+        "archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+        "kind": "sdk-source-comment-prefix",
+        "length": 1546,
+        "offset": 0,
+        "path": "lib/libc/musl/src/math/asin.c",
+        "source_sha256": "9302dd0b2f302f7b7decce82e737ed250bae1bcc65c19eaf3d7ec19010892e63"
+      },
+      "path": "musl-source-lib__libc__musl__src__math__asin.c.txt",
+      "sha256": "16e4c9d33a06c014651a46f607bc777d8f92cb625aeebca97fbf2efb6441a8c5",
+      "size": 1546
+    },
+    {
+      "origin": {
+        "archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+        "kind": "sdk-source-comment-prefix",
+        "length": 1308,
+        "offset": 0,
+        "path": "lib/libc/musl/src/math/atan.c",
+        "source_sha256": "1cffb67a65456ae0bc5f07a94df04a4f18ebc1ac0bffe3219250c4e0555ee01d"
+      },
+      "path": "musl-source-lib__libc__musl__src__math__atan.c.txt",
+      "sha256": "79d56218788d2a27bcb1cf05f51446c763f65d4c8f419a3bbcd074e464b735f5",
+      "size": 1308
+    },
+    {
+      "origin": {
+        "archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+        "kind": "sdk-source-comment-prefix",
+        "length": 1503,
+        "offset": 0,
+        "path": "lib/libc/musl/src/math/atan2.c",
+        "source_sha256": "a5f94b09b10b4e72bb15d94ae403c9dfd27d7ad881ecd729000004429acfca63"
+      },
+      "path": "musl-source-lib__libc__musl__src__math__atan2.c.txt",
+      "sha256": "02552e5f14ecd5d6ed4c022f38c88890f2e11e5722751f039032638ab3c663c4",
+      "size": 1503
+    },
+    {
+      "origin": {
+        "archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+        "kind": "sdk-source-comment-prefix",
+        "length": 509,
+        "offset": 0,
+        "path": "lib/libc/musl/src/math/cbrt.c",
+        "source_sha256": "af442893d4048c0eb485b93b5628792fb796d45ffc0f88c682041366c7da611d"
+      },
+      "path": "musl-source-lib__libc__musl__src__math__cbrt.c.txt",
+      "sha256": "8b96b75f42c2319887a8f8a25a0dfe058539ef538d2e0741115b9804ceb61c51",
+      "size": 509
+    },
+    {
+      "origin": {
+        "archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+        "kind": "sdk-source-comment-prefix",
+        "length": 113,
+        "offset": 0,
+        "path": "lib/libc/musl/src/math/exp.c",
+        "source_sha256": "7db56f21ca9b8915d36dd5099b707aafeb6a736eae798e19b76b074764e75f34"
+      },
+      "path": "musl-source-lib__libc__musl__src__math__exp.c.txt",
+      "sha256": "d879464986502f5a108b0b25095f85968c7fe617f656407b6ebb2d8b1be9874f",
+      "size": 113
+    },
+    {
+      "origin": {
+        "archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+        "kind": "sdk-source-comment-prefix",
+        "length": 121,
+        "offset": 0,
+        "path": "lib/libc/musl/src/math/exp_data.c",
+        "source_sha256": "c55dff64e369fe816cd8ce367064989bb119f85783599680d1a329031c660689"
+      },
+      "path": "musl-source-lib__libc__musl__src__math__exp_data.c.txt",
+      "sha256": "af710fc02739f06f406db14d25b1432e1aafbecf2b064e63d2e8515c1894a99b",
+      "size": 121
+    },
+    {
+      "origin": {
+        "archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+        "kind": "sdk-source-comment-prefix",
+        "length": 116,
+        "offset": 0,
+        "path": "lib/libc/musl/src/math/log.c",
+        "source_sha256": "a0694d8587a0d145d0f8ae87cbffba014d7988bc2ebcbfad94cea73b394c9ecc"
+      },
+      "path": "musl-source-lib__libc__musl__src__math__log.c.txt",
+      "sha256": "3b0f4b6e0ba95a6f9205a61c3e20c272cb6f4d0b50ab2865340ff43a57c69932",
+      "size": 116
+    },
+    {
+      "origin": {
+        "archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+        "kind": "sdk-source-comment-prefix",
+        "length": 691,
+        "offset": 0,
+        "path": "lib/libc/musl/src/math/log10.c",
+        "source_sha256": "ef9b4b1f0918cf1fcb797f9fa4d4ffe177bfa27f668d74a41d613bfbcd83850a"
+      },
+      "path": "musl-source-lib__libc__musl__src__math__log10.c.txt",
+      "sha256": "a10b1a81999d6e187cc65a869b53fcc2168bbd62b4b8ffb7b932726ddb2a5081",
+      "size": 691
+    },
+    {
+      "origin": {
+        "archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+        "kind": "sdk-source-comment-prefix",
+        "length": 117,
+        "offset": 0,
+        "path": "lib/libc/musl/src/math/log2.c",
+        "source_sha256": "281e4fc0f737419e245019d8bc8a8ca53032c2d88c31d08561e9e59dcb4b4640"
+      },
+      "path": "musl-source-lib__libc__musl__src__math__log2.c.txt",
+      "sha256": "1811ecaf980210c8286b1bbd6e08a494f751b73f9bbecc410de5f29ffee2ff8d",
+      "size": 117
+    },
+    {
+      "origin": {
+        "archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+        "kind": "sdk-source-comment-prefix",
+        "length": 97,
+        "offset": 0,
+        "path": "lib/libc/musl/src/math/log2_data.c",
+        "source_sha256": "5a62bb213f19dc1364cddb612e3d13831e382f5ae6f7fafd7064362f53478dfb"
+      },
+      "path": "musl-source-lib__libc__musl__src__math__log2_data.c.txt",
+      "sha256": "aeae385a739a08c7d276c5462f16c88f81ccab39dfca123ac70b219c4a9ae5b8",
+      "size": 97
+    },
+    {
+      "origin": {
+        "archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+        "kind": "sdk-source-comment-prefix",
+        "length": 96,
+        "offset": 0,
+        "path": "lib/libc/musl/src/math/log_data.c",
+        "source_sha256": "e96bcd99d88fc57e0f3686299014f4b949a6212603ce237f39e16cedc155617a"
+      },
+      "path": "musl-source-lib__libc__musl__src__math__log_data.c.txt",
+      "sha256": "13755d13feb33602c841286fcd7a637820a7bbe08474bdd8b14991584f336823",
+      "size": 96
+    },
+    {
+      "origin": {
+        "archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+        "kind": "sdk-source-comment-prefix",
+        "length": 113,
+        "offset": 0,
+        "path": "lib/libc/musl/src/math/pow.c",
+        "source_sha256": "b06f0a08d74fcff8cced7afa2c0e47e301e3e8a19c0de5becdec28cd7b014027"
+      },
+      "path": "musl-source-lib__libc__musl__src__math__pow.c.txt",
+      "sha256": "19941f43d6fb6c02a46feb375e14e57daccf9e400fe1f0b4c7dc08aae603d41c",
+      "size": 113
+    },
+    {
+      "origin": {
+        "archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+        "kind": "sdk-source-comment-prefix",
+        "length": 112,
+        "offset": 0,
+        "path": "lib/libc/musl/src/math/pow_data.c",
+        "source_sha256": "2052ec913f9b4a2170a98a6fcbcd7694f5dec220036b00c36106a2b4b65a4c55"
+      },
+      "path": "musl-source-lib__libc__musl__src__math__pow_data.c.txt",
+      "sha256": "e237d73cc422efa2525decfa88f5017a754b5e7d82719b4f989f28e6968ce977",
+      "size": 112
+    },
+    {
+      "origin": {
+        "archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+        "kind": "sdk-source-comment-prefix",
+        "length": 1342,
+        "offset": 0,
+        "path": "lib/libc/musl/src/stdlib/qsort.c",
+        "source_sha256": "3a838cc7f83f4746df6063f567be1ebb2f7d204243342122acd43f44d2434ec6"
+      },
+      "path": "musl-source-lib__libc__musl__src__stdlib__qsort.c.txt",
+      "sha256": "8095fd5bdc520e0b8688763e208e4f8ef7690ede2134c89860db4f685ca9e3af",
+      "size": 1342
+    },
+    {
+      "origin": {
+        "archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+        "kind": "sdk-source-comment-prefix",
+        "length": 80,
+        "offset": 0,
+        "path": "lib/libc/musl/src/thread/x86_64/__set_thread_area.s",
+        "source_sha256": "9a6299228be5f8f467652263e8f98c1f9ab2e0937243589b8c5642f0ebe3236d"
+      },
+      "path": "musl-source-lib__libc__musl__src__thread__x86_64____set_thread_area.s.txt",
+      "sha256": "e67a3c298a153360228cc1051633c5164692cc786afb6a4a9102b19787e5bc74",
+      "size": 80
+    },
+    {
+      "origin": {
+        "archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+        "kind": "sdk-source-comment-prefix",
+        "length": 217,
+        "offset": 0,
+        "path": "lib/c.zig",
+        "source_sha256": "b39fec9941872a61508e463ee0bc35087bf7613b56c95f1193c93c2d1a59ad9c"
+      },
+      "path": "zig-runtime-source-lib__c.zig.txt",
+      "sha256": "92bcb7aa4dce1ee1f082e584e54dd1a71f4d4af95ed1eadd5fbef51c604140d7",
+      "size": 217
+    },
+    {
+      "origin": {
+        "archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+        "kind": "sdk-source-comment-prefix",
+        "length": 74,
+        "offset": 0,
+        "path": "lib/compiler_rt/absv.zig",
+        "source_sha256": "32364c5a658e894772d817b2081c077e5c078c57db862a3d9f1862d1379187e7"
+      },
+      "path": "zig-runtime-source-lib__compiler_rt__absv.zig.txt",
+      "sha256": "ff07ce33e61c2dbaebd3b78a382876ee5f7e48864f521ee26f7773ca705ceaec",
+      "size": 74
+    },
+    {
+      "origin": {
+        "archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+        "kind": "sdk-source-comment-prefix",
+        "length": 108,
+        "offset": 0,
+        "path": "lib/compiler_rt/arm.zig",
+        "source_sha256": "bbb5b371dbb8dbc5b54cda6fa2293cc2ba2d0d685ae870924694b13d98198fb5"
+      },
+      "path": "zig-runtime-source-lib__compiler_rt__arm.zig.txt",
+      "sha256": "c6e3708aac39cdead97bbfcf64562558e79dad2a07a12a8e51f53206f0ed64e1",
+      "size": 108
+    },
+    {
+      "origin": {
+        "archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+        "kind": "sdk-source-comment-prefix",
+        "length": 228,
+        "offset": 0,
+        "path": "lib/compiler_rt/ceil.zig",
+        "source_sha256": "c0b94f955196844864638c527fa4a30dea10e6a3b66132fe61cab7830b5b3310"
+      },
+      "path": "zig-runtime-source-lib__compiler_rt__ceil.zig.txt",
+      "sha256": "431617e264124f79828010f1d56f2567d8cf81c4af1e3f6230762519218c4af0",
+      "size": 228
+    },
+    {
+      "origin": {
+        "archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+        "kind": "sdk-source-comment-prefix",
+        "length": 161,
+        "offset": 0,
+        "path": "lib/compiler_rt/cmpdf2.zig",
+        "source_sha256": "f015febc2a1fc858676b546c98a1b2f9e6eac5038bac18e5c070819ceaed04df"
+      },
+      "path": "zig-runtime-source-lib__compiler_rt__cmpdf2.zig.txt",
+      "sha256": "094f16c8139413e86da80b43ba7dacd5aa954881777052117bc132f51d6da73c",
+      "size": 161
+    },
+    {
+      "origin": {
+        "archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+        "kind": "sdk-source-comment-prefix",
+        "length": 161,
+        "offset": 0,
+        "path": "lib/compiler_rt/cmphf2.zig",
+        "source_sha256": "db02f8a6bfcfdd3e00b0b1fed696f9cdbc984dfaced2765b956b03396eee3a1f"
+      },
+      "path": "zig-runtime-source-lib__compiler_rt__cmphf2.zig.txt",
+      "sha256": "094f16c8139413e86da80b43ba7dacd5aa954881777052117bc132f51d6da73c",
+      "size": 161
+    },
+    {
+      "origin": {
+        "archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+        "kind": "sdk-source-comment-prefix",
+        "length": 161,
+        "offset": 0,
+        "path": "lib/compiler_rt/cmpsf2.zig",
+        "source_sha256": "b31b176202ca43576893d2381cac51d386b503f6f69bf74ccc0b5d41a3e975c1"
+      },
+      "path": "zig-runtime-source-lib__compiler_rt__cmpsf2.zig.txt",
+      "sha256": "094f16c8139413e86da80b43ba7dacd5aa954881777052117bc132f51d6da73c",
+      "size": 161
+    },
+    {
+      "origin": {
+        "archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+        "kind": "sdk-source-comment-prefix",
+        "length": 161,
+        "offset": 0,
+        "path": "lib/compiler_rt/cmptf2.zig",
+        "source_sha256": "a4410c123c822074ffad44b7b00036667b5ba6d04fbb7ecb9ccdc6c1faf5e3d3"
+      },
+      "path": "zig-runtime-source-lib__compiler_rt__cmptf2.zig.txt",
+      "sha256": "094f16c8139413e86da80b43ba7dacd5aa954881777052117bc132f51d6da73c",
+      "size": 161
+    },
+    {
+      "origin": {
+        "archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+        "kind": "sdk-source-comment-prefix",
+        "length": 161,
+        "offset": 0,
+        "path": "lib/compiler_rt/cmpxf2.zig",
+        "source_sha256": "0cafca634bd4cc424f9873132b60cc0b3f05a3cf3e3f7c6648eec1f42ce1d135"
+      },
+      "path": "zig-runtime-source-lib__compiler_rt__cmpxf2.zig.txt",
+      "sha256": "094f16c8139413e86da80b43ba7dacd5aa954881777052117bc132f51d6da73c",
+      "size": 161
+    },
+    {
+      "origin": {
+        "archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+        "kind": "sdk-source-comment-prefix",
+        "length": 145,
+        "offset": 0,
+        "path": "lib/compiler_rt/divdf3.zig",
+        "source_sha256": "b0b7ccd2d1ecd49b83c365c9f953f741de195ff6783948b9958b7bcee3ac03dc"
+      },
+      "path": "zig-runtime-source-lib__compiler_rt__divdf3.zig.txt",
+      "sha256": "1f7c203412b0e310e656eb05709455bdaefb41d72431412fa0a72732b41877e0",
+      "size": 145
+    },
+    {
+      "origin": {
+        "archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+        "kind": "sdk-source-comment-prefix",
+        "length": 145,
+        "offset": 0,
+        "path": "lib/compiler_rt/divsf3.zig",
+        "source_sha256": "b7f48d5c91774014a9849cfe0f277bede977ddd6c193a3255a3ba130132221b8"
+      },
+      "path": "zig-runtime-source-lib__compiler_rt__divsf3.zig.txt",
+      "sha256": "97896f0117ab37634d7a75227f830274ec065d07ce7a36feeaf620c784da9a98",
+      "size": 145
+    },
+    {
+      "origin": {
+        "archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+        "kind": "sdk-source-comment-prefix",
+        "length": 239,
+        "offset": 0,
+        "path": "lib/compiler_rt/exp.zig",
+        "source_sha256": "cfdd306d366211e654ac9395092c8fa2f32773aef0609fbb877705f129ee502a"
+      },
+      "path": "zig-runtime-source-lib__compiler_rt__exp.zig.txt",
+      "sha256": "8ffc6a7b847cbbc1daf8142bb2e3dd02a9fda593797f34fa33e902a7605336af",
+      "size": 239
+    },
+    {
+      "origin": {
+        "archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+        "kind": "sdk-source-comment-prefix",
+        "length": 241,
+        "offset": 0,
+        "path": "lib/compiler_rt/exp2.zig",
+        "source_sha256": "97ec14c5f51690fcad9c8c2d82cee3a8ea1cdd682689a6340dd5438ea973dedc"
+      },
+      "path": "zig-runtime-source-lib__compiler_rt__exp2.zig.txt",
+      "sha256": "ba31fb59051991117d8ea0389bb9be4f8a5869ec613f7e7897f1af95cd26d02d",
+      "size": 241
+    },
+    {
+      "origin": {
+        "archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+        "kind": "sdk-source-comment-prefix",
+        "length": 248,
+        "offset": 0,
+        "path": "lib/compiler_rt/floor.zig",
+        "source_sha256": "7aa25d35a1d93393fe55b49c9db7420dfaafcc60d8e63078d6ca846285e3678e"
+      },
+      "path": "zig-runtime-source-lib__compiler_rt__floor.zig.txt",
+      "sha256": "9599b2b8bfe88149ae7a1814cb8ab3b17682d1a8be3b8d321e5558871482e554",
+      "size": 248
+    },
+    {
+      "origin": {
+        "archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+        "kind": "sdk-source-comment-prefix",
+        "length": 287,
+        "offset": 0,
+        "path": "lib/compiler_rt/fma.zig",
+        "source_sha256": "f8d4321338ca607be9a80d6e11593f0f56bab4618c6efcbb27e1da824e700a39"
+      },
+      "path": "zig-runtime-source-lib__compiler_rt__fma.zig.txt",
+      "sha256": "9077e7a20993a3e7ac4d2284fd38d67f657280e95ea563c00cef72552a49bb8b",
+      "size": 287
+    },
+    {
+      "origin": {
+        "archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+        "kind": "sdk-source-comment-prefix",
+        "length": 161,
+        "offset": 0,
+        "path": "lib/compiler_rt/gedf2.zig",
+        "source_sha256": "6e894212203e9983f69bf2c38178e20fe67613309b81e94493ef2d17cc692090"
+      },
+      "path": "zig-runtime-source-lib__compiler_rt__gedf2.zig.txt",
+      "sha256": "094f16c8139413e86da80b43ba7dacd5aa954881777052117bc132f51d6da73c",
+      "size": 161
+    },
+    {
+      "origin": {
+        "archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+        "kind": "sdk-source-comment-prefix",
+        "length": 161,
+        "offset": 0,
+        "path": "lib/compiler_rt/gehf2.zig",
+        "source_sha256": "ce31442790acf50eb8c0ffa00cf3561361ee9c02aed9a903c65af7288ee5499d"
+      },
+      "path": "zig-runtime-source-lib__compiler_rt__gehf2.zig.txt",
+      "sha256": "094f16c8139413e86da80b43ba7dacd5aa954881777052117bc132f51d6da73c",
+      "size": 161
+    },
+    {
+      "origin": {
+        "archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+        "kind": "sdk-source-comment-prefix",
+        "length": 161,
+        "offset": 0,
+        "path": "lib/compiler_rt/gesf2.zig",
+        "source_sha256": "a997a88b6afe173f24267c0db49064984d4e76fbbcd67d8f1e915c646c3d1e68"
+      },
+      "path": "zig-runtime-source-lib__compiler_rt__gesf2.zig.txt",
+      "sha256": "094f16c8139413e86da80b43ba7dacd5aa954881777052117bc132f51d6da73c",
+      "size": 161
+    },
+    {
+      "origin": {
+        "archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+        "kind": "sdk-source-comment-prefix",
+        "length": 161,
+        "offset": 0,
+        "path": "lib/compiler_rt/getf2.zig",
+        "source_sha256": "44c8e974ef9fea0bc76f7433c89a2a82bc157cfcd439fd00bac25ec826d6506a"
+      },
+      "path": "zig-runtime-source-lib__compiler_rt__getf2.zig.txt",
+      "sha256": "094f16c8139413e86da80b43ba7dacd5aa954881777052117bc132f51d6da73c",
+      "size": 161
+    },
+    {
+      "origin": {
+        "archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+        "kind": "sdk-source-comment-prefix",
+        "length": 53,
+        "offset": 0,
+        "path": "lib/compiler_rt/int.zig",
+        "source_sha256": "f585dc04dc09e239b714df0b33d6cc700e97ce69ab8d91e33cd12304a4339885"
+      },
+      "path": "zig-runtime-source-lib__compiler_rt__int.zig.txt",
+      "sha256": "bd0df320974138c4854fd0818d5245fd0af83e948b56765942e6c95521719299",
+      "size": 53
+    },
+    {
+      "origin": {
+        "archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+        "kind": "sdk-source-comment-prefix",
+        "length": 242,
+        "offset": 0,
+        "path": "lib/compiler_rt/log.zig",
+        "source_sha256": "57f6bdac99d1507aa7157da17ae935d8e65cf708d62ba463f1096ccdb955d1e5"
+      },
+      "path": "zig-runtime-source-lib__compiler_rt__log.zig.txt",
+      "sha256": "a3df508f6c9ca384858ccf475cefbed89efc31c9cc2d68f89f0398fca128951f",
+      "size": 242
+    },
+    {
+      "origin": {
+        "archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+        "kind": "sdk-source-comment-prefix",
+        "length": 248,
+        "offset": 0,
+        "path": "lib/compiler_rt/log10.zig",
+        "source_sha256": "2df80603e051dd6d37dbbf9f35a2f827cec8930b5a6e3bb4de10954310203e17"
+      },
+      "path": "zig-runtime-source-lib__compiler_rt__log10.zig.txt",
+      "sha256": "cab72da0ea23d9b10b23e113aa502bd04dfc74560603c94701386a0c1f454a9d",
+      "size": 248
+    },
+    {
+      "origin": {
+        "archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+        "kind": "sdk-source-comment-prefix",
+        "length": 246,
+        "offset": 0,
+        "path": "lib/compiler_rt/log2.zig",
+        "source_sha256": "f340b3537f055c5eb0d5049706eb8a9da379ad0a75cde3ccd63e2d7611c6b83e"
+      },
+      "path": "zig-runtime-source-lib__compiler_rt__log2.zig.txt",
+      "sha256": "54f148f3cc708094512c454ee0fc149a1da5b3cc84bdb9a854a684b7a860d6fd",
+      "size": 246
+    },
+    {
+      "origin": {
+        "archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+        "kind": "sdk-source-comment-prefix",
+        "length": 143,
+        "offset": 0,
+        "path": "lib/compiler_rt/modti3.zig",
+        "source_sha256": "cfb039667be4642a66b3ce469f29576f1315caa6107ef8c2ddd07a1da3127e9e"
+      },
+      "path": "zig-runtime-source-lib__compiler_rt__modti3.zig.txt",
+      "sha256": "53311551e595ab672b6d277064b565e19d5d80b6d395b10c8a221cbcfe5b667d",
+      "size": 143
+    },
+    {
+      "origin": {
+        "archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+        "kind": "sdk-source-comment-prefix",
+        "length": 292,
+        "offset": 0,
+        "path": "lib/compiler_rt/negXi2.zig",
+        "source_sha256": "0d03f772c07d546fe5ea6e992dd1df081624c5eb64b30dcac4820a2b16f49c1f"
+      },
+      "path": "zig-runtime-source-lib__compiler_rt__negXi2.zig.txt",
+      "sha256": "a96d97cd6b679598f38b0d214f11ff1f145e1308cd8c00c426f4025811bb77ce",
+      "size": 292
+    },
+    {
+      "origin": {
+        "archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+        "kind": "sdk-source-comment-prefix",
+        "length": 120,
+        "offset": 0,
+        "path": "lib/compiler_rt/negv.zig",
+        "source_sha256": "87624315a6065634e4d7bef4e8b432b4d94387b340fb5aad97d09f157e52bf16"
+      },
+      "path": "zig-runtime-source-lib__compiler_rt__negv.zig.txt",
+      "sha256": "2f72a4903c836f05f32d99770fa280ba824c16290ad967658ddc15ca6e7b00eb",
+      "size": 120
+    },
+    {
+      "origin": {
+        "archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+        "kind": "sdk-source-comment-prefix",
+        "length": 110,
+        "offset": 0,
+        "path": "lib/compiler_rt/parity.zig",
+        "source_sha256": "a87ff798b17d81fe2897d1234028098a515128e4bf221371423017664a0d6752"
+      },
+      "path": "zig-runtime-source-lib__compiler_rt__parity.zig.txt",
+      "sha256": "084467e27e5a2e077d97edc4df7fe82d3d033ba88766f608fb363147bee473a2",
+      "size": 110
+    },
+    {
+      "origin": {
+        "archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+        "kind": "sdk-source-comment-prefix",
+        "length": 407,
+        "offset": 0,
+        "path": "lib/compiler_rt/popcount.zig",
+        "source_sha256": "865096ed33eea80b5aa0f38266fc53ae2d634119a19406883be6e45405954f3c"
+      },
+      "path": "zig-runtime-source-lib__compiler_rt__popcount.zig.txt",
+      "sha256": "21db96a942ea16360d1c68d13b4f597807bf3bd2fe9611261883e69b5d9dc45f",
+      "size": 407
+    },
+    {
+      "origin": {
+        "archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+        "kind": "sdk-source-comment-prefix",
+        "length": 294,
+        "offset": 0,
+        "path": "lib/compiler_rt/powiXf2.zig",
+        "source_sha256": "99fba8a25c1dbfdeebae0e61e89ebef6c72a958e10499caa50e60812f08f4d25"
+      },
+      "path": "zig-runtime-source-lib__compiler_rt__powiXf2.zig.txt",
+      "sha256": "608759edfecca2d52e2682066009c4cd8ddc64c7e4b7ffe1fdc59469bd45cdce",
+      "size": 294
+    },
+    {
+      "origin": {
+        "archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+        "kind": "sdk-source-comment-prefix",
+        "length": 186,
+        "offset": 0,
+        "path": "lib/compiler_rt/rem_pio2.zig",
+        "source_sha256": "908c7ee93fc246ce3405fa3a4303b8dbbc9a6c527f5e792fd59d6ab3cff79f27"
+      },
+      "path": "zig-runtime-source-lib__compiler_rt__rem_pio2.zig.txt",
+      "sha256": "f93c1f2e7c5f1311497a8452784c40662869b5d59222f1d6298df5cd2aee0a71",
+      "size": 186
+    },
+    {
+      "origin": {
+        "archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+        "kind": "sdk-source-comment-prefix",
+        "length": 192,
+        "offset": 0,
+        "path": "lib/compiler_rt/rem_pio2_large.zig",
+        "source_sha256": "30251d81ce0fd09130d359cd92f03ef2cbe1247ca6ead4a1b41b047745bdef0a"
+      },
+      "path": "zig-runtime-source-lib__compiler_rt__rem_pio2_large.zig.txt",
+      "sha256": "ef7a8240fe00082688de96e45b3304c1d43e42c5c83198c3c5a85ab4f35d11b2",
+      "size": 192
+    },
+    {
+      "origin": {
+        "archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+        "kind": "sdk-source-comment-prefix",
+        "length": 187,
+        "offset": 0,
+        "path": "lib/compiler_rt/rem_pio2f.zig",
+        "source_sha256": "a41741ff67bf8def1d237d62ef07bb0ec7d5198459958eb1420028052727a17a"
+      },
+      "path": "zig-runtime-source-lib__compiler_rt__rem_pio2f.zig.txt",
+      "sha256": "17c33bfc16f76c683e278f9a55469a090dd93e6a54cbf7f953038b3e2f119651",
+      "size": 187
+    },
+    {
+      "origin": {
+        "archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+        "kind": "sdk-source-comment-prefix",
+        "length": 248,
+        "offset": 0,
+        "path": "lib/compiler_rt/round.zig",
+        "source_sha256": "81ba3ee7cf24f55010da8de1b2b19cc91971bf3ed36b56859020ef4a33be4b18"
+      },
+      "path": "zig-runtime-source-lib__compiler_rt__round.zig.txt",
+      "sha256": "600d166c256dc93850976d707f1359c2081e99ce80852865973ce4168136420d",
+      "size": 248
+    },
+    {
+      "origin": {
+        "archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+        "kind": "sdk-source-comment-prefix",
+        "length": 244,
+        "offset": 0,
+        "path": "lib/compiler_rt/sin.zig",
+        "source_sha256": "91eb3f8e29e6c82b2a704ab0b47438e2b51e16bd3e1be622ccf264f061f290d5"
+      },
+      "path": "zig-runtime-source-lib__compiler_rt__sin.zig.txt",
+      "sha256": "9c40c6a20da3909ae52dfddf708e694fb17a29d268c40d6d17570cbfc5f72f88",
+      "size": 244
+    },
+    {
+      "origin": {
+        "archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+        "kind": "sdk-source-comment-prefix",
+        "length": 342,
+        "offset": 0,
+        "path": "lib/compiler_rt/ssp.zig",
+        "source_sha256": "87840e8a8c0eacff737dfd2238727862b9389c8afe4207e6cfda9b1bc2e23453"
+      },
+      "path": "zig-runtime-source-lib__compiler_rt__ssp.zig.txt",
+      "sha256": "89084ae1cee5ef56b863aad244c10636c54f0b51e50fe90290bcf792bfab1487",
+      "size": 342
+    },
+    {
+      "origin": {
+        "archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+        "kind": "sdk-source-comment-prefix",
+        "length": 127,
+        "offset": 0,
+        "path": "lib/compiler_rt/subo.zig",
+        "source_sha256": "531690f488c8c97072a612d8c7cd5820df68378bd825d51ddaf16044c351438c"
+      },
+      "path": "zig-runtime-source-lib__compiler_rt__subo.zig.txt",
+      "sha256": "36635814d5e6a959f4e3be9cd100f7ecc6cc7cf7f50551b7ec3a73deca34911e",
+      "size": 127
+    },
+    {
+      "origin": {
+        "archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+        "kind": "sdk-source-comment-prefix",
+        "length": 283,
+        "offset": 0,
+        "path": "lib/compiler_rt/tan.zig",
+        "source_sha256": "828484649e0a61f634bd1bea179255ec24ee9c77b1511a99ccad2b874e0e1a6c"
+      },
+      "path": "zig-runtime-source-lib__compiler_rt__tan.zig.txt",
+      "sha256": "040856b79ab06734fc648b6488e74d6f560d8926b60e7b106bc42235274e1e38",
+      "size": 283
+    },
+    {
+      "origin": {
+        "archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+        "kind": "sdk-source-comment-prefix",
+        "length": 2333,
+        "offset": 0,
+        "path": "lib/compiler_rt/trig.zig",
+        "source_sha256": "5375b04c419bf910fd4cfe1a667629eb2cf55b56e76c72ae8f9ab4c327092342"
+      },
+      "path": "zig-runtime-source-lib__compiler_rt__trig.zig.txt",
+      "sha256": "c22e45048bf20909c455b4d7f9bf42b4c146cdb2fd914d359ef6d76d1b963554",
+      "size": 2333
+    },
+    {
+      "origin": {
+        "archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+        "kind": "sdk-source-comment-prefix",
+        "length": 230,
+        "offset": 0,
+        "path": "lib/compiler_rt/trunc.zig",
+        "source_sha256": "dcd2d0715b5ce3df820f383e531ea06726ddf6b22e51f4ab950392e1ce46e30a"
+      },
+      "path": "zig-runtime-source-lib__compiler_rt__trunc.zig.txt",
+      "sha256": "183b8637c105a8095792651a924cfa82dc986bf67d6e20fd1163014c745c4fca",
+      "size": 230
+    },
+    {
+      "origin": {
+        "archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+        "kind": "sdk-source-comment-prefix",
+        "length": 232,
+        "offset": 0,
+        "path": "lib/std/Target.zig",
+        "source_sha256": "c5ab967bb0c816d58f4a9a4e68b32e4faae455ca313731b804d239a934c906af"
+      },
+      "path": "zig-runtime-source-lib__std__Target.zig.txt",
+      "sha256": "5a2b4fc50e209a40e3cdcaa455aa0efe6ac65f282f380103b03fb21f329218b2",
+      "size": 232
+    },
+    {
+      "origin": {
+        "archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+        "kind": "sdk-source-comment-prefix",
+        "length": 67,
+        "offset": 0,
+        "path": "lib/std/Target/x86.zig",
+        "source_sha256": "8f11891f9cc91835134d14a51f93356066b73cae9d532429890fd30209a1f075"
+      },
+      "path": "zig-runtime-source-lib__std__Target__x86.zig.txt",
+      "sha256": "e0c505d113c7e603f26c57f45821afed3aeb1bdf0c320920cd0c0b0f68fb2f79",
+      "size": 67
+    },
+    {
+      "origin": {
+        "archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+        "kind": "sdk-source-comment-prefix",
+        "length": 536,
+        "offset": 0,
+        "path": "lib/std/ascii.zig",
+        "source_sha256": "245e0e29ff75a5cbcf294bade7a32b35d1a5e0242bad59342822831c56f97b88"
+      },
+      "path": "zig-runtime-source-lib__std__ascii.zig.txt",
+      "sha256": "17da8cf7ff87554a406810aee0290e0c011a1450af53960df57f7f68a3bef094",
+      "size": 536
+    },
+    {
+      "origin": {
+        "archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+        "kind": "sdk-source-comment-prefix",
+        "length": 52,
+        "offset": 0,
+        "path": "lib/std/builtin.zig",
+        "source_sha256": "7120b362de4a6be0b712971dbb261469d13a061108c9aa68f965728e9937e826"
+      },
+      "path": "zig-runtime-source-lib__std__builtin.zig.txt",
+      "sha256": "b88116f127772e3671dca8fad1b7cac98e0a9beb688ddade3d9c627d3ec324da",
+      "size": 52
+    },
+    {
+      "origin": {
+        "archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+        "kind": "sdk-source-comment-prefix",
+        "length": 19,
+        "offset": 0,
+        "path": "lib/std/crypto.zig",
+        "source_sha256": "41bde1efcf6ddd6f1adbaefbb2559ff7dc281bf00da03b91cb069a7bf952066c"
+      },
+      "path": "zig-runtime-source-lib__std__crypto.zig.txt",
+      "sha256": "f6b3a92dce6a10a982c77c2f043126c7d70610b649925c3ddaa0c368ab8a551c",
+      "size": 19
+    },
+    {
+      "origin": {
+        "archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+        "kind": "sdk-source-comment-prefix",
+        "length": 223,
+        "offset": 0,
+        "path": "lib/std/debug/no_panic.zig",
+        "source_sha256": "7dc6fe2fbbda856c1d601c2732d8364095db03c6441b6bd5961aa12c8d167367"
+      },
+      "path": "zig-runtime-source-lib__std__debug__no_panic.zig.txt",
+      "sha256": "be4e6b50538df8b2dbf249db22c77017767127afb5190bcba058155781dffd95",
+      "size": 223
+    },
+    {
+      "origin": {
+        "archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+        "kind": "sdk-source-comment-prefix",
+        "length": 3028,
+        "offset": 0,
+        "path": "lib/std/log.zig",
+        "source_sha256": "a501bbda527d502fcc1cd0595a20c2487076c7e83c7636d6910ec2935ce8d59e"
+      },
+      "path": "zig-runtime-source-lib__std__log.zig.txt",
+      "sha256": "93c1faf6ba8f8a99c9c87b99679b68493401fc7e66680bc999db0faaaebd12ff",
+      "size": 3028
+    },
+    {
+      "origin": {
+        "archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+        "kind": "sdk-source-comment-prefix",
+        "length": 287,
+        "offset": 0,
+        "path": "lib/std/math/ilogb.zig",
+        "source_sha256": "a6b7569ae4ad22f6ac6324bb3c7074866e7cd93b15d7db8c42102b58fc8c99c9"
+      },
+      "path": "zig-runtime-source-lib__std__math__ilogb.zig.txt",
+      "sha256": "385765963cc7797dfef2e1e53af2a1cf30bdc319b6dfb570aef5ac5c213dd24a",
+      "size": 287
+    },
+    {
+      "origin": {
+        "archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+        "kind": "sdk-source-comment-prefix",
+        "length": 257,
+        "offset": 0,
+        "path": "lib/std/simd.zig",
+        "source_sha256": "cc554020cebe55782b38c18c56a011b61a42f332781e5d0a5b1be3003eddd7a3"
+      },
+      "path": "zig-runtime-source-lib__std__simd.zig.txt",
+      "sha256": "17259986fd4b616fd47cc418d03c34c9390a1dc18ae76ce586e3030af282ec40",
+      "size": 257
+    },
+    {
+      "origin": {
+        "archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+        "kind": "sdk-source-comment-prefix",
+        "length": 80,
+        "offset": 0,
+        "path": "lib/std/start.zig",
+        "source_sha256": "48e9190a5286a9d1239b28239b4d04107d403789371e42ed0514c78f658c8f40"
+      },
+      "path": "zig-runtime-source-lib__std__start.zig.txt",
+      "sha256": "93ed7911642f612bbe58b32612dd3932bfdf9eb01e2ad8475a9bb70741faa8f1",
+      "size": 80
+    },
+    {
+      "origin": {
+        "kind": "generated-file-prefix",
+        "length": 1532,
+        "offset": 0,
+        "path": "lib/cgraph/grammar.c",
+        "source_sha256": "0e2dea901f76c52a14ef02e68d0e146dd7d1f76d7dc604242d80bccab26ad012"
+      },
+      "path": "Bison-lib__cgraph__grammar.c.txt",
+      "sha256": "b979bc0e49fa1efed0fad3af4ecc582b471da7662626cebfd0d5f998b1119f72",
+      "size": 1532
+    },
+    {
+      "origin": {
+        "kind": "generated-file-prefix",
+        "length": 1527,
+        "offset": 0,
+        "path": "lib/cgraph/grammar.h",
+        "source_sha256": "d9e1647ab618b0f73fc6bb3e728ef07f46d7783ef3fd895ab2ddaa2986f308a7"
+      },
+      "path": "Bison-lib__cgraph__grammar.h.txt",
+      "sha256": "ecd76b7233bacbeeafca33a46b80f4120864e3de861e7d0a7d7c6fcce3d664dd",
+      "size": 1527
+    },
+    {
+      "origin": {
+        "kind": "generated-file-prefix",
+        "length": 1532,
+        "offset": 0,
+        "path": "lib/common/htmlparse.c",
+        "source_sha256": "655bd34e9a535869ea04bc8e91d38c6257bda00540be2d9eb5647f6456036860"
+      },
+      "path": "Bison-lib__common__htmlparse.c.txt",
+      "sha256": "b979bc0e49fa1efed0fad3af4ecc582b471da7662626cebfd0d5f998b1119f72",
+      "size": 1532
+    },
+    {
+      "origin": {
+        "kind": "generated-file-prefix",
+        "length": 1527,
+        "offset": 0,
+        "path": "lib/common/htmlparse.h",
+        "source_sha256": "9ec7b00470286f452c0db2f52b8220b61c7c5d86e99942a389ddbb4495f10dd5"
+      },
+      "path": "Bison-lib__common__htmlparse.h.txt",
+      "sha256": "ecd76b7233bacbeeafca33a46b80f4120864e3de861e7d0a7d7c6fcce3d664dd",
+      "size": 1527
+    },
+    {
+      "origin": {
+        "generated_path": "lib/cgraph/scan.c",
+        "generated_sha256": "400e1e2e375803662033b16c0ace51792d0e420e6744a9b45c7894ae7f198737",
+        "generator_sha256": "72ab0d721c90ba4fc1317f6e533ad158eb0a959e7a4ee97876860a84b5961773",
+        "generator_version": "2.6.4",
+        "kind": "pinned-generator-license-material",
+        "qualification": "Recorded generator/scanner versions agree; preserves upstream generated-scanner exception, no bundle approval",
+        "source_sha256": "97fd685958d93be7f8dab939bb8161dbd6afb0718c63bfc337c24321aea44273",
+        "source_url": "https://raw.githubusercontent.com/westes/flex/v2.6.4/COPYING"
+      },
+      "path": "Flex-2.6.4-COPYING.txt",
+      "sha256": "97fd685958d93be7f8dab939bb8161dbd6afb0718c63bfc337c24321aea44273",
+      "size": 1855
+    },
+    {
+      "origin": {
+        "archive_member": "rgb-1.1.0/COPYING",
+        "archive_sha256": "fc03d7f56e5b2a617668167f8927948cce54f93097e7ccd9f056077f479ed37b",
+        "kind": "pinned-reference-license-material",
+        "qualification": "Reference material; applicability remains under review",
+        "source_sha256": "1d08eb3384f5dedc7735bcfae1aa58cb64643ca9389edce3312b1c3cefbfdaa7",
+        "source_url": "https://xorg.freedesktop.org/archive/individual/app/rgb-1.1.0.tar.xz"
+      },
+      "path": "Xorg-rgb-1.1.0-COPYING.txt",
+      "sha256": "1d08eb3384f5dedc7735bcfae1aa58cb64643ca9389edce3312b1c3cefbfdaa7",
+      "size": 2275
+    },
+    {
+      "origin": {
+        "data_evidence_sha256": "d81fb1103368c16e4c11df54bfa440b22f0ece7655b8f1a9552465436c6ff53c",
+        "kind": "maintainer-data-comparison-reference",
+        "qualification": "Value correspondence and generated-byte reproduction; historical copying and license applicability remain under review"
+      },
+      "path": "DATA-ORIGINS.txt",
+      "sha256": "24f0edb2c3c1d67dec4bf35e8ef2aab7e5de6f525dbdd6a198b8a8053b3b526c",
+      "size": 844
+    },
+    {
+      "origin": {
+        "kind": "maintainer-draft-reference"
+      },
+      "path": "SOURCE-REFERENCES.txt",
+      "sha256": "6f5ea5a2d1756065c777a99b910ac8f5d104e870b16891df3f68a21c7277c16e",
+      "size": 442
+    },
+    {
+      "origin": {
+        "archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+        "kind": "pinned-sdk-header-prefix",
+        "length": 372,
+        "offset": 0,
+        "path": "lib/include/__stdarg___gnuc_va_list.h",
+        "source_sha256": "feca975bfdfb254d17458a8e3d51f8ad6d9bdc9fd6287727f0f8b2fb81fcb0b0"
+      },
+      "path": "SDK-header-2856d528ecc05d4e9a5e3d24.txt",
+      "sha256": "8b548ce9c0772f64352e0a72e894ec00ce269b9e0b9f607bbca6b1b7568147df",
+      "size": 372
+    },
+    {
+      "origin": {
+        "archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+        "kind": "pinned-sdk-header-prefix",
+        "length": 372,
+        "offset": 0,
+        "path": "lib/include/__stdarg___va_copy.h",
+        "source_sha256": "f0a8d3c963338173f2d57b2cbc209dde38c90536107b15eb0cf78166d4caee1f"
+      },
+      "path": "SDK-header-5b7087584346ab2d5cfde77c.txt",
+      "sha256": "945de68c47db6ae086ca724e56955f58a2fcd24996ff855729844e4da2b69eb9",
+      "size": 372
+    },
+    {
+      "origin": {
+        "archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+        "kind": "pinned-sdk-header-prefix",
+        "length": 372,
+        "offset": 0,
+        "path": "lib/include/__stdarg_header_macro.h",
+        "source_sha256": "7b3fbcc442af2508f36bb2dc98d9ad2b8a1f5c0f5333394fb2159c8bd5ecd5b8"
+      },
+      "path": "SDK-header-db9a3e1dc993617fe243d89b.txt",
+      "sha256": "51649fa4a0f431eebab1437ed612fb019ec2e7787e56eed82221eefd46a3703b",
+      "size": 372
+    },
+    {
+      "origin": {
+        "archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+        "kind": "pinned-sdk-header-prefix",
+        "length": 372,
+        "offset": 0,
+        "path": "lib/include/__stdarg_va_arg.h",
+        "source_sha256": "db0cca3b7768cf07807553fb88ea74e00cba4503e08a5f5504989fb3cc3e4cf1"
+      },
+      "path": "SDK-header-5b552217baff6a5084aa6dcc.txt",
+      "sha256": "b595a97ed09833b689e3f363e6dc485c1383ebeb8f501ad0669fefdf267d1e33",
+      "size": 372
+    },
+    {
+      "origin": {
+        "archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+        "kind": "pinned-sdk-header-prefix",
+        "length": 372,
+        "offset": 0,
+        "path": "lib/include/__stdarg_va_copy.h",
+        "source_sha256": "bb195f56cb08d4cee6a60bd9f62f34466e8ac4f89f6fed043b044cb2f7ead010"
+      },
+      "path": "SDK-header-96f5c1ca56186e5fad21cc98.txt",
+      "sha256": "a517fd65b43e273f5a8058114a09ed1571404207f694828be663fdde7eb5c25f",
+      "size": 372
+    },
+    {
+      "origin": {
+        "archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+        "kind": "pinned-sdk-header-prefix",
+        "length": 372,
+        "offset": 0,
+        "path": "lib/include/__stdarg_va_list.h",
+        "source_sha256": "81c3055f7033e26e7f53705653bc9d69b5202f25c2692e03b3a4f77ff44a7d76"
+      },
+      "path": "SDK-header-92b7bd6b3109814672885ca6.txt",
+      "sha256": "5754c957355450437a3f49af4b4ff624ace44a28722dda812a0533f2fd0ae618",
+      "size": 372
+    },
+    {
+      "origin": {
+        "archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+        "kind": "pinned-sdk-header-prefix",
+        "length": 372,
+        "offset": 0,
+        "path": "lib/include/__stddef_header_macro.h",
+        "source_sha256": "4cf46e8fbb809df048eecbbd63686fa741da27afa8db4245bd1f61c1fb1611dc"
+      },
+      "path": "SDK-header-7f665345d34086a66e010b88.txt",
+      "sha256": "d90e4486cbe230e2a69b2208b3cfa00d2f37dde34fecba5641a1e765f0ec53ad",
+      "size": 372
+    },
+    {
+      "origin": {
+        "archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+        "kind": "pinned-sdk-header-prefix",
+        "length": 372,
+        "offset": 0,
+        "path": "lib/include/__stddef_max_align_t.h",
+        "source_sha256": "3c1e4de47f4f06b35e2c5890d670052e84f716760505ff51b022fc8b21a9400f"
+      },
+      "path": "SDK-header-6019b64b894fd2862cb3856b.txt",
+      "sha256": "8998ce0e1626fdc5b04f6744ffc2eb65caea027ca78b5941d9df9a97ba4bebba",
+      "size": 372
+    },
+    {
+      "origin": {
+        "archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+        "kind": "pinned-sdk-header-prefix",
+        "length": 372,
+        "offset": 0,
+        "path": "lib/include/__stddef_null.h",
+        "source_sha256": "b1d71b08563ab3d2c22a1e4f8ddf4d9a1111c89e9404b859a45c307e8ebc6c69"
+      },
+      "path": "SDK-header-70362b8b54b5ad330b33981f.txt",
+      "sha256": "e422064af9560b26465ed99c1e6e46f5a00d7e0bdd892d5b0ac845968a77b338",
+      "size": 372
+    },
+    {
+      "origin": {
+        "archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+        "kind": "pinned-sdk-header-prefix",
+        "length": 504,
+        "offset": 0,
+        "path": "lib/include/__stddef_offsetof.h",
+        "source_sha256": "e5f0f4ff8ff5fc6a1cc8b535f5065f1728eadd2bf1e1401f021f803ec7b4222f"
+      },
+      "path": "SDK-header-a9024f9f3d0ce3dceecbf04d.txt",
+      "sha256": "e0da127a73aeec439eda8e78f90180ccd950b574dc51921b11a8220792105973",
+      "size": 504
+    },
+    {
+      "origin": {
+        "archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+        "kind": "pinned-sdk-header-prefix",
+        "length": 504,
+        "offset": 0,
+        "path": "lib/include/__stddef_ptrdiff_t.h",
+        "source_sha256": "b4178a57f3711b7013cba747a72a2f178c29fa9364e77d75b2159754072ced43"
+      },
+      "path": "SDK-header-c5e48ca307cb617e5f1d1c2f.txt",
+      "sha256": "d836ead13fa0c2712f504f4ec30129528644807b7cd725987de154a003ff51c5",
+      "size": 504
+    },
+    {
+      "origin": {
+        "archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+        "kind": "pinned-sdk-header-prefix",
+        "length": 504,
+        "offset": 0,
+        "path": "lib/include/__stddef_size_t.h",
+        "source_sha256": "d86ddc0238da09b385846ebef814ffc50a44e40cf85d4e3793f485952b7e73ad"
+      },
+      "path": "SDK-header-2abd6d92529ee639831683cb.txt",
+      "sha256": "44886d090522af81bbbf9e6245f69625fc84430086bb2d1bdc8a41ce1310db3b",
+      "size": 504
+    },
+    {
+      "origin": {
+        "archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+        "kind": "pinned-sdk-header-prefix",
+        "length": 372,
+        "offset": 0,
+        "path": "lib/include/__stddef_wchar_t.h",
+        "source_sha256": "1900d4998aef3698b06399ed686db0c21e26509b08638a25734fb97ae89b1001"
+      },
+      "path": "SDK-header-1f4051aa4747ad198acbcc4f.txt",
+      "sha256": "713ec82c8194a15383c5bad779fd8baca97f7eae52db544db760b011c17936f8",
+      "size": 372
+    },
+    {
+      "origin": {
+        "archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+        "kind": "pinned-sdk-header-prefix",
+        "length": 372,
+        "offset": 0,
+        "path": "lib/include/float.h",
+        "source_sha256": "a29019c5ba04f9bf55a46f9bf75c63039a6015921ddde7298e057b2a188bebec"
+      },
+      "path": "SDK-header-5223af8b90f7dc4842c70752.txt",
+      "sha256": "6015b181e142f418229b0ec6bfbac1b96bf12ae8e802b43c8aecc425d370c90c",
+      "size": 372
+    },
+    {
+      "origin": {
+        "archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+        "kind": "pinned-sdk-header-prefix",
+        "length": 370,
+        "offset": 0,
+        "path": "lib/include/inttypes.h",
+        "source_sha256": "eb8a7b2e17d57e9321043282bf0267fedd2ca58aadb11b04929ddbf8100fc3bc"
+      },
+      "path": "SDK-header-ba3fd8e6e009a0c564e8edd2.txt",
+      "sha256": "6ba160fe160e2d0f4b1d9e18dba676a82d068477c4e3c713683375e2e27ff98e",
+      "size": 370
+    },
+    {
+      "origin": {
+        "archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+        "kind": "pinned-sdk-header-prefix",
+        "length": 370,
+        "offset": 0,
+        "path": "lib/include/limits.h",
+        "source_sha256": "6b59cc1b6f86c901bf41ce942b8434530e852eb16e79e6e9287f89441f71efca"
+      },
+      "path": "SDK-header-7b8732d3672f3aea4dfef8e7.txt",
+      "sha256": "ed26adcef0b553b44030433d6892bb489b12cc28b7e39423421caf87a0134bed",
+      "size": 370
+    },
+    {
+      "origin": {
+        "archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+        "kind": "pinned-sdk-header-prefix",
+        "length": 373,
+        "offset": 0,
+        "path": "lib/include/stdalign.h",
+        "source_sha256": "0375392ce44c0bce9d2dda696b0b2e7129e2e58233e002f532d010c9ac02d27b"
+      },
+      "path": "SDK-header-729b34b9bd7c6ad0ac2188e8.txt",
+      "sha256": "4efb5f80669b7c385442e87625b2edd0b5cea825b268181b645b92971c91b811",
+      "size": 373
+    },
+    {
+      "origin": {
+        "archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+        "kind": "pinned-sdk-header-prefix",
+        "length": 969,
+        "offset": 0,
+        "path": "lib/include/stdarg.h",
+        "source_sha256": "ce6e43d79dc89b50208ecf259b1ffd519f5a78cd3a2c7fcaac6386f376b89fef"
+      },
+      "path": "SDK-header-25839d1c9b74dcf56f2b665e.txt",
+      "sha256": "fe069d0d0e201f94ecf04b789a95d01fe0295c340517ab50c30d11d912b91bac",
+      "size": 969
+    },
+    {
+      "origin": {
+        "archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+        "kind": "pinned-sdk-header-prefix",
+        "length": 373,
+        "offset": 0,
+        "path": "lib/include/stdatomic.h",
+        "source_sha256": "728b690f127fc85faa32b9031e3a0019da92f77db92ca91b749571e45617a9ea"
+      },
+      "path": "SDK-header-803e2321d4fbf60f5821c28f.txt",
+      "sha256": "c187113158e65259c99f706181adf0678112bb58fbbcd688fe8d2b581755b1f7",
+      "size": 373
+    },
+    {
+      "origin": {
+        "archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+        "kind": "pinned-sdk-header-prefix",
+        "length": 372,
+        "offset": 0,
+        "path": "lib/include/stdbool.h",
+        "source_sha256": "48655faf4ebd4ca0af26a1ee8e3e16f8dc68385c9cd550ffb3629320681305b3"
+      },
+      "path": "SDK-header-e1d12b7df13d0d1e064d2e16.txt",
+      "sha256": "48c8236343fafbfc67792dc3c7ac85af049bc64a772adcd88b266b905d4b52dc",
+      "size": 372
+    },
+    {
+      "origin": {
+        "archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+        "kind": "pinned-sdk-header-prefix",
+        "length": 969,
+        "offset": 0,
+        "path": "lib/include/stddef.h",
+        "source_sha256": "b3e62a046ddf28d09eedebe6eb9461cb7060e47cad2c69964b222c4eea10347e"
+      },
+      "path": "SDK-header-afa654dd86e751ff1ffa998d.txt",
+      "sha256": "385a49d08a399b48318c9704ef53eaec8e5a648cd7ac9f51800d8109c262566f",
+      "size": 969
+    },
+    {
+      "origin": {
+        "archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+        "kind": "pinned-sdk-header-prefix",
+        "length": 370,
+        "offset": 0,
+        "path": "lib/include/stdint.h",
+        "source_sha256": "655616d8fcb2c92b38c039019685c658c2346b3dd0021aed4ea057b43f621247"
+      },
+      "path": "SDK-header-c12b9cb918ea092b9b01a109.txt",
+      "sha256": "adcb355d09cc4b49be216bcd74ae4116f26975901975e22820f5d859921c8a6f",
+      "size": 370
+    },
+    {
+      "origin": {
+        "archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+        "kind": "pinned-sdk-header-prefix",
+        "length": 121,
+        "offset": 0,
+        "path": "lib/libc/include/x86_64-linux-musl/bits/stat.h",
+        "source_sha256": "9127e81feb501a630a48cacbc1a7d66ea522862f9ccc2c7ac6a03ead0414047e"
+      },
+      "path": "SDK-header-c49d4e7b3201b0949d8aca39.txt",
+      "sha256": "2c5892acc8f45fd3655473b36df9637d4eabebc1650e6dcbb496dbe6067fba09",
+      "size": 121
+    },
+    {
+      "origin": {
+        "kind": "pinned-canonical-license-text",
+        "scope": "Reference for preserved Bison notices; parser exceptions remain separate, applicability pending",
+        "source_sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+        "source_url": "https://www.gnu.org/licenses/gpl-3.0.txt"
+      },
+      "path": "GPL-3.0-COPYING.txt",
+      "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+      "size": 35149
+    }
+  ],
+  "parent_provenance_sha256": "e1937d91366e992a02ec97a7486bb7ae8a932c408645c03d19f8e03c0a48cd97",
+  "qualified": false,
+  "scope": "All other notice payloads; applicability and complete source review pending",
+  "source_evidence_sha256": "a0ba6e7ceba3290aa99a3a353443feae75a0cb76a1f7216e0a7c7f93f785e769"
+}

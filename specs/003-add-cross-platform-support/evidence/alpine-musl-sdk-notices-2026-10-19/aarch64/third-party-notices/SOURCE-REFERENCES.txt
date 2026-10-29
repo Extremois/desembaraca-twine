@@ -1,0 +1,9 @@
+Draft notice review material; approval and source offer remain incomplete.
+
+Graphviz 16.1.0 source:
+https://gitlab.com/graphviz/graphviz/-/archive/16.1.0/graphviz-16.1.0.tar.gz
+SHA-256: 1e028b2b3e84e946c1d3e8c47590f8f0741bba1041fe6eff36eee87e598ea249
+
+SDK archive used for source/header verification:
+https://ziglang.org/download/0.15.2/zig-aarch64-linux-0.15.2.tar.xz
+SHA-256: 958ed7d1e00d0ea76590d27666efbf7a932281b3d7ba0c6b01b0ff26498f667f

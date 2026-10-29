@@ -1,0 +1,152 @@
+{
+  "kind": "partial-installed-private-engine-platform-evidence",
+  "task": "T036",
+  "task_complete": false,
+  "qualified": false,
+  "application_revision": "d90b5671cba0477649e71a52b0d94704cce81c4e",
+  "target_ids": [
+    "ubuntu-24.04-stable-x86_64-distribution-default",
+    "ubuntu-24.04-stable-aarch64-distribution-default"
+  ],
+  "python_minors": [
+    "3.12",
+    "3.14"
+  ],
+  "evidence": {
+    "path": "specs/003-add-cross-platform-support/evidence/installed-private-engines-2026-10-20/runtime/summary.json",
+    "sha256": "9bed474295304dc6697f41b1c289f934fc9e5e6e7ab0a8bc3704caccd886d6c7"
+  },
+  "foundation": {
+    "path": "specs/003-add-cross-platform-support/evidence/installed-private-engines-2026-10-20/foundation.json",
+    "sha256": "429c3b2d00458d542e6a80aea6967b3a9b9a63990ef47166e8df6a9ae24640a5"
+  },
+  "reports": [
+    {
+      "runner": "ubuntu-24.04",
+      "python": "3.12.15",
+      "arch": "x86_64",
+      "artifact_id": "linux-glibc-x86_64",
+      "engine_sha256": "43ce8d686720467c21be91cab4b8f3b246baae49c2cfe293714ebdf8a82f5716",
+      "candidate_archive_sha256": "f446b7718e94eafa9adc29953aa4f1f65e588d5ee10a80d973771c32e91d1e7f",
+      "provenance_sha256": "eb7f183d0259d923c610eb5a8c058c77a14397be6e9c95319e72e4e67ebc370f",
+      "file": "ubuntu-24.04-3.12.json",
+      "sha256": "aca3b0f649509c5dd5308f47471391833005f245fa5c0fbe7e4a4b2e9ff1c2c8",
+      "actions_artifact_id": 12304824710,
+      "actions_archive_sha256": "b07fd495500e7ed6748d4ff760c34ae860c6e461768ea3d350101c1075e6ad31",
+      "modes": [
+        "wheel",
+        "sdist"
+      ],
+      "explicit_corpus_cases_per_format": 13,
+      "known_zero_references_per_format": 6,
+      "protections": [],
+      "passed": true
+    },
+    {
+      "runner": "ubuntu-24.04",
+      "python": "3.14.8",
+      "arch": "x86_64",
+      "artifact_id": "linux-glibc-x86_64",
+      "engine_sha256": "43ce8d686720467c21be91cab4b8f3b246baae49c2cfe293714ebdf8a82f5716",
+      "candidate_archive_sha256": "f446b7718e94eafa9adc29953aa4f1f65e588d5ee10a80d973771c32e91d1e7f",
+      "provenance_sha256": "eb7f183d0259d923c610eb5a8c058c77a14397be6e9c95319e72e4e67ebc370f",
+      "file": "ubuntu-24.04-3.14.json",
+      "sha256": "7fa832f2574bcc1502b1ad98cef4fb397ed5e59957cf4706b1d89fc101c88d4d",
+      "actions_artifact_id": 12305417087,
+      "actions_archive_sha256": "a3861f7b77aa2ccc1a4e0b2e6f5ed5eeb7f8e12f35c843a2084af149218bbb58",
+      "modes": [
+        "wheel",
+        "sdist"
+      ],
+      "explicit_corpus_cases_per_format": 13,
+      "known_zero_references_per_format": 6,
+      "protections": [],
+      "passed": true
+    },
+    {
+      "runner": "ubuntu-24.04-arm",
+      "python": "3.12.15",
+      "arch": "aarch64",
+      "artifact_id": "linux-glibc-aarch64",
+      "engine_sha256": "933b6c63370bdd3e814627e2a9a06176416c8da017a21dcbc96d8137dbc17e22",
+      "candidate_archive_sha256": "8c8b3e73397033b74404b68d9207bbfdc742dc1271f96ea2809ee2c92bc1eebe",
+      "provenance_sha256": "64d805c82e496159d53ab035cf7d02729c8b699aa688981b45a669bfd53f28c6",
+      "file": "ubuntu-24.04-arm-3.12.json",
+      "sha256": "39a01e16be18cfe55ef0f2454c2b35f4afe9024497e4e5080f3063c1fc90e06a",
+      "actions_artifact_id": 12305437129,
+      "actions_archive_sha256": "ef984ace8b38da9708220cffe74702a3c67c1d2d10ce99b62084d43265109dce",
+      "modes": [
+        "wheel",
+        "sdist"
+      ],
+      "explicit_corpus_cases_per_format": 13,
+      "known_zero_references_per_format": 6,
+      "protections": [],
+      "passed": true
+    },
+    {
+      "runner": "ubuntu-24.04-arm",
+      "python": "3.14.8",
+      "arch": "aarch64",
+      "artifact_id": "linux-glibc-aarch64",
+      "engine_sha256": "933b6c63370bdd3e814627e2a9a06176416c8da017a21dcbc96d8137dbc17e22",
+      "candidate_archive_sha256": "8c8b3e73397033b74404b68d9207bbfdc742dc1271f96ea2809ee2c92bc1eebe",
+      "provenance_sha256": "64d805c82e496159d53ab035cf7d02729c8b699aa688981b45a669bfd53f28c6",
+      "file": "ubuntu-24.04-arm-3.14.json",
+      "sha256": "1c540ee3389fe4d9d74dd61172186292586c4574e542e041cfa9f1f79102a6b0",
+      "actions_artifact_id": 12305896833,
+      "actions_archive_sha256": "fdc2554040139dc3e4db432002767074c680c510275219b696aa571f296bcedc",
+      "modes": [
+        "wheel",
+        "sdist"
+      ],
+      "explicit_corpus_cases_per_format": 13,
+      "known_zero_references_per_format": 6,
+      "protections": [],
+      "passed": true
+    }
+  ],
+  "installed_formats": [
+    "wheel",
+    "sdist"
+  ],
+  "installations": 8,
+  "explicit_corpus_executions": 104,
+  "known_zero_references": 48,
+  "acquisition": "Controlled private bundle transfer; production RuntimeManager and real engine execution",
+  "application_import": "Installed distributions in external isolated venvs; staged test driver has no src tree",
+  "network": "Python-only guard; not native syscall proof for these installed slots",
+  "limitations": [
+    "Private fixtures are not final remotely distributed candidates or active POSIX catalog entries",
+    "Hosted runner metadata is not complete immutable qualifying image/eligibility evidence",
+    "Source/license review, native network proof, Twine and remaining common/platform gates stay pending"
+  ],
+  "native_fixed_image_additional_checks": {
+    "path": "specs/003-add-cross-platform-support/evidence/fedora-native-2026-10-27/summary.json",
+    "sha256": "97527f029df1ba333ada037872badd3b37d76a24552cf02b10e9ed2cafe1120e",
+    "application_revision": "7b30c80a7a1b980860e0fa9e6b16a14d8245c28e",
+    "target_id": "ubuntu-24.04-stable-x86_64-distribution-default",
+    "python_slots": 2,
+    "python_versions": [
+      "3.12.15",
+      "3.14.8"
+    ],
+    "kernel": "6.8.0-147-generic",
+    "glibc": "glibc 2.39",
+    "formats": [
+      "wheel"
+    ],
+    "syscall_network_observation": true,
+    "recovery_review": {
+      "path": "specs/003-add-cross-platform-support/evidence/fedora-native-2026-10-27/nested-recovery.json",
+      "sha256": "ee173670529c1244ce3ef31e2940de7c571d74f14d73f2a5334d1bed8b2948fc"
+    },
+    "scope": "Additional pinned native KVM guest; kept separate from historical hosted runner wheel/sdist evidence",
+    "qualified": false,
+    "task_complete": false
+  },
+  "previous_native_fixed_image_index": {
+    "path": "specs/003-add-cross-platform-support/evidence/fedora-native-2026-10-27/previous-linux-ubuntu-24.04.json",
+    "sha256": "47e15b0287b25ce88a9b987d9842e03e0ae152d25359379f4043ccf998e9944b"
+  }
+}

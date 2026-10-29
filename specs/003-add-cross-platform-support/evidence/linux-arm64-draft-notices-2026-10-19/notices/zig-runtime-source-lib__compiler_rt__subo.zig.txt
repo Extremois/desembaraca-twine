@@ -1,0 +1,5 @@
+//! subo - subtract overflow
+//! * return a-%b.
+//! * return if a-b overflows => 1 else => 0
+//! - suboXi4_generic as default
+

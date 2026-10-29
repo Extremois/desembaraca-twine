@@ -1,0 +1,145 @@
+{
+  "kind": "installed-xcode-sdk-terms-review-not-full-artifact-approval",
+  "approved": false,
+  "qualified": false,
+  "application_revision": "60707b3984cb9a2b45f9d78166e4e72371900ec6",
+  "candidate_revision": "6279d6ff715abbd4fc8d5fdf778d8a27a4f3ddfb",
+  "workflow_url": "https://github.com/Extremois/desembaraca-twine/actions/runs/40784211220",
+  "passed": true,
+  "architectures": [
+    {
+      "artifact_id": "macos-arm64",
+      "actions_artifact_id": 12859215285,
+      "actions_zip_sha256": "6f9c2caf1c52688d1624779f61827f0a60066afeb0a64ebc8b848836fe29d6fc",
+      "license_rtf_sha256": "ffffc7530aaddce6636da743e61e8888d4f941f294c3dab5d2bd7fdb368e4f55",
+      "license_text_sha256": "13f94ef9f9d65fe83d5ba83ec6f8869f3a2e3e38a8c4068ac0c0b3b47ac37f71",
+      "header_count": 5,
+      "headers": [
+        {
+          "path": "usr/include/arm/_limits.h",
+          "sha256": "b64325f6b5aba08a361b7b8e537df3d8d193538c1d6329a4c4a7e72f5aa63478",
+          "bytes": 318,
+          "lines": 13,
+          "includes": 0,
+          "defines": 2,
+          "opening_braces": 0,
+          "inline_tokens": 0
+        },
+        {
+          "path": "usr/include/arm/_types.h",
+          "sha256": "4f0bde85f9a41cc7d30fff22ebd7e8f4eb206a55a926eda012a2e7481e3524fa",
+          "bytes": 4470,
+          "lines": 125,
+          "includes": 4,
+          "defines": 3,
+          "opening_braces": 1,
+          "inline_tokens": 0
+        },
+        {
+          "path": "usr/include/arm/signal.h",
+          "sha256": "de0bc923b92bd88f3bd8bcd38b20f8123277732d7d3309cb2a5bdc60bb4dd8c6",
+          "bytes": 393,
+          "lines": 22,
+          "includes": 1,
+          "defines": 1,
+          "opening_braces": 0,
+          "inline_tokens": 0
+        },
+        {
+          "path": "usr/include/machine/limits.h",
+          "sha256": "50345f1ab843fca787a38c552a84177e678d79dab86e714434f94f2546839357",
+          "bytes": 511,
+          "lines": 16,
+          "includes": 2,
+          "defines": 1,
+          "opening_braces": 0,
+          "inline_tokens": 0
+        },
+        {
+          "path": "usr/include/stdint.h",
+          "sha256": "9d070aad02d9f2ba1f2248d093b4194b62cf8d363778c737d1110f4736e5ed3c",
+          "bytes": 5556,
+          "lines": 205,
+          "includes": 13,
+          "defines": 73,
+          "opening_braces": 0,
+          "inline_tokens": 0
+        }
+      ]
+    },
+    {
+      "artifact_id": "macos-x86_64",
+      "actions_artifact_id": 12857564668,
+      "actions_zip_sha256": "c594826c0b0f3174118d404972015b3c17d9774d270cc9c3f747aeb9274ba71f",
+      "license_rtf_sha256": "ffffc7530aaddce6636da743e61e8888d4f941f294c3dab5d2bd7fdb368e4f55",
+      "license_text_sha256": "13f94ef9f9d65fe83d5ba83ec6f8869f3a2e3e38a8c4068ac0c0b3b47ac37f71",
+      "header_count": 5,
+      "headers": [
+        {
+          "path": "usr/include/arm/_limits.h",
+          "sha256": "b64325f6b5aba08a361b7b8e537df3d8d193538c1d6329a4c4a7e72f5aa63478",
+          "bytes": 318,
+          "lines": 13,
+          "includes": 0,
+          "defines": 2,
+          "opening_braces": 0,
+          "inline_tokens": 0
+        },
+        {
+          "path": "usr/include/arm/_types.h",
+          "sha256": "4f0bde85f9a41cc7d30fff22ebd7e8f4eb206a55a926eda012a2e7481e3524fa",
+          "bytes": 4470,
+          "lines": 125,
+          "includes": 4,
+          "defines": 3,
+          "opening_braces": 1,
+          "inline_tokens": 0
+        },
+        {
+          "path": "usr/include/arm/signal.h",
+          "sha256": "de0bc923b92bd88f3bd8bcd38b20f8123277732d7d3309cb2a5bdc60bb4dd8c6",
+          "bytes": 393,
+          "lines": 22,
+          "includes": 1,
+          "defines": 1,
+          "opening_braces": 0,
+          "inline_tokens": 0
+        },
+        {
+          "path": "usr/include/machine/limits.h",
+          "sha256": "50345f1ab843fca787a38c552a84177e678d79dab86e714434f94f2546839357",
+          "bytes": 511,
+          "lines": 16,
+          "includes": 2,
+          "defines": 1,
+          "opening_braces": 0,
+          "inline_tokens": 0
+        },
+        {
+          "path": "usr/include/stdint.h",
+          "sha256": "9d070aad02d9f2ba1f2248d093b4194b62cf8d363778c737d1110f4736e5ed3c",
+          "bytes": 5556,
+          "lines": 205,
+          "includes": 13,
+          "defines": 73,
+          "opening_braces": 0,
+          "inline_tokens": 0
+        }
+      ]
+    }
+  ],
+  "license_identical_across_architectures": true,
+  "header_source_code_copied": false,
+  "header_term_findings": {
+    "path": "specs/003-add-cross-platform-support/evidence/macos-sdk-terms-review-2026-10-28/header-findings.json",
+    "sha256": "eca4a021732300412b5b5ddda5d8225b2aeeae05fb5023172e3cac3911cf19d3"
+  },
+  "foundation": {
+    "path": "specs/003-add-cross-platform-support/evidence/macos-sdk-terms-review-2026-10-28/foundation.json",
+    "sha256": "3c96b91f7fa02012d740660f904336754c9c328634bb77ee2370a7066382172f"
+  },
+  "workflows": {
+    "path": "specs/003-add-cross-platform-support/evidence/macos-sdk-terms-review-2026-10-28/workflows.json",
+    "sha256": "ac2b28561d31a614f1f21bd5aa795477e046c604f9e8122d04ca2385ee8cb0ee"
+  }
+}

@@ -1,0 +1,19 @@
+Source and license information for linux-musl-x86_64
+
+Graphviz 16.1.0 source code is available under the Eclipse Public License 2.0.
+The license is included in Graphviz-COPYING.txt. Third-party components
+retain their own terms in the accompanying notices.
+Obtain the original Graphviz source archive at:
+https://gitlab.com/graphviz/graphviz/-/archive/16.1.0/graphviz-16.1.0.tar.gz
+SHA-256: 1e028b2b3e84e946c1d3e8c47590f8f0741bba1041fe6eff36eee87e598ea249
+Source revision: e41c710710be080ad37af1b51c6e2f8beffa9ee5
+
+SDK archive containing the library/runtime sources used by this build:
+https://ziglang.org/download/0.15.2/zig-x86_64-linux-0.15.2.tar.xz
+SHA-256: 02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239
+
+Maintainer candidate: complete corresponding-source delivery and
+component compatibility review are pending. The upstream archives above
+do not alone supply the build-specific recipes, generated inputs and
+relink instructions. Those must accompany the final source distribution.
+No three-year written source offer is made by this notice.

@@ -1,0 +1,7 @@
+// Ported from musl, which is MIT licensed.
+// https://git.musl-libc.org/cgit/musl/tree/COPYRIGHT
+//
+// https://git.musl-libc.org/cgit/musl/tree/src/math/ilogbl.c
+// https://git.musl-libc.org/cgit/musl/tree/src/math/ilogbf.c
+// https://git.musl-libc.org/cgit/musl/tree/src/math/ilogb.c
+

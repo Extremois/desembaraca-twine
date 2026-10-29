@@ -1,0 +1,97 @@
+{
+  "kind": "private-linux-package-installation-partial-not-cell-qualification",
+  "captured_at": "2026-10-18T12:30:21.580731+00:00",
+  "environment_kind": "wsl",
+  "source_state": "dirty",
+  "records": [
+    {
+      "python_minor": "3.12",
+      "python_patch": "3.12.15",
+      "mode": "wheel",
+      "package_sha256": "8e7aba90cdafc9914c551cb2c1d452db670316bf33360c5a2fa184da0e149b61",
+      "installed_outside_checkout": true,
+      "console_help": true,
+      "module_help": true,
+      "import_from_venv": true,
+      "unicode_spaces_path": true,
+      "valid_input_runtime_exit": 1,
+      "input_preserved": true,
+      "no_output_on_missing_engine": true,
+      "no_cache_acquisition": true,
+      "qualification": "installation-only; POSIX engine unavailable in distributed catalog"
+    },
+    {
+      "python_minor": "3.12",
+      "python_patch": "3.12.15",
+      "mode": "sdist",
+      "package_sha256": "99833a9b16fa529d2f6f7af3144f6fa6dfdcc7b5017ad8dbbd223db106d6e1de",
+      "installed_outside_checkout": true,
+      "console_help": true,
+      "module_help": true,
+      "import_from_venv": true,
+      "unicode_spaces_path": true,
+      "valid_input_runtime_exit": 1,
+      "input_preserved": true,
+      "no_output_on_missing_engine": true,
+      "no_cache_acquisition": true,
+      "qualification": "installation-only; POSIX engine unavailable in distributed catalog"
+    },
+    {
+      "python_minor": "3.14",
+      "python_patch": "3.14.8",
+      "mode": "wheel",
+      "package_sha256": "8e7aba90cdafc9914c551cb2c1d452db670316bf33360c5a2fa184da0e149b61",
+      "installed_outside_checkout": true,
+      "console_help": true,
+      "module_help": true,
+      "import_from_venv": true,
+      "unicode_spaces_path": true,
+      "valid_input_runtime_exit": 1,
+      "input_preserved": true,
+      "no_output_on_missing_engine": true,
+      "no_cache_acquisition": true,
+      "qualification": "installation-only; POSIX engine unavailable in distributed catalog"
+    },
+    {
+      "python_minor": "3.14",
+      "python_patch": "3.14.8",
+      "mode": "sdist",
+      "package_sha256": "99833a9b16fa529d2f6f7af3144f6fa6dfdcc7b5017ad8dbbd223db106d6e1de",
+      "installed_outside_checkout": true,
+      "console_help": true,
+      "module_help": true,
+      "import_from_venv": true,
+      "unicode_spaces_path": true,
+      "valid_input_runtime_exit": 1,
+      "input_preserved": true,
+      "no_output_on_missing_engine": true,
+      "no_cache_acquisition": true,
+      "qualification": "installation-only; POSIX engine unavailable in distributed catalog"
+    }
+  ],
+  "apache_license_verified_in_wheel_sdist": true,
+  "wheel_notice_files": 29,
+  "packages": {
+    "twine_edge_overlap-0.1.0.dev0-py3-none-any.whl": "8e7aba90cdafc9914c551cb2c1d452db670316bf33360c5a2fa184da0e149b61",
+    "twine_edge_overlap-0.1.0.dev0.tar.gz": "99833a9b16fa529d2f6f7af3144f6fa6dfdcc7b5017ad8dbbd223db106d6e1de"
+  },
+  "build_wheelhouse": {
+    "wheel-0.48.0-py3-none-any.whl": "3217dcc807155e45db462d7ef2431f5ddda0d7273b700d05a67b271ceb1287ab",
+    "build-1.6.1-py3-none-any.whl": "ecd351a4be9d35a9eaaba244a7687143c9c7d4aea6ac964e7e7ddab20cbcf4e7",
+    "packaging-26.3-py3-none-any.whl": "d7193f7c8e4e93f444fde0262bf90af30e16fa0ad0ad44cb553c87339b23cd1c",
+    "setuptools-84.0.0-py3-none-any.whl": "51a52592b3b99e102b609654876bd65f19f999935166d1352678931132b0c670",
+    "pyproject_hooks-1.3.3-py3-none-any.whl": "5fc53fdac9f7bd63fbcdc868fb5f90b4784d78a53a3d3388cd738b807441a20b"
+  },
+  "limitations": [
+    "Four isolated local installs on existing Ubuntu WSL only; not native distribution qualification.",
+    "No remote project installation and no normal POSIX engine acquisition/corpus: active catalog remains Windows-only.",
+    "Private SDK/build dependencies were installed only in isolated directories, not in system Python or project runtime dependencies.",
+    "Pip also used the existing per-user wheel cache while building sdist; no system package was changed. Future commands should set a private PIP_CACHE_DIR."
+  ],
+  "logs": [
+    {
+      "path": "linux-package-installation.logs/installation.txt",
+      "sha256": "82e9b0e371727823484cdcbe732154be6599bcce4d2e17d330e2d2ec81b9c525"
+    }
+  ]
+}

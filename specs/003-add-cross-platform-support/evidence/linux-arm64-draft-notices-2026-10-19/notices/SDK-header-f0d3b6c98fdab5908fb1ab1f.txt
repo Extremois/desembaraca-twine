@@ -1,0 +1,44 @@
+/* Prototype declarations for math functions; helper file for <math.h>.
+   Copyright (C) 1996-2025 Free Software Foundation, Inc.
+   This file is part of the GNU C Library.
+
+   The GNU C Library is free software; you can redistribute it and/or
+   modify it under the terms of the GNU Lesser General Public
+   License as published by the Free Software Foundation; either
+   version 2.1 of the License, or (at your option) any later version.
+
+   The GNU C Library is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+   Lesser General Public License for more details.
+
+   You should have received a copy of the GNU Lesser General Public
+   License along with the GNU C Library; if not, see
+   <https://www.gnu.org/licenses/>.  */
+
+/* NOTE: Because of the special way this file is used by <math.h>, this
+   file must NOT be protected from multiple inclusion as header files
+   usually are.
+
+   This file provides prototype declarations for the math functions.
+   Most functions are declared using the macro:
+
+   __MATHCALL (NAME,[_r], (ARGS...));
+
+   This means there is a function `NAME' returning `double' and a function
+   `NAMEf' returning `float'.  Each place `_Mdouble_' appears in the
+   prototype, that is actually `double' in the prototype for `NAME' and
+   `float' in the prototype for `NAMEf'.  Reentrant variant functions are
+   called `NAME_r' and `NAMEf_r'.
+
+   Functions returning other types like `int' are declared using the macro:
+
+   __MATHDECL (TYPE, NAME,[_r], (ARGS...));
+
+   This is just like __MATHCALL but for a function returning `TYPE'
+   instead of `_Mdouble_'.  In all of these cases, there is still
+   both a `NAME' and a `NAMEf' that takes `float' arguments.
+
+   Note that there must be no whitespace before the argument passed for
+   NAME, to make token pasting work with -traditional.  */
+

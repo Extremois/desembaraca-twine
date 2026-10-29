@@ -2,7 +2,7 @@ import tempfile
 from pathlib import Path
 import unittest
 from common import ROOT,fixture
-from runtime_support import blocked_network
+from runtime_support import blocked_network,active_artifact
 from twine_edge_overlap.runtime import ensure_runtime
 from twine_edge_overlap.application import run
 
@@ -15,7 +15,7 @@ class ManagedRuntimeIntegrationTests(unittest.TestCase):
         from twine_edge_overlap.runtime import Artifact,RuntimeManager,load_manifest
         from twine_edge_overlap.errors import DependencyError
         healthy=ensure_runtime()
-        data=copy.deepcopy(load_manifest().data)
+        data=copy.deepcopy(active_artifact().data)
         # Repack verified native files only for a deterministic, offline transport seam.
         # This is not evidence for downloading or qualifying the original upstream ZIP.
         payload=archive_bytes({entry['path']:(healthy.root/entry['path']).read_bytes() for entry in data['files']})
@@ -40,7 +40,8 @@ class ManagedRuntimeIntegrationTests(unittest.TestCase):
             with self.assertRaises(DependencyError): manager.ensure(force_repair=True)
             self.assertEqual(manager.ensure().generation_id,previous.generation_id)
             self.assertTrue(previous.executable.is_file())
-            (previous.root/'Graphviz-16.1.0-win32/bin/config8').write_bytes(b'altered')
+            tampered=next((entry['path'] for entry in data['files'] if entry['path']!=data['executable_relative_path']),data['executable_relative_path'])
+            (previous.root/tampered).write_bytes(b'altered')
             with self.assertRaises(DependencyError): run(source,runtime_provider=provider)
             manager.opener=ControlledTransport(payload)
             recovered=run(source,runtime_provider=provider)
@@ -59,7 +60,7 @@ class ManagedRuntimeIntegrationTests(unittest.TestCase):
         if os.name=='nt' and not temporary_base.startswith('\\\\?\\'):
             temporary_base='\\\\?\\'+temporary_base
         with tempfile.TemporaryDirectory(dir=temporary_base) as folder:
-            manager=RuntimeManager(cache_root=Path(folder)/('cache com acentos ação '+('longo '*12)).rstrip())
+            manager=RuntimeManager(artifact=active_artifact(),cache_root=Path(folder)/('cache com acentos ação '+('longo '*12)).rstrip())
             target=manager.root/'generations'/handle.generation_id
             target.parent.mkdir(parents=True)
             shutil.copytree(handle.root,target)
@@ -68,7 +69,7 @@ class ManagedRuntimeIntegrationTests(unittest.TestCase):
                 selected=manager.ensure()
             self.assertEqual(selected.generation_id,handle.generation_id)
             self.assertGreater(len(str(selected.executable.parent)),260)
-            self.assertEqual(selected.cwd,manager.root.parent)
+            self.assertEqual(selected.cwd,manager.root.parent if os.name=='nt' else selected.root)
 
     def test_managed_motor_produces_same_identities(self):
         import time

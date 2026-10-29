@@ -1,0 +1,7 @@
+//! SIMD (Single Instruction; Multiple Data) convenience functions.
+//!
+//! May offer a potential boost in performance on some targets by performing
+//! the same operation on multiple elements at once.
+//!
+//! Some functions are known to not work on MIPS.
+

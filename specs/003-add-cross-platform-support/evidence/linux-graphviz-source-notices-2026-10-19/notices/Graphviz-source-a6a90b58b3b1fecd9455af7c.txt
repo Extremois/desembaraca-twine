@@ -1,0 +1,24 @@
+/*************************************************************************
+ * Copyright (c) 2011 AT&T Intellectual Property
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v2.0
+ * which accompanies this distribution, and is available at
+ * https://www.eclipse.org/org/documents/epl-2.0/EPL-2.0.html
+ *
+ * Contributors: Details at https://graphviz.org
+ *************************************************************************/
+
+/* tlayout.c:
+ * Written by Emden R. Gansner
+ *
+ * Module for initial layout, using point nodes and ports.
+ *
+ * Note: If interior nodes are not connected, they tend to fly apart,
+ * despite being tied to port nodes. This occurs because, as initially
+ * coded, as the nodes tend to straighten into a line, the radius
+ * grows causing more expansion. Is the problem really here and not
+ * with disconnected nodes in xlayout? If here, we can either forbid
+ * expansion or eliminate repulsion between nodes only connected
+ * via port nodes.
+ */
+

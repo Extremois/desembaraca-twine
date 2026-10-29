@@ -1,0 +1,2 @@
+///! The quoted behavior definitions are from
+///! https://gcc.gnu.org/onlinedocs/gcc-12.1.0/gccint/Soft-float-library-routines.html#Soft-float-library-routines

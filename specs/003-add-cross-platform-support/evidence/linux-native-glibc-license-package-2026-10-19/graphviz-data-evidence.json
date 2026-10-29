@@ -1,0 +1,181 @@
+{
+  "kind": "graphviz-generated-data-evidence-not-license-approval",
+  "approved": false,
+  "qualified": false,
+  "executable_sha256": "43ce8d686720467c21be91cab4b8f3b246baae49c2cfe293714ebdf8a82f5716",
+  "provenance_sha256": "6202b10c2db173ce7a8a0e4511ce655427b20f5735ca63aa5ec78c2c4d61d287",
+  "compiler_evidence_sha256": "8861700b227371425260c9fcdcc8f0cd497d1d7e209705c8698d90ffca4e429d",
+  "source": {
+    "schema_version": 1,
+    "engine": "graphviz",
+    "version": "16.1.0",
+    "url": "https://gitlab.com/graphviz/graphviz/-/archive/16.1.0/graphviz-16.1.0.tar.gz",
+    "sha256": "1e028b2b3e84e946c1d3e8c47590f8f0741bba1041fe6eff36eee87e598ea249",
+    "size": 41189481,
+    "git_revision": "e41c710710be080ad37af1b51c6e2f8beffa9ee5",
+    "license": "EPL-2.0",
+    "license_path": "COPYING",
+    "license_sha256": "0becf16567beb77fa252b7664631dd177c8f9a1889e48995b45379c7130e5303",
+    "qualification": "source-only; no POSIX binary qualified"
+  },
+  "inputs": [
+    {
+      "path": "lib/common/make_colortbl.py",
+      "size": 2987,
+      "sha256": "c60ea34aa8c615d94527a6030ecd7e13121d47ebef9d30e101b5afeaf6f349ec"
+    },
+    {
+      "path": "lib/common/entities.py",
+      "size": 1608,
+      "sha256": "dd4f74ea85a0ab1edf842aec4e19503bd1e0dd8ba8ce66ed408fd66c9239fd00"
+    },
+    {
+      "path": "lib/common/brewer_colors",
+      "size": 45047,
+      "sha256": "a069692c03e8bcd402fbd88b2e664a7cc0f39870c05cc1d751413f8302a7d34e"
+    },
+    {
+      "path": "lib/common/svgcolor_names",
+      "size": 4577,
+      "sha256": "b1804a9fd48e36c4f57a9a1afa15e684cebe1735a460ea9deebc1d673e38d7a5"
+    },
+    {
+      "path": "lib/common/color_names",
+      "size": 16431,
+      "sha256": "a9838adf434637f93191d223e6dd23e74d19880d4c28e9013407e9f8c004a4c6"
+    },
+    {
+      "path": "lib/common/entities.html",
+      "size": 42092,
+      "sha256": "d90554950424a27e062eedaf43683132886dfe31570d5b0c5a2cb97ced46ba2a"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "lib/common/common/colortbl.h",
+      "sha256": "7cd53d4b8667696af35a23911a93875797511d5a70c1b46987c7e80d0563d6f3",
+      "size": 102902,
+      "generator": "make_colortbl.py",
+      "reproduced": true
+    },
+    {
+      "path": "lib/common/common/entities.h",
+      "sha256": "3c4c841918e18424c51f58423e510b1537be15a1c6518ec25d88321a5fee2da1",
+      "size": 4751,
+      "generator": "entities.py",
+      "reproduced": true
+    }
+  ],
+  "references": {
+    "schema_version": 1,
+    "purpose": "Pinned source comparison material, not a complete license audit",
+    "references": {
+      "svg11-types.html": {
+        "url": "https://www.w3.org/TR/2011/REC-SVG11-20110816/types.html",
+        "sha256": "92e6a601c7ee9946e6eec116fbbc31d226272d8853c1a73a2735f7e247fa1551",
+        "size": 205048,
+        "file": "svg11-types.html.gz",
+        "stored_sha256": "9ef743cb4fd99b86589fe7ae0c929e123d92cccd7aef3bb2d1c0a13893d9359e"
+      },
+      "html401-entities.html": {
+        "url": "https://www.w3.org/TR/1999/REC-html401-19991224/sgml/entities.html",
+        "sha256": "604f28d1a1ef222bef5fefab8e2935cddac019cb96aad6bd11d184d57f6d553e",
+        "size": 41360,
+        "file": "html401-entities.html.gz",
+        "stored_sha256": "fe346fa3caa8d0eef19875f820d18e6b48b9dd73c4ffcb1c51d84af2c2bbc40f"
+      },
+      "xorg-rgb-1.1.0-rgb.txt": {
+        "url": "https://xorg.freedesktop.org/archive/individual/app/rgb-1.1.0.tar.xz",
+        "archive_sha256": "fc03d7f56e5b2a617668167f8927948cce54f93097e7ccd9f056077f479ed37b",
+        "archive_size": 132824,
+        "archive_member": "rgb-1.1.0/rgb.txt",
+        "file": "xorg-rgb-1.1.0-rgb.txt",
+        "sha256": "3ab43100fec61f86ae6b7abebbf62fda355dff88c7ec9f0eed332520ddbb7965",
+        "size": 17975,
+        "stored_sha256": "3ab43100fec61f86ae6b7abebbf62fda355dff88c7ec9f0eed332520ddbb7965"
+      },
+      "xorg-rgb-1.1.0-COPYING": {
+        "url": "https://xorg.freedesktop.org/archive/individual/app/rgb-1.1.0.tar.xz",
+        "archive_sha256": "fc03d7f56e5b2a617668167f8927948cce54f93097e7ccd9f056077f479ed37b",
+        "archive_size": 132824,
+        "archive_member": "rgb-1.1.0/COPYING",
+        "file": "xorg-rgb-1.1.0-COPYING",
+        "sha256": "1d08eb3384f5dedc7735bcfae1aa58cb64643ca9389edce3312b1c3cefbfdaa7",
+        "size": 2275,
+        "stored_sha256": "1d08eb3384f5dedc7735bcfae1aa58cb64643ca9389edce3312b1c3cefbfdaa7"
+      }
+    }
+  },
+  "comparison": {
+    "svg_colors_matched": 147,
+    "html_entities_matched": 252,
+    "xorg": {
+      "matched": 674,
+      "differences": {
+        "gray": {
+          "graphviz": [
+            192,
+            192,
+            192,
+            255
+          ],
+          "reference": [
+            190,
+            190,
+            190
+          ]
+        },
+        "grey": {
+          "graphviz": [
+            192,
+            192,
+            192,
+            255
+          ],
+          "reference": [
+            190,
+            190,
+            190
+          ]
+        },
+        "invis": {
+          "graphviz": [
+            255,
+            255,
+            254,
+            0
+          ],
+          "reference": null
+        },
+        "none": {
+          "graphviz": [
+            255,
+            255,
+            254,
+            0
+          ],
+          "reference": null
+        },
+        "transparent": {
+          "graphviz": [
+            255,
+            255,
+            254,
+            0
+          ],
+          "reference": null
+        }
+      }
+    }
+  },
+  "historical_copying_proven": false,
+  "limits": {
+    "generator_seconds": 10,
+    "generator_output_bytes": 1048576,
+    "reference_bytes": 1048576
+  },
+  "pending": [
+    "Reference value equality does not establish the historical copying chain or decide license applicability",
+    "Corresponding-source offer, per-file SDK notices and complete reviewed audit remain pending"
+  ]
+}

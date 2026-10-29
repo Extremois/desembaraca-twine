@@ -1,0 +1,149 @@
+{
+  "kind": "independent-native-installed-cache-notice-snapshots",
+  "passed": true,
+  "qualified": false,
+  "application_revision": "ec5ff25f838416aea8a7526367bb1820df04e9a2",
+  "run_id": 39525752771,
+  "url": "https://github.com/Extremois/desembaraca-twine/actions/runs/39525752771",
+  "reports": [
+    {
+      "runner": "ubuntu-24.04",
+      "python": "3.12.15",
+      "arch": "x86_64",
+      "artifact_id": "linux-glibc-x86_64",
+      "file": "ubuntu-24.04-3.12.json",
+      "sha256": "2a95a0735e8922a4d366a5339325c0a622a5cc1a9e877c8c1cfdf93e8fe459b2",
+      "actions_artifact_id": 12312666744,
+      "actions_archive_sha256": "3885c94ff1844da12a7db900a680f9250c7357be3ae3aea45abf1e27beafa90a",
+      "notice_files_per_format": 480,
+      "modes": [
+        "wheel",
+        "sdist"
+      ],
+      "passed": true
+    },
+    {
+      "runner": "ubuntu-24.04",
+      "python": "3.14.8",
+      "arch": "x86_64",
+      "artifact_id": "linux-glibc-x86_64",
+      "file": "ubuntu-24.04-3.14.json",
+      "sha256": "ec6c1f221ae0f66c40f0c6cd593f27a724d2f229cd7021b327b5b90efb696c09",
+      "actions_artifact_id": 12312936252,
+      "actions_archive_sha256": "c648fb43f7dd5118e3a3a7ab9e973eec3ad0595f2c84ef6f0aab574c365b32c3",
+      "notice_files_per_format": 480,
+      "modes": [
+        "wheel",
+        "sdist"
+      ],
+      "passed": true
+    },
+    {
+      "runner": "ubuntu-24.04-arm",
+      "python": "3.12.15",
+      "arch": "aarch64",
+      "artifact_id": "linux-glibc-aarch64",
+      "file": "ubuntu-24.04-arm-3.12.json",
+      "sha256": "aec8b90d2d1c7b7f56d288a6e3dc604f3aa199d50564b5cf0242568901a05707",
+      "actions_artifact_id": 12313336424,
+      "actions_archive_sha256": "2a94703808602c9c56992824b4210d944cbbf7e3fca326f2af8cdb1ca133fe30",
+      "notice_files_per_format": 573,
+      "modes": [
+        "wheel",
+        "sdist"
+      ],
+      "passed": true
+    },
+    {
+      "runner": "ubuntu-24.04-arm",
+      "python": "3.14.8",
+      "arch": "aarch64",
+      "artifact_id": "linux-glibc-aarch64",
+      "file": "ubuntu-24.04-arm-3.14.json",
+      "sha256": "875ef0074ee5023d76d1afe087ee6c0577a7ad3986dc1c7dec608d6f518b3b7d",
+      "actions_artifact_id": 12313161395,
+      "actions_archive_sha256": "8546b395ff34b541b0d43f12cb9de686b947e7a3352a23ce79ffb4176be1cd0a",
+      "notice_files_per_format": 573,
+      "modes": [
+        "wheel",
+        "sdist"
+      ],
+      "passed": true
+    },
+    {
+      "runner": "macos-15",
+      "python": "3.12.10",
+      "arch": "arm64",
+      "artifact_id": "macos-arm64",
+      "file": "macos-15-3.12.json",
+      "sha256": "09a53d9c72739894020811dff7635a64c17b142bb26d1362f2df8cca571efb76",
+      "actions_artifact_id": 12313411042,
+      "actions_archive_sha256": "da5b614724b4cd2a0eef0339aa4e8af67a0a84ed9f58ff8923bda3283358fad2",
+      "notice_files_per_format": 233,
+      "modes": [
+        "wheel",
+        "sdist"
+      ],
+      "passed": true
+    },
+    {
+      "runner": "macos-15",
+      "python": "3.14.7",
+      "arch": "arm64",
+      "artifact_id": "macos-arm64",
+      "file": "macos-15-3.14.json",
+      "sha256": "a25bd0be1cfb52fc81d93a922716614568951333fa3a5e40d07d466de1170d8d",
+      "actions_artifact_id": 12312941532,
+      "actions_archive_sha256": "85eb8df30e8feae3ac214784a25cf09bf9d3abd0f0f59eed21b355595bf99a6d",
+      "notice_files_per_format": 233,
+      "modes": [
+        "wheel",
+        "sdist"
+      ],
+      "passed": true
+    },
+    {
+      "runner": "macos-15-intel",
+      "python": "3.12.10",
+      "arch": "x86_64",
+      "artifact_id": "macos-x86_64",
+      "file": "macos-15-intel-3.12.json",
+      "sha256": "31d5799e2df1e27789a350fb56324f90791e4d70a0ac903a040956410a332f50",
+      "actions_artifact_id": 12313086706,
+      "actions_archive_sha256": "faa0f2206165a722c9a09398dc3fbc4d425ef6576216dddb2553e94bb2934985",
+      "notice_files_per_format": 233,
+      "modes": [
+        "wheel",
+        "sdist"
+      ],
+      "passed": true
+    },
+    {
+      "runner": "macos-15-intel",
+      "python": "3.14.7",
+      "arch": "x86_64",
+      "artifact_id": "macos-x86_64",
+      "file": "macos-15-intel-3.14.json",
+      "sha256": "737d2a6f4d9774ff892e9113ea5688e1ba6b944e6bb2b8c5e929a30868fa503c",
+      "actions_artifact_id": 12313926402,
+      "actions_archive_sha256": "1fd6770efe1aea0c708e82b0948083842ff2deab1acb4f050edd3ca90b484cc3",
+      "notice_files_per_format": 233,
+      "modes": [
+        "wheel",
+        "sdist"
+      ],
+      "passed": true
+    }
+  ],
+  "installations": 16,
+  "notice_files_per_snapshot_total": 6076,
+  "before_after_notice_comparisons": 6076,
+  "corruption_checks": 16,
+  "restored_snapshots": 16,
+  "entrypoint_checks": 48,
+  "limitations": [
+    "Private development glibc/macOS bundles only; musl and Windows cache not measured",
+    "Real engine probes, fixture acquisition and Python-only network guard",
+    "No component compatibility, source offer, signature/notarization or support approval"
+  ]
+}

@@ -1,0 +1,22 @@
+/// @file
+/// @ingroup cgraph_utils
+/// @brief API for compacted arrays of booleans
+///
+/// The straightforward way to construct a dynamic array of booleans is to
+/// `calloc` an array of `bool` values. However, this wastes a lot of memory.
+/// Typically 8 bits per byte, which really adds up for large arrays.
+///
+/// The following implements an alternative that stores 8 array elements per
+/// byte. Using this over the `bool` implementation described above decreases
+/// heap pressure and increases locality of reference, at the cost of a few
+/// (inexpensive) shifts and masks.
+///
+/// As a bonus, short arrays are stored directly inline, avoiding heap
+/// allocation altogether. This is essentially Small String Optimization applied
+/// to a boolean array.
+///
+/// The above design is essentially what C++’s `std::vector<bool>` does.
+///
+/// This is deliberately implemented header-only so even Graphviz components
+/// that do not link against cgraph can use it.
+

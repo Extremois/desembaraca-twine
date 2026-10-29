@@ -1,0 +1,13 @@
+/*
+ * memset - fill memory with a constant byte
+ *
+ * Copyright (c) 2012-2020, Arm Limited.
+ * SPDX-License-Identifier: MIT
+ */
+
+/* Assumptions:
+ *
+ * ARMv8-a, AArch64, Advanced SIMD, unaligned accesses.
+ *
+ */
+

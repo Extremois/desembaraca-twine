@@ -1,0 +1,62 @@
+{
+  "application_revision": "13fc2a8d48f89a0fd85f4312a38f822b3796e314",
+  "run_url": "https://github.com/Extremois/desembaraca-twine/actions/runs/40686184975",
+  "qualification_scope": "abi",
+  "foundation": [
+    {
+      "job_id": 122809126643,
+      "name": "Pure contracts (windows-latest, Python 3.12)",
+      "conclusion": "success",
+      "test_count": 303,
+      "raw_sha256": "a18454c99c81a648aedb589c135b9c3332623dc58e8c07ac55c12076444f75a3",
+      "path": "foundation-122809126643.log.gz"
+    },
+    {
+      "job_id": 122809126994,
+      "name": "Pure contracts (windows-latest, Python 3.14)",
+      "conclusion": "success",
+      "test_count": 303,
+      "raw_sha256": "26c6dff73d8bcb7afa45e8a133a66e0ee9050332bd69cd3056496a44acab37c6",
+      "path": "foundation-122809126994.log.gz"
+    },
+    {
+      "job_id": 122809127034,
+      "name": "Pure contracts (macos-15, Python 3.14)",
+      "conclusion": "success",
+      "test_count": 303,
+      "raw_sha256": "f0cfad2874ccf2a0bee1435a0cb1b0b502175d6e6db23dbd68004ccc9851aa9b",
+      "path": "foundation-122809127034.log.gz"
+    },
+    {
+      "job_id": 122809127083,
+      "name": "Pure contracts (macos-15, Python 3.12)",
+      "conclusion": "success",
+      "test_count": 303,
+      "raw_sha256": "01906d6f0b28bec3865ed2010e2da09109b262fa7f31969ce6d607363dc04c89",
+      "path": "foundation-122809127083.log.gz"
+    },
+    {
+      "job_id": 122809127144,
+      "name": "Pure contracts (ubuntu-24.04, Python 3.12)",
+      "conclusion": "success",
+      "test_count": 303,
+      "raw_sha256": "03119e19eae943b0c8fdf7ef787442a2b984ee1c4312b2469f0470a2516b7982",
+      "path": "foundation-122809127144.log.gz"
+    },
+    {
+      "job_id": 122809127231,
+      "name": "Pure contracts (ubuntu-24.04, Python 3.14)",
+      "conclusion": "success",
+      "test_count": 303,
+      "raw_sha256": "1c83f15aae5672ee2b3e23097cc59452810e277bf1eba8a7076699df887ef753",
+      "path": "foundation-122809127231.log.gz"
+    }
+  ],
+  "qualified_support": false,
+  "remaining_gates": [
+    "ABI engine acceptance",
+    "license/source audits",
+    "immutable delivery",
+    "Twine output review"
+  ]
+}

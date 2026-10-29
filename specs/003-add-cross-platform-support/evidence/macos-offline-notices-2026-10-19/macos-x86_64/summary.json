@@ -1,0 +1,125 @@
+{
+  "kind": "native-macos-offline-notices-receipt",
+  "approved": false,
+  "qualified": false,
+  "revision": "24ed0e9c2a7c1cd26d3aa418f093ed4af1903d0a",
+  "run_id": 39314104394,
+  "job_id": 118271332733,
+  "url": "https://github.com/Extremois/desembaraca-twine/actions/runs/39314104394",
+  "artifact_id": "macos-x86_64",
+  "actions_artifact_id": 12217790224,
+  "actions_artifact_sha256": "7f8aa735e4b6a66617f776891abc65c289f262cf7563e61b98964c5700038263",
+  "executable_sha256": "d8ab197fbdfa9312050f4c4827f4bb612f7f4d1d021d4308a9850ee1a1104fff",
+  "provenance_sha256": "4d004b38271af98435c35290bc50f61519d7d5a47e44d41658fe625fcd97c0aa",
+  "notice_count": 232,
+  "offline_index_payloads": 231,
+  "canonical_reference_counts": {
+    "APSL-1.1-COPYING.txt": 3,
+    "APSL-2.0-COPYING.txt": 183,
+    "LLVM-license-reference-COPYING.txt": 24,
+    "GPL-3.0-COPYING.txt": 4
+  },
+  "candidate_archive_sha256": "0700ee097328d183f6882ce13e6f20700da264fb12c3351fdb529ab273500b6b",
+  "candidate_archive_bytes": 2038789,
+  "candidate_file_count": 233,
+  "corpus": [
+    {
+      "python": "3.12.10",
+      "cases": 13,
+      "passed": true
+    },
+    {
+      "python": "3.14.7",
+      "cases": 13,
+      "passed": true
+    }
+  ],
+  "retention_scope": "Full new canonical texts; compressed index/review/provenance/inventory/source observation/corpus. Other notice payloads verified after ZIP download, not duplicated here.",
+  "retained_files": {
+    "APSL-1.1-COPYING.txt": {
+      "sha256": "359a21ed59e82096455398ea10c5bc8c3ff28e7acf7935b77751d70e3630fc95",
+      "bytes": 19930,
+      "original_sha256": "359a21ed59e82096455398ea10c5bc8c3ff28e7acf7935b77751d70e3630fc95",
+      "original_bytes": 19930
+    },
+    "APSL-2.0-COPYING.txt": {
+      "sha256": "e5881019d8766c1e88a5fe1dbca4ba40c78011d41fcb18f6e9f50df60182685b",
+      "bytes": 19829,
+      "original_sha256": "e5881019d8766c1e88a5fe1dbca4ba40c78011d41fcb18f6e9f50df60182685b",
+      "original_bytes": 19829
+    },
+    "LLVM-license-reference-COPYING.txt": {
+      "sha256": "8d85c1057d742e597985c7d4e6320b015a9139385cff4cbae06ffc0ebe89afee",
+      "bytes": 15141,
+      "original_sha256": "8d85c1057d742e597985c7d4e6320b015a9139385cff4cbae06ffc0ebe89afee",
+      "original_bytes": 15141
+    },
+    "GPL-3.0-COPYING.txt": {
+      "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+      "bytes": 35149,
+      "original_sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+      "original_bytes": 35149
+    },
+    "NOTICE-ORIGINS.json.gz": {
+      "sha256": "1f0106b40a138ebe0a3411f2cc5673d398f5113a0304e187c2bb553e617b2bef",
+      "bytes": 27819,
+      "original_sha256": "087b6d4fba884171bb44c1bcb37099b1c21625a456eb9752794dccb676e27b29",
+      "original_bytes": 148327
+    },
+    "corpus-312.json": {
+      "sha256": "82df13fc80e6c601ea4b5f3312b879de09975894525b4730ee5466fe35bd3eec",
+      "bytes": 5348,
+      "original_sha256": "82df13fc80e6c601ea4b5f3312b879de09975894525b4730ee5466fe35bd3eec",
+      "original_bytes": 5348
+    },
+    "corpus-314.json": {
+      "sha256": "26ffb109c65bfbfd7043f8091280c7efe668774e1952b441dcdd2ef99b97d025",
+      "bytes": 5347,
+      "original_sha256": "26ffb109c65bfbfd7043f8091280c7efe668774e1952b441dcdd2ef99b97d025",
+      "original_bytes": 5347
+    },
+    "review.json.gz": {
+      "sha256": "75c8ffa3f5a7e5c186717845de4708394c2869018173a5069071a9980d15d492",
+      "bytes": 45934,
+      "original_sha256": "3b8f7681749fdaa48fa453a187cd86a18f21d9e324b58fa094549b6c2661234f",
+      "original_bytes": 270785
+    },
+    "provenance.json.gz": {
+      "sha256": "81828af0e4a15dd13fdc47ea0c06bfdbf7781c696f7222dc67174337a5d0b59f",
+      "bytes": 2648,
+      "original_sha256": "4d004b38271af98435c35290bc50f61519d7d5a47e44d41658fe625fcd97c0aa",
+      "original_bytes": 7216
+    },
+    "parent-provenance.json.gz": {
+      "sha256": "4b110d5612ff682e3f2bdc8848f0340fa4b54fd4d08bc4bf60564433c68414fc",
+      "bytes": 2576,
+      "original_sha256": "96c85e7cee6dd71245fe5a2f46afec005a62f701ab56d437b0bf17374940a768",
+      "original_bytes": 7094
+    },
+    "inventory.json.gz": {
+      "sha256": "1d2c7b7388ed21f046fcab69c2674442fded810222147495f797b3cc20bb61b5",
+      "bytes": 11187,
+      "original_sha256": "8ffd1641463ab561f89072d5b5233fc2e1b2caccbb794e24e8996caf204ce0fa",
+      "original_bytes": 49483
+    },
+    "candidate.json.gz": {
+      "sha256": "169d1c5fd744acededa297351097eae98f53af52b01a4f6f39f0804b848abf06",
+      "bytes": 512,
+      "original_sha256": "e5c6492c811ed411f1b54af7c2d0148d21072c8f16bfe89d4b20620a3a0e93ff",
+      "original_bytes": 862
+    },
+    "link-source-evidence.json.gz": {
+      "sha256": "31873eaa48edab1cce6244fb1bdfd0229172ebceac1c691868d05a9fb7dd1817",
+      "bytes": 107362,
+      "original_sha256": "2c27b1fd2c8a39ddf40e9968fedb06f3caa5043f03b594570c5a0b388dc5cba4",
+      "original_bytes": 4209059
+    }
+  },
+  "pending": [
+    "Per-file applicability and any additional required texts",
+    "Generated data provenance/notices",
+    "Unnamed linker-map slots and SDK contribution review",
+    "Complete corresponding-source offer",
+    "Approved audit, signing/notarization and installed native acceptance"
+  ]
+}

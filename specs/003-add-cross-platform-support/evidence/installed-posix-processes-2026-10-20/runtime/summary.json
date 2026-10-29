@@ -1,0 +1,382 @@
+{
+  "kind": "installed-private-posix-engines-native-ci",
+  "passed": true,
+  "qualified": false,
+  "application_revision": "eea100c37599517e09b6626d1edb82b599a1b19c",
+  "run_id": 39515644989,
+  "url": "https://github.com/Extremois/desembaraca-twine/actions/runs/39515644989",
+  "reports": [
+    {
+      "runner": "ubuntu-24.04",
+      "python": "3.12.15",
+      "arch": "x86_64",
+      "artifact_id": "linux-glibc-x86_64",
+      "engine_sha256": "43ce8d686720467c21be91cab4b8f3b246baae49c2cfe293714ebdf8a82f5716",
+      "candidate_archive_sha256": "f446b7718e94eafa9adc29953aa4f1f65e588d5ee10a80d973771c32e91d1e7f",
+      "provenance_sha256": "eb7f183d0259d923c610eb5a8c058c77a14397be6e9c95319e72e4e67ebc370f",
+      "file": "ubuntu-24.04-3.12.json",
+      "sha256": "032bdde06b51b62ddc2e6e49946444c7a2fc3309f6e0820c8f4f20b2040dbe57",
+      "actions_artifact_id": 12307548595,
+      "actions_archive_sha256": "54eae5e239b202d2ccb9b6f52b7f6bb2514538eebc65d96a950f4d6247abbc35",
+      "modes": [
+        "wheel",
+        "sdist"
+      ],
+      "explicit_corpus_cases_per_format": 13,
+      "known_zero_references_per_format": 6,
+      "protections": [],
+      "passed": true
+    },
+    {
+      "runner": "ubuntu-24.04",
+      "python": "3.14.8",
+      "arch": "x86_64",
+      "artifact_id": "linux-glibc-x86_64",
+      "engine_sha256": "43ce8d686720467c21be91cab4b8f3b246baae49c2cfe293714ebdf8a82f5716",
+      "candidate_archive_sha256": "f446b7718e94eafa9adc29953aa4f1f65e588d5ee10a80d973771c32e91d1e7f",
+      "provenance_sha256": "eb7f183d0259d923c610eb5a8c058c77a14397be6e9c95319e72e4e67ebc370f",
+      "file": "ubuntu-24.04-3.14.json",
+      "sha256": "fb83e22e267b199aee6542b4013adf6d5f8e7d75ff6bbe0f7567f7cbc92611ec",
+      "actions_artifact_id": 12307712675,
+      "actions_archive_sha256": "2666e83956d303db9cdde056d1f3d53bfba0ed8571673d2f187e3acd0c6edfcc",
+      "modes": [
+        "wheel",
+        "sdist"
+      ],
+      "explicit_corpus_cases_per_format": 13,
+      "known_zero_references_per_format": 6,
+      "protections": [],
+      "passed": true
+    },
+    {
+      "runner": "ubuntu-24.04-arm",
+      "python": "3.12.15",
+      "arch": "aarch64",
+      "artifact_id": "linux-glibc-aarch64",
+      "engine_sha256": "933b6c63370bdd3e814627e2a9a06176416c8da017a21dcbc96d8137dbc17e22",
+      "candidate_archive_sha256": "8c8b3e73397033b74404b68d9207bbfdc742dc1271f96ea2809ee2c92bc1eebe",
+      "provenance_sha256": "64d805c82e496159d53ab035cf7d02729c8b699aa688981b45a669bfd53f28c6",
+      "file": "ubuntu-24.04-arm-3.12.json",
+      "sha256": "0840bc9cbe0b17f8cc155907c9cb9717235eea88f1fa0b7009b95fbd4954e025",
+      "actions_artifact_id": 12307288077,
+      "actions_archive_sha256": "3b0cd7224d8642e245f281df86573121848c13f945b0668fbcc2d23e64bfdfcd",
+      "modes": [
+        "wheel",
+        "sdist"
+      ],
+      "explicit_corpus_cases_per_format": 13,
+      "known_zero_references_per_format": 6,
+      "protections": [],
+      "passed": true
+    },
+    {
+      "runner": "ubuntu-24.04-arm",
+      "python": "3.14.8",
+      "arch": "aarch64",
+      "artifact_id": "linux-glibc-aarch64",
+      "engine_sha256": "933b6c63370bdd3e814627e2a9a06176416c8da017a21dcbc96d8137dbc17e22",
+      "candidate_archive_sha256": "8c8b3e73397033b74404b68d9207bbfdc742dc1271f96ea2809ee2c92bc1eebe",
+      "provenance_sha256": "64d805c82e496159d53ab035cf7d02729c8b699aa688981b45a669bfd53f28c6",
+      "file": "ubuntu-24.04-arm-3.14.json",
+      "sha256": "aaf3ae3508185f253029b053a876056b934e1225c2597ff076829df9ec76a9fd",
+      "actions_artifact_id": 12308001602,
+      "actions_archive_sha256": "a5be532a050d38e46f9dd089a38849b39dce5eefab235f6f0199f5dd746091f6",
+      "modes": [
+        "wheel",
+        "sdist"
+      ],
+      "explicit_corpus_cases_per_format": 13,
+      "known_zero_references_per_format": 6,
+      "protections": [],
+      "passed": true
+    },
+    {
+      "runner": "macos-15",
+      "python": "3.12.10",
+      "arch": "arm64",
+      "artifact_id": "macos-arm64",
+      "engine_sha256": "774115a1a9e4b2385d33fa55fe02de0d8728cb0984967d445528c6fe04f97dac",
+      "candidate_archive_sha256": "4acb09b433658a3b64e71b68d5b13a240bf8577436a602dd26896a9a8d180b83",
+      "provenance_sha256": "af21e0ea2fc69a00148c650eb952abeeb9141a241b687f05ab0f8ef3f0879bda",
+      "file": "macos-15-3.12.json",
+      "sha256": "aa63715d9a190234d25c3819d26e1167a309fbfabfb30411029dd4031d763884",
+      "actions_artifact_id": 12307747759,
+      "actions_archive_sha256": "7bf651e48d150fbe2c27716df98753c963316c65bd5072bfdf290179053090ab",
+      "modes": [
+        "wheel",
+        "sdist"
+      ],
+      "explicit_corpus_cases_per_format": 13,
+      "known_zero_references_per_format": 6,
+      "protections": [
+        {
+          "mode": "wheel",
+          "before": {
+            "gatekeeper": {
+              "returncode": 0,
+              "output": "assessments enabled"
+            },
+            "sip": {
+              "returncode": 0,
+              "output": "System Integrity Protection status: disabled."
+            }
+          },
+          "after": {
+            "gatekeeper": {
+              "returncode": 0,
+              "output": "assessments enabled"
+            },
+            "sip": {
+              "returncode": 0,
+              "output": "System Integrity Protection status: disabled."
+            }
+          }
+        },
+        {
+          "mode": "sdist",
+          "before": {
+            "gatekeeper": {
+              "returncode": 0,
+              "output": "assessments enabled"
+            },
+            "sip": {
+              "returncode": 0,
+              "output": "System Integrity Protection status: disabled."
+            }
+          },
+          "after": {
+            "gatekeeper": {
+              "returncode": 0,
+              "output": "assessments enabled"
+            },
+            "sip": {
+              "returncode": 0,
+              "output": "System Integrity Protection status: disabled."
+            }
+          }
+        }
+      ],
+      "passed": true
+    },
+    {
+      "runner": "macos-15",
+      "python": "3.14.7",
+      "arch": "arm64",
+      "artifact_id": "macos-arm64",
+      "engine_sha256": "774115a1a9e4b2385d33fa55fe02de0d8728cb0984967d445528c6fe04f97dac",
+      "candidate_archive_sha256": "4acb09b433658a3b64e71b68d5b13a240bf8577436a602dd26896a9a8d180b83",
+      "provenance_sha256": "af21e0ea2fc69a00148c650eb952abeeb9141a241b687f05ab0f8ef3f0879bda",
+      "file": "macos-15-3.14.json",
+      "sha256": "780807314bacf4ce3e676cf8a30eaae8b47182c2a20329ff4c093ba3b4c5a97c",
+      "actions_artifact_id": 12307633754,
+      "actions_archive_sha256": "88d495dd161ca6db55726203c2addd251ae08864f975a393dfff63c9b9f9ed05",
+      "modes": [
+        "wheel",
+        "sdist"
+      ],
+      "explicit_corpus_cases_per_format": 13,
+      "known_zero_references_per_format": 6,
+      "protections": [
+        {
+          "mode": "wheel",
+          "before": {
+            "gatekeeper": {
+              "returncode": 0,
+              "output": "assessments enabled"
+            },
+            "sip": {
+              "returncode": 0,
+              "output": "System Integrity Protection status: disabled."
+            }
+          },
+          "after": {
+            "gatekeeper": {
+              "returncode": 0,
+              "output": "assessments enabled"
+            },
+            "sip": {
+              "returncode": 0,
+              "output": "System Integrity Protection status: disabled."
+            }
+          }
+        },
+        {
+          "mode": "sdist",
+          "before": {
+            "gatekeeper": {
+              "returncode": 0,
+              "output": "assessments enabled"
+            },
+            "sip": {
+              "returncode": 0,
+              "output": "System Integrity Protection status: disabled."
+            }
+          },
+          "after": {
+            "gatekeeper": {
+              "returncode": 0,
+              "output": "assessments enabled"
+            },
+            "sip": {
+              "returncode": 0,
+              "output": "System Integrity Protection status: disabled."
+            }
+          }
+        }
+      ],
+      "passed": true
+    },
+    {
+      "runner": "macos-15-intel",
+      "python": "3.12.10",
+      "arch": "x86_64",
+      "artifact_id": "macos-x86_64",
+      "engine_sha256": "d8ab197fbdfa9312050f4c4827f4bb612f7f4d1d021d4308a9850ee1a1104fff",
+      "candidate_archive_sha256": "ec0e27e30a2948ef79937cf720c6d31f4cb0e831d9c4fb799f84409fab114272",
+      "provenance_sha256": "0f3103a1dc15e334a5a6d73b2ac999e9bdeee513dac9c0f9eff14ddc86232a24",
+      "file": "macos-15-intel-3.12.json",
+      "sha256": "c9ea4997cc4ba6d04a5f6b8d30b77a736dfa1677d230332176e20a673409aad7",
+      "actions_artifact_id": 12308026749,
+      "actions_archive_sha256": "124bf995d931653f35f90386f6b6a94a4ae357f5e013bf762fcac94867b33df3",
+      "modes": [
+        "wheel",
+        "sdist"
+      ],
+      "explicit_corpus_cases_per_format": 13,
+      "known_zero_references_per_format": 6,
+      "protections": [
+        {
+          "mode": "wheel",
+          "before": {
+            "gatekeeper": {
+              "returncode": 0,
+              "output": "assessments enabled"
+            },
+            "sip": {
+              "returncode": 0,
+              "output": "System Integrity Protection status: disabled."
+            }
+          },
+          "after": {
+            "gatekeeper": {
+              "returncode": 0,
+              "output": "assessments enabled"
+            },
+            "sip": {
+              "returncode": 0,
+              "output": "System Integrity Protection status: disabled."
+            }
+          }
+        },
+        {
+          "mode": "sdist",
+          "before": {
+            "gatekeeper": {
+              "returncode": 0,
+              "output": "assessments enabled"
+            },
+            "sip": {
+              "returncode": 0,
+              "output": "System Integrity Protection status: disabled."
+            }
+          },
+          "after": {
+            "gatekeeper": {
+              "returncode": 0,
+              "output": "assessments enabled"
+            },
+            "sip": {
+              "returncode": 0,
+              "output": "System Integrity Protection status: disabled."
+            }
+          }
+        }
+      ],
+      "passed": true
+    },
+    {
+      "runner": "macos-15-intel",
+      "python": "3.14.7",
+      "arch": "x86_64",
+      "artifact_id": "macos-x86_64",
+      "engine_sha256": "d8ab197fbdfa9312050f4c4827f4bb612f7f4d1d021d4308a9850ee1a1104fff",
+      "candidate_archive_sha256": "ec0e27e30a2948ef79937cf720c6d31f4cb0e831d9c4fb799f84409fab114272",
+      "provenance_sha256": "0f3103a1dc15e334a5a6d73b2ac999e9bdeee513dac9c0f9eff14ddc86232a24",
+      "file": "macos-15-intel-3.14.json",
+      "sha256": "157a7f8afe781eb027be2e0fb6d15d337a5d6575b9a6168cc32fef888128c13b",
+      "actions_artifact_id": 12307308029,
+      "actions_archive_sha256": "3d288cf3065b9e09a03309112c640277dfff70365586776ae2738cdb3db24eac",
+      "modes": [
+        "wheel",
+        "sdist"
+      ],
+      "explicit_corpus_cases_per_format": 13,
+      "known_zero_references_per_format": 6,
+      "protections": [
+        {
+          "mode": "wheel",
+          "before": {
+            "gatekeeper": {
+              "returncode": 0,
+              "output": "assessments enabled"
+            },
+            "sip": {
+              "returncode": 0,
+              "output": "System Integrity Protection status: disabled."
+            }
+          },
+          "after": {
+            "gatekeeper": {
+              "returncode": 0,
+              "output": "assessments enabled"
+            },
+            "sip": {
+              "returncode": 0,
+              "output": "System Integrity Protection status: disabled."
+            }
+          }
+        },
+        {
+          "mode": "sdist",
+          "before": {
+            "gatekeeper": {
+              "returncode": 0,
+              "output": "assessments enabled"
+            },
+            "sip": {
+              "returncode": 0,
+              "output": "System Integrity Protection status: disabled."
+            }
+          },
+          "after": {
+            "gatekeeper": {
+              "returncode": 0,
+              "output": "assessments enabled"
+            },
+            "sip": {
+              "returncode": 0,
+              "output": "System Integrity Protection status: disabled."
+            }
+          }
+        }
+      ],
+      "passed": true
+    }
+  ],
+  "recovery_scenarios": 64,
+  "recovery_reference_executions": 384,
+  "process_recovery_scenarios": 64,
+  "process_recovery_reference_executions": 384,
+  "total_recovery_scenarios": 128,
+  "total_recovery_reference_executions": 768,
+  "installation_slots": 16,
+  "explicit_corpus_executions": 208,
+  "known_zero_references": 96,
+  "entrypoint_checks": 48,
+  "limitations": [
+    "Production application imported from external installed wheel/sdist; controlled private acquisition",
+    "Python-only network guard, no native syscall network proof",
+    "macOS protections observed unchanged; no Developer ID/notarization/quarantine approval",
+    "Hosted runners and private artifacts do not qualify whole support cells or activate POSIX catalog"
+  ]
+}

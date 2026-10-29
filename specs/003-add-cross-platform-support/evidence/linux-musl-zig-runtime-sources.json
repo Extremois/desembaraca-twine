@@ -1,0 +1,3937 @@
+{
+  "kind": "zig-startup-runtime-source-observations-not-approved",
+  "approved": false,
+  "qualified": false,
+  "source_to_binary_complete": false,
+  "artifact_id": "linux-musl-x86_64",
+  "executable_sha256": "a58b2f30b70a0393ff0cec93d40e7b039015d1ad2bbdc8a9c60634334519942f",
+  "provenance_sha256": "c4cf7cfedb0a08158a4954cd8f1263cb9b8b04571e44a6d6f36d2628b07798e6",
+  "sdk_archive_sha256": "02aa270f183da276e5b5920b1dac44a63f1a49e55050ebde3aecc9eb82f93239",
+  "inspector_sha256": "c857339616bbbfa5eba32733e22365048903fbaf6ed2126b897dd138bcb741fc",
+  "tool_sha256": "5d4c2f2005251bd37864085378bd33a62327ca46e0a4ea377c225bcc497154ab",
+  "objects": [
+    {
+      "input": "crt1.o",
+      "input_sha256": "9d368a3fc8fd67bbf70bbd37cfee47bb96c1bf8ca802ac74861cabb3812af7b6",
+      "member": null,
+      "object_sha256": "9d368a3fc8fd67bbf70bbd37cfee47bb96c1bf8ca802ac74861cabb3812af7b6",
+      "object_size": 3992,
+      "compilation_unit": "lib/libc/musl/crt/crt1.c",
+      "info_report_sha256": "7417a494d3dcc89d4182e81a5008d14c2b2cde175e13db5434a0b8e99e8365c0",
+      "line_report_sha256": "9b799cff1e3fc2ea2f8d1c298362105b57c069160e01f4b9693dfcf2c3452373",
+      "line_table_files": [
+        {
+          "file_id": 1,
+          "origin": "sdk",
+          "path": "lib/libc/musl/crt/crt1.c"
+        }
+      ]
+    },
+    {
+      "input": "libcompiler_rt.a",
+      "input_sha256": "596fb2eb5e84701ddd0079a3a5ad6065a9ca5916518f38ad522d8f1de559cc2a",
+      "member": "libcompiler_rt_zcu.o",
+      "object_sha256": "15fe69a5671b3092c5f48f9e4ccdfba06753f834984329db1be4f6d4db749063",
+      "object_size": 1667584,
+      "compilation_unit": "compiler_rt",
+      "info_report_sha256": "c3e24cf08287596bcc79133692c7381d4703e417dc754733e85d538f6ee22770",
+      "line_report_sha256": "70d12975312f84f789ae83de2d00b2d0c9b778f157ee2761daa6ffa31123885a",
+      "line_table_files": [
+        {
+          "file_id": 1,
+          "origin": "sdk",
+          "path": "lib/std/builtin.zig"
+        },
+        {
+          "file_id": 2,
+          "origin": "generated",
+          "path": "b/7dc92623758de044a4361c7caff9a66c/builtin.zig"
+        },
+        {
+          "file_id": 3,
+          "origin": "sdk",
+          "path": "lib/std/start.zig"
+        },
+        {
+          "file_id": 4,
+          "origin": "sdk",
+          "path": "lib/std/Target.zig"
+        },
+        {
+          "file_id": 5,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/common.zig"
+        },
+        {
+          "file_id": 6,
+          "origin": "sdk",
+          "path": "lib/std/mem.zig"
+        },
+        {
+          "file_id": 7,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/float_from_int.zig"
+        },
+        {
+          "file_id": 8,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/comparef.zig"
+        },
+        {
+          "file_id": 9,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/rem_pio2f.zig"
+        },
+        {
+          "file_id": 10,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/rem_pio2_large.zig"
+        },
+        {
+          "file_id": 11,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/rem_pio2.zig"
+        },
+        {
+          "file_id": 12,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/exp2.zig"
+        },
+        {
+          "file_id": 13,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/divmodei4.zig"
+        },
+        {
+          "file_id": 14,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/udivmodei4.zig"
+        },
+        {
+          "file_id": 15,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/os_version_check.zig"
+        },
+        {
+          "file_id": 16,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/arm.zig"
+        },
+        {
+          "file_id": 17,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/aulldiv.zig"
+        },
+        {
+          "file_id": 18,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/aullrem.zig"
+        },
+        {
+          "file_id": 19,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/clear_cache.zig"
+        },
+        {
+          "file_id": 20,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/atomics.zig"
+        },
+        {
+          "file_id": 21,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/stack_probe.zig"
+        },
+        {
+          "file_id": 22,
+          "origin": "sdk",
+          "path": "lib/std/Target/x86.zig"
+        },
+        {
+          "file_id": 23,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/ssp.zig"
+        },
+        {
+          "file_id": 24,
+          "origin": "sdk",
+          "path": "lib/std/valgrind.zig"
+        },
+        {
+          "file_id": 25,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/count0bits.zig"
+        },
+        {
+          "file_id": 26,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/parity.zig"
+        },
+        {
+          "file_id": 27,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/popcount.zig"
+        },
+        {
+          "file_id": 28,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/bitreverse.zig"
+        },
+        {
+          "file_id": 29,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/bswap.zig"
+        },
+        {
+          "file_id": 30,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/cmp.zig"
+        },
+        {
+          "file_id": 31,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/shift.zig"
+        },
+        {
+          "file_id": 32,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/negXi2.zig"
+        },
+        {
+          "file_id": 33,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/int.zig"
+        },
+        {
+          "file_id": 34,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/divti3.zig"
+        },
+        {
+          "file_id": 35,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/udivmod.zig"
+        },
+        {
+          "file_id": 36,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/mulXi3.zig"
+        },
+        {
+          "file_id": 37,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/udivti3.zig"
+        },
+        {
+          "file_id": 38,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/modti3.zig"
+        },
+        {
+          "file_id": 39,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/umodti3.zig"
+        },
+        {
+          "file_id": 40,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/absvsi2.zig"
+        },
+        {
+          "file_id": 41,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/absv.zig"
+        },
+        {
+          "file_id": 42,
+          "origin": "sdk",
+          "path": "lib/std/debug/no_panic.zig"
+        },
+        {
+          "file_id": 43,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/absvdi2.zig"
+        },
+        {
+          "file_id": 44,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/absvti2.zig"
+        },
+        {
+          "file_id": 45,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/negv.zig"
+        },
+        {
+          "file_id": 46,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/addvsi3.zig"
+        },
+        {
+          "file_id": 47,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/addo.zig"
+        },
+        {
+          "file_id": 48,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/subvsi3.zig"
+        },
+        {
+          "file_id": 49,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/subo.zig"
+        },
+        {
+          "file_id": 50,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/subvdi3.zig"
+        },
+        {
+          "file_id": 51,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/mulvsi3.zig"
+        },
+        {
+          "file_id": 52,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/mulo.zig"
+        },
+        {
+          "file_id": 53,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/extendhfsf2.zig"
+        },
+        {
+          "file_id": 54,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/extendf.zig"
+        },
+        {
+          "file_id": 55,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/extendhfdf2.zig"
+        },
+        {
+          "file_id": 56,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/extendhftf2.zig"
+        },
+        {
+          "file_id": 57,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/extendhfxf2.zig"
+        },
+        {
+          "file_id": 58,
+          "origin": "sdk",
+          "path": "lib/std/math.zig"
+        },
+        {
+          "file_id": 59,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/extendsfdf2.zig"
+        },
+        {
+          "file_id": 60,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/extendsftf2.zig"
+        },
+        {
+          "file_id": 61,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/extendsfxf2.zig"
+        },
+        {
+          "file_id": 62,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/extenddftf2.zig"
+        },
+        {
+          "file_id": 63,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/extenddfxf2.zig"
+        },
+        {
+          "file_id": 64,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/extendxftf2.zig"
+        },
+        {
+          "file_id": 65,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/truncsfhf2.zig"
+        },
+        {
+          "file_id": 66,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/truncf.zig"
+        },
+        {
+          "file_id": 67,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/truncdfhf2.zig"
+        },
+        {
+          "file_id": 68,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/truncdfsf2.zig"
+        },
+        {
+          "file_id": 69,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/truncxfhf2.zig"
+        },
+        {
+          "file_id": 70,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/truncxfsf2.zig"
+        },
+        {
+          "file_id": 71,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/truncxfdf2.zig"
+        },
+        {
+          "file_id": 72,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/trunctfhf2.zig"
+        },
+        {
+          "file_id": 73,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/trunctfsf2.zig"
+        },
+        {
+          "file_id": 74,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/trunctfdf2.zig"
+        },
+        {
+          "file_id": 75,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/trunctfxf2.zig"
+        },
+        {
+          "file_id": 76,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/fixhfsi.zig"
+        },
+        {
+          "file_id": 77,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/int_from_float.zig"
+        },
+        {
+          "file_id": 78,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/fixhfdi.zig"
+        },
+        {
+          "file_id": 79,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/fixhfti.zig"
+        },
+        {
+          "file_id": 80,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/fixhfei.zig"
+        },
+        {
+          "file_id": 81,
+          "origin": "sdk",
+          "path": "lib/std/math/frexp.zig"
+        },
+        {
+          "file_id": 82,
+          "origin": "sdk",
+          "path": "lib/std/zig/target.zig"
+        },
+        {
+          "file_id": 83,
+          "origin": "sdk",
+          "path": "lib/std/math/ldexp.zig"
+        },
+        {
+          "file_id": 84,
+          "origin": "sdk",
+          "path": "lib/std/math/isnan.zig"
+        },
+        {
+          "file_id": 85,
+          "origin": "sdk",
+          "path": "lib/std/math/isfinite.zig"
+        },
+        {
+          "file_id": 86,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/fixsfsi.zig"
+        },
+        {
+          "file_id": 87,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/fixsfdi.zig"
+        },
+        {
+          "file_id": 88,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/fixsfti.zig"
+        },
+        {
+          "file_id": 89,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/fixsfei.zig"
+        },
+        {
+          "file_id": 90,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/fixdfsi.zig"
+        },
+        {
+          "file_id": 91,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/fixdfdi.zig"
+        },
+        {
+          "file_id": 92,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/fixdfti.zig"
+        },
+        {
+          "file_id": 93,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/fixdfei.zig"
+        },
+        {
+          "file_id": 94,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/fixtfsi.zig"
+        },
+        {
+          "file_id": 95,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/fixtfdi.zig"
+        },
+        {
+          "file_id": 96,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/fixtfti.zig"
+        },
+        {
+          "file_id": 97,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/fixtfei.zig"
+        },
+        {
+          "file_id": 98,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/fixxfsi.zig"
+        },
+        {
+          "file_id": 99,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/fixxfdi.zig"
+        },
+        {
+          "file_id": 100,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/fixxfti.zig"
+        },
+        {
+          "file_id": 101,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/fixxfei.zig"
+        },
+        {
+          "file_id": 102,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/fixunshfsi.zig"
+        },
+        {
+          "file_id": 103,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/fixunshfdi.zig"
+        },
+        {
+          "file_id": 104,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/fixunshfti.zig"
+        },
+        {
+          "file_id": 105,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/fixunshfei.zig"
+        },
+        {
+          "file_id": 106,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/fixunssfsi.zig"
+        },
+        {
+          "file_id": 107,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/fixunssfdi.zig"
+        },
+        {
+          "file_id": 108,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/fixunssfti.zig"
+        },
+        {
+          "file_id": 109,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/fixunssfei.zig"
+        },
+        {
+          "file_id": 110,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/fixunsdfsi.zig"
+        },
+        {
+          "file_id": 111,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/fixunsdfdi.zig"
+        },
+        {
+          "file_id": 112,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/fixunsdfti.zig"
+        },
+        {
+          "file_id": 113,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/fixunsdfei.zig"
+        },
+        {
+          "file_id": 114,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/fixunstfsi.zig"
+        },
+        {
+          "file_id": 115,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/fixunstfdi.zig"
+        },
+        {
+          "file_id": 116,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/fixunstfti.zig"
+        },
+        {
+          "file_id": 117,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/fixunstfei.zig"
+        },
+        {
+          "file_id": 118,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/fixunsxfsi.zig"
+        },
+        {
+          "file_id": 119,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/fixunsxfdi.zig"
+        },
+        {
+          "file_id": 120,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/fixunsxfti.zig"
+        },
+        {
+          "file_id": 121,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/fixunsxfei.zig"
+        },
+        {
+          "file_id": 122,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/floatsihf.zig"
+        },
+        {
+          "file_id": 123,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/floatsisf.zig"
+        },
+        {
+          "file_id": 124,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/floatsidf.zig"
+        },
+        {
+          "file_id": 125,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/floatsitf.zig"
+        },
+        {
+          "file_id": 126,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/floatsixf.zig"
+        },
+        {
+          "file_id": 127,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/floatdihf.zig"
+        },
+        {
+          "file_id": 128,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/floatdisf.zig"
+        },
+        {
+          "file_id": 129,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/floatdidf.zig"
+        },
+        {
+          "file_id": 130,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/floatditf.zig"
+        },
+        {
+          "file_id": 131,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/floatdixf.zig"
+        },
+        {
+          "file_id": 132,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/floattihf.zig"
+        },
+        {
+          "file_id": 133,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/floattisf.zig"
+        },
+        {
+          "file_id": 134,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/floattidf.zig"
+        },
+        {
+          "file_id": 135,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/floattitf.zig"
+        },
+        {
+          "file_id": 136,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/floattixf.zig"
+        },
+        {
+          "file_id": 137,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/floateihf.zig"
+        },
+        {
+          "file_id": 138,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/floateisf.zig"
+        },
+        {
+          "file_id": 139,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/floateidf.zig"
+        },
+        {
+          "file_id": 140,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/floateitf.zig"
+        },
+        {
+          "file_id": 141,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/floateixf.zig"
+        },
+        {
+          "file_id": 142,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/floatunsihf.zig"
+        },
+        {
+          "file_id": 143,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/floatunsisf.zig"
+        },
+        {
+          "file_id": 144,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/floatunsidf.zig"
+        },
+        {
+          "file_id": 145,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/floatunsitf.zig"
+        },
+        {
+          "file_id": 146,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/floatunsixf.zig"
+        },
+        {
+          "file_id": 147,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/floatundihf.zig"
+        },
+        {
+          "file_id": 148,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/floatundisf.zig"
+        },
+        {
+          "file_id": 149,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/floatundidf.zig"
+        },
+        {
+          "file_id": 150,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/floatunditf.zig"
+        },
+        {
+          "file_id": 151,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/floatundixf.zig"
+        },
+        {
+          "file_id": 152,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/floatuntihf.zig"
+        },
+        {
+          "file_id": 153,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/floatuntisf.zig"
+        },
+        {
+          "file_id": 154,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/floatuntidf.zig"
+        },
+        {
+          "file_id": 155,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/floatuntitf.zig"
+        },
+        {
+          "file_id": 156,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/floatuntixf.zig"
+        },
+        {
+          "file_id": 157,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/floatuneihf.zig"
+        },
+        {
+          "file_id": 158,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/floatuneisf.zig"
+        },
+        {
+          "file_id": 159,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/floatuneidf.zig"
+        },
+        {
+          "file_id": 160,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/floatuneitf.zig"
+        },
+        {
+          "file_id": 161,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/floatuneixf.zig"
+        },
+        {
+          "file_id": 162,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/cmphf2.zig"
+        },
+        {
+          "file_id": 163,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/cmpsf2.zig"
+        },
+        {
+          "file_id": 164,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/cmpdf2.zig"
+        },
+        {
+          "file_id": 165,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/cmptf2.zig"
+        },
+        {
+          "file_id": 166,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/cmpxf2.zig"
+        },
+        {
+          "file_id": 167,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/unordhf2.zig"
+        },
+        {
+          "file_id": 168,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/unordsf2.zig"
+        },
+        {
+          "file_id": 169,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/unorddf2.zig"
+        },
+        {
+          "file_id": 170,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/unordxf2.zig"
+        },
+        {
+          "file_id": 171,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/unordtf2.zig"
+        },
+        {
+          "file_id": 172,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/gehf2.zig"
+        },
+        {
+          "file_id": 173,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/gesf2.zig"
+        },
+        {
+          "file_id": 174,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/gedf2.zig"
+        },
+        {
+          "file_id": 175,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/gexf2.zig"
+        },
+        {
+          "file_id": 176,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/getf2.zig"
+        },
+        {
+          "file_id": 177,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/addhf3.zig"
+        },
+        {
+          "file_id": 178,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/addf3.zig"
+        },
+        {
+          "file_id": 179,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/addsf3.zig"
+        },
+        {
+          "file_id": 180,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/adddf3.zig"
+        },
+        {
+          "file_id": 181,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/addtf3.zig"
+        },
+        {
+          "file_id": 182,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/addxf3.zig"
+        },
+        {
+          "file_id": 183,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/subhf3.zig"
+        },
+        {
+          "file_id": 184,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/subsf3.zig"
+        },
+        {
+          "file_id": 185,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/subdf3.zig"
+        },
+        {
+          "file_id": 186,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/subtf3.zig"
+        },
+        {
+          "file_id": 187,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/subxf3.zig"
+        },
+        {
+          "file_id": 188,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/mulhf3.zig"
+        },
+        {
+          "file_id": 189,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/mulf3.zig"
+        },
+        {
+          "file_id": 190,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/mulsf3.zig"
+        },
+        {
+          "file_id": 191,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/muldf3.zig"
+        },
+        {
+          "file_id": 192,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/multf3.zig"
+        },
+        {
+          "file_id": 193,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/mulxf3.zig"
+        },
+        {
+          "file_id": 194,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/divhf3.zig"
+        },
+        {
+          "file_id": 195,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/divsf3.zig"
+        },
+        {
+          "file_id": 196,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/divdf3.zig"
+        },
+        {
+          "file_id": 197,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/divxf3.zig"
+        },
+        {
+          "file_id": 198,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/divtf3.zig"
+        },
+        {
+          "file_id": 199,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/neghf2.zig"
+        },
+        {
+          "file_id": 200,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/negsf2.zig"
+        },
+        {
+          "file_id": 201,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/negdf2.zig"
+        },
+        {
+          "file_id": 202,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/negtf2.zig"
+        },
+        {
+          "file_id": 203,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/negxf2.zig"
+        },
+        {
+          "file_id": 204,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/powiXf2.zig"
+        },
+        {
+          "file_id": 205,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/mulhc3.zig"
+        },
+        {
+          "file_id": 206,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/mulc3.zig"
+        },
+        {
+          "file_id": 207,
+          "origin": "sdk",
+          "path": "lib/std/math/isinf.zig"
+        },
+        {
+          "file_id": 208,
+          "origin": "sdk",
+          "path": "lib/std/math/copysign.zig"
+        },
+        {
+          "file_id": 209,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/mulsc3.zig"
+        },
+        {
+          "file_id": 210,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/muldc3.zig"
+        },
+        {
+          "file_id": 211,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/mulxc3.zig"
+        },
+        {
+          "file_id": 212,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/multc3.zig"
+        },
+        {
+          "file_id": 213,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/divhc3.zig"
+        },
+        {
+          "file_id": 214,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/divc3.zig"
+        },
+        {
+          "file_id": 215,
+          "origin": "sdk",
+          "path": "lib/std/math/ilogb.zig"
+        },
+        {
+          "file_id": 216,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/divsc3.zig"
+        },
+        {
+          "file_id": 217,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/divdc3.zig"
+        },
+        {
+          "file_id": 218,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/divxc3.zig"
+        },
+        {
+          "file_id": 219,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/divtc3.zig"
+        },
+        {
+          "file_id": 220,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/fabs.zig"
+        },
+        {
+          "file_id": 221,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/fmax.zig"
+        },
+        {
+          "file_id": 222,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/ceil.zig"
+        },
+        {
+          "file_id": 223,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/cos.zig"
+        },
+        {
+          "file_id": 224,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/trig.zig"
+        },
+        {
+          "file_id": 225,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/exp.zig"
+        },
+        {
+          "file_id": 226,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/floor.zig"
+        },
+        {
+          "file_id": 227,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/fma.zig"
+        },
+        {
+          "file_id": 228,
+          "origin": "sdk",
+          "path": "lib/std/math/signbit.zig"
+        },
+        {
+          "file_id": 229,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/fmin.zig"
+        },
+        {
+          "file_id": 230,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/fmod.zig"
+        },
+        {
+          "file_id": 231,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/log.zig"
+        },
+        {
+          "file_id": 232,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/log10.zig"
+        },
+        {
+          "file_id": 233,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/log2.zig"
+        },
+        {
+          "file_id": 234,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/round.zig"
+        },
+        {
+          "file_id": 235,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/sin.zig"
+        },
+        {
+          "file_id": 236,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/sincos.zig"
+        },
+        {
+          "file_id": 237,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/sqrt.zig"
+        },
+        {
+          "file_id": 238,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/tan.zig"
+        },
+        {
+          "file_id": 239,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/trunc.zig"
+        },
+        {
+          "file_id": 240,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/udivmodti4.zig"
+        },
+        {
+          "file_id": 241,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/memcpy.zig"
+        },
+        {
+          "file_id": 242,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/memset.zig"
+        },
+        {
+          "file_id": 243,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/memmove.zig"
+        },
+        {
+          "file_id": 244,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/memcmp.zig"
+        },
+        {
+          "file_id": 245,
+          "origin": "sdk",
+          "path": "lib/compiler_rt/bcmp.zig"
+        }
+      ]
+    },
+    {
+      "input": "libzigc.a",
+      "input_sha256": "6d80c5e65a9dd862453d3b3046595620ee6fd5f2d2deb253bd21acd635a66b61",
+      "member": "libzigc_zcu.o",
+      "object_sha256": "1cf54298d59a971121810eee37b477b20f3ecf9daf62cfccbf5dadd3c0a72dc3",
+      "object_size": 48840,
+      "compilation_unit": "zigc",
+      "info_report_sha256": "826a7a11918be56f355d85488844f03b88bc0dcda1ff002adbe9211102c98177",
+      "line_report_sha256": "c30e2ffde964231400a59f3c54c448b34242b0a269036feeb5e9b58121504611",
+      "line_table_files": [
+        {
+          "file_id": 1,
+          "origin": "sdk",
+          "path": "lib/std/builtin.zig"
+        },
+        {
+          "file_id": 2,
+          "origin": "generated",
+          "path": "b/7dc92623758de044a4361c7caff9a66c/builtin.zig"
+        },
+        {
+          "file_id": 3,
+          "origin": "sdk",
+          "path": "lib/std/start.zig"
+        },
+        {
+          "file_id": 4,
+          "origin": "sdk",
+          "path": "lib/std/Target.zig"
+        },
+        {
+          "file_id": 5,
+          "origin": "sdk",
+          "path": "lib/c/common.zig"
+        },
+        {
+          "file_id": 6,
+          "origin": "sdk",
+          "path": "lib/std/Target/x86.zig"
+        },
+        {
+          "file_id": 7,
+          "origin": "sdk",
+          "path": "lib/std/mem.zig"
+        },
+        {
+          "file_id": 8,
+          "origin": "sdk",
+          "path": "lib/std/debug.zig"
+        },
+        {
+          "file_id": 9,
+          "origin": "sdk",
+          "path": "lib/std/log.zig"
+        },
+        {
+          "file_id": 10,
+          "origin": "sdk",
+          "path": "lib/std/crypto.zig"
+        },
+        {
+          "file_id": 11,
+          "origin": "sdk",
+          "path": "lib/std/std.zig"
+        },
+        {
+          "file_id": 12,
+          "origin": "sdk",
+          "path": "lib/std/heap.zig"
+        },
+        {
+          "file_id": 13,
+          "origin": "sdk",
+          "path": "lib/std/c.zig"
+        },
+        {
+          "file_id": 14,
+          "origin": "sdk",
+          "path": "lib/std/math.zig"
+        },
+        {
+          "file_id": 15,
+          "origin": "sdk",
+          "path": "lib/c/inttypes.zig"
+        },
+        {
+          "file_id": 16,
+          "origin": "sdk",
+          "path": "lib/c/stdlib.zig"
+        },
+        {
+          "file_id": 17,
+          "origin": "sdk",
+          "path": "lib/c/string.zig"
+        },
+        {
+          "file_id": 18,
+          "origin": "sdk",
+          "path": "lib/std/simd.zig"
+        },
+        {
+          "file_id": 19,
+          "origin": "sdk",
+          "path": "lib/std/ascii.zig"
+        },
+        {
+          "file_id": 20,
+          "origin": "sdk",
+          "path": "lib/c/strings.zig"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "path": "lib/c.zig",
+      "size": 1038,
+      "sha256": "b39fec9941872a61508e463ee0bc35087bf7613b56c95f1193c93c2d1a59ad9c",
+      "role": "explicit-source-entrypoint-not-line-table-observation",
+      "leading_comment_bytes": 217,
+      "leading_comment_sha256": "92bcb7aa4dce1ee1f082e584e54dd1a71f4d4af95ed1eadd5fbef51c604140d7",
+      "leading_comments": "//! This is Zig's multi-target implementation of libc.\n//!\n//! When `builtin.link_libc` is true, we need to export all the functions and\n//! provide a libc API compatible with the target (e.g. musl, wasi-libc, ...).\n\n",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/c/common.zig",
+      "size": 457,
+      "sha256": "7d4484d9e301f122f1a5be474d72df28ace94cd159274c698937f5a616684d0b",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/c/inttypes.zig",
+      "size": 570,
+      "sha256": "246d6bad1f2172393c86f461db87aae744213e7486b1fbe36b4f7931922d2e54",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/c/stdlib.zig",
+      "size": 1067,
+      "sha256": "f077ab46b0e5137d003962a26c058b65eb2e5b36bc37bc1d578e46fd0e1f8e7b",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/c/string.zig",
+      "size": 4479,
+      "sha256": "be4e20409e7eebacd77e982fd10e7cf1dbe888a6b24280f5c11c4fd508d83c02",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/c/strings.zig",
+      "size": 549,
+      "sha256": "a9728029705607997f8302e6cab5e8f7f61b19bc324cf1a76790cf6ad7a93db8",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt.zig",
+      "size": 11083,
+      "sha256": "46a73ce725f26b104c4c167a6baaa6bb4a7e39ceae662e619f8d816e88eddee1",
+      "role": "explicit-source-entrypoint-not-line-table-observation",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/absv.zig",
+      "size": 671,
+      "sha256": "32364c5a658e894772d817b2081c077e5c078c57db862a3d9f1862d1379187e7",
+      "leading_comment_bytes": 74,
+      "leading_comment_sha256": "ff07ce33e61c2dbaebd3b78a382876ee5f7e48864f521ee26f7773ca705ceaec",
+      "leading_comments": "/// absv - absolute oVerflow\n/// * @panic if value can not be represented\n",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/absvdi2.zig",
+      "size": 311,
+      "sha256": "8a4cd398e2cc51c23016b4ad1f3d793fb40e97657656811768689bc9530d3828",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/absvsi2.zig",
+      "size": 311,
+      "sha256": "2b9a3ee90f997b88d755ebd6003105561a149c5b4c725bb3a1fb0c4567676d48",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/absvti2.zig",
+      "size": 314,
+      "sha256": "04e038e6817db4fdf36f65c46ab6c3e0e6ad4a7c36c5ef3d2f9ed2299365b173",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/adddf3.zig",
+      "size": 594,
+      "sha256": "5c4a756bc6d7012b4d771384a909e554dfb37b807949f77db818be4a9d4b2936",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/addf3.zig",
+      "size": 6348,
+      "sha256": "ff2630e662c53db332f4ff33a0a17ab9a80d2d25570c0b9b459e049e639f5fa7",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/addhf3.zig",
+      "size": 319,
+      "sha256": "89c07af85c6e64e885101a3a3dea0b6b93fef48c0939fc746a42d27b0b610573",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/addo.zig",
+      "size": 1752,
+      "sha256": "1aae8f532c0c60e947fba77d1c006f064dd62b738b31e0e8e8a5e2997c66619a",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/addsf3.zig",
+      "size": 594,
+      "sha256": "f69f4e97daf42c935b9d22c98b81057582d9b416f6ed8d67a4bf4c4d4858c04f",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/addtf3.zig",
+      "size": 725,
+      "sha256": "4c6931490fc795a6fa93ba8d4fc8fecc9e6210485ac1bb6c6d19c2df63a4a32c",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/addvsi3.zig",
+      "size": 874,
+      "sha256": "5710f2a80b18aedc148c15a6f98afd603dae5656ae55af612e3bcca40d54b023",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/addxf3.zig",
+      "size": 323,
+      "sha256": "00ccd8d3d7bd6a7b43d03f963f410aebb30c219a2fcd9b4e4baa7e002900e3ac",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/arm.zig",
+      "size": 11159,
+      "sha256": "bbb5b371dbb8dbc5b54cda6fa2293cc2ba2d0d685ae870924694b13d98198fb5",
+      "leading_comment_bytes": 108,
+      "leading_comment_sha256": "c6e3708aac39cdead97bbfcf64562558e79dad2a07a12a8e51f53206f0ed64e1",
+      "leading_comments": "//! Implementation of ARM specific builtins for Run-time ABI\n//! This file includes all ARM-only functions.\n",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/atomics.zig",
+      "size": 26388,
+      "sha256": "406d80814a97425a07ee87ec6f2f820ce4f1bda0979f54c1182ca8ebe100715f",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/aulldiv.zig",
+      "size": 2563,
+      "sha256": "8d457bdac1cef307f0ac4a575580648cbce4b015f3fedb62ddc6872578558f65",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/aullrem.zig",
+      "size": 2618,
+      "sha256": "7a488fa596374cb6e683494ba354179db12e8f32c0785c80f3dd96f5a7c6ebf7",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/bcmp.zig",
+      "size": 874,
+      "sha256": "36978ab36f29618c052daed5c544151f1071477414c683cff53533dcb8362cc7",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/bitreverse.zig",
+      "size": 2762,
+      "sha256": "6f87953125f0947b866e4e357ef123ea9e49a54678a7acf5c11b74e3c612f644",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/bswap.zig",
+      "size": 3260,
+      "sha256": "01d58a6ed89a09b9e9d437f270c1e7c7e60dc4687c3a1cb5e78b54066c9da137",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/ceil.zig",
+      "size": 5139,
+      "sha256": "c0b94f955196844864638c527fa4a30dea10e6a3b66132fe61cab7830b5b3310",
+      "leading_comment_bytes": 228,
+      "leading_comment_sha256": "431617e264124f79828010f1d56f2567d8cf81c4af1e3f6230762519218c4af0",
+      "leading_comments": "//! Ported from musl, which is MIT licensed.\n//! https://git.musl-libc.org/cgit/musl/tree/COPYRIGHT\n//!\n//! https://git.musl-libc.org/cgit/musl/tree/src/math/ceilf.c\n//! https://git.musl-libc.org/cgit/musl/tree/src/math/ceil.c\n\n",
+      "license_indicators": [
+        {
+          "line": 1,
+          "text": "//! Ported from musl, which is MIT licensed.",
+          "within_leading_comments": true
+        },
+        {
+          "line": 2,
+          "text": "//! https://git.musl-libc.org/cgit/musl/tree/COPYRIGHT",
+          "within_leading_comments": true
+        }
+      ]
+    },
+    {
+      "path": "lib/compiler_rt/clear_cache.zig",
+      "size": 7746,
+      "sha256": "b2e171fb72e05c48d1a1dc8f7fcd940db4be5f4c616b02592f2bff5728dbff2f",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/cmp.zig",
+      "size": 1971,
+      "sha256": "f4c5b8446d82fb5d3e7ae923c5ebbcbe4c8ef289b7feb6277a3de3cc3f5bc0e9",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/cmpdf2.zig",
+      "size": 3161,
+      "sha256": "f015febc2a1fc858676b546c98a1b2f9e6eac5038bac18e5c070819ceaed04df",
+      "leading_comment_bytes": 161,
+      "leading_comment_sha256": "094f16c8139413e86da80b43ba7dacd5aa954881777052117bc132f51d6da73c",
+      "leading_comments": "///! The quoted behavior definitions are from\n///! https://gcc.gnu.org/onlinedocs/gcc-12.1.0/gccint/Soft-float-library-routines.html#Soft-float-library-routines\n",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/cmphf2.zig",
+      "size": 2267,
+      "sha256": "db02f8a6bfcfdd3e00b0b1fed696f9cdbc984dfaced2765b956b03396eee3a1f",
+      "leading_comment_bytes": 161,
+      "leading_comment_sha256": "094f16c8139413e86da80b43ba7dacd5aa954881777052117bc132f51d6da73c",
+      "leading_comments": "///! The quoted behavior definitions are from\n///! https://gcc.gnu.org/onlinedocs/gcc-12.1.0/gccint/Soft-float-library-routines.html#Soft-float-library-routines\n",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/cmpsf2.zig",
+      "size": 3161,
+      "sha256": "b31b176202ca43576893d2381cac51d386b503f6f69bf74ccc0b5d41a3e975c1",
+      "leading_comment_bytes": 161,
+      "leading_comment_sha256": "094f16c8139413e86da80b43ba7dacd5aa954881777052117bc132f51d6da73c",
+      "leading_comments": "///! The quoted behavior definitions are from\n///! https://gcc.gnu.org/onlinedocs/gcc-12.1.0/gccint/Soft-float-library-routines.html#Soft-float-library-routines\n",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/cmptf2.zig",
+      "size": 4739,
+      "sha256": "a4410c123c822074ffad44b7b00036667b5ba6d04fbb7ecb9ccdc6c1faf5e3d3",
+      "leading_comment_bytes": 161,
+      "leading_comment_sha256": "094f16c8139413e86da80b43ba7dacd5aa954881777052117bc132f51d6da73c",
+      "leading_comments": "///! The quoted behavior definitions are from\n///! https://gcc.gnu.org/onlinedocs/gcc-12.1.0/gccint/Soft-float-library-routines.html#Soft-float-library-routines\n",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/cmpxf2.zig",
+      "size": 2248,
+      "sha256": "0cafca634bd4cc424f9873132b60cc0b3f05a3cf3e3f7c6648eec1f42ce1d135",
+      "leading_comment_bytes": 161,
+      "leading_comment_sha256": "094f16c8139413e86da80b43ba7dacd5aa954881777052117bc132f51d6da73c",
+      "leading_comments": "///! The quoted behavior definitions are from\n///! https://gcc.gnu.org/onlinedocs/gcc-12.1.0/gccint/Soft-float-library-routines.html#Soft-float-library-routines\n",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/common.zig",
+      "size": 10957,
+      "sha256": "530232c1711ad74a4168bb6797a88fac2d047857dbb85f64a70dad78b0e8c592",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/comparef.zig",
+      "size": 4582,
+      "sha256": "aca6723ba9c93216cbe2d86dba53b2fac77be5333f8299ed8bd737eed45e1f37",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/cos.zig",
+      "size": 5691,
+      "sha256": "d9456a91b407355bd6d271da0e8bbef3bb81ffa7e038194dc9deddb908e14167",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/count0bits.zig",
+      "size": 7394,
+      "sha256": "2560554289e1b21b33ee181b1cc0dd25dd52d5813ce090cf9b8ad61c7ea34725",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/divc3.zig",
+      "size": 2280,
+      "sha256": "89075c09155d1d10bb295c6b394e5b859cfaa66e462a797e3041ae03b75b489a",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/divdc3.zig",
+      "size": 434,
+      "sha256": "33b59b651553ed4ff6cf81f609994478df7f63177847b6157a87cea0c7f35660",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/divdf3.zig",
+      "size": 9366,
+      "sha256": "b0b7ccd2d1ecd49b83c365c9f953f741de195ff6783948b9958b7bcee3ac03dc",
+      "leading_comment_bytes": 145,
+      "leading_comment_sha256": "1f7c203412b0e310e656eb05709455bdaefb41d72431412fa0a72732b41877e0",
+      "leading_comments": "//! Ported from:\n//!\n//! https://github.com/llvm/llvm-project/commit/d674d96bc56c0f377879d01c9d8dfdaaa7859cdb/compiler-rt/lib/builtins/divdf3.c\n\n",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/divhc3.zig",
+      "size": 434,
+      "sha256": "469a9dc6a9ab994d0e5c6e7a01fb959957d6732d21e11eb052a92abfff9fb37e",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/divhf3.zig",
+      "size": 344,
+      "sha256": "c9049e752d491845df4292f2c8c00935e8ea1d9e98bed0bba8bfee0e3e688425",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/divmodei4.zig",
+      "size": 2047,
+      "sha256": "4a96f841583c5ab480f959eea47c3bab7113ba738d5abf53a1a1711bb1e72457",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/divsc3.zig",
+      "size": 434,
+      "sha256": "1998f471a7f949bab53c278109cdf57125a869be42a6da1721851e89c206396e",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/divsf3.zig",
+      "size": 8574,
+      "sha256": "b7f48d5c91774014a9849cfe0f277bede977ddd6c193a3255a3ba130132221b8",
+      "leading_comment_bytes": 145,
+      "leading_comment_sha256": "97896f0117ab37634d7a75227f830274ec065d07ce7a36feeaf620c784da9a98",
+      "leading_comments": "//! Ported from:\n//!\n//! https://github.com/llvm/llvm-project/commit/d674d96bc56c0f377879d01c9d8dfdaaa7859cdb/compiler-rt/lib/builtins/divsf3.c\n\n",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/divtc3.zig",
+      "size": 590,
+      "sha256": "e1c2104e6a97933b5624acec795865671311ec00f255b3af2d9c78e1a88a7d34",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/divtf3.zig",
+      "size": 9925,
+      "sha256": "f156089d69c7e49fda0478feb131ab00e461ab11037aecffe9b8a6f77ed84066",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/divti3.zig",
+      "size": 1113,
+      "sha256": "c7fb99513127df63218591ec54f8dffccfd0456cb39c04f0c08d5e5058b414be",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/divxc3.zig",
+      "size": 434,
+      "sha256": "835477b93ac08c78c3360c2322ff307df5abb36e4fea162f338806e89f20e7e7",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/divxf3.zig",
+      "size": 8669,
+      "sha256": "af24bc90aa4be6286d87a584e8f4b30db920bca06136530bdef671dd05e78638",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/exp.zig",
+      "size": 11677,
+      "sha256": "cfdd306d366211e654ac9395092c8fa2f32773aef0609fbb877705f129ee502a",
+      "leading_comment_bytes": 239,
+      "leading_comment_sha256": "8ffc6a7b847cbbc1daf8142bb2e3dd02a9fda593797f34fa33e902a7605336af",
+      "leading_comments": "// Ported from musl, which is licensed under the MIT license:\n// https://git.musl-libc.org/cgit/musl/tree/COPYRIGHT\n//\n// https://git.musl-libc.org/cgit/musl/tree/src/math/expf.c\n// https://git.musl-libc.org/cgit/musl/tree/src/math/exp.c\n\n",
+      "license_indicators": [
+        {
+          "line": 1,
+          "text": "// Ported from musl, which is licensed under the MIT license:",
+          "within_leading_comments": true
+        },
+        {
+          "line": 2,
+          "text": "// https://git.musl-libc.org/cgit/musl/tree/COPYRIGHT",
+          "within_leading_comments": true
+        }
+      ]
+    },
+    {
+      "path": "lib/compiler_rt/exp2.zig",
+      "size": 20924,
+      "sha256": "97ec14c5f51690fcad9c8c2d82cee3a8ea1cdd682689a6340dd5438ea973dedc",
+      "leading_comment_bytes": 241,
+      "leading_comment_sha256": "ba31fb59051991117d8ea0389bb9be4f8a5869ec613f7e7897f1af95cd26d02d",
+      "leading_comments": "// Ported from musl, which is licensed under the MIT license:\n// https://git.musl-libc.org/cgit/musl/tree/COPYRIGHT\n//\n// https://git.musl-libc.org/cgit/musl/tree/src/math/exp2f.c\n// https://git.musl-libc.org/cgit/musl/tree/src/math/exp2.c\n\n",
+      "license_indicators": [
+        {
+          "line": 1,
+          "text": "// Ported from musl, which is licensed under the MIT license:",
+          "within_leading_comments": true
+        },
+        {
+          "line": 2,
+          "text": "// https://git.musl-libc.org/cgit/musl/tree/COPYRIGHT",
+          "within_leading_comments": true
+        }
+      ]
+    },
+    {
+      "path": "lib/compiler_rt/extenddftf2.zig",
+      "size": 781,
+      "sha256": "343c24a69419e37f1a3090275a951bbd9a7a0f1293a3544e61d88b2ee5e74175",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/extenddfxf2.zig",
+      "size": 364,
+      "sha256": "11942cd17763b5f4147bf258a1d9d2df7b501075ef3c72e1097486982d9a5c5d",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/extendf.zig",
+      "size": 6009,
+      "sha256": "abccca9903310df50fa05d6c6a1657529a3a3ce4eb5a21dfb2f5caaad81af5d7",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/extendhfdf2.zig",
+      "size": 373,
+      "sha256": "75e7b9b08ea0ed6849dbeb2f036ebd4baf23d9f63b351fcf56215245c47a70a4",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/extendhfsf2.zig",
+      "size": 920,
+      "sha256": "bc0ef214de8057519b243c4b0bf28fe1d05375ca44906ad82c472391d0f8cabf",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/extendhftf2.zig",
+      "size": 376,
+      "sha256": "32072c482af747e8cf7262ffc4bd46c3a1794af519c6f0ccac9fdc0b1c105200",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/extendhfxf2.zig",
+      "size": 373,
+      "sha256": "a011034f6d8f8b7069f9ecd5549a313117a33f8d1c8da3c83dbc9781bf1676d0",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/extendsfdf2.zig",
+      "size": 644,
+      "sha256": "93d386a5d78d1f875d9def2ea50880f1288962dd2a175b70bae7ef2b5e3ac20e",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/extendsftf2.zig",
+      "size": 781,
+      "sha256": "bb977579fa52c323a9ceb76e2162500654f812046a3ab8316a65b6bbf2424800",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/extendsfxf2.zig",
+      "size": 360,
+      "sha256": "73d8d97dce5a42ae8262f108864fdb2090f24511d937ef5c1c1ae6a9b51b5058",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/extendxftf2.zig",
+      "size": 1604,
+      "sha256": "b21ae417f989f3d4974329d2bec83695df4b8b61f7f7f92e22ad7fa82b9f9e4e",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/fabs.zig",
+      "size": 1913,
+      "sha256": "6eeb1df089342a992222488a52705aa2c39ad397dcd54356bf9d7de345166a47",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/fixdfdi.zig",
+      "size": 701,
+      "sha256": "2a8ce2ec1fbc916042269cfca9e46ea5887523ac4c734ae11aecb2bac254e07b",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/fixdfei.zig",
+      "size": 564,
+      "sha256": "85245b1cf9c93d72e4f3991c01751910ef2df766944e21db48c11b0d588e3ce7",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/fixdfsi.zig",
+      "size": 616,
+      "sha256": "90b0b835bbd02fe0c7cde072a06069e45134c3ee8302375f0de819c1ae99189e",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/fixdfti.zig",
+      "size": 713,
+      "sha256": "00d58fba931cb55356cd712eec852a5f2f7a554db0c6f65880a4672cda3c974d",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/fixhfdi.zig",
+      "size": 341,
+      "sha256": "01135bf9d9eb1924861b639762aba1e841891a5ffdd92cccda6faaa05446c839",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/fixhfei.zig",
+      "size": 564,
+      "sha256": "dbfdad4da7bf1bfe0a640e8032fd770f70cb48f5e7b6bd988ceeec0a19d2afb3",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/fixhfsi.zig",
+      "size": 341,
+      "sha256": "b8cc70de74a121ed093b6e5484a354be339af00a7f2040daba4ffa52e769b49e",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/fixhfti.zig",
+      "size": 713,
+      "sha256": "8ae56337d0e854df9cc00077cb6770b008850a3f7fa4f65db6da1d0e3b758257",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/fixsfdi.zig",
+      "size": 701,
+      "sha256": "1bc501b105b3643a781fb8be9e5f0f20820594fa031eeda53759c071fc027a39",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/fixsfei.zig",
+      "size": 564,
+      "sha256": "21ba0661f011dddda36a211923caa2a2481676cfb00aff3660fed89bb106dfcc",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/fixsfsi.zig",
+      "size": 616,
+      "sha256": "471123a675fee9aeae6c60d2feea5789129d8c6f9d19d44d554bc612868159d9",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/fixsfti.zig",
+      "size": 713,
+      "sha256": "af62b47f2b9e81e4bb510c0e42b9675a9d6ba315cc585ea542bc09bdf76ca90d",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/fixtfdi.zig",
+      "size": 736,
+      "sha256": "bee56736387be187b2e022205504c9ecdb71d6b669238497c42df6f977278313",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/fixtfei.zig",
+      "size": 565,
+      "sha256": "c992e5caef616675303a0d8b0d41320209754d8c572a587d871d46aafe8be255",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/fixtfsi.zig",
+      "size": 736,
+      "sha256": "44536accc65628f628b1531e88d3fcb91a82eac8b09ad7dfe5c38ddeba1b835e",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/fixtfti.zig",
+      "size": 867,
+      "sha256": "bf2e0e0afc5c955fee4072bca3df5da87fc1a21baf1f87bab0062f407e25ad60",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/fixunsdfdi.zig",
+      "size": 713,
+      "sha256": "98d41ac8de2f64e126fe9f07a8a457eb03f243b1aed7bbe961ba12c087647ad4",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/fixunsdfei.zig",
+      "size": 575,
+      "sha256": "f1cc74323685faaa3acdc14b3502c0752b89e99ee2a46a5b3fc3ec8282f25014",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/fixunsdfsi.zig",
+      "size": 628,
+      "sha256": "30f0ce883bfaeebfaf1e9d1493378eebb5e63010bd872b47cef23208a1dc9a0c",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/fixunsdfti.zig",
+      "size": 731,
+      "sha256": "9e401127d6478dbac044164da7fa2a889020931de9501ad192af13b1e5927fff",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/fixunshfdi.zig",
+      "size": 350,
+      "sha256": "6c10d75203d0a4c57628b08dd6da41e5e93d0991f3a51946c8208621efcfd205",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/fixunshfei.zig",
+      "size": 575,
+      "sha256": "299f9aa1f5931bc906887133cd017500c490d234c3188fcb75d83a0007889d2d",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/fixunshfsi.zig",
+      "size": 350,
+      "sha256": "ecd6315e4742b12c247af6dc3a4897e5655db549a6a080f5122448fc985906f4",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/fixunshfti.zig",
+      "size": 731,
+      "sha256": "7d4f676b7dbbf5681bb9dea3825398486e28bffb5f4443252f2031930b61dff2",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/fixunssfdi.zig",
+      "size": 713,
+      "sha256": "6355349a254e8496d5fe666e72f97ab2f0ff8d5c819225087ee49b7e6b7ca2c4",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/fixunssfei.zig",
+      "size": 575,
+      "sha256": "417c9df7118e1c47e518f3eebbaa838e5ea74eff33e9603b265cc6d0929ab0b0",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/fixunssfsi.zig",
+      "size": 628,
+      "sha256": "711bec91bf036234f45e20db7dd1b86b34aa3edb4048b09927c33ef91ed54c50",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/fixunssfti.zig",
+      "size": 731,
+      "sha256": "3b64b9d29c9fd50dc82b45fd271e47b7cf6171f64131593865e184955716363a",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/fixunstfdi.zig",
+      "size": 754,
+      "sha256": "064c430332c8feded406cfe035c69b6882a14bedbc6bfd7a80a2447554991f69",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/fixunstfei.zig",
+      "size": 576,
+      "sha256": "64a0971aa789d32287b2d2660b380f22e06dd0210d4e4850a68cb884846f5c13",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/fixunstfsi.zig",
+      "size": 754,
+      "sha256": "0f36cbd1513f17fabc584feedc4c4cc9e4394624cd39c72664b52c192d77198b",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/fixunstfti.zig",
+      "size": 891,
+      "sha256": "5e10266e9e41075ef741f7be910005b2615fe0dba6959efc2064140aee5df380",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/fixunsxfdi.zig",
+      "size": 350,
+      "sha256": "d9113de5ff93e7f9ecc4a5c0c504d4bd9473e2bd70da6fefb244145a216ac1d7",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/fixunsxfei.zig",
+      "size": 575,
+      "sha256": "957cc0373cdabc73b711a9caef7271b0d0f8e44f1545bc0fb3d2c59d1d1ba789",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/fixunsxfsi.zig",
+      "size": 350,
+      "sha256": "424f90f8c9aa07868552e5a90879b8c7c500ec0940b38fafa23e4cc14dd46e31",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/fixunsxfti.zig",
+      "size": 731,
+      "sha256": "f9ecdfc4fb0c891b4a916207728d0d318d2693c6545c0576ccc83389f26832bb",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/fixxfdi.zig",
+      "size": 341,
+      "sha256": "339eb7301f66856822bed3fc156e1baf4b1df13d5e7aa5a800e01f2812e064d5",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/fixxfei.zig",
+      "size": 564,
+      "sha256": "f6ec5742844e5161055cc070bd6d15d02bc0f959baa468dd2c66695f143a2ced",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/fixxfsi.zig",
+      "size": 341,
+      "sha256": "260d53924f0eb3b1d5b7fc50a03013a5127683077584857e2d7df89a9ad21879",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/fixxfti.zig",
+      "size": 713,
+      "sha256": "60b274ab0d823faf242c1a2384a13832a98c4b7c29f02c6a342b76d37c5614c8",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/float_from_int.zig",
+      "size": 4111,
+      "sha256": "68f69a7c11740b41eeae71d40f7715dec023ab6720b7e3e21baf3e17fc77b047",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/floatdidf.zig",
+      "size": 704,
+      "sha256": "022cba8823766ce2f5e93f863887302c4aa6838d47eabcb07c01b3113b8caf7e",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/floatdihf.zig",
+      "size": 347,
+      "sha256": "265c380f5131edd92ea7e088fd5f129f2f393f3c919021ebd6350dbd2c6b9ab8",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/floatdisf.zig",
+      "size": 704,
+      "sha256": "8d7024e1351a2e6c160a0786a2c9169a9a8614e5508e6212ea246f157b84f0fe",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/floatditf.zig",
+      "size": 748,
+      "sha256": "9cba7b4a97f9c676587ee55065f11baa66ce3cd8be69f8dd01bc4d5ec6497119",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/floatdixf.zig",
+      "size": 347,
+      "sha256": "2ae364193e8cb1bcdb5696ab62b85868052652c7a56d47b966d26f2a9868f189",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/floateidf.zig",
+      "size": 569,
+      "sha256": "197e1eeba944545778c07e05d777ad4cc9c0e67e5a2eccfc5423be80959ee553",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/floateihf.zig",
+      "size": 569,
+      "sha256": "5da83a5da9817c424ced5be4a241f2d365ded527e2c929cd9a8aa51213e17cbd",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/floateisf.zig",
+      "size": 569,
+      "sha256": "b63de8d4a28c486a168ec460c0186a60b6e8e47442c63576e5fc6f02addc71e3",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/floateitf.zig",
+      "size": 571,
+      "sha256": "7ab450726ba238929576e92e34ac1f0fa42c09f041062abbb2645cfd5c2688f9",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/floateixf.zig",
+      "size": 569,
+      "sha256": "01c178cafece0110839b3dc80ae89d7527d6cecfeafe2543d8a95e911455fe2c",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/floatsidf.zig",
+      "size": 619,
+      "sha256": "abfb98f9ca44cf479acd5c095a019349da5d08e90e51ab8eb29a3e6fb433d353",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/floatsihf.zig",
+      "size": 347,
+      "sha256": "314e6103bdfce66f9492440282a663d5bcdd93b89b081674d63afe197da8b184",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/floatsisf.zig",
+      "size": 619,
+      "sha256": "a575739b998acae63d9fbe1c530b5fb3c703a10962432886a01e8d8bff5d3a90",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/floatsitf.zig",
+      "size": 748,
+      "sha256": "56f9931c13390bad4bfee2b0982307f30579f744f3191783cef0e9179cfae32f",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/floatsixf.zig",
+      "size": 347,
+      "sha256": "a97fc655b4138f9c1254674cd9d18b125c154ae88baa6389005019fbc04301c3",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/floattidf.zig",
+      "size": 712,
+      "sha256": "9862a6f6093dc43734da88bd70b8951a6e395ecc8d83805dc11ad60e8e46c142",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/floattihf.zig",
+      "size": 712,
+      "sha256": "14a40890a62bb13ed51b250fa4ee2d26a1108819a96fef12baa884287c698dc3",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/floattisf.zig",
+      "size": 712,
+      "sha256": "9dd280d080e94726424d2c0687aa0963ea0118887934d8b5a0a2e72e7798eab3",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/floattitf.zig",
+      "size": 872,
+      "sha256": "392eaa3d9b3304e75f7df6172f9b36509d9cfbeedb5c9ffe6cc436f398748bdd",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/floattixf.zig",
+      "size": 712,
+      "sha256": "029b7f869555b831d8672d4c1b84a60a789ad1a0ace0ecd3113e6579f6c33d8e",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/floatundidf.zig",
+      "size": 713,
+      "sha256": "e1145526c20cbdf36df325641fed6b88e89a553715df1c74497ae2f08fe1353f",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/floatundihf.zig",
+      "size": 353,
+      "sha256": "63e47fdb5f531b4b1d4c0027a8bdb5fa2360e7eca261c778a87d19d9822f392b",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/floatundisf.zig",
+      "size": 713,
+      "sha256": "72fd8fb81b7a000d0f36a7cb6375723cc357a036cf24ab874462d1915010cbda",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/floatunditf.zig",
+      "size": 761,
+      "sha256": "307f0b11ef4ac9a4e15bae8398423b997630434ea45228c637bced0be01a1f82",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/floatundixf.zig",
+      "size": 353,
+      "sha256": "fce7350236cb9b3c7750db78084347b1b88d336f8680862d12353bf6eac35d3f",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/floatuneidf.zig",
+      "size": 577,
+      "sha256": "c8a63bf4925b7bbcd8d6411cb10970fe44d821069bb3a91b776de58fb4707985",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/floatuneihf.zig",
+      "size": 577,
+      "sha256": "3c1ff1842fb959db3f30b65e1a2636ad4539e5c3bd6a3a3df9e6ac194a4c5497",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/floatuneisf.zig",
+      "size": 577,
+      "sha256": "c10f7b3867025c2697b69df37eda12925137e9be16477095f1888fdad02c3a64",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/floatuneitf.zig",
+      "size": 579,
+      "sha256": "62ab13e15a672a85f0d657a228638f5099d480dd3f09c1732ed7647bc0faab93",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/floatuneixf.zig",
+      "size": 577,
+      "sha256": "a8cc6142011bcd2348d997f18b2e3f22c06dafa9d2ab0001a411cfb413b52bdc",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/floatunsidf.zig",
+      "size": 628,
+      "sha256": "ef8a1898d04f49aff17085c42528b244fb47c878d8f654e7f5597f158ba366e9",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/floatunsihf.zig",
+      "size": 357,
+      "sha256": "da0c5547b5dc7becea56f254e96f4486716ae07b8c6480655a5f367f142bf431",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/floatunsisf.zig",
+      "size": 628,
+      "sha256": "c312d1bf73a98a5110d23701441c4c3e64e79dd23292b85148e7827f5eb772ab",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/floatunsitf.zig",
+      "size": 761,
+      "sha256": "1a5ae7d38d92b450c5e70cbff234b22f8ca0874f90dde1bbc1581745d7b94ce5",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/floatunsixf.zig",
+      "size": 353,
+      "sha256": "4ed85787490274b4cd2f132bd242a82d4952472774f04af2bb1c54685a81905d",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/floatuntidf.zig",
+      "size": 724,
+      "sha256": "5d949d7f67f7415780cfeedfe61dc4b44befaaa5cb4a65fcbcc05c633044b46f",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/floatuntihf.zig",
+      "size": 724,
+      "sha256": "aa3a5548c001ef5449280edf0c44e55e02a4c2fee8731a77d0d46eb21398914c",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/floatuntisf.zig",
+      "size": 724,
+      "sha256": "51629243b8810df18d19a4a7ad2c338fb1a57a113f225a653ce0f2d103f613da",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/floatuntitf.zig",
+      "size": 888,
+      "sha256": "9e93e2e9cd2a3a30a531b8d61a102e8dcb3ca2fb2318d4f952581d4711c8765c",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/floatuntixf.zig",
+      "size": 724,
+      "sha256": "33e9a70c693512105a283bc02b8eb5a731e8da80f9caf3db1b41cb6b800ea9d3",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/floor.zig",
+      "size": 6290,
+      "sha256": "7aa25d35a1d93393fe55b49c9db7420dfaafcc60d8e63078d6ca846285e3678e",
+      "leading_comment_bytes": 248,
+      "leading_comment_sha256": "9599b2b8bfe88149ae7a1814cb8ab3b17682d1a8be3b8d321e5558871482e554",
+      "leading_comments": "//! Ported from musl, which is licensed under the MIT license:\n//! https://git.musl-libc.org/cgit/musl/tree/COPYRIGHT\n//!\n//! https://git.musl-libc.org/cgit/musl/tree/src/math/floorf.c\n//! https://git.musl-libc.org/cgit/musl/tree/src/math/floor.c\n\n",
+      "license_indicators": [
+        {
+          "line": 1,
+          "text": "//! Ported from musl, which is licensed under the MIT license:",
+          "within_leading_comments": true
+        },
+        {
+          "line": 2,
+          "text": "//! https://git.musl-libc.org/cgit/musl/tree/COPYRIGHT",
+          "within_leading_comments": true
+        }
+      ]
+    },
+    {
+      "path": "lib/compiler_rt/fma.zig",
+      "size": 11575,
+      "sha256": "f8d4321338ca607be9a80d6e11593f0f56bab4618c6efcbb27e1da824e700a39",
+      "leading_comment_bytes": 287,
+      "leading_comment_sha256": "9077e7a20993a3e7ac4d2284fd38d67f657280e95ea563c00cef72552a49bb8b",
+      "leading_comments": "//! Ported from musl, which is MIT licensed:\n//! https://git.musl-libc.org/cgit/musl/tree/COPYRIGHT\n//!\n//! https://git.musl-libc.org/cgit/musl/tree/src/math/fmal.c\n//! https://git.musl-libc.org/cgit/musl/tree/src/math/fmaf.c\n//! https://git.musl-libc.org/cgit/musl/tree/src/math/fma.c\n\n",
+      "license_indicators": [
+        {
+          "line": 1,
+          "text": "//! Ported from musl, which is MIT licensed:",
+          "within_leading_comments": true
+        },
+        {
+          "line": 2,
+          "text": "//! https://git.musl-libc.org/cgit/musl/tree/COPYRIGHT",
+          "within_leading_comments": true
+        }
+      ]
+    },
+    {
+      "path": "lib/compiler_rt/fmax.zig",
+      "size": 2867,
+      "sha256": "80804433c3edc85e394d55fbe037ce5fdee4540d79b2847e3293620587b4ad3d",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/fmin.zig",
+      "size": 2869,
+      "sha256": "eb0b3f4abd23deb11f27f38111acf281f2c52179acc12066451c4084077695fc",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/fmod.zig",
+      "size": 12218,
+      "sha256": "176aaad4202cc1938b8147b46dfb3475f878fe1c74b6bf2924b1772bb851a4a3",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/gedf2.zig",
+      "size": 1567,
+      "sha256": "6e894212203e9983f69bf2c38178e20fe67613309b81e94493ef2d17cc692090",
+      "leading_comment_bytes": 161,
+      "leading_comment_sha256": "094f16c8139413e86da80b43ba7dacd5aa954881777052117bc132f51d6da73c",
+      "leading_comments": "///! The quoted behavior definitions are from\n///! https://gcc.gnu.org/onlinedocs/gcc-12.1.0/gccint/Soft-float-library-routines.html#Soft-float-library-routines\n",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/gehf2.zig",
+      "size": 960,
+      "sha256": "ce31442790acf50eb8c0ffa00cf3561361ee9c02aed9a903c65af7288ee5499d",
+      "leading_comment_bytes": 161,
+      "leading_comment_sha256": "094f16c8139413e86da80b43ba7dacd5aa954881777052117bc132f51d6da73c",
+      "leading_comments": "///! The quoted behavior definitions are from\n///! https://gcc.gnu.org/onlinedocs/gcc-12.1.0/gccint/Soft-float-library-routines.html#Soft-float-library-routines\n",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/gesf2.zig",
+      "size": 1567,
+      "sha256": "a997a88b6afe173f24267c0db49064984d4e76fbbcd67d8f1e915c646c3d1e68",
+      "leading_comment_bytes": 161,
+      "leading_comment_sha256": "094f16c8139413e86da80b43ba7dacd5aa954881777052117bc132f51d6da73c",
+      "leading_comments": "///! The quoted behavior definitions are from\n///! https://gcc.gnu.org/onlinedocs/gcc-12.1.0/gccint/Soft-float-library-routines.html#Soft-float-library-routines\n",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/getf2.zig",
+      "size": 1375,
+      "sha256": "44c8e974ef9fea0bc76f7433c89a2a82bc157cfcd439fd00bac25ec826d6506a",
+      "leading_comment_bytes": 161,
+      "leading_comment_sha256": "094f16c8139413e86da80b43ba7dacd5aa954881777052117bc132f51d6da73c",
+      "leading_comments": "///! The quoted behavior definitions are from\n///! https://gcc.gnu.org/onlinedocs/gcc-12.1.0/gccint/Soft-float-library-routines.html#Soft-float-library-routines\n",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/gexf2.zig",
+      "size": 531,
+      "sha256": "65c606b2c22678e74b4fd9a9ed3deb9fd592de86ec1e588a5a9f9a45f6d99db2",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/int.zig",
+      "size": 27737,
+      "sha256": "f585dc04dc09e239b714df0b33d6cc700e97ce69ab8d91e33cd12304a4339885",
+      "leading_comment_bytes": 53,
+      "leading_comment_sha256": "bd0df320974138c4854fd0818d5245fd0af83e948b56765942e6c95521719299",
+      "leading_comments": "//! Builtin functions that operate on integer types\n\n",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/int_from_float.zig",
+      "size": 4079,
+      "sha256": "e9a5538a61fc6d11af2875b12679740713f69b95ba0c1ab5116e81a2475a50d2",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/log.zig",
+      "size": 8304,
+      "sha256": "57f6bdac99d1507aa7157da17ae935d8e65cf708d62ba463f1096ccdb955d1e5",
+      "leading_comment_bytes": 242,
+      "leading_comment_sha256": "a3df508f6c9ca384858ccf475cefbed89efc31c9cc2d68f89f0398fca128951f",
+      "leading_comments": "//! Ported from musl, which is licensed under the MIT license:\n//! https://git.musl-libc.org/cgit/musl/tree/COPYRIGHT\n//!\n//! https://git.musl-libc.org/cgit/musl/tree/src/math/lnf.c\n//! https://git.musl-libc.org/cgit/musl/tree/src/math/ln.c\n\n",
+      "license_indicators": [
+        {
+          "line": 1,
+          "text": "//! Ported from musl, which is licensed under the MIT license:",
+          "within_leading_comments": true
+        },
+        {
+          "line": 2,
+          "text": "//! https://git.musl-libc.org/cgit/musl/tree/COPYRIGHT",
+          "within_leading_comments": true
+        }
+      ]
+    },
+    {
+      "path": "lib/compiler_rt/log10.zig",
+      "size": 9499,
+      "sha256": "2df80603e051dd6d37dbbf9f35a2f827cec8930b5a6e3bb4de10954310203e17",
+      "leading_comment_bytes": 248,
+      "leading_comment_sha256": "cab72da0ea23d9b10b23e113aa502bd04dfc74560603c94701386a0c1f454a9d",
+      "leading_comments": "//! Ported from musl, which is licensed under the MIT license:\n//! https://git.musl-libc.org/cgit/musl/tree/COPYRIGHT\n//!\n//! https://git.musl-libc.org/cgit/musl/tree/src/math/log10f.c\n//! https://git.musl-libc.org/cgit/musl/tree/src/math/log10.c\n\n",
+      "license_indicators": [
+        {
+          "line": 1,
+          "text": "//! Ported from musl, which is licensed under the MIT license:",
+          "within_leading_comments": true
+        },
+        {
+          "line": 2,
+          "text": "//! https://git.musl-libc.org/cgit/musl/tree/COPYRIGHT",
+          "within_leading_comments": true
+        }
+      ]
+    },
+    {
+      "path": "lib/compiler_rt/log2.zig",
+      "size": 8927,
+      "sha256": "f340b3537f055c5eb0d5049706eb8a9da379ad0a75cde3ccd63e2d7611c6b83e",
+      "leading_comment_bytes": 246,
+      "leading_comment_sha256": "54f148f3cc708094512c454ee0fc149a1da5b3cc84bdb9a854a684b7a860d6fd",
+      "leading_comments": "//! Ported from musl, which is licensed under the MIT license:\n//! https://git.musl-libc.org/cgit/musl/tree/COPYRIGHT\n//!\n//! https://git.musl-libc.org/cgit/musl/tree/src/math/log2f.c\n//! https://git.musl-libc.org/cgit/musl/tree/src/math/log2.c\n\n",
+      "license_indicators": [
+        {
+          "line": 1,
+          "text": "//! Ported from musl, which is licensed under the MIT license:",
+          "within_leading_comments": true
+        },
+        {
+          "line": 2,
+          "text": "//! https://git.musl-libc.org/cgit/musl/tree/COPYRIGHT",
+          "within_leading_comments": true
+        }
+      ]
+    },
+    {
+      "path": "lib/compiler_rt/memcmp.zig",
+      "size": 931,
+      "sha256": "00f50c971cde8b864dec844cc95f37289313936388e70bb0310298f78f2668e4",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/memcpy.zig",
+      "size": 6452,
+      "sha256": "2414b6dbd73ca1d7ac0b1242003025c9a9883d512740d80ecd7615b9d8ea3f14",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/memmove.zig",
+      "size": 7246,
+      "sha256": "3f376198b9e81fca037f7bf241399180b25a671707dae6510cc7c2605f83b9f2",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/memset.zig",
+      "size": 876,
+      "sha256": "7078e14052effa62ae0fd85ca8808cea327fa294a10eb0f7fd644c0e954ade38",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/modti3.zig",
+      "size": 1380,
+      "sha256": "cfb039667be4642a66b3ce469f29576f1315caa6107ef8c2ddd07a1da3127e9e",
+      "leading_comment_bytes": 143,
+      "leading_comment_sha256": "53311551e595ab672b6d277064b565e19d5d80b6d395b10c8a221cbcfe5b667d",
+      "leading_comments": "//! Ported from:\n//!\n//! https://github.com/llvm/llvm-project/blob/2ffb1b0413efa9a24eb3c49e710e36f92e2cb50b/compiler-rt/lib/builtins/modti3.c\n\n",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/mulXi3.zig",
+      "size": 3064,
+      "sha256": "6716e49b8e38613080ef985f1e0fe675fb0f16a356cddd61b6a3cea407c37c5b",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/mulc3.zig",
+      "size": 2275,
+      "sha256": "4a57409d41f25bfa917ab67fe268e513cfb0194f089f97986f624584663b0cef",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/muldc3.zig",
+      "size": 425,
+      "sha256": "a20273097b56abb6c42ea5cf0da29aeea90bd5fda2baaff6ecf6c5c834754d79",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/muldf3.zig",
+      "size": 598,
+      "sha256": "d996a8810d4b2a60aa413287283ddfccff5cc3301e0d4a5d8bc527ab487bb22d",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/mulf3.zig",
+      "size": 8398,
+      "sha256": "152c5370d5e54093c3c92dcfc2b456cec66d5de0cc6f15870d588bbf01d3d1cc",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/mulhc3.zig",
+      "size": 425,
+      "sha256": "e39c3a45912273221a7a4a71cb23078e20a54e5b3ca67687fd4388a0a64c9957",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/mulhf3.zig",
+      "size": 323,
+      "sha256": "b6ffeb4ddad281d73e7e95939fb272f08486d159d7a2c5c6c9582c6bcc98a477",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/mulo.zig",
+      "size": 2643,
+      "sha256": "b0855cdae5ac3fb6334f22554e3ce14b4b06b174df95cc5175d361d0ed40e539",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/mulsc3.zig",
+      "size": 425,
+      "sha256": "b54819c244b8ceb9b660a2c877d4e1512c0024b1a9d2181014092912a17c08ba",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/mulsf3.zig",
+      "size": 598,
+      "sha256": "09d1a39905c22b9747e86e29a328697ec869dfdbea0243969f3176c9d6ec3798",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/multc3.zig",
+      "size": 581,
+      "sha256": "2d4293697df0dda6e71f88c5e13fd9b439732422e453ce3c5c437632320d5928",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/multf3.zig",
+      "size": 737,
+      "sha256": "9d1f07f1ffd3d395220a79bd10409c18b6f1bb504d7436f9e0e56dab5558016e",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/mulvsi3.zig",
+      "size": 902,
+      "sha256": "63ab2e07496987e4d97e7e9bf53b3f9c6fbbba5448be1e323fc9a60936eb6bb3",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/mulxc3.zig",
+      "size": 425,
+      "sha256": "203a101f66a0a2640b936078975489f12191b0c8c38702166d0b0708841311e5",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/mulxf3.zig",
+      "size": 323,
+      "sha256": "bf3456557dd933a99b5027a357497d1907c27c6c13876418decfd17748d79aba",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/negXi2.zig",
+      "size": 1171,
+      "sha256": "0d03f772c07d546fe5ea6e992dd1df081624c5eb64b30dcac4820a2b16f49c1f",
+      "leading_comment_bytes": 292,
+      "leading_comment_sha256": "a96d97cd6b679598f38b0d214f11ff1f145e1308cd8c00c426f4025811bb77ce",
+      "leading_comments": "//! neg - negate (the number)\n//! - negXi2 for unoptimized little and big endian\n//! sfffffff = 2^31-1\n//! two's complement inverting bits and add 1 would result in -INT_MIN == 0\n//! => -INT_MIN = -2^31 forbidden\n//! * size optimized builds\n//! * machines that dont support carry operations\n\n",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/negdf2.zig",
+      "size": 530,
+      "sha256": "e37ab61f46ee6c6da8bf06d14e1b7bc68e329043beada584f4c0a4037e768682",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/neghf2.zig",
+      "size": 265,
+      "sha256": "0d82a223c4f8862cd5a0c481ad15bfaaaca97092f5c3b91e931264f018f44cf5",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/negsf2.zig",
+      "size": 530,
+      "sha256": "07b1ff17c7b0391a125e2607d1d266f22f60eb05e70ba6da510aa13eae324588",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/negtf2.zig",
+      "size": 409,
+      "sha256": "979b9f4c452feaa6ab3c79095123d2808a22a144bf59b73dc0250e7e6fd43d4c",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/negv.zig",
+      "size": 1303,
+      "sha256": "87624315a6065634e4d7bef4e8b432b4d94387b340fb5aad97d09f157e52bf16",
+      "leading_comment_bytes": 120,
+      "leading_comment_sha256": "2f72a4903c836f05f32d99770fa280ba824c16290ad967658ddc15ca6e7b00eb",
+      "leading_comments": "//! negv - negate oVerflow\n//! * @panic, if result can not be represented\n//! - negvXi4_generic for unoptimized version\n",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/negxf2.zig",
+      "size": 265,
+      "sha256": "cc09b19c339ee71a9fb2b1522e9595a85c73be9d2bb8f497d979df7e41a978ba",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/os_version_check.zig",
+      "size": 2988,
+      "sha256": "6b74df48e568906474e51a7da47575a620e19402fe6f45cf3e34822b6126d145",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/parity.zig",
+      "size": 1385,
+      "sha256": "a87ff798b17d81fe2897d1234028098a515128e4bf221371423017664a0d6752",
+      "leading_comment_bytes": 110,
+      "leading_comment_sha256": "084467e27e5a2e077d97edc4df7fe82d3d033ba88766f608fb363147bee473a2",
+      "leading_comments": "//! parity - if number of bits set is even => 0, else => 1\n//! - pariytXi2_generic for big and little endian\n\n",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/popcount.zig",
+      "size": 1916,
+      "sha256": "865096ed33eea80b5aa0f38266fc53ae2d634119a19406883be6e45405954f3c",
+      "leading_comment_bytes": 407,
+      "leading_comment_sha256": "21db96a942ea16360d1c68d13b4f597807bf3bd2fe9611261883e69b5d9dc45f",
+      "leading_comments": "//! popcount - population count\n//! counts the number of 1 bits\n//! SWAR-Popcount: count bits of duos, aggregate to nibbles, and bytes inside\n//!   x-bit register in parallel to sum up all bytes\n//!   SWAR-Masks and factors can be defined as 2-adic fractions\n//! TAOCP: Combinational Algorithms, Bitwise Tricks And Techniques,\n//!   subsubsection \"Working with the rightmost bits\" and \"Sideways addition\".\n\n",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/powiXf2.zig",
+      "size": 2072,
+      "sha256": "99fba8a25c1dbfdeebae0e61e89ebef6c72a958e10499caa50e60812f08f4d25",
+      "leading_comment_bytes": 294,
+      "leading_comment_sha256": "608759edfecca2d52e2682066009c4cd8ddc64c7e4b7ffe1fdc59469bd45cdce",
+      "leading_comments": "//! a raised to integer power of b\n//! ported from https://github.com/llvm-mirror/compiler-rt/blob/release_80/lib/builtins/powisf2.c\n//! Multiplication order (left-to-right or right-to-left) does not matter for\n//! error propagation and this method is optimized for performance, not accuracy.\n\n",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/rem_pio2.zig",
+      "size": 6045,
+      "sha256": "908c7ee93fc246ce3405fa3a4303b8dbbc9a6c527f5e792fd59d6ab3cff79f27",
+      "leading_comment_bytes": 186,
+      "leading_comment_sha256": "f93c1f2e7c5f1311497a8452784c40662869b5d59222f1d6298df5cd2aee0a71",
+      "leading_comments": "// Ported from musl, which is licensed under the MIT license:\n// https://git.musl-libc.org/cgit/musl/tree/COPYRIGHT\n//\n// https://git.musl-libc.org/cgit/musl/tree/src/math/__rem_pio2.c\n\n",
+      "license_indicators": [
+        {
+          "line": 1,
+          "text": "// Ported from musl, which is licensed under the MIT license:",
+          "within_leading_comments": true
+        },
+        {
+          "line": 2,
+          "text": "// https://git.musl-libc.org/cgit/musl/tree/COPYRIGHT",
+          "within_leading_comments": true
+        }
+      ]
+    },
+    {
+      "path": "lib/compiler_rt/rem_pio2_large.zig",
+      "size": 20581,
+      "sha256": "30251d81ce0fd09130d359cd92f03ef2cbe1247ca6ead4a1b41b047745bdef0a",
+      "leading_comment_bytes": 192,
+      "leading_comment_sha256": "ef7a8240fe00082688de96e45b3304c1d43e42c5c83198c3c5a85ab4f35d11b2",
+      "leading_comments": "// Ported from musl, which is licensed under the MIT license:\n// https://git.musl-libc.org/cgit/musl/tree/COPYRIGHT\n//\n// https://git.musl-libc.org/cgit/musl/tree/src/math/__rem_pio2_large.c\n\n",
+      "license_indicators": [
+        {
+          "line": 1,
+          "text": "// Ported from musl, which is licensed under the MIT license:",
+          "within_leading_comments": true
+        },
+        {
+          "line": 2,
+          "text": "// https://git.musl-libc.org/cgit/musl/tree/COPYRIGHT",
+          "within_leading_comments": true
+        }
+      ]
+    },
+    {
+      "path": "lib/compiler_rt/rem_pio2f.zig",
+      "size": 2247,
+      "sha256": "a41741ff67bf8def1d237d62ef07bb0ec7d5198459958eb1420028052727a17a",
+      "leading_comment_bytes": 187,
+      "leading_comment_sha256": "17c33bfc16f76c683e278f9a55469a090dd93e6a54cbf7f953038b3e2f119651",
+      "leading_comments": "// Ported from musl, which is licensed under the MIT license:\n// https://git.musl-libc.org/cgit/musl/tree/COPYRIGHT\n//\n// https://git.musl-libc.org/cgit/musl/tree/src/math/__rem_pio2f.c\n\n",
+      "license_indicators": [
+        {
+          "line": 1,
+          "text": "// Ported from musl, which is licensed under the MIT license:",
+          "within_leading_comments": true
+        },
+        {
+          "line": 2,
+          "text": "// https://git.musl-libc.org/cgit/musl/tree/COPYRIGHT",
+          "within_leading_comments": true
+        }
+      ]
+    },
+    {
+      "path": "lib/compiler_rt/round.zig",
+      "size": 5307,
+      "sha256": "81ba3ee7cf24f55010da8de1b2b19cc91971bf3ed36b56859020ef4a33be4b18",
+      "leading_comment_bytes": 248,
+      "leading_comment_sha256": "600d166c256dc93850976d707f1359c2081e99ce80852865973ce4168136420d",
+      "leading_comments": "//! Ported from musl, which is licensed under the MIT license:\n//! https://git.musl-libc.org/cgit/musl/tree/COPYRIGHT\n//!\n//! https://git.musl-libc.org/cgit/musl/tree/src/math/roundf.c\n//! https://git.musl-libc.org/cgit/musl/tree/src/math/round.c\n\n",
+      "license_indicators": [
+        {
+          "line": 1,
+          "text": "//! Ported from musl, which is licensed under the MIT license:",
+          "within_leading_comments": true
+        },
+        {
+          "line": 2,
+          "text": "//! https://git.musl-libc.org/cgit/musl/tree/COPYRIGHT",
+          "within_leading_comments": true
+        }
+      ]
+    },
+    {
+      "path": "lib/compiler_rt/shift.zig",
+      "size": 4845,
+      "sha256": "f7c9e7244ca8cf3aee1e05560d8aa9a763975ee9273564a4b89d7bc9a73e1a45",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/sin.zig",
+      "size": 6783,
+      "sha256": "91eb3f8e29e6c82b2a704ab0b47438e2b51e16bd3e1be622ccf264f061f290d5",
+      "leading_comment_bytes": 244,
+      "leading_comment_sha256": "9c40c6a20da3909ae52dfddf708e694fb17a29d268c40d6d17570cbfc5f72f88",
+      "leading_comments": "//! Ported from musl, which is licensed under the MIT license:\n//! https://git.musl-libc.org/cgit/musl/tree/COPYRIGHT\n//!\n//! https://git.musl-libc.org/cgit/musl/tree/src/math/sinf.c\n//! https://git.musl-libc.org/cgit/musl/tree/src/math/sin.c\n\n",
+      "license_indicators": [
+        {
+          "line": 1,
+          "text": "//! Ported from musl, which is licensed under the MIT license:",
+          "within_leading_comments": true
+        },
+        {
+          "line": 2,
+          "text": "//! https://git.musl-libc.org/cgit/musl/tree/COPYRIGHT",
+          "within_leading_comments": true
+        }
+      ]
+    },
+    {
+      "path": "lib/compiler_rt/sincos.zig",
+      "size": 8779,
+      "sha256": "21b13553bb15727cf4198add3fdf40feefde024497a4d1f19761009e43111729",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/sqrt.zig",
+      "size": 8445,
+      "sha256": "a52efd687f04d273623ba1ea47d2fe5eb34b3df161c355808ffb07de07a4a0eb",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/ssp.zig",
+      "size": 4524,
+      "sha256": "87840e8a8c0eacff737dfd2238727862b9389c8afe4207e6cfda9b1bc2e23453",
+      "leading_comment_bytes": 342,
+      "leading_comment_sha256": "89084ae1cee5ef56b863aad244c10636c54f0b51e50fe90290bcf792bfab1487",
+      "leading_comments": "//!\n//! Small Zig reimplementation of gcc's libssp.\n//!\n//! This library implements most of the builtins required by the stack smashing\n//! protection as implemented by gcc&clang.\n//! Missing exports:\n//! - __gets_chk\n//! - __mempcpy_chk\n//! - __snprintf_chk\n//! - __sprintf_chk\n//! - __stpcpy_chk\n//! - __vsnprintf_chk\n//! - __vsprintf_chk\n\n",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/stack_probe.zig",
+      "size": 9539,
+      "sha256": "968cff3a1f91e64c8e1fbc1d95298418569d8a462d593f04ed1df42ceffbe112",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/subdf3.zig",
+      "size": 735,
+      "sha256": "d93c47d736b0c8b0053a930cfffdb54000a3ca796d143c6a4bd057520193c8ef",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/subhf3.zig",
+      "size": 406,
+      "sha256": "262109cfa4f3a87bcb9ba97ff7f1125e97839fd5f9da6784ea8fc53d652b5c37",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/subo.zig",
+      "size": 1742,
+      "sha256": "531690f488c8c97072a612d8c7cd5820df68378bd825d51ddaf16044c351438c",
+      "leading_comment_bytes": 127,
+      "leading_comment_sha256": "36635814d5e6a959f4e3be9cd100f7ecc6cc7cf7f50551b7ec3a73deca34911e",
+      "leading_comments": "//! subo - subtract overflow\n//! * return a-%b.\n//! * return if a-b overflows => 1 else => 0\n//! - suboXi4_generic as default\n\n",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/subsf3.zig",
+      "size": 735,
+      "sha256": "2c297251b666f69bbdd0d5dee6a232276f23c923883563ddb67c6531b0c7a12d",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/subtf3.zig",
+      "size": 884,
+      "sha256": "82ab2d66042f6b459f8ee71fdf7c912503f778457e0f16898a370eea4277a02e",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/subvdi3.zig",
+      "size": 932,
+      "sha256": "0d0ab706794011b48723aa16c7e9776d91c33c4d312d93e576d762873ebfc0b7",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/subvsi3.zig",
+      "size": 860,
+      "sha256": "767060401967d4eac52a83f437fe6e559b6d35bac2805a40564e3020eab28fa4",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/subxf3.zig",
+      "size": 399,
+      "sha256": "581b128b4cc989a83c2e903bac717fe7b15d8be87a85aa4033b27b135aca347c",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/tan.zig",
+      "size": 6175,
+      "sha256": "828484649e0a61f634bd1bea179255ec24ee9c77b1511a99ccad2b874e0e1a6c",
+      "leading_comment_bytes": 283,
+      "leading_comment_sha256": "040856b79ab06734fc648b6488e74d6f560d8926b60e7b106bc42235274e1e38",
+      "leading_comments": "//! Ported from musl, which is licensed under the MIT license:\n//! https://git.musl-libc.org/cgit/musl/tree/COPYRIGHT\n//!\n//! https://git.musl-libc.org/cgit/musl/tree/src/math/tanf.c\n//! https://git.musl-libc.org/cgit/musl/tree/src/math/tan.c\n//! https://golang.org/src/math/tan.go\n\n",
+      "license_indicators": [
+        {
+          "line": 1,
+          "text": "//! Ported from musl, which is licensed under the MIT license:",
+          "within_leading_comments": true
+        },
+        {
+          "line": 2,
+          "text": "//! https://git.musl-libc.org/cgit/musl/tree/COPYRIGHT",
+          "within_leading_comments": true
+        },
+        {
+          "line": 6,
+          "text": "//! https://golang.org/src/math/tan.go",
+          "within_leading_comments": true
+        }
+      ]
+    },
+    {
+      "path": "lib/compiler_rt/trig.zig",
+      "size": 11743,
+      "sha256": "5375b04c419bf910fd4cfe1a667629eb2cf55b56e76c72ae8f9ab4c327092342",
+      "leading_comment_bytes": 2333,
+      "leading_comment_sha256": "c22e45048bf20909c455b4d7f9bf42b4c146cdb2fd914d359ef6d76d1b963554",
+      "leading_comments": "// Ported from musl, which is licensed under the MIT license:\n// https://git.musl-libc.org/cgit/musl/tree/COPYRIGHT\n//\n// https://git.musl-libc.org/cgit/musl/tree/src/math/__cos.c\n// https://git.musl-libc.org/cgit/musl/tree/src/math/__cosdf.c\n// https://git.musl-libc.org/cgit/musl/tree/src/math/__sin.c\n// https://git.musl-libc.org/cgit/musl/tree/src/math/__sindf.c\n// https://git.musl-libc.org/cgit/musl/tree/src/math/__tand.c\n// https://git.musl-libc.org/cgit/musl/tree/src/math/__tandf.c\n\n/// kernel cos function on [-pi/4, pi/4], pi/4 ~ 0.785398164\n/// Input x is assumed to be bounded by ~pi/4 in magnitude.\n/// Input y is the tail of x.\n///\n/// Algorithm\n///      1. Since cos(-x) = cos(x), we need only to consider positive x.\n///      2. if x < 2^-27 (hx<0x3e400000 0), return 1 with inexact if x!=0.\n///      3. cos(x) is approximated by a polynomial of degree 14 on\n///         [0,pi/4]\n///                                       4            14\n///              cos(x) ~ 1 - x*x/2 + C1*x + ... + C6*x\n///         where the remez error is\n///\n///      |              2     4     6     8     10    12     14 |     -58\n///      |cos(x)-(1-.5*x +C1*x +C2*x +C3*x +C4*x +C5*x  +C6*x  )| <= 2\n///      |                                                      |\n///\n///                     4     6     8     10    12     14\n///      4. let r = C1*x +C2*x +C3*x +C4*x +C5*x  +C6*x  , then\n///             cos(x) ~ 1 - x*x/2 + r\n///         since cos(x+y) ~ cos(x) - sin(x)*y\n///                        ~ cos(x) - x*y,\n///         a correction term is necessary in cos(x) and hence\n///              cos(x+y) = 1 - (x*x/2 - (r - x*y))\n///         For better accuracy, rearrange to\n///              cos(x+y) ~ w + (tmp + (r-x*y))\n///         where w = 1 - x*x/2 and tmp is a tiny correction term\n///         (1 - x*x/2 == w + tmp exactly in infinite precision).\n///         The exactness of w + tmp in infinite precision depends on w\n///         and tmp having the same precision as x.  If they have extra\n///         precision due to compiler bugs, then the extra precision is\n///         only good provided it is retained in all terms of the final\n///         expression for cos().  Retention happens in all cases tested\n///         under FreeBSD, so don't pessimize things by forcibly clipping\n///         any extra precision in w.\n",
+      "license_indicators": [
+        {
+          "line": 1,
+          "text": "// Ported from musl, which is licensed under the MIT license:",
+          "within_leading_comments": true
+        },
+        {
+          "line": 2,
+          "text": "// https://git.musl-libc.org/cgit/musl/tree/COPYRIGHT",
+          "within_leading_comments": true
+        }
+      ]
+    },
+    {
+      "path": "lib/compiler_rt/trunc.zig",
+      "size": 4509,
+      "sha256": "dcd2d0715b5ce3df820f383e531ea06726ddf6b22e51f4ab950392e1ce46e30a",
+      "leading_comment_bytes": 230,
+      "leading_comment_sha256": "183b8637c105a8095792651a924cfa82dc986bf67d6e20fd1163014c745c4fca",
+      "leading_comments": "//! Ported from musl, which is MIT licensed.\n//! https://git.musl-libc.org/cgit/musl/tree/COPYRIGHT\n//!\n//! https://git.musl-libc.org/cgit/musl/tree/src/math/truncf.c\n//! https://git.musl-libc.org/cgit/musl/tree/src/math/trunc.c\n\n",
+      "license_indicators": [
+        {
+          "line": 1,
+          "text": "//! Ported from musl, which is MIT licensed.",
+          "within_leading_comments": true
+        },
+        {
+          "line": 2,
+          "text": "//! https://git.musl-libc.org/cgit/musl/tree/COPYRIGHT",
+          "within_leading_comments": true
+        }
+      ]
+    },
+    {
+      "path": "lib/compiler_rt/truncdfhf2.zig",
+      "size": 616,
+      "sha256": "c8acea6e4502a3bdd870ea3f6e272b15ef5a6bf375572921fa201a96730524cb",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/truncdfsf2.zig",
+      "size": 600,
+      "sha256": "dee838b218ad750c9bd5859283fd6a422a5d6d6eb9dfdcc8891dc57bf00cf6f4",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/truncf.zig",
+      "size": 8121,
+      "sha256": "a3c2dc54f858c1ac45f67455d9a91148bcfe76e7e099892fc9b381b331a79f5d",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/truncsfhf2.zig",
+      "size": 881,
+      "sha256": "eef61719d5ce37c400bd3de8c61bf965146be008254254b7d31982ca1ee07c34",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/trunctfdf2.zig",
+      "size": 731,
+      "sha256": "174abb828257b4429861cc926bb474a18e26d623551a60b716f3b5e60005955e",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/trunctfhf2.zig",
+      "size": 359,
+      "sha256": "ef28f00753b8293332509ad89f313601a07c9911af57fed4cb8f62bf702af212",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/trunctfsf2.zig",
+      "size": 731,
+      "sha256": "911b6c259d2d5d1a6924602450b30208a98701697e54324e50c55f367e6b695e",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/trunctfxf2.zig",
+      "size": 2852,
+      "sha256": "036d473c5dda835cda3f916660df670ff987fdbf0515dc371eeabe2ec5ca60f5",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/truncxfdf2.zig",
+      "size": 333,
+      "sha256": "bc30e3b43171ffa3e7253cce3e55dd8c495db7a32046c9a1034c172cda05dcf3",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/truncxfhf2.zig",
+      "size": 356,
+      "sha256": "1bbb1e1dd6abb07895b199ec520565b7348f5bbd1ab3e147c32a7b100115bec0",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/truncxfsf2.zig",
+      "size": 333,
+      "sha256": "0c8acddd96dccb4396d91ad573eb8dfb64d98e2c737c24a8a3e15ecd8e54826b",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/udivmod.zig",
+      "size": 4285,
+      "sha256": "dd03e2bd8065f565fb936a01f087f48d8c44e4fa392f638070b86e9bfa5edf0c",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/udivmodei4.zig",
+      "size": 5345,
+      "sha256": "f044505d528e460f966d3b8664f81f432dd926a68ce84467ca8f3c1fc51e80da",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/udivmodti4.zig",
+      "size": 886,
+      "sha256": "a99478450d7f1581c4fa9740039347e934f44f02754f34c758f7d81ac95882c4",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/udivti3.zig",
+      "size": 770,
+      "sha256": "51387a347030cec886bd69dc8270f4f0fb00d92d58a52cac0aa70c5812a11581",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/umodti3.zig",
+      "size": 846,
+      "sha256": "2759952e985dd271ce47af09bae053e01779b5a498f47a39a315b07d4067fe59",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/unorddf2.zig",
+      "size": 634,
+      "sha256": "f273dcab27a005f5a8394fc38b17fc96a740a901e73e7b2d11762295e2e70a20",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/unordhf2.zig",
+      "size": 341,
+      "sha256": "86a63b11fdbf9c3687540bb49c7c03c1267cae253258d5e0d8251b03d340307e",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/unordsf2.zig",
+      "size": 634,
+      "sha256": "3686a7fedf4f82d99d68d70da02ec0bdbcb33378d8c05786e615fefacb0399d5",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/unordtf2.zig",
+      "size": 656,
+      "sha256": "ba32f6ea504e841a7f67eb8b33539abd617499286e706e6c3b65fe21f9ae3ef1",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/compiler_rt/unordxf2.zig",
+      "size": 341,
+      "sha256": "43b27ae3c7760837e5df3164e6bc5690650db5a560be77f52e26b6e123864293",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/libc/musl/crt/crt1.c",
+      "size": 352,
+      "sha256": "f6c08ffd3125bedd3f0ec0f3c5135e7d95f3e1e5c033c99081819ef37712e99d",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/std/Target.zig",
+      "size": 107284,
+      "sha256": "c5ab967bb0c816d58f4a9a4e68b32e4faae455ca313731b804d239a934c906af",
+      "leading_comment_bytes": 232,
+      "leading_comment_sha256": "5a2b4fc50e209a40e3cdcaa455aa0efe6ac65f282f380103b03fb21f329218b2",
+      "leading_comments": "//! All the details about the machine that will be executing code.\n//! Unlike `Query` which might leave some things as \"default\" or \"host\", this\n//! data is fully resolved into a concrete set of OS versions, CPU features,\n//! etc.\n\n",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/std/Target/x86.zig",
+      "size": 139090,
+      "sha256": "8f11891f9cc91835134d14a51f93356066b73cae9d532429890fd30209a1f075",
+      "leading_comment_bytes": 67,
+      "leading_comment_sha256": "e0c505d113c7e603f26c57f45821afed3aeb1bdf0c320920cd0c0b0f68fb2f79",
+      "leading_comments": "//! This file is auto-generated by tools/update_cpu_features.zig.\n\n",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/std/ascii.zig",
+      "size": 16059,
+      "sha256": "245e0e29ff75a5cbcf294bade7a32b35d1a5e0242bad59342822831c56f97b88",
+      "leading_comment_bytes": 536,
+      "leading_comment_sha256": "17da8cf7ff87554a406810aee0290e0c011a1450af53960df57f7f68a3bef094",
+      "leading_comments": "//! The 7-bit [ASCII](https://en.wikipedia.org/wiki/ASCII) character encoding standard.\n//!\n//! This is not to be confused with the 8-bit [extended ASCII](https://en.wikipedia.org/wiki/Extended_ASCII) character encoding.\n//!\n//! Even though this module concerns itself with 7-bit ASCII,\n//! functions use `u8` as the type instead of `u7` for convenience and compatibility.\n//! Characters outside of the 7-bit range are gracefully handled (e.g. by returning `false`).\n//!\n//! See also: https://en.wikipedia.org/wiki/ASCII#Character_set\n\n",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/std/builtin.zig",
+      "size": 39860,
+      "sha256": "7120b362de4a6be0b712971dbb261469d13a061108c9aa68f965728e9937e826",
+      "leading_comment_bytes": 52,
+      "leading_comment_sha256": "b88116f127772e3671dca8fad1b7cac98e0a9beb688ddade3d9c627d3ec324da",
+      "leading_comments": "//! Types and values provided by the Zig language.\n\n",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/std/c.zig",
+      "size": 362358,
+      "sha256": "a8138d10955a61fae402e1235e81685732f46e4cacca1e922609034183824bb1",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/std/crypto.zig",
+      "size": 13676,
+      "sha256": "41bde1efcf6ddd6f1adbaefbb2559ff7dc281bf00da03b91cb069a7bf952066c",
+      "leading_comment_bytes": 19,
+      "leading_comment_sha256": "f6b3a92dce6a10a982c77c2f043126c7d70610b649925c3ddaa0c368ab8a551c",
+      "leading_comments": "//! Cryptography.\n\n",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/std/debug.zig",
+      "size": 69506,
+      "sha256": "347b67786d8b399584770955c25efff75aa14f541a9eeee66f3c9848ff072b92",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/std/debug/no_panic.zig",
+      "size": 2349,
+      "sha256": "7dc6fe2fbbda856c1d601c2732d8364095db03c6441b6bd5961aa12c8d167367",
+      "leading_comment_bytes": 223,
+      "leading_comment_sha256": "be4e6b50538df8b2dbf249db22c77017767127afb5190bcba058155781dffd95",
+      "leading_comments": "//! This namespace can be used with `pub const panic = std.debug.no_panic;` in the root file.\n//! It emits as little code as possible, for testing purposes.\n//!\n//! For a functional alternative, see `std.debug.FullPanic`.\n\n",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/std/heap.zig",
+      "size": 35783,
+      "sha256": "c21e1ef9f03f9afe6e737ebbebf8404c2574c1bf5d177736498867eb7747dcc5",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/std/log.zig",
+      "size": 8342,
+      "sha256": "a501bbda527d502fcc1cd0595a20c2487076c7e83c7636d6910ec2935ce8d59e",
+      "leading_comment_bytes": 3028,
+      "leading_comment_sha256": "93c1faf6ba8f8a99c9c87b99679b68493401fc7e66680bc999db0faaaebd12ff",
+      "leading_comments": "//! std.log is a standardized interface for logging which allows for the logging\n//! of programs and libraries using this interface to be formatted and filtered\n//! by the implementer of the `std.options.logFn` function.\n//!\n//! Each log message has an associated scope enum, which can be used to give\n//! context to the logging. The logging functions in std.log implicitly use a\n//! scope of .default.\n//!\n//! A logging namespace using a custom scope can be created using the\n//! std.log.scoped function, passing the scope as an argument; the logging\n//! functions in the resulting struct use the provided scope parameter.\n//! For example, a library called 'libfoo' might use\n//! `const log = std.log.scoped(.libfoo);` to use .libfoo as the scope of its\n//! log messages.\n//!\n//! An example `logFn` might look something like this:\n//!\n//! ```\n//! const std = @import(\"std\");\n//!\n//! pub const std_options: std.Options = .{\n//!     // Set the log level to info\n//!     .log_level = .info,\n//!\n//!     // Define logFn to override the std implementation\n//!     .logFn = myLogFn,\n//! };\n//!\n//! pub fn myLogFn(\n//!     comptime level: std.log.Level,\n//!     comptime scope: @Type(.enum_literal),\n//!     comptime format: []const u8,\n//!     args: anytype,\n//! ) void {\n//!     // Ignore all non-error logging from sources other than\n//!     // .my_project, .nice_library and the default\n//!     const scope_prefix = \"(\" ++ switch (scope) {\n//!         .my_project, .nice_library, std.log.default_log_scope => @tagName(scope),\n//!         else => if (@intFromEnum(level) <= @intFromEnum(std.log.Level.err))\n//!             @tagName(scope)\n//!         else\n//!             return,\n//!     } ++ \"): \";\n//!\n//!     const prefix = \"[\" ++ comptime level.asText() ++ \"] \" ++ scope_prefix;\n//!\n//!     // Print the message to stderr, silently ignoring any errors\n//!     std.debug.lockStdErr();\n//!     defer std.debug.unlockStdErr();\n//!     const stderr = std.fs.File.stderr().deprecatedWriter();\n//!     nosuspend stderr.print(prefix ++ format ++ \"\\n\", args) catch return;\n//! }\n//!\n//! pub fn main() void {\n//!     // Using the default scope:\n//!     std.log.debug(\"A borderline useless debug log message\", .{}); // Won't be printed as log_level is .info\n//!     std.log.info(\"Flux capacitor is starting to overheat\", .{});\n//!\n//!     // Using scoped logging:\n//!     const my_project_log = std.log.scoped(.my_project);\n//!     const nice_library_log = std.log.scoped(.nice_library);\n//!     const verbose_lib_log = std.log.scoped(.verbose_lib);\n//!\n//!     my_project_log.debug(\"Starting up\", .{}); // Won't be printed as log_level is .info\n//!     nice_library_log.warn(\"Something went very wrong, sorry\", .{});\n//!     verbose_lib_log.warn(\"Added 1 + 1: {}\", .{1 + 1}); // Won't be printed as it gets filtered out by our log function\n//! }\n//! ```\n//! Which produces the following output:\n//! ```\n//! [info] (default): Flux capacitor is starting to overheat\n//! [warning] (nice_library): Something went very wrong, sorry\n//! ```\n\n",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/std/math.zig",
+      "size": 74776,
+      "sha256": "65645001357d5f78cbf646485e009a048b828680bb1b47fb3de0fd8617d91af1",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/std/math/copysign.zig",
+      "size": 1136,
+      "sha256": "ecbf663d488010fd3c51dec7cfb9666afc4c73f5e35796d18f1f5d6848d327c1",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/std/math/frexp.zig",
+      "size": 7877,
+      "sha256": "2a9cf896243de2e7bf46513614eae704626b6a4898c54abc047df66759739080",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/std/math/ilogb.zig",
+      "size": 5519,
+      "sha256": "a6b7569ae4ad22f6ac6324bb3c7074866e7cd93b15d7db8c42102b58fc8c99c9",
+      "leading_comment_bytes": 287,
+      "leading_comment_sha256": "385765963cc7797dfef2e1e53af2a1cf30bdc319b6dfb570aef5ac5c213dd24a",
+      "leading_comments": "// Ported from musl, which is MIT licensed.\n// https://git.musl-libc.org/cgit/musl/tree/COPYRIGHT\n//\n// https://git.musl-libc.org/cgit/musl/tree/src/math/ilogbl.c\n// https://git.musl-libc.org/cgit/musl/tree/src/math/ilogbf.c\n// https://git.musl-libc.org/cgit/musl/tree/src/math/ilogb.c\n\n",
+      "license_indicators": [
+        {
+          "line": 1,
+          "text": "// Ported from musl, which is MIT licensed.",
+          "within_leading_comments": true
+        },
+        {
+          "line": 2,
+          "text": "// https://git.musl-libc.org/cgit/musl/tree/COPYRIGHT",
+          "within_leading_comments": true
+        }
+      ]
+    },
+    {
+      "path": "lib/std/math/isfinite.zig",
+      "size": 1083,
+      "sha256": "a68292f5d9110c879fd619fbbe888b2b66739b9f49d7eb1692f27d13120d12c9",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/std/math/isinf.zig",
+      "size": 1775,
+      "sha256": "9252e2a7668feb48b0d87ff5b5e40a904a62e61838eb187a979f2f390612b004",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/std/math/isnan.zig",
+      "size": 1681,
+      "sha256": "9dee284f974e89bcfc81fd90d45c496663fce6c2567e636aa8ca26598b74524e",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/std/math/ldexp.zig",
+      "size": 6839,
+      "sha256": "2c3c54f8e10fb9ebaae5443832bbc4ad3d87ff35a50e109b71c0d8844feaeeaa",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/std/math/signbit.zig",
+      "size": 1557,
+      "sha256": "7d9fdef881d5e3dec3462602542a2d25a20b1b638c55b7514f2e08a0a631a9e2",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/std/mem.zig",
+      "size": 185101,
+      "sha256": "d4b891a60b1bb54e106c56d626dfd575ed39a85b1a09795b9c0a534fc10fd9ca",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/std/simd.zig",
+      "size": 23280,
+      "sha256": "cc554020cebe55782b38c18c56a011b61a42f332781e5d0a5b1be3003eddd7a3",
+      "leading_comment_bytes": 257,
+      "leading_comment_sha256": "17259986fd4b616fd47cc418d03c34c9390a1dc18ae76ce586e3030af282ec40",
+      "leading_comments": "//! SIMD (Single Instruction; Multiple Data) convenience functions.\n//!\n//! May offer a potential boost in performance on some targets by performing\n//! the same operation on multiple elements at once.\n//!\n//! Some functions are known to not work on MIPS.\n\n",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/std/start.zig",
+      "size": 28071,
+      "sha256": "48e9190a5286a9d1239b28239b4d04107d403789371e42ed0514c78f658c8f40",
+      "leading_comment_bytes": 80,
+      "leading_comment_sha256": "93ed7911642f612bbe58b32612dd3932bfdf9eb01e2ad8475a9bb70741faa8f1",
+      "leading_comments": "// This file is included in the compilation unit when exporting an executable.\n\n",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/std/std.zig",
+      "size": 7957,
+      "sha256": "b78c7a6dec7a3ea3381bae30533309bd8de71994422c3f87fc9760e378c7e427",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/std/valgrind.zig",
+      "size": 12292,
+      "sha256": "5476736a0d3f9a3da24f99fcc14e4c0fe2655943891d3e6e9f6593c0d48aa2f7",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    },
+    {
+      "path": "lib/std/zig/target.zig",
+      "size": 25071,
+      "sha256": "6790e45f8e37e2b62a84c453dd4c59f9592303f0922a831163f57ccc8f866867",
+      "leading_comment_bytes": 0,
+      "leading_comment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "leading_comments": "",
+      "license_indicators": []
+    }
+  ],
+  "generated_files": [
+    {
+      "path": "b/7dc92623758de044a4361c7caff9a66c/builtin.zig",
+      "size": 2264,
+      "sha256": "0795924d103f617454ad0b2eef7c93ee285efe20d2445b4cb00eba519933bd04"
+    }
+  ],
+  "summary": {
+    "objects": 3,
+    "sdk_sources_verified": 260,
+    "generated_files_hashed": 1,
+    "sources_with_leading_comments": 49,
+    "sources_with_license_indicators": 17,
+    "sources_with_indicators_outside_prefix": 0
+  },
+  "pending": [
+    "File tables overapproximate source presence; not retained-section or exhaustive transitive-source evidence",
+    "Generated builtin current-file hashes are not pinned SDK sources or proof of their build-time bytes",
+    "Per-file Zig/LLVM/third-party applicability, complete source offer and reviewed audit remain pending",
+    "Other headers/components, native Alpine/ARM64/kernel/CPU qualification and distribution remain pending"
+  ]
+}

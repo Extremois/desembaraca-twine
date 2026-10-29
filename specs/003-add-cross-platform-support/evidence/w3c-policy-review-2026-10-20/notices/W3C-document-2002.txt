@@ -1,0 +1,134 @@
+W3C reference review material; license applicability remains pending.
+Source: https://www.w3.org/Consortium/Legal/2002/copyright-documents-20021231
+Observed destination: https://www.w3.org/copyright/document-license-2002/
+Raw source SHA-256: beedccab0ddee27d20caf239a77f449d0631ca81ab21246958a934d9bbdf7eec
+
+Skip to content (https://www.w3.org/copyright/document-license-2002/#main)
+日本語ホームページJapanese website (https://www.w3.org/ja/)
+简体中文首页Chinese website (https://www.w3.org/zh-hans/)
+Visit the W3C homepage
+(https://www.w3.org/)
+Standards & groups (https://www.w3.org/standards/)
+Standards & groups
+Understand the various specifications, their maturity levels on the web standards track, their adoption, and the groups that develop them.
+Explore web standards (https://www.w3.org/standards/)
+About W3C web standards (https://www.w3.org/standards/about/)
+W3C standards & drafts (https://www.w3.org/TR/)
+Types of documents W3C publishes (https://www.w3.org/standards/types/)
+W3C groups (https://www.w3.org/groups/)
+Translations of W3C standards & drafts (https://www.w3.org/translations/)
+Reviews & public feedback (https://www.w3.org/standards/review/)
+Promote web standards (https://www.w3.org/get-involved/promote/)
+Liaisons (https://www.w3.org/liaisons/)
+Technical Architecture Group (TAG) (https://www.w3.org/groups/other/tag/)
+Get involved (https://www.w3.org/get-involved/)
+Get involved
+W3C works at the nexus of core technology, industry needs, and societal needs.
+Find ways to get involved (https://www.w3.org/get-involved/)
+Browse our work by industry (https://www.w3.org/ecosystems/)
+Become a Member (https://www.w3.org/membership/)
+Member home (restricted) (https://www.w3.org/Member/)
+Support us (https://www.w3.org/support-us/)
+Mailing lists (https://www.w3.org/email/)
+Participant guidebook (https://www.w3.org/guide/)
+Positive work environment (https://www.w3.org/about/positive-work-environment/)
+Invited Experts (https://www.w3.org/invited-experts/)
+Resources (https://www.w3.org/resources/)
+Resources
+Master web fundamentals, use our developer tools, or contribute code.
+Learn from W3C resources (https://www.w3.org/resources/)
+Developers (https://www.w3.org/developers/)
+Validators & tools (https://www.w3.org/developers/tools/)
+Accessibility fundamentals (https://www.w3.org/WAI/fundamentals/)
+Internationalization (i18n) (https://www.w3.org/International/i18n-drafts/nav/about)
+Translations of W3C standards & drafts (https://www.w3.org/translations/)
+Code of conduct (https://www.w3.org/policies/code-of-conduct/)
+Reports (https://www.w3.org/reports/)
+News & events (https://www.w3.org/news-events/)
+News & events
+Recent content across news, blogs, press releases, media; upcoming events.
+Explore news & events (https://www.w3.org/news-events/)
+News (https://www.w3.org/news/)
+Blog (https://www.w3.org/blog/)
+Press releases (https://www.w3.org/press-releases/)
+Press & media (https://www.w3.org/about/press-media/)
+Events (https://www.w3.org/events/)
+Annual W3C Conference (TPAC) (https://www.w3.org/news-events/tpac/)
+Code of conduct (https://www.w3.org/policies/code-of-conduct/)
+Support us (https://www.w3.org/support-us/)
+Support us
+Make a huge difference to our operations as a public-interest non-profit, and help us to achieve our vision.
+Ways you can support us (https://www.w3.org/support-us/)
+About (https://www.w3.org/about/)
+About
+Understand our values and principles, learn our history, look into our policies, meet our people.
+Find out more about us (https://www.w3.org/about/)
+Our mission (https://www.w3.org/mission/)
+Support us (https://www.w3.org/support-us/)
+Leadership (https://www.w3.org/about/leadership/)
+Staff (https://www.w3.org/staff/)
+Careers (https://www.w3.org/careers/)
+Media kit (https://www.w3.org/about/press-media/)
+Diversity (https://www.w3.org/about/diversity/)
+Corporation (https://www.w3.org/about/corporation/)
+Policies & legal information (https://www.w3.org/policies/)
+Contact us (https://www.w3.org/contact/)
+Help (https://www.w3.org/help/)
+Search
+(https://www.w3.org/help/search/)
+My account
+(https://www.w3.org/users/myprofile/)
+Home (https://www.w3.org/)
+Copyright (https://www.w3.org/copyright/)
+Document license - 2002 version (https://www.w3.org/copyright/document-license-2002/)
+Document license - 2002 version
+Read this page in:
+中文（简体）
+(https://www.w3.org/zh-hans/copyright/document-license-2002/)
+日本語
+(https://www.w3.org/ja/copyright/document-license-2002/)
+Status: This document license was applied to documents published by W3C before 31 January 2015. On 1 February 2015 W3C adopted a more permissive document license (https://www.w3.org/copyright/document-license-2015/) and applied the new license to all W3C documents that had previously been made available under this license.
+License
+By using and/or copying this document, or the W3C document from which this statement is linked, you (the licensee) agree that you have read, understood, and will comply with the following terms and conditions:
+Permission to copy, and distribute the contents of this document, or the W3C document from which this statement is linked, in any medium for any purpose and without fee or royalty is hereby granted, provided that you include the following on ALL copies of the document, or portions thereof, that you use:
+A link or URL to the original W3C document.
+The pre-existing copyright notice of the original author, or if it doesn't exist, a notice (hypertext is preferred, but a textual representation is permitted) of the form: "Copyright © [$date-of-document] World Wide Web Consortium (https://www.w3.org/) , (MIT (https://www.csail.mit.edu/) , ERCIM (https://www.ercim.eu/) , Keio (https://www.keio.ac.jp/) , Beihang (https://ev.buaa.edu.cn/) ). All Rights Reserved. http://www.w3.org/copyright/document-license-2002/ (https://www.w3.org/copyright/document-license-2002/) "
+If it exists, the STATUS of the W3C document.
+When space permits, inclusion of the full text of this NOTICE should be provided. We request that authorship attribution be provided in any software, documents, or other items or products that you create pursuant to the implementation of the contents of this document, or any portion thereof.
+No right to create modifications or derivatives of W3C documents is granted pursuant to this license. However, if additional requirements (documented in the Copyright FAQ (https://www.w3.org/copyright/intellectual-rights/) ) are satisfied, the right to create modifications or derivatives is sometimes granted by the W3C to individuals complying with those requirements.
+Disclaimers
+THIS DOCUMENT IS PROVIDED "AS IS," AND COPYRIGHT HOLDERS MAKE NO REPRESENTATIONS OR WARRANTIES, EXPRESS OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, NON-INFRINGEMENT, OR TITLE; THAT THE CONTENTS OF THE DOCUMENT ARE SUITABLE FOR ANY PURPOSE; NOR THAT THE IMPLEMENTATION OF SUCH CONTENTS WILL NOT INFRINGE ANY THIRD PARTY PATENTS, COPYRIGHTS, TRADEMARKS OR OTHER RIGHTS.
+COPYRIGHT HOLDERS WILL NOT BE LIABLE FOR ANY DIRECT, INDIRECT, SPECIAL OR CONSEQUENTIAL DAMAGES ARISING OUT OF ANY USE OF THE DOCUMENT OR THE PERFORMANCE OR IMPLEMENTATION OF THE CONTENTS THEREOF.
+The name and trademarks of copyright holders may NOT be used in advertising or publicity pertaining to this document or its contents without specific, written prior permission. Title to copyright in this document will at all times remain with copyright holders.
+Versions
+This version: https://www.w3.org/copyright/document-license-2002/ (https://www.w3.org/copyright/document-license-2002/)
+Latest version: https://www.w3.org/copyright/document-license/ (https://www.w3.org/copyright/document-license/)
+Previous version: https://www.w3.org/Consortium/Legal/copyright-documents-19990405 (https://www.w3.org/Consortium/Legal/copyright-documents-19990405)
+Changes since the previous document
+This formulation of W3C's notice and license became active on December 31, 2002. This version removes the copyright ownership notice such that this license can be used with materials other than those owned by W3C, moves information on style sheets, DTDs, and schemas to the Copyright FAQ (https://www.w3.org/copyright/intellectual-rights/) , reflects that ERCIM is now a host of W3C, includes references to this specific dated version of the license, and removes the ambiguous grant of "use".
+Please see our Copyright FAQ (https://www.w3.org/copyright/intellectual-rights/) for common questions about using materials from our site, such as the translating or annotating specifications.
+In this section
+BSD test suite license (https://www.w3.org/copyright/3-clause-bsd-license-2008/)
+Document license - 2002 version (https://www.w3.org/copyright/document-license-2002/)
+Document license - 2015 version (https://www.w3.org/copyright/document-license-2015/)
+Document license - 2023 version (https://www.w3.org/copyright/document-license-2023/)
+Intellectual rights (https://www.w3.org/copyright/intellectual-rights/)
+Software and Document license - 2002 version (https://www.w3.org/copyright/software-license-2002/)
+Software and Document license - 2015 version (https://www.w3.org/copyright/software-license-2015/)
+Software and Document license - 2023 version (https://www.w3.org/copyright/software-license-2023/)
+Test suites licenses (https://www.w3.org/copyright/test-suites-licenses/)
+W3C test suite license - 2008 version (https://www.w3.org/copyright/test-suite-license-2008/)
+W3C test suite license - 2023 version (https://www.w3.org/copyright/test-suite-license-2023/)
+Home (https://www.w3.org/)
+Contact (https://www.w3.org/contact/)
+Help (https://www.w3.org/help/)
+Support us (https://www.w3.org/support-us/)
+Legal & Policies (https://www.w3.org/policies/)
+Corporation (https://www.w3.org/about/corporation/)
+System Status (https://status.w3.org/)
+W3C on Mastodon
+(https://w3c.social/@w3c)
+W3C on GitHub
+(https://github.com/w3c/)
+Copyright © 2026 World Wide Web Consortium (https://www.w3.org/) .
+W3C® liability (https://www.w3.org/policies/#disclaimers) , trademark (https://www.w3.org/policies/#trademarks) and permissive license (https://www.w3.org/copyright/document-license/) rules apply.

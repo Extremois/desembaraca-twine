@@ -1,0 +1,1898 @@
+{
+  "application_revision": "f834748c83d4c82bbb307068cda3e8ae952c442b",
+  "qualified": false,
+  "visual_review_complete": false,
+  "reviewer": null,
+  "twine_version": null,
+  "slots": [
+    {
+      "slot": "darwin-darwin-aarch64-3.12",
+      "artifact_id": 12815719127,
+      "run_url": "https://github.com/Extremois/desembaraca-twine/actions/runs/40688784181",
+      "report_sha256": "018a7a1402852d2e93583cf3ac25bc3d364fd48b1537437a279e5ee9649f2bac",
+      "archive_sha256": "05e3aa41b6deb04a345c31bf3025eb24544a0264ff8150d400d18886ad4acf48",
+      "outputs": [
+        {
+          "case": "crossing",
+          "mode": "wheel",
+          "path": "darwin-darwin-aarch64-3.12/wheel/crossing.twee",
+          "sha256": "aa821f1611a98d479811f652197070728904bd2afe31c8e6fca64ed9fbec8e8b",
+          "reopened": false
+        },
+        {
+          "case": "coincident",
+          "mode": "wheel",
+          "path": "darwin-darwin-aarch64-3.12/wheel/coincident.twee",
+          "sha256": "8644eeb3404043bec66b149c0ed3f2f4bea0600914a944e75c5f6464b78c1ed6",
+          "reopened": false
+        },
+        {
+          "case": "isolated_overlap",
+          "mode": "wheel",
+          "path": "darwin-darwin-aarch64-3.12/wheel/isolated_overlap.twee",
+          "sha256": "bef1e0132bce9b72f1317cdbb43d3c2a54e604632459cbda2c5af7d52c17a03a",
+          "reopened": false
+        },
+        {
+          "case": "connected_overlap",
+          "mode": "wheel",
+          "path": "darwin-darwin-aarch64-3.12/wheel/connected_overlap.twee",
+          "sha256": "137e849cfdf04ef3db7ed9057a7142ebecc403ee78952f307138ff5ecca72618",
+          "reopened": false
+        },
+        {
+          "case": "through_isolated",
+          "mode": "wheel",
+          "path": "darwin-darwin-aarch64-3.12/wheel/through_isolated.twee",
+          "sha256": "f2460867ce13305139836fc5737093e3e513fae53c4bee8fe0742fe5fc98c341",
+          "reopened": false
+        },
+        {
+          "case": "through_connected",
+          "mode": "wheel",
+          "path": "darwin-darwin-aarch64-3.12/wheel/through_connected.twee",
+          "sha256": "8c13ace7ce2f65beff622e529456029fda6c7e1f624a5046886a7065f60a2f3f",
+          "reopened": false
+        },
+        {
+          "case": "crossing",
+          "mode": "sdist",
+          "path": "darwin-darwin-aarch64-3.12/sdist/crossing.twee",
+          "sha256": "aa821f1611a98d479811f652197070728904bd2afe31c8e6fca64ed9fbec8e8b",
+          "reopened": false
+        },
+        {
+          "case": "coincident",
+          "mode": "sdist",
+          "path": "darwin-darwin-aarch64-3.12/sdist/coincident.twee",
+          "sha256": "8644eeb3404043bec66b149c0ed3f2f4bea0600914a944e75c5f6464b78c1ed6",
+          "reopened": false
+        },
+        {
+          "case": "isolated_overlap",
+          "mode": "sdist",
+          "path": "darwin-darwin-aarch64-3.12/sdist/isolated_overlap.twee",
+          "sha256": "bef1e0132bce9b72f1317cdbb43d3c2a54e604632459cbda2c5af7d52c17a03a",
+          "reopened": false
+        },
+        {
+          "case": "connected_overlap",
+          "mode": "sdist",
+          "path": "darwin-darwin-aarch64-3.12/sdist/connected_overlap.twee",
+          "sha256": "137e849cfdf04ef3db7ed9057a7142ebecc403ee78952f307138ff5ecca72618",
+          "reopened": false
+        },
+        {
+          "case": "through_isolated",
+          "mode": "sdist",
+          "path": "darwin-darwin-aarch64-3.12/sdist/through_isolated.twee",
+          "sha256": "f2460867ce13305139836fc5737093e3e513fae53c4bee8fe0742fe5fc98c341",
+          "reopened": false
+        },
+        {
+          "case": "through_connected",
+          "mode": "sdist",
+          "path": "darwin-darwin-aarch64-3.12/sdist/through_connected.twee",
+          "sha256": "8c13ace7ce2f65beff622e529456029fda6c7e1f624a5046886a7065f60a2f3f",
+          "reopened": false
+        }
+      ]
+    },
+    {
+      "slot": "darwin-darwin-aarch64-3.14",
+      "artifact_id": 12816805156,
+      "run_url": "https://github.com/Extremois/desembaraca-twine/actions/runs/40688784181",
+      "report_sha256": "879a89f6c4ade820e502daf0f9cd5c8f4757a0421be67eb4a85079838a9dbb06",
+      "archive_sha256": "42d019fe8a5887c46781adf98fe6605b72e8b9eb914b1fe73fc8b1ed79ce1ff5",
+      "outputs": [
+        {
+          "case": "crossing",
+          "mode": "wheel",
+          "path": "darwin-darwin-aarch64-3.14/wheel/crossing.twee",
+          "sha256": "aa821f1611a98d479811f652197070728904bd2afe31c8e6fca64ed9fbec8e8b",
+          "reopened": false
+        },
+        {
+          "case": "coincident",
+          "mode": "wheel",
+          "path": "darwin-darwin-aarch64-3.14/wheel/coincident.twee",
+          "sha256": "8644eeb3404043bec66b149c0ed3f2f4bea0600914a944e75c5f6464b78c1ed6",
+          "reopened": false
+        },
+        {
+          "case": "isolated_overlap",
+          "mode": "wheel",
+          "path": "darwin-darwin-aarch64-3.14/wheel/isolated_overlap.twee",
+          "sha256": "bef1e0132bce9b72f1317cdbb43d3c2a54e604632459cbda2c5af7d52c17a03a",
+          "reopened": false
+        },
+        {
+          "case": "connected_overlap",
+          "mode": "wheel",
+          "path": "darwin-darwin-aarch64-3.14/wheel/connected_overlap.twee",
+          "sha256": "137e849cfdf04ef3db7ed9057a7142ebecc403ee78952f307138ff5ecca72618",
+          "reopened": false
+        },
+        {
+          "case": "through_isolated",
+          "mode": "wheel",
+          "path": "darwin-darwin-aarch64-3.14/wheel/through_isolated.twee",
+          "sha256": "f2460867ce13305139836fc5737093e3e513fae53c4bee8fe0742fe5fc98c341",
+          "reopened": false
+        },
+        {
+          "case": "through_connected",
+          "mode": "wheel",
+          "path": "darwin-darwin-aarch64-3.14/wheel/through_connected.twee",
+          "sha256": "8c13ace7ce2f65beff622e529456029fda6c7e1f624a5046886a7065f60a2f3f",
+          "reopened": false
+        },
+        {
+          "case": "crossing",
+          "mode": "sdist",
+          "path": "darwin-darwin-aarch64-3.14/sdist/crossing.twee",
+          "sha256": "aa821f1611a98d479811f652197070728904bd2afe31c8e6fca64ed9fbec8e8b",
+          "reopened": false
+        },
+        {
+          "case": "coincident",
+          "mode": "sdist",
+          "path": "darwin-darwin-aarch64-3.14/sdist/coincident.twee",
+          "sha256": "8644eeb3404043bec66b149c0ed3f2f4bea0600914a944e75c5f6464b78c1ed6",
+          "reopened": false
+        },
+        {
+          "case": "isolated_overlap",
+          "mode": "sdist",
+          "path": "darwin-darwin-aarch64-3.14/sdist/isolated_overlap.twee",
+          "sha256": "bef1e0132bce9b72f1317cdbb43d3c2a54e604632459cbda2c5af7d52c17a03a",
+          "reopened": false
+        },
+        {
+          "case": "connected_overlap",
+          "mode": "sdist",
+          "path": "darwin-darwin-aarch64-3.14/sdist/connected_overlap.twee",
+          "sha256": "137e849cfdf04ef3db7ed9057a7142ebecc403ee78952f307138ff5ecca72618",
+          "reopened": false
+        },
+        {
+          "case": "through_isolated",
+          "mode": "sdist",
+          "path": "darwin-darwin-aarch64-3.14/sdist/through_isolated.twee",
+          "sha256": "f2460867ce13305139836fc5737093e3e513fae53c4bee8fe0742fe5fc98c341",
+          "reopened": false
+        },
+        {
+          "case": "through_connected",
+          "mode": "sdist",
+          "path": "darwin-darwin-aarch64-3.14/sdist/through_connected.twee",
+          "sha256": "8c13ace7ce2f65beff622e529456029fda6c7e1f624a5046886a7065f60a2f3f",
+          "reopened": false
+        }
+      ]
+    },
+    {
+      "slot": "darwin-darwin-x86_64-3.12",
+      "artifact_id": 12815244900,
+      "run_url": "https://github.com/Extremois/desembaraca-twine/actions/runs/40688784181",
+      "report_sha256": "bd3b109f15506b404b696742f68decf8e50fc13700371737f7178e32886910d4",
+      "archive_sha256": "5abc417fe3377b12fb2211d3a431b018706481a9c39828ef564bc3be1275d9b1",
+      "outputs": [
+        {
+          "case": "crossing",
+          "mode": "wheel",
+          "path": "darwin-darwin-x86_64-3.12/wheel/crossing.twee",
+          "sha256": "aa821f1611a98d479811f652197070728904bd2afe31c8e6fca64ed9fbec8e8b",
+          "reopened": false
+        },
+        {
+          "case": "coincident",
+          "mode": "wheel",
+          "path": "darwin-darwin-x86_64-3.12/wheel/coincident.twee",
+          "sha256": "8644eeb3404043bec66b149c0ed3f2f4bea0600914a944e75c5f6464b78c1ed6",
+          "reopened": false
+        },
+        {
+          "case": "isolated_overlap",
+          "mode": "wheel",
+          "path": "darwin-darwin-x86_64-3.12/wheel/isolated_overlap.twee",
+          "sha256": "bef1e0132bce9b72f1317cdbb43d3c2a54e604632459cbda2c5af7d52c17a03a",
+          "reopened": false
+        },
+        {
+          "case": "connected_overlap",
+          "mode": "wheel",
+          "path": "darwin-darwin-x86_64-3.12/wheel/connected_overlap.twee",
+          "sha256": "137e849cfdf04ef3db7ed9057a7142ebecc403ee78952f307138ff5ecca72618",
+          "reopened": false
+        },
+        {
+          "case": "through_isolated",
+          "mode": "wheel",
+          "path": "darwin-darwin-x86_64-3.12/wheel/through_isolated.twee",
+          "sha256": "f2460867ce13305139836fc5737093e3e513fae53c4bee8fe0742fe5fc98c341",
+          "reopened": false
+        },
+        {
+          "case": "through_connected",
+          "mode": "wheel",
+          "path": "darwin-darwin-x86_64-3.12/wheel/through_connected.twee",
+          "sha256": "8c13ace7ce2f65beff622e529456029fda6c7e1f624a5046886a7065f60a2f3f",
+          "reopened": false
+        },
+        {
+          "case": "crossing",
+          "mode": "sdist",
+          "path": "darwin-darwin-x86_64-3.12/sdist/crossing.twee",
+          "sha256": "aa821f1611a98d479811f652197070728904bd2afe31c8e6fca64ed9fbec8e8b",
+          "reopened": false
+        },
+        {
+          "case": "coincident",
+          "mode": "sdist",
+          "path": "darwin-darwin-x86_64-3.12/sdist/coincident.twee",
+          "sha256": "8644eeb3404043bec66b149c0ed3f2f4bea0600914a944e75c5f6464b78c1ed6",
+          "reopened": false
+        },
+        {
+          "case": "isolated_overlap",
+          "mode": "sdist",
+          "path": "darwin-darwin-x86_64-3.12/sdist/isolated_overlap.twee",
+          "sha256": "bef1e0132bce9b72f1317cdbb43d3c2a54e604632459cbda2c5af7d52c17a03a",
+          "reopened": false
+        },
+        {
+          "case": "connected_overlap",
+          "mode": "sdist",
+          "path": "darwin-darwin-x86_64-3.12/sdist/connected_overlap.twee",
+          "sha256": "137e849cfdf04ef3db7ed9057a7142ebecc403ee78952f307138ff5ecca72618",
+          "reopened": false
+        },
+        {
+          "case": "through_isolated",
+          "mode": "sdist",
+          "path": "darwin-darwin-x86_64-3.12/sdist/through_isolated.twee",
+          "sha256": "f2460867ce13305139836fc5737093e3e513fae53c4bee8fe0742fe5fc98c341",
+          "reopened": false
+        },
+        {
+          "case": "through_connected",
+          "mode": "sdist",
+          "path": "darwin-darwin-x86_64-3.12/sdist/through_connected.twee",
+          "sha256": "8c13ace7ce2f65beff622e529456029fda6c7e1f624a5046886a7065f60a2f3f",
+          "reopened": false
+        }
+      ]
+    },
+    {
+      "slot": "darwin-darwin-x86_64-3.14",
+      "artifact_id": 12816416773,
+      "run_url": "https://github.com/Extremois/desembaraca-twine/actions/runs/40688784181",
+      "report_sha256": "10b7b7b901f5eab3171e72f3fe79bdebd8e07806d67fdaa18c672c1e5095c489",
+      "archive_sha256": "efd362859fb39d4e2ab7bbda0f5e62ab8d8666f2a6052857524b2ae91290c8ee",
+      "outputs": [
+        {
+          "case": "crossing",
+          "mode": "wheel",
+          "path": "darwin-darwin-x86_64-3.14/wheel/crossing.twee",
+          "sha256": "aa821f1611a98d479811f652197070728904bd2afe31c8e6fca64ed9fbec8e8b",
+          "reopened": false
+        },
+        {
+          "case": "coincident",
+          "mode": "wheel",
+          "path": "darwin-darwin-x86_64-3.14/wheel/coincident.twee",
+          "sha256": "8644eeb3404043bec66b149c0ed3f2f4bea0600914a944e75c5f6464b78c1ed6",
+          "reopened": false
+        },
+        {
+          "case": "isolated_overlap",
+          "mode": "wheel",
+          "path": "darwin-darwin-x86_64-3.14/wheel/isolated_overlap.twee",
+          "sha256": "bef1e0132bce9b72f1317cdbb43d3c2a54e604632459cbda2c5af7d52c17a03a",
+          "reopened": false
+        },
+        {
+          "case": "connected_overlap",
+          "mode": "wheel",
+          "path": "darwin-darwin-x86_64-3.14/wheel/connected_overlap.twee",
+          "sha256": "137e849cfdf04ef3db7ed9057a7142ebecc403ee78952f307138ff5ecca72618",
+          "reopened": false
+        },
+        {
+          "case": "through_isolated",
+          "mode": "wheel",
+          "path": "darwin-darwin-x86_64-3.14/wheel/through_isolated.twee",
+          "sha256": "f2460867ce13305139836fc5737093e3e513fae53c4bee8fe0742fe5fc98c341",
+          "reopened": false
+        },
+        {
+          "case": "through_connected",
+          "mode": "wheel",
+          "path": "darwin-darwin-x86_64-3.14/wheel/through_connected.twee",
+          "sha256": "8c13ace7ce2f65beff622e529456029fda6c7e1f624a5046886a7065f60a2f3f",
+          "reopened": false
+        },
+        {
+          "case": "crossing",
+          "mode": "sdist",
+          "path": "darwin-darwin-x86_64-3.14/sdist/crossing.twee",
+          "sha256": "aa821f1611a98d479811f652197070728904bd2afe31c8e6fca64ed9fbec8e8b",
+          "reopened": false
+        },
+        {
+          "case": "coincident",
+          "mode": "sdist",
+          "path": "darwin-darwin-x86_64-3.14/sdist/coincident.twee",
+          "sha256": "8644eeb3404043bec66b149c0ed3f2f4bea0600914a944e75c5f6464b78c1ed6",
+          "reopened": false
+        },
+        {
+          "case": "isolated_overlap",
+          "mode": "sdist",
+          "path": "darwin-darwin-x86_64-3.14/sdist/isolated_overlap.twee",
+          "sha256": "bef1e0132bce9b72f1317cdbb43d3c2a54e604632459cbda2c5af7d52c17a03a",
+          "reopened": false
+        },
+        {
+          "case": "connected_overlap",
+          "mode": "sdist",
+          "path": "darwin-darwin-x86_64-3.14/sdist/connected_overlap.twee",
+          "sha256": "137e849cfdf04ef3db7ed9057a7142ebecc403ee78952f307138ff5ecca72618",
+          "reopened": false
+        },
+        {
+          "case": "through_isolated",
+          "mode": "sdist",
+          "path": "darwin-darwin-x86_64-3.14/sdist/through_isolated.twee",
+          "sha256": "f2460867ce13305139836fc5737093e3e513fae53c4bee8fe0742fe5fc98c341",
+          "reopened": false
+        },
+        {
+          "case": "through_connected",
+          "mode": "sdist",
+          "path": "darwin-darwin-x86_64-3.14/sdist/through_connected.twee",
+          "sha256": "8c13ace7ce2f65beff622e529456029fda6c7e1f624a5046886a7065f60a2f3f",
+          "reopened": false
+        }
+      ]
+    },
+    {
+      "slot": "linux-glibc-aarch64-3.12",
+      "artifact_id": 12815868129,
+      "run_url": "https://github.com/Extremois/desembaraca-twine/actions/runs/40688784181",
+      "report_sha256": "33d8e1340b92370639a355abc8c0b7138abda836a15227d9af0eda77ad07ce61",
+      "archive_sha256": "96240688272f117eceec9c787df92feb74843e49f6c8ce8f95f83441cd3107ac",
+      "outputs": [
+        {
+          "case": "crossing",
+          "mode": "wheel",
+          "path": "linux-glibc-aarch64-3.12/wheel/crossing.twee",
+          "sha256": "aa821f1611a98d479811f652197070728904bd2afe31c8e6fca64ed9fbec8e8b",
+          "reopened": false
+        },
+        {
+          "case": "coincident",
+          "mode": "wheel",
+          "path": "linux-glibc-aarch64-3.12/wheel/coincident.twee",
+          "sha256": "8644eeb3404043bec66b149c0ed3f2f4bea0600914a944e75c5f6464b78c1ed6",
+          "reopened": false
+        },
+        {
+          "case": "isolated_overlap",
+          "mode": "wheel",
+          "path": "linux-glibc-aarch64-3.12/wheel/isolated_overlap.twee",
+          "sha256": "bef1e0132bce9b72f1317cdbb43d3c2a54e604632459cbda2c5af7d52c17a03a",
+          "reopened": false
+        },
+        {
+          "case": "connected_overlap",
+          "mode": "wheel",
+          "path": "linux-glibc-aarch64-3.12/wheel/connected_overlap.twee",
+          "sha256": "137e849cfdf04ef3db7ed9057a7142ebecc403ee78952f307138ff5ecca72618",
+          "reopened": false
+        },
+        {
+          "case": "through_isolated",
+          "mode": "wheel",
+          "path": "linux-glibc-aarch64-3.12/wheel/through_isolated.twee",
+          "sha256": "f2460867ce13305139836fc5737093e3e513fae53c4bee8fe0742fe5fc98c341",
+          "reopened": false
+        },
+        {
+          "case": "through_connected",
+          "mode": "wheel",
+          "path": "linux-glibc-aarch64-3.12/wheel/through_connected.twee",
+          "sha256": "8c13ace7ce2f65beff622e529456029fda6c7e1f624a5046886a7065f60a2f3f",
+          "reopened": false
+        },
+        {
+          "case": "crossing",
+          "mode": "sdist",
+          "path": "linux-glibc-aarch64-3.12/sdist/crossing.twee",
+          "sha256": "aa821f1611a98d479811f652197070728904bd2afe31c8e6fca64ed9fbec8e8b",
+          "reopened": false
+        },
+        {
+          "case": "coincident",
+          "mode": "sdist",
+          "path": "linux-glibc-aarch64-3.12/sdist/coincident.twee",
+          "sha256": "8644eeb3404043bec66b149c0ed3f2f4bea0600914a944e75c5f6464b78c1ed6",
+          "reopened": false
+        },
+        {
+          "case": "isolated_overlap",
+          "mode": "sdist",
+          "path": "linux-glibc-aarch64-3.12/sdist/isolated_overlap.twee",
+          "sha256": "bef1e0132bce9b72f1317cdbb43d3c2a54e604632459cbda2c5af7d52c17a03a",
+          "reopened": false
+        },
+        {
+          "case": "connected_overlap",
+          "mode": "sdist",
+          "path": "linux-glibc-aarch64-3.12/sdist/connected_overlap.twee",
+          "sha256": "137e849cfdf04ef3db7ed9057a7142ebecc403ee78952f307138ff5ecca72618",
+          "reopened": false
+        },
+        {
+          "case": "through_isolated",
+          "mode": "sdist",
+          "path": "linux-glibc-aarch64-3.12/sdist/through_isolated.twee",
+          "sha256": "f2460867ce13305139836fc5737093e3e513fae53c4bee8fe0742fe5fc98c341",
+          "reopened": false
+        },
+        {
+          "case": "through_connected",
+          "mode": "sdist",
+          "path": "linux-glibc-aarch64-3.12/sdist/through_connected.twee",
+          "sha256": "8c13ace7ce2f65beff622e529456029fda6c7e1f624a5046886a7065f60a2f3f",
+          "reopened": false
+        }
+      ]
+    },
+    {
+      "slot": "linux-glibc-aarch64-3.14",
+      "artifact_id": 12816013552,
+      "run_url": "https://github.com/Extremois/desembaraca-twine/actions/runs/40688784181",
+      "report_sha256": "71cea343f456f3ade93636a057d7c75f1268c3491f363568532efff139f9e608",
+      "archive_sha256": "39a2b2cb62be12028f63f425e1b9499f9b15e58339437579bddaaf9dadfaf50e",
+      "outputs": [
+        {
+          "case": "crossing",
+          "mode": "wheel",
+          "path": "linux-glibc-aarch64-3.14/wheel/crossing.twee",
+          "sha256": "aa821f1611a98d479811f652197070728904bd2afe31c8e6fca64ed9fbec8e8b",
+          "reopened": false
+        },
+        {
+          "case": "coincident",
+          "mode": "wheel",
+          "path": "linux-glibc-aarch64-3.14/wheel/coincident.twee",
+          "sha256": "8644eeb3404043bec66b149c0ed3f2f4bea0600914a944e75c5f6464b78c1ed6",
+          "reopened": false
+        },
+        {
+          "case": "isolated_overlap",
+          "mode": "wheel",
+          "path": "linux-glibc-aarch64-3.14/wheel/isolated_overlap.twee",
+          "sha256": "bef1e0132bce9b72f1317cdbb43d3c2a54e604632459cbda2c5af7d52c17a03a",
+          "reopened": false
+        },
+        {
+          "case": "connected_overlap",
+          "mode": "wheel",
+          "path": "linux-glibc-aarch64-3.14/wheel/connected_overlap.twee",
+          "sha256": "137e849cfdf04ef3db7ed9057a7142ebecc403ee78952f307138ff5ecca72618",
+          "reopened": false
+        },
+        {
+          "case": "through_isolated",
+          "mode": "wheel",
+          "path": "linux-glibc-aarch64-3.14/wheel/through_isolated.twee",
+          "sha256": "f2460867ce13305139836fc5737093e3e513fae53c4bee8fe0742fe5fc98c341",
+          "reopened": false
+        },
+        {
+          "case": "through_connected",
+          "mode": "wheel",
+          "path": "linux-glibc-aarch64-3.14/wheel/through_connected.twee",
+          "sha256": "8c13ace7ce2f65beff622e529456029fda6c7e1f624a5046886a7065f60a2f3f",
+          "reopened": false
+        },
+        {
+          "case": "crossing",
+          "mode": "sdist",
+          "path": "linux-glibc-aarch64-3.14/sdist/crossing.twee",
+          "sha256": "aa821f1611a98d479811f652197070728904bd2afe31c8e6fca64ed9fbec8e8b",
+          "reopened": false
+        },
+        {
+          "case": "coincident",
+          "mode": "sdist",
+          "path": "linux-glibc-aarch64-3.14/sdist/coincident.twee",
+          "sha256": "8644eeb3404043bec66b149c0ed3f2f4bea0600914a944e75c5f6464b78c1ed6",
+          "reopened": false
+        },
+        {
+          "case": "isolated_overlap",
+          "mode": "sdist",
+          "path": "linux-glibc-aarch64-3.14/sdist/isolated_overlap.twee",
+          "sha256": "bef1e0132bce9b72f1317cdbb43d3c2a54e604632459cbda2c5af7d52c17a03a",
+          "reopened": false
+        },
+        {
+          "case": "connected_overlap",
+          "mode": "sdist",
+          "path": "linux-glibc-aarch64-3.14/sdist/connected_overlap.twee",
+          "sha256": "137e849cfdf04ef3db7ed9057a7142ebecc403ee78952f307138ff5ecca72618",
+          "reopened": false
+        },
+        {
+          "case": "through_isolated",
+          "mode": "sdist",
+          "path": "linux-glibc-aarch64-3.14/sdist/through_isolated.twee",
+          "sha256": "f2460867ce13305139836fc5737093e3e513fae53c4bee8fe0742fe5fc98c341",
+          "reopened": false
+        },
+        {
+          "case": "through_connected",
+          "mode": "sdist",
+          "path": "linux-glibc-aarch64-3.14/sdist/through_connected.twee",
+          "sha256": "8c13ace7ce2f65beff622e529456029fda6c7e1f624a5046886a7065f60a2f3f",
+          "reopened": false
+        }
+      ]
+    },
+    {
+      "slot": "linux-glibc-x86_64-3.12",
+      "artifact_id": 12816640066,
+      "run_url": "https://github.com/Extremois/desembaraca-twine/actions/runs/40688784181",
+      "report_sha256": "51365544b31c61ed324b864f67380d3a7db31e09ef2e8fcb5ad66aece2992997",
+      "archive_sha256": "f924ebea85444884429a00d1f178ddaf3da1f161301343ad89a0914e64dcacdc",
+      "outputs": [
+        {
+          "case": "crossing",
+          "mode": "wheel",
+          "path": "linux-glibc-x86_64-3.12/wheel/crossing.twee",
+          "sha256": "aa821f1611a98d479811f652197070728904bd2afe31c8e6fca64ed9fbec8e8b",
+          "reopened": false
+        },
+        {
+          "case": "coincident",
+          "mode": "wheel",
+          "path": "linux-glibc-x86_64-3.12/wheel/coincident.twee",
+          "sha256": "8644eeb3404043bec66b149c0ed3f2f4bea0600914a944e75c5f6464b78c1ed6",
+          "reopened": false
+        },
+        {
+          "case": "isolated_overlap",
+          "mode": "wheel",
+          "path": "linux-glibc-x86_64-3.12/wheel/isolated_overlap.twee",
+          "sha256": "bef1e0132bce9b72f1317cdbb43d3c2a54e604632459cbda2c5af7d52c17a03a",
+          "reopened": false
+        },
+        {
+          "case": "connected_overlap",
+          "mode": "wheel",
+          "path": "linux-glibc-x86_64-3.12/wheel/connected_overlap.twee",
+          "sha256": "137e849cfdf04ef3db7ed9057a7142ebecc403ee78952f307138ff5ecca72618",
+          "reopened": false
+        },
+        {
+          "case": "through_isolated",
+          "mode": "wheel",
+          "path": "linux-glibc-x86_64-3.12/wheel/through_isolated.twee",
+          "sha256": "f2460867ce13305139836fc5737093e3e513fae53c4bee8fe0742fe5fc98c341",
+          "reopened": false
+        },
+        {
+          "case": "through_connected",
+          "mode": "wheel",
+          "path": "linux-glibc-x86_64-3.12/wheel/through_connected.twee",
+          "sha256": "8c13ace7ce2f65beff622e529456029fda6c7e1f624a5046886a7065f60a2f3f",
+          "reopened": false
+        },
+        {
+          "case": "crossing",
+          "mode": "sdist",
+          "path": "linux-glibc-x86_64-3.12/sdist/crossing.twee",
+          "sha256": "aa821f1611a98d479811f652197070728904bd2afe31c8e6fca64ed9fbec8e8b",
+          "reopened": false
+        },
+        {
+          "case": "coincident",
+          "mode": "sdist",
+          "path": "linux-glibc-x86_64-3.12/sdist/coincident.twee",
+          "sha256": "8644eeb3404043bec66b149c0ed3f2f4bea0600914a944e75c5f6464b78c1ed6",
+          "reopened": false
+        },
+        {
+          "case": "isolated_overlap",
+          "mode": "sdist",
+          "path": "linux-glibc-x86_64-3.12/sdist/isolated_overlap.twee",
+          "sha256": "bef1e0132bce9b72f1317cdbb43d3c2a54e604632459cbda2c5af7d52c17a03a",
+          "reopened": false
+        },
+        {
+          "case": "connected_overlap",
+          "mode": "sdist",
+          "path": "linux-glibc-x86_64-3.12/sdist/connected_overlap.twee",
+          "sha256": "137e849cfdf04ef3db7ed9057a7142ebecc403ee78952f307138ff5ecca72618",
+          "reopened": false
+        },
+        {
+          "case": "through_isolated",
+          "mode": "sdist",
+          "path": "linux-glibc-x86_64-3.12/sdist/through_isolated.twee",
+          "sha256": "f2460867ce13305139836fc5737093e3e513fae53c4bee8fe0742fe5fc98c341",
+          "reopened": false
+        },
+        {
+          "case": "through_connected",
+          "mode": "sdist",
+          "path": "linux-glibc-x86_64-3.12/sdist/through_connected.twee",
+          "sha256": "8c13ace7ce2f65beff622e529456029fda6c7e1f624a5046886a7065f60a2f3f",
+          "reopened": false
+        }
+      ]
+    },
+    {
+      "slot": "linux-glibc-x86_64-3.14",
+      "artifact_id": 12816172107,
+      "run_url": "https://github.com/Extremois/desembaraca-twine/actions/runs/40688784181",
+      "report_sha256": "bbb7de748ef681edf701ae368054030f29217b2b89af3a92ae4fc0ccbdfb8fab",
+      "archive_sha256": "19f64c1f915ab140e10f531d84edb48ae3d92199b79a603c84763f9e49fa468b",
+      "outputs": [
+        {
+          "case": "crossing",
+          "mode": "wheel",
+          "path": "linux-glibc-x86_64-3.14/wheel/crossing.twee",
+          "sha256": "aa821f1611a98d479811f652197070728904bd2afe31c8e6fca64ed9fbec8e8b",
+          "reopened": false
+        },
+        {
+          "case": "coincident",
+          "mode": "wheel",
+          "path": "linux-glibc-x86_64-3.14/wheel/coincident.twee",
+          "sha256": "8644eeb3404043bec66b149c0ed3f2f4bea0600914a944e75c5f6464b78c1ed6",
+          "reopened": false
+        },
+        {
+          "case": "isolated_overlap",
+          "mode": "wheel",
+          "path": "linux-glibc-x86_64-3.14/wheel/isolated_overlap.twee",
+          "sha256": "bef1e0132bce9b72f1317cdbb43d3c2a54e604632459cbda2c5af7d52c17a03a",
+          "reopened": false
+        },
+        {
+          "case": "connected_overlap",
+          "mode": "wheel",
+          "path": "linux-glibc-x86_64-3.14/wheel/connected_overlap.twee",
+          "sha256": "137e849cfdf04ef3db7ed9057a7142ebecc403ee78952f307138ff5ecca72618",
+          "reopened": false
+        },
+        {
+          "case": "through_isolated",
+          "mode": "wheel",
+          "path": "linux-glibc-x86_64-3.14/wheel/through_isolated.twee",
+          "sha256": "f2460867ce13305139836fc5737093e3e513fae53c4bee8fe0742fe5fc98c341",
+          "reopened": false
+        },
+        {
+          "case": "through_connected",
+          "mode": "wheel",
+          "path": "linux-glibc-x86_64-3.14/wheel/through_connected.twee",
+          "sha256": "8c13ace7ce2f65beff622e529456029fda6c7e1f624a5046886a7065f60a2f3f",
+          "reopened": false
+        },
+        {
+          "case": "crossing",
+          "mode": "sdist",
+          "path": "linux-glibc-x86_64-3.14/sdist/crossing.twee",
+          "sha256": "aa821f1611a98d479811f652197070728904bd2afe31c8e6fca64ed9fbec8e8b",
+          "reopened": false
+        },
+        {
+          "case": "coincident",
+          "mode": "sdist",
+          "path": "linux-glibc-x86_64-3.14/sdist/coincident.twee",
+          "sha256": "8644eeb3404043bec66b149c0ed3f2f4bea0600914a944e75c5f6464b78c1ed6",
+          "reopened": false
+        },
+        {
+          "case": "isolated_overlap",
+          "mode": "sdist",
+          "path": "linux-glibc-x86_64-3.14/sdist/isolated_overlap.twee",
+          "sha256": "bef1e0132bce9b72f1317cdbb43d3c2a54e604632459cbda2c5af7d52c17a03a",
+          "reopened": false
+        },
+        {
+          "case": "connected_overlap",
+          "mode": "sdist",
+          "path": "linux-glibc-x86_64-3.14/sdist/connected_overlap.twee",
+          "sha256": "137e849cfdf04ef3db7ed9057a7142ebecc403ee78952f307138ff5ecca72618",
+          "reopened": false
+        },
+        {
+          "case": "through_isolated",
+          "mode": "sdist",
+          "path": "linux-glibc-x86_64-3.14/sdist/through_isolated.twee",
+          "sha256": "f2460867ce13305139836fc5737093e3e513fae53c4bee8fe0742fe5fc98c341",
+          "reopened": false
+        },
+        {
+          "case": "through_connected",
+          "mode": "sdist",
+          "path": "linux-glibc-x86_64-3.14/sdist/through_connected.twee",
+          "sha256": "8c13ace7ce2f65beff622e529456029fda6c7e1f624a5046886a7065f60a2f3f",
+          "reopened": false
+        }
+      ]
+    },
+    {
+      "slot": "linux-musl-aarch64-3.12",
+      "artifact_id": 12816830077,
+      "run_url": "https://github.com/Extremois/desembaraca-twine/actions/runs/40688784213",
+      "report_sha256": "b2a8d17b4425e287b4628452000846ff8661c01b38210bd9e4df5bd42491a36b",
+      "archive_sha256": "8d67c779a62ee66a9c2e283304ea128463ba3369d9005ce72f9abd79672015b4",
+      "outputs": [
+        {
+          "case": "crossing",
+          "mode": "wheel",
+          "path": "linux-musl-aarch64-3.12/wheel/crossing.twee",
+          "sha256": "aa821f1611a98d479811f652197070728904bd2afe31c8e6fca64ed9fbec8e8b",
+          "reopened": false
+        },
+        {
+          "case": "coincident",
+          "mode": "wheel",
+          "path": "linux-musl-aarch64-3.12/wheel/coincident.twee",
+          "sha256": "8644eeb3404043bec66b149c0ed3f2f4bea0600914a944e75c5f6464b78c1ed6",
+          "reopened": false
+        },
+        {
+          "case": "isolated_overlap",
+          "mode": "wheel",
+          "path": "linux-musl-aarch64-3.12/wheel/isolated_overlap.twee",
+          "sha256": "bef1e0132bce9b72f1317cdbb43d3c2a54e604632459cbda2c5af7d52c17a03a",
+          "reopened": false
+        },
+        {
+          "case": "connected_overlap",
+          "mode": "wheel",
+          "path": "linux-musl-aarch64-3.12/wheel/connected_overlap.twee",
+          "sha256": "137e849cfdf04ef3db7ed9057a7142ebecc403ee78952f307138ff5ecca72618",
+          "reopened": false
+        },
+        {
+          "case": "through_isolated",
+          "mode": "wheel",
+          "path": "linux-musl-aarch64-3.12/wheel/through_isolated.twee",
+          "sha256": "f2460867ce13305139836fc5737093e3e513fae53c4bee8fe0742fe5fc98c341",
+          "reopened": false
+        },
+        {
+          "case": "through_connected",
+          "mode": "wheel",
+          "path": "linux-musl-aarch64-3.12/wheel/through_connected.twee",
+          "sha256": "8c13ace7ce2f65beff622e529456029fda6c7e1f624a5046886a7065f60a2f3f",
+          "reopened": false
+        },
+        {
+          "case": "crossing",
+          "mode": "sdist",
+          "path": "linux-musl-aarch64-3.12/sdist/crossing.twee",
+          "sha256": "aa821f1611a98d479811f652197070728904bd2afe31c8e6fca64ed9fbec8e8b",
+          "reopened": false
+        },
+        {
+          "case": "coincident",
+          "mode": "sdist",
+          "path": "linux-musl-aarch64-3.12/sdist/coincident.twee",
+          "sha256": "8644eeb3404043bec66b149c0ed3f2f4bea0600914a944e75c5f6464b78c1ed6",
+          "reopened": false
+        },
+        {
+          "case": "isolated_overlap",
+          "mode": "sdist",
+          "path": "linux-musl-aarch64-3.12/sdist/isolated_overlap.twee",
+          "sha256": "bef1e0132bce9b72f1317cdbb43d3c2a54e604632459cbda2c5af7d52c17a03a",
+          "reopened": false
+        },
+        {
+          "case": "connected_overlap",
+          "mode": "sdist",
+          "path": "linux-musl-aarch64-3.12/sdist/connected_overlap.twee",
+          "sha256": "137e849cfdf04ef3db7ed9057a7142ebecc403ee78952f307138ff5ecca72618",
+          "reopened": false
+        },
+        {
+          "case": "through_isolated",
+          "mode": "sdist",
+          "path": "linux-musl-aarch64-3.12/sdist/through_isolated.twee",
+          "sha256": "f2460867ce13305139836fc5737093e3e513fae53c4bee8fe0742fe5fc98c341",
+          "reopened": false
+        },
+        {
+          "case": "through_connected",
+          "mode": "sdist",
+          "path": "linux-musl-aarch64-3.12/sdist/through_connected.twee",
+          "sha256": "8c13ace7ce2f65beff622e529456029fda6c7e1f624a5046886a7065f60a2f3f",
+          "reopened": false
+        }
+      ]
+    },
+    {
+      "slot": "linux-musl-aarch64-3.14",
+      "artifact_id": 12815209914,
+      "run_url": "https://github.com/Extremois/desembaraca-twine/actions/runs/40688784213",
+      "report_sha256": "0d5677b0608f00d4e2f250b28d0c552c65b42adac2371683f726c2c176b2fd66",
+      "archive_sha256": "8baf79a07673a2e9f74dd117a3c7a81dba6f4b1e195b501d16a43549f8d3dd0e",
+      "outputs": [
+        {
+          "case": "crossing",
+          "mode": "wheel",
+          "path": "linux-musl-aarch64-3.14/wheel/crossing.twee",
+          "sha256": "aa821f1611a98d479811f652197070728904bd2afe31c8e6fca64ed9fbec8e8b",
+          "reopened": false
+        },
+        {
+          "case": "coincident",
+          "mode": "wheel",
+          "path": "linux-musl-aarch64-3.14/wheel/coincident.twee",
+          "sha256": "8644eeb3404043bec66b149c0ed3f2f4bea0600914a944e75c5f6464b78c1ed6",
+          "reopened": false
+        },
+        {
+          "case": "isolated_overlap",
+          "mode": "wheel",
+          "path": "linux-musl-aarch64-3.14/wheel/isolated_overlap.twee",
+          "sha256": "bef1e0132bce9b72f1317cdbb43d3c2a54e604632459cbda2c5af7d52c17a03a",
+          "reopened": false
+        },
+        {
+          "case": "connected_overlap",
+          "mode": "wheel",
+          "path": "linux-musl-aarch64-3.14/wheel/connected_overlap.twee",
+          "sha256": "137e849cfdf04ef3db7ed9057a7142ebecc403ee78952f307138ff5ecca72618",
+          "reopened": false
+        },
+        {
+          "case": "through_isolated",
+          "mode": "wheel",
+          "path": "linux-musl-aarch64-3.14/wheel/through_isolated.twee",
+          "sha256": "f2460867ce13305139836fc5737093e3e513fae53c4bee8fe0742fe5fc98c341",
+          "reopened": false
+        },
+        {
+          "case": "through_connected",
+          "mode": "wheel",
+          "path": "linux-musl-aarch64-3.14/wheel/through_connected.twee",
+          "sha256": "8c13ace7ce2f65beff622e529456029fda6c7e1f624a5046886a7065f60a2f3f",
+          "reopened": false
+        },
+        {
+          "case": "crossing",
+          "mode": "sdist",
+          "path": "linux-musl-aarch64-3.14/sdist/crossing.twee",
+          "sha256": "aa821f1611a98d479811f652197070728904bd2afe31c8e6fca64ed9fbec8e8b",
+          "reopened": false
+        },
+        {
+          "case": "coincident",
+          "mode": "sdist",
+          "path": "linux-musl-aarch64-3.14/sdist/coincident.twee",
+          "sha256": "8644eeb3404043bec66b149c0ed3f2f4bea0600914a944e75c5f6464b78c1ed6",
+          "reopened": false
+        },
+        {
+          "case": "isolated_overlap",
+          "mode": "sdist",
+          "path": "linux-musl-aarch64-3.14/sdist/isolated_overlap.twee",
+          "sha256": "bef1e0132bce9b72f1317cdbb43d3c2a54e604632459cbda2c5af7d52c17a03a",
+          "reopened": false
+        },
+        {
+          "case": "connected_overlap",
+          "mode": "sdist",
+          "path": "linux-musl-aarch64-3.14/sdist/connected_overlap.twee",
+          "sha256": "137e849cfdf04ef3db7ed9057a7142ebecc403ee78952f307138ff5ecca72618",
+          "reopened": false
+        },
+        {
+          "case": "through_isolated",
+          "mode": "sdist",
+          "path": "linux-musl-aarch64-3.14/sdist/through_isolated.twee",
+          "sha256": "f2460867ce13305139836fc5737093e3e513fae53c4bee8fe0742fe5fc98c341",
+          "reopened": false
+        },
+        {
+          "case": "through_connected",
+          "mode": "sdist",
+          "path": "linux-musl-aarch64-3.14/sdist/through_connected.twee",
+          "sha256": "8c13ace7ce2f65beff622e529456029fda6c7e1f624a5046886a7065f60a2f3f",
+          "reopened": false
+        }
+      ]
+    },
+    {
+      "slot": "linux-musl-x86_64-3.12",
+      "artifact_id": 12815544405,
+      "run_url": "https://github.com/Extremois/desembaraca-twine/actions/runs/40688784213",
+      "report_sha256": "87b0cbfb6e9f40ab1bd94cd7f8ab57c3b5a27a1499cc964163cce9a96c8d65d6",
+      "archive_sha256": "bdfc05ae5b0a6da4a0788114c3378967392e6cc2527ac1bb7763685fbdbc47b8",
+      "outputs": [
+        {
+          "case": "crossing",
+          "mode": "wheel",
+          "path": "linux-musl-x86_64-3.12/wheel/crossing.twee",
+          "sha256": "aa821f1611a98d479811f652197070728904bd2afe31c8e6fca64ed9fbec8e8b",
+          "reopened": false
+        },
+        {
+          "case": "coincident",
+          "mode": "wheel",
+          "path": "linux-musl-x86_64-3.12/wheel/coincident.twee",
+          "sha256": "8644eeb3404043bec66b149c0ed3f2f4bea0600914a944e75c5f6464b78c1ed6",
+          "reopened": false
+        },
+        {
+          "case": "isolated_overlap",
+          "mode": "wheel",
+          "path": "linux-musl-x86_64-3.12/wheel/isolated_overlap.twee",
+          "sha256": "bef1e0132bce9b72f1317cdbb43d3c2a54e604632459cbda2c5af7d52c17a03a",
+          "reopened": false
+        },
+        {
+          "case": "connected_overlap",
+          "mode": "wheel",
+          "path": "linux-musl-x86_64-3.12/wheel/connected_overlap.twee",
+          "sha256": "137e849cfdf04ef3db7ed9057a7142ebecc403ee78952f307138ff5ecca72618",
+          "reopened": false
+        },
+        {
+          "case": "through_isolated",
+          "mode": "wheel",
+          "path": "linux-musl-x86_64-3.12/wheel/through_isolated.twee",
+          "sha256": "f2460867ce13305139836fc5737093e3e513fae53c4bee8fe0742fe5fc98c341",
+          "reopened": false
+        },
+        {
+          "case": "through_connected",
+          "mode": "wheel",
+          "path": "linux-musl-x86_64-3.12/wheel/through_connected.twee",
+          "sha256": "8c13ace7ce2f65beff622e529456029fda6c7e1f624a5046886a7065f60a2f3f",
+          "reopened": false
+        },
+        {
+          "case": "crossing",
+          "mode": "sdist",
+          "path": "linux-musl-x86_64-3.12/sdist/crossing.twee",
+          "sha256": "aa821f1611a98d479811f652197070728904bd2afe31c8e6fca64ed9fbec8e8b",
+          "reopened": false
+        },
+        {
+          "case": "coincident",
+          "mode": "sdist",
+          "path": "linux-musl-x86_64-3.12/sdist/coincident.twee",
+          "sha256": "8644eeb3404043bec66b149c0ed3f2f4bea0600914a944e75c5f6464b78c1ed6",
+          "reopened": false
+        },
+        {
+          "case": "isolated_overlap",
+          "mode": "sdist",
+          "path": "linux-musl-x86_64-3.12/sdist/isolated_overlap.twee",
+          "sha256": "bef1e0132bce9b72f1317cdbb43d3c2a54e604632459cbda2c5af7d52c17a03a",
+          "reopened": false
+        },
+        {
+          "case": "connected_overlap",
+          "mode": "sdist",
+          "path": "linux-musl-x86_64-3.12/sdist/connected_overlap.twee",
+          "sha256": "137e849cfdf04ef3db7ed9057a7142ebecc403ee78952f307138ff5ecca72618",
+          "reopened": false
+        },
+        {
+          "case": "through_isolated",
+          "mode": "sdist",
+          "path": "linux-musl-x86_64-3.12/sdist/through_isolated.twee",
+          "sha256": "f2460867ce13305139836fc5737093e3e513fae53c4bee8fe0742fe5fc98c341",
+          "reopened": false
+        },
+        {
+          "case": "through_connected",
+          "mode": "sdist",
+          "path": "linux-musl-x86_64-3.12/sdist/through_connected.twee",
+          "sha256": "8c13ace7ce2f65beff622e529456029fda6c7e1f624a5046886a7065f60a2f3f",
+          "reopened": false
+        }
+      ]
+    },
+    {
+      "slot": "linux-musl-x86_64-3.14",
+      "artifact_id": 12815863243,
+      "run_url": "https://github.com/Extremois/desembaraca-twine/actions/runs/40688784213",
+      "report_sha256": "6599c3ac12def40d7dca0ab4d3db512c78c7aaad2b15f6c34c1d1de54bf18a3e",
+      "archive_sha256": "0bd565d9f2ee15857b4f72c3a25252e51c2fadd3f8c06774c26cf4810524d8d6",
+      "outputs": [
+        {
+          "case": "crossing",
+          "mode": "wheel",
+          "path": "linux-musl-x86_64-3.14/wheel/crossing.twee",
+          "sha256": "aa821f1611a98d479811f652197070728904bd2afe31c8e6fca64ed9fbec8e8b",
+          "reopened": false
+        },
+        {
+          "case": "coincident",
+          "mode": "wheel",
+          "path": "linux-musl-x86_64-3.14/wheel/coincident.twee",
+          "sha256": "8644eeb3404043bec66b149c0ed3f2f4bea0600914a944e75c5f6464b78c1ed6",
+          "reopened": false
+        },
+        {
+          "case": "isolated_overlap",
+          "mode": "wheel",
+          "path": "linux-musl-x86_64-3.14/wheel/isolated_overlap.twee",
+          "sha256": "bef1e0132bce9b72f1317cdbb43d3c2a54e604632459cbda2c5af7d52c17a03a",
+          "reopened": false
+        },
+        {
+          "case": "connected_overlap",
+          "mode": "wheel",
+          "path": "linux-musl-x86_64-3.14/wheel/connected_overlap.twee",
+          "sha256": "137e849cfdf04ef3db7ed9057a7142ebecc403ee78952f307138ff5ecca72618",
+          "reopened": false
+        },
+        {
+          "case": "through_isolated",
+          "mode": "wheel",
+          "path": "linux-musl-x86_64-3.14/wheel/through_isolated.twee",
+          "sha256": "f2460867ce13305139836fc5737093e3e513fae53c4bee8fe0742fe5fc98c341",
+          "reopened": false
+        },
+        {
+          "case": "through_connected",
+          "mode": "wheel",
+          "path": "linux-musl-x86_64-3.14/wheel/through_connected.twee",
+          "sha256": "8c13ace7ce2f65beff622e529456029fda6c7e1f624a5046886a7065f60a2f3f",
+          "reopened": false
+        },
+        {
+          "case": "crossing",
+          "mode": "sdist",
+          "path": "linux-musl-x86_64-3.14/sdist/crossing.twee",
+          "sha256": "aa821f1611a98d479811f652197070728904bd2afe31c8e6fca64ed9fbec8e8b",
+          "reopened": false
+        },
+        {
+          "case": "coincident",
+          "mode": "sdist",
+          "path": "linux-musl-x86_64-3.14/sdist/coincident.twee",
+          "sha256": "8644eeb3404043bec66b149c0ed3f2f4bea0600914a944e75c5f6464b78c1ed6",
+          "reopened": false
+        },
+        {
+          "case": "isolated_overlap",
+          "mode": "sdist",
+          "path": "linux-musl-x86_64-3.14/sdist/isolated_overlap.twee",
+          "sha256": "bef1e0132bce9b72f1317cdbb43d3c2a54e604632459cbda2c5af7d52c17a03a",
+          "reopened": false
+        },
+        {
+          "case": "connected_overlap",
+          "mode": "sdist",
+          "path": "linux-musl-x86_64-3.14/sdist/connected_overlap.twee",
+          "sha256": "137e849cfdf04ef3db7ed9057a7142ebecc403ee78952f307138ff5ecca72618",
+          "reopened": false
+        },
+        {
+          "case": "through_isolated",
+          "mode": "sdist",
+          "path": "linux-musl-x86_64-3.14/sdist/through_isolated.twee",
+          "sha256": "f2460867ce13305139836fc5737093e3e513fae53c4bee8fe0742fe5fc98c341",
+          "reopened": false
+        },
+        {
+          "case": "through_connected",
+          "mode": "sdist",
+          "path": "linux-musl-x86_64-3.14/sdist/through_connected.twee",
+          "sha256": "8c13ace7ce2f65beff622e529456029fda6c7e1f624a5046886a7065f60a2f3f",
+          "reopened": false
+        }
+      ]
+    }
+  ],
+  "outputs": 144,
+  "scope": "Six POSIX ABI targets, two Pythons and two package formats; Windows review remains separate",
+  "distinct_outputs": [
+    {
+      "case": "coincident",
+      "sha256": "8644eeb3404043bec66b149c0ed3f2f4bea0600914a944e75c5f6464b78c1ed6",
+      "path": "review-by-hash/coincident-8644eeb34040.twee",
+      "occurrences": [
+        {
+          "slot": "darwin-darwin-aarch64-3.12",
+          "mode": "wheel",
+          "path": "darwin-darwin-aarch64-3.12/wheel/coincident.twee"
+        },
+        {
+          "slot": "darwin-darwin-aarch64-3.12",
+          "mode": "sdist",
+          "path": "darwin-darwin-aarch64-3.12/sdist/coincident.twee"
+        },
+        {
+          "slot": "darwin-darwin-aarch64-3.14",
+          "mode": "wheel",
+          "path": "darwin-darwin-aarch64-3.14/wheel/coincident.twee"
+        },
+        {
+          "slot": "darwin-darwin-aarch64-3.14",
+          "mode": "sdist",
+          "path": "darwin-darwin-aarch64-3.14/sdist/coincident.twee"
+        },
+        {
+          "slot": "darwin-darwin-x86_64-3.12",
+          "mode": "wheel",
+          "path": "darwin-darwin-x86_64-3.12/wheel/coincident.twee"
+        },
+        {
+          "slot": "darwin-darwin-x86_64-3.12",
+          "mode": "sdist",
+          "path": "darwin-darwin-x86_64-3.12/sdist/coincident.twee"
+        },
+        {
+          "slot": "darwin-darwin-x86_64-3.14",
+          "mode": "wheel",
+          "path": "darwin-darwin-x86_64-3.14/wheel/coincident.twee"
+        },
+        {
+          "slot": "darwin-darwin-x86_64-3.14",
+          "mode": "sdist",
+          "path": "darwin-darwin-x86_64-3.14/sdist/coincident.twee"
+        },
+        {
+          "slot": "linux-glibc-aarch64-3.12",
+          "mode": "wheel",
+          "path": "linux-glibc-aarch64-3.12/wheel/coincident.twee"
+        },
+        {
+          "slot": "linux-glibc-aarch64-3.12",
+          "mode": "sdist",
+          "path": "linux-glibc-aarch64-3.12/sdist/coincident.twee"
+        },
+        {
+          "slot": "linux-glibc-aarch64-3.14",
+          "mode": "wheel",
+          "path": "linux-glibc-aarch64-3.14/wheel/coincident.twee"
+        },
+        {
+          "slot": "linux-glibc-aarch64-3.14",
+          "mode": "sdist",
+          "path": "linux-glibc-aarch64-3.14/sdist/coincident.twee"
+        },
+        {
+          "slot": "linux-glibc-x86_64-3.12",
+          "mode": "wheel",
+          "path": "linux-glibc-x86_64-3.12/wheel/coincident.twee"
+        },
+        {
+          "slot": "linux-glibc-x86_64-3.12",
+          "mode": "sdist",
+          "path": "linux-glibc-x86_64-3.12/sdist/coincident.twee"
+        },
+        {
+          "slot": "linux-glibc-x86_64-3.14",
+          "mode": "wheel",
+          "path": "linux-glibc-x86_64-3.14/wheel/coincident.twee"
+        },
+        {
+          "slot": "linux-glibc-x86_64-3.14",
+          "mode": "sdist",
+          "path": "linux-glibc-x86_64-3.14/sdist/coincident.twee"
+        },
+        {
+          "slot": "linux-musl-aarch64-3.12",
+          "mode": "wheel",
+          "path": "linux-musl-aarch64-3.12/wheel/coincident.twee"
+        },
+        {
+          "slot": "linux-musl-aarch64-3.12",
+          "mode": "sdist",
+          "path": "linux-musl-aarch64-3.12/sdist/coincident.twee"
+        },
+        {
+          "slot": "linux-musl-aarch64-3.14",
+          "mode": "wheel",
+          "path": "linux-musl-aarch64-3.14/wheel/coincident.twee"
+        },
+        {
+          "slot": "linux-musl-aarch64-3.14",
+          "mode": "sdist",
+          "path": "linux-musl-aarch64-3.14/sdist/coincident.twee"
+        },
+        {
+          "slot": "linux-musl-x86_64-3.12",
+          "mode": "wheel",
+          "path": "linux-musl-x86_64-3.12/wheel/coincident.twee"
+        },
+        {
+          "slot": "linux-musl-x86_64-3.12",
+          "mode": "sdist",
+          "path": "linux-musl-x86_64-3.12/sdist/coincident.twee"
+        },
+        {
+          "slot": "linux-musl-x86_64-3.14",
+          "mode": "wheel",
+          "path": "linux-musl-x86_64-3.14/wheel/coincident.twee"
+        },
+        {
+          "slot": "linux-musl-x86_64-3.14",
+          "mode": "sdist",
+          "path": "linux-musl-x86_64-3.14/sdist/coincident.twee"
+        }
+      ],
+      "reopened": false
+    },
+    {
+      "case": "connected_overlap",
+      "sha256": "137e849cfdf04ef3db7ed9057a7142ebecc403ee78952f307138ff5ecca72618",
+      "path": "review-by-hash/connected_overlap-137e849cfdf0.twee",
+      "occurrences": [
+        {
+          "slot": "darwin-darwin-aarch64-3.12",
+          "mode": "wheel",
+          "path": "darwin-darwin-aarch64-3.12/wheel/connected_overlap.twee"
+        },
+        {
+          "slot": "darwin-darwin-aarch64-3.12",
+          "mode": "sdist",
+          "path": "darwin-darwin-aarch64-3.12/sdist/connected_overlap.twee"
+        },
+        {
+          "slot": "darwin-darwin-aarch64-3.14",
+          "mode": "wheel",
+          "path": "darwin-darwin-aarch64-3.14/wheel/connected_overlap.twee"
+        },
+        {
+          "slot": "darwin-darwin-aarch64-3.14",
+          "mode": "sdist",
+          "path": "darwin-darwin-aarch64-3.14/sdist/connected_overlap.twee"
+        },
+        {
+          "slot": "darwin-darwin-x86_64-3.12",
+          "mode": "wheel",
+          "path": "darwin-darwin-x86_64-3.12/wheel/connected_overlap.twee"
+        },
+        {
+          "slot": "darwin-darwin-x86_64-3.12",
+          "mode": "sdist",
+          "path": "darwin-darwin-x86_64-3.12/sdist/connected_overlap.twee"
+        },
+        {
+          "slot": "darwin-darwin-x86_64-3.14",
+          "mode": "wheel",
+          "path": "darwin-darwin-x86_64-3.14/wheel/connected_overlap.twee"
+        },
+        {
+          "slot": "darwin-darwin-x86_64-3.14",
+          "mode": "sdist",
+          "path": "darwin-darwin-x86_64-3.14/sdist/connected_overlap.twee"
+        },
+        {
+          "slot": "linux-glibc-aarch64-3.12",
+          "mode": "wheel",
+          "path": "linux-glibc-aarch64-3.12/wheel/connected_overlap.twee"
+        },
+        {
+          "slot": "linux-glibc-aarch64-3.12",
+          "mode": "sdist",
+          "path": "linux-glibc-aarch64-3.12/sdist/connected_overlap.twee"
+        },
+        {
+          "slot": "linux-glibc-aarch64-3.14",
+          "mode": "wheel",
+          "path": "linux-glibc-aarch64-3.14/wheel/connected_overlap.twee"
+        },
+        {
+          "slot": "linux-glibc-aarch64-3.14",
+          "mode": "sdist",
+          "path": "linux-glibc-aarch64-3.14/sdist/connected_overlap.twee"
+        },
+        {
+          "slot": "linux-glibc-x86_64-3.12",
+          "mode": "wheel",
+          "path": "linux-glibc-x86_64-3.12/wheel/connected_overlap.twee"
+        },
+        {
+          "slot": "linux-glibc-x86_64-3.12",
+          "mode": "sdist",
+          "path": "linux-glibc-x86_64-3.12/sdist/connected_overlap.twee"
+        },
+        {
+          "slot": "linux-glibc-x86_64-3.14",
+          "mode": "wheel",
+          "path": "linux-glibc-x86_64-3.14/wheel/connected_overlap.twee"
+        },
+        {
+          "slot": "linux-glibc-x86_64-3.14",
+          "mode": "sdist",
+          "path": "linux-glibc-x86_64-3.14/sdist/connected_overlap.twee"
+        },
+        {
+          "slot": "linux-musl-aarch64-3.12",
+          "mode": "wheel",
+          "path": "linux-musl-aarch64-3.12/wheel/connected_overlap.twee"
+        },
+        {
+          "slot": "linux-musl-aarch64-3.12",
+          "mode": "sdist",
+          "path": "linux-musl-aarch64-3.12/sdist/connected_overlap.twee"
+        },
+        {
+          "slot": "linux-musl-aarch64-3.14",
+          "mode": "wheel",
+          "path": "linux-musl-aarch64-3.14/wheel/connected_overlap.twee"
+        },
+        {
+          "slot": "linux-musl-aarch64-3.14",
+          "mode": "sdist",
+          "path": "linux-musl-aarch64-3.14/sdist/connected_overlap.twee"
+        },
+        {
+          "slot": "linux-musl-x86_64-3.12",
+          "mode": "wheel",
+          "path": "linux-musl-x86_64-3.12/wheel/connected_overlap.twee"
+        },
+        {
+          "slot": "linux-musl-x86_64-3.12",
+          "mode": "sdist",
+          "path": "linux-musl-x86_64-3.12/sdist/connected_overlap.twee"
+        },
+        {
+          "slot": "linux-musl-x86_64-3.14",
+          "mode": "wheel",
+          "path": "linux-musl-x86_64-3.14/wheel/connected_overlap.twee"
+        },
+        {
+          "slot": "linux-musl-x86_64-3.14",
+          "mode": "sdist",
+          "path": "linux-musl-x86_64-3.14/sdist/connected_overlap.twee"
+        }
+      ],
+      "reopened": false
+    },
+    {
+      "case": "crossing",
+      "sha256": "aa821f1611a98d479811f652197070728904bd2afe31c8e6fca64ed9fbec8e8b",
+      "path": "review-by-hash/crossing-aa821f1611a9.twee",
+      "occurrences": [
+        {
+          "slot": "darwin-darwin-aarch64-3.12",
+          "mode": "wheel",
+          "path": "darwin-darwin-aarch64-3.12/wheel/crossing.twee"
+        },
+        {
+          "slot": "darwin-darwin-aarch64-3.12",
+          "mode": "sdist",
+          "path": "darwin-darwin-aarch64-3.12/sdist/crossing.twee"
+        },
+        {
+          "slot": "darwin-darwin-aarch64-3.14",
+          "mode": "wheel",
+          "path": "darwin-darwin-aarch64-3.14/wheel/crossing.twee"
+        },
+        {
+          "slot": "darwin-darwin-aarch64-3.14",
+          "mode": "sdist",
+          "path": "darwin-darwin-aarch64-3.14/sdist/crossing.twee"
+        },
+        {
+          "slot": "darwin-darwin-x86_64-3.12",
+          "mode": "wheel",
+          "path": "darwin-darwin-x86_64-3.12/wheel/crossing.twee"
+        },
+        {
+          "slot": "darwin-darwin-x86_64-3.12",
+          "mode": "sdist",
+          "path": "darwin-darwin-x86_64-3.12/sdist/crossing.twee"
+        },
+        {
+          "slot": "darwin-darwin-x86_64-3.14",
+          "mode": "wheel",
+          "path": "darwin-darwin-x86_64-3.14/wheel/crossing.twee"
+        },
+        {
+          "slot": "darwin-darwin-x86_64-3.14",
+          "mode": "sdist",
+          "path": "darwin-darwin-x86_64-3.14/sdist/crossing.twee"
+        },
+        {
+          "slot": "linux-glibc-aarch64-3.12",
+          "mode": "wheel",
+          "path": "linux-glibc-aarch64-3.12/wheel/crossing.twee"
+        },
+        {
+          "slot": "linux-glibc-aarch64-3.12",
+          "mode": "sdist",
+          "path": "linux-glibc-aarch64-3.12/sdist/crossing.twee"
+        },
+        {
+          "slot": "linux-glibc-aarch64-3.14",
+          "mode": "wheel",
+          "path": "linux-glibc-aarch64-3.14/wheel/crossing.twee"
+        },
+        {
+          "slot": "linux-glibc-aarch64-3.14",
+          "mode": "sdist",
+          "path": "linux-glibc-aarch64-3.14/sdist/crossing.twee"
+        },
+        {
+          "slot": "linux-glibc-x86_64-3.12",
+          "mode": "wheel",
+          "path": "linux-glibc-x86_64-3.12/wheel/crossing.twee"
+        },
+        {
+          "slot": "linux-glibc-x86_64-3.12",
+          "mode": "sdist",
+          "path": "linux-glibc-x86_64-3.12/sdist/crossing.twee"
+        },
+        {
+          "slot": "linux-glibc-x86_64-3.14",
+          "mode": "wheel",
+          "path": "linux-glibc-x86_64-3.14/wheel/crossing.twee"
+        },
+        {
+          "slot": "linux-glibc-x86_64-3.14",
+          "mode": "sdist",
+          "path": "linux-glibc-x86_64-3.14/sdist/crossing.twee"
+        },
+        {
+          "slot": "linux-musl-aarch64-3.12",
+          "mode": "wheel",
+          "path": "linux-musl-aarch64-3.12/wheel/crossing.twee"
+        },
+        {
+          "slot": "linux-musl-aarch64-3.12",
+          "mode": "sdist",
+          "path": "linux-musl-aarch64-3.12/sdist/crossing.twee"
+        },
+        {
+          "slot": "linux-musl-aarch64-3.14",
+          "mode": "wheel",
+          "path": "linux-musl-aarch64-3.14/wheel/crossing.twee"
+        },
+        {
+          "slot": "linux-musl-aarch64-3.14",
+          "mode": "sdist",
+          "path": "linux-musl-aarch64-3.14/sdist/crossing.twee"
+        },
+        {
+          "slot": "linux-musl-x86_64-3.12",
+          "mode": "wheel",
+          "path": "linux-musl-x86_64-3.12/wheel/crossing.twee"
+        },
+        {
+          "slot": "linux-musl-x86_64-3.12",
+          "mode": "sdist",
+          "path": "linux-musl-x86_64-3.12/sdist/crossing.twee"
+        },
+        {
+          "slot": "linux-musl-x86_64-3.14",
+          "mode": "wheel",
+          "path": "linux-musl-x86_64-3.14/wheel/crossing.twee"
+        },
+        {
+          "slot": "linux-musl-x86_64-3.14",
+          "mode": "sdist",
+          "path": "linux-musl-x86_64-3.14/sdist/crossing.twee"
+        }
+      ],
+      "reopened": false
+    },
+    {
+      "case": "isolated_overlap",
+      "sha256": "bef1e0132bce9b72f1317cdbb43d3c2a54e604632459cbda2c5af7d52c17a03a",
+      "path": "review-by-hash/isolated_overlap-bef1e0132bce.twee",
+      "occurrences": [
+        {
+          "slot": "darwin-darwin-aarch64-3.12",
+          "mode": "wheel",
+          "path": "darwin-darwin-aarch64-3.12/wheel/isolated_overlap.twee"
+        },
+        {
+          "slot": "darwin-darwin-aarch64-3.12",
+          "mode": "sdist",
+          "path": "darwin-darwin-aarch64-3.12/sdist/isolated_overlap.twee"
+        },
+        {
+          "slot": "darwin-darwin-aarch64-3.14",
+          "mode": "wheel",
+          "path": "darwin-darwin-aarch64-3.14/wheel/isolated_overlap.twee"
+        },
+        {
+          "slot": "darwin-darwin-aarch64-3.14",
+          "mode": "sdist",
+          "path": "darwin-darwin-aarch64-3.14/sdist/isolated_overlap.twee"
+        },
+        {
+          "slot": "darwin-darwin-x86_64-3.12",
+          "mode": "wheel",
+          "path": "darwin-darwin-x86_64-3.12/wheel/isolated_overlap.twee"
+        },
+        {
+          "slot": "darwin-darwin-x86_64-3.12",
+          "mode": "sdist",
+          "path": "darwin-darwin-x86_64-3.12/sdist/isolated_overlap.twee"
+        },
+        {
+          "slot": "darwin-darwin-x86_64-3.14",
+          "mode": "wheel",
+          "path": "darwin-darwin-x86_64-3.14/wheel/isolated_overlap.twee"
+        },
+        {
+          "slot": "darwin-darwin-x86_64-3.14",
+          "mode": "sdist",
+          "path": "darwin-darwin-x86_64-3.14/sdist/isolated_overlap.twee"
+        },
+        {
+          "slot": "linux-glibc-aarch64-3.12",
+          "mode": "wheel",
+          "path": "linux-glibc-aarch64-3.12/wheel/isolated_overlap.twee"
+        },
+        {
+          "slot": "linux-glibc-aarch64-3.12",
+          "mode": "sdist",
+          "path": "linux-glibc-aarch64-3.12/sdist/isolated_overlap.twee"
+        },
+        {
+          "slot": "linux-glibc-aarch64-3.14",
+          "mode": "wheel",
+          "path": "linux-glibc-aarch64-3.14/wheel/isolated_overlap.twee"
+        },
+        {
+          "slot": "linux-glibc-aarch64-3.14",
+          "mode": "sdist",
+          "path": "linux-glibc-aarch64-3.14/sdist/isolated_overlap.twee"
+        },
+        {
+          "slot": "linux-glibc-x86_64-3.12",
+          "mode": "wheel",
+          "path": "linux-glibc-x86_64-3.12/wheel/isolated_overlap.twee"
+        },
+        {
+          "slot": "linux-glibc-x86_64-3.12",
+          "mode": "sdist",
+          "path": "linux-glibc-x86_64-3.12/sdist/isolated_overlap.twee"
+        },
+        {
+          "slot": "linux-glibc-x86_64-3.14",
+          "mode": "wheel",
+          "path": "linux-glibc-x86_64-3.14/wheel/isolated_overlap.twee"
+        },
+        {
+          "slot": "linux-glibc-x86_64-3.14",
+          "mode": "sdist",
+          "path": "linux-glibc-x86_64-3.14/sdist/isolated_overlap.twee"
+        },
+        {
+          "slot": "linux-musl-aarch64-3.12",
+          "mode": "wheel",
+          "path": "linux-musl-aarch64-3.12/wheel/isolated_overlap.twee"
+        },
+        {
+          "slot": "linux-musl-aarch64-3.12",
+          "mode": "sdist",
+          "path": "linux-musl-aarch64-3.12/sdist/isolated_overlap.twee"
+        },
+        {
+          "slot": "linux-musl-aarch64-3.14",
+          "mode": "wheel",
+          "path": "linux-musl-aarch64-3.14/wheel/isolated_overlap.twee"
+        },
+        {
+          "slot": "linux-musl-aarch64-3.14",
+          "mode": "sdist",
+          "path": "linux-musl-aarch64-3.14/sdist/isolated_overlap.twee"
+        },
+        {
+          "slot": "linux-musl-x86_64-3.12",
+          "mode": "wheel",
+          "path": "linux-musl-x86_64-3.12/wheel/isolated_overlap.twee"
+        },
+        {
+          "slot": "linux-musl-x86_64-3.12",
+          "mode": "sdist",
+          "path": "linux-musl-x86_64-3.12/sdist/isolated_overlap.twee"
+        },
+        {
+          "slot": "linux-musl-x86_64-3.14",
+          "mode": "wheel",
+          "path": "linux-musl-x86_64-3.14/wheel/isolated_overlap.twee"
+        },
+        {
+          "slot": "linux-musl-x86_64-3.14",
+          "mode": "sdist",
+          "path": "linux-musl-x86_64-3.14/sdist/isolated_overlap.twee"
+        }
+      ],
+      "reopened": false
+    },
+    {
+      "case": "through_connected",
+      "sha256": "8c13ace7ce2f65beff622e529456029fda6c7e1f624a5046886a7065f60a2f3f",
+      "path": "review-by-hash/through_connected-8c13ace7ce2f.twee",
+      "occurrences": [
+        {
+          "slot": "darwin-darwin-aarch64-3.12",
+          "mode": "wheel",
+          "path": "darwin-darwin-aarch64-3.12/wheel/through_connected.twee"
+        },
+        {
+          "slot": "darwin-darwin-aarch64-3.12",
+          "mode": "sdist",
+          "path": "darwin-darwin-aarch64-3.12/sdist/through_connected.twee"
+        },
+        {
+          "slot": "darwin-darwin-aarch64-3.14",
+          "mode": "wheel",
+          "path": "darwin-darwin-aarch64-3.14/wheel/through_connected.twee"
+        },
+        {
+          "slot": "darwin-darwin-aarch64-3.14",
+          "mode": "sdist",
+          "path": "darwin-darwin-aarch64-3.14/sdist/through_connected.twee"
+        },
+        {
+          "slot": "darwin-darwin-x86_64-3.12",
+          "mode": "wheel",
+          "path": "darwin-darwin-x86_64-3.12/wheel/through_connected.twee"
+        },
+        {
+          "slot": "darwin-darwin-x86_64-3.12",
+          "mode": "sdist",
+          "path": "darwin-darwin-x86_64-3.12/sdist/through_connected.twee"
+        },
+        {
+          "slot": "darwin-darwin-x86_64-3.14",
+          "mode": "wheel",
+          "path": "darwin-darwin-x86_64-3.14/wheel/through_connected.twee"
+        },
+        {
+          "slot": "darwin-darwin-x86_64-3.14",
+          "mode": "sdist",
+          "path": "darwin-darwin-x86_64-3.14/sdist/through_connected.twee"
+        },
+        {
+          "slot": "linux-glibc-aarch64-3.12",
+          "mode": "wheel",
+          "path": "linux-glibc-aarch64-3.12/wheel/through_connected.twee"
+        },
+        {
+          "slot": "linux-glibc-aarch64-3.12",
+          "mode": "sdist",
+          "path": "linux-glibc-aarch64-3.12/sdist/through_connected.twee"
+        },
+        {
+          "slot": "linux-glibc-aarch64-3.14",
+          "mode": "wheel",
+          "path": "linux-glibc-aarch64-3.14/wheel/through_connected.twee"
+        },
+        {
+          "slot": "linux-glibc-aarch64-3.14",
+          "mode": "sdist",
+          "path": "linux-glibc-aarch64-3.14/sdist/through_connected.twee"
+        },
+        {
+          "slot": "linux-glibc-x86_64-3.12",
+          "mode": "wheel",
+          "path": "linux-glibc-x86_64-3.12/wheel/through_connected.twee"
+        },
+        {
+          "slot": "linux-glibc-x86_64-3.12",
+          "mode": "sdist",
+          "path": "linux-glibc-x86_64-3.12/sdist/through_connected.twee"
+        },
+        {
+          "slot": "linux-glibc-x86_64-3.14",
+          "mode": "wheel",
+          "path": "linux-glibc-x86_64-3.14/wheel/through_connected.twee"
+        },
+        {
+          "slot": "linux-glibc-x86_64-3.14",
+          "mode": "sdist",
+          "path": "linux-glibc-x86_64-3.14/sdist/through_connected.twee"
+        },
+        {
+          "slot": "linux-musl-aarch64-3.12",
+          "mode": "wheel",
+          "path": "linux-musl-aarch64-3.12/wheel/through_connected.twee"
+        },
+        {
+          "slot": "linux-musl-aarch64-3.12",
+          "mode": "sdist",
+          "path": "linux-musl-aarch64-3.12/sdist/through_connected.twee"
+        },
+        {
+          "slot": "linux-musl-aarch64-3.14",
+          "mode": "wheel",
+          "path": "linux-musl-aarch64-3.14/wheel/through_connected.twee"
+        },
+        {
+          "slot": "linux-musl-aarch64-3.14",
+          "mode": "sdist",
+          "path": "linux-musl-aarch64-3.14/sdist/through_connected.twee"
+        },
+        {
+          "slot": "linux-musl-x86_64-3.12",
+          "mode": "wheel",
+          "path": "linux-musl-x86_64-3.12/wheel/through_connected.twee"
+        },
+        {
+          "slot": "linux-musl-x86_64-3.12",
+          "mode": "sdist",
+          "path": "linux-musl-x86_64-3.12/sdist/through_connected.twee"
+        },
+        {
+          "slot": "linux-musl-x86_64-3.14",
+          "mode": "wheel",
+          "path": "linux-musl-x86_64-3.14/wheel/through_connected.twee"
+        },
+        {
+          "slot": "linux-musl-x86_64-3.14",
+          "mode": "sdist",
+          "path": "linux-musl-x86_64-3.14/sdist/through_connected.twee"
+        }
+      ],
+      "reopened": false
+    },
+    {
+      "case": "through_isolated",
+      "sha256": "f2460867ce13305139836fc5737093e3e513fae53c4bee8fe0742fe5fc98c341",
+      "path": "review-by-hash/through_isolated-f2460867ce13.twee",
+      "occurrences": [
+        {
+          "slot": "darwin-darwin-aarch64-3.12",
+          "mode": "wheel",
+          "path": "darwin-darwin-aarch64-3.12/wheel/through_isolated.twee"
+        },
+        {
+          "slot": "darwin-darwin-aarch64-3.12",
+          "mode": "sdist",
+          "path": "darwin-darwin-aarch64-3.12/sdist/through_isolated.twee"
+        },
+        {
+          "slot": "darwin-darwin-aarch64-3.14",
+          "mode": "wheel",
+          "path": "darwin-darwin-aarch64-3.14/wheel/through_isolated.twee"
+        },
+        {
+          "slot": "darwin-darwin-aarch64-3.14",
+          "mode": "sdist",
+          "path": "darwin-darwin-aarch64-3.14/sdist/through_isolated.twee"
+        },
+        {
+          "slot": "darwin-darwin-x86_64-3.12",
+          "mode": "wheel",
+          "path": "darwin-darwin-x86_64-3.12/wheel/through_isolated.twee"
+        },
+        {
+          "slot": "darwin-darwin-x86_64-3.12",
+          "mode": "sdist",
+          "path": "darwin-darwin-x86_64-3.12/sdist/through_isolated.twee"
+        },
+        {
+          "slot": "darwin-darwin-x86_64-3.14",
+          "mode": "wheel",
+          "path": "darwin-darwin-x86_64-3.14/wheel/through_isolated.twee"
+        },
+        {
+          "slot": "darwin-darwin-x86_64-3.14",
+          "mode": "sdist",
+          "path": "darwin-darwin-x86_64-3.14/sdist/through_isolated.twee"
+        },
+        {
+          "slot": "linux-glibc-aarch64-3.12",
+          "mode": "wheel",
+          "path": "linux-glibc-aarch64-3.12/wheel/through_isolated.twee"
+        },
+        {
+          "slot": "linux-glibc-aarch64-3.12",
+          "mode": "sdist",
+          "path": "linux-glibc-aarch64-3.12/sdist/through_isolated.twee"
+        },
+        {
+          "slot": "linux-glibc-aarch64-3.14",
+          "mode": "wheel",
+          "path": "linux-glibc-aarch64-3.14/wheel/through_isolated.twee"
+        },
+        {
+          "slot": "linux-glibc-aarch64-3.14",
+          "mode": "sdist",
+          "path": "linux-glibc-aarch64-3.14/sdist/through_isolated.twee"
+        },
+        {
+          "slot": "linux-glibc-x86_64-3.12",
+          "mode": "wheel",
+          "path": "linux-glibc-x86_64-3.12/wheel/through_isolated.twee"
+        },
+        {
+          "slot": "linux-glibc-x86_64-3.12",
+          "mode": "sdist",
+          "path": "linux-glibc-x86_64-3.12/sdist/through_isolated.twee"
+        },
+        {
+          "slot": "linux-glibc-x86_64-3.14",
+          "mode": "wheel",
+          "path": "linux-glibc-x86_64-3.14/wheel/through_isolated.twee"
+        },
+        {
+          "slot": "linux-glibc-x86_64-3.14",
+          "mode": "sdist",
+          "path": "linux-glibc-x86_64-3.14/sdist/through_isolated.twee"
+        },
+        {
+          "slot": "linux-musl-aarch64-3.12",
+          "mode": "wheel",
+          "path": "linux-musl-aarch64-3.12/wheel/through_isolated.twee"
+        },
+        {
+          "slot": "linux-musl-aarch64-3.12",
+          "mode": "sdist",
+          "path": "linux-musl-aarch64-3.12/sdist/through_isolated.twee"
+        },
+        {
+          "slot": "linux-musl-aarch64-3.14",
+          "mode": "wheel",
+          "path": "linux-musl-aarch64-3.14/wheel/through_isolated.twee"
+        },
+        {
+          "slot": "linux-musl-aarch64-3.14",
+          "mode": "sdist",
+          "path": "linux-musl-aarch64-3.14/sdist/through_isolated.twee"
+        },
+        {
+          "slot": "linux-musl-x86_64-3.12",
+          "mode": "wheel",
+          "path": "linux-musl-x86_64-3.12/wheel/through_isolated.twee"
+        },
+        {
+          "slot": "linux-musl-x86_64-3.12",
+          "mode": "sdist",
+          "path": "linux-musl-x86_64-3.12/sdist/through_isolated.twee"
+        },
+        {
+          "slot": "linux-musl-x86_64-3.14",
+          "mode": "wheel",
+          "path": "linux-musl-x86_64-3.14/wheel/through_isolated.twee"
+        },
+        {
+          "slot": "linux-musl-x86_64-3.14",
+          "mode": "sdist",
+          "path": "linux-musl-x86_64-3.14/sdist/through_isolated.twee"
+        }
+      ],
+      "reopened": false
+    }
+  ],
+  "distinct_output_count": 6
+}
