@@ -1,5 +1,11 @@
 # Candidatos e auditorias estruturadas para revisão
 
+**Pares históricos:** a [integração da tabela alternativa](../entity-integration-ci-2026-10-28/README.md)
+reconstruiu os seis bundles e seus kits. Seu `payload-plan.json` identifica os
+12 arquivos novos e conferidos. Estes rascunhos continuam como histórico e
+precisam ser atualizados antes de aprovação ou publicação; não usar seus hashes
+para distribuir a implementação atual.
+
 Os seis manifestos candidatos e seus rascunhos de auditoria usam a revisão `6279d6ff715abbd4fc8d5fdf778d8a27a4f3ddfb`, já aprovada pelos cinco workflows do Actions. O [resumo](summary.json) fixa os hashes dos manifestos e auditorias. Os rascunhos anteriores continuam históricos.
 
 | Artefato | Arquivos conferidos | Avisos além do índice | Inputs estáticos mapeados |

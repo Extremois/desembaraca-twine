@@ -3,15 +3,15 @@
   "task": "T038",
   "task_complete": false,
   "qualified": false,
-  "captured_at": "2026-10-27T22:07:15.168752+00:00",
+  "captured_at": "2026-10-27T22:34:24.340758+00:00",
   "registry": {
     "path": "tools/runtime/support-targets.json",
     "sha256": "be3e8a77e3836d1125658c00a75fbf0e3584f1e26a166a053583336c29a5d295"
   },
-  "application_revision": "55a789ea497c2fa74180cbb2e2dee3b81f1a1220",
+  "application_revision": "7b30c80a7a1b980860e0fa9e6b16a14d8245c28e",
   "evidence": {
-    "path": "specs/003-add-cross-platform-support/evidence/debian-native-2026-10-27/summary.json",
-    "sha256": "b7343aca3c9f0e32ceab8270fa79d4419100db2317e541f0596014670205a0eb"
+    "path": "specs/003-add-cross-platform-support/evidence/fedora-native-2026-10-27/summary.json",
+    "sha256": "97527f029df1ba333ada037872badd3b37d76a24552cf02b10e9ed2cafe1120e"
   },
   "expected_targets": 4,
   "expected_python_slots": 8,
@@ -33,8 +33,8 @@
           "qualified": false,
           "observation_state": "partial-native-observation",
           "evidence": {
-            "path": "specs/003-add-cross-platform-support/evidence/debian-native-2026-10-27/summary.json",
-            "sha256": "b7343aca3c9f0e32ceab8270fa79d4419100db2317e541f0596014670205a0eb"
+            "path": "specs/003-add-cross-platform-support/evidence/fedora-native-2026-10-27/summary.json",
+            "sha256": "97527f029df1ba333ada037872badd3b37d76a24552cf02b10e9ed2cafe1120e"
           },
           "observed_python": "3.12.15"
         },
@@ -44,8 +44,8 @@
           "qualified": false,
           "observation_state": "partial-native-observation",
           "evidence": {
-            "path": "specs/003-add-cross-platform-support/evidence/debian-native-2026-10-27/summary.json",
-            "sha256": "b7343aca3c9f0e32ceab8270fa79d4419100db2317e541f0596014670205a0eb"
+            "path": "specs/003-add-cross-platform-support/evidence/fedora-native-2026-10-27/summary.json",
+            "sha256": "97527f029df1ba333ada037872badd3b37d76a24552cf02b10e9ed2cafe1120e"
           },
           "observed_python": "3.14.8"
         }
@@ -93,8 +93,8 @@
           "qualified": false,
           "observation_state": "partial-native-observation",
           "evidence": {
-            "path": "specs/003-add-cross-platform-support/evidence/debian-native-2026-10-27/summary.json",
-            "sha256": "b7343aca3c9f0e32ceab8270fa79d4419100db2317e541f0596014670205a0eb"
+            "path": "specs/003-add-cross-platform-support/evidence/fedora-native-2026-10-27/summary.json",
+            "sha256": "97527f029df1ba333ada037872badd3b37d76a24552cf02b10e9ed2cafe1120e"
           },
           "observed_python": "3.12.15"
         },
@@ -104,8 +104,8 @@
           "qualified": false,
           "observation_state": "partial-native-observation",
           "evidence": {
-            "path": "specs/003-add-cross-platform-support/evidence/debian-native-2026-10-27/summary.json",
-            "sha256": "b7343aca3c9f0e32ceab8270fa79d4419100db2317e541f0596014670205a0eb"
+            "path": "specs/003-add-cross-platform-support/evidence/fedora-native-2026-10-27/summary.json",
+            "sha256": "97527f029df1ba333ada037872badd3b37d76a24552cf02b10e9ed2cafe1120e"
           },
           "observed_python": "3.14.8"
         }
@@ -142,8 +142,8 @@
   ],
   "limitations": [
     "Private development wheel and controlled runtime acquisition; no final remote candidate or sdist acceptance",
-    "Pinned dated Debian/Ubuntu images; maintenance recorded separately, no package security/LTS or Pro eligibility acceptance",
-    "Musl engine kernel observation on Debian/Ubuntu; no native Alpine qualification",
+    "Pinned Fedora image builds and dated Debian/Ubuntu images; no package security/maintenance, LTS or Pro eligibility acceptance",
+    "Musl engine kernel observation on Fedora/Debian/Ubuntu; no native Alpine qualification",
     "No local VM, Twine review, ARM64 qualification, catalog or support promotion"
   ],
   "maintenance_review": {
@@ -168,5 +168,9 @@
         "source": "https://www.debian.org/releases/trixie/"
       }
     ]
+  },
+  "previous_index": {
+    "path": "specs/003-add-cross-platform-support/evidence/fedora-native-2026-10-27/previous-linux-debian.json",
+    "sha256": "2fa52eea0aebc7da24b5cc0bb7dcd709fec55626d4dc549c290c46f9679f5e12"
   }
 }

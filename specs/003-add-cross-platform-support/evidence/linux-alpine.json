@@ -1,0 +1,335 @@
+{
+  "kind": "partial-userland-alpine-evidence-index",
+  "task": "T044",
+  "task_complete": false,
+  "qualified": false,
+  "captured_at": "2026-10-27T23:30:00+00:00",
+  "registry": {
+    "path": "tools/runtime/support-targets.json",
+    "sha256": "be3e8a77e3836d1125658c00a75fbf0e3584f1e26a166a053583336c29a5d295"
+  },
+  "application_revision": "7b30c80a7a1b980860e0fa9e6b16a14d8245c28e",
+  "userland_evidence": {
+    "path": "specs/003-add-cross-platform-support/evidence/alpine-userland-compatibility-2026-10-20/summary.json",
+    "sha256": "b8e05e7fe713762b221988c49d4084ced82817fc39186a66b90ce51f0952933e"
+  },
+  "series_scope": {
+    "3.21": {
+      "patch": "3.21.5",
+      "repository_branch": "main",
+      "community_dependency": false
+    },
+    "3.22": {
+      "patch": "3.22.4",
+      "repository_branch": "main",
+      "community_dependency": false
+    },
+    "3.23": {
+      "patch": "3.23.6",
+      "repository_branch": "main",
+      "community_dependency": false
+    },
+    "3.24": {
+      "patch": "3.24.2",
+      "repository_branch": "main",
+      "community_dependency": false
+    }
+  },
+  "expected_targets": 8,
+  "expected_python_slots": 16,
+  "complete_targets": 0,
+  "targets_with_partial_native_observations": 0,
+  "python_slots_with_partial_native_observations": 0,
+  "targets": [
+    {
+      "target_id": "alpine-3.21-stable-x86_64-distribution-default",
+      "version": "3.21",
+      "arch": "x86_64",
+      "observed_patch": "3.21.5",
+      "repository_branch": "main",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "userland-container-observation",
+          "evidence": {
+            "path": "specs/003-add-cross-platform-support/evidence/alpine-userland-compatibility-2026-10-20/summary.json",
+            "sha256": "b8e05e7fe713762b221988c49d4084ced82817fc39186a66b90ce51f0952933e"
+          },
+          "observed_python": "3.12.12"
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "userland-container-observation",
+          "evidence": {
+            "path": "specs/003-add-cross-platform-support/evidence/alpine-userland-compatibility-2026-10-20/summary.json",
+            "sha256": "b8e05e7fe713762b221988c49d4084ced82817fc39186a66b90ce51f0952933e"
+          },
+          "observed_python": "3.14.1"
+        }
+      ],
+      "pending_reason": "Native kernel/SO execution (container tested only), final distributed candidate, Twine review and remaining common gates"
+    },
+    {
+      "target_id": "alpine-3.21-stable-aarch64-distribution-default",
+      "version": "3.21",
+      "arch": "aarch64",
+      "observed_patch": "3.21.5",
+      "repository_branch": "main",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "userland-container-observation",
+          "evidence": {
+            "path": "specs/003-add-cross-platform-support/evidence/alpine-userland-compatibility-2026-10-20/summary.json",
+            "sha256": "b8e05e7fe713762b221988c49d4084ced82817fc39186a66b90ce51f0952933e"
+          },
+          "observed_python": "3.12.12"
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "userland-container-observation",
+          "evidence": {
+            "path": "specs/003-add-cross-platform-support/evidence/alpine-userland-compatibility-2026-10-20/summary.json",
+            "sha256": "b8e05e7fe713762b221988c49d4084ced82817fc39186a66b90ce51f0952933e"
+          },
+          "observed_python": "3.14.1"
+        }
+      ],
+      "pending_reason": "Native kernel/SO execution (container tested only), final distributed candidate, Twine review and remaining common gates"
+    },
+    {
+      "target_id": "alpine-3.22-stable-x86_64-distribution-default",
+      "version": "3.22",
+      "arch": "x86_64",
+      "observed_patch": "3.22.4",
+      "repository_branch": "main",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "userland-container-observation",
+          "evidence": {
+            "path": "specs/003-add-cross-platform-support/evidence/alpine-userland-compatibility-2026-10-20/summary.json",
+            "sha256": "b8e05e7fe713762b221988c49d4084ced82817fc39186a66b90ce51f0952933e"
+          },
+          "observed_python": "3.12.13"
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "userland-container-observation",
+          "evidence": {
+            "path": "specs/003-add-cross-platform-support/evidence/alpine-userland-compatibility-2026-10-20/summary.json",
+            "sha256": "b8e05e7fe713762b221988c49d4084ced82817fc39186a66b90ce51f0952933e"
+          },
+          "observed_python": "3.14.5"
+        }
+      ],
+      "pending_reason": "Native kernel/SO execution (container tested only), final distributed candidate, Twine review and remaining common gates"
+    },
+    {
+      "target_id": "alpine-3.22-stable-aarch64-distribution-default",
+      "version": "3.22",
+      "arch": "aarch64",
+      "observed_patch": "3.22.4",
+      "repository_branch": "main",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "userland-container-observation",
+          "evidence": {
+            "path": "specs/003-add-cross-platform-support/evidence/alpine-userland-compatibility-2026-10-20/summary.json",
+            "sha256": "b8e05e7fe713762b221988c49d4084ced82817fc39186a66b90ce51f0952933e"
+          },
+          "observed_python": "3.12.13"
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "userland-container-observation",
+          "evidence": {
+            "path": "specs/003-add-cross-platform-support/evidence/alpine-userland-compatibility-2026-10-20/summary.json",
+            "sha256": "b8e05e7fe713762b221988c49d4084ced82817fc39186a66b90ce51f0952933e"
+          },
+          "observed_python": "3.14.5"
+        }
+      ],
+      "pending_reason": "Native kernel/SO execution (container tested only), final distributed candidate, Twine review and remaining common gates"
+    },
+    {
+      "target_id": "alpine-3.23-stable-x86_64-distribution-default",
+      "version": "3.23",
+      "arch": "x86_64",
+      "observed_patch": "3.23.6",
+      "repository_branch": "main",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "userland-container-observation",
+          "evidence": {
+            "path": "specs/003-add-cross-platform-support/evidence/alpine-userland-compatibility-2026-10-20/summary.json",
+            "sha256": "b8e05e7fe713762b221988c49d4084ced82817fc39186a66b90ce51f0952933e"
+          },
+          "observed_python": "3.12.15"
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "userland-container-observation",
+          "evidence": {
+            "path": "specs/003-add-cross-platform-support/evidence/alpine-userland-compatibility-2026-10-20/summary.json",
+            "sha256": "b8e05e7fe713762b221988c49d4084ced82817fc39186a66b90ce51f0952933e"
+          },
+          "observed_python": "3.14.8"
+        }
+      ],
+      "pending_reason": "Native kernel/SO execution (container tested only), final distributed candidate, Twine review and remaining common gates"
+    },
+    {
+      "target_id": "alpine-3.23-stable-aarch64-distribution-default",
+      "version": "3.23",
+      "arch": "aarch64",
+      "observed_patch": "3.23.6",
+      "repository_branch": "main",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "userland-container-observation",
+          "evidence": {
+            "path": "specs/003-add-cross-platform-support/evidence/alpine-userland-compatibility-2026-10-20/summary.json",
+            "sha256": "b8e05e7fe713762b221988c49d4084ced82817fc39186a66b90ce51f0952933e"
+          },
+          "observed_python": "3.12.15"
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "userland-container-observation",
+          "evidence": {
+            "path": "specs/003-add-cross-platform-support/evidence/alpine-userland-compatibility-2026-10-20/summary.json",
+            "sha256": "b8e05e7fe713762b221988c49d4084ced82817fc39186a66b90ce51f0952933e"
+          },
+          "observed_python": "3.14.8"
+        }
+      ],
+      "pending_reason": "Native kernel/SO execution (container tested only), final distributed candidate, Twine review and remaining common gates"
+    },
+    {
+      "target_id": "alpine-3.24-stable-x86_64-distribution-default",
+      "version": "3.24",
+      "arch": "x86_64",
+      "observed_patch": "3.24.2",
+      "repository_branch": "main",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "userland-container-observation",
+          "evidence": {
+            "path": "specs/003-add-cross-platform-support/evidence/alpine-userland-compatibility-2026-10-20/summary.json",
+            "sha256": "b8e05e7fe713762b221988c49d4084ced82817fc39186a66b90ce51f0952933e"
+          },
+          "observed_python": "3.12.15"
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "userland-container-observation",
+          "evidence": {
+            "path": "specs/003-add-cross-platform-support/evidence/alpine-userland-compatibility-2026-10-20/summary.json",
+            "sha256": "b8e05e7fe713762b221988c49d4084ced82817fc39186a66b90ce51f0952933e"
+          },
+          "observed_python": "3.14.8"
+        }
+      ],
+      "pending_reason": "Native kernel/SO execution (container tested only), final distributed candidate, Twine review and remaining common gates"
+    },
+    {
+      "target_id": "alpine-3.24-stable-aarch64-distribution-default",
+      "version": "3.24",
+      "arch": "aarch64",
+      "observed_patch": "3.24.2",
+      "repository_branch": "main",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "userland-container-observation",
+          "evidence": {
+            "path": "specs/003-add-cross-platform-support/evidence/alpine-userland-compatibility-2026-10-20/summary.json",
+            "sha256": "b8e05e7fe713762b221988c49d4084ced82817fc39186a66b90ce51f0952933e"
+          },
+          "observed_python": "3.12.15"
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "userland-container-observation",
+          "evidence": {
+            "path": "specs/003-add-cross-platform-support/evidence/alpine-userland-compatibility-2026-10-20/summary.json",
+            "sha256": "b8e05e7fe713762b221988c49d4084ced82817fc39186a66b90ce51f0952933e"
+          },
+          "observed_python": "3.14.8"
+        }
+      ],
+      "pending_reason": "Native kernel/SO execution (container tested only), final distributed candidate, Twine review and remaining common gates"
+    }
+  ],
+  "limitations": [
+    "Userland compatibility verified in ephemeral containers on runner host kernel; native Alpine Linux kernel execution unverified",
+    "No reliance on system Graphviz community package; private musl static engine used",
+    "No local VM, Twine review, final distributed candidate or catalog promotion"
+  ],
+  "release_scope": {
+    "reference_date": "2026-10-17",
+    "versions": [
+      "3.21",
+      "3.22",
+      "3.23",
+      "3.24"
+    ],
+    "main_repository_scope": true,
+    "community_exclusion": true,
+    "maintenance_acceptance": false,
+    "source": "tools/runtime/support-targets.json"
+  }
+}

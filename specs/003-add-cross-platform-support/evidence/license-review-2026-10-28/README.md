@@ -1,5 +1,12 @@
 # Dossiê para decisão de licenças — spec 003
 
+**Atualização da tabela de entidades:** a [integração validada](../entity-integration-ci-2026-10-28/README.md)
+substitui os dois arquivos nos seis builds POSIX e nos kits de fontes, com inputs
+WHATWG/W3C e avisos próprios. As condições da tabela antiga abaixo descrevem os
+bundles históricos deste dossiê. A revisão dos novos pares deve usar os hashes
+da integração; as demais conclusões por componente e a entrega permanente
+continuam pendentes.
+
 ## Escopo da revisão
 
 Revisar os seis bundles POSIX existentes da revisão `f63b43e8842539336dc93f08cfa5711a94d0003f`, preservando o Graphviz 16.1.0 atual. O [índice de candidatos](candidate-index.json) contém os hashes completos de binário, fontes e proveniência, os recibos originais e os avisos preservados para cada artefato. O índice é material de revisão, com `approved: false`, `qualified: false` e revisor ainda não registrado.

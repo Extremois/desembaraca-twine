@@ -1,0 +1,88 @@
+{
+  "application_revision": "f834748c83d4c82bbb307068cda3e8ae952c442b",
+  "qualified_support": false,
+  "workflows": [
+    {
+      "id": 40688784173,
+      "name": "Cross-platform foundation",
+      "url": "https://github.com/Extremois/desembaraca-twine/actions/runs/40688784173",
+      "conclusion": "success"
+    },
+    {
+      "id": 40688784181,
+      "name": "Installed packages with private POSIX engines",
+      "url": "https://github.com/Extremois/desembaraca-twine/actions/runs/40688784181",
+      "conclusion": "success"
+    },
+    {
+      "id": 40688784213,
+      "name": "Musl and Windows cache notice integrity",
+      "url": "https://github.com/Extremois/desembaraca-twine/actions/runs/40688784213",
+      "conclusion": "success"
+    },
+    {
+      "id": 40688784230,
+      "name": "Current wheel and sdist installation",
+      "url": "https://github.com/Extremois/desembaraca-twine/actions/runs/40688784230",
+      "conclusion": "success"
+    },
+    {
+      "id": 40688784249,
+      "name": "Installed cache notice integrity",
+      "url": "https://github.com/Extremois/desembaraca-twine/actions/runs/40688784249",
+      "conclusion": "success"
+    }
+  ],
+  "foundation": [
+    {
+      "name": "Pure contracts (macos-15, Python 3.14)",
+      "test_count": 303,
+      "path": "122817940951.log.gz",
+      "raw_sha256": "d0839b4e7006ce42c6c693f768fba823e0cab4ae2ef3d09ce6a13bc4777067cd",
+      "conclusion": "success"
+    },
+    {
+      "name": "Pure contracts (ubuntu-24.04, Python 3.14)",
+      "test_count": 303,
+      "path": "122817941206.log.gz",
+      "raw_sha256": "282f61fe92caf15566b847a14218dac6d43f5f3bf636eaff11a8e3e1d137276c",
+      "conclusion": "success"
+    },
+    {
+      "name": "Pure contracts (ubuntu-24.04, Python 3.12)",
+      "test_count": 303,
+      "path": "122817941224.log.gz",
+      "raw_sha256": "40f430fcfd142f507b7a9aafecde2660dda193b464abf3a037325a4c697e631e",
+      "conclusion": "success"
+    },
+    {
+      "name": "Pure contracts (macos-15, Python 3.12)",
+      "test_count": 303,
+      "path": "122817941381.log.gz",
+      "raw_sha256": "8c72a71288172b415a9e843eb4aebbf90e280d02590bfa8fee64aa7e7730b248",
+      "conclusion": "success"
+    },
+    {
+      "name": "Pure contracts (windows-latest, Python 3.14)",
+      "test_count": 303,
+      "path": "122817941448.log.gz",
+      "raw_sha256": "cf88674c144d1a21652fbaefb66af70d07338a70d7dbfd5ddc43340b888d5839",
+      "conclusion": "success"
+    },
+    {
+      "name": "Pure contracts (windows-latest, Python 3.12)",
+      "test_count": 303,
+      "path": "122817941480.log.gz",
+      "raw_sha256": "4587103f764d42d64db10008100a6dd95d165cd1191b86487e419a16924477e0",
+      "conclusion": "success"
+    }
+  ],
+  "earlier_failure": {
+    "run": 40688028110,
+    "job": 122815350558,
+    "conclusion": "failure",
+    "log": "../export-failure-7569dbb.log.gz",
+    "resolution": "Did not reproduce on full repeat; diagnostic output preserved by f834748; no binary/runtime fix claimed"
+  },
+  "redundant_rebuilds": "Four rebuilds on f834748 cancelled; diagnostic output/JSON newline changes do not change engine recipes or sources"
+}

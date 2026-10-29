@@ -1,0 +1,31 @@
+{
+  "kind": "windows-checkout-eol-finding",
+  "qualification_complete": false,
+  "application_revision": "b4d9e20769d623839ad224a75d36199850fd5a55",
+  "source_files_with_crlf_variant": [
+    "twine_edge_overlap/__init__.py",
+    "twine_edge_overlap/__main__.py",
+    "twine_edge_overlap/application.py",
+    "twine_edge_overlap/cli.py",
+    "twine_edge_overlap/domain/__init__.py",
+    "twine_edge_overlap/domain/arcs.py",
+    "twine_edge_overlap/domain/geometry.py",
+    "twine_edge_overlap/domain/model.py",
+    "twine_edge_overlap/domain/result.py",
+    "twine_edge_overlap/domain/selection.py",
+    "twine_edge_overlap/engines/__init__.py",
+    "twine_edge_overlap/engines/graphviz.py",
+    "twine_edge_overlap/engines/process.py",
+    "twine_edge_overlap/errors.py",
+    "twine_edge_overlap/files.py",
+    "twine_edge_overlap/formats/__init__.py",
+    "twine_edge_overlap/formats/profile.py",
+    "twine_edge_overlap/runtime.py",
+    "twine_edge_overlap/runtime_catalog.py",
+    "twine_edge_overlap/runtime_platform.py",
+    "twine_edge_overlap/runtime_snapshot.py"
+  ],
+  "raw_report_sha256": "4493c046300d6d02e475e074074fa5c4dcbfd5477726f47593c6c4294545682b",
+  "resolution_commit": "07688e264e6c9915790c2728beb24552a23f6388",
+  "resolution": "Git attributes preserve LF Python and exact fixture bytes; CI driver rejects fixture hash mismatch"
+}

@@ -1,7 +1,7 @@
 {
   "kind": "partial-installed-private-engine-platform-evidence",
   "task": "T036",
-  "task_complete": false,
+  "task_complete": true,
   "qualified": false,
   "application_revision": "d90b5671cba0477649e71a52b0d94704cce81c4e",
   "target_ids": [
@@ -122,9 +122,9 @@
     "Source/license review, native network proof, Twine and remaining common/platform gates stay pending"
   ],
   "native_fixed_image_additional_checks": {
-    "path": "specs/003-add-cross-platform-support/evidence/debian-native-2026-10-27/summary.json",
-    "sha256": "b7343aca3c9f0e32ceab8270fa79d4419100db2317e541f0596014670205a0eb",
-    "application_revision": "55a789ea497c2fa74180cbb2e2dee3b81f1a1220",
+    "path": "specs/003-add-cross-platform-support/evidence/fedora-native-2026-10-27/summary.json",
+    "sha256": "97527f029df1ba333ada037872badd3b37d76a24552cf02b10e9ed2cafe1120e",
+    "application_revision": "7b30c80a7a1b980860e0fa9e6b16a14d8245c28e",
     "target_id": "ubuntu-24.04-stable-x86_64-distribution-default",
     "python_slots": 2,
     "python_versions": [
@@ -138,15 +138,19 @@
     ],
     "syscall_network_observation": true,
     "recovery_review": {
-      "path": "specs/003-add-cross-platform-support/evidence/debian-native-2026-10-27/nested-recovery.json",
-      "sha256": "c52c8d8b8262bba18795e3c53fbaa0f53b2ca96502cacad9c4653b9a1343765a"
+      "path": "specs/003-add-cross-platform-support/evidence/fedora-native-2026-10-27/nested-recovery.json",
+      "sha256": "ee173670529c1244ce3ef31e2940de7c571d74f14d73f2a5334d1bed8b2948fc"
     },
     "scope": "Additional pinned native KVM guest; kept separate from historical hosted runner wheel/sdist evidence",
     "qualified": false,
     "task_complete": false
   },
   "previous_native_fixed_image_index": {
-    "path": "specs/003-add-cross-platform-support/evidence/debian-native-2026-10-27/previous-linux-ubuntu-24.04.json",
-    "sha256": "872f44ff7fb25746e2f77e9e83c26846298ebf929acaf722e447b5e00ee82ded"
+    "path": "specs/003-add-cross-platform-support/evidence/fedora-native-2026-10-27/previous-linux-ubuntu-24.04.json",
+    "sha256": "47e15b0287b25ce88a9b987d9842e03e0ae152d25359379f4043ccf998e9944b"
+  },
+  "actions_task_acceptance": {
+    "path": "specs/003-add-cross-platform-support/evidence/actions-installed-closeout/ubuntu2404-task-acceptance.json",
+    "sha256": "e06dbff835671319eb72d360123cfd6421d50d0283bb88fb18195d4f17e9c188"
   }
 }

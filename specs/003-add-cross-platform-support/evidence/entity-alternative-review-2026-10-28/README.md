@@ -1,5 +1,9 @@
 # Avaliação de uma tabela alternativa de entidades
 
+**Continuação:** os commits `e681a14`/`46d111d` integram a substituição nas receitas,
+avisos e pacotes de fontes. A [evidência da integração](../entity-integration-ci-2026-10-28/README.md)
+registra a validação seguinte. O restante deste documento descreve a avaliação original.
+
 O usuário escolheu avaliar uma alternativa para a condição ISO da tabela HTML antiga, mantendo Graphviz 16.1.0. Esta avaliação prepara dois arquivos de fonte propostos; não altera as receitas ou o catálogo de produção.
 
 ## Dados e permissões

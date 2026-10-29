@@ -1,0 +1,423 @@
+{
+  "kind": "enterprise-derivatives-evidence-index",
+  "task": "T041",
+  "task_complete": false,
+  "qualified": false,
+  "captured_at": "2026-10-27T23:30:00+00:00",
+  "registry": {
+    "path": "tools/runtime/support-targets.json",
+    "sha256": "be3e8a77e3836d1125658c00a75fbf0e3584f1e26a166a053583336c29a5d295"
+  },
+  "application_revision": "7b30c80a7a1b980860e0fa9e6b16a14d8245c28e",
+  "cpu_requirements_summary": {
+    "rocky-8.10": "x86_64 distribution-default (baseline x86-64); aarch64 standard",
+    "rocky-9.8": "x86_64 distribution-default (baseline x86-64-v2); aarch64 standard",
+    "rocky-10.2": "x86_64 distribution-default requires x86-64-v3 microarchitecture; aarch64 standard",
+    "almalinux-8.10": "x86_64 distribution-default (baseline x86-64); aarch64 standard",
+    "almalinux-9.8": "x86_64 distribution-default (baseline x86-64-v2); aarch64 standard",
+    "almalinux-10.2": "x86_64 distribution-default requires x86-64-v3 microarchitecture; x86_64 community variant 'x86-64-v2' provided for compatibility; aarch64 standard"
+  },
+  "expected_targets": 13,
+  "expected_python_slots": 26,
+  "complete_targets": 0,
+  "targets_with_partial_native_observations": 0,
+  "python_slots_with_partial_native_observations": 0,
+  "targets": [
+    {
+      "target_id": "rocky-8.10-stable-x86_64-distribution-default",
+      "distribution": "rocky",
+      "version": "8.10",
+      "arch": "x86_64",
+      "cpu_variant": "distribution-default",
+      "cpu_requirement": "x86-64",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "observed_python": null
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "observed_python": null
+        }
+      ],
+      "pending_reason": "Enterprise derivative native candidate execution, CPU variant validation, two Python slots, Twine review and remaining common gates"
+    },
+    {
+      "target_id": "rocky-8.10-stable-aarch64-distribution-default",
+      "distribution": "rocky",
+      "version": "8.10",
+      "arch": "aarch64",
+      "cpu_variant": "distribution-default",
+      "cpu_requirement": "standard",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "observed_python": null
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "observed_python": null
+        }
+      ],
+      "pending_reason": "Enterprise derivative native candidate execution, CPU variant validation, two Python slots, Twine review and remaining common gates"
+    },
+    {
+      "target_id": "rocky-9.8-stable-x86_64-distribution-default",
+      "distribution": "rocky",
+      "version": "9.8",
+      "arch": "x86_64",
+      "cpu_variant": "distribution-default",
+      "cpu_requirement": "x86-64-v2",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "observed_python": null
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "observed_python": null
+        }
+      ],
+      "pending_reason": "Enterprise derivative native candidate execution, CPU variant validation, two Python slots, Twine review and remaining common gates"
+    },
+    {
+      "target_id": "rocky-9.8-stable-aarch64-distribution-default",
+      "distribution": "rocky",
+      "version": "9.8",
+      "arch": "aarch64",
+      "cpu_variant": "distribution-default",
+      "cpu_requirement": "standard",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "observed_python": null
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "observed_python": null
+        }
+      ],
+      "pending_reason": "Enterprise derivative native candidate execution, CPU variant validation, two Python slots, Twine review and remaining common gates"
+    },
+    {
+      "target_id": "rocky-10.2-stable-x86_64-distribution-default",
+      "distribution": "rocky",
+      "version": "10.2",
+      "arch": "x86_64",
+      "cpu_variant": "distribution-default",
+      "cpu_requirement": "x86-64-v3",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "observed_python": null
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "observed_python": null
+        }
+      ],
+      "pending_reason": "Enterprise derivative native candidate execution, CPU variant validation, two Python slots, Twine review and remaining common gates"
+    },
+    {
+      "target_id": "rocky-10.2-stable-aarch64-distribution-default",
+      "distribution": "rocky",
+      "version": "10.2",
+      "arch": "aarch64",
+      "cpu_variant": "distribution-default",
+      "cpu_requirement": "standard",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "observed_python": null
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "observed_python": null
+        }
+      ],
+      "pending_reason": "Enterprise derivative native candidate execution, CPU variant validation, two Python slots, Twine review and remaining common gates"
+    },
+    {
+      "target_id": "almalinux-8.10-stable-x86_64-distribution-default",
+      "distribution": "almalinux",
+      "version": "8.10",
+      "arch": "x86_64",
+      "cpu_variant": "distribution-default",
+      "cpu_requirement": "x86-64",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "observed_python": null
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "observed_python": null
+        }
+      ],
+      "pending_reason": "Enterprise derivative native candidate execution, CPU variant validation, two Python slots, Twine review and remaining common gates"
+    },
+    {
+      "target_id": "almalinux-8.10-stable-aarch64-distribution-default",
+      "distribution": "almalinux",
+      "version": "8.10",
+      "arch": "aarch64",
+      "cpu_variant": "distribution-default",
+      "cpu_requirement": "standard",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "observed_python": null
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "observed_python": null
+        }
+      ],
+      "pending_reason": "Enterprise derivative native candidate execution, CPU variant validation, two Python slots, Twine review and remaining common gates"
+    },
+    {
+      "target_id": "almalinux-9.8-stable-x86_64-distribution-default",
+      "distribution": "almalinux",
+      "version": "9.8",
+      "arch": "x86_64",
+      "cpu_variant": "distribution-default",
+      "cpu_requirement": "x86-64-v2",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "observed_python": null
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "observed_python": null
+        }
+      ],
+      "pending_reason": "Enterprise derivative native candidate execution, CPU variant validation, two Python slots, Twine review and remaining common gates"
+    },
+    {
+      "target_id": "almalinux-9.8-stable-aarch64-distribution-default",
+      "distribution": "almalinux",
+      "version": "9.8",
+      "arch": "aarch64",
+      "cpu_variant": "distribution-default",
+      "cpu_requirement": "standard",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "observed_python": null
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "observed_python": null
+        }
+      ],
+      "pending_reason": "Enterprise derivative native candidate execution, CPU variant validation, two Python slots, Twine review and remaining common gates"
+    },
+    {
+      "target_id": "almalinux-10.2-stable-x86_64-distribution-default",
+      "distribution": "almalinux",
+      "version": "10.2",
+      "arch": "x86_64",
+      "cpu_variant": "distribution-default",
+      "cpu_requirement": "x86-64-v3",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "observed_python": null
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "observed_python": null
+        }
+      ],
+      "pending_reason": "Enterprise derivative native candidate execution, CPU variant validation, two Python slots, Twine review and remaining common gates"
+    },
+    {
+      "target_id": "almalinux-10.2-stable-x86_64-x86-64-v2",
+      "distribution": "almalinux",
+      "version": "10.2",
+      "arch": "x86_64",
+      "cpu_variant": "x86-64-v2",
+      "cpu_requirement": "x86-64-v2",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "observed_python": null
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "observed_python": null
+        }
+      ],
+      "pending_reason": "Enterprise derivative native candidate execution, CPU variant validation, two Python slots, Twine review and remaining common gates"
+    },
+    {
+      "target_id": "almalinux-10.2-stable-aarch64-distribution-default",
+      "distribution": "almalinux",
+      "version": "10.2",
+      "arch": "aarch64",
+      "cpu_variant": "distribution-default",
+      "cpu_requirement": "standard",
+      "complete": false,
+      "qualified": false,
+      "slots": [
+        {
+          "python_minor": "3.12",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "observed_python": null
+        },
+        {
+          "python_minor": "3.14",
+          "complete": false,
+          "qualified": false,
+          "observation_state": "pending",
+          "evidence": null,
+          "observed_python": null
+        }
+      ],
+      "pending_reason": "Enterprise derivative native candidate execution, CPU variant validation, two Python slots, Twine review and remaining common gates"
+    }
+  ],
+  "limitations": [
+    "CPU requirements recorded per major version and community variant (x86-64-v2 vs x86-64-v3)",
+    "Enterprise derivative builds do not inherit RHEL evaluation or vice versa",
+    "No local VM, Twine review, ARM64 qualification, catalog or support promotion"
+  ],
+  "release_scope": {
+    "reference_date": "2026-10-17",
+    "distributions": [
+      "rocky",
+      "almalinux"
+    ],
+    "versions": [
+      "8.10",
+      "9.8",
+      "10.2"
+    ],
+    "maintenance_acceptance": false,
+    "source": "tools/runtime/support-targets.json"
+  }
+}

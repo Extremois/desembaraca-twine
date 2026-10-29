@@ -19,6 +19,19 @@ e revisão Twine continuam separadas. As seções seguintes são histórico.
 
 # Pré-requisitos Python Linux: evidência parcial
 
+## Fedora 43/44 x64 nativos — 2026-10-27
+
+O [ensaio KVM conferido](fedora-native-2026-10-27/README.md) executou CPython
+3.12.15 e 3.14.8 privados em Fedora 43 (kernel 6.17.1-300.fc43/glibc 2.42) e 44
+(kernel 6.19.10-300.fc44/glibc 2.43) sob SELinux enforcing (`unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023`).
+Venv/pip/SSL, wheel externo, três entrypoints, 53 arquivos contra o commit, corpus,
+rastros e recuperação passaram; o Python do SO manteve seu hash intacto. O Python
+fornecido pela imagem controla somente o probe e não conta como slot da aplicação.
+Os arquivos dos interpretadores são obtidos pelo host e fixados por hashes; o guest
+permanece sem internet. A ferramenta strace privada funcionou no Fedora sem alterar
+políticas do SELinux. Debian 12/13 e os seis Ubuntu x64 foram repetidos como regressão.
+ARM64, candidata final remota/sdist e Twine permanecem pendentes; T033/T039 continuam abertas.
+
 ## Debian 12/13 x64 nativos — 2026-10-27
 
 O [ensaio KVM conferido](debian-native-2026-10-27/README.md) executou CPython
