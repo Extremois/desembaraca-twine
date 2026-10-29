@@ -11,6 +11,7 @@ src/twine_edge_overlap/runtime_assets/*.json -text
 src/twine_edge_overlap/runtime-catalog.json -text
 src/twine_edge_overlap/support-matrix.json -text
 tools/runtime/*.json -text
+docs/evidence/** -text -whitespace
 tools/runtime/licenses/*.json -text
 tools/runtime/licenses/*-COPYING.txt -text -whitespace
 tools/runtime/licenses/data-references/** -text -whitespace
