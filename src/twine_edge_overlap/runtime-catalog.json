@@ -118,5 +118,6 @@
       "minimum_libc": "1.2.0",
       "minimum_kernel": "4.15"
     }
-  ]
+  ],
+  "application_revision": "c0078230a3bf1a2b934f1754e8b12664f100b4cc"
 }

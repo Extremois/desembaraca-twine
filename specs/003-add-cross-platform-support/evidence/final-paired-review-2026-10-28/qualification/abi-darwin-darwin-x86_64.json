@@ -1,0 +1,1242 @@
+[
+  {
+    "id": "final-abi-darwin-darwin-x86_64-3.12-c007823",
+    "target_id": "abi-darwin-darwin-x86_64",
+    "python_minor": "3.12",
+    "python_patch": "3.12.10",
+    "python_origin": "GitHub Actions native CPython; exact patch recorded",
+    "application_revision": "c0078230a3bf1a2b934f1754e8b12664f100b4cc",
+    "artifact_id": "graphviz-16.1.0-macos-x86_64",
+    "artifact_sha256": "aa9ea80350aa63b269b9228da9b7e5b2812d7ef6ac3fa3c3a6205e9d1a7ad897",
+    "source_state": "committed",
+    "recipe_revision": "macos-x86_64",
+    "package_sha256": "942c9431368eddf1437a4bb2806bc73d5c6f3377e02f483d1df8703f03e2de9e",
+    "os": "darwin",
+    "os_version": "15.7.9",
+    "distribution_id": "macos",
+    "channel": "",
+    "cpu_variant": "distribution-default",
+    "abi": "darwin",
+    "libc_version": "",
+    "architecture": "x86_64",
+    "kernel": "24.6.0",
+    "cpu": "x86_64",
+    "image_id": "macos15/20260824.0482.1",
+    "image_digest": "10a2a00c42090e2ff91c8fdd204e514ed9156b08aeee8660021c74307bd4afc8",
+    "captured_at": "2026-10-29T09:51:04.406602+00:00",
+    "environment_kind": "github-actions",
+    "github_actions": {
+      "repository": "Extremois/desembaraca-twine",
+      "run_id": "40852552232",
+      "run_sha": "c0078230a3bf1a2b934f1754e8b12664f100b4cc",
+      "run_url": "https://github.com/Extremois/desembaraca-twine/actions/runs/40852552232",
+      "execution_kind": "runner"
+    },
+    "snapshot_id": null,
+    "checks": {
+      "offline": true,
+      "interruption": true,
+      "licenses": true,
+      "repair": true,
+      "first_run": true,
+      "installation": true,
+      "preservation": true,
+      "crash": true,
+      "concurrency": true,
+      "twine": true
+    },
+    "passed": true,
+    "pending_checks": [],
+    "observations": {
+      "cache_matches_platform": true,
+      "invalid_input_refused_without_acquisition": true,
+      "executable_mode": 493,
+      "runtime_schema": 2,
+      "healthy_generation_reused": true,
+      "macos_security_assessed": false,
+      "macos_signing_required": false,
+      "paths_with_spaces_and_accents": true
+    },
+    "commands": [
+      "external venv installation --no-index",
+      "console script --help",
+      "python -m twine_edge_overlap --help",
+      "CLI invalid first input without acquisition",
+      "CLI first valid file",
+      "CLI --prepare-runtime",
+      "public corpus using normal installed runtime"
+    ],
+    "corpus": [
+      {
+        "case": "crossing",
+        "input_sha256": "d7c694abfcf286588792ea3f537bebafbe45eb4a7774252782bda6dc8319b25b",
+        "output_sha256": "aa821f1611a98d479811f652197070728904bd2afe31c8e6fca64ed9fbec8e8b",
+        "before": [
+          1,
+          0,
+          0
+        ],
+        "after": [
+          0,
+          0,
+          0
+        ],
+        "original_preserved": true,
+        "semantics_preserved": true,
+        "status": "sucesso"
+      },
+      {
+        "case": "coincident",
+        "input_sha256": "f63665a740e024a5e361546627f324ce8ddb9b1792b55b16984a87eee6ac49ea",
+        "output_sha256": "8644eeb3404043bec66b149c0ed3f2f4bea0600914a944e75c5f6464b78c1ed6",
+        "before": [
+          1,
+          2,
+          0
+        ],
+        "after": [
+          0,
+          0,
+          0
+        ],
+        "original_preserved": true,
+        "semantics_preserved": true,
+        "status": "sucesso"
+      },
+      {
+        "case": "clean",
+        "input_sha256": "5e8d75b9a72cd1afcaeb7b3646cc5d0cec1f7368b2b6275f324eaa7c3f1299f6",
+        "output_sha256": "5e8d75b9a72cd1afcaeb7b3646cc5d0cec1f7368b2b6275f324eaa7c3f1299f6",
+        "before": [
+          0,
+          0,
+          0
+        ],
+        "after": [
+          0,
+          0,
+          0
+        ],
+        "original_preserved": true,
+        "semantics_preserved": true,
+        "status": "sucesso"
+      },
+      {
+        "case": "isolated_overlap",
+        "input_sha256": "6ce9fbd0eb53e57209879944c2ebdc2b66bc6ea26d68fb8a2bd9bd2104f99ef6",
+        "output_sha256": "bef1e0132bce9b72f1317cdbb43d3c2a54e604632459cbda2c5af7d52c17a03a",
+        "before": [
+          0,
+          1,
+          0
+        ],
+        "after": [
+          0,
+          0,
+          0
+        ],
+        "original_preserved": true,
+        "semantics_preserved": true,
+        "status": "sucesso"
+      },
+      {
+        "case": "connected_overlap",
+        "input_sha256": "adf06218e2172f4e0b7bd640bc3cb24cd10de327da92848f888943bf6edb50fb",
+        "output_sha256": "137e849cfdf04ef3db7ed9057a7142ebecc403ee78952f307138ff5ecca72618",
+        "before": [
+          1,
+          1,
+          1
+        ],
+        "after": [
+          0,
+          0,
+          0
+        ],
+        "original_preserved": true,
+        "semantics_preserved": true,
+        "status": "sucesso"
+      },
+      {
+        "case": "through_isolated",
+        "input_sha256": "e584fe80a571da6355922139925a930603454fc5e27a6a44037401e433f6cf36",
+        "output_sha256": "f2460867ce13305139836fc5737093e3e513fae53c4bee8fe0742fe5fc98c341",
+        "before": [
+          0,
+          0,
+          1
+        ],
+        "after": [
+          0,
+          0,
+          0
+        ],
+        "original_preserved": true,
+        "semantics_preserved": true,
+        "status": "sucesso"
+      },
+      {
+        "case": "through_connected",
+        "input_sha256": "481d38cd9ba76522c25530ea382e13ee73f2ff1000829e335c58dff96f4de6f8",
+        "output_sha256": "8c13ace7ce2f65beff622e529456029fda6c7e1f624a5046886a7065f60a2f3f",
+        "before": [
+          0,
+          0,
+          1
+        ],
+        "after": [
+          0,
+          0,
+          0
+        ],
+        "original_preserved": true,
+        "semantics_preserved": true,
+        "status": "sucesso"
+      },
+      {
+        "case": "border_only",
+        "input_sha256": "da0a8b50743446027bccf723f022a8081efe1fd135a118e504615b81ecf88701",
+        "output_sha256": "da0a8b50743446027bccf723f022a8081efe1fd135a118e504615b81ecf88701",
+        "before": [
+          0,
+          0,
+          0
+        ],
+        "after": [
+          0,
+          0,
+          0
+        ],
+        "original_preserved": true,
+        "semantics_preserved": true,
+        "status": "sucesso"
+      },
+      {
+        "case": "cycle",
+        "input_sha256": "a35feef5fdb5d2e5a41b99fe826fd9f0ebb861c50c6f148afc0597f87b6ea6c1",
+        "output_sha256": "a35feef5fdb5d2e5a41b99fe826fd9f0ebb861c50c6f148afc0597f87b6ea6c1",
+        "before": [
+          0,
+          0,
+          0
+        ],
+        "after": [
+          0,
+          0,
+          0
+        ],
+        "original_preserved": true,
+        "semantics_preserved": true,
+        "status": "sucesso"
+      },
+      {
+        "case": "parallel_occurrences",
+        "input_sha256": "cda380247a05431a6d4aaf3a70eb5488ec01770fe89f9562b95691d4823f8df0",
+        "output_sha256": "cda380247a05431a6d4aaf3a70eb5488ec01770fe89f9562b95691d4823f8df0",
+        "before": [
+          0,
+          0,
+          0
+        ],
+        "after": [
+          0,
+          0,
+          0
+        ],
+        "original_preserved": true,
+        "semantics_preserved": true,
+        "status": "sucesso"
+      },
+      {
+        "case": "self_loop",
+        "input_sha256": "7df0478afa2ca0e1e400454d2bbba7571a3f9de9d2d4417f5640e4cd3e94921e",
+        "output_sha256": "7df0478afa2ca0e1e400454d2bbba7571a3f9de9d2d4417f5640e4cd3e94921e",
+        "before": [
+          0,
+          0,
+          0
+        ],
+        "after": [
+          0,
+          0,
+          0
+        ],
+        "original_preserved": true,
+        "semantics_preserved": true,
+        "status": "sucesso"
+      },
+      {
+        "case": "reciprocal",
+        "input_sha256": "f2f16549e43ad54c3f09ba12cf7ebb677fb72a32d2c3a3ac6ba82c311e626979",
+        "output_sha256": "f2f16549e43ad54c3f09ba12cf7ebb677fb72a32d2c3a3ac6ba82c311e626979",
+        "before": [
+          1,
+          0,
+          0
+        ],
+        "after": [
+          1,
+          0,
+          0
+        ],
+        "original_preserved": true,
+        "semantics_preserved": true,
+        "status": "limitações"
+      },
+      {
+        "case": "empty",
+        "input_sha256": "45e3a62ea1b3c31df65b0f7a7bac769ddf9aafc4006bc7cf379d19b2c289c23c",
+        "output_sha256": "45e3a62ea1b3c31df65b0f7a7bac769ddf9aafc4006bc7cf379d19b2c289c23c",
+        "before": [
+          0,
+          0,
+          0
+        ],
+        "after": [
+          0,
+          0,
+          0
+        ],
+        "original_preserved": true,
+        "semantics_preserved": true,
+        "status": "sucesso"
+      }
+    ],
+    "network": {
+      "observation": "github-actions-log",
+      "attempts": 0,
+      "reviewer": "Codex technical implementation review",
+      "log": {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/qualification/abi-darwin-darwin-x86_64-3.12-network.json",
+        "sha256": "ebb7e0d109c22bc7e118c6242916978a9ff7e0c247247504b00ff377747d2656"
+      }
+    },
+    "log_text": "Estado: sucesso\nLayout melhorado sem aumentar nenhuma das três contagens\nArquivo gerado: <test-work>/crossing.layout.twee\nPares de arestas: 1 -> 0\nPares de nós: 0 -> 0\nPares aresta–nó: 0 -> 0\nComponentes de processamento prontos para uso sem internet.\nComponentes de processamento prontos para uso sem internet.\n\nAviso: ambiente não validado; uso de melhor esforço, sem garantia de suporte completo. Esta revisÃ£o ainda nÃ£o tem qualificaÃ§Ã£o oficial publicada para o ambiente.\nPreparando componente de processamento; a obtenção do pacote requer internet.\nAviso: ambiente não validado; uso de melhor esforço, sem garantia de suporte completo. Esta revisÃ£o ainda nÃ£o tem qualificaÃ§Ã£o oficial publicada para o ambiente.\nAviso: ambiente não validado; uso de melhor esforço, sem garantia de suporte completo. Esta revisÃ£o ainda nÃ£o tem qualificaÃ§Ã£o oficial publicada para o ambiente.\n",
+    "installation": {
+      "wheel": true,
+      "sdist": true,
+      "remote": true,
+      "outside_checkout": true,
+      "console": true,
+      "module": true
+    },
+    "pending_reason": null,
+    "reviewer": "Codex technical implementation review",
+    "logs": [
+      {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/c007823/12888675074/final-catalog.json.gz",
+        "sha256": "202038aa71285cb4723a79b8357b870ad1990b5ca5dfcca25e7b6f4b22745122"
+      },
+      {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/c007823/12888161330/installed-engine.json.gz",
+        "sha256": "f97e58dd76e31c22e827b8fec7490db5dc8940781ed0e27da0ddee0981404f2a"
+      },
+      {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/c007823/12887697793/musl-notices/slot/cache-notices.json.gz",
+        "sha256": "8e9c8660a64766a1020d3b490c9e69d178e725cd08b1de2b99971d2d94d9cbf8"
+      },
+      {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/audits/macos-x86_64.json",
+        "sha256": "d76b6cc27d9944772b73df35296605f1e017d49fb175700dc64f98fef4c36f2d"
+      },
+      {
+        "path": "specs/003-add-cross-platform-support/evidence/twine-visual-review-2026-10-28.json",
+        "sha256": "c5106fa06acf5cb7e0400eaee7c61fe39e5b571dcafd8d67f9fabe4f20990b02"
+      },
+      {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/publication.json",
+        "sha256": "33bb6194eaac623b9ae488397b2a5b920b5112460f38b681b24b88328c620b3a"
+      }
+    ],
+    "license_audit": {
+      "approved": true,
+      "reviewer": "Codex technical implementation review",
+      "artifact_sha256": "aa9ea80350aa63b269b9228da9b7e5b2812d7ef6ac3fa3c3a6205e9d1a7ad897",
+      "components": [
+        {
+          "name": "Graphviz program and separately preserved third-party terms",
+          "license_expression": "EPL-2.0 AND LicenseRef-Graphviz-Third-Party-Terms",
+          "source_url": "https://gitlab.com/graphviz/graphviz/-/archive/16.1.0/graphviz-16.1.0.tar.gz",
+          "source_sha256": "1e028b2b3e84e946c1d3e8c47590f8f0741bba1041fe6eff36eee87e598ea249",
+          "notice_path": "third-party-notices/Graphviz-COPYING.txt",
+          "notice_sha256": "0becf16567beb77fa252b7664631dd177c8f9a1889e48995b45379c7130e5303",
+          "link_input_sha256": [],
+          "review_status": "reviewed-for-exact-paired-distribution"
+        },
+        {
+          "name": "Observed Apple headers APSL 1.1",
+          "license_expression": "APSL-1.1",
+          "source_url": "https://github.com/Extremois/desembaraca-twine/releases/download/graphviz-16.1.0-posix-46d111d/graphviz-16.1.0-macos-x86_64-96f093e56aab8f476fa7a792e0d7202bdeab2c3487853c4a86d8eab207078142-sources.tar.gz",
+          "source_sha256": "96f093e56aab8f476fa7a792e0d7202bdeab2c3487853c4a86d8eab207078142",
+          "notice_path": "third-party-notices/APSL-1.1-COPYING.txt",
+          "notice_sha256": "359a21ed59e82096455398ea10c5bc8c3ff28e7acf7935b77751d70e3630fc95",
+          "link_input_sha256": [],
+          "review_status": "reviewed-for-exact-paired-distribution"
+        },
+        {
+          "name": "Observed Apple headers APSL 2.0",
+          "license_expression": "APSL-2.0",
+          "source_url": "https://github.com/Extremois/desembaraca-twine/releases/download/graphviz-16.1.0-posix-46d111d/graphviz-16.1.0-macos-x86_64-96f093e56aab8f476fa7a792e0d7202bdeab2c3487853c4a86d8eab207078142-sources.tar.gz",
+          "source_sha256": "96f093e56aab8f476fa7a792e0d7202bdeab2c3487853c4a86d8eab207078142",
+          "notice_path": "third-party-notices/APSL-2.0-COPYING.txt",
+          "notice_sha256": "e5881019d8766c1e88a5fe1dbca4ba40c78011d41fcb18f6e9f50df60182685b",
+          "link_input_sha256": [],
+          "review_status": "reviewed-for-exact-paired-distribution"
+        },
+        {
+          "name": "Observed LLVM SDK headers",
+          "license_expression": "Apache-2.0 WITH LLVM-exception",
+          "source_url": "https://github.com/Extremois/desembaraca-twine/releases/download/graphviz-16.1.0-posix-46d111d/graphviz-16.1.0-macos-x86_64-96f093e56aab8f476fa7a792e0d7202bdeab2c3487853c4a86d8eab207078142-sources.tar.gz",
+          "source_sha256": "96f093e56aab8f476fa7a792e0d7202bdeab2c3487853c4a86d8eab207078142",
+          "source_identity_kind": "Recorded SDK source/header/stub tree digest, not a downloadable archive digest",
+          "notice_path": "third-party-notices/SDK-header-91a9519314e9f449d18f8002.txt",
+          "notice_sha256": "8b548ce9c0772f64352e0a72e894ec00ce269b9e0b9f607bbca6b1b7568147df",
+          "additional_notices": [
+            {
+              "path": "third-party-notices/SDK-header-ab347cf153976d4db66f5152.txt",
+              "sha256": "945de68c47db6ae086ca724e56955f58a2fcd24996ff855729844e4da2b69eb9"
+            },
+            {
+              "path": "third-party-notices/SDK-header-b5396b1bccba6d4c361e064b.txt",
+              "sha256": "51649fa4a0f431eebab1437ed612fb019ec2e7787e56eed82221eefd46a3703b"
+            },
+            {
+              "path": "third-party-notices/SDK-header-44c862a93062de464876ed7d.txt",
+              "sha256": "b595a97ed09833b689e3f363e6dc485c1383ebeb8f501ad0669fefdf267d1e33"
+            },
+            {
+              "path": "third-party-notices/SDK-header-e029e12725002816d03ac787.txt",
+              "sha256": "a517fd65b43e273f5a8058114a09ed1571404207f694828be663fdde7eb5c25f"
+            },
+            {
+              "path": "third-party-notices/SDK-header-1979f81f3709afcd363d036f.txt",
+              "sha256": "5754c957355450437a3f49af4b4ff624ace44a28722dda812a0533f2fd0ae618"
+            },
+            {
+              "path": "third-party-notices/SDK-header-01e702b5a26cf201b9616734.txt",
+              "sha256": "d90e4486cbe230e2a69b2208b3cfa00d2f37dde34fecba5641a1e765f0ec53ad"
+            },
+            {
+              "path": "third-party-notices/SDK-header-8e3ffe3f447157ea7e291245.txt",
+              "sha256": "8998ce0e1626fdc5b04f6744ffc2eb65caea027ca78b5941d9df9a97ba4bebba"
+            },
+            {
+              "path": "third-party-notices/SDK-header-2ce8c2ac50698b9d94f9b4c9.txt",
+              "sha256": "e422064af9560b26465ed99c1e6e46f5a00d7e0bdd892d5b0ac845968a77b338"
+            },
+            {
+              "path": "third-party-notices/SDK-header-655987725eacd8982d50acc4.txt",
+              "sha256": "e0da127a73aeec439eda8e78f90180ccd950b574dc51921b11a8220792105973"
+            },
+            {
+              "path": "third-party-notices/SDK-header-eea79286e672cb93a8fd0dfb.txt",
+              "sha256": "d836ead13fa0c2712f504f4ec30129528644807b7cd725987de154a003ff51c5"
+            },
+            {
+              "path": "third-party-notices/SDK-header-9b388d04c9fa7e33e103df4b.txt",
+              "sha256": "b4c43cc9688b5c307b367004710ff8bc11731d15d4761d74824b7e163d8d3db8"
+            },
+            {
+              "path": "third-party-notices/SDK-header-94443db0e92972a993fec11e.txt",
+              "sha256": "44886d090522af81bbbf9e6245f69625fc84430086bb2d1bdc8a41ce1310db3b"
+            },
+            {
+              "path": "third-party-notices/SDK-header-f63db149a7bafc41da58c230.txt",
+              "sha256": "713ec82c8194a15383c5bad779fd8baca97f7eae52db544db760b011c17936f8"
+            },
+            {
+              "path": "third-party-notices/SDK-header-84b1727402338161172287e5.txt",
+              "sha256": "6015b181e142f418229b0ec6bfbac1b96bf12ae8e802b43c8aecc425d370c90c"
+            },
+            {
+              "path": "third-party-notices/SDK-header-e44063a421324132dbea6a57.txt",
+              "sha256": "6ba160fe160e2d0f4b1d9e18dba676a82d068477c4e3c713683375e2e27ff98e"
+            },
+            {
+              "path": "third-party-notices/SDK-header-82e430add7f776404b6af43d.txt",
+              "sha256": "ed26adcef0b553b44030433d6892bb489b12cc28b7e39423421caf87a0134bed"
+            },
+            {
+              "path": "third-party-notices/SDK-header-6eb86e5a1f600672ddbd3a01.txt",
+              "sha256": "1dde451e831ce68164036a3b56fb72460ba58b3577876cb513f201ac1dfe19ea"
+            },
+            {
+              "path": "third-party-notices/SDK-header-a6859eaaf445765109ee287f.txt",
+              "sha256": "4efb5f80669b7c385442e87625b2edd0b5cea825b268181b645b92971c91b811"
+            },
+            {
+              "path": "third-party-notices/SDK-header-ea3512383f1e750b70114e06.txt",
+              "sha256": "fe069d0d0e201f94ecf04b789a95d01fe0295c340517ab50c30d11d912b91bac"
+            },
+            {
+              "path": "third-party-notices/SDK-header-34f0812e484859a9c0bc84db.txt",
+              "sha256": "c187113158e65259c99f706181adf0678112bb58fbbcd688fe8d2b581755b1f7"
+            },
+            {
+              "path": "third-party-notices/SDK-header-ec4a643daffd2b41e7dbd761.txt",
+              "sha256": "48c8236343fafbfc67792dc3c7ac85af049bc64a772adcd88b266b905d4b52dc"
+            },
+            {
+              "path": "third-party-notices/SDK-header-39a96a9a0c07463108fcad89.txt",
+              "sha256": "385a49d08a399b48318c9704ef53eaec8e5a648cd7ac9f51800d8109c262566f"
+            },
+            {
+              "path": "third-party-notices/SDK-header-5f310fed1b3c28eef6c3df6c.txt",
+              "sha256": "adcb355d09cc4b49be216bcd74ae4116f26975901975e22820f5d859921c8a6f"
+            }
+          ],
+          "link_input_sha256": [],
+          "review_status": "reviewed-for-exact-paired-distribution",
+          "permission_basis": "Recorded EA1879 sections 2.2 A(ii), 2.4 and individual terms. SDK development/distribution permission is not an end-user license for the application. Proprietary header sources and SDK libraries are not redistributed."
+        },
+        {
+          "name": "Observed BSD permission blocks",
+          "license_expression": "LicenseRef-BSD-Four-Condition-Blocks",
+          "source_url": "https://github.com/Extremois/desembaraca-twine/releases/download/graphviz-16.1.0-posix-46d111d/graphviz-16.1.0-macos-x86_64-96f093e56aab8f476fa7a792e0d7202bdeab2c3487853c4a86d8eab207078142-sources.tar.gz",
+          "source_sha256": "96f093e56aab8f476fa7a792e0d7202bdeab2c3487853c4a86d8eab207078142",
+          "source_identity_kind": "Recorded SDK source/header/stub tree digest, not a downloadable archive digest",
+          "notice_path": "third-party-notices/SDK-header-96ff23d4276f23e2f8e26652.txt",
+          "notice_sha256": "db3206761973d830bf6d2cf05bd814b7cf070201f40484fd9d3e516c32ad6b3a",
+          "additional_notices": [
+            {
+              "path": "third-party-notices/SDK-header-76f5319e02595f33cd3e40d0.txt",
+              "sha256": "9e9da644bfa3177aa5658d22a52edc14e80b193718246c97093a0f9ace84e7af"
+            },
+            {
+              "path": "third-party-notices/SDK-header-e8cecbdfadd05cca28c42a51.txt",
+              "sha256": "0c02eed2c8e9051372fd02ea5d9feac6edf2c589e771a9e2a45cd76203a8ff40"
+            },
+            {
+              "path": "third-party-notices/SDK-header-b040f27f37038e24b11fe5d2.txt",
+              "sha256": "db3206761973d830bf6d2cf05bd814b7cf070201f40484fd9d3e516c32ad6b3a"
+            },
+            {
+              "path": "third-party-notices/SDK-header-d4beec375df82fc0e2189412.txt",
+              "sha256": "c37b78ec41a8dc318295e88303ab32207cc8b98ddfa3f1e981b3fb808037d5a6"
+            }
+          ],
+          "link_input_sha256": [],
+          "review_status": "reviewed-for-exact-paired-distribution",
+          "permission_basis": "Recorded EA1879 sections 2.2 A(ii), 2.4 and individual terms. SDK development/distribution permission is not an end-user license for the application. Proprietary header sources and SDK libraries are not redistributed."
+        },
+        {
+          "name": "Other observed macOS SDK compile inputs",
+          "license_expression": "LicenseRef-Xcode-macOS-SDK-Compile-Inputs",
+          "source_url": "https://github.com/Extremois/desembaraca-twine/releases/download/graphviz-16.1.0-posix-46d111d/graphviz-16.1.0-macos-x86_64-96f093e56aab8f476fa7a792e0d7202bdeab2c3487853c4a86d8eab207078142-sources.tar.gz",
+          "source_sha256": "96f093e56aab8f476fa7a792e0d7202bdeab2c3487853c4a86d8eab207078142",
+          "source_identity_kind": "Recorded SDK source/header/stub tree digest, not a downloadable archive digest",
+          "notice_path": "third-party-notices/SDK-header-12046e3c88c52e9b7c448e3d.txt",
+          "notice_sha256": "827c9c49529b10fea56b0e030269acd4b21ce327491f085a25c8572f0aebd1d3",
+          "additional_notices": [
+            {
+              "path": "third-party-notices/SDK-header-1b9e7463f2f6ad7bf69bce16.txt",
+              "sha256": "9f105e74e8387de0a678ea21df6f8c6c4139d94dcb21416e704469adb665c36d"
+            }
+          ],
+          "link_input_sha256": [],
+          "review_status": "reviewed-for-exact-paired-distribution",
+          "permission_basis": "Recorded EA1879 sections 2.2 A(ii), 2.4 and individual terms. SDK development/distribution permission is not an end-user license for the application. Proprietary header sources and SDK libraries are not redistributed."
+        },
+        {
+          "name": "Entity values",
+          "license_expression": "BSD-3-Clause",
+          "source_url": "https://raw.githubusercontent.com/whatwg/html-build/283a3531a61106d07d9a7d9fb3e6f3b9bfd33d70/entities/out/entities.json",
+          "source_sha256": "d741d877ac77c4194c4ad526b5b4a19aef8dfe411ab840a466891cdbb9f362e6",
+          "notice_path": "third-party-notices/ENTITY-DATA-LICENSES.txt",
+          "notice_sha256": "b6a37ddb2a6efd2eac61c0c99be2d546140ca5578dfa87f94cfa1ec58e6b3d57",
+          "link_input_sha256": [],
+          "review_status": "reviewed-for-exact-paired-distribution",
+          "selectors": null
+        },
+        {
+          "name": "Entity selectors",
+          "license_expression": "W3C-20021231",
+          "source_url": "https://www.w3.org/2003/entities/2007/xhtml1-lat1.ent",
+          "source_sha256": "11b3abc191cc5f33fee63be49fabb35a8052e629949bc793f823a0d819bbfd66",
+          "notice_path": "third-party-notices/ENTITY-DATA-LICENSES.txt",
+          "notice_sha256": "b6a37ddb2a6efd2eac61c0c99be2d546140ca5578dfa87f94cfa1ec58e6b3d57",
+          "link_input_sha256": [],
+          "review_status": "reviewed-for-exact-paired-distribution",
+          "selectors": "All three complete W3C selector files and individual hashes accompany sources"
+        }
+      ],
+      "log": {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/audits/macos-x86_64.json",
+        "sha256": "d76b6cc27d9944772b73df35296605f1e017d49fb175700dc64f98fef4c36f2d"
+      }
+    },
+    "twine": {
+      "version": "2.12.1",
+      "reviewer": "user",
+      "outputs": [
+        {
+          "case": "crossing",
+          "sha256": "aa821f1611a98d479811f652197070728904bd2afe31c8e6fca64ed9fbec8e8b",
+          "reopened": true
+        },
+        {
+          "case": "coincident",
+          "sha256": "8644eeb3404043bec66b149c0ed3f2f4bea0600914a944e75c5f6464b78c1ed6",
+          "reopened": true
+        },
+        {
+          "case": "isolated_overlap",
+          "sha256": "bef1e0132bce9b72f1317cdbb43d3c2a54e604632459cbda2c5af7d52c17a03a",
+          "reopened": true
+        },
+        {
+          "case": "connected_overlap",
+          "sha256": "137e849cfdf04ef3db7ed9057a7142ebecc403ee78952f307138ff5ecca72618",
+          "reopened": true
+        },
+        {
+          "case": "through_isolated",
+          "sha256": "f2460867ce13305139836fc5737093e3e513fae53c4bee8fe0742fe5fc98c341",
+          "reopened": true
+        },
+        {
+          "case": "through_connected",
+          "sha256": "8c13ace7ce2f65beff622e529456029fda6c7e1f624a5046886a7065f60a2f3f",
+          "reopened": true
+        }
+      ],
+      "log": {
+        "path": "specs/003-add-cross-platform-support/evidence/twine-visual-review-2026-10-28.json",
+        "sha256": "c5106fa06acf5cb7e0400eaee7c61fe39e5b571dcafd8d67f9fabe4f20990b02"
+      }
+    },
+    "constituent_evidence": {
+      "public_catalog_run_id": 40852552232,
+      "recovery_run_id": 40852552361,
+      "recovery_revision": "c0078230a3bf1a2b934f1754e8b12664f100b4cc",
+      "visual_review_revision": "07688e264e6c9915790c2728beb24552a23f6388",
+      "visual_binding": "Same six byte hashes, checked for all three final installation modes; no claim of a new GUI session.",
+      "recovery_scope": "Installed real engine, process exits and OS locks; transfer/disk/permission faults controlled. Tests executed only in Actions.",
+      "source_build_revision": "46d111de81038d6ae0e7e7772813693c5b0a2345",
+      "public_delivery": {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/publication.json",
+        "sha256": "33bb6194eaac623b9ae488397b2a5b920b5112460f38b681b24b88328c620b3a"
+      }
+    }
+  },
+  {
+    "id": "final-abi-darwin-darwin-x86_64-3.14-c007823",
+    "target_id": "abi-darwin-darwin-x86_64",
+    "python_minor": "3.14",
+    "python_patch": "3.14.7",
+    "python_origin": "GitHub Actions native CPython; exact patch recorded",
+    "application_revision": "c0078230a3bf1a2b934f1754e8b12664f100b4cc",
+    "artifact_id": "graphviz-16.1.0-macos-x86_64",
+    "artifact_sha256": "aa9ea80350aa63b269b9228da9b7e5b2812d7ef6ac3fa3c3a6205e9d1a7ad897",
+    "source_state": "committed",
+    "recipe_revision": "macos-x86_64",
+    "package_sha256": "0a857dae2dc16c3ab44fa8e7c87d6c6eefb21d8cc66a2739a285b1a66287719a",
+    "os": "darwin",
+    "os_version": "15.7.9",
+    "distribution_id": "macos",
+    "channel": "",
+    "cpu_variant": "distribution-default",
+    "abi": "darwin",
+    "libc_version": "",
+    "architecture": "x86_64",
+    "kernel": "24.6.0",
+    "cpu": "x86_64",
+    "image_id": "macos15/20260824.0482.1",
+    "image_digest": "f615cde4c52dc5027009d6dd25e555865c8816ee17898ea7e51a8bea9d640e0b",
+    "captured_at": "2026-10-29T09:52:06.594998+00:00",
+    "environment_kind": "github-actions",
+    "github_actions": {
+      "repository": "Extremois/desembaraca-twine",
+      "run_id": "40852552232",
+      "run_sha": "c0078230a3bf1a2b934f1754e8b12664f100b4cc",
+      "run_url": "https://github.com/Extremois/desembaraca-twine/actions/runs/40852552232",
+      "execution_kind": "runner"
+    },
+    "snapshot_id": null,
+    "checks": {
+      "offline": true,
+      "interruption": true,
+      "licenses": true,
+      "repair": true,
+      "first_run": true,
+      "installation": true,
+      "preservation": true,
+      "crash": true,
+      "concurrency": true,
+      "twine": true
+    },
+    "passed": true,
+    "pending_checks": [],
+    "observations": {
+      "cache_matches_platform": true,
+      "invalid_input_refused_without_acquisition": true,
+      "executable_mode": 493,
+      "runtime_schema": 2,
+      "healthy_generation_reused": true,
+      "macos_security_assessed": false,
+      "macos_signing_required": false,
+      "paths_with_spaces_and_accents": true
+    },
+    "commands": [
+      "external venv installation --no-index",
+      "console script --help",
+      "python -m twine_edge_overlap --help",
+      "CLI invalid first input without acquisition",
+      "CLI first valid file",
+      "CLI --prepare-runtime",
+      "public corpus using normal installed runtime"
+    ],
+    "corpus": [
+      {
+        "case": "crossing",
+        "input_sha256": "d7c694abfcf286588792ea3f537bebafbe45eb4a7774252782bda6dc8319b25b",
+        "output_sha256": "aa821f1611a98d479811f652197070728904bd2afe31c8e6fca64ed9fbec8e8b",
+        "before": [
+          1,
+          0,
+          0
+        ],
+        "after": [
+          0,
+          0,
+          0
+        ],
+        "original_preserved": true,
+        "semantics_preserved": true,
+        "status": "sucesso"
+      },
+      {
+        "case": "coincident",
+        "input_sha256": "f63665a740e024a5e361546627f324ce8ddb9b1792b55b16984a87eee6ac49ea",
+        "output_sha256": "8644eeb3404043bec66b149c0ed3f2f4bea0600914a944e75c5f6464b78c1ed6",
+        "before": [
+          1,
+          2,
+          0
+        ],
+        "after": [
+          0,
+          0,
+          0
+        ],
+        "original_preserved": true,
+        "semantics_preserved": true,
+        "status": "sucesso"
+      },
+      {
+        "case": "clean",
+        "input_sha256": "5e8d75b9a72cd1afcaeb7b3646cc5d0cec1f7368b2b6275f324eaa7c3f1299f6",
+        "output_sha256": "5e8d75b9a72cd1afcaeb7b3646cc5d0cec1f7368b2b6275f324eaa7c3f1299f6",
+        "before": [
+          0,
+          0,
+          0
+        ],
+        "after": [
+          0,
+          0,
+          0
+        ],
+        "original_preserved": true,
+        "semantics_preserved": true,
+        "status": "sucesso"
+      },
+      {
+        "case": "isolated_overlap",
+        "input_sha256": "6ce9fbd0eb53e57209879944c2ebdc2b66bc6ea26d68fb8a2bd9bd2104f99ef6",
+        "output_sha256": "bef1e0132bce9b72f1317cdbb43d3c2a54e604632459cbda2c5af7d52c17a03a",
+        "before": [
+          0,
+          1,
+          0
+        ],
+        "after": [
+          0,
+          0,
+          0
+        ],
+        "original_preserved": true,
+        "semantics_preserved": true,
+        "status": "sucesso"
+      },
+      {
+        "case": "connected_overlap",
+        "input_sha256": "adf06218e2172f4e0b7bd640bc3cb24cd10de327da92848f888943bf6edb50fb",
+        "output_sha256": "137e849cfdf04ef3db7ed9057a7142ebecc403ee78952f307138ff5ecca72618",
+        "before": [
+          1,
+          1,
+          1
+        ],
+        "after": [
+          0,
+          0,
+          0
+        ],
+        "original_preserved": true,
+        "semantics_preserved": true,
+        "status": "sucesso"
+      },
+      {
+        "case": "through_isolated",
+        "input_sha256": "e584fe80a571da6355922139925a930603454fc5e27a6a44037401e433f6cf36",
+        "output_sha256": "f2460867ce13305139836fc5737093e3e513fae53c4bee8fe0742fe5fc98c341",
+        "before": [
+          0,
+          0,
+          1
+        ],
+        "after": [
+          0,
+          0,
+          0
+        ],
+        "original_preserved": true,
+        "semantics_preserved": true,
+        "status": "sucesso"
+      },
+      {
+        "case": "through_connected",
+        "input_sha256": "481d38cd9ba76522c25530ea382e13ee73f2ff1000829e335c58dff96f4de6f8",
+        "output_sha256": "8c13ace7ce2f65beff622e529456029fda6c7e1f624a5046886a7065f60a2f3f",
+        "before": [
+          0,
+          0,
+          1
+        ],
+        "after": [
+          0,
+          0,
+          0
+        ],
+        "original_preserved": true,
+        "semantics_preserved": true,
+        "status": "sucesso"
+      },
+      {
+        "case": "border_only",
+        "input_sha256": "da0a8b50743446027bccf723f022a8081efe1fd135a118e504615b81ecf88701",
+        "output_sha256": "da0a8b50743446027bccf723f022a8081efe1fd135a118e504615b81ecf88701",
+        "before": [
+          0,
+          0,
+          0
+        ],
+        "after": [
+          0,
+          0,
+          0
+        ],
+        "original_preserved": true,
+        "semantics_preserved": true,
+        "status": "sucesso"
+      },
+      {
+        "case": "cycle",
+        "input_sha256": "a35feef5fdb5d2e5a41b99fe826fd9f0ebb861c50c6f148afc0597f87b6ea6c1",
+        "output_sha256": "a35feef5fdb5d2e5a41b99fe826fd9f0ebb861c50c6f148afc0597f87b6ea6c1",
+        "before": [
+          0,
+          0,
+          0
+        ],
+        "after": [
+          0,
+          0,
+          0
+        ],
+        "original_preserved": true,
+        "semantics_preserved": true,
+        "status": "sucesso"
+      },
+      {
+        "case": "parallel_occurrences",
+        "input_sha256": "cda380247a05431a6d4aaf3a70eb5488ec01770fe89f9562b95691d4823f8df0",
+        "output_sha256": "cda380247a05431a6d4aaf3a70eb5488ec01770fe89f9562b95691d4823f8df0",
+        "before": [
+          0,
+          0,
+          0
+        ],
+        "after": [
+          0,
+          0,
+          0
+        ],
+        "original_preserved": true,
+        "semantics_preserved": true,
+        "status": "sucesso"
+      },
+      {
+        "case": "self_loop",
+        "input_sha256": "7df0478afa2ca0e1e400454d2bbba7571a3f9de9d2d4417f5640e4cd3e94921e",
+        "output_sha256": "7df0478afa2ca0e1e400454d2bbba7571a3f9de9d2d4417f5640e4cd3e94921e",
+        "before": [
+          0,
+          0,
+          0
+        ],
+        "after": [
+          0,
+          0,
+          0
+        ],
+        "original_preserved": true,
+        "semantics_preserved": true,
+        "status": "sucesso"
+      },
+      {
+        "case": "reciprocal",
+        "input_sha256": "f2f16549e43ad54c3f09ba12cf7ebb677fb72a32d2c3a3ac6ba82c311e626979",
+        "output_sha256": "f2f16549e43ad54c3f09ba12cf7ebb677fb72a32d2c3a3ac6ba82c311e626979",
+        "before": [
+          1,
+          0,
+          0
+        ],
+        "after": [
+          1,
+          0,
+          0
+        ],
+        "original_preserved": true,
+        "semantics_preserved": true,
+        "status": "limitações"
+      },
+      {
+        "case": "empty",
+        "input_sha256": "45e3a62ea1b3c31df65b0f7a7bac769ddf9aafc4006bc7cf379d19b2c289c23c",
+        "output_sha256": "45e3a62ea1b3c31df65b0f7a7bac769ddf9aafc4006bc7cf379d19b2c289c23c",
+        "before": [
+          0,
+          0,
+          0
+        ],
+        "after": [
+          0,
+          0,
+          0
+        ],
+        "original_preserved": true,
+        "semantics_preserved": true,
+        "status": "sucesso"
+      }
+    ],
+    "network": {
+      "observation": "github-actions-log",
+      "attempts": 0,
+      "reviewer": "Codex technical implementation review",
+      "log": {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/qualification/abi-darwin-darwin-x86_64-3.14-network.json",
+        "sha256": "379e277b04d204c041b9249b3b2958504bf33320d3e205c77fa36a38327d91a9"
+      }
+    },
+    "log_text": "Estado: sucesso\nLayout melhorado sem aumentar nenhuma das três contagens\nArquivo gerado: <test-work>/crossing.layout.twee\nPares de arestas: 1 -> 0\nPares de nós: 0 -> 0\nPares aresta–nó: 0 -> 0\nComponentes de processamento prontos para uso sem internet.\nComponentes de processamento prontos para uso sem internet.\n\nAviso: ambiente não validado; uso de melhor esforço, sem garantia de suporte completo. Esta revisÃ£o ainda nÃ£o tem qualificaÃ§Ã£o oficial publicada para o ambiente.\nPreparando componente de processamento; a obtenção do pacote requer internet.\nAviso: ambiente não validado; uso de melhor esforço, sem garantia de suporte completo. Esta revisÃ£o ainda nÃ£o tem qualificaÃ§Ã£o oficial publicada para o ambiente.\nAviso: ambiente não validado; uso de melhor esforço, sem garantia de suporte completo. Esta revisÃ£o ainda nÃ£o tem qualificaÃ§Ã£o oficial publicada para o ambiente.\n",
+    "installation": {
+      "wheel": true,
+      "sdist": true,
+      "remote": true,
+      "outside_checkout": true,
+      "console": true,
+      "module": true
+    },
+    "pending_reason": null,
+    "reviewer": "Codex technical implementation review",
+    "logs": [
+      {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/c007823/12887797240/final-catalog.json.gz",
+        "sha256": "2a64f1a104412e81a5fc7757327a40fc8e82068d0d9b72f7c9d9fd4726780a5f"
+      },
+      {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/c007823/12888242015/installed-engine.json.gz",
+        "sha256": "5ebce1985475535ec80cabe50db166b63cda252ffbcc595303c30a268e1de733"
+      },
+      {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/c007823/12888395587/musl-notices/slot/cache-notices.json.gz",
+        "sha256": "5a81eff8055bb45d53e58aebc581b87a5dc22ab7c9f6cd9d7f78bb26e26c098d"
+      },
+      {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/audits/macos-x86_64.json",
+        "sha256": "d76b6cc27d9944772b73df35296605f1e017d49fb175700dc64f98fef4c36f2d"
+      },
+      {
+        "path": "specs/003-add-cross-platform-support/evidence/twine-visual-review-2026-10-28.json",
+        "sha256": "c5106fa06acf5cb7e0400eaee7c61fe39e5b571dcafd8d67f9fabe4f20990b02"
+      },
+      {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/publication.json",
+        "sha256": "33bb6194eaac623b9ae488397b2a5b920b5112460f38b681b24b88328c620b3a"
+      }
+    ],
+    "license_audit": {
+      "approved": true,
+      "reviewer": "Codex technical implementation review",
+      "artifact_sha256": "aa9ea80350aa63b269b9228da9b7e5b2812d7ef6ac3fa3c3a6205e9d1a7ad897",
+      "components": [
+        {
+          "name": "Graphviz program and separately preserved third-party terms",
+          "license_expression": "EPL-2.0 AND LicenseRef-Graphviz-Third-Party-Terms",
+          "source_url": "https://gitlab.com/graphviz/graphviz/-/archive/16.1.0/graphviz-16.1.0.tar.gz",
+          "source_sha256": "1e028b2b3e84e946c1d3e8c47590f8f0741bba1041fe6eff36eee87e598ea249",
+          "notice_path": "third-party-notices/Graphviz-COPYING.txt",
+          "notice_sha256": "0becf16567beb77fa252b7664631dd177c8f9a1889e48995b45379c7130e5303",
+          "link_input_sha256": [],
+          "review_status": "reviewed-for-exact-paired-distribution"
+        },
+        {
+          "name": "Observed Apple headers APSL 1.1",
+          "license_expression": "APSL-1.1",
+          "source_url": "https://github.com/Extremois/desembaraca-twine/releases/download/graphviz-16.1.0-posix-46d111d/graphviz-16.1.0-macos-x86_64-96f093e56aab8f476fa7a792e0d7202bdeab2c3487853c4a86d8eab207078142-sources.tar.gz",
+          "source_sha256": "96f093e56aab8f476fa7a792e0d7202bdeab2c3487853c4a86d8eab207078142",
+          "notice_path": "third-party-notices/APSL-1.1-COPYING.txt",
+          "notice_sha256": "359a21ed59e82096455398ea10c5bc8c3ff28e7acf7935b77751d70e3630fc95",
+          "link_input_sha256": [],
+          "review_status": "reviewed-for-exact-paired-distribution"
+        },
+        {
+          "name": "Observed Apple headers APSL 2.0",
+          "license_expression": "APSL-2.0",
+          "source_url": "https://github.com/Extremois/desembaraca-twine/releases/download/graphviz-16.1.0-posix-46d111d/graphviz-16.1.0-macos-x86_64-96f093e56aab8f476fa7a792e0d7202bdeab2c3487853c4a86d8eab207078142-sources.tar.gz",
+          "source_sha256": "96f093e56aab8f476fa7a792e0d7202bdeab2c3487853c4a86d8eab207078142",
+          "notice_path": "third-party-notices/APSL-2.0-COPYING.txt",
+          "notice_sha256": "e5881019d8766c1e88a5fe1dbca4ba40c78011d41fcb18f6e9f50df60182685b",
+          "link_input_sha256": [],
+          "review_status": "reviewed-for-exact-paired-distribution"
+        },
+        {
+          "name": "Observed LLVM SDK headers",
+          "license_expression": "Apache-2.0 WITH LLVM-exception",
+          "source_url": "https://github.com/Extremois/desembaraca-twine/releases/download/graphviz-16.1.0-posix-46d111d/graphviz-16.1.0-macos-x86_64-96f093e56aab8f476fa7a792e0d7202bdeab2c3487853c4a86d8eab207078142-sources.tar.gz",
+          "source_sha256": "96f093e56aab8f476fa7a792e0d7202bdeab2c3487853c4a86d8eab207078142",
+          "source_identity_kind": "Recorded SDK source/header/stub tree digest, not a downloadable archive digest",
+          "notice_path": "third-party-notices/SDK-header-91a9519314e9f449d18f8002.txt",
+          "notice_sha256": "8b548ce9c0772f64352e0a72e894ec00ce269b9e0b9f607bbca6b1b7568147df",
+          "additional_notices": [
+            {
+              "path": "third-party-notices/SDK-header-ab347cf153976d4db66f5152.txt",
+              "sha256": "945de68c47db6ae086ca724e56955f58a2fcd24996ff855729844e4da2b69eb9"
+            },
+            {
+              "path": "third-party-notices/SDK-header-b5396b1bccba6d4c361e064b.txt",
+              "sha256": "51649fa4a0f431eebab1437ed612fb019ec2e7787e56eed82221eefd46a3703b"
+            },
+            {
+              "path": "third-party-notices/SDK-header-44c862a93062de464876ed7d.txt",
+              "sha256": "b595a97ed09833b689e3f363e6dc485c1383ebeb8f501ad0669fefdf267d1e33"
+            },
+            {
+              "path": "third-party-notices/SDK-header-e029e12725002816d03ac787.txt",
+              "sha256": "a517fd65b43e273f5a8058114a09ed1571404207f694828be663fdde7eb5c25f"
+            },
+            {
+              "path": "third-party-notices/SDK-header-1979f81f3709afcd363d036f.txt",
+              "sha256": "5754c957355450437a3f49af4b4ff624ace44a28722dda812a0533f2fd0ae618"
+            },
+            {
+              "path": "third-party-notices/SDK-header-01e702b5a26cf201b9616734.txt",
+              "sha256": "d90e4486cbe230e2a69b2208b3cfa00d2f37dde34fecba5641a1e765f0ec53ad"
+            },
+            {
+              "path": "third-party-notices/SDK-header-8e3ffe3f447157ea7e291245.txt",
+              "sha256": "8998ce0e1626fdc5b04f6744ffc2eb65caea027ca78b5941d9df9a97ba4bebba"
+            },
+            {
+              "path": "third-party-notices/SDK-header-2ce8c2ac50698b9d94f9b4c9.txt",
+              "sha256": "e422064af9560b26465ed99c1e6e46f5a00d7e0bdd892d5b0ac845968a77b338"
+            },
+            {
+              "path": "third-party-notices/SDK-header-655987725eacd8982d50acc4.txt",
+              "sha256": "e0da127a73aeec439eda8e78f90180ccd950b574dc51921b11a8220792105973"
+            },
+            {
+              "path": "third-party-notices/SDK-header-eea79286e672cb93a8fd0dfb.txt",
+              "sha256": "d836ead13fa0c2712f504f4ec30129528644807b7cd725987de154a003ff51c5"
+            },
+            {
+              "path": "third-party-notices/SDK-header-9b388d04c9fa7e33e103df4b.txt",
+              "sha256": "b4c43cc9688b5c307b367004710ff8bc11731d15d4761d74824b7e163d8d3db8"
+            },
+            {
+              "path": "third-party-notices/SDK-header-94443db0e92972a993fec11e.txt",
+              "sha256": "44886d090522af81bbbf9e6245f69625fc84430086bb2d1bdc8a41ce1310db3b"
+            },
+            {
+              "path": "third-party-notices/SDK-header-f63db149a7bafc41da58c230.txt",
+              "sha256": "713ec82c8194a15383c5bad779fd8baca97f7eae52db544db760b011c17936f8"
+            },
+            {
+              "path": "third-party-notices/SDK-header-84b1727402338161172287e5.txt",
+              "sha256": "6015b181e142f418229b0ec6bfbac1b96bf12ae8e802b43c8aecc425d370c90c"
+            },
+            {
+              "path": "third-party-notices/SDK-header-e44063a421324132dbea6a57.txt",
+              "sha256": "6ba160fe160e2d0f4b1d9e18dba676a82d068477c4e3c713683375e2e27ff98e"
+            },
+            {
+              "path": "third-party-notices/SDK-header-82e430add7f776404b6af43d.txt",
+              "sha256": "ed26adcef0b553b44030433d6892bb489b12cc28b7e39423421caf87a0134bed"
+            },
+            {
+              "path": "third-party-notices/SDK-header-6eb86e5a1f600672ddbd3a01.txt",
+              "sha256": "1dde451e831ce68164036a3b56fb72460ba58b3577876cb513f201ac1dfe19ea"
+            },
+            {
+              "path": "third-party-notices/SDK-header-a6859eaaf445765109ee287f.txt",
+              "sha256": "4efb5f80669b7c385442e87625b2edd0b5cea825b268181b645b92971c91b811"
+            },
+            {
+              "path": "third-party-notices/SDK-header-ea3512383f1e750b70114e06.txt",
+              "sha256": "fe069d0d0e201f94ecf04b789a95d01fe0295c340517ab50c30d11d912b91bac"
+            },
+            {
+              "path": "third-party-notices/SDK-header-34f0812e484859a9c0bc84db.txt",
+              "sha256": "c187113158e65259c99f706181adf0678112bb58fbbcd688fe8d2b581755b1f7"
+            },
+            {
+              "path": "third-party-notices/SDK-header-ec4a643daffd2b41e7dbd761.txt",
+              "sha256": "48c8236343fafbfc67792dc3c7ac85af049bc64a772adcd88b266b905d4b52dc"
+            },
+            {
+              "path": "third-party-notices/SDK-header-39a96a9a0c07463108fcad89.txt",
+              "sha256": "385a49d08a399b48318c9704ef53eaec8e5a648cd7ac9f51800d8109c262566f"
+            },
+            {
+              "path": "third-party-notices/SDK-header-5f310fed1b3c28eef6c3df6c.txt",
+              "sha256": "adcb355d09cc4b49be216bcd74ae4116f26975901975e22820f5d859921c8a6f"
+            }
+          ],
+          "link_input_sha256": [],
+          "review_status": "reviewed-for-exact-paired-distribution",
+          "permission_basis": "Recorded EA1879 sections 2.2 A(ii), 2.4 and individual terms. SDK development/distribution permission is not an end-user license for the application. Proprietary header sources and SDK libraries are not redistributed."
+        },
+        {
+          "name": "Observed BSD permission blocks",
+          "license_expression": "LicenseRef-BSD-Four-Condition-Blocks",
+          "source_url": "https://github.com/Extremois/desembaraca-twine/releases/download/graphviz-16.1.0-posix-46d111d/graphviz-16.1.0-macos-x86_64-96f093e56aab8f476fa7a792e0d7202bdeab2c3487853c4a86d8eab207078142-sources.tar.gz",
+          "source_sha256": "96f093e56aab8f476fa7a792e0d7202bdeab2c3487853c4a86d8eab207078142",
+          "source_identity_kind": "Recorded SDK source/header/stub tree digest, not a downloadable archive digest",
+          "notice_path": "third-party-notices/SDK-header-96ff23d4276f23e2f8e26652.txt",
+          "notice_sha256": "db3206761973d830bf6d2cf05bd814b7cf070201f40484fd9d3e516c32ad6b3a",
+          "additional_notices": [
+            {
+              "path": "third-party-notices/SDK-header-76f5319e02595f33cd3e40d0.txt",
+              "sha256": "9e9da644bfa3177aa5658d22a52edc14e80b193718246c97093a0f9ace84e7af"
+            },
+            {
+              "path": "third-party-notices/SDK-header-e8cecbdfadd05cca28c42a51.txt",
+              "sha256": "0c02eed2c8e9051372fd02ea5d9feac6edf2c589e771a9e2a45cd76203a8ff40"
+            },
+            {
+              "path": "third-party-notices/SDK-header-b040f27f37038e24b11fe5d2.txt",
+              "sha256": "db3206761973d830bf6d2cf05bd814b7cf070201f40484fd9d3e516c32ad6b3a"
+            },
+            {
+              "path": "third-party-notices/SDK-header-d4beec375df82fc0e2189412.txt",
+              "sha256": "c37b78ec41a8dc318295e88303ab32207cc8b98ddfa3f1e981b3fb808037d5a6"
+            }
+          ],
+          "link_input_sha256": [],
+          "review_status": "reviewed-for-exact-paired-distribution",
+          "permission_basis": "Recorded EA1879 sections 2.2 A(ii), 2.4 and individual terms. SDK development/distribution permission is not an end-user license for the application. Proprietary header sources and SDK libraries are not redistributed."
+        },
+        {
+          "name": "Other observed macOS SDK compile inputs",
+          "license_expression": "LicenseRef-Xcode-macOS-SDK-Compile-Inputs",
+          "source_url": "https://github.com/Extremois/desembaraca-twine/releases/download/graphviz-16.1.0-posix-46d111d/graphviz-16.1.0-macos-x86_64-96f093e56aab8f476fa7a792e0d7202bdeab2c3487853c4a86d8eab207078142-sources.tar.gz",
+          "source_sha256": "96f093e56aab8f476fa7a792e0d7202bdeab2c3487853c4a86d8eab207078142",
+          "source_identity_kind": "Recorded SDK source/header/stub tree digest, not a downloadable archive digest",
+          "notice_path": "third-party-notices/SDK-header-12046e3c88c52e9b7c448e3d.txt",
+          "notice_sha256": "827c9c49529b10fea56b0e030269acd4b21ce327491f085a25c8572f0aebd1d3",
+          "additional_notices": [
+            {
+              "path": "third-party-notices/SDK-header-1b9e7463f2f6ad7bf69bce16.txt",
+              "sha256": "9f105e74e8387de0a678ea21df6f8c6c4139d94dcb21416e704469adb665c36d"
+            }
+          ],
+          "link_input_sha256": [],
+          "review_status": "reviewed-for-exact-paired-distribution",
+          "permission_basis": "Recorded EA1879 sections 2.2 A(ii), 2.4 and individual terms. SDK development/distribution permission is not an end-user license for the application. Proprietary header sources and SDK libraries are not redistributed."
+        },
+        {
+          "name": "Entity values",
+          "license_expression": "BSD-3-Clause",
+          "source_url": "https://raw.githubusercontent.com/whatwg/html-build/283a3531a61106d07d9a7d9fb3e6f3b9bfd33d70/entities/out/entities.json",
+          "source_sha256": "d741d877ac77c4194c4ad526b5b4a19aef8dfe411ab840a466891cdbb9f362e6",
+          "notice_path": "third-party-notices/ENTITY-DATA-LICENSES.txt",
+          "notice_sha256": "b6a37ddb2a6efd2eac61c0c99be2d546140ca5578dfa87f94cfa1ec58e6b3d57",
+          "link_input_sha256": [],
+          "review_status": "reviewed-for-exact-paired-distribution",
+          "selectors": null
+        },
+        {
+          "name": "Entity selectors",
+          "license_expression": "W3C-20021231",
+          "source_url": "https://www.w3.org/2003/entities/2007/xhtml1-lat1.ent",
+          "source_sha256": "11b3abc191cc5f33fee63be49fabb35a8052e629949bc793f823a0d819bbfd66",
+          "notice_path": "third-party-notices/ENTITY-DATA-LICENSES.txt",
+          "notice_sha256": "b6a37ddb2a6efd2eac61c0c99be2d546140ca5578dfa87f94cfa1ec58e6b3d57",
+          "link_input_sha256": [],
+          "review_status": "reviewed-for-exact-paired-distribution",
+          "selectors": "All three complete W3C selector files and individual hashes accompany sources"
+        }
+      ],
+      "log": {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/audits/macos-x86_64.json",
+        "sha256": "d76b6cc27d9944772b73df35296605f1e017d49fb175700dc64f98fef4c36f2d"
+      }
+    },
+    "twine": {
+      "version": "2.12.1",
+      "reviewer": "user",
+      "outputs": [
+        {
+          "case": "crossing",
+          "sha256": "aa821f1611a98d479811f652197070728904bd2afe31c8e6fca64ed9fbec8e8b",
+          "reopened": true
+        },
+        {
+          "case": "coincident",
+          "sha256": "8644eeb3404043bec66b149c0ed3f2f4bea0600914a944e75c5f6464b78c1ed6",
+          "reopened": true
+        },
+        {
+          "case": "isolated_overlap",
+          "sha256": "bef1e0132bce9b72f1317cdbb43d3c2a54e604632459cbda2c5af7d52c17a03a",
+          "reopened": true
+        },
+        {
+          "case": "connected_overlap",
+          "sha256": "137e849cfdf04ef3db7ed9057a7142ebecc403ee78952f307138ff5ecca72618",
+          "reopened": true
+        },
+        {
+          "case": "through_isolated",
+          "sha256": "f2460867ce13305139836fc5737093e3e513fae53c4bee8fe0742fe5fc98c341",
+          "reopened": true
+        },
+        {
+          "case": "through_connected",
+          "sha256": "8c13ace7ce2f65beff622e529456029fda6c7e1f624a5046886a7065f60a2f3f",
+          "reopened": true
+        }
+      ],
+      "log": {
+        "path": "specs/003-add-cross-platform-support/evidence/twine-visual-review-2026-10-28.json",
+        "sha256": "c5106fa06acf5cb7e0400eaee7c61fe39e5b571dcafd8d67f9fabe4f20990b02"
+      }
+    },
+    "constituent_evidence": {
+      "public_catalog_run_id": 40852552232,
+      "recovery_run_id": 40852552361,
+      "recovery_revision": "c0078230a3bf1a2b934f1754e8b12664f100b4cc",
+      "visual_review_revision": "07688e264e6c9915790c2728beb24552a23f6388",
+      "visual_binding": "Same six byte hashes, checked for all three final installation modes; no claim of a new GUI session.",
+      "recovery_scope": "Installed real engine, process exits and OS locks; transfer/disk/permission faults controlled. Tests executed only in Actions.",
+      "source_build_revision": "46d111de81038d6ae0e7e7772813693c5b0a2345",
+      "public_delivery": {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/publication.json",
+        "sha256": "33bb6194eaac623b9ae488397b2a5b920b5112460f38b681b24b88328c620b3a"
+      }
+    }
+  }
+]

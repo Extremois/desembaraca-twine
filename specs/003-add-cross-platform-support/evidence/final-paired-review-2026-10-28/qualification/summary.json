@@ -1,0 +1,240 @@
+{
+  "passed": true,
+  "qualified": true,
+  "application_revision": "c0078230a3bf1a2b934f1754e8b12664f100b4cc",
+  "targets": 7,
+  "python_slots": 14,
+  "installation_modes": 42,
+  "records": [
+    {
+      "target_id": "abi-windows-win32-x86_64",
+      "python": "3.12",
+      "public_catalog": {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/c007823/12887547372/final-catalog.json.gz",
+        "sha256": "56e3bc1aa7c82bf5cdd7d7d0a6fa25a93f90f4b9715919dafd0fa7b4daf696ae"
+      },
+      "recovery": {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/c007823/12886974420/windows-cache-notices.json.gz",
+        "sha256": "75c80a862bf10f4bf10ec85b6d3b37bf98b436ee189ed9e21216da514a9dfd21"
+      },
+      "notices": {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/c007823/12887697793/musl-notices/slot/cache-notices.json.gz",
+        "sha256": "8e9c8660a64766a1020d3b490c9e69d178e725cd08b1de2b99971d2d94d9cbf8"
+      }
+    },
+    {
+      "target_id": "abi-windows-win32-x86_64",
+      "python": "3.14",
+      "public_catalog": {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/c007823/12888122090/final-catalog.json.gz",
+        "sha256": "2055ef2bce542a397209e63b4e198761d9a77df94672e347ccda425c2ff39c3a"
+      },
+      "recovery": {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/c007823/12887318663/windows-cache-notices.json.gz",
+        "sha256": "5158a4db1aac39c394280f8d62cadb9649559f7ca555159ff0be3a4110e8e9f3"
+      },
+      "notices": {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/c007823/12888395587/musl-notices/slot/cache-notices.json.gz",
+        "sha256": "5a81eff8055bb45d53e58aebc581b87a5dc22ab7c9f6cd9d7f78bb26e26c098d"
+      }
+    },
+    {
+      "target_id": "abi-darwin-darwin-x86_64",
+      "python": "3.12",
+      "public_catalog": {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/c007823/12888675074/final-catalog.json.gz",
+        "sha256": "202038aa71285cb4723a79b8357b870ad1990b5ca5dfcca25e7b6f4b22745122"
+      },
+      "recovery": {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/c007823/12888161330/installed-engine.json.gz",
+        "sha256": "f97e58dd76e31c22e827b8fec7490db5dc8940781ed0e27da0ddee0981404f2a"
+      },
+      "notices": {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/c007823/12887697793/musl-notices/slot/cache-notices.json.gz",
+        "sha256": "8e9c8660a64766a1020d3b490c9e69d178e725cd08b1de2b99971d2d94d9cbf8"
+      }
+    },
+    {
+      "target_id": "abi-darwin-darwin-x86_64",
+      "python": "3.14",
+      "public_catalog": {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/c007823/12887797240/final-catalog.json.gz",
+        "sha256": "2a64f1a104412e81a5fc7757327a40fc8e82068d0d9b72f7c9d9fd4726780a5f"
+      },
+      "recovery": {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/c007823/12888242015/installed-engine.json.gz",
+        "sha256": "5ebce1985475535ec80cabe50db166b63cda252ffbcc595303c30a268e1de733"
+      },
+      "notices": {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/c007823/12888395587/musl-notices/slot/cache-notices.json.gz",
+        "sha256": "5a81eff8055bb45d53e58aebc581b87a5dc22ab7c9f6cd9d7f78bb26e26c098d"
+      }
+    },
+    {
+      "target_id": "abi-darwin-darwin-aarch64",
+      "python": "3.12",
+      "public_catalog": {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/c007823/12888102305/final-catalog.json.gz",
+        "sha256": "ab97f3e746b165a6cbbc2b8f648cc3573eeb47877ba0b50c63bd81c4918b3c85"
+      },
+      "recovery": {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/c007823/12888201588/installed-engine.json.gz",
+        "sha256": "9aa2e6cb3508a00420942c8509fe225c8edac7052766e263fefae50e0fdd4c1a"
+      },
+      "notices": {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/c007823/12887697793/musl-notices/slot/cache-notices.json.gz",
+        "sha256": "8e9c8660a64766a1020d3b490c9e69d178e725cd08b1de2b99971d2d94d9cbf8"
+      }
+    },
+    {
+      "target_id": "abi-darwin-darwin-aarch64",
+      "python": "3.14",
+      "public_catalog": {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/c007823/12887787191/final-catalog.json.gz",
+        "sha256": "78cfb5fa24ecaf461439a92e60c00979d0bce782bc80ad42ae0f136f09536410"
+      },
+      "recovery": {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/c007823/12887752932/installed-engine.json.gz",
+        "sha256": "f08ef732adee52a012bb8f7e4ebfc244c7b59e735a168f2935767191aadb3148"
+      },
+      "notices": {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/c007823/12888395587/musl-notices/slot/cache-notices.json.gz",
+        "sha256": "5a81eff8055bb45d53e58aebc581b87a5dc22ab7c9f6cd9d7f78bb26e26c098d"
+      }
+    },
+    {
+      "target_id": "abi-linux-glibc-x86_64",
+      "python": "3.12",
+      "public_catalog": {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/c007823/12887572839/final-catalog.json.gz",
+        "sha256": "821736516bd8540344559651d4beaff6fe59e7cac2e9f9372f2a2c609b3106fe"
+      },
+      "recovery": {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/c007823/12886849561/installed-engine.json.gz",
+        "sha256": "8ca6e9ccbc64cf336448d730076c405fd2a8d2124d77c22c17c3b15ae6bbd844"
+      },
+      "notices": {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/c007823/12887697793/musl-notices/slot/cache-notices.json.gz",
+        "sha256": "8e9c8660a64766a1020d3b490c9e69d178e725cd08b1de2b99971d2d94d9cbf8"
+      }
+    },
+    {
+      "target_id": "abi-linux-glibc-x86_64",
+      "python": "3.14",
+      "public_catalog": {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/c007823/12887293906/final-catalog.json.gz",
+        "sha256": "943767a65b69319171285d2d9092b96f41bc68a2b4de3577de00647e9e996f6f"
+      },
+      "recovery": {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/c007823/12887019715/installed-engine.json.gz",
+        "sha256": "4bfc43264c4d52cb0e079ba99e8913482492f33d056830431b797d86da0311b7"
+      },
+      "notices": {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/c007823/12888395587/musl-notices/slot/cache-notices.json.gz",
+        "sha256": "5a81eff8055bb45d53e58aebc581b87a5dc22ab7c9f6cd9d7f78bb26e26c098d"
+      }
+    },
+    {
+      "target_id": "abi-linux-glibc-aarch64",
+      "python": "3.12",
+      "public_catalog": {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/c007823/12888296288/final-catalog.json.gz",
+        "sha256": "8c8db19b8786631b6cbdd3a5d09ef10da186d49f388bfe9559bec0443f842daf"
+      },
+      "recovery": {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/c007823/12887358089/installed-engine.json.gz",
+        "sha256": "3267f1ba6b1dcdad594466cba32567b5a3ef45a6f6f04aac84b83b979f742ddb"
+      },
+      "notices": {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/c007823/12887697793/musl-notices/slot/cache-notices.json.gz",
+        "sha256": "8e9c8660a64766a1020d3b490c9e69d178e725cd08b1de2b99971d2d94d9cbf8"
+      }
+    },
+    {
+      "target_id": "abi-linux-glibc-aarch64",
+      "python": "3.14",
+      "public_catalog": {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/c007823/12887891598/final-catalog.json.gz",
+        "sha256": "0af853e0d3f661cb5b308a8f27495434e6174a6b114daec964214e2052ddaf43"
+      },
+      "recovery": {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/c007823/12888211105/installed-engine.json.gz",
+        "sha256": "e471f874851bc0418e1d8e873684dff147fe2e325343f8a0a19e375f3ecf475c"
+      },
+      "notices": {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/c007823/12888395587/musl-notices/slot/cache-notices.json.gz",
+        "sha256": "5a81eff8055bb45d53e58aebc581b87a5dc22ab7c9f6cd9d7f78bb26e26c098d"
+      }
+    },
+    {
+      "target_id": "abi-linux-musl-x86_64",
+      "python": "3.12",
+      "public_catalog": {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/c007823/12887738443/final-catalog.json.gz",
+        "sha256": "6db02f28cba15af87aa69709a2b2540610e12e68f6df8a1a925c62e5fe18130d"
+      },
+      "recovery": {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/c007823/12887383151/musl-notices/slot/installed-runtime.json.gz",
+        "sha256": "4b6095ca6b95d9e5b017dfb1733fe521d3c86a2e7a5629247c354c77c4dbdf35"
+      },
+      "notices": {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/c007823/12887697793/musl-notices/slot/cache-notices.json.gz",
+        "sha256": "8e9c8660a64766a1020d3b490c9e69d178e725cd08b1de2b99971d2d94d9cbf8"
+      }
+    },
+    {
+      "target_id": "abi-linux-musl-x86_64",
+      "python": "3.14",
+      "public_catalog": {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/c007823/12887762570/final-catalog.json.gz",
+        "sha256": "a4edbedf0e9145db4fcd5b39cda39fa5336427f8d4f596370e4d4c99b5b85d67"
+      },
+      "recovery": {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/c007823/12887757560/musl-notices/slot/installed-runtime.json.gz",
+        "sha256": "1beec9a59692a4268a4c5b9b466a51bcee3c14690b2af85b9dbb2be638c8a026"
+      },
+      "notices": {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/c007823/12888395587/musl-notices/slot/cache-notices.json.gz",
+        "sha256": "5a81eff8055bb45d53e58aebc581b87a5dc22ab7c9f6cd9d7f78bb26e26c098d"
+      }
+    },
+    {
+      "target_id": "abi-linux-musl-aarch64",
+      "python": "3.12",
+      "public_catalog": {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/c007823/12887174861/final-catalog.json.gz",
+        "sha256": "bd57e2092deaff4d650b40b416e187b6d96aa9346463e67a95666276530df4b1"
+      },
+      "recovery": {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/c007823/12887697793/musl-notices/slot/installed-runtime.json.gz",
+        "sha256": "cbe5b924b09028afc943d13679763cb05f5a85690268c5f58ac036af0865ddf6"
+      },
+      "notices": {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/c007823/12887697793/musl-notices/slot/cache-notices.json.gz",
+        "sha256": "8e9c8660a64766a1020d3b490c9e69d178e725cd08b1de2b99971d2d94d9cbf8"
+      }
+    },
+    {
+      "target_id": "abi-linux-musl-aarch64",
+      "python": "3.14",
+      "public_catalog": {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/c007823/12886989918/final-catalog.json.gz",
+        "sha256": "aa1821b3526c3e4da97c3f8f5677dfa2f4ea27ae691e439371ecdf95c18dd690"
+      },
+      "recovery": {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/c007823/12888395587/musl-notices/slot/installed-runtime.json.gz",
+        "sha256": "d16c27415e3cd6f3f4ae023c3f4d43ed9f63d35ff98efb8d08daa105113ddd48"
+      },
+      "notices": {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/c007823/12888395587/musl-notices/slot/cache-notices.json.gz",
+        "sha256": "5a81eff8055bb45d53e58aebc581b87a5dc22ab7c9f6cd9d7f78bb26e26c098d"
+      }
+    }
+  ],
+  "promotion": "Existing promote-support.py propose() executed for all seven targets after validating both Python records and durable byte-bound logs.",
+  "compatibility_declarations": "69 distro entries retained as compatibility declarations, not individually certified",
+  "limitations": [
+    "Apple signing/notarization optional and not asserted",
+    "Windows ABI exercised on actual hosted Server, not represented as Windows 11 clean certification"
+  ]
+}

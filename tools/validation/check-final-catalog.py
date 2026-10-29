@@ -49,6 +49,7 @@ def collect(dist,wheelhouse,abi):
                  (system,arch,'windows' if abi=='win32' else abi)]
     if len(descriptors)!=1:raise ValueError('Missing or ambiguous installed catalog artifact')
     descriptor=descriptors[0]
+    qualified_revision=catalog.get('application_revision',revision)
     facts=dict(system=system,arch=arch,abi=abi,python=platform.python_version(),kernel=platform.release(),
         image=os.environ.get('TWINE_CI_IMAGE',os.environ.get('ImageOS','')+'/'+os.environ.get('ImageVersion','')),
         runner_arch=os.environ.get('RUNNER_ARCH'),fingerprint_scope='Observed environment facts; not a root-filesystem digest')
@@ -81,12 +82,20 @@ def collect(dist,wheelhouse,abi):
                 raise ValueError('Final installation escaped its isolated venv/PATH')
             if mode=='remote' and installed['direct_url']['url']!=url:
                 raise ValueError('Remote package did not come from the immutable commit URL')
+            support=json.loads(run([python,'-c',
+                'import json; from twine_edge_overlap.runtime_platform import detect_host; '
+                'from twine_edge_overlap.runtime_catalog import load_catalog,load_support_matrix,select_artifact,classify_support; '
+                'c=load_catalog(); h=detect_host(); '
+                'd=classify_support(h,select_artifact(c,h),load_support_matrix(),application_revision=c.get("application_revision")); '
+                'print(json.dumps(dict(level=d.level,target_id=d.target_id)))'],work,env).stdout)
+            if catalog.get('application_revision') and support!={'level':'official','target_id':target['id']}:
+                raise ValueError('Promoted installed catalog does not classify the actual ABI as official')
             for module in ('twine_edge_overlap','twine_edge_overlap.cli'):
                 run([python,'-m',module,'--help'],work,env,30)
             run([scripts/('desembaraca-twine.exe' if os.name=='nt' else 'desembaraca-twine'),'--help'],work,env,30)
             package_sha=(installed['direct_url']['archive_info']['hashes']['sha256'] if mode=='remote'
                          else hashlib.sha256(package.read_bytes()).hexdigest())
-            request=dict(target=target,artifact_id=descriptor['id'],application_revision=revision,
+            request=dict(target=target,artifact_id=descriptor['id'],application_revision=qualified_revision,
                 source_state='committed',variant_required=False,package_sha256=package_sha,
                 package_mode=mode,python_minor='.'.join(map(str,sys.version_info[:2])),
                 python_origin='GitHub Actions native CPython; exact patch recorded',image_id=facts['image'],
@@ -105,9 +114,9 @@ def collect(dist,wheelhouse,abi):
             result['log_text']=result['log_text'].replace(str(work),'<test-work>')
             records.append(dict(mode=mode,archive_sha256=package_sha,installed_files=installed['files'],
                 licenses=installed['licenses'],outside_checkout=True,git_and_global_graphviz_absent=True,
-                real_catalog=True,public_acquisition=True,worker=result))
+                real_catalog=True,public_acquisition=True,support=support,worker=result))
     return dict(kind='final-public-catalog-installed-acceptance',passed=True,qualified=False,
-        application_revision=revision,environment=facts,environment_digest=image_digest,
+        application_revision=revision,qualified_application_revision=qualified_revision,environment=facts,environment_digest=image_digest,
         python=platform.python_version(),artifact_id=descriptor['id'],target_id=target['id'],records=records,
         scope='Real published catalog with wheel/sdist/remote acquisition, corpus and offline reuse; support promotion is a reviewed separate step')
 

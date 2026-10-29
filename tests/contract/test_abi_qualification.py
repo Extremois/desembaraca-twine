@@ -19,6 +19,18 @@ class ABIQualificationTests(unittest.TestCase):
     def target(self):
         return next(row for row in self.registry()['targets'] if row['os']=='linux' and row['abi']=='glibc' and row['arch']=='x86_64')
 
+    def test_published_matrix_classifies_each_qualified_abi(self):
+        from twine_edge_overlap.runtime_catalog import load_catalog,load_support_matrix
+        catalog=load_catalog();matrix=load_support_matrix()
+        for target in matrix['abi_targets']:
+            descriptor=next(row for row in catalog['artifacts'] if row['id']==target['artifact_id'])
+            for minor in ((3,12),(3,14)):
+                host=HostEnvironment(os=target['os'],arch=target['arch'],python_version=minor,
+                    os_version=target.get('minimum_os','11'),libc_family=target['abi'],
+                    libc_version=target.get('minimum_libc',''))
+                self.assertEqual(classify_support(host,descriptor,matrix,
+                    application_revision=catalog['application_revision']).level,'official')
+
     def test_scope_has_seven_targets_fourteen_slots_and_no_apple_requirement(self):
         data=self.registry()
         self.assertEqual(len(data['targets']),7)
