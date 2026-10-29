@@ -1,0 +1,133 @@
+name: Final published catalog acceptance
+on:
+  workflow_dispatch:
+  push:
+    branches: [feat/003-add-cross-platform-support]
+    paths:
+      - '.github/workflows/final-catalog-acceptance.yml'
+      - 'tools/validation/check-final-catalog.py'
+      - 'src/**'
+      - 'pyproject.toml'
+      - 'MANIFEST.in'
+      - 'LICENSE'
+      - 'NOTICE'
+permissions:
+  contents: read
+concurrency:
+  group: final-catalog-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  hosted:
+    name: Public catalog (${{ matrix.runner }}, Python ${{ matrix.python }})
+    strategy:
+      fail-fast: false
+      matrix:
+        runner: [ubuntu-24.04, ubuntu-24.04-arm, macos-15, macos-15-intel, windows-latest]
+        python: ['3.12', '3.14']
+        include:
+          - runner: ubuntu-24.04
+            abi: glibc
+          - runner: ubuntu-24.04-arm
+            abi: glibc
+          - runner: macos-15
+            abi: darwin
+          - runner: macos-15-intel
+            abi: darwin
+          - runner: windows-latest
+            abi: win32
+    runs-on: ${{ matrix.runner }}
+    timeout-minutes: 20
+    env:
+      PYTHONUTF8: '1'
+      PIP_DISABLE_PIP_VERSION_CHECK: '1'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Build final wheel and sdist
+        run: |
+          python -m pip install build
+          python -m build --outdir "${{ runner.temp }}/final-dist"
+          python -m pip download --only-binary=:all: --no-deps --dest "${{ runner.temp }}/final-wheels" setuptools wheel packaging
+      - name: Exercise the real published catalog in three external installations
+        run: >-
+          python tools/validation/check-final-catalog.py
+          --dist-dir "${{ runner.temp }}/final-dist"
+          --wheelhouse "${{ runner.temp }}/final-wheels"
+          --abi "${{ matrix.abi }}"
+          --report "${{ runner.temp }}/final-catalog.json"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: final-catalog-${{ matrix.runner }}-${{ matrix.python }}-${{ github.sha }}
+          retention-days: 7
+          path: |
+            ${{ runner.temp }}/final-catalog.json
+            ${{ runner.temp }}/final-dist/
+  musl:
+    name: Public catalog musl (${{ matrix.arch }}, Python ${{ matrix.python }})
+    strategy:
+      fail-fast: false
+      matrix:
+        arch: [x86_64, aarch64]
+        python: ['3.12', '3.14']
+        include:
+          - arch: x86_64
+            runner: ubuntu-24.04
+          - arch: aarch64
+            runner: ubuntu-24.04-arm
+    runs-on: ${{ matrix.runner }}
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Select the pinned matching musl userland
+        id: image
+        shell: bash
+        env:
+          TARGET_ARCH: ${{ matrix.arch }}
+          TARGET_PYTHON: ${{ matrix.python }}
+        run: |
+          test "$(uname -m)" = "$TARGET_ARCH"
+          python - <<'PY'
+          import json,os
+          from pathlib import Path
+          pin=json.loads(Path('tools/runtime/alpine-ci-images.json').read_bytes())['images'][os.environ['TARGET_PYTHON']]['platforms'][os.environ['TARGET_ARCH']]
+          with open(os.environ['GITHUB_OUTPUT'],'a') as stream:
+              stream.write('reference='+pin['reference']+'\noci_arch='+pin['oci_arch']+'\n')
+          PY
+      - name: Accept wheel, sdist and remote installs without root or engine fixtures
+        shell: bash
+        env:
+          IMAGE: ${{ steps.image.outputs.reference }}
+          OCI_ARCH: ${{ steps.image.outputs.oci_arch }}
+        run: |
+          mkdir "$RUNNER_TEMP/final-musl"
+          docker pull --platform "linux/$OCI_ARCH" "$IMAGE"
+          docker image inspect "$IMAGE" > "$RUNNER_TEMP/final-musl/image.json"
+          docker run --rm --platform "linux/$OCI_ARCH" --user "$(id -u):$(id -g)" -e GITHUB_ACTIONS -e GITHUB_SHA -e GITHUB_REPOSITORY -e GITHUB_RUN_ID -e RUNNER_ARCH -e PYTHONUTF8=1 -e HOME=/work/home -e "TWINE_CI_IMAGE=$IMAGE" -v "$GITHUB_WORKSPACE:/workspace:ro" -v "$RUNNER_TEMP/final-musl:/work" --workdir /workspace "$IMAGE" sh -ec '
+            mkdir /work/home /work/project
+            cp /workspace/pyproject.toml /workspace/MANIFEST.in /workspace/LICENSE /workspace/NOTICE /workspace/README.md /work/project/
+            cp -R /workspace/src /work/project/src
+            python -m venv /work/builder
+            /work/builder/bin/python -m pip install build
+            /work/builder/bin/python -m build /work/project --outdir /work/dist
+            /work/builder/bin/python -m pip download --only-binary=:all: --no-deps --dest /work/wheels setuptools wheel packaging
+            /work/builder/bin/python tools/validation/check-final-catalog.py --dist-dir /work/dist --wheelhouse /work/wheels --abi musl --report /work/final-catalog.json
+          '
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: final-catalog-musl-${{ matrix.arch }}-${{ matrix.python }}-${{ github.sha }}
+          retention-days: 7
+          path: |
+            ${{ runner.temp }}/final-musl/final-catalog.json
+            ${{ runner.temp }}/final-musl/image.json
+            ${{ runner.temp }}/final-musl/dist/

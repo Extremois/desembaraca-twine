@@ -5,7 +5,10 @@ on:
     paths:
       - '.github/workflows/macos-candidate.yml'
       - 'tools/runtime/**'
-      - 'src/**'
+      - '!tools/runtime/abi-targets.json'
+      - '!tools/runtime/licenses/linux.json'
+      - '!tools/runtime/licenses/macos.json'
+      - 'src/**/*.py'
       - 'tests/fixtures/**'
       - 'tests/integration/test_macos_runtime.py'
       - 'tests/integration/test_linux_runtime.py'

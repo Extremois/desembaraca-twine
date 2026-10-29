@@ -1,7 +1,7 @@
 {
   "tag": "graphviz-16.1.0-posix-46d111d",
-  "published": false,
-  "authorized": false,
+  "published": true,
+  "authorized": true,
   "local_directory": ".tmp/publish-posix-46d111d",
   "asset_count": 12,
   "total_bytes": 390122923,
@@ -66,5 +66,7 @@
       "size": 68248557,
       "sha256": "f196f2e30a38a7414bcbc6ea00c56e609b71abd65b1d11b026883d1ed35fc859"
     }
-  ]
+  ],
+  "authorization_to_publish": true,
+  "release_url": "https://github.com/Extremois/desembaraca-twine/releases/tag/graphviz-16.1.0-posix-46d111d"
 }

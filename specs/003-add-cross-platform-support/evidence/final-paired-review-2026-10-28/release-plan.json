@@ -1,12 +1,12 @@
 {
   "tag": "graphviz-16.1.0-posix-46d111d",
   "name": "Graphviz 16.1.0 private POSIX runtimes",
-  "draft": true,
+  "draft": false,
   "prerelease": true,
   "target_commit": "46d111de81038d6ae0e7e7772813693c5b0a2345",
-  "authorization_to_publish": false,
+  "authorization_to_publish": true,
   "asset_count": 12,
-  "published": false,
+  "published": true,
   "application_catalog_changed": false,
   "artifacts": [
     {
@@ -171,5 +171,6 @@
       "static_inputs_reviewed": 66,
       "provenance_sha256": "cea6884b8c3331ec66ce94227591b9ef5bd6dc3ea5e102ad92e6c49e9a5899e8"
     }
-  ]
+  ],
+  "release_url": "https://github.com/Extremois/desembaraca-twine/releases/tag/graphviz-16.1.0-posix-46d111d"
 }

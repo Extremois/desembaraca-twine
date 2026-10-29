@@ -1,0 +1,705 @@
+{
+  "application_revision": "fdd2725ca5404998ec477b35f044be562a06768b",
+  "passed": true,
+  "qualified": false,
+  "scope": "Reviewed candidate inspections and installed current packages; public delivery/catalog acceptance remain separate",
+  "workflows": [
+    {
+      "id": 40804473257,
+      "name": "Musl and Windows cache notice integrity",
+      "url": "https://github.com/Extremois/desembaraca-twine/actions/runs/40804473257",
+      "jobs": 6
+    },
+    {
+      "id": 40804473160,
+      "name": "Entity table alternative review",
+      "url": "https://github.com/Extremois/desembaraca-twine/actions/runs/40804473160",
+      "jobs": 1
+    },
+    {
+      "id": 40804473185,
+      "name": "Installed cache notice integrity",
+      "url": "https://github.com/Extremois/desembaraca-twine/actions/runs/40804473185",
+      "jobs": 8
+    }
+  ],
+  "foundation": [],
+  "artifacts": [
+    {
+      "workflow": "Musl and Windows cache notice integrity",
+      "run_id": 40804473257,
+      "actions_artifact_id": 12868080669,
+      "name": "windows-cache-notices-3.12-fdd2725ca5404998ec477b35f044be562a06768b",
+      "actions_zip_sha256": "1296e0c69b5b69489d7d6c0ee61f145511c38d878832baf1c2780c4c96173267",
+      "records": [
+        {
+          "path": "12868080669/windows-cache-notices.json.gz",
+          "raw_sha256": "0f028eba8cef602752b9a9b22f76443b22a97ff69bc5403825336d63fd7318c9",
+          "passed": true,
+          "kind": "current-wheel-sdist-offline-installation-not-support-qualification",
+          "python": "3.12.10",
+          "system": "Windows",
+          "artifact_id": null
+        },
+        {
+          "path": "12868080669/windows-review/sdist/coincident.twee.gz",
+          "raw_sha256": "8644eeb3404043bec66b149c0ed3f2f4bea0600914a944e75c5f6464b78c1ed6"
+        },
+        {
+          "path": "12868080669/windows-review/sdist/connected_overlap.twee.gz",
+          "raw_sha256": "137e849cfdf04ef3db7ed9057a7142ebecc403ee78952f307138ff5ecca72618"
+        },
+        {
+          "path": "12868080669/windows-review/sdist/crossing.twee.gz",
+          "raw_sha256": "aa821f1611a98d479811f652197070728904bd2afe31c8e6fca64ed9fbec8e8b"
+        },
+        {
+          "path": "12868080669/windows-review/sdist/isolated_overlap.twee.gz",
+          "raw_sha256": "bef1e0132bce9b72f1317cdbb43d3c2a54e604632459cbda2c5af7d52c17a03a"
+        },
+        {
+          "path": "12868080669/windows-review/sdist/through_connected.twee.gz",
+          "raw_sha256": "8c13ace7ce2f65beff622e529456029fda6c7e1f624a5046886a7065f60a2f3f"
+        },
+        {
+          "path": "12868080669/windows-review/sdist/through_isolated.twee.gz",
+          "raw_sha256": "f2460867ce13305139836fc5737093e3e513fae53c4bee8fe0742fe5fc98c341"
+        },
+        {
+          "path": "12868080669/windows-review/wheel/coincident.twee.gz",
+          "raw_sha256": "8644eeb3404043bec66b149c0ed3f2f4bea0600914a944e75c5f6464b78c1ed6"
+        },
+        {
+          "path": "12868080669/windows-review/wheel/connected_overlap.twee.gz",
+          "raw_sha256": "137e849cfdf04ef3db7ed9057a7142ebecc403ee78952f307138ff5ecca72618"
+        },
+        {
+          "path": "12868080669/windows-review/wheel/crossing.twee.gz",
+          "raw_sha256": "aa821f1611a98d479811f652197070728904bd2afe31c8e6fca64ed9fbec8e8b"
+        },
+        {
+          "path": "12868080669/windows-review/wheel/isolated_overlap.twee.gz",
+          "raw_sha256": "bef1e0132bce9b72f1317cdbb43d3c2a54e604632459cbda2c5af7d52c17a03a"
+        },
+        {
+          "path": "12868080669/windows-review/wheel/through_connected.twee.gz",
+          "raw_sha256": "8c13ace7ce2f65beff622e529456029fda6c7e1f624a5046886a7065f60a2f3f"
+        },
+        {
+          "path": "12868080669/windows-review/wheel/through_isolated.twee.gz",
+          "raw_sha256": "f2460867ce13305139836fc5737093e3e513fae53c4bee8fe0742fe5fc98c341"
+        }
+      ]
+    },
+    {
+      "workflow": "Musl and Windows cache notice integrity",
+      "run_id": 40804473257,
+      "actions_artifact_id": 12868035849,
+      "name": "windows-cache-notices-3.14-fdd2725ca5404998ec477b35f044be562a06768b",
+      "actions_zip_sha256": "2a276c29c0d1ac8bafd97378a972019f0743f2bf18e52d4c92a5651b68666793",
+      "records": [
+        {
+          "path": "12868035849/windows-cache-notices.json.gz",
+          "raw_sha256": "655f9ab94497973ab672910c579ef413653a50b6e8f37d9e2dbf29037a6b05f7",
+          "passed": true,
+          "kind": "current-wheel-sdist-offline-installation-not-support-qualification",
+          "python": "3.14.9",
+          "system": "Windows",
+          "artifact_id": null
+        },
+        {
+          "path": "12868035849/windows-review/sdist/coincident.twee.gz",
+          "raw_sha256": "8644eeb3404043bec66b149c0ed3f2f4bea0600914a944e75c5f6464b78c1ed6"
+        },
+        {
+          "path": "12868035849/windows-review/sdist/connected_overlap.twee.gz",
+          "raw_sha256": "137e849cfdf04ef3db7ed9057a7142ebecc403ee78952f307138ff5ecca72618"
+        },
+        {
+          "path": "12868035849/windows-review/sdist/crossing.twee.gz",
+          "raw_sha256": "aa821f1611a98d479811f652197070728904bd2afe31c8e6fca64ed9fbec8e8b"
+        },
+        {
+          "path": "12868035849/windows-review/sdist/isolated_overlap.twee.gz",
+          "raw_sha256": "bef1e0132bce9b72f1317cdbb43d3c2a54e604632459cbda2c5af7d52c17a03a"
+        },
+        {
+          "path": "12868035849/windows-review/sdist/through_connected.twee.gz",
+          "raw_sha256": "8c13ace7ce2f65beff622e529456029fda6c7e1f624a5046886a7065f60a2f3f"
+        },
+        {
+          "path": "12868035849/windows-review/sdist/through_isolated.twee.gz",
+          "raw_sha256": "f2460867ce13305139836fc5737093e3e513fae53c4bee8fe0742fe5fc98c341"
+        },
+        {
+          "path": "12868035849/windows-review/wheel/coincident.twee.gz",
+          "raw_sha256": "8644eeb3404043bec66b149c0ed3f2f4bea0600914a944e75c5f6464b78c1ed6"
+        },
+        {
+          "path": "12868035849/windows-review/wheel/connected_overlap.twee.gz",
+          "raw_sha256": "137e849cfdf04ef3db7ed9057a7142ebecc403ee78952f307138ff5ecca72618"
+        },
+        {
+          "path": "12868035849/windows-review/wheel/crossing.twee.gz",
+          "raw_sha256": "aa821f1611a98d479811f652197070728904bd2afe31c8e6fca64ed9fbec8e8b"
+        },
+        {
+          "path": "12868035849/windows-review/wheel/isolated_overlap.twee.gz",
+          "raw_sha256": "bef1e0132bce9b72f1317cdbb43d3c2a54e604632459cbda2c5af7d52c17a03a"
+        },
+        {
+          "path": "12868035849/windows-review/wheel/through_connected.twee.gz",
+          "raw_sha256": "8c13ace7ce2f65beff622e529456029fda6c7e1f624a5046886a7065f60a2f3f"
+        },
+        {
+          "path": "12868035849/windows-review/wheel/through_isolated.twee.gz",
+          "raw_sha256": "f2460867ce13305139836fc5737093e3e513fae53c4bee8fe0742fe5fc98c341"
+        }
+      ]
+    },
+    {
+      "workflow": "Musl and Windows cache notice integrity",
+      "run_id": 40804473257,
+      "actions_artifact_id": 12867776415,
+      "name": "musl-cache-notices-aarch64-3.14-fdd2725ca5404998ec477b35f044be562a06768b",
+      "actions_zip_sha256": "e072fcc00dd08bbfb2fc47311309e71977288aec26b056b2eb61ce18d4c69379",
+      "records": [
+        {
+          "path": "12867776415/musl-notices/slot/cache-notices.json.gz",
+          "raw_sha256": "8310d2b1de67d67772c88ba5f33088e76c587da6c741369ef38b6d6e24f6da0e",
+          "passed": true,
+          "kind": "current-wheel-sdist-offline-installation-not-support-qualification",
+          "python": "3.14.5",
+          "system": "Linux",
+          "artifact_id": null
+        },
+        {
+          "path": "12867776415/musl-notices/slot/remote-installation.json.gz",
+          "raw_sha256": "7a5f0daea0087e0943a9c141cc73613f33d7c00299f1c2d8b2f6a6d3cd65c20f",
+          "passed": true,
+          "kind": "documented-remote-install-and-help-smoke",
+          "python": "3.14.5",
+          "system": null,
+          "artifact_id": null
+        },
+        {
+          "path": "12867776415/musl-notices/slot/installed-runtime.json.gz",
+          "raw_sha256": "7e0150ee6583d09ab59ee1a85e2524d3371f1a28ee9089118f2734b7ebd3d581",
+          "passed": true,
+          "kind": "current-wheel-sdist-offline-installation-not-support-qualification",
+          "python": "3.14.5",
+          "system": "Linux",
+          "artifact_id": null
+        },
+        {
+          "path": "12867776415/musl-audit-inspection.json.gz",
+          "raw_sha256": "b9d3cb0abc0066335d6ea022e50816c911736fd8f18bd2bb087852433c732a5e",
+          "passed": true,
+          "kind": null,
+          "python": null,
+          "system": null,
+          "artifact_id": "linux-musl-aarch64"
+        },
+        {
+          "path": "12867776415/musl-notices/slot/runtime-review/sdist/coincident.twee.gz",
+          "raw_sha256": "8644eeb3404043bec66b149c0ed3f2f4bea0600914a944e75c5f6464b78c1ed6"
+        },
+        {
+          "path": "12867776415/musl-notices/slot/runtime-review/sdist/connected_overlap.twee.gz",
+          "raw_sha256": "137e849cfdf04ef3db7ed9057a7142ebecc403ee78952f307138ff5ecca72618"
+        },
+        {
+          "path": "12867776415/musl-notices/slot/runtime-review/sdist/crossing.twee.gz",
+          "raw_sha256": "aa821f1611a98d479811f652197070728904bd2afe31c8e6fca64ed9fbec8e8b"
+        },
+        {
+          "path": "12867776415/musl-notices/slot/runtime-review/sdist/isolated_overlap.twee.gz",
+          "raw_sha256": "bef1e0132bce9b72f1317cdbb43d3c2a54e604632459cbda2c5af7d52c17a03a"
+        },
+        {
+          "path": "12867776415/musl-notices/slot/runtime-review/sdist/through_connected.twee.gz",
+          "raw_sha256": "8c13ace7ce2f65beff622e529456029fda6c7e1f624a5046886a7065f60a2f3f"
+        },
+        {
+          "path": "12867776415/musl-notices/slot/runtime-review/sdist/through_isolated.twee.gz",
+          "raw_sha256": "f2460867ce13305139836fc5737093e3e513fae53c4bee8fe0742fe5fc98c341"
+        },
+        {
+          "path": "12867776415/musl-notices/slot/runtime-review/wheel/coincident.twee.gz",
+          "raw_sha256": "8644eeb3404043bec66b149c0ed3f2f4bea0600914a944e75c5f6464b78c1ed6"
+        },
+        {
+          "path": "12867776415/musl-notices/slot/runtime-review/wheel/connected_overlap.twee.gz",
+          "raw_sha256": "137e849cfdf04ef3db7ed9057a7142ebecc403ee78952f307138ff5ecca72618"
+        },
+        {
+          "path": "12867776415/musl-notices/slot/runtime-review/wheel/crossing.twee.gz",
+          "raw_sha256": "aa821f1611a98d479811f652197070728904bd2afe31c8e6fca64ed9fbec8e8b"
+        },
+        {
+          "path": "12867776415/musl-notices/slot/runtime-review/wheel/isolated_overlap.twee.gz",
+          "raw_sha256": "bef1e0132bce9b72f1317cdbb43d3c2a54e604632459cbda2c5af7d52c17a03a"
+        },
+        {
+          "path": "12867776415/musl-notices/slot/runtime-review/wheel/through_connected.twee.gz",
+          "raw_sha256": "8c13ace7ce2f65beff622e529456029fda6c7e1f624a5046886a7065f60a2f3f"
+        },
+        {
+          "path": "12867776415/musl-notices/slot/runtime-review/wheel/through_isolated.twee.gz",
+          "raw_sha256": "f2460867ce13305139836fc5737093e3e513fae53c4bee8fe0742fe5fc98c341"
+        },
+        {
+          "path": "12867776415/musl-notices/image.json.gz",
+          "raw_sha256": "68a9ff29036637199e34516aecdf4d386972a1f4fdb3be8ebdc39ed31b4b44dc"
+        }
+      ]
+    },
+    {
+      "workflow": "Musl and Windows cache notice integrity",
+      "run_id": 40804473257,
+      "actions_artifact_id": 12867472209,
+      "name": "musl-cache-notices-aarch64-3.12-fdd2725ca5404998ec477b35f044be562a06768b",
+      "actions_zip_sha256": "9ef0a708af73ef551b9ad068125fe41f7bc992fdfd22a25b4ae160df9bd78fd8",
+      "records": [
+        {
+          "path": "12867472209/musl-notices/slot/cache-notices.json.gz",
+          "raw_sha256": "9ee7bce7181f16098bd92bc6d08eae17655ac803692d3ac28c344339ccd6865f",
+          "passed": true,
+          "kind": "current-wheel-sdist-offline-installation-not-support-qualification",
+          "python": "3.12.13",
+          "system": "Linux",
+          "artifact_id": null
+        },
+        {
+          "path": "12867472209/musl-notices/slot/installed-runtime.json.gz",
+          "raw_sha256": "399ddfd397bf70d88e2f63c4d5deb2ac20213614076e1a0ec8d7165b9530a200",
+          "passed": true,
+          "kind": "current-wheel-sdist-offline-installation-not-support-qualification",
+          "python": "3.12.13",
+          "system": "Linux",
+          "artifact_id": null
+        },
+        {
+          "path": "12867472209/musl-notices/slot/remote-installation.json.gz",
+          "raw_sha256": "d9d0d77398c9d7c060b593d9b93e99255ab46c7513631ee22c83d0687dbc1471",
+          "passed": true,
+          "kind": "documented-remote-install-and-help-smoke",
+          "python": "3.12.13",
+          "system": null,
+          "artifact_id": null
+        },
+        {
+          "path": "12867472209/musl-audit-inspection.json.gz",
+          "raw_sha256": "b9d3cb0abc0066335d6ea022e50816c911736fd8f18bd2bb087852433c732a5e",
+          "passed": true,
+          "kind": null,
+          "python": null,
+          "system": null,
+          "artifact_id": "linux-musl-aarch64"
+        },
+        {
+          "path": "12867472209/musl-notices/slot/runtime-review/sdist/coincident.twee.gz",
+          "raw_sha256": "8644eeb3404043bec66b149c0ed3f2f4bea0600914a944e75c5f6464b78c1ed6"
+        },
+        {
+          "path": "12867472209/musl-notices/slot/runtime-review/sdist/connected_overlap.twee.gz",
+          "raw_sha256": "137e849cfdf04ef3db7ed9057a7142ebecc403ee78952f307138ff5ecca72618"
+        },
+        {
+          "path": "12867472209/musl-notices/slot/runtime-review/sdist/crossing.twee.gz",
+          "raw_sha256": "aa821f1611a98d479811f652197070728904bd2afe31c8e6fca64ed9fbec8e8b"
+        },
+        {
+          "path": "12867472209/musl-notices/slot/runtime-review/sdist/isolated_overlap.twee.gz",
+          "raw_sha256": "bef1e0132bce9b72f1317cdbb43d3c2a54e604632459cbda2c5af7d52c17a03a"
+        },
+        {
+          "path": "12867472209/musl-notices/slot/runtime-review/sdist/through_connected.twee.gz",
+          "raw_sha256": "8c13ace7ce2f65beff622e529456029fda6c7e1f624a5046886a7065f60a2f3f"
+        },
+        {
+          "path": "12867472209/musl-notices/slot/runtime-review/sdist/through_isolated.twee.gz",
+          "raw_sha256": "f2460867ce13305139836fc5737093e3e513fae53c4bee8fe0742fe5fc98c341"
+        },
+        {
+          "path": "12867472209/musl-notices/slot/runtime-review/wheel/coincident.twee.gz",
+          "raw_sha256": "8644eeb3404043bec66b149c0ed3f2f4bea0600914a944e75c5f6464b78c1ed6"
+        },
+        {
+          "path": "12867472209/musl-notices/slot/runtime-review/wheel/connected_overlap.twee.gz",
+          "raw_sha256": "137e849cfdf04ef3db7ed9057a7142ebecc403ee78952f307138ff5ecca72618"
+        },
+        {
+          "path": "12867472209/musl-notices/slot/runtime-review/wheel/crossing.twee.gz",
+          "raw_sha256": "aa821f1611a98d479811f652197070728904bd2afe31c8e6fca64ed9fbec8e8b"
+        },
+        {
+          "path": "12867472209/musl-notices/slot/runtime-review/wheel/isolated_overlap.twee.gz",
+          "raw_sha256": "bef1e0132bce9b72f1317cdbb43d3c2a54e604632459cbda2c5af7d52c17a03a"
+        },
+        {
+          "path": "12867472209/musl-notices/slot/runtime-review/wheel/through_connected.twee.gz",
+          "raw_sha256": "8c13ace7ce2f65beff622e529456029fda6c7e1f624a5046886a7065f60a2f3f"
+        },
+        {
+          "path": "12867472209/musl-notices/slot/runtime-review/wheel/through_isolated.twee.gz",
+          "raw_sha256": "f2460867ce13305139836fc5737093e3e513fae53c4bee8fe0742fe5fc98c341"
+        },
+        {
+          "path": "12867472209/musl-notices/image.json.gz",
+          "raw_sha256": "03da9f2a1291c6a9ea16c563888d47b30ab77666f7971be69fe95396a0ca8e58"
+        }
+      ]
+    },
+    {
+      "workflow": "Musl and Windows cache notice integrity",
+      "run_id": 40804473257,
+      "actions_artifact_id": 12867332988,
+      "name": "musl-cache-notices-x86_64-3.14-fdd2725ca5404998ec477b35f044be562a06768b",
+      "actions_zip_sha256": "01b600b0459e9afcdb7e604f10da64c1d11da3a31da0e17a474bad3de8dc67d8",
+      "records": [
+        {
+          "path": "12867332988/musl-notices/slot/installed-runtime.json.gz",
+          "raw_sha256": "19f83bd2c80a1a6e1c3ea70b855ca063c01fe484f1e9fa9b224fc338a9af922f",
+          "passed": true,
+          "kind": "current-wheel-sdist-offline-installation-not-support-qualification",
+          "python": "3.14.5",
+          "system": "Linux",
+          "artifact_id": null
+        },
+        {
+          "path": "12867332988/musl-notices/slot/cache-notices.json.gz",
+          "raw_sha256": "b747f150c0f0e6436d4d43a40b9eebdc39a6550a925e427bb36be836bae9e8df",
+          "passed": true,
+          "kind": "current-wheel-sdist-offline-installation-not-support-qualification",
+          "python": "3.14.5",
+          "system": "Linux",
+          "artifact_id": null
+        },
+        {
+          "path": "12867332988/musl-notices/slot/remote-installation.json.gz",
+          "raw_sha256": "0c04bcdf0016756edd617ff9d22039e3b073e8ed6723176e9d77771b41259aa6",
+          "passed": true,
+          "kind": "documented-remote-install-and-help-smoke",
+          "python": "3.14.5",
+          "system": null,
+          "artifact_id": null
+        },
+        {
+          "path": "12867332988/musl-audit-inspection.json.gz",
+          "raw_sha256": "bba62df4f4bbb52c2a4d424ff8c5d36a309e564253e9ed68476493c5ad9a6ed5",
+          "passed": true,
+          "kind": null,
+          "python": null,
+          "system": null,
+          "artifact_id": "linux-musl-x86_64"
+        },
+        {
+          "path": "12867332988/musl-notices/slot/runtime-review/sdist/coincident.twee.gz",
+          "raw_sha256": "8644eeb3404043bec66b149c0ed3f2f4bea0600914a944e75c5f6464b78c1ed6"
+        },
+        {
+          "path": "12867332988/musl-notices/slot/runtime-review/sdist/connected_overlap.twee.gz",
+          "raw_sha256": "137e849cfdf04ef3db7ed9057a7142ebecc403ee78952f307138ff5ecca72618"
+        },
+        {
+          "path": "12867332988/musl-notices/slot/runtime-review/sdist/crossing.twee.gz",
+          "raw_sha256": "aa821f1611a98d479811f652197070728904bd2afe31c8e6fca64ed9fbec8e8b"
+        },
+        {
+          "path": "12867332988/musl-notices/slot/runtime-review/sdist/isolated_overlap.twee.gz",
+          "raw_sha256": "bef1e0132bce9b72f1317cdbb43d3c2a54e604632459cbda2c5af7d52c17a03a"
+        },
+        {
+          "path": "12867332988/musl-notices/slot/runtime-review/sdist/through_connected.twee.gz",
+          "raw_sha256": "8c13ace7ce2f65beff622e529456029fda6c7e1f624a5046886a7065f60a2f3f"
+        },
+        {
+          "path": "12867332988/musl-notices/slot/runtime-review/sdist/through_isolated.twee.gz",
+          "raw_sha256": "f2460867ce13305139836fc5737093e3e513fae53c4bee8fe0742fe5fc98c341"
+        },
+        {
+          "path": "12867332988/musl-notices/slot/runtime-review/wheel/coincident.twee.gz",
+          "raw_sha256": "8644eeb3404043bec66b149c0ed3f2f4bea0600914a944e75c5f6464b78c1ed6"
+        },
+        {
+          "path": "12867332988/musl-notices/slot/runtime-review/wheel/connected_overlap.twee.gz",
+          "raw_sha256": "137e849cfdf04ef3db7ed9057a7142ebecc403ee78952f307138ff5ecca72618"
+        },
+        {
+          "path": "12867332988/musl-notices/slot/runtime-review/wheel/crossing.twee.gz",
+          "raw_sha256": "aa821f1611a98d479811f652197070728904bd2afe31c8e6fca64ed9fbec8e8b"
+        },
+        {
+          "path": "12867332988/musl-notices/slot/runtime-review/wheel/isolated_overlap.twee.gz",
+          "raw_sha256": "bef1e0132bce9b72f1317cdbb43d3c2a54e604632459cbda2c5af7d52c17a03a"
+        },
+        {
+          "path": "12867332988/musl-notices/slot/runtime-review/wheel/through_connected.twee.gz",
+          "raw_sha256": "8c13ace7ce2f65beff622e529456029fda6c7e1f624a5046886a7065f60a2f3f"
+        },
+        {
+          "path": "12867332988/musl-notices/slot/runtime-review/wheel/through_isolated.twee.gz",
+          "raw_sha256": "f2460867ce13305139836fc5737093e3e513fae53c4bee8fe0742fe5fc98c341"
+        },
+        {
+          "path": "12867332988/musl-notices/image.json.gz",
+          "raw_sha256": "8c30b5a74dc6eb8e8c9e57d65c3416169087625801fb65f410ff18c9372d317d"
+        }
+      ]
+    },
+    {
+      "workflow": "Musl and Windows cache notice integrity",
+      "run_id": 40804473257,
+      "actions_artifact_id": 12867159111,
+      "name": "musl-cache-notices-x86_64-3.12-fdd2725ca5404998ec477b35f044be562a06768b",
+      "actions_zip_sha256": "cbb68b8ce5d5b7be6eec51f40501747fad01e0af446e95d09b77b06ad326526a",
+      "records": [
+        {
+          "path": "12867159111/musl-notices/slot/cache-notices.json.gz",
+          "raw_sha256": "066a8d33bc11f1c64dde768f35982d1e153c597e429ef6d36b5e56c016911a75",
+          "passed": true,
+          "kind": "current-wheel-sdist-offline-installation-not-support-qualification",
+          "python": "3.12.13",
+          "system": "Linux",
+          "artifact_id": null
+        },
+        {
+          "path": "12867159111/musl-notices/slot/installed-runtime.json.gz",
+          "raw_sha256": "7e044b91dc78156e3383c1e6351454efef8931bb4052113fc2862effe236ad03",
+          "passed": true,
+          "kind": "current-wheel-sdist-offline-installation-not-support-qualification",
+          "python": "3.12.13",
+          "system": "Linux",
+          "artifact_id": null
+        },
+        {
+          "path": "12867159111/musl-notices/slot/remote-installation.json.gz",
+          "raw_sha256": "3574cc783349a1a365dbdb15ac6fb320d3acf4ba5912a78ed1db17a794c74692",
+          "passed": true,
+          "kind": "documented-remote-install-and-help-smoke",
+          "python": "3.12.13",
+          "system": null,
+          "artifact_id": null
+        },
+        {
+          "path": "12867159111/musl-audit-inspection.json.gz",
+          "raw_sha256": "bba62df4f4bbb52c2a4d424ff8c5d36a309e564253e9ed68476493c5ad9a6ed5",
+          "passed": true,
+          "kind": null,
+          "python": null,
+          "system": null,
+          "artifact_id": "linux-musl-x86_64"
+        },
+        {
+          "path": "12867159111/musl-notices/slot/runtime-review/sdist/coincident.twee.gz",
+          "raw_sha256": "8644eeb3404043bec66b149c0ed3f2f4bea0600914a944e75c5f6464b78c1ed6"
+        },
+        {
+          "path": "12867159111/musl-notices/slot/runtime-review/sdist/crossing.twee.gz",
+          "raw_sha256": "aa821f1611a98d479811f652197070728904bd2afe31c8e6fca64ed9fbec8e8b"
+        },
+        {
+          "path": "12867159111/musl-notices/slot/runtime-review/sdist/connected_overlap.twee.gz",
+          "raw_sha256": "137e849cfdf04ef3db7ed9057a7142ebecc403ee78952f307138ff5ecca72618"
+        },
+        {
+          "path": "12867159111/musl-notices/slot/runtime-review/sdist/isolated_overlap.twee.gz",
+          "raw_sha256": "bef1e0132bce9b72f1317cdbb43d3c2a54e604632459cbda2c5af7d52c17a03a"
+        },
+        {
+          "path": "12867159111/musl-notices/slot/runtime-review/sdist/through_connected.twee.gz",
+          "raw_sha256": "8c13ace7ce2f65beff622e529456029fda6c7e1f624a5046886a7065f60a2f3f"
+        },
+        {
+          "path": "12867159111/musl-notices/slot/runtime-review/sdist/through_isolated.twee.gz",
+          "raw_sha256": "f2460867ce13305139836fc5737093e3e513fae53c4bee8fe0742fe5fc98c341"
+        },
+        {
+          "path": "12867159111/musl-notices/slot/runtime-review/wheel/coincident.twee.gz",
+          "raw_sha256": "8644eeb3404043bec66b149c0ed3f2f4bea0600914a944e75c5f6464b78c1ed6"
+        },
+        {
+          "path": "12867159111/musl-notices/slot/runtime-review/wheel/connected_overlap.twee.gz",
+          "raw_sha256": "137e849cfdf04ef3db7ed9057a7142ebecc403ee78952f307138ff5ecca72618"
+        },
+        {
+          "path": "12867159111/musl-notices/slot/runtime-review/wheel/crossing.twee.gz",
+          "raw_sha256": "aa821f1611a98d479811f652197070728904bd2afe31c8e6fca64ed9fbec8e8b"
+        },
+        {
+          "path": "12867159111/musl-notices/slot/runtime-review/wheel/isolated_overlap.twee.gz",
+          "raw_sha256": "bef1e0132bce9b72f1317cdbb43d3c2a54e604632459cbda2c5af7d52c17a03a"
+        },
+        {
+          "path": "12867159111/musl-notices/slot/runtime-review/wheel/through_connected.twee.gz",
+          "raw_sha256": "8c13ace7ce2f65beff622e529456029fda6c7e1f624a5046886a7065f60a2f3f"
+        },
+        {
+          "path": "12867159111/musl-notices/slot/runtime-review/wheel/through_isolated.twee.gz",
+          "raw_sha256": "f2460867ce13305139836fc5737093e3e513fae53c4bee8fe0742fe5fc98c341"
+        },
+        {
+          "path": "12867159111/musl-notices/image.json.gz",
+          "raw_sha256": "b4c3d3aaa40826b8c590f7d7b3e6500cef262014cd86afff502e1396ac82fbae"
+        }
+      ]
+    },
+    {
+      "workflow": "Installed cache notice integrity",
+      "run_id": 40804473185,
+      "actions_artifact_id": 12867896009,
+      "name": "cache-notices-ubuntu-24.04-arm-3.12-fdd2725ca5404998ec477b35f044be562a06768b",
+      "actions_zip_sha256": "343d5311ede951687574c0f4b323e5588e5f403bcb7d97a3d9410b6cbc914b97",
+      "records": [
+        {
+          "path": "12867896009/cache-notices.json.gz",
+          "raw_sha256": "c66ca7a6fb69d67a97b306e5b424dad3ce82a4d71833fea2433cfdf5789e7012",
+          "passed": true,
+          "kind": "current-wheel-sdist-offline-installation-not-support-qualification",
+          "python": "3.12.15",
+          "system": "Linux",
+          "artifact_id": null
+        }
+      ]
+    },
+    {
+      "workflow": "Installed cache notice integrity",
+      "run_id": 40804473185,
+      "actions_artifact_id": 12867741001,
+      "name": "cache-notices-macos-15-intel-3.14-fdd2725ca5404998ec477b35f044be562a06768b",
+      "actions_zip_sha256": "6131d4a8d0f8055b03934dc1393698956caec7276e3fe530571af1b9ba9260b7",
+      "records": [
+        {
+          "path": "12867741001/cache-notices.json.gz",
+          "raw_sha256": "66a1a4f6428cfccece1c36d580862b38df430aec160d61e268f31011571f98cb",
+          "passed": true,
+          "kind": "current-wheel-sdist-offline-installation-not-support-qualification",
+          "python": "3.14.7",
+          "system": "Darwin",
+          "artifact_id": null
+        }
+      ]
+    },
+    {
+      "workflow": "Installed cache notice integrity",
+      "run_id": 40804473185,
+      "actions_artifact_id": 12867696408,
+      "name": "cache-notices-ubuntu-24.04-arm-3.14-fdd2725ca5404998ec477b35f044be562a06768b",
+      "actions_zip_sha256": "54cc7c5c7b329d13b9011cf548fc8b3669f1f81cd350d3eef8c606f015b49958",
+      "records": [
+        {
+          "path": "12867696408/cache-notices.json.gz",
+          "raw_sha256": "800faedab1540467cf8d1f0393bf609504580314ac57d933557b476165f4de45",
+          "passed": true,
+          "kind": "current-wheel-sdist-offline-installation-not-support-qualification",
+          "python": "3.14.9",
+          "system": "Linux",
+          "artifact_id": null
+        }
+      ]
+    },
+    {
+      "workflow": "Installed cache notice integrity",
+      "run_id": 40804473185,
+      "actions_artifact_id": 12867631802,
+      "name": "cache-notices-ubuntu-24.04-3.14-fdd2725ca5404998ec477b35f044be562a06768b",
+      "actions_zip_sha256": "04be35c8ea950267308556f5731cdae37443c2fe67affe98596c0614762a2708",
+      "records": [
+        {
+          "path": "12867631802/cache-notices.json.gz",
+          "raw_sha256": "4b5f8b835e52a43a50bc0b25878f05ae9b0278367eb093a540ca0867679d04e8",
+          "passed": true,
+          "kind": "current-wheel-sdist-offline-installation-not-support-qualification",
+          "python": "3.14.9",
+          "system": "Linux",
+          "artifact_id": null
+        }
+      ]
+    },
+    {
+      "workflow": "Installed cache notice integrity",
+      "run_id": 40804473185,
+      "actions_artifact_id": 12867322150,
+      "name": "cache-notices-macos-15-3.12-fdd2725ca5404998ec477b35f044be562a06768b",
+      "actions_zip_sha256": "a84ac03caf394920aee898a73cd7339a90660537e6a41fdb3a406f82c41d7ae0",
+      "records": [
+        {
+          "path": "12867322150/cache-notices.json.gz",
+          "raw_sha256": "2ef68714d9727a0903b41b6af1d6a5d50d942dcfc72f24fc14ca1616d1a23d50",
+          "passed": true,
+          "kind": "current-wheel-sdist-offline-installation-not-support-qualification",
+          "python": "3.12.10",
+          "system": "Darwin",
+          "artifact_id": null
+        }
+      ]
+    },
+    {
+      "workflow": "Installed cache notice integrity",
+      "run_id": 40804473185,
+      "actions_artifact_id": 12867218625,
+      "name": "cache-notices-macos-15-intel-3.12-fdd2725ca5404998ec477b35f044be562a06768b",
+      "actions_zip_sha256": "db7f60256f696d7374a76df735cbb452674ab45dea487c6546a92872ca824d5d",
+      "records": [
+        {
+          "path": "12867218625/cache-notices.json.gz",
+          "raw_sha256": "71a919f1ebd2836c715c817a1878a34498841045ec4779b775fd9877d1a6accf",
+          "passed": true,
+          "kind": "current-wheel-sdist-offline-installation-not-support-qualification",
+          "python": "3.12.10",
+          "system": "Darwin",
+          "artifact_id": null
+        }
+      ]
+    },
+    {
+      "workflow": "Installed cache notice integrity",
+      "run_id": 40804473185,
+      "actions_artifact_id": 12866988765,
+      "name": "cache-notices-ubuntu-24.04-3.12-fdd2725ca5404998ec477b35f044be562a06768b",
+      "actions_zip_sha256": "96aecd03e4c00767a8de387df27a136ee2903240888218cbb1bc31b785f49685",
+      "records": [
+        {
+          "path": "12866988765/cache-notices.json.gz",
+          "raw_sha256": "0d16361c93c099a563fa377eac36df2a30e7359ddd31ed0a61727b169c01bef5",
+          "passed": true,
+          "kind": "current-wheel-sdist-offline-installation-not-support-qualification",
+          "python": "3.12.15",
+          "system": "Linux",
+          "artifact_id": null
+        }
+      ]
+    },
+    {
+      "workflow": "Installed cache notice integrity",
+      "run_id": 40804473185,
+      "actions_artifact_id": 12866774413,
+      "name": "cache-notices-macos-15-3.14-fdd2725ca5404998ec477b35f044be562a06768b",
+      "actions_zip_sha256": "a584265704174807cd7f406df9879ded91dee1014cb6fdcfea9d948e1dba2846",
+      "records": [
+        {
+          "path": "12866774413/cache-notices.json.gz",
+          "raw_sha256": "8f68dbf8253fd6ad278861ff66dc093faf7f4fe91e9e7d6fb271a28e8bac1f17",
+          "passed": true,
+          "kind": "current-wheel-sdist-offline-installation-not-support-qualification",
+          "python": "3.14.7",
+          "system": "Darwin",
+          "artifact_id": null
+        }
+      ]
+    }
+  ],
+  "excluded_workflows": [
+    {
+      "id": 40804473176,
+      "name": "Installed packages with private POSIX engines",
+      "conclusion": "failure"
+    },
+    {
+      "id": 40804473186,
+      "name": "Cross-platform foundation",
+      "conclusion": "failure"
+    }
+  ]
+}

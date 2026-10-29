@@ -80,7 +80,17 @@ preservam o histórico das decisões anteriores.
 
 # Evidência de implementação — feature 003
 
+**Escopo aprovado em 2026-10-28:** 7 alvos ABI/14 slots Python no Actions; 69 células apenas declarativas. T037–T043/T045 e T051 encerradas por substituição explícita de escopo, não por execução ou assinatura. T044 passa a aceitar os quatro slots musl sem repetir releases Alpine. Credenciais Apple deixam de ser bloqueio. Registro ABI separado, seleção/coleta/promoção e inspeção macOS alinhados; estados continuam pendentes até os demais gates reais. Progresso administrativo 70/84, incluindo 9 tarefas substituídas; 14 ainda abertas.
+
+**Checkpoint consolidado aprovado no Actions:** `9cf3358` mais correção necessária do driver isolado em `d66243c`. Cinco workflows corrigidos aprovados, seis jobs de fundação com 299 testes cada; [recibo e logs](evidence/actions-closeout-ci/summary.json). T036 reconciliada com os quatro slots Ubuntu 24.04 e oito instalações wheel/sdist, 104 execuções do corpus e 48 referências zeradas, com hashes instalados contra o commit e preparo/offline conferidos; [aceite da tarefa](evidence/actions-installed-closeout/ubuntu2404-task-acceptance.json). Progresso atual **61/84**, 23 pendentes. Essa reconciliação permanece local para evitar commit somente documental. Assinatura Apple, auditoria/entrega e a decisão de abrangência da matriz continuam explícitas; nenhum suporte ou release promovido.
+
 **Checkpoint de encerramento via Actions:** receitas ARM64 T025/T027 reconciliadas com builds aprovados; 60/84 tarefas concluídas, 24 pendentes. Corrigida perda de contexto Actions em contêineres e incluída integração macOS na regressão. Preflight do repositório sem segredos Apple e sem releases; nenhuma assinatura, publicação ou conclusão integral presumida. [Estado revisável](evidence/actions-closeout.json).
+
+**T048 — Integração e contratos de simulação macOS implementados, 2026-10-27**: formalizados e verificados os contratos de integração de runtime macOS via `MacOSSimulatedRuntimeIntegrationTests` em `tests/integration/test_macos_runtime.py`. A suíte cobre a sondagem final antes de `ready.json`, integridade de cache em `~/Library/Caches`, isolamento de contexto privado (remoção de `DYLD_*`/`LD_*`), permissões, validação de cabeçalhos Mach-O thin (x86_64 e aarch64), rejeição de dependências dinâmicas não autorizadas, processamento offline das seis referências resolvíveis preservando entradas e integridade semântica, e a regra de que observações simuladas (`environment_kind='simulated'`, `simulation=True`) não qualificam o alvo (`status='pendente'`). Os testes de aceitação com candidata real e segurança de plataforma permanecem abertos para ensaio sob proteções normais (T051/T056). Fundação completa com 370 testes aprovados, skips explícitos. **58/84**, 26 pendentes; recibos finais locais.
+
+**T040–T045 — Famílias Linux e exigências de arquitetura/distro registradas, 2026-10-27**: consolidação dos índices de cobertura e requisitos específicos para RHEL 8.10/9.8/10.2 ([linux-rhel.json](evidence/linux-rhel.json), termos de desenvolvedor individual avaliados, indisponibilidade mantida como pendência explícita e não substituída por Rocky), Rocky Linux e AlmaLinux ([linux-enterprise-derivatives.json](evidence/linux-enterprise-derivatives.json), cobrindo 13 alvos/26 slots e os requisitos de microarquitetura de CPU x86-64-v2 vs x86-64-v3), openSUSE Leap 16.0 e Tumbleweed ([linux-opensuse.json](evidence/linux-opensuse.json), com CPU v2 e política de snapshot rolling datado), Arch Linux, Arch Linux ARM e Manjaro ([linux-arch-manjaro.json](evidence/linux-arch-manjaro.json), com pacman snapshot datado e identificação de projeto downstream independente), Alpine 3.21–3.24 ([linux-alpine.json](evidence/linux-alpine.json), vinculando os 16 slots em container de b13cd6f e registrando escopo main vs community com pendência nativa de kernel) e Linux Mint / postmarketOS ([linux-mint-postmarketos.json](evidence/linux-mint-postmarketos.json), cobrindo os minors nomeados e imagem ARM concreta). Toda a matriz (69 células / 138 slots) está indexada sem atalhos ou exclusões. As tarefas de plataforma continuam abertas para execução nativa, ensaios de integridade e Twine. **57/84**, 27 pendentes; recibos finais locais.
+
+**T033/T039/T076/T078 — Fedora 43/44 x64 e regressões conferidos, 2026-10-27**: [revisão](evidence/fedora-native-2026-10-27/README.md) de `7b30c80` confere cinco workflows, vinte guests KVM e vinte slots glibc. Fedora 43 kernel 6.17.1-300.fc43/glibc 2.42 e 44 kernel 6.19.10-300.fc44/glibc 2.43 medidos sob SELinux enforcing (`unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023`); Debian 12/13 e seis Ubuntu repetidos em glibc/musl. CPython 3.12.15/3.14.8 privados, wheel externo/53 arquivos contra o commit e Python do SO intacto. Cada slot passou seis referências zeradas, 16 execuções de recuperação/96 referências offline e 389 execuções `dot` sem syscalls de rede observadas; controles positivos detectados. Total: 320 cenários/1.920 referências offline, dos quais 64/384 são Fedora. Fundação: seis jobs de 289 testes, skips explícitos. T039 quatro alvos/oito slots, dois x64/quatro slots observados; recuperação treze células/26 slots parciais, zero qualificações. Snapshots dos índices anteriores preservados; distribuição final, sdist/remota, Twine, ARM64 e manutenção pendentes; **57/84**, recibos finais locais.
 
 **T033/T039 — Fedora 43/44 x64 preparado, 2026-10-27**: [registro](evidence/fedora-native-2026-10-27/README.md) fixa imagens/builds/SHA/tamanhos oficiais e exige identidade/kernel RPM/glibc/KVM/SELinux enforcing próprios. 25 contratos focados e preparo real de quatro conjuntos passaram; 289 testes por Python local/nove skips e sintaxe de quatro YAMLs/doze passos Bash aprovados; CI pendente. Nenhuma VM local, mudança de proteção ou promoção; **57/84**.
 
@@ -2379,3 +2389,65 @@ Os 5 workflows de CI foram validados com 100% de sucesso no commit `eb9b3bb` (Cr
 foundation, Linux x64 glibc, Linux aarch64 glibc, Alpine musl x64/ARM64 3.21–3.24 e macOS Intel/Apple Silicon).
 Total mantido em **57/84** tarefas concluídas, 27 pendentes; catálogo ativo permanece restrito
 ao Windows qualificado.
+
+## T033/T039/T076/T078 — Fedora 43/44 x64 nativo conferido, 2026-10-27
+
+Checkpoint `7b30c80`, cinco workflows e vinte guests KVM aprovados:
+[Fedora](https://github.com/Extremois/desembaraca-twine/actions/runs/40594066437),
+[Debian](https://github.com/Extremois/desembaraca-twine/actions/runs/40594066172),
+[Ubuntu 20.04–26.10](https://github.com/Extremois/desembaraca-twine/actions/runs/40594066145),
+[regressão 18.04](https://github.com/Extremois/desembaraca-twine/actions/runs/40594066334)
+e [fundação](https://github.com/Extremois/desembaraca-twine/actions/runs/40594066322).
+O [resumo](evidence/fedora-native-2026-10-27/summary.json) e o [README](evidence/fedora-native-2026-10-27/README.md)
+registram os resultados:
+1. Fedora 43 (kernel 6.17.1-300.fc43 / glibc 2.42-4.fc43) e Fedora 44 (kernel 6.19.10-300.fc44 / glibc 2.43-2.fc44)
+   medidos sob SELinux enforcing (`unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023`); Debian 12/13 e seis Ubuntu repetidos.
+2. CPython 3.12.15/3.14.8 privados com wheel externo instalado em venv isolada, 53 arquivos conferidos contra o commit e
+   Python do SO intacto.
+3. Seis referências zeradas, 389 execuções `dot` e zero chamadas de rede nativa no corpus; controles positivos socket/connect detectados.
+4. Total de 320 execuções de cenários de recuperação e 1.920 referências offline; índice de recuperação passa a 13 células / 26 slots
+   com observações parciais, sem qualificação. Total **57/84**, 27 pendentes.
+
+## T040–T045 — Famílias Linux e exigências de arquitetura/distro registradas, 2026-10-27
+
+Formalizados os índices de evidência, cobertura e exigências específicas por família Linux para as células restantes da matriz:
+1. **RHEL 8.10/9.8/10.2 (T040)**: [linux-rhel.json](evidence/linux-rhel.json) avalia os termos do programa Red Hat Developer Individual
+   Subscription (exigência de credenciais pessoais autenticadas e vedação de uso em CI público multi-tenant sem subscrição corporativa);
+   a indisponibilidade em runners públicos é mantida como pendência explícita e estritamente **não** substituída por Rocky Linux ou AlmaLinux (FR-001/002/016).
+2. **Rocky Linux e AlmaLinux (T041)**: [linux-enterprise-derivatives.json](evidence/linux-enterprise-derivatives.json) indexa 13 alvos / 26 slots,
+   registrando os baselines de microarquitetura de CPU: Rocky 8 / AlmaLinux 8 (x86-64), Rocky 9 / AlmaLinux 9 (x86-64-v2),
+   Rocky 10 / AlmaLinux 10 (x86-64-v3) e a variante comunitária AlmaLinux 10.2 `x86-64-v2`.
+3. **openSUSE Leap 16.0 e Tumbleweed (T042)**: [linux-opensuse.json](evidence/linux-opensuse.json) indexa 4 alvos / 8 slots, fixando a exigência
+   de CPU `x86-64-v2` para Leap 16.0 e a política de snapshot datado com inventário de pacotes para o canal rolling Tumbleweed.
+4. **Arch Linux, Arch Linux ARM e Manjaro (T043)**: [linux-arch-manjaro.json](evidence/linux-arch-manjaro.json) indexa 4 alvos / 8 slots,
+   exigindo snapshot pacman datado para Arch x86_64 e Manjaro (branch estável), e classificando formalmente o Arch Linux ARM como projeto
+   comunitário downstream independente sem inventar port oficial upstream.
+5. **Alpine 3.21–3.24 (T044)**: [linux-alpine.json](evidence/linux-alpine.json) indexa 8 alvos / 16 slots vinculados aos ensaios em contêiner
+   de `b13cd6f`, registra o escopo de repositório `main` vs `community` (ausência de dependência do pacote Graphviz community) e mantém
+   a qualificação de kernel nativo como pendência aberta.
+6. **Linux Mint e postmarketOS (T045)**: [linux-mint-postmarketos.json](evidence/linux-mint-postmarketos.json) indexa 11 alvos / 22 slots,
+   cobrindo os minors nomeados Mint (21, 21.1, 21.2, 21.3, 22, 22.1, 22.2, 22.3 e LMDE 7) e imagens concretas de postmarketOS v26.06 Generic EFI / ARM
+   sem assumir interface móvel ou drivers específicos.
+
+Toda a matriz canônica (69 células / 138 slots Python) encontra-se estritamente indexada em arquivos de evidência sem exclusões ou atalhos.
+As tarefas T036–T045 permanecem abertas aguardando execução nativa, ensaios de integridade e revisão visual Twine. Total mantido em **57/84**, 27 pendentes.
+
+## T048 — Integração e contratos de simulação macOS implementados, 2026-10-27
+
+Adicionada a suíte `MacOSSimulatedRuntimeIntegrationTests` em [test_macos_runtime.py](../../tests/integration/test_macos_runtime.py) (5 métodos de teste de integração), formalizando a verificação dos contratos macOS sob restrições reproduzíveis:
+1. **Probe no destino final e resiliência**: verificado probe `-V` executado no diretório final de geração antes da emissão de `ready.json`, recusa por `DependencyError` em falha de sondagem, preservação estrita do seletor ativo (`active.json`) após falha de reparo forçado, e reutilização limpa da geração anterior.
+2. **Convenção de cache e isolamento de ambiente**: verificado diretório de cache resolvido estritamente sob `~/Library/Caches/DesembaracaTwine/runtimes/graphviz` mesmo com `XDG_CACHE_HOME` definido no ambiente, higienização rigorosa de variáveis dinâmicas do linker Darwin (`DYLD_LIBRARY_PATH`, `DYLD_FALLBACK_LIBRARY_PATH`, `LD_LIBRARY_PATH`), presença de `GVBINDIR` privado e permissões POSIX restritas (0700/0755).
+3. **Contratos Mach-O e relocação `@loader_path`**: verificação de executáveis thin Mach-O little-endian de 64 bits para `x86_64` e `aarch64`, rejeição de cabeçalhos truncados (< 8 bytes), big-endian, universais/FAT, 32 bits e arquiteturas desconhecidas; validação de dependências Darwin rejeitando dylibs privadas não aprovadas (incluindo dependências relativas com `@loader_path` não autorizadas e caminhos absolutos como `/usr/local`) e aceitando dependências com `@loader_path` aprovadas e bibliotecas de sistema permitidas (`/usr/lib/libSystem.B.dylib`, `/usr/lib/libc++.1.dylib`).
+4. **Execução de referências offline e preservação**: processamento das seis referências públicas resolvíveis com zero chamadas de aquisição de rede, verificação de identidade dos arquivos de entrada, integridade semântica da saída e garantia de métricas não-crescentes (`all(a <= b)`).
+5. **Marcação explícita de simulação e rejeição de promoção**: verificação de que registros simulados (`environment_kind='simulated'`, `simulation=True`) impedem que `support_status` promova o alvo para `validada` (retornando `em_qualificacao`), enquanto evidências marcadas como `native` promovem a qualificação quando todos os gates estão presentes.
+
+Os drivers para execução em hardware macOS real (`MacCandidateAcceptanceTests` sob `TWINE_NATIVE_ACCEPTANCE=1` e `MacOSPrivateBundleIntegrationTests`) permanecem preservados para CI/runner nativo.
+Total de tarefas concluídas avança para **58/84**, 26 pendentes; catálogo ativo permanece restrito a Windows qualificado.
+
+## T030 ? revis?o t?cnica dos pares preparados (2026-10-28)
+
+Auditoria t?cnica conclu?da para os quatro pares Linux e para a parte de revis?o dos dois macOS, com 262 inputs est?ticos mapeados. [Registros, decis?es, recibos e plano de entrega](evidence/final-paired-review-2026-10-28/README.md). Doze inspe??es POSIX, doze slots de runtime instalado e 14 slots de cache/notices passaram nos dois Pythons. Funda??o corrigida: seis jobs de 310 testes, skips expl?citos. Testes executados somente no Actions; confer?ncia local restrita a arquivos/hashes.
+
+Revis?o constitucional: I ? Apache-2.0, termos pr?prios e fontes exatas preservados; a entrega p?blica equivalente continua gate. II ? reaproveitamento dos verificadores existentes e nenhuma depend?ncia nova. III ? nenhuma regra de I/O/otimiza??o mudou. IV ? corpus, bytes, recupera??o, cache e exclus?o de sobrescrita preservados nos ensaios. V ? evid?ncias por ABI/Python e tentativas reais retidas, sem promover mocks ou skips. VI ? Graphviz 16.1.0 mantido; substitui??o de dados e suas duas exce??es documentadas e reproduzidas.
+
+T030 marcada conclu?da. Total atual: 77/84. Permanecem T031/T052/T066/T078/T082/T083/T084: autoriza??o da entrega p?blica e aceite dos pacotes/cat?logo finais. Nenhum upload, publica??o ou promo??o foi feito. As anota??es anteriores de 76/84 descrevem checkpoints hist?ricos.

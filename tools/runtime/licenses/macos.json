@@ -153,7 +153,7 @@
     "Prepare full per-build notices and corresponding-source material/immutable offer",
     "Approved artifact audit and GitHub Actions ABI distributed acceptance"
   ],
-  "qualification": "Native build evidence only; no reviewed audit, distribution manifest or runtime catalog admission",
+  "qualification": "Exact current pairs technically reviewed; public source delivery and catalog acceptance remain pending",
   "signing_and_notarization_requirements": {
     "required": false,
     "identity_type": "Developer ID Application",
@@ -312,6 +312,48 @@
     "collection_evidence": {
       "path": "specs/003-add-cross-platform-support/evidence/macos-sdk-terms-review-2026-10-28/summary.json",
       "sha256": "595ceb68d7a99de10fbefd52a996cae4080543f2a1a39d9cf34a5a1a455bfd39"
+    }
+  },
+  "current_paired_technical_audits": {
+    "approved": true,
+    "qualified": false,
+    "reviewer": "Codex technical implementation review",
+    "summary": {
+      "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/summary.json",
+      "sha256": "148638e76e9fef3799d1e57774a716931affdbd459d14f6ef04fa756cd80a93d"
+    },
+    "artifacts": [
+      {
+        "artifact_id": "macos-arm64",
+        "audit": {
+          "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/audits/macos-arm64.json",
+          "sha256": "a4e6a052f21101509623cf4bb7e5dcc82cc8d97e04ecef610305b864944a506f"
+        },
+        "candidate_sha256": "3defe05ab35e63a73ec69faf44ecf382b63e9c0b7d46d19c7081ec0a7399a831",
+        "sources_sha256": "4beb91d4f42565ef94b0945ca464277661c57e1e1ad0a10efbb087a56d13d575"
+      },
+      {
+        "artifact_id": "macos-x86_64",
+        "audit": {
+          "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/audits/macos-x86_64.json",
+          "sha256": "d76b6cc27d9944772b73df35296605f1e017d49fb175700dc64f98fef4c36f2d"
+        },
+        "candidate_sha256": "aa9ea80350aa63b269b9228da9b7e5b2812d7ef6ac3fa3c3a6205e9d1a7ad897",
+        "sources_sha256": "96f093e56aab8f476fa7a792e0d7202bdeab2c3487853c4a86d8eab207078142"
+      }
+    ],
+    "public_paired_delivery": true,
+    "remaining": [
+      "Final installed catalog acceptance"
+    ],
+    "scope": "Only these exact pairs; historical ledger entries are not retrospectively approved",
+    "publication": {
+      "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/publication.json",
+      "sha256": "33bb6194eaac623b9ae488397b2a5b920b5112460f38b681b24b88328c620b3a"
+    },
+    "public_downloads": {
+      "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/public-download-verification.json",
+      "sha256": "f1478c6919511e37447c99c13bf44fe5080ea7637a2a038cab4186c70ebf2010"
     }
   }
 }

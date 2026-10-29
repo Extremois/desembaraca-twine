@@ -11,6 +11,19 @@ from twine_edge_overlap.runtime_platform import HostEnvironment
 
 
 class CatalogTests(unittest.TestCase):
+    def test_all_seven_published_artifacts_have_bound_manifests_and_exact_selection(self):
+        from twine_edge_overlap.runtime_catalog import verified_manifest
+        from twine_edge_overlap.runtime import load_manifest
+        catalog=load_catalog()
+        self.assertEqual(len(catalog['artifacts']),7)
+        for item in catalog['artifacts']:
+            artifact=load_manifest(verified_manifest(item))
+            validate_manifest_identity(item,artifact.data)
+            host=HostEnvironment(os=item['os'],arch=item['arch'],os_version=item.get('minimum_os',''),
+                libc_family=item.get('abi',''),libc_version=item.get('minimum_libc',''),
+                kernel_version=item.get('minimum_kernel',''))
+            self.assertEqual(select_artifact(catalog,host)['id'],item['id'])
+
     def test_packaged_catalog_preserves_windows_manifest_bytes(self):
         catalog = load_catalog()
         host = HostEnvironment(os='windows', os_version='11', arch='x86_64')

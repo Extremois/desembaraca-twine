@@ -1,0 +1,54 @@
+{
+  "application_revision": "6e73877efddc7dc9dac758ec96ba018035e7177b",
+  "passed": true,
+  "qualified": false,
+  "scope": "Reviewed candidate inspections and installed current packages; public delivery/catalog acceptance remain separate",
+  "workflows": [
+    {
+      "id": 40805520908,
+      "name": "Cross-platform foundation",
+      "url": "https://github.com/Extremois/desembaraca-twine/actions/runs/40805520908",
+      "jobs": 6
+    }
+  ],
+  "foundation": [
+    {
+      "name": "Pure contracts (ubuntu-24.04, Python 3.12)",
+      "tests": 310,
+      "log": "123223420518.log.gz",
+      "raw_sha256": "e07bcf2d53a121d012a14456fa535b1d2bf529cd41060d1c858be8951ef14c49"
+    },
+    {
+      "name": "Pure contracts (windows-latest, Python 3.12)",
+      "tests": 310,
+      "log": "123223420639.log.gz",
+      "raw_sha256": "f1dc951383d06f1d0171428ca24479b59716ed7873f175a09a1db8a2503fc73e"
+    },
+    {
+      "name": "Pure contracts (macos-15, Python 3.14)",
+      "tests": 310,
+      "log": "123223420667.log.gz",
+      "raw_sha256": "70c5b96de6eef057f1c78b5db1981fc41db480c2c9b84109e6114ae35cb0870b"
+    },
+    {
+      "name": "Pure contracts (windows-latest, Python 3.14)",
+      "tests": 310,
+      "log": "123223420699.log.gz",
+      "raw_sha256": "1c7a443e63c3784253d862e7d4ddc2ce30eb0c4fb3620c8a4820ceaeaff0ca59"
+    },
+    {
+      "name": "Pure contracts (ubuntu-24.04, Python 3.14)",
+      "tests": 310,
+      "log": "123223420763.log.gz",
+      "raw_sha256": "663696113796bef4b47ee0f5c54d57e4d8a9c161ae99b3b26fcdf8d4ea4f3bce"
+    },
+    {
+      "name": "Pure contracts (macos-15, Python 3.12)",
+      "tests": 310,
+      "log": "123223420772.log.gz",
+      "raw_sha256": "0e0c648864de4ed86358745899386dca73cbf2093d9333aeacb9b38db30a62dd"
+    }
+  ],
+  "artifacts": [],
+  "excluded_workflows": []
+}

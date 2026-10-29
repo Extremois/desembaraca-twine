@@ -1404,5 +1404,65 @@
     "local_payloads_verified": 12,
     "published": false,
     "source_kit_notice_update_pending": true
+  },
+  "current_paired_technical_audits": {
+    "approved": true,
+    "qualified": false,
+    "reviewer": "Codex technical implementation review",
+    "summary": {
+      "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/summary.json",
+      "sha256": "148638e76e9fef3799d1e57774a716931affdbd459d14f6ef04fa756cd80a93d"
+    },
+    "artifacts": [
+      {
+        "artifact_id": "linux-glibc-aarch64",
+        "audit": {
+          "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/audits/linux-glibc-aarch64.json",
+          "sha256": "af31d0b1cbca76f19b8b37d286ade0ed7961d133bbbea90cb1da1f1996f663b0"
+        },
+        "candidate_sha256": "e4f8f852a3278edb8fb91b74330641c79693a13c367e9762fd119916b3c2f542",
+        "sources_sha256": "d434a52573f3d29e6819300a33d4ede9ef8f4415a7e39befec68e5d0c9fbaadd"
+      },
+      {
+        "artifact_id": "linux-glibc-x86_64",
+        "audit": {
+          "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/audits/linux-glibc-x86_64.json",
+          "sha256": "1cef0458a994edca09389f248b7c911efb4c96170be53b685f20e544d3b4dced"
+        },
+        "candidate_sha256": "1403a2beae5a0bc7b616f68c772c954a6f66a4c44665619306ceac658f6a9871",
+        "sources_sha256": "dfe53f2dc50f9c5837f4f86dc5af7f3151e450724e7cc65942bd98991c605059"
+      },
+      {
+        "artifact_id": "linux-musl-aarch64",
+        "audit": {
+          "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/audits/linux-musl-aarch64.json",
+          "sha256": "b2bd2cb714dc7bbb9e0d283401129dadc4caea185e8c49548ad5b8c670227596"
+        },
+        "candidate_sha256": "b342050b5f6a9ff861e4528bca1710298366938491db2b8c3cad0ba16b680df9",
+        "sources_sha256": "4a937f3371fab412c91a2cf9bc1d74100b1690053914c195d846368a8c4f9027"
+      },
+      {
+        "artifact_id": "linux-musl-x86_64",
+        "audit": {
+          "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/audits/linux-musl-x86_64.json",
+          "sha256": "946bb32da59ed3bafd03b31258cf2e0e6d4800c9a89deb163c58df046592dd4b"
+        },
+        "candidate_sha256": "519ce6fa092c9e3bc5d0502cee3e5c86ac21e32e3c799df650249834da0224e1",
+        "sources_sha256": "f196f2e30a38a7414bcbc6ea00c56e609b71abd65b1d11b026883d1ed35fc859"
+      }
+    ],
+    "public_paired_delivery": true,
+    "remaining": [
+      "Final installed catalog acceptance"
+    ],
+    "scope": "Only these exact pairs; historical ledger entries are not retrospectively approved",
+    "publication": {
+      "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/publication.json",
+      "sha256": "33bb6194eaac623b9ae488397b2a5b920b5112460f38b681b24b88328c620b3a"
+    },
+    "public_downloads": {
+      "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/public-download-verification.json",
+      "sha256": "f1478c6919511e37447c99c13bf44fe5080ea7637a2a038cab4186c70ebf2010"
+    }
   }
 }
