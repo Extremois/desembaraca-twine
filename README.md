@@ -15,6 +15,31 @@ As mensagens da CLI estão em português.
 
 ### Instalação e primeiro uso
 
+Para disponibilizar o comando sem ativar a venv, baixe ou clone o projeto e execute
+na raiz, com CPython 3.12 ou 3.14:
+
+```powershell
+python install.py
+```
+
+O instalador cria ou reutiliza `~/.venvs/desembaraca-twine`, instala o pacote e
+disponibiliza somente o comando `desembaraca-twine` no PATH do usuário. Não exige
+administrador, ativação da venv ou mudança no Python do sistema. Feche o aplicativo
+de terminal e abra-o novamente; depois, de qualquer pasta:
+
+```powershell
+desembaraca-twine "C:\Grafos\minha história.twee"
+```
+
+No Linux/macOS, execute `python3.12 install.py` ou `python3.14 install.py`, abra um
+novo terminal bash/zsh e use `desembaraca-twine "/pasta/minha história.twee"`.
+No Windows, o instalador adiciona `%LOCALAPPDATA%\Programs\DesembaracaTwine\bin`
+ao PATH do usuário. No Linux/macOS, publica o comando em `~/.local/bin` e acrescenta
+o PATH aos perfis pessoais de bash/zsh, preservando seu conteúdo. Reexecutar o
+instalador atualiza o pacote sem duplicar essas entradas. Instalação requer HTTPS;
+o motor continua sendo preparado no primeiro uso válido. Uma instalação direta
+com `pip` mantém as alternativas manuais abaixo.
+
 A matriz qualificada cobre **Linux glibc ≥ 2.27 e musl ≥ 1.2.0 em x64/ARM64, macOS ≥ 15 em Intel/ARM64 e Windows x64 (runtime Win32 legado), com CPython 3.12 ou 3.14 nativo**. A qualificação por ABI foi executada no GitHub Actions; o runner Windows Server não é apresentado como certificação de Windows 11 limpo. Os comandos abaixo mostram o uso no Windows; a instalação Linux/macOS aparece adiante.
 Instale uma dessas versões do [Python](https://www.python.org/downloads/windows/),
 baixe ou clone o projeto completo e abra o PowerShell na pasta do projeto:
@@ -215,6 +240,31 @@ nodes. It reads a `.twee` file and creates a rearranged copy, preserving the ori
 contents, and links. CLI messages and most supporting documentation are in Portuguese.
 
 ### Installation and first use
+
+To make the command available without activating a venv, download or clone the
+project and run this from its root with CPython 3.12 or 3.14:
+
+```powershell
+python install.py
+```
+
+The installer creates or reuses `~/.venvs/desembaraca-twine`, installs the package,
+and exposes only `desembaraca-twine` on your user PATH. No administrator access,
+venv activation, or system Python change is required. Close the terminal application
+and reopen it, then run from any directory:
+
+```powershell
+desembaraca-twine "C:\Graphs\my story.twee"
+```
+
+On Linux/macOS, run `python3.12 install.py` or `python3.14 install.py`, open a new
+bash/zsh terminal, and use `desembaraca-twine "/folder/my story.twee"`.
+On Windows, the installer adds `%LOCALAPPDATA%\Programs\DesembaracaTwine\bin` to
+your user PATH. On Linux/macOS, it publishes the command in `~/.local/bin` and
+appends its PATH setup to personal bash/zsh profiles, preserving their contents.
+Rerunning updates the package without duplicating those entries. Installation
+requires HTTPS; the engine is still prepared on the first valid input. Direct
+`pip` installation retains the manual alternatives below.
 
 The qualified matrix covers **Linux glibc ≥ 2.27 and musl ≥ 1.2.0 on x64/ARM64, macOS ≥ 15 on Intel/ARM64, and Windows x64 (legacy Win32 runtime), with native CPython 3.12 or 3.14**. ABI qualification ran in GitHub Actions; the actual Windows Server runner is not represented as clean Windows 11 certification. The following commands show Windows usage; Linux/macOS installation is documented below.
 Install one of these [Python versions](https://www.python.org/downloads/windows/),
