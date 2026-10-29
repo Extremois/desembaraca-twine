@@ -73,7 +73,9 @@ def collect(dist,wheelhouse,abi):
             run([python,'-m','pip','install','--no-index','--no-deps','--no-build-isolation',package],work,env)
             installed=json.loads(run([python,'-c',packages.FACTS],work,env).stdout)
             if installed['files']!=expected['files'] or installed['licenses']!=expected['licenses']:
-                raise ValueError('Installed source/data/notices differ from the final wheel and sdist')
+                differences={group:[name for name in set(installed[group])|set(expected[group])
+                    if installed[group].get(name)!=expected[group].get(name)] for group in ('files','licenses')}
+                raise ValueError('Installed '+mode+' differs from final distributions: '+json.dumps(differences))
             if (not Path(installed.pop('package_path')).resolve().is_relative_to(environment)
                     or installed['git_available'] or installed['graphviz_available']):
                 raise ValueError('Final installation escaped its isolated venv/PATH')
