@@ -61,7 +61,7 @@ def install(source):
     env.update(PIP_CONFIG_FILE=os.devnull,PYTHONNOUSERSITE='1')
     subprocess.run([str(python),'-c',
         'import platform,sys; sys.exit(0 if platform.python_implementation()=="CPython" and sys.version_info[:2] in ((3,12),(3,14)) else "A venv existente precisa usar CPython 3.12 ou 3.14.")'],check=True,env=env)
-    subprocess.run([str(python),'-m','pip','install','--disable-pip-version-check','--upgrade',source],check=True,env=env)
+    subprocess.run([str(python),'-m','pip','install','--disable-pip-version-check','--upgrade','--force-reinstall',source],check=True,env=env)
     launcher=scripts/('desembaraca-twine.exe' if windows else 'desembaraca-twine')
     subprocess.run([str(launcher),'--help'],check=True,stdout=subprocess.DEVNULL,env=env)
     bin_directory=(Path(os.environ.get('LOCALAPPDATA') or home/'AppData/Local')/'Programs/DesembaracaTwine/bin'

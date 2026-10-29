@@ -36,7 +36,13 @@ def collect(wheel):
             def run(command,environment=env):
                 return subprocess.run([str(x) for x in command],cwd=home,env=environment,check=True,
                                       capture_output=True,timeout=180)
-            for _ in range(2):run([sys.executable,installer,'--source',wheel])
+            run([sys.executable,installer,'--source',wheel])
+            private_python=home/'.venvs/desembaraca-twine'/('Scripts/python.exe' if windows else 'bin/python')
+            module=Path(run([private_python,'-c','import twine_edge_overlap.cli; print(twine_edge_overlap.cli.__file__)']).stdout.decode('utf-8').strip())
+            original_module=module.read_bytes()
+            module.write_bytes(b'# Incomplete previous installation\n'+original_module)
+            run([sys.executable,installer,'--source',wheel])
+            assert module.read_bytes()==original_module
             assert binary.is_file() and not (work/'escape').exists()
             profiles={}
             if windows:
@@ -66,7 +72,8 @@ def collect(wheel):
             return dict(passed=True,revision=os.environ['GITHUB_SHA'],system=platform.system(),arch=platform.machine(),python=platform.python_version(),
                         outside_checkout=True,standalone_installer=True,rerun_idempotent=True,activation_required=False,
                         private_launcher=True,argument_boundaries=True,existing_path_preserved=True,
-                        profile_hashes=profiles,existing_profile_contents_preserved=True,pip_target_ignored=True,runtime_prepared=False)
+                        profile_hashes=profiles,existing_profile_contents_preserved=True,pip_target_ignored=True,
+                        same_version_reinstallation=True,runtime_prepared=False)
     finally:
         if windows:
             with winreg.CreateKey(winreg.HKEY_CURRENT_USER,'Environment') as key:
