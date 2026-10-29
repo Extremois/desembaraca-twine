@@ -1,0 +1,25 @@
+{
+  "passed": true,
+  "revision": "5a1c43fc344d927d30bedc1c91590573983d56ed",
+  "system": "Linux",
+  "arch": "x86_64",
+  "python": "3.12.15",
+  "outside_checkout": true,
+  "standalone_installer": true,
+  "rerun_idempotent": true,
+  "activation_required": false,
+  "private_launcher": true,
+  "argument_boundaries": true,
+  "existing_path_preserved": true,
+  "profile_hashes": {
+    ".profile": "680daf4f2deb4ca9bc594075bb842d43d5e23f167ccb277b527993b9fbf1b0d2",
+    ".bashrc": "680daf4f2deb4ca9bc594075bb842d43d5e23f167ccb277b527993b9fbf1b0d2",
+    ".bash_profile": "680daf4f2deb4ca9bc594075bb842d43d5e23f167ccb277b527993b9fbf1b0d2",
+    ".zprofile": "680daf4f2deb4ca9bc594075bb842d43d5e23f167ccb277b527993b9fbf1b0d2",
+    ".zshrc": "680daf4f2deb4ca9bc594075bb842d43d5e23f167ccb277b527993b9fbf1b0d2"
+  },
+  "existing_profile_contents_preserved": true,
+  "pip_target_ignored": true,
+  "same_version_reinstallation": true,
+  "runtime_prepared": false
+}

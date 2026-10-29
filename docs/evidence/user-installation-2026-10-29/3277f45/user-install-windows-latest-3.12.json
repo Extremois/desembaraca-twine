@@ -1,0 +1,18 @@
+{
+  "passed": true,
+  "revision": "3277f458fde57eb1acb680fbd66cb398117f865f",
+  "system": "Windows",
+  "arch": "AMD64",
+  "python": "3.12.10",
+  "outside_checkout": true,
+  "standalone_installer": true,
+  "rerun_idempotent": true,
+  "activation_required": false,
+  "private_launcher": true,
+  "argument_boundaries": true,
+  "existing_path_preserved": true,
+  "profile_hashes": {},
+  "existing_profile_contents_preserved": true,
+  "pip_target_ignored": true,
+  "runtime_prepared": false
+}

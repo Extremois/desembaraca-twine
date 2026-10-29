@@ -1,0 +1,24 @@
+{
+  "passed": true,
+  "revision": "3277f458fde57eb1acb680fbd66cb398117f865f",
+  "system": "Darwin",
+  "arch": "arm64",
+  "python": "3.14.7",
+  "outside_checkout": true,
+  "standalone_installer": true,
+  "rerun_idempotent": true,
+  "activation_required": false,
+  "private_launcher": true,
+  "argument_boundaries": true,
+  "existing_path_preserved": true,
+  "profile_hashes": {
+    ".profile": "8a6dbdff5a71d02ca99ce06b301b120186dba811505641b1683aa954bfef8a45",
+    ".bashrc": "8a6dbdff5a71d02ca99ce06b301b120186dba811505641b1683aa954bfef8a45",
+    ".bash_profile": "8a6dbdff5a71d02ca99ce06b301b120186dba811505641b1683aa954bfef8a45",
+    ".zprofile": "8a6dbdff5a71d02ca99ce06b301b120186dba811505641b1683aa954bfef8a45",
+    ".zshrc": "8a6dbdff5a71d02ca99ce06b301b120186dba811505641b1683aa954bfef8a45"
+  },
+  "existing_profile_contents_preserved": true,
+  "pip_target_ignored": true,
+  "runtime_prepared": false
+}
