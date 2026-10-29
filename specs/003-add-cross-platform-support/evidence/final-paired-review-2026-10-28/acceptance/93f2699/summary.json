@@ -1,0 +1,482 @@
+{
+  "application_revision": "93f2699296bdc660f7bb8f57684c3a9501e3f216",
+  "passed": true,
+  "qualified": false,
+  "scope": "Raw executed CI receipts; final reviewed qualification and publication are identified by the separate qualification and closeout records",
+  "workflows": [
+    {
+      "id": 40856199612,
+      "name": "Installed cache notice integrity",
+      "url": "https://github.com/Extremois/desembaraca-twine/actions/runs/40856199612",
+      "jobs": 8
+    },
+    {
+      "id": 40856199518,
+      "name": "Final published catalog acceptance",
+      "url": "https://github.com/Extremois/desembaraca-twine/actions/runs/40856199518",
+      "jobs": 14
+    }
+  ],
+  "foundation": [],
+  "artifacts": [
+    {
+      "workflow": "Installed cache notice integrity",
+      "run_id": 40856199612,
+      "actions_artifact_id": 12890086486,
+      "name": "cache-notices-macos-15-3.12-93f2699296bdc660f7bb8f57684c3a9501e3f216",
+      "actions_zip_sha256": "e62bc3437d221de053010294ef8ae5e3946d24bbdd567257e3e05e32bc581803",
+      "records": [
+        {
+          "path": "12890086486/cache-notices.json.gz",
+          "raw_sha256": "3ff6097718b88a0c864dd6c58ae9b2abcf401d54e93ffd20bbd338e0c164de36",
+          "passed": true,
+          "kind": "current-wheel-sdist-offline-installation-not-support-qualification",
+          "python": "3.12.10",
+          "system": "Darwin",
+          "artifact_id": null
+        }
+      ]
+    },
+    {
+      "workflow": "Installed cache notice integrity",
+      "run_id": 40856199612,
+      "actions_artifact_id": 12889896730,
+      "name": "cache-notices-macos-15-intel-3.12-93f2699296bdc660f7bb8f57684c3a9501e3f216",
+      "actions_zip_sha256": "92d41f2e687513b8add574b28d677f959b85e5dc4a3361b4da0610ba9b9980de",
+      "records": [
+        {
+          "path": "12889896730/cache-notices.json.gz",
+          "raw_sha256": "84db64a759781a27825981474ab0694e36cc3cf97bc42b9a4b7c73a1667cef03",
+          "passed": true,
+          "kind": "current-wheel-sdist-offline-installation-not-support-qualification",
+          "python": "3.12.10",
+          "system": "Darwin",
+          "artifact_id": null
+        }
+      ]
+    },
+    {
+      "workflow": "Installed cache notice integrity",
+      "run_id": 40856199612,
+      "actions_artifact_id": 12889611160,
+      "name": "cache-notices-ubuntu-24.04-3.14-93f2699296bdc660f7bb8f57684c3a9501e3f216",
+      "actions_zip_sha256": "9d265d22e73f8db4b11a8841300c0eac264848c031cc4e0b72b289f29abee886",
+      "records": [
+        {
+          "path": "12889611160/cache-notices.json.gz",
+          "raw_sha256": "77a0ce49b1db92757bb7b7be6cd3aec5d8a71708320701bd3e456f6ccab6a4e8",
+          "passed": true,
+          "kind": "current-wheel-sdist-offline-installation-not-support-qualification",
+          "python": "3.14.9",
+          "system": "Linux",
+          "artifact_id": null
+        }
+      ]
+    },
+    {
+      "workflow": "Installed cache notice integrity",
+      "run_id": 40856199612,
+      "actions_artifact_id": 12889458384,
+      "name": "cache-notices-macos-15-intel-3.14-93f2699296bdc660f7bb8f57684c3a9501e3f216",
+      "actions_zip_sha256": "58b56d9d431d1419b99e98ae2e221a9678425a4e64a92f01636231b06fd11dbe",
+      "records": [
+        {
+          "path": "12889458384/cache-notices.json.gz",
+          "raw_sha256": "6d80f8ff8c8050e02c0be189cfb312a18d40f696aa63c03ad91d66784296df5b",
+          "passed": true,
+          "kind": "current-wheel-sdist-offline-installation-not-support-qualification",
+          "python": "3.14.7",
+          "system": "Darwin",
+          "artifact_id": null
+        }
+      ]
+    },
+    {
+      "workflow": "Installed cache notice integrity",
+      "run_id": 40856199612,
+      "actions_artifact_id": 12889182467,
+      "name": "cache-notices-ubuntu-24.04-arm-3.12-93f2699296bdc660f7bb8f57684c3a9501e3f216",
+      "actions_zip_sha256": "73e6bbe5ca641ff4b03c0d8fafd1e609963fd6ddd557f717ec52fe21919cccb9",
+      "records": [
+        {
+          "path": "12889182467/cache-notices.json.gz",
+          "raw_sha256": "255b6d5c115882fb4222b6f1ef773f58432158fdc5c090a7d8c726e45d2d46db",
+          "passed": true,
+          "kind": "current-wheel-sdist-offline-installation-not-support-qualification",
+          "python": "3.12.15",
+          "system": "Linux",
+          "artifact_id": null
+        }
+      ]
+    },
+    {
+      "workflow": "Installed cache notice integrity",
+      "run_id": 40856199612,
+      "actions_artifact_id": 12889177556,
+      "name": "cache-notices-ubuntu-24.04-3.12-93f2699296bdc660f7bb8f57684c3a9501e3f216",
+      "actions_zip_sha256": "853ba354b3b0a10751872dc86d8711485d4499544db2af3f9f5a3cceb82cdf17",
+      "records": [
+        {
+          "path": "12889177556/cache-notices.json.gz",
+          "raw_sha256": "7971f3235bfb4108b1bce33e6d0640ace119f2c391c614b5eafd26225e565544",
+          "passed": true,
+          "kind": "current-wheel-sdist-offline-installation-not-support-qualification",
+          "python": "3.12.15",
+          "system": "Linux",
+          "artifact_id": null
+        }
+      ]
+    },
+    {
+      "workflow": "Installed cache notice integrity",
+      "run_id": 40856199612,
+      "actions_artifact_id": 12888764158,
+      "name": "cache-notices-macos-15-3.14-93f2699296bdc660f7bb8f57684c3a9501e3f216",
+      "actions_zip_sha256": "e33b7385970282bd0c198d422b38bd8ceaebdc1a39a5f0347fdeded360d8cf3e",
+      "records": [
+        {
+          "path": "12888764158/cache-notices.json.gz",
+          "raw_sha256": "39b054b9406e1b5c0eab45d768cbb3cc75c7101c5d17be66fbffd90b74283769",
+          "passed": true,
+          "kind": "current-wheel-sdist-offline-installation-not-support-qualification",
+          "python": "3.14.7",
+          "system": "Darwin",
+          "artifact_id": null
+        }
+      ]
+    },
+    {
+      "workflow": "Installed cache notice integrity",
+      "run_id": 40856199612,
+      "actions_artifact_id": 12888673702,
+      "name": "cache-notices-ubuntu-24.04-arm-3.14-93f2699296bdc660f7bb8f57684c3a9501e3f216",
+      "actions_zip_sha256": "d642318e3d8d6bb5d689f1b3c64791f52f8a823b3b24e1eb6ce5d7a507bb87df",
+      "records": [
+        {
+          "path": "12888673702/cache-notices.json.gz",
+          "raw_sha256": "aa29a9d142f307bb3fa946e8d2dfb465fe367e7bc8d630a8db2448f7d1d5bc50",
+          "passed": true,
+          "kind": "current-wheel-sdist-offline-installation-not-support-qualification",
+          "python": "3.14.9",
+          "system": "Linux",
+          "artifact_id": null
+        }
+      ]
+    },
+    {
+      "workflow": "Final published catalog acceptance",
+      "run_id": 40856199518,
+      "actions_artifact_id": 12890195095,
+      "name": "final-catalog-musl-x86_64-3.14-93f2699296bdc660f7bb8f57684c3a9501e3f216",
+      "actions_zip_sha256": "70c4f207c5cb7b396ac6dbbb6c05d5ff9bac3e1c61c4e5253b99f94ee8dd7bad",
+      "records": [
+        {
+          "path": "12890195095/final-catalog.json.gz",
+          "raw_sha256": "6c405fff07d6902ed19c7ccb54c6770d888731df714acc808cebf694b017539a",
+          "passed": true,
+          "kind": "final-public-catalog-installed-acceptance",
+          "python": "3.14.5",
+          "system": null,
+          "artifact_id": "graphviz-16.1.0-linux-musl-x86_64"
+        },
+        {
+          "path": "12890195095/image.json.gz",
+          "raw_sha256": "577d84b853ef6209da6ffd2b693c01c2c399fa060dc63d0b8ccf4c8bd42f5731"
+        }
+      ]
+    },
+    {
+      "workflow": "Final published catalog acceptance",
+      "run_id": 40856199518,
+      "actions_artifact_id": 12890160174,
+      "name": "final-catalog-musl-aarch64-3.14-93f2699296bdc660f7bb8f57684c3a9501e3f216",
+      "actions_zip_sha256": "3ef2700682382c59a18bb3a98472377545f27937d34a3701e753b73e2bd0260e",
+      "records": [
+        {
+          "path": "12890160174/final-catalog.json.gz",
+          "raw_sha256": "d22e74b2b31cf13926763c02d903761cd7b97b5ff38e2fa89e0218cbf83b406a",
+          "passed": true,
+          "kind": "final-public-catalog-installed-acceptance",
+          "python": "3.14.5",
+          "system": null,
+          "artifact_id": "graphviz-16.1.0-linux-musl-aarch64"
+        },
+        {
+          "path": "12890160174/image.json.gz",
+          "raw_sha256": "c1490a31e8c097d43a201cc7c979b93fec0ede20fe8f5560cfc05400d5116a27"
+        }
+      ]
+    },
+    {
+      "workflow": "Final published catalog acceptance",
+      "run_id": 40856199518,
+      "actions_artifact_id": 12890115114,
+      "name": "final-catalog-ubuntu-24.04-arm-3.14-93f2699296bdc660f7bb8f57684c3a9501e3f216",
+      "actions_zip_sha256": "cb23fa67c584b1e971011593d5f1b1a9fd5fb2666ed5c1bfbc35f35c08ebdfd6",
+      "records": [
+        {
+          "path": "12890115114/final-catalog.json.gz",
+          "raw_sha256": "ad83521abb4af5665a33309dd4b679a1ce3f531f7724fdc083662aaad8a1ca36",
+          "passed": true,
+          "kind": "final-public-catalog-installed-acceptance",
+          "python": "3.14.9",
+          "system": null,
+          "artifact_id": "graphviz-16.1.0-linux-glibc-aarch64"
+        }
+      ]
+    },
+    {
+      "workflow": "Final published catalog acceptance",
+      "run_id": 40856199518,
+      "actions_artifact_id": 12889965880,
+      "name": "final-catalog-ubuntu-24.04-3.14-93f2699296bdc660f7bb8f57684c3a9501e3f216",
+      "actions_zip_sha256": "93bd406613b4e6169bc57932da9caa9669d0654509e2b66fe393490066d7c7bd",
+      "records": [
+        {
+          "path": "12889965880/final-catalog.json.gz",
+          "raw_sha256": "ee92c352638d47b54f68804b3b26068389015105ccfff599876b880f63919675",
+          "passed": true,
+          "kind": "final-public-catalog-installed-acceptance",
+          "python": "3.14.9",
+          "system": null,
+          "artifact_id": "graphviz-16.1.0-linux-glibc-x86_64"
+        }
+      ]
+    },
+    {
+      "workflow": "Final published catalog acceptance",
+      "run_id": 40856199518,
+      "actions_artifact_id": 12889886667,
+      "name": "final-catalog-macos-15-3.14-93f2699296bdc660f7bb8f57684c3a9501e3f216",
+      "actions_zip_sha256": "a1c9a227a37837de46b4348d9b09167dee36f7b1841a9a13965ad7271c9d2b58",
+      "records": [
+        {
+          "path": "12889886667/final-catalog.json.gz",
+          "raw_sha256": "9f48155de434de60961f44498f13bbfcffedd8d62597bfb843bcc86bc7f22ada",
+          "passed": true,
+          "kind": "final-public-catalog-installed-acceptance",
+          "python": "3.14.7",
+          "system": null,
+          "artifact_id": "graphviz-16.1.0-macos-arm64"
+        }
+      ]
+    },
+    {
+      "workflow": "Final published catalog acceptance",
+      "run_id": 40856199518,
+      "actions_artifact_id": 12889747530,
+      "name": "final-catalog-macos-15-3.12-93f2699296bdc660f7bb8f57684c3a9501e3f216",
+      "actions_zip_sha256": "c2c9b20660c225fcad7fca0fcd24a53d87219aae6081a4f8a8e1344213c452c5",
+      "records": [
+        {
+          "path": "12889747530/final-catalog.json.gz",
+          "raw_sha256": "a260755087976eaf434d96d516b43cf9cab60455e57c3873a6fc4964937e18e4",
+          "passed": true,
+          "kind": "final-public-catalog-installed-acceptance",
+          "python": "3.12.10",
+          "system": null,
+          "artifact_id": "graphviz-16.1.0-macos-arm64"
+        }
+      ]
+    },
+    {
+      "workflow": "Final published catalog acceptance",
+      "run_id": 40856199518,
+      "actions_artifact_id": 12889488066,
+      "name": "final-catalog-windows-latest-3.12-93f2699296bdc660f7bb8f57684c3a9501e3f216",
+      "actions_zip_sha256": "8357335d4c0405481a1a825ef80c64d1463aca0ae702247e4398606a66be821c",
+      "records": [
+        {
+          "path": "12889488066/final-catalog.json.gz",
+          "raw_sha256": "2b8975866752e057a7f7e3bfcffa04ef1e8f7722c5350ca3102f3131c86c1402",
+          "passed": true,
+          "kind": "final-public-catalog-installed-acceptance",
+          "python": "3.12.10",
+          "system": null,
+          "artifact_id": "graphviz-16.1.0-windows-legacy"
+        }
+      ]
+    },
+    {
+      "workflow": "Final published catalog acceptance",
+      "run_id": 40856199518,
+      "actions_artifact_id": 12889222848,
+      "name": "final-catalog-windows-latest-3.14-93f2699296bdc660f7bb8f57684c3a9501e3f216",
+      "actions_zip_sha256": "0d71ad692318c1bf1c07bbb11da348cafb3f1a1533ea3b3bbe0963c25d4a53a5",
+      "records": [
+        {
+          "path": "12889222848/final-catalog.json.gz",
+          "raw_sha256": "7445549d367ac8a3235a2ee135e4705d4a94a5e387f7ec5802ff1471e163dc51",
+          "passed": true,
+          "kind": "final-public-catalog-installed-acceptance",
+          "python": "3.14.9",
+          "system": null,
+          "artifact_id": "graphviz-16.1.0-windows-legacy"
+        }
+      ]
+    },
+    {
+      "workflow": "Final published catalog acceptance",
+      "run_id": 40856199518,
+      "actions_artifact_id": 12888968625,
+      "name": "final-catalog-ubuntu-24.04-3.12-93f2699296bdc660f7bb8f57684c3a9501e3f216",
+      "actions_zip_sha256": "f838740987adf05944edc59f1f24bf9468c8e5bb4dfeeed6d43c3d5719dadc35",
+      "records": [
+        {
+          "path": "12888968625/final-catalog.json.gz",
+          "raw_sha256": "aaf82bb5a383aa929850caeec53935a70d03011b4b3a1ef2d4b41bd279e72f60",
+          "passed": true,
+          "kind": "final-public-catalog-installed-acceptance",
+          "python": "3.12.15",
+          "system": null,
+          "artifact_id": "graphviz-16.1.0-linux-glibc-x86_64"
+        }
+      ]
+    },
+    {
+      "workflow": "Final published catalog acceptance",
+      "run_id": 40856199518,
+      "actions_artifact_id": 12888948561,
+      "name": "final-catalog-musl-aarch64-3.12-93f2699296bdc660f7bb8f57684c3a9501e3f216",
+      "actions_zip_sha256": "f18b3476656c89d6db299d3a64be551b83eb646e6beecfbcc2998e85c50be544",
+      "records": [
+        {
+          "path": "12888948561/final-catalog.json.gz",
+          "raw_sha256": "604c14bf9dc4e402d23f0476bee8c50ce91c1fe44b4ad70ce7d70e690a763d04",
+          "passed": true,
+          "kind": "final-public-catalog-installed-acceptance",
+          "python": "3.12.13",
+          "system": null,
+          "artifact_id": "graphviz-16.1.0-linux-musl-aarch64"
+        },
+        {
+          "path": "12888948561/image.json.gz",
+          "raw_sha256": "68939aae2e9d96cbd85c4d928974e82f09388cb7b4114a2827a872890fbc7eae"
+        }
+      ]
+    },
+    {
+      "workflow": "Final published catalog acceptance",
+      "run_id": 40856199518,
+      "actions_artifact_id": 12888878103,
+      "name": "final-catalog-ubuntu-24.04-arm-3.12-93f2699296bdc660f7bb8f57684c3a9501e3f216",
+      "actions_zip_sha256": "e9863cf9fbca1e689cecad0c3909bfbe685355fce06c2b4f3f0254e887926db0",
+      "records": [
+        {
+          "path": "12888878103/final-catalog.json.gz",
+          "raw_sha256": "d714695baa9c9ce3a66a2ede3070276fe53b74e1d7b0dd912011058773bab819",
+          "passed": true,
+          "kind": "final-public-catalog-installed-acceptance",
+          "python": "3.12.15",
+          "system": null,
+          "artifact_id": "graphviz-16.1.0-linux-glibc-aarch64"
+        }
+      ]
+    },
+    {
+      "workflow": "Final published catalog acceptance",
+      "run_id": 40856199518,
+      "actions_artifact_id": 12888794444,
+      "name": "final-catalog-macos-15-intel-3.12-93f2699296bdc660f7bb8f57684c3a9501e3f216",
+      "actions_zip_sha256": "473d788736878424f1d279c9bc67f4185fc8d7865d02d700902bbd303cec42c9",
+      "records": [
+        {
+          "path": "12888794444/final-catalog.json.gz",
+          "raw_sha256": "3c821b974fc9e1432431fa2b8ba52ee0ab14ad3f4238653c6b985d274a3355ef",
+          "passed": true,
+          "kind": "final-public-catalog-installed-acceptance",
+          "python": "3.12.10",
+          "system": null,
+          "artifact_id": "graphviz-16.1.0-macos-x86_64"
+        }
+      ]
+    },
+    {
+      "workflow": "Final published catalog acceptance",
+      "run_id": 40856199518,
+      "actions_artifact_id": 12888654840,
+      "name": "final-catalog-macos-15-intel-3.14-93f2699296bdc660f7bb8f57684c3a9501e3f216",
+      "actions_zip_sha256": "33e482c9dd1f49cfe99251b2264ad22b83c1ee0c4f955d608aeb244656eb5a1d",
+      "records": [
+        {
+          "path": "12888654840/final-catalog.json.gz",
+          "raw_sha256": "5d93d3157b2882861f8ce594715db893f93758b7378e1f87d62585e79b6afb01",
+          "passed": true,
+          "kind": "final-public-catalog-installed-acceptance",
+          "python": "3.14.7",
+          "system": null,
+          "artifact_id": "graphviz-16.1.0-macos-x86_64"
+        }
+      ]
+    },
+    {
+      "workflow": "Final published catalog acceptance",
+      "run_id": 40856199518,
+      "actions_artifact_id": 12888599240,
+      "name": "final-catalog-musl-x86_64-3.12-93f2699296bdc660f7bb8f57684c3a9501e3f216",
+      "actions_zip_sha256": "68d1ae4d03d2b1e0456fb32db03e22f15184482e98c8f14459caf518569523fa",
+      "records": [
+        {
+          "path": "12888599240/image.json.gz",
+          "raw_sha256": "53f91ad3b3ae3ff1e9d51aa970fb46f6e127212d13568af17ff77999b6174485"
+        },
+        {
+          "path": "12888599240/final-catalog.json.gz",
+          "raw_sha256": "c13da3155e070fa080102169b34c208df5fb1fe51cf2ad695911616b0f067381",
+          "passed": true,
+          "kind": "final-public-catalog-installed-acceptance",
+          "python": "3.12.13",
+          "system": null,
+          "artifact_id": "graphviz-16.1.0-linux-musl-x86_64"
+        }
+      ]
+    }
+  ],
+  "excluded_workflows": [
+    {
+      "id": 40856199481,
+      "name": "Installed packages with private POSIX engines",
+      "conclusion": null
+    },
+    {
+      "id": 40856199426,
+      "name": "Current wheel and sdist installation",
+      "conclusion": null
+    },
+    {
+      "id": 40856199515,
+      "name": "Cross-platform foundation",
+      "conclusion": "cancelled"
+    },
+    {
+      "id": 40856199499,
+      "name": "Documented remote installation",
+      "conclusion": "cancelled"
+    },
+    {
+      "id": 40856199627,
+      "name": "Musl and Windows cache notice integrity",
+      "conclusion": "cancelled"
+    },
+    {
+      "id": 40856199488,
+      "name": "Alpine musl Graphviz candidates",
+      "conclusion": "cancelled"
+    },
+    {
+      "id": 40856199523,
+      "name": "Linux Graphviz candidate",
+      "conclusion": "cancelled"
+    },
+    {
+      "id": 40856199472,
+      "name": "Linux ARM64 Graphviz candidate",
+      "conclusion": "cancelled"
+    },
+    {
+      "id": 40856199479,
+      "name": "macOS Graphviz candidates",
+      "conclusion": "cancelled"
+    }
+  ]
+}

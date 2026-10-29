@@ -1,0 +1,182 @@
+{
+  "kind": "feature-003-convergence-closeout",
+  "passed": true,
+  "complete": true,
+  "tasks": [
+    "T085",
+    "T086"
+  ],
+  "tasks_completed": 86,
+  "tasks_total": 86,
+  "code_revision": "93f2699296bdc660f7bb8f57684c3a9501e3f216",
+  "documentation_revision": "07a2a917519f156bdd9544412c8ba1a7fec9baf3",
+  "qualified_functional_baseline": "c0078230a3bf1a2b934f1754e8b12664f100b4cc",
+  "scope": "Documentation and 25 Portuguese literals only; exact AST equality after correcting those literals. No ABI selection, runtime manifests, native binaries or processing algorithm changed. Normal installed catalog revalidated for this correction.",
+  "before": {
+    "run_id": 40855817098,
+    "job_id": 123386392253,
+    "expected_failure": "New CLI diagnostic contract rejected the original mojibake",
+    "log": {
+      "path": "specs/003-add-cross-platform-support/evidence/convergence-2026-10-29/regression-before.log.gz",
+      "sha256": "a2192385a34dccf8402b9cb6d97f6549e7daded26b6a73b97b506bde01076984"
+    }
+  },
+  "literal_review": {
+    "path": "specs/003-add-cross-platform-support/evidence/convergence-2026-10-29/literal-review.json",
+    "sha256": "f921506772efa9179c987c4af168133f9c7baebd8ee2a5b781ed076b5a70368b"
+  },
+  "foundation": {
+    "jobs": 6,
+    "tests_per_job": 315,
+    "receipts": {
+      "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/07a2a91/summary.json",
+      "sha256": "f1c85247dbcce79e2d6210624785f0ac109f2eecc7e55257581c4c3fee7525e5"
+    }
+  },
+  "installed_catalog": {
+    "slots": 14,
+    "installations": 42,
+    "receipts": {
+      "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/93f2699/summary.json",
+      "sha256": "2cff29bae0f28dc7a678edd67a81e7dcca5a68e67a7fe3973cf43a1e43335670"
+    },
+    "reports": [
+      {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/93f2699/12890195095/final-catalog.json.gz",
+        "sha256": "a57d98c7f17c2fe6c9daff838fcb112fe6203ad3f679e6474ce130ed749c42b4"
+      },
+      {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/93f2699/12890160174/final-catalog.json.gz",
+        "sha256": "14a43221e81160e8b34f09d3320e1e670b5613023ce2980da08873214fbe85cb"
+      },
+      {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/93f2699/12890115114/final-catalog.json.gz",
+        "sha256": "507b5088586cab73b1282df6d41d9fdbe7ac4e5938c520713589c24f46f2f429"
+      },
+      {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/93f2699/12889965880/final-catalog.json.gz",
+        "sha256": "f25e04a0ed4559157f663664489714f95bfaa6f61afdda8e840d5996e959a519"
+      },
+      {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/93f2699/12889886667/final-catalog.json.gz",
+        "sha256": "01c637124ca240a4bc762f046350a7b8172d07f216aa6367aa43c007a9ad7b76"
+      },
+      {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/93f2699/12889747530/final-catalog.json.gz",
+        "sha256": "91bb1e7cf430c6e10ecfc13dcea5fc638d56b720e2116afa7d7996e96f8f31a6"
+      },
+      {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/93f2699/12889488066/final-catalog.json.gz",
+        "sha256": "63cea95cc2849cebe5285f7c3b605f4a69902cb3085fd012307121fc568db905"
+      },
+      {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/93f2699/12889222848/final-catalog.json.gz",
+        "sha256": "971b0feb2438fc7b49c86fae2dd7ca80ff8c2ec2bc4e1455b109ac4522de30d0"
+      },
+      {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/93f2699/12888968625/final-catalog.json.gz",
+        "sha256": "c21d5c2391edbc8a5c22d2f148361385be8f094413875947f765220bda2fc106"
+      },
+      {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/93f2699/12888948561/final-catalog.json.gz",
+        "sha256": "bd3173e6afbf47d866ab4fb74f22ed0f30685f7baddf5d15e1eda32abcb81433"
+      },
+      {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/93f2699/12888878103/final-catalog.json.gz",
+        "sha256": "2045c793f42c8195480d78e75e38d1468195dce56cb975910a49cc44b04afdea"
+      },
+      {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/93f2699/12888794444/final-catalog.json.gz",
+        "sha256": "bfb10bb90f0075d7ca6fc10e5e4723f720438a4b8af19b1b9786857523a28865"
+      },
+      {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/93f2699/12888654840/final-catalog.json.gz",
+        "sha256": "860d9fb0932ae7d20cfef68bc8df8223a8b7607cfd2ad3bab47c16bec569dcdb"
+      },
+      {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/93f2699/12888599240/final-catalog.json.gz",
+        "sha256": "7c3f1b99f7db187cfdad09f2f0534a2265560cfd8b2b3f54dc8906889acd1dcf"
+      }
+    ]
+  },
+  "documented_installation": {
+    "slots": 14,
+    "immutable_revision": "93f2699296bdc660f7bb8f57684c3a9501e3f216",
+    "reports": [
+      {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/07a2a91/12889667069/musl-notices/slot/remote-installation.json.gz",
+        "sha256": "782c33e1bdd16a833ed49560f5e423804cd9dffa7b9e6785c44e169040dd79e6"
+      },
+      {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/07a2a91/12889532386/musl-notices/slot/remote-installation.json.gz",
+        "sha256": "5494e3fbea88952d0ca90d76d901b62a119b48e8c233993d5e0066ad8d908c2d"
+      },
+      {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/07a2a91/12889457610/musl-notices/slot/remote-installation.json.gz",
+        "sha256": "7dede4a357d9a9c7ddb44109a09c49ccd5768fdfb85bdd18f536df89cd8fff7e"
+      },
+      {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/07a2a91/12889088223/musl-notices/slot/remote-installation.json.gz",
+        "sha256": "3f8dfc87e72ca32ef0fc87fdb194d0b670ddab33a5afd432a2211599c732344d"
+      },
+      {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/07a2a91/12890485057/documented-installation.json.gz",
+        "sha256": "a5d3381e0069c8d86927de2d3cef5783cd626ddf37f2980a7bfd2cf66c44346a"
+      },
+      {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/07a2a91/12890420505/documented-installation.json.gz",
+        "sha256": "c0d7007cd328855a661b229f956ce1634d5c7d2eaadd705e4446b79833f4b2eb"
+      },
+      {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/07a2a91/12889946315/documented-installation.json.gz",
+        "sha256": "22abeaa3da70248f4f9158f055ada3f211f0b4a97942d38c3a4a7a5c67293b06"
+      },
+      {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/07a2a91/12889945939/documented-installation.json.gz",
+        "sha256": "f0bd6316c38e07404d06d1cbc82320c5dfa9e93d46c35d558f7b962afd3341f6"
+      },
+      {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/07a2a91/12889736187/documented-installation.json.gz",
+        "sha256": "e3294dc842d4a9f914623472ba423cc2c592ae6ab044d8d16041e4bebd69f1cb"
+      },
+      {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/07a2a91/12889731267/documented-installation.json.gz",
+        "sha256": "7df1a8d4023cfe52418d1bb71cc488f3dd012141ab2e65c32ffc6b0e5cef7e4d"
+      },
+      {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/07a2a91/12889596870/documented-installation.json.gz",
+        "sha256": "aba209641f5e2584bb59d1fbcdac3bc40c8f32f7a611fce66d42768eb4482381"
+      },
+      {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/07a2a91/12889497181/documented-installation.json.gz",
+        "sha256": "cf215e1fbc6dadc513ebf7aadfc0e0043f2e2d6ace583581e9ddfa7279327b0d"
+      },
+      {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/07a2a91/12888933874/documented-installation.json.gz",
+        "sha256": "520003ebb1e1725c82289652fbb4ffebd43f3c1ca2795c29d967f100a5dda2e1"
+      },
+      {
+        "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/acceptance/07a2a91/12888923966/documented-installation.json.gz",
+        "sha256": "284675cd25c78a652e54917d338cb66a36e2fa4db457b63ccfeba68b386f5372"
+      }
+    ]
+  },
+  "twine": {
+    "review": {
+      "path": "specs/003-add-cross-platform-support/evidence/twine-visual-review-2026-10-28.json",
+      "sha256": "c5106fa06acf5cb7e0400eaee7c61fe39e5b571dcafd8d67f9fabe4f20990b02"
+    },
+    "binding": "All six output hashes still match the existing user review in all 42 installations; no new GUI review is claimed."
+  },
+  "publication": {
+    "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/publication.json",
+    "sha256": "33bb6194eaac623b9ae488397b2a5b920b5112460f38b681b24b88328c620b3a"
+  },
+  "previous_closeout": {
+    "path": "specs/003-add-cross-platform-support/evidence/final-paired-review-2026-10-28/closeout.json",
+    "sha256": "ebaa02f3295e04f6539e6efb929cd7e807c141d7176fa0f1be4207d1f2ad0b6f"
+  },
+  "validation": "GitHub Actions only; local work limited to file edits, hashes and AST/data review. Historical receipts and their original byte-bound references are preserved.",
+  "constitution": "No new dependency/algorithm or change to data preservation, source licensing, acquisition or system protections.",
+  "remaining": []
+}

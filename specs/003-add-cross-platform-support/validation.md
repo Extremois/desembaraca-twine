@@ -1,6 +1,6 @@
 ## Termos do SDK macOS e reconhecimento Berkeley — 2026-10-28
 
-**Estado final em 2026-10-29: 84/84 tarefas concluídas**, sete alvos ABI/14 slots qualificados, 42 instalações externas e 14 instalações documentadas aprovadas. [Encerramento e revisão constitucional](evidence/final-paired-review-2026-10-28/closeout.json). Publicação autorizada de seis pares runtime/fontes concluída e hashes públicos conferidos sem autenticação. As entradas datadas abaixo são histórico; suas pendências e contagens foram superadas por este registro final.
+**Estado atual após convergência em 2026-10-29: 86/86 tarefas concluídas.** [Recibo atual](evidence/convergence-2026-10-29/summary.json): documentação ABI corrigida, 25 literais portugueses recuperados, seis jobs de 315 testes, 42 instalações reais e 14 instalações documentadas aprovadas no Actions. Os registros anteriores de 84/84 e seus hashes permanecem históricos e íntegros.
 
 
 A revisão `60707b3` coletou o acordo instalado EA1879 do Xcode 16.4 nos dois runners, com RTF idêntico por hash. A [revisão dos 67 headers restantes](evidence/macos-sdk-terms-review-2026-10-28/README.md) identifica declarações LLVM, blocos BSD e a rota de inputs do SDK, preservando seus limites. Não foi criado requisito de obter fontes do Apple Clang ou redistribuir headers proprietários. O reconhecimento Berkeley foi incorporado a README/NOTICE e [validado em 20 instalações externas de wheel/sdist](evidence/berkeley-notice-packages-ci-2026-10-28/README.md). Os quatro workflows passaram; os seis jobs de fundação executaram 307 testes cada.

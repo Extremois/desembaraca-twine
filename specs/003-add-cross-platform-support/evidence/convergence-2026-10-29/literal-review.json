@@ -1,0 +1,137 @@
+{
+  "kind": "catalog-literal-only-change-review",
+  "before_revision": "4acfd0bd7e8bbdd7cac081a0c019471bc4104174",
+  "after_revision": "93f2699296bdc660f7bb8f57684c3a9501e3f216",
+  "before_sha256": "a4f8f80be47f9bd3bbf76b518a348c92495046fa3e589b5cf4ad21193179aa68",
+  "after_sha256": "6f530376b8714aecc4d25455f8d3de779c2cccfc047a4476a535dfeaa0914afd",
+  "method": "Parse both files as data; decode only the 25 corrupted literals in the previous AST; resulting AST must exactly equal the current AST, excluding source locations.",
+  "ast_matches_after_literal_correction": true,
+  "changed_literals": [
+    {
+      "line": 45,
+      "before": "caminho de manifesto invÃ¡lido",
+      "after": "caminho de manifesto inválido"
+    },
+    {
+      "line": 54,
+      "before": "versÃ£o mÃ­nima invÃ¡lida",
+      "after": "versão mínima inválida"
+    },
+    {
+      "line": 142,
+      "before": "NÃ£o hÃ¡ componente qualificado compatÃ­vel com o ambiente identificado",
+      "after": "Não há componente qualificado compatível com o ambiente identificado"
+    },
+    {
+      "line": 146,
+      "before": "seleÃ§Ã£o de artefato ambÃ­gua",
+      "after": "seleção de artefato ambígua"
+    },
+    {
+      "line": 168,
+      "before": "requisitos mÃ­nimos diferem do manifesto qualificado",
+      "after": "requisitos mínimos diferem do manifesto qualificado"
+    },
+    {
+      "line": 325,
+      "before": "Ambiente sem correspondÃªncia Ãºnica com uma combinaÃ§Ã£o oficialmente validada.",
+      "after": "Ambiente sem correspondência única com uma combinação oficialmente validada."
+    },
+    {
+      "line": 40,
+      "before": "JSON invÃ¡lido",
+      "after": "JSON inválido"
+    },
+    {
+      "line": 87,
+      "before": "descritor nÃ£o qualificado",
+      "after": "descritor não qualificado"
+    },
+    {
+      "line": 96,
+      "before": "requisitos CPU invÃ¡lidos",
+      "after": "requisitos CPU inválidos"
+    },
+    {
+      "line": 106,
+      "before": "esquema ou motor invÃ¡lido",
+      "after": "esquema ou motor inválido"
+    },
+    {
+      "line": 108,
+      "before": "catÃ¡logo invÃ¡lido",
+      "after": "catálogo inválido"
+    },
+    {
+      "line": 117,
+      "before": "catÃ¡logo local ausente ou invÃ¡lido",
+      "after": "catálogo local ausente ou inválido"
+    },
+    {
+      "line": 161,
+      "before": "manifesto legado incompatÃ­vel com descritor",
+      "after": "manifesto legado incompatível com descritor"
+    },
+    {
+      "line": 165,
+      "before": "ABI/identidade do manifesto difere do catÃ¡logo",
+      "after": "ABI/identidade do manifesto difere do catálogo"
+    },
+    {
+      "line": 204,
+      "before": "snapshot desconhecido nÃ£o pode gerar evidÃªncia de referÃªncia",
+      "after": "snapshot desconhecido não pode gerar evidência de referência"
+    },
+    {
+      "line": 207,
+      "before": "inventÃ¡rio/fingerprint de referÃªncia inconsistente",
+      "after": "inventário/fingerprint de referência inconsistente"
+    },
+    {
+      "line": 221,
+      "before": "qualificaÃ§Ãµes Python incompletas/duplicadas",
+      "after": "qualificações Python incompletas/duplicadas"
+    },
+    {
+      "line": 255,
+      "before": "alvo de suporte invÃ¡lido",
+      "after": "alvo de suporte inválido"
+    },
+    {
+      "line": 262,
+      "before": "matriz de suporte invÃ¡lida",
+      "after": "matriz de suporte inválida"
+    },
+    {
+      "line": 265,
+      "before": "identidade/evidÃªncia duplicada ou invÃ¡lida",
+      "after": "identidade/evidência duplicada ou inválida"
+    },
+    {
+      "line": 274,
+      "before": "matriz de suporte ausente ou invÃ¡lida",
+      "after": "matriz de suporte ausente ou inválida"
+    },
+    {
+      "line": 287,
+      "before": "Esta revisÃ£o ainda nÃ£o tem qualificaÃ§Ã£o oficial publicada para o ambiente.",
+      "after": "Esta revisão ainda não tem qualificação oficial publicada para o ambiente."
+    },
+    {
+      "line": 92,
+      "before": "ABI Linux invÃ¡lida",
+      "after": "ABI Linux inválida"
+    },
+    {
+      "line": 224,
+      "before": "estado de qualificaÃ§Ã£o invÃ¡lido",
+      "after": "estado de qualificação inválido"
+    },
+    {
+      "line": 38,
+      "before": "constante JSON invÃ¡lida",
+      "after": "constante JSON inválida"
+    }
+  ],
+  "scope": "No local application, engine or tests executed; selection logic and all other literals unchanged."
+}

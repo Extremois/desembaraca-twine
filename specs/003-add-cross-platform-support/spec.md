@@ -9,7 +9,7 @@
 
 **Created**: 2026-10-17
 
-**Status**: Implementada, publicada e validada no escopo ABI aprovado: 7 alvos/14 slots, 84/84 tarefas. [Encerramento](evidence/final-paired-review-2026-10-28/closeout.json).
+**Status**: Implementada, publicada e validada no escopo ABI aprovado: 7 alvos/14 slots, 86/86 tarefas. [Encerramento após convergência](evidence/convergence-2026-10-29/summary.json).
 
 **Input**: User description: "Vamos tornar o nosso projeto usavel em diferentes sistemas operacionais. Agora que temos funcionando um MVP no Windows o proximo passo é tornar usavel em Linux e MacOS."
 
