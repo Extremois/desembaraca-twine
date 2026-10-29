@@ -99,7 +99,7 @@ Para instalar o comando no usuário sem criar ou ativar a venv manualmente, use
 CPython 3.12 ou 3.14 no PowerShell:
 
 ```powershell
-Invoke-WebRequest "https://raw.githubusercontent.com/Extremois/desembaraca-twine/e5f15dd913371b87899e2633456b9e2901d18766/install.py" -OutFile "$env:TEMP\desembaraca-twine-install.py"
+Invoke-WebRequest "https://raw.githubusercontent.com/Extremois/desembaraca-twine/5a1c43fc344d927d30bedc1c91590573983d56ed/install.py" -OutFile "$env:TEMP\desembaraca-twine-install.py"
 python "$env:TEMP\desembaraca-twine-install.py"
 ```
 
@@ -116,7 +116,7 @@ instalador publicado da versão desejada e execute-o novamente.
 No Linux/macOS, com `curl` e o Python nativo selecionado:
 
 ```sh
-curl -fL "https://raw.githubusercontent.com/Extremois/desembaraca-twine/e5f15dd913371b87899e2633456b9e2901d18766/install.py" -o "$HOME/desembaraca-twine-install.py"
+curl -fL "https://raw.githubusercontent.com/Extremois/desembaraca-twine/5a1c43fc344d927d30bedc1c91590573983d56ed/install.py" -o "$HOME/desembaraca-twine-install.py"
 python3.12 "$HOME/desembaraca-twine-install.py"
 ```
 
@@ -355,7 +355,7 @@ To install the user command without manually creating or activating a venv,
 use CPython 3.12 or 3.14 in PowerShell:
 
 ```powershell
-Invoke-WebRequest "https://raw.githubusercontent.com/Extremois/desembaraca-twine/e5f15dd913371b87899e2633456b9e2901d18766/install.py" -OutFile "$env:TEMP\desembaraca-twine-install.py"
+Invoke-WebRequest "https://raw.githubusercontent.com/Extremois/desembaraca-twine/5a1c43fc344d927d30bedc1c91590573983d56ed/install.py" -OutFile "$env:TEMP\desembaraca-twine-install.py"
 python "$env:TEMP\desembaraca-twine-install.py"
 ```
 
@@ -372,7 +372,7 @@ the published installer for the desired version and run it again.
 On Linux/macOS, with `curl` and your selected native Python:
 
 ```sh
-curl -fL "https://raw.githubusercontent.com/Extremois/desembaraca-twine/e5f15dd913371b87899e2633456b9e2901d18766/install.py" -o "$HOME/desembaraca-twine-install.py"
+curl -fL "https://raw.githubusercontent.com/Extremois/desembaraca-twine/5a1c43fc344d927d30bedc1c91590573983d56ed/install.py" -o "$HOME/desembaraca-twine-install.py"
 python3.12 "$HOME/desembaraca-twine-install.py"
 ```
 
